@@ -1,0 +1,97 @@
+## Review setup
+- **Input scope** Abstract only, as provided in the submission record.
+- **Assessment boundary** Assessment is restricted to the claims and evidence visible in the abstract. No full text, figures, tables, methods, statistics, or supplementary materials were supplied, so mechanistic, quantitative, and technical details cannot be verified.
+- **Shared manuscript claim summary** The authors report a single transcobalamin-like gene in Bombyx mori (Bmtcn) with homologs across insect orders; predicted structural conservation of a cobalamin-compatible pocket; head-enriched expression in neuronal and glial populations; and loss-of-function phenotypes including homocysteine accumulation, behavioral abnormalities, brain-associated phenotypes, and head transcriptomic changes consistent with perturbed folate-one-carbon metabolism and cellular remodeling. They propose that cobalamin acts through alternative metabolic or signaling routes in insects and that B. mori is a tractable system for mechanistic dissection.
+- **Visible evidence base** Abstract-level statements only. No primary data, figures, tables, statistical tests, sample sizes, validation experiments, or sequence/structure accessions are visible.
+- **Missing materials affecting confidence** Full text, methods, figures, tables, statistics, mutant generation and validation, docking parameters and controls, expression quantification, transcriptomic analysis pipeline, and independent replication are all unavailable.
+
+## Reviewer
+- **Overall assessment** The manuscript addresses an interesting and underexplored question, namely whether insects possess functional transcobalamin-like components linked to vitamin B12 biology. The conceptual framing is clear and the combination of comparative genomics, structural prediction, expression mapping, and mutant phenotyping is potentially attractive. However, from the supplied abstract alone, the central claims are not established. The evidence is described in qualitative terms, key mechanistic links are asserted rather than demonstrated, and the abstract itself concedes that direct biochemical validation of cobalamin binding is lacking. As presented, the work is hypothesis-generating rather than conclusive.
+- **Who would be interested in the results, and why** Insect physiologists, neurobiologists, and comparative endocrinologists or nutrition researchers interested in vitamin and one-carbon metabolism; evolutionary biologists studying conservation of vitamin transport systems; and researchers using Bombyx mori as a genetic model. If substantiated, the findings would also interest those working on insect neurodevelopment and behavior.
+- **Major strengths** The topic is original and addresses a genuine gap in insect vitamin B12 biology. The use of a genetic loss-of-function model in B. mori is a reasonable strategy for linking a candidate gene to organismal phenotypes. Combining structural prediction, expression localization, and transcriptomics provides a multi-level framework that, if rigorously executed, could support a coherent model. The abstract is generally readable and communicates the main idea without excessive jargon.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Mechanistic support for the core claim
+    - **Claim pointer** Bmtcn encodes a transcobalamin-like protein with a cobalamin-compatible binding pocket and is associated with vitamin B12-related functions.
+    - **Evidence pointer** Abstract statements on structure prediction and docking; location not provided.
+    - **Concern** The abstract states that structural prediction and docking suggest a conserved fold and a pocket compatible with cobalamin binding, but explicitly notes that direct biochemical validation remains needed. No binding affinity, ligand competition, or functional transport assay is reported in the visible material.
+    - **Why it matters** Without biochemical or functional evidence of cobalamin interaction, the designation of Bmtcn as a transcobalamin-like component with B12-related function rests on sequence and structural inference alone. This is insufficient to support the central mechanistic claim.
+    - **Resolution test** Provide direct cobalamin binding data (for example equilibrium binding, isothermal titration calorimetry, or ligand competition) and, ideally, functional evidence that Bmtcn mediates cobalamin uptake or distribution in a relevant insect cell or tissue context.
+  - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Causal attribution of phenotypes
+    - **Claim pointer** Bmtcn loss-of-function mutants accumulate homocysteine, display behavioral abnormalities, and show brain-associated phenotypes.
+    - **Evidence pointer** Abstract statements on mutant phenotypes; location not provided.
+    - **Concern** The abstract reports mutant phenotypes but does not describe how the mutants were generated, whether loss of function was validated, whether phenotypes were rescued by Bmtcn re-expression, or whether genetic background effects were controlled.
+    - **Why it matters** Without rescue or independent validation, the link between Bmtcn disruption and the observed metabolic, behavioral, and brain phenotypes remains correlative. Off-target or background effects cannot be excluded.
+    - **Resolution test** Report mutant generation and validation, include rescue experiments restoring Bmtcn expression, and demonstrate that phenotypes are absent or attenuated in rescued animals relative to controls.
+  - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Specificity of the metabolic interpretation
+    - **Claim pointer** Head transcriptomics reveals coordinated changes consistent with perturbed folate-one-carbon metabolism and broad remodeling of core cellular programs alongside stress-associated responses.
+    - **Evidence pointer** Abstract statement on transcriptomics; location not provided.
+    - **Concern** The transcriptomic interpretation is described as consistent with perturbed folate-one-carbon metabolism, but no metabolite measurements for folate species, methionine, S-adenosylmethionine, or related one-carbon intermediates are reported in the visible material. Homocysteine accumulation alone is not specific to one-carbon disruption.
+    - **Why it matters** Transcriptional signatures can reflect secondary stress responses rather than a direct metabolic lesion. Without targeted metabolite quantification, the proposed metabolic mechanism is underdetermined.
+    - **Resolution test** Provide targeted metabolite measurements of folate and one-carbon pathway intermediates in mutants versus controls, and show that transcriptional changes map onto specific perturbed reactions rather than general stress.
+  - **Concern ID** R1-M4
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Expression specificity and functional relevance
+    - **Claim pointer** Bmtcn expression is enriched in the head and detectable across neuronal and glial populations, implicating the nervous system as a potential site of cobalamin handling and/or demand.
+    - **Evidence pointer** Abstract statement on expression; location not provided.
+    - **Concern** The abstract does not specify the resolution of the expression analysis, whether neuronal and glial detection was validated with markers or co-localization, or whether expression was quantified across stages and sexes.
+    - **Why it matters** The inference that the nervous system is a site of cobalamin handling depends on the specificity and reproducibility of the expression data. Without marker co-localization and quantification, the claim remains suggestive.
+    - **Resolution test** Provide marker-based co-localization, developmental and sex-specific quantification, and, where possible, protein-level validation of Bmtcn localization.
+  - **Concern ID** R1-M5
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Evolutionary inference
+    - **Claim pointer** A single transcobalamin-like gene is present in B. mori and homologs are detected across diverse insect orders.
+    - **Evidence pointer** Abstract statement on homolog detection; location not provided.
+    - **Concern** The abstract does not report the phylogenetic methods, sequence identity thresholds, or whether the insect homologs are orthologs or more distant relatives of vertebrate transcobalamin. The functional implication of conservation is therefore unclear.
+    - **Why it matters** Conservation of sequence or predicted fold does not establish conservation of cobalamin-related function. The evolutionary claim requires explicit phylogenetic and selection analysis.
+    - **Resolution test** Provide a dated or well-supported phylogeny, sequence identity and domain architecture comparisons, and, if possible, tests for purifying selection on the insect lineage.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Terminology precision
+    - **Affected element** Use of transcobalamin-like and transcobalamin interchangeably.
+    - **Evidence pointer** Abstract; location not provided.
+    - **Issue** The abstract alternates between transcobalamin-like and insect transcobalamin, which may overstate functional equivalence.
+    - **Required correction** Use transcobalamin-like consistently unless functional equivalence is demonstrated, and define the criteria for the designation.
+  - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Quantitative reporting
+    - **Affected element** Phenotype and expression descriptions.
+    - **Evidence pointer** Abstract; location not provided.
+    - **Issue** Terms such as enriched, abnormalities, and coordinated changes are qualitative and lack effect sizes or statistical support in the visible material.
+    - **Required correction** Report effect sizes, sample sizes, and statistical tests for all quantitative claims in the abstract or in the corresponding results sections.
+  - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Readability for nonspecialists
+    - **Affected element** Framing of the alternative route hypothesis.
+    - **Evidence pointer** Abstract; location not provided.
+    - **Issue** The statement that insects lack canonical cobalamin-dependent methionine synthase and that cobalamin may act through alternative routes is asserted without explaining the functional consequence for a general reader.
+    - **Required correction** Briefly state what the absence of canonical methionine synthase implies and what alternative routes are being proposed.
+  - **Concern ID** R1-m4
+    - **Severity** Minor
+    - **Axis** Scope of the model claim
+    - **Affected element** Claim that B. mori is a tractable system for mechanistic dissection.
+    - **Evidence pointer** Abstract; location not provided.
+    - **Issue** Tractability is asserted but not supported by any description of genetic tools, generation time, or assay availability in the visible material.
+    - **Required correction** Either provide concrete support for tractability or soften the claim to a proposal for future work.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The absence of direct cobalamin binding evidence and the absence of rescue or independent validation of the mutant phenotypes prevent the central claims from being established. R1-M3, R1-M4, and R1-M5 further weaken the mechanistic and evolutionary interpretation but are not individually blocking.
+- **Assessment against Nature-style criteria** Originality is moderate to high, as insect transcobalamin-like function is not well characterized. Scientific importance is potentially significant but currently unproven because the mechanistic link to vitamin B12 is inferential. Interdisciplinary readership could be broad, spanning insect biology, neurobiology, and metabolism, but the abstract does not yet deliver the mechanistic depth such an audience would expect. Technical soundness cannot be fully judged from the abstract, and the visible material reveals gaps in biochemical validation, causal attribution, and quantitative reporting. Readability for nonspecialists is acceptable, though some terminology and the alternative-route hypothesis need clearer explanation.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript is potentially supportive if the technical concerns, particularly direct cobalamin binding and rescue-based causal validation, are resolved.
+
+## Risk / unsupported claims
+- The claim that Bmtcn is a functional transcobalamin-like component with cobalamin-related function is unsupported by direct biochemical evidence in the visible material.
+- The claim that Bmtcn loss-of-function causes the observed metabolic, behavioral, and brain phenotypes is correlative without rescue or independent validation.
+- The claim that transcriptomic changes reflect perturbed folate-one-carbon metabolism is not supported by targeted metabolite measurements in the visible material.
+- The claim that the nervous system is a site of cobalamin handling or demand is based on expression enrichment without marker-validated co-localization or protein-level evidence.
+- The claim that insect homologs are functionally equivalent to vertebrate transcobalamin is not supported by phylogenetic or selection analysis in the visible material.
+- The claim that B. mori is a tractable system for mechanistic dissection is asserted without supporting detail on tools or assays.

@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no methods, figures, or supplementary data were available for evaluation
+- **Shared manuscript claim summary** The authors report cryo-EM structures of human full-length UGGT1 in monomeric open and closed conformational states, with evidence for intermediate conformations from 3D variability and molecular dynamics. A density bridging the sensory TRXL2 and catalytic domains in the open state is interpreted as substrate association. A dimeric form with occluded substrate binding sites is proposed to regulate activity. Glycoproteomics of endogenous substrates shows no consensus sequence flanking modified N-glycosylation sites. Disease-associated variants are mapped onto the structure to explain functional disruption.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary information were provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, cryo-EM data quality metrics, molecular dynamics simulation details, glycoproteomics methods and datasets, variant functional assays, and any statistical analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially significant advance in understanding UGGT1 substrate recognition through structural biology. The proposed conformational continuum and the observation of a substrate-associated open state are conceptually interesting. However, the evidence base available for this review is limited to the abstract, which prevents verification of the structural interpretations, the functional relevance of the dimer, and the glycoproteomics conclusions. The link between the structural data and the disease-associated variant analysis is stated but not substantiated in the provided material. The work is likely to interest the glycobiology and protein quality control communities, but the strength of the conclusions cannot be fully assessed from the abstract alone.
+- **Who would be interested in the results, and why** Researchers in glycoprotein quality control, protein folding, ER biology, and structural biology would be interested. The work also has relevance for those studying congenital disorders of glycosylation and for drug discovery efforts targeting UGGT1. The proposed conformational dynamics model may inform broader understanding of multidomain enzyme regulation.
+- **Major strengths** The study addresses a long-standing question in glycoprotein quality control, namely how UGGT1 recognizes its substrates. The use of cryo-EM to capture multiple conformational states of a full-length human enzyme is technically demanding and represents a substantial advance. The integration of structural data with glycoproteomics and disease-associated variants provides a multi-layered approach. The observation of a dimeric form with occluded substrate sites offers a plausible regulatory mechanism.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims that a density bridging the sensory TRXL2 and catalytic domains in the open state is consistent with substrate association, and that this supports a mode of binding placing the substrate near the catalytic domain.
+  - **Evidence pointer** Abstract text; no figure or table identifiers provided
+  - **Concern** The interpretation of the unassigned density as substrate is a central claim, but the abstract provides no information on the identity of the putative substrate, the resolution of the map in that region, or whether the density was validated by independent methods such as mass spectrometry or mutagenesis. Without these details, the assignment remains speculative.
+  - **Why it matters** If the density assignment is incorrect, the proposed binding mode and the mechanistic model built upon it would be undermined. This is the key structural observation that links the conformational states to substrate recognition.
+  - **Resolution test** Provide cryo-EM map quality metrics for the region of interest, show that the density is reproducible across independent reconstructions, and include orthogonal validation such as cross-linking mass spectrometry or site-directed mutagenesis with functional readouts.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Functional relevance
+  - **Claim pointer** The abstract states that a dimeric form of UGGT1 was observed in which the glycoprotein substrate binding sites are occluded, suggesting that dimerization may regulate UGGT1 activity.
+  - **Evidence pointer** Abstract text; no figure or table identifiers provided
+  - **Concern** The functional significance of the dimer is inferred solely from the structural observation of occluded binding sites. No biochemical or cellular data are presented to demonstrate that dimerization occurs in solution or in cells, that it is reversible, or that it correlates with changes in enzymatic activity.
+  - **Why it matters** Without functional validation, the regulatory role of dimerization remains a hypothesis. If the dimer is a crystallization or grid preparation artifact, the proposed regulatory mechanism would not be supported.
+  - **Resolution test** Include size exclusion chromatography with multi-angle light scattering, analytical ultracentrifugation, or cellular cross-linking experiments to confirm dimer formation, and show that dimerization modulates UGGT1 activity in vitro or in cells.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim support
+  - **Claim pointer** The abstract claims that the human UGGT1 structure helps explain how disease-associated missense and deletion variants disrupt function.
+  - **Evidence pointer** Abstract text; no variant list or structural mapping details provided
+  - **Concern** The abstract does not specify which variants were analyzed, how they map onto the structure, or what functional assays were used to link structural disruption to disease. The claim of explanation is not supported by any visible data.
+  - **Why it matters** This claim extends the relevance of the structure to clinical genetics. Without specific variant information and functional validation, the statement is an assertion rather than a demonstrated conclusion.
+  - **Resolution test** Provide a table of disease-associated variants with their structural locations, predicted or measured effects on stability or activity, and functional data from cellular or biochemical assays.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Conformational states description
+  - **Evidence pointer** Abstract text
+  - **Issue** The terms "open" and "closed" are used without defining what structural features distinguish these states.
+  - **Required correction** Define the conformational differences, for example by domain rearrangements or interdomain distances, in the abstract or refer to a figure that illustrates the states.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Methodological transparency
+  - **Affected element** Molecular dynamics simulations
+  - **Evidence pointer** Abstract text
+  - **Issue** The abstract mentions molecular dynamics simulations but gives no indication of simulation length, force field, or whether the simulations were used to generate or test the intermediate conformations.
+  - **Required correction** Briefly state the simulation approach and its role in supporting the conformational continuum model.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Glycoproteomics conclusion
+  - **Evidence pointer** Abstract text
+  - **Issue** The statement that no consensus sequence was found flanking modified sites is presented as a definitive conclusion, but the abstract does not indicate the number of sites analyzed or the statistical power of the analysis.
+  - **Required correction** Include the number of identified glycosylation sites and the criteria used to define the absence of a consensus sequence.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, and R1-M3 are blocking because the central structural interpretation, the functional relevance of the dimer, and the disease variant claims cannot be evaluated from the abstract alone. The manuscript must provide the underlying data and validation for these claims.
+- **Assessment against Nature-style criteria** 
+  - Originality: The work appears original in providing full-length human UGGT1 structures and proposing a conformational continuum model. The originality is high if the structural interpretations are validated.
+  - Scientific importance: The study addresses a fundamental question in glycoprotein quality control and has potential implications for understanding congenital disorders of glycosylation. The importance is high if the functional claims are supported.
+  - Interdisciplinary readership: The topic bridges structural biology, glycobiology, cell biology, and clinical genetics. The abstract is written in a way that is accessible to a broad audience, though some domain-specific terms are used without definition.
+  - Technical soundness: Cannot be assessed from the abstract. The cryo-EM and simulation methods are not described in sufficient detail to evaluate their rigor.
+  - Readability for nonspecialists: The abstract is generally clear, but terms such as "TRXL2" and "reglucosylation" may be unfamiliar to readers outside the field. The logical flow from structure to function to disease is coherent.
+- **Recommendation posture** Supportive if technical concerns are resolved. The abstract presents a compelling structural study with broad implications, but the key claims require the full manuscript and supporting data to be verified. The current evidence base is insufficient to establish the case.
+
+## Risk / unsupported claims
+- The assignment of the bridging density to substrate is unsupported without map quality metrics and orthogonal validation.
+- The regulatory role of UGGT1 dimerization is unsupported without biochemical or cellular evidence of dimer formation and functional consequences.
+- The claim that the structure explains disease-associated variant disruption is unsupported without specific variant data and functional assays.
+- The existence of intermediate conformations is stated as a model but the supporting evidence from 3D variability and simulations is not visible in the abstract.
+- The glycoproteomics conclusion regarding absence of a consensus sequence is not evaluable without information on sample size and statistical methods.

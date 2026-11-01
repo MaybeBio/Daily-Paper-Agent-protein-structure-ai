@@ -1,0 +1,64 @@
+## Review setup
+- **Input scope** Title, author list, arXiv identifier 2610.34690v1, and an arXiv landing page shell containing only navigation, submission history, access, and arXivLabs boilerplate. No abstract text, no manuscript body, no figures, no tables, no references.
+- **Assessment boundary** Assessment is limited to what can be verified from the supplied material. No scientific claim, method detail, experiment, or result can be evaluated because none is present in the input.
+- **Shared manuscript claim summary** The only recoverable claim is the title-level assertion that a method named IsoAct performs geometry-aware post-hoc debiasing via isometric actions. No supporting claim, scope condition, or empirical statement is provided.
+- **Visible evidence base** Title and author metadata only. The remainder of the supplied text is arXiv interface furniture and does not constitute manuscript content.
+- **Missing materials affecting confidence** Abstract, introduction, related work, method formulation, theoretical results, datasets, baselines, metrics, experimental tables, figures, ablation studies, compute details, code or data availability, and limitations. Confidence in any substantive judgment is therefore effectively zero.
+
+## Reviewer
+- **Overall assessment** The submission cannot be reviewed on scientific grounds in its current supplied form. The input contains a title and author list but no abstract or body, so there is no method to inspect, no result to verify, and no claim to test. The topic suggested by the title, post-hoc debiasing with geometric or group-theoretic structure, is potentially of interest to the machine learning fairness and representation learning communities, but that is an inference from the title alone and cannot be treated as an assessed contribution. The appropriate posture is that the case is not established from the provided evidence, not that the work is weak.
+- **Who would be interested in the results, and why** If the title reflects the actual content, the likely audience would be researchers in fairness and debiasing for machine learning, post-hoc model correction, and geometric or symmetry-based representation methods. Practitioners concerned with correcting deployed models without retraining would also have an interest. This readership inference is based solely on the title and is not corroborated by any supplied text.
+- **Major strengths** None identifiable from the supplied material. No abstract, method, or result is available to assess for originality, rigor, or significance.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Evidential completeness
+    - **Claim pointer** The title asserts that IsoAct achieves geometry-aware post-hoc debiasing via isometric actions.
+    - **Evidence pointer** location not provided
+    - **Concern** No abstract, method section, experiment, or result is present in the supplied material, so the central claim cannot be examined at any level.
+    - **Why it matters** Without the manuscript body, no assessment of correctness, novelty, or significance is possible, and the core claim remains entirely unverified.
+    - **Resolution test** Provide the full manuscript including abstract, method, experiments, and results so the claim can be evaluated against concrete evidence.
+  - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Claim specificity
+    - **Claim pointer** The term "isometric actions" implies a specific mathematical structure, presumably group actions preserving a metric, but the supplied material does not define the object, the space, or the invariance being enforced.
+    - **Evidence pointer** location not provided
+    - **Concern** The key technical construct in the title is undefined in the supplied material, leaving the mechanism, assumptions, and scope conditions unknown.
+    - **Why it matters** A geometry-aware debiasing method stands or falls on whether the assumed symmetry or metric structure actually holds for the data and the bias being corrected. This cannot be checked without a formal statement.
+    - **Resolution test** Provide a formal definition of the isometric action, the space it acts on, the invariance or equivariance it enforces, and the conditions under which the assumption is valid.
+  - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Empirical support
+    - **Claim pointer** The title implies demonstrated debiasing performance, but no datasets, baselines, metrics, or quantitative outcomes are supplied.
+    - **Evidence pointer** location not provided
+    - **Concern** There is no evidence of evaluation, comparison, or ablation, so any performance or fairness improvement is unsupported.
+    - **Why it matters** Post-hoc debiasing claims are only meaningful relative to established baselines and appropriate fairness and utility metrics. None are available here.
+    - **Resolution test** Provide experimental setup, datasets, baselines, metrics, main results, and ablations, with enough detail for independent verification.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Presentation
+    - **Affected element** Title
+    - **Evidence pointer** Title
+    - **Issue** The title combines a coined method name with two technical qualifiers, "geometry-aware" and "isometric actions", without any supplied text clarifying their relationship or distinguishing them.
+    - **Required correction** Ensure the abstract and introduction define both qualifiers and state precisely what "geometry-aware" adds beyond the isometric action formulation.
+  - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Positioning
+    - **Affected element** Related work framing
+    - **Evidence pointer** location not provided
+    - **Issue** No related work is supplied, so the distinction between post-hoc debiasing and in-processing or pre-processing debiasing, and the novelty relative to existing geometric debiasing methods, cannot be judged.
+    - **Required correction** Provide a related work section that explicitly contrasts IsoAct with prior post-hoc and geometry-based debiasing approaches.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The supplied material contains no technical content, so the case for the central claim is not established.
+- **Assessment against Nature-style criteria** Originality cannot be assessed because no method or contribution statement is supplied. Scientific importance cannot be assessed because no results or impact argument is supplied. Interdisciplinary readership cannot be assessed beyond a title-based guess, since no accessible framing for nonspecialists is present. Technical soundness cannot be assessed because there is no formulation, proof, or experiment. Readability for nonspecialists cannot be assessed because there is no prose to evaluate. On every criterion the supplied material is insufficient rather than deficient in content.
+- **Recommendation posture** Currently not established from the provided evidence. This reflects the absence of reviewable material, not a judgment on the underlying work.
+
+## Risk / unsupported claims
+- The claim that IsoAct performs geometry-aware post-hoc debiasing via isometric actions is unsupported in the supplied material, since no method or result is provided.
+- Any implied claim of improved fairness, accuracy, or robustness is unsupported, as no experiments, baselines, or metrics are present.
+- Any implied claim of theoretical guarantees from the isometric action construction is unsupported, as no formal statement or proof is present.
+- Any implied claim of novelty relative to prior debiasing work is unverifiable, as no related work or comparison is supplied.
+- The audience and application scope suggested by the title are inferential only and are not corroborated by any supplied text.

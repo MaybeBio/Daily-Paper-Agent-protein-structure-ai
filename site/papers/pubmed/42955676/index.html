@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pseudoknots: Based RRI Detection Using Machine Learning Models. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">5</span>
+    <div>
+      <h1>Pseudoknots: Based RRI Detection Using Machine Learning Models.</h1>
+      <div class="meta">Joel, W; Varadarajan, Swetha</div>
+      <div class="meta muted">
+        
+        <span class="journal">Methods in molecular biology (Clifton, N.J.)</span>
+        · 2026-10-29
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42955676/">原文</a>
+      </div>
+      <p class="one-liner">该文综述了利用机器学习模型检测含假结的RNA-RNA相互作用，虽对象为RNA而非蛋白质，但其结构建模与ML方法可迁移至蛋白质结构计算，故给予中档评分。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">RNA-RNA interactions (RRIs) are fundamental to diverse cellular processes, including gene regulation, RNA splicing, editing, and translation. These interactions, whether intra- or inter-molecular, contribute to RNA functionality and cellular regulatory networks. A major structural component influencing RRIs is the presence of pseudoknots-non-nested base-pairing interactions that are critical to the function of ribozymes, viral RNAs, telomerase, and ribosomal RNA. Despite their biological importance, pseudoknots are frequently excluded from computational models due to the increased complexity they introduce to RNA secondary structure prediction and interaction detection. Traditional dynamic programming algorithms are limited to pseudoknot-free models, resulting in many RNA-RNA interaction prediction tools simplifying or ignoring pseudoknots altogether. This oversimplification can compromise the accuracy of predictions, particularly in scenarios where pseudoknotted structures are essential for biological function. Recent advancements in machine learning (ML) and deep learning offer new potential to model such complex RNA features. By leveraging large-scale sequence and structural data, ML models can implicitly learn interaction patterns associated with pseudoknotted regions, offering improved predictive power over thermodynamics-based methods alone. This chapter explores how pseudoknot-aware modeling can be integrated into ML-based RRI detection pipelines. We discuss the biological relevance of pseudoknots, computational challenges in modeling them, and the strategies for designing and extracting features that capture pseudoknot structures. We also survey current ML approaches, including classical and deep learning models, and examine how they incorporate structural information. Case studies are presented to demonstrate practical applications, followed by a review of benchmarking methods, datasets, and performance evaluation strategies. By combining biologically informed structure prediction with advanced ML techniques, this chapter outlines a framework for improving the fidelity of RRI detection in the presence of pseudoknots.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">RNA-RNA 相互作用 (RNA-RNA interactions, RRIs) 是多种细胞过程的基础，包括基因调控、RNA 剪接、编辑和翻译。这些相互作用，无论是分子内还是分子间，都有助于 RNA 功能和细胞调控网络。影响 RRI 的一个主要结构组分是假结 (pseudoknots) 的存在——非嵌套碱基配对相互作用，其对核酶、病毒 RNA、端粒酶和核糖体 RNA 的功能至关重要。尽管假结具有生物学重要性，但由于它们给 RNA 二级结构预测和相互作用检测带来的复杂性增加，假结经常被排除在计算模型之外。传统的动态规划算法仅限于无假结模型，导致许多 RNA-RNA 相互作用预测工具简化或完全忽略假结。这种过度简化可能损害预测的准确性，特别是在假结结构对生物学功能至关重要的场景中。机器学习 (machine learning, ML) 和深度学习的最新进展为建模此类复杂 RNA 特征提供了新的潜力。通过利用大规模序列和结构数据，ML 模型可以隐式学习与假结区域相关的相互作用模式，提供优于仅基于热力学方法的预测能力。本章探讨如何将假结感知建模整合到基于 ML 的 RRI 检测流程中。我们讨论假结的生物学相关性、建模它们的计算挑战，以及设计和提取捕获假结结构的特征的策略。我们还综述当前的 ML 方法，包括经典模型和深度学习模型，并考察它们如何整合结构信息。通过案例研究展示实际应用，随后回顾基准测试方法、数据集和性能评估策略。通过将生物学信息驱动的结构预测与先进的 ML 技术相结合，本章概述了一个在假结存在下提高 RRI 检测保真度的框架。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Pseudoknots: Based RRI Detection Using Machine Learning Models</li>
+<li><strong>作者</strong>：Joel, W; Varadarajan, Swetha</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：Methods in Molecular Biology (Clifton, N.J.)</li>
+<li><strong>年份</strong>：2026（在线日期 2026-10-29）</li>
+<li><strong>论文类型</strong>：综述/方法学章节（book chapter）</li>
+<li><strong>领域</strong>：RNA 生物信息学；RNA-RNA 相互作用（RRI）预测；伪结（pseudoknot）建模；机器学习</li>
+<li><strong>关键词</strong>：RNA-RNA interactions, pseudoknots, machine learning, deep learning, secondary structure prediction, feature engineering</li>
+<li><strong>DOI/arXiv</strong>：10.1007/978-1-0716-5567-2_9</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供（提及 benchmarking datasets 但未列出具体数据集）</li>
+<li><strong>阅读日期</strong>：2026-05-12（按当前日期推算）</li>
+<li><strong>在本课题方向中的位置</strong>：本文聚焦 RNA 二级结构中的伪结（pseudoknot）对 RNA-RNA 相互作用（RRI）检测的影响，属于「结构预测 × 机器学习」交叉方向。与蛋白质结构计算研究（如 AlphaFold、MD 模拟）在方法论上可类比：两者都面临「复杂结构基序（伪结 vs. 蛋白质 loop/domain 运动）对预测模型的挑战」，且都从「物理/热力学方法」向「数据驱动 ML 方法」过渡。本文的伪结感知特征工程与 ML 集成策略，可迁移至蛋白质结构预测中处理非标准构象（如 intrinsically disordered regions、非天然 loop 构象）的建模思路。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文系统综述了伪结（pseudoknot）在 RNA-RNA 相互作用（RRI）检测中的生物学重要性与计算挑战，提出将伪结感知的结构特征与机器学习（含深度学习）模型集成，以替代或增强传统热力学/动态规划方法，从而提升含伪结 RRI 的预测保真度。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何在 RNA-RNA 相互作用（RRI）检测中有效建模伪结（pseudoknot）——一种非嵌套碱基配对结构，传统动态规划算法无法处理，导致现有 RRI 预测工具忽略或简化伪结，影响预测准确性。</li>
+<li><strong>为什么重要</strong>：伪结在核酶（ribozymes）、病毒 RNA、端粒酶、核糖体 RNA 等功能关键区域普遍存在，忽略伪结会导致 RRI 预测在生物学关键场景下失真。</li>
+<li><strong>现有方法为何不足</strong>：传统动态规划（DP）算法受限于 pseudoknot-free 模型；热力学方法（如最小自由能）难以处理伪结的非嵌套配对；现有 RRI 工具为计算可行性而简化或忽略伪结。</li>
+<li><strong>精确研究问题（Can...?）</strong>：Can machine learning models, by incorporating pseudoknot-aware structural features, achieve higher fidelity in RNA-RNA interaction detection compared to thermodynamics-based methods that ignore pseudoknots?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「仅本文框架」——基于本文叙述整理，未经外部文献核验）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文主张的位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期热力学方法</td>
+<td>MFE 最小自由能、DP 算法（如 Nussinov 类）</td>
+<td>计算高效、可解释</td>
+<td>仅限 pseudoknot-free 结构；无法处理非嵌套配对</td>
+<td>作为基线，但不足以处理伪结</td>
+</tr>
+<tr>
+<td>伪结专用算法</td>
+<td>动态规划扩展（如 Rivas-Eddy 类）、启发式</td>
+<td>可处理部分伪结类型</td>
+<td>计算复杂度高、对复杂伪结仍有限</td>
+<td>证明伪结可计算，但扩展性差</td>
+</tr>
+<tr>
+<td>传统 ML 方法</td>
+<td>支持向量机、随机森林等，基于序列/结构特征</td>
+<td>可隐式学习模式、比纯热力学灵活</td>
+<td>特征工程依赖人工、泛化有限</td>
+<td>作为 ML 集成的基础层</td>
+</tr>
+<tr>
+<td>深度学习方法</td>
+<td>CNN、RNN、图神经网络等</td>
+<td>自动特征提取、可处理大规模数据</td>
+<td>需大量标注数据、可解释性差</td>
+<td>本文主张的核心方向：伪结感知的 DL 模型</td>
+</tr>
+<tr>
+<td>本文框架</td>
+<td>伪结感知特征 + ML/DL 集成</td>
+<td>结合生物学先验与数据驱动</td>
+<td>依赖高质量训练数据、伪结标注稀缺</td>
+<td>提出将伪结结构信息显式编码进 ML 管线</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>伪结被系统性忽略</td>
+<td>多数 RRI 预测工具不输出伪结或将其简化</td>
+<td>伪结增加二级结构预测和相互作用检测的复杂度；DP 算法天然不兼容非嵌套配对</td>
+<td>摘要：「pseudoknots are frequently excluded from computational models due to the increased complexity」</td>
+</tr>
+<tr>
+<td>热力学方法失效</td>
+<td>MFE 方法无法正确折叠含伪结的 RNA</td>
+<td>伪结的非嵌套配对违反 DP 的最优子结构假设</td>
+<td>摘要：「Traditional dynamic programming algorithms are limited to pseudoknot-free models」</td>
+</tr>
+<tr>
+<td>预测准确性受损</td>
+<td>在伪结关键的功能场景（如核酶、病毒 RNA）中预测失真</td>
+<td>简化伪结导致结构模型不完整，进而影响 RRI 位点识别</td>
+<td>摘要：「This oversimplification can compromise the accuracy of predictions」</td>
+</tr>
+<tr>
+<td>特征设计困难</td>
+<td>如何提取捕获伪结结构的特征缺乏标准方案</td>
+<td>伪结类型多样（H-type、K-type 等），结构表示复杂</td>
+<td>摘要：「strategies for designing and extracting features that capture pseudoknot structures」</td>
+</tr>
+<tr>
+<td>数据与基准不足</td>
+<td>伪结标注数据稀缺，benchmarking 不统一</td>
+<td>实验解析的伪结结构有限；缺乏标准评测协议</td>
+<td>摘要：「review of benchmarking methods, datasets, and performance evaluation strategies」</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：将伪结感知的结构特征（如配对概率矩阵、伪结类型标签、环区拓扑描述符）显式编码为 ML/DL 模型的输入，替代或增强传统热力学打分函数，用于 RRI 检测。</li>
+<li><strong>核心洞察</strong>：伪结虽然增加计算复杂度，但其结构模式（非嵌套配对）在序列和共变信息中具有可学习的统计规律；ML 模型可以隐式捕获这些规律，而无需显式枚举所有可能的伪结构象——这绕过了 DP 算法的组合爆炸问题。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：对于任何「结构基序增加预测复杂度」的问题（如蛋白质中的非标准 loop、domain 运动、allostery），核心策略是：① 识别该基序的生物学关键性；② 设计能部分捕获该基序的中间表示（而非完整枚举）；③ 用数据驱动模型学习该表示到功能的映射。这一「中间表示 + 学习」范式可迁移至蛋白质结构预测中的构象采样与对接问题。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：RNA 序列（一条或多条，取决于 RRI 是 intra- 或 inter-molecular）；可选：同源序列比对、实验约束（如 SHAPE、DMS 数据）</li>
+<li><strong>输出</strong>：RRI 检测结果——包括相互作用位点、配对概率、伪结存在与否及类型</li>
+<li><strong>模块</strong>：
+  1. 特征提取模块：从序列/比对中计算配对概率矩阵（如通过 partition function）、伪结类型标签、结构描述符
+  2. 模型模块：经典 ML（SVM、RF）或 DL（CNN、RNN、GNN）
+  3. 集成模块：将 ML 预测与热力学打分（如 MFE）结合，或纯 ML 端到端
+  4. 评测模块：benchmarking 数据集上的性能评估</li>
+<li><strong>训练</strong>：监督学习，需要标注了伪结和 RRI 位点的训练数据；文中未提供具体训练协议</li>
+<li><strong>工具</strong>：未提供具体工具名</li>
+<li><strong>假设</strong>：① 伪结结构可从序列特征中学习；② 伪结感知特征能提升 RRI 检测精度；③ 现有 benchmark 数据足以训练和评估</li>
+<li><strong>文字流程</strong>：输入 RNA 序列 → 计算配对概率/结构特征 → 提取伪结相关描述符 → 输入 ML/DL 模型 → 输出 RRI 位点与伪结状态 → 在 benchmark 数据集上评估并与热力学基线对比</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>配对概率矩阵计算</td>
+<td>估计每个碱基对的概率</td>
+<td>提供结构先验，替代单一 MFE 结构</td>
+<td>输入：序列/比对；输出：N×N 概率矩阵</td>
+<td>摘要提及「leveraging large-scale sequence and structural data」</td>
+<td>预期影响：失去结构先验，模型需从零学习配对模式，精度下降 [预期效应]</td>
+</tr>
+<tr>
+<td>伪结类型标注/编码</td>
+<td>标记伪结类型（H-type、K-type 等）</td>
+<td>不同类型伪结有不同拓扑，需区分处理</td>
+<td>输入：结构/序列；输出：类型标签或 one-hot 编码</td>
+<td>摘要：「strategies for designing and extracting features that capture pseudoknot structures」</td>
+<td>预期影响：模型无法区分伪结类型，可能混淆不同拓扑模式 [预期效应]</td>
+</tr>
+<tr>
+<td>结构描述符提取</td>
+<td>提取环区、茎区、假结环等拓扑特征</td>
+<td>提供可解释的结构信号</td>
+<td>输入：配对矩阵/结构；输出：特征向量</td>
+<td>摘要：「capture pseudoknot structures」</td>
+<td>预期影响：特征维度降低，模型表达能力受限 [预期效应]</td>
+</tr>
+<tr>
+<td>ML/DL 分类器</td>
+<td>学习特征到 RRI 标签的映射</td>
+<td>核心预测模块</td>
+<td>输入：特征向量/矩阵；输出：RRI 位点概率</td>
+<td>摘要：「survey current ML approaches, including classical and deep learning models」</td>
+<td>移除后无预测能力 [实测：本文为综述，无消融实验]</td>
+</tr>
+<tr>
+<td>热力学-ML 集成</td>
+<td>结合 MFE 打分与 ML 输出</td>
+<td>利用互补信息</td>
+<td>输入：ML 概率 + 热力学得分；输出：最终预测</td>
+<td>摘要：「offering improved predictive power over thermodynamics-based methods alone」</td>
+<td>预期影响：失去热力学约束，可能降低在无标注数据上的泛化 [预期效应]</td>
+</tr>
+<tr>
+<td>Benchmark 评测</td>
+<td>在标准数据集上评估</td>
+<td>验证方法有效性</td>
+<td>输入：预测结果 + 金标准；输出：性能指标</td>
+<td>摘要：「review of benchmarking methods, datasets, and performance evaluation strategies」</td>
+<td>移除后无法量化方法优劣 [预期效应]</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><em>（本文为综述章节，未提供具体公式。以下为基于文中概念的必要符号说明，标注为 [Analysis] 推断）</em></p>
+<p><strong>不适用</strong>（原文未给出任何数学公式）。文中仅概念性提及「配对概率」「最小自由能」等术语，未给出形式化定义。若需形式化，可参考：
+- 配对概率：( P(i,j) = \frac{\sum_{s \ni (i,j)} e^{-\Delta G(s)/RT}}{Z} )，其中 ( Z ) 为配分函数 [Analysis 推断，非原文]
+- 但原文未提供，故按规则标记为「不适用」。</p>
+<h2>10 实验设计与证据链</h2>
+<p><em>（本文为综述，无原始实验。以下基于文中描述的案例与评测策略整理）</em></p>
+<ul>
+<li><strong>数据集/群体</strong>：未提供具体数据集名称；提及「benchmarking datasets」但未列出</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供具体指标（推测为 precision/recall/F1 或 AUC，但原文未明示）</li>
+<li><strong>基线</strong>：热力学方法（MFE/DP）作为对比基线</li>
+<li><strong>预算/骨干/仪器</strong>：未提供</li>
+<li><strong>Oracle 输入</strong>：未提供</li>
+<li><strong>评测协议</strong>：未提供具体协议</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>案例研究（文中提及）</td>
+<td>ML 方法可处理含伪结的 RRI</td>
+<td>与热力学基线对比</td>
+<td>未提供具体数值</td>
+<td>ML 有潜力提升伪结场景下的预测</td>
+<td>无法量化提升幅度</td>
+<td>摘要：「Case studies are presented to demonstrate practical applications」</td>
+</tr>
+<tr>
+<td>Benchmark 综述</td>
+<td>伪结感知特征提升性能</td>
+<td>不同特征/模型对比</td>
+<td>未提供具体数值</td>
+<td>特征设计是关键</td>
+<td>无法确定最优特征组合</td>
+<td>摘要：「review of benchmarking methods, datasets, and performance evaluation strategies」</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文是方法学综述，不提出新模型，而是梳理「伪结感知 ML 用于 RRI 检测」的框架。结论边界为「提出框架与方向」，而非「验证某模型有效」。</li>
+<li><strong>Oracle/真值输入</strong>：文中未讨论 oracle 输入；在 RRI 检测中，真值通常来自实验解析的 RNA 结构（如晶体、NMR），但本文未明确。</li>
+<li><strong>端到端状态</strong>：未提供端到端系统；仅概念性描述 pipeline。</li>
+<li><strong>算力成本</strong>：未讨论。</li>
+<li><strong>历史数据依赖</strong>：ML 方法依赖大规模标注数据，文中承认「pseudoknot 标注稀缺」是挑战。</li>
+<li><strong>模型依赖</strong>：结论依赖 ML 模型能隐式学习伪结模式这一假设，未提供实证。</li>
+<li><strong>最难情形</strong>：复杂伪结（多茎、嵌套伪结）的建模；病毒 RNA 中长程相互作用。</li>
+<li><strong>不确定性</strong>：未提供性能数值，无法评估方法实际效果。</li>
+<li><strong>有边界的复述</strong>：本文主张「将伪结感知特征集成到 ML 模型中有望提升 RRI 检测保真度」，但未提供定量证据，该主张停留在框架层面，需后续实证验证。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p><em>（在提供的材料中未发现作者明确承认的局限）</em></p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 伪结增加计算复杂度（摘要：「increased complexity」）
+- 传统 DP 算法无法处理伪结（摘要：「limited to pseudoknot-free models」）
+- 现有工具简化或忽略伪结（摘要：「simplifying or ignoring pseudoknots altogether」）
+- 数据与基准不足（摘要：「review of benchmarking methods, datasets」暗示该领域缺乏标准）</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>综述未提供任何定量比较</td>
+<td>可能缺乏实证支持「ML 优于热力学」的主张</td>
+<td>读者无法判断方法有效性</td>
+<td>在标准 benchmark 上复现 ML vs. 热力学基线</td>
+<td>摘要仅定性描述「improved predictive power」</td>
+</tr>
+<tr>
+<td>伪结特征设计缺乏具体方案</td>
+<td>特征提取是核心难点，但文中未给出可操作细节</td>
+<td>框架可复现性存疑</td>
+<td>要求作者提供特征列表与提取代码</td>
+<td>摘要仅提及「strategies for designing」</td>
+</tr>
+<tr>
+<td>未讨论伪结类型多样性</td>
+<td>不同伪结类型（H-type、K-type、复杂嵌套）可能需要不同建模策略</td>
+<td>统一框架可能不适用所有伪结</td>
+<td>按伪结类型分层评测</td>
+<td>摘要仅泛称「pseudoknots」</td>
+</tr>
+<tr>
+<td>未提及训练数据规模与来源</td>
+<td>数据稀缺是伪结建模的关键瓶颈</td>
+<td>无法评估模型泛化能力</td>
+<td>调查现有公开伪结数据集</td>
+<td>摘要提及「benchmarking datasets」但未具体化</td>
+</tr>
+<tr>
+<td>与蛋白质结构预测的类比缺失</td>
+<td>伪结建模与蛋白质 loop/domain 建模有相似挑战，但文中未跨领域讨论</td>
+<td>限制了方法迁移的启示</td>
+<td>对比蛋白质结构预测中的类似策略</td>
+<td>[Analysis] 基于课题方向推断</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>（面向蛋白质结构相关计算研究 × AI/物理模拟）：</p>
+<ol>
+<li><strong>中间表示策略</strong>：伪结建模的核心是「不完全枚举，而是用配对概率矩阵等中间表示捕获结构信息」。可迁移至蛋白质构象采样：用 residue-residue 接触概率（类似 AlphaFold 的 distogram）替代显式构象枚举，降低搜索空间。</li>
+<li><strong>热力学-ML 集成</strong>：将物理先验（MFE）与数据驱动预测结合，而非二选一。可迁移至蛋白质力场与 ML 势函数的混合：用 ML 修正物理力场的系统误差，或用量子化学/DFT 数据训练 ML 势。</li>
+<li><strong>特征工程的结构感知</strong>：伪结类型标签、环区拓扑描述符等结构特征比纯序列特征更有效。可迁移至蛋白质：将二级结构、溶剂可及性、domain 架构等结构注释作为 ML 输入特征。</li>
+<li><strong>Benchmark 设计</strong>：伪结场景需要专门的 benchmark 与评测协议。可迁移至蛋白质：为特定结构基序（如 loop、disorder region）设计专项评测集，避免通用 benchmark 掩盖局部失效。</li>
+<li><strong>数据稀缺应对</strong>：伪结标注数据稀缺，需探索半监督/迁移学习。可迁移至蛋白质：利用大规模无标注序列数据预训练，再在少量实验结构上微调。</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>：AlphaFold 2 的 Evoformer 使用配对表示（pairwise representation）类似本文的配对概率矩阵思想；AlphaFold 3 处理复合物相互作用与本文 RRI 检测目标一致。</li>
+<li><strong>组合方向</strong>：将本文的伪结感知特征与蛋白质-RNA 复合物预测（如 AlphaFold 3、RoseTTAFoldNA）结合，处理 RNA 伪结对蛋白-RNA 界面的影响。</li>
+<li><strong>冲突/差异</strong>：本文强调「ML 替代热力学」，而蛋白质领域（如 MD 模拟）仍以物理力场为主，ML 作为修正。两种范式可互补：物理模拟生成训练数据，ML 加速预测。</li>
+<li><strong>可迁移领域</strong>：RNA 二级结构预测中的伪结处理策略（如 DP 扩展、启发式）可类比蛋白质 loop 建模中的「片段组装 vs. 从头预测」之争。</li>
+<li><strong>候选方向</strong>：将伪结的「非嵌套配对」概念推广至蛋白质的「非局域接触」（如 allosteric 通路中的远距离残基对），用图神经网络建模长程依赖。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：伪结感知的 RNA-RNA 相互作用图神经网络（Pseudoknot-Aware GNN for RRI）
+   - <strong>来源局限/观察</strong>：本文仅综述框架，未提出具体模型；伪结的非嵌套配对天然适合图表示。
+   - <strong>核心假设</strong>：将配对概率矩阵作为图边权重，GNN 能隐式学习伪结拓扑模式，优于序列-only 模型。
+   - <strong>初步方法</strong>：构建 RNA 二级结构图（节点=碱基，边=配对/相邻），用 GNN 预测 RRI 位点；在配对概率矩阵上做 edge 特征。
+   - <strong>验证方式</strong>：在公开 RRI benchmark（如 RISE、IntaRNA 数据集）上对比热力学基线与序列-only ML。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：蛋白质-RNA 复合物中的伪结感知对接（Pseudoknot-Aware Protein-RNA Docking）
+   - <strong>来源局限/观察</strong>：本文聚焦 RNA-only RRI，但伪结在蛋白-RNA 互作中同样关键（如病毒 RNA 与宿主蛋白）。
+   - <strong>核心假设</strong>：在蛋白-RNA 对接中显式建模 RNA 伪结约束，可提升 docking 精度。
+   - <strong>初步方法</strong>：将伪结约束作为 docking 打分函数的附加项，或作为 DL 模型的输入特征。
+   - <strong>验证方式</strong>：在蛋白-RNA 复合物 benchmark（如 DockQ 数据集）上对比有无伪结约束的 docking 性能。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：从 RNA 伪结到蛋白质 loop 的迁移学习（Cross-Molecule Transfer: Pseudoknot → Protein Loop）
+   - <strong>来源局限/观察</strong>：伪结与蛋白质 loop 都代表「非标准结构基序」，但现有模型分别处理。
+   - <strong>核心假设</strong>：在 RNA 伪结数据上预训练的模型，可迁移至蛋白质 loop 构象预测。
+   - <strong>初步方法</strong>：设计统一的「非嵌套结构基序」表示（如配对/接触矩阵），在 RNA 伪结上预训练，在蛋白质 loop 上微调。
+   - <strong>验证方式</strong>：对比迁移学习 vs. 从头训练的 loop 预测精度。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：伪结感知的 RNA 构象采样增强（Pseudoknot-Enhanced Conformational Sampling for RNA）
+   - <strong>来源局限/观察</strong>：本文指出伪结增加构象复杂度，但未讨论采样策略。
+   - <strong>核心假设</strong>：在 MD 或 MCMC 采样中引入伪结约束（如配对概率先验），可加速 RNA 构象空间探索。
+   - <strong>初步方法</strong>：将伪结配对概率作为 biased potential 或 replica exchange 的增强项。
+   - <strong>验证方式</strong>：在已知伪结 RNA（如核酶）上比较采样效率与构象覆盖率。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：伪结感知的 RNA 设计（Pseudoknot-Aware RNA Design）
+   - <strong>来源局限/观察</strong>：本文讨论检测，但伪结在 RNA 设计（如核酶设计）中同样重要。
+   - <strong>核心假设</strong>：在设计目标中显式编码伪结约束，可生成功能更优的 RNA 序列。
+   - <strong>初步方法</strong>：在序列设计模型中添加伪结结构约束（如通过 inverse folding 的约束项）。
+   - <strong>验证方式</strong>：设计已知伪结基序的 RNA，实验验证折叠与功能。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only, as supplied for a book chapter in Methods in Molecular Biology</li>
+<li><strong>Assessment boundary</strong> Evaluation is restricted to the supplied abstract text. No full text, figures, tables, datasets, model descriptions, or benchmark results were provided, so claims about performance, case studies, and framework validity cannot be verified.</li>
+<li><strong>Shared manuscript claim summary</strong> The manuscript claims that pseudoknots are biologically important for RNA-RNA interactions (RRIs) but are commonly excluded from computational models because they increase complexity; that traditional dynamic programming methods are limited to pseudoknot-free models; that machine learning (ML) and deep learning can implicitly learn pseudoknot-associated interaction patterns from large-scale sequence and structural data and thereby improve predictive power over thermodynamics-based methods alone; and that the chapter provides a framework for integrating pseudoknot-aware modeling into ML-based RRI detection pipelines, supported by discussion of features, a survey of ML approaches, case studies, and benchmarking strategies.</li>
+<li><strong>Visible evidence base</strong> The abstract itself. It references biological roles of pseudoknots in ribozymes, viral RNAs, telomerase, and ribosomal RNA, and refers generally to case studies, benchmarking methods, datasets, and performance evaluation strategies, but supplies no specific data, model names, metrics, or results.</li>
+<li><strong>Missing materials affecting confidence</strong> Full chapter text; specific ML architectures and feature representations; datasets used; benchmark protocols; quantitative performance results; definitions of case studies; comparison baselines; code or reproducibility information; figure and table contents. These omissions prevent verification of the central performance and framework claims.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract addresses a relevant and well-motivated problem, namely the exclusion of pseudoknots from RRI detection and the potential of ML to address this gap. The framing is coherent and biologically grounded. However, the supplied material is an abstract only, and it is entirely programmatic. It asserts improved predictive power and outlines a framework without presenting any verifiable evidence, quantitative comparison, named methods, datasets, or results. As it stands, the contribution cannot be assessed for technical soundness or originality beyond its stated intent.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in RNA structural bioinformatics, RNA-RNA interaction prediction, and computational biology would be interested, because pseudoknot-aware modeling remains an open problem and ML-based approaches are an active area. Molecular biologists studying ribozymes, viral RNAs, telomerase, and ribosomal RNA may also be interested if the framework yields practical detection improvements. The interest is currently potential rather than demonstrated.</li>
+<li><strong>Major strengths</strong> The problem selection is well justified and biologically important. The abstract correctly identifies a genuine limitation of pseudoknot-free dynamic programming models and a plausible rationale for ML-based alternatives. The stated scope, covering biological relevance, computational challenges, feature design, a survey of classical and deep learning approaches, case studies, and benchmarking, is appropriately comprehensive for a methods-oriented chapter. The writing is clear and accessible.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Unsupported performance claim</li>
+<li><strong>Claim pointer</strong> ML models "can implicitly learn interaction patterns associated with pseudoknotted regions, offering improved predictive power over thermodynamics-based methods alone."</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The claim of improved predictive power is asserted without any supporting benchmark, metric, dataset, or comparison. No quantitative or even qualitative result is presented in the supplied material.</li>
+<li><strong>Why it matters</strong> This is the central scientific claim of the chapter. Without evidence, the reader cannot determine whether the proposed advantage is real, marginal, or context-dependent.</li>
+<li><strong>Resolution test</strong> Provide at least one concrete comparison between an ML-based pseudoknot-aware method and a thermodynamics-based baseline on a defined dataset, with reported performance metrics and evaluation protocol.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-M2<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Framework specification</li>
+<li><strong>Claim pointer</strong> The chapter "outlines a framework for improving the fidelity of RRI detection in the presence of pseudoknots."</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The framework is described only in general terms. No components, inputs, outputs, feature extraction procedure, model integration step, or workflow is specified in the supplied material.</li>
+<li><strong>Why it matters</strong> A framework claim requires an inspectable structure. Without it, the contribution cannot be distinguished from a general review or a proposal.</li>
+<li><strong>Resolution test</strong> Present the framework explicitly, including its stages, the role of pseudoknot features, and how it integrates with existing RRI detection pipelines.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-M3<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Evidence for case studies</li>
+<li><strong>Claim pointer</strong> "Case studies are presented to demonstrate practical applications."</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> No case study is identified, described, or quantified in the supplied material. It is unclear what biological systems, datasets, or tasks are covered.</li>
+<li><strong>Why it matters</strong> Case studies are the main vehicle for demonstrating practical utility. Without specifics, the practical application claim is unverifiable.</li>
+<li><strong>Resolution test</strong> Name each case study, state the biological context, the data used, and the observed outcome.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-M4<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Benchmarking and evaluation</li>
+<li><strong>Claim pointer</strong> The chapter includes "a review of benchmarking methods, datasets, and performance evaluation strategies."</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> No datasets, benchmark tasks, or evaluation metrics are named. It is not possible to judge whether the evaluation approach is adequate for pseudoknot-aware RRI detection, where class imbalance, structural ambiguity, and dataset bias are known issues.</li>
+<li><strong>Why it matters</strong> Evaluation design determines whether reported improvements are meaningful. A review that does not specify evaluation criteria cannot support the framework's credibility.</li>
+<li><strong>Resolution test</strong> List the datasets, benchmark tasks, and metrics discussed, and state the criteria used to judge model performance.</li>
+</ul>
+</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology precision</li>
+<li><strong>Affected element</strong> Use of "pseudoknot-aware modeling"</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Issue</strong> The term is used without definition of what constitutes awareness, for example explicit feature encoding versus implicit learning.</li>
+<li><strong>Required correction</strong> Define the term and distinguish explicit from implicit pseudoknot handling.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-m2<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Scope clarity</li>
+<li><strong>Affected element</strong> Survey of ML approaches</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Issue</strong> The abstract states that classical and deep learning models are surveyed but names none, so the coverage and currency of the survey cannot be judged.</li>
+<li><strong>Required correction</strong> Identify representative methods and the time range covered.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-m3<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Claim calibration</li>
+<li><strong>Affected element</strong> Statement that oversimplification "can compromise the accuracy of predictions"</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Issue</strong> The statement is plausible but presented without citation or example in the supplied material.</li>
+<li><strong>Required correction</strong> Provide at least one cited example where ignoring pseudoknots degrades prediction accuracy.</li>
+</ul>
+</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 and R1-M2 are blocking. The performance advantage and the framework itself are not established from the supplied material. R1-M3 and R1-M4 further weaken the practical and evaluative claims.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality is asserted rather than demonstrated; the abstract positions the work within an existing gap but does not show a novel method or finding. Scientific importance is plausible given the biological role of pseudoknots, but remains unproven without results. Interdisciplinary readership potential is moderate, since the topic spans computational and molecular biology, yet the abstract offers no concrete advance to attract a broad audience. Technical soundness cannot be evaluated because no methods, data, or metrics are provided. Readability for nonspecialists is good; the abstract is clear and avoids unnecessary jargon.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract describes a reasonable and well-motivated scope, but the central claims of improved predictive power and a usable framework cannot be assessed without the full text, specific methods, datasets, and quantitative results.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>Improved predictive power of ML models over thermodynamics-based methods alone is asserted without supporting evidence (unsupported in supplied material).</li>
+<li>The existence and effectiveness of a framework for pseudoknot-aware RRI detection is claimed but not specified (unsupported in supplied material).</li>
+<li>Case studies demonstrating practical applications are claimed but not identified or described (unverifiable from supplied material).</li>
+<li>Benchmarking methods, datasets, and evaluation strategies are claimed to be reviewed but none are named (unverifiable from supplied material).</li>
+<li>The assertion that excluding pseudoknots compromises prediction accuracy is plausible but uncited in the supplied material (weakly supported).</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

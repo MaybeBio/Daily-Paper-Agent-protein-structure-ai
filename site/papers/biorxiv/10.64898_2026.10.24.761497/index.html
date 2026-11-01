@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Function-preserving CD8⁺ T Cell Immunogenicity minimization through protein design · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Function-preserving CD8⁺ T Cell Immunogenicity minimization through protein design</h1>
+      <div class="meta">Bingxu Liu; Tianyang Mao; Max H Witwer; Oliver Morell; Nir Hacohen; David Baker</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-27
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.10.24.761497">原文</a>
+      </div>
+      <p class="one-liner">该文开发了整合结构引导序列设计与MHC-I表位预测的计算框架，在保持蛋白功能的同时降低CD8⁺ T细胞免疫原性，属于蛋白质结构相关序列设计方法，与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Rapid advances in protein design enable new approaches in adoptive cell therapy, but foreign proteins can elicit cytotoxic T cell responses, and hence there is considerable need for approaches which reduce immunogenicity without compromising protein function. Here, we develop a computational framework integrating structure-guided sequence design with MHC class I epitope prediction to efficiently tune protein immunogenicity while preserving function. Using a de novo-designed luciferase as a model, we demonstrate epitope elimination while preserving function across 5 common mouse alleles and extend our computational optimization to 25 common human MHC-I alleles. In mice immunized with mRNA-lipid nanoparticles, variants designed to have few MHC-I epitopes elicited little detectable CD8⁺ T cell response, whereas variants designed to include multiple epitopes induced robust responses. Together, these results demonstrate that the CD8⁺ T cell immunogenicity of designed proteins can be tuned while preserving function, opening the door to incorporation of designed proteins in a next generation of adoptive cell therapies.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质设计的快速进展为过继性细胞疗法带来了新方法，但外源蛋白质可能引发细胞毒性T细胞反应，因此亟需在不损害蛋白质功能的前提下降低免疫原性的策略。在此，我们开发了一个计算框架，将结构引导的序列设计与MHC I类表位预测相结合，以在保持功能的同时高效调节蛋白质免疫原性。以从头设计的荧光素酶为模型，我们展示了在5种常见小鼠等位基因中消除表位同时保留功能，并将计算优化扩展到25种常见人类MHC-I等位基因。在经mRNA-脂质纳米颗粒免疫的小鼠中，设计为具有少量MHC-I表位的变体几乎未引发可检测的CD8⁺ T细胞反应，而设计为包含多个表位的变体则诱导了强烈反应。综合这些结果，我们证明了设计蛋白质的CD8⁺ T细胞免疫原性可在保留功能的同时进行调节，为将设计蛋白质纳入下一代过继性细胞疗法打开了大门。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Function-preserving CD8⁺ T Cell Immunogenicity minimization through protein design</li>
+<li><strong>作者</strong>：Bingxu Liu; Tianyang Mao; Max H Witwer; Oliver Morell; Nir Hacohen; David Baker</li>
+<li><strong>单位</strong>：未提供（根据致谢推测涉及 University of Washington / HHMI / 合作机构，但原文未明确列出）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：预印本（方法学 + 实验验证）</li>
+<li><strong>领域</strong>：蛋白质设计 × 免疫原性工程 × MHC-I 表位预测</li>
+<li><strong>关键词</strong>：protein design, immunogenicity, MHC-I, CD8⁺ T cell, ProteinMPNN, NetMHCpan, deimmunization, adoptive cell therapy</li>
+<li><strong>DOI/ID</strong>：10.64898/2026.10.24.761497</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-05-14</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>序列设计</strong>分支，核心创新在于将 <strong>MHC-I 表位预测（NetMHCpan4.1）</strong> 作为可微/可迭代的优化目标，与 <strong>结构感知序列设计（ProteinMPNN）</strong> 耦合，实现「功能保持」与「免疫原性最小化」的联合优化。与 AlphaFold 类结构预测工具（AF3）结合作为结构验证过滤器，属于「AI 生成 → 物理/生物验证」的闭环设计范式。对蛋白质结构计算课题的可迁移点在于：<strong>将功能约束（底物邻近残基固定）与免疫原性约束（表位评分）同时编码进序列设计目标函数</strong>。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文开发了迭代优化框架 <strong>MINT</strong>，将 ProteinMPNN 序列设计与 NetMHCpan4.1 MHC-I 表位预测耦合，在固定 43 个底物邻近残基以保持催化活性的前提下，对 de novo 荧光素酶 LuxSit-i 进行序列重设计，在 5 种小鼠等位基因和 25 种人 HLA 等位基因上实现表位消除，并通过 mRNA-LNP 免疫实验证明：预测无表位变体在小鼠体内诱导极低的 CD8⁺ T 细胞反应，而预测高表位变体诱导强烈反应，从而在<strong>功能保持</strong>与<strong>免疫原性最小化</strong>之间建立了可实验验证的因果联系。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：能否通过计算蛋白质设计，在保持蛋白质功能（酶活性）的同时，系统性消除其 MHC-I 表位，从而降低 CD8⁺ T 细胞免疫原性？</li>
+<li><strong>为什么重要</strong>：蛋白质治疗（如 CAR-T、TCR-T 等过继细胞治疗中引入的外源蛋白）常因 MHC-I 呈递的抗原肽引发细胞毒性 T 细胞攻击，导致治疗细胞被清除。现有去免疫方法（如点突变去除已知表位）往往损害功能或仅覆盖少数等位基因。</li>
+<li><strong>现有方法不足</strong>：</li>
+<li>传统表位去除策略是「局部修补」，无法全局优化序列空间；</li>
+<li>ProteinMPNN 等结构感知设计工具未考虑免疫原性维度；</li>
+<li>缺乏在<strong>多等位基因</strong>（5 小鼠 + 25 人）同时去免疫的系统性方法；</li>
+<li>缺乏体内验证计算预测与真实 T 细胞反应之间因果关系的实验范式。</li>
+<li><strong>精确研究问题</strong>：<strong>Can structure-guided sequence design with integrated MHC-I epitope prediction produce protein variants that retain enzymatic function while eliciting minimal CD8⁺ T cell responses across multiple MHC-I alleles in vivo?</strong></li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文引用与领域常识构建，标注为「经外部核验」部分。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期表位预测</td>
+<td>SYFPEITHI, BIMAS</td>
+<td>快速、可解释</td>
+<td>精度有限，仅覆盖已知基序</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>机器学习表位预测</td>
+<td>NetMHCpan 系列</td>
+<td>覆盖广、精度高</td>
+<td>仅预测，不指导设计</td>
+<td>本文使用 NetMHCpan4.1 作为评分器</td>
+</tr>
+<tr>
+<td>结构感知序列设计</td>
+<td>ProteinMPNN (Dauparas et al., 2022)</td>
+<td>高序列多样性、保持结构</td>
+<td>不考虑免疫原性</td>
+<td>本文使用 ProteinMPNN 作为序列生成器</td>
+</tr>
+<tr>
+<td>去免疫设计</td>
+<td>点突变去除已知表位</td>
+<td>简单直接</td>
+<td>损害功能、覆盖等位基因少</td>
+<td>本文超越此策略</td>
+</tr>
+<tr>
+<td>迭代设计 + 结构验证</td>
+<td>AlphaFold 过滤 + 实验验证</td>
+<td>提高设计成功率</td>
+<td>未与免疫原性耦合</td>
+<td>本文使用 AF3 作为结构过滤器</td>
+</tr>
+<tr>
+<td><strong>本文</strong></td>
+<td><strong>MINT：ProteinMPNN + NetMHCpan 迭代耦合</strong></td>
+<td><strong>功能保持 + 多等位基因去免疫 + 体内验证</strong></td>
+<td>依赖表位预测精度</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在「结构感知序列设计」与「免疫原性预测」的交汇处，提出一个<strong>模块化、可扩展</strong>的框架，不重新训练任何模型，而是通过<strong>迭代优化策略</strong>将两者耦合。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>外源蛋白引发 CD8⁺ T 细胞攻击</td>
+<td>过继细胞治疗中表达的外源蛋白被 MHC-I 呈递，导致细胞被清除</td>
+<td>细胞内蛋白被蛋白酶体降解为肽段，经 MHC-I 呈递后可能被 T 细胞识别为异物</td>
+<td>Abstract；Introduction 引文 8–11</td>
+</tr>
+<tr>
+<td>去免疫与功能保持难以兼得</td>
+<td>去除表位的突变常破坏蛋白折叠或活性</td>
+<td>表位残基可能与功能关键残基重叠；局部修补缺乏全局视角</td>
+<td>43 个底物邻近残基被固定（Methods）；Results 图 1D 显示低/高免疫原性变体活性相当</td>
+</tr>
+<tr>
+<td>多等位基因同时去免疫困难</td>
+<td>人类 HLA 高度多态，单一设计难以覆盖</td>
+<td>不同等位基因识别不同肽基序，优化目标维度高</td>
+<td>25 个人 HLA 等位基因面板（Methods；图 1C）</td>
+</tr>
+<tr>
+<td>计算预测与体内免疫反应脱节</td>
+<td>预测低免疫原性不代表体内不引发反应</td>
+<td>缺乏系统体内验证</td>
+<td>本文用 mRNA-LNP 免疫 + 5+1 融合 + 单变体免疫（图 2A–E）</td>
+</tr>
+<tr>
+<td>表位预测计算成本高</td>
+<td>NetMHCpan 对每个肽-等位基因对需独立推理</td>
+<td>肽段数量随序列长度和窗口数线性增长</td>
+<td>作者开发 6 项优化策略（Methods：缓存、分组评估、早期拒绝等）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>MINT 是一个迭代优化循环：
+- <strong>输入</strong>：目标蛋白 3D 结构（LuxSit-i）
+- <strong>生成</strong>：ProteinMPNN 生成候选序列（固定 43 个底物邻近残基）
+- <strong>评分</strong>：NetMHCpan4.1 对每个候选序列的所有 9-11mer 肽段 × 等位基因面板进行表位评分
+- <strong>选择</strong>：保留低表位评分且结构预测（AF3）通过（pLDDT ≥ 阈值、RMSD ≤ 阈值）的序列
+- <strong>迭代</strong>：对保留序列进行新一轮突变（热点残基定向突变 + 多样性采样）</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>免疫原性可作为序列设计的「可优化目标」</strong>：通过将 NetMHCpan 的 EL percentile rank 转换为连续惩罚函数，表位预测从「过滤器」变为「梯度信号」，指导序列设计。</li>
+<li><strong>功能保持通过「约束」而非「后验筛选」实现</strong>：固定底物邻近残基（43/117 = 37%），从源头保证催化活性，而非设计后筛选活性。</li>
+<li><strong>去免疫与免疫原性增强是同一枚硬币的两面</strong>：同一框架既可最小化表位（去免疫），也可最大化表位（疫苗设计），只需反转优化方向。</li>
+<li><strong>序列多样性是免疫逃逸的关键</strong>：通过 min-max Hamming distance 选择维持种群多样性，避免收敛到单一序列导致潜在脱靶表位。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>「约束 + 优化」优于「生成 + 筛选」</strong>：在蛋白质设计任务中，将关键功能残基作为硬约束（hard constraint）编码进生成过程，比先生成再筛选更高效、更可靠。</li>
+<li><strong>预测器可作为「可微损失」而非「后验过滤器」</strong>：任何具有连续输出的生物物理/ML 预测器（如 AlphaFold pLDDT、对接能量、稳定性预测）都可类似地耦合进序列设计循环。</li>
+<li><strong>多目标优化的「种群策略」</strong>：同时追踪最优解和多样性解，避免局部最优，适用于任何多约束序列设计问题。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：LuxSit-i 3D 结构（117 aa），底物邻近残基集合（43 个），等位基因面板（5 小鼠或 25 人 HLA）</li>
+<li><strong>输出</strong>：去免疫化蛋白变体序列（低表位评分 + 结构有效 + 功能保持）</li>
+<li><strong>模块</strong>：
+  1. <strong>序列生成器</strong>：ProteinMPNN（vanilla 或免疫引导）
+  2. <strong>表位评分器</strong>：NetMHCpan4.1（EL percentile rank）
+  3. <strong>结构验证器</strong>：AF3（AlphaFold3）折叠，检查 pLDDT 和 RMSD
+  4. <strong>优化循环</strong>：热点识别 → 定向突变 → 评分 → 选择 → 迭代
+  5. <strong>实验验证</strong>：mRNA-LNP 免疫小鼠，体外 T 细胞再刺激</li>
+<li><strong>训练</strong>：无模型重训练；仅优化序列搜索策略</li>
+<li><strong>工具</strong>：ProteinMPNN、NetMHCpan4.1、AF3、mRNA-LNP 平台、流式细胞术</li>
+<li><strong>反馈回路</strong>：计算预测（低/高表位）→ 体内免疫 → T 细胞反应测量 → 验证预测准确性</li>
+<li><strong>假设</strong>：</li>
+<li>NetMHCpan4.1 的 EL rank 能反映体内 MHC-I 呈递概率</li>
+<li>固定底物邻近残基足以保持酶活性</li>
+<li>AF3 结构预测可作为设计序列正确折叠的代理指标</li>
+</ul>
+<p><strong>文字流程</strong>：
+1. 从 LuxSit-i 结构出发，固定 43 个底物邻近残基
+2. 用 ProteinMPNN 生成大量候选序列（40,000 个 backbone redesigns）
+3. 对每个候选序列，枚举所有 9-11mer 肽段 × 等位基因面板，用 NetMHCpan4.1 计算 EL rank
+4. 筛选零表位（EL rank &lt; 0.5%）的序列，用 AF3 折叠验证结构
+5. 对未完全去免疫的序列，识别热点残基（被表位覆盖的突变位点），进行定向突变
+6. 迭代多轮，同时维持序列多样性（min-max Hamming distance）
+7. 最终选择低表位 + 高结构评分 + 功能保持的变体
+8. 合成 mRNA，包封 LNP，免疫小鼠，检测 CD8⁺ T 细胞反应</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ProteinMPNN 序列生成</strong></td>
+<td>从结构生成多样化的氨基酸序列</td>
+<td>结构到序列的逆映射，保持折叠</td>
+<td>输入：3D 结构 + 固定残基掩码；输出：候选序列</td>
+<td>Methods「MINT Design Creation」；图 1A</td>
+<td>无此模块则无法探索序列空间；预期：设计多样性大幅下降</td>
+</tr>
+<tr>
+<td><strong>NetMHCpan4.1 表位评分</strong></td>
+<td>预测每个 9-11mer 肽段 × 等位基因的 MHC-I 呈递概率</td>
+<td>免疫原性的计算代理</td>
+<td>输入：肽段序列 + HLA 等位基因；输出：EL percentile rank</td>
+<td>Methods；图 1C</td>
+<td>无此模块则无法指导去免疫；预期：免疫原性无法降低</td>
+</tr>
+<tr>
+<td><strong>AF3 结构验证</strong></td>
+<td>折叠候选序列，检查结构保真度</td>
+<td>确保序列能正确折叠为目标结构</td>
+<td>输入：候选序列；输出：pLDDT + RMSD</td>
+<td>Methods「Design Library」；图 1A</td>
+<td>无此模块则可能产生无法折叠的序列；预期：设计成功率下降</td>
+</tr>
+<tr>
+<td><strong>热点识别与定向突变</strong></td>
+<td>识别被表位覆盖的残基位置，进行针对性替换</td>
+<td>高效消除表位而非全序列随机突变</td>
+<td>输入：表位评分结果 + 序列；输出：突变候选列表</td>
+<td>Methods「MINT Design Creation with Cycling」</td>
+<td>无此模块则优化效率低；预期：需要更多轮次才能去免疫</td>
+</tr>
+<tr>
+<td><strong>多样性维持（min-max Hamming）</strong></td>
+<td>在种群中保持序列多样性</td>
+<td>避免收敛到单一序列，探索更广序列空间</td>
+<td>输入：候选序列集合；输出：多样性子集</td>
+<td>Methods「MINT Design Creation with Cycling」</td>
+<td>无此模块则可能陷入局部最优；预期：最终设计多样性下降</td>
+</tr>
+<tr>
+<td><strong>NetMHCpan 缓存与优化</strong></td>
+<td>缓存肽-等位基因预测，分组评估，早期拒绝</td>
+<td>降低计算成本</td>
+<td>输入：预测请求；输出：缓存命中/未命中</td>
+<td>Methods「Optimization Strategies」；图 1F</td>
+<td>无此模块则计算成本过高；预期：无法扩展到 25 等位基因</td>
+</tr>
+<tr>
+<td><strong>mRNA-LNP 免疫实验</strong></td>
+<td>体内验证设计变体的免疫原性</td>
+<td>计算预测的最终验证</td>
+<td>输入：mRNA 疫苗；输出：CD8⁺ T 细胞反应（IFN-γ/TNF-α/IL-2）</td>
+<td>图 2A–E</td>
+<td>无此模块则无法确认计算预测的生物学相关性</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>本文未提供显式编号公式，但核心评分逻辑可重构如下：</p>
+<p><strong>1. 表位惩罚函数（EL percentile rank → 连续惩罚）</strong></p>
+<p>文中描述：EL percentile rank 被转换为连续惩罚，但具体函数形式未在提供的文本中给出。根据描述可推断：</p>
+<p>[
+\text{Penalty}(r) = f(r)
+]</p>
+<p>其中 ( r ) 为 NetMHCpan4.1 预测的 EL percentile rank（百分比单位，如 2%）。文中提到「All penalties were summed across the contributing windows and alleles to score a given point mutation」，即：</p>
+<p>[
+S_{\text{mut}}(a) = \sum_{\text{windows}} \sum_{\text{alleles}} \text{Penalty}(r_{w,a})
+]</p>
+<p><strong>2. 归一化与均值中心化</strong></p>
+<p>[
+I_i(a) = \frac{S_{\text{mut}}(a) - \mu}{\sigma}
+]</p>
+<p>其中 ( \mu ) 为 20 个候选氨基酸在该位置的得分均值，( \sigma ) 为标准差（文中「mean-centered across the 20 candidate residues at that position」）。</p>
+<p><strong>3. 权重项（免疫加权 + 序列发散）</strong></p>
+<p>[
+w = \kappa \cdot I_i(a) + \lambda \cdot D
+]</p>
+<p>其中：
+- ( \kappa = 0.95 )（免疫加权基数）
+- ( \lambda = 0.1 )（序列发散项系数）
+- ( D ) 为序列发散度量（与亲本序列的差异）</p>
+<p><strong>4. 温度重归一化</strong></p>
+<p>[
+P(a) = \frac{\exp(w / T)}{\sum_{a'} \exp(w' / T)}
+]</p>
+<p>其中 ( T = 0.3 )（温度参数）。</p>
+<p><strong>5. 免疫原性得分（累积表位计数）</strong></p>
+<p>文中描述：累积免疫原性得分 = 低于各阈值（0.25%, 0.50%, ..., 2.00%）的肽-位置-等位基因出现次数之和。每个阈值独立计数，低 rank 肽贡献更高权重。</p>
+<p><strong>6. 结构过滤标准</strong></p>
+<ul>
+<li>平均 Cα pLDDT ≥ 90（人等位基因设计）或 ≥ 95（小鼠等位基因设计）</li>
+<li>对齐 Cα RMSD ≤ 2.0 Å（人）或 ≤ 1.0 Å（小鼠）</li>
+</ul>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<h3>数据集/群体</h3>
+<ul>
+<li><strong>模型蛋白</strong>：LuxSit-i，de novo 设计的荧光素酶，117 aa</li>
+<li><strong>小鼠</strong>：C57BL/6N（免疫实验）</li>
+<li><strong>等位基因面板</strong>：5 种常见小鼠 MHC-I 等位基因；25 种常见人 HLA-A/B 等位基因</li>
+<li><strong>BMDC</strong>：来自 CD45.1⁺ 小鼠（BoyJ）</li>
+</ul>
+<h3>指标</h3>
+<ul>
+<li><strong>计算指标</strong>：NetMHCpan EL percentile rank；累积表位计数（&lt;0.25%, &lt;0.5%, ..., &lt;2%）；AF3 平均 Cα pLDDT；对齐 Cα RMSD</li>
+<li><strong>实验指标</strong>：CD8⁺ T 细胞中 IFN-γ、TNF-α、IL-2 产生频率（流式细胞术）</li>
+<li><strong>功能指标</strong>：荧光素酶活性（IVTT 系统 + 底物 DTZ）</li>
+</ul>
+<h3>基线/对照</h3>
+<ul>
+<li>野生型 LuxSit-i（未设计）</li>
+<li>预测高表位变体（作为阳性对照）</li>
+<li>预测无表位变体（作为实验组）</li>
+</ul>
+<h3>评测协议</h3>
+<ul>
+<li><strong>计算阶段</strong>：MINT 生成候选 → AF3 折叠验证 → 选择通过结构过滤的序列</li>
+<li><strong>体外功能</strong>：IVTT 表达，测量荧光素酶活性，按 mScarlet 荧光归一化</li>
+<li><strong>体内免疫</strong>：mRNA-LNP 免疫（prime day 0, boost day 21），day 28 取脾</li>
+<li><strong>T 细胞检测</strong>：BMDC 转染各变体 mRNA，与免疫小鼠脾细胞共培养，胞内细胞因子染色</li>
+</ul>
+<h3>实验列表</h3>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 Claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>计算去免疫（5 小鼠等位基因）</strong></td>
+<td>MINT 单轮即可消除小鼠等位基因表位</td>
+<td>40,000 个 ProteinMPNN 设计，筛选零表位（&lt;0.5%）</td>
+<td>获得低表位变体，且 AF3 结构验证通过</td>
+<td>单轮设计足以应对少量等位基因</td>
+<td>未证明对所有可能小鼠等位基因有效</td>
+<td>图 1C；Methods</td>
+</tr>
+<tr>
+<td><strong>计算去免疫（25 人 HLA 等位基因）</strong></td>
+<td>多轮迭代可消除 25 个等位基因的表位</td>
+<td>需要多轮突变和选择</td>
+<td>完全去免疫需要多轮迭代</td>
+<td>多等位基因去免疫需要迭代优化</td>
+<td>未证明可扩展到全部人群 HLA 多样性</td>
+<td>图 1C, 1E；Methods</td>
+</tr>
+<tr>
+<td><strong>功能保持</strong></td>
+<td>去免疫变体保留荧光素酶活性</td>
+<td>低/高表位变体 vs 野生型，IVTT + DTZ 底物</td>
+<td>低表位和高表位变体活性相当</td>
+<td>去免疫不必然损害功能</td>
+<td>未做定量酶动力学比较</td>
+<td>图 1D</td>
+</tr>
+<tr>
+<td><strong>体内免疫原性（5+1 融合）</strong></td>
+<td>预测高表位变体在体内诱导 T 细胞反应，低表位变体不诱导</td>
+<td>5 个低表位 + 1 个高表位融合 mRNA-LNP 免疫</td>
+<td>高表位变体诱导强 CD8⁺ T 细胞反应，低表位变体几乎无反应</td>
+<td>计算预测与体内免疫原性一致</td>
+<td>融合蛋白中表位竞争可能影响结果</td>
+<td>图 2A–C</td>
+</tr>
+<tr>
+<td><strong>单变体免疫</strong></td>
+<td>排除表位竞争效应，确认个体变体免疫原性</td>
+<td>10 个独立 mRNA-LNP，每个编码单一变体</td>
+<td>与融合结果一致：高表位诱导反应，低表位不诱导</td>
+<td>免疫原性差异是变体内在属性</td>
+<td>未测试所有 10 个变体的完整剂量-反应曲线</td>
+<td>图 2D</td>
+</tr>
+<tr>
+<td><strong>交叉反应性</strong></td>
+<td>T 细胞对变体的识别具有特异性</td>
+<td>高表位变体免疫的 T 细胞 vs 不同变体转染的 BMDC</td>
+<td>有限交叉反应，T 细胞优先识别对应变体</td>
+<td>序列多样性导致免疫原性差异</td>
+<td>未做肽级表位定位</td>
+<td>图 2E</td>
+</tr>
+<tr>
+<td><strong>计算优化基准测试</strong></td>
+<td>迭代方法比非迭代方法更高效</td>
+<td>非迭代（单轮）vs 迭代（多轮），匹配 CPU 时间</td>
+<td>迭代方法在相同 CPU 时间内达到更低表位得分</td>
+<td>迭代优化更高效</td>
+<td>未与其他去免疫方法（如点突变）直接比较</td>
+<td>图 1F</td>
+</tr>
+<tr>
+<td><strong>消融分析</strong></td>
+<td>6 项优化策略降低 NetMHCpan 调用次数</td>
+<td>完全未优化 vs 缓存 vs 完全优化</td>
+<td>优化后 NetMHCpan 推理次数大幅减少</td>
+<td>缓存和早期拒绝有效</td>
+<td>未逐项消融各策略的独立贡献</td>
+<td>Methods「Ablation Analysis」</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅针对 <strong>MHC-I 限制性 CD8⁺ T 细胞免疫原性</strong>，不涉及 MHC-II/CD4⁺ T 细胞、抗体反应或先天免疫。作者在 Discussion 中明确提及 MHC-II 扩展为未来方向。</li>
+<li><strong>模型蛋白</strong>：仅使用一种 de novo 荧光素酶（LuxSit-i）作为验证模型。结论不能直接推广到所有蛋白，尤其是结构更复杂、功能残基分布更广的蛋白。</li>
+<li><strong>oracle/真值输入</strong>：NetMHCpan4.1 预测作为表位真值，其准确度直接影响设计质量。体内实验验证了预测与 T 细胞反应的相关性，但样本量有限（5+1 融合 + 10 个单变体）。</li>
+<li><strong>端到端状态</strong>：计算设计 → 体外功能验证 → 体内免疫原性验证的完整闭环已建立，但未做治疗性实验（如过继转移后肿瘤控制）。</li>
+<li><strong>算力成本</strong>：作者开发了缓存和早期拒绝策略降低 NetMHCpan 调用，但未报告总 CPU 时间绝对值。基准测试仅比较了迭代 vs 非迭代方法的相对效率。</li>
+<li><strong>历史数据依赖</strong>：NetMHCpan4.1 训练数据来自已知 MHC-I 配体数据库，对罕见等位基因的预测可能不准确。</li>
+<li><strong>模型依赖</strong>：ProteinMPNN 和 AF3 的预测质量直接影响设计成功率。作者未报告设计成功率（即多少设计通过结构过滤）。</li>
+<li><strong>最难情形</strong>：25 个人 HLA 等位基因同时去免疫需要多轮迭代，且未证明可扩展到全部人群 HLA 多样性（&gt;10,000 等位基因）。</li>
+<li><strong>群体/领域边界</strong>：小鼠实验使用 C57BL/6N（H-2ᵇ 单倍型），结果不能直接推广到其他小鼠品系或人类。</li>
+</ul>
+<p><strong>有边界的复述</strong>：MINT 能够在保持 LuxSit-i 荧光素酶活性的前提下，通过迭代序列设计消除 5 种小鼠和 25 种人 MHC-I 等位基因的预测表位，且这种计算预测的免疫原性差异在小鼠体内得到验证——预测无表位变体诱导极低的 CD8⁺ T 细胞反应，预测高表位变体诱导强烈反应。该结论限于 MHC-I 限制性 CD8⁺ T 细胞反应、单一模型蛋白、以及所测试的等位基因面板。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅覆盖 MHC-I 限制性 CD8⁺ T 细胞反应</td>
+<td>未涉及 CD4⁺ T 细胞、抗体反应</td>
+<td>将框架扩展至 MHC-II 表位预测，支持抗体去免疫</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>依赖 NetMHCpan 预测准确度</td>
+<td>预测误差可能影响设计质量</td>
+<td>随预测模型改进而提升</td>
+<td>Discussion（隐含）</td>
+</tr>
+<tr>
+<td>实验验证限于小鼠模型</td>
+<td>未在人类系统中验证</td>
+<td>未明确提及</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>计算成本高</td>
+<td>25 等位基因需要多轮迭代</td>
+<td>开发了缓存和早期拒绝策略（已部分解决）</td>
+<td>Methods「Optimization Strategies」</td>
+</tr>
+<tr>
+<td>仅验证一种模型蛋白</td>
+<td>LuxSit-i 为 de novo 荧光素酶，结构相对简单</td>
+<td>未明确提及</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：作者在 Discussion 中明确提及 MHC-II 扩展方向，其余局限多为隐含而非明确承认。作者未提供消融实验的详细数据（如每项优化策略的独立贡献）。</p>
+</blockquote>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>功能保持仅通过固定 43 个底物邻近残基实现</strong></td>
+<td>底物邻近 ≠ 催化必需；固定残基可能过度约束序列空间，也可能不足以保持活性</td>
+<td>功能保持是本文核心卖点，但缺乏定量酶动力学比较（仅报告活性相当）</td>
+<td>对设计变体做详细酶动力学表征（kcat/Km）；对固定残基做丙氨酸扫描</td>
+<td>图 1D；Methods「Luciferase activity measurement」</td>
+</tr>
+<tr>
+<td><strong>体内免疫原性实验使用 5+1 融合蛋白</strong></td>
+<td>融合蛋白中表位竞争、蛋白水解差异可能影响结果；单变体实验虽补充验证但样本量小</td>
+<td>融合设计可能引入混淆变量</td>
+<td>增加单变体免疫的样本量；使用不同融合顺序/连接子</td>
+<td>图 2A–D</td>
+</tr>
+<tr>
+<td><strong>NetMHCpan 预测与体内呈递的差距</strong></td>
+<td>NetMHCpan 预测基于体外结合亲和力，体内实际呈递受蛋白酶体切割、TAP 转运等影响</td>
+<td>预测-实验一致性是方法有效性的基础</td>
+<td>对设计变体做 MHC-I 肽组学（immunopeptidomics）验证</td>
+<td>图 2C–D</td>
+</tr>
+<tr>
+<td><strong>未报告设计成功率</strong></td>
+<td>40,000 个初始设计中多少通过 AF3 过滤？多轮迭代的累积成功率？</td>
+<td>影响方法实用性的评估</td>
+<td>报告每轮通过率、最终成功率</td>
+<td>Methods「MINT Design Creation」</td>
+</tr>
+<tr>
+<td><strong>AF3 作为结构验证器的局限性</strong></td>
+<td>AF3 pLDDT/RMSD 阈值（90/2.0 Å）的生物学意义未验证；AF3 对 de novo 蛋白的预测可靠性未知</td>
+<td>结构过滤是设计流程的关键环节</td>
+<td>对设计变体做实验结构验证（X-ray/Cryo-EM）或氢氘交换质谱</td>
+<td>Methods「Design Library」</td>
+</tr>
+<tr>
+<td><strong>免疫原性「最小化」的绝对性</strong></td>
+<td>「无表位」基于 NetMHCpan 阈值（&lt;0.5%），但低亲和力肽仍可能引发 T 细胞反应；T 细胞库多样性未考虑</td>
+<td>去免疫的临床安全性需要更严格标准</td>
+<td>使用更严格阈值；体外用人类 T 细胞库验证</td>
+<td>图 2C–D</td>
+</tr>
+<tr>
+<td><strong>未与现有去免疫方法直接比较</strong></td>
+<td>未与点突变去免疫、T 细胞表位去除（deimmunization）等已有策略对比</td>
+<td>无法评估 MINT 的相对优势</td>
+<td>用相同模型蛋白和等位基因面板做头对头比较</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td><strong>序列多样性 vs 免疫原性的权衡</strong></td>
+<td>min-max Hamming distance 选择可能牺牲最优去免疫效果；未分析最终设计的序列聚类</td>
+<td>理解设计空间的探索质量</td>
+<td>对最终设计做序列聚类、系统发育分析</td>
+<td>Methods「MINT Design Creation with Cycling」</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<h3>Agent 提炼的知识候选</h3>
+<ol>
+<li>
+<p><strong>「预测器作为可优化目标」的通用范式</strong>：任何具有连续输出的预测器（NetMHCpan、AlphaFold、Rosetta 能量函数）都可以从「后验过滤器」转变为「优化目标」，通过将预测分数转换为连续惩罚/奖励信号，耦合进序列设计循环。这对蛋白质结构计算课题的启示：<strong>结构预测置信度（pLDDT）、对接能量、稳定性预测等均可类似地作为设计目标</strong>。</p>
+</li>
+<li>
+<p><strong>「硬约束 + 软优化」的混合策略</strong>：固定功能关键残基（硬约束）保证功能，同时允许其余位置自由突变（软优化）以降低免疫原性。这种「约束-优化」分离策略可迁移到其他多目标蛋白设计任务（如同时优化稳定性 + 表达量 + 免疫原性）。</p>
+</li>
+<li>
+<p><strong>迭代 + 多样性维持的搜索策略</strong>：MINT 不是单轮生成-筛选，而是多轮「突变 → 评分 → 选择 → 再突变」循环，并通过 min-max Hamming distance 维持种群多样性。这种策略可迁移到任何序列空间搜索问题，避免陷入局部最优。</p>
+</li>
+<li>
+<p><strong>计算成本优化的工程实践</strong>：缓存（cache）、分组评估（allele grouping）、早期拒绝（early rejection）等工程优化使大规模多等位基因去免疫成为可能。对蛋白质结构计算课题的启示：<strong>大规模构象采样或序列设计中，工程优化（缓存、并行、早期终止）往往比算法创新更重要</strong>。</p>
+</li>
+<li>
+<p><strong>「功能保持」的实验验证设计</strong>：本文用 IVTT 系统快速测量酶活性，用 mRNA-LNP 免疫系统验证 T 细胞反应，建立了「计算设计 → 体外功能 → 体内免疫」的完整验证链条。这种「计算预测 + 正交实验验证」的闭环设计值得借鉴。</p>
+</li>
+<li>
+<p><strong>模块化设计框架</strong>：MINT 将「序列生成器」（ProteinMPNN）、「表位预测器」（NetMHCpan）、「结构验证器」（AF3）解耦，允许各模块独立升级。对蛋白质结构计算课题的启示：<strong>设计框架应模块化，以便随预测模型进步而升级</strong>。</p>
+</li>
+<li>
+<p><strong>免疫原性作为「可调旋钮」而非「二值属性」</strong>：MINT 既可最小化免疫原性（去免疫），也可最大化（疫苗设计），只需反转优化方向。这种「同一框架、双向应用」的思路可迁移到其他蛋白性质设计。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>ProteinMPNN (Dauparas et al., 2022, Science)</strong>：本文的核心序列生成器。ProteinMPNN 是结构条件序列设计（inverse folding）的代表方法，本文将其与免疫原性预测耦合，扩展了其应用场景。</li>
+<li><strong>NetMHCpan 4.1 (Reynisson et al., 2020, Nucleic Acids Research)</strong>：本文的表位预测器。基于神经网络的 MHC-I 结合预测，是免疫信息学标准工具。</li>
+<li><strong>AlphaFold 3 (Abramson et al., 2024, Nature)</strong>：本文使用 AF3 作为结构验证器。AF3 的预测结构作为设计序列正确折叠的代理指标。</li>
+<li><strong>mRNA-LNP 疫苗平台 (Pardi et al., 2018, Nature Reviews Drug Discovery)</strong>：本文的免疫验证平台。LNP 递送 mRNA 编码抗原蛋白，诱导抗原特异性 T 细胞反应。</li>
+<li><strong>去免疫设计先例</strong>：作者引用文献 14–17 表明已有 ProteinMPNN 去免疫研究，但本文的贡献在于：(1) 系统验证功能保持；(2) 扩展到 25 个人 HLA 等位基因；(3) 体内 T 细胞验证。</li>
+<li><strong>de novo 荧光素酶 LuxSit-i (文献 18)</strong>：本文的模型蛋白，de novo 设计的酶，具有已知结构和活性位点，适合作为设计验证平台。</li>
+<li><strong>免疫原性工程与蛋白质设计的交叉</strong>：本文属于「蛋白质设计 × 免疫工程」交叉领域，与癌症免疫治疗（CAR-T、TCR-T）直接相关。</li>
+<li><strong>[Analysis] 候选连接</strong>：本文的「预测器作为优化目标」范式与「机器学习势能函数指导分子动力学模拟」有方法论上的相似性——都是将 ML 预测作为可微/可迭代的优化信号。可探索将 MINT 的迭代优化策略迁移到构象采样或对接 pose 优化中。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<h3>Agent 生成的研究候选</h3>
+<p><strong>候选 1：MINT 框架迁移至 MHC-II 表位去免疫</strong>
+- <strong>来源局限/观察</strong>：作者明确提及 MHC-II 扩展为未来方向；CD4⁺ T 细胞在抗体反应和免疫记忆中的关键作用
+- <strong>核心假设</strong>：将 NetMHCpan 替换为 MHC-II 预测器（如 NetMHCIIpan），MINT 框架可直接用于 CD4⁺ T 细胞表位去免疫
+- <strong>增量</strong>：扩展免疫原性设计的覆盖范围，支持抗体去免疫
+- <strong>初步方法</strong>：替换表位预测器，调整肽段长度窗口（MHC-II 为 13-25mer），验证功能保持
+- <strong>验证方式</strong>：MHC-II 限制性 T 细胞杂交瘤实验或 HLA-DR 转基因小鼠免疫
+- <strong>失败模式</strong>：MHC-II 表位预测精度不足；MHC-II 肽段更长，与功能残基重叠概率更高
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 2：免疫原性感知的蛋白从头设计（de novo design with immunogenicity constraint）</strong>
+- <strong>来源局限/观察</strong>：MINT 是对现有蛋白序列的「再设计」，未涉及从零开始设计新蛋白
+- <strong>核心假设</strong>：将免疫原性评分集成到 RFdiffusion 等生成模型的采样过程中，可直接生成低免疫原性的全新蛋白
+- <strong>增量</strong>：将免疫原性从「后验优化」提升为「生成约束」，可能发现更优的序列空间
+- <strong>初步方法</strong>：在 RFdiffusion 的扩散采样过程中加入免疫原性引导（类似 classifier guidance），或对生成序列做 MINT 后处理
+- <strong>验证方式</strong>：生成多种功能蛋白（结合蛋白、酶），比较免疫原性与功能
+- <strong>失败模式</strong>：免疫原性引导可能过度限制序列空间，导致生成失败或功能丧失
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 3：免疫原性-功能帕累托前沿的系统性映射</strong>
+- <strong>来源局限/观察</strong>：MINT 只报告了「低免疫原性 + 功能保持」的最终设计，未系统探索免疫原性与功能之间的权衡
+- <strong>核心假设</strong>：免疫原性与功能之间存在可量化的帕累托前沿，不同应用场景需要不同的权衡点
+- <strong>增量</strong>：提供设计选择的系统框架，而非单一最优解
+- <strong>初步方法</strong>：对 LuxSit-i 生成大量变体，计算免疫原性得分与酶活性，绘制帕累托前沿；分析前沿上的序列特征
+- <strong>验证方式</strong>：选择前沿上不同位置的变体做体内免疫实验
+- <strong>失败模式</strong>：免疫原性与功能高度耦合，帕累托前沿退化；实验验证成本高
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 4：MINT 与分子动力学模拟的联合优化</strong>
+- <strong>来源局限/观察</strong>：MINT 使用 AF3 静态结构作为功能代理，未考虑蛋白动力学
+- <strong>核心假设</strong>：将 MD 模拟纳入 MINT 循环，可识别 AF3 无法捕捉的动力学功能缺陷
+- <strong>增量</strong>：提高功能保持的可靠性，特别是对构象变化重要的蛋白（如信号蛋白、变构酶）
+- <strong>初步方法</strong>：在 MINT 的每一轮选择中，对候选变体做短 MD 模拟，检查构象稳定性、活性位点几何
+- <strong>验证方式</strong>：对构象变化重要的蛋白（如激酶）做 MINT+MD 设计，比较功能保持率
+- <strong>失败模式</strong>：MD 计算成本过高；MD 力场误差可能引入假阳性/假阴性
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 5：免疫原性最小化在治疗性蛋白设计中的通用化</strong>
+- <strong>来源局限/观察</strong>：MINT 仅验证了荧光素酶模型，未测试实际治疗相关蛋白
+- <strong>核心假设</strong>：MINT 可应用于治疗性蛋白（如 CAR 的 scFv 域、细胞因子、酶替代疗法蛋白）的去免疫
+- <strong>增量</strong>：直接推动临床转化
+- <strong>初步方法</strong>：选择 2-3 个治疗相关蛋白，应用 MINT 去免疫，验证功能与免疫原性
+- <strong>验证方式</strong>：体外 T 细胞实验 + 动物模型
+- <strong>失败模式</strong>：治疗蛋白的功能残基分布更广，去免疫空间有限；翻译后修饰影响表位预测
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 6：免疫原性感知的序列设计在疫苗免疫原性最大化中的应用</strong>
+- <strong>来源局限/观察</strong>：MINT 框架可反转方向（作者在 Discussion 中提及）
+- <strong>核心假设</strong>：同一框架可用于最大化免疫原性，设计更有效的疫苗抗原
+- <strong>增量</strong>：将去免疫工具转化为疫苗设计工具
+- <strong>初步方法</strong>：反转优化方向，最大化表位得分，同时保持结构稳定性
+- <strong>验证方式</strong>：设计肿瘤新抗原或病原体抗原，验证免疫原性增强
+- <strong>失败模式</strong>：最大化表位可能损害蛋白稳定性或表达
+- <strong>创新状态</strong>：unverified</p></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, main text, methods, acknowledgements) as provided</li>
+<li><strong>Assessment boundary</strong> Scientific content, methodological soundness, and claims as presented in the supplied material; no external data or supplementary figures were available for inspection</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present MINT, a computational framework combining structure-guided sequence design (ProteinMPNN) with MHC-I epitope prediction (NetMHCpan4.1) to tune CD8⁺ T cell immunogenicity of designed proteins while preserving function. Using a de novo-designed luciferase (LuxSit-i), they demonstrate in silico epitope minimization across 5 mouse and 25 human MHC-I alleles, and in vivo validation in mice showing reduced CD8⁺ T cell responses to predicted low-epitope variants.</li>
+<li><strong>Visible evidence base</strong> Abstract, main text narrative, methods section; figures referenced but not provided (Figures 1, 2, S1, S2); no raw data, statistical analyses, or supplementary materials</li>
+<li><strong>Missing materials affecting confidence</strong> All figures and supplementary figures; raw experimental data (flow cytometry, luminescence measurements); statistical analysis details; sequence information for designed variants; details of NetMHCpan allele selection criteria; LNP characterization data; gating strategies for flow cytometry</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript addresses a timely and important problem in protein design and adoptive cell therapy: reducing immunogenicity of therapeutic proteins without compromising function. The conceptual framework is sound and the integration of established computational tools (ProteinMPNN, NetMHCpan4.1) with in vivo validation is a logical and potentially impactful approach. However, the provided material is insufficient to fully evaluate the claims. Key experimental details, quantitative results, and figure data are absent from the supplied text. The in vivo experiments, while well-designed in concept, lack presentation of actual data. The methods section contains algorithmic descriptions but omits critical parameters and validation metrics. The claim of "function-preserving" immunogenicity minimization rests on limited functional data (luciferase activity) without comprehensive characterization. The manuscript has potential but requires substantial additional information and possibly additional experiments to establish the case convincingly.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in protein design and engineering, particularly those working on therapeutic proteins, cell therapy, and immunogenicity prediction. Computational biologists developing deimmunization algorithms. Immunologists studying T cell responses to engineered proteins. The broader synthetic biology community interested in designing proteins with tailored immunological properties. The work could also interest clinicians and translational researchers developing adoptive cell therapies, as reducing immunogenicity of therapeutic proteins is a major clinical barrier.</li>
+<li><strong>Major strengths</strong> 1) Addresses a clinically relevant and technically challenging problem with a clear conceptual framework. 2) Integration of established computational tools (ProteinMPNN, NetMHCpan4.1) in a modular pipeline that can incorporate improved prediction methods. 3) In vivo validation using mRNA-LNP immunization is an appropriate and sensitive approach. 4) The "5+1" fusion design for comparing multiple variants within a shared immunization context is clever and controls for inter-animal variability. 5) The computational optimizations (caching, early rejection, allele grouping) demonstrate practical attention to scalability. 6) The demonstration of both low- and high-immunogenicity designs from the same starting protein provides a useful contrast for understanding immunogenicity determinants.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "variants designed to have few MHC-I epitopes elicited little detectable CD8⁺ T cell response, whereas variants designed to include multiple epitopes induced robust responses"</li>
+<li><strong>Evidence pointer</strong> Figures 2C, 2D, S2B–D; location not provided</li>
+<li><strong>Concern</strong> The central in vivo claim is presented without any quantitative data in the provided text. No numerical values for cytokine-positive cell frequencies, no statistical comparisons, no representative flow cytometry plots, and no information on effect sizes or variability are given. The statement "minimal detectable responses" and "robust responses" are qualitative and cannot be evaluated without the underlying data.</li>
+<li><strong>Why it matters</strong> This is the primary experimental validation of the computational approach. Without quantitative evidence, the reader cannot assess the magnitude of the immunogenicity reduction, the consistency across biological replicates, or whether the differences are statistically significant. The claim that immunogenicity can be "tuned" requires demonstration of a graded or at least reproducible binary response.</li>
+<li><strong>Resolution test</strong> Provide quantitative data showing frequencies of cytokine-producing CD8⁺ T cells for each variant, with appropriate statistical tests (e.g., ANOVA with multiple comparison correction), effect sizes, and variability measures. Include representative flow cytometry plots and gating strategies. Ideally, show a dose-response or correlation between predicted epitope burden and measured T cell response.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Functional preservation</li>
+<li><strong>Claim pointer</strong> "we demonstrate epitope elimination while preserving function" and "The resulting sequences exhibited substantial diversity in amino acid composition"</li>
+<li><strong>Evidence pointer</strong> Figures 1D, S1A; location not provided</li>
+<li><strong>Concern</strong> The claim of function preservation rests on luciferase activity measurements, but the provided text gives no quantitative activity data. The statement that low and high immunogenicity variants "retained comparable luciferase activity" is not supported by any numbers, statistical analysis, or comparison to the parent enzyme. Additionally, only a single functional readout (enzymatic activity) is used; protein stability, expression levels, and biophysical properties are not assessed.</li>
+<li><strong>Why it matters</strong> The central premise of the work is that immunogenicity can be minimized "without compromising protein function." If the designed variants have substantially reduced activity, stability, or expression, the practical utility of the approach is diminished. The lack of quantitative functional data makes it impossible to assess the trade-off between immunogenicity reduction and functional preservation.</li>
+<li><strong>Resolution test</strong> Provide quantitative luciferase activity measurements (e.g., relative light units normalized to expression) for parent and designed variants, with statistical comparisons. Include additional functional characterization such as thermal stability, expression yield, and kinetic parameters (Km, kcat) if feasible. Show that the activity of low-immunogenicity variants is within an acceptable range of the parent enzyme.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological completeness</li>
+<li><strong>Claim pointer</strong> "MINT (MHC-I Immunogenicity Tuning; Figure 1A)" and the iterative optimization strategy</li>
+<li><strong>Evidence pointer</strong> Methods section, Figure 1A; location not provided</li>
+<li><strong>Concern</strong> The methods section describes the algorithmic framework but omits several critical parameters needed for reproducibility. The scoring function is described with equations that are incompletely specified (the actual equations are not shown in the provided text). The selection of the 25 human HLA alleles is not justified. The criteria for "zero-shot" success versus when cycling is required are not defined. The termination criteria are described but not quantified. The relationship between the described "non-cycling" and "cycling" methods and their respective performance is unclear.</li>
+<li><strong>Why it matters</strong> Reproducibility is a fundamental requirement for computational methods. Without complete specification of the algorithm, parameters, and allele selection, other researchers cannot implement or benchmark MINT. The choice of HLA alleles is particularly important as it determines the generalizability of the approach to different human populations.</li>
+<li><strong>Resolution test</strong> Provide complete algorithmic specifications including all equations, parameter values, and pseudocode. Justify the selection of the 25 HLA alleles (e.g., coverage of common alleles in target populations). Define clear criteria for when zero-shot design is sufficient versus when iterative cycling is needed. Provide a step-by-step example of the algorithm applied to a single design task.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Generalizability</li>
+<li><strong>Claim pointer</strong> "approaches such as MINT should be broadly applicable for reducing their immunogenicity"</li>
+<li><strong>Evidence pointer</strong> Discussion section; location not provided</li>
+<li><strong>Concern</strong> The manuscript validates MINT on a single protein (LuxSit-i, a luciferase). The claim of broad applicability is speculative without demonstration on multiple proteins with different folds, sizes, and functions. The choice of a small (117 residue) de novo protein may not represent the challenges of larger, more complex therapeutic proteins.</li>
+<li><strong>Why it matters</strong> The clinical relevance of the approach depends on its applicability to diverse therapeutic proteins. A single demonstration, while valuable, does not establish generalizability. The computational cost and success rate may vary substantially with protein size and complexity.</li>
+<li><strong>Resolution test</strong> Apply MINT to at least 2-3 additional proteins with different structural classes and functions. Report success rates, computational costs, and functional preservation across these test cases. If additional experiments are not feasible, clearly frame the current work as a proof-of-concept with explicit limitations.</li>
+<li><strong>Concern ID</strong> R1-M5</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Immunogenicity prediction validation</li>
+<li><strong>Claim pointer</strong> "variants designed to have few MHC-I epitopes elicited little detectable CD8⁺ T cell response"</li>
+<li><strong>Evidence pointer</strong> Figures 2C, 2D; location not provided</li>
+<li><strong>Concern</strong> The in vivo validation relies on NetMHCpan4.1 predictions as the basis for design, but the correlation between predicted epitope burden and actual T cell immunogenicity is not directly assessed. The manuscript does not report whether the predicted epitopes that were removed or retained correspond to the actual T cell epitopes recognized in the mouse experiments. This is a critical validation step for the computational predictions.</li>
+<li><strong>Why it matters</strong> NetMHCpan predictions are imperfect, and the success of the approach depends on the accuracy of these predictions for the specific protein and alleles tested. Without epitope-level validation, it is unclear whether the reduced immunogenicity results from successful epitope removal or from other unintended consequences of the sequence changes.</li>
+<li><strong>Resolution test</strong> Perform epitope mapping studies (e.g., overlapping peptide libraries) to identify the actual T cell epitopes recognized in immunized mice. Compare these to the predicted epitopes that were targeted for removal. Report the concordance between predictions and experimental epitope identification.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract states "efficiently tune protein immunogenicity" but the efficiency is not quantified anywhere in the provided text. The term "efficiently" is vague and could be interpreted as computational efficiency, experimental success rate, or both.</li>
+<li><strong>Required correction</strong> Specify what is meant by "efficiently" or remove the qualifier. If computational efficiency is meant, provide runtime or cost metrics in the abstract or main text.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> In vivo experiments</li>
+<li><strong>Evidence pointer</strong> Figures 2C, 2D; location not provided</li>
+<li><strong>Issue</strong> No information is provided on the number of biological replicates, the statistical tests used, or the criteria for significance in the in vivo experiments.</li>
+<li><strong>Required correction</strong> Include sample sizes, statistical methods, and significance thresholds in the figure legends or methods. Report exact p-values or confidence intervals for key comparisons.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> "deimmunized" and "immunized" variants</li>
+<li><strong>Evidence pointer</strong> Methods section; location not provided</li>
+<li><strong>Issue</strong> The terms "deimmunized" and "immunized" are used to describe the designed variants, but the criteria for these classifications are not explicitly defined. It is unclear whether these terms refer to predicted epitope counts, experimental immunogenicity, or both.</li>
+<li><strong>Required correction</strong> Define these terms explicitly in the methods or results section. Clarify whether they are based on computational predictions, experimental measurements, or a combination.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Benchmarking</li>
+<li><strong>Evidence pointer</strong> Benchmarking section; location not provided</li>
+<li><strong>Issue</strong> The benchmarking section mentions comparison between non-cycling and cycling methods but does not report the results of this comparison in the provided text. The claim of improved efficiency is not supported by data.</li>
+<li><strong>Required correction</strong> Report the benchmarking results, including computational cost, success rate, and final immunogenicity scores for both methods. If the comparison is shown in a figure, reference it explicitly and summarize the key findings in the text.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Experimental design</li>
+<li><strong>Affected element</strong> Mouse strain choice</li>
+<li><strong>Evidence pointer</strong> Mice and immunization section; location not provided</li>
+<li><strong>Issue</strong> The manuscript uses C57BL/6N mice, which express H-2b MHC haplotypes. The choice of 5 mouse alleles for design is not justified in the context of the mouse strain used. It is unclear whether the designed alleles match the H-2b haplotype.</li>
+<li><strong>Required correction</strong> Clarify the relationship between the mouse alleles used for design and the H-2b haplotype of C57BL/6N mice. If the designed alleles do not match, explain the rationale for the chosen alleles.</li>
+<li><strong>Concern ID</strong> R1-m6</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Computational code</li>
+<li><strong>Evidence pointer</strong> Methods section; location not provided</li>
+<li><strong>Issue</strong> No information is provided on code availability, software versions, or computational environment. This limits reproducibility of the computational pipeline.</li>
+<li><strong>Required correction</strong> Provide a statement on code availability, including repository links, software versions, and any custom scripts used. Consider depositing the MINT pipeline in a public repository.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> 1) Absence of quantitative in vivo data supporting the central immunogenicity claim (R1-M1). 2) Lack of quantitative functional data for designed variants (R1-M2). 3) Incomplete specification of the computational algorithm and parameters (R1-M3). 4) No validation of predicted epitopes against experimentally identified T cell epitopes (R1-M5). 5) Benchmarking results not reported in the provided text (R1-m4).</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that CD8⁺ T cell immunogenicity can be "systematically modulated" is not supported by the provided data, as no quantitative immunogenicity measurements are presented.</li>
+<li>The claim of "function-preserving" design is only weakly supported by a single functional assay (luciferase activity) with no quantitative data shown.</li>
+<li>The claim that MINT is "broadly applicable" to therapeutic proteins is speculative, as only one protein was tested.</li>
+<li>The claim of computational efficiency improvements from caching and other optimizations is not supported by benchmarking data in the provided text.</li>
+<li>The statement that "variants designed to include multiple epitopes induced robust responses" implies a positive control for immunogenicity, but the design rationale for these variants and their relationship to the low-epitope variants is not fully explained.</li>
+<li>The generalizability of the approach to human MHC alleles is based on computational predictions only, with no experimental validation in humanized models or human cells.</li>
+<li>The manuscript does not address potential off-target effects of the sequence modifications, such as altered protein stability, aggregation propensity, or changes in post-translational modification sites.</li>
+</ul>
+<h2>Assessment against Nature-style criteria</h2>
+<ul>
+<li><strong>Originality</strong> The concept of integrating structure-based protein design with immunogenicity prediction is not entirely novel, as the authors acknowledge prior work using ProteinMPNN for deimmunization. However, the systematic framework (MINT) with iterative optimization, multi-allele coverage, and in vivo validation represents a meaningful advance. The "5+1" fusion design for comparative immunogenicity assessment is a creative experimental approach. The originality is moderate to good, but the field is competitive and the incremental advance over prior work needs to be clearly articulated.</li>
+<li><strong>Scientific importance</strong> The problem addressed is clinically important, as immunogenicity of therapeutic proteins is a major barrier to adoptive cell therapy. A reliable computational method for reducing immunogenicity while preserving function would have significant translational value. However, the importance is somewhat diminished by the limited experimental validation presented and the focus on a single model protein. The potential impact on the field is high if the method proves generalizable, but this is not yet established.</li>
+<li><strong>Interdisciplinary readership</strong> The work bridges computational protein design, immunology, and cell therapy, which could attract readers from multiple disciplines. The conceptual framework is accessible, but the methods section is highly technical and may be challenging for non-specialists. The clinical relevance to adoptive cell therapy provides a compelling hook for a broad audience. The interdisciplinary appeal is good but could be strengthened by clearer explanations of the immunology concepts for computational readers and vice versa.</li>
+<li><strong>Technical soundness</strong> The computational approach is based on established tools (ProteinMPNN, NetMHCpan4.1, AF3) and the algorithmic logic is reasonable. However, the incomplete specification of the algorithm, missing parameters, and absence of benchmarking data prevent a full assessment of technical soundness. The in vivo experimental design is appropriate, but the lack of quantitative data is a significant concern. The functional assay (luciferase activity) is straightforward but limited in scope.</li>
+<li><strong>Readability for nonspecialists</strong> The abstract and introduction are clearly written and accessible. The main text is generally readable, but the methods section assumes significant expertise in both computational protein design and immunology. The discussion effectively contextualizes the work for a broad audience. The manuscript would benefit from a figure summarizing the MINT workflow in a visually accessible manner. Overall readability is adequate but could be improved with additional context for non-specialist readers.</li>
+</ul>
+<h2>Recommendation posture</h2>
+<p>Supportive if technical concerns are resolved. The conceptual framework is promising and the experimental approach is well-designed, but the current manuscript does not provide sufficient evidence to establish the central claims. The authors must provide quantitative in vivo data, complete functional characterization, full algorithmic specifications, and benchmarking results. If these concerns are addressed, the work could make a valuable contribution to the field. However, as presented, the case is not fully established from the provided evidence.</p></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mdRNAcat: A Molecular Dynamics RNA Catalog of REST2 Conformational Ensembles · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>mdRNAcat: A Molecular Dynamics RNA Catalog of REST2 Conformational Ensembles</h1>
+      <div class="meta">Anton E. Dorn; Emile de Bruyn; Fabrice von der Lehr; Philipp Knechtges; Stefan Kesselheim; Alexander Schug</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-26
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.35204v2">原文</a>
+      </div>
+      <p class="one-liner">该文构建了RNA系统的REST2增强采样MD模拟数据集，虽对象为RNA而非蛋白质，但其构象系综数据与训练信号设计对蛋白质结构计算建模具有可迁移的参考价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Learning molecular models of RNA requires simulation data that capture conformational variability and provide consistent physical training signals. Here, we introduce mdRNAcat, a curated dataset of all-atom molecular dynamics (MD) simulations of 48 RNA systems selected to promote sequence diversity. Each system is simulated using replica-exchange with solute scaling (REST2), with 32 Hamiltonian states and production lengths of 200-300 ns per state. The dataset provides atomic coordinates, instantaneous forces, and forces reevaluated under the unscaled reference Hamiltonian, together with structural annotations and replica-exchange metadata. Coordinates and forces are available at 1 ps intervals for the reference state and 100 ps intervals across all states in a standardized HDF5 format. We characterize conformational sampling, exchange behavior, base pairing, and sugar-pucker distributions to document the properties of the simulated ensembles. mdRNAcat provides a reusable resource for developing and evaluating data-driven RNA models, including coarse-grained force fields.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">学习RNA分子模型需要能够捕捉构象变异性并提供一致物理训练信号的模拟数据。在此，我们介绍mdRNAcat，这是一个精选的数据集，包含48个RNA系统的全原子分子动力学（molecular dynamics, MD）模拟，这些系统被选择以促进序列多样性。每个系统使用溶质缩放副本交换（replica-exchange with solute scaling, REST2）进行模拟，包含32个哈密顿状态，每个状态的生产长度为200-300纳秒。数据集提供原子坐标、瞬时力以及在未缩放参考哈密顿量下重新评估的力，连同结构注释和副本交换元数据。坐标和力以1皮秒间隔提供于参考状态，并以100皮秒间隔提供于所有状态，采用标准化HDF5格式。我们表征了构象采样、交换行为、碱基配对和糖环折叠分布，以记录模拟系综的性质。mdRNAcat为开发和评估数据驱动的RNA模型（包括粗粒化力场）提供了可重复使用的资源。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li>标题：mdRNAcat: A Molecular Dynamics RNA Catalog of REST2 Conformational Ensembles</li>
+<li>作者：Anton E. Dorn; Emile de Bruyn; Fabrice von der Lehr; Philipp Knechtges; Stefan Kesselheim; Alexander Schug</li>
+<li>单位：未提供（正文中未给出作者单位信息）</li>
+<li>期刊/预印本平台：arXiv（预印本平台）</li>
+<li>年份：2026（日期标注为 2026-10-26）</li>
+<li>论文类型：预印本（arXiv preprint），从标题判断为数据集/资源类论文（Catalog）</li>
+<li>领域：Quantitative Biology &gt; Biomolecules；分子动力学（Molecular Dynamics, MD）模拟；RNA 构象系综</li>
+<li>关键词：未提供（正文中未列出关键词）</li>
+<li>DOI/arXiv 号：2610.35204v2</li>
+<li>代码：未提供（正文中未给出代码链接）</li>
+<li>数据：未提供（正文中未给出数据链接）</li>
+<li>阅读日期：未提供</li>
+<li>在「蛋白质结构相关计算研究 × AI 方法/物理模拟」方向中的位置：本文为 RNA 的 MD 构象系综目录（REST2 增强采样），对象为 RNA 而非蛋白质，但属于「物理模拟（MD）× 构象采样/构象生成」这一课题子方向；其增强采样策略、系综组织方式与数据目录构建思路，对蛋白质构象采样与构象生成数据集构建具有可迁移参考价值。由于提供的材料仅为 arXiv 页面框架文本（导航、引用工具、arXivLabs 说明等），无摘要与正文内容，以下各节凡涉及具体方法、结果、数值者均无法评估。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>提供的材料中未包含摘要或正文，无法给出有依据的一句话总结（Not assessable）。</p>
+<h2>03 研究问题</h2>
+<p>提供的材料中未包含摘要或正文，无法确定具体研究问题、其重要性及现有方法不足（Not assessable）。标题提示的可能问题为：如何构建一个基于 REST2 增强采样（replica exchange with solute tempering 2）的 RNA 分子动力学构象系综目录——此为 [Analysis]，仅由标题推断，未经原文核验。</p>
+<h2>04 背景与发展脉络</h2>
+<p>提供的材料中未包含引言或相关工作，无法梳理分阶段脉络与代表性方法（Not assessable）。标题涉及的 REST2 属于增强采样（enhanced sampling）方法族，但本文对其定位与主张无法从所给材料核验。</p>
+<h2>05 核心痛点</h2>
+<p>提供的材料中未包含正文，无法填写痛点表（Not assessable）。</p>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p>提供的材料中未包含摘要或正文，无法提取表面方法、核心洞察与普适教训（Not assessable）。</p>
+<h2>07 方法总览</h2>
+<p>提供的材料中未包含方法部分，无法给出输入、输出、模块、训练、工具、反馈回路与假设（Not assessable）。标题提示方法涉及 REST2 构象系综的生成与编目，但流程细节未提供。</p>
+<h2>08 核心模块拆解</h2>
+<p>提供的材料中未包含方法部分，无法拆解模块（Not assessable）。</p>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>不适用（提供的材料中未包含任何公式）。</p>
+<h2>10 实验设计与证据链</h2>
+<p>提供的材料中未包含实验、数据集、指标、基线或评测协议（Not assessable）。</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<p>提供的材料中未包含结论或结果，无法审计任务范围、oracle 输入、端到端状态、算力成本、数据依赖、模型依赖、最难情形与领域边界（Not assessable）。有边界的复述：仅可确认该预印本标题指向一个 RNA 的 REST2 构象系综目录，其余结论均无法从所给材料核验。</p>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<h2>13 批判性分析</h2>
+<p>提供的材料中未包含正文，无法提出有依据的具体关切（Not assessable）。</p>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<h3>Agent 提炼的知识候选</h3>
+<p>提供的材料中未包含方法或结果，无法提炼可迁移的概念、方法、公式或实验设计（Not assessable）。仅从标题可标注一个候选方向 [Analysis]：以 REST2 增强采样构建 RNA 构象系综并编目，其「系综目录化」思路或可迁移至蛋白质构象采样数据集构建——但该迁移性未经原文核验。</p>
+<h2>15 与已有知识连接</h2>
+<p>提供的材料中未包含参考文献或相关工作，无法建立可核验的外部文献连接（Not assessable）。可标注的候选连接（未核验）：REST2 增强采样方法、RNA 构象系综数据库类资源——均需外部核验后方可确认。</p>
+<h2>16 研究想法</h2>
+<h3>Agent 生成的研究候选</h3>
+<p>提供的材料不足以支撑有依据的研究候选（Not assessable）。若需生成候选，须先获取该预印本的摘要与正文。</p>
+<ul>
+<li>名称：未提供</li>
+<li>来源局限/观察：未提供</li>
+<li>核心假设：未提供</li>
+<li>相对本文的增量：未提供</li>
+<li>初步方法：未提供</li>
+<li>验证方式：未提供</li>
+<li>可能的失败模式：未提供</li>
+<li>创新状态：unverified</li>
+</ul></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Title, author list, journal/platform, date, DOI/ID, URL, and the visible abstract page text for the manuscript "mdRNAcat: A Molecular Dynamics RNA Catalog of REST2 Conformational Ensembles"</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the supplied abstract page content. No full manuscript text, figures, tables, or supplementary materials were provided.</li>
+<li><strong>Shared manuscript claim summary</strong> The manuscript presents mdRNAcat, described as a catalog of RNA conformational ensembles generated by molecular dynamics simulations using the REST2 enhanced sampling method. The title indicates a focus on REST2-derived ensembles, and the abstract page suggests the work is submitted to the Quantitative Biology section of arXiv.</li>
+<li><strong>Visible evidence base</strong> The supplied material consists of the arXiv abstract page metadata, including title, authors, submission date, DOI/ID, and URL. No abstract text, main text, figures, tables, or supplementary information are present in the provided material.</li>
+<li><strong>Missing materials affecting confidence</strong> The abstract text itself is absent. The full manuscript, all figures, tables, methods descriptions, simulation parameters, validation analyses, and any data availability statements are not provided. The absence of the abstract and all technical content severely limits the ability to evaluate the scientific claims.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The provided material is insufficient to conduct a substantive scientific review. The only information available is the manuscript title, author list, and submission metadata. No abstract, no methods, no results, and no discussion are accessible. Consequently, the scientific claims, technical soundness, and significance of the work cannot be assessed. The review must therefore focus on what can be inferred from the title and metadata, while clearly stating that the evidence base is inadequate for a meaningful evaluation.</li>
+<li><strong>Who would be interested in the results, and why</strong> Based solely on the title, the work could interest computational biophysicists, RNA structural biologists, and researchers developing enhanced sampling methods for biomolecular simulations. The combination of RNA conformational dynamics and REST2, a replica exchange method, suggests relevance to those studying RNA folding, conformational heterogeneity, and the application of advanced sampling techniques. However, without the abstract or manuscript content, the specific contributions and target audience cannot be confirmed.</li>
+<li><strong>Major strengths</strong> From the supplied material, only one potential strength can be inferred. The title indicates a focus on REST2 conformational ensembles, which is a technically relevant enhanced sampling approach. The creation of a catalog, as implied by the title, could be a useful community resource if properly validated and curated. No other strengths can be identified from the available information.</li>
+<li><strong>Major Concerns</strong> The primary concern is the complete absence of the abstract and manuscript content. This prevents any evaluation of the scientific claims, methodology, results, or conclusions. The review cannot proceed beyond the title-level inference.</li>
+<li><strong>Minor Comments</strong> None can be formulated from the supplied material, as there is no substantive content to comment on.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The technical content of the manuscript is entirely unavailable. The simulation protocols, REST2 parameter choices, force field selection, system preparation, convergence criteria, and validation against experimental data cannot be assessed. These elements are essential to establish the reliability of the reported ensembles.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality cannot be assessed without the abstract or manuscript. Scientific importance cannot be evaluated. Interdisciplinary readership cannot be determined. Technical soundness is unverifiable. Readability for nonspecialists cannot be judged. All five criteria are unassessable from the provided material.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript cannot be evaluated in any meaningful way because the abstract and all technical content are missing. A review would require the full abstract and manuscript text.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence completeness</li>
+<li><strong>Claim pointer</strong> The manuscript claims to present mdRNAcat, a catalog of RNA conformational ensembles from REST2 simulations, as indicated by the title.</li>
+<li><strong>Evidence pointer</strong> Abstract page metadata only, location not provided</li>
+<li><strong>Concern</strong> The abstract text is not included in the supplied material. The entire scientific content of the manuscript, including the abstract, methods, results, and discussion, is absent. The review can only reference the title and submission metadata.</li>
+<li><strong>Why it matters</strong> Without the abstract and manuscript content, there is no basis to evaluate the validity of the claims, the quality of the methods, the significance of the results, or the suitability for publication. A scientific review requires access to the actual scientific content.</li>
+<li>
+<p><strong>Resolution test</strong> Provide the full abstract and manuscript text, including all figures, tables, and supplementary materials, to enable a substantive review.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical validation</li>
+<li><strong>Claim pointer</strong> The title implies that REST2 conformational ensembles of RNA are generated and cataloged, which requires appropriate simulation setup and validation.</li>
+<li><strong>Evidence pointer</strong> Location not provided</li>
+<li><strong>Concern</strong> No information is available on the simulation parameters, force fields, system sizes, simulation lengths, REST2 replica exchange settings, or convergence assessments. Without these details, the reliability of the reported ensembles cannot be judged.</li>
+<li><strong>Why it matters</strong> Molecular dynamics results, particularly those from enhanced sampling methods, are highly sensitive to parameter choices and require rigorous validation. The absence of this information makes the scientific claims unverifiable.</li>
+<li>
+<p><strong>Resolution test</strong> Provide detailed methods sections describing simulation protocols, parameter choices, and validation analyses, including comparisons to experimental data or established benchmarks.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Data availability</li>
+<li><strong>Claim pointer</strong> The title describes a catalog, which implies the availability of the generated conformational ensembles as a resource.</li>
+<li><strong>Evidence pointer</strong> Location not provided</li>
+<li><strong>Concern</strong> No information is provided about the accessibility, format, or curation of the proposed catalog. It is unclear whether the data are deposited in a public repository, how they are organized, or how users can access them.</li>
+<li><strong>Why it matters</strong> A catalog is only useful if it is accessible and well-documented. The absence of data availability information undermines the practical value of the claimed resource.</li>
+<li><strong>Resolution test</strong> Provide a data availability statement describing the repository, data format, access protocols, and any associated documentation or tools.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Metadata completeness</li>
+<li><strong>Affected element</strong> Abstract page</li>
+<li><strong>Evidence pointer</strong> Abstract page metadata</li>
+<li><strong>Issue</strong> The abstract page does not include an abstract text, which is unusual for a scientific submission. This may be a technical issue with the submission or a deliberate omission.</li>
+<li>
+<p><strong>Required correction</strong> Ensure the abstract text is included in the submission and visible on the abstract page.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Citation and reference information</li>
+<li><strong>Affected element</strong> Abstract page</li>
+<li><strong>Evidence pointer</strong> Abstract page metadata</li>
+<li><strong>Issue</strong> The abstract page lists "References &amp; Citations" and "BibTeX formatted citation" as sections, but no actual references or citation details are visible in the supplied material.</li>
+<li><strong>Required correction</strong> Verify that the reference list and citation information are properly generated and displayed on the abstract page.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that mdRNAcat is a catalog of REST2 conformational ensembles is unsupported because the abstract and manuscript content are not provided.</li>
+<li>Any claim regarding the scientific quality, novelty, or significance of the work is unsupported and cannot be evaluated.</li>
+<li>Any claim regarding the technical validity of the REST2 simulations is unsupported due to the absence of methods and results.</li>
+<li>Any claim regarding the availability or utility of the catalog as a community resource is unsupported due to the absence of data availability information.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

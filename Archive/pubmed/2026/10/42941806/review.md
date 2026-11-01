@@ -1,0 +1,99 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, main sections, conclusions, acknowledgments)
+- **Assessment boundary** Scientific content, technical soundness, structural coherence, and support for claims as presented in the provided text
+- **Shared manuscript claim summary** The authors argue that artificial intelligence is transforming protein glycosylation research across four domains: glycosylation reaction prediction, glycosylation site identification, glycoprotein structural modeling, and glycomics data mining. They propose a "glycan language" framework and claim that AI methods are moving the field from prediction toward generation and functional design.
+- **Visible evidence base** The manuscript text includes descriptions of specific tools (GlycoPredictor, Bayesian optimization, ESM-2, AlphaFold2/3, DeepGlycanSite, CandyCrunch, DeepGlyco, GlycoCompute, GlycanGT, OneProt, AlphaFLOW, ModelAngelo, LeGenD), references to figures and tables, and case examples (MCTS1–JAK2–IFN-γ axis, CDG variant interpretation, IgG Fc glycan signatures)
+- **Missing materials affecting confidence** Figures, tables, and reference list are not provided. No experimental data, benchmark results, or code are included. The manuscript is a review, so primary data are not expected, but the absence of figures and tables limits verification of the described results.
+
+## Reviewer
+- **Overall assessment** This is a broad, well-structured review of AI applications in protein glycosylation research. The authors cover a commendable range of topics, from chemical reaction prediction to structural biology and glycomics. The "glycan language" framing is a useful organizing principle. However, the manuscript has several significant weaknesses. The depth of technical discussion is uneven, with some sections reading as lists of tools rather than critical analyses. The treatment of AlphaFold3 is notably uncritical, and the authors do not adequately address the substantial limitations of current AI methods for glycoprotein modeling. The clinical and translational claims, particularly regarding CDG, are not well supported by the evidence presented. The manuscript would benefit from a more critical stance, clearer articulation of the field's open problems, and a more rigorous comparison of the methods discussed.
+- **Who would be interested in the results, and why** Researchers in glycobiology, glycochemistry, and glycoproteomics would find this review useful as a survey of AI tools applicable to their field. Computational biologists and machine learning researchers working on protein structure prediction or post-translational modification prediction may also be interested. The review could serve as an entry point for those seeking to apply AI methods to glycosylation-related problems. However, the lack of critical depth may limit its value for experts in either AI or glycoscience.
+- **Major strengths** The manuscript covers a wide range of topics in a logical structure, from chemical synthesis to structural biology to omics data analysis. The "glycan language" framework provides a coherent narrative. The authors include recent developments (AlphaFold3, generative models) and make an effort to discuss limitations, particularly regarding data scarcity and evaluation practices. The inclusion of specific case examples, such as the CDG variant interpretation, helps ground the discussion.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that AlphaFold3 can model glycoproteins with high accuracy and that it represents a significant advance for the field, citing specific examples such as the EXTL3 homodimer and OC43 spike protein.
+  - **Evidence pointer** Section 4.1.2, Section 4.4, Figure 4 (not provided)
+  - **Concern** The discussion of AlphaFold3 is overly optimistic and does not acknowledge the well-documented limitations of AF3 for glycoprotein modeling. The authors cite a few examples where AF3 performed well but do not discuss the systematic evaluation studies that show AF3 struggles with glycan conformation, anomeric configuration, and glycosidic linkage accuracy. The claim that AF3 treats glycans as "first-class molecular entities" is an overstatement; AF3's handling of glycans is still limited by training data and force field approximations. The authors also do not address the fact that AF3's confidence metrics (pLDDT, PAE) are unreliable for glycans, which they themselves note in Section 4.1.2 but do not connect to the broader claims of AF3's utility.
+  - **Why it matters** The manuscript's central argument is that AI is transforming glycoprotein structural biology. If the discussion of the most prominent AI tool (AF3) is uncritical and does not accurately represent its capabilities and limitations, the overall thesis is weakened. Readers may be misled about the current state of the art and make inappropriate decisions about tool selection.
+  - **Resolution test** The authors should provide a balanced assessment of AF3, including quantitative comparisons with experimental structures across a diverse test set, discussion of known failure modes (e.g., anomeric errors, glycan flexibility), and a clear statement of what AF3 can and cannot do for glycoprotein modeling. They should also discuss alternative approaches and their relative merits.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Support for claims
+  - **Claim pointer** The authors claim that "glycan language models link sequence and structure to function" and that these models are "becoming clinically actionable" for prioritizing variants in congenital disorders of glycosylation and stratifying immune disorders and tumors.
+  - **Evidence pointer** Section 5.3, Section 5.4, Section 5.5
+  - **Concern** The claim that glycan language models are "clinically actionable" is not supported by the evidence presented. The authors describe a few examples (e.g., XGBoost classifier for PMM2-CDG with AUC 0.917, LeGenD for glycan structure prediction) but do not provide details on validation cohorts, prospective studies, or clinical implementation. The leap from computational predictions to clinical actionability is not justified. Furthermore, the authors do not discuss the regulatory, ethical, or practical challenges of deploying such models in clinical settings.
+  - **Why it matters** The manuscript positions AI as a transformative force in glycosylation research with clinical implications. Overstating the clinical readiness of these tools could mislead researchers and clinicians, and could undermine trust in the field if the claims are not borne out.
+  - **Resolution test** The authors should either temper the "clinically actionable" claim or provide concrete evidence of clinical validation, such as prospective studies, external validation cohorts, or regulatory approval. They should also discuss the specific challenges that remain before these tools can be used in clinical practice.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Completeness
+  - **Claim pointer** The authors state that the review covers "recent advances" in AI for glycosylation research, but the discussion of glycomics data mining is largely focused on a few specific tools and does not provide a comprehensive survey of the field.
+  - **Evidence pointer** Section 5
+  - **Concern** The glycomics section is uneven. While the authors discuss CandyCrunch, DeepGlyco, GlycoCompute, and GlycanGT, they do not mention several other important approaches, such as the use of transformers for glycan sequence representation, graph neural networks for glycan property prediction, or the growing literature on glycan-focused foundation models. The discussion of data resources (Table 2) is brief and does not critically evaluate the strengths and weaknesses of each resource. The section on explainable AI is also thin, with only two examples discussed.
+  - **Why it matters** A review should provide a comprehensive and balanced survey of the field. If important approaches are omitted, the review's utility as a reference is diminished, and readers may not be aware of the full range of available tools.
+  - **Resolution test** The authors should expand the glycomics section to include a more comprehensive survey of AI methods, including those they may have overlooked. They should also provide a more critical evaluation of the data resources and discuss the trade-offs between different approaches.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Reproducibility
+  - **Claim pointer** The authors describe several AI tools and their reported performance metrics (e.g., CandyCrunch top-1 accuracy 90.3%, XGBoost AUC 0.917) but do not provide sufficient details on how these metrics were obtained or whether they are reproducible.
+  - **Evidence pointer** Section 3.4.2, Section 5.4
+  - **Concern** The manuscript does not provide details on the datasets, training/validation splits, or evaluation protocols used to obtain the reported performance metrics. This makes it difficult for readers to assess the reliability of these numbers or to reproduce the results. The authors also do not discuss potential sources of bias or overfitting in the reported results.
+  - **Why it matters** Reproducibility is a cornerstone of scientific research. Without clear details on evaluation methodology, the reported performance metrics cannot be independently verified, and the claims based on them are weakened.
+  - **Resolution test** The authors should provide more details on the evaluation protocols, including dataset descriptions, splits, and metrics. They should also discuss potential limitations and sources of bias in the reported results.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Section 2.2.1
+  - **Evidence pointer** Text describing GlycoPredictor
+  - **Issue** The description of the GlycoPredictor model is dense and could be clearer. The authors mention "approximately 10,434 reactions" and a "734-reaction Barresi–Hindsgaul dataset" but do not explain why these specific datasets were chosen or how they differ.
+  - **Required correction** Provide a brief explanation of the datasets and their relevance, and consider breaking the description into smaller, more digestible paragraphs.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Section 4.1.2
+  - **Evidence pointer** Text discussing AlphaFold3
+  - **Issue** The term "first-class molecular entities" is vague and not standard terminology in structural biology. It is unclear what the authors mean by this phrase.
+  - **Required correction** Replace with a more precise description, such as "treated as explicit components of the molecular system being modeled" or similar.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Consistency
+  - **Affected element** Section 5.4
+  - **Evidence pointer** Text discussing CDG
+  - **Issue** The authors mention "circulating miRNA profiles" as a biomarker for PMM2-CDG but do not explain why miRNA profiles are relevant to a disorder caused by a defect in protein glycosylation. The connection is not obvious.
+  - **Required correction** Add a brief explanation of the rationale for using miRNA profiles in this context, or remove the example if it is not directly relevant.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Readability
+  - **Affected element** Section 6 (Conclusions)
+  - **Evidence pointer** Text in conclusions
+  - **Issue** The conclusions section is largely a summary of the main sections and does not provide a forward-looking perspective or a clear statement of the most important open problems.
+  - **Required correction** Add a paragraph that explicitly identifies the top 3-5 challenges that need to be addressed for AI to realize its potential in glycosylation research, and suggest potential solutions or research directions.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Section 4.3.2
+  - **Evidence pointer** Text discussing cryo-EM
+  - **Issue** The discussion of AI-assisted cryo-EM is brief and does not mention specific tools or methods beyond ModelAngelo. There are other AI-based approaches for cryo-EM map interpretation that could be mentioned.
+  - **Required correction** Consider adding a brief discussion of other AI-based cryo-EM tools and their applicability to glycoproteins.
+- **Technical failings that need to be addressed before the case is established** The manuscript's central thesis that AI is transforming glycosylation research is plausible but not fully established. The uncritical treatment of AlphaFold3 (R1-M1) and the overstatement of clinical actionability (R1-M2) are the most significant technical failings. The lack of detail on evaluation protocols (R1-M4) also undermines the credibility of the reported performance metrics. These issues need to be addressed before the review can be considered a reliable guide to the field.
+- **Assessment against Nature-style criteria** 
+  - **Originality** The "glycan language" framework is a useful organizing principle, but the individual topics covered are not new. The review does not present a novel synthesis or a unique perspective that would distinguish it from other recent reviews on AI in glycosylation.
+  - **Scientific importance** The topic is important, as glycosylation is a ubiquitous and understudied modification with major implications for human health. A comprehensive and critical review would be valuable. However, the current manuscript does not fully deliver on this promise.
+  - **Interdisciplinary readership** The manuscript is likely to appeal to researchers in glycobiology and computational biology, but the lack of depth in some sections may limit its appeal to experts in either field. The writing is generally accessible but could be improved with clearer explanations of technical concepts.
+  - **Technical soundness** The technical soundness is mixed. The descriptions of individual tools are generally accurate, but the overall argument is weakened by the uncritical treatment of AF3 and the lack of detail on evaluation protocols.
+  - **Readability for nonspecialists** The manuscript is generally readable, but some sections are dense and assume prior knowledge of both glycosylation and AI. The authors could improve accessibility by providing more background and defining key terms.
+- **Recommendation posture** Supportive if technical concerns are resolved. The manuscript has the potential to be a useful review, but the authors need to address the concerns raised above, particularly the uncritical treatment of AlphaFold3 and the overstatement of clinical actionability. A more balanced and critical perspective would significantly strengthen the manuscript.
+
+## Risk / unsupported claims
+- The claim that glycan language models are "becoming clinically actionable" (Section 5.3) is not supported by the evidence presented.
+- The claim that AlphaFold3 treats glycans as "first-class molecular entities" (Section 4.1.2) is an overstatement and not supported by the literature.
+- The reported performance metrics for various tools (e.g., CandyCrunch top-1 accuracy 90.3%, XGBoost AUC 0.917) are presented without sufficient detail on evaluation methodology, making them difficult to assess.
+- The claim that the MCTS1–JAK2–IFN-γ axis example demonstrates the utility of AI for glycoprotein structure-function analysis (Section 4.1.2) is not clearly supported, as the authors note this involves a non-glycosylated signaling axis.
+- The statement that "AI is now laying down new methodological foundations at every link along that chain" (Section 6) is a broad generalization that is not fully supported by the specific examples discussed.

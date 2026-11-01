@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TCSP3.0: Template-Based Crystal Structure Prediction with Coefficient-Preserving Element Substitution and Structural Diversity · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-low">2</span>
+    <div>
+      <h1>TCSP3.0: Template-Based Crystal Structure Prediction with Coefficient-Preserving Element Substitution and Structural Diversity</h1>
+      <div class="meta">Ying Feng; Jeffrey Hu; Lai Wei; Liang Tao; Madeline Miklos; Dipannoy Das Gupta; Hossein Erfanshekooh; Jianjun Hu</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-25
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.34029v1">原文</a>
+      </div>
+      <p class="one-liner">该工作提出基于模板的晶体结构预测方法TCSP3.0，通过元素替换和机器学习势能弛豫提升无机晶体结构预测精度，研究对象为晶体材料而非蛋白质，方法虽可迁移但未涉及蛋白质结构计算。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Template-based crystal structure prediction (CSP) transfers a known crystal structure to a new composition by element substitution, so its accuracy depends on retrieving suitable templates, mapping elements and ranking the resulting candidates correctly. Auditing the original TCSP2.0 implementation on the T180 benchmark, we found that 469 of its 2,347 selected structures (20%) have the wrong composition, caused by element mappings that ignore stoichiometric coefficients and by sequential text substitution that cascades or corrupts element symbols. We propose TCSP3.0, which enforces coefficient-preserving mappings, substitutes species simultaneously on parsed structures and validates every candidate&#39;s composition and cell. It further adds periodic-number retrieval, soft oxidation-state evidence, radius-compatibility scoring, structural deduplication, and ORB-v3 machine-learning-potential relaxation and energy ranking of its candidates, as used by deep generative CSP baselines. TCSP3.0 achieves Top-1 and Top-20 match rates of 72.2% and 90.6% on T180, compared with 28.3% and 45.6% for TCSP2.0, and a Top-20 match rate of 74.0% on a new 800-target benchmark (T800). On T180 it also outperforms PNcsp+ and deep generative models CrystalFlow and MaskGXT (Top-1 72.2% versus at most 63.9%). Even without relaxation, TCSP3.0 reaches 67.8% at Top-1 and 90.6% at Top-20 in a median of 28 s per target on two CPU cores, about ten times faster than CrystalFlow. Paired ten-arm ablations on T180 and T800 show that most of the improvement comes from the correctness fixes; structural deduplication significantly improves the Top-5 match rate, embedding-based retrieval is required for coverage, and the remaining scoring features have small or null effects.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">基于模板的晶体结构预测（CSP）通过元素替换将已知晶体结构转移到新组分，因此其准确性取决于正确检索合适模板、映射元素以及排序所得候选结构。在T180基准上审计原始TCSP2.0实现时，我们发现其2,347个选定结构中有469个（20%）组分错误，原因在于忽略化学计量系数的元素映射以及顺序文本替换导致元素符号级联或损坏。我们提出TCSP3.0，它强制保留系数的映射，在解析结构上同时替换物种，并验证每个候选的组分和晶胞。此外，它增加了周期数检索、软氧化态证据、半径兼容性评分、结构去重，以及ORB-v3机器学习势弛豫和候选能量排序，这些与深度生成CSP基线所用方法一致。TCSP3.0在T180上达到Top-1和Top-20匹配率分别为72.2%和90.6%，而TCSP2.0为28.3%和45.6%，并在新的800目标基准（T800）上达到Top-20匹配率74.0%。在T180上，它还优于PNcsp+和深度生成模型CrystalFlow及MaskGXT（Top-1 72.2%对比最高63.9%）。即使不进行弛豫，TCSP3.0在双CPU核心上每个目标中位时间28秒内达到Top-1 67.8%和Top-20 90.6%，比CrystalFlow快约十倍。在T180和T800上的配对十臂消融实验显示，大部分改进来自正确性修复；结构去重显著提高Top-5匹配率，基于嵌入的检索对覆盖度是必需的，其余评分特征效果微小或无效。</div>
+  </section>
+  
+  
+  
+</article>
+</main>
+</body>
+</html>

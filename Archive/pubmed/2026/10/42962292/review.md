@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors propose a workflow called "sequence scanning" that applies systematic constraints to improve sampling diversity in deep-learning-based cofolding models (Boltz and Protenix). They report improved accuracy in predicting antibody-antigen interface contacts and molecular glue (MG) ternary complex poses compared to previously published results, based on large benchmark sets.
+- **Visible evidence base** Abstract text only; no quantitative results, benchmark descriptions, or methodological details are available
+- **Missing materials affecting confidence** Full manuscript, methods section, benchmark dataset definitions, baseline comparisons, statistical analyses, and any figures or tables
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially useful methodological contribution to a recognized problem in computational structural biology, namely the limited accuracy of cofolding models for antibody-antigen and molecular glue ternary complexes. The concept of sequence scanning as a constraint-based sampling strategy is plausible and of interest to the drug discovery community. However, the abstract provides no quantitative evidence, no clear description of the scanning procedure, and no explicit comparison to the published baselines it claims to improve upon. As such, the central claims cannot be evaluated from the supplied material.
+- **Who would be interested in the results, and why** Computational structural biologists, developers of deep-learning-based protein complex prediction tools, and pharmaceutical researchers involved in antibody engineering or targeted protein degradation (molecular glue degraders) would be interested. The work addresses two clinically and industrially relevant complex types where current state-of-the-art models underperform, and a simple workflow that improves accuracy without retraining would be broadly applicable.
+- **Major strengths** The problem selection is well motivated and of high practical relevance. The proposed workflow is model-agnostic (evaluated on two different architectures), which suggests potential generalizability. The use of large, diverse benchmark sets is stated, which is appropriate for assessing general performance.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "We find improved accuracy of the sequence scanning workflow in predicting antibody-antigen interface contacts and in pose prediction quality for MGs compared to previously published results."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states improved accuracy but provides no numerical results, no effect sizes, no confidence intervals, and no explicit identification of the "previously published results" used as baselines. Without these, the magnitude and statistical significance of the improvement cannot be assessed.
+  - **Why it matters** The claim of improvement is the central contribution of the work. If the improvement is marginal or not statistically robust, the practical value of the workflow is unclear. The absence of quantitative support prevents any judgment on whether the method is a meaningful advance.
+  - **Resolution test** Provide in the abstract or manuscript explicit performance metrics (e.g., interface contact precision/recall, DockQ or similar pose quality scores) for the sequence scanning workflow and for the baseline methods on the same benchmarks, with appropriate statistical testing.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological clarity
+  - **Claim pointer** "We present sequence scanning, a new workflow, evaluated on Boltz and Protenix, that improves prediction accuracy in these domains by applying systematic constraints to enhance overall sampling diversity."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not describe what "sequence scanning" actually does. The term is ambiguous. It is unclear whether the method involves mutating sequences, scanning residue positions, generating multiple sequence alignments, or some other procedure. The phrase "systematic constraints" is also undefined.
+  - **Why it matters** Without a clear description of the method, the work cannot be reproduced or evaluated for novelty. The reader cannot determine whether the approach is genuinely new or a minor variation of existing sampling strategies.
+  - **Resolution test** Provide a concise but specific description of the sequence scanning procedure in the abstract, or ensure the manuscript clearly defines the algorithm, its inputs, and its constraints.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Baseline validity
+  - **Claim pointer** "improved accuracy ... compared to previously published results"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not specify which published results are used for comparison. It is unclear whether the baselines are the default Boltz and Protenix predictions on the same benchmarks, or results from other published studies using different datasets and evaluation protocols.
+  - **Why it matters** Comparisons across different benchmarks and evaluation pipelines can be misleading. Without a controlled comparison on identical datasets with identical metrics, the claimed improvement may be an artifact of dataset or metric differences.
+  - **Resolution test** State explicitly in the abstract or manuscript that the comparison is made against default Boltz and Protenix predictions on the same benchmark sets, using the same evaluation metrics.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Scope clarity
+  - **Affected element** Benchmark description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states "large, diverse benchmark sets" but gives no indication of dataset sizes, composition, or how diversity was ensured.
+  - **Required correction** Add brief details on the number of complexes and the criteria for diversity (e.g., sequence identity thresholds, antigen classes, MG chemotypes).
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Generalizability
+  - **Affected element** Model scope
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The workflow is evaluated on Boltz and Protenix, but the abstract does not state whether the method is expected to transfer to other cofolding models such as AlphaFold3.
+  - **Required correction** Add a sentence on the expected generalizability of the workflow to other architectures, or explicitly limit the claims to the two tested models.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Computational cost
+  - **Affected element** Practical utility
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** Sequence scanning likely increases the number of sampling runs, but the abstract does not mention the computational overhead relative to standard prediction.
+  - **Required correction** Include a brief statement on the additional compute required and whether the accuracy gain justifies the cost.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (no quantitative evidence), R1-M2 (method undefined), R1-M3 (baselines unspecified). These three issues collectively prevent any assessment of whether the central claim of improved accuracy is valid.
+- **Assessment against Nature-style criteria** 
+  - Originality: The concept of constraint-based sampling to improve cofolding accuracy is not entirely new, but the specific application to antibody-antigen and MG ternary complexes may offer a novel angle. However, without a clear method description, originality cannot be fully assessed.
+  - Scientific importance: The problem is important for drug discovery, and a simple workflow that improves accuracy on these challenging targets would be valuable. The importance is therefore potentially high, but the evidence does not yet establish the magnitude of the contribution.
+  - Interdisciplinary readership: The work sits at the intersection of computational biology, structural biology, and medicinal chemistry. It would appeal to a broad readership if the claims are substantiated.
+  - Technical soundness: Cannot be evaluated from the abstract. The lack of methodological detail and quantitative results precludes any judgment on technical rigor.
+  - Readability for nonspecialists: The abstract is concise and accessible, but the undefined term "sequence scanning" and the absence of concrete results reduce clarity for nonspecialist readers.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a potentially useful workflow, but the central claims of improved accuracy are unsupported by quantitative data, the method is not described with sufficient clarity, and the baselines are not identified. A revised abstract or full manuscript that addresses these gaps would be required before a supportive assessment could be made.
+
+## Risk / unsupported claims
+- The claim of "improved accuracy" in antibody-antigen interface contact prediction and MG pose quality is unsupported by any numerical data in the abstract.
+- The claim that sequence scanning "enhances overall sampling diversity" is plausible but not demonstrated or defined.
+- The claim of evaluation on "large, diverse benchmark sets" is unverifiable without dataset details.
+- The comparison to "previously published results" is unverifiable because the specific baselines are not named.
+- The generalizability of the workflow beyond Boltz and Protenix is not addressed and should not be assumed.

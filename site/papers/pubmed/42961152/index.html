@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TRAILS-MD: Mapping complex conformational landscapes and transition pathways via lightweight lineage-aware adaptive sampling. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>TRAILS-MD: Mapping complex conformational landscapes and transition pathways via lightweight lineage-aware adaptive sampling.</h1>
+      <div class="meta">Maity, Dibyendu; Majumdar, Rupak; Chakrabarty, Suman</div>
+      <div class="meta muted">
+        
+        <span class="journal">The Journal of chemical physics</span>
+        · 2026-10-30
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42961152/">原文</a>
+      </div>
+      <p class="one-liner">提出轻量级自适应采样框架TRAILS-MD，通过轨迹谱系保留和机器学习集体变量，高效映射蛋白质构象景观与转变路径，直接服务于蛋白质构象采样与MD模拟。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Molecular dynamics (MD) simulations are fundamentally limited by the timescale gap between rapid atomic fluctuations and slow, activated conformational transitions. While adaptive sampling accelerates the exploration of metastable states, conventional implementations often obscure the dynamical connectivity between discovered basins, confusing broad configurational coverage with the sampling of physically viable transition pathways. Here, we present a lightweight, engine-agnostic adaptive sampling framework (TRAILS-MD) that iteratively launches short trajectory ensembles across either fixed or on-the-fly machine-learned (ML) collective-variable (CV) spaces. A defining feature of our approach is explicit trajectory lineage preservation, which allows for the rigorous reconstruction of connected pathways from highly parallelized, disjointed exploration stages. We demonstrate the efficacy of this framework across a hierarchy of molecular challenges: overcoming low-dimensional barriers in peptide isomerization, navigating entropic bottlenecks in protein folding (Trp-cage and WW domain), mapping transient exit tunnels during ligand unbinding (HSP90), and exploring large conformational changes in adenylate kinase. Finally, we show how lineage-aware exploratory ensembles can seamlessly seed unbiased production trajectories for the construction of Markov state models (MSMs). By bridging the gap between deep-learning-driven coordinate discovery and strict parent-child trajectory tracking, this framework democratizes advanced data-driven sampling for routine computational biophysics workflows.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">分子动力学（molecular dynamics, MD）模拟从根本上受限于快速原子波动与缓慢、激活构象转变之间的时间尺度差距。尽管自适应采样加速了对亚稳态的探索，但传统实现往往模糊了所发现盆地之间的动力学连接，将广泛的构象覆盖与物理可行转变路径的采样混为一谈。在此，我们提出一个轻量级、引擎无关的自适应采样框架（TRAILS-MD），该框架在固定或实时机器学习（machine-learned, ML）集体变量（collective-variable, CV）空间中迭代启动短轨迹集合。我们方法的一个显著特征是显式轨迹谱系保留，这使得能够从高度并行化、不连续的探索阶段中严格重建连接路径。我们通过一系列分子挑战展示了该框架的有效性：克服肽异构化中的低维势垒、导航蛋白质折叠（Trp-cage和WW结构域）中的熵瓶颈、绘制配体解离（HSP90）过程中的瞬时出口通道，以及探索腺苷酸激酶中的大尺度构象变化。最后，我们展示了谱系感知的探索性集合如何无缝地播种无偏生产轨迹，以构建马尔可夫状态模型（Markov state models, MSMs）。通过弥合深度学习驱动的坐标发现与严格父子轨迹追踪之间的鸿沟，该框架为常规计算生物物理学工作流程普及了先进的数据驱动采样。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：TRAILS-MD: Mapping complex conformational landscapes and transition pathways via lightweight lineage-aware adaptive sampling</li>
+<li><strong>作者</strong>：Maity, Dibyendu; Majumdar, Rupak; Chakrabarty, Suman</li>
+<li><strong>单位</strong>：未提供（基于作者信息推测为印度科研机构，具体未在材料中说明）</li>
+<li><strong>期刊/平台</strong>：The Journal of Chemical Physics</li>
+<li><strong>年份</strong>：2026（在线日期 2026-10-30）</li>
+<li><strong>论文类型</strong>：方法学论文（含多系统验证）</li>
+<li><strong>领域</strong>：计算生物物理 / 增强采样 MD 模拟 / 机器学习辅助构象采样</li>
+<li><strong>关键词</strong>：adaptive sampling, molecular dynamics, conformational landscape, transition pathways, Markov state models, collective variables, machine learning</li>
+<li><strong>DOI/arXiv</strong>：10.1063/5.0350663</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-05-12（按当前日期推算）</li>
+<li><strong>在本课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × 物理模拟（MD）」中的增强采样方法创新，核心贡献在于将自适应采样与轨迹谱系追踪结合，解决构象空间探索中「覆盖度 vs 路径连通性」的矛盾，并可与 ML 驱动的 CV 发现（如深度学习方法）无缝集成，属于 MD 采样与 AI 方法交叉的前沿位置。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出一个轻量级、引擎无关的自适应采样框架 TRAILS-MD，通过显式保留轨迹父子谱系关系，在固定或 ML 学习的 CV 空间中迭代发射短轨迹集合，从而在高效探索亚稳态的同时严格重建连通转变路径，并在多系统（肽异构化、蛋白折叠、配体解离、酶构象变化）中验证其有效性，且可无缝对接 MSM 构建。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何在不牺牲计算效率的前提下，从高度并行化、碎片化的自适应采样轨迹中重建物理上连通的构象转变路径？</li>
+<li><strong>为什么重要</strong>：MD 模拟受限于时间尺度鸿沟，自适应采样虽能加速亚稳态探索，但若丢失轨迹间的动力学连接，则无法区分「构象覆盖」与「真实转变路径」，影响对功能相关构象转变机制的理解（如配体结合/解离、酶催化构象变化）。</li>
+<li><strong>现有方法不足</strong>：传统自适应采样（如加权集成、MSM 导向采样）通常只关注状态覆盖或统计收敛，忽略轨迹间的谱系关系；而严格路径采样方法（如 TPS、milestoning）计算成本高、实现复杂，难以用于常规工作流。</li>
+<li><strong>精确研究问题</strong>：Can a lightweight, lineage-aware adaptive sampling framework reconstruct connected transition pathways from parallelized short trajectory ensembles without sacrificing sampling efficiency?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「仅本文框架」——基于摘要中隐含的文献背景，未做外部核验）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统 MD</td>
+<td>单一长轨迹</td>
+<td>严格动力学</td>
+<td>时间尺度受限</td>
+<td>被超越的基线</td>
+</tr>
+<tr>
+<td>增强采样</td>
+<td>metadynamics, replica exchange</td>
+<td>加速势垒跨越</td>
+<td>路径信息模糊、需预定义 CV</td>
+<td>本文可兼容的补充</td>
+</tr>
+<tr>
+<td>自适应采样</td>
+<td>weighted ensemble, MSM-guided sampling</td>
+<td>高效探索亚稳态</td>
+<td>轨迹碎片化、路径连通性丢失</td>
+<td>本文的直接改进对象</td>
+</tr>
+<tr>
+<td>ML 辅助 CV</td>
+<td>VAMPnets, autoencoders, Deep-TICA</td>
+<td>自动发现低维描述</td>
+<td>与采样循环集成困难</td>
+<td>本文支持 on-the-fly ML-CV 集成</td>
+</tr>
+<tr>
+<td>路径采样</td>
+<td>TPS, transition path sampling, milestoning</td>
+<td>严格路径系综</td>
+<td>计算昂贵、实现复杂</td>
+<td>本文提供轻量替代</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在自适应采样的高效性与路径采样的严格性之间取折中，通过谱系追踪实现「高效探索 + 路径可重建」，且不依赖特定 MD 引擎或 CV 形式。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>时间尺度鸿沟</td>
+<td>快速原子涨落 vs 慢构象转变</td>
+<td>MD 固有物理限制</td>
+<td>摘要第 1 句</td>
+</tr>
+<tr>
+<td>覆盖≠路径</td>
+<td>自适应采样发现多个亚稳态但无法判断是否连通</td>
+<td>并行短轨迹丢失父子关系</td>
+<td>摘要第 2-3 句</td>
+</tr>
+<tr>
+<td>路径重建困难</td>
+<td>传统方法需严格路径采样，成本高</td>
+<td>TPS 等方法的计算负担</td>
+<td>摘要末段「democratizes」暗示现有方法门槛高</td>
+</tr>
+<tr>
+<td>ML-CV 集成断层</td>
+<td>深度学习的 CV 发现与采样循环脱节</td>
+<td>缺乏轻量接口</td>
+<td>摘要「on-the-fly ML-CV」设计</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：一个迭代式自适应采样框架，在固定或 ML 学习的 CV 空间中发射短轨迹集合，并显式记录每条轨迹的父-子谱系关系。</li>
+<li><strong>核心洞察</strong>：轨迹谱系信息是连接碎片化探索片段的「胶水」——通过保留「谁从谁出发」的关系，可以在事后严格重建跨越多个采样轮次的连通路径，而无需额外计算。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：在并行化、分布式计算日益普及的背景下，任何采样方法都应默认记录数据的「生成历史」元数据，这不仅是可重复性的要求，更是从碎片化计算中恢复全局动力学信息的低成本途径。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：分子结构（PDB 或初始构象）、力场参数、CV 定义（固定或 ML 生成）、采样预算（总轨迹数/总 MD 步数）</li>
+<li><strong>输出</strong>：连通构象路径、亚稳态集合、可转移给 MSM 构建的轨迹数据</li>
+<li><strong>核心模块</strong>：
+  1. CV 空间定义（固定 CV 或 on-the-fly ML 学习）
+  2. 自适应选点（基于当前构象分布选择新一轮起始点）
+  3. 短轨迹发射（并行 MD 模拟）
+  4. 谱系记录（父-子关系元数据）
+  5. 路径重建（基于谱系树连接亚稳态）
+  6. MSM 对接（可选，用谱系轨迹作为 unbiased 数据）</li>
+<li><strong>训练</strong>：不涉及传统 ML 训练（除非使用 on-the-fly ML-CV，则涉及 CV 模型的在线更新）</li>
+<li><strong>工具</strong>：引擎无关（可适配 GROMACS, OpenMM, AMBER 等）</li>
+<li><strong>假设</strong>：短轨迹集合的谱系关系足以重建真实动力学路径；CV 空间能分辨关键中间态</li>
+<li><strong>流程</strong>：初始构象 → 定义 CV → 发射第一批短轨迹 → 分析构象分布 → 选择新起始点 → 发射下一批（记录父子关系）→ 迭代直至收敛 → 基于谱系树重建路径 → 可选：用谱系轨迹构建 MSM</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>谱系追踪</td>
+<td>记录每条轨迹的父-子关系</td>
+<td>重建连通路径的核心机制</td>
+<td>输入：轨迹 ID 与起始构象来源；输出：谱系树</td>
+<td>摘要「defining feature」</td>
+<td>预期：路径重建不可能，退化为普通自适应采样 [预期效应]</td>
+</tr>
+<tr>
+<td>自适应选点</td>
+<td>选择新一轮起始构象</td>
+<td>高效探索未访问区域</td>
+<td>输入：当前构象分布；输出：新起始点集合</td>
+<td>摘要「iteratively launches」</td>
+<td>预期：探索效率下降，可能遗漏亚稳态 [预期效应]</td>
+</tr>
+<tr>
+<td>CV 空间定义</td>
+<td>降维描述构象</td>
+<td>指导选点与路径分析</td>
+<td>输入：坐标/特征；输出：低维 CV 值</td>
+<td>摘要「fixed or on-the-fly ML-CV」</td>
+<td>预期：CV 质量差则路径重建失真 [预期效应]</td>
+</tr>
+<tr>
+<td>短轨迹发射</td>
+<td>并行 MD 采样</td>
+<td>分摊计算成本</td>
+<td>输入：起始构象+速度；输出：轨迹片段</td>
+<td>摘要「short trajectory ensembles」</td>
+<td>预期：无此模块则无采样加速 [预期效应]</td>
+</tr>
+<tr>
+<td>MSM 对接</td>
+<td>用谱系轨迹构建无偏模型</td>
+<td>获得定量动力学</td>
+<td>输入：谱系轨迹；输出：MSM 转移矩阵</td>
+<td>摘要末段</td>
+<td>预期：失去定量速率信息 [预期效应]</td>
+</tr>
+</tbody>
+</table>
+<p><em>注：由于仅提供摘要，所有消融效应均为「预期效应」而非「实测消融效应」。</em></p>
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>——摘要中未提供具体数学公式。方法核心（谱系追踪、自适应选点准则）的数学表达在原文 Methods 节中，但未在提供材料中呈现。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/系统</strong>：四个层次化测试系统：
+  1. 肽异构化（低维势垒）
+  2. Trp-cage 和 WW domain 蛋白折叠（熵瓶颈）
+  3. HSP90 配体解离（瞬时出口通道）
+  4. 腺苷酸激酶（大尺度构象变化）</li>
+<li><strong>规模</strong>：未提供具体模拟时长、轨迹数</li>
+<li><strong>指标</strong>：未明确列出（推测包括：亚稳态发现率、路径重建成功率、与参考路径的重合度、MSM 泛化误差）</li>
+<li><strong>基线</strong>：未明确说明（推测为传统自适应采样或长 MD）</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>肽异构化</td>
+<td>能克服低维势垒</td>
+<td>未提供</td>
+<td>未提供具体数值</td>
+<td>框架可处理简单势垒</td>
+<td>无法判断与 metadynamics 等方法的效率对比</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>Trp-cage/WW 折叠</td>
+<td>能导航熵瓶颈</td>
+<td>未提供</td>
+<td>未提供具体数值</td>
+<td>框架适用于蛋白折叠</td>
+<td>无法判断折叠时间估计的准确性</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>HSP90 配体解离</td>
+<td>能映射瞬时出口通道</td>
+<td>未提供</td>
+<td>未提供具体数值</td>
+<td>框架可捕捉瞬态路径</td>
+<td>无法判断与随机加速 MD 的对比</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>腺苷酸激酶</td>
+<td>能探索大尺度构象变化</td>
+<td>未提供</td>
+<td>未提供具体数值</td>
+<td>框架可处理功能相关构象变化</td>
+<td>无法判断是否发现新构象态</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>MSM 构建</td>
+<td>谱系轨迹可作无偏数据</td>
+<td>未提供</td>
+<td>未提供具体数值</td>
+<td>框架与 MSM 工作流兼容</td>
+<td>无法判断 MSM 质量是否优于传统方法</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅覆盖摘要中提及的四个测试系统，未涉及膜蛋白、 intrinsically disordered proteins 等更复杂场景。</li>
+<li><strong>oracle/真值输入</strong>：CV 空间的选择（固定或 ML 学习）是方法的关键输入，其质量直接影响结果；摘要未说明 CV 选择的自动化程度。</li>
+<li><strong>端到端状态</strong>：方法框架完整，但代码未公开（摘要未提及），可复现性待验证。</li>
+<li><strong>算力成本</strong>：声称「lightweight」，但未提供与现有方法的定量对比。</li>
+<li><strong>历史数据依赖</strong>：谱系追踪需要记录所有轨迹的元数据，存储开销未讨论。</li>
+<li><strong>模型依赖</strong>：引擎无关是设计目标，但实际实现中是否所有引擎都支持所需元数据记录未说明。</li>
+<li><strong>最难情形</strong>：大尺度构象变化（腺苷酸激酶）是测试中最复杂场景，但未与专门针对 domain motion 的方法对比。</li>
+<li><strong>群体/领域边界</strong>：结论限于「常规计算生物物理工作流」场景，未声称适用于超大规模并行或特殊系综。</li>
+<li><strong>不确定性</strong>：未提供误差估计或多次重复实验的变异性分析。</li>
+</ul>
+<p><strong>有边界的复述</strong>：TRAILS-MD 在四个测试系统中展示了通过谱系追踪从并行短轨迹重建连通路径的可行性，且与 MSM 工作流兼容；但其相对现有方法的定量优势、代码可用性、以及在大规模/复杂系统中的表现尚未在摘要中证实。</p>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（仅摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 方法依赖 CV 空间的质量（摘要中「fixed or on-the-fly ML-CV」暗示 CV 选择是关键变量）
+- 测试系统数量有限（4 个），未覆盖全部生物分子场景</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>谱系追踪的存储/计算开销未讨论</td>
+<td>大规模并行时元数据记录可能成为瓶颈</td>
+<td>影响「lightweight」声称的可信度</td>
+<td>对比有/无谱系记录时的 wall-time 与存储</td>
+<td>摘要仅称「lightweight」无数据支撑</td>
+</tr>
+<tr>
+<td>未与现有增强采样方法定量对比</td>
+<td>可能只是将已知思想重新包装</td>
+<td>无法判断相对优势</td>
+<td>与 WE、metadynamics、REMD 在相同系统上对比效率与路径质量</td>
+<td>摘要无对比数据</td>
+</tr>
+<tr>
+<td>CV 选择的主观性</td>
+<td>固定 CV 需专家知识，ML-CV 的稳定性未验证</td>
+<td>影响方法的易用性与泛化性</td>
+<td>测试不同 CV 选择对结果的影响</td>
+<td>摘要未说明 CV 选择准则</td>
+</tr>
+<tr>
+<td>路径重建的「严格性」未定义</td>
+<td>如何验证重建路径是真实转变路径？</td>
+<td>核心声称需要验证</td>
+<td>与 TPS 或 milestoning 结果对比路径系综</td>
+<td>摘要仅称「rigorous reconstruction」</td>
+</tr>
+<tr>
+<td>测试系统规模偏小</td>
+<td>腺苷酸激酶是最大系统，但未达大型复合物水平</td>
+<td>限制结论外推</td>
+<td>在更大系统（如核糖体、膜受体）上测试</td>
+<td>摘要系统列表</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>谱系追踪作为通用元数据模式</strong>：在自适应采样中记录「谁从谁出发」的关系，是低成本恢复动力学连通性的关键。可迁移到本课题的任意增强采样工作流（如结合 AlphaFold 初始构象的 MD 采样），作为标准实践。</p>
+</li>
+<li>
+<p><strong>覆盖度与连通性的解耦</strong>：本文明确区分「构象覆盖」与「路径连通」两个目标，提示本课题在评估采样方法时应同时报告两个指标，而非仅看亚稳态发现数。</p>
+</li>
+<li>
+<p><strong>轻量级设计哲学</strong>：引擎无关、不依赖特定 CV 形式的设计，使方法易于集成到现有工作流。对本课题的启示：新方法应优先考虑与主流 MD 引擎和 ML 工具的兼容性。</p>
+</li>
+<li>
+<p><strong>ML-CV 与采样的在线集成</strong>：on-the-fly ML-CV 的提法暗示了「学习-采样」交替进行的范式，可迁移到本课题中与深度学习结构预测/构象生成方法的结合。</p>
+</li>
+<li>
+<p><strong>MSM 的无缝对接</strong>：将谱系轨迹直接用于 MSM 构建，避免了传统方法中「先采样后处理」的断裂。对本课题：任何采样方法都应考虑输出格式与下游动力学建模工具的兼容性。</p>
+</li>
+<li>
+<p><strong>层次化测试策略</strong>：从简单（肽）到复杂（酶）的测试系统设计，是验证采样方法通用性的有效路径，可借鉴到本课题的方法评估中。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>：加权集成模拟（WE）也通过轨迹复制/剪枝保持路径系综，但 WE 需要预定义反应坐标；TRAILS-MD 的谱系追踪可视为 WE 思想的轻量简化，但更强调事后重建而非在线控制。</li>
+<li><strong>组合方向</strong>：与 AlphaFold 生成的构象集合结合，用 TRAILS-MD 探索预测结构间的转变路径，是自然延伸。</li>
+<li><strong>冲突/差异</strong>：与 metadynamics 等偏置采样不同，TRAILS-MD 不施加偏置力，而是通过选点策略加速探索，这保留了 unbiased 轨迹用于 MSM 的优势。</li>
+<li><strong>可迁移领域</strong>：配体结合/解离路径映射（如本文 HSP90 案例）与分子对接后的构象精修直接相关；酶构象变化（腺苷酸激酶）与催化机制研究相关。</li>
+<li><strong>候选方向</strong>：将谱系追踪思想应用于粗粒化 MD 或增强采样与 ML 势函数（如 NNP）的结合中，可能进一步降低成本。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：AlphaFold 初始构象的谱系感知自适应采样
+   - <strong>来源局限/观察</strong>：AlphaFold 预测结构缺乏构象系综信息，而 MD 从单一结构出发易陷入局部势阱
+   - <strong>核心假设</strong>：以 AlphaFold 预测结构为种子，用 TRAILS-MD 式谱系追踪可高效探索预测结构附近的构象盆地并重建转变路径
+   - <strong>初步方法</strong>：将 AlphaFold 的 pLDDT 或 PAE 信息作为 CV 或选点权重，结合谱系追踪
+   - <strong>验证方式</strong>：在已知构象变化的蛋白（如激酶）上对比与常规 MD 的路径重建质量
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：谱系感知的配体解离路径增强采样
+   - <strong>来源局限/观察</strong>：分子对接后的解离路径模拟常因路径碎片化而难以获得完整解离机制
+   - <strong>核心假设</strong>：谱系追踪可显著提高解离路径重建的完整性，且无需预定义解离坐标
+   - <strong>初步方法</strong>：在对接复合物上运行 TRAILS-MD，用谱系树识别主要解离通道
+   - <strong>验证方式</strong>：与随机加速 MD 或 metadynamics 的解离路径对比
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：ML-CV 与谱系追踪的联合在线学习框架
+   - <strong>来源局限/观察</strong>：本文提出 on-the-fly ML-CV 但未详述其与谱系追踪的交互机制
+   - <strong>核心假设</strong>：将 VAMPnet 或 autoencoder 的 CV 学习与谱系追踪结合，可自适应发现最优反应坐标
+   - <strong>初步方法</strong>：每轮采样后更新 CV 模型，用谱系信息约束 CV 的动力学一致性
+   - <strong>验证方式</strong>：在 Trp-cage 折叠上对比固定 CV 与自适应 CV 的采样效率
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：谱系追踪在粗粒化 MD 中的适用性评估
+   - <strong>来源局限/观察</strong>：粗粒化模型计算成本低但路径保真度存疑
+   - <strong>核心假设</strong>：谱系追踪可部分补偿粗粒化模型的时间尺度压缩，恢复有效路径信息
+   - <strong>初步方法</strong>：在 Martini 或 AWSEM 模型上实现谱系追踪，与全原子结果对比
+   - <strong>验证方式</strong>：比较路径系综的相似性指标
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：谱系感知的构象生成模型训练数据构建
+   - <strong>来源局限/观察</strong>：深度学习构象生成器（如扩散模型）需要高质量构象轨迹作为训练数据
+   - <strong>核心假设</strong>：谱系追踪产生的连通轨迹比传统采样数据更适合训练生成模型
+   - <strong>初步方法</strong>：用 TRAILS-MD 生成训练集，训练构象生成模型，对比用普通 MD 数据训练的模型
+   - <strong>验证方式</strong>：生成构象的多样性、物理有效性、与实验结构吻合度
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no figures, tables, methods, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present TRAILS-MD, an engine-agnostic adaptive sampling framework that preserves trajectory lineage to reconstruct connected transition pathways from parallelized short trajectory ensembles. They claim demonstration across peptide isomerization, protein folding (Trp-cage and WW domain), ligand unbinding (HSP90), and adenylate kinase conformational change, and further claim that lineage-aware ensembles can seed unbiased production runs for Markov state model construction.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, methodological details, or validation metrics are visible</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, methodological descriptions, simulation parameters, convergence criteria, comparison baselines, and MSM validation details</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a conceptually appealing framework that addresses a genuine limitation in adaptive sampling, namely the loss of dynamical connectivity information during parallelized exploration. The lineage preservation idea is sensible and potentially useful. However, the abstract provides no quantitative evidence, no comparison against existing methods, and no methodological detail sufficient to assess technical soundness. The claims of broad applicability across four distinct molecular systems are stated without supporting data. The manuscript cannot be evaluated for scientific rigor from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biophysicists and cheminformaticians working on enhanced sampling, Markov state model construction, and rare event simulation would be the primary audience. Researchers developing machine-learned collective variables and those applying adaptive sampling to drug discovery or protein dynamics would also find the framework relevant if the claims are substantiated.</li>
+<li><strong>Major strengths</strong> The conceptual framing is clear and addresses a real gap in the field. The engine-agnostic design and the explicit focus on lineage preservation as a means to reconstruct pathways from disjointed exploration stages is a sensible and potentially impactful idea. The stated goal of bridging ML-driven coordinate discovery with rigorous trajectory tracking is timely.</li>
+<li><strong>Major Concerns</strong> </li>
+<li>R1-M1</li>
+<li>R1-M2</li>
+<li>R1-M3</li>
+<li><strong>Minor Comments</strong> </li>
+<li>R1-m1</li>
+<li>R1-m2</li>
+<li>R1-m3</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: the lineage preservation concept appears novel in the adaptive sampling context, though prior work on trajectory stitching and path sampling exists. Scientific importance: potentially high if the framework demonstrably improves pathway reconstruction efficiency and accuracy, but this is not established from the abstract. Interdisciplinary readership: the work would appeal to a specialized computational chemistry and biophysics audience; broader interest would depend on demonstrated impact on biological discovery. Technical soundness: cannot be assessed from the abstract alone. Readability for nonspecialists: the abstract is reasonably clear but uses jargon that would limit accessibility to a general scientific audience.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The conceptual contribution is promising, but the absence of quantitative results and methodological detail precludes any assessment of validity. A supportive posture would require the full manuscript to demonstrate rigorous validation, comparative benchmarks, and convergence analyses.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The authors claim demonstration of the framework across peptide isomerization, Trp-cage and WW domain folding, HSP90 ligand unbinding, and adenylate kinase conformational change.</li>
+<li><strong>Evidence pointer</strong> Abstract only; no figures, tables, or quantitative results provided</li>
+<li><strong>Concern</strong> The abstract asserts successful application to four distinct molecular systems but provides no quantitative outcomes, no comparison to conventional adaptive sampling or other enhanced sampling methods, and no metrics of success such as convergence times, pathway fluxes, or free energy profiles.</li>
+<li><strong>Why it matters</strong> Without quantitative evidence, the reader cannot assess whether the framework actually works, how well it performs relative to existing approaches, or whether the claimed demonstrations are meaningful. The core scientific contribution of the paper rests on these results.</li>
+<li>
+<p><strong>Resolution test</strong> The full manuscript must provide quantitative results for each system, including convergence metrics, comparison against appropriate baselines, and statistical uncertainty estimates.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The authors claim that lineage preservation allows rigorous reconstruction of connected pathways from highly parallelized, disjointed exploration stages.</li>
+<li><strong>Evidence pointer</strong> Abstract only; methodological details not provided</li>
+<li><strong>Concern</strong> The abstract does not describe how lineage information is stored, propagated, or used to reconstruct pathways. It is unclear how trajectories launched from different states are connected, how the framework handles branching and merging of lineages, and how the reconstruction avoids artifacts from the adaptive selection process.</li>
+<li><strong>Why it matters</strong> The central methodological claim of the paper is the lineage-aware pathway reconstruction. Without a clear description of the algorithm, its computational overhead, and its limitations, the technical validity of the approach cannot be evaluated.</li>
+<li>
+<p><strong>Resolution test</strong> The full manuscript must provide a detailed algorithmic description, pseudocode or formal specification, complexity analysis, and validation of the reconstruction procedure on systems with known pathways.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Claim substantiation</li>
+<li><strong>Claim pointer</strong> The authors claim that lineage-aware exploratory ensembles can seamlessly seed unbiased production trajectories for Markov state model construction.</li>
+<li><strong>Evidence pointer</strong> Abstract only; no MSM validation results provided</li>
+<li><strong>Concern</strong> The abstract states that the framework can seed MSM construction but provides no evidence that the resulting MSMs are statistically valid, that the seeding improves MSM quality relative to standard approaches, or that the lineage information is correctly propagated into the MSM framework.</li>
+<li><strong>Why it matters</strong> The MSM application is presented as a key outcome of the framework. Without validation of the MSMs, including implied timescale tests, Chapman-Kolmogorov checks, and comparison to reference simulations, the claim of seamless integration is unsupported.</li>
+<li><strong>Resolution test</strong> The full manuscript must include MSM validation metrics, comparison to MSMs built from conventional adaptive sampling or unbiased simulations, and a demonstration that lineage-aware seeding improves model quality or statistical efficiency.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Terminology</li>
+<li><strong>Evidence pointer</strong> Abstract, first sentence</li>
+<li><strong>Issue</strong> The phrase "lightweight" is used in the title and abstract but is not defined. It is unclear whether this refers to computational cost, memory footprint, implementation complexity, or something else.</li>
+<li>
+<p><strong>Required correction</strong> Define "lightweight" with specific metrics, such as wall-clock time overhead, memory usage, or number of parameters relative to existing methods.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Engine-agnostic claim</li>
+<li><strong>Evidence pointer</strong> Abstract, "engine-agnostic" statement</li>
+<li><strong>Issue</strong> The abstract claims the framework is engine-agnostic but does not specify which MD engines were tested or whether the implementation is publicly available.</li>
+<li>
+<p><strong>Required correction</strong> List the tested MD engines and provide information on code availability, including repository location and license.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Context</li>
+<li><strong>Affected element</strong> Related work</li>
+<li><strong>Evidence pointer</strong> Abstract, overall</li>
+<li><strong>Issue</strong> The abstract does not situate the work relative to existing adaptive sampling methods that also address pathway reconstruction, such as weighted ensemble, transition path sampling, or milestoning.</li>
+<li><strong>Required correction</strong> Add a brief statement in the abstract or introduction that distinguishes TRAILS-MD from these existing approaches and clarifies the specific advantage of lineage preservation.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of successful demonstration across four molecular systems is unsupported without quantitative results.</li>
+<li>The claim of rigorous pathway reconstruction from parallelized exploration is unverifiable without algorithmic details.</li>
+<li>The claim of seamless seeding of MSM construction is unsupported without MSM validation data.</li>
+<li>The claim that the framework "democratizes advanced data-driven sampling" is an editorial statement without supporting evidence.</li>
+<li>The relative performance of TRAILS-MD compared to existing adaptive sampling methods is not assessable from the abstract.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

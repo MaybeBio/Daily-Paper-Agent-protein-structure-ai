@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>De novo design of ligand binding proteins using large language models alone. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>De novo design of ligand binding proteins using large language models alone.</h1>
+      <div class="meta">Kim, Nam Hyeong; Hatstat, A Katherine; Jo, Hyunil; Wu, Yibing; DeGrado, William F</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv : the preprint server for biology</span>
+        · 2026-10-25
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42922519/">原文</a>
+      </div>
+      <p class="one-liner">仅用大语言模型进行配体结合蛋白的从头设计，生成序列并实验验证，属于蛋白质结构/序列设计且方法为AI，与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein design has rapidly advanced with the advent of sequence- and structure-based machine learning models. However, reasoned design, which applies physicochemical principles and rules derived from sequence-structure-function relationships, has not seen the same benefits from generative machine learning models. Here, we test the ability of common large language models (LLMs; e.g. Claude, ChatGPT, and Gemini) to consider design principles to generate de novo proteins that bind metals and lipophilic small molecules without copying existing sequences. Common LLMs alone are able to 1) generate protein sequences to adopt a desired fold and bind the target ligand and 2) explain the principles that motivate the design choices. Following structure prediction and filtering, we selected a small set of designs (6 to 12 designs per query) for experimental validation, affording metal binders in one round of LLM-based design (25% hit rate) and perfluorooctanoic acid binders in two rounds (25% hit rate in the second round of design). Importantly, the LLMs produce detailed justification to accompany the de novo designed sequences, providing a conceptual framework on which designs can be evaluated. While the successful designs have some deviations from the prompted parameters and LLM-articulated design rationale, these campaigns provide a case study that highlights the utility of LLMs in making protein design more comprehensible and accessible to users without sophisticated design expertise.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">随着基于序列和结构的机器学习模型的出现，蛋白质设计取得了快速进展。然而，理性设计，即应用源自序列-结构-功能关系的物理化学原理和规则，并未从生成式机器学习模型中获得同样的益处。在此，我们测试了常见大型语言模型（LLMs；例如Claude、ChatGPT和Gemini）考虑设计原则以生成从头蛋白质的能力，这些蛋白质能够结合金属和亲脂性小分子，且不复制现有序列。仅凭常见LLMs即可：1) 生成蛋白质序列以采用所需折叠并结合目标配体；2) 解释激励设计选择的原则。经过结构预测和筛选，我们选择了一小组设计（每次查询6至12个设计）进行实验验证，在一轮基于LLM的设计中获得了金属结合剂（25%命中率），并在两轮中获得了全氟辛酸结合剂（第二轮设计命中率为25%）。重要的是，LLMs为从头设计的序列提供了详细的理由说明，为评估设计提供了概念框架。尽管成功的设计与提示参数及LLM阐述的设计原理存在一些偏差，但这些活动提供了一个案例研究，突显了LLMs在使蛋白质设计更易理解且对缺乏复杂设计专业知识的用户更易访问方面的实用性。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li>标题：De novo design of ligand binding proteins using large language models alone</li>
+<li>作者：Kim, Nam Hyeong; Hatstat, A Katherine; Jo, Hyunil; Wu, Yibing; DeGrado, William F</li>
+<li>单位：未提供（正文/摘要中未列出）</li>
+<li>期刊/预印本平台：bioRxiv : the preprint server for biology</li>
+<li>年份：2026-10-25（预印本日期）</li>
+<li>论文类型：预印本 / 实验验证型方法学研究（case study）</li>
+<li>领域：蛋白质从头设计（de novo protein design）、配体结合蛋白设计、大语言模型（LLM）用于蛋白质设计</li>
+<li>关键词：未提供（摘要未列关键词）</li>
+<li>DOI/arXiv 号：10.64898/2026.09.02.748987</li>
+<li>代码：未提供</li>
+<li>数据：未提供（全文不可获取，仅摘要）</li>
+<li>阅读日期：2026-10-25</li>
+<li>在「蛋白质结构相关计算研究 × AI 方法/物理模拟」方向中的位置：本文属于「用通用 LLM 直接生成蛋白质序列 + 设计理由」的路线，与 AlphaFold/结构预测、物理模拟（MD/对接）形成互补或对照——本文用 LLM 生成序列，再用结构预测与过滤筛选，实验验证结合能力。对本课题的意义在于：LLM 作为序列/设计生成器，结构预测作为筛选 oracle，实验作为最终验证，构成一条「生成—预测—过滤—实验」的闭环范式。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文测试通用 LLM（Claude、ChatGPT、Gemini）能否在不复制已有序列的前提下，依据设计原则生成可折叠并结金属与亲脂小分子的从头蛋白序列，经结构预测与过滤后每轮选 6–12 个设计做实验验证，金属结合蛋白一轮命中率 25%，全氟辛酸（perfluorooctanoic acid, PFOA）结合蛋白两轮后第二轮命中率 25%，且 LLM 同时给出设计理由，但成功设计与提示参数及 LLM 自述理由存在偏差。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li>具体问题：通用 LLM 能否仅凭设计原则（物理化学规则、序列-结构-功能关系）生成 de novo 蛋白序列，使其折叠成目标结构并结目标配体（金属、亲脂小分子），且不复制已有序列？</li>
+<li>为什么重要：现有序列/结构机器学习模型推动了蛋白设计，但「reasoned design」（应用物理化学原理与规则）未同等受益于生成式 ML；若 LLM 能承担 reasoned design，可让设计更可解释、更易被非专家使用。</li>
+<li>现有方法为何不足：摘要指出 reasoned design 未从生成式 ML 获得同等收益；即现有生成模型多偏向数据驱动生成，缺少显式原理推理与可解释理由。</li>
+<li>精确研究问题（Can ... ?）：Can common LLMs alone generate de novo protein sequences that adopt a desired fold and bind target metals and lipophilic small molecules, without copying existing sequences, and explain the design principles motivating their choices?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<ul>
+<li>阶段 1：基于序列/结构的机器学习模型推动蛋白设计快速发展（摘要首句）。</li>
+<li>阶段 2：reasoned design——应用物理化学原理与序列-结构-功能关系规则——未同等受益于生成式 ML（摘要）。</li>
+<li>阶段 3：本文主张的位置——测试通用 LLM 是否能承担 reasoned design，生成 de novo 金属/亲脂小分子结合蛋白，并附带设计理由，作为「LLM 使蛋白设计更可理解、更可及」的 case study。</li>
+<li>脉络标注：以上脉络为「仅本文框架」（基于摘要陈述），未经外部核验。</li>
+</ul>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>reasoned design 未受益于生成式 ML</td>
+<td>序列/结构 ML 进步快，但应用物理化学原理的设计未同等受益</td>
+<td>作者解释：生成式 ML 未同等服务于 reasoned design</td>
+<td>摘要首两句</td>
+</tr>
+<tr>
+<td>设计可解释性/可及性不足</td>
+<td>非专家难以评估设计</td>
+<td>作者主张 LLM 可提供详细 justification</td>
+<td>摘要「LLMs produce detailed justification...」</td>
+</tr>
+<tr>
+<td>成功设计与提示参数/理由不一致</td>
+<td>成功设计偏离 prompted parameters 与 LLM 自述 rationale</td>
+<td>作者承认存在 deviations</td>
+<td>摘要「While the successful designs have some deviations...」</td>
+</tr>
+<tr>
+<td>命中率有限</td>
+<td>金属一轮 25%，PFOA 第二轮 25%</td>
+<td>未提供机制性解释</td>
+<td>摘要命中率数据</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p>1) 表面方法：直接用通用 LLM（Claude、ChatGPT、Gemini）生成 de novo 蛋白序列，要求折叠成目标 fold 并结目标配体，同时输出设计理由；再用结构预测与过滤筛选，每查询选 6–12 个设计做实验验证。
+2) 核心洞察：通用 LLM 可能已内化足够的序列-结构-功能关系与物理化学规则，从而在无专门设计模型的情况下完成 reasoned design，并给出可评估的概念框架（justification）。
+3) 可能的普适教训 [Analysis]：LLM 可作为「可解释的序列生成器」，与结构预测/物理模拟组成生成-筛选-验证闭环；但 LLM 自述理由与成功设计存在偏差，说明「理由」不能直接当作因果解释，需实验与结构证据校验。</p>
+<h2>07 方法总览</h2>
+<ul>
+<li>输入：设计查询（目标 fold、目标配体：金属或亲脂小分子、设计原则/参数）。</li>
+<li>输出：de novo 蛋白序列 + LLM 给出的设计理由（justification）。</li>
+<li>模块：LLM 生成模块（Claude/ChatGPT/Gemini）；结构预测模块；过滤模块；实验验证模块。</li>
+<li>训练：未提供（使用现成通用 LLM，无本文训练细节）。</li>
+<li>工具：通用 LLM；结构预测工具（具体名称未提供）；实验验证（结合实验，具体未提供）。</li>
+<li>反馈回路：PFOA 设计经历两轮（round 1 → round 2），提示存在迭代设计回路；金属设计为一轮。</li>
+<li>假设：LLM 能依据设计原则生成可折叠且能结合目标配体的序列，且不复制已有序列。</li>
+<li>文字流程：设计查询 → LLM 生成序列与理由 → 结构预测 → 过滤 → 选 6–12 个设计 → 实验验证 → （PFOA）进入第二轮设计。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LLM 生成</td>
+<td>生成 de novo 序列与设计理由</td>
+<td>核心生成器，替代专门设计模型</td>
+<td>输入查询 → 输出序列+理由</td>
+<td>摘要</td>
+<td>无生成器则无设计；预期无法产出候选（预期效应）</td>
+</tr>
+<tr>
+<td>结构预测</td>
+<td>预测生成序列的 fold</td>
+<td>筛选可折叠/符合目标 fold 的候选</td>
+<td>序列 → 结构预测</td>
+<td>摘要「Following structure prediction and filtering」</td>
+<td>预期无法过滤不合格 fold（预期效应）</td>
+</tr>
+<tr>
+<td>过滤</td>
+<td>缩小候选至 6–12 个/查询</td>
+<td>控制实验验证成本</td>
+<td>预测结构 → 少量候选</td>
+<td>摘要</td>
+<td>预期实验负担增大、命中率可能下降（预期效应）</td>
+</tr>
+<tr>
+<td>实验验证</td>
+<td>验证结合金属/PFOA</td>
+<td>最终判定命中</td>
+<td>候选 → 结合实验结果</td>
+<td>摘要命中率 25%</td>
+<td>无实验则无法确认结合（预期效应）</td>
+</tr>
+<tr>
+<td>理由生成</td>
+<td>输出设计 justification</td>
+<td>提供可评估的概念框架</td>
+<td>设计 → 文字理由</td>
+<td>摘要</td>
+<td>预期降低可解释性（预期效应）</td>
+</tr>
+<tr>
+<td>- 注：本文未提供消融实验，表中「移除后影响」均为预期效应，非实测消融效应。</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>不适用（摘要未提供公式）。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li>数据集/群体：未提供（无数据集描述）。</li>
+<li>规模：每查询选 6–12 个设计做实验验证。</li>
+<li>指标：hit rate（命中率）。</li>
+<li>基线：未提供（未与专门设计模型或其它方法对比）。</li>
+<li>预算：未提供。</li>
+<li>骨干/仪器：通用 LLM（Claude、ChatGPT、Gemini）；结构预测工具未提供；实验仪器未提供。</li>
+<li>oracle 输入：结构预测作为筛选 oracle（具体工具未提供）。</li>
+<li>评测协议：结构预测 + 过滤后实验验证结合。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>金属结合蛋白设计</td>
+<td>LLM 能否生成金属结合 de novo 蛋白</td>
+<td>一轮 LLM 设计，6–12 设计/查询</td>
+<td>25% hit rate</td>
+<td>LLM 可在一轮内产出金属结合蛋白</td>
+<td>不支持「高命中率」或「优于专门方法」</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>PFOA 结合蛋白设计</td>
+<td>LLM 能否生成亲脂小分子结合蛋白</td>
+<td>两轮设计，第二轮 6–12 设计/查询</td>
+<td>第二轮 25% hit rate</td>
+<td>LLM 可经两轮迭代产出 PFOA 结合蛋白</td>
+<td>不支持「一轮即成功」或「无需迭代」</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>理由生成</td>
+<td>LLM 能否解释设计原则</td>
+<td>无对比</td>
+<td>产出详细 justification</td>
+<td>LLM 可提供概念框架</td>
+<td>不支持「理由与成功设计一致」</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li>任务范围：仅测试金属与亲脂小分子（PFOA）结合蛋白，非通用配体/全部 fold。</li>
+<li>oracle/真值输入：结构预测作为筛选 oracle，具体工具未提供；实验为最终真值。</li>
+<li>端到端状态：LLM 生成 + 结构预测 + 过滤 + 实验验证，构成端到端但非全自动闭环（含人工选择 6–12 设计）。</li>
+<li>算力成本：未提供。</li>
+<li>历史数据依赖：LLM 预训练数据可能含已知蛋白序列；作者强调「without copying existing sequences」，但未提供序列相似性/复制检测细节。</li>
+<li>模型依赖：仅测试 Claude、ChatGPT、Gemini，结论限于这些模型。</li>
+<li>最难情形：成功设计偏离提示参数与 LLM 自述理由，说明理由与结果不完全一致。</li>
+<li>群体/领域边界：面向无设计专长的用户的可及性主张，未做用户研究。</li>
+<li>不确定性：命中率基于小样本（6–12/查询），统计不确定性未提供。</li>
+<li>有边界复述：在测试的 LLM 与两类配体、小样本实验下，LLM 可生成具结合活性的 de novo 序列并给出理由，但存在设计偏差，命中率有限，不能推广为通用或高可靠设计方法。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>成功设计偏离提示参数与 LLM 自述理由</td>
+<td>deviations from prompted parameters and LLM-articulated design rationale</td>
+<td>未提供</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>命中率有限</td>
+<td>金属 25%（一轮），PFOA 25%（第二轮）</td>
+<td>未提供</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>仅为 case study</td>
+<td>定位为 case study</td>
+<td>未提供</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供序列复制检测细节</td>
+<td>「without copying existing sequences」可能仅凭 LLM 生成，未做相似性检索</td>
+<td>若序列与已知蛋白高度相似，则「de novo」主张减弱</td>
+<td>对生成序列做 BLAST/结构相似性检索</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>命中率样本小</td>
+<td>6–12 设计/查询，25% 对应约 2–3 个命中</td>
+<td>统计不确定性大，命中率可能不稳定</td>
+<td>增大样本、报告置信区间</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>无基线对比</td>
+<td>未与专门设计模型或物理模拟方法对比</td>
+<td>无法判断 LLM 相对优势</td>
+<td>同任务下与 RFdiffusion/AlphaFold 类方法对比</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>理由与成功设计不一致</td>
+<td>LLM 自述 rationale 可能为事后合理化</td>
+<td>若理由不可靠，则「可解释设计」主张受限</td>
+<td>对理由中的关键残基做突变验证</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>结构预测工具未指明</td>
+<td>筛选 oracle 不明</td>
+<td>不同预测器会影响过滤结果与命中率</td>
+<td>报告预测器并做敏感性分析</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>全文不可获取</td>
+<td>仅摘要，方法细节缺失</td>
+<td>无法评估可复现性</td>
+<td>获取预印本全文</td>
+<td>Full Text Availability</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<h3>Agent 提炼的知识候选</h3>
+<ul>
+<li>可迁移概念：LLM 作为「可解释序列生成器」，与结构预测/物理模拟组成生成-筛选-验证闭环，可迁移到本课题的 de novo 结合蛋白/结构设计流程。</li>
+<li>可迁移方法：每查询仅选 6–12 设计做实验，控制验证成本；迭代轮次（PFOA 两轮）可提升命中率，可迁移到构象采样/设计迭代。</li>
+<li>可迁移实验设计：以 hit rate 为指标、结构预测为过滤 oracle、实验为真值，可迁移到对接/MD 验证流程。</li>
+<li>可迁移警示：LLM 自述理由与成功设计存在偏差，提示在本课题中不能把 LLM rationale 当作因果解释，需用 MD/对接/突变实验校验。</li>
+<li>可迁移思路：将 LLM 生成与 AlphaFold 类结构预测、MD/对接结合，形成混合 pipeline。</li>
+</ul>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li>相似：与 AlphaFold/结构预测驱动的设计流程相似——生成后需结构预测筛选（摘要提及 structure prediction）。</li>
+<li>组合：LLM 生成 + 结构预测 + 实验验证，可与本课题的 MD/对接组合成多级筛选。</li>
+<li>冲突：与「专门设计模型优于通用 LLM」的预期存在潜在冲突，但本文无基线对比，无法判定。</li>
+<li>可迁移领域：分子对接、构象生成、结构/序列设计——LLM 可作为候选生成器，物理模拟作为精修/验证。</li>
+<li>注：以上连接基于摘要，未核验外部文献。</li>
+</ul>
+<h2>16 研究想法</h2>
+<h3>Agent 生成的研究候选</h3>
+<p>1) 名称：LLM-生成 + MD/对接多级筛选的配体结合蛋白设计
+- 来源局限/观察：本文仅用结构预测过滤，未用 MD/对接精修。
+- 核心假设：在 LLM 生成后加入 MD/对接可提升命中率并减少设计偏差。
+- 相对本文的增量：增加物理模拟筛选层。
+- 初步方法：LLM 生成 → 结构预测 → MD/对接打分 → 实验验证。
+- 验证方式：对比有无 MD/对接层的 hit rate。
+- 可能的失败模式：MD/对接打分与实验结合相关性弱。
+- 创新状态：unverified。</p>
+<p>2) 名称：LLM 设计理由的因果校验
+- 来源局限/观察：成功设计偏离 LLM 自述 rationale。
+- 核心假设：LLM 理由中关键残基对结合有因果贡献。
+- 相对本文的增量：对理由做突变验证。
+- 初步方法：提取理由中关键残基 → 突变 → 结合实验/MD。
+- 验证方式：突变后结合变化。
+- 可能的失败模式：理由为事后合理化，突变无效应。
+- 创新状态：unverified。</p>
+<p>3) 名称：LLM 生成序列的 de novo 性量化
+- 来源局限/观察：未提供复制检测细节。
+- 核心假设：部分生成序列与已知蛋白存在可检测相似性。
+- 相对本文的增量：系统量化序列/结构相似性。
+- 初步方法：BLAST/结构比对。
+- 验证方式：相似性分布。
+- 可能的失败模式：相似性低但功能仍依赖已知 motif。
+- 创新状态：unverified。</p></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; full text not available for verification</li>
+<li><strong>Shared manuscript claim summary</strong> The authors report that common large language models (LLMs), including Claude, ChatGPT, and Gemini, can generate de novo protein sequences that adopt desired folds and bind target ligands (metals and perfluorooctanoic acid) without copying existing sequences. They report experimental hit rates of 25% for metal binders in one round and 25% for perfluorooctanoic acid binders in a second round, with LLMs providing design rationales. The authors position this as a case study demonstrating LLM utility in making protein design more comprehensible and accessible.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, methods, or supplementary materials provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full text, experimental protocols, sequence data, structure prediction details, hit definitions, negative controls, and any statistical analyses are not available. The absence of these materials substantially limits the ability to evaluate the validity and robustness of the reported results.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents an intriguing and potentially valuable application of LLMs to de novo protein design, with claims of experimental success in generating metal and small-molecule binders. However, the evidence base is limited to the abstract, which lacks critical details on methodology, hit criteria, reproducibility, and controls. The central claims are plausible but not verifiable from the supplied material. The conceptual contribution, namely the use of LLMs to provide design rationales, is interesting but its significance depends on the quality and novelty of those rationales, which cannot be assessed here. The reported hit rates are modest and the absence of negative controls or baseline comparisons weakens the strength of the claims. Overall, the work has potential but the case is not established from the abstract alone.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in protein design and engineering, particularly those interested in generative models and accessible design tools, would find this work relevant. The claim that LLMs can generate functional binders with accompanying rationales may appeal to a broader computational biology audience and to experimentalists seeking more interpretable design pipelines. The emphasis on accessibility for users without sophisticated design expertise could also attract interest from the synthetic biology and biotechnology communities.</li>
+<li><strong>Major strengths</strong> The use of widely available LLMs for protein design is a timely and accessible approach. The inclusion of LLM-generated design rationales is a distinctive feature that could enhance interpretability. The reported experimental validation, albeit with modest hit rates, suggests some practical utility. The focus on metals and a lipophilic small molecule (perfluorooctanoic acid) covers chemically distinct targets, which adds breadth to the claim.</li>
+<li><strong>Major Concerns</strong> </li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The abstract claims that LLMs alone can generate de novo proteins that bind metals and perfluorooctanoic acid, with hit rates of 25% in one or two rounds of design.</li>
+<li><strong>Evidence pointer</strong> Abstract only; no methods, figures, or tables provided</li>
+<li><strong>Concern</strong> The abstract reports experimental hit rates but provides no details on how "hits" were defined, how binding was measured, what thresholds were used, or how many designs were tested per round. Without this information, the hit rates are not interpretable. Additionally, no negative controls (e.g., designs generated without LLM rationale or random sequences) or baseline comparisons are mentioned, so the specificity of the LLM contribution cannot be evaluated.</li>
+<li><strong>Why it matters</strong> The central claim of the paper is that LLMs can generate functional binders. If hit rates are based on weak or non-stringent binding criteria, or if the success is not significantly above what would be expected by chance, the claim would be substantially weakened. The lack of controls also prevents assessment of whether the LLM's design rationale is causally linked to success or merely post hoc.</li>
+<li><strong>Resolution test</strong> Provide full experimental details, including binding assay methods, hit thresholds, number of designs tested, and results from appropriate negative controls (e.g., random sequences or designs without LLM rationale). Show that the hit rates are statistically significant relative to these controls.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility and specificity</li>
+<li><strong>Claim pointer</strong> The abstract states that LLMs generate sequences to "adopt a desired fold and bind the target ligand" and that successful designs have "some deviations from the prompted parameters and LLM-articulated design rationale."</li>
+<li><strong>Evidence pointer</strong> Abstract only; no sequence or structure data provided</li>
+<li><strong>Concern</strong> The abstract acknowledges deviations from the prompted parameters and rationale but does not describe the nature or extent of these deviations. It is unclear whether the designs actually adopt the intended fold, whether binding is specific to the target ligand, or whether the deviations are minor or substantial. Without sequence and structure validation data, the claim that the designs "adopt a desired fold" is unverifiable.</li>
+<li><strong>Why it matters</strong> The claim of de novo design implies that the proteins are not merely random sequences that happen to bind. If the folds are not as intended or if binding is non-specific, the design process is not validated. The deviations could indicate that the LLM is not following its own rationale, which would undermine the interpretability claim.</li>
+<li><strong>Resolution test</strong> Provide structural characterization (e.g., experimental structures or high-confidence predictions) for successful designs, showing that they adopt the intended fold. Include binding specificity data (e.g., against off-target ligands) and a detailed analysis of the deviations from the prompted parameters and rationale.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Novelty and significance</li>
+<li><strong>Claim pointer</strong> The abstract implies that this is a novel application of LLMs to reasoned design, stating that "reasoned design... has not seen the same benefits from generative machine learning models."</li>
+<li><strong>Evidence pointer</strong> Abstract only; no literature comparison provided</li>
+<li><strong>Concern</strong> The abstract does not compare this work to existing LLM-based protein design methods or to other generative models that incorporate design principles. It is unclear what is genuinely new here versus incremental. The claim that reasoned design has not benefited from generative models may be overstated, as other works have used language models for protein design with rationales.</li>
+<li><strong>Why it matters</strong> For a Nature-style audience, the significance of the work depends on its novelty relative to the state of the art. If similar approaches have been reported, the contribution is diminished. The abstract does not provide enough context to judge this.</li>
+<li><strong>Resolution test</strong> Add a clear comparison to prior LLM-based design methods, highlighting specific differences in approach or outcomes. Cite and discuss relevant prior work to establish the novelty of the contribution.</li>
+<li><strong>Minor Comments</strong> </li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract wording</li>
+<li><strong>Evidence pointer</strong> Abstract, "25% hit rate" statements</li>
+<li><strong>Issue</strong> The hit rates are reported without context on the number of designs tested or the variability across different LLMs or targets. This makes the rates difficult to interpret.</li>
+<li><strong>Required correction</strong> Specify the number of designs tested per round and per target, and report hit rates with confidence intervals or ranges across replicates or different LLMs.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> "De novo" claim</li>
+<li><strong>Evidence pointer</strong> Abstract, "without copying existing sequences"</li>
+<li><strong>Issue</strong> The abstract claims the designs do not copy existing sequences but does not describe how this was verified (e.g., sequence similarity searches against known proteins). The term "de novo" is used loosely.</li>
+<li><strong>Required correction</strong> Describe the method used to confirm that generated sequences are not homologous to known proteins, and report the maximum sequence identity to any existing protein.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Generalizability</li>
+<li><strong>Affected element</strong> Scope of claims</li>
+<li><strong>Evidence pointer</strong> Abstract, "common LLMs (e.g. Claude, ChatGPT, and Gemini)"</li>
+<li><strong>Issue</strong> The abstract implies that the results are general across LLMs, but it is unclear if all three models were tested for all targets or if the hit rates are pooled or per-model.</li>
+<li><strong>Required correction</strong> Clarify which LLMs were used for which targets and report per-model results to support the generalizability claim.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that LLMs can generate proteins that "adopt a desired fold" is unsupported without structural data.</li>
+<li>The claim of "de novo" design is unsupported without evidence of sequence novelty relative to known proteins.</li>
+<li>The hit rates are uninterpretable without definitions of "hit" and details on assay methods and thresholds.</li>
+<li>The claim that LLMs provide "detailed justification" that serves as a "conceptual framework" is not verifiable from the abstract, as no examples of such rationales are provided.</li>
+<li>The novelty claim relative to prior LLM-based design methods is not assessable without a literature comparison.</li>
+<li>The generalizability claim across LLMs is not assessable without per-model results.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,409 @@
+{
+  "source": "biorxiv",
+  "source_id": "10.64898/2026.10.21.760860",
+  "title": "Predicting Protein-Protein Interactions Using Vectorized Sequence Descriptors and Machine Learning Classifiers",
+  "doi": "10.64898/2026.10.21.760860",
+  "abstract": "Accurate prediction of protein-protein interactions (PPIs) is fundamental for elucidating cellular mechanisms and accelerating drug discovery. Although experimental techniques provide extensive interaction maps, their high cost and time requirements necessitate robust computational alternatives. In this study, we present an interpretable machine-learning framework that integrates sequence-derived descriptors,specifically 120 Auto-Covariance (AC) features, 686 Conjoint Triad (CT) features, and 1,820 Local Descriptors (LD) features, with classical classification algorithms, including Support Vector Machines (SVM), Random Forests (RF), and XGBoost (XGB). Evaluated on gold-standard sequence-based PPI benchmark dataset using stratified five fold cross-validation, the models achieved robust classification accuracies: 86.92% (SVM), 97.75% (RF), and a peak cross-validation accuracy of 97.97% with XGBoost (Rec: 98.09%, Pr: 98.10%, F1: 98.09%). Furthermore, rigorous evaluation on an independent unseen (Human-PPI) test set demonstrated exceptional generalization capabilities. The Random Forest model emerged as the top-performing architecture, yielding an outstanding accuracy of 99.51%, a precision of 99.72%, a recall of 99.29%, an F1-score of 99.50%, an Area Under the Receiver Operating Characteristic curve (AUROC) of 0.9990, and an Area Under the Precision-Recall Curve (AUPRC) of 0.9989 (closely followed by XGBoost with 98.54% accuracy, AUROC 0.9979, and AUPRC 0.9974). Feature-importance analysis revealed that short-range physicochemical correlations (such as polarity and hydrophobicity lags in Protein 2), regional amino-acid compositions, and specific triad patterns (e.g., A/G/V-M/S/T/Y-M/S/T/Y) drive accurate PPI discrimination. These findings demonstrate the effectiveness of domain-informed, handcrafted sequence features combined with machine-learning classifiers for PPI prediction, providing biologically interpretable insights with minimal computational overhead and enabling efficient, scalable interactome screening.",
+  "authors": [
+    "Ruchika Bhat",
+    "Vaishnavi Kumari",
+    "Virendra Singh Kaira",
+    "Zakeerhussain D Kudari",
+    "Sai P. Shankar",
+    "G. Jaiganesh"
+  ],
+  "published_date": "2026-10-26",
+  "updated_date": "2026-10-27T05:15:41Z",
+  "journal": "bioRxiv",
+  "category": "Bioinformatics",
+  "landing_url": "https://www.biorxiv.org/content/10.64898/2026.10.21.760860",
+  "pdf_url": "https://www.biorxiv.org/content/10.64898/2026.10.21.760860.full.pdf",
+  "pdf_path": "",
+  "pdf_downloaded": false,
+  "query": "(\"protein structure\" OR \"structure prediction\" OR \"protein design\" OR \"protein folding\" OR \"inverse folding\" OR \"protein domain\" OR \"backbone design\" OR \"sequence design\" OR \"structure design\" OR \"protein conformation\" OR \"conformational ensemble\") AND (\"deep learning\" OR \"machine learning\" OR \"neural network\" OR \"graph neural network\" OR \"language model\" OR transformer OR \"diffusion model\" OR generative OR \"foundation model\" OR \"flow matching\" OR \"molecular dynamics\" OR simulation OR docking OR alphafold OR esmfold OR rosetta)",
+  "version": "",
+  "keywords": [
+    "Bioinformatics"
+  ],
+  "extra": {
+    "publisher": "openRxiv",
+    "prefix": "10.64898",
+    "type": "posted-content",
+    "group_title": "Bioinformatics",
+    "raw_record": {
+      "institution": [
+        {
+          "name": "bioRxiv"
+        }
+      ],
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            10,
+            30
+          ]
+        ],
+        "date-time": "2026-10-30T02:31:43Z",
+        "timestamp": 1793327503447,
+        "version": "4.5.0"
+      },
+      "posted": {
+        "date-parts": [
+          [
+            2026,
+            10,
+            26
+          ]
+        ]
+      },
+      "group-title": "Bioinformatics",
+      "reference-count": 25,
+      "publisher": "openRxiv",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2026,
+                10,
+                26
+              ]
+            ],
+            "date-time": "2026-10-26T00:00:00Z",
+            "timestamp": 1792972800000
+          },
+          "content-version": "vor",
+          "delay-in-days": 0,
+          "URL": "http://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "content-domain": {
+        "domain": [],
+        "crossmark-restriction": false
+      },
+      "accepted": {
+        "date-parts": [
+          [
+            2026,
+            10,
+            26
+          ]
+        ]
+      },
+      "abstract": "<jats:title>ABSTRACT</jats:title>\n                <jats:p>Accurate prediction of protein-protein interactions (PPIs) is fundamental for elucidating cellular mechanisms and accelerating drug discovery. Although experimental techniques provide extensive interaction maps, their high cost and time requirements necessitate robust computational alternatives. In this study, we present an interpretable machine-learning framework that integrates sequence-derived descriptors,specifically 120 Auto-Covariance (AC) features, 686 Conjoint Triad (CT) features, and 1,820 Local Descriptors (LD) features, with classical classification algorithms, including Support Vector Machines (SVM), Random Forests (RF), and XGBoost (XGB). Evaluated on gold-standard sequence-based PPI benchmark dataset using stratified five fold cross-validation, the models achieved robust classification accuracies: 86.92% (SVM), 97.75% (RF), and a peak cross-validation accuracy of 97.97% with XGBoost (Rec: 98.09%, Pr: 98.10%, F1: 98.09%). Furthermore, rigorous evaluation on an independent unseen (Human-PPI) test set demonstrated exceptional generalization capabilities. The Random Forest model emerged as the top-performing architecture, yielding an outstanding accuracy of 99.51%, a precision of 99.72%, a recall of 99.29%, an F1-score of 99.50%, an Area Under the Receiver Operating Characteristic curve (AUROC) of 0.9990, and an Area Under the Precision-Recall Curve (AUPRC) of 0.9989 (closely followed by XGBoost with 98.54% accuracy, AUROC 0.9979, and AUPRC 0.9974). Feature-importance analysis revealed that short-range physicochemical correlations (such as polarity and hydrophobicity lags in Protein 2), regional amino-acid compositions, and specific triad patterns (e.g., A/G/V-M/S/T/Y-M/S/T/Y) drive accurate PPI discrimination. These findings demonstrate the effectiveness of domain-informed, handcrafted sequence features combined with machine-learning classifiers for PPI prediction, providing biologically interpretable insights with minimal computational overhead and enabling efficient, scalable interactome screening.</jats:p>",
+      "DOI": "10.64898/2026.10.21.760860",
+      "type": "posted-content",
+      "created": {
+        "date-parts": [
+          [
+            2026,
+            10,
+            27
+          ]
+        ],
+        "date-time": "2026-10-27T05:15:41Z",
+        "timestamp": 1793078141000
+      },
+      "source": "Crossref",
+      "is-referenced-by-count": 0,
+      "title": [
+        "Predicting Protein-Protein Interactions Using Vectorized Sequence Descriptors and Machine Learning Classifiers"
+      ],
+      "prefix": "10.64898",
+      "author": [
+        {
+          "ORCID": "https://orcid.org/0000-0002-5477-4410",
+          "authenticated-orcid": false,
+          "given": "Ruchika",
+          "family": "Bhat",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Quantum Assisted Drug Discovery Group, Qclairvoyance Quantum Labs, Secunderabad - 500094, Telangana, India"
+            },
+            {
+              "name": "The University of Arizona, Tucson, AZ 85721, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Vaishnavi",
+          "family": "Kumari",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Quantum Assisted Drug Discovery Group, Qclairvoyance Quantum Labs, Secunderabad - 500094, Telangana, India"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0009-0008-0234-0566",
+          "authenticated-orcid": false,
+          "given": "Virendra Singh",
+          "family": "Kaira",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Quantum Assisted Drug Discovery Group, Qclairvoyance Quantum Labs, Secunderabad - 500094, Telangana, India"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0009-0009-1433-5980",
+          "authenticated-orcid": false,
+          "given": "Zakeerhussain D",
+          "family": "Kudari",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Quantum Assisted Drug Discovery Group, Qclairvoyance Quantum Labs, Secunderabad - 500094, Telangana, India"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Sai P.",
+          "family": "Shankar",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Quantum Assisted Drug Discovery Group, Qclairvoyance Quantum Labs, Secunderabad - 500094, Telangana, India"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-4421-1382",
+          "authenticated-orcid": false,
+          "given": "G.",
+          "family": "Jaiganesh",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Quantum Assisted Drug Discovery Group, Qclairvoyance Quantum Labs, Secunderabad - 500094, Telangana, India"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "member": "54368",
+      "reference": [
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.1",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Kuriyan, J. , Konforti, B. & Wemmer, D. The Molecules of Life: Physical and Chemical Principles (Garland Science, 2012), 1 edn.",
+          "DOI": "10.1201/9780429258787"
+        },
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.2",
+          "unstructured": "Alberts, B. et al. Molecular Biology of the Cell (Garland Science, 2014), 6 edn."
+        },
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.3",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/415141a"
+        },
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.4",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.36227/techrxiv.176369451.19187650/v1"
+        },
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.5",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.36227/techrxiv.176344155.52503175/v1"
+        },
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.6",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/s12038-019-9909-z"
+        },
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.7",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.3390/molecules28135169"
+        },
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.8",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1073/pnas.0607879104"
+        },
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.9",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1093/nar/gkn159"
+        },
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.10",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/978-3-642-39479-9_73"
+        },
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.11",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1186/1471-2105-14-S8-S10"
+        },
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.12",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.neucom.2018.02.097"
+        },
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.13",
+          "doi-asserted-by": "crossref",
+          "first-page": "273",
+          "DOI": "10.1023/A:1022627411411",
+          "article-title": "Support-vector networks",
+          "volume": "20",
+          "year": "1995",
+          "journal-title": "Mach. learning"
+        },
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.14",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1371/journal.pone.0125811"
+        },
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.15",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1023/A:1010933404324"
+        },
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.16",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Chen, T. & Guestrin, C. Xgboost: A scalable tree boosting system. In Proceedings of the 22nd acm sigkdd international conference on knowledge discovery and data mining, 785–794 (2016).",
+          "DOI": "10.1145/2939672.2939785"
+        },
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.17",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.3390/molecules23102535"
+        },
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.18",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1186/s12859-018-2105-6"
+        },
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.19",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/s41598-018-32511-1"
+        },
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.20",
+          "unstructured": "Bernett, J. Ppi prediction from sequence, gold standard dataset. figshare (2022)."
+        },
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.21",
+          "doi-asserted-by": "crossref",
+          "first-page": "4992",
+          "DOI": "10.1021/pr100618t",
+          "article-title": "Large-scale prediction of human protein-protein interactions from amino acid sequence based on latent topic features",
+          "volume": "9",
+          "year": "2010",
+          "journal-title": "J. proteome research"
+        },
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.22",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/CIBCB.2019.8791241"
+        },
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.23",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.heliyon.2023.e17575"
+        },
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.24",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1021/acs.jcim.7b00028"
+        },
+        {
+          "key": "2026102919051565000_2026.10.21.760860v1.25",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/S41586-021-03819-2"
+        }
+      ],
+      "link": [
+        {
+          "URL": "https://syndication.highwire.org/content/doi/10.64898/2026.10.21.760860",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2026,
+            10,
+            30
+          ]
+        ],
+        "date-time": "2026-10-30T02:05:22Z",
+        "timestamp": 1793325922000
+      },
+      "score": 55.47699,
+      "resource": {
+        "primary": {
+          "URL": "http://biorxiv.org/lookup/doi/10.64898/2026.10.21.760860"
+        }
+      },
+      "issued": {
+        "date-parts": [
+          [
+            2026,
+            10,
+            26
+          ]
+        ]
+      },
+      "references-count": 25,
+      "URL": "https://doi.org/10.64898/2026.10.21.760860",
+      "published": {
+        "date-parts": [
+          [
+            2026,
+            10,
+            26
+          ]
+        ]
+      },
+      "subtype": "preprint"
+    }
+  }
+}

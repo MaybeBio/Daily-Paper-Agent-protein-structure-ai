@@ -1,0 +1,24 @@
+{
+  "source": "pubmed",
+  "id": "42929551",
+  "title": "CS-SelectFold: Chemical-Shift-Guided Selection of Protein Hidden Conformations from a Generative Protein Structure Model.",
+  "authors": "Tang, Wanjia; Wang, Qianqian; Xiao, Xiongjie; Zhang, Xu; Jiang, Bin; Liu, Maili",
+  "journal": "Journal of chemical information and modeling",
+  "published_date": "2026-10-26",
+  "window": {
+    "start": "2026-10-25",
+    "end": "2026-10-31"
+  },
+  "score": 9,
+  "one_liner_zh": "该文提出CS-SelectFold框架，结合生成式构象采样与NMR化学位移引导的后验选择，从序列中恢复低群体蛋白隐藏构象，核心贡献在蛋白质构象采样与结构计算，方法创新且验证充分。",
+  "abstract": "Low-populated protein excited states can play decisive roles in function, ligand recognition, and misfolding, but their structural characterization remains difficult because these conformations are transient and sparsely populated. Here, we present CS-SelectFold, a framework that combines generative conformational sampling with NMR chemical-shift-guided post hoc selection to recover low-populated protein conformations without additional training or fine-tuning of its pretrained components. CS-SelectFold uses SimpleFold to sample diverse candidate structures from sequence, applies structural prescreening to enrich models that escape the dominant ground-state basin, predicts chemical shifts with UCBShift 2.0, and ranks candidates by agreement with experimentally determined excited-state chemical shifts. We benchmarked CS-SelectFold on two proteins with experimentally characterized low-populated states. For the T4 lysozyme L99A cavity mutant, a canonical excited-state system, the method recovered the defining excited-state-like local rearrangement around the engineered cavity, including inward placement of Phe114, consistent with the NMR/CS-Rosetta-derived excited-state model. A retrospective two-reference hotspot analysis using internal-distance RMSD (dRMSD) horizontal line the root-mean-square difference between corresponding pairwise distances within the hotspot rather than conventional coordinate RMSD after structural superposition horizontal line further showed that chemical-shift-based ranking enriched conformations that moved away from the ground-state basin and toward the experimentally defined excited-state basin. For the A39V/N53P/V55L Fyn SH3 domain, which populates an aggregation-prone hidden folding intermediate, CS-SelectFold recovered the key topological signature of the experimentally characterized intermediate: loss of the C-terminal beta-strand present in the native state, as confirmed by both three-dimensional structural comparison and secondary-structure analysis. These results provide proof-of-concept support for CS-SelectFold and suggest that the same sample-and-select principle may extend to broader low-populated hidden conformations, including folding intermediates.",
+  "abstract_zh": "低丰度蛋白质激发态在功能、配体识别和错误折叠中可发挥决定性作用，但其结构表征仍然困难，因为这些构象是瞬态且稀疏分布的。在此，我们提出CS-SelectFold，一个结合生成性构象采样与NMR化学位移引导的事后选择的框架，以恢复低丰度蛋白质构象，无需对其预训练组件进行额外训练或微调。CS-SelectFold使用SimpleFold从序列中采样多样化的候选结构，应用结构预筛选以富集逃逸主导基态盆地（ground-state basin）的模型，使用UCBShift 2.0预测化学位移，并根据与实验确定的激发态化学位移的一致性对候选进行排序。我们在两个具有实验表征低丰度态的蛋白质上对CS-SelectFold进行了基准测试。对于T4溶菌酶L99A空腔突变体，一个典型的激发态系统，该方法恢复了围绕工程空腔的定义性激发态样局部重排，包括Phe114的内向放置，与NMR/CS-Rosetta衍生的激发态模型一致。一项使用内部距离RMSD（dRMSD）的回顾性双参考热点分析——即热点内相应成对距离之间的均方根差，而非结构叠加后的常规坐标RMSD——进一步表明，基于化学位移的排序富集了从基态盆地移向实验定义激发态盆地的构象。对于A39V/N53P/V55L Fyn SH3结构域，其群体化一个易聚集的隐藏折叠中间体，CS-SelectFold恢复了实验表征中间体的关键拓扑特征：天然态中存在的C端β-链的丢失，这通过三维结构比较和二级结构分析均得到确认。这些结果为CS-SelectFold提供了概念验证支持，并表明相同的采样-选择原则可能扩展到更广泛的低丰度隐藏构象，包括折叠中间体。",
+  "has_fulltext": false,
+  "fulltext_source": "abstract",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42929551/",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/42929551/",
+  "paper_page_path": "papers/pubmed/42929551/index.html"
+}

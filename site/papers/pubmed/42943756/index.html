@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comparative Conformational Sampling of Apo Adenylate Kinase by Enhanced Molecular Dynamics and a Sequence-Based Generative Ensemble Model. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Comparative Conformational Sampling of Apo Adenylate Kinase by Enhanced Molecular Dynamics and a Sequence-Based Generative Ensemble Model.</h1>
+      <div class="meta">Zhao, Qingling; Cui, Ting; Li, Ying</div>
+      <div class="meta muted">
+        
+        <span class="journal">Molecules (Basel, Switzerland)</span>
+        · 2026-10-27
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42943756/">原文</a>
+      </div>
+      <p class="one-liner">该文以腺苷酸激酶为基准，系统比较多种增强采样MD方法与基于序列的生成模型BioEmu在开放-闭合构象转变采样中的表现，核心聚焦蛋白质构象采样这一结构计算问题，方法涵盖物理模拟与AI生成模型，与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Conformational sampling remains a major challenge in molecular dynamics (MD) simulations of proteins with large-scale functional motions. Here, we use apo Escherichia coli adenylate kinase (AdK) as a benchmark for the open-closed transition and compare nine sampling protocols under a uniform explicit-solvent budget of 300 ns per method. The methods include unbiased MD, metadynamics, targeted MD (TMD), accelerated MD, simulated tempering, interpolation-based MD, and BioEmu. Closed-state sampling was evaluated relative to a reference-closed basin defined from ligand-stripped PDB 1AKE. TMD was the only method that both reached and maintained the closed reference, whereas unbiased MD did not enter this basin within 300 ns. Metadynamics increased sampling along the domain-distance coordinate but also promoted excessive LID opening, while simulated tempering showed a similar tendency. BioEmu generated closed-like conformations, but these states were not maintained during subsequent short MD simulations. Overall, the results show that collective-variable coverage does not necessarily correspond to stable target state occupancy and that different sampling methods provide different types of conformational information. These findings highlight the importance of selecting sampling strategies according to the specific scientific objective.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">构象采样仍然是具有大规模功能运动的蛋白质分子动力学（molecular dynamics, MD）模拟中的主要挑战。在此，我们以大肠杆菌腺苷酸激酶（apo Escherichia coli adenylate kinase, AdK）作为开放-闭合转变的基准，并在每种方法统一使用300 ns的显式溶剂预算下，比较了九种采样协议。这些方法包括无偏MD、元动力学（metadynamics）、靶向MD（targeted MD, TMD）、加速MD、模拟退火、基于插值的MD以及BioEmu。闭合态采样相对于由去除配体的PDB 1AKE定义的参考闭合盆地进行了评估。TMD是唯一既达到又维持闭合参考态的方法，而无偏MD在300 ns内未进入该盆地。元动力学增加了沿域间距离坐标的采样，但也促进了过度的LID开放，而模拟退火显示出类似趋势。BioEmu生成了类似闭合的构象，但这些状态在随后的短MD模拟中未被维持。总体而言，结果表明集体变量覆盖并不一定对应于稳定的目标态占据，且不同采样方法提供不同类型的构象信息。这些发现强调了根据具体科学目标选择采样策略的重要性。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Comparative Conformational Sampling of Apo Adenylate Kinase by Enhanced Molecular Dynamics and a Sequence-Based Generative Ensemble Model</li>
+<li><strong>作者</strong>: Zhao, Qingling; Cui, Ting; Li, Ying</li>
+<li><strong>单位</strong>: 北京联合大学生物化学工程学院（College of Biochemical Engineering, Beijing Union University，据 Acknowledgments）</li>
+<li><strong>期刊/平台</strong>: Molecules (Basel, Switzerland)</li>
+<li><strong>年份</strong>: 2026（在线日期 2026-10-27）</li>
+<li><strong>论文类型</strong>: 方法比较研究（benchmark comparison）</li>
+<li><strong>领域</strong>: 蛋白质构象采样 × 增强采样 MD × 生成式模型</li>
+<li><strong>关键词</strong>: 构象采样；腺苷酸激酶；增强采样；BioEmu；分子动力学；开-闭转变</li>
+<li><strong>DOI/arXiv</strong>: 10.3390/molecules31203686</li>
+<li><strong>代码</strong>: https://github.com/liying0128/adk-conformational-sampling</li>
+<li><strong>数据</strong>: 未提供（除代码仓库中的数值表格外）</li>
+<li><strong>阅读日期</strong>: 2026-11-01（未提供，按当前日期推断）</li>
+<li><strong>在课题方向中的位置</strong>: 本文属于「蛋白质构象采样 × 物理模拟（MD）与 AI 生成模型」交叉方向，以腺苷酸激酶（AdK）的开-闭转变为基准，在统一 300 ns 显式溶剂预算下系统比较 9 种采样协议（无偏 MD、功能/盲/错误 CV 元动力学、TMD、GaMD、模拟退火、插值 MD、BioEmu 生成+MD 弛豫），核心关注「CV 空间覆盖 ≠ 目标态稳定占据」这一关键区分，对构象生成模型的物理有效性评估具有直接参考价值。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>以 apo 大肠杆菌腺苷酸激酶（AdK）为基准，在统一 300 ns 显式溶剂预算下比较 9 种构象采样协议，发现仅 TMD 能到达并维持闭合参考态（但属非平衡驱动），元动力学虽大幅扩展 CV 空间覆盖却主要导致 LID 过度打开，BioEmu 生成的闭合样构象在后续 MD 中不能稳定维持，表明 CV 覆盖、目标态到达与稳定占据是三种不同的采样能力。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 在相同体系、相同力场、相同显式溶剂和相同 300 ns 计算预算下，不同构象采样方法（无偏 MD、多种增强采样、路径驱动方法、序列生成式模型）对 AdK 开-闭转变的采样能力分别如何？CV 空间覆盖与目标态稳定占据是否一致？</li>
+<li><strong>为什么重要</strong>: 蛋白质功能运动（如 AdK 的 LID/NMP 开闭）发生在微秒-毫秒时间尺度，远超常规 MD 可达范围。增强采样和生成式模型是两种主流加速策略，但缺乏在统一条件下的系统比较，导致方法选择缺乏依据。</li>
+<li><strong>现有方法不足</strong>: 已有比较多基于不同体系、不同力场、不同溶剂条件或不同时长，难以直接对比；生成式模型（如 BioEmu）生成的构象缺乏显式溶剂 MD 下的稳定性验证；元动力学的 CV 覆盖常被误读为热力学采样质量。</li>
+<li><strong>精确研究问题（Can ... ?）</strong>: 在 300 ns 统一预算下，哪种采样协议能同时实现（a）到达闭合参考态、（b）维持闭合态稳定占据、（c）合理覆盖域间距离空间？CV 覆盖度是否可作为目标态采样效率的代理指标？</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文 Introduction 的叙述框架，标注为「仅本文框架」；未做外部文献核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>经典 MD</td>
+<td>无偏显式溶剂 MD</td>
+<td>物理严格、可直接计算可观测量</td>
+<td>微秒-毫秒转变不可达</td>
+<td>方法 A（基线）</td>
+</tr>
+<tr>
+<td>增强采样（需 CV）</td>
+<td>元动力学（metadynamics）</td>
+<td>可扩展 CV 空间覆盖、可重建 FES</td>
+<td>依赖 CV 选择、偏置分布非平衡</td>
+<td>方法 B（功能 CV）、G（盲 CV）、H（错误 CV）</td>
+</tr>
+<tr>
+<td>增强采样（无需 CV）</td>
+<td>GaMD、模拟退火</td>
+<td>无需先验 CV</td>
+<td>提升幅度有限、可能增强无关运动</td>
+<td>方法 F（GaMD）、E（模拟退火）</td>
+</tr>
+<tr>
+<td>路径驱动</td>
+<td>TMD、插值 MD</td>
+<td>可强制到达目标态</td>
+<td>非平衡、路径依赖、不提供平衡信息</td>
+<td>方法 C（TMD）、D（插值 MD）</td>
+</tr>
+<tr>
+<td>生成式模型</td>
+<td>BioEmu（序列→构象集成）</td>
+<td>极快、无需 MD 即可生成构象</td>
+<td>热力学解释不明、显式溶剂下稳定性未知</td>
+<td>方法 I（BioEmu + MD 弛豫）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>: 在统一预算下系统比较上述方法，明确「CV 覆盖」「目标态到达」「目标态稳定占据」三者不可混为一谈，为方法选择提供目标导向的决策框架。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无偏 MD 无法到达闭合态</td>
+<td>300 ns 内从未低于 3.5 Å RMSD 阈值</td>
+<td>开-闭转变时间尺度远超 300 ns</td>
+<td>Results 2.1，方法 A 数据（未提供具体数值）</td>
+</tr>
+<tr>
+<td>元动力学 CV 覆盖 ≠ 目标态占据</td>
+<td>功能元动力学占据 1260 个 CV bin，但闭合样帧仅 0.43%</td>
+<td>偏置沿 CV 方向驱动系统，但 CV 空间覆盖包含大量过度打开构象</td>
+<td>Results 2.1 表 1；Results 2.5</td>
+</tr>
+<tr>
+<td>过度打开（over-opening）</td>
+<td>LID-CORE 距离达 4.54-4.67 nm，远超闭合参考值</td>
+<td>偏置势沿域间距离方向持续推动，缺乏对过度打开的约束</td>
+<td>Results 2.2；Results 2.5</td>
+</tr>
+<tr>
+<td>生成式模型构象不稳定</td>
+<td>BioEmu 生成的闭合样构象在 50 ns 无偏 MD 后闭合样帧仅 0.03%</td>
+<td>生成模型未以显式溶剂力场为训练目标，生成构象不在 ff14SB/TIP3M 自由能盆内</td>
+<td>Results 2.7；Supplementary Figure S7</td>
+</tr>
+<tr>
+<td>模拟退火温度混合</td>
+<td>平均生产温度 344 K，势能比 300 K 高约 30,000 kJ/mol</td>
+<td>温度混合导致构象分布非 300 K 平衡</td>
+<td>Results 2.6；Supplementary Figure S8</td>
+</tr>
+<tr>
+<td>插值 MD 构象不持久</td>
+<td>插值种子初始闭合样，弛豫后闭合样帧仅 0.37%</td>
+<td>笛卡尔插值路径不经过自由能盆</td>
+<td>Results 2.7</td>
+</tr>
+<tr>
+<td>计算成本差异</td>
+<td>元动力学 GPU 时间 16.3-16.7 h，无偏 MD 约 13.5 h</td>
+<td>偏置势计算和写入开销</td>
+<td>Results 2.8</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>在统一体系（apo AdK，PDB 4AKE 为起点）、统一力场（ff14SB/TIP3P）、统一显式溶剂盒子（39,915 原子）、统一 300 ns 生产预算下，运行 9 种采样协议，用统一的闭合参考态（配体剥离的 PDB 1AKE，Cα RMSD &lt; 3.5 Å）和域间距离平面（NMP-CORE vs LID-CORE）评估各方法的采样行为。</p>
+<h3>2) 核心洞察</h3>
+<p><strong>「CV 空间覆盖」「目标态到达」「目标态稳定占据」是三种不同的采样能力，不能互相代理。</strong> 元动力学可以大幅扩展 CV 覆盖（1260 bins），但闭合样帧占比极低（0.43%）；TMD 能到达并维持闭合态（54.88% 闭合样帧），但 CV 覆盖极窄（213 bins）；BioEmu 能生成闭合样构象，但这些构象在显式溶剂 MD 中迅速离开闭合区域。这一区分对任何使用 CV 覆盖度或生成模型构象作为采样质量指标的研究都有警示意义。</p>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li>对「构象生成模型 + MD 验证」工作流：生成模型的构象必须经过显式溶剂 MD 弛豫验证，不能仅凭生成时的 RMSD 判断其物理有效性。</li>
+<li>对「增强采样方法选择」：若目标是探索构象空间（如发现新构象），元动力学类方法更合适；若目标是到达已知功能态，TMD 类路径驱动方法更直接；若目标是平衡系综，两者都需要谨慎的重加权和收敛性评估。</li>
+<li>对「基准设计」：本文的统一预算、统一力场、统一分析标准的比较框架，可作为蛋白质构象采样方法评估的模板。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: apo AdK 开放态结构（PDB 4AKE，chain A，去晶体水）；闭合参考为配体剥离的 PDB 1AKE（chain A，去 AP5A 抑制剂）</li>
+<li><strong>输出</strong>: 各方法的构象轨迹、闭合样帧占比、域间距离平面覆盖、Cα RMSF、计算成本</li>
+<li><strong>模块</strong>:
+  1. <strong>体系准备</strong>: Amber ff14SB 力场（OpenMM 8.6 的 amber14-all.xml），TIP3P 水，1.2 nm padding，0.15 M NaCl，共 39,915 原子（3341 蛋白原子 + 12,168 水分子）
+  2. <strong>共同平衡</strong>: 能量最小化 → 0.2 ns NVT → 1.0 ns NPT（300 K, 1 bar），所有生产运行共享同一平衡盒子
+  3. <strong>9 种采样协议</strong>:<ul>
+<li>A: 无偏 MD（300.9 ns）</li>
+<li>B: 功能元动力学（NMP-CORE 和 LID-CORE 域间距离为 CV）</li>
+<li>C: TMD（Cα RMSD 到 1AKE 的谐波约束，力常数 8000 kJ/mol/nm²，目标 0.05 nm，前 2/3 时间退火，共 308.3 ns）</li>
+<li>D: 插值 MD（6 条 Cα 笛卡尔插值，λ = 0.15-1.00，各 50 ns 无偏弛豫）</li>
+<li>E: 模拟退火（8 个温度，300-400 K 几何间隔，每 2 ps 尝试交换）</li>
+<li>F: 二面角 GaMD（先收集 2 ns 二面角势统计，Vmin=10,800, Vmax=11,285, Vavg=11,024, σ=75 kJ/mol，k0≈0.107）</li>
+<li>G: 盲元动力学（Cα 回旋半径 + Cα RMSD 到起始结构）</li>
+<li>H: 错误 CV 元动力学（两个与开闭无关的 CORE 内距离）</li>
+<li>I: BioEmu 生成 + MD 弛豫（6 个种子，各 50 ns 无偏 MD）
+  4. <strong>共同分析</strong>: Cα RMSD 到 4AKE/1AKE、域间距离平面（NMP-CORE vs LID-CORE）的 0.05 nm × 0.05 nm bin 覆盖、闭合样帧分类（RMSD &lt; 3.5 Å）、Cα RMSF（CORE 叠合后）、计算成本（GPU 小时）</li>
+</ul>
+</li>
+<li><strong>工具</strong>: OpenMM 8.6（NVIDIA GeForce RTX 4090，OpenCL 平台，CPU PME）；BioEmu v1.1（仅序列输入，无结构模板）</li>
+<li><strong>假设</strong>: 闭合参考态由配体剥离的 1AKE 定义，不等同于实验确定的 apo 闭合态；所有方法共享同一平衡起点，差异仅来自采样协议</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>统一体系准备与平衡</td>
+<td>确保所有方法从相同起点出发</td>
+<td>消除溶剂/平衡差异对方法比较的混淆</td>
+<td>输入：4AKE 结构；输出：平衡盒子</td>
+<td>Methods 4.1；「shared by all subsequent production runs」</td>
+<td>若各自独立平衡，方法差异将与初始条件差异混淆</td>
+</tr>
+<tr>
+<td>功能元动力学（B）</td>
+<td>沿域间距离 CV 扩展采样</td>
+<td>检验功能 CV 是否能有效驱动开闭转变</td>
+<td>输入：平衡结构；输出：偏置轨迹</td>
+<td>Results 2.1 表 1（1260 bins, 0.43% 闭合样）</td>
+<td>移除后无法评估 CV 选择对采样质量的影响</td>
+</tr>
+<tr>
+<td>盲元动力学（G）</td>
+<td>使用通用 CV（Rg, RMSD）</td>
+<td>检验无功能先验时是否能发现闭合态</td>
+<td>输入：平衡结构；输出：偏置轨迹</td>
+<td>Results 2.5（最小 RMSD 2.43 Å，优于功能元动力学）</td>
+<td>移除后无法比较 CV 先验信息的作用</td>
+</tr>
+<tr>
+<td>TMD（C）</td>
+<td>以 RMSD 约束驱动到闭合参考</td>
+<td>检验路径驱动方法的目标态到达能力</td>
+<td>输入：平衡结构 + 1AKE 参考；输出：约束轨迹</td>
+<td>Results 2.3（唯一到达并维持闭合态的方法，54.88% 闭合样帧）</td>
+<td>移除后无方法能到达闭合态，无法建立「到达」基准</td>
+</tr>
+<tr>
+<td>插值 MD（D）</td>
+<td>笛卡尔插值生成中间构象并弛豫</td>
+<td>检验「结构插值 + MD 弛豫」是否足以维持闭合态</td>
+<td>输入：4AKE/1AKE 插值构象；输出：弛豫轨迹</td>
+<td>Results 2.7（闭合样帧仅 0.37%）</td>
+<td>移除后无法评估「种子接近目标态」是否足够</td>
+</tr>
+<tr>
+<td>BioEmu + MD（I）</td>
+<td>序列生成构象集成 + 显式溶剂弛豫</td>
+<td>检验生成式模型构象的物理稳定性</td>
+<td>输入：4AKE 序列；输出：6 个种子 + 50 ns 弛豫轨迹</td>
+<td>Results 2.7（闭合样帧仅 0.03%）</td>
+<td>移除后无法评估生成模型在显式溶剂下的有效性</td>
+</tr>
+<tr>
+<td>统一分析管道</td>
+<td>对所有轨迹用相同标准分类/度量</td>
+<td>保证方法间可比性</td>
+<td>输入：各轨迹；输出：RMSD/覆盖/bin 数/闭合样帧占比</td>
+<td>Methods 4.4</td>
+<td>若分析标准不一致，方法比较失去意义</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>本文为方法比较研究，未提出新公式。以下为理解所需的关键定义：</p>
+<ul>
+<li><strong>Cα RMSD（全局）</strong>：对 Cα 原子坐标进行最优刚体叠合后的均方根偏差，用于定义闭合样帧（阈值 3.5 Å = 0.35 nm）。用途：目标态到达与维持的度量。</li>
+<li><strong>域间距离（domain distance）</strong>：NMP-CORE 和 LID-CORE 的 Cα 质心距离。用途：定义 2D 构象平面和 CV。</li>
+<li><strong>CV bin 覆盖</strong>：在 NMP-CORE × LID-CORE 平面上以 0.05 nm × 0.05 nm 为 bin，统计轨迹占据的 bin 数。用途：度量构象空间探索广度。</li>
+<li><strong>闭合样帧占比</strong>：Cα RMSD 到 1AKE &lt; 3.5 Å 的帧数 / 总帧数。用途：度量目标态稳定占据。</li>
+<li><strong>TMD 约束</strong>：谐波约束，力常数 8000 kJ/mol/nm²，目标 RMSD 0.05 nm，前 2/3 时间退火。用途：驱动系统到闭合参考。</li>
+<li><strong>GaMD 参数</strong>：二面角势统计 Vmin=10,800，Vmax=11,285，Vavg=11,024，σ=75 kJ/mol，k0≈0.107。用途：表征 GaMD 偏置强度。</li>
+<li><strong>元动力学参数</strong>：高斯高度 1.0 kJ/mol，宽度 0.05 nm，沉积间隔 2 ps，偏置因子 12，网格 0.6-4.5 nm。用途：表征元动力学偏置设置。</li>
+</ul>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>: 单一体系——apo 大肠杆菌腺苷酸激酶（AdK），214 残基；开放态起点为 PDB 4AKE（chain A），闭合参考为配体剥离的 PDB 1AKE（chain A）。非数据集型研究，为单体系基准比较。</li>
+<li><strong>规模</strong>: 9 种协议 × 300 ns 显式溶剂 MD（TMD 308.3 ns）；体系 39,915 原子；单张 RTX 4090。</li>
+<li><strong>指标</strong>: 最小 Cα RMSD 到 1AKE、闭合样帧占比（&lt; 3.5 Å）、域间距离平面 bin 覆盖数、Cα RMSF、GPU 时间。</li>
+<li><strong>基线</strong>: 方法 A（无偏 MD）为物理基线；方法 D（插值 MD）为非生成式「种子接近目标态」对照；方法 H（错误 CV 元动力学）为负对照。</li>
+<li><strong>oracle 输入</strong>: 闭合参考态（1AKE）仅用于评估，不参与除 TMD 和插值 MD 外的采样过程；BioEmu 仅接收序列。</li>
+<li><strong>评测协议</strong>: 所有方法共享同一平衡盒子；分析统一使用 Cα 坐标；闭合样帧分类阈值统一为 3.5 Å。</li>
+<li><strong>算力成本</strong>: 单张 RTX 4090，OpenCL 平台；无偏 MD 约 13.5 GPU h/300 ns，元动力学 16.3-16.7 GPU h/300 ns。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>闭合态到达与维持</td>
+<td>不同方法到达并维持闭合参考态的能力不同</td>
+<td>9 种协议，统一 300 ns 预算，统一闭合阈值 3.5 Å</td>
+<td>仅 TMD 到达并维持（54.88% 闭合样帧，最小 RMSD 1.28 Å）；无偏 MD 最小 RMSD 3.86 Å，未达阈值</td>
+<td>TMD 是唯一能稳定占据闭合参考态的方法</td>
+<td>不能推断 TMD 的闭合态是平衡态或自由能极小</td>
+<td>Results 2.1 表 1；Results 2.3 图 3</td>
+</tr>
+<tr>
+<td>CV 覆盖 vs 目标态占据</td>
+<td>高 CV 覆盖不等于高目标态占据</td>
+<td>功能元动力学（1260 bins）vs 无偏 MD（212 bins）vs TMD（213 bins）</td>
+<td>功能元动力学覆盖最大但闭合样帧仅 0.43%；TMD 覆盖小但闭合样帧 54.88%</td>
+<td>CV 覆盖度不能作为目标态采样效率的代理</td>
+<td>不能推断元动力学的 FES 重建无效（未做重加权）</td>
+<td>Results 2.1 表 1；Results 2.5</td>
+</tr>
+<tr>
+<td>元动力学过度打开</td>
+<td>元动力学促进 LID 过度打开</td>
+<td>功能元动力学 LID-CORE 最大 4.54 nm；盲元动力学 4.67 nm</td>
+<td>两种元动力学均产生远超闭合参考（2.10 nm）和开放参考（3.08 nm）的 LID 距离</td>
+<td>元动力学偏置沿 CV 方向驱动过度打开</td>
+<td>不能推断所有元动力学设置都会过度打开</td>
+<td>Results 2.2；Results 2.5</td>
+</tr>
+<tr>
+<td>生成模型构象稳定性</td>
+<td>BioEmu 闭合样构象在显式溶剂 MD 中不持久</td>
+<td>6 个 BioEmu 种子（RMSD 1.94-3.81 Å），各 50 ns 无偏 MD</td>
+<td>闭合样帧仅 0.03%；中间态 95.5%</td>
+<td>生成构象不在 ff14SB/TIP3P 自由能盆内</td>
+<td>不能推断 BioEmu 对所有体系均无效</td>
+<td>Results 2.7；Supplementary Figure S7</td>
+</tr>
+<tr>
+<td>插值 MD 构象稳定性</td>
+<td>笛卡尔插值种子不维持闭合态</td>
+<td>6 个插值种子，各 50 ns 无偏 MD</td>
+<td>闭合样帧仅 0.37%；60.1% 开放样</td>
+<td>接近目标态的初始结构不足以维持闭合</td>
+<td>不能推断其他插值路径（如非线性）无效</td>
+<td>Results 2.7</td>
+</tr>
+<tr>
+<td>模拟退火温度效应</td>
+<td>温度升高促进闭合而非打开</td>
+<td>8 温度（300-400 K），平均 344 K</td>
+<td>闭合样帧 0%；LID-CORE 增大</td>
+<td>300-400 K 范围促进 LID 打开而非闭合</td>
+<td>不能推断更高温度范围的行为</td>
+<td>Results 2.6；Supplementary Figure S8</td>
+</tr>
+<tr>
+<td>GaMD 效果</td>
+<td>GaMD 提升闭合态采样</td>
+<td>二面角 GaMD，k0≈0.107</td>
+<td>闭合样帧 0.03%；CO 象限 40.1%</td>
+<td>GaMD 改变构象分布但未达闭合态</td>
+<td>不能推断更强偏置的效果</td>
+<td>Results 2.6</td>
+</tr>
+<tr>
+<td>错误 CV 负对照</td>
+<td>与功能无关的 CV 不促进闭合</td>
+<td>两个 CORE 内距离为 CV</td>
+<td>行为接近无偏基线</td>
+<td>错误 CV 不提供功能相关信息</td>
+<td>不能推断所有非功能 CV 均无效</td>
+<td>Supplementary Section S5；Figure S9</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 本文结论仅适用于 apo AdK 在 ff14SB/TIP3P 力场、300 ns 显式溶剂预算下的行为。不适用于其他蛋白、其他力场、其他时长或其他溶剂条件。</li>
+<li><strong>oracle/真值输入</strong>: 闭合参考态由配体剥离的 1AKE 定义，并非实验确定的 apo 闭合态。1AKE 是抑制剂结合态，配体去除后可能不代表真实的 apo 闭合构象。TMD 的目标是该参考态，而非实验 apo 闭合态。</li>
+<li><strong>端到端状态</strong>: 本文为纯计算研究，无实验验证。作者明确声明「purely computational: no experimental validation of the sampled ensembles or of the protocol ranking was performed」。</li>
+<li><strong>算力成本</strong>: 单张 RTX 4090，每方法 300 ns，总 GPU 时间约 120-150 h。元动力学额外开销约 20-25%。TMD 因约束计算略高（15.9 GPU h）。</li>
+<li><strong>历史数据依赖</strong>: 无。所有模拟从同一平衡起点开始，不依赖历史轨迹。</li>
+<li><strong>模型依赖</strong>: 力场为 ff14SB；水模型为 TIP3P；平台为 OpenMM 8.6（OpenCL/CPU PME）。BioEmu 为 v1.1，仅序列输入。不同力场或平台可能改变结论。</li>
+<li><strong>最难情形</strong>: 元动力学的 FES 重建显示闭合参考附近区域采样稀疏（约 129 kJ/mol 高能区域），说明即使到达闭合态附近，自由能面的可靠性也有限。作者未做重加权，因此所有偏置模拟的分布都不能解释为平衡分布。</li>
+<li><strong>群体/领域边界</strong>: 结论限于 AdK 这一体系。作者在 Discussion 中建议将本文框架推广到其他体系，但未提供证据。</li>
+<li><strong>不确定性</strong>: 未提供误差棒、重复实验或统计检验。所有结论基于单次轨迹（或 6 个种子的拼接轨迹）。闭合样帧占比等指标未报告方差。</li>
+<li><strong>有边界的复述</strong>: 在 ff14SB/TIP3P 力场、300 ns 显式溶剂预算、apo AdK 体系下，TMD 是唯一能到达并维持闭合参考态的方法，但其行为属非平衡驱动；元动力学（功能或盲 CV）大幅扩展 CV 空间覆盖但主要产生 LID 过度打开；BioEmu 生成的闭合样构象在显式溶剂 MD 中不稳定；CV 覆盖度不能作为目标态采样效率的代理指标。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>纯计算、无实验验证</td>
+<td>「The work is purely computational: no experimental validation of the sampled ensembles or of the protocol ranking was performed」</td>
+<td>将协议-问题映射与实验室可观测量的关联需要实验测试</td>
+<td>Discussion 末段</td>
+</tr>
+<tr>
+<td>单体系、单力场</td>
+<td>仅研究野生型 apo AdK，仅使用 ff14SB/TIP3P</td>
+<td>未明确提及，但隐含需要扩展到其他体系和力场</td>
+<td>Discussion 末段</td>
+</tr>
+<tr>
+<td>300 ns 预算有限</td>
+<td>生产长度 300 ns，而非微秒-毫秒尺度</td>
+<td>未明确提及</td>
+<td>Discussion 末段</td>
+</tr>
+<tr>
+<td>未研究配体结合态和突变体</td>
+<td>「ligand-bound states and point mutants that alter the open–closed equilibrium were not investigated」</td>
+<td>未明确提及</td>
+<td>Discussion 末段</td>
+</tr>
+<tr>
+<td>偏置模拟未重加权</td>
+<td>元动力学和 TMD 的分布未重加权为 300 K 平衡分布</td>
+<td>定量自由能估计需要单独的重加权和收敛性评估</td>
+<td>Discussion 末段</td>
+</tr>
+<tr>
+<td>BioEmu 采样规模有限</td>
+<td>仅 6 个种子，非统计大样本</td>
+<td>未明确提及</td>
+<td>Methods 4.3</td>
+</tr>
+<tr>
+<td>闭合参考态非实验 apo 态</td>
+<td>闭合参考由配体剥离的 1AKE 定义，非实验确定的 apo 闭合结构</td>
+<td>未明确提及</td>
+<td>Methods 4.1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单次轨迹、无重复</td>
+<td>所有结论基于单次 300 ns 轨迹（或 6 种子拼接），无误差棒或统计检验。元动力学和 TMD 的随机性可能影响闭合样帧占比等指标</td>
+<td>若轨迹间方差大，方法排序可能不稳定</td>
+<td>每种方法运行 3-5 次独立重复，报告均值和标准差</td>
+<td>Results 2.1 表 1 未提供方差</td>
+</tr>
+<tr>
+<td>闭合参考态定义</td>
+<td>配体剥离的 1AKE 可能不代表真实的 apo 闭合态；apo AdK 的闭合态在实验中可能只是瞬态</td>
+<td>若参考态定义有偏，TMD 的「成功」可能只是对人为目标的拟合</td>
+<td>使用 NMR 或 smFRET 导出的 apo 系综作为参考，或使用多个闭合态参考</td>
+<td>Methods 4.1</td>
+</tr>
+<tr>
+<td>元动力学未重加权</td>
+<td>作者明确不将偏置分布解释为自由能，但 FES 重建（图 8）仍被展示。未重加权的 FES 可能误导读者</td>
+<td>若读者误读 FES 为热力学量，可能得出错误结论</td>
+<td>对元动力学轨迹进行重加权（如 Tiwary-Parrinello），比较重加权前后 FES</td>
+<td>Results 2.5 图 8</td>
+</tr>
+<tr>
+<td>TMD 的「维持」是约束产物</td>
+<td>TMD 在 RMSD 约束下维持闭合态，不能说明无约束时闭合态是否稳定</td>
+<td>若约束撤除后系统迅速打开，TMD 的「稳定占据」意义有限</td>
+<td>在 TMD 末端撤除约束，继续无偏 MD 观察闭合态保持时间</td>
+<td>Results 2.3</td>
+</tr>
+<tr>
+<td>BioEmu 评估不完整</td>
+<td>仅 6 个种子、50 ns 弛豫，未评估生成模型的整体构象分布质量（如多样性、与实验系综的重叠）</td>
+<td>若生成模型本身质量高但种子选择有偏，结论可能不公</td>
+<td>增加种子数、延长弛豫时间、用系综重叠指标（如 ECOD）评估</td>
+<td>Results 2.7</td>
+</tr>
+<tr>
+<td>计算成本比较不完整</td>
+<td>仅报告 GPU 时间，未报告内存、CPU 开销、wall-clock 时间。元动力学的 bin 写入和 TMD 的约束计算可能有额外开销</td>
+<td>若实际 wall-clock 差异更大，方法选择的成本考量会改变</td>
+<td>报告完整资源使用（内存、CPU、wall-clock）</td>
+<td>Results 2.8</td>
+</tr>
+<tr>
+<td>「错误 CV」负对照的推广性</td>
+<td>仅测试了一组「错误」CV（两个 CORE 内距离），不能排除其他非功能 CV 也能促进闭合</td>
+<td>若某些非功能 CV 也能驱动闭合，则「功能 CV 必要性」的结论需弱化</td>
+<td>测试多组随机/非功能 CV 组合</td>
+<td>Supplementary Section S5</td>
+</tr>
+<tr>
+<td>力场依赖性未测试</td>
+<td>结论基于 ff14SB/TIP3P，其他力场（如 CHARMM36m、AMBER ff19SB）可能改变闭合态稳定性</td>
+<td>若力场对闭合态稳定性敏感，方法排序可能改变</td>
+<td>在 2-3 种力场下重复关键实验（TMD、功能元动力学、无偏 MD）</td>
+<td>Methods 4.1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>「CV 覆盖 ≠ 目标态占据」的评估框架</strong>：本文最核心的可迁移概念。在评估任何增强采样或生成模型时，应同时报告（a）CV 空间覆盖度、（b）目标态到达时间/频率、（c）目标态维持时间/占比，三者不可互相替代。可迁移到本课题的构象生成模型评估中：生成模型的 RMSD 分布不能替代 MD 弛豫后的稳定性验证。</p>
+</li>
+<li>
+<p><strong>统一预算比较协议</strong>：本文的「同一体系、同一力场、同一溶剂、同一预算、同一分析标准」比较框架，可直接迁移到本课题的方法评估中。特别是「共享同一平衡盒子」的设计，消除了初始条件差异对方法比较的混淆。</p>
+</li>
+<li>
+<p><strong>负对照设计</strong>：方法 H（错误 CV 元动力学）和方法 D（插值 MD）作为负对照和「非生成式种子」对照，为方法比较提供了重要参照。本课题在评估 AI 构象生成模型时，应设置类似的非 AI 基线（如结构插值、同源模型）。</p>
+</li>
+<li>
+<p><strong>生成模型 + MD 弛豫的验证流程</strong>：BioEmu 生成闭合样构象但 MD 弛豫后不稳定，说明生成模型的构象必须经过显式溶剂 MD 验证。可迁移到本课题：任何 AI 生成的构象（AlphaFold、扩散模型、生成式集成模型）都应经过 MD 弛豫验证其物理稳定性。</p>
+</li>
+<li>
+<p><strong>过度打开（over-opening）的监测</strong>：元动力学和模拟退火均产生 LID 过度打开，说明增强采样可能放大非功能运动。本课题在评估构象采样方法时，应监测非目标自由度（如 LID 过度打开）作为副作用指标。</p>
+</li>
+<li>
+<p><strong>TMD 作为「可达性」基准</strong>：TMD 在已知目标结构时能有效到达并维持目标态，可作为评估其他方法「目标态可达性」的参照。本课题在评估生成模型时，可用 TMD 作为「已知目标时的最优可达性」上界。</p>
+</li>
+<li>
+<p><strong>计算成本归一化</strong>：本文按 GPU 时间归一化比较各方法，而非按模拟长度。本课题在比较不同方法（MD vs 生成模型）时，应以计算成本而非轨迹长度作为归一化基准。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AdK 开闭转变的已有研究</strong>: 本文引用了 NMR（Henzler-Wildman et al.）、smFRET 和计算研究，表明 apo AdK 可采样部分闭合转变，但闭合事件在纳秒时间尺度上罕见。本文的 300 ns 无偏 MD 未达闭合态与此一致。可连接：Henzler-Wildman et al., Nature 2007（AdK 的 NMR 系综与开闭转变）。</li>
+<li><strong>元动力学与 CV 选择</strong>: 本文的功能元动力学（域间距离 CV）与盲元动力学（Rg, RMSD）的比较，呼应了 CV 选择对增强采样效果的关键影响。可连接：Bussi &amp; Laio, Nat. Rev. Phys. 2020（元动力学的 CV 选择与收敛性）。</li>
+<li><strong>TMD 的适用性</strong>: TMD 作为非平衡路径方法的定位，与「路径采样 vs 平衡采样」的区分一致。可连接：Schlitter et al., J. Mol. Graph. 1994（TMD 原始方法）；Ovchinnikov &amp; Karplus, J. Phys. Chem. B 2012（TMD 的路径分析）。</li>
+<li><strong>GaMD 的已有评估</strong>: 本文 GaMD 未显著提升闭合态采样，与 GaMD 在较大构象重排中的局限性一致。可连接：Miao et al., JCTC 2015（GaMD 原始方法）。</li>
+<li><strong>BioEmu 与生成式构象模型</strong>: 本文是少数将生成式模型（BioEmu）与增强采样 MD 在统一预算下比较的工作。可连接：Lewis et al., Nature 2024（BioEmu 原始方法）；后续可连接 AlphaFold 3（Abramson et al., Nature 2024）的构象生成能力评估。</li>
+<li><strong>「覆盖 vs 占据」的区分</strong>: 本文的核心区分与「构象系综的多样性 vs 热力学权重」的讨论一致。可连接：Best, J. Chem. Theory Comput. 2012（系综评估指标）；Lindorff-Larsen et al., PLoS One 2016（Markov 状态模型与系综验证）。</li>
+<li><strong>力场依赖性</strong>: 本文使用 ff14SB/TIP3P，未测试其他力场。可连接：Beauchamp et al., JCTC 2012（力场对蛋白质构象系综的影响）。</li>
+<li><strong>计算成本比较</strong>: 本文按 GPU 时间归一化比较，与「计算成本感知的方法评估」趋势一致。可连接：Eastman et al., PLoS Comput. Biol. 2017（OpenMM 性能基准）。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>: 多力场 × 多预算的 AdK 构象采样基准扩展
+   - <strong>来源局限/观察</strong>: 本文仅使用 ff14SB/TIP3P 和 300 ns 预算，结论的力场和时长依赖性未知。
+   - <strong>核心假设</strong>: 不同力场（ff19SB、CHARMM36m、a99SB-disp）下，各采样方法的相对排序可能改变，尤其是闭合态稳定性。
+   - <strong>初步方法</strong>: 在 2-3 种力场下重复本文的 9 种协议，预算梯度（100/300/1000 ns），比较闭合态占据和 CV 覆盖的力场敏感性。
+   - <strong>验证方式</strong>: 力场间闭合态占据的秩相关；与 NMR 化学位移或 smFRET 距离分布对比。
+   - <strong>可能的失败模式</strong>: 力场差异可能小于方法差异，导致结论不变；或闭合态在多数力场下均不稳定，无法区分。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 生成式构象模型的 MD 稳定性评分（Generative-to-MD Stability Score, G2MSS）
+   - <strong>来源局限/观察</strong>: 本文发现 BioEmu 生成的闭合样构象在 MD 中不稳定（0.03% 闭合样帧），但未提供量化指标。
+   - <strong>核心假设</strong>: 生成模型的构象质量可通过「MD 弛豫后的目标态保持率」量化，该指标与生成模型的训练目标（如序列-结构映射）无关。
+   - <strong>初步方法</strong>: 对任意生成模型（BioEmu、AlphaFold 3、扩散模型）的构象输出，统一执行 50 ns 显式溶剂 MD，计算目标态保持率、RMSF、自由能盆偏离度，形成标准化评分。
+   - <strong>验证方式</strong>: 在 AdK 及其他开闭转变体系（如 MBP、LAO 结合蛋白）上测试，与实验系综对比。
+   - <strong>可能的失败模式</strong>: MD 弛豫时间不足以反映真实稳定性；生成模型构象可能落在 MD 力场的高能区域，导致评分偏低但实际有效。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 过度打开指数（Over-opening Index, OOI）作为增强采样副作用监测指标
+   - <strong>来源局限/观察</strong>: 元动力学和模拟退火均产生 LID 过度打开（4.54-4.67 nm），但现有评估多关注目标 CV 的覆盖，忽略非目标自由度的失真。
+   - <strong>核心假设</strong>: 增强采样方法在扩展目标 CV 的同时，可能系统性放大非目标自由度（如 LID 过度打开），OOI 可量化这一副作用。
+   - <strong>初步方法</strong>: 定义 OOI = 非目标自由度（如 LID-CORE 距离）超过参考系综最大值的帧占比；在多种增强采样方法上计算 OOI，与目标态占据率联合评估。
+   - <strong>验证方式</strong>: 在 AdK 及多结构域蛋白（如 PyK、HK）上测试 OOI 与实验系综的一致性。
+   - <strong>可能的失败模式</strong>: OOI 可能对 CV 选择高度敏感，不同 CV 集下结果不一致。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 混合工作流：生成式模型筛选 + TMD 精修 + 无偏 MD 验证
+   - <strong>来源局限/观察</strong>: 本文显示生成式模型（BioEmu）和 TMD 各有优势：前者快速生成多样构象，后者能到达并维持目标态。但两者单独使用均有局限。
+   - <strong>核心假设</strong>: 将生成式模型的构象多样性（筛选候选）与 TMD 的目标态驱动（精修）结合，可优于任一单独方法。
+   - <strong>初步方法</strong>: 用 BioEmu 生成 100 个构象 → 按域间距离聚类 → 每簇选代表 → TMD 驱动到闭合参考 → 无偏 MD 验证稳定性。与单独 BioEmu、单独 TMD 比较闭合态占据和计算成本。
+   - <strong>验证方式</strong>: 在 AdK 上测试，扩展至其他开闭转变体系。
+   - <strong>可能的失败模式</strong>: TMD 精修可能破坏生成模型的多样性；生成模型构象可能不在 TMD 的收敛半径内。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 无参考目标态的构象采样评估指标
+   - <strong>来源局限/观察</strong>: 本文的评估依赖已知闭合参考（1AKE）。在无参考结构的情况下，如何评估采样质量仍是开放问题。
+   - <strong>核心假设</strong>: 可通过「构象系综的物理合理性」（如 Ramachandran 分布、侧链 packing、溶剂可及面积）和「系综内部一致性」（如 Markov 状态模型的转移矩阵可逆性）评估无参考采样质量。
+   - <strong>初步方法</strong>: 对本文 9 种协议的轨迹，计算无参考指标（如系综内 RMSD 分布、自由能面连通性、力场能量分布），与有参考指标（闭合态占据）比较相关性。
+   - <strong>验证方式</strong>: 在 AdK 上验证无参考指标与闭合态占据的相关性；扩展至无已知闭合态的蛋白。
+   - <strong>可能的失败模式</strong>: 无参考指标可能无法捕捉目标态特异性，导致与有参考指标相关性低。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 力场-生成模型一致性检验（Force-field-Generative Consistency, FGC）
+   - <strong>来源局限/观察</strong>: BioEmu 生成的构象在 ff14SB/TIP3P 下不稳定，可能反映生成模型训练数据（PDB）与 MD 力场的自由能面不一致。
+   - <strong>核心假设</strong>: 生成模型与 MD 力场的一致性可通过「生成构象在 MD 中的初始弛豫方向」量化：若生成构象在力场下向目标态弛豫，则一致；若向非目标方向弛豫，则不一致。
+   - <strong>初步方法</strong>: 对 BioEmu 生成的闭合样构象，执行短 MD（1-5 ns），统计 Cα RMSD 到闭合参考的时间演化方向；定义 FGC 分数 = 向闭合态弛豫的种子比例。
+   - <strong>验证方式</strong>: 在 AdK 上测试，扩展至其他体系；与不同力场（ff19SB、CHARMM36m）比较 FGC 分数。
+   - <strong>可能的失败模式</strong>: 短 MD 弛豫方向可能对初始速度敏感；生成模型可能在不同力场下表现不同。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text provided (Abstract, Introduction, Results, Discussion, Materials and Methods, Conclusions, Acknowledgments). No separate figures, tables, or supplementary files were supplied as standalone items.</li>
+<li><strong>Assessment boundary</strong> Evaluation is limited to the supplied text. Numerical values, figure content, and supplementary items are assessed only as reported in the text; no independent verification of trajectories, code, or deposited data was possible.</li>
+<li><strong>Shared manuscript claim summary</strong> Under a uniform 300 ns explicit-solvent budget, nine sampling protocols for apo E. coli adenylate kinase are compared. The authors report that TMD was the only method that reached and maintained a reference-closed basin defined from ligand-stripped 1AKE, that metadynamics and simulated tempering expanded collective-variable coverage largely through LID over-opening, that BioEmu generated closed-like seeds that did not persist under short unbiased MD, and that CV coverage, target-state reaching, and stable target-state occupancy are distinct aspects of sampling.</li>
+<li><strong>Visible evidence base</strong> Text-reported metrics only: Table 1 (as cited), Figures 1 to 8 (as cited), Supplementary Figures S1 to S17 and Supplementary Section S5 (as cited), Methods Sections 4.1 to 4.4, and a public repository URL. No raw trajectories, no numerical tables, no figure panels, and no supplementary text were provided for inspection.</li>
+<li><strong>Missing materials affecting confidence</strong> Figure panels and captions, Table 1 contents, Supplementary Section S5 and Figures S1 to S17, the analysis scripts and numerical tables at the stated repository, force-field and BioEmu version details beyond those named, and any convergence or reproducibility diagnostics for the biased runs.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript addresses a legitimate and useful question, namely how different sampling strategies behave when applied to the same system under a matched computational budget. The framing is careful, the limitations are stated explicitly, and the authors repeatedly avoid over-interpreting biased distributions as thermodynamics. The central comparative claim, that CV coverage, target-state reaching, and stable occupancy are distinct, is internally consistent with the reported numbers. However, the study rests on a single protein, a single force field, a single 300 ns budget, and a reference-closed basin derived from a ligand-bound crystal. Several quantitative statements, particularly the metadynamics free-energy values and the coverage-efficiency comparison, are presented with more precision than the underlying convergence supports. The BioEmu comparison uses six relaxed seeds, which is too few to support general statements about sequence-based generative ensembles. As written, the work is a reasonable methodological comparison but does not yet establish a generalizable conclusion, and key evidence is deferred to figures and supplementary material that were not available for assessment.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biophysicists and method developers working on enhanced sampling and generative structure models would find the protocol-to-question mapping useful as a practical reference. Researchers studying adenylate kinase conformational dynamics would be interested in the reported LID-versus-NMP mobility asymmetry and the TMD closure order. Groups applying sequence-based generative models as ensemble generators would be interested in the observation that closed-like generated seeds did not persist under explicit-solvent MD, although the small seed count limits how far this can be generalized.</li>
+<li><strong>Major strengths</strong> The comparison is executed under a genuinely shared system preparation, force field, solvent, and production budget, which is the main methodological value of the work. The authors explicitly separate nonequilibrium from equilibrium interpretations, for example for TMD occupancy and for the metadynamics and simulated-tempering distributions. The negative controls, namely wrong-CV metadynamics and interpolation MD, are well chosen and strengthen the argument that proximity to a target structure at seeding time does not imply stable occupancy. The limitations paragraph in the Discussion is unusually candid and correctly identifies the absence of experimental validation, the single force field, and the unrestored reweighting.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness and statistical support</li>
+<li><strong>Claim pointer</strong> The manuscript reports that reconstruction of a free-energy surface from the deposited metadynamics bias placed the closed reference approximately 46 kJ mol−1 above the open crystal, with grid regions reaching approximately 129 kJ mol−1, while also stating these values should not be interpreted as an open–closed free-energy difference.</li>
+<li><strong>Evidence pointer</strong> Section 2.5 and Figure 8; location not provided for the underlying grid data.</li>
+<li><strong>Concern</strong> Reporting specific numerical free-energy values from a biased, admittedly unconverged, and unreweighted distribution creates a quantitative claim that the surrounding caveat does not neutralize. A reader can extract the 46 kJ mol−1 figure without the caveat. If the distribution is not converged and not reweighted, the numbers carry no interpretable meaning and should not be stated as values at all.</li>
+<li><strong>Why it matters</strong> Free-energy differences are among the most citable quantities in this literature. Presenting an unconverged number, even with a disclaimer, risks propagating an unsupported value into subsequent work and undermines the otherwise careful interpretive stance of the paper.</li>
+<li><strong>Resolution test</strong> Either remove the numerical free-energy values and present Figure 8 purely as a qualitative biased-landscape illustration, or provide convergence diagnostics, block analysis, and a reweighted estimate with an uncertainty range. If reweighting is not feasible, state explicitly that no free-energy value is reported.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-M2<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Generalizability of the central comparison</li>
+<li><strong>Claim pointer</strong> The manuscript concludes that different sampling methods provide different types of conformational information and that sampling strategy should be matched to the scientific objective, based on nine protocols applied to one protein, one force field, and one 300 ns budget.</li>
+<li><strong>Evidence pointer</strong> Sections 2.1 to 2.8, Section 3, Section 5; location not provided for any replicate runs.</li>
+<li><strong>Concern</strong> Every protocol was run once. No replicate seeds, no independent starting velocities, and no statistical uncertainty are reported for any metric, including closed-like frame fractions, minimum RMSDs, bin counts, and hitting times. Single-trajectory comparisons cannot distinguish method behavior from trajectory-specific stochastic variation, particularly for rare-event metrics such as the 0.03% and 0.43% closed-like fractions.</li>
+<li><strong>Why it matters</strong> The central claim is comparative. Without replication or uncertainty estimates, differences such as 0.43% versus 0.93% closed-like frames, or 198 versus 212 occupied bins, are not interpretable as method differences. This directly affects whether the protocol-to-question mapping is established.</li>
+<li><strong>Resolution test</strong> Provide at least three independent replicates per protocol with different initial velocities, report means and dispersions for the primary metrics, and state whether the reported method differences exceed the between-replicate spread. If replication is not feasible, the comparative claims must be softened to single-trajectory observations and the abstract and conclusions adjusted accordingly.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-M3<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Evidence base for the generative-model claim</li>
+<li><strong>Claim pointer</strong> The manuscript states that BioEmu generated closed-like conformations that were not maintained during subsequent short MD, and the Discussion proposes a hybrid workflow combining sequence-based generation with explicit-solvent relaxation.</li>
+<li><strong>Evidence pointer</strong> Section 2.7, Section 4.3 Method I, Supplementary Figure S7; location not provided for the sixteen generated samples.</li>
+<li><strong>Concern</strong> Sixteen samples were generated and six were extracted and relaxed. The selection criterion for those six is not stated. The reported RMSD range of 1.94 to 3.81 Å and the statement that five of six were below the 3.5 Å cutoff are therefore based on a small, possibly non-random subset. No comparison is made to the distribution of all sixteen samples, and no thermodynamic weighting was applied.</li>
+<li><strong>Why it matters</strong> Conclusions about a generative ensemble model require either a representative sample of its output distribution or an explicit statement that the extracted seeds are illustrative. As written, the claim that closed-like BioEmu states are not maintained may reflect seed selection rather than model behavior, and the proposed hybrid workflow rests on this limited evidence.</li>
+<li><strong>Resolution test</strong> Report the selection criterion for the six seeds, provide the RMSD and domain-distance distributions for all sixteen generated samples, and state whether the six are representative. If the full set cannot be relaxed, restrict the claim to the specific relaxed seeds and remove general statements about BioEmu ensemble behavior.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-M4<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Validity of the reference-closed basin</li>
+<li><strong>Claim pointer</strong> Closed-state occupancy is evaluated relative to a reference-closed basin defined from ligand-stripped PDB 1AKE, and the 3.5 Å Cα RMSD cutoff is used throughout to classify frames as closed-like.</li>
+<li><strong>Evidence pointer</strong> Section 1, Section 2.3, Section 4.1, Section 4.4.</li>
+<li><strong>Concern</strong> The reference is a ligand-bound crystal after inhibitor removal, and the authors acknowledge it is not an experimentally determined apo closed state. The 3.5 Å cutoff is applied uniformly, but no sensitivity analysis is reported for this threshold, and no alternative reference or alternative metric is used to confirm that the classification is robust. The reported open–closed crystal RMSD is 7.13 Å, so the 3.5 Å cutoff sits near the midpoint and small changes could reclassify substantial frame fractions.</li>
+<li><strong>Why it matters</strong> Nearly every headline number, including 54.88% closed-like frames for TMD and 0.03% for BioEmu-relaxation, depends on this threshold and this reference. If the classification is threshold-sensitive, the comparative ranking may not be stable.</li>
+<li><strong>Resolution test</strong> Report closed-like frame fractions and minimum RMSDs as a function of the RMSD cutoff, for example at 3.0, 3.5, and 4.0 Å, and confirm that the qualitative ranking of protocols is unchanged. Discuss explicitly how the ligand-bound origin of 1AKE may bias the reference basin relative to a true apo closed state.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-M5<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Interpretation of coverage-efficiency comparison</li>
+<li><strong>Claim pointer</strong> The manuscript reports that functional metadynamics achieved approximately 77 occupied CV bins per GPU hour versus 13 to 19 bins per GPU hour for most other protocols, and concludes that metadynamics provided substantially greater CV-plane coverage per unit computational cost.</li>
+<li><strong>Evidence pointer</strong> Section 2.8, Section 4.4.</li>
+<li><strong>Concern</strong> Coverage is defined as occupied bins in a 0.05 nm by 0.05 nm grid over the domain-distance plane. This metric is sensitive to grid resolution, to the extent of the sampled region, and to the fact that over-open conformations contribute bins without contributing functional information. Normalizing this metric by GPU time produces a quantity whose interpretation is unclear, since a method that over-opens more will score higher by construction. The authors acknowledge this qualitatively but still report the normalized values as a comparative result.</li>
+<li><strong>Why it matters</strong> The coverage-efficiency numbers could be read as a performance ranking, which the authors state they do not intend. Without a functional weighting, the metric rewards exploration of non-functional regions.</li>
+<li><strong>Resolution test</strong> Either remove the normalized bins-per-GPU-hour comparison, or supplement it with a coverage metric restricted to the region bounded by the two crystal structures, and report both so that the distinction between total and functional coverage is explicit.</li>
+</ul>
+</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reporting completeness</li>
+<li><strong>Affected element</strong> Table 1 and Figures 1 to 8</li>
+<li><strong>Evidence pointer</strong> Section 2, Table 1, Figures 1 to 8; location not provided for the actual table and figure contents.</li>
+<li><strong>Issue</strong> The manuscript cites Table 1 and Figures 1 to 8 as the primary evidence for the comparative metrics, but the supplied material contains only the text references. The numerical values in the text cannot be checked against the table or figures.</li>
+<li><strong>Required correction</strong> Ensure that Table 1 reports all nine protocols with the same metric set, including minimum RMSD, closed-like fraction, occupied bins, and GPU hours, and that figure captions define all axes, units, and classification thresholds.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-m2<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Methodological detail</li>
+<li><strong>Affected element</strong> Method I, BioEmu protocol</li>
+<li><strong>Evidence pointer</strong> Section 4.3 Method I.</li>
+<li><strong>Issue</strong> The text states that sixteen samples were generated and six frames were extracted, but does not state how the six were chosen, whether they were the most closed-like, or whether they were randomly selected.</li>
+<li><strong>Required correction</strong> State the selection criterion explicitly and, if selection was based on proximity to the closed reference, acknowledge the resulting bias in the interpretation.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-m3<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Methodological detail</li>
+<li><strong>Affected element</strong> Method F, dihedral GaMD</li>
+<li><strong>Evidence pointer</strong> Section 2.6, Section 4.3 Method F.</li>
+<li><strong>Issue</strong> The applied boost is described as relatively mild with k0 approximately 0.107, and the authors note that stronger boosting would require separate assessment. No justification is given for selecting this boost level, and no comparison to standard GaMD boost regimes is provided.</li>
+<li><strong>Required correction</strong> Justify the chosen boost level relative to established GaMD practice, or state explicitly that the GaMD result is conditional on this specific and possibly suboptimal boost setting.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-m4<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Analysis scripts and numerical tables</li>
+<li><strong>Evidence pointer</strong> Section 4.4, repository URL.</li>
+<li><strong>Issue</strong> The repository is cited as containing analysis scripts and numerical tables, but the supplied material does not include the repository contents, and no version, commit hash, or archival identifier is given.</li>
+<li><strong>Required correction</strong> Provide a versioned or archived identifier for the repository and confirm that all numerical values reported in the text can be regenerated from the deposited scripts and data.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-m5<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology consistency</li>
+<li><strong>Affected element</strong> Use of "closed reference" and "closed-like"</li>
+<li><strong>Evidence pointer</strong> Throughout Sections 1 to 5.</li>
+<li><strong>Issue</strong> The terms "closed reference", "reference-closed basin", and "closed-like" are used interchangeably in places, and the distinction between reaching the reference and occupying a basin defined relative to it is not always clear.</li>
+<li><strong>Required correction</strong> Define each term once in the Methods and use them consistently, distinguishing structural proximity from basin occupancy.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-m6<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Numerical precision</li>
+<li><strong>Affected element</strong> Reported percentages and distances</li>
+<li><strong>Evidence pointer</strong> Sections 2.1 to 2.8.</li>
+<li><strong>Issue</strong> Values such as 54.88%, 0.93%, 0.43%, and 0.03% are reported to two significant figures without uncertainty, which implies more precision than single-trajectory estimates support.</li>
+<li><strong>Required correction</strong> Round reported percentages and distances to a precision consistent with the underlying sampling, or attach uncertainty estimates if replicates are provided.</li>
+</ul>
+</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (unconverged free-energy values reported numerically), R1-M2 (no replication or uncertainty for any comparative metric), R1-M3 (six-seed BioEmu basis for generative-model claims), R1-M4 (threshold and reference sensitivity untested), R1-M5 (coverage-efficiency metric rewards non-functional exploration).</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality is moderate. The individual methods are established, and the contribution is the controlled same-system comparison rather than a new method or a new biological finding. Scientific importance is limited by the single-protein, single-force-field scope and by the absence of experimental validation, which the authors acknowledge. Interdisciplinary readership is plausible but narrow, since the results speak primarily to computational method selection rather than to biology, and the adenylate kinase findings are largely consistent with prior literature. Technical soundness is the weakest axis, because the comparative claims rest on single trajectories without uncertainty, the free-energy values are reported despite acknowledged non-convergence, and the generative-model comparison uses six seeds. Readability for nonspecialists is reasonable in the Introduction and Discussion, but the Results section assumes familiarity with collective variables, reweighting, and domain nomenclature, and a nonspecialist would struggle to extract the practical guidance the authors intend to provide.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The comparison is well motivated and the interpretive caution is commendable, but the central comparative claims require replication with uncertainty estimates, removal or proper support of the numerical free-energy values, a representative BioEmu sample, and a sensitivity analysis of the closed-state classification before the protocol-to-question mapping can be considered established.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The reported free-energy values of approximately 46 kJ mol−1 and approximately 129 kJ mol−1 are not supported as interpretable quantities, since the authors state the distribution was neither converged nor reweighted.</li>
+<li>The comparative ranking of protocols by closed-like frame fraction, minimum RMSD, and occupied bins is not supported by replicate runs or uncertainty estimates, and single-trajectory differences of the reported magnitude may not be method-specific.</li>
+<li>The claim that BioEmu closed-like conformations are not maintained during explicit-solvent MD is based on six selected seeds out of sixteen generated samples, with the selection criterion unstated, and cannot be generalized to the model's ensemble behavior.</li>
+<li>The coverage-efficiency comparison in bins per GPU hour is reported as a quantitative result but is not interpretable as a performance measure because the metric includes non-functional over-open regions.</li>
+<li>The proposed hybrid workflow combining sequence-based generation with explicit-solvent relaxation is a recommendation rather than a tested protocol, since no such workflow was executed end to end in this study.</li>
+<li>The statement that the LID is more mobile than the NMP domain in unbiased MD is consistent with prior literature but is derived here from a single 300 ns trajectory and is therefore weakly supported within this work.</li>
+<li>The TMD closure order, NMP before LID, is correctly described by the authors as restraint-dependent kinematics, and any reading of it as an equilibrium mechanism is unsupported.</li>
+<li>The classification of frames as open-like, closed-like, or intermediate depends on a single 3.5 Å cutoff applied to a ligand-stripped reference, and no sensitivity analysis is provided to show that the resulting fractions are robust.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

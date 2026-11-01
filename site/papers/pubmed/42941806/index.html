@@ -1,0 +1,764 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>From Prediction to Generation: Artificial Intelligence Reconstructing the Paradigm of Protein Glycosylation Research. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>From Prediction to Generation: Artificial Intelligence Reconstructing the Paradigm of Protein Glycosylation Research.</h1>
+      <div class="meta">Zhu, Junhong; Huang, Shuang; Zhang, Nannan</div>
+      <div class="meta muted">
+        
+        <span class="journal">International journal of molecular sciences</span>
+        · 2026-10-27
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42941806/">原文</a>
+      </div>
+      <p class="one-liner">该综述以蛋白质糖基化为对象，系统梳理AI在糖基化位点预测、糖结构生成及糖蛋白构象模拟（含AlphaFold3和MD）中的应用，虽非纯蛋白结构核心，但方法可迁移至蛋白质结构计算研究。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Among post-translational modifications, protein glycosylation is distinguished by its abundance and structural intricacy. Unlike protein biosynthesis, glycan assembly follows no template; it reflects glycosyltransferase/glycosidase competition, sugar-donor availability, and organelle-enforced compartmentalization, yielding heterogeneous glycoforms that confer functional versatility but complicate analysis. Three bottlenecks persist: stereochemical control in chemical glycosylation, ambiguous assignment of occupancy sites, and reproducing native conformations of fully glycosylated proteins. Adopting the &#34;glycan language&#34; framework, we survey how AI addresses each, emphasizing the systems on which it has been tested. In synthesis planning, GlycoPredictor uncovered anomeric-selectivity rules such as the anti-nitrile and C2-azido alpha-directing effects, while Bayesian optimization discovered lithium-salt-directed stereoselective glycosylation; for site identification, ESM-2 with AlphaFold2-derived structural features improves N- and O-glycosite prediction, and DeepGlycanSite maps carbohydrate-binding interfaces. For structure and dynamics, AlphaFold3 and multimodal cryo-electron microscopy (cryo-EM), hydrogen-deuterium exchange mass spectrometry, and molecular dynamics (MD) modeling move glycoproteins toward conformational ensembles, as in the AI-assisted dissection of the MCTS1-JAK2-IFN-gamma axis. In glycomics, deep learning resolves intact glycopeptides and de novo glycan topology and has defined Fc N-glycan signatures of immunoglobulin G in autoimmune and malignant disease. Because glycan language models link sequence and structure to function, they are becoming clinically actionable: they prioritize candidate variants in congenital disorders of glycosylation and stratify immune disorders and tumors by aberrant glycosylation. Remaining obstacles include scarce structure-linked datasets, encoding of branched topologies, multimodal fusion, and interpretability.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">在翻译后修饰中，蛋白质糖基化以其丰富性和结构复杂性而著称。与蛋白质生物合成不同，聚糖组装不遵循模板；它反映了糖基转移酶/糖苷酶的竞争、糖供体的可用性以及细胞器强加的区室化，从而产生异质性糖型，赋予功能多样性但使分析复杂化。存在三个瓶颈：化学糖基化中的立体化学控制、占据位点的模糊分配，以及完全糖基化蛋白质天然构象的再现。采用“聚糖语言”框架，我们调查了人工智能如何应对这些问题，并强调其测试所基于的系统。在合成规划中，GlycoPredictor揭示了异头选择性规则，如抗腈基和C2-叠氮基α导向效应，而贝叶斯优化发现了锂盐导向的立体选择性糖基化；对于位点识别，ESM-2结合AlphaFold2衍生的结构特征改善了N-和O-糖位点预测，DeepGlycanSite则绘制碳水化合物结合界面。在结构和动力学方面，AlphaFold3和多模态冷冻电子显微镜（cryo-EM）、氢-氘交换质谱以及分子动力学（MD）建模将糖蛋白推向构象系综，如MCTS1-JAK2-IFN-γ轴的AI辅助解析所示。在糖组学中，深度学习解析完整糖肽和从头聚糖拓扑，并已定义免疫球蛋白G在自身免疫和恶性疾病中的Fc N-聚糖特征。由于聚糖语言模型将序列和结构与功能联系起来，它们正变得临床可操作：它们在先天性糖基化障碍中优先考虑候选变异，并通过异常糖基化对免疫疾病和肿瘤进行分层。剩余障碍包括稀缺的结构关联数据集、分支拓扑的编码、多模态融合和可解释性。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: From Prediction to Generation: Artificial Intelligence Reconstructing the Paradigm of Protein Glycosylation Research</li>
+<li><strong>作者</strong>: Zhu, Junhong; Huang, Shuang; Zhang, Nannan</li>
+<li><strong>单位</strong>: 未提供</li>
+<li><strong>期刊/平台</strong>: International Journal of Molecular Sciences</li>
+<li><strong>年份</strong>: 2026</li>
+<li><strong>论文类型</strong>: 综述（Review）</li>
+<li><strong>领域</strong>: 蛋白质糖基化 × 人工智能（AI）</li>
+<li><strong>关键词</strong>: 蛋白质糖基化；人工智能；糖基化位点预测；结构预测；糖组学；AlphaFold3</li>
+<li><strong>DOI/ID</strong>: 10.3390/ijms27209032</li>
+<li><strong>代码</strong>: 未提供</li>
+<li><strong>数据</strong>: 未提供</li>
+<li><strong>阅读日期</strong>: 2026-11-01</li>
+<li><strong>在课题方向中的位置</strong>: 本文是综述，覆盖 AI 在糖基化反应预测、糖基化位点鉴定、糖蛋白结构建模（含 AlphaFold3 评估）和糖组学数据挖掘四个环节的应用。对本课题（蛋白质结构相关计算研究 × AI/物理模拟）而言，其核心价值在于：①系统梳理了 AlphaFold3 对糖蛋白/蛋白-聚糖复合物建模的能力与局限；②展示了 AI 预测结构 + 实验验证（如 MCTS1–JAK2–IFN-γ 轴）的闭环工作流；③提出了糖蛋白构象系综建模（AlphaFLOW + MD）的可行路径。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文系统综述了 AI 在蛋白质糖基化研究四个环节（反应预测、位点鉴定、结构建模、糖组学挖掘）的应用现状，指出 AlphaFold3 能对糖蛋白复合物进行原子级建模但存在立体化学错误且置信度指标无法检测此类错误，并主张通过多模态融合、构象系综建模和闭环实验验证推动糖蛋白研究从静态预测走向功能设计。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: AI 如何系统性地解决蛋白质糖基化研究中的三大瓶颈——糖苷键立体化学控制、糖基化位点准确鉴定、完全糖基化蛋白的天然构象建模？</li>
+<li><strong>为什么重要</strong>: 糖基化是最丰富、结构最复杂的翻译后修饰，参与蛋白折叠、免疫识别、信号转导，其异常与癌症、神经退行性疾病、先天性糖基化障碍（CDG）直接相关。但糖基化研究长期受限于实验通量低、结构数据稀缺、构象异质性大。</li>
+<li><strong>现有方法为何不足</strong>: 传统化学合成依赖经验规则和 DFT 计算，难以泛化；质谱位点鉴定成本高、通量低；通用结构预测工具（如 AlphaFold2）不支持糖链；AlphaFold3 虽支持聚糖但存在立体化学错误且置信度指标无法检测；单结构预测无法反映糖蛋白的构象系综。</li>
+<li><strong>精确研究问题（Can ... ?）</strong>: Can AI-based methods (from predictive models to generative models) overcome the three bottlenecks of protein glycosylation research—stereochemical control, site assignment, and conformational modeling of fully glycosylated proteins—to shift the field from static prediction to functional design?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络主要基于本文框架，部分经外部核验（如 AlphaFold 系列、GlycoPredictor 等为公开文献）。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>经验规则时代</td>
+<td>邻基参与效应、溶剂效应经验规则</td>
+<td>可解释、可操作</td>
+<td>仅覆盖有限底物类型，无法泛化</td>
+<td>2.1 节背景</td>
+</tr>
+<tr>
+<td>量子化学时代</td>
+<td>DFT 过渡态计算</td>
+<td>可解释单反应机理</td>
+<td>计算昂贵，难以推广到多底物</td>
+<td>2.1 节背景</td>
+</tr>
+<tr>
+<td>传统机器学习</td>
+<td>SVM、随机森林、朴素贝叶斯（位点预测）</td>
+<td>可处理中等规模特征</td>
+<td>依赖手工特征，难以捕捉非线性关系</td>
+<td>3.1 节背景</td>
+</tr>
+<tr>
+<td>深度学习时代</td>
+<td>CNN、RNN/LSTM（N-GlycoPred）、ESM-2 + AlphaFold2 结构特征（EMNGly）</td>
+<td>自动特征学习，性能提升</td>
+<td>数据偏差、跨研究不可比</td>
+<td>3.2 节</td>
+</tr>
+<tr>
+<td>结构预测时代</td>
+<td>AlphaFold2/Multimer、RoseTTAFold、AlphaFold3</td>
+<td>高精度蛋白结构预测；AF3 支持聚糖</td>
+<td>AF3 对糖蛋白有立体化学错误，置信度指标失效</td>
+<td>4.1 节</td>
+</tr>
+<tr>
+<td>生成/动态时代</td>
+<td>AlphaFLOW（flow matching + AF 结构）、MD 模拟、多模态融合（OneProt）</td>
+<td>捕获构象系综、动态行为</td>
+<td>计算成本高，糖蛋白专用力场仍不完善</td>
+<td>4.2 节</td>
+</tr>
+<tr>
+<td>数据挖掘时代</td>
+<td>CandyCrunch、DeepGlyco、GlycanGT、SHAP/XAI</td>
+<td>高通量、端到端、可解释</td>
+<td>数据稀缺、泛化受限</td>
+<td>5 节</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>糖苷键立体化学控制困难</td>
+<td>化学合成中 α/β 选择性难以预测，2-脱氧糖、唾液酸等底物尤其困难</td>
+<td>反应结果取决于多维变量（供体、受体、溶剂、温度、离子），传统经验规则和 DFT 无法覆盖</td>
+<td>2.1 节；"stereoselectivity still responds to solvent, temperature, ionic effects"</td>
+</tr>
+<tr>
+<td>糖基化位点鉴定模糊</td>
+<td>O-糖基化无通用基序，O-GlcNAc 低化学计量，质谱通量低</td>
+<td>缺乏模板指导、位点占用率低、实验数据偏差</td>
+<td>3.1 节；"O-glycosylation has no universal consensus motif"</td>
+</tr>
+<tr>
+<td>糖蛋白构象建模困难</td>
+<td>糖链高度柔性、分支异质性大，单结构无法代表功能态</td>
+<td>糖链无模板合成、构象系综大、力场不完善</td>
+<td>4.2 节；"glycan chains exhibit high flexibility and broad branching heterogeneity"</td>
+</tr>
+<tr>
+<td>AlphaFold3 立体化学错误</td>
+<td>半乳糖 C2 羟基错配、α/β 异头构型反转，但置信度指标（pLDDT、PAE、ipTM）仍给出高分</td>
+<td>输入表示（SMILES vs CCD bondedAtomPairs）影响立体化学保真度；置信度指标未针对糖化学训练</td>
+<td>4.1.2 节；"standard confidence metrics fail to detect anomeric or epimeric errors"</td>
+</tr>
+<tr>
+<td>数据稀缺与偏差</td>
+<td>糖基化数据库规模小、物种覆盖不均、N-糖基化过度代表</td>
+<td>实验验证成本高、缺乏标准化流程</td>
+<td>3.5 节、5.1 节；"N-glycosylation is overrepresented relative to O-glycosylation"</td>
+</tr>
+<tr>
+<td>跨研究不可比</td>
+<td>不同研究使用不同数据集、负集构建和评估指标</td>
+<td>缺乏统一基准</td>
+<td>3.5 节；"a common benchmark for glycosylation site prediction has not yet been adopted"</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>: 按糖基化研究的信息流（反应预测 → 位点鉴定 → 结构建模 → 糖组学挖掘）组织综述，逐一评估 AI 方法在各环节的进展与局限。</li>
+<li><strong>核心洞察</strong>: 糖基化研究正经历从"预测"到"生成"的范式转变——AI 不再仅用于预测既有事实（如位点是否存在、反应选择性如何），而是开始生成新的化学知识（如发现新的立体选择性规则）、新的结构假设（如 AF3 建模糖蛋白复合物）和新的功能解释（如可解释 AI 挖掘调控因子）。但这一转变的关键瓶颈是<strong>立体化学保真度</strong>和<strong>构象动态性</strong>——静态预测工具（AF3）无法保证糖链立体化学正确，单结构无法代表糖蛋白的功能构象系综。</li>
+<li><strong>可能的普适教训</strong> [Analysis]: ①对含糖/修饰残基的系统，AI 结构预测的置信度指标不能替代立体化学验证——"高置信度"不等于"化学正确"；②糖基化位点预测的进步不取决于模型架构，而取决于数据质量与标准化；③从静态预测走向功能设计，必须引入构象系综（MD、flow matching）和闭环实验验证，而非依赖单一结构。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: 糖基化反应数据库（CAS 10,434 反应 + Barresi–Hindsgaul 734 反应）、蛋白序列（ESM-2 嵌入）、蛋白结构（AlphaFold2 预测结构）、质谱数据、凝集素结合数据、糖蛋白结构（PDB）</li>
+<li><strong>输出</strong>: 反应立体选择性预测、糖基化位点概率、蛋白-聚糖复合物结构、糖组学分类/聚类、可解释的调控因子</li>
+<li><strong>模块</strong>:
+  1. 反应预测模块：GlycoPredictor（决策树 + 分子描述符）、贝叶斯优化（主动学习）
+  2. 位点预测模块：N-GlycoPred（CNN + BiLSTM）、HOTGpred（预训练特征 + 多阶段特征选择）、EMNGly（ESM-2 + AlphaFold2 结构特征）、CoNGlyPred（ESM-2 + 3D 结构特征 + 图网络 + 共注意力）
+  3. 结构建模模块：AlphaFold2/Multimer、RoseTTAFold、AlphaFold3（AF3）、RoseTTAFold All-Atom（RFAA）、AlphaFLOW（flow matching）
+  4. 糖组学模块：CandyCrunch（扩张残差网络）、DeepGlyco（Tree-LSTM + GNN）、GlycanGT（Graph Transformer）、GlyCompute（自动动力学建模 + 序贯贝叶斯参数估计）、LeGenD（凝集素 + SHAP）</li>
+<li><strong>训练</strong>: 各模型独立训练，无统一训练流程；GlycoPredictor 用决策树可解释模型；CandyCrunch 用 ~500,000 标注谱训练；LeGenD 用 309 个糖谱（10 个重组蛋白 × 30 个糖工程 CHO 细胞系）训练</li>
+<li><strong>工具</strong>: GROMACS、NAMD（MD 模拟）；CHARMM36、GLYCAM06、Drude 极化力场</li>
+<li><strong>文字流程</strong>: 糖基化反应数据/蛋白序列/结构 → AI 模型（决策树/深度学习/GNN/生成模型）→ 预测结果（选择性/位点/结构/糖型）→ 实验验证（合成、质谱、冷冻电镜）→ 模型修正 → 闭环迭代</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GlycoPredictor（决策树）</td>
+<td>预测糖苷化反应的立体选择性（α/β 比例）</td>
+<td>化学合成中立体化学控制是首要瓶颈</td>
+<td>输入：分子描述符；输出：主要/次要异头物及比例</td>
+<td>2.2.1 节；识别出 anti-nitrile 效应、C2-azido α-导向效应、DMT/DBT 三嗪离去基团 α-导向效应</td>
+<td>失去可解释的化学规则提取能力（预期）</td>
+</tr>
+<tr>
+<td>贝叶斯优化</td>
+<td>自主探索反应条件，发现新反应</td>
+<td>高维反应空间人工搜索效率低</td>
+<td>输入：反应条件；输出：最优条件 + 新立体选择性模式</td>
+<td>2.2.2 节；发现锂盐导向的立体选择性糖苷化</td>
+<td>失去训练分布外的反应发现能力（预期）</td>
+</tr>
+<tr>
+<td>N-GlycoPred（CNN + BiLSTM）</td>
+<td>N-糖基化位点预测</td>
+<td>位点鉴定是糖蛋白功能研究基础</td>
+<td>输入：蛋白序列；输出：位点概率</td>
+<td>3.2.2 节；稳定预测性能</td>
+<td>失去局部序列基序捕捉能力（预期）</td>
+</tr>
+<tr>
+<td>HOTGpred</td>
+<td>O-连接苏氨酸糖基化位点预测</td>
+<td>O-糖基化无通用基序，预测难度大</td>
+<td>输入：蛋白序列 + 预训练特征；输出：位点概率</td>
+<td>3.2.2 节；提高 O-GalNAc 位点预测精度</td>
+<td>失去弱序列约束下的判别能力（预期）</td>
+</tr>
+<tr>
+<td>EMNGly / CoNGlyPred（ESM-2 + AF2 结构）</td>
+<td>融合序列与结构信息的糖基化位点预测</td>
+<td>序列信息不足以捕捉空间约束</td>
+<td>输入：序列 + AlphaFold2 结构特征；输出：位点概率</td>
+<td>3.2.3 节；结构特征改善空间受限位点预测</td>
+<td>失去对空间约束位点的识别能力（预期）</td>
+</tr>
+<tr>
+<td>AlphaFold3（AF3）</td>
+<td>蛋白-聚糖复合物统一建模</td>
+<td>糖蛋白结构数据稀缺，需计算建模</td>
+<td>输入：序列 + 聚糖；输出：复合物结构</td>
+<td>4.1.2 节；可建模糖蛋白复合物，但存在立体化学错误</td>
+<td>失去糖蛋白复合物建模能力（预期）</td>
+</tr>
+<tr>
+<td>AlphaFLOW（flow matching）</td>
+<td>构象系综采样</td>
+<td>单结构无法代表糖蛋白功能态</td>
+<td>输入：AF 结构；输出：构象分布</td>
+<td>4.2.1 节；捕获亚稳态构象</td>
+<td>失去动态构象信息（预期）</td>
+</tr>
+<tr>
+<td>CandyCrunch（扩张残差网络）</td>
+<td>从 LC-MS/MS 谱直接预测聚糖结构</td>
+<td>传统谱图解析依赖数据库匹配，无法处理未知结构</td>
+<td>输入：原始 LC-MS/MS 谱；输出：聚糖结构</td>
+<td>5.2 节；top-1 准确率 90.3%（独立测试集）</td>
+<td>失去端到端结构解析能力（预期）</td>
+</tr>
+<tr>
+<td>GlycanGT（Graph Transformer）</td>
+<td>聚糖基础模型</td>
+<td>聚糖结构是分支拓扑，需图表示</td>
+<td>输入：聚糖图；输出：结构补全/功能预测</td>
+<td>5.2 节；自监督预训练</td>
+<td>失去长程依赖建模能力（预期）</td>
+</tr>
+<tr>
+<td>GlyCompute（自动动力学建模）</td>
+<td>从实验糖谱自动构建 N-糖基化动力学模型</td>
+<td>手动建模耗时且易错</td>
+<td>输入：糖谱 + 相对丰度；输出：动力学模型 + 参数</td>
+<td>5.2 节；在 CHO 细胞 IgG 和宿主细胞蛋白上验证</td>
+<td>失去自动化建模能力（预期）</td>
+</tr>
+<tr>
+<td>LeGenD（凝集素 + SHAP）</td>
+<td>从凝集素结合数据预测聚糖结构并解释</td>
+<td>凝集素芯片高通量但需解释</td>
+<td>输入：凝集素结合谱；输出：聚糖结构 + 关键凝集素</td>
+<td>5.5 节；SHAP 识别关键凝集素</td>
+<td>失去可解释性（预期）</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<blockquote>
+<p>本文为综述，未提供具体公式。以下为文中涉及的模型/方法的形式化描述（[Analysis] 标注）。</p>
+</blockquote>
+<ul>
+<li><strong>GlycoPredictor 决策树</strong>: 以分子描述符为特征，预测异头物选择性。形式上可写为 $f(\mathbf{x}) \to { \alpha, \beta, \alpha/\beta \text{ ratio} }$，其中 $\mathbf{x}$ 为供体/受体/溶剂/温度等描述符向量。文中未给出具体数学形式。</li>
+<li><strong>贝叶斯优化</strong>: 以高斯过程为代理模型，采集函数（如 EI, Expected Improvement）指导下一次实验条件选择。文中未给出具体公式。</li>
+<li><strong>AlphaFold3 扩散模型</strong>: 以扩散过程生成原子坐标，条件为序列 + 共价修饰（含聚糖）。文中未给出具体公式。</li>
+<li><strong>AlphaFLOW flow matching</strong>: 以 flow matching 目标训练，将噪声分布映射到构象分布 $p(x_1)$，条件为 AF 结构嵌入。文中未给出具体公式。</li>
+<li><strong>CandyCrunch 扩张残差网络</strong>: 以扩张卷积堆叠，输入为 MS/MS 谱峰列表，输出为聚糖结构类别概率。文中未给出具体公式。</li>
+<li><strong>GlycanGT Graph Transformer</strong>: 以聚糖为图 $G=(V,E)$，节点为单糖，边为糖苷键，通过自注意力聚合邻居信息。文中未给出具体公式。</li>
+<li><strong>SHAP 值</strong>: $\phi_i = \sum_{S \subseteq N \setminus {i}} \frac{|S|!(|N|-|S|-1)!}{|N|!} [f(S \cup {i}) - f(S)]$，用于特征归因。文中未给出具体公式，但描述了 SHAP 在 LeGenD 中的应用。</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<blockquote>
+<p>本文为综述，无原始实验。以下为文中引用的代表性研究及其证据。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>实验/研究</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GlycoPredictor 训练与验证</td>
+<td>决策树可从文献数据中提取立体选择性规则</td>
+<td>10,434 反应（CAS 2010–2015）+ 734 反应（Barresi–Hindsgaul）；随机 vs 出版级别划分</td>
+<td>随机划分 R²=0.57；出版级别划分 R²=0.11</td>
+<td>模型在训练分布内可预测选择性；跨出版泛化差</td>
+<td>不能声称模型可泛化到未见过的化学空间</td>
+<td>2.2.1 节</td>
+</tr>
+<tr>
+<td>GlycoPredictor 规则实验验证</td>
+<td>anti-nitrile 效应、C2-azido α-导向效应</td>
+<td>合成 DMT 供体，在乙腈中测试</td>
+<td>实验证实 α-选择性</td>
+<td>模型发现的规则具有化学真实性</td>
+<td>规则可能仅适用于特定供体/溶剂体系</td>
+<td>2.2.1 节</td>
+</tr>
+<tr>
+<td>贝叶斯优化锂盐实验</td>
+<td>锂盐可导向立体选择性糖苷化</td>
+<td>无先验数据，自主探索</td>
+<td>发现锂盐导向的新反应模式</td>
+<td>贝叶斯优化可在训练分布外发现新反应</td>
+<td>未在多种底物上验证普适性</td>
+<td>2.2.2 节</td>
+</tr>
+<tr>
+<td>AF3 糖蛋白建模评估</td>
+<td>AF3 能建模蛋白-聚糖复合物</td>
+<td>与实验结构对比（PDB 7AU2, 7PNM 等）</td>
+<td>EXTL3 糖蛋白平均 pocket-aligned RMSD 1.10 Å；OC43 刺突蛋白 4665 残基可建模</td>
+<td>AF3 可对糖蛋白复合物进行原子级建模</td>
+<td>示例为个案，非系统基准</td>
+<td>4.1.2 节</td>
+</tr>
+<tr>
+<td>AF3 立体化学评估</td>
+<td>AF3 输出立体化学正确</td>
+<td>输入表示：SMILES vs CCD bondedAtomPairs</td>
+<td>SMILES 输入产生 C2 羟基错配和 α/β 反转；CCD bondedAtomPairs 产生立体化学有效模型</td>
+<td>输入表示决定立体化学保真度</td>
+<td>不能声称 AF3 在所有输入下均立体化学正确</td>
+<td>4.1.2 节</td>
+</tr>
+<tr>
+<td>AF3 置信度指标评估</td>
+<td>pLDDT/PAE 能检测糖链错误</td>
+<td>立体化学错误 vs 置信度分数</td>
+<td>错误糖链仍获高置信度分数</td>
+<td>置信度指标无法检测立体化学错误</td>
+<td>不能依赖置信度分数筛选糖链错误</td>
+<td>4.1.2 节</td>
+</tr>
+<tr>
+<td>CandyCrunch 独立测试</td>
+<td>端到端聚糖结构预测</td>
+<td>独立测试集</td>
+<td>top-1 准确率 90.3%</td>
+<td>深度学习可从原始谱预测聚糖结构</td>
+<td>对罕见/新型聚糖的泛化未验证</td>
+<td>5.2 节</td>
+</tr>
+<tr>
+<td>LeGenD + SHAP</td>
+<td>可解释 AI 可识别关键凝集素</td>
+<td>309 个糖谱（10 蛋白 × 30 细胞系）</td>
+<td>SHAP 识别出影响预测的关键凝集素</td>
+<td>可解释 AI 可桥接凝集素数据与聚糖结构</td>
+<td>生物学验证尚不充分</td>
+<td>5.5 节</td>
+</tr>
+<tr>
+<td>MCTS1–JAK2–IFN-γ 轴研究</td>
+<td>AI 预测结构 + 生化验证可解析信号通路</td>
+<td>AI 结构预测 + 实验验证</td>
+<td>揭示 MCTS1 缺陷如何通过 JAK2 翻译重起始影响 IFN-γ 信号</td>
+<td>AI 结构预测可指导功能机制研究</td>
+<td>该通路不涉及糖基化，为方法迁移示例</td>
+<td>4.1.2 节</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 本文是综述，覆盖 AI 在糖基化反应预测、位点鉴定、结构建模、糖组学挖掘四个环节的应用，不提出新模型。</li>
+<li><strong>oracle/真值输入</strong>: 各模型依赖的标注数据来源不同——反应数据来自 CAS 文献库，位点数据来自质谱实验，结构数据来自 PDB/AlphaFold DB，糖组学数据来自凝集素芯片和 LC-MS/MS。</li>
+<li><strong>端到端状态</strong>: 各环节独立发展，尚无统一的端到端糖蛋白设计流程。AF3 是唯一接近端到端的工具，但仅限结构预测，不涉及序列/糖型设计。</li>
+<li><strong>算力成本</strong>: 未提供具体数据。文中仅提及 AlphaFLOW 等生成模型需要 GPU 资源，但未量化。</li>
+<li><strong>历史数据依赖</strong>: GlycoPredictor 依赖 2010–2015 年 CAS 数据，出版级别划分下 R² 仅 0.11，说明对未见出版物的泛化能力有限。</li>
+<li><strong>模型依赖</strong>: AF3 的糖蛋白建模能力高度依赖输入表示（SMILES vs CCD bondedAtomPairs），且置信度指标无法检测立体化学错误。</li>
+<li><strong>最难情形</strong>: ①O-糖基化位点预测（无通用基序）；②稀有糖型/非经典修饰的结构解析；③糖链构象动态的建模；④跨出版/跨物种泛化。</li>
+<li><strong>群体/领域边界</strong>: 结论主要基于已发表文献，对未发表数据、工业界内部数据、非模式生物的糖基化不适用。</li>
+<li><strong>有边界的复述</strong>: AI 在糖基化研究的四个环节均取得进展，但每个环节的结论都受限于数据规模、标注质量和验证方式——反应预测的跨出版泛化差（R²=0.11），位点预测缺乏统一基准，AF3 结构预测存在立体化学错误且置信度指标失效，糖组学模型对稀有结构泛化有限。糖蛋白研究从"预测"走向"生成"的范式转变尚处于早期，需要标准化数据基础设施和闭环实验验证。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据稀缺</td>
+<td>糖基化数据库规模小、物种覆盖不均、N-糖基化过度代表</td>
+<td>建立标准化数据库，推动数据共享</td>
+<td>3.5 节、5.1 节</td>
+</tr>
+<tr>
+<td>数据标准化不足</td>
+<td>不同平台、不同分析流程、不同表示方式阻碍整合</td>
+<td>采用 MIRAGE 指南，统一数据格式</td>
+<td>5.1 节、5.6 节</td>
+</tr>
+<tr>
+<td>模型泛化受限</td>
+<td>GlycoPredictor 出版级别划分 R² 仅 0.11；CandyCrunch 对稀有糖型准确率下降</td>
+<td>扩大训练数据覆盖，发展少样本学习</td>
+<td>2.2.1 节、5.2 节</td>
+</tr>
+<tr>
+<td>AF3 立体化学不可靠</td>
+<td>SMILES 输入产生 C2 羟基错配和 α/β 反转；置信度指标无法检测</td>
+<td>开发糖类专用输入表示和验证工具</td>
+<td>4.1.2 节</td>
+</tr>
+<tr>
+<td>动态构象缺失</td>
+<td>单结构预测无法反映糖蛋白构象系综</td>
+<td>结合 MD、flow matching 等生成模型</td>
+<td>4.2 节</td>
+</tr>
+<tr>
+<td>可解释性不足</td>
+<td>深度学习模型难以追溯预测依据</td>
+<td>发展 XAI 方法，如 SHAP</td>
+<td>5.5 节</td>
+</tr>
+<tr>
+<td>多模态融合尚浅</td>
+<td>序列、结构、质谱、凝集素数据未充分整合</td>
+<td>构建多模态基础模型</td>
+<td>5.3 节、6 节</td>
+</tr>
+<tr>
+<td>闭环验证缺乏</td>
+<td>多数预测未经实验验证</td>
+<td>推动 AI 预测 + 实验验证的闭环工作流</td>
+<td>4.3 节、6 节</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GlycoPredictor 的 R² 从随机划分 0.57 降至出版划分 0.11</td>
+<td>模型可能主要记忆了文献中的相似反应，而非学习普适化学规则；也可能出版划分本身引入了更难的分布偏移</td>
+<td>直接关系到"AI 发现化学规律"这一核心主张的可信度</td>
+<td>在更多独立出版数据集上测试；对比不同划分策略下的性能差异</td>
+<td>2.2.1 节</td>
+</tr>
+<tr>
+<td>AF3 糖蛋白建模的评估仅基于少量示例（PDB 7AU2, 7PNM）</td>
+<td>示例可能偏向 AF3 擅长的体系；缺乏系统基准</td>
+<td>若 AF3 在糖蛋白上普遍存在立体化学错误，则其作为糖蛋白建模工具的可靠性存疑</td>
+<td>构建包含多种糖型、多种蛋白骨架的系统测试集，评估立体化学正确率</td>
+<td>4.1.2 节</td>
+</tr>
+<tr>
+<td>综述将 AlphaFLOW 描述为糖蛋白构象采样的可行工具，但未提供糖蛋白专用验证</td>
+<td>AlphaFLOW 主要在未修饰蛋白上验证；糖链的力场参数和采样效率可能不同</td>
+<td>糖蛋白构象系综建模是本课题的核心需求，若工具不适用则需另寻方案</td>
+<td>在糖蛋白体系上运行 AlphaFLOW，与 MD 模拟结果对比</td>
+<td>4.2.1 节</td>
+</tr>
+<tr>
+<td>综述主张"从预测到生成"的范式转变，但所举生成案例（Bayesian optimization、AlphaFLOW）均非糖蛋白专用</td>
+<td>范式转变的证据可能不足；生成方法在糖蛋白上的应用仍处于早期</td>
+<td>若范式转变主张过强，可能误导读者对技术成熟度的判断</td>
+<td>统计糖蛋白领域生成模型的应用数量与验证深度</td>
+<td>全文框架</td>
+</tr>
+<tr>
+<td>综述将 MCTS1–JAK2–IFN-γ 轴作为 AI 结构预测 + 实验验证的范例，但该体系不涉及糖基化</td>
+<td>该范例展示的是通用工作流，而非糖蛋白特异方法；可能高估了 AI 在糖蛋白功能研究中的直接贡献</td>
+<td>读者可能误以为该工作流已直接应用于糖蛋白体系</td>
+<td>检索是否存在 AI 结构预测 + 实验验证直接应用于糖蛋白体系的案例</td>
+<td>4.1.2 节</td>
+</tr>
+<tr>
+<td>综述未讨论 AI 方法在糖蛋白上的计算成本与可扩展性</td>
+<td>糖蛋白体系大、糖链构象多，计算成本可能成为实际应用的瓶颈</td>
+<td>若成本过高，即使方法有效也难以推广</td>
+<td>对比不同方法在糖蛋白体系上的计算时间与资源消耗</td>
+<td>全文未提供</td>
+</tr>
+<tr>
+<td>综述对"立体化学控制"的讨论集中在化学合成，未充分讨论酶法合成中 AI 的角色</td>
+<td>酶法糖基化是体内主要途径，AI 在酶工程中的应用可能被低估</td>
+<td>若酶法合成是更可行的路径，AI 的投入方向可能需要调整</td>
+<td>检索 AI 在糖基转移酶工程中的应用文献</td>
+<td>2.1–2.2 节</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>可迁移概念——"立体化学保真度验证"</strong>：AF3 对糖蛋白的建模存在立体化学错误且置信度指标无法检测。对本课题的启示：任何 AI 结构预测工具在用于含修饰残基（糖基化、磷酸化等）体系时，必须独立验证立体化学正确性，不能依赖 pLDDT/PAE 等置信度指标。可迁移为：在蛋白质-配体/蛋白质-修饰体系的结构预测流程中，增加立体化学校验模块。</p>
+</li>
+<li>
+<p><strong>可迁移方法——"输入表示决定输出保真度"</strong>：AF3 的糖蛋白建模中，SMILES 输入产生立体化学错误，而 CCD bondedAtomPairs 输入产生有效模型。对本课题的启示：AI 结构预测的输入表示（如小分子的 SMILES vs 3D 构象、聚糖的线性编码 vs 图表示）直接影响输出质量。可迁移为：在分子对接/构象生成任务中，系统比较不同输入表示对输出立体化学和构象多样性的影响。</p>
+</li>
+<li>
+<p><strong>可迁移方法——"出版级别划分评估泛化"</strong>：GlycoPredictor 在随机划分下 R²=0.57，出版级别划分下 R²=0.11，揭示了文献挖掘模型的泛化陷阱。对本课题的启示：在蛋白质结构相关计算研究中，评估模型泛化能力时应采用更严格的划分策略（如按来源、按时间、按蛋白家族），而非随机划分。可迁移为：在蛋白质构象生成/对接模型评估中，采用"按蛋白家族划分"或"按实验方法划分"的验证协议。</p>
+</li>
+<li>
+<p><strong>可迁移概念——"闭环工作流"</strong>：MCTS1–JAK2–IFN-γ 轴研究展示了 AI 结构预测 + 生化验证的闭环模式。对本课题的启示：AI 预测的结构应作为假设生成器，而非最终答案；必须通过实验（突变、结合实验、MD 模拟）验证。可迁移为：在蛋白质-聚糖相互作用预测中，建立"AI 预测 → MD 模拟 → 实验验证 → 模型修正"的闭环。</p>
+</li>
+<li>
+<p><strong>可迁移方法——"可解释 AI 桥接数据与机制"</strong>：LeGenD 结合 SHAP 从凝集素结合数据中识别关键特征，将黑箱预测转化为可检验的生物学假设。对本课题的启示：在蛋白质结构-功能关系研究中，可解释性方法（SHAP、注意力权重、归因图）可将模型预测转化为可检验的机制假设。可迁移为：在蛋白质-聚糖结合预测中，用 SHAP 识别关键残基/糖基，指导突变实验设计。</p>
+</li>
+<li>
+<p><strong>可迁移概念——"构象系综而非单结构"</strong>：综述强调糖蛋白功能依赖构象系综，单结构预测无法捕捉。对本课题的启示：蛋白质结构预测应走向构象分布预测，而非单一结构。可迁移为：在蛋白质-聚糖复合物建模中，使用生成模型（flow matching、扩散模型）采样构象系综，而非仅预测单一结合构象。</p>
+</li>
+<li>
+<p><strong>可迁移方法——"图表示学习聚糖拓扑"</strong>：GlycanGT 用 Graph Transformer 处理聚糖分支结构，突破了线性编码的局限。对本课题的启示：聚糖的分支拓扑是信息编码的关键，图神经网络是处理此类非线形结构的自然选择。可迁移为：在蛋白质-聚糖相互作用预测中，将聚糖编码为图结构，蛋白质编码为序列/结构图，构建双图交互模型。</p>
+</li>
+<li>
+<p><strong>可迁移概念——"数据标准化是前提"</strong>：综述反复强调糖基化数据缺乏标准化阻碍 AI 应用。对本课题的启示：蛋白质结构相关计算研究的数据集构建应遵循统一标准（如 MIRAGE 指南的类似物），否则模型性能难以跨研究比较。可迁移为：在蛋白质-聚糖复合物数据集构建中，统一聚糖编码、位点注释和验证标准。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold 系列</strong>：本文对 AF3 的糖蛋白建模评估（4.1.2 节）与已知的 AlphaFold2 在单体蛋白上的高精度形成对比——AF3 扩展了模态范围但引入了新的立体化学风险。这与用户课题中"AlphaFold 用于含修饰蛋白"的方向直接相关。</li>
+<li><strong>RoseTTAFold All-Atom (RFAA)</strong>：本文提及 RFAA 可建模含小分子/修饰的全原子体系（4.1.1 节），与用户课题中"分子对接 × AI"方向相关。</li>
+<li><strong>AlphaFLOW</strong>：本文将其作为构象采样的生成模型示例（4.2.1 节），与用户课题中"构象采样 × 生成模型"方向直接相关。</li>
+<li><strong>MD 模拟</strong>：本文 4.2.3 节讨论了 MD 在糖蛋白构象研究中的应用（GROMACS/NAMD、CHARMM36/GLYCAM06、Drude 极化力场），与用户课题中"MD 模拟 × 糖蛋白"方向相关。</li>
+<li><strong>蛋白质语言模型</strong>：本文 3.2.3 节讨论 ESM-2 在糖基化位点预测中的应用，与用户课题中"PLM × 结构/序列设计"方向相关。</li>
+<li><strong>图神经网络</strong>：本文 5.2 节讨论 GlycanGT 用 Graph Transformer 处理聚糖拓扑，与用户课题中"GNN × 分子表示"方向相关。</li>
+<li><strong>候选方向（未验证）</strong> [Analysis]：本文未提及但与本课题相关的方向包括：扩散模型用于糖蛋白构象生成、强化学习用于糖基化路径设计、大语言模型用于糖基化文献挖掘。这些方向可作为后续探索的候选。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>: 立体化学感知的蛋白质-聚糖复合物结构预测框架
+   - <strong>来源局限/观察</strong>: AF3 对糖蛋白建模存在立体化学错误且置信度指标无法检测（4.1.2 节）
+   - <strong>核心假设</strong>: 在 AF3 输出后增加立体化学校验模块（如 C2 羟基方向、α/β 构型检查），可显著提高糖蛋白复合物预测的化学有效性
+   - <strong>初步方法</strong>: 构建糖蛋白立体化学验证规则库；在 AF3 输出上运行校验；对失败案例进行局部重采样（MD 或扩散模型）
+   - <strong>验证方式</strong>: 在 PDB 糖蛋白测试集上对比 AF3 原始输出 vs 校验后输出的立体化学正确率
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: 糖基化位点预测的出版级别泛化基准
+   - <strong>来源局限/观察</strong>: GlycoPredictor 在出版级别划分下 R² 从 0.57 降至 0.11（2.2.1 节），说明文献挖掘模型的泛化能力被高估
+   - <strong>核心假设</strong>: 现有糖基化位点预测模型的性能在出版级别划分下显著下降，需要更严格的评估协议
+   - <strong>初步方法</strong>: 收集已发表的糖基化位点预测模型，在统一数据集上采用随机、蛋白家族、出版级别三种划分策略评估
+   - <strong>验证方式</strong>: 对比三种划分策略下的 AUC/精确率差异，识别泛化瓶颈
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: 糖蛋白构象系综的 flow matching 生成模型
+   - <strong>来源局限/观察</strong>: 综述指出糖蛋白功能依赖构象系综，单结构预测无法捕捉（4.2 节）；AlphaFLOW 展示了 flow matching 在蛋白构象采样上的潜力（4.2.1 节）
+   - <strong>核心假设</strong>: 将 flow matching 扩展到糖蛋白体系，以糖链柔性为条件变量，可生成比单结构预测更接近实验的构象系综
+   - <strong>初步方法</strong>: 在 AlphaFLOW 基础上增加糖链图编码器；以 MD 模拟轨迹为训练数据；输出为构象分布而非单结构
+   - <strong>验证方式</strong>: 与 MD 模拟的构象系综对比 RMSD 分布和关键构象态覆盖率
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: 可解释的糖基化-疾病关联挖掘框架
+   - <strong>来源局限/观察</strong>: 综述强调可解释 AI 在糖组学中的价值（5.5 节），但现有模型多为黑箱
+   - <strong>核心假设</strong>: 结合 SHAP 与图神经网络，可从糖组学数据中识别可验证的糖基化-疾病关联机制
+   - <strong>初步方法</strong>: 构建糖基化-疾病多组学数据集；训练 GNN 分类器；用 SHAP 识别关键糖基化特征；用通路分析验证
+   - <strong>验证方式</strong>: 在独立队列中验证 SHAP 识别特征的预测能力
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: 糖基化位点工程的多模态基础模型
+   - <strong>来源局限/观察</strong>: 综述指出多模态融合是未来方向（5.3 节），但现有模型多为单模态
+   - <strong>核心假设</strong>: 融合序列（ESM-2）、结构（AF2/AF3）、质谱和糖组学数据的多模态模型，可显著提升糖基化位点预测和糖型设计的准确性
+   - <strong>初步方法</strong>: 构建多模态编码器；在糖基化位点预测、糖型分类、功能预测三个任务上评估
+   - <strong>验证方式</strong>: 与单模态基线对比，分析模态贡献度
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: 糖蛋白 MD 模拟的机器学习力场修正
+   - <strong>来源局限/观察</strong>: 综述指出 MD 是糖蛋白构象研究的关键工具，但力场对糖链的描述仍不完善（4.2.3 节）
+   - <strong>核心假设</strong>: 用机器学习修正糖链力场参数（如糖苷键扭转角、氢键网络），可提高 MD 模拟与实验数据的一致性
+   - <strong>初步方法</strong>: 收集糖蛋白 MD 轨迹和实验数据（NMR、HDX-MS）；训练力场修正模型；在独立体系上验证
+   - <strong>验证方式</strong>: 对比修正前后 MD 模拟的构象分布与实验数据的偏差
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, main sections, conclusions, acknowledgments)</li>
+<li><strong>Assessment boundary</strong> Scientific content, technical soundness, structural coherence, and support for claims as presented in the provided text</li>
+<li><strong>Shared manuscript claim summary</strong> The authors argue that artificial intelligence is transforming protein glycosylation research across four domains: glycosylation reaction prediction, glycosylation site identification, glycoprotein structural modeling, and glycomics data mining. They propose a "glycan language" framework and claim that AI methods are moving the field from prediction toward generation and functional design.</li>
+<li><strong>Visible evidence base</strong> The manuscript text includes descriptions of specific tools (GlycoPredictor, Bayesian optimization, ESM-2, AlphaFold2/3, DeepGlycanSite, CandyCrunch, DeepGlyco, GlycoCompute, GlycanGT, OneProt, AlphaFLOW, ModelAngelo, LeGenD), references to figures and tables, and case examples (MCTS1–JAK2–IFN-γ axis, CDG variant interpretation, IgG Fc glycan signatures)</li>
+<li><strong>Missing materials affecting confidence</strong> Figures, tables, and reference list are not provided. No experimental data, benchmark results, or code are included. The manuscript is a review, so primary data are not expected, but the absence of figures and tables limits verification of the described results.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This is a broad, well-structured review of AI applications in protein glycosylation research. The authors cover a commendable range of topics, from chemical reaction prediction to structural biology and glycomics. The "glycan language" framing is a useful organizing principle. However, the manuscript has several significant weaknesses. The depth of technical discussion is uneven, with some sections reading as lists of tools rather than critical analyses. The treatment of AlphaFold3 is notably uncritical, and the authors do not adequately address the substantial limitations of current AI methods for glycoprotein modeling. The clinical and translational claims, particularly regarding CDG, are not well supported by the evidence presented. The manuscript would benefit from a more critical stance, clearer articulation of the field's open problems, and a more rigorous comparison of the methods discussed.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in glycobiology, glycochemistry, and glycoproteomics would find this review useful as a survey of AI tools applicable to their field. Computational biologists and machine learning researchers working on protein structure prediction or post-translational modification prediction may also be interested. The review could serve as an entry point for those seeking to apply AI methods to glycosylation-related problems. However, the lack of critical depth may limit its value for experts in either AI or glycoscience.</li>
+<li><strong>Major strengths</strong> The manuscript covers a wide range of topics in a logical structure, from chemical synthesis to structural biology to omics data analysis. The "glycan language" framework provides a coherent narrative. The authors include recent developments (AlphaFold3, generative models) and make an effort to discuss limitations, particularly regarding data scarcity and evaluation practices. The inclusion of specific case examples, such as the CDG variant interpretation, helps ground the discussion.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The authors claim that AlphaFold3 can model glycoproteins with high accuracy and that it represents a significant advance for the field, citing specific examples such as the EXTL3 homodimer and OC43 spike protein.</li>
+<li><strong>Evidence pointer</strong> Section 4.1.2, Section 4.4, Figure 4 (not provided)</li>
+<li><strong>Concern</strong> The discussion of AlphaFold3 is overly optimistic and does not acknowledge the well-documented limitations of AF3 for glycoprotein modeling. The authors cite a few examples where AF3 performed well but do not discuss the systematic evaluation studies that show AF3 struggles with glycan conformation, anomeric configuration, and glycosidic linkage accuracy. The claim that AF3 treats glycans as "first-class molecular entities" is an overstatement; AF3's handling of glycans is still limited by training data and force field approximations. The authors also do not address the fact that AF3's confidence metrics (pLDDT, PAE) are unreliable for glycans, which they themselves note in Section 4.1.2 but do not connect to the broader claims of AF3's utility.</li>
+<li><strong>Why it matters</strong> The manuscript's central argument is that AI is transforming glycoprotein structural biology. If the discussion of the most prominent AI tool (AF3) is uncritical and does not accurately represent its capabilities and limitations, the overall thesis is weakened. Readers may be misled about the current state of the art and make inappropriate decisions about tool selection.</li>
+<li><strong>Resolution test</strong> The authors should provide a balanced assessment of AF3, including quantitative comparisons with experimental structures across a diverse test set, discussion of known failure modes (e.g., anomeric errors, glycan flexibility), and a clear statement of what AF3 can and cannot do for glycoprotein modeling. They should also discuss alternative approaches and their relative merits.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Support for claims</li>
+<li><strong>Claim pointer</strong> The authors claim that "glycan language models link sequence and structure to function" and that these models are "becoming clinically actionable" for prioritizing variants in congenital disorders of glycosylation and stratifying immune disorders and tumors.</li>
+<li><strong>Evidence pointer</strong> Section 5.3, Section 5.4, Section 5.5</li>
+<li><strong>Concern</strong> The claim that glycan language models are "clinically actionable" is not supported by the evidence presented. The authors describe a few examples (e.g., XGBoost classifier for PMM2-CDG with AUC 0.917, LeGenD for glycan structure prediction) but do not provide details on validation cohorts, prospective studies, or clinical implementation. The leap from computational predictions to clinical actionability is not justified. Furthermore, the authors do not discuss the regulatory, ethical, or practical challenges of deploying such models in clinical settings.</li>
+<li><strong>Why it matters</strong> The manuscript positions AI as a transformative force in glycosylation research with clinical implications. Overstating the clinical readiness of these tools could mislead researchers and clinicians, and could undermine trust in the field if the claims are not borne out.</li>
+<li><strong>Resolution test</strong> The authors should either temper the "clinically actionable" claim or provide concrete evidence of clinical validation, such as prospective studies, external validation cohorts, or regulatory approval. They should also discuss the specific challenges that remain before these tools can be used in clinical practice.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Claim pointer</strong> The authors state that the review covers "recent advances" in AI for glycosylation research, but the discussion of glycomics data mining is largely focused on a few specific tools and does not provide a comprehensive survey of the field.</li>
+<li><strong>Evidence pointer</strong> Section 5</li>
+<li><strong>Concern</strong> The glycomics section is uneven. While the authors discuss CandyCrunch, DeepGlyco, GlycoCompute, and GlycanGT, they do not mention several other important approaches, such as the use of transformers for glycan sequence representation, graph neural networks for glycan property prediction, or the growing literature on glycan-focused foundation models. The discussion of data resources (Table 2) is brief and does not critically evaluate the strengths and weaknesses of each resource. The section on explainable AI is also thin, with only two examples discussed.</li>
+<li><strong>Why it matters</strong> A review should provide a comprehensive and balanced survey of the field. If important approaches are omitted, the review's utility as a reference is diminished, and readers may not be aware of the full range of available tools.</li>
+<li><strong>Resolution test</strong> The authors should expand the glycomics section to include a more comprehensive survey of AI methods, including those they may have overlooked. They should also provide a more critical evaluation of the data resources and discuss the trade-offs between different approaches.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> The authors describe several AI tools and their reported performance metrics (e.g., CandyCrunch top-1 accuracy 90.3%, XGBoost AUC 0.917) but do not provide sufficient details on how these metrics were obtained or whether they are reproducible.</li>
+<li><strong>Evidence pointer</strong> Section 3.4.2, Section 5.4</li>
+<li><strong>Concern</strong> The manuscript does not provide details on the datasets, training/validation splits, or evaluation protocols used to obtain the reported performance metrics. This makes it difficult for readers to assess the reliability of these numbers or to reproduce the results. The authors also do not discuss potential sources of bias or overfitting in the reported results.</li>
+<li><strong>Why it matters</strong> Reproducibility is a cornerstone of scientific research. Without clear details on evaluation methodology, the reported performance metrics cannot be independently verified, and the claims based on them are weakened.</li>
+<li><strong>Resolution test</strong> The authors should provide more details on the evaluation protocols, including dataset descriptions, splits, and metrics. They should also discuss potential limitations and sources of bias in the reported results.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Section 2.2.1</li>
+<li><strong>Evidence pointer</strong> Text describing GlycoPredictor</li>
+<li><strong>Issue</strong> The description of the GlycoPredictor model is dense and could be clearer. The authors mention "approximately 10,434 reactions" and a "734-reaction Barresi–Hindsgaul dataset" but do not explain why these specific datasets were chosen or how they differ.</li>
+<li><strong>Required correction</strong> Provide a brief explanation of the datasets and their relevance, and consider breaking the description into smaller, more digestible paragraphs.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Section 4.1.2</li>
+<li><strong>Evidence pointer</strong> Text discussing AlphaFold3</li>
+<li><strong>Issue</strong> The term "first-class molecular entities" is vague and not standard terminology in structural biology. It is unclear what the authors mean by this phrase.</li>
+<li><strong>Required correction</strong> Replace with a more precise description, such as "treated as explicit components of the molecular system being modeled" or similar.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Consistency</li>
+<li><strong>Affected element</strong> Section 5.4</li>
+<li><strong>Evidence pointer</strong> Text discussing CDG</li>
+<li><strong>Issue</strong> The authors mention "circulating miRNA profiles" as a biomarker for PMM2-CDG but do not explain why miRNA profiles are relevant to a disorder caused by a defect in protein glycosylation. The connection is not obvious.</li>
+<li><strong>Required correction</strong> Add a brief explanation of the rationale for using miRNA profiles in this context, or remove the example if it is not directly relevant.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability</li>
+<li><strong>Affected element</strong> Section 6 (Conclusions)</li>
+<li><strong>Evidence pointer</strong> Text in conclusions</li>
+<li><strong>Issue</strong> The conclusions section is largely a summary of the main sections and does not provide a forward-looking perspective or a clear statement of the most important open problems.</li>
+<li><strong>Required correction</strong> Add a paragraph that explicitly identifies the top 3-5 challenges that need to be addressed for AI to realize its potential in glycosylation research, and suggest potential solutions or research directions.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Section 4.3.2</li>
+<li><strong>Evidence pointer</strong> Text discussing cryo-EM</li>
+<li><strong>Issue</strong> The discussion of AI-assisted cryo-EM is brief and does not mention specific tools or methods beyond ModelAngelo. There are other AI-based approaches for cryo-EM map interpretation that could be mentioned.</li>
+<li><strong>Required correction</strong> Consider adding a brief discussion of other AI-based cryo-EM tools and their applicability to glycoproteins.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The manuscript's central thesis that AI is transforming glycosylation research is plausible but not fully established. The uncritical treatment of AlphaFold3 (R1-M1) and the overstatement of clinical actionability (R1-M2) are the most significant technical failings. The lack of detail on evaluation protocols (R1-M4) also undermines the credibility of the reported performance metrics. These issues need to be addressed before the review can be considered a reliable guide to the field.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li><strong>Originality</strong> The "glycan language" framework is a useful organizing principle, but the individual topics covered are not new. The review does not present a novel synthesis or a unique perspective that would distinguish it from other recent reviews on AI in glycosylation.</li>
+<li><strong>Scientific importance</strong> The topic is important, as glycosylation is a ubiquitous and understudied modification with major implications for human health. A comprehensive and critical review would be valuable. However, the current manuscript does not fully deliver on this promise.</li>
+<li><strong>Interdisciplinary readership</strong> The manuscript is likely to appeal to researchers in glycobiology and computational biology, but the lack of depth in some sections may limit its appeal to experts in either field. The writing is generally accessible but could be improved with clearer explanations of technical concepts.</li>
+<li><strong>Technical soundness</strong> The technical soundness is mixed. The descriptions of individual tools are generally accurate, but the overall argument is weakened by the uncritical treatment of AF3 and the lack of detail on evaluation protocols.</li>
+<li><strong>Readability for nonspecialists</strong> The manuscript is generally readable, but some sections are dense and assume prior knowledge of both glycosylation and AI. The authors could improve accessibility by providing more background and defining key terms.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The manuscript has the potential to be a useful review, but the authors need to address the concerns raised above, particularly the uncritical treatment of AlphaFold3 and the overstatement of clinical actionability. A more balanced and critical perspective would significantly strengthen the manuscript.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that glycan language models are "becoming clinically actionable" (Section 5.3) is not supported by the evidence presented.</li>
+<li>The claim that AlphaFold3 treats glycans as "first-class molecular entities" (Section 4.1.2) is an overstatement and not supported by the literature.</li>
+<li>The reported performance metrics for various tools (e.g., CandyCrunch top-1 accuracy 90.3%, XGBoost AUC 0.917) are presented without sufficient detail on evaluation methodology, making them difficult to assess.</li>
+<li>The claim that the MCTS1–JAK2–IFN-γ axis example demonstrates the utility of AI for glycoprotein structure-function analysis (Section 4.1.2) is not clearly supported, as the authors note this involves a non-glycosylated signaling axis.</li>
+<li>The statement that "AI is now laying down new methodological foundations at every link along that chain" (Section 6) is a broad generalization that is not fully supported by the specific examples discussed.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

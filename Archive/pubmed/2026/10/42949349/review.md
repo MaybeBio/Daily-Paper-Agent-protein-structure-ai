@@ -1,0 +1,79 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report a computational-assisted, structure-guided engineering strategy for Cu/Zn superoxide dismutase (Cu/Zn-SOD). They identify Gln22 and Glu134 as engineering sites, generate single mutants Q22I and E134M with 1.55- and 2.39-fold higher specific activities than wild type, and a double mutant M2 (Q22I/E134M) with 7121.0 U mg-1 specific activity (3.43-fold over WT). They report increased optimal temperature (40 to 50 degrees C) for Q22I and M2, enhanced thermostability for M2, improved kinetic parameters (41.18% lower Km, 2.95-fold higher Vmax), and molecular docking suggesting complementary structural and active-site effects.
+- **Visible evidence base** Abstract text only; no experimental methods, statistical analyses, structural data, or docking parameters provided
+- **Missing materials affecting confidence** Full methods, all figures and tables, statistical details, sequence alignments, structural models, docking protocols, raw kinetic data, thermostability assay conditions, and replicate information
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially useful enzyme engineering study with clear quantitative improvements in catalytic activity and thermostability. However, the evidence base is limited to summary statistics without methodological detail, statistical validation, or structural verification. The claims are plausible but cannot be fully assessed from the supplied material. The work may interest researchers in food chemistry, enzyme engineering, and antioxidant applications, but the current abstract does not establish the mechanistic basis for the observed improvements.
+- **Who would be interested in the results, and why** Researchers in enzyme engineering, protein design, and food science would be interested because improved SOD variants with higher activity and thermostability have potential applications in food preservation, oxidative stress mitigation, and industrial processing. The structure-guided approach may also interest computational biologists working on enzyme optimization.
+- **Major strengths** The engineering strategy is clearly described and logically structured, moving from computational identification to saturation mutagenesis to combinatorial improvement. The reported fold-improvements in specific activity and kinetic parameters are substantial and potentially impactful. The combination of activity, thermostability, and kinetic data provides a multi-dimensional characterization.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that Q22I and E134M were identified as the most beneficial single substitutions from saturation mutagenesis, and that M2 shows the highest specific activity of 7121.0 U mg-1 with a 3.43-fold increase over WT.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract provides no information on the number of replicates, statistical error bars, or significance testing for the specific activity measurements. Without these, it is impossible to determine whether the reported fold-changes are statistically robust or within experimental noise.
+  - **Why it matters** Enzyme activity assays are inherently variable, and claims of improved catalytic performance require statistical validation. If the differences are not significant, the core conclusion of enhanced activity is unsupported.
+  - **Resolution test** Provide mean values with standard deviations, replicate numbers, and appropriate statistical tests (e.g., t-test or ANOVA) for all activity comparisons between WT and mutants.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that M2 exhibits enhanced thermostability and that the optimal temperature increased from 40 to 50 degrees C for Q22I and M2.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** No thermostability data are presented, such as half-life at specific temperatures, residual activity over time, or melting temperature (Tm). The claim of enhanced thermostability is stated without quantitative support.
+  - **Why it matters** Thermostability is a key claimed improvement and a major selling point for industrial applications. Without quantitative thermostability metrics, the claim cannot be evaluated or reproduced.
+  - **Resolution test** Provide thermostability curves, half-life values, or Tm measurements for WT and mutants under defined conditions, with statistical comparison.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that molecular docking suggested complementary effects of Q22I and E134M on structural stability and active-site optimization, supporting improved catalytic performance.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The docking analysis is described only in qualitative terms. No docking scores, structural models, interaction details, or validation of the docking protocol are provided. The link between docking predictions and experimental results is asserted but not demonstrated.
+  - **Why it matters** The mechanistic explanation for the improved performance rests on the docking analysis. Without quantitative docking results and structural context, the proposed mechanism is speculative.
+  - **Resolution test** Provide docking scores, key residue interactions, structural overlays, and validation of the docking approach (e.g., re-docking of known ligands). Ideally, support with experimental structural data such as crystallography or mutagenesis validation.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Reproducibility
+  - **Claim pointer** The authors claim that an integrated computational-assisted, structure-guided engineering strategy was applied, with Gln22 and Glu134 identified as promising sites.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The computational methods used for site identification are not described. It is unclear whether this involved molecular dynamics, sequence conservation analysis, or other approaches. The criteria for selecting Gln22 and Glu134 are not stated.
+  - **Why it matters** Reproducibility of the engineering strategy requires a clear description of the computational pipeline and selection criteria. Without this, other researchers cannot apply or validate the approach.
+  - **Resolution test** Describe the computational methods, including software, parameters, and selection thresholds, in the full manuscript.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Kinetic analysis claim
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** The abstract states M2 had a 41.18% lower Km and 2.95-fold higher Vmax than WT, but does not specify the substrate concentration range, assay conditions, or whether these are apparent or true kinetic constants.
+  - **Required correction** Specify assay conditions and clarify whether Km and Vmax are apparent values determined under specific conditions.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Mutant nomenclature
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** The notation "E134 M" includes a space, which is inconsistent with standard protein mutation nomenclature and may cause confusion.
+  - **Required correction** Use standard notation "E134M" throughout.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Context
+  - **Affected element** Comparison to existing SOD engineering
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** The abstract does not contextualize the achieved improvements against previously engineered SOD variants, so the significance of the fold-improvements relative to the field is unclear.
+  - **Required correction** Add a brief comparison to prior SOD engineering efforts in the introduction or discussion.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (statistical validation of activity data), R1-M2 (quantitative thermostability data), R1-M3 (quantitative docking results and structural validation)
+- **Assessment against Nature-style criteria** Originality: The structure-guided approach is not novel in itself, but the specific mutations and combination strategy may offer incremental originality. Scientific importance: Improved SOD variants have practical relevance, but the abstract does not demonstrate broad conceptual advance. Interdisciplinary readership: The work may appeal to enzyme engineers and food chemists, but the abstract lacks the broader significance needed for a high-impact general audience. Technical soundness: Not established from the abstract due to missing statistical and methodological details. Readability for nonspecialists: The abstract is generally clear, though some terms assume domain knowledge.
+- **Recommendation posture** Currently not established from the provided evidence. The claims are promising but require full experimental details, statistical validation, and quantitative structural or docking data to be assessed rigorously. Supportive if technical concerns are resolved in the full manuscript.
+
+## Risk / unsupported claims
+- The claim of enhanced thermostability for M2 is unsupported as no quantitative thermostability data are provided.
+- The claim that molecular docking supports complementary effects on structural stability and active-site optimization is unsupported as no docking results or structural validation are provided.
+- The claim that Q22I and E134M are the most beneficial substitutions from saturation mutagenesis is not assessable without screening data and selection criteria.
+- The statistical significance of all reported fold-improvements in specific activity and kinetic parameters is not assessable from the abstract.

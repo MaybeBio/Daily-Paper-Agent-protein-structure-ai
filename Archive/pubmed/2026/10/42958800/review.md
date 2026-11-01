@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as stated in the abstract, without access to full methods, figures, or statistical details
+- **Shared manuscript claim summary** The authors report that membrane anchoring and virion-like assembly of SARS-CoV-2 Spike (S) dampen global conformational dynamics induced by variant mutations, that D614G and Omicron BA.1 mutations produce spatially constrained dynamic changes in VLP-displayed S distinct from those in soluble recombinant 2P S, that 2P substitutions disrupt native interprotomer communication, and that recombinant S does not recapitulate the native conformational ensemble of virion-presented S.
+- **Visible evidence base** Abstract text only. No figures, tables, methods sections, or supplementary materials were provided.
+- **Missing materials affecting confidence** Full methods for CIM-MS HDXMS and WE-MD simulations, statistical analysis details, replicate numbers, construct validation data, VLP characterization, comparison metrics between constructs, and all primary data figures and tables.
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially important finding that the supramolecular context of SARS-CoV-2 Spike alters the conformational dynamics associated with variant mutations, with implications for interpreting recombinant protein studies. The combination of experimental HDXMS with computational WE-MD is appropriate and potentially powerful. However, the abstract alone does not provide sufficient methodological detail, quantitative results, or statistical validation to assess the robustness of the claims. The central conclusion that membrane anchoring "reshapes" variant-induced dynamics is plausible but requires substantially more evidence than is visible here.
+- **Who would be interested in the results, and why** Structural biologists studying viral glycoproteins, biophysicists using HDXMS or enhanced sampling simulations, SARS-CoV-2 researchers investigating variant evolution and antibody recognition, and developers of recombinant protein reagents for vaccine and therapeutic development would find these results relevant. The work challenges the common practice of using soluble ectodomains as proxies for native viral surface proteins.
+- **Major strengths** The study addresses a significant gap in the field by directly comparing soluble recombinant S with membrane-anchored VLP-displayed S. The combination of CIM-MS HDXMS with WE-MD simulations is methodologically sophisticated. The finding that 2P substitutions alter interprotomer communication has practical implications for the interpretation of a widely used reagent. The spatial constraint of variant effects in VLP S versus recombinant S is a conceptually interesting result.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that membrane anchoring and virion-like assembly "substantially dampen global dynamic changes produced by variant mutations" and that VLP S effects are "more spatially constrained" than in recombinant 2P S.
+  - **Evidence pointer** Abstract text, location not provided
+  - **Concern** The abstract provides no quantitative metrics for the magnitude of dynamic changes, no statistical comparisons between constructs, and no information on how "dampening" or "spatial constraint" was defined or measured. Without effect sizes, confidence intervals, or significance testing, the comparative claim cannot be evaluated.
+  - **Why it matters** The central conclusion of the paper rests on a quantitative comparison between two constructs. If the differences are within experimental noise or are not statistically robust, the main message would be unsupported.
+  - **Resolution test** Provide quantitative HDXMS difference values with associated uncertainties for each construct and mutation, statistical tests comparing VLP S to recombinant S, and a clear operational definition of "dampening" and "spatial constraint" with supporting metrics.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that "2P substitutions alter native interprotomer communication" and that recombinant S shows "a predominantly fast-exchanging population in the RBD hinge region, consistent with disruption of hydrogen-bonding and salt bridge networks."
+  - **Evidence pointer** Abstract text, location not provided
+  - **Concern** The abstract states a mechanistic interpretation (disruption of specific noncovalent networks) without presenting any structural or mutational evidence that directly tests this mechanism. The HDXMS data may be consistent with such disruption, but consistency is not proof. No alternative explanations are considered.
+  - **Why it matters** This claim has direct implications for the interpretation of all prior structural studies using 2P S. If the mechanism is not firmly established, the conclusion overreaches the data.
+  - **Resolution test** Show direct evidence for the proposed hydrogen-bond and salt bridge disruption, such as structural comparisons, targeted mutations, or computational analyses that test the proposed mechanism against alternatives.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that WE-MD simulations and HDXMS experiments were combined to reach the stated conclusions.
+  - **Evidence pointer** Abstract text, location not provided
+  - **Concern** The abstract does not describe how the two methods were integrated. Were the simulations used to interpret the HDXMS data, to predict dynamics that were then tested experimentally, or compared in a more qualitative manner? The degree of agreement between experiment and simulation is not stated.
+  - **Why it matters** The credibility of the conclusions depends on the consistency between the two independent approaches. Without a description of the integration strategy and the level of agreement, the reader cannot assess whether the computational results independently support the experimental findings.
+  - **Resolution test** Describe the integration workflow, report quantitative agreement metrics between HDXMS and WE-MD results, and clarify whether the simulations were used prospectively or retrospectively.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract text, location not provided
+  - **Issue** The abstract uses specialized terminology (CIM-MS, HDXMS, WE-MD, 2P S, VLP) without defining any of these terms, which limits accessibility for readers outside the immediate biophysics community.
+  - **Required correction** Define each acronym at first use and briefly state what each method measures in plain language.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Scientific importance
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract text, location not provided
+  - **Issue** The abstract claims "direct implications for epitope presentation, antibody recognition, and interpretation of recombinant S structural studies" but does not specify what those implications are.
+  - **Required correction** State at least one concrete implication for each of the three areas mentioned.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract text, location not provided
+  - **Issue** The abstract does not state how many replicates were performed for the HDXMS experiments or how many independent WE-MD trajectories were generated.
+  - **Required correction** Include replicate numbers and trajectory counts in the abstract or indicate where this information can be found.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (quantitative comparison without statistics), R1-M2 (mechanistic claim without direct evidence), R1-M3 (integration of methods not described).
+- **Assessment against Nature-style criteria** Originality is high, as the direct comparison of soluble versus membrane-anchored S in the context of variant mutations is not commonly addressed. Scientific importance is potentially high given the widespread use of recombinant S reagents, but the importance is not fully established from the abstract alone. Interdisciplinary readership is plausible, spanning virology, biophysics, and structural biology, though the abstract is written for specialists. Technical soundness cannot be assessed from the abstract, as no methodological or statistical details are visible. Readability for nonspecialists is limited by undefined jargon and a dense presentation of results without context.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents an interesting hypothesis and a reasonable experimental strategy, but the absence of quantitative results, statistical validation, and methodological integration details prevents assessment of whether the central claims are supported. A full manuscript with complete methods and data would be required to evaluate this work properly.
+
+## Risk / unsupported claims
+- The claim that membrane anchoring "substantially dampens" variant-induced dynamics is unsupported without quantitative comparison metrics.
+- The claim that 2P substitutions "alter native interprotomer communication" is unsupported without direct mechanistic evidence.
+- The claim that recombinant S "does not recapitulate the native conformational ensemble" is presented as a conclusion but is not quantitatively demonstrated in the abstract.
+- The stated implications for epitope presentation and antibody recognition are asserted without specific supporting data.
+- The degree of agreement between HDXMS and WE-MD simulations is not stated, making the combined conclusion unverifiable from the abstract.

@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Context-dependent protein structure prediction analysis and complex stoichiometry inference with MultimerMapper. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Context-dependent protein structure prediction analysis and complex stoichiometry inference with MultimerMapper.</h1>
+      <div class="meta">Rodriguez Araya, Elvio; Serra, Esteban</div>
+      <div class="meta muted">
+        
+        <span class="journal">Frontiers in bioinformatics</span>
+        · 2026-10-25
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42923437/">原文</a>
+      </div>
+      <p class="one-liner">该文开发了MultimerMapper，一个用于分析和可视化多聚体蛋白结构预测集合的软件，利用统计和图论推断化学计量比及相互作用模式，虽非新预测方法，但为蛋白复合物结构计算分析提供了有价值的工具。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Advances in artificial intelligence (AI) have transformed the field of structural biology, notably with the accuracy level reached by AlphaFold in the prediction of protein structures. While cloud implementations have broadened access to these methods, there is still a lack of non-AI tools to systematically interpret and analyze the resulting data, especially under varying modeling contexts. Here, we present MultimerMapper, a pipeline and software suite designed to generate, extract, integrate, analyze, and visualize the behavior of multimeric systems in ensembles of overlapping protein structure predictions. It utilizes statistics, graph theory, and novel algorithms to interpret how protein-protein interfaces and protein conformations behave across different modeling contexts, under the premise that they vary depending on the components introduced into the predictions. Starting from a list of input sequences, a stoichiometric space exploration algorithm guides users in the generation of highly informative structure prediction ensembles. Through interactive visualizations, MultimerMapper highlights higher-order subassemblies, infers stoichiometries, and identifies alternative interaction modes and conformational changes statistically associated with the presence or absence of specific protein partners. MultimerMapper offers a new perspective on the dynamic nature of predicted protein complex structures, supporting researchers in the exploration of functional mechanisms and assembly paths.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">人工智能 (AI) 的进展已经改变了结构生物学领域，尤其是 AlphaFold 在蛋白质结构预测方面所达到的准确度水平。尽管云端实现拓宽了这些方法的可及性，但仍然缺乏非 AI 工具来系统地解释和分析由此产生的数据，尤其是在不同的建模情境下。在此，我们提出 MultimerMapper，这是一个流程和软件套件，旨在生成、提取、整合、分析和可视化多聚体系统在重叠蛋白质结构预测集合中的行为。它利用统计学、图论和新算法来解释蛋白质-蛋白质界面和蛋白质构象在不同建模情境下如何表现，其前提是它们会随预测中引入的组分而变化。从输入序列列表开始，一个化学计量空间探索算法引导用户生成信息量高的结构预测集合。通过交互式可视化，MultimerMapper 突出高阶亚组装体，推断化学计量，并识别与特定蛋白质伙伴的存在或缺失在统计上相关的替代相互作用模式和构象变化。MultimerMapper 为预测蛋白质复合物结构的动态性质提供了新视角，支持研究人员探索功能机制和组装路径。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Context-dependent protein structure prediction analysis and complex stoichiometry inference with MultimerMapper</li>
+<li><strong>作者</strong>: Rodriguez Araya, Elvio; Serra, Esteban</li>
+<li><strong>单位</strong>: 未提供（根据作者领域推测为与锥虫蛋白质复合物研究相关机构）</li>
+<li><strong>期刊/预印本平台</strong>: Frontiers in Bioinformatics</li>
+<li><strong>年份</strong>: 2026</li>
+<li><strong>论文类型</strong>: 方法学/软件工具论文</li>
+<li><strong>领域</strong>: 蛋白质结构预测分析、蛋白质复合物化学计量推断、生物信息学</li>
+<li><strong>关键词</strong>: AlphaFold、蛋白质复合物、化学计量、构象变化、蛋白质相互作用、结构预测分析</li>
+<li><strong>DOI/arXiv 号</strong>: 10.3389/fbinf.2026.1914731</li>
+<li><strong>代码</strong>: https://github.com/elviorodriguez/MultimerMapper；Zenodo: https://doi.org/10.5281/zenodo.22031831</li>
+<li><strong>数据</strong>: 相关代码库（DiscodaMultimer、negative_PPI_pairs_generator、random_complexes_for_benchmark）均在 GitHub 提供</li>
+<li><strong>阅读日期</strong>: 2026-05-13（基于当前日期）</li>
+<li><strong>在课题方向中的位置</strong>: 本文属于「蛋白质结构相关计算研究 × AI 方法」方向，聚焦于 AlphaFold 多聚体预测结果的系统化后处理分析工具开发。其核心贡献在于提出"上下文依赖结构预测分析"框架，利用统计方法、图论和聚类算法从 AlphaFold 预测集合中提取蛋白质相互作用动态、构象变化和化学计量信息，填补了 AlphaFold 输出结果缺乏系统化解释工具的空白。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文开发了 MultimerMapper 软件套件，通过系统性地生成和分析不同蛋白质组合的 AlphaFold 多聚体结构预测集合，利用图论、统计关联分析和聚类算法，推断蛋白质复合物的化学计量、动态相互作用和上下文依赖的构象变化，并在锥虫及非锥虫体系上验证了其泛化能力。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 如何从 AlphaFold 等深度学习结构预测工具生成的多聚体预测结果中，系统性地提取蛋白质复合物的化学计量信息、动态相互作用模式和上下文依赖的构象变化？</li>
+<li><strong>为什么重要</strong>: AlphaFold 虽能高精度预测蛋白质结构，但面对未知复合物时，用户往往只有氨基酸序列列表，缺乏系统化工具来指导预测组合的选择、结果解释和化学计量推断。对于高度动态、瞬时相互作用或竞争性结合的复合物体系，这一问题尤为突出。</li>
+<li><strong>现有方法不足</strong>: 现有方法如 CombFold 需要预先知道化学计量信息，且生成的是静态模型，无法解释相互作用动态和构象变异性。其他工具缺乏对预测集合的系统化统计分析框架。</li>
+<li><strong>精确研究问题</strong>: Can a systematic stoichiometric space exploration algorithm, combined with statistical analysis of AlphaFold prediction ensembles, reliably infer complex stoichiometry and context-dependent conformational changes without prior experimental knowledge?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：此脉络基于本文引言及参考文献构建，经外部核验部分已注明）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单体结构预测</td>
+<td>AlphaFold2 (Jumper et al., 2021)</td>
+<td>高精度单体预测</td>
+<td>无法直接处理多聚体</td>
+<td>基础工具</td>
+</tr>
+<tr>
+<td>复合物预测扩展</td>
+<td>AlphaFold2-multimer (Evans et al., 2021)、RoseTTAFold 系列</td>
+<td>支持多链复合物预测</td>
+<td>需用户指定组合和化学计量</td>
+<td>本文的预测工具</td>
+</tr>
+<tr>
+<td>云平台普及</td>
+<td>ColabFold (Mirdita et al., 2022)</td>
+<td>降低使用门槛</td>
+<td>结果缺乏系统化解释</td>
+<td>本文的输入来源</td>
+</tr>
+<tr>
+<td>复合物组装</td>
+<td>CombFold (Shor &amp; Schneidman-Duhovny, 2024)</td>
+<td>利用子复合物预测组装大复合物</td>
+<td>需先验化学计量知识，输出静态模型</td>
+<td>本文的互补/替代方案</td>
+</tr>
+<tr>
+<td>预测结果分析</td>
+<td>本文 MultimerMapper</td>
+<td>无需先验知识，系统化探索化学计量空间，提供动态相互作用和构象变化分析</td>
+<td>依赖 AlphaFold 预测质量，统计框架仍需完善</td>
+<td>本文</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未知复合物化学计量推断困难</td>
+<td>面对仅知序列的蛋白质体系，无法确定复合物中各组分比例</td>
+<td>AlphaFold 预测需要用户指定输入链组合，缺乏系统化探索工具</td>
+<td>Introduction: "the prediction of stoichiometric coefficients when prior experimental data or templates are unavailable remains unsolved"</td>
+</tr>
+<tr>
+<td>预测结果缺乏动态解释</td>
+<td>AlphaFold 输出静态结构，无法反映相互作用动态和构象变异性</td>
+<td>现有方法聚焦于单一最优预测，忽略不同上下文下的预测变异性</td>
+<td>Introduction: "current methods... generate static models without providing an explicit interpretation of interaction dynamics and conformational variability"</td>
+</tr>
+<tr>
+<td>大复合物预测计算成本高</td>
+<td>全组合探索不可行</td>
+<td>预测数量与蛋白质种类呈平方级增长</td>
+<td>Methods: SSE 算法设计为"减少计算资源消耗"</td>
+</tr>
+<tr>
+<td>瞬时/竞争性相互作用难以捕捉</td>
+<td>简单二聚体预测无法反映竞争性结合或顺序组装</td>
+<td>相互作用依赖于特定上下文（其他蛋白存在与否）</td>
+<td>Results: MRGBP 案例中顺序结合模式仅在特定组合预测中显现</td>
+</tr>
+<tr>
+<td>统计显著性缺乏</td>
+<td>难以判断观察到的相互作用变化是否具有统计意义</td>
+<td>缺乏合适的统计框架</td>
+<td>Discussion: "it would be necessary to find an appropriate statistical framework to define the significance of BPD values"</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>MultimerMapper 是一个软件套件，包含多个模块：输入验证、指标提取、PPI 检测、坐标分析、结构域检测、多价性预测、接触矩阵聚类、化学计量空间探索（SSE）算法、图论分析、φ 系数和点二列相关系数计算，以及交互式可视化输出。</p>
+<h3>2) 核心洞察</h3>
+<p><strong>上下文依赖的结构预测分析</strong>：AlphaFold 对同一蛋白质在不同组合（上下文）下的预测结果会发生变化，这些变化本身携带有价值的生物学信息。通过系统性地改变预测组合（哪些蛋白一起预测、各多少个拷贝），可以：
+- 识别哪些相互作用是"静态"的（在所有上下文中都出现）vs"动态"的（仅在特定上下文中出现）
+- 通过"化学计量收敛"概念推断复合物的功能化学计量
+- 通过伪轨迹分析捕捉上下文依赖的构象变化</p>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>预测变异性作为信息源</strong>：深度学习模型的不确定性/变异性不应仅被视为噪声，而可以被系统化利用来提取生物学信息。这一思路可迁移到其他 AI 驱动的结构生物学任务中。</li>
+<li><strong>组合空间系统化探索</strong>：面对组合爆炸问题时，采用"从简单到复杂、只扩展稳定节点"的贪心策略可以有效平衡计算成本和信息获取。</li>
+<li><strong>统计关联分析的应用</strong>：将 φ 系数和点二列相关等经典统计方法应用于结构预测集合分析，为"哪些蛋白存在导致哪些相互作用变化"提供了可检验的假设。</li>
+</ul>
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>: FASTA 文件（蛋白质序列列表）+ 目录（包含 2-mer 预测结果）；可选 N-mer 预测结果目录</p>
+<p><strong>输出</strong>: 
+- 交互式 HTML 报告（含 3D 结构视图、图表）
+- 结构化数据文件（表格格式）
+- 图论表示（PPI 网络图）</p>
+<p><strong>模块流程</strong>:
+1. <strong>输入验证模块</strong>: 检查输入文件格式、序列一致性、预测结果完整性
+2. <strong>指标提取器</strong>: 从每个预测模型中提取 pLDDT、pTM、ipTM、PAE 矩阵、原子坐标
+3. <strong>PPI 检测器</strong>: 基于 miPAE 阈值判断蛋白质对是否相互作用
+4. <strong>坐标分析器</strong>: 计算 RMSD、回转半径等构象指标
+5. <strong>结构域检测器</strong>: 基于 PAE 矩阵的图聚类算法识别结构域
+6. <strong>多价性预测器</strong>: 计算多价链比例 (FMC)
+7. <strong>接触矩阵聚类</strong>: 对多价相互作用的接触矩阵进行层次聚类，识别不同结合模式
+8. <strong>SSE 算法</strong>: 系统化探索化学计量空间，生成预测建议
+9. <strong>PPI 图转换器</strong>: 整合所有信息生成图表示，计算 φ 和 rpb 系数
+10. <strong>可视化模块</strong>: 生成交互式报告</p>
+<p><strong>文字流程</strong>: 
+用户提供序列列表 → MultimerMapper 生成所有 2-mer 组合建议 → 用户预测 2-mer → 输入结果 → MultimerMapper 检测 PPI → 基于稳定 PPI 生成 3-mer 建议 → 用户预测 3-mer → 重复迭代直到收敛 → 最终分析（伪轨迹、聚类、统计关联）→ 输出报告</p>
+<p><strong>关键假设</strong>:
+- AlphaFold 预测的 PAE 和 pLDDT 值能反映真实的相互作用强度和构象稳定性
+- 不同上下文（组合）下的预测变异性反映了真实的生物学动态
+- 稳定复合物中所有亚基的相互作用界面应被完全占据</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PPI 检测器</td>
+<td>基于 miPAE 阈值判断蛋白质对是否相互作用</td>
+<td>从预测模型中提取二元相互作用信息</td>
+<td>输入: 预测模型指标；输出: PPI 判定</td>
+<td>Results 图 4a: miPAE 在 AF2/AF3 上 AUC 最高</td>
+<td>[预期] 无法区分真实相互作用与假阳性预测</td>
+</tr>
+<tr>
+<td>坐标分析器</td>
+<td>计算 RMSD、回转半径等构象指标</td>
+<td>量化构象变化</td>
+<td>输入: 原子坐标；输出: 构象指标</td>
+<td>Results 图 5c-d: RMSD 和 ROG 变化与已知生物学行为一致</td>
+<td>[预期] 无法检测上下文依赖的构象变化</td>
+</tr>
+<tr>
+<td>结构域检测器</td>
+<td>基于 PAE 的图聚类识别结构域</td>
+<td>将蛋白质分割为独立折叠单元</td>
+<td>输入: 参考结构 PAE 矩阵；输出: 结构域分配</td>
+<td>Methods: 修改自 pae_to_domains 算法</td>
+<td>[预期] 无法进行结构域级别的构象分析</td>
+</tr>
+<tr>
+<td>多价性预测器</td>
+<td>计算 FMC 指标判断多价相互作用</td>
+<td>识别一个蛋白同时与多个同种蛋白结合的能力</td>
+<td>输入: 接触信息；输出: FMC 值</td>
+<td>Results: FMC ≥ 0.2 判定为多价</td>
+<td>[预期] 无法识别多价结合模式</td>
+</tr>
+<tr>
+<td>接触矩阵聚类</td>
+<td>层次聚类识别不同结合模式</td>
+<td>区分同一蛋白对的不同相互作用界面</td>
+<td>输入: 接触矩阵；输出: 聚类结果</td>
+<td>Results 图 6a-b: SEC31-SEC31 和 SEC13-SEC31 的多个结合模式</td>
+<td>[预期] 无法区分不同结合模式</td>
+</tr>
+<tr>
+<td>SSE 算法</td>
+<td>系统化探索化学计量空间</td>
+<td>在计算成本可控下找到功能化学计量</td>
+<td>输入: PPI 网络；输出: 预测建议</td>
+<td>Results: 60% 案例中唯一确定化学计量</td>
+<td>[预期] 无法推断未知复合物的化学计量</td>
+</tr>
+<tr>
+<td>PPI 图转换器</td>
+<td>计算 φ 和 rpb 系数</td>
+<td>统计检验蛋白存在与相互作用/构象变化的关联</td>
+<td>输入: PPI 和构象数据；输出: 统计指标</td>
+<td>Results 图 8b-e: 显著关联</td>
+<td>[预期] 无法提供统计支持的生物学假设</td>
+</tr>
+<tr>
+<td>伪轨迹生成器</td>
+<td>按 RMSD 排序生成构象轨迹</td>
+<td>可视化构象变化过程</td>
+<td>输入: 构象集合；输出: 伪轨迹</td>
+<td>Results 图 5: MRGBP 顺序结合模式</td>
+<td>[预期] 无法捕捉构象动态</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>miPAE (minimum interaction PAE)</strong>:
+- 定义: 两个蛋白质链之间所有残基对 PAE 值的最小值
+- 用途: PPI 检测的核心指标，AF2 阈值 9.7 Å，AF3 阈值 7.5 Å
+- 直觉: 如果两个蛋白之间存在稳定的相互作用界面，则界面残基对的 PAE 值应较低</p>
+<p><strong>pDockQ (predicted DockQ)</strong>:
+- 定义: 基于 PAE 预测的对接质量分数
+- 用途: 辅助 PPI 检测的指标
+- 直觉: 预测的复合物结构质量越高，pDockQ 越高</p>
+<p><strong>FMC (Fraction of Multivalent Chains)</strong>:
+- 公式: FMC = m₂ / (m₁ + m₂)
+- 其中 m₁ = 单价链数（接触 ≤1 个对侧链），m₂ = 多价链数（接触 ≥2 个对侧链）
+- 阈值: FMC ≥ 0.2 判定为多价相互作用
+- 直觉: 如果一个蛋白的多个拷贝同时与另一个蛋白的多个拷贝接触，则可能形成多价相互作用</p>
+<p><strong>φ 系数 (Phi coefficient)</strong>:
+- 公式: φ = (n₁₁n₀₀ - n₁₀n₀₁) / √(n₁·n·₁n₀·n·₀)
+- 用途: 衡量蛋白 S 的存在与 PPI 检测之间的关联
+- 直觉: 正值表示 S 的存在与 PPI 正相关，负值表示负相关</p>
+<p><strong>rpb 系数 (Point-biserial correlation)</strong>:
+- 公式: rpb = (RMSD̄₁ - RMSD̄₀) / sₘ × √(m₁m₀ / m(m-1))
+- 用途: 衡量蛋白 S 的存在与 RMSD 变化之间的关联
+- 直觉: 正值表示 S 的存在与构象偏离参考结构相关</p>
+<p><strong>回转半径 (Radius of Gyration, ROG)</strong>:
+- 定义: 原子坐标相对于质心的均方根距离
+- 用途: 衡量蛋白质构象的紧凑程度</p>
+<p><strong>SSE 收敛条件</strong>:
+- 当所有稳定化学计量的子节点均不稳定时停止
+- 收敛化学计量 = 所有子节点均不稳定的稳定化学计量</p>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集</strong>:
+1. <strong>PPI 检测基准</strong>: 157 对锥虫蛋白（实验验证的相互作用对）+ 200 对非相互作用对（来自不同复合物的蛋白）
+2. <strong>化学计量推断基准</strong>: 从 Complex Portal 数据库随机采样的 20 个异源寡聚复合物，跨 5 个物种
+3. <strong>构象变化测试</strong>: 7 个已知具有上下文依赖构象变化的系统（非锥虫）
+4. <strong>PPI 动态测试</strong>: 12 个已知 PPI 动态行为的系统（非锥虫）</p>
+<p><strong>预测设置</strong>:
+- AF2-multimer v3 本地运行（AWS 实例），AF3 服务器
+- 每个组合 5 个模型，最多 20 次循环
+- 使用修改的 Discoba 数据库生成 MSA</p>
+<p><strong>评测协议</strong>:
+- PPI 检测: ROC 曲线分析，比较 miPAE、ipTM、pDockT 的 AUC
+- 化学计量推断: 与 Complex Portal 已知化学计量比较
+- 构象变化: 与文献报道的构象变化比较
+- PPI 动态: 与已知 PPI 动态行为比较</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PPI 检测 ROC 分析</td>
+<td>miPAE 优于其他指标</td>
+<td>AF2/AF3 预测，157 正例 + 200 负例</td>
+<td>miPAE AUC: AF2=0.847, AF3=0.834</td>
+<td>miPAE 是有效的 PPI 检测指标</td>
+<td>不能证明 miPAE 在所有场景下最优</td>
+<td>Results 图 4a, Supplementary Fig 2</td>
+</tr>
+<tr>
+<td>化学计量推断</td>
+<td>SSE 算法能恢复已知化学计量</td>
+<td>20 个 Complex Portal 复合物</td>
+<td>60% 唯一确定，80% 至少形成稳定复合物</td>
+<td>SSE 能有效推断化学计量</td>
+<td>40% 案例无法唯一确定</td>
+<td>Results, Supplementary "Complex Stoichiometry Inference Testing"</td>
+</tr>
+<tr>
+<td>构象变化预测</td>
+<td>BPD 能识别上下文依赖构象变化</td>
+<td>7 个已知系统</td>
+<td>6/7 正确预测</td>
+<td>BPD 是有效的构象变化指标</td>
+<td>1 个跨物种案例失败</td>
+<td>Results, Supplementary "Context-Dependent Conformational Change Prediction Testing"</td>
+</tr>
+<tr>
+<td>PPI 动态分类</td>
+<td>φ 系数能正确分类 PPI 动态</td>
+<td>12 个已知系统</td>
+<td>8/12 正确</td>
+<td>φ 系数提供有用信息</td>
+<td>4 个案例失败，存在过度预测负动态的倾向</td>
+<td>Results, Supplementary "Context-Dependent Dynamic Interaction Prediction Testing"</td>
+</tr>
+<tr>
+<td>MRGBP 案例研究</td>
+<td>伪轨迹能重现已知顺序结合</td>
+<td>NuA4 复合物系统</td>
+<td>重现 MRGBP-MRGx-BDF6 顺序结合</td>
+<td>方法能捕捉真实生物学动态</td>
+<td>单一案例，需更多验证</td>
+<td>Results 图 5, Supplementary Video S2</td>
+</tr>
+<tr>
+<td>SEC31/SEC13 案例</td>
+<td>聚类能识别不同结合模式</td>
+<td>COPII 复合物系统</td>
+<td>识别多个结合模式</td>
+<td>聚类方法有效</td>
+<td>需实验验证</td>
+<td>Results 图 6, Supplementary Video S3</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<p><strong>任务范围</strong>: 本文方法适用于从 AlphaFold 预测集合中提取蛋白质复合物的化学计量、动态相互作用和构象变化信息。方法假设用户已有蛋白质序列列表，且预测已通过 AF2m 或 AF3 完成。</p>
+<p><strong>oracle/真值输入</strong>: 方法依赖 AlphaFold 预测的 PAE、pLDDT 等指标作为输入，这些指标本身是预测值而非实验数据。方法不要求任何实验先验知识，但预测质量直接影响下游分析。</p>
+<p><strong>端到端状态</strong>: MultimerMapper 是端到端的分析工具，从 FASTA 序列到最终报告，但预测步骤（AF2m/AF3）需要用户自行完成。方法不包含预测步骤。</p>
+<p><strong>算力成本</strong>: 主要成本在 AlphaFold 预测阶段。MultimerMapper 本身分析成本较低，但 SSE 算法可能生成大量预测组合，需用户根据计算资源调整参数。</p>
+<p><strong>历史数据依赖</strong>: 方法不依赖历史数据，但 PPI 检测阈值（miPAE ≤ 9.7 Å for AF2, ≤ 7.5 Å for AF3）是基于基准数据集优化的，可能随 AlphaFold 版本更新需要重新校准。</p>
+<p><strong>模型依赖</strong>: 方法设计为与 AlphaFold 系列兼容，但核心逻辑（PAE 分析、接触预测）理论上可迁移到其他输出类似指标的预测工具。</p>
+<p><strong>最难情形</strong>: 跨物种蛋白对（如锥虫蛋白与人类蛋白）的构象变化预测失败率较高，可能由于进化距离导致共进化信号减弱。高度动态或瞬时相互作用可能被误判为"不稳定"而非"动态"。</p>
+<p><strong>有边界的复述</strong>: MultimerMapper 能在无先验知识条件下，通过系统化探索化学计量空间和统计分析 AlphaFold 预测集合，在约 60% 的测试案例中唯一确定已知复合物的化学计量，在 80% 案例中至少识别出稳定复合物；能正确预测 6/7 测试系统的构象变化和 8/12 测试系统的 PPI 动态行为。方法在跨物种场景和高度动态系统中存在局限。</p>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>跨物种构象变化预测失败</td>
+<td>1/7 测试系统（跨物种案例）未能正确预测</td>
+<td>未明确提及</td>
+<td>Results, Supplementary "Context-Dependent Conformational Change Prediction Testing"</td>
+</tr>
+<tr>
+<td>PPI 动态过度预测负动态</td>
+<td>约 20% 的案例中过度预测负动态</td>
+<td>未明确提及</td>
+<td>Discussion: "we saw a tendency to overpredict negative PPI dynamics (∼20%)"</td>
+</tr>
+<tr>
+<td>非多价相互作用不进行聚类</td>
+<td>单价相互作用的接触矩阵不进行聚类分析</td>
+<td>未明确提及</td>
+<td>Methods: 聚类算法仅对多价对执行</td>
+</tr>
+<tr>
+<td>BPD 统计框架不完善</td>
+<td>BPD 值接近 -1 时不能直接解释为负关联</td>
+<td>"it would be necessary to find an appropriate statistical framework to define the significance of BPD values in future studies"</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>φ 和 rpb 的统计假设可能不成立</td>
+<td>模型非独立观测，p 值可能反保守</td>
+<td>提供参数可聚合模型，但无等效方案用于 rpb</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>依赖 AlphaFold 预测质量</td>
+<td>预测错误会传播到下游分析</td>
+<td>未明确提及</td>
+<td>Discussion: "MultimerMapper's predictions can only be as good as the capabilities of the method used to generate the structures"</td>
+</tr>
+<tr>
+<td>大小限制</td>
+<td>AF3 服务器约 5000 氨基酸限制</td>
+<td>未明确提及</td>
+<td>Discussion</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PPI 检测基准中负例生成方式</td>
+<td>负例来自"不同复合物的蛋白"，但未说明是否控制亚细胞共定位或表达共调控</td>
+<td>如果负例过于"容易"，AUC 可能被高估</td>
+<td>使用更严格的负例（如共定位但不相互作用的蛋白对）重新评估</td>
+<td>Methods: "Lists of proteins belonging to different eukaryotic complexes... randomly selected"</td>
+</tr>
+<tr>
+<td>miPAE 阈值对 AF2/AF3 不同</td>
+<td>AF2 阈值 9.7 Å vs AF3 阈值 7.5 Å，差异较大</td>
+<td>阈值差异可能反映模型差异，但也可能反映基准数据集偏差</td>
+<td>在相同蛋白集上直接比较 AF2/AF3 的 miPAE 分布</td>
+<td>Results 图 4a</td>
+</tr>
+<tr>
+<td>化学计量推断成功率 60%</td>
+<td>20 个测试复合物的选择标准未明确，可能存在选择偏差</td>
+<td>如果测试集偏向简单复合物，成功率可能被高估</td>
+<td>在更大、更多样化的复合物集上验证</td>
+<td>Supplementary "Complex Stoichiometry Inference Testing"</td>
+</tr>
+<tr>
+<td>BPD 与伪轨迹的生物学解释</td>
+<td>作者将 RMSD 排序解释为"伪轨迹"，但缺乏与实验构象数据的直接比较</td>
+<td>伪轨迹可能反映预测噪声而非真实构象变化</td>
+<td>与实验构象系综（如 NMR、cryo-EM）直接比较</td>
+<td>Results 图 5</td>
+</tr>
+<tr>
+<td>φ 系数统计检验的 p 值</td>
+<td>作者承认模型非独立观测，但未提供校正方法</td>
+<td>可能导致假阳性关联</td>
+<td>使用置换检验或混合效应模型</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>与 CombFold 的比较</td>
+<td>作者提到 CombFold 作为灵感来源，但未进行系统比较</td>
+<td>用户需要知道何时选择 MultimerMapper vs CombFold</td>
+<td>在相同数据集上运行两种方法并比较</td>
+<td>Introduction</td>
+</tr>
+<tr>
+<td>泛化性声明</td>
+<td>作者声称方法"不依赖特定预测器"，但所有实验均基于 AF2/AF3</td>
+<td>其他预测器（如 RoseTTAFold）的兼容性未验证</td>
+<td>使用 RF/RF2 预测结果测试 MultimerMapper</td>
+<td>Discussion</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>:</p>
+<ol>
+<li>
+<p><strong>上下文采样策略</strong>：MultimerMapper 的 SSE 算法采用"从简单到复杂、只扩展稳定节点"的贪心策略，这一思想可迁移到其他组合优化问题中，如多亚基复合物的组装路径探索、蛋白质-配体结合位点组合筛选等。</p>
+</li>
+<li>
+<p><strong>预测变异性作为信息源</strong>：将深度学习模型在不同输入条件下的预测差异视为生物学信号而非噪声，这一思路可迁移到构象采样分析中——通过改变输入上下文（如不同共伴侣蛋白、不同化学计量）来探索蛋白质的构象空间。</p>
+</li>
+<li>
+<p><strong>统计关联分析框架</strong>：使用 φ 系数和点二列相关将蛋白存在与相互作用/构象变化关联起来，为从结构预测集合中提取因果性假设提供了可操作的方法。可迁移到 MD 模拟轨迹分析中，用于识别关键残基或配体存在与构象状态变化的关联。</p>
+</li>
+<li>
+<p><strong>多价相互作用检测</strong>：FMC 指标和接触矩阵聚类方法可迁移到其他蛋白质-蛋白质相互作用分析中，特别是识别同一蛋白对之间的不同结合模式（如开放/闭合构象、不同结合位点）。</p>
+</li>
+<li>
+<p><strong>伪轨迹构建</strong>：通过 RMSD 排序构建"伪轨迹"的方法，可迁移到 MD 模拟轨迹分析中，用于识别构象状态转换路径，或与增强采样方法结合。</p>
+</li>
+<li>
+<p><strong>结构域级分析</strong>：基于 PAE 矩阵的图聚类结构域分割方法，可迁移到其他需要将蛋白质分割为功能单元的分析任务中，如蛋白质-蛋白质相互作用界面分析、变构通路识别等。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold2 (Jumper et al., 2021)</strong>: 本文的基础预测工具，MultimerMapper 直接使用 AF2 输出的 PAE、pLDDT 等指标。</li>
+<li><strong>AlphaFold2-multimer (Evans et al., 2021)</strong>: 多聚体预测扩展，本文的主要预测工具之一。</li>
+<li><strong>AlphaFold3 (Abramson et al., 2024)</strong>: 最新预测工具，本文测试了其与 MultimerMapper 的兼容性。</li>
+<li><strong>CombFold (Shor &amp; Schneidman-Duhovny, 2024)</strong>: 本文的直接灵感来源，但 CombFold 需要先验化学计量知识，MultimerMapper 填补了这一空白。</li>
+<li><strong>pDockQ (Bryant et al., 2022a)</strong>: 蛋白质-蛋白质相互作用预测指标，本文将其作为 PPI 检测的辅助指标。</li>
+<li><strong>pae_to_domains (Croll, 2024)</strong>: 基于 PAE 的结构域分割算法，MultimerMapper 修改并整合了该算法。</li>
+<li><strong>ColabFold (Mirdita et al., 2022)</strong>: MSA 生成工具，本文使用其服务器生成 MSA。</li>
+<li><strong>Discoda 数据库 (Wheeler et al., 2021)</strong>: 锥虫基因组数据库，本文修改后用于提高锥虫蛋白的 MSA 质量。</li>
+<li><strong>Leiden 聚类算法 (Traag et al., 2019)</strong>: 图聚类算法，用于结构域检测。</li>
+<li><strong>Kabsch 算法 (Kabsch, 1976)</strong>: 结构比对算法，用于 RMSD 计算。</li>
+<li><strong>InterProScan (Paysan-Lafosse et al., 2023)</strong>: 功能结构域注释工具，MultimerMapper 自动查询其 REST API。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>:</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>: 基于上下文采样的构象系综生成方法
+   - <strong>来源局限/观察</strong>: MultimerMapper 通过改变蛋白组合生成构象变化，但仅限于 AlphaFold 预测；MD 模拟虽能生成真实构象系综，但计算成本高且需要力场参数。
+   - <strong>核心假设</strong>: 通过系统化改变 AlphaFold 输入上下文（如不同共伴侣、不同化学计量、不同截短变体），可以生成覆盖功能相关构象空间的预测系综，其多样性可与短 MD 模拟相当。
+   - <strong>初步方法</strong>: 对目标蛋白设计一组上下文变体（如不同结合伴侣、不同截短、不同点突变），分别进行 AlphaFold 预测，然后对预测结构进行聚类和 PCA 分析，与 MD 模拟生成的构象系综比较。
+   - <strong>验证方式</strong>: 在已知具有多个构象状态的蛋白（如激酶、G 蛋白偶联受体）上测试，比较预测系综与实验构象的覆盖度。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 基于 φ 系数的蛋白质-蛋白质相互作用竞争性预测
+   - <strong>来源局限/观察</strong>: MultimerMapper 的 φ 系数能识别蛋白存在与 PPI 的关联，但仅用于后验分析；若能将其整合到预测流程中，可主动预测竞争性结合。
+   - <strong>核心假设</strong>: 在包含多个竞争性结合蛋白的系统中，通过分析不同组合的 AlphaFold 预测结果，可以预测哪些蛋白对存在竞争性结合关系。
+   - <strong>初步方法</strong>: 对包含蛋白 A、B、C 的系统，生成 A-B、A-C、A-B-C 的预测组合，计算 φ 系数矩阵，识别正/负关联对。
+   - <strong>验证方式</strong>: 在已知存在竞争性结合的复合物系统（如转录因子复合物）上测试。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 基于 FMC 的蛋白质多价结合模式预测
+   - <strong>来源局限/观察</strong>: FMC 指标能识别多价相互作用，但仅用于二值判断；多价结合的具体模式（如对称/不对称、顺序/协同）尚未被挖掘。
+   - <strong>核心假设</strong>: 通过分析多价蛋白对的接触矩阵聚类结果，可以预测多价结合的具体模式，并推断其生物学功能（如信号放大、协同结合）。
+   - <strong>初步方法</strong>: 对 FMC ≥ 0.2 的蛋白对，提取所有接触矩阵，进行层次聚类和网络分析，识别不同的结合模式。
+   - <strong>验证方式</strong>: 在已知多价结合系统（如抗体-抗原、凝集素-糖）上测试。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 基于伪轨迹的蛋白质构象变化路径预测
+   - <strong>来源局限/观察</strong>: MultimerMapper 的伪轨迹通过 RMSD 排序构建，但缺乏时间信息；若能结合 MD 模拟或增强采样，可预测构象变化的路径和中间态。
+   - <strong>核心假设</strong>: AlphaFold 预测的上下文依赖构象变化与 MD 模拟的构象转变路径存在相关性，可用于指导 MD 模拟的初始构象选择。
+   - <strong>初步方法</strong>: 对目标蛋白生成上下文依赖的预测系综，构建伪轨迹，识别中间态构象，然后以这些构象为起点进行 MD 模拟。
+   - <strong>验证方式</strong>: 在已知构象转变路径的蛋白（如转运蛋白、分子马达）上测试。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 基于结构域分割的蛋白质-蛋白质相互作用热点预测
+   - <strong>来源局限/观察</strong>: MultimerMapper 的结构域分割基于 PAE 矩阵，但未与相互作用热点预测结合；结构域边界附近的残基可能在相互作用中起关键作用。
+   - <strong>核心假设</strong>: 结构域边界附近的残基在蛋白质-蛋白质相互作用中具有更高的热点概率，可用于指导突变设计。
+   - <strong>初步方法</strong>: 对蛋白复合物进行结构域分割，识别结构域边界残基，与已知相互作用热点数据库比较。
+   - <strong>验证方式</strong>: 在已知相互作用热点的蛋白复合物上测试，评估结构域边界残基的热点富集度。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, methods, results, discussion, data availability) as provided. Figures, tables, and supplementary materials referenced but not included.</li>
+<li><strong>Assessment boundary</strong> Scientific and technical evaluation of the described methodology, its validation, and the claims made. No assessment of code functionality beyond what is described.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present MultimerMapper, a software pipeline for analyzing ensembles of AlphaFold protein structure predictions of multimeric complexes. The tool systematically explores stoichiometric space, detects protein-protein interactions, identifies context-dependent conformational changes, infers stoichiometries, and provides interactive visualizations. Validation is claimed on trypanosomatid systems and on external benchmarks for stoichiometry inference, conformational change prediction, and PPI dynamics classification.</li>
+<li><strong>Visible evidence base</strong> Main text methods and results descriptions, including benchmark performance numbers (stoichiometry 60%/80%, conformational changes 6/7, PPI dynamics 8/12), a worked example (MRGBP/NuA4, Hsp90 system), and methodological details for all core modules.</li>
+<li><strong>Missing materials affecting confidence</strong> All figures, tables, and supplementary materials (including benchmark datasets, detailed results, videos, and parameter sensitivity analyses) are referenced but not provided. This substantially limits the ability to verify the described results and assess the robustness of the methodology.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This manuscript describes a timely and potentially useful software tool for interpreting AlphaFold predictions of protein complexes. The core concept of "context-dependent structure prediction analysis" is interesting and the systematic exploration of stoichiometric space is a reasonable approach. However, the manuscript as presented has significant limitations. The validation is described at a high level with key details relegated to inaccessible supplementary materials. Several methodological choices require justification, and the statistical framework for the association analyses is acknowledged by the authors themselves to be exploratory. The distinction between this work and existing tools, and the specific advantages offered, could be articulated more clearly. The manuscript would benefit from a more critical discussion of failure cases and limitations. Overall, the idea has merit, but the evidence provided in the main text is insufficient to fully establish the tool's utility and reliability.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in structural bioinformatics and computational biology who use AlphaFold or similar tools for predicting protein complexes, particularly those studying large, dynamic, or poorly characterized assemblies. The tool's focus on stoichiometry inference and context-dependent conformational changes addresses a real gap in the field. Biologists studying multi-protein complexes, especially in non-model organisms, could also find the tool useful for generating hypotheses about assembly pathways and interaction dynamics.</li>
+<li><strong>Major strengths</strong></li>
+<li>Addresses a relevant and timely problem: interpreting the output of deep learning structure prediction tools for multi-protein complexes.</li>
+<li>The concept of context-dependent analysis is novel and goes beyond static structure prediction.</li>
+<li>The software appears to be user-friendly, with interactive visualizations and minimal prior computational expertise required.</li>
+<li>The authors provide open-source code and a stable version on Zenodo, which is commendable for reproducibility.</li>
+<li>The validation strategy includes both the development system (trypanosomatids) and external benchmarks, which is a strength.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>R1-M1</strong> (Severity: Major, Blocking: Yes, Axis: Validation rigor): The central validation results are presented without sufficient detail in the main text. The benchmark for stoichiometry inference (20 complexes, 60% unambiguous, 80% stable) is described in a single sentence, with all details in supplementary materials. Similarly, the conformational change and PPI dynamics benchmarks are summarized without specifics on the systems, the definition of "correct," or the comparison to baselines. Without this information, the reader cannot assess the significance or robustness of these results.</li>
+<li><strong>R1-M2</strong> (Severity: Major, Blocking: Yes, Axis: Methodological justification): The choice of cutoffs (e.g., miPAE ≤ 9.7 Å for AF2, ≤ 7.5 Å for AF3, Nmodels = 4, Ccutoff = 5, FMC ≥ 0.2) is presented as optimized, but the optimization procedure is not described in the main text. The sensitivity of the results to these parameters is not discussed. This is critical for a tool that aims to be widely applicable.</li>
+<li><strong>R1-M3</strong> (Severity: Major, Blocking: Yes, Axis: Statistical validity): The authors acknowledge that the φ and rpb statistics are exploratory due to non-independence of observations (multiple models per prediction). This is a significant caveat that limits the strength of the conclusions that can be drawn from these analyses. The manuscript would be strengthened by a more thorough discussion of this limitation and potential solutions.</li>
+<li><strong>R1-M4</strong> (Severity: Major, Blocking: No, Axis: Comparative analysis): The manuscript does not provide a clear comparison of MultimerMapper to existing tools or approaches. For example, how does the stoichiometry inference compare to other methods? What is the added value of the context-dependent analysis compared to simply running AlphaFold on different combinations? A more explicit comparison would help establish the tool's niche.</li>
+<li><strong>R1-M5</strong> (Severity: Major, Blocking: No, Axis: Failure analysis): The discussion of failure cases is brief. For the PPI dynamics benchmark, 4/12 systems failed, and the authors mention a tendency to overpredict negative dynamics. A more detailed analysis of these failures would be valuable for users to understand the tool's limitations.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>R1-m1</strong> (Severity: Minor, Axis: Clarity): The manuscript would benefit from a figure in the main text that provides a clear schematic overview of the MultimerMapper pipeline, from input sequences to final outputs.</li>
+<li><strong>R1-m2</strong> (Severity: Minor, Axis: Reproducibility): The description of the "modified Discoba database" is vague. More details on the modification and its impact on MSA quality would be helpful.</li>
+<li><strong>R1-m3</strong> (Severity: Minor, Axis: Terminology): The term "predicted dynamic interactions" is used, but the distinction between this and simply "dynamic interactions" observed in experiments could be clarified.</li>
+<li><strong>R1-m4</strong> (Severity: Minor, Axis: Presentation): The results section for the MRGBP example is detailed but would be more compelling with a quantitative comparison to the experimental data, rather than a qualitative description.</li>
+<li><strong>R1-m5</strong> (Severity: Minor, Axis: Accessibility): The authors state the tool is for users without extensive experience, but the manuscript assumes familiarity with concepts like miPAE, pDockQ, and PAE matrices. A brief primer on these metrics would improve accessibility.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong></li>
+<li>R1-M1, R1-M2, R1-M3 as described above. The lack of detailed validation data and parameter sensitivity analysis in the main text prevents a full assessment of the tool's reliability.</li>
+<li><strong>Assessment against Nature-style criteria</strong></li>
+<li><strong>Originality</strong>: The concept of context-dependent analysis of structure predictions is a novel contribution. The systematic exploration of stoichiometric space guided by stability is a reasonable and original approach. However, the individual components (e.g., PPI detection, clustering) are not new, and the novelty lies in their integration.</li>
+<li><strong>Scientific importance</strong>: The problem addressed is important. As AlphaFold and similar tools become more widely used, there is a growing need for methods to interpret their output for complex systems. The tool could be valuable for hypothesis generation in many biological contexts.</li>
+<li><strong>Interdisciplinary readership</strong>: The tool is likely to be of interest to a broad audience in structural biology, bioinformatics, and molecular biology. However, the manuscript's readability for non-specialists is limited by the heavy use of technical jargon without sufficient explanation.</li>
+<li><strong>Technical soundness</strong>: The described methods are generally sound, but the validation is incomplete from the main text. The statistical caveats are acknowledged but not fully addressed. The lack of parameter sensitivity analysis is a concern.</li>
+<li><strong>Readability for nonspecialists</strong>: The manuscript is written for a specialist audience. The abstract is clear, but the methods and results sections would be challenging for a non-expert to follow.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The core idea is promising and the tool could be a valuable resource. However, the manuscript in its current form does not provide sufficient evidence to fully establish the tool's utility and reliability. The authors must provide the detailed validation data, parameter sensitivity analyses, and a more thorough discussion of limitations and comparisons to existing methods.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that MultimerMapper "infers stoichiometries" is not fully supported by the main text, as the benchmark details are not provided.</li>
+<li>The claim that the tool "identifies alternative interaction modes and conformational changes statistically associated with the presence or absence of specific protein partners" is weakened by the acknowledged limitations of the statistical framework.</li>
+<li>The generalizability of the tool beyond the tested systems is not established, given the limited detail on the benchmarks.</li>
+<li>The statement that the tool "offers a new perspective on the dynamic nature of predicted protein complex structures" is more of an assertion than a demonstrated result, as the biological insights derived from the tool are not deeply explored in the main text.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

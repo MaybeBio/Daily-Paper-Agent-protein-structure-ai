@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Can System-1-Style Decision Models Replace Dedicated Rerankers in RAG? A Systems Evaluation · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-low">0</span>
+    <div>
+      <h1>Can System-1-Style Decision Models Replace Dedicated Rerankers in RAG? A Systems Evaluation</h1>
+      <div class="meta">Qiaomu Li; Ying Xie</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-26
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.34816v1">原文</a>
+      </div>
+      <p class="one-liner">该文评估RAG系统中决策模型替代重排序器的性能，不涉及蛋白质结构计算或相关AI/物理模拟方法，与本课题无关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Retrieval-augmented generation (RAG) systems often use a dedicated reranker to choose which retrieved candidates reach the language model. Reranking improves relevance but adds latency, so teams look for faster alternatives. System-1style decision models make direct, structured predictions instead of generating long responses. Could one provide comparable reranking quality with less inference overhead? We first screen 21 open-weight models on 11 benchmarks, then compare a promising decision model with a dedicated reranker on identical candidate lists. The default decision-model setup fails on many long candidate sets, so scoring only the requests it completes gives a misleading ranking. Limiting candidate text length largely restores reliability and makes some configurations competitive. A frozen evaluation on new retrieval data supports the reliability and ranking results, but confirms the latency requirement for only one of the two selected configurations. Across workloads, which model ranks better changes, and a tuned reranker remains faster and uses far less GPU memory. A decision model can perform competitive reranking, but replacing a reranker requires weighing quality, latency and memory together, and teams should tune the reranker they already run first.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">检索增强生成 (retrieval-augmented generation, RAG) 系统通常使用专用的重排序器 (reranker) 来选择哪些检索到的候选结果进入语言模型。重排序提高了相关性，但增加了延迟，因此团队寻求更快的替代方案。System-1 风格的决策模型直接进行结构化预测，而不是生成长篇响应。它能否以更少的推理开销提供相当的重排序质量？我们首先在 11 个基准上筛选了 21 个开放权重模型，然后在相同的候选列表上比较了一个有前景的决策模型与一个专用重排序器。默认的决策模型设置在许多长候选集上失败，因此仅对它能完成的请求进行评分会给出误导性的排名。限制候选文本长度在很大程度上恢复了可靠性，并使某些配置具有竞争力。在新检索数据上的冻结评估支持了可靠性和排名结果，但仅确认了两个选定配置中一个的延迟要求。在不同工作负载下，哪个模型排名更好会发生变化，而经过调优的重排序器仍然更快，并且使用的 GPU 内存少得多。决策模型可以执行具有竞争力的重排序，但替换重排序器需要综合权衡质量、延迟和内存，团队应首先调优他们已经在运行的重排序器。</div>
+  </section>
+  
+  
+  
+</article>
+</main>
+</body>
+</html>

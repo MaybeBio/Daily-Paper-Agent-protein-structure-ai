@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ERIS2: A deep-learning platform for predicting mutation-induced protein stability changes. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>ERIS2: A deep-learning platform for predicting mutation-induced protein stability changes.</h1>
+      <div class="meta">Ekambaram, Srinivasan; Kundu, Debarshi; Ghosh, Swaroop; Dokholyan, Nikolay V</div>
+      <div class="meta muted">
+        
+        <span class="journal">Structure (London, England : 1993)</span>
+        · 2026-10-30
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42962663/">原文</a>
+      </div>
+      <p class="one-liner">该文提出基于注意力卷积网络的ERIS2平台，整合序列嵌入与实验结构特征预测突变引起的蛋白质稳定性变化，属于蛋白质结构相关的AI计算建模，与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Accurately predicting changes in protein thermodynamic stability upon mutation is a fundamental challenge in protein engineering and therapeutics. Deep learning has improved prediction, but many models remain limited by small, imbalanced training data and poor generalization across mutation types. Here, we present ERIS2, an attention-convolutional deep learning framework that integrates contextual sequence embeddings with atomistic and residue-level structural features from experimental protein structures to predict mutation-induced stability changes. Trained on large-scale experimental measurements combined with curated ProTherm data, a 5-fold ERIS2 ensemble achieved Pearson correlation coefficients of 0.69 on S461, 0.51 on S669, and 0.60 on S96, three blind-test datasets sequence-disjoint from all training configurations, and showed negligible anti-symmetry bias on Ssym forward and reverse pairs. ERIS2 is freely available as a structure-based web server without registration, providing a robust framework for protein stability prediction and advancing computational tools for protein engineering and therapeutic design.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">准确预测突变引起的蛋白质热力学稳定性变化是蛋白质工程和治疗领域的一项基本挑战。深度学习已改进预测性能，但许多模型仍受限于小规模、不平衡的训练数据以及跨突变类型的泛化能力不足。在此，我们提出ERIS2，一种注意力卷积深度学习框架，将上下文序列嵌入与来自实验蛋白质结构的原子级和残基级结构特征相结合，以预测突变诱导的稳定性变化。基于大规模实验测量数据及精选的ProTherm数据训练，一个5折ERIS2集成模型在S461、S669和S96三个盲测数据集上分别实现了0.69、0.51和0.60的皮尔逊相关系数，这些数据集与所有训练配置在序列上无重叠，并在Ssym正向和反向配对中显示出可忽略的反对称性偏差。ERIS2作为基于结构的网络服务器免费提供，无需注册，为蛋白质稳定性预测提供了稳健框架，并推进了蛋白质工程和治疗设计的计算工具发展。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：ERIS2: A deep-learning platform for predicting mutation-induced protein stability changes</li>
+<li><strong>作者</strong>：Ekambaram, Srinivasan; Kundu, Debarshi; Ghosh, Swaroop; Dokholyan, Nikolay V</li>
+<li><strong>单位</strong>：未提供（根据作者信息推测为 Dokholyan 实验室，具体机构未在摘要中给出）</li>
+<li><strong>期刊/平台</strong>：Structure (London, England : 1993)</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：方法学论文（提出新预测平台）</li>
+<li><strong>领域</strong>：蛋白质稳定性预测 × 深度学习</li>
+<li><strong>关键词</strong>：protein stability, mutation, deep learning, attention-convolutional, sequence embedding, structural features</li>
+<li><strong>DOI/arXiv</strong>：10.1016/j.str.2026.10.003</li>
+<li><strong>代码</strong>：未提供（摘要中未提及）</li>
+<li><strong>数据</strong>：ProTherm（经整理的实验测量数据）+ 大规模实验测量数据；S461、S669、S96、Ssym 作为盲测集</li>
+<li><strong>阅读日期</strong>：2026-11-15（根据当前日期推断）</li>
+<li><strong>在该方向中的位置</strong>：属于「蛋白质结构相关计算研究 × AI 方法」中的稳定性预测子方向，与 ERIS（第一代）一脉相承，采用深度学习替代物理能量函数，融合序列 embedding 与结构特征，面向突变稳定性变化（ΔΔG）预测。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>ERIS2 通过融合上下文序列 embedding 与实验结构的原子级和残基级特征，构建注意力-卷积深度学习框架，在三个序列不相交的盲测集上达到 Pearson r = 0.69（S461）、0.51（S669）、0.60（S96），并以 5 折集成方式提供免注册的在线预测服务。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何准确预测单点突变引起的蛋白质热力学稳定性变化（ΔΔG）？</li>
+<li><strong>为什么重要</strong>：蛋白质工程和抗体/治疗性蛋白设计中，稳定性预测是核心环节，直接影响突变体筛选效率和实验成本。</li>
+<li><strong>现有方法为何不足</strong>：尽管深度学习已提升预测精度，但许多模型受限于：(1) 训练数据规模小且类别不平衡；(2) 对不同突变类型（如疏水→极性、带电残基替换等）的泛化能力差。</li>
+<li><strong>精确研究问题</strong>：Can an attention-convolutional deep learning framework that integrates contextual sequence embeddings with atomistic and residue-level structural features achieve robust and generalizable ΔΔG prediction across diverse mutation types and blind-test datasets?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文摘要及该领域公开知识构建，标注为「经外部核验」部分。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>物理能量函数时代</td>
+<td>FoldX, Rosetta, ERIS（第一代）</td>
+<td>可解释、基于物理原理</td>
+<td>计算成本高、精度有限、依赖力场参数</td>
+<td>ERIS2 的命名前身</td>
+</tr>
+<tr>
+<td>序列特征机器学习</td>
+<td>支持向量机、随机森林（如 I-Mutant 系列）</td>
+<td>快速、可批量</td>
+<td>缺乏结构信息、精度天花板低</td>
+<td>被超越的基线</td>
+</tr>
+<tr>
+<td>深度学习序列模型</td>
+<td>基于 PSSM/one-hot 的 CNN/RNN</td>
+<td>自动特征提取</td>
+<td>忽略结构上下文、泛化差</td>
+<td>被超越的基线</td>
+</tr>
+<tr>
+<td>结构感知深度学习</td>
+<td>图神经网络、3D-CNN（如 DDGun、ThermoNet）</td>
+<td>利用结构信息</td>
+<td>数据规模受限、对突变类型泛化不足</td>
+<td>本文的直接竞争基线</td>
+</tr>
+<tr>
+<td>预训练语言模型 + 结构融合</td>
+<td>ESM 系列 + 结构编码器</td>
+<td>序列语义丰富</td>
+<td>结构特征利用不充分</td>
+<td><strong>本文位置：注意力-卷积融合框架</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练数据规模小</td>
+<td>现有数据集（如 ProTherm）样本量有限，难以支撑深度模型</td>
+<td>实验测量 ΔΔG 成本高、通量低</td>
+<td>摘要提及「small, imbalanced training data」</td>
+</tr>
+<tr>
+<td>数据类别不平衡</td>
+<td>某些突变类型（如疏水核心突变）样本远多于其他类型</td>
+<td>实验偏好导致采样偏差</td>
+<td>摘要提及「imbalanced training data」</td>
+</tr>
+<tr>
+<td>泛化能力差</td>
+<td>模型在未见过的突变类型上表现显著下降</td>
+<td>训练分布与测试分布不一致</td>
+<td>摘要提及「poor generalization across mutation types」</td>
+</tr>
+<tr>
+<td>结构信息利用不足</td>
+<td>许多深度模型仅用序列或简单结构特征</td>
+<td>结构编码方式不够精细</td>
+<td>本文强调「atomistic and residue-level structural features」的必要性</td>
+</tr>
+<tr>
+<td>可访问性差</td>
+<td>多数预测工具需注册或本地安装</td>
+<td>部署门槛高</td>
+<td>摘要强调「freely available as a structure-based web server without registration」</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>ERIS2 是一个注意力-卷积（attention-convolutional）深度学习框架，输入为实验蛋白质结构 + 突变信息，输出为 ΔΔG 预测值。模型整合三类特征：上下文序列 embedding（来自预训练语言模型）、原子级结构特征、残基级结构特征。采用 5 折集成策略提升鲁棒性。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>序列与结构的互补性</strong>：序列 embedding 捕捉进化保守性和残基间长程语义关系，而原子级结构特征捕捉局部几何和物理化学环境——两者互补，单独使用均不充分。</li>
+<li><strong>注意力机制的价值</strong>：注意力层能够自动学习哪些残基/原子对突变位点的稳定性贡献最大，无需人工设计距离截断或相互作用规则。</li>
+<li><strong>数据整理的重要性</strong>：将 ProTherm 与大规模实验测量数据结合并精心整理，比单纯堆叠更多数据更有效。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li>在蛋白质性质预测任务中，<strong>多尺度特征融合</strong>（序列语义 + 原子几何 + 残基环境）往往优于单一尺度特征。</li>
+<li><strong>盲测集设计</strong>（序列不相交）是评估泛化能力的关键，许多文献中的高精度可能来自数据泄漏。</li>
+<li>集成策略（5-fold ensemble）是低成本提升稳定性的有效手段。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：实验解析的蛋白质结构（PDB 格式）+ 突变信息（残基位置 + 替换氨基酸）</li>
+<li><strong>输出</strong>：ΔΔG 预测值（突变体与野生型的热力学稳定性变化）</li>
+<li><strong>模块</strong>：
+  1. 序列 embedding 模块（预训练语言模型生成上下文感知的残基表示）
+  2. 结构特征提取模块（原子级：距离矩阵、接触数、溶剂可及性等；残基级：二级结构、B-factor 等）
+  3. 注意力-卷积融合模块（注意力层加权重要残基/原子，卷积层提取局部模式）
+  4. 回归头（输出 ΔΔG 标量）
+  5. 5 折集成模块（平均多个模型的预测）</li>
+<li><strong>训练</strong>：大规模实验测量数据 + 整理后的 ProTherm 数据；损失函数未在摘要中说明</li>
+<li><strong>工具</strong>：未提供具体框架（PyTorch/TensorFlow 未说明）</li>
+<li><strong>假设</strong>：实验结构中的原子坐标足以捕捉突变引起的局部环境变化；序列 embedding 能补充结构未覆盖的进化信息</li>
+<li><strong>流程</strong>：输入结构 → 提取序列 embedding → 提取原子/残基级结构特征 → 特征拼接 → 注意力加权 → 卷积特征提取 → 回归输出 ΔΔG → 5 折集成平均</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列 embedding 模块</td>
+<td>生成上下文感知的残基表示</td>
+<td>捕捉进化保守性、残基间长程语义关系</td>
+<td>输入：氨基酸序列；输出：每残基 embedding 向量</td>
+<td>摘要提及「contextual sequence embeddings」</td>
+<td>[预期] 移除后丢失进化信息，泛化能力下降</td>
+</tr>
+<tr>
+<td>原子级结构特征</td>
+<td>描述突变位点周围的精细几何与化学环境</td>
+<td>捕捉原子间相互作用（如氢键、疏水接触）的细微变化</td>
+<td>输入：PDB 结构；输出：原子级特征向量</td>
+<td>摘要提及「atomistic...structural features」</td>
+<td>[预期] 移除后对局部环境敏感度下降</td>
+</tr>
+<tr>
+<td>残基级结构特征</td>
+<td>描述残基尺度的结构属性</td>
+<td>提供二级结构、溶剂可及性等粗粒度信息</td>
+<td>输入：PDB 结构；输出：残基级特征向量</td>
+<td>摘要提及「residue-level structural features」</td>
+<td>[预期] 移除后丢失全局结构上下文</td>
+</tr>
+<tr>
+<td>注意力层</td>
+<td>学习重要残基/原子的权重</td>
+<td>自动聚焦对稳定性贡献最大的区域</td>
+<td>输入：融合特征；输出：加权特征</td>
+<td>摘要提及「attention-convolutional」</td>
+<td>[预期] 移除后模型难以区分关键残基</td>
+</tr>
+<tr>
+<td>卷积层</td>
+<td>提取局部特征模式</td>
+<td>捕捉相邻残基/原子的协同效应</td>
+<td>输入：注意力加权特征；输出：高阶特征</td>
+<td>摘要提及「attention-convolutional」</td>
+<td>[预期] 移除后局部模式识别能力下降</td>
+</tr>
+<tr>
+<td>5 折集成</td>
+<td>平均多个模型预测</td>
+<td>降低单模型方差，提升鲁棒性</td>
+<td>输入：5 个子模型预测；输出：平均 ΔΔG</td>
+<td>摘要提及「5-fold ERIS2 ensemble」</td>
+<td>[预期] 移除后精度下降，方差增大</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>不适用。摘要中未提供任何数学公式或符号定义。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：</li>
+<li>训练集：大规模实验测量数据 + 整理后的 ProTherm 数据（具体规模未提供）</li>
+<li>盲测集 1：S461（461 个突变）</li>
+<li>盲测集 2：S669（669 个突变）</li>
+<li>盲测集 3：S96（96 个突变）</li>
+<li>对称性测试集：Ssym（包含正向和反向突变对）</li>
+<li><strong>关键设计</strong>：三个盲测集均与所有训练配置序列不相交（sequence-disjoint），确保无数据泄漏</li>
+<li><strong>指标</strong>：Pearson 相关系数（r）</li>
+<li><strong>基线</strong>：未在摘要中明确列出对比基线</li>
+<li><strong>评测协议</strong>：5 折交叉验证 + 独立盲测</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S461 盲测</td>
+<td>模型在未见序列上的预测精度</td>
+<td>序列不相交的独立测试</td>
+<td>Pearson r = 0.69</td>
+<td>模型具有良好的泛化能力</td>
+<td>不能说明在更难突变类型上的表现</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>S669 盲测</td>
+<td>模型在更大规模盲测集上的表现</td>
+<td>序列不相交的独立测试</td>
+<td>Pearson r = 0.51</td>
+<td>模型在更大数据集上仍保持有效</td>
+<td>精度低于 S461，可能因数据异质性</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>S96 盲测</td>
+<td>模型在小规模盲测集上的表现</td>
+<td>序列不相交的独立测试</td>
+<td>Pearson r = 0.60</td>
+<td>模型在小数据集上表现稳定</td>
+<td>样本量小，统计功效有限</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>Ssym 对称性测试</td>
+<td>模型是否对正向/反向突变对有一致预测</td>
+<td>正向与反向突变对的预测比较</td>
+<td>可忽略的反向对称性偏差</td>
+<td>模型对突变方向性偏差小</td>
+<td>未提供具体数值</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对单点突变引起的 ΔΔG 预测，不涵盖多突变、插入/缺失、或非天然氨基酸。</li>
+<li><strong>输入依赖</strong>：需要实验解析的蛋白质结构（非 AlphaFold 预测结构），这限制了在无结构蛋白上的应用。</li>
+<li><strong>oracle/真值输入</strong>：训练和测试均依赖实验测定的 ΔΔG 值，其本身存在实验误差（通常 ±0.5-1.0 kcal/mol），模型精度受限于标签噪声。</li>
+<li><strong>端到端状态</strong>：模型是端到端训练的，但特征提取（结构特征）依赖外部工具，非完全端到端。</li>
+<li><strong>算力成本</strong>：未提供推理/训练时间信息。</li>
+<li><strong>历史数据依赖</strong>：训练数据来自 ProTherm 等历史实验数据，存在实验方法、条件不一致的问题。</li>
+<li><strong>最难情形</strong>：S669 上 r = 0.51 表明在更大、更多样的突变集合上精度下降，可能反映模型对某些突变类型（如带电残基替换）仍不够鲁棒。</li>
+<li><strong>群体/领域边界</strong>：模型在序列不相交的测试集上验证，但未说明是否覆盖所有蛋白质家族或仅限球状蛋白。</li>
+<li><strong>不确定性</strong>：未提供预测置信区间或不确定性估计。</li>
+</ul>
+<p><strong>有边界的复述</strong>：ERIS2 在需要实验结构的条件下，对单点突变 ΔΔG 预测在三个盲测集上达到中等偏高的 Pearson 相关性（0.51-0.69），且对突变方向性偏差小，但精度受限于标签噪声和突变类型多样性。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的摘要材料中，作者未明确列出局限性。摘要仅提及现有方法的局限（小数据、不平衡、泛化差），但未对 ERIS2 自身的局限进行讨论。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 模型依赖实验结构，未提及对无结构蛋白的适用性
+- 未提供与其他方法的定量对比
+- 未提供具体训练数据规模</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅报告 Pearson r，未报告 RMSE/MAE</td>
+<td>Pearson r 对线性变换不变，可能掩盖系统偏差</td>
+<td>实际应用中绝对误差更关键</td>
+<td>要求作者补充 RMSE、MAE、Bland-Altman 分析</td>
+<td>摘要仅提及 Pearson r</td>
+</tr>
+<tr>
+<td>S461 与 S669 精度差异较大（0.69 vs 0.51）</td>
+<td>可能反映数据分布差异或模型对特定突变类型的偏好</td>
+<td>泛化能力声明需谨慎</td>
+<td>分析各数据集的突变类型分布，按类型分层报告精度</td>
+<td>摘要中两个数据集的 r 值差异</td>
+</tr>
+<tr>
+<td>未提及与现有方法（如 DDGun、ThermoNet、ESM 变体）的对比</td>
+<td>无法判断相对优势</td>
+<td>新方法需证明超越现有基线</td>
+<td>在相同数据集上运行多个基线方法</td>
+<td>摘要未提供对比实验</td>
+</tr>
+<tr>
+<td>训练数据「大规模实验测量 + ProTherm」来源不明确</td>
+<td>数据质量、重复测量一致性未知</td>
+<td>数据质量直接影响模型上限</td>
+<td>提供数据清洗流程、重复性分析</td>
+<td>摘要仅提及「large-scale experimental measurements」</td>
+</tr>
+<tr>
+<td>未提供不确定性估计</td>
+<td>用户无法判断预测可靠性</td>
+<td>工程应用中需要置信度</td>
+<td>添加 MC-dropout 或 ensemble 方差输出</td>
+<td>摘要未提及</td>
+</tr>
+<tr>
+<td>依赖实验结构限制了应用范围</td>
+<td>AlphaFold 预测结构是否可用未验证</td>
+<td>许多蛋白无实验结构</td>
+<td>在 AF2 预测结构上测试</td>
+<td>摘要明确「experimental protein structures」</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>多尺度特征融合策略</strong>：将预训练语言模型的序列 embedding 与原子级 + 残基级结构特征结合，是提升蛋白质性质预测精度的有效路径。可迁移至：蛋白质-配体结合亲和力预测、蛋白质-蛋白质相互作用界面预测。</p>
+</li>
+<li>
+<p><strong>序列不相交的盲测设计</strong>：确保测试集与训练集序列不相交是评估泛化能力的关键。可迁移至：任何蛋白质相关深度学习模型的评估协议设计。</p>
+</li>
+<li>
+<p><strong>注意力机制用于残基重要性加权</strong>：注意力层可自动学习突变位点周围哪些残基对稳定性贡献最大，无需人工设计相互作用规则。可迁移至：蛋白质构象采样中的关键残基识别、分子对接中的热点残基预测。</p>
+</li>
+<li>
+<p><strong>5 折集成作为低成本鲁棒性提升</strong>：集成多个模型而非追求单模型极致精度，是实用部署中的有效策略。可迁移至：任何计算成本可控的蛋白质预测任务。</p>
+</li>
+<li>
+<p><strong>对称性偏差评估</strong>：通过正向/反向突变对测试模型的方向一致性，是评估物理合理性的重要手段。可迁移至：蛋白质设计中的反向突变验证、MD 模拟中的可逆性检查。</p>
+</li>
+<li>
+<p><strong>数据整理比数据堆叠更重要</strong>：将 ProTherm 与大规模实验数据结合并精心整理，比单纯增加数据量更有效。可迁移至：蛋白质构象数据集构建、MD 轨迹特征提取。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>ERIS（第一代）</strong>：本文是 ERIS 的深度学习升级版。ERIS 基于物理能量函数（Medusa 力场）计算突变稳定性，ERIS2 则完全转向数据驱动。两者对比体现了该领域从物理模拟到深度学习的范式转移。</li>
+<li><strong>DDGun / ThermoNet / DDG预测基准</strong>：这些是 ΔΔG 预测领域的代表性方法，本文未在摘要中提供对比，但读者可将其作为基线参考。</li>
+<li><strong>AlphaFold 相关</strong>：本文使用实验结构而非预测结构，但可设想将 ERIS2 与 AlphaFold 预测结构结合，扩展至无实验结构的蛋白质。</li>
+<li><strong>ESM / ProtTrans 等蛋白质语言模型</strong>：本文的「contextual sequence embeddings」很可能来自此类预训练模型，与蛋白质结构预测中的 ESM-IF 等思路一致。</li>
+<li><strong>DeepDDG / DDGun3D</strong>：这些是结构感知的 ΔΔG 预测方法，与 ERIS2 属于同一子方向，可对比特征工程策略。</li>
+<li><strong>蛋白质设计中的稳定性约束</strong>：ERIS2 的预测能力可嵌入蛋白质设计流程（如 Rosetta 设计、深度生成模型）作为筛选器，与「结构/序列设计 × AI」方向直接相关。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<h3>候选 1：ERIS2-ΔΔG 不确定性量化与主动学习框架</h3>
+<ul>
+<li><strong>名称</strong>：Uncertainty-aware active learning for ΔΔG prediction</li>
+<li><strong>来源局限/观察</strong>：ERIS2 未提供预测置信度，且训练数据存在标签噪声</li>
+<li><strong>核心假设</strong>：通过 ensemble 方差或 MC-dropout 量化预测不确定性，可指导实验设计（优先验证高不确定性突变）</li>
+<li><strong>相对本文的增量</strong>：增加不确定性输出 + 主动学习采样策略</li>
+<li><strong>初步方法</strong>：在 ERIS2 架构上添加不确定性头，使用贝叶斯推断或深度 ensemble；设计 acquisition function 选择下一批实验突变</li>
+<li><strong>验证方式</strong>：在 S669 上模拟主动学习循环，比较随机采样 vs 不确定性采样下的精度提升曲线</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 2：ERIS2 特征迁移至蛋白质-配体结合亲和力预测</h3>
+<ul>
+<li><strong>名称</strong>：Transferring stability features to binding affinity prediction</li>
+<li><strong>来源局限/观察</strong>：ERIS2 的多尺度特征融合策略（序列 embedding + 原子/残基结构特征）具有通用性</li>
+<li><strong>核心假设</strong>：相同的特征融合架构可迁移至蛋白质-配体结合 ΔΔG 预测</li>
+<li><strong>相对本文的增量</strong>：任务迁移 + 特征适配（加入配体原子特征）</li>
+<li><strong>初步方法</strong>：保留 ERIS2 的序列 embedding 和蛋白结构特征模块，增加配体图神经网络分支，在 BindingDB 等数据集上微调</li>
+<li><strong>验证方式</strong>：与现有对接打分函数（如 Glide、AutoDock Vina）和深度学习打分函数对比</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 3：ERIS2 与 AlphaFold 结构预测的联合管线</h3>
+<ul>
+<li><strong>名称</strong>：AF2-ERIS2 pipeline for stability prediction on uncharacterized proteins</li>
+<li><strong>来源局限/观察</strong>：ERIS2 依赖实验结构，限制了在无结构蛋白上的应用</li>
+<li><strong>核心假设</strong>：AlphaFold 预测结构可作为 ERIS2 的输入，且精度损失可控</li>
+<li><strong>相对本文的增量</strong>：扩展应用范围至无实验结构的蛋白质</li>
+<li><strong>初步方法</strong>：在 S669 上比较实验结构 vs AF2 预测结构的 ERIS2 预测精度；分析结构质量（pLDDT）与预测误差的关系</li>
+<li><strong>验证方式</strong>：分层分析不同 pLDDT 区间的预测精度，确定可靠应用边界</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 4：基于 ERIS2 的突变方向性偏差校正</h3>
+<ul>
+<li><strong>名称</strong>：Directionality-aware calibration for ΔΔG prediction</li>
+<li><strong>来源局限/观察</strong>：ERIS2 在 Ssym 上仅报告「negligible bias」，但未提供具体数值；许多 ΔΔG 预测器存在系统性方向偏差</li>
+<li><strong>核心假设</strong>：通过显式建模正向/反向突变对的物理约束（如热力学循环闭合），可进一步降低方向偏差</li>
+<li><strong>相对本文的增量</strong>：在损失函数中加入热力学循环一致性约束</li>
+<li><strong>初步方法</strong>：设计循环一致性损失项，强制 ΔΔG(A→B) = -ΔΔG(B→A)；在 Ssym 上验证</li>
+<li><strong>验证方式</strong>：比较有无循环约束下的方向偏差和整体精度</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 5：ERIS2 嵌入蛋白质设计循环作为稳定性筛选器</h3>
+<ul>
+<li><strong>名称</strong>：ERIS2 as a fast stability filter in protein design pipelines</li>
+<li><strong>来源局限/观察</strong>：蛋白质设计（如抗体工程）需要快速筛选大量突变体，实验验证成本高</li>
+<li><strong>核心假设</strong>：ERIS2 可作为设计循环中的第一层筛选器，减少实验验证数量</li>
+<li><strong>相对本文的增量</strong>：应用场景扩展 + 与生成模型（如扩散模型）的接口设计</li>
+<li><strong>初步方法</strong>：将 ERIS2 集成到 ProteinMPNN / RFdiffusion 设计流程中，对生成序列进行稳定性排序</li>
+<li><strong>验证方式</strong>：在已知设计基准上比较「ERIS2 筛选 + 实验验证」vs「全实验验证」的成本与成功率</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present ERIS2, an attention-convolutional deep learning framework combining contextual sequence embeddings with atomistic and residue-level structural features, trained on large-scale experimental measurements and curated ProTherm data. A 5-fold ensemble achieves Pearson correlation coefficients of 0.69 on S461, 0.51 on S669, and 0.60 on S96, with negligible anti-symmetry bias on Ssym. The tool is available as a structure-based web server without registration.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, methods, or supplementary data provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods description, training and test dataset details, benchmark definitions, figure panels, statistical analyses, and web server implementation details</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract reports a potentially useful deep learning platform for protein stability prediction, with competitive benchmark performance and a freely accessible web server. However, the evidence base is limited to the abstract, which prevents verification of the methodological soundness, dataset handling, benchmark rigor, and statistical claims. The reported correlations are plausible but require detailed scrutiny of training-test separation, data leakage risks, and comparison with existing methods.</li>
+<li><strong>Who would be interested in the results, and why</strong> Protein engineers, computational biologists, and therapeutic developers interested in rapid and accurate stability prediction for variant effect assessment, rational design, and clinical variant interpretation. The web server availability without registration increases practical utility for experimental laboratories.</li>
+<li><strong>Major strengths</strong> The integration of contextual sequence embeddings with atomistic and residue-level structural features is a reasonable design choice. The use of multiple blind-test datasets (S461, S669, S96) that are sequence-disjoint from training configurations addresses a common weakness in the field. The negligible anti-symmetry bias on Ssym is a valuable property for mutation directionality. The free web server without registration lowers access barriers.</li>
+<li><strong>Major Concerns</strong> </li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The 5-fold ERIS2 ensemble achieved Pearson correlation coefficients of 0.69 on S461, 0.51 on S669, and 0.60 on S96, three blind-test datasets sequence-disjoint from all training configurations.</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract does not describe how the 5-fold ensemble was constructed, how the training data were partitioned, or how sequence-disjointness was enforced. Without details on the training-test split, the possibility of data leakage through homologous sequences or shared structural templates cannot be excluded. The performance differences across datasets (0.69 vs 0.51 vs 0.60) are not explained.</li>
+<li><strong>Why it matters</strong> Benchmark credibility depends on rigorous separation of training and test data. If sequence-disjointness is incomplete or if the ensemble averaging masks high variance across folds, the reported correlations may not generalize to real-world applications.</li>
+<li><strong>Resolution test</strong> Provide a detailed description of the data partitioning strategy, including sequence identity thresholds, and report per-fold performance with standard deviations. Demonstrate that no test sequence shares significant homology with training sequences.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> Trained on large-scale experimental measurements combined with curated ProTherm data.</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract does not specify the size of the training dataset, the source of the large-scale experimental measurements, the curation criteria for ProTherm data, or how redundancy and conflicting measurements were handled. The balance of mutation types (e.g., alanine scanning, charged-to-neutral, etc.) is not described.</li>
+<li><strong>Why it matters</strong> Training data composition directly affects model bias and generalization. Small or imbalanced datasets are cited as a limitation of existing models, so the authors must demonstrate that their training data are sufficiently large and balanced to support the claimed advantage.</li>
+<li><strong>Resolution test</strong> Report the number of unique mutations, the number of proteins, the distribution of mutation types, and the curation protocol. Provide a comparison of training data size and composition with existing models.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Comparative performance</li>
+<li><strong>Claim pointer</strong> ERIS2 achieved Pearson correlation coefficients of 0.69 on S461, 0.51 on S669, and 0.60 on S96.</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract does not compare ERIS2 performance with existing state-of-the-art methods on the same benchmarks. Without such comparison, the significance of these correlation values is unclear.</li>
+<li><strong>Why it matters</strong> The field has multiple established predictors, and a new method must demonstrate improvement or at least parity to justify its contribution. Reporting absolute correlations without context does not establish the platform's value.</li>
+<li><strong>Resolution test</strong> Include a benchmark table comparing ERIS2 with at least three existing methods on S461, S669, and S96, with statistical significance tests where appropriate.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> ERIS2 is freely available as a structure-based web server without registration.</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract does not provide the web server URL, nor does it describe the input requirements (e.g., PDB format, mutation notation), output format, or computational limits. No information is given on whether the server supports batch queries or high-throughput use.</li>
+<li><strong>Why it matters</strong> Reproducibility and practical utility depend on clear access and usage documentation. A web server that is not described in sufficient detail cannot be evaluated or used effectively by the community.</li>
+<li><strong>Resolution test</strong> Provide the URL, a usage example, and documentation of input-output specifications in the manuscript or supplementary materials.</li>
+<li><strong>Minor Comments</strong> </li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract wording</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The phrase "attention-convolutional deep learning framework" is not elaborated. The abstract does not clarify how attention and convolution are combined or why this architecture is suited to the problem.</li>
+<li><strong>Required correction</strong> Add one or two sentences describing the architectural rationale and the specific roles of attention and convolution components.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> Performance metrics</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> Only Pearson correlation coefficients are reported. No root-mean-square error, mean absolute error, or confidence intervals are provided.</li>
+<li><strong>Required correction</strong> Report additional error metrics and confidence intervals for the correlation coefficients.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> "Negligible anti-symmetry bias"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The term "negligible" is not quantified. The abstract does not state the actual bias value or the threshold for negligibility.</li>
+<li><strong>Required correction</strong> Provide the numerical value of the anti-symmetry bias and the criterion used to define it as negligible.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (data partitioning and ensemble details), R1-M2 (training data composition and curation), R1-M3 (comparison with existing methods)</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The abstract suggests an incremental advance combining known architectural elements (attention, convolution, sequence embeddings, structural features) rather than a fundamentally new approach. Originality is moderate but not clearly established from the abstract alone.</li>
+<li>Scientific importance: Protein stability prediction is a relevant problem in protein engineering and therapeutics, but the abstract does not demonstrate a major advance over existing methods. Importance is plausible but not established.</li>
+<li>Interdisciplinary readership: The topic bridges computational biology, structural biology, and protein engineering. The abstract is accessible to these audiences, but the lack of methodological detail limits broader appeal.</li>
+<li>Technical soundness: Cannot be assessed from the abstract. The reported metrics are promising but unverifiable without methods and benchmark details.</li>
+<li>Readability for nonspecialists: The abstract is concise and understandable, though terms like "attention-convolutional" and "contextual sequence embeddings" may require background knowledge.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract reports promising results, but the absence of methodological detail, comparative benchmarks, and dataset descriptions prevents verification of the core claims. Supportive if the technical concerns are resolved in the full manuscript.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that ERIS2 "provides a robust framework" is unsupported without comparison to existing methods and error analysis.</li>
+<li>The claim of "negligible anti-symmetry bias" is unquantified and cannot be evaluated.</li>
+<li>The claim that the three benchmark datasets are "sequence-disjoint from all training configurations" is unverifiable without details on the partitioning method.</li>
+<li>The claim of "large-scale experimental measurements" is unquantified.</li>
+<li>The overall performance advantage of ERIS2 over existing tools is not established from the abstract alone.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frustration Quenching and Network Topology of the Energy Landscape as Primary Determinants of Protein-Ligand Binding Pose Prediction by Deep Learning Models. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Frustration Quenching and Network Topology of the Energy Landscape as Primary Determinants of Protein-Ligand Binding Pose Prediction by Deep Learning Models.</h1>
+      <div class="meta">Turano, Lucas; Foley, Brandon; Dennis, Ryan; Gatlin, Will; Verkhivker, Gennady M</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv : the preprint server for biology</span>
+        · 2026-10-25
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42926560/">原文</a>
+      </div>
+      <p class="one-liner">该研究分析深度学习共折叠与对接模型在蛋白质-配体结合姿态预测中的表现，揭示能量景观挫败淬灭与网络拓扑是决定预测精度的物理因素，属于蛋白质结构计算与AI方法交叉研究。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Deep learning co-folding and docking models accurately predict ligand binding poses at orthosteric sites yet systematically underperform at allosteric pockets. Here, we demonstrate that this accuracy gap reflects a fundamental biophysical property of local energy landscape topology-specifically, the magnitude of frustration quenching upon ligand binding-rather than an intrinsic algorithmic defect. By evaluating leading co-folding and docking paradigms across curated benchmarks and large-scale uncurated datasets, we show that AI prediction success strongly tracks frustration quenching-the degree to which ligand binding relieves local energetic strain to form a steep energy funnel. Topologically, frustration-weighted residue interaction networks reveal that orthosteric pockets act as high-betweenness communication hubs embedded within contiguous, minimally frustrated pathways. In contrast, allosteric sites reside in low-betweenness peripheral regions with fragmented frustration profiles, presenting flatter, entropy-dominated landscapes that challenge structure prediction algorithms. Comparing generative diffusion with single-shot regression demonstrates that multi-pose sampling capacity is required to cross energy barriers and discover the frustration funnel, whereas joint receptor- ligand coordinate co-adaptation governs local optimization within the funnel. Collectively, this study reframes the allosteric &#34;blind spot&#34; as a quantitative property of energy landscape architecture rather than a defect of any specific predictive framework. We demonstrate that frustration quenching magnitude and structural network centrality serve as physical descriptors that define the intrinsic limits of AI performance, reframing AI accuracy from a benchmark metric into a physics-grounded quantitative reporter of macromolecular binding landscape architecture.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">深度学习共折叠与对接模型能够准确预测正构位点的配体结合姿态，但在变构口袋处却系统性表现不佳。在此，我们证明这一精度差距反映了局部能量景观拓扑结构的基本生物物理特性——具体而言，即配体结合时挫拆淬灭的幅度——而非算法本身的固有缺陷。通过评估领先的共折叠与对接范式在精选基准和大型非精选数据集上的表现，我们表明AI预测成功率与挫拆淬灭（即配体结合缓解局部能量应变以形成陡峭能量漏斗的程度）密切相关。在拓扑层面，挫拆加权残基相互作用网络揭示，正构位点作为高介数通信枢纽，嵌入在连续且最小挫拆的路径中。相比之下，变构位点位于低介数外围区域，具有碎片化的挫拆分布，呈现出更平坦、熵主导的景观，这对结构预测算法构成挑战。将生成式扩散与单次回归进行比较表明，多姿态采样能力是跨越能量障碍并发现挫拆漏斗所必需的，而受体-配体坐标的联合共适应则控制漏斗内的局部优化。总体而言，本研究将变构“盲点”重新定义为能量景观架构的定量属性，而非任何特定预测框架的缺陷。我们证明挫拆淬灭幅度和结构网络中心性可作为物理描述符，定义AI性能的内在极限，将AI精度从基准指标重新定位为基于物理的大分子结合景观架构的定量报告器。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Frustration Quenching and Network Topology of the Energy Landscape as Primary Determinants of Protein-Ligand Binding Pose Prediction by Deep Learning Models</li>
+<li><strong>作者与单位</strong>: Turano, Lucas; Foley, Brandon; Dennis, Ryan; Gatlin, Will; Verkhivker, Gennady M.（单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>: bioRxiv : the preprint server for biology</li>
+<li><strong>年份</strong>: 2026-10-25（预印本日期）</li>
+<li><strong>论文类型</strong>: 预印本（实证研究）</li>
+<li><strong>领域</strong>: 蛋白质-配体结合构象预测 × 深度学习（co-folding/docking） × 能量景观拓扑</li>
+<li><strong>关键词</strong>: frustration quenching, energy landscape topology, protein-ligand docking, deep learning, allosteric pocket, orthosteric pocket, diffusion model, co-folding</li>
+<li><strong>DOI/arXiv 号</strong>: 10.64898/2026.10.05.756861</li>
+<li><strong>代码</strong>: 未提供</li>
+<li><strong>数据</strong>: 未提供（提及 curated benchmarks 和 large-scale uncurated datasets，但未给出具体名称）</li>
+<li><strong>阅读日期</strong>: 2026-10-26</li>
+<li><strong>在该方向中的位置</strong>: 本文处于「蛋白质结构相关计算研究 × AI 方法」交叉点，聚焦于解释性物理描述符（frustration quenching、网络中心性）如何决定深度学习模型在蛋白质-配体结合构象预测中的成败边界，属于「AI 预测能力的物理基础」类研究，而非提出新预测算法。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文通过分析深度学习 co-folding/docking 模型在 orthosteric 与 allosteric 位点的预测表现差异，提出并验证了「配体结合诱导的 frustration quenching 幅度」与「残基相互作用网络的拓扑中心性」是决定 AI 结合构象预测成功率的物理决定因素，而非算法缺陷。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 为什么深度学习 co-folding 和 docking 模型在 orthosteric 位点能准确预测配体结合构象，却在 allosteric 位点系统性失败？</li>
+<li><strong>为什么重要</strong>: Allosteric 位点是药物设计的重要靶点，若 AI 预测工具在这些位点不可靠，将严重限制其在实际药物发现中的应用。</li>
+<li><strong>现有方法为何不足</strong>: 现有研究多从算法角度（如训练数据偏差、特征表示）解释性能差异，缺乏从能量景观物理性质出发的系统性解释。</li>
+<li><strong>精确研究问题</strong>: Can the magnitude of frustration quenching upon ligand binding and the network centrality of binding pockets serve as quantitative physical descriptors that define the intrinsic limits of deep learning binding pose prediction?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：此脉络为「仅本文框架」，基于本文引言与讨论的叙述重构，未经外部系统核验。）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统 docking</td>
+<td>AutoDock, Glide, GOLD</td>
+<td>物理评分函数，可解释</td>
+<td>采样效率低，精度有限</td>
+<td>作为 baseline 对比</td>
+</tr>
+<tr>
+<td>深度学习 docking</td>
+<td>GNINA, DiffDock 等</td>
+<td>速度快，精度高</td>
+<td>对 allosteric 位点泛化差</td>
+<td>本文分析对象之一</td>
+</tr>
+<tr>
+<td>Co-folding 模型</td>
+<td>AlphaFold 系列、RoseTTAFold 系列</td>
+<td>联合建模受体-配体坐标</td>
+<td>对构象变化敏感，allosteric 位点失败</td>
+<td>本文分析对象之一</td>
+</tr>
+<tr>
+<td>生成式扩散模型</td>
+<td>基于 diffusion 的 docking/co-folding</td>
+<td>多构象采样能力</td>
+<td>计算成本高</td>
+<td>本文对比其与单次回归的差异</td>
+</tr>
+<tr>
+<td>能量景观物理分析</td>
+<td>frustration 分析、网络拓扑分析</td>
+<td>提供物理可解释描述符</td>
+<td>传统上未与 AI 性能直接关联</td>
+<td><strong>本文核心贡献</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Allosteric 位点预测系统性失败</td>
+<td>深度学习模型在 allosteric 位点的结合构象预测准确率显著低于 orthosteric 位点</td>
+<td>作者主张：allosteric 位点能量景观平坦、熵主导，缺乏陡峭的 frustration funnel</td>
+<td>Abstract 第 2-3 句</td>
+</tr>
+<tr>
+<td>算法缺陷解释不充分</td>
+<td>仅从训练数据或模型架构角度无法解释性能差异</td>
+<td>作者主张：性能差异反映的是能量景观拓扑的物理性质，而非算法缺陷</td>
+<td>Abstract 第 2 句</td>
+</tr>
+<tr>
+<td>多构象采样需求</td>
+<td>单次回归方法无法跨越能量势垒找到 frustration funnel</td>
+<td>作者主张：需要多构象采样能力（如 diffusion）才能发现 funnel</td>
+<td>Abstract 第 5-6 句</td>
+</tr>
+<tr>
+<td>受体-配体协同适应</td>
+<td>仅优化配体坐标不足以在 funnel 内精确定位</td>
+<td>作者主张：联合受体-配体坐标 co-adaptation 是 funnel 内局部优化的关键</td>
+<td>Abstract 第 6 句</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>: 评估多种深度学习 co-folding 和 docking 模型在 curated benchmarks 和 large-scale uncurated datasets 上的结合构象预测表现，并将预测成功与否与能量景观的 frustration 分析及残基相互作用网络拓扑指标相关联。</li>
+<li><strong>核心洞察</strong>: AI 预测的成功率不是随机的算法行为，而是由配体结合时 frustration quenching 的幅度（即局部能量应变被释放、形成陡峭能量 funnel 的程度）和结合口袋在残基相互作用网络中的拓扑位置（orthosteric 位点作为高 betweenness 通信枢纽，allosteric 位点位于低 betweenness 外围区域）共同决定的物理量。</li>
+<li><strong>可能的普适教训</strong> [Analysis]: 深度学习模型在分子识别任务中的性能边界可能不是由模型容量或训练数据量决定，而是由目标系统的物理-化学性质（如能量景观形状）决定。这提示在评估或设计 AI 预测工具时，应首先分析目标系统的能量景观拓扑，以预判模型可能的表现区间。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: 蛋白质序列/结构、配体分子、结合位点信息（orthosteric 或 allosteric）</li>
+<li><strong>输出</strong>: 配体结合构象预测、预测成功/失败标签、frustration 指标、网络拓扑指标</li>
+<li><strong>模块</strong>:
+  1. 深度学习预测模块（多种 co-folding 和 docking 模型）
+  2. Frustration 分析模块（计算配体结合前后的局部能量应变变化）
+  3. 网络拓扑分析模块（构建 frustration-weighted 残基相互作用网络，计算 betweenness 等指标）</li>
+<li><strong>训练</strong>: 未提供（使用预训练模型）</li>
+<li><strong>工具</strong>: 未提供具体软件名称</li>
+<li><strong>反馈回路</strong>: 预测结果与物理描述符的统计关联分析</li>
+<li><strong>假设</strong>: 预测成功与 frustration quenching 幅度正相关；orthosteric 位点具有高 betweenness 和连续 minimal frustration 路径；allosteric 位点具有低 betweenness 和碎片化 frustration 分布</li>
+<li><strong>文字流程</strong>: 收集基准数据集 → 运行多种深度学习模型进行结合构象预测 → 对每个蛋白-配体体系进行 frustration 分析 → 构建 frustration-weighted 网络并计算拓扑指标 → 统计关联预测成功与物理描述符 → 对比 diffusion 与单次回归方法的差异 → 得出结论</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>深度学习预测模型</td>
+<td>生成配体结合构象</td>
+<td>核心预测任务</td>
+<td>输入：蛋白+配体；输出：构象+置信度</td>
+<td>Abstract 第 1 句</td>
+<td>无预测结果，无法关联分析</td>
+</tr>
+<tr>
+<td>Frustration 分析</td>
+<td>量化配体结合前后的能量应变变化</td>
+<td>提供物理描述符</td>
+<td>输入：蛋白结构+配体结合构象；输出：frustration quenching 幅度</td>
+<td>Abstract 第 3 句</td>
+<td>无法建立物理-性能关联</td>
+</tr>
+<tr>
+<td>Frustration-weighted 网络分析</td>
+<td>计算残基网络的拓扑中心性</td>
+<td>提供拓扑描述符</td>
+<td>输入：蛋白结构+残基间相互作用；输出：betweenness、frustration 分布</td>
+<td>Abstract 第 4 句</td>
+<td>无法区分 orthosteric/allosteric 拓扑差异</td>
+</tr>
+<tr>
+<td>多构象采样（diffusion）</td>
+<td>生成多个候选构象</td>
+<td>跨越能量势垒</td>
+<td>输入：蛋白+配体；输出：多构象集合</td>
+<td>Abstract 第 5-6 句</td>
+<td>无法验证采样能力对成功率的贡献</td>
+</tr>
+<tr>
+<td>单次回归模型</td>
+<td>直接预测单一构象</td>
+<td>对比基线</td>
+<td>输入：蛋白+配体；输出：单一构象</td>
+<td>Abstract 第 5-6 句</td>
+<td>无法对比采样策略差异</td>
+</tr>
+</tbody>
+</table>
+<p><em>注：以上「移除后的影响」均为 [Analysis] 推断，非实测消融结果。</em></p>
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>。本文为实证分析型研究，摘要中未提供具体数学公式。核心概念（frustration quenching、betweenness centrality）为已有定义，但文中未给出具体计算式。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>: 未提供具体名称；提及「curated benchmarks」和「large-scale uncurated datasets」</li>
+<li><strong>规模</strong>: 未提供具体数量</li>
+<li><strong>指标</strong>: 未提供具体指标（推测为 RMSD 或类似构象预测精度指标）</li>
+<li><strong>基线</strong>: 未提供具体基线模型</li>
+<li><strong>预算</strong>: 未提供</li>
+<li><strong>骨干/仪器</strong>: 未提供</li>
+<li><strong>Oracle 输入</strong>: 未提供</li>
+<li><strong>评测协议</strong>: 未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>模型在 orthosteric vs allosteric 位点的预测表现</td>
+<td>Allosteric 位点系统性表现差</td>
+<td>多种模型、多数据集</td>
+<td>未提供具体数值</td>
+<td>Allosteric 位点预测失败是普遍现象</td>
+<td>无法量化差距大小</td>
+<td>Abstract 第 1 句</td>
+</tr>
+<tr>
+<td>预测成功与 frustration quenching 的关联</td>
+<td>Frustration quenching 幅度决定预测成功</td>
+<td>统计关联分析</td>
+<td>未提供具体数值</td>
+<td>预测成功与 frustration quenching 正相关</td>
+<td>无法确定因果方向</td>
+<td>Abstract 第 3 句</td>
+</tr>
+<tr>
+<td>网络拓扑分析</td>
+<td>Orthosteric 位点具有高 betweenness</td>
+<td>网络分析</td>
+<td>未提供具体数值</td>
+<td>Orthosteric 位点是通信枢纽</td>
+<td>无法排除其他拓扑指标的作用</td>
+<td>Abstract 第 4 句</td>
+</tr>
+<tr>
+<td>Diffusion vs 单次回归对比</td>
+<td>多构象采样能力是跨势垒的关键</td>
+<td>方法对比</td>
+<td>未提供具体数值</td>
+<td>Diffusion 能发现 frustration funnel</td>
+<td>无法确定最优采样策略</td>
+<td>Abstract 第 5-6 句</td>
+</tr>
+<tr>
+<td>联合 co-adaptation 分析</td>
+<td>受体-配体协同适应是 funnel 内优化关键</td>
+<td>方法对比</td>
+<td>未提供具体数值</td>
+<td>Co-adaptation 改善局部优化</td>
+<td>无法分离配体 vs 受体贡献</td>
+<td>Abstract 第 6 句</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 蛋白质-配体结合构象预测，限定于 orthosteric 和 allosteric 位点</li>
+<li><strong>Oracle/真值输入</strong>: 未提供（推测使用实验解析的共晶结构作为真值）</li>
+<li><strong>端到端状态</strong>: 非端到端；本文是分析性研究，不提出新预测模型</li>
+<li><strong>算力成本</strong>: 未提供</li>
+<li><strong>历史数据依赖</strong>: 依赖已有深度学习模型的预训练权重和基准数据集</li>
+<li><strong>模型依赖</strong>: 结论基于多种深度学习模型，但未提供模型清单</li>
+<li><strong>最难情形</strong>: Allosteric 位点、平坦能量景观、熵主导区域</li>
+<li><strong>群体/领域边界</strong>: 结论可能仅适用于球状蛋白的配体结合位点，不适用于蛋白-蛋白相互作用或核酸-蛋白相互作用</li>
+<li><strong>不确定性</strong>: 未提供统计显著性、置信区间或效应量</li>
+<li><strong>有边界的复述</strong>: 在本文分析的模型和数据范围内，配体结合诱导的 frustration quenching 幅度和口袋的网络中心性可以解释深度学习模型在 orthosteric 与 allosteric 位点上的预测成功率差异；该结论不排除其他因素（如训练数据分布）的贡献，也不声称 frustration 指标可预测所有蛋白-配体体系的 AI 表现。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（仅摘要）中未发现作者明确承认的局限。</p>
+<p><em>作者提及的相关约束（非正式局限）</em>:
+- 摘要中未提供具体数据集、模型清单和数值结果，暗示这些细节在正文中，但无法从摘要评估。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>相关性不等于因果性</td>
+<td>Frustration quenching 可能与预测成功相关，但未必是原因；可能是训练数据中 orthosteric 位点样本更多导致</td>
+<td>若为数据偏差，则物理描述符的解释力有限</td>
+<td>控制训练数据分布后重新分析</td>
+<td>Abstract 第 3 句</td>
+</tr>
+<tr>
+<td>未提供具体数值</td>
+<td>无法评估效应量、统计显著性和稳健性</td>
+<td>科学结论需要量化证据</td>
+<td>查阅全文获取数值</td>
+<td>摘要全文</td>
+</tr>
+<tr>
+<td>模型选择未说明</td>
+<td>不同模型架构可能有不同失败模式，统一归因于物理性质可能过度简化</td>
+<td>影响结论的普适性</td>
+<td>按模型类型分层分析</td>
+<td>Abstract 第 1 句</td>
+</tr>
+<tr>
+<td>「系统性 underperform」的定义模糊</td>
+<td>未给出性能差距的量化阈值</td>
+<td>影响结论的可操作性</td>
+<td>查阅全文获取具体指标</td>
+<td>Abstract 第 1 句</td>
+</tr>
+<tr>
+<td>网络拓扑指标的选择</td>
+<td>Betweenness 只是众多中心性指标之一，其他指标（如 closeness、eigenvector）可能同样重要</td>
+<td>影响物理解释的完整性</td>
+<td>比较多种中心性指标</td>
+<td>Abstract 第 4 句</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>:</p>
+<ol>
+<li>
+<p><strong>物理描述符作为 AI 性能预测器</strong>: 本文的核心可迁移思路是「用能量景观的物理性质（frustration quenching 幅度）来预判 AI 模型在特定系统上的表现」。在本课题中，可迁移为：在评估新的结构预测或对接模型时，先对目标蛋白进行 frustration 分析，建立「物理特征 → 模型预期表现」的映射，从而在计算前预判哪些体系适合 AI 预测、哪些需要传统物理模拟。</p>
+</li>
+<li>
+<p><strong>网络拓扑分析用于位点分类</strong>: 用 frustration-weighted 残基相互作用网络的 betweenness 中心性来区分 orthosteric 与 allosteric 位点，这一方法可迁移到本课题的「结合位点可预测性评估」中，作为位点分类的物理特征。</p>
+</li>
+<li>
+<p><strong>多构象采样 vs 单次回归的对比框架</strong>: 本文对比 diffusion 与单次回归的差异，指出多构象采样是跨能量势垒的关键。这提示在本课题的构象生成任务中，应优先考虑生成式模型（diffusion、flow matching）而非单次回归，尤其是在目标系统能量景观平坦或存在多势垒时。</p>
+</li>
+<li>
+<p><strong>Co-folding 中受体-配体协同适应的重要性</strong>: 本文强调联合坐标 co-adaptation 对 funnel 内局部优化的作用。可迁移到本课题的分子对接或共折叠模型设计中：在模型架构中显式建模受体-配体联合坐标更新，而非仅优化配体姿态。</p>
+</li>
+<li>
+<p><strong>「盲点」的重新框架化</strong>: 将 allosteric 位点的预测失败从「算法缺陷」重新框架为「能量景观的物理属性」，这一视角可迁移到本课题中任何「AI 失败案例」的分析，引导研究者从物理性质而非纯算法角度寻找解释。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>Frustration 分析</strong>: 与蛋白质能量景观理论中的「minimal frustration principle」（Bryngelson &amp; Wolynes, 1987; Onuchic et al., 1997）直接相关。本文将其扩展到配体结合场景，属于该理论的延伸应用。</li>
+<li><strong>网络拓扑分析</strong>: 与蛋白质残基相互作用网络（RIN）分析领域相关，betweenness centrality 是网络科学中的标准指标（Freeman, 1977）。</li>
+<li><strong>深度学习对接模型</strong>: 与 DiffDock（Corso et al., 2023）、AlphaFold 系列（Jumper et al., 2021; Abramson et al., 2024）等模型的表现分析相关，本文提供了这些模型失败模式的物理解释。</li>
+<li><strong>Allosteric 位点预测</strong>: 与 allosteric 位点识别和药物设计领域相关，本文为「为什么 AI 在 allosteric 位点不可靠」提供了物理基础。</li>
+<li><strong>[Analysis] 候选方向</strong>: 本文的「frustration quenching 作为 AI 性能预测器」思路，与「物理信息机器学习」（physics-informed ML）趋势一致，但将其从「训练约束」转为「性能预判」是较新颖的角度，值得进一步探索。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>:</p>
+<ol>
+<li>
+<p><strong>名称</strong>: Frustration-Guided AI 模型选择框架
+   - <strong>来源局限/观察</strong>: 本文提出 frustration quenching 决定 AI 预测成功率，但未提供可操作的预判工具
+   - <strong>核心假设</strong>: 通过预计算 frustration 指标，可在运行 AI 模型前预测其在该体系上的可靠性
+   - <strong>初步方法</strong>: 构建 frustration 指标（quenching 幅度、funnel 陡度）与多种 AI 模型（DiffDock、AlphaFold3 等）预测精度的回归模型，训练于已知基准，验证于新体系
+   - <strong>验证方式</strong>: 在独立测试集上比较「frustration 预判 + 模型选择」与「单一模型全用」的总体精度
+   - <strong>可能的失败模式</strong>: Frustration 指标与模型精度关联不稳健，或需要大量计算资源预计算
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: 网络中心性引导的 allosteric 位点可预测性评分
+   - <strong>来源局限/观察</strong>: 本文定性描述 allosteric 位点具有低 betweenness 和碎片化 frustration，但未给出定量评分
+   - <strong>核心假设</strong>: 结合位点的 betweenness 中心性和 frustration 连续性可构成一个「可预测性评分」，定量预测 AI 模型在该位点的表现
+   - <strong>初步方法</strong>: 定义评分函数 = f(betweenness, frustration 连续性, funnel 陡度)，在多个蛋白-配体体系上验证与 AI 预测精度的相关性
+   - <strong>验证方式</strong>: 与本文的定性结论对比，检验评分是否能在未见过的位点上排序 AI 模型表现
+   - <strong>可能的失败模式</strong>: 评分过于简化，忽略配体化学性质等关键因素
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: 扩散模型采样策略与能量景观形状的匹配
+   - <strong>来源局限/观察</strong>: 本文指出多构象采样是跨势垒关键，但未讨论采样策略如何匹配不同能量景观
+   - <strong>核心假设</strong>: 针对平坦、熵主导的 allosteric 位点，需要更激进的采样策略（更高温度、更多噪声）；针对陡峭 funnel 的 orthosteric 位点，需要更精细的局部优化
+   - <strong>初步方法</strong>: 在 diffusion 模型中引入能量景观感知的噪声调度，根据 frustration 分析结果自适应调整采样参数
+   - <strong>验证方式</strong>: 在 allosteric 位点基准上比较自适应采样与固定采样的预测精度
+   - <strong>可能的失败模式</strong>: 自适应策略引入额外计算开销，或对噪声调度的修改破坏模型训练稳定性
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: Co-folding 模型中受体-配体协同自由度的消融研究
+   - <strong>来源局限/观察</strong>: 本文强调联合 co-adaptation 的重要性，但未量化其贡献
+   - <strong>核心假设</strong>: 在 co-folding 模型中，受体-配体联合坐标更新对 allosteric 位点预测的贡献大于 orthosteric 位点
+   - <strong>初步方法</strong>: 对现有 co-folding 模型进行消融：固定受体 vs 联合更新，比较两类位点的预测精度差异
+   - <strong>验证方式</strong>: 若假设成立，则 allosteric 位点的精度下降应显著大于 orthosteric 位点
+   - <strong>可能的失败模式</strong>: 模型架构差异导致消融结果不可比，或 allosteric 位点样本量不足
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: 能量景观拓扑作为 AI 训练数据的筛选标准
+   - <strong>来源局限/观察</strong>: 本文暗示 AI 在 orthosteric 位点表现好可能部分因为训练数据中此类位点更多，但未讨论数据筛选
+   - <strong>核心假设</strong>: 若在训练数据中按 frustration 指标平衡 orthosteric 与 allosteric 位点样本，可提升模型在 allosteric 位点的泛化能力
+   - <strong>初步方法</strong>: 从 PDB 中筛选具有不同 frustration 特征的结合位点，构建平衡训练集，重新训练或微调现有模型
+   - <strong>验证方式</strong>: 在独立 allosteric 位点测试集上比较平衡训练与原始训练的精度
+   - <strong>可能的失败模式</strong>: 数据量不足，或 frustration 指标计算成本过高无法大规模应用
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose that the performance gap between deep learning models on orthosteric versus allosteric protein–ligand binding pose prediction is explained by local energy landscape topology, specifically the magnitude of frustration quenching upon ligand binding and the network centrality of binding sites. They further claim that generative diffusion models outperform single-shot regression because multi-pose sampling is required to cross energy barriers, and that frustration quenching magnitude and structural network centrality serve as physical descriptors of AI performance limits.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, benchmark descriptions, dataset details, or statistical analyses are visible</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods, figures, tables, benchmark definitions, dataset curation details, model specifications, and statistical analyses</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a conceptually appealing hypothesis that links protein energy landscape physics to deep learning performance in binding pose prediction. The framing of the allosteric "blind spot" as a physical property rather than an algorithmic defect is potentially valuable. However, the abstract provides no quantitative evidence, no methodological detail, and no specific results that would allow assessment of whether the claims are supported. The central assertions, while plausible, are presented as conclusions without visible supporting data. The manuscript cannot be evaluated for technical soundness from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biophysicists and structural biologists interested in energy landscape theory would find the frustration-based framework relevant. Machine learning researchers developing protein–ligand docking and co-folding models would be interested in the proposed physical descriptors of model performance limits. Drug discovery scientists using AI-based pose prediction tools would benefit from understanding when and why these tools fail at allosteric sites. The work could also interest researchers studying protein allostery and network analysis of protein structures.</li>
+<li><strong>Major strengths</strong> The hypothesis is clearly articulated and conceptually novel, connecting frustration theory and network topology to AI model performance in a way that reframes a known empirical limitation as a physically grounded phenomenon. The proposed distinction between generative and regression approaches in terms of energy barrier crossing is mechanistically sensible. The abstract is well written and accessible to a broad interdisciplinary audience.</li>
+<li><strong>Major Concerns</strong> </li>
+<li>R1-M1</li>
+<li>R1-M2</li>
+<li>R1-M3</li>
+<li><strong>Minor Comments</strong> </li>
+<li>R1-m1</li>
+<li>R1-m2</li>
+<li>R1-m3</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The frustration-based explanation for AI pose prediction performance differences appears original and potentially significant. However, originality cannot be fully assessed without seeing how the authors distinguish their framework from prior work on energy landscape analysis of binding sites.</li>
+<li>Scientific importance: If substantiated, the findings could provide a predictive framework for when deep learning models will succeed or fail at specific binding sites, which would be valuable for both fundamental biophysics and applied drug discovery. The importance is high but conditional on evidence.</li>
+<li>Interdisciplinary readership: The topic bridges machine learning, biophysics, and structural biology, and the abstract is written in a way that nonspecialists in each field could follow. The potential readership is broad.</li>
+<li>Technical soundness: Cannot be assessed from the abstract alone. No methods, data, or statistical analyses are visible.</li>
+<li>Readability for nonspecialists: The abstract is well structured and uses accessible language, though terms such as "frustration quenching" and "betweenness" may require some background. Overall readability is good.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The hypothesis is interesting and the framing is compelling, but the abstract contains no quantitative results or methodological detail. A supportive posture would require the full manuscript to demonstrate that the claims are backed by rigorous benchmarking, appropriate statistical analysis, and robust validation.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The authors claim that "AI prediction success strongly tracks frustration quenching" and that this explains the orthosteric versus allosteric performance gap.</li>
+<li><strong>Evidence pointer</strong> Abstract only; no figures, tables, or quantitative results provided</li>
+<li><strong>Concern</strong> The central claim of the paper is presented without any visible quantitative support. No correlation coefficients, performance metrics, statistical significance values, or comparative benchmarks are reported in the abstract. The reader cannot assess the strength of the relationship between frustration quenching and prediction success, nor whether the proposed explanation is statistically robust.</li>
+<li><strong>Why it matters</strong> This is the foundational claim of the manuscript. Without quantitative evidence demonstrating a strong and statistically significant relationship between frustration quenching and model performance, the entire framework rests on assertion rather than demonstration. The claim that this relationship "defines the intrinsic limits of AI performance" requires rigorous statistical validation across multiple datasets and models.</li>
+<li>
+<p><strong>Resolution test</strong> The full manuscript must provide quantitative measures of frustration quenching for each binding site, corresponding model performance metrics, and a statistical analysis demonstrating the strength and significance of the relationship. Ideally, this would include correlation analyses, effect sizes, and validation across independent datasets.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological transparency</li>
+<li><strong>Claim pointer</strong> The authors state that they evaluated "leading co-folding and docking paradigms across curated benchmarks and large-scale uncurated datasets" and compared "generative diffusion with single-shot regression."</li>
+<li><strong>Evidence pointer</strong> Abstract only; no methods section, model list, or dataset descriptions provided</li>
+<li><strong>Concern</strong> The abstract provides no information about which specific models were evaluated, how benchmarks were curated, what constitutes "large-scale uncurated datasets," or how the generative and regression approaches were compared. Without this information, the reader cannot evaluate whether the model selection was representative, whether the benchmarks were appropriate, or whether the comparison was fair and controlled.</li>
+<li><strong>Why it matters</strong> The conclusions about model performance and the necessity of multi-pose sampling depend entirely on the specific models and datasets used. If the model selection was biased or the benchmarks were not representative, the conclusions could be artifacts of the specific evaluation setup. Reproducibility and generalizability cannot be assessed without methodological detail.</li>
+<li>
+<p><strong>Resolution test</strong> The full manuscript must provide a complete list of models evaluated, detailed descriptions of benchmark construction and dataset curation, and a clear explanation of the comparison protocol including hyperparameters, training procedures, and evaluation metrics. The methods should be sufficiently detailed to allow independent replication.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Causal inference</li>
+<li><strong>Claim pointer</strong> The authors claim that "multi-pose sampling capacity is required to cross energy barriers and discover the frustration funnel, whereas joint receptor–ligand coordinate co-adaptation governs local optimization within the funnel."</li>
+<li><strong>Evidence pointer</strong> Abstract only; no mechanistic or ablation studies visible</li>
+<li><strong>Concern</strong> The abstract asserts a mechanistic explanation for why generative diffusion models outperform single-shot regression, but no evidence is presented to support this specific causal mechanism. The claim that multi-pose sampling is "required" to cross energy barriers is a strong causal statement that would require ablation studies or controlled experiments isolating the effect of sampling strategy from other model differences.</li>
+<li><strong>Why it matters</strong> The proposed mechanism distinguishes between two aspects of model design and assigns them distinct functional roles. If this mechanistic claim is incorrect, the practical recommendations that might follow from it would be misguided. The claim that sampling capacity is "required" is particularly strong and demands direct evidence.</li>
+<li><strong>Resolution test</strong> The full manuscript must include controlled comparisons that isolate the effect of sampling strategy, such as ablations where a generative model is restricted to single-pose output or where a regression model is augmented with multi-pose sampling. Ideally, the authors would also provide evidence that the proposed mechanism operates as described, for example through analysis of intermediate sampling trajectories or energy landscape exploration behavior.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology clarity</li>
+<li><strong>Affected element</strong> Abstract, term "frustration quenching"</li>
+<li><strong>Evidence pointer</strong> Abstract, first paragraph</li>
+<li><strong>Issue</strong> The term "frustration quenching" is used as a central concept but is not defined in the abstract. While specialists in energy landscape theory may be familiar with the concept, the interdisciplinary readership of this work may not have sufficient background to understand what is meant by the magnitude of frustration quenching and how it is measured.</li>
+<li>
+<p><strong>Required correction</strong> Provide a brief operational definition of frustration quenching in the abstract, such as a one-sentence explanation of how it is quantified and what it represents physically.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Quantitative reporting</li>
+<li><strong>Affected element</strong> Abstract, performance claims</li>
+<li><strong>Evidence pointer</strong> Abstract, no specific numbers reported</li>
+<li><strong>Issue</strong> The abstract states that models "systematically underperform" at allosteric pockets and that "AI prediction success strongly tracks" frustration quenching, but no quantitative magnitudes are given. The reader cannot gauge the size of the performance gap or the strength of the proposed relationship.</li>
+<li>
+<p><strong>Required correction</strong> Include representative quantitative values in the abstract, such as the performance difference between orthosteric and allosteric sites and a correlation coefficient or effect size for the frustration quenching relationship.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Scope clarity</li>
+<li><strong>Affected element</strong> Abstract, generalizability claims</li>
+<li><strong>Evidence pointer</strong> Abstract, final sentence</li>
+<li><strong>Issue</strong> The abstract concludes that frustration quenching and network centrality "define the intrinsic limits of AI performance," which is a very broad claim. It is unclear whether this applies to all deep learning models, all binding sites, and all ligand types, or whether the findings are specific to the models and datasets evaluated.</li>
+<li><strong>Required correction</strong> Qualify the generalizability claim to reflect the scope of the actual evaluation, such as "for the models and datasets evaluated here" or similar limiting language.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that "AI prediction success strongly tracks frustration quenching" is unsupported in the abstract, as no quantitative evidence is provided.</li>
+<li>The claim that "multi-pose sampling capacity is required to cross energy barriers" is unsupported, as no mechanistic or ablation evidence is visible.</li>
+<li>The claim that frustration quenching and network centrality "define the intrinsic limits of AI performance" is an overgeneralization that cannot be assessed from the abstract alone.</li>
+<li>The claim that the allosteric "blind spot" is "a quantitative property of energy landscape architecture rather than a defect of any specific predictive framework" is presented as a conclusion but is not supported by any visible data.</li>
+<li>The comparative performance of "leading co-folding and docking paradigms" is asserted but not quantified or described.</li>
+<li>The distinction between generative diffusion and single-shot regression in terms of energy barrier crossing is asserted but not demonstrated.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

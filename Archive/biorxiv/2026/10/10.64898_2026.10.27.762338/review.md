@@ -1,0 +1,118 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were available for inspection
+- **Shared manuscript claim summary** The authors present ESMfluc, a model that predicts local backbone variability from protein language-model representations and provides interpretability through an exact decomposition of the final attention classifier stage. The model reportedly achieves an AUROC of 0.889 on held-out ATLAS proteins and a mean within-domain Spearman correlation of 0.616 with PB-state variability in filtered mdCATH domains, outperforming PEGASUS on that metric. Influence profiles are claimed to identify biologically meaningful bands of positive and negative influence, supported by comparisons with structural features and ablation of learned attention.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary materials provided
+- **Missing materials affecting confidence** Full methods, all quantitative results beyond those cited in the abstract, model architecture details, training procedures, statistical test descriptions, definitions of "bands" and "peaks," the circular-shift null model, and all figures and tables
+
+## Reviewer
+- **Overall assessment** The abstract presents a technically ambitious and potentially valuable contribution to interpretable protein language-model prediction. The core idea of decomposing attention to distinguish "how strongly" from "what supports" is conceptually appealing and addresses a real gap in the interpretability literature. However, the abstract alone provides insufficient detail to evaluate the validity of the central claims. Several claims are stated without supporting statistics, and the relationship between the proposed interpretability metric and biological meaning remains correlational. The work appears promising but is not yet established from the provided evidence.
+- **Who would be interested in the results, and why** Researchers in computational biology, particularly those working on protein language models, interpretability of deep learning models in biology, and protein dynamics prediction. The work may also interest experimental structural biologists seeking sequence-based predictors of conformational variability, and machine learning researchers focused on attention-based interpretability methods.
+- **Major strengths** The conceptual distinction between attention strength and evidential support is a meaningful contribution to the interpretability literature. The use of an exact decomposition rather than post-hoc attribution methods is methodologically sound in principle. The evaluation against multiple external predictors and on multiple datasets suggests an attempt at rigorous benchmarking. The authors appropriately acknowledge limitations, including the lack of physical communication pathways and the complementary rather than replacement role of their method.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** "The best of seven model conditions, a fine-tuned ESM3 model, reached an area under the receiver operating characteristic curve (AUROC) of 0.889 on 208 held-out ATLAS proteins."  
+  - **Evidence pointer** Abstract, Results section; location not provided  
+  - **Concern** The abstract reports a single AUROC value without confidence intervals, error bars, or statistical comparison against the other six model conditions. It is unclear whether the difference between the best condition and the others is statistically significant, and whether the reported value reflects a single split or multiple seeds.  
+  - **Why it matters** Without measures of variance or significance testing, the reader cannot assess whether the reported performance is robust or the product of favorable initialization or data splitting. This is particularly important given that the authors later report that influence profiles "recurred across training seeds," implying multiple seeds were used, yet the primary performance metric is reported as a point estimate.  
+  - **Resolution test** Provide confidence intervals or standard deviations for the AUROC across seeds and splits, and report statistical significance of the difference between the best and second-best conditions.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** "In 985 mdCATH domains filtered for sequence similarity to ATLAS, excluding the two residues at each chain end, its mean within-domain Spearman correlation with PB-state variability was 0.616, compared with 0.589 for the strongest external predictor, PEGASUS (0.634 and 0.527 with all positions)."  
+  - **Evidence pointer** Abstract, Results section; location not provided  
+  - **Concern** The comparison between ESMfluc and PEGASUS is presented as a difference of 0.027 in mean Spearman correlation, but no significance testing is reported. Moreover, the parenthetical values for "all positions" show PEGASUS at 0.634, which exceeds ESMfluc's 0.616, yet the text does not explain why the filtered condition is the preferred comparison. The choice of filtering appears to favor ESMfluc, and the rationale is not given.  
+  - **Why it matters** The central performance claim of the paper rests on this comparison. If the difference is not statistically significant, or if the filtering choice is not well justified, the claim of superiority over PEGASUS is weakened. The reader needs to understand whether the filtering was pre-registered or post-hoc.  
+  - **Resolution test** Report significance testing for the difference in mean Spearman correlation, justify the filtering criteria, and report results under both conditions with appropriate statistical comparisons.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** "The resulting influence profiles identified bands of positive and negative influence that recurred across training seeds more often than expected after circularly shifting their positions."  
+  - **Evidence pointer** Abstract, Results section; location not provided  
+  - **Concern** The abstract does not define what constitutes a "band," how bands were detected, what threshold was used for "recurred," or how the circular-shift null model was constructed. The statistical test is described in one sentence without any reported effect size, p-value, or measure of enrichment.  
+  - **Why it matters** This is the central interpretability claim of the paper. Without a clear definition of the detection procedure and the null model, the claim of non-random recurrence cannot be evaluated. The circular-shift procedure is a reasonable null model in principle, but its implementation details matter greatly for validity.  
+  - **Resolution test** Provide a precise algorithmic definition of band detection, describe the circular-shift procedure in full, and report the enrichment statistic with confidence intervals or effect sizes.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** "Compared with matched non-band residues, peaks supporting multi-PB predictions showed larger differences in predicted backbone angles between neighboring residues and fewer contacts in experimental structures. Peaks supporting single-PB predictions showed smaller angular differences."  
+  - **Evidence pointer** Abstract, Results section; location not provided  
+  - **Concern** The abstract reports qualitative directional differences ("larger," "fewer," "smaller") without any quantitative values, effect sizes, or significance tests. The matching procedure for "matched non-band residues" is not described.  
+  - **Why it matters** These structural correlations are the primary evidence that the influence profiles carry biological meaning. Without quantitative reporting, the reader cannot assess the strength or reliability of these associations.  
+  - **Resolution test** Report the quantitative values for both band and non-band residues, the matching criteria, and the statistical significance of each comparison.  
+  - **Concern ID** R1-M5  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** "Replacing learned attention with uniform attention reduced candidate multi-PB-supporting bands from five to six to fewer than one per protein."  
+  - **Evidence pointer** Abstract, Results section; location not provided  
+  - **Concern** The ablation result is reported as a range ("five to six") without specifying the exact values, the number of proteins analyzed, or the variance across proteins. The threshold for "candidate multi-PB-supporting bands" is not defined.  
+  - **Why it matters** This ablation is the key causal evidence that learned attention contributes to the identified bands. The imprecise reporting prevents assessment of the effect size and reliability.  
+  - **Resolution test** Report exact mean and standard deviation or distribution of band counts per protein under both conditions, and define the candidate detection threshold.  
+  - **Concern ID** R1-M6  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Scientific importance  
+  - **Claim pointer** "Several external predictors agreed more closely than ESMfluc with root-mean-square fluctuations."  
+  - **Evidence pointer** Abstract, Results section; location not provided  
+  - **Concern** The abstract acknowledges that ESMfluc underperforms external predictors on RMSF, but does not specify which predictors, by how much, or whether this underperformance is statistically significant.  
+  - **Why it matters** This limitation is important for positioning the method. Without specifics, the reader cannot judge whether the interpretability benefits outweigh the performance deficit.  
+  - **Resolution test** Report the quantitative comparison with named predictors and significance testing.  
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Readability for nonspecialists  
+  - **Affected element** Abstract, Background  
+  - **Evidence pointer** Abstract, Background section; location not provided  
+  - **Issue** The term "Protein Block (PB) state" is introduced without definition. Nonspecialist readers may not know what a Protein Block is.  
+  - **Required correction** Add a brief definition or parenthetical explanation of Protein Blocks.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Readability for nonspecialists  
+  - **Affected element** Abstract, Results  
+  - **Evidence pointer** Abstract, Results section; location not provided  
+  - **Issue** The phrase "exact decomposition of the final attention classifier stage" is used without explaining what "exact" means in this context or how it differs from other attribution methods.  
+  - **Required correction** Provide a one-sentence explanation of the decomposition approach and why it is "exact."  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Completeness of reporting  
+  - **Affected element** Abstract, Results  
+  - **Evidence pointer** Abstract, Results section; location not provided  
+  - **Issue** The abstract mentions "seven model conditions" but does not list them.  
+  - **Required correction** Briefly enumerate the seven conditions or refer to a table in the full manuscript.  
+  - **Concern ID** R1-m4  
+  - **Severity** Minor  
+  - **Axis** Completeness of reporting  
+  - **Affected element** Abstract, Conclusions  
+  - **Evidence pointer** Abstract, Conclusions section; location not provided  
+  - **Issue** The GitHub and Zenodo links are provided in footnotes, but it is unclear whether the code and data are publicly accessible at the time of submission.  
+  - **Required correction** State explicitly that code and data are publicly available and provide access details in the main text.  
+  - **Concern ID** R1-m5  
+  - **Severity** Minor  
+  - **Axis** Clarity of claims  
+  - **Affected element** Abstract, Conclusions  
+  - **Evidence pointer** Abstract, Conclusions section; location not provided  
+  - **Issue** The phrase "without establishing physical communication pathways or mutation effects" is useful but could be interpreted as a disclaimer rather than a finding.  
+  - **Required correction** Clarify whether this is a limitation of the current study or a scope statement for the method.  
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4, R1-M5. The abstract does not provide sufficient statistical detail to evaluate the central performance and interpretability claims. The lack of variance measures, significance tests, and precise definitions of detection procedures prevents assessment of robustness. R1-M6 is important for positioning but does not block the core case.
+- **Assessment against Nature-style criteria**  
+  - Originality: The conceptual distinction between attention strength and evidential support appears novel and potentially valuable. The exact decomposition approach is a methodological contribution. However, the abstract does not provide enough detail to assess how this differs from existing interpretability methods beyond the stated limitation of attention weights.  
+  - Scientific importance: The problem of interpretable protein language-model predictions is of growing importance. If the claims hold, the work could provide a useful tool for understanding sequence-structure relationships. However, the abstract does not establish the biological significance of the identified influence patterns beyond correlational evidence.  
+  - Interdisciplinary readership: The work bridges machine learning and structural biology, and the abstract is written in a way that is largely accessible to both communities. The use of domain-specific terms without definition (e.g., Protein Blocks) is a minor barrier.  
+  - Technical soundness: The approach is reasonable in principle, but the abstract provides insufficient statistical detail to assess technical soundness. The lack of confidence intervals, significance tests, and precise algorithmic definitions is a significant gap.  
+  - Readability for nonspecialists: The abstract is generally clear and well-structured. The main text would need to provide more context for terms like Protein Blocks and PB-state variability for a broader audience.  
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual contribution is promising and the direction is worth pursuing, but the abstract alone does not provide sufficient statistical detail to validate the central claims. A full manuscript with complete methods, quantitative results, and significance testing would be needed to assess whether the case is established. Supportive if technical concerns are resolved in the full manuscript.
+
+## Risk / unsupported claims
+- The claim that ESMfluc outperforms PEGASUS on PB-state variability correlation is unsupported without significance testing and justification of the filtering choice.
+- The claim that influence profiles "recurred across training seeds more often than expected" is unsupported without a precise definition of the detection procedure and null model.
+- The claim that peaks supporting multi-PB predictions show structural correlates is unsupported without quantitative values and significance tests.
+- The claim that the ablation with uniform attention reduces band counts is imprecise and unsupported as reported.
+- The AUROC of 0.889 is a point estimate without variance measures and cannot be evaluated for robustness.
+- The relationship between the identified influence patterns and biological function is correlational and explicitly not causal, which is appropriately acknowledged but limits the strength of the conclusions.

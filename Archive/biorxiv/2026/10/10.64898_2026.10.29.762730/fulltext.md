@@ -1,0 +1,23 @@
+## LPT: Orchestrating bounded agentic loops for automated protein binder design
+
+
+## Abstract
+
+Current large language models (LLMs) can reason over scientific information and use code-based tools, but their training knowledge is broad rather than specialized, can be out of date and is hard to attribute to sources. Furthermore, unconstrained agentic workflows and unlimited tool use can consume large amounts of tokens. Here we present LPT (little protein tiger), a framework for fixed orchestration of LLM stages, each running a bounded agentic loop with custom system prompts and tool access, to enable de novo protein binder design from a single natural language prompt. The LLM stages can query a curated literature database, containing ~14000 papers digested into key findings, enabling recall of specialized information. An LLM with database access answered 41/48 test questions drawn from database key findings correctly, while a model without access answered none. In three end-to-end design campaigns, initiated from a single prompt, LPT autonomously identified the design intent, selected targets, structures and hotspot residues and designed candidate binders to disrupt CALCRL/RAMP1, PD-1/PD-L1 and PVR-TIGIT interactions. Cross-validation with multiple folding models confirms a high in silico success rate at minimal token consumption and low computational costs.
+
+
+## Competing Interest Statement
+
+The authors have declared no competing interest.
+
+Supplementary Material
+
+Thank you for your interest in spreading the word about bioRxiv.
+
+NOTE: Your email address is requested solely to identify you as the sender of this article.
+
+
+## Citation Manager Formats
+
+
+## Subject Area

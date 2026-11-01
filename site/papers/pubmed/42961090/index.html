@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beyond Static Structures: New Opportunities to Model the Dynamic Interactions of Cell-Surface Proteins. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Beyond Static Structures: New Opportunities to Model the Dynamic Interactions of Cell-Surface Proteins.</h1>
+      <div class="meta">Wu, Yinghao</div>
+      <div class="meta muted">
+        
+        <span class="journal">Chembiochem : a European journal of chemical biology</span>
+        · 2026-10-30
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42961090/">原文</a>
+      </div>
+      <p class="one-liner">该文综述细胞表面蛋白动态相互作用建模的挑战与机遇，强调MD信息机器学习、生成模型和多尺度模拟，与蛋白质构象采样和结构预测计算课题高度相关但偏展望性综述。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Recent advances in AI-driven structure prediction have transformed structural biology but remain limited for cell-surface proteins mediating transient, context-dependent interactions. Multidomain architectures, flexible linkers, and coupled cis- and trans-interactions challenge current models, leading to inaccurate predictions for key adhesion molecules. These limitations highlight the need to incorporate cellular context, conformational dynamics, and multivalent interactions. Emerging strategies, including MD-informed machine learning, generative models, and multiscale simulations integrated with experimental restraints, offer promising solutions. Together, these approaches aim to bridge static structure prediction with dynamic, physiologically relevant modeling of protein interactions at cell-cell interfaces.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">近期，AI驱动的结构预测进展已改变了结构生物学，但对于介导瞬时的、依赖环境的相互作用的细胞表面蛋白而言，仍存在局限。多结构域架构、柔性连接区以及耦合的顺式（cis）和反式（trans）相互作用对当前模型构成挑战，导致对关键黏附分子的预测不准确。这些局限凸显了纳入细胞环境、构象动力学和多价相互作用的必要性。新兴策略，包括分子动力学（molecular dynamics, MD）信息驱动的机器学习、生成模型以及与实验约束整合的多尺度模拟，提供了有前景的解决方案。总之，这些方法旨在将静态结构预测与细胞-细胞界面处蛋白质相互作用的动态、生理相关建模衔接起来。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Beyond Static Structures: New Opportunities to Model the Dynamic Interactions of Cell-Surface Proteins</li>
+<li><strong>作者</strong>：Wu, Yinghao</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/预印本平台</strong>：Chembiochem : a European journal of chemical biology</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：观点/展望（Perspective/Review）</li>
+<li><strong>领域</strong>：结构生物学 × AI 方法 × 蛋白质动态相互作用</li>
+<li><strong>关键词</strong>：AI-driven structure prediction；cell-surface proteins；conformational dynamics；multivalent interactions；MD-informed machine learning；multiscale simulations</li>
+<li><strong>DOI/arXiv 号</strong>：10.1002/cbic.70592</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-05-09</li>
+<li><strong>该文在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI/深度学习」方向中的<strong>综述/展望类</strong>文献，聚焦于细胞表面蛋白（cell-surface proteins）的动态相互作用建模，指出当前 AI 结构预测方法（如 AlphaFold 类工具）在膜蛋白/细胞表面蛋白上的局限，并提出 MD-informed ML、生成模型、多尺度模拟与实验约束整合等未来方向。该文不提出新方法，而是为该课题提供问题框架与路线图。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文指出当前 AI 结构预测方法对细胞表面蛋白（多结构域、柔性连接子、顺式/反式互作耦合）的动态相互作用建模不足，主张通过 MD-informed 机器学习、生成模型和多尺度模拟结合实验约束，将静态结构预测推进到动态、生理相关的细胞间界面相互作用建模。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何超越静态结构预测，对细胞表面蛋白介导的瞬时、情境依赖的相互作用进行动态建模？</li>
+<li><strong>为什么重要</strong>：细胞表面蛋白（如黏附分子）介导细胞间通讯、免疫识别、组织发育等关键生理过程，其功能高度依赖构象动态和多价相互作用，静态结构远不足以解释其机制。</li>
+<li><strong>现有方法为何不足</strong>：当前 AI 结构预测（如 AlphaFold 类）主要针对单结构域或稳定折叠的蛋白，对多结构域架构、柔性连接子、膜环境下的构象变化以及顺式（cis）与反式（trans）相互作用的耦合缺乏建模能力，导致对关键黏附分子的预测不准确。</li>
+<li><strong>精确研究问题</strong>：Can current AI-driven structure prediction methods accurately capture the dynamic, context-dependent interactions of cell-surface proteins, and if not, what computational strategies can bridge static prediction with physiologically relevant dynamic modeling?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文框架，未经外部系统核验，标注为「仅本文框架」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文主张的位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期实验结构生物学</td>
+<td>X-ray crystallography, cryo-EM</td>
+<td>高分辨率、原子级细节</td>
+<td>静态、脱离细胞环境、难以捕捉瞬时构象</td>
+<td>作为动态建模的实验约束来源</td>
+</tr>
+<tr>
+<td>同源建模与分子动力学（MD）</td>
+<td>Homology modeling, classical MD</td>
+<td>可探索构象空间、捕捉动态</td>
+<td>计算成本高、力场精度有限、难以覆盖大尺度构象变化</td>
+<td>作为动态信息的补充来源</td>
+</tr>
+<tr>
+<td>AI 结构预测</td>
+<td>AlphaFold2/3 等</td>
+<td>高精度静态结构预测、速度快</td>
+<td>对多结构域/柔性连接子/膜蛋白/多价互作建模不足</td>
+<td>本文批判的核心对象</td>
+</tr>
+<tr>
+<td>动态与多尺度建模（未来方向）</td>
+<td>MD-informed ML、生成模型、多尺度模拟+实验约束</td>
+<td>可整合动态信息与细胞情境</td>
+<td>尚在发展中、需实验验证</td>
+<td>本文主张的前进方向</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多结构域架构建模不足</td>
+<td>对含多个结构域的细胞表面蛋白预测不准确</td>
+<td>当前 AI 模型主要针对单结构域训练，难以处理结构域间相对取向与协同运动</td>
+<td>原文摘要：「Multidomain architectures... challenge current models」</td>
+</tr>
+<tr>
+<td>柔性连接子处理困难</td>
+<td>连接子区域构象不确定，影响整体结构预测</td>
+<td>柔性区域缺乏稳定折叠，AI 模型难以从序列直接推断其构象</td>
+<td>原文摘要：「flexible linkers... challenge current models」</td>
+</tr>
+<tr>
+<td>顺式/反式互作耦合缺失</td>
+<td>对 cis- 与 trans- 相互作用耦合的黏附分子预测失败</td>
+<td>当前模型未显式建模细胞膜上的空间约束与分子间互作</td>
+<td>原文摘要：「coupled cis- and trans-interactions challenge current models」</td>
+</tr>
+<tr>
+<td>缺乏细胞情境</td>
+<td>预测结果脱离膜环境、配体浓度、细胞类型等生理条件</td>
+<td>静态结构预测不考虑细胞环境对构象和互作的影响</td>
+<td>原文摘要：「need to incorporate cellular context」</td>
+</tr>
+<tr>
+<td>构象动态缺失</td>
+<td>无法捕捉瞬时、情境依赖的构象状态</td>
+<td>静态预测仅给出单一稳定构象，不覆盖功能相关的动态集合</td>
+<td>原文摘要：「conformational dynamics... limitations」</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：本文是一篇展望性综述，不提出具体算法，而是系统梳理当前 AI 结构预测在细胞表面蛋白上的不足，并列举三类有前景的解决策略：MD-informed machine learning、生成模型（generative models）、多尺度模拟与实验约束整合。</p>
+<p><strong>2) 核心洞察</strong>：细胞表面蛋白的功能本质上是<strong>动态的、情境依赖的、多价的</strong>，而当前 AI 结构预测范式本质上是<strong>静态的、单体的、脱离情境的</strong>。要弥合这一鸿沟，不能仅靠改进静态预测精度，而需要将动态信息（MD 模拟）、生成能力（生成模型）和实验约束（如交联质谱、FRET、cryo-ET）整合进建模流程，实现从「预测一个结构」到「建模一个动态互作系统」的范式转变。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：对于蛋白质结构计算研究这一课题方向，本文的启示是：<strong>结构预测的下一步不是更准的静态结构，而是对构象集合（conformational ensemble）和互作动态的建模</strong>。任何单一方法（无论是 AI 还是 MD）都难以独立解决这一问题，跨方法整合（AI + MD + 实验约束）是必然趋势。此外，<strong>膜环境/细胞情境</strong>应被视为建模的一等公民，而非可忽略的边界条件。</p>
+<h2>07 方法总览</h2>
+<p>本文为综述，无具体方法实现。但按其主张，未来动态建模流程可概括为：</p>
+<ul>
+<li><strong>输入</strong>：细胞表面蛋白的序列、已知结构域结构、实验约束（交联质谱、FRET、cryo-ET 密度图）、膜环境参数</li>
+<li><strong>输出</strong>：动态构象集合、蛋白-蛋白互作模型（含 cis/trans 取向）、多价互作的热力学/动力学描述</li>
+<li><strong>模块</strong>：
+  1. 静态结构预测（现有 AI 方法，作为起点）
+  2. MD 模拟（探索构象空间，生成动态轨迹）
+  3. MD-informed ML（用 MD 数据训练/微调 ML 模型，加速构象采样）
+  4. 生成模型（生成构象集合或多聚体组装）
+  5. 多尺度模拟（从原子到粗粒化，覆盖不同时间和空间尺度）
+  6. 实验约束整合（将实验数据作为软约束或重加权项）</li>
+<li><strong>训练</strong>：ML 模型需在 MD 模拟数据或实验构象数据上训练/微调</li>
+<li><strong>工具</strong>：未具体列出，但涉及 MD 引擎、深度学习框架、结构预测工具</li>
+<li><strong>反馈回路</strong>：实验约束 → 修正模拟/预测 → 新预测 → 实验验证</li>
+<li><strong>假设</strong>：动态构象集合比单一静态结构更能解释细胞表面蛋白功能；实验约束可有效引导计算模型</li>
+</ul>
+<p><strong>文字流程</strong>：序列 → 静态结构预测（AI）→ 以静态结构为起点进行 MD 模拟 → 用 MD 轨迹训练/微调 ML 模型或生成模型 → 整合实验约束进行多尺度模拟 → 输出动态互作模型 → 实验验证 → 迭代优化。</p>
+<h2>08 核心模块拆解</h2>
+<blockquote>
+<p>本文为综述，无实测消融实验。以下「移除后的影响」均为基于作者论述的预期效应，标注为「预期」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>静态结构预测（AI）</td>
+<td>提供初始结构模型</td>
+<td>作为动态模拟的起点</td>
+<td>输入：序列；输出：静态结构</td>
+<td>原文摘要提及当前 AI 预测的局限</td>
+<td>预期：失去起点，动态模拟需从实验结构或同源模型开始，效率降低</td>
+</tr>
+<tr>
+<td>MD 模拟</td>
+<td>探索构象空间、生成动态轨迹</td>
+<td>捕捉柔性连接子和结构域运动</td>
+<td>输入：静态结构+力场；输出：构象轨迹</td>
+<td>原文摘要：「MD-informed machine learning」</td>
+<td>预期：失去动态信息源，ML 模型无训练数据</td>
+</tr>
+<tr>
+<td>MD-informed ML</td>
+<td>加速构象采样、学习构象-序列关系</td>
+<td>弥补 MD 计算成本高的问题</td>
+<td>输入：MD 轨迹；输出：加速预测模型</td>
+<td>原文摘要：「MD-informed machine learning」</td>
+<td>预期：失去加速能力，大规模构象采样不可行</td>
+</tr>
+<tr>
+<td>生成模型</td>
+<td>生成构象集合或多聚体组装</td>
+<td>处理多价互作和构象多样性</td>
+<td>输入：序列/结构约束；输出：构象集合</td>
+<td>原文摘要：「generative models」</td>
+<td>预期：失去生成新构象的能力，只能依赖 MD 采样</td>
+</tr>
+<tr>
+<td>多尺度模拟</td>
+<td>覆盖不同时空尺度</td>
+<td>细胞表面互作涉及从原子到细胞尺度的过程</td>
+<td>输入：原子模型+粗粒化参数；输出：多尺度动态模型</td>
+<td>原文摘要：「multiscale simulations」</td>
+<td>预期：失去跨尺度整合能力，无法建模细胞界面互作</td>
+</tr>
+<tr>
+<td>实验约束整合</td>
+<td>将实验数据引入计算模型</td>
+<td>提高模型生理相关性</td>
+<td>输入：实验数据；输出：约束修正的模型</td>
+<td>原文摘要：「integrated with experimental restraints」</td>
+<td>预期：失去实验锚定，模型可能偏离真实生理状态</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>。本文为综述/展望，未提出新的数学模型或公式。</p>
+<h2>10 实验设计与证据链</h2>
+<p>本文为观点性综述，<strong>无实验数据、无数据集、无基准测试、无消融实验</strong>。其论证基于对现有文献的归纳与批判性分析。</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无（综述）</td>
+<td>当前 AI 结构预测对细胞表面蛋白不足</td>
+<td>未提供具体对比实验</td>
+<td>未提供定量结果</td>
+<td>作者主张需引入动态建模策略</td>
+<td>无法证明这些策略的有效性</td>
+<td>原文摘要</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注</strong>：本文所有主张均为作者观点，缺乏实验验证。读者不应将本文作为方法有效性的证据，而应视为问题框架与方向指引。</p>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅针对细胞表面蛋白（如黏附分子）的动态相互作用建模，不覆盖所有蛋白质。</li>
+<li><strong>oracle/真值输入</strong>：无实验数据作为 oracle；作者依赖文献中的既有实验观察。</li>
+<li><strong>端到端状态</strong>：本文不提出端到端方法，仅提出方向性建议。</li>
+<li><strong>算力成本</strong>：未讨论。</li>
+<li><strong>历史数据依赖</strong>：作者对现有 AI 结构预测方法的批评基于文献报道的已知局限。</li>
+<li><strong>模型依赖</strong>：作者讨论的 AlphaFold 类方法为现有公开工具。</li>
+<li><strong>最难情形</strong>：多结构域、柔性连接子、膜环境下的 cis/trans 互作耦合。</li>
+<li><strong>群体/领域边界</strong>：结论仅适用于细胞表面蛋白，不适用于可溶性蛋白或稳定复合物。</li>
+<li><strong>不确定性</strong>：作者提出的三类策略（MD-informed ML、生成模型、多尺度模拟+实验约束）均处于「有前景但未验证」阶段。</li>
+</ul>
+<p><strong>有边界的复述</strong>：本文主张，对于细胞表面蛋白的动态相互作用，当前 AI 静态结构预测不足以支撑功能解释，需要结合 MD 模拟、生成模型和实验约束的多尺度动态建模策略；但该主张为方向性建议，未经实验验证。</p>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中，作者未明确列出局限性。但作者提及了以下相关约束：</p>
+<p><strong>作者提及的相关约束（非正式局限）</strong>：
+- 当前 AI 结构预测方法对细胞表面蛋白的不足（这是作者批判的对象，而非自我局限）
+- 新兴策略（MD-informed ML、生成模型、多尺度模拟）尚处于「emerging」阶段，暗示其成熟度有限</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>作者主张 MD-informed ML 和生成模型可解决动态建模问题，但未提供任何定量证据或案例</td>
+<td>这些策略可能仅在小规模体系上有效，或面临与现有 AI 方法相同的泛化问题</td>
+<td>若策略无效，则本文的路线图缺乏实际指导价值</td>
+<td>在标准基准（如细胞表面蛋白互作预测任务）上对比新策略与现有方法</td>
+<td>原文摘要仅列举方向，无实验数据</td>
+</tr>
+<tr>
+<td>作者批评 AI 结构预测「静态」，但未讨论 AlphaFold 类方法在预测多构象状态方面的最新进展（如 AF-cluster 等）</td>
+<td>可能低估了现有方法在构象集合预测上的能力</td>
+<td>若现有方法已部分解决动态问题，则本文的「缺口」论述可能夸大</td>
+<td>系统检索 AlphaFold 变体在构象集合预测上的文献</td>
+<td>原文摘要未提及任何具体 AI 方法的变体或改进</td>
+</tr>
+<tr>
+<td>作者强调「细胞情境」的重要性，但未具体说明如何将膜环境、配体浓度等参数形式化地纳入计算模型</td>
+<td>「情境」概念可能过于模糊，难以转化为可计算的约束</td>
+<td>若无法形式化，则「情境感知建模」仅停留在口号层面</td>
+<td>尝试将膜环境参数（如脂质组成、膜曲率）编码为 MD 或 ML 的输入特征</td>
+<td>原文摘要仅提及「cellular context」概念</td>
+</tr>
+<tr>
+<td>作者将「实验约束整合」列为关键策略，但未讨论实验数据的不确定性和稀疏性对建模的影响</td>
+<td>实验约束可能过于稀疏或噪声大，无法有效约束高维构象空间</td>
+<td>若约束质量不足，则整合策略可能失效</td>
+<td>在模拟数据上测试不同噪声水平的约束对预测精度的影响</td>
+<td>原文摘要未讨论实验约束的质量问题</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li><strong>问题框架</strong>：细胞表面蛋白的动态互作建模应被视为独立于静态结构预测的研究问题，其核心挑战是多结构域架构、柔性连接子、cis/trans 耦合和膜环境。</li>
+<li><strong>方法整合思路</strong>：MD-informed ML（用 MD 轨迹训练 ML 模型）是连接物理模拟与深度学习的可行桥梁，可迁移到本课题的构象采样和构象生成任务。</li>
+<li><strong>实验约束的价值</strong>：将实验数据（如交联质谱、FRET、cryo-ET）作为软约束整合进计算模型，可提高预测的生理相关性——这一思路可迁移到分子对接和 MD 模拟的初始条件设定。</li>
+<li><strong>多尺度模拟的必要性</strong>：细胞表面互作涉及从原子到细胞尺度的过程，单一尺度方法难以覆盖；本课题的 MD 模拟可考虑与粗粒化模型结合。</li>
+<li><strong>生成模型的应用场景</strong>：生成模型可用于生成构象集合或多聚体组装，这为构象生成任务提供了新工具选项。</li>
+<li><strong>批判性视角</strong>：对 AI 结构预测的批评应具体化（如指出具体失败案例），而非笼统指责「静态」；本课题在评估新方法时也应注意此点。</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold2/3（Jumper et al., Nature 2021; Abramson et al., Nature 2024）</strong>：本文批评的对象，代表 AI 静态结构预测的 SOTA。本课题中 AlphaFold 类方法用于结构预测和对接，本文指出其在细胞表面蛋白上的局限。</li>
+<li><strong>分子动力学模拟（MD）</strong>：本文主张 MD-informed ML 作为动态建模的核心策略，与本课题中 MD 模拟用于构象采样和自由能计算的方向一致。</li>
+<li><strong>生成模型（如扩散模型在蛋白质设计中的应用，Watson et al., Nature 2023）</strong>：本文提及生成模型用于构象生成，与本课题中构象生成任务相关。</li>
+<li><strong>实验约束整合（如 integrative modeling, Rout &amp; Sali 2019）</strong>：本文强调实验约束的价值，与本课题中利用实验数据引导 MD 或对接的思路一致。</li>
+<li><strong>候选方向（未经外部核验）</strong>：本文未引用具体文献，以上连接基于本课题已有知识框架，标注为候选方向。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：MD-informed 生成模型用于细胞表面蛋白构象集合预测
+   - <strong>来源局限/观察</strong>：本文指出静态预测不足，但未提出具体方法；生成模型在构象生成上有潜力。
+   - <strong>核心假设</strong>：用 MD 轨迹训练的生成模型可生成比单一静态结构更准确的构象集合。
+   - <strong>相对本文的增量</strong>：将本文的方向性建议具体化为可实现的算法。
+   - <strong>初步方法</strong>：对目标细胞表面蛋白运行增强采样 MD，用轨迹训练条件扩散模型或 VAE，生成构象集合；用实验数据（如 SAXS、FRET）验证。
+   - <strong>验证方式</strong>：在已知动态蛋白（如整合素）上对比生成集合与实验构象的吻合度。
+   - <strong>可能的失败模式</strong>：MD 采样不足导致训练数据偏差；生成模型可能生成物理上不合理的构象。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>名称</strong>：膜环境感知的 AlphaFold 微调用于细胞表面蛋白互作预测
+   - <strong>来源局限/观察</strong>：本文指出当前 AI 预测缺乏细胞情境，但未提出解决方案。
+   - <strong>核心假设</strong>：将膜环境特征（脂质组成、膜曲率、跨膜螺旋取向）编码为输入特征，可提升细胞表面蛋白互作预测精度。
+   - <strong>相对本文的增量</strong>：将「细胞情境」概念转化为可计算的特征。
+   - <strong>初步方法</strong>：在 AlphaFold 类模型基础上，增加膜环境编码器，在细胞表面蛋白数据集上微调。
+   - <strong>验证方式</strong>：在已知 cis/trans 互作的黏附分子（如 cadherin）上测试预测精度。
+   - <strong>可能的失败模式</strong>：膜环境特征难以形式化；微调可能过拟合小规模数据集。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>名称</strong>：实验约束引导的多尺度模拟框架用于细胞表面蛋白动态互作
+   - <strong>来源局限/观察</strong>：本文强调实验约束整合的价值，但未给出具体框架。
+   - <strong>核心假设</strong>：将交联质谱和 cryo-ET 密度图作为软约束，可显著提高多尺度模拟对细胞表面蛋白互作的预测能力。
+   - <strong>相对本文的增量</strong>：提供一个可操作的整合框架。
+   - <strong>初步方法</strong>：构建原子-粗粒化混合模型，将实验约束作为偏置势，运行多尺度模拟。
+   - <strong>验证方式</strong>：在已知结构的细胞表面蛋白复合物上回测，比较约束有无的预测差异。
+   - <strong>可能的失败模式</strong>：实验约束稀疏或噪声大；多尺度模拟的参数化复杂。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>名称</strong>：顺式/反式互作耦合的显式建模方法
+   - <strong>来源局限/观察</strong>：本文指出 cis/trans 耦合是当前模型的盲区。
+   - <strong>核心假设</strong>：显式建模细胞膜上的空间约束（如膜距离、取向限制）可捕捉 cis/trans 耦合效应。
+   - <strong>相对本文的增量</strong>：将耦合效应从定性描述转化为定量模型。
+   - <strong>初步方法</strong>：在对接或 MD 模拟中引入膜平面约束和分子取向偏置，模拟 cis/trans 互作。
+   - <strong>验证方式</strong>：在已知 cis/trans 互作的受体-配体对（如 Notch 配体）上测试。
+   - <strong>可能的失败模式</strong>：膜约束的物理参数难以确定；计算成本高。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Conceptual claims and proposed strategies as presented in the abstract</li>
+<li><strong>Shared manuscript claim summary</strong> The abstract argues that AI-driven structure prediction methods are inadequate for cell-surface proteins due to their dynamic, context-dependent interactions, and proposes that emerging computational strategies (MD-informed machine learning, generative models, multiscale simulations with experimental restraints) can bridge static prediction and dynamic modeling.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, methods, or references provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, figures, tables, methods section, validation data, case studies, and references; without these, the technical feasibility and novelty of the proposed approaches cannot be assessed</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a timely and relevant perspective on a genuine limitation in current structural biology. The identification of challenges specific to cell-surface proteins is reasonable and aligns with known issues in the field. However, the abstract is largely programmatic, offering few concrete examples or evidence of successful implementation. The proposed strategies are not new individually, and the abstract does not articulate what specific advance or insight this work contributes beyond existing reviews. The scientific case is plausible but not established from the provided material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists developing protein structure prediction methods, experimentalists studying cell adhesion and receptor signaling, and researchers at the interface of molecular dynamics and machine learning. The topic is relevant to those seeking to move beyond static structures toward physiologically meaningful models of membrane protein interactions.</li>
+<li><strong>Major strengths</strong> The abstract correctly identifies a real gap in current AI-based prediction tools, particularly regarding multidomain architectures and cis-trans coupling. The framing of cellular context and multivalent interactions as key missing elements is scientifically sound. The proposed direction toward integrating experimental restraints with multiscale simulations is sensible and potentially impactful.</li>
+<li><strong>Major Concerns</strong> </li>
+<li>R1-M1</li>
+<li>R1-M2</li>
+<li>R1-M3</li>
+<li><strong>Minor Comments</strong> </li>
+<li>R1-m1</li>
+<li>R1-m2</li>
+<li>R1-m3</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The abstract provides no quantitative evidence, no benchmark results, and no specific examples where current methods fail and proposed methods succeed. Without such data, the central claim that emerging strategies "offer promising solutions" remains an assertion rather than a demonstrated outcome.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The abstract does not clearly distinguish its perspective from existing reviews on protein structure prediction limitations and hybrid simulation approaches. The individual strategies listed are established in the literature.</li>
+<li>Scientific importance: The problem is important, but the abstract does not demonstrate a new conceptual framework or a testable hypothesis that would advance the field.</li>
+<li>Interdisciplinary readership: The topic bridges structural biology, computational chemistry, and machine learning, which could appeal to a broad audience if the full work provides concrete cross-disciplinary insights.</li>
+<li>Technical soundness: Cannot be evaluated from the abstract alone; no methods or validation are presented.</li>
+<li>Readability for nonspecialists: The abstract is concise and accessible, though terms like "MD-informed machine learning" and "multiscale simulations" may require some background.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract outlines a plausible research direction but does not provide sufficient substance to support the claims made. A full manuscript with concrete examples, benchmarks, or a novel methodological framework would be needed to assess whether the case can be made.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The abstract claims that current AI-driven methods "lead to inaccurate predictions for key adhesion molecules" and that emerging strategies "offer promising solutions."</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Concern</strong> The abstract makes specific claims about prediction inaccuracies for adhesion molecules but provides no examples, no quantitative failure rates, and no comparison with alternative methods. Similarly, the proposed solutions are listed without any demonstration of their effectiveness in relevant test cases.</li>
+<li><strong>Why it matters</strong> Without concrete evidence of failure and success, the reader cannot judge whether the problem is as severe as stated or whether the proposed strategies are viable. The claims remain anecdotal and unverifiable.</li>
+<li>
+<p><strong>Resolution test</strong> Provide at least one specific example where current AI tools fail on a cell-surface protein interaction, and show how one of the proposed strategies (e.g., MD-informed ML or multiscale simulation) produces a more accurate or more informative result, with quantitative metrics.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Novelty and contribution</li>
+<li><strong>Claim pointer</strong> The abstract implies that the combination of MD-informed machine learning, generative models, and multiscale simulations with experimental restraints represents a new opportunity.</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Concern</strong> Each of the listed strategies has been discussed in the literature for several years. The abstract does not articulate what is new about their application to cell-surface proteins specifically, nor does it present a novel integration framework or a unique insight that would distinguish this work from prior perspective articles.</li>
+<li><strong>Why it matters</strong> For a perspective or review-type contribution, the value lies in synthesizing existing knowledge into a new framework or identifying a specific gap that others have missed. The abstract does not demonstrate such synthesis.</li>
+<li>
+<p><strong>Resolution test</strong> Clearly state what is novel about the proposed approach relative to existing reviews, and provide a conceptual framework or a specific methodological advance that is not already described in prior literature.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Scope and specificity</li>
+<li><strong>Claim pointer</strong> The abstract claims that "emerging strategies... offer promising solutions" to bridge static and dynamic modeling.</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Concern</strong> The abstract is too general. It does not specify which types of cell-surface proteins are most affected, what timescales or length scales are relevant, what experimental restraints are most useful, or how the proposed methods would be validated. The term "multivalent interactions" is mentioned but not elaborated in terms of mechanistic challenges.</li>
+<li><strong>Why it matters</strong> Without specificity, the abstract reads as a generic call for more dynamic modeling rather than a focused analysis of a tractable problem. This limits its usefulness to practitioners who need concrete guidance on where to invest effort.</li>
+<li><strong>Resolution test</strong> Identify a specific class of cell-surface interactions (e.g., cadherin cis-dimerization or integrin activation) and describe the particular modeling challenge, the relevant timescales, and the type of experimental data that would constrain the model.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Terminology</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Issue</strong> The term "MD-informed machine learning" is not standard and could be interpreted in multiple ways, such as using MD trajectories as training data or using ML to accelerate MD sampling.</li>
+<li>
+<p><strong>Required correction</strong> Define the term explicitly or use a more standard phrase such as "machine learning trained on molecular dynamics trajectories" or "ML-enhanced sampling."</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Missing context</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Issue</strong> The abstract does not mention any specific experimental technique (e.g., cryo-EM, crosslinking, FRET) that would provide the restraints for multiscale simulations, leaving the reader uncertain about the practical feasibility.</li>
+<li>
+<p><strong>Required correction</strong> Add a brief mention of which experimental methods are most compatible with the proposed modeling strategies.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability</li>
+<li><strong>Affected element</strong> Sentence structure</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Issue</strong> The final sentence is somewhat vague, as "bridge static structure prediction with dynamic, physiologically relevant modeling" does not specify what the end product would look like or how it would be used.</li>
+<li><strong>Required correction</strong> Clarify the intended output, such as "predicting conformational ensembles" or "generating testable hypotheses for mutagenesis experiments."</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that current AI methods "lead to inaccurate predictions for key adhesion molecules" is unsupported without specific examples or benchmarks.</li>
+<li>The assertion that the listed emerging strategies "offer promising solutions" is unsupported without demonstration of their application to cell-surface proteins.</li>
+<li>The implicit claim that the combination of these strategies represents a new opportunity is not substantiated relative to existing literature.</li>
+<li>The overall feasibility of integrating experimental restraints with multiscale simulations for cell-surface proteins is not assessable from the abstract alone.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

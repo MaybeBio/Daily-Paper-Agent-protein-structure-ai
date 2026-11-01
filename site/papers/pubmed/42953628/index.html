@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prediction of Residue-Level Base Preference for DNA-Binding Proteins Using a Multimodal Learning Framework. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Prediction of Residue-Level Base Preference for DNA-Binding Proteins Using a Multimodal Learning Framework.</h1>
+      <div class="meta">Li, Siyuan; He, Wenyan; Zhang, Mengru; Zhang, Xin; Fang, Wei-Qun; Xu, Min-Juan; Shi, Yi; Cai, Yujia; Zhang, Yong; Da, Lin-Tai</div>
+      <div class="meta muted">
+        
+        <span class="journal">JACS Au</span>
+        · 2026-10-29
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42953628/">原文</a>
+      </div>
+      <p class="one-liner">该文提出多模态深度学习框架3M-BSIP，融合蛋白语言模型、图神经网络和表面点云特征，预测DNA结合蛋白的界面残基和碱基偏好，并可用于蛋白设计，核心围绕蛋白质结构计算建模，方法创新且应用明确。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Specific recognition between proteins and DNA governs essential cellular functions, yet the binding specificity of most DNA-binding proteins (DBPs) remains experimentally uncharacterized and high-throughput experimental methods still lag far behind the ever-growing protein data set. Here, we present 3M-BSIP (3-modal base-specific interaction predictor), a multimodal deep learning framework capable of predicting the DNA-binding interface and residue-level base preference for DBPs. 3M-BSIP constructs a holistic protein representation by integrating three distinct modalities: a protein language model capturing evolutionary conservation; a graph neural network encoding 3D structural features; and a hierarchical encoder characterizing physicochemical properties of protein surface pointclouds. Comprehensive benchmarking demonstrates that 3M-BSIP achieves SOTA performance on both interface-residue identification and base-preference predictions. Crucially, the model maintains robust performance on computationally constructed protein structures and is also tolerant toward those undergoing profound structural rearrangements upon DNA binding. Two real-world applications of 3M-BSIP demonstrate that our model not only can accurately predict the specific binding motif of structurally unknown transcription factors but also, more importantly, can guide rapid reprogramming of the base preference of DBPs based on a purely computational pipeline. Therefore, 3M-BSIP holds great potential in annotating the binding motifs of all DBPs in a high-throughput manner and designing new DBPs with desired base specificities.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质与DNA之间的特异性识别调控着关键的细胞功能，然而大多数DNA结合蛋白（DBPs）的结合特异性在实验上仍未得到表征，且高通量实验方法远远落后于不断增长的蛋白质数据集。在此，我们提出3M-BSIP（三模态碱基特异性相互作用预测器），这是一种多模态深度学习框架，能够预测DBPs的DNA结合界面和残基水平的碱基偏好。3M-BSIP通过整合三种不同模态构建整体蛋白质表示：捕捉进化保守性的蛋白质语言模型；编码三维结构特征的图神经网络；以及表征蛋白质表面点云理化性质的分层编码器。综合基准测试表明，3M-BSIP在界面残基识别和碱基偏好预测方面均达到SOTA性能。关键在于，该模型在计算构建的蛋白质结构上保持稳健性能，并且对DNA结合时发生显著结构重排的蛋白质也具有耐受性。3M-BSIP的两个实际应用表明，我们的模型不仅能准确预测结构未知转录因子的特异性结合基序，更重要的是，能基于纯计算流程指导DBPs碱基偏好的快速重编程。因此，3M-BSIP在高通量注释所有DBPs的结合基序以及设计具有所需碱基特异性的新型DBPs方面具有巨大潜力。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Prediction of Residue-Level Base Preference for DNA-Binding Proteins Using a Multimodal Learning Framework</li>
+<li><strong>作者</strong>：Li, Siyuan; He, Wenyan; Zhang, Mengru; Zhang, Min-Juan; Xu, Min-Juan; Shi, Yi; Cai, Yujia; Zhang, Yong; Da, Lin-Tai</li>
+<li><strong>单位</strong>：未提供（推测为上海交通大学，依据致谢部分 "Shanghai Jiao Tong University"）</li>
+<li><strong>期刊/平台</strong>：JACS Au</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：研究论文（含方法开发 + 实验验证）</li>
+<li><strong>领域</strong>：蛋白质-DNA 相互作用预测；结构生物信息学；多模态深度学习</li>
+<li><strong>关键词</strong>：DNA-binding proteins; base preference; multimodal learning; protein language model; graph neural network; molecular surface</li>
+<li><strong>DOI/ID</strong>：10.1021/jacsau.6c00925</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：PDB 结构数据（2,714 个复合物）、AlphaFold3 预测结构（60 个）、JASPAR CORE 2024 数据库</li>
+<li><strong>阅读日期</strong>：2026-11-01</li>
+<li><strong>方向定位</strong>：该文属于「蛋白质结构相关计算研究 × AI 方法」交叉方向，聚焦于从蛋白质结构（实验或计算预测）预测其 DNA 结合界面和残基水平的碱基偏好。与 AlphaFold3、DeepPBS、NA-MPNN 等方法直接相关，属于结构→功能（结合特异性）预测的端到端方法，且强调对 apo 构象和计算预测结构的鲁棒性。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>3M-BSIP 通过融合蛋白质语言模型（SaProt）、图神经网络（GVP-GNN）和分子表面点云编码器三种模态，以多任务学习方式从蛋白质结构预测 DNA 结合界面、残基接触强度排序和残基水平碱基偏好（A/T/C/G），在实验结构和计算预测结构上均达到 SOTA 性能，并成功指导了 BsaXI 限制性内切酶的碱基偏好重编程。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：给定一个 DNA 结合蛋白（DBP）的结构（实验解析或计算预测），能否预测其 DNA 结合界面残基，以及每个界面残基对四种碱基（A/T/C/G）的偏好？</li>
+<li><strong>为什么重要</strong>：蛋白质-DNA 特异性识别是基因调控、表观遗传、基因组编辑等功能的基础。但大多数 DBP 的结合基序（motif）未被实验表征，高通量实验方法（如 ChIP-seq、SELEX-seq）成本高、通量有限，且无法覆盖所有物种和蛋白家族。</li>
+<li><strong>现有方法不足</strong>：</li>
+<li>早期方法依赖同源序列比对或已知基序数据库，无法推广到新家族。</li>
+<li>结构-based 方法（如 DeepPBS、NA-MPNN）需要 DNA 结构作为输入，且对 apo 构象或计算预测结构敏感。</li>
+<li>现有方法多聚焦于界面预测，缺乏残基水平的碱基偏好预测能力。</li>
+<li><strong>精确研究问题</strong>：Can a multimodal deep learning framework, trained solely on protein structure and sequence features, predict residue-level base preferences for DNA-binding proteins with sufficient accuracy to guide experimental design and protein engineering?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文 Introduction 和 Discussion 的叙述，结合外部知识标注，属于「经外部核验」的框架。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列同源推断</td>
+<td>基于 PWM 数据库（JASPAR）、同源比对</td>
+<td>简单、可解释</td>
+<td>依赖已知家族；无法处理新蛋白</td>
+<td>超越</td>
+</tr>
+<tr>
+<td>结构-based 界面预测</td>
+<td>GraphBind、GeoBind</td>
+<td>利用 3D 结构信息</td>
+<td>仅预测界面，不预测碱基偏好；对 apo 构象敏感</td>
+<td>超越</td>
+</tr>
+<tr>
+<td>结构-based 基序预测</td>
+<td>DeepPBS、NA-MPNN</td>
+<td>可预测结合基序</td>
+<td>需要 DNA 结构作为输入；计算成本高；对构象变化敏感</td>
+<td>超越</td>
+</tr>
+<tr>
+<td>多模态端到端预测</td>
+<td><strong>3M-BSIP（本文）</strong></td>
+<td>仅需蛋白结构；预测残基级碱基偏好；对 apo/计算结构鲁棒</td>
+<td>无法直接输出连续基序（需 ntM 后处理）；对 DNA 形状读出（shape readout）机制覆盖有限</td>
+<td>本文</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：3M-BSIP 是首个仅依赖蛋白质结构（无需 DNA 结构）即可预测残基水平碱基偏好的多模态框架，且对构象变化和计算预测结构具有鲁棒性。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验表征滞后</td>
+<td>JASPAR 仅覆盖 53% 人类 TFs、32% 拟南芥 TFs；45% 植物 TF 家族在哺乳动物中缺失</td>
+<td>高通量实验方法通量有限，无法跟上基因组时代蛋白发现速度</td>
+<td>Introduction 第 1-2 段</td>
+</tr>
+<tr>
+<td>非经典 DBP 被忽视</td>
+<td>超过 22% 非经典 DBP 具有序列特异性结合</td>
+<td>传统方法聚焦于已知 TF 家族</td>
+<td>Introduction 第 2 段</td>
+</tr>
+<tr>
+<td>现有方法需 DNA 结构</td>
+<td>DeepPBS、NA-MPNN 需要 DNA 作为输入</td>
+<td>DNA 构象高度柔性，引入偏差</td>
+<td>Introduction 第 3 段</td>
+</tr>
+<tr>
+<td>对 apo 构象敏感</td>
+<td>结合诱导的构象变化导致预测失效</td>
+<td>现有方法在训练时依赖 holo 构象特征</td>
+<td>Results 图 4D</td>
+</tr>
+<tr>
+<td>缺乏残基级碱基偏好预测</td>
+<td>现有方法仅预测界面或整体基序</td>
+<td>缺乏细粒度标注数据和方法设计</td>
+<td>Introduction 第 3 段</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>3M-BSIP 是一个三模态深度学习框架：
+- <strong>模态 1</strong>：蛋白质语言模型（SaProt，650M 参数）处理序列+结构序列（3Di）的交叉输入，捕获进化保守性
+- <strong>模态 2</strong>：GVP-GNN 处理 Cα 骨架图（节点=残基，边=空间邻近），编码 SE(3)-等变几何特征
+- <strong>模态 3</strong>：基于 dMaSIF 的分子表面点云编码器，捕获表面电荷、疏水性、曲率等理化性质</p>
+<p>三个模态通过交叉注意力融合，输出三个预测头：界面分类、接触强度排序、碱基偏好。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>洞察 1</strong>：蛋白质-DNA 识别特异性由「进化保守性 + 3D 几何 + 表面理化性质」三者共同决定，单一模态不足以捕捉完整的识别密码（recognition code）。</li>
+<li><strong>洞察 2</strong>：残基水平的碱基偏好可以通过「化学感知距离」（对氢键、疏水、盐桥赋予不同权重）从结构自动生成监督信号，无需人工标注。</li>
+<li><strong>洞察 3</strong>：以序列为中心（sequence-centric）的交叉注意力融合优于简单的特征拼接，因为序列特征可以作为「锚点」来查询结构信息。</li>
+<li><strong>洞察 4</strong>：模型对 apo 构象的鲁棒性源于训练数据中天然包含的构象多样性，以及表面特征对侧链重排的相对不敏感性。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li>多模态融合的价值不在于「更多特征」，而在于不同模态捕获了互补的物理化学信息（进化 vs 几何 vs 表面化学）。</li>
+<li>自动生成细粒度监督信号（如化学感知距离）可以绕过人工标注瓶颈，这一策略可迁移到其他分子相互作用预测任务。</li>
+<li>对构象变化的鲁棒性可能来自训练数据的多样性而非模型架构本身，这提示数据增强策略的重要性。</li>
+</ul>
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>：蛋白质结构（PDB 文件或 AlphaFold3 预测结构），仅需蛋白质坐标和序列。</p>
+<p><strong>输出</strong>：
+1. 每个残基的界面概率 p(R) ∈ [0,1]
+2. 每个残基的接触强度分数 s(R)
+3. 每个残基的碱基偏好分布 q(R) ∈ R⁴（A/T/C/G）</p>
+<p><strong>处理流程</strong>：</p>
+<pre><code>蛋白质结构 (PDB/AlphaFold3)
+    │
+    ├── 序列 + 3Di → SaProt (650M) → 序列嵌入
+    │
+    ├── Cα 图 (6.0Å 阈值) → GVP-GNN (3层) → 几何嵌入
+    │
+    └── dMaSIF 表面点云 → 分层编码器 → 表面嵌入
+                    │
+                    ▼
+        序列中心交叉注意力融合
+                    │
+                    ▼
+        三个预测头（多任务学习）
+        ├── 界面分类 (加权 BCE)
+        ├── 接触强度排序 (LambdaRank/NDCG)
+        └── 碱基偏好 (交叉熵)
+</code></pre>
+<p><strong>监督信号生成</strong>：
+- 界面残基：与 DNA 任何重原子距离 &lt; 4.5Å
+- 化学感知距离：d_chem(a,b) = ||x_a - x_b||₂ · α(t_a, t_b)，其中 α 对疏水=0.85、氢键=0.82、盐桥=0.80
+- 碱基偏好：基于侧链重原子与碱基重原子的最小距离，通过高斯核和 logit 变换生成 4 维分布</p>
+<p><strong>训练</strong>：
+- 优化器：Adam（SaProt 主干 lr=5e-5，下游模块 lr=5e-4）
+- 权重衰减：1e-5
+- 学习率调度：线性 warmup 5 epochs，之后验证损失不降则减半（最小 1e-6）
+- 损失权重：w_cls=2, w_pref=1, w_rank=1
+- 硬件：NVIDIA V100 (32GB)</p>
+<p><strong>推理后处理</strong>（用于基序预测）：ntM（nucleotide-mer）结构重建方法，将残基级碱基偏好组合成连续 DNA 基序。</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SaProt 序列编码器</td>
+<td>捕获进化保守性和序列上下文</td>
+<td>进化约束是 DNA 结合特异性的首要决定因素</td>
+<td>输入：aa+3Di 交叉序列；输出：残基级嵌入</td>
+<td>消融实验显示序列模态贡献最大（图 4D）</td>
+<td>碱基偏好准确率显著下降（0.60→0.44，图 4D）</td>
+</tr>
+<tr>
+<td>GVP-GNN 几何编码器</td>
+<td>编码 3D 折叠和残基空间关系</td>
+<td>DNA 结合需要特定的 3D 排列</td>
+<td>输入：Cα 图（6.0Å 邻域）；输出：残基级几何嵌入</td>
+<td>消融实验显示几何模态对界面预测重要</td>
+<td>界面 MCC 下降，但对碱基偏好影响较小 [Analysis]</td>
+</tr>
+<tr>
+<td>dMaSIF 表面编码器</td>
+<td>捕获表面电荷、疏水性和局部曲率</td>
+<td>表面理化性质决定与 DNA 的化学互补性</td>
+<td>输入：表面点云（46维特征/点）；输出：残基级表面嵌入</td>
+<td>消融实验显示表面模态对碱基偏好有补充作用</td>
+<td>碱基偏好准确率下降，特别是对极性残基 [Analysis]</td>
+</tr>
+<tr>
+<td>交叉注意力融合</td>
+<td>以序列特征为查询，选择性整合几何和表面信息</td>
+<td>不同残基可能需要不同模态的主导信息</td>
+<td>输入：三种嵌入；输出：融合嵌入</td>
+<td>对比实验显示优于简单拼接（图 4E）</td>
+<td>融合策略降级为拼接时性能下降</td>
+</tr>
+<tr>
+<td>多任务预测头</td>
+<td>同时预测界面、排序、碱基偏好</td>
+<td>三个任务共享表征，互相正则化</td>
+<td>输入：融合嵌入；输出：三个预测</td>
+<td>多任务学习提升所有任务性能</td>
+<td>单任务训练时碱基偏好准确率下降 [Analysis]</td>
+</tr>
+<tr>
+<td>ntM 结构重建</td>
+<td>将残基级预测转化为连续 DNA 基序</td>
+<td>残基级预测需要整合为可验证的基序</td>
+<td>输入：碱基偏好热图；输出：DNA 基序</td>
+<td>51910 案例验证（图 5）</td>
+<td>无法直接输出基序，需额外后处理</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>1. 化学感知距离</strong>：</p>
+<pre><code>d_chem(a,b) = ||x_a - x_b||₂ · α(t_a, t_b)
+</code></pre>
+<ul>
+<li>x_a, x_b：原子 a, b 的坐标</li>
+<li>t_a, t_b：原子类型（疏水、氢键供体/受体、带电）</li>
+<li>α：折扣因子（疏水=0.85，氢键=0.82，盐桥=0.80）</li>
+</ul>
+<p><strong>2. 残基几何分数</strong>：</p>
+<pre><code>s_geo(R) = exp(-d_min(R, N*(R))² / (2σ²))
+</code></pre>
+<ul>
+<li>d_min(R, N<em>(R))：残基 R 与其最近核苷酸 N</em> 的最小化学感知距离</li>
+<li>σ = 3.0 Å（高斯核宽度）</li>
+</ul>
+<p><strong>3. 碱基偏好 logit</strong>：</p>
+<pre><code>l_y = 12 / (1 + exp(b̃/2))     （正确碱基 y）
+l_{i≠y} = 2 / (1 + exp((4-b̃)/2))  （错误碱基 i）
+</code></pre>
+<ul>
+<li>b̃ = min(b(R,N), 4.5Å)，b(R,N) 为残基侧链与碱基重原子的最小距离</li>
+<li>正确碱基获得显著更高的 logit，经 softmax 后形成监督分布</li>
+</ul>
+<p><strong>4. 最终监督信号</strong>：</p>
+<pre><code>h(R) = s_geo(R) ⊙ p(R)
+</code></pre>
+<ul>
+<li>⊙ 表示逐元素乘法</li>
+<li>p(R) = softmax(l(R))，为碱基分配系数</li>
+</ul>
+<p><strong>5. 总损失</strong>：</p>
+<pre><code>L_total = w_cls · L_cls + w_pref · L_pref + w_rank · L_rank
+</code></pre>
+<ul>
+<li>w_cls = 2, w_pref = 1, w_rank = 1</li>
+<li>L_cls：加权二元交叉熵（界面 vs 非界面）</li>
+<li>L_pref：碱基偏好交叉熵</li>
+<li>L_rank：基于 LambdaRank 的列表排序损失（优化 NDCG）</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<h3>数据集</h3>
+<table>
+<thead>
+<tr>
+<th>数据集</th>
+<th>规模</th>
+<th>来源</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PDB 实验结构</td>
+<td>2,714 个复合物（去冗余后）</td>
+<td>PDB（&lt;4.0Å，蛋白 40-600 aa，DNA &gt;8bp，2025-02-28 前）</td>
+<td>训练/验证/测试</td>
+</tr>
+<tr>
+<td>AF3_Test_apo</td>
+<td>60 个 apo 结构</td>
+<td>AlphaFold3 预测（JASPAR 2024 中每类 10 个 TF）</td>
+<td>鲁棒性测试</td>
+</tr>
+<tr>
+<td>AF3_Test_holo</td>
+<td>60 个 holo 结构</td>
+<td>AlphaFold3 预测</td>
+<td>鲁棒性测试</td>
+</tr>
+<tr>
+<td>Geo_Test_131</td>
+<td>131 个复合物</td>
+<td>BioLiP 数据库（去冗余，与训练集无重叠）</td>
+<td>外部基准</td>
+</tr>
+</tbody>
+</table>
+<h3>评测协议</h3>
+<ul>
+<li>界面预测：MCC（Matthews Correlation Coefficient）</li>
+<li>碱基偏好：准确率（accuracy）</li>
+<li>接触排序：NDCG@5</li>
+<li>对比基线：GeoBind（SOTA 界面预测方法）</li>
+</ul>
+<h3>关键实验与结果</h3>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 Claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主测试集性能</td>
+<td>3M-BSIP 在界面预测上达到 SOTA</td>
+<td>对比 GeoBind，PDB_Test_368</td>
+<td>界面 MCC = 0.65（优于 GeoBind 0.545 vs 0.523）</td>
+<td>多模态方法优于单模态</td>
+<td>差异在低序列相似性子集上缩小</td>
+<td>Results 图 4A-B</td>
+</tr>
+<tr>
+<td>碱基偏好预测</td>
+<td>模型能预测残基级碱基偏好</td>
+<td>无直接对比方法（新任务）</td>
+<td>准确率 0.60</td>
+<td>首次实现残基级碱基偏好预测</td>
+<td>准确率仍有提升空间</td>
+<td>Results 图 4C</td>
+</tr>
+<tr>
+<td>消融实验</td>
+<td>三种模态均必要</td>
+<td>单模态/双模态 vs 完整模型</td>
+<td>碱基偏好准确率从 0.60 降至 0.44（仅序列）</td>
+<td>多模态互补</td>
+<td>各模态贡献权重未量化</td>
+<td>Results 图 4D</td>
+</tr>
+<tr>
+<td>融合策略对比</td>
+<td>交叉注意力优于简单拼接</td>
+<td>交叉注意力 vs 拼接 vs 其他融合</td>
+<td>交叉注意力最优</td>
+<td>序列中心查询策略有效</td>
+<td>未测试所有可能的融合策略</td>
+<td>Results 图 4E</td>
+</tr>
+<tr>
+<td>Geo_Test_131 外部基准</td>
+<td>泛化到独立数据集</td>
+<td>对比 GeoBind</td>
+<td>界面 MCC 0.545 vs 0.523</td>
+<td>泛化能力优于基线</td>
+<td>提升幅度有限</td>
+<td>Results 图 4A</td>
+</tr>
+<tr>
+<td>AF3_Test_apo/holo</td>
+<td>对计算预测结构鲁棒</td>
+<td>apo vs holo 输入</td>
+<td>R² &gt; 0.71（两形式间相关性）</td>
+<td>对构象变化不敏感</td>
+<td>未测试极端构象变化</td>
+<td>Results 图 4D</td>
+</tr>
+<tr>
+<td>51910 TF 基序预测</td>
+<td>预测未知 TF 的结合基序</td>
+<td>预测 "TTAxT" vs 实验验证</td>
+<td>EMSA 和报告基因实验确认</td>
+<td>可用于功能未知 DBP 的基序注释</td>
+<td>仅一个案例</td>
+<td>Results 图 5</td>
+</tr>
+<tr>
+<td>BsaXI 重编程</td>
+<td>引导碱基偏好改变</td>
+<td>3 个突变体 vs WT</td>
+<td>2/3 突变体 SPR 验证偏好反转</td>
+<td>可用于 DBP 工程</td>
+<td>未测试体内功能</td>
+<td>Results 图 6</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<p><strong>任务范围</strong>：3M-BSIP 预测的是残基水平的碱基偏好（即每个残基倾向于接触哪种碱基），而非直接预测整个 DNA 结合基序。基序需要通过 ntM 后处理重建。</p>
+<p><strong>输入限制</strong>：模型仅接受蛋白质结构输入，不利用 DNA 序列或结构信息。这意味着模型学习的是「蛋白质内在的 DNA 识别倾向」，而非「特定 DNA 序列的适配性」。</p>
+<p><strong>真值/监督信号</strong>：训练标签来自结构几何（化学感知距离），而非实验测定的结合特异性数据。因此，模型预测的是「结构上可能」的碱基偏好，而非「功能上必需」的偏好。</p>
+<p><strong>端到端状态</strong>：从蛋白质结构到碱基偏好是端到端的，但基序预测需要额外的结构重建步骤，并非完全端到端。</p>
+<p><strong>鲁棒性边界</strong>：对 apo 构象的鲁棒性在 R² &gt; 0.71 的水平上得到验证，但测试集规模有限（54 个实验 apo/holo 对，60 个 AlphaFold3 对），且未覆盖极端构象变化（如无序蛋白、诱导拟合机制）。</p>
+<p><strong>性能边界</strong>：在低序列相似性（高 Levenshtein 距离）子集上，性能下降明显（MCC 从 0.94 降至 0.36），说明对全新折叠的泛化能力有限。</p>
+<p><strong>有边界的复述</strong>：3M-BSIP 能够从蛋白质结构（实验或计算预测）准确预测 DNA 结合界面和残基水平碱基偏好，在已知折叠家族内表现优异，对 apo 构象和计算预测结构具有鲁棒性，并已通过实验验证其指导 DBP 基序注释和特异性重编程的实用性；但其性能随进化距离增加而下降，且无法直接输出连续基序。</p>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无法直接输出连续基序</td>
+<td>预测的是残基级碱基偏好，需 ntM 后处理才能得到基序</td>
+<td>开发端到端的基序预测方法</td>
+<td>Discussion 第 3 段</td>
+</tr>
+<tr>
+<td>对 DNA 形状读出（shape readout）机制覆盖有限</td>
+<td>模型主要捕捉碱基化学识别（base readout），对 DNA 构象介导的间接识别不敏感</td>
+<td>引入 DNA 结构特征或形状描述符</td>
+<td>Discussion 第 4 段</td>
+</tr>
+<tr>
+<td>单蛋白输入限制</td>
+<td>无法编码多聚体 DBP 中多个亚基的协同识别</td>
+<td>扩展框架以支持多链输入</td>
+<td>Discussion 第 4 段</td>
+</tr>
+<tr>
+<td>高分辨率复合物结构数据有限</td>
+<td>训练数据依赖 PDB 中已解析的 DBP-DNA 复合物，覆盖不全</td>
+<td>结合 AlphaFold3 等生成更多训练数据</td>
+<td>Discussion 第 5 段</td>
+</tr>
+<tr>
+<td>对低序列相似性蛋白泛化有限</td>
+<td>性能随 Levenshtein 距离增加而下降</td>
+<td>引入更多样化的训练数据或领域自适应</td>
+<td>Results 图 4A-B 讨论</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>监督信号完全来自结构几何</td>
+<td>结构几何 ≠ 结合特异性。某些残基可能在结构中靠近 DNA 但不参与特异性识别；反之，远离的残基可能通过水分子介导识别</td>
+<td>如果监督信号有偏，模型学到的可能是「结构邻近性」而非「功能特异性」</td>
+<td>对比实验：用实验测定的突变数据（如 SELEX 富集分析）作为真值重新训练，比较性能差异</td>
+<td>Methods 2.5 节</td>
+</tr>
+<tr>
+<td>训练/测试集划分基于结构相似性而非功能相似性</td>
+<td>同一结构折叠可能结合不同 DNA 序列（如 TF 家族内的多样性），模型可能学到折叠-基序的偶联而非通用识别规则</td>
+<td>影响模型对新功能但相似折叠的预测可靠性</td>
+<td>按功能类别（如 TF 家族）而非结构相似性划分训练/测试集，重新评估</td>
+<td>Methods 2.2 节</td>
+</tr>
+<tr>
+<td>与 GeoBind 的对比仅限界面预测</td>
+<td>GeoBind 不预测碱基偏好，因此无法直接对比核心新功能；碱基偏好预测缺乏外部基准</td>
+<td>无法确认碱基偏好预测的绝对水平是否足够好</td>
+<td>在已知结构的 DBP-DNA 复合物上，将预测的碱基偏好与实验突变数据（如丙氨酸扫描）系统对比</td>
+<td>Results 图 4A-C</td>
+</tr>
+<tr>
+<td>对 apo 构象鲁棒性的机制解释不足</td>
+<td>作者归因于训练数据多样性，但未排除模型「忽略构象细节」的可能性（即模型可能主要依赖序列特征）</td>
+<td>如果模型实际依赖序列而非结构，则「结构预测」的定位需要重新审视</td>
+<td>控制实验：固定序列、仅改变输入结构（如使用不同构象），观察预测变化幅度</td>
+<td>Results 图 4D</td>
+</tr>
+<tr>
+<td>BsaIX 重编程实验样本量小</td>
+<td>仅 3 个突变体，2 个成功，统计功效有限</td>
+<td>无法排除偶然性</td>
+<td>扩大突变体数量，增加阴性对照（随机突变）</td>
+<td>Results 图 6</td>
+</tr>
+<tr>
+<td>未与其他碱基偏好预测方法对比</td>
+<td>如 DeepPBS 也可输出碱基偏好，但作者未与之对比</td>
+<td>无法确认 SOTA 声称的完整性</td>
+<td>在相同基准上与 DeepPBS、NA-MPNN 等对比</td>
+<td>Results 图 4</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>化学感知距离作为自动标注策略</strong>：通过定义原子类型依赖的折扣因子（疏水 0.85、氢键 0.82、盐桥 0.80），可以从结构自动生成残基-碱基偏好标签。这一策略可迁移到其他分子相互作用预测任务（如蛋白-配体、蛋白-蛋白），避免人工标注瓶颈。</p>
+</li>
+<li>
+<p><strong>序列中心交叉注意力融合</strong>：以序列特征为查询（query），结构特征为键/值（key/value）的融合策略优于简单拼接。这一设计可迁移到任何「序列+结构」多模态框架，如蛋白-蛋白相互作用预测、功能位点注释。</p>
+</li>
+<li>
+<p><strong>多任务学习的内在正则化</strong>：同时预测界面、排序、碱基偏好三个任务，共享表征可以互相约束。这一设计可迁移到其他需要多层次预测的任务（如同时预测结合位点和结合强度）。</p>
+</li>
+<li>
+<p><strong>对 apo 构象鲁棒性的实现路径</strong>：通过训练数据中天然包含的构象多样性（而非显式数据增强），模型可以学习构象不变的界面特征。这对「从 apo 结构预测结合功能」的任务（如虚拟筛选、隐式对接）有直接借鉴意义。</p>
+</li>
+<li>
+<p><strong>残基级碱基偏好热图作为中间表示</strong>：将基序预测分解为残基级碱基偏好 + 结构重建两步，比直接预测基序更灵活，且可解释性更强。这一思路可迁移到其他「序列基序」预测任务。</p>
+</li>
+<li>
+<p><strong>计算预测结构作为训练/测试数据</strong>：使用 AlphaFold3 预测结构构建测试集（AF3_Test_apo/holo），验证模型对计算结构的鲁棒性。这一策略可迁移到其他结构预测任务，以评估方法在「无实验结构」场景下的实用性。</p>
+</li>
+<li>
+<p><strong>从预测到实验验证的闭环</strong>：预测 → 结构重建 → 实验验证（EMSA、报告基因、SPR）的完整流程，为计算预测方法的实用性提供了强证据。这一范式可迁移到其他蛋白功能预测研究。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li>
+<p><strong>与 AlphaFold3 的关系</strong>：本文使用 AlphaFold3 生成 apo/holo 预测结构作为测试集，验证模型对计算结构的鲁棒性。AlphaFold3 本身也可预测蛋白-DNA 复合物结构，但本文方法更轻量、聚焦于残基级碱基偏好，两者互补。候选方向：将 AlphaFold3 预测的复合物结构作为 3M-BSIP 的输入，可能进一步提升基序预测精度。</p>
+</li>
+<li>
+<p><strong>与 DeepPBS 的关系</strong>：DeepPBS 是几何深度学习模型，从蛋白-DNA 复合物结构预测 PWM。本文的 3M-BSIP 仅需蛋白结构即可预测残基级碱基偏好，且对 apo 构象鲁棒。候选方向：对比两者在相同基准上的性能，探索将 DeepPBS 的 DNA 结构特征融入 3M-BSIP。</p>
+</li>
+<li>
+<p><strong>与 GeoBind 的关系</strong>：GeoBind 是 SOTA 的 DNA 结合界面预测方法。本文在界面预测任务上与之对比，并扩展了碱基偏好预测。候选方向：将 GeoBind 的界面预测作为 3M-BSIP 的前置过滤，减少非界面残基的干扰。</p>
+</li>
+<li>
+<p><strong>与 SaProt 的关系</strong>：SaProt 是结构感知的蛋白质语言模型，本文将其作为序列模态编码器。候选方向：探索其他结构感知 PLM（如 ESM-IF、ProteinMPNN）作为替代编码器。</p>
+</li>
+<li>
+<p><strong>与 dMaSIF 的关系</strong>：dMaSIF 是分子表面深度学习方法，本文使用其生成表面点云特征。候选方向：将 3M-BSIP 的表面编码器迁移到蛋白-配体相互作用预测。</p>
+</li>
+<li>
+<p><strong>与 Rosetta 的关系</strong>：本文使用 Rosetta 进行突变筛选和能量评估（BsaXI 重编程）。候选方向：将 3M-BSIP 的碱基偏好预测与 Rosetta 的物理能量函数结合，构建混合评分函数用于 DBP 设计。</p>
+</li>
+<li>
+<p><strong>与蛋白质设计的关系</strong>：本文展示了从预测到重编程的完整流程，与「结构-based 蛋白设计」方向直接相关。候选方向：将 3M-BSIP 集成到 DBP 设计 pipeline 中，作为特异性评估模块。</p>
+</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：DNA 形状读出感知的碱基偏好预测
+   - <strong>来源局限/观察</strong>：作者承认模型对 DNA 形状读出机制覆盖有限，主要捕捉碱基化学识别
+   - <strong>核心假设</strong>：引入 DNA 局部构象特征（如螺旋参数、凹槽宽度）可以提升对形状读出主导的 DBP 的预测精度
+   - <strong>初步方法</strong>：在 3M-BSIP 基础上增加 DNA 形状特征通道，或在训练数据中标注形状读出 vs 碱基读出的 DBP 类别，进行条件训练
+   - <strong>验证方式</strong>：在已知形状读出机制的 DBP 家族（如 HMG-box）上对比有无形状特征的性能
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：多聚体 DBP 的协同碱基偏好预测
+   - <strong>来源局限/观察</strong>：当前模型仅接受单链蛋白输入，无法编码多亚基协同识别
+   - <strong>核心假设</strong>：多聚体界面的残基协同效应可以通过图神经网络的消息传递捕获
+   - <strong>初步方法</strong>：扩展 GVP-GNN 以支持多链输入，在残基间添加链间边；或使用层次化图池化聚合多亚基信息
+   - <strong>验证方式</strong>：在多亚基 TF 家族（如 bZIP、bHLH 二聚体）上测试，对比单链输入的基线
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：从碱基偏好热图到连续基序的端到端生成
+   - <strong>来源局限/观察</strong>：当前方法需 ntM 后处理才能得到连续基序，非完全端到端
+   - <strong>核心假设</strong>：将基序生成建模为序列到序列问题，可以直接从蛋白结构生成 PWM 或共有基序
+   - <strong>初步方法</strong>：在 3M-BSIP 的融合特征上增加 Transformer 解码器，以自回归方式生成基序位置权重矩阵
+   - <strong>验证方式</strong>：在 JASPAR 基准上对比 ntM 后处理与端到端生成的基序一致性
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：基于碱基偏好预测的 DBP 特异性重编程通用平台
+   - <strong>来源局限/观察</strong>：BsaXI 案例展示了单一蛋白的重编程，但流程依赖人工筛选
+   - <strong>核心假设</strong>：将 3M-BSIP 与生成式蛋白设计模型（如 ProteinMPNN、RFDiffusion）结合，可以实现 DBP 特异性的自动化重编程
+   - <strong>初步方法</strong>：构建「预测-设计-验证」闭环：3M-BSIP 评估突变体 → 生成模型提出新突变 → 实验验证
+   - <strong>验证方式</strong>：在多个 DBP 家族上测试重编程成功率，对比随机突变基线
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：RNA 结合蛋白的碱基偏好预测迁移
+   - <strong>来源局限/观察</strong>：框架设计具有通用性，但仅验证于 DNA 结合蛋白
+   - <strong>核心假设</strong>：RNA 结合蛋白的碱基偏好识别机制与 DNA 类似，模型可迁移
+   - <strong>初步方法</strong>：将训练数据替换为蛋白-RNA 复合物结构，调整化学感知距离参数以适应 RNA 化学性质
+   - <strong>验证方式</strong>：在已知 RNA 结合蛋白上测试，对比 DNA 模型的迁移性能
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：构象系综感知的碱基偏好预测
+   - <strong>来源局限/观察</strong>：模型对 apo 构象鲁棒，但未显式建模构象系综
+   - <strong>核心假设</strong>：输入多个构象（如 MD 采样或 AlphaFold3 多状态预测）可以进一步提升预测精度和置信度
+   - <strong>初步方法</strong>：将多个构象的预测结果进行一致性聚合，或使用注意力机制融合多构象特征
+   - <strong>验证方式</strong>：在具有显著诱导拟合效应的 DBP 上对比单构象 vs 多构象输入
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text provided (Abstract, Introduction, Materials and Methods, Results, Discussion, Acknowledgements). Supplementary figures, tables, and sections are referenced but not included.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the supplied manuscript text. All claims that depend on Supporting Information (Figures S1–S9, Supplementary Methods Sections 1–3, Supplementary Results) cannot be independently verified from the material provided.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present 3M-BSIP, a multimodal deep learning framework that integrates a protein language model (SaProt), a geometric graph neural network, and a surface pointcloud encoder via cross-attention to predict, from a DBP structure alone, (i) DNA-binding interface residues, (ii) contact-strength ranking, and (iii) residue-level base preference over A/T/C/G. The authors claim state-of-the-art performance on interface and base-preference tasks, robustness to computationally modeled and conformationally flexible (apo) structures, and two real-world applications: motif prediction for an uncharacterized Streptomyces TF (51910) and computational reprogramming of BsaXI base specificity.</li>
+<li><strong>Visible evidence base</strong> Main-text figures (Figure 1–Figure 6 and unnumbered inline references), Methods descriptions of data curation, feature extraction, model architecture, training, and evaluation metrics, and reported quantitative results in the Results section. No supplementary figures, tables, or source data files are included in the supplied material.</li>
+<li><strong>Missing materials affecting confidence</strong> Figures S1–S9; Supplementary Methods Sections 1–3; Supplementary Results; the ntM reconstruction procedure; details of the AF3_Test_apo/holo construction; the 54-protein experimental apo/holo set composition; per-family performance breakdowns; statistical tests; code/data availability statement; and any independent validation of the BsaXI and 51910 predictions beyond the reported assays.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript describes a technically ambitious multimodal framework for a genuinely difficult problem, namely residue-level base preference prediction from a protein structure alone. The conceptual framing, the three-modality design, and the two application case studies are attractive. However, from the supplied material, several central claims are not yet fully established. The most consequential issues are (i) the absence of a direct, quantitative comparison against the methods the authors position as the closest prior art (DeepPBS, NA-MPNN) on the base-preference task, (ii) reliance on a self-defined supervisory signal whose relationship to experimental base specificity is not independently validated, (iii) incomplete reporting of data-splitting and leakage controls, and (iv) dependence on supplementary material that is not available for verification. The work is potentially publishable if these technical concerns are resolved, but the current evidence base does not yet support the strongest claims.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational structural biologists and protein–DNA recognition researchers interested in specificity codes; machine-learning method developers working on multimodal and geometric deep learning for biomolecular interfaces; protein engineers and synthetic biologists interested in reprogramming DNA-binding specificity; and groups curating binding motifs for uncharacterized transcription factors. The residue-level base-preference formulation, if validated, would be of broad interest because most existing methods predict at the motif or interface level rather than at the per-residue base level.</li>
+<li><strong>Major strengths</strong></li>
+<li>The problem is well motivated and the gap in residue-level base-preference prediction is real and clearly articulated.</li>
+<li>The multimodal design is principled, and the ablation study (Figure 4D–F) provides a coherent argument that sequence, structure, and surface modalities contribute complementary information.</li>
+<li>The inclusion of apo versus holo robustness testing (Figure 5D–E) addresses a practically important failure mode for structure-based predictors.</li>
+<li>The two application case studies, particularly the BsaXI reprogramming with SPR validation, are a meaningful attempt to move beyond benchmark metrics toward functional validation.</li>
+<li>The manuscript is generally well organized and the methods are described at a level of detail that permits partial reproduction.</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Benchmarking and comparative claims</li>
+<li><strong>Claim pointer</strong> The manuscript claims "SOTA performance on both interface-residue identification and base-preference predictions" and states that 3M-BSIP "consistently outperforms the existing methods."</li>
+<li><strong>Evidence pointer</strong> Results section "3M-BSIP Outperforms the GeoBind Method on Interface-Residue Prediction," Figure 6A–C; Introduction positioning of DeepPBS and NA-MPNN.</li>
+<li><strong>Concern</strong> The only head-to-head quantitative comparison reported is against GeoBind, which the authors themselves note does not provide base-preference prediction. DeepPBS and NA-MPNN, which are the methods that actually predict base or motif preferences, are discussed in the Introduction but are not benchmarked against 3M-BSIP on the base-preference task in the supplied text. The SOTA claim for base-preference prediction is therefore not supported by a direct comparison.</li>
+<li><strong>Why it matters</strong> The central novelty claim is residue-level base-preference prediction. Without a direct comparison to the closest prior methods on the same test set and the same metric, the SOTA claim is unsubstantiated and the reader cannot judge the actual advance.</li>
+<li><strong>Resolution test</strong> Provide a head-to-head evaluation of 3M-BSIP against DeepPBS and NA-MPNN on a common, nonredundant test set using a common metric for base or motif preference, with the same input constraints (protein-only versus protein–DNA complex) clearly stated.</li>
+</ul>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Validity of the supervisory signal</li>
+<li><strong>Claim pointer</strong> The model is trained to predict a "residue-level base-preference heatmap" derived from a chemical-aware distance and a hand-designed logit formulation, and this heatmap is treated as ground truth for base preference.</li>
+<li><strong>Evidence pointer</strong> Materials and Methods "Generation of Supervisory Signals," "Derivation of Residue Score and Base Allocation Coefficient," and "Generation of Residue-Level Base Preference Heatmap"; Results "Structural Characterizations of Protein–DNA Interface for DBPs."</li>
+<li><strong>Concern</strong> The target label is not an experimental measurement of base preference but a deterministic function of the crystal structure geometry, with several arbitrary hyperparameters (discount factors 0.85/0.82/0.80, σ = 3.0 Å, the specific logit formulas, the 4.5 Å cutoff). The manuscript does not demonstrate that this constructed heatmap correlates with experimentally measured base preferences (for example, from PBM, SELEX, or mutation-based affinity data). The model may therefore be learning to reproduce a geometric proxy rather than biological specificity.</li>
+<li><strong>Why it matters</strong> If the label is a proxy, all reported base-preference accuracies measure agreement with the proxy, not with biological base preference. This directly affects the interpretation of the benchmark results and the two application claims.</li>
+<li><strong>Resolution test</strong> Show that the constructed heatmap correlates with at least one independent experimental measure of base preference on a held-out set, and report the sensitivity of the reported accuracies to the arbitrary hyperparameters in the label construction.</li>
+</ul>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Data splitting and leakage control</li>
+<li><strong>Claim pointer</strong> The model "has learned the generalizable biophysical principles of protein–DNA recognition rather than merely overfitting," supported by the deredundancy procedure and hierarchical clustering-based splitting.</li>
+<li><strong>Evidence pointer</strong> Materials and Methods "Data Sets and Benchmarks," "Structure Preprocessing and Data Set Partitioning"; Results "Ablation Studies Validate the Necessity of Multimodal Integration," Figure 4A–C.</li>
+<li><strong>Concern</strong> The deredundancy criterion removes structures only when both protein and DNA sequences are identical and DNA backbone RMSD is below 1.5 Å. This is a permissive criterion that can retain near-duplicate proteins with different DNA sequences. The splitting is then performed by TM-score clustering with 80/10/10 allocation within each cluster, which places structurally similar proteins in both training and test sets by design. The manuscript does not report sequence-identity-based leakage analysis between training and test sets, nor does it report performance under a strict sequence-identity or fold-level holdout.</li>
+<li><strong>Why it matters</strong> The reported test performance, including the high MCC values at low Levenshtein distance, may be inflated by structural and sequence similarity between training and test proteins. The generalization claim depends on ruling this out.</li>
+<li><strong>Resolution test</strong> Report a strict holdout evaluation with a defined sequence identity threshold (for example, 30 percent) and a fold-level holdout, and report the corresponding metrics alongside the current numbers.</li>
+</ul>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Reproducibility and reporting completeness</li>
+<li><strong>Claim pointer</strong> Multiple results and methodological steps are stated to be detailed in Supporting Information, including the fusion strategy comparison, the ntM reconstruction, the integrated gradient attribution, and the screening pipeline.</li>
+<li><strong>Evidence pointer</strong> References to Figure S1, Figure S2, Figure S3, Figure S4, Figure S5, Figure S6, Figure S7, Figure S8, Figure S9, Supporting Information Section 1, Supplementary Methods Sections 2–3, and Supplementary Results.</li>
+<li><strong>Concern</strong> The supplied material does not include any supplementary content, and no code or data availability statement is present in the provided text. Several claims, including the fusion strategy comparison and the structural reconstruction that converts the heatmap into the "TTAxT" motif, cannot be evaluated.</li>
+<li><strong>Why it matters</strong> The ntM reconstruction is the bridge between the residue-level prediction and the experimentally tested motif. Without it, the 51910 application cannot be fully assessed.</li>
+<li><strong>Resolution test</strong> Provide all supplementary figures, tables, and methods, and include a code and data availability statement with repository identifiers.</li>
+</ul>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M5</p>
+<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Statistical rigor of comparative and application claims</li>
+<li><strong>Claim pointer</strong> 3M-BSIP "surpasses GeoBind on the majority of tested samples," and the BsaXI screening is described as having a "high success rate (2/3)."</li>
+<li><strong>Evidence pointer</strong> Results "3M-BSIP Outperforms the GeoBind Method on Interface-Residue Prediction," Figure 6A–B; Results "Reprogramming the DNA Binding Specificity of a Type IIB Restriction Endonuclease," Figure 6C–D.</li>
+<li><strong>Concern</strong> The reported differences are small in several cases (for example, interface MCC 0.545 versus 0.523 on the full test set, and 0.518 versus 0.512 at Levenshtein distance above 5). No confidence intervals, significance tests, or per-sample paired statistics are reported. The BsaXI success rate is based on three candidates, of which one did not achieve reversal, and the specificity ratio changes are reported without error estimates or replicate numbers.</li>
+<li><strong>Why it matters</strong> Small metric differences without uncertainty quantification cannot support a superiority claim, and a 2/3 success rate on three candidates is too small to support a general claim about the method's success rate.</li>
+<li><strong>Resolution test</strong> Report confidence intervals or paired significance tests for all comparative metrics, and report replicate numbers and error estimates for the SPR measurements.</li>
+</ul>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology consistency</li>
+<li><strong>Affected element</strong> Use of "base preference," "base-specific interaction," and "specificity" across Abstract, Results, and Discussion.</li>
+<li><strong>Evidence pointer</strong> Abstract; Results "Reprogramming the DNA Binding Specificity of a Type IIB Restriction Endonuclease."</li>
+<li><strong>Issue</strong> The terms are used interchangeably without a stated operational definition distinguishing residue-level base preference from motif-level specificity.</li>
+<li><strong>Required correction</strong> Provide a single explicit definition of each term at first use and apply it consistently.</li>
+</ul>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Metric definition</li>
+<li><strong>Affected element</strong> "Base-preference accuracy" reported throughout the Results.</li>
+<li><strong>Evidence pointer</strong> Results "Ablation Studies," Figure 4D and 4H; Results "3M-BSIP Outperforms the GeoBind Method," Figure 6C.</li>
+<li><strong>Issue</strong> The metric is reported as a single accuracy value but its exact definition (per residue, per residue–nucleotide pair, threshold, treatment of noninterface residues) is not fully specified in the supplied text.</li>
+<li><strong>Required correction</strong> State the exact formula and the treatment of noninterface residues and ties.</li>
+</ul>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Data set description</li>
+<li><strong>Affected element</strong> The 54-protein experimental apo/holo set.</li>
+<li><strong>Evidence pointer</strong> Results "Well-Tolerance to 3M-BSIP toward the Structurally Flexible DBPs," Figure 5D.</li>
+<li><strong>Issue</strong> The composition, source, and redundancy control of this set relative to the training data are not described.</li>
+<li><strong>Required correction</strong> Describe how the 54 proteins were selected and confirm no overlap with training data.</li>
+</ul>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Figure and text consistency</li>
+<li><strong>Affected element</strong> Reference to "Figure" without a number in the Model Architecture section.</li>
+<li><strong>Evidence pointer</strong> Materials and Methods "3M-BSIP Model Architecture," first paragraph.</li>
+<li><strong>Issue</strong> The text refers to "(Figure )" with no figure number, and several inline figure references in the Results are unnumbered in the supplied text.</li>
+<li><strong>Required correction</strong> Ensure all figure callouts are correctly numbered and consistent with the final figure set.</li>
+</ul>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Claim scope</li>
+<li><strong>Affected element</strong> Statement that 3M-BSIP "holds great potential in annotating the binding motifs of all DBPs."</li>
+<li><strong>Evidence pointer</strong> Abstract; Discussion.</li>
+<li><strong>Issue</strong> The claim of "all DBPs" is broader than the evidence, which covers a curated structural data set and two case studies.</li>
+<li><strong>Required correction</strong> Restrict the claim to the tested scope or provide a systematic coverage analysis across DBP families.</li>
+</ul>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (absence of direct comparison to DeepPBS and NA-MPNN on base preference), R1-M2 (unvalidated proxy label for base preference), R1-M3 (permissive deredundancy and similarity-based splitting without strict holdout), R1-M4 (missing supplementary material and no code/data availability), R1-M5 (no uncertainty quantification for comparative and application claims).</p>
+</li>
+<li>
+<p><strong>Assessment against Nature-style criteria</strong></p>
+</li>
+<li><strong>Originality</strong> The residue-level base-preference formulation and the three-modality fusion are a reasonable methodological contribution. However, the originality relative to DeepPBS and NA-MPNN is not demonstrated because no direct comparison is provided.</li>
+<li><strong>Scientific importance</strong> The problem is important and the potential impact on motif annotation and protein engineering is significant. The importance claim is weakened by the unvalidated supervisory signal and the small-scale application validation.</li>
+<li><strong>Interdisciplinary readership</strong> The topic would interest computational biologists, protein engineers, and synthetic biologists. The current presentation assumes substantial familiarity with geometric deep learning terminology, which limits accessibility.</li>
+<li><strong>Technical soundness</strong> The architecture and training pipeline are described in reasonable detail, but the label construction, data splitting, and comparative evaluation have unresolved issues as detailed in R1-M1 through R1-M5.</li>
+<li>
+<p><strong>Readability for nonspecialists</strong> The Abstract and Introduction are accessible. The Methods and Results contain dense jargon and several undefined metrics, which would hinder a nonspecialist reader.</p>
+</li>
+<li>
+<p><strong>Recommendation posture</strong> Currently not established from the provided evidence. The work is potentially supportive if the technical concerns R1-M1 through R1-M5 are resolved, in particular a direct benchmark against DeepPBS and NA-MPNN on base preference, validation of the supervisory signal against experimental base-preference data, and a strict holdout evaluation.</p>
+</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of SOTA performance on base-preference prediction is unsupported because no direct comparison to DeepPBS or NA-MPNN is provided in the supplied material.</li>
+<li>The claim that the model learns "generalizable biophysical principles" is weakened by the permissive deredundancy criterion and the similarity-based data splitting, with no strict sequence-identity or fold-level holdout reported.</li>
+<li>The claim that the residue-level base-preference heatmap represents biological base preference is not supported by any comparison to experimental base-preference measurements in the supplied text.</li>
+<li>The claim of a "high success rate (2/3)" for BsaXI reprogramming is based on three candidates and lacks replicate numbers and error estimates.</li>
+<li>The claim that 3M-BSIP can "annotate the binding motifs of all DBPs" is broader than the evidence provided.</li>
+<li>The claim that the model is robust to "profound structural rearrangements" is supported by a single detailed example (ZnF456) plus aggregate R2 values, and the aggregate analysis depends on supplementary material not provided.</li>
+<li>The claim that the ntM reconstruction reliably converts residue-level predictions into contiguous motifs cannot be evaluated because the method is in Supplementary Methods Sections 2–3, which are not supplied.</li>
+<li>The claim that the model outperforms GeoBind on "the majority of tested samples" is reported without per-sample paired statistics or confidence intervals.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

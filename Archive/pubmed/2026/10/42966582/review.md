@@ -1,0 +1,91 @@
+## Review setup
+- **Input scope** Abstract only, as supplied in the submission record
+- **Assessment boundary** Evaluation is restricted to the claims and evidence visible in the abstract. No full text, figures, tables, methods, statistics, or supplementary materials were provided, so mechanistic, quantitative, and reproducibility assessments are limited.
+- **Shared manuscript claim summary** The authors report that epicatechin gallate (ECG) binds bovine myosin via static quenching, alters aromatic residue microenvironments, rearranges secondary structure toward beta-sheet, and is stabilized by hydrogen bonds and hydrophobic interactions involving Glu331, Ile326, and Asp242. At 100 micromol/L ECG, they report a polyphenol binding rate of 25.76%, about a 5.2-fold increase in DPPH radical scavenging, markedly reduced surface hydrophobicity, and nearly 6-fold enhanced solubility. In vitro digestion is reported to delay gastric-phase hydrolysis while promoting intestinal-phase digestion and polyphenol release.
+- **Visible evidence base** Abstract-level statements only. Spectroscopic analyses, FTIR, molecular simulation, binding rate, DPPH scavenging, surface hydrophobicity, solubility, and in vitro digestion outcomes are asserted without accompanying data, figures, tables, or statistical detail.
+- **Missing materials affecting confidence** Full text, figures, tables, methods, statistical analyses, replicates, controls, simulation parameters and validation, and digestion model details are all absent. Confidence in the quantitative and mechanistic claims is therefore low.
+
+## Reviewer
+- **Overall assessment** The topic is relevant to meat protein functionality and polyphenol applications, and the multi-method approach is potentially interesting. However, the supplied material is an abstract only, and it does not permit verification of any of the central mechanistic or quantitative claims. The work is currently not established from the provided evidence.
+- **Who would be interested in the results, and why** Researchers in food protein chemistry, meat science, polyphenol-protein interaction, and functional food ingredient development would be interested, because the findings could inform the use of tea polyphenols to modulate myosin structure and functionality during processing.
+- **Major strengths** The study combines spectroscopic, structural, computational, and functional assays, which is an appropriate multi-scale strategy for a protein-polyphenol interaction study. The inclusion of in vitro digestion adds applied relevance. The reported identification of specific binding residues, if validated, would provide residue-level insight.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Mechanistic claim
+    - **Claim pointer** ECG binds myosin through static quenching and alters the microenvironment of aromatic amino acid residues.
+    - **Evidence pointer** Abstract only; location not provided
+    - **Concern** The abstract asserts static quenching and microenvironmental change but provides no fluorescence spectra, Stern-Volmer analysis, quenching constant, binding constant, number of binding sites, or thermodynamic parameters. Static versus dynamic quenching cannot be distinguished from the supplied material.
+    - **Why it matters** The binding mechanism is a central claim, and misassignment of quenching mode would undermine the proposed interaction model.
+    - **Resolution test** Provide fluorescence quenching data with Stern-Volmer plots at multiple temperatures, calculated Ksv, Kq, Ka, n, and thermodynamic parameters, and demonstrate consistency with static quenching.
+  - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Structural claim
+    - **Claim pointer** ECG induces secondary structure rearrangement and promotes beta-sheet formation.
+    - **Evidence pointer** Abstract only; location not provided
+    - **Concern** No FTIR spectra, amide I deconvolution, secondary structure percentages, or statistical comparison are supplied. The direction and magnitude of the structural change cannot be evaluated.
+    - **Why it matters** The structural rearrangement claim underpins the proposed functional enhancement, and without quantitative spectral evidence it remains unverified.
+    - **Resolution test** Provide FTIR amide I deconvolution with secondary structure content, replicate variability, and statistical testing across ECG concentrations.
+  - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Computational claim
+    - **Claim pointer** Hydrogen bonds and hydrophobic interactions dominate stabilization, with Glu331, Ile326, and Asp242 as key residues.
+    - **Evidence pointer** Abstract only; location not provided
+    - **Concern** No docking or molecular dynamics protocol, scoring, binding free energy, simulation duration, force field, or validation is provided. Residue-level claims cannot be assessed or reproduced.
+    - **Why it matters** Specific residue assignments are strong mechanistic assertions that require methodological transparency and validation against experimental mutagenesis or competitive binding data.
+    - **Resolution test** Provide full simulation parameters, binding free energy decomposition, replicate simulations, and, where possible, experimental validation of the identified residues.
+  - **Concern ID** R1-M4
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Quantitative functional claim
+    - **Claim pointer** At 100 micromol/L ECG, binding rate is 25.76%, DPPH scavenging increases about 5.2-fold, surface hydrophobicity markedly decreases, and solubility increases nearly 6-fold.
+    - **Evidence pointer** Abstract only; location not provided
+    - **Concern** These are precise quantitative claims without units for some measures, baseline values, replicate numbers, variance, or statistical significance. The 5.2-fold and 6-fold values cannot be verified or compared to controls.
+    - **Why it matters** The applied significance of the work depends on these functional improvements, and unverifiable magnitudes weaken the central conclusion.
+    - **Resolution test** Provide absolute values, controls, sample sizes, error estimates, and statistical tests for each functional measurement.
+  - **Concern ID** R1-M5
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Digestion claim
+    - **Claim pointer** ECG delays gastric-phase hydrolysis but promotes intestinal-phase digestion and polyphenol release.
+    - **Evidence pointer** Abstract only; location not provided
+    - **Concern** The in vitro digestion model, enzyme activities, phase durations, and quantification methods are not described. The opposing phase-specific effects are asserted without mechanistic explanation or data.
+    - **Why it matters** Digestion behavior affects the nutritional and functional interpretation of the polyphenol-protein system.
+    - **Resolution test** Provide the digestion protocol, hydrolysis curves, peptide or free amino group quantification, polyphenol release data, and statistical analysis.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Terminology
+    - **Affected element** Abstract wording
+    - **Evidence pointer** Abstract only; location not provided
+    - **Issue** The phrase "providing a scientific basis" is a broad claim that is not supported by the abstract-level evidence.
+    - **Required correction** Temper the conclusion to reflect the specific findings and their scope.
+  - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Reporting completeness
+    - **Affected element** Concentration reporting
+    - **Evidence pointer** Abstract only; location not provided
+    - **Issue** Only one ECG concentration (100 micromol/L) is highlighted, with no indication of the concentration range tested.
+    - **Required correction** Report the full concentration range and justify the selected concentration.
+  - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Units and formatting
+    - **Affected element** Abstract text
+    - **Evidence pointer** Abstract only; location not provided
+    - **Issue** "mumol/L" appears as a text rendering of micromol/L, and unit consistency should be checked.
+    - **Required correction** Use standard unit notation throughout.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4. These concern the core mechanistic, structural, computational, and quantitative claims, none of which can be verified from the supplied material.
+- **Assessment against Nature-style criteria** Originality is moderate, since polyphenol-myosin interactions have been studied, though the specific ECG-myosin residue-level analysis may add novelty. Scientific importance is potentially relevant to food protein functionality but is not demonstrated at the level required for a broad audience. Interdisciplinary readership is limited, as the work is primarily of interest to food and protein chemistry communities. Technical soundness cannot be established from the abstract alone, and the absence of data, statistics, and methods prevents verification. Readability for nonspecialists is acceptable in the abstract, but the claims are too broad relative to the evidence shown.
+- **Recommendation posture** Currently not established from the provided evidence. Supportive only if the technical concerns, particularly R1-M1 through R1-M4, are resolved with full data and methodological detail.
+
+## Risk / unsupported claims
+- Static quenching mechanism is asserted but not demonstrated in the supplied material.
+- Secondary structure rearrangement toward beta-sheet is asserted without spectral data or quantification.
+- Key binding residues Glu331, Ile326, and Asp242 are asserted without simulation details or experimental validation.
+- The 25.76% binding rate, 5.2-fold DPPH increase, and nearly 6-fold solubility enhancement are unverifiable without baselines, controls, and statistics.
+- The claim that ECG "significantly improved" physicochemical and functional properties is broader than the abstract-level evidence supports.
+- The phase-specific digestion effects are asserted without protocol or data.
+- The statement that the work provides "a scientific basis for the application of tea polyphenols in meat protein systems" is not supported by the supplied material.

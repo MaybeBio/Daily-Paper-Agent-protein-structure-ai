@@ -1,0 +1,82 @@
+## Review setup
+
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract
+- **Shared manuscript claim summary** The authors present LPT (little protein tiger), a framework that orchestrates fixed LLM stages, each running a bounded agentic loop with custom system prompts and tool access, to enable de novo protein binder design from a single natural language prompt. The framework includes a curated literature database of approximately 14,000 papers. The authors report that an LLM with database access answered 41/48 test questions correctly, while a model without access answered none. In three end-to-end design campaigns, LPT autonomously identified design intent, selected targets, structures and hotspot residues, and designed candidate binders to disrupt CALCRL/RAMP1, PD-1/PD-L1 and PVR-TIGIT interactions. Cross-validation with multiple folding models reportedly confirms a high in silico success rate at minimal token consumption and low computational costs.
+- **Visible evidence base** Abstract text only. No figures, tables, methods, or supplementary materials were provided for review.
+- **Missing materials affecting confidence** Full manuscript text, methods section, all figures and tables, supplementary materials, benchmark details, database construction details, design campaign outputs, folding model validation results, and token consumption data.
+
+## Reviewer
+
+- **Overall assessment** The abstract describes a potentially useful framework for structured LLM orchestration in protein design, with a plausible motivation around bounded agentic loops and token efficiency. However, the evidence presented is insufficient to evaluate the core claims. The benchmark result (41/48 versus 0/48) is striking but lacks methodological detail. The three design campaigns are described only at the level of interaction targets, with no quantitative outcomes reported. The claim of high in silico success rate is not supported by any data in the abstract. The framework's novelty relative to existing LLM orchestration and protein design methods is not established from the supplied material.
+- **Who would be interested in the results, and why** Researchers in computational protein design, LLM applications in biology, and automated scientific discovery would be interested if the full manuscript substantiates the claims. The bounded agentic loop concept and the curated literature database could appeal to those working on token-efficient AI workflows for scientific tasks. The specific design campaigns targeting immune checkpoint interactions (PD-1/PD-L1, PVR-TIGIT) and GPCR-related complexes (CALCRL/RAMP1) may interest structural biologists and drug discovery groups.
+- **Major strengths** The motivation for bounded agentic loops to control token consumption is timely and practically relevant. The curated literature database approach addresses a real limitation of LLM training knowledge. The benchmark design (with versus without database access) provides a clear comparative framing. The choice of three distinct protein-protein interaction targets suggests some breadth of application.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "In three end-to-end design campaigns, initiated from a single prompt, LPT autonomously identified the design intent, selected targets, structures and hotspot residues and designed candidate binders to disrupt CALCRL/RAMP1, PD-1/PD-L1 and PVR-TIGIT interactions."
+  - **Evidence pointer** Abstract only, location not provided
+  - **Concern** The abstract reports that three design campaigns were conducted and that candidate binders were designed, but provides no quantitative results. No binding affinity measurements, no experimental validation, no success metrics, and no comparison to existing design methods are presented. The phrase "designed candidate binders" is ambiguous regarding whether any of these candidates were shown to actually bind their targets.
+  - **Why it matters** The central claim of the paper is that LPT enables automated protein binder design. Without any quantitative evidence that the designed candidates are functional binders, the claim is not established. In silico design without experimental or at least rigorous computational validation does not demonstrate binder design capability.
+  - **Resolution test** Provide per-campaign results including number of candidates designed, predicted binding affinities, folding model scores, and any experimental validation. If experimental data are not available, clearly state this limitation and provide computational benchmarks against established design methods.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "Cross-validation with multiple folding models confirms a high in silico success rate at minimal token consumption and low computational costs."
+  - **Evidence pointer** Abstract only, location not provided
+  - **Concern** The claim of high in silico success rate is presented without any numerical data. No success rate percentage, no definition of what constitutes success, no details on which folding models were used, and no comparison to baseline methods are provided. The claim of minimal token consumption and low computational costs is similarly unsupported by any quantitative comparison.
+  - **Why it matters** These are quantitative claims that require quantitative support. Without specific numbers and definitions, the claims cannot be evaluated or reproduced. The token consumption claim is central to the paper's motivation, yet no token usage data are presented.
+  - **Resolution test** Report the specific success rate with a clear definition of success, list the folding models used, provide token consumption figures compared to unconstrained agentic baselines, and report computational cost in concrete terms.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "An LLM with database access answered 41/48 test questions drawn from database key findings correctly, while a model without access answered none."
+  - **Evidence pointer** Abstract only, location not provided
+  - **Concern** The benchmark result is reported without methodological detail. The nature of the test questions, the selection process, the LLM used, the prompting strategy, and the evaluation criteria are not described. The result that the model without access answered zero questions correctly is surprising and suggests the questions may be designed in a way that makes them unanswerable without the database, which could indicate a benchmark design that inflates the apparent value of the database.
+  - **Why it matters** The database access benchmark is a key supporting claim for the framework's utility. Without methodological transparency, the result cannot be assessed for fairness or generalizability. A zero-score baseline raises questions about question design and whether the comparison is meaningful.
+  - **Resolution test** Provide the full benchmark methodology including question examples, selection criteria, LLM configuration, and evaluation rubric. Discuss whether the zero baseline reflects question design or genuine knowledge limitations.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Framework description
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The term "fixed orchestration of LLM stages" is not defined. It is unclear whether "fixed" refers to a predetermined sequence of stages, fixed prompts, or something else. The relationship between the stages and the bounded agentic loops is also not explained.
+  - **Required correction** Define the orchestration architecture clearly, including the number of stages, their functions, and how the bounded loops operate within each stage.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Literature database description
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The database is described as containing approximately 14,000 papers "digested into key findings," but the digestion process, the format of the key findings, and the curation methodology are not described.
+  - **Required correction** Describe how papers were selected, how key findings were extracted, and how the database is queried by the LLM.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** "de novo protein binder design"
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The term "de novo" is used, but the abstract describes selection of existing targets, structures, and hotspot residues, which may not constitute de novo design in the strict sense. The design process appears to involve choosing from known options rather than generating entirely new binders from first principles.
+  - **Required correction** Clarify what aspect of the design is de novo, or use more precise terminology that reflects the actual design process.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** LLM configuration
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The specific LLM or LLMs used in the framework are not identified. This information is essential for reproducibility.
+  - **Required correction** Specify the LLM models used in each stage.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of quantitative results for the design campaigns, the unsupported success rate and cost claims, and the lack of benchmark methodology all prevent the case from being established from the supplied material.
+- **Assessment against Nature-style criteria** Originality: The bounded agentic loop concept and the curated literature database are potentially original contributions, but the abstract does not provide enough detail to assess novelty relative to existing LLM orchestration frameworks. Scientific importance: The application to protein binder design for immune checkpoint and GPCR-related targets is scientifically relevant, but the importance cannot be assessed without evidence that the designed binders are functional. Interdisciplinary readership: The work spans AI, structural biology, and drug discovery, which could attract broad interest, but the abstract is too thin to engage specialists in any of these fields. Technical soundness: Cannot be assessed from the abstract alone. The benchmark design raises questions, and the lack of quantitative results for the main claims is a significant concern. Readability for nonspecialists: The abstract is readable and the motivation is clear, but the technical claims are underspecified.
+- **Recommendation posture** Currently not established from the provided evidence. The framework concept is interesting and the motivation is sound, but the abstract does not provide sufficient quantitative evidence to support the central claims of successful binder design, high success rate, and token efficiency. A full manuscript with detailed methods and results would be required to evaluate the work properly.
+
+## Risk / unsupported claims
+
+- The claim of "high in silico success rate" is unsupported by any numerical data in the abstract.
+- The claim of "minimal token consumption and low computational costs" is unsupported by any comparative data.
+- The claim that LPT "designed candidate binders" to disrupt the three named interactions is unverifiable without results showing the candidates have any predicted or measured binding activity.
+- The benchmark result (41/48 versus 0/48) is reported without methodology and cannot be evaluated for fairness or validity.
+- The description of the literature database and its query mechanism is insufficient to assess its functionality or coverage.
+- The term "de novo" is used in a way that may not match the described design process, which appears to involve selection from known structures and hotspots.

@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors propose a diversity-seeking docking-guided de novo molecular design framework, introduce a residue-level multi-interaction fingerprint and a reachability ratio diagnostic, benchmark multiple search policies across seven targets from five protein families, and report that diversity-aware search broadens predicted interaction profiles under a fixed evaluation budget, while a budget-matched NSGA-II baseline achieves the strongest predicted binding affinity.
+- **Visible evidence base** Abstract text only; no figures, tables, methods details, or raw results provided
+- **Missing materials affecting confidence** Full methods, benchmark details, statistical analysis specifics, target list, compound generation parameters, fingerprint definitions, code repository contents, and all numerical results beyond those cited in the abstract
+
+## Reviewer
+- **Overall assessment** The abstract presents a well-motivated and timely contribution to structure-based molecular design, with a clear conceptual framing and a reasonable set of benchmark comparisons. The reported effect sizes and statistical significance for the primary diversity metric are encouraging. However, the abstract alone does not provide sufficient methodological detail to assess technical soundness, and several claims regarding baseline performance and representation ablations cannot be evaluated without the full manuscript. The authors appropriately acknowledge the computational scope of their findings, which strengthens credibility, but the case for broad significance remains incomplete from the supplied material.
+- **Who would be interested in the results, and why** Computational chemists and medicinal chemists working on de novo drug design, virtual screening, and generative models would find the diversity-seeking framework relevant. Researchers developing quality-diversity algorithms or multi-objective optimization for molecular discovery would also be interested. The work may appeal to method developers seeking alternatives to scalar scoring prioritization in structure-based pipelines.
+- **Major strengths** The conceptual shift from scalar score prioritization to diversity-seeking exploration is clearly articulated and well motivated. The introduction of a residue-level multi-interaction fingerprint and a reachability ratio diagnostic suggests methodological novelty. The benchmark includes multiple protein families and several search policies, providing a comparative scope. The explicit acknowledgment that results are computational and do not establish biochemical activity is a commendable limitation statement.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims that Curiosity-IMGEP discovers 15.0% more interaction profiles than random search with d = 1.01 and pBonf < 10-6, and that NSGA-II achieves the strongest predicted binding affinity at -11.03 kcal/mol.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract reports effect sizes and p-values but does not describe the statistical test, multiple-comparison correction procedure, number of replicates, or variance estimates. The d values appear to be Cohen's d, but this is not stated. Without these details, the robustness of the reported significance cannot be assessed.
+  - **Why it matters** Statistical claims are central to the conclusion that diversity-aware search outperforms random search. If the test is underpowered, improperly corrected, or based on non-independent samples, the conclusions may not hold.
+  - **Resolution test** Provide in the full manuscript the exact statistical test, correction method, replicate structure, and variance measures for each reported comparison.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility
+  - **Claim pointer** The abstract states that code, configurations, and raw results are publicly available.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** No repository URL, accession code, or data availability identifier is given. The claim of public availability cannot be verified from the abstract.
+  - **Why it matters** Reproducibility is a core expectation for computational studies. Without a verifiable link, the claim is unsubstantiated.
+  - **Resolution test** Include a repository URL or DOI in the manuscript and verify that all code, configurations, and raw results are accessible.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Completeness of evidence
+  - **Claim pointer** The abstract states that representation ablations compare continuous and binary fingerprints, charged-interaction channels, distance cutoffs, and inclusion of docking quality in the search vector.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** No results from these ablations are reported in the abstract. It is unclear whether these comparisons support or weaken the main conclusions.
+  - **Why it matters** Ablation studies are critical for understanding which design choices drive the reported performance. Without results, the contribution of the fingerprint and search vector components is unsubstantiated.
+  - **Resolution test** Report ablation results in the full manuscript with clear metrics and statistical comparisons.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Reachability ratio definition
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** The reachability ratio is described as an empirical diagnostic of goal-retrieval discriminability, but its computation and interpretation are not explained.
+  - **Required correction** Provide a clear definition and a brief example of how the reachability ratio is calculated and interpreted.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reporting consistency
+  - **Affected element** NSGA-II performance claims
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** The abstract states NSGA-II achieves the strongest predicted binding affinity but is tied within noise with the Genetic algorithm, and underperforms on interaction-profile counts. The relationship between these outcomes and the main diversity claim is not fully clarified.
+  - **Required correction** Clarify whether the NSGA-II result is presented as a caveat, a complementary finding, or a limitation of the diversity-focused approach.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Precision
+  - **Affected element** Scaffold count reporting
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** The scaffold count for NSGA-II is reported as 23 +/- 12, but the units and the basis for the uncertainty are not specified.
+  - **Required correction** Specify whether the uncertainty is a standard deviation across runs or another measure, and clarify the counting method for Bemis-Murcko scaffolds.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (statistical reporting) and R1-M2 (data availability verification) must be resolved. R1-M3 (ablation results) is needed to fully support the methodological claims.
+- **Assessment against Nature-style criteria** Originality is moderate to high, as the diversity-seeking framing and the residue-level fingerprint appear novel. Scientific importance is relevant for computational drug design but the scope is incremental rather than paradigm-shifting. Interdisciplinary readership is plausible, though the abstract is technical and may not fully engage nonspecialists. Technical soundness cannot be fully assessed from the abstract due to missing statistical and methodological details. Readability for nonspecialists is adequate but could be improved by defining key terms such as reachability ratio and interaction-profile counts.
+- **Recommendation posture** Supportive if technical concerns are resolved. The core idea is promising and the reported effect sizes are encouraging, but the abstract alone does not establish the case. Full methods, statistical details, and ablation results are required for a definitive assessment.
+
+## Risk / unsupported claims
+- The claim that Curiosity-IMGEP discovers 15.0% more interaction profiles than random search is supported only by abstract-level statistics, which are not fully described.
+- The claim that NSGA-II achieves the strongest predicted binding affinity is reported but not contextualized with variance or significance testing.
+- The claim that representation ablations were performed is unverifiable without results.
+- The claim of public data availability is unverifiable without a repository link.
+- The statement that results do not experimentally establish distinct binding modes or biochemical activity is appropriately cautious and supported by the computational scope.

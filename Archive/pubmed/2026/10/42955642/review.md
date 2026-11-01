@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Feasibility and clarity of the described AI-assisted pipeline for converting antibody sequences into functional mintbodies, as presented in the abstract
+- **Shared manuscript claim summary** The authors claim to have developed a convenient, end-to-end pipeline that uses AI-assisted tools to convert unstable scFvs from existing monoclonal antibodies into stable, functional modification-specific intracellular antibodies (mintbodies), validated in mammalian cells
+- **Visible evidence base** Abstract text only; no figures, tables, methods details, or results are provided
+- **Missing materials affecting confidence** Full protocol steps, AI tool names and versions, training or validation datasets, quantitative stability or binding data, live-cell screening results, comparison to existing methods, and any negative controls
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially valuable methodological contribution to the intracellular antibody field, addressing a real bottleneck in converting monoclonal antibodies into functional probes. However, the current evidence base is limited to a high-level description, and the core claims of efficiency, generalizability, and functional success cannot be evaluated without the full protocol and validation data. The work is likely to interest researchers in cell biology, epigenetics, and protein engineering, but the case for a broadly applicable pipeline is not yet established from the supplied material.
+- **Who would be interested in the results, and why** Researchers studying posttranslational modifications in living cells, particularly those working on histones and RNA polymerase II, would benefit from improved tools for real-time PTM tracking. Additionally, protein engineers and synthetic biologists interested in AI-guided antibody engineering would find the pipeline relevant. The method could also appeal to laboratories lacking specialized expertise in intracellular antibody development, as it promises a more accessible workflow.
+- **Major strengths** The abstract addresses a well-recognized problem, namely the instability of scFvs in the reducing intracellular environment, with a practical solution that integrates AI tools. The proposed pipeline is described as end-to-end, covering sequence annotation, structure prediction, framework optimization, and experimental validation, which suggests a comprehensive approach. The focus on live-cell screening as a validation step is appropriate for the intended application.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The authors claim that the pipeline efficiently converts unstable scFvs into stable and functional probes using AI-assisted tools  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The abstract provides no quantitative or qualitative data demonstrating that the pipeline successfully converts scFvs into functional mintbodies. No success rate, number of antibodies tested, or representative results from live-cell screening are mentioned.  
+  - **Why it matters** Without evidence of successful conversion, the central claim of an effective pipeline is unsupported. The abstract implies efficacy but offers no basis for assessing whether the method works beyond a single anecdotal case or at all.  
+  - **Resolution test** Provide data from the full manuscript showing the number of scFvs tested, the proportion that became stable and functional, and representative live-cell imaging results demonstrating specific PTM detection.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Reproducibility  
+  - **Claim pointer** The abstract describes a practical, end-to-end protocol that integrates specific AI tools  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The specific AI tools, their versions, and the parameters used for structure prediction and framework optimization are not named or described. The protocol cannot be reproduced or evaluated for general applicability without this information.  
+  - **Why it matters** Reproducibility is a core requirement for a methods paper. If the AI tools are not specified, readers cannot implement the pipeline, and reviewers cannot assess whether the approach is novel or derivative of existing tools.  
+  - **Resolution test** List all AI tools, including versions and key settings, in the full protocol, and provide a step-by-step description that a competent researcher could follow.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Generalizability  
+  - **Claim pointer** The authors state that most mouse monoclonal antibodies fail to remain functional in cells and that their pipeline addresses this generally  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The abstract does not indicate how many different antibodies or PTM targets were tested. It is unclear whether the pipeline works broadly across diverse scFv sequences or only for a narrow set of favorable cases.  
+  - **Why it matters** The claim of a general method is central to the paper's significance. If only one or two antibodies were successfully converted, the pipeline may not be broadly applicable, limiting its utility.  
+  - **Resolution test** Report the number and diversity of antibodies tested, including their target PTMs and source species, and discuss any failures or limitations observed.
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Definition of mintbody  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Issue** The term mintbody is defined, but the abstract does not clarify whether the fluorescent protein fusion affects scFv stability or function, which could be relevant to the pipeline design.  
+  - **Required correction** Briefly state whether the fluorescent protein tag is included in the AI optimization or added after stabilization.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Scope  
+  - **Affected element** Comparison to existing methods  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Issue** The abstract mentions that no general methods exist but does not reference any prior attempts or alternative approaches, such as rational mutagenesis or framework grafting.  
+  - **Required correction** Add a sentence in the introduction or discussion citing prior efforts and explaining how the AI approach differs or improves upon them.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Readability  
+  - **Affected element** Protocol timeline  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Issue** The abstract does not indicate the time or resource investment required for the pipeline, which is relevant for potential users deciding whether to adopt it.  
+  - **Required correction** Include an estimate of the time from sequence input to validated mintbody in the full protocol, and mention it briefly in the abstract if space permits.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking because the core claims of efficacy and reproducibility cannot be assessed from the abstract alone. R1-M3 is important but not blocking, as it affects the breadth of the claim rather than its basic validity.
+- **Assessment against Nature-style criteria**  
+  - Originality: The abstract suggests a novel integration of AI tools for scFv stabilization, which could be original, but the lack of tool names and comparison to existing methods prevents a full assessment.  
+  - Scientific importance: The problem addressed is significant, and a general solution would be valuable, but the importance is contingent on demonstrated broad applicability.  
+  - Interdisciplinary readership: The work bridges computational biology, protein engineering, and cell biology, which could attract a broad audience, but the abstract does not yet make the case compellingly for nonspecialists.  
+  - Technical soundness: Not assessable from the abstract; the absence of validation data and methodological detail is a major gap.  
+  - Readability for nonspecialists: The abstract is clear and accessible, with jargon defined, but the lack of concrete results weakens its impact.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a promising approach, but the core claims of efficiency and functionality require the full protocol and validation data. I would be supportive if the technical concerns are resolved in the full manuscript.
+
+## Risk / unsupported claims
+- The claim that the pipeline efficiently converts unstable scFvs into stable and functional probes is unsupported, as no success data are provided.
+- The claim that the method is a general solution is unsupported, as the number and diversity of tested antibodies are not stated.
+- The claim that AI-assisted tools are integrated in a novel way is not assessable, as specific tools and their roles are not described.
+- The implied superiority or convenience of the pipeline relative to existing methods is not supported by any comparative data.

@@ -1,0 +1,80 @@
+## Review setup
+- **Input scope** Abstract only, as supplied for manuscript DOI 10.1021/acs.jcim.6c02266
+- **Assessment boundary** Evaluation is restricted to the claims and evidence visible in the abstract. No full text, figures, tables, methods, supplementary information, or numerical results were provided.
+- **Shared manuscript claim summary** The authors present CS-SelectFold, a framework that couples generative conformational sampling (SimpleFold) with structural prescreening, chemical-shift prediction (UCBShift 2.0), and ranking against experimental excited-state chemical shifts, without retraining or fine-tuning. They claim proof-of-concept recovery of low-populated conformations for two systems, the T4 lysozyme L99A cavity mutant and the A39V/N53P/V55L Fyn SH3 domain.
+- **Visible evidence base** Two benchmark systems are described. For T4 lysozyme L99A, the reported evidence is recovery of an excited-state-like local rearrangement around the engineered cavity, inward placement of Phe114, and a retrospective two-reference hotspot analysis using internal-distance RMSD (dRMSD) showing enrichment of conformations displaced from the ground-state basin toward the excited-state basin. For Fyn SH3, the reported evidence is recovery of the loss of the C-terminal beta-strand, supported by three-dimensional structural comparison and secondary-structure analysis.
+- **Missing materials affecting confidence** Full text, methods, sampling parameters, candidate pool sizes, prescreening criteria, chemical-shift datasets and their uncertainty, ranking metrics, statistical tests, negative controls, baselines, figures, tables, and supplementary data are all absent. Confidence in the technical soundness and generality of the claims is therefore limited.
+
+## Reviewer
+- **Overall assessment** The abstract describes a conceptually reasonable sample-and-select strategy for accessing low-populated protein conformations, and the choice of two experimentally characterized systems is appropriate for a proof-of-concept study. However, the supplied material does not allow the central claims to be independently evaluated. Key elements such as how candidates are prescreened, how chemical-shift agreement is scored, how enrichment is quantified, and how the method performs against baselines or controls are not visible. The work is potentially interesting but currently not established from the provided evidence.
+- **Who would be interested in the results, and why** Researchers in computational structural biology, NMR spectroscopy, protein folding and misfolding, and generative protein modeling would be interested, because a reliable method to select hidden or excited conformations from generative models without retraining would be broadly useful for mechanistic and ligand-recognition studies.
+- **Major strengths** The problem is well motivated and functionally relevant. The framework is modular and avoids retraining pretrained components, which is a practical advantage. The use of two distinct test systems, an excited-state cavity mutant and an aggregation-prone folding intermediate, suggests an intent to test generality. The reported use of dRMSD-based hotspot analysis is a sensible way to assess movement between basins rather than relying only on coordinate superposition.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Technical soundness
+    - **Claim pointer** CS-SelectFold recovers low-populated conformations for the two benchmark systems.
+    - **Evidence pointer** Abstract only; methods, figures, and tables not provided (location not provided)
+    - **Concern** The abstract does not describe the sampling protocol, the size and diversity of the candidate pool, the structural prescreening criteria, the chemical-shift ranking function, or the threshold used to declare recovery. Without these, the reported recoveries cannot be distinguished from chance enrichment or from selection bias introduced by prescreening.
+    - **Why it matters** The central claim depends on whether the selected conformations are genuinely enriched relative to an unbiased or baseline selection. If the prescreening step already removes ground-state-like structures, the subsequent chemical-shift ranking may not be the effective driver of recovery.
+    - **Resolution test** Provide the full sampling and selection pipeline, candidate pool statistics, prescreening criteria, ranking metric, and a comparison against random selection and against chemical-shift ranking without prescreening.
+  - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Evidence sufficiency
+    - **Claim pointer** Chemical-shift-based ranking enriched conformations that moved away from the ground-state basin and toward the experimentally defined excited-state basin.
+    - **Evidence pointer** Abstract only; retrospective two-reference hotspot analysis described but no data shown (location not provided)
+    - **Concern** The enrichment claim is reported qualitatively. No effect sizes, distributions, statistical significance, or number of independent runs are visible. The retrospective nature of the analysis also raises the possibility that the reference excited-state model informed the evaluation in a way that favors the method.
+    - **Why it matters** Enrichment is the core quantitative support for the selection principle. Without numerical and statistical detail, the claim remains unverifiable.
+    - **Resolution test** Report dRMSD distributions for selected versus unselected candidates, effect sizes, confidence intervals, and significance tests, and clarify whether the evaluation references were used only for assessment or also during selection.
+  - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Generalizability
+    - **Claim pointer** The same sample-and-select principle may extend to broader low-populated hidden conformations, including folding intermediates.
+    - **Evidence pointer** Abstract only; two systems reported (location not provided)
+    - **Concern** Generality is asserted from two cases, one of which is a cavity mutant with a well-characterized local rearrangement. The Fyn SH3 case involves a larger topological change, but the abstract does not show whether the method recovers it reproducibly or whether it fails on other systems.
+    - **Why it matters** The stated scope of the method is broad, but the evidence base is narrow. Overgeneralization could mislead readers about applicability.
+    - **Resolution test** Either temper the generality claim or provide additional systems, including at least one negative or unsuccessful case, and report success rates across independent sampling runs.
+  - **Concern ID** R1-M4
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Validation independence
+    - **Claim pointer** Recovered conformations are consistent with the NMR/CS-Rosetta-derived excited-state model and with the experimentally characterized folding intermediate.
+    - **Evidence pointer** Abstract only; comparison described but no quantitative agreement metrics shown (location not provided)
+    - **Concern** The abstract does not specify how agreement was quantified, whether the experimental references were used in any way during model selection, or how the method would perform if the reference structure were unavailable. The Fyn SH3 validation relies on loss of a C-terminal beta-strand, which is a coarse topological feature that could be reproduced by many non-native conformations.
+    - **Why it matters** Independent validation is essential to establish that the selected conformations correspond to the experimentally observed states rather than to plausible but incorrect alternatives.
+    - **Resolution test** Provide blinded or held-out validation, quantitative agreement metrics against experimental data not used in selection, and a more discriminating structural comparison for the Fyn SH3 intermediate.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Clarity
+    - **Affected element** Definition of dRMSD
+    - **Evidence pointer** Abstract (location not provided)
+    - **Issue** The abstract defines dRMSD in a parenthetical that is difficult to parse and interrupts the sentence.
+    - **Required correction** Rewrite the definition concisely and move detailed metric definitions to the methods.
+  - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Reporting completeness
+    - **Affected element** Benchmark description
+    - **Evidence pointer** Abstract (location not provided)
+    - **Issue** The abstract does not state how many candidates were sampled, how many were selected, or how long the procedure takes.
+    - **Required correction** Add brief quantitative details on candidate pool size, selection count, and computational cost.
+  - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Terminology
+    - **Affected element** Use of "proof-of-concept"
+    - **Evidence pointer** Abstract (location not provided)
+    - **Issue** The term is used without specifying what would constitute a failed proof of concept.
+    - **Required correction** State explicit success criteria for the proof-of-concept claim.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M4
+- **Assessment against Nature-style criteria** Originality is moderate, as sample-and-select with chemical shifts has precedents, but the combination with a generative model without retraining is a reasonable incremental contribution. Scientific importance is potentially high if the method generalizes, but it is not demonstrated from the supplied material. Interdisciplinary readership is plausible across computational and experimental structural biology. Technical soundness cannot be assessed because methods and quantitative results are absent. Readability for nonspecialists is limited by undefined terms and the absence of a clear statement of success criteria.
+- **Recommendation posture** Currently not established from the provided evidence. Supportive if technical concerns are resolved with full methods, quantitative enrichment statistics, baseline comparisons, and independent validation.
+
+## Risk / unsupported claims
+- The claim that CS-SelectFold recovers low-populated conformations is not supported by visible quantitative evidence.
+- The claim that chemical-shift-based ranking enriches conformations toward the excited-state basin is not supported by visible statistics or effect sizes.
+- The claim that the method extends to broader hidden conformations, including folding intermediates, is not supported beyond two systems.
+- The claim that recovered conformations are consistent with experimental references is not supported by visible agreement metrics or blinded validation.
+- The claim that no additional training or fine-tuning is required is plausible but not verifiable without methods details.

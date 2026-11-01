@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fine-Tuning a Protein Language Model for Epitope Library Generation and Sequence Filtering. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>Fine-Tuning a Protein Language Model for Epitope Library Generation and Sequence Filtering.</h1>
+      <div class="meta">Flechas Manrique, Natalia; Martinez Diez, Alberto; Lopez-Martinez, Elena; Andrea, Luc; Cortajarena, Aitziber L; Espinosa-Portales, Llorenc; Manteca, Aitor</div>
+      <div class="meta muted">
+        
+        <span class="journal">Methods in molecular biology (Clifton, N.J.)</span>
+        · 2026-10-30
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42961735/">原文</a>
+      </div>
+      <p class="one-liner">该文微调蛋白语言模型生成线性表位肽库并用Transformer分类器过滤，虽聚焦肽段序列而非完整蛋白结构，但生成与筛选框架可迁移至蛋白质序列设计，与结构计算课题部分相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Linear peptide epitopes play a key role in vaccines, immunotherapies, and diagnostics, yet discovering them remains difficult because peptide sequence space grows exponentially and experimentally confirmed epitopes are relatively few. This chapter presents a computational framework for the generation of synthetic linear epitope libraries that reproduce key statistical and sequence-level properties of naturally occurring epitopes. A large language model pre-trained on protein sequences and subsequently fine-tuned on curated epitope datasets is employed to generate biologically plausible peptide candidates beyond those observed experimentally. To further enrich functional relevance of the generated sequences, they are filtered using transformer-based classification models trained on viral and bacterial epitope datasets. These models are applied as discriminative tools to distinguish likely epitopes from non-epitopes rather than to infer pathogen origin. The resulting libraries are designed to be compatible with high-throughput experimental screening platforms, such as droplet microfluidics, enabling efficient integration of generative artificial intelligence with experimental immunology workflows.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">线性肽表位在疫苗、免疫疗法和诊断中扮演关键角色，然而由于肽序列空间呈指数增长且实验确认的表位相对稀少，发现它们仍然困难。本章介绍了一个计算框架，用于生成合成线性表位文库，该文库再现天然表位的关键统计和序列级特性。采用一个在蛋白质序列上预训练并随后在精选表位数据集上微调的大型语言模型，以生成超出实验观察范围的生物学上合理的肽候选物。为进一步增强生成序列的功能相关性，使用基于Transformer的分类模型（在病毒和细菌表位数据集上训练）对其进行过滤。这些模型被用作判别工具，以区分可能的表位与非表位，而非推断病原体来源。所得文库设计为与高通量实验筛选平台（如液滴微流控）兼容，从而实现生成式人工智能与实验免疫学工作流程的高效整合。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li>标题：Fine-Tuning a Protein Language Model for Epitope Library Generation and Sequence Filtering</li>
+<li>作者与单位：Flechas Manrique, Natalia; Martinez Diez, Alberto; Lopez-Martinez, Elena; Andrea, Luc; Cortajarena, Aitziber L; Espinosa-Portales, Llorenc; Manteca, Aitor（具体单位未提供）</li>
+<li>期刊/预印本平台：Methods in molecular biology (Clifton, N.J.)</li>
+<li>年份：2026-10-30</li>
+<li>论文类型：书籍章节（Methods chapter）</li>
+<li>领域：免疫信息学、蛋白质语言模型、表位发现、生成式 AI</li>
+<li>关键词：linear peptide epitopes; protein language model; fine-tuning; epitope library generation; transformer-based classification; droplet microfluidics（基于摘要推断）</li>
+<li>DOI/arXiv 号：10.1007/978-1-0716-5583-2_1</li>
+<li>代码：未提供</li>
+<li>数据：未提供（摘要提及 curated epitope datasets、viral and bacterial epitope datasets，但未给出具体数据集名称或链接）</li>
+<li>阅读日期：2026-05-15</li>
+<li>在「蛋白质结构相关计算研究 × AI 方法/物理模拟」方向中的位置：本文属于 AI 方法（蛋白质语言模型微调 + transformer 分类器）在序列设计/表位库生成中的应用。与结构预测、构象采样、分子对接、MD 模拟无直接关联，但其「生成 + 判别过滤」的两阶段范式、微调策略、以及面向高通量实验筛选的库设计思路，对蛋白质序列设计、功能肽设计等方向具有可迁移性。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>针对线性肽表位实验确认数量少、序列空间指数增长的问题，该工作通过在 curated 表位数据集上微调预训练蛋白质语言模型生成候选表位，再用基于 transformer 的分类模型过滤，得到设计上与高通量微流控筛选兼容的合成表位库，但摘要未报告生成序列的实验验证结果或定量性能指标。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li>具体问题：如何利用蛋白质语言模型生成具有生物学合理性的线性肽表位库，使其在统计和序列层面再现天然表位的性质，并通过分类模型富集功能相关序列？</li>
+<li>为什么重要：线性肽表位在疫苗、免疫治疗和诊断中起关键作用，但实验确认的表位数量有限，而肽序列空间呈指数增长，传统实验筛选效率低。</li>
+<li>现有方法为何不足：摘要指出实验确认表位相对较少，序列空间巨大，暗示穷举实验筛选不可行；未详细讨论现有计算方法的具体不足。</li>
+<li>精确研究问题（Can ... ?）：Can a protein language model fine-tuned on curated epitope datasets generate synthetic linear peptide libraries that reproduce key statistical and sequence-level properties of natural epitopes and are compatible with high-throughput experimental screening?（基于摘要重构，原文未以问句形式给出）</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<ul>
+<li>阶段一：实验表位发现——通过免疫学实验确认线性肽表位，通量低、成本高。</li>
+<li>阶段二：计算表位预测——基于序列特征或机器学习预测表位，但摘要未引用具体方法。</li>
+<li>阶段三：生成式蛋白质语言模型——在大规模蛋白质序列上预训练，具备生成新序列的能力。</li>
+<li>阶段四（本文位置）：将预训练蛋白质语言模型微调到表位数据集，生成合成表位库，再用 transformer 分类器过滤，并与微流控高通量筛选对接。</li>
+<li>优点：生成 + 判别两阶段可兼顾多样性与功能相关性；面向实验平台设计。</li>
+<li>局限：摘要未提供定量评估、实验验证或与基线方法的比较。</li>
+<li>脉络标注：以上脉络为「仅本文框架」，基于摘要内容重构，未经外部文献核验。</li>
+</ul>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验确认表位数量少</td>
+<td>可用于训练的 curated epitope 数据有限</td>
+<td>作者指出 experimentally confirmed epitopes are relatively few</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>肽序列空间指数增长</td>
+<td>穷举筛选不可行</td>
+<td>作者指出 peptide sequence space grows exponentially</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>生成序列的功能相关性不确定</td>
+<td>语言模型生成的序列未必是功能性表位</td>
+<td>作者通过增加 transformer 分类过滤步骤来应对</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>生成库与实验平台兼容性</td>
+<td>需要与高通量筛选平台对接</td>
+<td>作者设计库时考虑 droplet microfluidics 兼容性</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p>1) 表面方法：在 curated 表位数据集上微调预训练蛋白质语言模型，生成合成线性肽表位库；再用在病毒和细菌表位数据上训练的 transformer 分类模型过滤，区分 likely epitopes 与 non-epitopes。
+2) 核心洞察：预训练蛋白质语言模型已捕获蛋白质序列的统计规律，微调后可将其生成分布偏移到表位子空间；生成与判别分离可以在不牺牲多样性的前提下富集功能相关序列。
+3) 可能的普适教训 [Analysis]：在数据稀缺的功能序列设计任务中，「生成模型微调 + 判别模型过滤」的两阶段范式可作为一种通用策略；面向下游实验平台（如微流控）设计库的约束应在前端纳入考虑。</p>
+<h2>07 方法总览</h2>
+<ul>
+<li>输入：curated epitope datasets（序列数据）；viral and bacterial epitope datasets（用于训练分类器）</li>
+<li>输出：合成线性肽表位库（经过滤的候选序列集合）</li>
+<li>模块：</li>
+<li>模块 A：预训练蛋白质语言模型（具体模型未提供）</li>
+<li>模块 B：在表位数据上的微调</li>
+<li>模块 C：基于 transformer 的表位/非表位分类器（在病毒和细菌表位数据上训练）</li>
+<li>模块 D：过滤步骤，将生成序列分为 likely epitopes 与 non-epitopes</li>
+<li>训练：先预训练（外部完成），再在表位数据上微调；分类器独立训练</li>
+<li>工具：未提供具体框架或代码</li>
+<li>反馈回路：摘要未提及迭代生成-过滤回路</li>
+<li>假设：微调后的语言模型能生成再现天然表位统计和序列层面性质的序列；分类器能有效区分表位与非表位</li>
+<li>文字流程：curated epitope 数据 → 微调预训练蛋白质语言模型 → 生成候选肽序列 → transformer 分类器打分/过滤 → 输出合成表位库 → 对接高通量实验筛选（如 droplet microfluidics）</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>预训练蛋白质语言模型</td>
+<td>提供蛋白质序列的通用表示与生成能力</td>
+<td>表位数据量不足以从头训练</td>
+<td>输入：蛋白质序列；输出：序列表示/生成分布</td>
+<td>摘要</td>
+<td>预期：无法生成合理序列（未实测）</td>
+</tr>
+<tr>
+<td>表位数据微调</td>
+<td>将生成分布偏移到表位子空间</td>
+<td>通用模型不专门生成表位</td>
+<td>输入：curated epitope 数据；输出：微调后模型</td>
+<td>摘要</td>
+<td>预期：生成序列缺乏表位特征（未实测）</td>
+</tr>
+<tr>
+<td>Transformer 分类器</td>
+<td>区分 likely epitopes 与 non-epitopes</td>
+<td>生成序列功能相关性不确定</td>
+<td>输入：肽序列；输出：表位/非表位判别</td>
+<td>摘要</td>
+<td>预期：库中非表位比例升高（未实测）</td>
+</tr>
+<tr>
+<td>过滤步骤</td>
+<td>富集功能相关序列</td>
+<td>提高实验筛选效率</td>
+<td>输入：生成序列 + 分类器输出；输出：过滤后库</td>
+<td>摘要</td>
+<td>预期：库质量下降（未实测）</td>
+</tr>
+</tbody>
+</table>
+<p>注：以上「移除后的影响」均为预期效应，摘要未提供消融实验数据。</p>
+<h2>09 关键公式符号</h2>
+<p>不适用（摘要未提供任何公式或符号定义）。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li>数据集/群体：curated epitope datasets；viral and bacterial epitope datasets（具体名称、规模未提供）</li>
+<li>规模：未提供</li>
+<li>指标：未提供</li>
+<li>基线：未提供</li>
+<li>预算：未提供</li>
+<li>骨干/仪器：预训练蛋白质语言模型（具体架构未提供）；transformer 分类模型</li>
+<li>oracle 输入：未提供</li>
+<li>评测协议：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供具体实验</td>
+<td>微调后模型可生成表位样序列</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>未提供具体实验</td>
+<td>分类器可区分表位与非表位</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<p>注：摘要为章节介绍性文字，未报告任何定量实验结果。</p>
+<h2>11 结论正确解读</h2>
+<ul>
+<li>任务范围：本文为 Methods 章节，描述计算框架，非实验研究报告。</li>
+<li>oracle/真值输入：未提供。</li>
+<li>端到端状态：框架描述完整，但未展示端到端实验验证。</li>
+<li>算力成本：未提供。</li>
+<li>历史数据依赖：依赖 curated epitope 数据集和 viral/bacterial epitope 数据集，具体来源未提供。</li>
+<li>模型依赖：依赖预训练蛋白质语言模型和 transformer 分类器，具体模型未提供。</li>
+<li>最难情形：摘要未讨论。</li>
+<li>群体/领域边界：针对线性肽表位，不涉及构象表位或非肽表位。</li>
+<li>不确定性：生成序列的生物学合理性、分类器的实际判别性能、与微流控平台的实际兼容性均未在摘要中量化。</li>
+<li>有边界的复述：该章节提出了一个「微调蛋白质语言模型生成 + transformer 分类过滤」的计算框架，用于构建合成线性肽表位库，设计目标是与高通量实验筛选兼容；摘要未提供定量性能数据或实验验证结果。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>摘要未报告任何定量评估</td>
+<td>无法判断生成序列是否真正再现天然表位性质</td>
+<td>框架有效性未知</td>
+<td>需查看章节全文中的评估结果</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>分类器在病毒和细菌表位上训练，但声称不用于推断病原体来源</td>
+<td>训练数据可能引入物种特异性偏差，影响对非病毒/非细菌表位的判别</td>
+<td>限制库的通用性</td>
+<td>在独立物种表位数据上测试分类器</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>未说明预训练模型是否在表位相关蛋白上预训练</td>
+<td>若预训练语料缺乏免疫相关序列，微调效果可能受限</td>
+<td>影响生成质量</td>
+<td>比较不同预训练语料的微调效果</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>未提及生成序列的多样性控制</td>
+<td>微调可能导致模式坍塌，生成库多样性不足</td>
+<td>影响实验筛选覆盖度</td>
+<td>计算生成库的序列多样性指标</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>与微流控平台的兼容性仅为设计目标</td>
+<td>未验证实际兼容性（如序列长度、合成难度、液滴封装效率）</td>
+<td>影响实验落地</td>
+<td>实际微流控实验验证</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<h3>Agent 提炼的知识候选</h3>
+<ul>
+<li>可迁移概念：在数据稀缺的功能序列设计任务中，「预训练语言模型微调生成 + 判别模型过滤」的两阶段范式可作为一种通用策略。对于蛋白质结构相关计算研究，该思路可迁移到：</li>
+<li>构象生成：用预训练结构生成模型微调到特定构象集合，再用判别模型过滤物理合理性。</li>
+<li>序列设计：微调蛋白质语言模型生成候选序列，用结构预测或对接打分过滤。</li>
+<li>分子对接：生成候选结合肽，用对接打分或分类器过滤。</li>
+<li>可迁移方法：面向下游实验平台（如微流控、高通量筛选）设计生成库时，应在生成阶段就纳入平台约束（序列长度、合成可行性等）。</li>
+<li>可迁移实验设计：生成-过滤框架的评估应包含多样性指标、功能相关性指标和与基线的比较；本文摘要未展示，但提示了需要关注的评估维度。</li>
+<li>可迁移公式：不适用。</li>
+<li>面向课题方向的迁移建议 [Analysis]：若将本文框架迁移到蛋白质结构预测或构象采样，可考虑用 AlphaFold 或 MD 生成的构象数据微调生成模型，再用物理合理性判别器（如能量打分、Ramachandran 偏好）过滤。</li>
+</ul>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li>相似方向：蛋白质语言模型（如 ESM、ProtGPT2 等）在序列生成与设计中的应用（未在本文摘要中引用，为外部知识）。</li>
+<li>组合方向：生成模型 + 判别模型的两阶段范式在分子生成领域已有广泛应用（如 GAN、VAE + 分类器），本文将其应用于表位库生成。</li>
+<li>冲突：未发现。</li>
+<li>可迁移领域：免疫信息学、蛋白质设计、高通量筛选。</li>
+<li>注：以上连接基于外部知识，本文摘要未提供具体文献引用。</li>
+</ul>
+<h2>16 研究想法</h2>
+<h3>Agent 生成的研究候选</h3>
+<ol>
+<li>
+<p>名称：基于结构感知的蛋白质语言模型微调用于构象表位生成
+   - 来源局限/观察：本文仅针对线性肽表位，未涉及构象表位；而构象表位在免疫识别中同样重要。
+   - 核心假设：将蛋白质语言模型与结构信息（如 AlphaFold 嵌入）结合微调，可生成构象表位候选。
+   - 相对本文的增量：从线性序列扩展到结构依赖的表位生成。
+   - 初步方法：用结构预测模型提取构象表位区域的结构嵌入，微调语言模型生成候选序列，再用对接或 MD 过滤。
+   - 验证方式：与已知构象表位比较，实验验证结合亲和力。
+   - 可能的失败模式：结构嵌入与序列生成的对齐困难；构象表位数据更稀缺。
+   - 创新状态：unverified</p>
+</li>
+<li>
+<p>名称：生成-过滤框架中的多样性-功能性权衡分析
+   - 来源局限/观察：本文未报告生成库的多样性指标，微调可能导致模式坍塌。
+   - 核心假设：在生成-过滤框架中存在多样性-功能性权衡，可通过调节过滤阈值或引入多样性正则化来控制。
+   - 相对本文的增量：系统分析权衡关系，提供调节策略。
+   - 初步方法：在不同过滤阈值下生成库，计算多样性与预测功能性指标，绘制权衡曲线。
+   - 验证方式：实验筛选不同阈值下的库，比较命中率。
+   - 可能的失败模式：多样性指标与实验命中率不相关。
+   - 创新状态：unverified</p>
+</li>
+<li>
+<p>名称：跨物种表位分类器的泛化性评估与去偏
+   - 来源局限/观察：本文分类器在病毒和细菌表位上训练，但声称不用于推断病原体来源，可能存在物种偏差。
+   - 核心假设：分类器学到的可能是物种特异性特征而非通用表位特征。
+   - 相对本文的增量：评估并去偏分类器，提升跨物种泛化。
+   - 初步方法：在独立物种表位数据上测试分类器，使用对抗训练或数据增强去偏。
+   - 验证方式：跨物种表位预测的 AUC 比较。
+   - 可能的失败模式：去偏后分类性能下降。
+   - 创新状态：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and methods as described in the abstract; no full text, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present a computational framework that fine-tunes a protein language model on curated epitope datasets to generate synthetic linear epitope libraries, then filters these sequences using transformer-based classifiers trained on viral and bacterial epitope data. The claimed outcome is libraries that reproduce statistical and sequence-level properties of natural epitopes and are compatible with high-throughput screening platforms such as droplet microfluidics.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, benchmark comparisons, dataset descriptions, or validation metrics are provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full methods, dataset curation details, model architecture specifications, training and evaluation protocols, quantitative performance metrics, comparison against existing epitope prediction or generation tools, and any experimental validation data</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract describes a conceptually reasonable pipeline that combines generative and discriminative language models for epitope library design. The idea is timely and aligns with current trends in applying protein language models to immunology. However, the abstract provides no quantitative evidence that the generated libraries indeed reproduce natural epitope properties, that the filtering step improves functional relevance, or that the approach outperforms existing methods. As presented, the claims are plausible but unsubstantiated. The chapter appears to be a methods description rather than a primary research report, which tempers expectations, but even for a methods chapter the absence of any performance characterization limits the reader's ability to assess utility.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in computational immunology, vaccine design, and peptide library engineering would be the primary audience. Those working on generative models for biological sequences and on high-throughput screening integration would also find the framework relevant. The droplet microfluidics compatibility angle may attract experimentalists seeking AI-guided library design.</li>
+<li><strong>Major strengths</strong> The combination of generative and discriminative language models in a single pipeline is a sensible design choice. The explicit framing of classifiers as filters rather than pathogen-origin predictors is a clear and appropriate scoping decision. The stated compatibility with high-throughput screening platforms indicates practical intent beyond purely computational benchmarking.</li>
+<li><strong>Major Concerns</strong>  </li>
+<li>R1-M1  </li>
+<li>R1-M2  </li>
+<li>R1-M3</li>
+<li><strong>Minor Comments</strong>  </li>
+<li>R1-m1  </li>
+<li>R1-m2  </li>
+<li>R1-m3</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 and R1-M2 are blocking. Without quantitative evidence of library quality and without a demonstration that the filtering step adds value, the core claims of the framework cannot be evaluated.</li>
+<li><strong>Assessment against Nature-style criteria</strong><br />
+  Originality: Moderate. The combination of fine-tuned protein language models with discriminative filtering for epitope library generation is not entirely novel, as similar generative-discriminative pipelines exist in other sequence-design contexts, but the specific application to linear epitope libraries is a reasonable niche contribution.<br />
+  Scientific importance: Moderate. Epitope discovery is relevant to vaccinology and diagnostics, but the abstract does not demonstrate that the approach advances the state of the art.<br />
+  Interdisciplinary readership: Moderate. The work bridges machine learning and immunology, but the abstract is written at a level that assumes familiarity with both fields without providing sufficient context for either audience.<br />
+  Technical soundness: Not assessable from the abstract. No metrics, baselines, or validation procedures are described.<br />
+  Readability for nonspecialists: Acceptable. The abstract is concise and avoids jargon overload, though terms such as "transformer-based classification models" and "droplet microfluidics" are used without brief explanation.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The framework is plausible and the direction is worthwhile, but the abstract alone does not provide sufficient support for the claims. If the full chapter includes quantitative validation, the case may become supportive.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Evidence sufficiency  </li>
+<li><strong>Claim pointer</strong> The framework generates synthetic epitope libraries that "reproduce key statistical and sequence-level properties of naturally occurring epitopes."  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Concern</strong> The abstract asserts that the generated libraries reproduce statistical and sequence-level properties of natural epitopes, but no quantitative comparison is presented. There are no metrics such as amino acid frequency distributions, motif enrichment scores, sequence similarity distributions, or diversity measures that would substantiate this claim.  </li>
+<li><strong>Why it matters</strong> The central value proposition of the framework is that generated libraries are biologically plausible and useful for screening. Without quantitative evidence of property reproduction, a reader cannot determine whether the generative model produces anything beyond random peptide sequences with superficial epitope-like features.  </li>
+<li>
+<p><strong>Resolution test</strong> Provide a comparison between generated and experimentally confirmed epitope sequences using at least two quantitative measures, such as k-mer frequency correlation, position-specific amino acid propensity, or embedding-space distance distributions, with appropriate statistical tests.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2  </p>
+</li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Evidence sufficiency  </li>
+<li><strong>Claim pointer</strong> Filtering with transformer-based classifiers "enrich[es] functional relevance" of generated sequences.  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Concern</strong> The abstract states that filtering enriches functional relevance but provides no data showing that filtered sequences are more likely to be epitopes than unfiltered ones. No precision, recall, enrichment factor, or comparison against unfiltered generation is reported.  </li>
+<li><strong>Why it matters</strong> The filtering step is a key component of the pipeline. If it does not measurably improve the proportion of plausible epitopes, the additional computational complexity is not justified. The claim of enrichment is central to the framework's utility.  </li>
+<li>
+<p><strong>Resolution test</strong> Report the fraction of generated sequences classified as epitopes before and after filtering, along with any available experimental validation or at least a benchmark against known epitope databases.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3  </p>
+</li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> No  </li>
+<li><strong>Axis</strong> Comparative positioning  </li>
+<li><strong>Claim pointer</strong> The framework is presented as a useful tool for epitope library generation, implying advantage over existing approaches.  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Concern</strong> No comparison is made against existing epitope prediction tools, generative sequence models, or random library baselines. The abstract does not state what this framework adds beyond what current methods already achieve.  </li>
+<li><strong>Why it matters</strong> Without a baseline comparison, the reader cannot assess whether the framework is a meaningful advance or a reimplementation of known techniques. This is particularly relevant for a methods chapter, where positioning relative to prior work is essential.  </li>
+<li><strong>Resolution test</strong> Include a comparison against at least one existing epitope prediction or generation method using a common evaluation metric, or clearly state the specific limitations of prior approaches that this framework addresses.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Clarity  </li>
+<li><strong>Affected element</strong> Dataset description  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Issue</strong> The abstract mentions "curated epitope datasets" but does not specify their size, source, species, or whether they are linear or conformational epitopes.  </li>
+<li>
+<p><strong>Required correction</strong> Specify the datasets used, including source databases, number of sequences, and any filtering criteria applied during curation.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2  </p>
+</li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Reproducibility  </li>
+<li><strong>Affected element</strong> Model details  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Issue</strong> The abstract refers to "a large language model pre-trained on protein sequences" without naming the model or its version. This is insufficient for reproducibility.  </li>
+<li>
+<p><strong>Required correction</strong> Name the specific model and version used, and state whether the fine-tuning code and hyperparameters are publicly available.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3  </p>
+</li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Scope clarity  </li>
+<li><strong>Affected element</strong> Application claim  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Issue</strong> The abstract states the libraries are "designed to be compatible" with droplet microfluidics but does not describe any design choices that ensure this compatibility, such as sequence length constraints or synthesis considerations.  </li>
+<li><strong>Required correction</strong> Briefly describe the design features that enable compatibility with droplet microfluidics, or soften the claim to indicate intended rather than demonstrated compatibility.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that generated libraries "reproduce key statistical and sequence-level properties" of natural epitopes is unsupported by any quantitative evidence in the abstract.</li>
+<li>The claim that filtering "enrich[es] functional relevance" is unsupported by any comparative data.</li>
+<li>The claim of compatibility with droplet microfluidics is stated as a design goal rather than a demonstrated property; the abstract provides no evidence of experimental validation.</li>
+<li>The overall utility of the framework relative to existing methods is not assessable due to the absence of baseline comparisons.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

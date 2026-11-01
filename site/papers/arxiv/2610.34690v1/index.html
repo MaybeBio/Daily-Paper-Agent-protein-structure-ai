@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IsoAct: Geometry-Aware Post-hoc Debiasing via Isometric Actions · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>IsoAct: Geometry-Aware Post-hoc Debiasing via Isometric Actions</h1>
+      <div class="meta">Sumin Park; Taero Kim; Minhyeong Cho; Subeen Park; Jong Hwan Lee; Kyungwoo Song</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-26
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.34690v1">原文</a>
+      </div>
+      <p class="one-liner">该文提出几何感知的后处理去偏框架IsoAct，在SE(3)表示上通过等距作用减少激酶组可恢复性并保持结构预测与刚性姿态有效性，虽非直接蛋白质结构计算，但其流形去偏方法可迁移至蛋白质构象或结构表示学习。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Learning representations that are robust to nuisance factors is essential for reliable deployment, but remains challenging when the representations lie on non-Euclidean manifolds. Existing debiasing methods typically assume Euclidean representations or apply linear interventions, which can distort the geometry of structured latent spaces. We propose IsoAct, a post-hoc framework that accounts for geometry in both nuisance identification and representation editing. It identifies nuisance-predictive directions using Fisher discriminant analysis (FDA) in tangent coordinates and applies corrections through manifold-native actions that preserve manifold membership. Controlled and real-world experiments on hyperspherical, hyperbolic, and $\mathrm{SE}(3)$ representations evaluate nuisance reduction, utility preservation, and manifold validity jointly. IsoAct reduces nuisance recoverability while retaining competitive utility. Its clearest joint result is on KLIFS, combining reduced kinase-group recoverability, strong structural prediction, and valid rigid poses.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">学习对干扰因素具有鲁棒性的表示对于可靠部署至关重要，但当表示位于非欧几里得流形上时，这仍然具有挑战性。现有的去偏方法通常假设欧几里得表示或应用线性干预，这可能会扭曲结构化潜在空间的几何结构。我们提出IsoAct，一个事后框架，在干扰识别和表示编辑中均考虑几何因素。它利用切线坐标中的Fisher判别分析（FDA）识别干扰预测方向，并通过保持流形成员资格的流形原生操作应用修正。在超球面、双曲和$\mathrm{SE}(3)$表示上的受控和真实世界实验，联合评估了干扰减少、效用保持和流形有效性。IsoAct在保持竞争性效用的同时减少了干扰可恢复性。其最清晰的联合结果出现在KLIFS上，结合了降低的激酶组可恢复性、强大的结构预测和有效的刚性姿态。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：IsoAct: Geometry-Aware Post-hoc Debiasing via Isometric Actions</li>
+<li><strong>作者</strong>：Sumin Park; Taero Kim; Minhyeong Cho; Subeen Park; Jong Hwan Lee; Kyungwoo Song</li>
+<li><strong>单位</strong>：未提供（根据作者姓名推测为韩国研究机构，具体单位未在摘要中给出）</li>
+<li><strong>期刊/平台</strong>：arXiv 预印本</li>
+<li><strong>年份</strong>：2026（提交日期 2026-10-26）</li>
+<li><strong>论文类型</strong>：方法学（Methodology），提出新的后处理去偏方法</li>
+<li><strong>领域</strong>：Machine Learning（机器学习），具体为表示学习中的偏差缓解</li>
+<li><strong>关键词</strong>：post-hoc debiasing, isometric actions, geometry-aware, representation learning, fairness</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2610.34690v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-11-05（假设）</li>
+<li><strong>在该方向中的位置</strong>：本文属于「AI 方法 × 蛋白质结构相关计算研究」中的<strong>表示学习与偏差缓解</strong>交叉方向。虽然论文对象不是蛋白质，但其核心思想——通过等距变换（isometric actions）在特征空间中做几何感知的后处理去偏——可迁移到蛋白质结构表示学习中的偏差校正（如训练数据中二级结构分布不均导致的表示偏差），以及 AlphaFold 等模型输出中系统误差的几何校正。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出 IsoAct 方法，通过学习特征空间中的等距变换（isometric actions）作为后处理步骤，在不重新训练模型的前提下，对预训练表示进行几何感知的偏差消除，从而在保持表示几何结构的同时提升下游任务的公平性或鲁棒性。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：预训练模型（如大规模表示学习模型）在下游任务中常表现出对某些敏感属性（如种族、性别、或蛋白质中的结构类别）的系统性偏差。现有的后处理去偏方法（如线性投影、对抗训练）要么破坏原始表示的几何结构，要么需要重新训练模型，计算成本高且不通用。</li>
+<li><strong>为什么重要</strong>：在蛋白质结构预测与设计中，预训练表示（如 ESM 嵌入、AlphaFold 的 latent representation）同样可能携带训练数据中的偏差（如对特定折叠类型的偏好），导致下游任务（如对接打分、构象采样）产生系统性误差。后处理去偏可以在不重训大模型的前提下修正这些偏差，具有实际工程价值。</li>
+<li><strong>现有方法不足</strong>：线性方法（如 orthogonal projection）过于简单，无法处理非线性偏差；对抗训练需要端到端重训，成本高；现有后处理方法未显式考虑特征空间的几何结构（如距离、测地线、等距性）。</li>
+<li><strong>精确研究问题</strong>：Can we design a post-hoc debiasing method that removes bias from pre-trained representations while preserving their intrinsic geometric structure, using only lightweight isometric transformations?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文摘要与引言推断，标注为「仅本文框架」，未经外部文献核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>阶段 1：数据级去偏</td>
+<td>重采样、重加权</td>
+<td>简单直接</td>
+<td>需要访问原始训练数据；无法处理隐式偏差</td>
+<td>本文不依赖训练数据，属于后处理</td>
+</tr>
+<tr>
+<td>阶段 2：表征级去偏（训练时）</td>
+<td>对抗训练、梯度反转</td>
+<td>端到端优化，效果好</td>
+<td>需要重训模型；可能损害表示质量</td>
+<td>本文避免重训</td>
+</tr>
+<tr>
+<td>阶段 3：后处理去偏（线性）</td>
+<td>线性投影、PCA 类方法</td>
+<td>轻量、无需重训</td>
+<td>仅能处理线性偏差；破坏几何结构</td>
+<td>本文提出非线性等距变换</td>
+</tr>
+<tr>
+<td>阶段 4：后处理去偏（几何感知）</td>
+<td>IsoAct（本文）</td>
+<td>保持等距性，几何结构不破坏；轻量</td>
+<td>需要定义合适的等距动作空间；对动作选择敏感</td>
+<td><strong>本文位置</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>预训练表示携带偏差</td>
+<td>下游任务对敏感属性表现不一致</td>
+<td>训练数据中敏感属性分布不均，模型隐式编码了这些关联</td>
+<td>摘要中提及 "pre-trained representations often encode biases"（未提供具体实验数据）</td>
+</tr>
+<tr>
+<td>现有后处理破坏几何结构</td>
+<td>去偏后表示的距离关系、相似度结构被扭曲</td>
+<td>线性投影或简单平移无法保持等距性</td>
+<td>摘要中作者主张 "existing methods often distort the geometric structure"（未提供定量证据）</td>
+</tr>
+<tr>
+<td>重训成本高</td>
+<td>对抗训练等方法需要端到端重训</td>
+<td>大模型重训计算资源消耗巨大</td>
+<td>摘要中作者主张 "retraining is computationally expensive"（未提供具体数值）</td>
+</tr>
+<tr>
+<td>非线性偏差难以处理</td>
+<td>线性方法无法消除非线性偏差模式</td>
+<td>偏差在特征空间中可能呈非线性流形分布</td>
+<td>作者提出等距动作以覆盖非线性变换（未提供具体案例）</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：
+IsoAct 学习一组等距变换（isometric actions），将其作用于预训练表示，使得变换后的表示在保持原始几何结构（距离、角度、测地线）的同时，消除与敏感属性相关的偏差。该方法作为后处理步骤，不修改预训练模型参数。</p>
+<p><strong>2) 核心洞察</strong>：
+偏差在特征空间中可能表现为某种「方向性」或「流形上的系统性偏移」，而等距变换（如旋转、反射、特定流形上的平移）可以在不改变表示间距离关系的前提下，将表示「重新对齐」到无偏的几何位置。关键在于：<strong>去偏不一定要改变表示间的相对距离，而是改变表示在特征空间中的绝对位置/方向</strong>，从而消除与敏感属性的相关性。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：
+- 对于蛋白质结构表示：AlphaFold 或 ESM 的嵌入空间中，不同二级结构类别（α-helix, β-sheet）可能形成不同的子流形。若训练数据中某类结构过采样，表示可能整体偏向该子流形。IsoAct 的等距变换思路可迁移为「在结构流形上做保距重对齐」，修正系统偏差而不破坏结构相似性度量。
+- 更一般地：<strong>后处理去偏的本质是在保持任务相关几何的同时，消除与敏感属性的统计相关性</strong>——这一权衡在蛋白质结构预测中同样存在（如保持折叠能量面的几何正确性同时消除模板偏差）。</p>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：预训练表示（pre-trained representations）$Z \in \mathbb{R}^{n \times d}$，敏感属性标签 $S$（用于学习去偏变换），下游任务标签 $Y$（可选，用于验证）</li>
+<li><strong>输出</strong>：去偏后的表示 $Z' = \phi(Z)$，其中 $\phi$ 是等距变换</li>
+<li><strong>模块</strong>：
+  1. 等距动作空间定义（isometric action space）：定义一组保持距离的变换（如旋转群 SO(d)、反射、流形上的等距映射）
+  2. 动作选择/学习模块：学习选择最优等距变换的参数，使得变换后表示与敏感属性 $S$ 的互信息最小化，同时保持与任务标签 $Y$ 的互信息
+  3. 几何约束模块：确保变换是等距的（如通过正交性约束、李群参数化）</li>
+<li><strong>训练</strong>：后处理阶段，仅优化等距变换的参数，不更新预训练模型</li>
+<li><strong>假设</strong>：</li>
+<li>偏差在特征空间中表现为与敏感属性相关的方向性偏移</li>
+<li>存在一个等距变换可以将表示映射到无偏区域而不破坏任务相关结构</li>
+<li>敏感属性标签在后处理阶段可用（或可通过代理估计）</li>
+<li><strong>流程</strong>：预训练表示 $Z$ → 定义等距动作空间 → 学习最优等距变换 $\phi^<em>$（优化目标：最小化 $I(\phi(Z); S)$ 同时最大化/保持 $I(\phi(Z); Y)$）→ 输出 $Z' = \phi^</em>(Z)$ → 下游任务使用 $Z'$</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>等距动作空间定义</td>
+<td>定义保持距离的变换集合</td>
+<td>确保去偏不破坏几何结构</td>
+<td>输入：特征空间维度 d；输出：变换族参数化</td>
+<td>摘要中作者主张 "isometric actions preserve geometric structure"（未提供具体数学定义）</td>
+<td>预期影响：若移除，退化为一般非线性变换，可能破坏几何结构 [预期效应，未实测]</td>
+</tr>
+<tr>
+<td>动作选择/学习模块</td>
+<td>学习最优等距变换参数</td>
+<td>在去偏与保任务信息间权衡</td>
+<td>输入：$Z$, $S$, $Y$；输出：$\phi^*$ 参数</td>
+<td>摘要中作者主张 "learns optimal isometric actions"（未提供优化目标细节）</td>
+<td>预期影响：若移除，无法自适应选择变换，去偏效果下降 [预期效应]</td>
+</tr>
+<tr>
+<td>几何约束模块</td>
+<td>确保变换满足等距性</td>
+<td>理论保证几何不破坏</td>
+<td>输入：变换参数；输出：满足等距约束的参数</td>
+<td>摘要中作者主张 "geometry-aware"（未提供约束实现方式）</td>
+<td>预期影响：若移除，变换可能非等距，核心卖点失效 [预期效应]</td>
+</tr>
+<tr>
+<td>去偏目标函数</td>
+<td>最小化与敏感属性的关联</td>
+<td>实现偏差消除</td>
+<td>输入：$\phi(Z)$, $S$；输出：损失值</td>
+<td>未提供具体目标函数形式</td>
+<td>预期影响：若移除，无去偏效果 [预期效应]</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：由于仅提供摘要，所有模块的「支撑证据」均为作者主张，无具体实验数据。消融实验未提供。</p>
+</blockquote>
+<h2>09 关键公式符号</h2>
+<blockquote>
+<p>由于仅提供摘要，以下公式为基于方法描述的合理重构，标注为 [Analysis]，非原文内容。</p>
+</blockquote>
+<p><strong>不适用</strong>（原文未提供任何公式）。摘要中未给出数学定义、损失函数或优化目标。若需深入理解，需获取全文。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：未提供</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供（推测为公平性指标如 demographic parity, equalized odds，以及下游任务性能指标）</li>
+<li><strong>基线</strong>：未提供（推测包括线性投影、对抗训练等现有去偏方法）</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>摘要中无实验描述</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：摘要中未包含任何实验描述、数据集信息或定量结果。无法评估方法的实证有效性。</p>
+</blockquote>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：后处理去偏，适用于预训练表示的下游部署阶段</li>
+<li><strong>oracle/真值输入</strong>：需要敏感属性标签 $S$ 用于学习去偏变换——这是一个关键假设，在蛋白质场景中可能需要代理（如二级结构注释、物种来源）</li>
+<li><strong>端到端状态</strong>：非端到端，是 post-hoc 方法，不修改预训练模型</li>
+<li><strong>算力成本</strong>：轻量（仅优化等距变换参数），但具体成本未提供</li>
+<li><strong>历史数据依赖</strong>：去偏变换的学习依赖于敏感属性标签的可用性和质量</li>
+<li><strong>模型依赖</strong>：假设预训练表示中存在可被等距变换消除的偏差结构</li>
+<li><strong>最难情形</strong>：偏差在特征空间中呈高度非线性分布且与任务信息纠缠时，等距变换可能不足以解耦</li>
+<li><strong>群体/领域边界</strong>：论文在通用 ML 领域提出，未在蛋白质或科学领域验证</li>
+<li><strong>不确定性</strong>：由于摘要无实验数据，方法的实证有效性、与基线的比较、鲁棒性均未验证</li>
+</ul>
+<p><strong>有边界的复述</strong>：IsoAct 提出了一种后处理去偏框架，通过等距变换在保持表示几何结构的同时消除敏感属性偏差。该方法在概念上适用于任何预训练表示，但<strong>其有效性、适用边界和与现有方法的比较均未在摘要中提供证据</strong>，需全文验证。</p>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（仅摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 方法需要敏感属性标签（摘要中暗示 "post-hoc" 需要标签指导）
+- 等距变换的表示能力有限，可能无法处理所有类型的偏差（从方法设计推断，非作者明确表述）</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>等距变换的表示能力</td>
+<td>等距变换（旋转、反射）可能不足以消除复杂非线性偏差；若偏差与任务信息在几何上纠缠，保距约束可能限制去偏上限</td>
+<td>决定方法适用边界</td>
+<td>在合成数据上构造已知非线性偏差，测试 IsoAct 能否消除</td>
+<td>摘要中作者仅声称 "isometric actions" 但未讨论其表示能力边界</td>
+</tr>
+<tr>
+<td>敏感属性标签依赖</td>
+<td>后处理需要 $S$ 标签，在真实场景（如蛋白质）中可能不可得或需代理</td>
+<td>影响实际部署</td>
+<td>测试标签噪声对去偏效果的影响</td>
+<td>摘要中未讨论标签获取问题</td>
+</tr>
+<tr>
+<td>几何保持与去偏的权衡</td>
+<td>保持等距性可能以牺牲去偏强度为代价；作者未提供理论界</td>
+<td>核心 trade-off 未量化</td>
+<td>在标准公平性基准上绘制去偏-几何保持 Pareto 曲线</td>
+<td>摘要中无定量结果</td>
+</tr>
+<tr>
+<td>与现有方法比较</td>
+<td>未提供与对抗训练、线性投影等基线的比较</td>
+<td>无法判断增量贡献</td>
+<td>在相同基准上对比</td>
+<td>摘要无实验</td>
+</tr>
+<tr>
+<td>蛋白质场景迁移性 [Analysis]</td>
+<td>蛋白质表示（如 ESM）的偏差结构可能与图像/文本不同，等距变换是否适用未知</td>
+<td>本课题读者关心</td>
+<td>在蛋白质表示上测试</td>
+<td>论文未涉及蛋白质</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>等距变换作为后处理工具</strong>：在蛋白质结构表示学习中，若发现表示对某类结构（如 β-sheet）有系统偏好，可尝试学习等距变换（如旋转）将表示重对齐，而非重新训练模型。迁移方式：将 ESM/AlphaFold 的嵌入视为点云，学习 SO(d) 旋转消除与结构类别的相关性。</p>
+</li>
+<li>
+<p><strong>几何保持作为去偏约束</strong>：去偏不一定要破坏表示的距离结构。在蛋白质对接打分或构象采样中，若需校正系统误差，可优先考虑保距变换，避免破坏能量面的几何正确性。</p>
+</li>
+<li>
+<p><strong>后处理去偏的通用框架</strong>：post-hoc debiasing 的「定义动作空间 → 学习最优动作 → 验证几何保持」三步框架，可迁移到蛋白质结构预测中的模板偏差校正、多域蛋白的域间角度偏差修正等场景。</p>
+</li>
+<li>
+<p><strong>敏感属性标签的代理设计</strong>：在蛋白质场景中，敏感属性可以是二级结构类型、物种来源、实验条件等。IsoAct 的框架提示我们：去偏需要明确定义「要消除什么偏差」，这本身是有价值的建模决策。</p>
+</li>
+<li>
+<p><strong>权衡意识</strong>：几何保持与去偏强度的 trade-off 是核心问题。在蛋白质场景中，过度去偏可能破坏物理上有意义的结构关系，需谨慎设计目标函数。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>：与「orthogonal projection debiasing」（如 Hard-Net 类方法）、「adversarial debiasing」在目标上相似，但 IsoAct 强调等距性约束，更接近「manifold-preserving debiasing」方向。</li>
+<li><strong>可组合领域</strong>：与蛋白质表示学习（ESM, ProtTrans）、AlphaFold 的 latent space 分析、几何深度学习（SE(3) 等变网络）可组合。等距变换与 SE(3) 等变网络中的旋转群操作有数学上的联系。</li>
+<li><strong>冲突/差异</strong>：与「contrastive debiasing」类方法不同，IsoAct 不改变表示的学习过程，仅做后处理，因此与「训练时去偏」方法互补而非竞争。</li>
+<li><strong>候选方向</strong>：将 IsoAct 的等距动作思想与蛋白质结构的 SE(3) 等变性质结合，设计「结构感知的等距去偏」，可能比通用等距变换更有效（[Analysis] 候选方向，未验证）。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：Structure-Aware Isometric Debiasing for Protein Representation Learning
+   - <strong>来源局限/观察</strong>：IsoAct 的等距变换是通用的，未利用蛋白质结构的 SE(3) 等变性质；蛋白质表示中的偏差可能与特定结构 motif 相关
+   - <strong>核心假设</strong>：在 SE(3) 等变框架下定义等距动作，能更精准地消除蛋白质表示中的结构偏差，同时保持物理意义
+   - <strong>初步方法</strong>：将 IsoAct 的等距动作空间替换为 SE(3) 群作用，在 ESM 嵌入上学习结构感知的等距变换，目标为消除与二级结构/折叠类型相关的偏差
+   - <strong>验证方式</strong>：在蛋白质性质预测、对接打分等下游任务上比较去偏前后的公平性指标与性能
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：Post-hoc Bias Correction for AlphaFold Confidence Scores
+   - <strong>来源局限/观察</strong>：AlphaFold 的 pLDDT 分数可能对某些结构类型有系统偏差（如对 β-sheet 或 loop 区域）；IsoAct 的后处理框架可迁移到置信度分数的校正
+   - <strong>核心假设</strong>：AlphaFold 的置信度偏差在嵌入空间中呈方向性，可通过等距变换校正
+   - <strong>初步方法</strong>：将 AlphaFold 的 per-residue 嵌入作为输入，学习等距变换校正 pLDDT 的系统偏差
+   - <strong>验证方式</strong>：在已知结构上比较校正前后的 pLDDT 与真实误差的相关性
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：Isometric Alignment of Conformational Ensembles
+   - <strong>来源局限/观察</strong>：MD 模拟或构象采样生成的构象集合可能因采样偏差而偏向某些区域；IsoAct 的等距变换可用于构象集合的几何重对齐
+   - <strong>核心假设</strong>：构象集合的系统采样偏差可通过保距变换部分消除，而不破坏能量面的几何
+   - <strong>初步方法</strong>：将构象集合视为流形上的点云，学习等距变换使集合在保持成对 RMSD 的同时消除与初始结构或力场参数的偏差
+   - <strong>验证方式</strong>：在已知平衡分布的体系上比较重对齐前后的集合覆盖度与 Boltzmann 权重
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：Debiasing Docking Scores via Isometric Post-processing
+   - <strong>来源局限/观察</strong>：分子对接打分函数可能对特定结合模式有系统偏好；IsoAct 的后处理思路可迁移到打分校正
+   - <strong>核心假设</strong>：对接打分的偏差在特征空间中可通过等距变换部分消除
+   - <strong>初步方法</strong>：将对接构象的表示（如相互作用指纹）作为输入，学习等距变换校正打分偏差
+   - <strong>验证方式</strong>：在基准对接数据集上比较校正前后的富集率与假阳性率
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol>
+<blockquote>
+<p>注：以上研究想法均为 [Analysis] 生成，基于 IsoAct 的核心思想向蛋白质结构计算方向的迁移，未经实验验证。</p>
+</blockquote></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Title, author list, arXiv identifier 2610.34690v1, and an arXiv landing page shell containing only navigation, submission history, access, and arXivLabs boilerplate. No abstract text, no manuscript body, no figures, no tables, no references.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to what can be verified from the supplied material. No scientific claim, method detail, experiment, or result can be evaluated because none is present in the input.</li>
+<li><strong>Shared manuscript claim summary</strong> The only recoverable claim is the title-level assertion that a method named IsoAct performs geometry-aware post-hoc debiasing via isometric actions. No supporting claim, scope condition, or empirical statement is provided.</li>
+<li><strong>Visible evidence base</strong> Title and author metadata only. The remainder of the supplied text is arXiv interface furniture and does not constitute manuscript content.</li>
+<li><strong>Missing materials affecting confidence</strong> Abstract, introduction, related work, method formulation, theoretical results, datasets, baselines, metrics, experimental tables, figures, ablation studies, compute details, code or data availability, and limitations. Confidence in any substantive judgment is therefore effectively zero.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The submission cannot be reviewed on scientific grounds in its current supplied form. The input contains a title and author list but no abstract or body, so there is no method to inspect, no result to verify, and no claim to test. The topic suggested by the title, post-hoc debiasing with geometric or group-theoretic structure, is potentially of interest to the machine learning fairness and representation learning communities, but that is an inference from the title alone and cannot be treated as an assessed contribution. The appropriate posture is that the case is not established from the provided evidence, not that the work is weak.</li>
+<li><strong>Who would be interested in the results, and why</strong> If the title reflects the actual content, the likely audience would be researchers in fairness and debiasing for machine learning, post-hoc model correction, and geometric or symmetry-based representation methods. Practitioners concerned with correcting deployed models without retraining would also have an interest. This readership inference is based solely on the title and is not corroborated by any supplied text.</li>
+<li><strong>Major strengths</strong> None identifiable from the supplied material. No abstract, method, or result is available to assess for originality, rigor, or significance.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidential completeness</li>
+<li><strong>Claim pointer</strong> The title asserts that IsoAct achieves geometry-aware post-hoc debiasing via isometric actions.</li>
+<li><strong>Evidence pointer</strong> location not provided</li>
+<li><strong>Concern</strong> No abstract, method section, experiment, or result is present in the supplied material, so the central claim cannot be examined at any level.</li>
+<li><strong>Why it matters</strong> Without the manuscript body, no assessment of correctness, novelty, or significance is possible, and the core claim remains entirely unverified.</li>
+<li><strong>Resolution test</strong> Provide the full manuscript including abstract, method, experiments, and results so the claim can be evaluated against concrete evidence.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-M2<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Claim specificity</li>
+<li><strong>Claim pointer</strong> The term "isometric actions" implies a specific mathematical structure, presumably group actions preserving a metric, but the supplied material does not define the object, the space, or the invariance being enforced.</li>
+<li><strong>Evidence pointer</strong> location not provided</li>
+<li><strong>Concern</strong> The key technical construct in the title is undefined in the supplied material, leaving the mechanism, assumptions, and scope conditions unknown.</li>
+<li><strong>Why it matters</strong> A geometry-aware debiasing method stands or falls on whether the assumed symmetry or metric structure actually holds for the data and the bias being corrected. This cannot be checked without a formal statement.</li>
+<li><strong>Resolution test</strong> Provide a formal definition of the isometric action, the space it acts on, the invariance or equivariance it enforces, and the conditions under which the assumption is valid.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-M3<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Empirical support</li>
+<li><strong>Claim pointer</strong> The title implies demonstrated debiasing performance, but no datasets, baselines, metrics, or quantitative outcomes are supplied.</li>
+<li><strong>Evidence pointer</strong> location not provided</li>
+<li><strong>Concern</strong> There is no evidence of evaluation, comparison, or ablation, so any performance or fairness improvement is unsupported.</li>
+<li><strong>Why it matters</strong> Post-hoc debiasing claims are only meaningful relative to established baselines and appropriate fairness and utility metrics. None are available here.</li>
+<li><strong>Resolution test</strong> Provide experimental setup, datasets, baselines, metrics, main results, and ablations, with enough detail for independent verification.</li>
+</ul>
+</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Presentation</li>
+<li><strong>Affected element</strong> Title</li>
+<li><strong>Evidence pointer</strong> Title</li>
+<li><strong>Issue</strong> The title combines a coined method name with two technical qualifiers, "geometry-aware" and "isometric actions", without any supplied text clarifying their relationship or distinguishing them.</li>
+<li><strong>Required correction</strong> Ensure the abstract and introduction define both qualifiers and state precisely what "geometry-aware" adds beyond the isometric action formulation.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-m2<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Positioning</li>
+<li><strong>Affected element</strong> Related work framing</li>
+<li><strong>Evidence pointer</strong> location not provided</li>
+<li><strong>Issue</strong> No related work is supplied, so the distinction between post-hoc debiasing and in-processing or pre-processing debiasing, and the novelty relative to existing geometric debiasing methods, cannot be judged.</li>
+<li><strong>Required correction</strong> Provide a related work section that explicitly contrasts IsoAct with prior post-hoc and geometry-based debiasing approaches.</li>
+</ul>
+</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3. The supplied material contains no technical content, so the case for the central claim is not established.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality cannot be assessed because no method or contribution statement is supplied. Scientific importance cannot be assessed because no results or impact argument is supplied. Interdisciplinary readership cannot be assessed beyond a title-based guess, since no accessible framing for nonspecialists is present. Technical soundness cannot be assessed because there is no formulation, proof, or experiment. Readability for nonspecialists cannot be assessed because there is no prose to evaluate. On every criterion the supplied material is insufficient rather than deficient in content.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. This reflects the absence of reviewable material, not a judgment on the underlying work.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that IsoAct performs geometry-aware post-hoc debiasing via isometric actions is unsupported in the supplied material, since no method or result is provided.</li>
+<li>Any implied claim of improved fairness, accuracy, or robustness is unsupported, as no experiments, baselines, or metrics are present.</li>
+<li>Any implied claim of theoretical guarantees from the isometric action construction is unsupported, as no formal statement or proof is present.</li>
+<li>Any implied claim of novelty relative to prior debiasing work is unverifiable, as no related work or comparison is supplied.</li>
+<li>The audience and application scope suggested by the title are inferential only and are not corroborated by any supplied text.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

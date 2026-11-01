@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RNA Tertiary Structure Prediction and Analysis Using NuFold and the NuFold Database. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>RNA Tertiary Structure Prediction and Analysis Using NuFold and the NuFold Database.</h1>
+      <div class="meta">Liu, Boyuan; Kagaya, Yuki; Platt, David; Kihara, Daisuke</div>
+      <div class="meta muted">
+        
+        <span class="journal">Methods in molecular biology (Clifton, N.J.)</span>
+        · 2026-10-30
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42961747/">原文</a>
+      </div>
+      <p class="one-liner">该文介绍RNA三级结构预测工具NuFold及其数据库，虽对象为RNA而非蛋白质，但其基于深度学习的端到端结构预测框架可迁移至蛋白质结构计算，对本课题有借鉴价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Accurate prediction of RNA tertiary structure is critical for understanding the functions of diverse non-coding RNAs, yet experimental structure determination remains challenging and resource intensive. Inspired by advances in deep learning for protein structure prediction, NuFold was developed as an end-to-end framework that predicts all-atom RNA tertiary structures directly from sequence. NuFold integrates evolutionary information from multiple sequence alignments and predicted secondary structure features to construct 3D coordinates of RNA. To maximize accessibility, NuFold is available as open-source software, supported by a Google Colab notebook for browser-based prediction and NuFold DB, a large-scale repository of precomputed RNA structures. This chapter provides a practical guide to using these resources, enabling researchers to generate and interpret RNA structural models without extensive computational resources, and thereby facilitating structural and functional studies in RNA biology.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">RNA三级结构的准确预测对于理解多种非编码RNA的功能至关重要，然而实验结构测定仍然具有挑战性且资源密集。受蛋白质结构预测深度学习进展的启发，NuFold被开发为一个端到端框架，直接从序列预测RNA的全原子三级结构。NuFold整合了来自多序列比对和预测二级结构特征的进化信息，以构建RNA的三维坐标。为了最大化可访问性，NuFold作为开源软件提供，并支持通过Google Colab笔记本进行基于浏览器的预测，以及NuFold DB（一个大规模预计算RNA结构库）。本章提供了使用这些资源的实用指南，使研究人员无需大量计算资源即可生成和解释RNA结构模型，从而促进RNA生物学中的结构和功能研究。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：RNA Tertiary Structure Prediction and Analysis Using NuFold and the NuFold Database</li>
+<li><strong>作者</strong>：Liu, Boyuan; Kagaya, Yuki; Platt, David; Kihara, Daisuke</li>
+<li><strong>单位</strong>：未提供（根据作者信息推测为普渡大学（Purdue University）相关团队，但原文未明确，故标注为未提供）</li>
+<li><strong>期刊/预印本平台</strong>：Methods in Molecular Biology (Clifton, N.J.)</li>
+<li><strong>年份</strong>：2026（在线日期 2026-10-30）</li>
+<li><strong>论文类型</strong>：方法学/实践指南（protocol chapter）</li>
+<li><strong>领域</strong>：RNA 三级结构预测；深度学习；结构生物学</li>
+<li><strong>关键词</strong>：RNA 三级结构预测；NuFold；深度学习；多序列比对；二级结构特征；NuFold DB；Google Colab</li>
+<li><strong>DOI/arXiv 号</strong>：10.1007/978-1-0716-5583-2_13</li>
+<li><strong>代码</strong>：NuFold 为开源软件（具体仓库地址未在摘要中提供）</li>
+<li><strong>数据</strong>：NuFold DB（预计算 RNA 结构的大型存储库）</li>
+<li><strong>阅读日期</strong>：2026-05-13（根据系统日期）</li>
+<li><strong>该文在课题方向中的位置</strong>：本文属于「RNA 三级结构预测 × 深度学习」方向，是蛋白质结构预测方法（如 AlphaFold）向 RNA 领域迁移的代表性工作。与课题（蛋白质结构相关计算研究 × AI/物理模拟）的关联在于：其端到端预测框架、进化信息与二级结构特征融合的策略、以及大规模预计算数据库的构建思路，均可迁移至蛋白质结构预测、构象采样或设计任务中。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文介绍 NuFold——一个端到端深度学习框架，直接从 RNA 序列预测全原子三级结构，通过整合多序列比对（MSA）的进化信息和预测的二级结构特征来构建 3D 坐标，并提供开源软件、Google Colab 笔记本和 NuFold DB 预计算数据库作为实用资源，使无大量计算资源的用户也能生成和解读 RNA 结构模型。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何准确预测 RNA 三级结构，以理解非编码 RNA 的功能，同时克服实验结构测定（如 X 射线晶体学、冷冻电镜）的资源密集和技术挑战？</li>
+<li><strong>为什么重要</strong>：非编码 RNA 在基因调控、剪接、翻译等生物过程中发挥关键作用，其功能高度依赖三维结构；实验方法耗时且昂贵，计算预测可大规模补充结构信息。</li>
+<li><strong>现有方法为何不足</strong>：传统 RNA 结构预测方法（如基于热力学的二级结构预测、同源建模）精度有限，且难以处理长链 RNA 或非标准构象；深度学习方法在蛋白质领域（如 AlphaFold）取得突破，但直接迁移到 RNA 面临 RNA 特有的碱基配对、非规范相互作用等挑战。</li>
+<li><strong>精确研究问题</strong>：Can an end-to-end deep learning framework, integrating evolutionary and secondary structure information, predict all-atom RNA tertiary structures from sequence with sufficient accuracy for practical biological use?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<ul>
+<li><strong>脉络标注</strong>：仅本文框架（基于摘要推断，未进行外部文献核验）</li>
+<li><strong>阶段一：实验结构测定</strong>（X 射线晶体学、NMR、冷冻电镜）</li>
+<li>优点：高精度、原子级分辨率</li>
+<li>局限：耗时、成本高、对某些 RNA 难以结晶或表达</li>
+<li><strong>阶段二：传统计算预测</strong>（热力学模型、同源建模、片段组装）</li>
+<li>优点：无需实验资源</li>
+<li>局限：精度有限，尤其对长链或非标准 RNA</li>
+<li><strong>阶段三：深度学习预测</strong>（受 AlphaFold 启发）</li>
+<li>代表：NuFold</li>
+<li>优点：端到端预测、整合多源信息、可扩展</li>
+<li>局限：依赖训练数据质量、对新型 RNA 泛化能力待验证</li>
+<li><strong>本文主张的位置</strong>：NuFold 作为 RNA 领域的 AlphaFold 式工具，填补了深度学习在 RNA 三级结构预测中的空白，并通过开源和数据库形式降低使用门槛。</li>
+</ul>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验结构测定困难</td>
+<td>RNA 结构测定耗时、资源密集</td>
+<td>非编码 RNA 难以结晶、表达量低、构象动态</td>
+<td>摘要：「experimental structure determination remains challenging and resource intensive」</td>
+</tr>
+<tr>
+<td>计算预测精度不足</td>
+<td>传统方法无法准确预测三级结构</td>
+<td>缺乏对 RNA 非规范相互作用和柔性构象的建模</td>
+<td>摘要：「Inspired by advances in deep learning for protein structure prediction」暗示传统方法不足</td>
+</tr>
+<tr>
+<td>计算资源门槛高</td>
+<td>研究者难以运行复杂预测工具</td>
+<td>深度学习模型需要 GPU 和专业知识</td>
+<td>摘要：「without extensive computational resources」</td>
+</tr>
+<tr>
+<td>结构数据可访问性差</td>
+<td>预计算结构难以获取</td>
+<td>缺乏集中式存储库</td>
+<td>摘要：「NuFold DB, a large-scale repository of precomputed RNA structures」</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：NuFold 是一个端到端深度学习框架，输入 RNA 序列，整合 MSA 进化信息和预测的二级结构特征，输出全原子 3D 坐标；配套提供开源代码、Colab 笔记本和 NuFold DB 数据库。</li>
+<li><strong>核心洞察</strong>：蛋白质结构预测的成功（如 AlphaFold）可迁移至 RNA，但需针对 RNA 特性（如碱基配对、非规范相互作用）调整特征表示；通过融合进化信息和二级结构先验，可弥补 RNA 结构数据不足的问题。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：端到端预测框架 + 多源特征融合 + 大规模预计算数据库，是结构预测工具从蛋白质扩展到其他生物大分子（如 RNA、DNA-蛋白质复合物）的可复用范式；开源和云平台是提升工具影响力的关键。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：RNA 序列（可能包括 MSA 和预测的二级结构）</li>
+<li><strong>输出</strong>：全原子 RNA 三级结构（3D 坐标）</li>
+<li><strong>模块</strong>：
+  1. 特征提取模块：从序列生成 MSA 和二级结构特征
+  2. 深度学习网络：端到端映射特征到 3D 坐标
+  3. 结构优化模块（推测）：可能包含几何约束或能量最小化（摘要未明确）</li>
+<li><strong>训练</strong>：未提供具体训练数据、损失函数和优化细节</li>
+<li><strong>工具</strong>：开源软件、Google Colab 笔记本（浏览器端预测）、NuFold DB（预计算结构库）</li>
+<li><strong>反馈回路</strong>：未提及（可能无显式反馈）</li>
+<li><strong>假设</strong>：RNA 三级结构可由序列 + 进化信息 + 二级结构特征充分决定；深度学习可学习该映射</li>
+<li><strong>文字流程</strong>：用户输入 RNA 序列 → 生成 MSA（可能通过同源搜索）→ 预测二级结构 → 将序列、MSA、二级结构特征输入 NuFold 深度学习网络 → 网络输出全原子 3D 坐标 → 用户通过 Colab 或本地软件查看和下载结构模型；或直接查询 NuFold DB 获取预计算结构。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSA 特征提取</td>
+<td>提供进化保守性信息</td>
+<td>RNA 结构保守性可通过序列变异推断</td>
+<td>输入：RNA 序列；输出：MSA 特征矩阵</td>
+<td>摘要：「integrates evolutionary information from multiple sequence alignments」</td>
+<td>预期影响：预测精度下降，尤其对保守结构域 [Analysis]</td>
+</tr>
+<tr>
+<td>二级结构预测模块</td>
+<td>提供碱基配对先验</td>
+<td>RNA 三级结构受二级结构约束</td>
+<td>输入：RNA 序列；输出：预测的二级结构特征</td>
+<td>摘要：「predicted secondary structure features」</td>
+<td>预期影响：无法处理非规范配对，结构准确性降低 [Analysis]</td>
+</tr>
+<tr>
+<td>深度学习网络</td>
+<td>端到端映射特征到 3D 坐标</td>
+<td>学习序列-结构复杂映射</td>
+<td>输入：序列 + MSA + 二级结构特征；输出：全原子坐标</td>
+<td>摘要：「end-to-end framework that predicts all-atom RNA tertiary structures」</td>
+<td>预期影响：无此模块则无法生成结构 [Analysis]</td>
+</tr>
+<tr>
+<td>NuFold DB</td>
+<td>存储预计算结构</td>
+<td>避免用户重复计算，提高可访问性</td>
+<td>输入：查询请求；输出：预计算 RNA 结构</td>
+<td>摘要：「large-scale repository of precomputed RNA structures」</td>
+<td>预期影响：用户需自行运行预测，增加计算负担 [Analysis]</td>
+</tr>
+<tr>
+<td>Google Colab 笔记本</td>
+<td>提供浏览器端预测接口</td>
+<td>降低计算资源门槛</td>
+<td>输入：RNA 序列；输出：预测结构</td>
+<td>摘要：「supported by a Google Colab notebook for browser-based prediction」</td>
+<td>预期影响：无 GPU 用户无法使用 [Analysis]</td>
+</tr>
+</tbody>
+</table>
+<p>注：以上「预期影响」均为 [Analysis] 推断，原文未提供消融实验数据。</p>
+<h2>09 关键公式符号</h2>
+<p>不适用。本文为方法学/实践指南章节，摘要中未包含具体数学公式或算法细节。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：未提供（摘要未提及训练或测试数据集）</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供（推测可能包括 RMSD、TM-score 等，但原文未明确）</li>
+<li><strong>基线</strong>：未提供</li>
+<li><strong>预算/资源</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：未提供</li>
+<li><strong>Oracle 输入</strong>：未提供</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<p>注：本文为协议章节，摘要中未包含实验验证数据。作者声称 NuFold 能预测 RNA 三级结构，但未在摘要中提供定量评估。</p>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅限 RNA 三级结构预测，不涉及蛋白质或其他分子</li>
+<li><strong>Oracle/真值输入</strong>：依赖 MSA 和预测的二级结构作为输入特征，这些本身可能包含错误</li>
+<li><strong>端到端状态</strong>：声称端到端预测，但实际依赖外部工具生成 MSA 和二级结构</li>
+<li><strong>算力成本</strong>：未提供具体需求，但 Colab 支持暗示中等算力需求</li>
+<li><strong>历史数据依赖</strong>：依赖训练数据中的 RNA 结构多样性，对新型 RNA 泛化能力未知</li>
+<li><strong>模型依赖</strong>：深度学习模型的具体架构、训练策略未在摘要中披露</li>
+<li><strong>最难情形</strong>：长链 RNA、非规范构象、动态 RNA 可能预测困难 [Analysis]</li>
+<li><strong>不确定性</strong>：未提供预测置信度或误差估计信息</li>
+<li><strong>有边界的复述</strong>：NuFold 是一个整合 MSA 和二级结构特征的端到端 RNA 三级结构预测工具，提供开源和数据库资源，但其预测精度、适用范围和计算需求在摘要中未量化，需参考完整论文或独立基准测试。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 摘要提到「without extensive computational resources」作为目标，暗示完整运行可能需要一定资源
+- 依赖「predicted secondary structure features」，暗示二级结构预测误差可能传播到三级结构预测 [Analysis]</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>摘要未提供定量评估</td>
+<td>可能缺乏与现有方法（如 SimRNA、Rosetta FARFAR）的系统比较</td>
+<td>无法判断 NuFold 的实际精度和优势</td>
+<td>查阅完整论文中的基准测试结果，或独立运行 NuFold 与基线方法对比</td>
+<td>摘要仅描述方法，无性能数据</td>
+</tr>
+<tr>
+<td>依赖 MSA 和二级结构预测</td>
+<td>对孤儿序列（无同源序列）或预测误差大的 RNA 可能失效</td>
+<td>影响工具适用范围</td>
+<td>测试孤儿序列或低质量 MSA 输入下的预测精度</td>
+<td>摘要：「integrates evolutionary information... and predicted secondary structure features」</td>
+</tr>
+<tr>
+<td>端到端声称与实际流程</td>
+<td>实际依赖外部工具生成输入特征，并非完全端到端</td>
+<td>影响对方法创新性的判断</td>
+<td>检查代码中 MSA 和二级结构预测是否内嵌</td>
+<td>摘要：「end-to-end framework」与「integrates... features」存在张力</td>
+</tr>
+<tr>
+<td>数据库覆盖范围未说明</td>
+<td>NuFold DB 的 RNA 类型、长度、物种覆盖未知</td>
+<td>影响用户对数据库实用性的判断</td>
+<td>查阅数据库文档或统计信息</td>
+<td>摘要：「large-scale repository」但无具体规模</td>
+</tr>
+<tr>
+<td>与蛋白质结构预测方法的对比未提及</td>
+<td>未说明 NuFold 与 AlphaFold 在 RNA 上的直接比较</td>
+<td>无法评估跨领域迁移的效果</td>
+<td>查阅完整论文或相关 benchmark</td>
+<td>摘要仅提及「Inspired by advances in deep learning for protein structure prediction」</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>跨分子类型迁移策略</strong>：将蛋白质结构预测的深度学习框架迁移至 RNA 时，需调整特征表示（如加入二级结构先验），这一思路可反向迁移至蛋白质-配体复合物或蛋白质-核酸复合物预测。
+2. <strong>多源特征融合</strong>：MSA 进化信息 + 二级结构预测的组合，可弥补单一特征的信息不足，适用于蛋白质构象采样或设计中的特征工程。
+3. <strong>开源 + 云平台 + 数据库三件套</strong>：通过开源代码、Colab 笔记本和预计算数据库降低使用门槛，是提高结构预测工具影响力的有效模式，可借鉴于蛋白质结构预测工具的发布。
+4. <strong>端到端框架设计</strong>：直接从序列到 3D 坐标的映射，避免中间步骤误差累积，适用于蛋白质结构预测或构象生成的端到端模型设计。
+5. <strong>实用指南写作</strong>：以协议章节形式提供逐步操作指南，有助于工具推广，可应用于蛋白质结构预测工具的教学和文档编写。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：AlphaFold（Jumper et al., Nature 2021）——蛋白质结构预测的深度学习框架，NuFold 明确受其启发；RoseTTAFold（Baek et al., Science 2021）——类似端到端预测架构。</li>
+<li><strong>RNA 结构预测传统方法</strong>：SimRNA、Rosetta FARFAR、mFold——基于热力学或采样的方法，NuFold 代表深度学习方法对它们的补充。</li>
+<li><strong>数据库资源</strong>：Protein Data Bank (PDB) 和 RNA 专用数据库（如 RNAcentral）——NuFold DB 作为预计算结构库，与 PDB 形成互补。</li>
+<li><strong>可迁移领域</strong>：蛋白质-核酸复合物预测（如 AlphaFold3）、RNA 设计（如序列设计优化结构）——NuFold 的特征融合和端到端思路可迁移。</li>
+<li><strong>候选方向</strong> [Analysis]：NuFold 的 MSA + 二级结构特征融合策略，可借鉴于蛋白质构象采样中的条件生成模型（如扩散模型）的特征设计。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：RNA 结构预测的置信度估计模块
+   - <strong>来源局限/观察</strong>：摘要未提供预测置信度或误差估计，用户难以判断模型输出的可靠性
+   - <strong>核心假设</strong>：通过集成不确定性量化（如 Monte Carlo dropout 或 ensemble 方差），可提升 RNA 结构预测的实用性和可解释性
+   - <strong>相对本文的增量</strong>：在 NuFold 框架上增加置信度输出，不改变核心预测架构
+   - <strong>初步方法</strong>：训练多个 NuFold 模型实例，计算预测结构间的 RMSD 分布作为置信度指标；或修改损失函数引入不确定性头
+   - <strong>验证方式</strong>：在已知 RNA 结构测试集上比较置信度与真实误差的相关性
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：蛋白质-核酸复合物预测的跨分子特征融合
+   - <strong>来源局限/观察</strong>：NuFold 仅处理 RNA 单体，未涉及蛋白质-RNA 相互作用
+   - <strong>核心假设</strong>：将 NuFold 的 MSA + 二级结构特征融合策略扩展至蛋白质-RNA 复合物，可提升复合物结构预测精度
+   - <strong>相对本文的增量</strong>：扩展输入特征（蛋白质序列 + RNA 序列 + 交互界面先验），修改网络架构处理双序列输入
+   - <strong>初步方法</strong>：基于 NuFold 架构，增加蛋白质特征编码器，使用交叉注意力融合蛋白质和 RNA 特征
+   - <strong>验证方式</strong>：在蛋白质-RNA 复合物基准集（如 Protein-RNA Interface Database）上测试
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：RNA 构象采样的扩散模型增强
+   - <strong>来源局限/观察</strong>：NuFold 预测单一静态结构，未处理 RNA 构象动态性
+   - <strong>核心假设</strong>：将 NuFold 的预测作为先验，结合扩散模型进行构象采样，可生成 RNA 的构象系综
+   - <strong>相对本文的增量</strong>：从单结构预测扩展至多构象生成
+   - <strong>初步方法</strong>：训练条件扩散模型，以 NuFold 预测结构为条件，采样多样构象
+   - <strong>验证方式</strong>：在已知动态 RNA（如核糖开关）上比较采样构象与实验构象系综的覆盖度
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：NuFold 特征在 RNA 序列设计中的逆向应用
+   - <strong>来源局限/观察</strong>：NuFold 是结构预测工具，未涉及序列设计
+   - <strong>核心假设</strong>：NuFold 的中间特征（如注意力权重）可编码结构-序列关系，用于 RNA 序列设计
+   - <strong>相对本文的增量</strong>：从预测任务转向生成任务
+   - <strong>初步方法</strong>：提取 NuFold 的注意力图作为结构约束，使用强化学习或生成模型优化序列
+   - <strong>验证方式</strong>：设计序列的预测结构与目标结构比对，或通过实验验证
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：低资源 RNA 结构预测的迁移学习框架
+   - <strong>来源局限/观察</strong>：NuFold 依赖 MSA，对孤儿 RNA 序列可能失效
+   - <strong>核心假设</strong>：通过蛋白质结构预测模型的预训练权重迁移，可提升低同源性 RNA 的预测精度
+   - <strong>相对本文的增量</strong>：利用蛋白质领域的大规模预训练模型，微调至 RNA 任务
+   - <strong>初步方法</strong>：使用 AlphaFold 或 ESM 的预训练权重，替换输入特征层，在 RNA 结构数据上微调
+   - <strong>验证方式</strong>：在孤儿 RNA 测试集上比较迁移学习与从头训练的精度
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The abstract describes NuFold, an end-to-end deep learning framework for all-atom RNA tertiary structure prediction from sequence, integrating evolutionary information from multiple sequence alignments and predicted secondary structure features. It also introduces NuFold DB, a large-scale repository of precomputed RNA structures, and presents a practical guide for using these resources via open-source software and a Google Colab notebook.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative performance metrics, benchmark comparisons, validation datasets, or implementation details are provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full chapter text, figures, tables, methods sections, benchmark results, validation protocols, database statistics, and any comparison with existing RNA structure prediction tools</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a potentially useful practical resource for the RNA biology community, namely a deep learning based RNA tertiary structure prediction tool with an accompanying database and accessible interfaces. However, the abstract provides no quantitative evidence of prediction accuracy, no benchmark comparisons against existing methods, and no details on the scope or quality of the database. The scientific case for the utility and reliability of NuFold is therefore not established from the supplied material. The chapter may serve a valuable role as a methods protocol, but the claims of accuracy and broad utility require substantiation.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in RNA biology, structural biology, and computational biology who study non-coding RNA function and need structural models. The practical guide format and the availability of a Colab notebook and precomputed database would appeal to experimentalists without specialized computational expertise. The work may also interest developers of deep learning methods for biomolecular structure prediction.</li>
+<li><strong>Major strengths</strong> The abstract addresses a genuine need in the field, namely accessible RNA tertiary structure prediction. The provision of open-source software, a Colab notebook, and a precomputed database is a practical strength that lowers barriers to adoption. The integration of evolutionary information and predicted secondary structure features is a reasonable design choice consistent with successful approaches in protein structure prediction.</li>
+<li><strong>Major Concerns</strong> </li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The abstract claims that NuFold "predicts all-atom RNA tertiary structures directly from sequence" and that it was "inspired by advances in deep learning for protein structure prediction."</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Concern</strong> No quantitative accuracy metrics are reported. The abstract does not state any measure of prediction quality, such as root mean square deviation, template modeling score, or fraction of native contacts, on any benchmark dataset. Without such data, the claim that NuFold produces accurate all-atom RNA structures is unsupported.</li>
+<li><strong>Why it matters</strong> The central value proposition of a structure prediction method is its accuracy. Readers cannot assess whether NuFold is fit for purpose, how it compares to existing tools such as Rosetta FARFAR, SimRNA, or other deep learning based methods, or whether the predicted structures are reliable enough for downstream functional interpretation.</li>
+<li><strong>Resolution test</strong> Provide benchmark results on standard RNA structure prediction test sets, with comparison to existing methods, including accuracy metrics and ideally confidence estimates per prediction.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Scientific importance</li>
+<li><strong>Claim pointer</strong> The abstract claims that NuFold DB is "a large-scale repository of precomputed RNA structures."</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Concern</strong> No information is given about the size of the database, the diversity of RNA sequences covered, the criteria for inclusion, or the validation status of the stored structures. The term "large-scale" is undefined.</li>
+<li><strong>Why it matters</strong> The utility of a precomputed database depends on its coverage, quality, and relevance to the research community. Without these details, readers cannot judge whether the database is a meaningful resource or whether the stored models carry appropriate caveats about their reliability.</li>
+<li><strong>Resolution test</strong> Specify the number of entries, sequence diversity metrics, source databases, filtering criteria, and any quality scores or confidence annotations associated with each stored structure.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The abstract states that NuFold "integrates evolutionary information from multiple sequence alignments and predicted secondary structure features to construct 3D coordinates of RNA."</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Concern</strong> No details are provided on the architecture, training data, loss functions, or how the multiple sequence alignment and secondary structure features are incorporated. The abstract does not describe how the method handles the fundamental challenge of RNA tertiary structure prediction, namely the sparsity of known RNA structures for training.</li>
+<li><strong>Why it matters</strong> The methodological approach determines the expected performance and limitations of the tool. Without architectural and training details, the method cannot be evaluated for technical soundness, and readers cannot anticipate failure modes or appropriate use cases.</li>
+<li><strong>Resolution test</strong> Provide a description of the model architecture, training dataset composition, feature encoding, and any constraints or postprocessing steps used to generate all-atom coordinates.</li>
+<li><strong>Minor Comments</strong> </li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability for nonspecialists</li>
+<li><strong>Affected element</strong> Abstract wording</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Issue</strong> The phrase "end-to-end framework" is used without explanation of what this means in the context of RNA structure prediction.</li>
+<li><strong>Required correction</strong> Briefly define the term or rephrase to describe the input to output mapping more plainly.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interdisciplinary readership</li>
+<li><strong>Affected element</strong> Abstract scope</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Issue</strong> The abstract does not mention any limitations of the method or the types of RNA for which prediction may be unreliable.</li>
+<li><strong>Required correction</strong> Add a sentence acknowledging known limitations, such as dependence on homologous sequences or reduced accuracy for certain RNA classes.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Benchmark reference</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Issue</strong> No reference is made to any benchmark dataset or community challenge, such as RNA-Puzzles, which would provide context for the method's performance.</li>
+<li><strong>Required correction</strong> Mention whether NuFold has been evaluated on such benchmarks and cite the relevant results.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3. The absence of accuracy metrics, database characterization, and methodological detail means the core claims of the abstract cannot be verified.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The abstract does not establish novelty relative to existing RNA structure prediction methods. The approach of adapting deep learning from protein structure prediction to RNA is not new, and no distinctive methodological innovation is described.</li>
+<li>Scientific importance: The potential importance is real, given the need for accessible RNA structure prediction, but the abstract does not demonstrate impact through results or comparisons.</li>
+<li>Interdisciplinary readership: The resource oriented framing could appeal to a broad audience, but the abstract lacks the technical depth and validation data that would engage computational specialists and the accessibility framing that would fully serve experimentalists.</li>
+<li>Technical soundness: Not assessable from the abstract alone. The absence of any performance data is a critical gap.</li>
+<li>Readability for nonspecialists: The abstract is generally clear but uses jargon without definition and omits practical guidance on expected accuracy or runtime.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract describes a potentially useful resource, but the scientific claims require substantial additional evidence, including benchmark results, database statistics, and methodological detail. A supportive posture would be possible if the full chapter provides these elements and the technical concerns are resolved.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that NuFold predicts accurate all-atom RNA tertiary structures is unsupported by any quantitative data in the abstract.</li>
+<li>The characterization of NuFold DB as "large-scale" is undefined and unverifiable from the abstract.</li>
+<li>The implied utility of the tool for "facilitating structural and functional studies in RNA biology" is not supported by any demonstration of downstream applicability.</li>
+<li>The claim that the method is "inspired by advances in deep learning for protein structure prediction" is plausible but not substantiated with specific architectural or training parallels.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

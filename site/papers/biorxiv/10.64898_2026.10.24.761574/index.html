@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Computational Design and Evaluation of De Novo Protein Minibinders Targeting Specific Sites of STAT3 · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Computational Design and Evaluation of De Novo Protein Minibinders Targeting Specific Sites of STAT3</h1>
+      <div class="meta">Emily R. Sragovicz; Alexander V. Tobias</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-27
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.10.24.761574">原文</a>
+      </div>
+      <p class="one-liner">该文利用AI驱动的BindCraft设计靶向STAT3特定结构域的全新蛋白微结合剂，并用AlphaFold3评估其对接，属于蛋白质结构计算设计研究，与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">STAT3 is a transcription factor involved in the progression of many types of cancer, which makes it an attractive therapeutic target. Small-molecule STAT3 inhibitors have experienced a high failure rate in clinical trials, indicating alternative approaches may be warranted. To address these limitations, we used BindCraft, a modern AI-driven protein design tool, to create miniprotein binder candidates against several sites of STAT3. We selected seven target hotspots on the SH2, linker, DNA-binding and coiled-coil domains of STAT3. Of 139 designs that passed BindCraft’s filters, 11 high-confidence binders emerged from five of the seven hotspots. These candidate binders were evaluated with AlphaFold3 (AF3). All eleven are predicted to dock with their intended domain; most within 4.5 Å of one or more of their targeted hotspot residues. Several minibinders are predicted to dock simultaneously to STAT3 without overlap. Such pairs have the potential to constitute STAT3 sandwich assays. BLASTp searches found no matches with known protein sequences for six of the binders and only very low-significance matches for the other five. We disclose herein the sequences of our top binders targeting diverse regions of the STAT3 surface with the hope that experimental validation by the broader research community will yield promising leads for preclinical drug development against this important cellular regulator.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">STAT3是一种参与多种癌症进展的转录因子，因此成为有吸引力的治疗靶点。小分子STAT3抑制剂在临床试验中失败率很高，表明可能需要替代方法。为解决这些局限性，我们使用BindCraft（一种现代AI驱动的蛋白质设计工具）针对STAT3的多个位点创建微型蛋白结合候选物。我们在STAT3的SH2、连接区、DNA结合域和卷曲螺旋域上选择了七个靶向热点。在通过BindCraft筛选的139个设计中，从七个热点中的五个中涌现出11个高置信度结合物。这些候选结合物通过AlphaFold3 (AF3)进行评估。所有11个均被预测与其预期结构域对接；大多数在4.5 Å范围内接近一个或多个靶向热点残基。几个微型蛋白被预测可同时与STAT3对接而不重叠。此类配对有潜力构成STAT3夹心检测。BLASTp搜索发现六个结合物与已知蛋白质序列无匹配，其余五个仅有极低显著性匹配。我们在此公开针对STAT3表面不同区域的最佳结合物序列，希望更广泛研究界的实验验证能为针对这一重要细胞调节因子的临床前药物开发提供有前景的先导化合物。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>标题</td>
+<td>Computational Design and Evaluation of De Novo Protein Minibinders Targeting Specific Sites of STAT3</td>
+</tr>
+<tr>
+<td>作者</td>
+<td>Emily R. Sragovicz; Alexander V. Tobias</td>
+</tr>
+<tr>
+<td>单位</td>
+<td>未提供（正文未给出作者所属机构）</td>
+</tr>
+<tr>
+<td>期刊/预印本平台</td>
+<td>bioRxiv（预印本）</td>
+</tr>
+<tr>
+<td>年份</td>
+<td>2026（日期标注 2026-10-27）</td>
+</tr>
+<tr>
+<td>论文类型</td>
+<td>计算设计 + 计算评估类研究论文（无实验验证）</td>
+</tr>
+<tr>
+<td>领域</td>
+<td>蛋白质 de novo 设计、AI 结构预测、癌症靶点（STAT3）结合剂设计</td>
+</tr>
+<tr>
+<td>关键词</td>
+<td>未提供（正文未列关键词；可提取：STAT3、minibinder、BindCraft、AlphaFold2/3、ipTM、BLASTp、hotspot）</td>
+</tr>
+<tr>
+<td>DOI/arXiv 号</td>
+<td>10.64898/2026.10.24.761574</td>
+</tr>
+<tr>
+<td>代码</td>
+<td>未提供（使用公开 BindCraft pipeline，运行于 Google Colaboratory；作者未发布自有代码）</td>
+</tr>
+<tr>
+<td>数据</td>
+<td>设计的 11 条 minibinder 序列在正文 Table 3 中披露；靶结构使用 PDB 6NJS；未提供独立数据仓库链接</td>
+</tr>
+<tr>
+<td>阅读日期</td>
+<td>未提供（本 Card 生成时未记录）</td>
+</tr>
+<tr>
+<td>在课题方向中的位置</td>
+<td>属于「蛋白质结构相关计算研究 × AI」中的<strong>结构/序列设计 + 结构预测评估</strong>分支：以 BindCraft（RFdiffusion/ProteinMPNN/AF2 类 pipeline）做 de novo binder 设计，以 AlphaFold3 做下游打分与界面评估，属于「AI 设计 → AI 评估」的纯计算闭环，不含 MD/对接物理模拟，也不含湿实验闭环。对本课题的可迁移点在于：hotspot 选择准则、设计-评估双模型（AF2 设计内 / AF3 外）分离策略、界面覆盖度与距离双指标、以及「无实验验证」结论的边界界定方式。</td>
+</tr>
+</tbody>
+</table>
+<h2>02 一句话总结</h2>
+<p>针对 STAT3 这一缺乏高选择性小分子抑制剂的癌症靶点，作者用 BindCraft 在 SH2、linker、DNA-binding、coiled-coil 四个结构域的 7 个表面 hotspot 上生成 de novo minibinder，从 139 条通过 pipeline 过滤的设计中筛出 11 条（AF3 ipTM ≥ 0.75），经 AF3 预测这些 binder 均覆盖其目标结构域、多数落在目标 hotspot 4.5 Å 内且序列经 BLASTp 判定为新颖，但全部结论仅基于结构预测置信度、无任何实验亲和力或特异性验证。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：能否用现代 AI 蛋白设计工具（BindCraft）针对 STAT3 多个结构域的指定表面 hotspot，设计出序列全新、且经独立结构预测器（AF3）判定为高置信度结合的 miniprotein binder？</li>
+<li><strong>为什么重要</strong>：STAT3 在约 70% 癌症中表达异常，是重要治疗靶点；但小分子 STAT3 抑制剂临床试验失败率高，SH2 结构域在 STAT 家族中高度保守导致选择性差，DNA-binding 结构域表面大而平坦、干扰后可能影响必需基因转录。因此需要替代模态（如蛋白 binder）。</li>
+<li><strong>现有方法为何不足</strong>：小分子抑制剂选择性差、临床失败率高；SH2 与 DNA-binding 结构域各自存在成药性障碍（正文 Introduction 引 [1][4]）。</li>
+<li><strong>精确研究问题（Can ... ?）</strong>：Can BindCraft design de novo miniproteins that, according to AlphaFold3 predictions, bind at or near user-specified STAT3 hotspot residues with ipTM ≥ 0.75 and pLDDT ≥ 90 over ≥ 85% of the complex, while being sequence-novel by BLASTp?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><strong>声明：以下脉络为「仅本文框架」</strong>——本文 Introduction 只给出极简背景（STAT3 生物学 + 小分子失败），未系统综述 binder 设计方法史；下列阶段划分中，除本文明确引用者外，其余为 [Analysis] 补充的领域常识框架，未经本文核验。</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>小分子抑制剂</td>
+<td>未具名 STAT3 小分子抑制剂（正文引 [1][4]）</td>
+<td>口服/透膜潜力</td>
+<td>临床失败率高；SH2 保守致选择性差；DNA-binding 面大而平</td>
+<td>本文要绕开的基线</td>
+</tr>
+<tr>
+<td>传统 de novo binder 设计</td>
+<td>未在本文讨论</td>
+<td>—</td>
+<td>—</td>
+<td>未涉及</td>
+</tr>
+<tr>
+<td>扩散 + 序列设计 + AF2 过滤</td>
+<td>RFdiffusion / ProteinMPNN / AF2（正文引 [7]）</td>
+<td>模块化、可控</td>
+<td>本文实测：hotspot 1–3 上未产出 ipTM &gt; 0.30 的 binder</td>
+<td>本文的<strong>失败前身</strong>，被弃用</td>
+</tr>
+<tr>
+<td>一体化 AI 设计 pipeline</td>
+<td>BindCraft（正文引 [6]）</td>
+<td>自动化全流程、内置 AF2 过滤</td>
+<td>内置评估器为 AF2，作者认为 AF3 更准</td>
+<td>本文主方法</td>
+</tr>
+<tr>
+<td>独立下游评估</td>
+<td>AlphaFold3 / AlphaFold Server（正文引 [8][9]）</td>
+<td>更先进、更准（作者主张）</td>
+<td>无法直接嵌入 Colab 流程，需手动提交</td>
+<td>本文评估层</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>STAT3 小分子抑制剂临床转化差</td>
+<td>高失败率</td>
+<td>作者引 [4]；SH2 在 STAT 家族高度保守致选择性差（引 [1]）</td>
+<td>Introduction 段</td>
+</tr>
+<tr>
+<td>DNA-binding 结构域难成药</td>
+<td>表面大而平坦，干扰可能影响必需基因转录</td>
+<td>作者引 [1]</td>
+<td>Introduction 段</td>
+</tr>
+<tr>
+<td>早期 pipeline（RFdiffusion/ProteinMPNN/AF2）在部分 hotspot 上无效</td>
+<td>hotspot 1–3 无 ipTM &gt; 0.30 的 binder</td>
+<td>作者仅陈述结果，未给机制解释</td>
+<td>Methods 2.3 节</td>
+</tr>
+<tr>
+<td>设计器内置评估器（AF2）精度不足</td>
+<td>需外部更准模型复核</td>
+<td>作者主张 AF3 更先进更准（引 [9]）</td>
+<td>Methods 2.4 节</td>
+</tr>
+<tr>
+<td>极性/带电口袋难以设计</td>
+<td>HS12 三个 campaign 仅 1 条通过</td>
+<td>作者推测：极性带电口袋对 BindCraft 比疏水 patch 更难（引 [20]）</td>
+<td>Discussion 4.2 节</td>
+</tr>
+<tr>
+<td>设计位点与目标 hotspot 偏离</td>
+<td>需加大远端结合惩罚</td>
+<td>作者通过调参应对（见 08 节）</td>
+<td>Methods 2.3 节、Table 1</td>
+</tr>
+<tr>
+<td>两种「是否命中 hotspot」度量不一致</td>
+<td>距离度量与视觉覆盖度量结论常不同</td>
+<td>作者解释：overlap 无 interface = 覆盖但无近接触；interface 无 overlap = 邻近但未覆盖</td>
+<td>Discussion 4.2 节、Table 5</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>：用 BindCraft 在 STAT3 的 7 个手工挑选的表面 hotspot 上做 de novo minibinder 生成；用 AF2 ipTM ≥ 0.60 做初筛，再用 AF3（AlphaFold Server）以 ipTM ≥ 0.75 + pLDDT ≥ 90（≥85% 复合物残基）做高置信度判定；用 ChimeraX 做界面可视化与覆盖度评估；用 BLASTp 做序列新颖性检查。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>：
+   - 把「设计器」与「评估器」解耦——设计用 BindCraft（内含 AF2），评估用独立的 AF3，以避免单一模型的自我确认偏差（作者明确说明 AF3 无法嵌入 Colab 流程，故改为手动下游评估）。
+   - hotspot 选择被形式化为 5 条可操作准则（≤3 残基、Cα–Cα ≤ 10 Å、≥2 疏水、部分暴露、优先 α-helix/β-sheet），把「可设计性」前置到靶点选择阶段。
+   - 通过调参（weights_con_inter 1.0→2.0、inter_contact_distance 20→10 Å、inter_contact_number 2→3）把设计压力集中到输入 hotspot 附近。
+   - 用「距离界面（4.5 Å）」与「视觉覆盖（≥50% 表面）」两个互补指标交叉验证命中情况，并明确二者会给出不同答案。</p>
+</li>
+<li>
+<p><strong>可能的普适教训 [Analysis]</strong>：
+   - 对「难靶点」（大平坦面、极性口袋、家族保守界面），AI 设计的产出率高度依赖 hotspot 的理化性质，而非仅依赖模型能力；hotspot 筛选本身应被视为方法的一部分并报告产出率。
+   - 用独立模型做下游评估是低成本、可复制的抗自证策略，但若两个模型同源（AF2/AF3 同属 AlphaFold 家族），独立性有限，不能替代实验。
+   - 报告「设计-目标一致性」时应同时给出距离指标与覆盖指标，否则容易高估命中率。</p>
+</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：STAT3 结构（PDB 6NJS，562 aa 单体核心片段）；7 个手工挑选的 hotspot（每个 2–3 残基）。</li>
+<li><strong>输出</strong>：11 条高置信度 minibinder 序列 + 其 AF3 预测复合物结构、ipTM/pLDDT/PAE、界面残基列表、BLASTp 结果。</li>
+<li><strong>模块</strong>：ChimeraX（hotspot 选择与可视化）→ BindCraft（RFdiffusion 类骨架生成 + ProteinMPNN 序列设计 + AF2 过滤，运行于 Google Colab）→ AlphaFold Server/AF3（下游评估）→ ChimeraX（界面/覆盖度分析）→ NCBI BLASTp（序列新颖性）。</li>
+<li><strong>训练</strong>：无自训练；全部使用预训练模型与默认/微调参数。</li>
+<li><strong>工具</strong>：BindCraft、AlphaFold2、AlphaFold3/AlphaFold Server、ChimeraX、BLASTp、Google Colaboratory。</li>
+<li><strong>反馈回路</strong>：每个 hotspot 运行 1–4 个 campaign；campaign 数量取决于 hotspot 可及性与前序 campaign 成功度（成功少则追加 campaign）。这是<strong>人工启发式反馈</strong>，非自动优化循环。</li>
+<li><strong>假设</strong>：BindCraft 能设计出结合在输入 hotspot 处或附近的 de novo miniprotein；其序列与已知蛋白无显著相似性；AF3 的 ipTM/pLDDT 可作为高置信度结合的代理指标。</li>
+<li><strong>文字流程</strong>：6NJS 结构 → ChimeraX 选 hotspot（5 条准则，13 候选→7 入选）→ 逐 hotspot 跑 BindCraft（调参加强近端接触）→ 取 AF2 ipTM ≥ 0.60 的设计 → 手动提交 AFS/AF3 → 取 ipTM ≥ 0.75 且 pLDDT ≥ 90 覆盖 ≥85% 复合物者 → ChimeraX 可视化界面与覆盖度 → BLASTp 查新颖性 → 输出 11 条序列。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hotspot 选择（ChimeraX + 5 准则）</td>
+<td>定义设计靶位</td>
+<td>决定设计可及性与成功率</td>
+<td>输入：6NJS 结构；输出：7 个 hotspot</td>
+<td>Methods 2.2 节；13 候选→7 入选</td>
+<td>未做消融。<strong>预期</strong>：无准则筛选会降低产出率（HS12 极性口袋仅 1/3 campaign 通过，支持理化性质影响产出）</td>
+</tr>
+<tr>
+<td>BindCraft 参数调优</td>
+<td>把接触压向输入 hotspot</td>
+<td>防止 binder 结合到远端</td>
+<td>输入：weights_con_inter=2.0、inter_contact_distance=10 Å、inter_contact_number=3；输出：设计序列</td>
+<td>Methods 2.3 节、Table 1</td>
+<td>未做消融。<strong>预期</strong>：默认参数下远端结合比例上升（作者称调参目的即为此）</td>
+</tr>
+<tr>
+<td>半胱氨酸剔除</td>
+<td>避免二硫键依赖折叠</td>
+<td>减少折叠复杂度</td>
+<td>输入：序列设计约束；输出：无 Cys 的 binder</td>
+<td>Methods 2.3 节</td>
+<td>未做消融。<strong>预期</strong>：保留 Cys 可能增加折叠失败或需还原环境</td>
+</tr>
+<tr>
+<td>BindCraft 内置 AF2 过滤（ipTM ≥ 0.60）</td>
+<td>初筛</td>
+<td>降低下游 AF3 提交量</td>
+<td>输入：139 条设计；输出：98 条</td>
+<td>Results 3.1 节、Table 2</td>
+<td><strong>实测</strong>：139→98（41 条被滤除）</td>
+</tr>
+<tr>
+<td>AF3 下游评估（ipTM ≥ 0.75 + pLDDT ≥ 90 覆盖 ≥85%）</td>
+<td>高置信度判定</td>
+<td>用更准模型独立复核</td>
+<td>输入：98 条；输出：11 条</td>
+<td>Methods 2.4 节、Results 3.1 节、Table 3</td>
+<td><strong>实测</strong>：98→11</td>
+</tr>
+<tr>
+<td>PAE 检查</td>
+<td>验证界面相互匹配置信度</td>
+<td>补充 ipTM 的界面级证据</td>
+<td>输入：AF3 PAE 图；输出：界面块低误差判定</td>
+<td>Results 3.3 节、Figure 5</td>
+<td>未做消融。<strong>预期</strong>：无 PAE 则缺少界面级独立证据</td>
+</tr>
+<tr>
+<td>ChimeraX 界面/覆盖度分析</td>
+<td>判定是否命中 hotspot</td>
+<td>距离与覆盖双指标</td>
+<td>输入：AF3 复合物模型；输出：界面残基表、覆盖判定</td>
+<td>Methods 2.8 节、Results 3.5 节、Table 5</td>
+<td>未做消融。<strong>实测</strong>：两指标结论不一致（10/11 有距离命中，9/11 有覆盖命中，4/11 全覆盖）</td>
+</tr>
+<tr>
+<td>双 binder 同时对接（结构叠合，非三元预测）</td>
+<td>评估 sandwich assay 可行性</td>
+<td>提供双位点检测思路</td>
+<td>输入：两个独立二元 AF3 模型；输出：叠合结构 Figure 4</td>
+<td>Methods 2.6 节、Results 3.2 节</td>
+<td>未做消融。作者明确<strong>未</strong>用 AF3 预测三元复合物，理由是工具会扭曲折叠与结合位置</td>
+</tr>
+<tr>
+<td>BLASTp 新颖性检查</td>
+<td>验证序列非已知蛋白嵌合</td>
+<td>支撑「de novo」主张</td>
+<td>输入：11 条序列；输出：6 条无匹配、5 条极低显著性匹配</td>
+<td>Methods 2.7 节、Results 3.4 节、Table 4</td>
+<td><strong>实测</strong>：11 条全部判为新颖</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>本文未给出显式数学公式。以下为理解所必需的<strong>判据与编号关系</strong>（非公式推导）：</p>
+<ul>
+<li><strong>残基编号换算</strong>：<code>aa_number_PDB_6NJS = aa_number_AFS_6NJS + 126</code>。符号含义：AFS 编号从 1 开始（对应 6NJS 全长 562 aa）；PDB 6NJS 文件中首个残基编号为 127。用途：跨图表对齐 hotspot 与界面残基。直觉：两套编号存在恒定偏移。来源：Methods 2.5 节、Figure 6。</li>
+<li><strong>界面定义</strong>：STAT3 残基与 binder 任一非氢原子距离 ≤ 4.5 Å 即判为界面残基。用途：判定 hotspot 是否被命中。来源：Methods 2.8 节、Table 3。</li>
+<li><strong>覆盖（overlap）定义</strong>：STAT3 残基表面被 binder 覆盖 ≥ 50%（视觉判定）。用途：与距离指标互补。来源：Methods 2.8 节。</li>
+<li><strong>高置信度判据</strong>：AF3 ipTM ≥ 0.75 且 pLDDT ≥ 90 覆盖复合物 ≥ 85% 残基。来源：Methods 2.1/2.4 节。</li>
+<li><strong>初筛判据</strong>：BindCraft（AF2）ipTM ≥ 0.60。来源：Methods 2.1 节。</li>
+<li><strong>BLASTp 显著性阈值</strong>：E-value &lt; 10⁻⁵ 视为显著匹配。来源：Results 3.4 节（引 [13]）。</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/群体</strong>：靶结构 PDB 6NJS（STAT3 单体核心片段，562 aa）；13 个候选 hotspot 中选 7 个；17 个 BindCraft campaign；139 条设计序列。
+<strong>规模</strong>：139 → 98（AF2 ipTM ≥ 0.60）→ 11（AF3 高置信度）。
+<strong>指标</strong>：AF2 ipTM、AF3 ipTM、pLDDT、PAE、界面残基距离（4.5 Å）、视觉覆盖度（≥50%）、BLASTp E-value。
+<strong>基线</strong>：RFdiffusion/ProteinMPNN/AF2 pipeline（仅用于 hotspot 1–3，未产出 ipTM &gt; 0.30 的 binder，被弃用且不报告）。
+<strong>预算</strong>：未提供（未报告 GPU 时长、AF3 调用次数上限等）。
+<strong>骨干/仪器</strong>：BindCraft（内含 AF2）、AlphaFold3/AlphaFold Server、ChimeraX、BLASTp、Google Colaboratory。
+<strong>oracle 输入</strong>：无实验真值；「真值」为 AF3 预测本身，属模型自证范畴。
+<strong>评测协议</strong>：AF3 手动提交；pLDDT 覆盖比例由<strong>视觉检查</strong> ribbon 结构判定；覆盖度亦为视觉判定。</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pipeline 产出率统计</td>
+<td>BindCraft 能在多 hotspot 上产出候选</td>
+<td>7 hotspot、17 campaign</td>
+<td>139 设计→98 过 AF2 0.60→11 过 AF3 0.75</td>
+<td>部分 hotspot 可产出高置信度设计</td>
+<td>不能说明产出率可推广到其他靶点</td>
+<td>Results 3.1、Table 2</td>
+</tr>
+<tr>
+<td>AF3 结构建模</td>
+<td>11 条 binder 结合目标结构域</td>
+<td>逐条 AF3 预测</td>
+<td>11/11 覆盖目标结构域</td>
+<td>设计-目标结构域一致</td>
+<td>不能说明真实结合</td>
+<td>Results 3.2、Figure 3</td>
+</tr>
+<tr>
+<td>PAE 检查</td>
+<td>界面相互匹配置信</td>
+<td>逐条 PAE 图</td>
+<td>界面块低预测误差</td>
+<td>AF3 对界面匹配有置信</td>
+<td>不能替代亲和力测量</td>
+<td>Results 3.3、Figure 5</td>
+</tr>
+<tr>
+<td>BLASTp</td>
+<td>序列新颖性</td>
+<td>NR 库、E-value 10、word size 5、BLOSUM62</td>
+<td>6 条无匹配、5 条极低显著性（细菌/假设蛋白）</td>
+<td>序列非已知蛋白嵌合</td>
+<td>不能说明无脱靶结合</td>
+<td>Results 3.4、Table 4</td>
+</tr>
+<tr>
+<td>Hotspot 命中（距离）</td>
+<td>binder 落在目标 hotspot 4.5 Å 内</td>
+<td>与输入 hotspot 比对</td>
+<td>10/11 至少 1 个 hotspot 残基在 4.5 Å 内；2 条全部 hotspot 均为界面残基；1 条（Hotspot4b_l77_s720724）无</td>
+<td>多数设计靠近目标位点</td>
+<td>不能说明覆盖整个 hotspot</td>
+<td>Results 3.5、Table 5</td>
+</tr>
+<tr>
+<td>Hotspot 命中（覆盖）</td>
+<td>binder 覆盖目标 hotspot</td>
+<td>视觉 ≥50% 覆盖</td>
+<td>9/11 覆盖 ≥1 个；4 条全覆盖；2 条零覆盖</td>
+<td>部分设计完全覆盖 hotspot</td>
+<td>不能说明结合能或特异性</td>
+<td>Results 3.5、Table 5</td>
+</tr>
+<tr>
+<td>双 binder 同时对接</td>
+<td>sandwich assay 可行性</td>
+<td>两个独立二元模型结构叠合（非三元 AF3 预测）</td>
+<td>6NJS_HS8_l75_s347865 与 6NJS_HS9_l59_s417381 不重叠</td>
+<td>存在双位点检测候选</td>
+<td>不能说明三元复合物真实形成</td>
+<td>Results 3.2、Figure 4、Methods 2.6</td>
+</tr>
+<tr>
+<td>早期 pipeline 对比</td>
+<td>RFdiffusion/ProteinMPNN/AF2 是否可行</td>
+<td>hotspot 1–3</td>
+<td>无 ipTM &gt; 0.30 的 binder</td>
+<td>该 pipeline 在此设置下失败</td>
+<td>不能推广为该方法普遍无效</td>
+<td>Methods 2.3</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：纯计算设计 + 纯计算评估；无表达、无结合测定、无细胞实验。</li>
+<li><strong>oracle/真值输入</strong>：无实验真值。所谓「高置信度」是 AF3 的自我预测置信度，不是结合亲和力。</li>
+<li><strong>端到端状态</strong>：设计端到端（序列产出），验证端未闭环（无湿实验）。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：依赖 PDB 6NJS 单一晶体结构；依赖 BindCraft/AF2/AF3 的预训练权重。</li>
+<li><strong>模型依赖</strong>：设计器与评估器同属 AlphaFold 家族（AF2 内嵌、AF3 外评），独立性有限；作者自认 AF3 ipTM 不能直接换算为结合常数。</li>
+<li><strong>最难情形</strong>：HS12（极性带电口袋）3 个 campaign 仅 1 条通过；HS4A 与 HS7 零通过；Hotspot4b_l77_s720724 无任何 hotspot 残基落在界面内。</li>
+<li><strong>群体/领域边界</strong>：仅 STAT3 单体核心片段（6NJS），未建模二聚化或 DNA 结合状态下的表面；未测试与其他 STAT 家族蛋白的交叉反应性。</li>
+<li><strong>不确定性</strong>：pLDDT 覆盖比例与覆盖度均为视觉判定，未报告评分者一致性；AF3 提交为手动，未报告重复运行的一致性。</li>
+<li><strong>有边界的复述</strong>：在 PDB 6NJS 单体结构上、以 7 个手工 hotspot 为输入、用 BindCraft 设计并经 AF3 以 ipTM ≥ 0.75 判据筛选，得到 11 条预测覆盖目标结构域、多数靠近目标 hotspot、序列经 BLASTp 判为新颖的 minibinder 候选；这些候选是否真实结合、亲和力与特异性如何，本文未提供任何实验证据。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无实验验证</td>
+<td>未做任何湿实验</td>
+<td>希望更广研究界做实验验证</td>
+<td>Discussion 4.3、Conclusion</td>
+</tr>
+<tr>
+<td>ipTM 不等于亲和力</td>
+<td>AF3 ipTM 是置信度分数，不能直接换算为结合常数或其他生化亲和力度量</td>
+<td>未明确</td>
+<td>Discussion 4.3</td>
+</tr>
+<tr>
+<td>仅建模单体核心片段</td>
+<td>使用 6NJS，二聚化或 DNA 结合相关表面在无伙伴情况下建模</td>
+<td>未明确</td>
+<td>Discussion 4.3</td>
+</tr>
+<tr>
+<td>未研究特异性</td>
+<td>未评估 minibinder 对其他蛋白的结合特异性</td>
+<td>建议评估与其他 STAT 家族蛋白（结构相似）的相互作用</td>
+<td>Discussion 4.3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>作者提及的相关约束（非正式局限）</strong>：AF3 无法嵌入 Colab 流程，故只能手动提交至 AFS（Methods 2.4）；未用 AF3 预测三元复合物，因工具会扭曲折叠与结合位置（Methods 2.6）；pLDDT 覆盖比例与覆盖度依赖视觉检查（Methods 2.4、2.8）。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>设计器与评估器同源（AF2 内嵌 + AF3 外评）</td>
+<td>同家族模型的错误可能相关，AF3 高分未必独立于 AF2 偏好</td>
+<td>削弱「独立验证」的说服力</td>
+<td>用非同源评估器（如物理打分、MD 结合自由能、或实验）复核同一批序列</td>
+<td>Methods 2.4；Results 3.1</td>
+</tr>
+<tr>
+<td>高置信度判据含视觉成分（pLDDT ≥ 90 覆盖 ≥85%、覆盖度 ≥50%）</td>
+<td>不同评估者可能给出不同通过名单</td>
+<td>影响 11 条名单的可复现性</td>
+<td>报告评分者间一致性，或改用自动化阈值脚本</td>
+<td>Methods 2.4、2.8</td>
+</tr>
+<tr>
+<td>距离指标与覆盖指标结论不一致（10/11 vs 9/11，仅 4 条全覆盖）</td>
+<td>「命中 hotspot」的定义本身不唯一，可能高估设计精度</td>
+<td>直接影响对 BindCraft 定位能力的评价</td>
+<td>预先注册单一主指标，或报告两指标的联合分布</td>
+<td>Results 3.5、Discussion 4.2、Table 5</td>
+</tr>
+<tr>
+<td>双 binder 同时对接由两个二元模型叠合得到</td>
+<td>两个独立预测的刚体叠合忽略了诱导契合与相互排斥</td>
+<td>sandwich assay 可行性结论偏乐观</td>
+<td>用三元复合物预测（含对照）、或实验性共结合测定</td>
+<td>Methods 2.6、Figure 4</td>
+</tr>
+<tr>
+<td>早期 pipeline 失败（hotspot 1–3，ipTM ≤ 0.30）未报告细节</td>
+<td>失败可能源于参数/流程而非方法本身，无法归因</td>
+<td>影响对「BindCraft 优于 RFdiffusion/ProteinMPNN/AF2」的判断</td>
+<td>在相同 hotspot 与相同调参下重跑该 pipeline 并报告</td>
+<td>Methods 2.3</td>
+</tr>
+<tr>
+<td>HS12 极性口袋低产出归因于「极性带电口袋难设计」</td>
+<td>也可能是 hotspot 选择准则（要求 ≥2 疏水残基）与极性口袋不匹配所致</td>
+<td>归因不同则改进方向不同（改模型 vs 改 hotspot 准则）</td>
+<td>对同一极性口袋用不同 hotspot 定义重跑，比较产出率</td>
+<td>Discussion 4.2、Methods 2.2</td>
+</tr>
+<tr>
+<td>BLASTp 无匹配被解读为「绝对新颖」</td>
+<td>无匹配也可能意味着序列落在已知蛋白空间之外，折叠/表达/稳定性风险未知</td>
+<td>影响这些序列作为实验起点的可行性</td>
+<td>做折叠稳定性预测、可溶性预测与实验表达测试</td>
+<td>Results 3.4、Conclusion</td>
+</tr>
+<tr>
+<td>未报告 AF3 重复运行一致性</td>
+<td>单次预测的高分可能含随机性</td>
+<td>影响名单稳定性</td>
+<td>多次提交同一序列，报告 ipTM 分布</td>
+<td>Methods 2.4（未提及重复）</td>
+</tr>
+<tr>
+<td>未评估与其他 STAT 家族成员的交叉反应</td>
+<td>靶点家族保守性正是小分子失败的原因，binder 可能重蹈覆辙</td>
+<td>直接关系「选择性」这一核心卖点</td>
+<td>对 STAT1/STAT3 等同源结构做 AF3/对接并比较界面</td>
+<td>Discussion 4.3（作者自认）</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong></p>
+<ul>
+<li><strong>可迁移概念 1：hotspot 的形式化筛选准则</strong>。5 条准则（≤3 残基、Cα–Cα ≤ 10 Å、≥2 疏水、部分暴露、优先二级结构）可直接迁移到本课题的任何 binder/peptide 设计任务，作为靶点可设计性的前置过滤器。注意其隐含偏好疏水 patch，对极性/带电界面可能不适用（HS12 证据）。</li>
+<li><strong>可迁移概念 2：设计器与评估器解耦</strong>。用独立模型做下游打分是低成本抗自证手段；但需注意同源模型（AF2/AF3）独立性有限，本课题中可替换为物理模拟（MD/MM-PBSA/自由能微扰）或对接打分作为第三方评估。</li>
+<li><strong>可迁移方法 3：双指标命中判定</strong>。「距离界面（4.5 Å）」+「视觉覆盖（≥50%）」的组合可迁移到任何「设计是否落在指定表位」的评估中；本文证据显示两指标会给出不同答案，因此应同时报告。</li>
+<li><strong>可迁移方法 4：调参把接触压向目标位点</strong>。weights_con_inter、inter_contact_distance、inter_contact_number 三个参数的调整思路（提高接触权重、缩短最大接触距离、增加接触点密度）可迁移到其他扩散类 binder 设计 pipeline 的位点约束。</li>
+<li><strong>可迁移实验设计 5：产出率作为 hotspot 难度的读出</strong>。以「每 hotspot 的 campaign 数 vs 通过数」作为可设计性指标（HS11 最高产、HS12 最难），可迁移为靶点优先级排序的定量依据。</li>
+<li><strong>可迁移思路 6：避免用结构预测工具强行构造多聚体</strong>。作者拒绝用 AF3 预测三元复合物、改用刚体叠合，这一「工具误用边界」的判断可迁移到本课题中涉及多组分复合物的预测任务。</li>
+<li><strong>可迁移思路 7：序列新颖性作为设计质量的一环</strong>。BLASTp + E-value 阈值（10⁻⁵）是低成本、可复制的 de novo 性检查，可纳入本课题的设计流水线标准步骤。</li>
+<li><strong>对本课题的迁移路径</strong>：若本课题做 binder/peptide 设计，可把本文的「hotspot 准则 → 设计 → 独立模型评估 → 双指标命中 → 新颖性」五步作为最小可复现基线；若本课题做 MD/对接，可把本文的 11 条序列作为待验证的对接/MD 输入，用物理模拟补上本文缺失的亲和力与稳定性证据。</li>
+</ul>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似</strong>：BindCraft（本文引 [6]）与 RFdiffusion/ProteinMPNN/AF2（本文引 [7]）同属「扩散生成骨架 + 序列设计 + 结构预测过滤」范式；本文实测前者在 STAT3 hotspot 上优于后者（hotspot 1–3 上后者 ipTM ≤ 0.30），但该比较未控制参数与 hotspot 定义，属弱证据。</li>
+<li><strong>组合</strong>：AlphaFold3（本文引 [8][9]）作为下游评估器，与设计 pipeline 组合成「生成-判别」结构；本课题可进一步组合物理模拟（MD/MM-PBSA）作为第三层判别。</li>
+<li><strong>冲突</strong>：本文「AF3 ipTM 高置信度」与「无实验验证」之间存在张力——作者自认 ipTM 不能换算为亲和力（Discussion 4.3），这与领域内对 AF3 用于 binder 筛选的常见乐观解读形成对照。</li>
+<li><strong>可迁移领域</strong>：蛋白-蛋白界面定义（4.5 Å 非氢原子距离，本文引 [10][11]）是通用约定，可迁移到本课题的对接结果分析与界面残基注释。</li>
+<li><strong>候选方向（未核验）</strong>：STAT3 家族保守性导致的选择性问题（本文引 [1]）提示：任何 STAT3 binder 的选择性评估都应包含 STAT1/STAT2 等同源结构对照，本文未做，属可填补空白。</li>
+<li><strong>用户已有知识连接</strong>：若本课题已使用 AlphaFold2/3 做复合物预测，本文提供了一个具体的「AF2 设计内 + AF3 评估外」工作流实例与阈值（0.60 / 0.75 / pLDDT 90 / 85% 覆盖），可作为阈值选择的参考锚点。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong></p>
+<p><strong>候选 1：用物理模拟补上本文缺失的亲和力与稳定性证据</strong>
+- 来源局限/观察：Discussion 4.3 明确「AF3 ipTM 不直接换算为结合常数」；全文无实验。
+- 核心假设：本文 11 条 minibinder 中，AF3 ipTM 较高的若干条在 MD/MM-PBSA 或自由能微扰下会显示更有利的结合自由能，且排序与 ipTM 部分相关。
+- 相对本文的增量：把「预测置信度」升级为「物理量估计」，并检验 ipTM 与物理打分的相关性。
+- 初步方法：取 11 条序列 + AF3 复合物结构，做显式溶剂 MD（≥100 ns × 3 重复），用 MM-PBSA 或 FEP 估计 ΔG；同时做单体稳定性 MD。
+- 验证方式：ipTM 与 ΔG 的秩相关；与已知 STAT3 结合肽/结构域（如 SH2 结合基序）做阳性对照。
+- 可能的失败模式：AF3 复合物构象本身偏离真实结合态，导致 MD 起点错误；minibinder 在 MD 中解离或重折叠。
+- 创新状态：unverified。</p>
+<p><strong>候选 2：STAT 家族选择性交叉评估</strong>
+- 来源局限/观察：Discussion 4.3 作者自认未研究特异性，并建议评估与其他 STAT 蛋白的相互作用；Introduction 指出 SH2 保守正是小分子失败原因。
+- 核心假设：针对 SH2/linker 等保守结构域设计的 binder 会与 STAT1/STAT2 等产生可预测的交叉界面，而针对 DNA-binding/coiled-coil 的 binder 选择性更高。
+- 相对本文的增量：把「选择性」从讨论中的建议变成可量化结果。
+- 初步方法：对 11 条 binder × STAT 家族同源结构（AlphaFold DB 或 PDB）做 AF3/对接，比较 ipTM 与界面残基保守性；用序列保守性打分（如 ConSurf 类方法）标注 hotspot 保守程度。
+- 验证方式：交叉反应预测与 hotspot 保守性得分的相关性；若有实验条件，做结合选择性测定。
+- 可能的失败模式：同源结构预测质量差异引入偏差；AF3 对非同源复合物打分不可比。
+- 创新状态：unverified。</p>
+<p><strong>候选 3：极性/带电口袋的 hotspot 准则改造</strong>
+- 来源局限/观察：HS12 极性带电口袋 3 个 campaign 仅 1 条通过；作者归因于极性口袋对 BindCraft 更难（Discussion 4.2，引 [20]）；而 Methods 2.2 的 hotspot 准则要求 ≥2 疏水残基，与极性口袋天然冲突。
+- 核心假设：HS12 低产出部分源于 hotspot 定义与口袋理化性质不匹配，而非模型能力上限；改用适配极性界面的 hotspot 准则（如允许极性/带电残基、纳入氢键供受体对）可提高产出率。
+- 相对本文的增量：把「难靶点」从归因问题转为可操作的准则改进问题。
+- 初步方法：对 HS12 定义 3–5 组替代 hotspot（不同残基组合、不同疏水/极性配比），在相同 BindCraft 参数下各跑 3 个 campaign，比较通过率与 AF3 分数。
+- 验证方式：产出率与 AF3 ipTM 分布的组间比较；对通过者做界面氢键/盐桥分析。
+- 可能的失败模式：产出率提升但界面质量下降；极性界面本身可设计性低，准则改造无效。
+- 创新状态：unverified。</p>
+<p><strong>候选 4：三元复合物的可靠预测协议（替代刚体叠合）</strong>
+- 来源局限/观察：Methods 2.6 作者明确拒绝用 AF3 预测三元复合物，理由是工具会扭曲折叠与结合位置，改用两个二元模型刚体叠合。
+- 核心假设：存在可用的三元复合物预测/建模协议（如带约束的 AF3、或对接 + MD 精修），能在不扭曲单体折叠的前提下给出可信的三元界面。
+- 相对本文的增量：把 sandwich assay 可行性从「几何不重叠」升级为「三元界面能量学可行」。
+- 初步方法：对 6NJS_HS8_l75_s347865 + 6NJS_HS9_l59_s417381 + STAT3 组合，比较三种策略：(a) 直接 AF3 三元预测；(b) 刚体叠合后 MD 精修；(c) 约束对接 + MD。以单体折叠 RMSD 与界面能量为评价指标。
+- 验证方式：三种策略的界面预测一致性；与实验共结合数据（若有）对照。
+- 可能的失败模式：所有计算策略都无法可靠预测三元界面；两个 binder 在真实条件下相互排斥。
+- 创新状态：unverified。</p>
+<p><strong>候选 5：把「产出率」建成 hotspot 可设计性的预测模型</strong>
+- 来源局限/观察：本文报告了每 hotspot 的 campaign 数与通过数（HS11 最高产、HS12 最难、HS4A/HS7 零通过），但样本仅 7 个 hotspot，未建模。
+- 核心假设：hotspot 的局部理化与几何特征（疏水比例、暴露度、二级结构类型、口袋极性、曲率）可预测 AI 设计的产出率。
+- 相对本文的增量：把「试了才知道」变成「先算再试」，用于靶点优先级排序。
+- 初步方法：从文献/公开数据收集更多「hotspot 特征 → 设计产出率」样本（含本文 7 个），训练简单回归/分类模型；特征用 ChimeraX/FreeSASA 等可计算量。
+- 验证方式：留一法交叉验证；在本文未使用的新 hotspot 上前瞻性测试。
+- 可能的失败模式：样本量过小、平台/参数异质性导致不可迁移；产出率受随机性主导。
+- 创新状态：unverified。</p></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text provided (Abstract, Introduction, Materials and Methods, Results, Discussion, Conclusion, Author Contributions, Declaration of Competing Interest, Acknowledgments). Figures and Tables are referenced but not supplied as visual content.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the supplied text. No figure images, table contents, sequence data, PAE plots, or BLASTp outputs were provided for independent inspection. No experimental data are reported.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors claim that BindCraft was used to design de novo miniprotein binders against seven selected hotspots spanning the SH2, linker, DNA-binding, and coiled-coil domains of STAT3; that 11 designs from five hotspots met a high-confidence AlphaFold3 (AF3) threshold (ipTM &gt;= 0.75, pLDDT &gt;= 90 for most of the complex); that these binders are predicted to dock with their intended domain and mostly within 4.5 Angstrom of at least one targeted hotspot residue; that some binder pairs are predicted to dock simultaneously without overlap and could support a sandwich assay format; and that BLASTp indicates the sequences are novel.</li>
+<li><strong>Visible evidence base</strong> Narrative description of the computational workflow, parameter changes, hotspot selection criteria, scoring thresholds, and summarized results. All quantitative support resides in Tables 1 through 6 and Figures 1 through 6, none of which are supplied in inspectable form. No experimental binding, affinity, specificity, or functional data are presented.</li>
+<li><strong>Missing materials affecting confidence</strong> Figure 1 (workflow), Figure 3 (AF3 models of all 11 binders), Figure 4 (simultaneous docking), Figure 5 (PAE plots), Figure 6 (numbering guide), Table 1 (BindCraft parameters), Table 2 (pipeline yield), Table 3 (ipTM values and sequences), Table 4 (BLASTp results), Table 5 (interface and overlap analysis), Table 6 (hotspot function and numbering). Absence of these prevents verification of essentially every quantitative claim.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This is a purely computational design report that generates and ranks minibinder candidates against STAT3 using BindCraft and AlphaFold3, with no experimental validation. The workflow is described clearly and the authors are explicit about the absence of wet-lab data. However, the central claims rest entirely on predicted confidence metrics (ipTM, pLDDT, PAE) that are not measures of binding, and the manuscript itself acknowledges this. The evidence base as supplied is insufficient to establish that any of the 11 candidates binds STAT3, that they engage the intended hotspots, or that the sandwich-assay proposal is physically realizable. The work is best characterized as a hypothesis-generating sequence disclosure rather than an established result. Several methodological choices (threshold selection, single-seed AF3 evaluation, structural superposition to construct a ternary model, BLASTp parameters) require clarification before even the computational claims can be assessed.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in computational protein design and de novo binder engineering, particularly those working with BindCraft, RFdiffusion, and AlphaFold-based scoring pipelines, may find the reported yield statistics and hotspot-selection heuristics of practical interest. Groups working on STAT3 as an oncology target and on peptide or miniprotein inhibitors of transcription factors may be interested in the disclosed sequences as starting points for experimental screening. The sandwich-assay concept, if validated, would interest assay-development groups. Because no experimental validation is presented, the immediate audience is limited to those who would independently test the designs.</li>
+<li><strong>Major strengths</strong> The manuscript is transparent about its limitations, explicitly stating that no experimental validation was performed and that ipTM does not translate to affinity. The hotspot-selection criteria are stated concretely (three residues, within 10 Angstrom C-alpha distance, at least two hydrophobic residues, partial surface exposure, preference for secondary structure), which makes the design rationale reproducible in principle. The decision to report the negative preliminary RFdiffusion/ProteinMPNN/AF2 results for hotspots 1 through 3 is a useful disclosure. The authors provide a numbering crosswalk between AFS and PDB 6NJS schemes, which is a genuine practical contribution for anyone attempting to reproduce or extend the work. The distinction between interface contact (within 4.5 Angstrom) and visual coverage is thoughtfully discussed, and the authors note the two measures often disagree rather than collapsing them into a single favorable metric.</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidentiary support for the central claim</li>
+<li><strong>Claim pointer</strong> The manuscript claims that 11 high-confidence minibinders were designed that bind STAT3 at or near the input hotspot residues, and that these constitute promising leads for therapeutic development.</li>
+<li><strong>Evidence pointer</strong> Abstract, Section 3.1, Section 3.2, Table 3, Figure 3, location not provided for the underlying data</li>
+<li><strong>Concern</strong> The entire claim of binding rests on AlphaFold3 confidence metrics (ipTM, pLDDT, PAE) with no experimental binding, affinity, or specificity measurement. The authors themselves state in Section 4.3 that AF3 ipTM does not translate directly to a binding constant. AlphaFold-class models are known to produce plausible interfaces for non-binding pairs, and ipTM is a self-consistency score rather than an affinity predictor. No negative controls (for example, designed binders against an unrelated surface, or STAT3 against an unrelated miniprotein) are reported to calibrate what an ipTM of 0.75 to 0.93 means in this specific system.</li>
+<li><strong>Why it matters</strong> The central claim of the paper is that these are STAT3 binders. Without experimental validation or at minimum a calibration of the scoring metric against known binders and non-binders, the claim is not established. The therapeutic framing in the Abstract and Conclusion amplifies a claim the evidence cannot support.</li>
+<li>
+<p><strong>Resolution test</strong> Provide experimental binding data (for example, SPR, BLI, ITC, or pull-down) for at least a subset of the 11 candidates, or provide a calibration showing that the AF3 ipTM threshold used separates known STAT3 binders from known non-binders in this system. Alternatively, substantially soften the claim throughout to "computationally predicted candidate binders requiring experimental validation" and remove therapeutic-lead framing.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Target engagement and hotspot specificity</li>
+<li><strong>Claim pointer</strong> The manuscript claims that most binders dock within 4.5 Angstrom of one or more targeted hotspot residues and that all 11 cover their intended domain.</li>
+<li><strong>Evidence pointer</strong> Section 3.5, Table 5, Figure 3, location not provided</li>
+<li><strong>Concern</strong> The reported results show that only 4 of 11 binders visually cover all their input hotspot residues, 2 cover none, and one binder (Hotspot4b_l77_s720724) has no hotspot residue among its interface residues at all. The authors acknowledge that the two measures of docking location often disagree. Yet the Abstract states that "most" binders dock within 4.5 Angstrom of one or more targeted hotspot residues, which is technically true but obscures that hotspot engagement is partial or absent for a majority of candidates. The claim that all 11 cover their intended domain is based on AF3 predictions that have not been experimentally verified, and domain-level coverage is a much weaker statement than hotspot engagement.</li>
+<li><strong>Why it matters</strong> The design intent was site-specific targeting. If binders do not engage the intended hotspot, the rationale for selecting those hotspots (biological function, druggability) does not carry over to the binders. The discrepancy between interface contact and visual coverage also raises the question of which metric, if either, is meaningful for a predicted model.</li>
+<li>
+<p><strong>Resolution test</strong> Report per-binder hotspot engagement with explicit counts and clearly separate the two metrics in the main text rather than only in table notes. State plainly how many binders engage all, some, or none of their intended hotspot residues. If hotspot engagement is the design goal, explain why binders that fail it are retained as top candidates.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Validity of the sandwich-assay claim</li>
+<li><strong>Claim pointer</strong> The manuscript claims that several minibinders are predicted to dock simultaneously to STAT3 without overlap and that such pairs have the potential to constitute STAT3 sandwich assays.</li>
+<li><strong>Evidence pointer</strong> Section 2.6, Section 3.2, Figure 4, location not provided</li>
+<li><strong>Concern</strong> The simultaneous docking model was not generated by predicting a ternary complex. The authors explicitly state in Section 2.6 that they declined to submit the ternary complex to AF3 because the tool would distort folds, and instead superimposed two independently predicted binary models in ChimeraX. This is a structural alignment of two separately predicted poses, not a prediction or measurement of simultaneous binding. There is no energetic or steric assessment of whether both binders can occupy the surface at once, no consideration of linker geometry for an assay format, and no experimental demonstration of simultaneous binding.</li>
+<li><strong>Why it matters</strong> The sandwich-assay proposal is presented as a potential application and is one of the more distinctive claims of the paper. It rests on a superposition that cannot establish co-occupancy. Presenting it as a candidate format without this caveat in the Abstract overstates what the modeling supports.</li>
+<li>
+<p><strong>Resolution test</strong> Either perform an actual ternary complex prediction with an appropriate tool and report the result, or provide a quantitative steric and energetic argument for co-occupancy, or explicitly reframe the sandwich-assay statement as a speculative hypothesis contingent on experimental demonstration of simultaneous binding. The Abstract should not present it as a supported outcome.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Reproducibility of the design and scoring pipeline</li>
+<li><strong>Claim pointer</strong> The manuscript reports specific BindCraft parameter modifications and AF3 thresholds that define the high-confidence set.</li>
+<li><strong>Evidence pointer</strong> Section 2.3, Section 2.4, Table 1, location not provided</li>
+<li><strong>Concern</strong> The parameter changes are described (weights_con_inter raised from 1.0 to 2.0, inter_contact_distance reduced from 20 to 10 Angstrom, inter_contact_number revised from 2 to 3), but the full parameter set is deferred to Table 1, which is not supplied. The rationale for the specific AF3 thresholds (ipTM &gt;= 0.75, pLDDT &gt;= 90 for &gt;= 85% of the complex) is not justified against any benchmark. The pLDDT criterion is described as determined by visual inspection of the ribbon structure, which is not a quantitative or reproducible criterion. The number of AF3 seeds or recycles is not stated. Whether the reported ipTM values are from a single prediction or an average is not stated.</li>
+<li><strong>Why it matters</strong> Without the full parameter set and a stated, reproducible scoring protocol, independent groups cannot reproduce the design campaign or the selection of the 11 candidates. The visual pLDDT assessment in particular is a subjective step embedded in a quantitative selection pipeline.</li>
+<li>
+<p><strong>Resolution test</strong> Provide the complete BindCraft parameter set, state the AF3 run configuration (seeds, recycles, model version), replace the visual pLDDT assessment with a quantitative per-residue criterion and report the fraction of residues meeting it, and justify the chosen thresholds against a benchmark or a sensitivity analysis.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M5</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Novelty assessment methodology</li>
+<li><strong>Claim pointer</strong> The manuscript claims that BLASTp found no matches for six binders and only very low-significance matches for the other five, suggesting the sequences are novel and not chimeras of known proteins.</li>
+<li><strong>Evidence pointer</strong> Section 2.7, Section 3.4, Table 4, location not provided</li>
+<li><strong>Concern</strong> The BLASTp parameters include an E-value cutoff threshold of 10, which is unusually permissive for a novelty assessment, and a seed word size of 5, which is short and increases sensitivity to spurious short matches. The significance threshold for interpreting matches is stated separately as 10^-5 in Section 3.4, which creates an inconsistency between the search parameter and the interpretation threshold. The claim of "absolute novelty" in the Conclusion is stronger than a BLASTp search can support, since BLASTp detects sequence similarity, not structural or functional novelty, and does not exclude the possibility that a designed sequence adopts a known fold or engages an off-target partner.</li>
+<li><strong>Why it matters</strong> The novelty claim is one of the stated hypotheses of the paper. If the search parameters are not appropriate or the interpretation threshold is inconsistent with the search threshold, the novelty conclusion is weakened. "Absolute novelty" is not a claim BLASTp can establish.</li>
+<li>
+<p><strong>Resolution test</strong> Justify the E-value cutoff of 10 and the word size of 5, or rerun with standard parameters and report both. Reconcile the search threshold with the interpretation threshold. Replace "absolutely novel" with a precise statement of what the search does and does not establish.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M6</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Specificity and off-target risk</li>
+<li><strong>Claim pointer</strong> The manuscript presents the binders as candidates for targeting STAT3, with the SH2 domain noted as highly conserved among STAT proteins.</li>
+<li><strong>Evidence pointer</strong> Section 1, Section 4.3, location not provided</li>
+<li><strong>Concern</strong> The authors acknowledge in Section 4.3 that they did not investigate binding specificity against other proteins and that evaluating interaction with other STAT proteins would be instructive. Given that the SH2 domain is explicitly described in the Introduction as highly conserved among STAT proteins, and that several binders target the SH2 domain or adjacent regions, the absence of any specificity analysis is a substantive gap. No computational cross-reactivity screen against other STAT family members or against the human proteome is reported.</li>
+<li><strong>Why it matters</strong> Selectivity is a central concern for STAT3-targeting therapeutics, as the Introduction itself notes. A binder that engages STAT3 but also engages STAT1, STAT5, or other conserved surfaces would not address the stated limitation of existing small-molecule inhibitors.</li>
+<li>
+<p><strong>Resolution test</strong> Perform a computational specificity screen, at minimum docking or AF3 evaluation against other STAT family members and ideally against a broader set of human proteins, and report the results. If specificity is not assessed, remove or substantially qualify any implication that these binders address the selectivity problem noted in the Introduction.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology consistency</li>
+<li><strong>Affected element</strong> Binder naming</li>
+<li><strong>Evidence pointer</strong> Section 3.5, Section 4.2, Table 5</li>
+<li><strong>Issue</strong> Binder identifiers are inconsistent. Most follow the pattern 6NJS_HS8_l75_s347865, but one is written as Hotspot4b_l77_s720724 without the 6NJS prefix, and Section 4.2 contains a garbled phrase "6NJS_HS11_l53_s331773 l64, l53" that appears to be a drafting error.</li>
+<li>
+<p><strong>Required correction</strong> Standardize all binder identifiers to a single format throughout the text and tables, and correct the garbled phrase in Section 4.2.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Numerical consistency</li>
+<li><strong>Affected element</strong> Reported ipTM ranges</li>
+<li><strong>Evidence pointer</strong> Section 3.1</li>
+<li><strong>Issue</strong> The text states BindCraft ipTM values range from 0.81 to 0.94 and AF3 ipTM values range from 0.75 to 0.93. It is not stated whether these are per-binder single values or ranges across multiple predictions, and the relationship between the BindCraft (AF2) ipTM and the AF3 ipTM for the same binder is not discussed.</li>
+<li>
+<p><strong>Required correction</strong> State whether each reported value is a single prediction or an aggregate, and clarify the relationship between the two scoring stages.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Method description completeness</li>
+<li><strong>Affected element</strong> AF3 evaluation protocol</li>
+<li><strong>Evidence pointer</strong> Section 2.4</li>
+<li><strong>Issue</strong> The manuscript states that sequences were manually submitted to the AlphaFold Server but does not report the number of seeds, recycles, or the model version, nor whether any prediction was repeated.</li>
+<li>
+<p><strong>Required correction</strong> Report the AF3 run configuration and whether predictions were repeated or averaged.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical interpretation</li>
+<li><strong>Affected element</strong> BLASTp significance threshold</li>
+<li><strong>Evidence pointer</strong> Section 2.7, Section 3.4</li>
+<li><strong>Issue</strong> The search uses an E-value cutoff of 10 while the interpretation uses a significance threshold of 10^-5. The two thresholds are not reconciled.</li>
+<li>
+<p><strong>Required correction</strong> Explain the relationship between the search cutoff and the interpretation threshold, or use a single consistent threshold.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Claim scope</li>
+<li><strong>Affected element</strong> Conclusion wording</li>
+<li><strong>Evidence pointer</strong> Section 5</li>
+<li><strong>Issue</strong> The Conclusion states the sequences "appear to be absolutely novel." "Absolutely" is not supportable by a BLASTp search.</li>
+<li>
+<p><strong>Required correction</strong> Replace with a precise statement of what the BLASTp results show, for example that no significant sequence similarity to known proteins was detected under the stated parameters.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m6</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Figure and table accessibility</li>
+<li><strong>Affected element</strong> All figures and tables</li>
+<li><strong>Evidence pointer</strong> Figures 1 through 6, Tables 1 through 6</li>
+<li><strong>Issue</strong> The supplied manuscript text references all figures and tables but none were provided in inspectable form, so the quantitative basis of every result could not be verified.</li>
+<li>
+<p><strong>Required correction</strong> Ensure all figures and tables are supplied with the manuscript, with legible labels and complete notes, and that Table 5 notes define both metrics unambiguously.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m7</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reference formatting</li>
+<li><strong>Affected element</strong> In-text citations</li>
+<li><strong>Evidence pointer</strong> Section 1, Section 2.8, Section 4.2</li>
+<li><strong>Issue</strong> Several citations appear with irregular spacing (for example "[ 1 ]", "[ 2 ]") and reference [20] is cited in Section 4.2 but the reference list was not supplied for verification.</li>
+<li>
+<p><strong>Required correction</strong> Standardize citation formatting and supply the full reference list.</p>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (absence of experimental validation for the binding claim), R1-M2 (partial or absent hotspot engagement for a majority of candidates), R1-M3 (sandwich-assay claim rests on structural superposition rather than ternary prediction or measurement). R1-M4, R1-M5, and R1-M6 are non-blocking but must be resolved for the computational claims to be reproducible and for the specificity and novelty statements to be defensible.</p>
+</li>
+<li>
+<p><strong>Assessment against Nature-style criteria</strong></p>
+</li>
+<li><strong>Originality</strong> Moderate. The application of BindCraft to STAT3 is a new combination, and the disclosure of designed sequences against multiple STAT3 domains has some value as a community resource. However, the methodological approach (BindCraft design followed by AlphaFold3 rescoring) is an established pattern, and the manuscript does not introduce a new method, benchmark, or conceptual advance. The sandwich-assay idea is the most distinctive element but is not supported by the evidence presented.</li>
+<li><strong>Scientific importance</strong> Currently limited. The work is hypothesis-generating and provides no experimental evidence that any candidate binds STAT3. The therapeutic framing in the Abstract and Conclusion is not matched by the evidence. Importance would increase substantially with even a small set of experimental binding measurements.</li>
+<li><strong>Interdisciplinary readership</strong> Limited in the current form. The paper is addressed to computational design specialists. The biological and clinical framing suggests an intent to reach oncology and drug-development audiences, but without experimental data those readers have no basis to act on the results beyond treating the sequences as screening candidates.</li>
+<li><strong>Technical soundness</strong> Partially sound but incomplete. The design pipeline is described with reasonable clarity, and the authors are candid about limitations. However, the scoring thresholds are not benchmarked, the pLDDT criterion is assessed visually, the AF3 run configuration is not reported, the BLASTp parameters are questionable and internally inconsistent, the ternary model is a superposition rather than a prediction, and no specificity analysis is performed. These are addressable but collectively they prevent the computational claims from being fully established.</li>
+<li>
+<p><strong>Readability for nonspecialists</strong> Reasonable. The Introduction provides adequate background on STAT3 and the motivation for targeting it. The Methods and Results are dense with tool-specific terminology (ipTM, pLDDT, PAE, BindCraft parameters) that is not always explained for a general audience. A brief glossary or expanded definitions at first use would help.</p>
+</li>
+<li>
+<p><strong>Recommendation posture</strong> Currently not established from the provided evidence. The computational workflow is described clearly enough to be potentially reproducible once the missing tables and parameters are supplied, and the authors are transparent about the absence of experimental validation. However, the central claims of binding, hotspot engagement, and sandwich-assay feasibility are not supported by the evidence presented, and the therapeutic framing exceeds what the data can bear. The manuscript would need experimental validation of at least a subset of candidates, or a substantial reframing as a purely computational candidate-disclosure report with all claims correspondingly qualified, before the case could be considered established.</p>
+</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that the 11 designs are STAT3 binders is unsupported. Only predicted confidence metrics are reported, and the authors acknowledge these do not translate to binding.</li>
+<li>The claim that most binders dock within 4.5 Angstrom of a targeted hotspot residue is technically reported but obscures that only 4 of 11 visually cover all hotspot residues and 2 cover none.</li>
+<li>The claim that binder pairs could constitute STAT3 sandwich assays is unsupported. It rests on superposition of two independently predicted binary models, not on a ternary complex prediction or measurement.</li>
+<li>The claim that the sequences are "absolutely novel" is unsupported by BLASTp, which assesses sequence similarity only and cannot establish absolute novelty.</li>
+<li>The implication that these binders address the selectivity limitations of existing STAT3 inhibitors is unsupported, since no specificity analysis against other STAT proteins or off-targets was performed.</li>
+<li>The framing of the candidates as leads for preclinical drug development is unsupported by the absence of any experimental affinity, specificity, stability, or functional data.</li>
+<li>The pLDDT-based high-confidence criterion is not reproducible as described, since it depends on visual inspection of ribbon structures rather than a quantitative per-residue computation.</li>
+<li>The relationship between BindCraft (AF2) ipTM and AF3 ipTM for the same binder is not reported, so the incremental value of the AF3 rescoring step cannot be assessed.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

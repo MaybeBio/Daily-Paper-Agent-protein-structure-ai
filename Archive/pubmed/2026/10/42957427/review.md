@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no access to methods, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors introduce SprintX, a large-scale AlphaFold3-derived synthetic dataset of antibody-antigen complex structures, generated without predefined binding-site or pose constraints, and processed through a multi-stage quality-control pipeline. They claim that SprintX recapitulates key geometric and physicochemical properties of experimentally resolved complexes, and that pretraining with SprintX improves downstream performance in antibody generation, binding-affinity prediction, and binding-interface prediction.
+- **Visible evidence base** Abstract text only; no quantitative results, benchmark details, or dataset statistics are provided
+- **Missing materials affecting confidence** Full methods, dataset construction details, quality-control metrics, downstream task definitions, benchmark results, comparison baselines, and any figures or tables
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially valuable resource for the antibody design community, addressing a recognized bottleneck in structure-based AI modeling. The concept of using AlphaFold3 to generate a large synthetic structural prior dataset is timely and could have broad utility. However, the abstract provides no quantitative evidence to support the central claims of quality, utility, or downstream improvement. The scientific case is therefore not established from the supplied material, and a full assessment requires access to the manuscript's methods and results.
+- **Who would be interested in the results, and why** Researchers in computational antibody design, structural biology, and AI-driven drug discovery would be interested. The dataset could serve as a training resource for models in antibody generation, affinity prediction, and interface prediction, and the quality-control pipeline may be of methodological interest to those developing synthetic structural datasets.
+- **Major strengths** The proposed approach addresses a clear and important problem, namely data scarcity in antibody-antigen complex structures. The use of AlphaFold3 without predefined binding-site constraints is a reasonable and potentially more general strategy than docking-based synthesis. The emphasis on multi-stage quality control and the stated intention to release the dataset openly are commendable and align with community needs.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "SprintX recapitulated key geometric characteristics and physicochemical regularities of experimentally resolved antibody-antigen complexes while filtering out structurally unstable or implausible synthetic outputs."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract asserts that SprintX recapitulates key geometric and physicochemical properties of experimental complexes, but no quantitative comparisons, metrics, or statistical analyses are presented. Without specific data, such as distributions of interface contacts, hydrogen bonds, or shape complementarity scores compared against experimental structures, this claim is unsupported.
+  - **Why it matters** The entire utility of the dataset hinges on its fidelity to experimentally resolved complexes. If the synthetic structures deviate systematically from real ones, downstream models trained on them may learn incorrect biases. The claim of recapitulation is foundational and must be substantiated with concrete evidence.
+  - **Resolution test** Provide quantitative comparisons between SprintX and experimentally resolved complexes for multiple geometric and physicochemical features, including statistical tests and effect sizes, in the full manuscript.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "Across downstream tasks including antibody generation, computational binding-affinity prediction, and binding-interface prediction, models pretrained with SprintX showed meaningful improvements in structural plausibility and competitive performance on computational binding-affinity and binding-interface prediction benchmarks."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract claims meaningful improvements and competitive performance but provides no numerical results, no baseline comparisons, and no specification of which models or benchmarks were used. The terms "meaningful" and "competitive" are undefined without data.
+  - **Why it matters** The downstream utility is the primary justification for the dataset's release. Without quantitative evidence, readers cannot assess whether the improvements are statistically significant, practically relevant, or consistent across tasks. This claim is central to the paper's contribution.
+  - **Resolution test** Report specific performance metrics for each downstream task, including baseline values, improvement magnitudes, and statistical significance, in the full manuscript.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility and transparency
+  - **Claim pointer** "SprintX uses AlphaFold3 to generate antigen-conditioned candidate complex-structure predictions from sampled antibody sequences paired with selected antigens, without imposing predefined binding-site or pose constraints."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not describe how antibody sequences were sampled, how antigens were selected, how many candidates were generated per pair, or how the ranking to select one representative structure was performed. These details are essential for reproducibility and for understanding potential biases in the dataset.
+  - **Why it matters** Without this information, the dataset cannot be reproduced or critically evaluated. The sampling and selection procedures directly influence the diversity and quality of the synthetic structures, and any undocumented choices could introduce systematic artifacts.
+  - **Resolution test** Provide a detailed description of the generation pipeline, including sampling strategies, candidate counts, ranking criteria, and any filtering thresholds, in the methods section.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Dataset size and composition
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract describes SprintX as "large-scale" but does not state the number of antibody-antigen pairs, the number of unique antibodies or antigens, or the diversity of the included sequences.
+  - **Required correction** Include basic dataset statistics, such as total number of complexes, number of unique antibodies and antigens, and any clustering or redundancy reduction steps.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** "Structural prior knowledge"
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "structural prior knowledge" is used repeatedly but is not defined. It is unclear whether this refers to the dataset itself, the pretraining strategy, or a specific modeling framework.
+  - **Required correction** Define the term explicitly at first use and clarify how the dataset functions as a prior in downstream model training.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Quality-control pipeline
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The multi-stage quality-control pipeline is mentioned but not described in any detail. The specific metrics used for global confidence, stereochemical validation, and interface-level contact analysis are not named.
+  - **Required correction** List the specific metrics and thresholds used in each stage of the quality-control pipeline in the methods section.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, and R1-M3 are blocking. The abstract lacks quantitative evidence for the central claims of structural fidelity and downstream utility, and the generation pipeline is insufficiently described for reproducibility. These issues must be resolved in the full manuscript before the scientific case can be considered established.
+- **Assessment against Nature-style criteria**  
+  - Originality: The concept of using AlphaFold3 to generate a large synthetic structural prior dataset is novel and distinct from docking-based approaches. This is a potentially original contribution.  
+  - Scientific importance: The problem of data scarcity in antibody-antigen complex structures is significant, and a validated synthetic dataset could have substantial impact on the field. The importance is high if the claims are substantiated.  
+  - Interdisciplinary readership: The work bridges structural biology, computational chemistry, and machine learning, and would appeal to a broad interdisciplinary audience.  
+  - Technical soundness: Not assessable from the abstract. The quality-control pipeline and downstream evaluations are described only at a high level, and no technical details or results are provided.  
+  - Readability for nonspecialists: The abstract is generally clear and accessible, though terms such as "structural prior knowledge" and "interface-level contact analysis" could benefit from brief clarification for a broader audience.
+- **Recommendation posture** Currently not established from the provided evidence. The concept is promising and the resource could be valuable, but the abstract alone does not provide sufficient quantitative or methodological detail to support the central claims. A full review of the manuscript is necessary, and the authors should be encouraged to resubmit with complete evidence.
+
+## Risk / unsupported claims
+- The claim that SprintX recapitulates key geometric and physicochemical properties of experimental complexes is unsupported without quantitative comparisons.
+- The claim of meaningful downstream improvements is unsupported without specific benchmark results and baselines.
+- The claim that the quality-control pipeline filters out unstable or implausible outputs is unverifiable without details on the metrics and thresholds used.
+- The overall utility of the dataset as a "complementary source of structural prior knowledge" is not assessable from the abstract alone.

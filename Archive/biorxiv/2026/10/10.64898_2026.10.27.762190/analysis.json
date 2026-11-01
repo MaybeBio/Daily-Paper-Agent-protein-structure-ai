@@ -1,0 +1,24 @@
+{
+  "source": "biorxiv",
+  "id": "10.64898/2026.10.27.762190",
+  "title": "De novo Protein Generating Model via Structure-Aware Graph Neural Networks",
+  "authors": "Chance M Gammill; Lakshman Tamil",
+  "journal": "bioRxiv",
+  "published_date": "2026-10-28",
+  "window": {
+    "start": "2026-10-25",
+    "end": "2026-10-31"
+  },
+  "score": 9,
+  "one_liner_zh": "该文提出一种基于结构感知图神经网络和可微结构预测（ESMFold）的蛋白质从头生成模型，以结构精度而非序列恢复为优化目标，直接针对蛋白质结构计算建模问题，方法创新且与课题高度相关。",
+  "abstract": "The focus of this paper is to create a protein conformation prediction model that is optimized for structural accuracy rather than sequence recovery. To achieve this goal, we created a graph neural network (GNN) [19] for the design of computational proteins that integrates differentiable structure prediction through ESMFold [13] via a structural loss function, allowing direct optimization of the 3D conformational accuracy. Our model takes protein backbone coordinates as input and predicts an amino acid sequence using a composite loss that heavily weights structural similarity. On a matched evaluation sample, our model achieves structural precision (RMSD, TM-score, and GDT-TS) that is statistically indistinguishable from ProteinMPNN, a leading sequence recovery-focused method, despite training with no direct sequence recovery supervision and substantially lower native sequence recovery. Our results demonstrate that sequence recovery is not necessary to achieve competitive structural accuracy and that proteins can possess multiple non-unique solutions, suggesting that protein sequence prediction models may perform comparably well under purely structural conformation training. This distinction in training data and model structure allows for the training of a protein-generating model on non-natural proteins. Creating a model designed for de novo protein generation.",
+  "abstract_zh": "本文的重点是构建一个以结构精度而非序列恢复为优化目标的蛋白质构象预测模型。为实现这一目标，我们创建了一个用于计算蛋白质设计的图神经网络（GNN）[19]，通过ESMFold [13]集成可微分的结构预测，并采用结构损失函数，从而能够直接优化三维构象的准确性。我们的模型以蛋白质骨架坐标为输入，利用一个高度加权结构相似性的复合损失来预测氨基酸序列。在匹配的评估样本上，尽管训练过程中没有直接的序列恢复监督，且天然序列恢复率显著较低，我们的模型在结构精度（RMSD、TM-score和GDT-TS）上与以序列恢复为重点的领先方法ProteinMPNN在统计上无显著差异。我们的结果表明，序列恢复并非实现竞争性结构精度的必要条件，且蛋白质可能存在多个非唯一解，这提示蛋白质序列预测模型在纯结构构象训练下可能表现同样出色。训练数据和模型结构的这一区别使得我们能够在非天然蛋白质上训练蛋白质生成模型，从而创建一个专为从头蛋白质生成设计的模型。",
+  "has_fulltext": true,
+  "fulltext_source": "europepmc",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.27.762190",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.10.27.762190",
+  "paper_page_path": "papers/biorxiv/10.64898_2026.10.27.762190/index.html"
+}

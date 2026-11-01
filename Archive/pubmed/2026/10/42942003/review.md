@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, results, discussion, methods, concluding remarks) as provided by the user. No supplementary figures, tables, or appendices were included in the supplied material.
+- **Assessment boundary** The review is limited to the content of the provided manuscript text. Claims, figures, tables, and supplementary materials referenced but not supplied are noted as such and assessed only insofar as they are described in the text.
+- **Shared manuscript claim summary** The authors propose a thermodynamic framework that uses spectral phasor trajectories to extract quantitative protein stability parameters (ΔG°w and m-values) from fluorescence denaturation data, explicitly accounting for changes in fluorescence quantum yield between states. The framework is validated on simulated two- and three-state data and applied to published urea-induced unfolding of E. coli OmpA and SDS-induced denaturation of A. fulgidus CopA, with the latter revealing three transitions where conventional intensity analysis resolved only two.
+- **Visible evidence base** The manuscript text includes equations (1)–(22), descriptions of Figures 1–4 and S1–S7, Table 1 (referenced but not shown), and references to published datasets. No raw data, code, or full figures are available in the supplied material.
+- **Missing materials affecting confidence** Supplementary figures (S1–S7), Table 1, Table S1, the Python scripts mentioned in the Acknowledgments, and the full published datasets for OmpA and AfCopA are not provided. These are essential for independent verification of the fitting results, confidence intervals, and the claimed agreement with published thermodynamic parameters.
+
+## Reviewer
+- **Overall assessment** The manuscript presents a conceptually interesting extension of spectral phasor analysis from a qualitative to a quantitative thermodynamic tool. The mathematical derivation linking phasor distances to molecular fractions via quantum yield corrections is sound in principle and addresses a real limitation of prior phasor-based approaches. The validation on simulated data is a strength, and the application to OmpA provides a useful benchmark. However, the central claim that the method resolves intermediates invisible to conventional analysis rests on a single experimental system (AfCopA) for which the full dataset, fitting details, and statistical comparisons are not fully visible in the supplied text. The manuscript would be strengthened by clearer presentation of the fitting procedures, error analysis, and the conditions under which the method fails or becomes unreliable.
+- **Who would be interested in the results, and why** Researchers in protein biophysics, particularly those studying membrane protein folding and stability, would find this work relevant. The method offers a way to extract thermodynamic parameters from fluorescence data without assuming constant quantum yield, which is a common but often unverified assumption. The ability to resolve hidden intermediates could be of interest to those working on multidomain proteins and intrinsically disordered proteins. The work may also appeal to method developers in fluorescence spectroscopy and data analysis.
+- **Major strengths** The mathematical framework is clearly derived and addresses a genuine gap in the field. The use of simulated data to validate the approach before applying it to experimental systems is methodologically sound. The demonstration that ignoring quantum yield differences leads to incorrect ΔG° values is an important cautionary result. The application to a membrane protein with multiple transitions showcases the potential of the method to reveal complexity that conventional analysis misses.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that the proposed formalism accurately recovers thermodynamic parameters from simulated three-state data and that phasor analysis reveals two intermediates in AfCopA denaturation that are not resolvable by conventional intensity analysis.
+  - **Evidence pointer** Section 2.1, Figure 2; Section 2.3, Figures 4–5; Table 1 (not provided); Table S1 (not provided)
+  - **Concern** The validation of the three-state model relies on simulated data with specific assumptions about spectral properties and quantum yields. The text states that a three-state model can fit the total intensity data and recover the true parameters only in the absence of error, and that 1% random error leads to substantially different estimates. This raises questions about the robustness of the method when applied to real, noisy data. For the AfCopA dataset, the authors report that the three-state intensity model shows bias at high SDS mole fractions and that a four-state model is overparameterized. The phasor analysis identifies three transitions, but the statistical significance of the improvement over the two-transition model is not quantified in the supplied text. The claim that the method resolves hidden intermediates would be substantially strengthened by a formal model comparison (e.g., AICc differences, F-tests) and by showing that the recovered parameters are stable across replicate experiments or bootstrap resampling.
+  - **Why it matters** The central novelty of the manuscript is the ability to resolve intermediates that conventional analysis misses. If the method is not robust to noise or if the improvement in fit is not statistically significant, the claim is not established. The manuscript currently provides insufficient evidence to distinguish between a genuine improvement in resolution and an artifact of overfitting.
+  - **Resolution test** Provide a formal statistical comparison between the two- and three-transition models for the AfCopA data, including AICc values, parameter uncertainties, and confidence intervals. Show that the recovered parameters are reproducible across independent experimental replicates or through bootstrap analysis. Demonstrate the method's performance on simulated data with noise levels comparable to the experimental data.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors state that the relative distance in phasor space equals the fraction of photons from the denatured state, and that Equation (14) relates this to the molecular fraction via quantum yields. They further claim that fitting Equation (16) without accounting for quantum yield differences leads to incorrect ΔG° values.
+  - **Evidence pointer** Section 2.1, Equations (7)–(16); Section 2.2, Figure 3E–F and Figure S5 (not provided)
+  - **Concern** The derivation of Equation (14) is referenced to Appendix A, which is not provided in the supplied material. The relationship between photon fractions and molecular fractions is critical to the entire framework, and the derivation must be shown in full to allow readers to verify its correctness. Additionally, the authors state that fitting Equation (16) with ϕN = ϕD leads to incorrect ΔG° values, but the magnitude of the error and the conditions under which this error becomes significant are not quantified. For the OmpA dataset, the authors report that the phasor-based and intensity-based analyses agree, but the text does not specify whether the quantum yield correction was applied in this case or whether the quantum yields of the native and denatured states were similar enough that the correction was negligible.
+  - **Why it matters** The entire method hinges on the correct conversion of phasor distances to molecular fractions. If the derivation is flawed or if the quantum yield correction is not applied correctly, the recovered thermodynamic parameters will be biased. The manuscript must provide the full derivation and demonstrate the sensitivity of the results to the quantum yield values used.
+  - **Resolution test** Include the full derivation from Appendix A in the main text or supplementary material. Provide a sensitivity analysis showing how the recovered ΔG° and m-values change as a function of the quantum yield ratio ϕN/ϕD. For the OmpA dataset, explicitly state whether the quantum yield correction was applied and report the quantum yield values used.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Reproducibility
+  - **Claim pointer** The authors state that the method was applied to published data on OmpA and to their own AfCopA data, and that the results agree with previously reported thermodynamic parameters.
+  - **Evidence pointer** Section 2.2, Figure 3; Section 2.3, Figures 4–5; Table 1 (not provided)
+  - **Concern** The manuscript does not provide sufficient detail on how the published OmpA data were digitized and processed. The text mentions that spectra were digitized, but the resolution of the digitization, the number of data points, and the wavelength range are not specified. For the AfCopA data, the fitting procedures are described in general terms, but the specific initial guesses, parameter bounds, and convergence criteria are not given. The Python scripts mentioned in the Acknowledgments are not provided, making it difficult for others to reproduce the analysis.
+  - **Why it matters** Reproducibility is a core requirement for method papers. Without access to the data processing scripts and detailed fitting protocols, other researchers cannot apply the method to their own data or verify the results independently.
+  - **Resolution test** Provide the Python scripts as supplementary material, along with a detailed description of the digitization procedure, data processing steps, and fitting protocols. Include the digitized OmpA data and the AfCopA dataset as supplementary files.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability
+  - **Affected element** Section 2.1, Equations (7)–(16)
+  - **Evidence pointer** Section 2.1
+  - **Issue** The derivation of the relationship between phasor distance and molecular fraction is dense and would benefit from a step-by-step explanation in the main text, particularly for readers not familiar with phasor analysis.
+  - **Required correction** Add a brief intuitive explanation of why the phasor distance is proportional to the photon fraction, and how the quantum yield correction modifies this relationship.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Section 2.3, Figure 5
+  - **Evidence pointer** Section 2.3
+  - **Issue** The text states that the three transitions in AfCopA denaturation were identified from linear regions in the phasor plot, but it is not clear how the boundaries between these regions were determined objectively.
+  - **Required correction** Describe the criteria used to identify the linear segments in the phasor trajectory, or state that the boundaries were determined by visual inspection.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Section 3.6, Equation (20)
+  - **Evidence pointer** Section 3.6
+  - **Issue** The quantum yield determination method is described, but the absorbance values used in Equation (20) are not reported for the OmpA and AfCopA datasets.
+  - **Required correction** Report the absorbance values at the excitation wavelength for the samples used for quantum yield determination, or state that these values are provided in the supplementary material.
+- **Technical failings that need to be addressed before the case is established** The full derivation of Equation (14) must be provided. The statistical comparison between the two- and three-transition models for AfCopA must be quantified. The sensitivity of the results to the quantum yield correction must be demonstrated. The reproducibility of the analysis must be ensured by providing the scripts and data.
+- **Assessment against Nature-style criteria** Originality: The work is original in its application of phasor analysis to quantitative thermodynamics, but the underlying mathematics is not novel. Scientific importance: The method could be useful for studying membrane protein stability, but its impact depends on the robustness of the results, which is not fully established. Interdisciplinary readership: The work is primarily of interest to biophysicists and spectroscopists; the broader interdisciplinary appeal is limited. Technical soundness: The mathematical framework is plausible, but the validation is incomplete, particularly regarding noise robustness and statistical significance. Readability for nonspecialists: The manuscript is written for a specialist audience and assumes familiarity with phasor analysis and thermodynamic models; the introduction and methods sections are not accessible to a general scientific audience.
+- **Recommendation posture** Supportive if technical concerns are resolved. The core idea is promising and the simulated validation is a good start, but the manuscript does not currently provide sufficient evidence to establish the central claim of resolving hidden intermediates. The missing derivation, lack of statistical comparison, and incomplete reproducibility details must be addressed before the case is made.
+
+## Risk / unsupported claims
+- The claim that phasor analysis resolves two intermediates in AfCopA denaturation is not supported by a formal statistical comparison with the two-state model.
+- The claim that the recovered thermodynamic parameters agree with previously published values for OmpA cannot be fully assessed without access to the digitized data and the original publication's values.
+- The claim that the method is robust to noise is not supported, as the text states that 1% error leads to substantially different parameter estimates in the three-state simulation.
+- The relationship between phasor distance and molecular fraction (Equation (14)) is not verifiable without the full derivation from Appendix A.
+- The quantum yield values for the OmpA and AfCopA states are not reported, making it impossible to assess the magnitude of the correction applied.

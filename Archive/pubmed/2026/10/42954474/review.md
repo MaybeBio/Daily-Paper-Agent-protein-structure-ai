@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors use ReaxFF molecular dynamics simulations to study collisions of lysozyme and neurotensin with PEG surfaces under vacuum, mimicking soft and reactive landing in preparative mass spectrometry. They report that PEG acts as a soft cushion preserving protein structure at most velocities, that covalent bond formation occurs only at high velocity (≥5 km/s) in amorphous PEG without chain terminations, and that molecular fragments transferred in iBEAM may induce protein grafting at 3 km/s.
+- **Visible evidence base** Abstract text only; no quantitative data, simulation parameters, or statistical analyses are provided
+- **Missing materials affecting confidence** Full manuscript, simulation methodology details, force field validation, convergence criteria, system size and composition, trajectory statistics, error estimates, and all figures and tables
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting computational study on protein collision dynamics with PEG surfaces, relevant to soft and reactive landing in mass spectrometry. However, the evidence base is limited to a summary of qualitative findings, and several claims lack the quantitative support needed to assess their validity. The central conclusion that PEG preserves protein structure is plausible but not established from the abstract alone. The claim regarding iBEAM fragment-mediated grafting is presented as a proof-of-principle but is insufficiently contextualized.
+- **Who would be interested in the results, and why** Researchers in biomaterial surface science, preparative mass spectrometry, and computational biophysics would find these results relevant. The study addresses a practical question of how polymer surfaces can be engineered to preserve protein integrity during deposition, which is of interest to those developing soft landing techniques for protein analysis and surface functionalization.
+- **Major strengths** The study addresses a timely and practical question at the interface of surface science and mass spectrometry. The use of ReaxFF allows for the exploration of both energy dissipation and reactive chemistry, which is appropriate for the stated goals. The consideration of multiple PEG structures and a range of collision velocities is a reasonable parameter sweep for a first computational exploration.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that PEG acts as a soft, cushion-like substrate that effectively dissipates impact energy and preserves protein structure under most conditions.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract provides no quantitative metrics for structural preservation, such as root-mean-square deviation, radius of gyration, or secondary structure content over time. Without such data, the claim of structural preservation is qualitative and cannot be evaluated. Additionally, the range of "most conditions" is undefined.
+  - **Why it matters** The central conclusion of the study rests on this claim. If structural preservation is not quantified, the reader cannot assess the magnitude of the effect or compare it with other surfaces or conditions.
+  - **Resolution test** Provide quantitative structural metrics (e.g., RMSD, RMSF, secondary structure fraction) as a function of time and velocity for each PEG structure, with error bars across replicate trajectories.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that covalent bond formation was observed only at high velocity (≥5 km/s) in the amorphous PEG structure lacking surface chain terminations.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract does not specify how covalent bond formation was detected, which atom pairs were considered, or how many trajectories exhibited such events. The absence of bond formation in other structures is stated as a binary outcome, but no statistical confidence is provided.
+  - **Why it matters** This is a key mechanistic finding that distinguishes reactive from non-reactive conditions. Without detection criteria and statistics, the claim is not reproducible or verifiable.
+  - **Resolution test** Define the bond detection criterion (e.g., distance and lifetime thresholds), report the number of reactive events per trajectory and per condition, and provide statistical significance tests across replicate simulations.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scientific importance
+  - **Claim pointer** The claim that molecular fragments transferred in iBEAM may act as mediators to induce protein grafting at relatively low velocity (3 km/s).
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** This claim is presented as a proof-of-principle, but the abstract provides no details on what iBEAM is, what fragments are transferred, how they were modeled, or what evidence supports grafting at 3 km/s. The connection to the main simulation results is unclear.
+  - **Why it matters** This claim extends the study beyond the primary system and suggests a new mechanism. If not properly supported, it may overstate the implications of the work.
+  - **Resolution test** Provide a clear description of the iBEAM process, the fragment species and their source, the simulation setup for this condition, and direct evidence of grafting (e.g., bond formation between fragment and protein or surface) with appropriate controls.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract, first sentence
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The opening sentence is generic and does not specify the gap or motivation for this specific study.
+  - **Required correction** Rephrase to state the specific unresolved question about protein-surface collision dynamics on flexible polymer surfaces.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Energy conversion statement
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The conversion of 1 km/s to approximately 74 eV for lysozyme is stated without context. It is unclear whether this is per molecule or per atom, and how it relates to typical bond dissociation energies.
+  - **Required correction** Clarify the conversion basis and provide a comparison with relevant bond energies or typical soft landing energy ranges.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Simulation scope
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract mentions neurotensin in the methods but does not report any specific results for this smaller peptide. It is unclear whether neurotensin was used as a comparison or if its results are omitted.
+  - **Required correction** Either report neurotensin results or state explicitly that the abstract focuses on lysozyme and that neurotensin data are presented in the full manuscript.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3
+- **Assessment against Nature-style criteria** 
+  - Originality: The combination of ReaxFF with PEG surfaces for protein soft landing is not entirely novel, but the specific focus on flexible polymer surfaces and reactive landing is a reasonable extension. The originality is moderate.
+  - Scientific importance: The question of protein integrity during deposition is practically relevant, but the abstract does not demonstrate a broad conceptual advance. The importance is moderate.
+  - Interdisciplinary readership: The topic bridges surface science, mass spectrometry, and biophysics, which could attract a cross-disciplinary audience. However, the abstract is written in a way that assumes familiarity with both ReaxFF and landing techniques.
+  - Technical soundness: Not assessable from the abstract alone. The lack of quantitative metrics and statistical detail prevents evaluation of the technical rigor.
+  - Readability for nonspecialists: The abstract is generally readable but uses field-specific terms (e.g., iBEAM, ReaxFF) without sufficient explanation for a general scientific audience.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents plausible qualitative findings, but the absence of quantitative data, detection criteria, and statistical support means the central claims cannot be verified. A full manuscript with detailed methods and results would be required to assess whether the case is made.
+
+## Risk / unsupported claims
+- The claim that PEG preserves protein structure under most conditions is unsupported without quantitative structural metrics.
+- The claim that covalent bond formation occurs only at ≥5 km/s in one specific PEG structure is unsupported without detection criteria and statistics.
+- The claim that iBEAM fragments may induce protein grafting at 3 km/s is unsupported and insufficiently contextualized.
+- The relevance of the simulations to actual electrospray, MALDI, and cluster ion beam conditions is asserted but not demonstrated with parameter matching or experimental comparison.

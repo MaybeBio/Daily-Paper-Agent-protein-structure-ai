@@ -1,0 +1,108 @@
+{
+  "identity": {
+    "pmid": "42926731",
+    "doi": "",
+    "title": "A Shortcut to Structure in AlphaFold 3."
+  },
+  "content": {
+    "abstract": "AlphaFold 3 predicts protein structures with remarkable accuracy, yet how structural information emerges within the model remains poorly understood. Here, through causal interventions on internal representations and direct probing of every Pairformer block, we trace the formation of global protein geometry and identify the multiple sequence alignment (MSA) as a structural shortcut to the fold. Removing the MSA largely preserves local secondary structure while disrupting the long-range relationships that define global topology. Restoring the MSA-enriched pair representation at only forty residues recovers most of this lost organization, including at pairs never directly modified. This contribution depends on the detailed direction of the MSA module's output rather than its magnitude. The Pairformer rapidly converts this signal into global geometry: the final fold becomes recoverable by approximately block 9 of 48 for a majority of proteins, roughly twenty-seven blocks before the model's decoder can render it, whereas without the MSA it remains inaccessible for most proteins throughout the pass. Which homologs are supplied shapes this trajectory more strongly than which query is supplied; it persists for a designed query that never evolved but collapses for a shuffled sequence. Most importantly, an alignment built for a different protein that shares the fold, supplied only at the structurally corresponding columns, raises the median TM-score against experiment from 0.44 to 0.72, while the same alignment shifted a few residues along the chain performs worse than supplying no alignment at all. What AlphaFold 3 reads from an alignment is therefore a description of the fold itself, transferable between proteins that share one, rather than the query's own evolutionary history. This explains both its accuracy and the limits of what it has solved.",
+    "keywords": [
+      "Activation patching",
+      "AlphaFold 3",
+      "Evolutionary information",
+      "Mechanistic interpretability",
+      "Protein structure prediction",
+      "global fold mapping"
+    ],
+    "mesh_terms": [],
+    "pub_types": [
+      "Journal Article",
+      "Preprint"
+    ]
+  },
+  "contributors": {
+    "medline": {
+      "full_names": [
+        "Feldman, Jonathan",
+        "Skolnick, Jeffrey"
+      ],
+      "short_names": [
+        "Feldman J",
+        "Skolnick J"
+      ],
+      "auids": [],
+      "affiliations": [
+        "College of Computing, Georgia Institute of Technology, Atlanta, Georgia, USA.",
+        "Center for the Study of Systems Biology, Georgia Institute of Technology, Atlanta, Georgia, USA.",
+        "School of Biological Sciences, Georgia Institute of Technology, Atlanta, Georgia, USA.",
+        "Center for the Study of Systems Biology, Georgia Institute of Technology, Atlanta, Georgia, USA.",
+        "School of Biological Sciences, Georgia Institute of Technology, Atlanta, Georgia, USA.",
+        "Parker H. Petit Center for AI-Driven Health Innovation, Atlanta, Georgia, USA."
+      ]
+    },
+    "xml": [
+      {
+        "full_name": "Feldman, Jonathan",
+        "short_name": "Feldman J",
+        "identifiers": [],
+        "affiliations": [
+          "College of Computing, Georgia Institute of Technology, Atlanta, Georgia, USA.",
+          "Center for the Study of Systems Biology, Georgia Institute of Technology, Atlanta, Georgia, USA.",
+          "School of Biological Sciences, Georgia Institute of Technology, Atlanta, Georgia, USA."
+        ]
+      },
+      {
+        "full_name": "Skolnick, Jeffrey",
+        "short_name": "Skolnick J",
+        "identifiers": [],
+        "affiliations": [
+          "Center for the Study of Systems Biology, Georgia Institute of Technology, Atlanta, Georgia, USA.",
+          "School of Biological Sciences, Georgia Institute of Technology, Atlanta, Georgia, USA.",
+          "Parker H. Petit Center for AI-Driven Health Innovation, Atlanta, Georgia, USA."
+        ]
+      }
+    ]
+  },
+  "source": {
+    "journal_title": [
+      "ArXiv"
+    ],
+    "journal_abbrev": [
+      "ArXiv"
+    ],
+    "pub_date": "2026 Oct 6",
+    "pub_year": "2026",
+    "pub_types": [
+      "Journal Article",
+      "Preprint"
+    ]
+  },
+  "metadata": {
+    "entrez_date": "2026/10/25 05:37",
+    "fetched_at": "2026-11-01 11:11:31"
+  },
+  "links": {
+    "cites": [],
+    "refs": [],
+    "similar": [
+      "42926731"
+    ],
+    "review": [
+      "42926731"
+    ],
+    "pmc": [
+      "13692673"
+    ],
+    "entrez": {},
+    "external": [
+      {
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/pmid/42926731/",
+        "provider": "PubMed Central",
+        "category": "Full Text Sources",
+        "attribute": "free resource",
+        "linkname": ""
+      }
+    ],
+    "text_mined": []
+  }
+}

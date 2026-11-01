@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report a spatially partitioned semirational engineering strategy combined with the GRAPE method applied to an alginate lyase from *Vibrio* sp. The optimized variant M13 shows a 4.6-fold increase in catalytic efficiency and an 11.4-fold extension of half-life at 50 degrees C. Molecular dynamics simulations and residue interaction network analysis are used to propose mechanistic explanations involving distal Cap Loop rigidification, Gate Loop flexibility, and a Val272-Tyr260-Arg73 communication pathway.
+- **Visible evidence base** Abstract text only; no experimental methods, numerical data tables, simulation parameters, or statistical analyses are visible
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, simulation details, raw kinetic and thermostability data, statistical analysis, and any supplementary information
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting protein engineering strategy with promising quantitative improvements in both activity and stability. However, the mechanistic claims are supported only by qualitative statements in the abstract, and the absence of methodological detail and primary data prevents independent evaluation of the central conclusions. The work may be of interest to the enzyme engineering community, but the case as presented is not fully established.
+- **Who would be interested in the results, and why** Researchers in enzyme engineering, protein stability engineering, alginate oligosaccharide production, and biocatalysis would be interested. The proposed spatial partitioning principle and the use of distal loop rigidification to overcome the stability-activity trade-off could inform similar engineering efforts on other polysaccharide lyases or glycoside hydrolases.
+- **Major strengths** The reported simultaneous improvement in catalytic efficiency and thermostability is notable and practically relevant. The use of reversion mutations to test mechanistic hypotheses is a sound experimental logic. The proposed design principle, spatial partitioning of stability and activity determinants, is conceptually clear and potentially generalizable.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The variant M13 achieved a 4.6-fold increase in catalytic efficiency and an 11.4-fold extension of half-life at 50 degrees C.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract reports these improvements without any indication of the assay conditions, substrate used, number of replicates, error estimates, or statistical significance. It is unclear whether the kinetic parameters were determined under identical conditions for the wild-type and variant, and whether the half-life measurements are based on a single time point or full inactivation curves.
+  - **Why it matters** Without these details, the magnitude of the reported improvements cannot be assessed for reliability or compared to typical experimental variation in enzyme kinetics and thermostability assays.
+  - **Resolution test** Provide full kinetic data with standard errors and replicate numbers, describe assay conditions explicitly, and show inactivation curves with fitted parameters for both wild-type and M13.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic support
+  - **Claim pointer** Molecular dynamics simulations indicated that distal Cap Loop rigidification suppresses thermal unfolding while Gate Loop flexibility is retained for catalysis.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states that simulations "indicated" these effects but provides no quantitative metrics, such as root-mean-square fluctuation values, hydrogen bond occupancy, or free energy estimates. It is not possible to determine whether the observed differences between the wild-type and M13 are statistically meaningful or within simulation noise.
+  - **Why it matters** The central mechanistic claim of the paper rests on this simulation result. Without quantitative support and appropriate error analysis, the conclusion that Cap Loop rigidification is the cause of improved thermostability is not established.
+  - **Resolution test** Report quantitative simulation metrics with error bars or replicate trajectories, and show that the differences between wild-type and M13 are statistically significant. Provide a comparison with the A67K reversion variant to demonstrate the specificity of the effect.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic support
+  - **Claim pointer** Residue interaction network analysis identified a Val272-Tyr260-Arg73 communication pathway associated with active site preorganization into a near-attack conformation.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract claims a communication pathway and a near-attack conformation but provides no details on how the network analysis was performed, what metric defined the pathway, or how the near-attack conformation was identified and quantified. The V272A reversion experiment shows a catalytic effect, but the connection between this effect and the proposed pathway is not demonstrated.
+  - **Why it matters** The proposed pathway is a specific structural hypothesis. Without a clear definition of the pathway and evidence that the V272A mutation disrupts it specifically, the claim remains speculative.
+  - **Resolution test** Define the network analysis method and the criteria for pathway identification. Show that the near-attack conformation is populated more frequently in M13 than in the wild-type or the V272A variant, and that this population difference correlates with the measured catalytic changes.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "spatially partitioned semirational strategy" is introduced without definition. It is unclear whether this refers to partitioning mutations by structural region, by functional role, or by some other criterion.
+  - **Required correction** Define the term explicitly in the abstract or provide a brief description of what spatial partitioning means in this context.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Reversion experiment reporting
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The A67K reversion is reported to shift the optimal temperature from 40 to 30 degrees C, but the effect on catalytic efficiency or half-life is not stated. The V272A reversion is reported to reduce kcat/Km by 45.7%, but the effect on thermostability is not stated.
+  - **Required correction** Report the full phenotypic consequences of each reversion mutation, including both activity and stability parameters, to allow a complete assessment of the trade-off.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Simulation and analysis details
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** No information is given on the simulation software, force field, simulation length, number of replicates, or the specific network analysis tool used.
+  - **Required correction** Provide these details in the methods section and cite the relevant software and parameters.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The quantitative claims of improved activity and stability, and the two mechanistic explanations, cannot be evaluated from the abstract alone. Full experimental and simulation data are required.
+- **Assessment against Nature-style criteria** Originality: the spatial partitioning concept is a reasonable extension of existing engineering strategies, but its novelty relative to prior loop engineering and consensus design approaches is not clearly established from the abstract. Scientific importance: the stability-activity trade-off is a recognized problem, and a generalizable solution would be valuable, but the abstract does not demonstrate generality beyond this single enzyme. Interdisciplinary readership: the work is primarily of interest to enzyme engineers and biocatalysis researchers; the mechanistic claims are not presented in a way that would engage a broader structural biology or protein science audience. Technical soundness: cannot be assessed from the abstract; the absence of quantitative data and statistical analysis is a significant limitation. Readability for nonspecialists: the abstract is concise and the main message is clear, but the mechanistic terminology is used without sufficient explanation.
+- **Recommendation posture** Currently not established from the provided evidence. The reported improvements are promising, but the mechanistic claims and quantitative results require full experimental and simulation data for verification. Supportive if technical concerns are resolved.
+
+## Risk / unsupported claims
+- The claim that distal Cap Loop rigidification suppresses thermal unfolding is unsupported without quantitative simulation data.
+- The claim that Gate Loop flexibility is retained for catalysis is unsupported without comparative flexibility metrics.
+- The claim that the Val272-Tyr260-Arg73 pathway is associated with active site preorganization into a near-attack conformation is unsupported without a defined pathway and conformational analysis.
+- The claim that spatial partitioning can concurrently improve thermostability and catalytic efficiency as a general design principle is not established from a single enzyme example.
+- The quantitative improvements (4.6-fold, 11.4-fold, 45.7%) are not assessable without error estimates and experimental details.

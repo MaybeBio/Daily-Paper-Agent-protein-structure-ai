@@ -1,0 +1,786 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aptamers without SELEX: De novo design from protein structure in hours. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Aptamers without SELEX: De novo design from protein structure in hours.</h1>
+      <div class="meta">Dolgusheva, Vladislava A; Leibin, Iosif V; Kudryashova, Natalia O; Mukanov, Artem R; Kuznetsov, Ivan I; Manasyan, Artem L; Pavlyuk, Gleb A; Mishkorez, Ivan V; Keremet, Anna M; Podlesnyi, Pavel R; Kalinkin, Alexey N; Avdeev, Kirill S; Kuznetsov, Maxim D; Parfenov, Nikita O; Gromov, Stanislav M; Ufaev, Dmitry; Nasaev, Shamsudin S</div>
+      <div class="meta muted">
+        
+        <span class="journal">Molecular therapy. Nucleic acids</span>
+        · 2026-10-30
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42960155/">原文</a>
+      </div>
+      <p class="one-liner">该文提出Xelari模块化流程，从蛋白质结构出发从头设计DNA/RNA适配体，结合物理/结构参考的代理模型，虽对象为适配体而非蛋白质，但其基于结构的生成与评分方法可迁移至蛋白质结构相关计算，具有借鉴价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Systematic evolution of ligands by exponential enrichment (SELEX)-based aptamer discovery can be constrained by target availability, selection biases, and optimization requirements. We introduce Xelari, a modular pipeline for de novo DNA and RNA aptamer design from protein structures without target-specific SELEX data or retraining. Xelari combines algorithmic modules with surrogate models trained on physical or structural references. InNA reproduced nucleotide-amino-acid interaction energies with RMSE of 0.19 kcal/mol across 483,735 reference pairs. AliNA achieved a mean F1 of 0.757 on 339 PDB-derived RNA evaluation sequences. Edgar correlated with experimental folding energies but did not reproduce their absolute scale, supporting its use as a ranking heuristic. Under the reported calibration, ValentiNA showed MAE of 0.931 kcal/mol and Spearman rho of 0.795 across 32 retrospective records associated with 27 structural templates; this analysis does not establish family-independent validation. Prospectively, three DNA aptamers designed against Treponema pallidum protein structures showed cell-associated binding in a treponeme assay (apparent K(D), 0.91-2.57 muM). A fourth DNA aptamer served as a capture reagent in a serum-based hybrid aptamer-antibody assay for Tau441. These applications support feasibility without establishing intended-target engagement in the cellular assay or a general success rate, positioning structure-based design as a complement to experimental selection.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">基于指数富集的配体系统进化（SELEX）的适配体发现可能受到靶标可用性、选择偏差和优化要求的限制。我们引入了Xelari，一种模块化流程，用于从蛋白质结构出发进行从头DNA和RNA适配体设计，无需靶标特异性SELEX数据或重新训练。Xelari将算法模块与基于物理或结构参考训练的替代模型相结合。InNA在483,735个参考对上重现了核苷酸-氨基酸相互作用能，均方根误差（RMSE）为0.19 kcal/mol。AliNA在339个PDB来源的RNA评估序列上实现了平均F1分数0.757。Edgar与实验折叠能相关，但未重现其绝对尺度，支持其作为排序启发式方法的使用。在报告的校准下，ValentiNA在27个结构模板相关的32个回顾性记录中显示出平均绝对误差（MAE）为0.931 kcal/mol，Spearman rho为0.795；该分析未建立家族无关的验证。在前瞻性应用中，针对梅毒螺旋体（Treponema pallidum）蛋白质结构设计的三个DNA适配体在螺旋体测定中显示出细胞相关结合（表观K(D)，0.91-2.57 μM）。第四个DNA适配体在基于血清的杂交适配体-抗体测定中作为捕获试剂用于Tau441。这些应用支持可行性，但未在细胞测定中建立预期靶标结合或一般成功率，将基于结构的设计定位为实验选择的补充方法。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Aptamers without SELEX: De novo design from protein structure in hours</li>
+<li><strong>作者与单位</strong>: Dolgusheva, Vladislava A; Leibin, Iosif V; Kudryashova, Natalia O; Mukanov, Artem I; Kuznetsov, Ivan I; Manasyan, Artem L; Pavlyuk, Gleb A; Mishkorez, Ivan V; Keremet, Anna M; Podlesnyi, Pavel N; Kalinkin, Alexey V; Avdeev, Kirill S; Kuznetsov, Maxim D; Parfenov, Nikolay O; Nasaev, Shamsudin S（单位未提供，作者均与 Xelari Inc. 有关联）</li>
+<li><strong>期刊/预印本平台</strong>: Molecular Therapy - Nucleic Acids</li>
+<li><strong>年份</strong>: 2026</li>
+<li><strong>论文类型</strong>: 方法学论文（含前瞻性实验验证）</li>
+<li><strong>领域</strong>: 核酸适配体（aptamer）的 de novo 计算设计；结构生物学 × AI/物理模拟</li>
+<li><strong>关键词</strong>: aptamer, SELEX-free, de novo design, protein structure, surrogate models, DFT, MD simulation</li>
+<li><strong>DOI/arXiv 号</strong>: 10.1016/j.omtn.2026.103133</li>
+<li><strong>代码</strong>: 未提供（平台为专有，可通过 https://platform.xelari.com 申请学术使用）</li>
+<li><strong>数据</strong>: Zenodo: https://doi.org/10.5281/zenodo.22541422（CC-BY 4.0）</li>
+<li><strong>阅读日期</strong>: 2026-05-15（按当前日期推算）</li>
+<li><strong>在课题方向中的位置</strong>: 本文提出了一条不依赖 SELEX 的核酸适配体 de novo 设计流水线 Xelari，将蛋白质结构作为输入，通过多个 AI 代理模型（DFT、MD 的替代模型）与算法模块的组合，在数小时内生成候选适配体序列。该工作属于「结构预测/构象生成 × AI 方法」在核酸-蛋白质相互作用设计中的应用，与蛋白质 binder 设计（如 AlphaFold 辅助的抗体/纳米抗体设计）在方法论上高度同构，可作为蛋白质结构相关计算研究中「从结构到序列设计」的参考范式。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出模块化流水线 Xelari，将蛋白质结构作为唯一输入，通过 AI 代理模型（DFT/MD 替代模型）与算法模块的组合，在 2-3 小时内生成适配体候选序列，并在梅毒螺旋体蛋白和 Tau441 两个前瞻性实验中展示了功能性结合，但未建立通用成功率或与 SELEX 的 superiority。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 能否在不依赖 SELEX 实验筛选的情况下，仅从蛋白质三维结构出发，在数小时内设计出能够结合靶蛋白的 DNA/RNA 适配体？</li>
+<li><strong>为什么重要</strong>: SELEX 依赖靶蛋白的可溶性、纯化制备和多次筛选循环，对膜蛋白、翻译后修饰蛋白、毒性蛋白等难以制备的靶点效率低下；且筛选过程存在序列偏好和文库覆盖不足的问题。计算 de novo 设计可绕过这些限制，将适配体发现从「实验筛选」转变为「结构驱动的理性设计」。</li>
+<li><strong>现有方法为何不足</strong>: </li>
+<li>序列-only 方法（基于 HT-SELEX 数据训练的判别/生成模型）依赖已有适配体数据，对未见过的靶点泛化能力有限，且缺乏物理可解释性；</li>
+<li>结构/物理方法（MD、对接）计算成本高，无法在筛选规模（10⁴-10⁶ 候选）下运行；</li>
+<li>AlphaFold3/RoseTTAFoldNA 等结构预测模型需要已知的核酸-蛋白复合物训练数据，对 de novo 设计（无已知复合物）不适用。</li>
+<li><strong>精确的「Can ... ?」研究问题</strong>: Can a modular pipeline combining algorithmic modules with surrogate models trained on physical/structural references generate functional DNA/RNA aptamers from protein structure alone, without SELEX or target-specific retraining?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文框架及作者引用的外部文献，标注为「经外部核验」的部分基于文中明确引用的经典工作。</p>
+</blockquote>
+<ol>
+<li><strong>SELEX 时代（1990-2010s）</strong>：SELEX（1990 年引入）是适配体发现的黄金标准，通过迭代筛选富集高亲和力序列。代表方法：传统 SELEX、Cell-SELEX、Capture-SELEX 等。优点：不依赖结构信息，直接实验筛选；局限：需要靶蛋白可溶性制备、多轮筛选耗时数周至数月、存在文库偏差和 PCR 扩增偏好。</li>
+<li><strong>序列-only 计算方法（2010s-2020s）</strong>：利用 HT-SELEX 数据训练机器学习模型预测适配体-蛋白结合。代表方法：基于 CNN/LSTM 的判别模型、语言模型、生成模型。优点：计算快速；局限：依赖已有适配体数据，对未见靶点泛化差，缺乏物理可解释性。</li>
+<li><strong>结构/物理方法（2010s-2020s）</strong>：分子对接（如 MEGADOCK、AutoDock）、MD 模拟、MM-PBSA 等用于评估核酸-蛋白相互作用。优点：物理可解释；局限：计算成本高，无法大规模筛选，力场对核酸-蛋白相互作用的准确性有限。</li>
+<li><strong>AI 结构预测（2020s-）</strong>：AlphaFold2/3、RoseTTAFoldNA 等可预测核酸-蛋白复合物结构。优点：端到端结构预测；局限：依赖已知复合物训练数据，对 de novo 设计（无已知复合物）不适用，且预测精度对设计任务不足。</li>
+<li><strong>本文位置</strong>：Xelari 将问题分解为多个子任务，每个子任务用专门的代理模型（DFT/MD 替代模型）或算法模块解决，避免了对靶点特异性适配体数据的依赖。这一「分解-替代-组合」策略与蛋白质设计中的「能量函数分解 + 机器学习加速」思路一致。</li>
+</ol>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SELEX 对难制备靶点失效</td>
+<td>膜蛋白、翻译后修饰蛋白、毒性蛋白难以纯化或保持天然构象</td>
+<td>需要 preparative 量的纯化靶蛋白，且筛选条件与生理环境可能不一致</td>
+<td>Introduction: "require preparative quantities of purified target in its native conformation"</td>
+</tr>
+<tr>
+<td>SELEX 文库覆盖不足</td>
+<td>随机文库（~10¹⁵）仅覆盖 40-nt 随机区序列空间（~10²⁴）的极小部分</td>
+<td>序列空间远大于文库容量，筛选结果受初始文库组成影响</td>
+<td>Introduction: "covers less than 10⁻⁹ the total space of possible sequences"</td>
+</tr>
+<tr>
+<td>筛选条件与使用条件不一致</td>
+<td>筛选缓冲液、温度、离子强度与最终应用场景不同，导致候选适配体在真实环境中失效</td>
+<td>筛选在固定条件下进行，无法覆盖所有使用场景</td>
+<td>Introduction: "Candidates enriched under these conditions can show different binding properties when transferred to other experimental or physiological environments"</td>
+</tr>
+<tr>
+<td>后筛选化学修饰引入不确定性</td>
+<td>筛选后引入的稳定性修饰可能改变结合构象和亲和力</td>
+<td>修饰改变核苷酸化学性质，可能破坏筛选得到的结合界面</td>
+<td>Introduction: "modifications introduced after selection can alter the conformational dynamics and binding interface"</td>
+</tr>
+<tr>
+<td>计算成本与筛选规模不匹配</td>
+<td>直接 MD/对接无法在 10⁴-10⁶ 候选规模下运行</td>
+<td>物理模拟的计算成本与筛选通量需求矛盾</td>
+<td>Introduction: "computational cost of direct reference calculations is incompatible with screening 10⁴–10⁶ candidates"</td>
+</tr>
+<tr>
+<td>结构预测模型对 de novo 设计不适用</td>
+<td>AlphaFold3/RoseTTAFoldNA 需要已知复合物训练数据</td>
+<td>训练数据中核酸-蛋白复合物有限且冗余</td>
+<td>Introduction: "experimentally resolved aptamer-protein complexes remain limited in number and substantially redundant"</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>: Xelari 是一个九阶段流水线，将蛋白质结构作为输入，依次执行结构补全（PDBFixer/Boltz-2）、表面特异性分析（Ehrlich）、种子片段构建（DiNA + InNA）、全长适配体组装（MoNA）、折叠稳定性评估（Edgar）、复合物松弛（INGA）和亲和力排序（Valentina），最终输出适配体候选序列及复合物模型。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>: 将 de novo 适配体设计分解为多个子问题，每个子问题用「代理模型」替代昂贵的参考计算——InNA 替代 DFT（r2SCAN-3c）计算核苷酸-氨基酸相互作用能，Edgar 替代伞形采样 MD 计算折叠自由能，Valentina 替代全原子 MD 计算结合自由能。这些代理模型在离线阶段用参考计算生成的数据训练，在线推理时只需毫秒级前向传播，从而在 2-3 小时内完成全流程。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]: 
+   - 「分解-替代-组合」策略：将复杂设计问题分解为可独立验证的子任务，每个子任务用专门的代理模型加速，是处理「物理精度 vs 计算通量」矛盾的有效范式。这一思路可迁移到蛋白质设计（如用 GNN 替代 MM-PBSA 做突变扫描）。
+   - 「参考计算生成训练数据」的 self-contained 策略：不依赖实验数据或已有适配体库，而是用物理参考计算（DFT、MD）生成训练标签，使模型对未见靶点具有更好的泛化能力。这与 AlphaFold 依赖 PDB 训练数据的策略形成对比。
+   - 模块化设计的诊断价值：每个模块可独立 benchmark（如 DiNA 的 DCC 定位、Edgar 的折叠能、Valentina 的亲和力），失败时可定位到具体环节，而非黑箱端到端。</p>
+</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: 蛋白质三维结构（实验或预测，PDB/mmCIF 格式），用户参数（适配体长度、修饰类型、特异性等级、温度、离子条件）</li>
+<li><strong>输出</strong>: 排序后的适配体候选序列列表、对应的适配体-蛋白质复合物模型、预测的折叠自由能和结合自由能</li>
+<li><strong>模块</strong>:
+  1. <strong>结构补全</strong>（PDBFixer + Boltz-2）：修复缺失残基、原子，补全大片段缺失
+  2. <strong>表面特异性分析</strong>（Ehrlich，算法模块）：将蛋白表面分割为局部 patch，与参考蛋白库比较，识别靶蛋白的独特表面区域
+  3. <strong>种子片段构建</strong>（DiNA，算法模块 + InNA）：在选定的表面区域上构建 4-6 nt 种子片段，用 InNA 评分
+  4. <strong>全长组装</strong>（MoNA，算法模块）：将种子片段嫁接到预计算的 scaffold 库（15-45 nt），通过序列和结构过滤
+  5. <strong>折叠稳定性评估</strong>（Edgar，GNN）：预测适配体折叠自由能，过滤不稳定候选
+  6. <strong>复合物松弛</strong>（INGA，条件流匹配模型）：对适配体-蛋白复合物进行构象松弛
+  7. <strong>亲和力排序</strong>（Valentina，GNN）：预测结合自由能，排序候选</li>
+<li><strong>训练</strong>:</li>
+<li>InNA: 483,735 对 DFT（rR2SCAN-3c）参考能量，训练/验证/测试划分</li>
+<li>Edgar: 26,447 个 RNA/DNA 结构的伞形采样 MD 标签</li>
+<li>Valentina: 两阶段训练（粗粒度 PMF + 全原子 PMF），10,278 + 1,690 标签</li>
+<li>INGA: MD 轨迹训练的条件流匹配模型</li>
+<li><strong>工具</strong>: ORCA 5（DFT）、GROMACS（MD）、MEGADOCK4（对接）、PDBFixer（结构补全）、Boltz-2（结构预测）、naskit（RNA/DNA 结构处理）、DSSR（构象分析）</li>
+<li><strong>流程</strong>: 输入结构 → 补全 → Ehrlich 表面分析 → DiNA 种子构建（InNA 评分）→ MoNA 组装（scaffold 库 + 过滤）→ Edgar 折叠过滤 → INGA 松弛 → Valentina 排序 → 输出候选</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ehrlich</strong>（算法）</td>
+<td>表面特异性评分，识别靶蛋白独特表面区域</td>
+<td>避免适配体结合到其他蛋白也存在的保守表面，提高特异性</td>
+<td>输入：补全后蛋白结构；输出：表面 patch 特异性评分图</td>
+<td>14 抗原内部 benchmark：同抗原 patch 相似度 0.88±0.13 vs 异抗原 0.16±0.10（图 3A）；PatchBag 外部验证（图 3B）</td>
+<td>[预期] 移除后适配体可能结合保守表面，导致脱靶结合；特异性无法保证</td>
+</tr>
+<tr>
+<td><strong>DiNA</strong>（算法）</td>
+<td>在选定表面区域构建 4-6 nt 种子片段</td>
+<td>种子片段是适配体-蛋白接触的核心单元，直接决定结合界面</td>
+<td>输入：蛋白结构 + Ehrlich 选定的表面区域；输出：种子片段群体</td>
+<td>DCC benchmark：19 靶标中 17 个（89%）定位在 5 Å 内（图 4D）</td>
+<td>[预期] 移除后无法确定适配体结合位点，设计失去结构基础</td>
+</tr>
+<tr>
+<td><strong>InNA</strong>（GNN）</td>
+<td>预测核苷酸-氨基酸相互作用能，替代 DFT</td>
+<td>DFT 计算单个 pair 需数分钟，无法用于筛选</td>
+<td>输入：核苷酸-氨基酸 pair 几何；输出：相互作用能</td>
+<td>483,735 对测试集 RMSE ≈ 0.19 kcal/mol，R² = 0.9972（图 5A）；LYS/GLU 外推无精度损失（图 5D）</td>
+<td>[实测] 移除后 DiNA 无法评分种子片段，需退回 DFT 计算，筛选通量下降数个数量级</td>
+</tr>
+<tr>
+<td><strong>MoNA</strong>（算法）</td>
+<td>将种子嫁接到 scaffold 库，组装全长适配体</td>
+<td>种子片段太短无法独立折叠，需要 scaffold 提供结构框架</td>
+<td>输入：种子片段 + scaffold 库；输出：全长适配体候选</td>
+<td>500 个组装候选 benchmark：58.4% 需要补偿突变恢复拓扑（表 S10）</td>
+<td>[预期] 移除后无法生成全长序列，设计流程中断</td>
+</tr>
+<tr>
+<td><strong>Edgar</strong>（GNN）</td>
+<td>预测折叠自由能，过滤不稳定候选</td>
+<td>适配体需要稳定折叠才能呈现结合构象</td>
+<td>输入：序列 + 二级结构；输出：折叠自由能</td>
+<td>外部实验 benchmark：与实验折叠能相关（图 6），但绝对标度有偏差</td>
+<td>[预期] 移除后不稳定候选进入下游，浪费计算资源；但排序功能可能部分保留</td>
+</tr>
+<tr>
+<td><strong>INGA</strong>（条件流匹配）</td>
+<td>构象松弛，将适配体-蛋白复合物松弛到局部能量极小</td>
+<td>组装后的复合物可能存在 steric clash 和非物理构象</td>
+<td>输入：粗粒度复合物模型；输出：松弛后全原子模型</td>
+<td>Chignolin benchmark：从非靶构象向靶构象转移（图 2）</td>
+<td>[预期] 移除后复合物模型质量下降，Valentina 评分基于非物理构象</td>
+</tr>
+<tr>
+<td><strong>Valentina</strong>（GNN）</td>
+<td>预测结合自由能，最终排序</td>
+<td>需要从大量候选中选出最可能高亲和力的序列</td>
+<td>输入：松弛后复合物结构；输出：结合自由能</td>
+<td>32 条回顾性记录：Pearson r = 0.805，Spearman ρ = 0.795，MAE = 0.931 kcal/mol（图 7）</td>
+<td>[预期] 移除后无法排序候选，需实验筛选全部候选，失去计算设计的优势</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ol>
+<li>
+<p><strong>Ehrlich 表面特异性评分</strong>（Equation 1）:
+   [
+   F(p) = \alpha_g G(p) + \alpha_c C(p)
+   ]
+   - ( F(p) )：patch p 的操作性特异性评分，值越低表示越独特
+   - ( G(p) )：几何分量（基于 PFH 描述子与参考库的 χ² 距离）
+   - ( C(p) )：组成分量（氨基酸组成与参考库的差异）
+   - ( \alpha_g = \alpha_c = 1 )：等权重组合</p>
+</li>
+<li>
+<p><strong>DiNA 位点排序</strong>（Equation 2）:
+   [
+   R(\Omega) = \sum_{a \in A(\Omega)} w_a
+   ]
+   - ( R(\Omega) )：候选表面区域 Ω 的位点评分
+   - ( A(\Omega) )：区域 Ω 中贡献至少一个表面顶点的氨基酸集合
+   - ( w_a )：氨基酸类型 a 的固定权重（芳香族残基上调以利于碱基堆叠，带电残基下调以避免静电主导）</p>
+</li>
+<li>
+<p><strong>DCC 定位指标</strong>（Equation 3）:
+   [
+   \text{DCC} = |c_{\text{exp}} - c_{\text{pred}}|<em>2
+   ]
+   - ( c</em>{\text{exp}} )：实验结合位点质心（由共晶结构定义）
+   - ( c_{\text{pred}} )：预测种子群体质心
+   - 单位：Å</p>
+</li>
+<li>
+<p><strong>InNA 相互作用能</strong>（Equation 4）:
+   [
+   \Delta E_{\text{pair}} = \sum_a \varepsilon_a
+   ]
+   - ( \varepsilon_a )：原子 a 的能量贡献，由距离调制 Transformer 层输出
+   - 训练目标：MSE vs rR2SCAN-3c 参考能量</p>
+</li>
+<li>
+<p><strong>DFT 参考能量定义</strong>（Equation 5）:
+   [
+   \Delta E_{\text{int}} = E_{\text{tot}}(\text{AA}, \text{NT}) - E_{\text{tot}}(\text{AA}) - E_{\text{tot}}(\text{NT})
+   ]
+   - ( E_{\text{tot}}(\text{AA}, \text{NT}) )：氨基酸-核苷酸复合物总能量
+   - ( E_{\text{tot}}(\text{AA}) )、( E_{\text{tot}}(\text{NT}) )：孤立片段能量
+   - 在 rR2SCAN-3c/ORCA 5 水平计算，真空条件</p>
+</li>
+<li>
+<p><strong>适配体折叠自由能</strong>（Edgar 训练标签）:
+   [
+   \Delta G_{\text{fold}} = -k_B T \ln \left( \frac{Z_{\text{folded}}}{Z_{\text{unfolded}}} \right)
+   ]
+   - 由伞形采样 MD + WHAM 重构 PMF 得到
+   - 反应坐标：端到端距离</p>
+</li>
+<li>
+<p><strong>Valentina 结合自由能</strong>（校准）:
+   [
+   \Delta G_{\text{bind}} = \alpha \cdot S + \beta
+   ]
+   - ( S )：Valentina 原始评分（负值表示更强结合）
+   - ( \alpha = 0.0234 \pm 0.0047 ) (kcal/mol)/(kJ/mol)
+   - ( \beta = -9.43 \pm 0.30 ) kcal/mol
+   - 线性拟合 R² = 0.63，基于 17 条校准记录</p>
+</li>
+</ol>
+<h2>10 实验设计与证据链</h2>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ehrlich 内部 benchmark（14 抗原，68 个 patch 代表）</td>
+<td>表面特异性评分能区分同抗原/异抗原 patch</td>
+<td>同抗原 patch 对 vs 异抗原 patch 对</td>
+<td>同抗原相似度 0.88±0.13，异抗原 0.16±0.10</td>
+<td>Ehrlich 能识别同一抗原的不同表面 patch 的相似性</td>
+<td>不能证明 Ehrlich 能预测适配体结合位点</td>
+<td>图 3A</td>
+</tr>
+<tr>
+<td>Ehrlich 外部验证（PatchBag 729 个界面 pair，191 个 PDB 结构，65 个 Pfam 家族）</td>
+<td>表面特异性评分能恢复已知蛋白-蛋白界面</td>
+<td>同 Pfam 家族界面 vs 跨家族界面</td>
+<td>同家族界面相似度显著高于跨家族</td>
+<td>Ehrlich 的 patch 描述子能捕捉真实的界面相似性</td>
+<td>蛋白-蛋白界面 ≠ 适配体-蛋白界面</td>
+<td>图 3B</td>
+</tr>
+<tr>
+<td>DiNA DCC benchmark（38 个适配体-蛋白共晶结构，19 个靶标）</td>
+<td>DiNA 能定位实验观察到的适配体结合位点</td>
+<td>无 anchor 的自动位点选择</td>
+<td>19 靶标中 17 个（89%）DCC ≤ 5 Å；中位 DCC 3.14 Å</td>
+<td>DiNA 能从蛋白结构出发定位适配体结合位点</td>
+<td>定位成功 ≠ 生成的适配体有功能；DCC 是质心距离，不保证界面残基一致</td>
+<td>图 4D</td>
+</tr>
+<tr>
+<td>InNA 精度 benchmark（483,735 对 DFT 参考）</td>
+<td>InNA 能高精度复现 DFT 相互作用能</td>
+<td>7 种氨基酸-核苷酸组合，LYS/GLU 完全外推</td>
+<td>RMSE ≈ 0.19 kcal/mol，R² = 0.9972；LYS/GLU 外推 RMSE 0.193 kcal/mol</td>
+<td>InNA 是可靠的 DFT 替代模型，且对未见氨基酸有泛化能力</td>
+<td>相互作用能 ≠ 结合自由能；真空条件与溶液条件有差异</td>
+<td>图 5A-D</td>
+</tr>
+<tr>
+<td>Edgar 外部实验 benchmark（56 条文献折叠能记录）</td>
+<td>Edgar 预测与实验折叠能相关</td>
+<td>无 recalibration</td>
+<td>Pearson r = 0.846，Spearman ρ = 0.829；但 MAE = 6.69 kcal/mol，R² = -3.976</td>
+<td>Edgar 能排序折叠稳定性，但绝对标度不可靠</td>
+<td>不能作为绝对折叠能的定量预测器</td>
+<td>图 6</td>
+</tr>
+<tr>
+<td>Valentina 回顾性 benchmark（32 条纯化 assay 记录，27 个结构模板）</td>
+<td>Valentina 评分与实验结合自由能相关</td>
+<td>记录级与模板聚合级</td>
+<td>记录级 Pearson r = 0.805，Spearman ρ = 0.795，MAE = 0.931 kcal/mol；模板聚合后 ρ = 0.818</td>
+<td>Valentina 能排序已知适配体的相对亲和力</td>
+<td>回顾性相关 ≠ 前瞻性预测能力；32 条记录样本量小，且非独立验证</td>
+<td>图 7</td>
+</tr>
+<tr>
+<td>前瞻性实验 1：梅毒螺旋体蛋白</td>
+<td>Xelari 设计的 DNA 适配体结合完整梅毒螺旋体细胞</td>
+<td>3 个靶蛋白（Tpp17、Tpp47、Tp0751），无 SELEX</td>
+<td>表观 KD = 0.91-2.57 μM（活细胞 assay）</td>
+<td>Xelari 生成的适配体在细胞层面有结合活性</td>
+<td>未确认与预期靶蛋白的特异性结合；未提供阴性对照序列的 KD</td>
+<td>Results 前瞻性部分</td>
+</tr>
+<tr>
+<td>前瞻性实验 2：Tau441 血清检测</td>
+<td>Xelari 设计的 DNA 适配体在血清中捕获 Tau441</td>
+<td>杂交适配体-抗体侧向层析 assay</td>
+<td>浓度依赖性信号；pT217-Tau441 在 1 pg/mL 可检测</td>
+<td>适配体在复杂基质中功能可用</td>
+<td>未提供适配体单独的解离常数；信号由适配体和抗体共同贡献</td>
+<td>Results 前瞻性部分</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 本文的结论严格限定于「从蛋白质结构出发、不依赖 SELEX 的适配体设计」这一任务。Xelari 的输入是已知或预测的蛋白质三维结构，输出是候选适配体序列。</li>
+<li><strong>端到端状态</strong>: 本文展示的是「计算设计 → 合成 → 实验验证」的完整闭环，但验证规模有限（4 个适配体，2 个实验场景），且未报告阴性对照或失败案例的完整统计。</li>
+<li><strong>性能边界</strong>: 表观 KD 为 0.91-2.57 μM（活细胞）和功能检测（血清 Tau41），这些数值远低于 SELEX 优化后的适配体（通常 nM 级），说明 Xelari 当前定位是「初始候选生成」而非「亲和力成熟」。</li>
+<li><strong>关键限定条件</strong>:</li>
+<li>回顾性 benchmark 的 32 条记录并非独立于校准集，且样本量小；</li>
+<li>活细胞结合 assay 未确认与预期靶蛋白的特异性结合；</li>
+<li>Tau41 检测信号由适配体和抗体共同贡献，无法单独归因于适配体；</li>
+<li>未报告通用成功率（即「设计 N 个适配体，M 个有功能」的完整分母）。</li>
+<li><strong>正确表述</strong>: 本文证明了「从蛋白质结构出发、不依赖 SELEX 的适配体 de novo 设计」在多个模块层面（位点定位、折叠预测、亲和力排序）和两个前瞻性场景中具有可行性，但未建立通用成功率、未证明与 SELEX 的 superiority、未验证特异性结合。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>回顾性分析不建立独立验证</td>
+<td>32 条记录与校准集存在重叠，分离仅按 PDB ID 进行，不保证独立性</td>
+<td>需要更大规模、真正独立的前瞻性测试</td>
+<td>Results 回顾性 benchmark 部分</td>
+</tr>
+<tr>
+<td>活细胞 assay 未确认特异性</td>
+<td>梅毒螺旋体实验测量的是细胞结合，未确认与预期靶蛋白的特异性结合</td>
+<td>需要纯化蛋白结合实验和竞争实验</td>
+<td>Results 前瞻性实验 1 部分</td>
+</tr>
+<tr>
+<td>Tau41 检测无法归因于适配体</td>
+<td>信号由适配体和抗体共同贡献，无适配体单独的解离常数</td>
+<td>需要适配体单独的表征</td>
+<td>Results 前瞻性实验 2 部分</td>
+</tr>
+<tr>
+<td>未报告完整分母</td>
+<td>未报告设计、合成、测试的完整候选数量</td>
+<td>需要预定义的前瞻性系列</td>
+<td>Discussion 部分</td>
+</tr>
+<tr>
+<td>非独立第三方验证</td>
+<td>梅毒螺旋体实验由 Xelari 关联作者完成</td>
+<td>需要独立实验室验证</td>
+<td>Declaration of interests 部分</td>
+</tr>
+<tr>
+<td>G-四链体超出生成范围</td>
+<td>scaffold 库和组装流程不生成 G-四链体拓扑</td>
+<td>扩展 scaffold 库以覆盖 G-四链体</td>
+<td>Results scaffold 库部分</td>
+</tr>
+<tr>
+<td>化学修饰范围有限</td>
+<td>仅支持部分 2′-修饰（2′-F、2′-O-Me 等），未覆盖所有临床相关修饰</td>
+<td>扩展修饰化学表示</td>
+<td>方法 化学修饰部分</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>回顾性 benchmark 的「独立性」定义模糊</td>
+<td>作者承认分离仅按 PDB ID 进行，但同一靶蛋白的不同 PDB 结构可能高度相似，导致训练/测试泄漏</td>
+<td>若存在泄漏，则 Valentina 的回顾性性能被高估</td>
+<td>按靶蛋白家族或序列相似性聚类后重新划分训练/测试集</td>
+<td>Results 回顾性 benchmark 部分</td>
+</tr>
+<tr>
+<td>活细胞 KD 的解读</td>
+<td>表观 KD 0.91-2.57 μM 可能反映的是非特异性细胞表面结合，而非靶蛋白特异性结合</td>
+<td>若为非特异性结合，则「设计成功」的结论不成立</td>
+<td>增加无关蛋白阴性对照、竞争实验、突变体对照</td>
+<td>Results 前瞻性实验 1 部分</td>
+</tr>
+<tr>
+<td>未报告失败案例</td>
+<td>未报告设计了多少候选、合成了多少、多少有功能</td>
+<td>无法评估真实成功率，可能选择性报告</td>
+<td>要求作者提供完整的前瞻性设计-测试记录</td>
+<td>Discussion 部分</td>
+</tr>
+<tr>
+<td>Edgar 的绝对标度问题</td>
+<td>作者承认 Edgar 预测的绝对折叠能与实验有系统性偏差（R² = -3.976），仅排序可用</td>
+<td>若折叠能排序不可靠，则 scaffold 库的过滤标准可能失效</td>
+<td>在更多实验数据上验证 Edgar 的排序一致性</td>
+<td>图 6 及 Edgar 部分</td>
+</tr>
+<tr>
+<td>与 SELEX 的比较缺失</td>
+<td>未在相同靶点上比较 Xelari 与 SELEX 的成功率、亲和力分布</td>
+<td>无法判断「complement」的定位是否成立</td>
+<td>在多个靶点上并行运行 Xelari 和 SELEX，比较结果分布</td>
+<td>Discussion 部分</td>
+</tr>
+<tr>
+<td>计算时间「2-3 小时」的范围模糊</td>
+<td>未明确该时间是否包含 scaffold 库的离线构建、模型训练等一次性成本</td>
+<td>若包含一次性成本，则「per-target」时间被低估</td>
+<td>明确区分一次性成本和 per-target 成本</td>
+<td>Results 架构部分</td>
+</tr>
+<tr>
+<td>前瞻性实验的靶点选择偏差</td>
+<td>梅毒螺旋体脂蛋白和 Tau41 均为带正电或富含芳香族残基的靶点，可能偏向于核酸适配体易结合的靶点</td>
+<td>若靶点选择有偏，则无法推广到一般靶点</td>
+<td>在带负电、疏水、或平坦表面靶点上测试</td>
+<td>Results 前瞻性实验部分</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<blockquote>
+<p>标题写「Agent 提炼的知识候选」</p>
+</blockquote>
+<h3>Agent 提炼的知识候选</h3>
+<ol>
+<li>
+<p><strong>「分解-替代-组合」流水线范式</strong>（可迁移性：高）
+   - Xelari 将适配体设计分解为位点选择、种子构建、scaffold 组装、折叠评估、亲和力排序等子任务，每个子任务用专门的代理模型或算法模块解决。这一范式可直接迁移到蛋白质 binder 设计（如纳米抗体、affibody 的 de novo 设计），将「结构 → 序列」的端到端问题分解为可独立验证的步骤。
+   - 迁移方式：在蛋白质设计中，可用「表面 patch 特异性分析」替代「CDR 环嫁接位点选择」，用「片段组装」替代「scaffold 选择」，用「GNN 亲和力预测」替代「MD 结合自由能计算」。</p>
+</li>
+<li>
+<p><strong>用参考计算生成训练数据的 self-contained 策略</strong>（可迁移性：高）
+   - InNA 用 DFT（rR2SCAN-3c）生成 1309 万对训练数据，Edgar 用伞形采样 MD 生成折叠能标签，Valentina 用 PMF 计算生成亲和力标签。这种「参考计算 → 代理模型」的策略不依赖实验数据或已有数据库，对未见靶点具有更好的泛化能力。
+   - 迁移方式：在蛋白质设计中，可用「QM/MM 计算 → GNN 代理」加速酶催化活性预测，用「增强采样 MD → 代理模型」加速构象变化自由能预测。</p>
+</li>
+<li>
+<p><strong>模块级 benchmark 而非仅端到端评估</strong>（可迁移性：高）
+   - Xelari 对每个模块独立 benchmark：Ehrlich 用 14 抗原内部集 + PatchBag 外部集，DiNA 用 DCC 定位指标，Edgar 用外部实验折叠能，Valentina 用回顾性亲和力记录。这种「模块级验证」使得失败可定位、改进可迭代。
+   - 迁移方式：在蛋白质设计流水线中，对每个环节（如结合位点预测、骨架生成、序列设计、亲和力排序）分别建立 benchmark 和评估指标，而非仅报告端到端成功率。</p>
+</li>
+<li>
+<p><strong>「代理模型 + 物理参考」的精度-速度权衡</strong>（可迁移性：中）
+   - InNA 的 RMSE 0.19 kcal/mol 相对于 DFT 参考，但 DFT 本身在真空条件下计算，与溶液中的真实相互作用有系统偏差。代理模型的精度受限于参考计算的精度，不能超越参考计算的物理保真度。
+   - 迁移方式：在使用代理模型时，明确其参考计算的物理假设和适用范围，避免将代理模型的精度误解为物理精度。</p>
+</li>
+<li>
+<p><strong>G-四链体等特殊拓扑的边界识别</strong>（可迁移性：中）
+   - Xelari 明确将 G-四链体排除在生成范围之外，并指出这是 scaffold 库的拓扑覆盖限制。这种「明确边界」的做法值得借鉴——在设计方法时，明确哪些拓扑/化学空间是当前方法无法覆盖的，避免过度声称。
+   - 迁移方式：在蛋白质设计中，明确方法是否覆盖非标准氨基酸、D-氨基酸、环肽等特殊化学空间。</p>
+</li>
+<li>
+<p><strong>「功能验证」而非仅「结合验证」的实验设计</strong>（可迁移性：中）
+   - Tau41 实验采用了「适配体-抗体杂交侧向层析」的功能性 assay，而非仅测量结合亲和力。这种「在应用场景中验证功能」的思路，比仅报告 KD 更有说服力。
+   - 迁移方式：在蛋白质 binder 设计中，除了测量结合亲和力，还应在功能 assay（如中和实验、报告基因实验）中验证设计分子的功能。</p>
+</li>
+<li>
+<p><strong>校准集与评估集的分离策略</strong>（可迁移性：中）
+   - Valentina 的校准使用 17 条记录，评估使用 32 条记录，且作者明确承认分离不保证独立性。这种「校准-评估分离」的意识值得借鉴，但需要更严格的独立性控制。
+   - 迁移方式：在构建预测模型时，明确区分校准集和评估集，并报告两者之间的相似性（如序列同一性、结构相似性），避免隐式泄漏。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (Abstract, Introduction, Results, Discussion, Materials and methods, Data and code availability, Acknowledgments, Author contributions, Declaration of interests, Supplemental information listing)</li>
+<li><strong>Assessment boundary</strong> Single-reviewer technical and conceptual assessment of the supplied manuscript text only. No reanalysis of deposited data, no access to source code, model weights, or internal datasets, and no independent verification of the cited prospective experimental studies.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present Xelari, a modular structure-based pipeline for de novo DNA and RNA aptamer design from protein structures without target-specific SELEX data or retraining. The pipeline combines five trained models (INGA, InNA, AliNA, Edgar, ValentiNA) and three algorithmic modules (Ehrlich, DiNA, MoNA). Individual modules are benchmarked retrospectively against computational or experimental references. Prospectively, three DNA aptamers designed against <em>Treponema pallidum</em> proteins showed cell-associated binding in a treponeme assay (apparent KD 0.91 to 2.57 micromolar), and a fourth DNA aptamer functioned as a capture reagent for Tau441 in a serum-based hybrid assay. The authors position structure-based design as a complement to experimental selection and explicitly state that a general success rate is not established.</li>
+<li><strong>Visible evidence base</strong> Abstract; Introduction; Results (Xelari architecture, target preparation, surface site specificity, binding-site localization, InNA, AliNA, Edgar, scaffold library, MoNA assembly, complex relaxation and affinity prediction, chemical modifications, prospective validation); Discussion; Materials and methods; Data and code availability; Acknowledgments; Author contributions; Declaration of interests; Supplemental information listing (Figure S1, Tables S1 to S15 referenced but not provided in the submission).</li>
+<li><strong>Missing materials affecting confidence</strong> Supplemental figures and tables (S1 to S15) are referenced throughout but not included in the supplied text. Source code, model weights, and internal training datasets are explicitly not deposited. The complete denominator of candidates ranked, synthesized, and tested in the prospective studies is not reported. The two prospective experimental studies are cited rather than presented in full. The ValentiNA calibration dataset (Table S11) and retrospective affinity compilation (Table S12) are not available for inspection.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> The manuscript describes a modular, structure-first pipeline for aptamer design and reports module-level retrospective benchmarks plus two prospective applications. The framing is unusually candid about limitations, and the authors repeatedly and correctly distinguish ranking association from absolute prediction, retrospective from prospective evidence, and feasibility from success rate. The principal scientific weakness is that the central claim, that the complete workflow can generate functional aptamers against new targets without SELEX, rests on four DNA aptamers evaluated in two settings, neither of which provides purified-target 1:1 binding data for the intended protein, and neither of which reports the candidate denominator. The module benchmarks are informative but do not compose into an end-to-end accuracy estimate, and the authors acknowledge this. Several technical concerns (proprietary pipeline, non-deposited code and weights, non-homology-controlled Edgar DNA split, calibration and evaluation overlap, RNA-only MoNA benchmark, G-quadruplex exclusion) limit reproducibility and generality. The work is a credible feasibility demonstration and a useful methodological contribution if the technical concerns are addressed and the claims are held to the narrower scope the authors themselves articulate.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Researchers in aptamer discovery and nucleic-acid therapeutics, particularly groups working on targets that are difficult to produce in purified native form (membrane proteins, disordered proteins, post-translationally modified targets). Computational structural biologists and machine-learning practitioners interested in surrogate models for physics-based reference calculations across coupled design stages. Assay developers interested in aptamer-antibody hybrid formats. The work is likely to be of interest to the readership of a molecular therapy or nucleic-acid therapeutics journal, and the modular architecture may be of broader methodological interest to the molecular design community.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong></p>
+</li>
+<li>The problem framing is well motivated. The Introduction gives a specific and technically grounded account of SELEX constraints (target production, library coverage, amplification bias, post-selection modification) rather than a generic critique.</li>
+<li>The decomposition of de novo design into sequential subproblems, each with a stated reference method and a stated surrogate, is a coherent and inspectable architecture.</li>
+<li>The InNA benchmark is the strongest quantitative result in the manuscript. Sub-kcal/mol RMSE against r2SCAN-3c on 483,735 pair geometries, with lysine and glutamic acid held out entirely from training and validation, is a meaningful transfer result for a pairwise scoring function.</li>
+<li>The manuscript is unusually explicit about what its evidence does not show. The authors state that the cellular assay does not establish intended-target engagement, that the Tau441 study does not provide an aptamer-only affinity, that the ValentiNA panel does not establish family-independent accuracy, that the Edgar benchmark is not homology-controlled for DNA, and that the MoNA benchmark is RNA-only.</li>
+<li>The chemical-modification analysis, while limited, tests directional ranking across three distinct modification classes (C5 base, 2-prime sugar, backbone) and reports both attenuation and exaggeration of predicted effects rather than only favorable cases.</li>
+<li>
+<p>The Discussion identifies concrete failure modes and a specific next test (a prospective series with predefined denominators and independent replication), which is a constructive framing.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> End-to-end validation and claim scope</li>
+<li><strong>Claim pointer</strong> The manuscript claims that Xelari enables de novo aptamer design from protein structure without target-specific SELEX data, and that Xelari-generated candidates can retain experimental function after synthesis in more than one biological and assay setting.</li>
+<li><strong>Evidence pointer</strong> Results, Prospective experimental validation; Results, Prospective live-cell binding; Results, Prospective application to Tau441 detection in serum; Discussion</li>
+<li><strong>Concern</strong> The prospective evidence comprises four DNA aptamers in two settings. In the <em>T. pallidum</em> study, binding was measured on intact cells and was not confirmed against the purified intended lipoproteins, so engagement of the design target is not established. In the Tau441 study, the aptamer served as a capture reagent in a sandwich format in which both recognition reagents contribute to signal, and no aptamer-only 1:1 affinity or independently mapped epitope is reported. Neither study reports the complete denominator of candidates ranked, synthesized, and tested. The central claim of the manuscript therefore rests on a small number of functional successes whose target-level attribution is not established.</li>
+<li><strong>Why it matters</strong> The headline claim is about a design capability, not about four specific sequences. Without a denominator and without target-engagement confirmation, the reader cannot distinguish a pipeline that reliably produces functional candidates from one that produced four functional sequences among an unknown number attempted. The authors acknowledge this, but the Abstract and title still carry the stronger framing.</li>
+<li>
+<p><strong>Resolution test</strong> Report the complete candidate denominator for each prospective campaign (ranked, synthesized, tested, functional). Provide purified-target binding data for at least the <em>T. pallidum</em> aptamers, or an epitope-mapping or competition experiment that assigns the cellular signal to the intended lipoprotein. For Tau441, provide an aptamer-only binding measurement or an epitope-mapping experiment. Alternatively, restrict the Abstract and title claims to the demonstrated scope.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility and independent verification</li>
+<li><strong>Claim pointer</strong> The manuscript presents Xelari as a platform whose modules are benchmarked and whose predictions are deposited for independent recalculation.</li>
+<li><strong>Evidence pointer</strong> Data and code availability; Results, Xelari architecture; Materials and methods, Data sources, training, and test datasets</li>
+<li><strong>Concern</strong> Source code, model weights, checkpoints, and internal training and model-development datasets are explicitly not deposited. The prediction platform is proprietary and available for academic use upon request. The deposited material permits recalculation of reported benchmark statistics from frozen predictions but does not permit re-execution of the pipeline, retraining of any model, or independent application of Xelari to a new target. The claim that the pipeline is modular and that individual failure modes are separately inspectable is therefore not independently testable by a reader.</li>
+<li><strong>Why it matters</strong> A methods paper whose central object is a computational pipeline is difficult to evaluate or build upon if the pipeline cannot be run. The module benchmarks can be checked arithmetically from the deposit, but the composition of modules into the end-to-end workflow, which is the actual claim, cannot. This also limits the ability of the community to test the authors' own stated next step, a broader prospective series.</li>
+<li>
+<p><strong>Resolution test</strong> Deposit at minimum the inference code and frozen weights for the five trained models and the three algorithmic modules, or provide a documented execution environment sufficient to reproduce the reported prospective designs from the deposited target structures. If full release is not possible, state explicitly which claims are and are not independently reproducible from the deposit.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Benchmark independence and calibration</li>
+<li><strong>Claim pointer</strong> ValentiNA showed MAE of 0.931 kcal/mol and Spearman rho of 0.795 across 32 retrospective records associated with 27 structural templates, and the calibrated predictions for the three <em>T. pallidum</em> aptamers differed from measured apparent KD values by 1.06- to 1.18-fold.</li>
+<li><strong>Evidence pointer</strong> Results, Complex relaxation and affinity prediction; Figure 7; Materials and methods, Prediction of the complex binding free energy with ValentiNA; Materials and methods, Validation protocol; Table S11; Table S12</li>
+<li><strong>Concern</strong> The calibration coefficients were fitted on 17 literature records (Table S11), and the retrospective evaluation uses 32 records (Table S12). The manuscript states that separation by PDB identifier does not establish independence and that related aptamer-target systems can occur in both calibration and evaluation. The template-aggregated sensitivity analysis collapses repeated structural inputs but does not establish statistical independence. The three <em>T. pallidum</em> comparisons apply a global affine calibration fitted on 17 separate complexes and report 1.06- to 1.18-fold agreement, but the authors correctly note this is not an independent test of ranking accuracy. The reported accuracy metrics therefore describe correspondence within a panel that is not demonstrably independent of calibration.</li>
+<li><strong>Why it matters</strong> The reported MAE and Spearman rho are presented as the quantitative performance of the affinity module. If calibration and evaluation records overlap at the aptamer-family or target-family level, these numbers overstate generalization. The authors flag this, but the Abstract reports the numbers without the caveat.</li>
+<li>
+<p><strong>Resolution test</strong> Report the overlap between the 17 calibration records and the 32 evaluation records at the aptamer-family and target-family level, not only by PDB identifier. Provide a held-out evaluation in which neither the aptamer family nor the target family appears in calibration. If the panel cannot support this, state the overlap explicitly in the Abstract.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Module benchmark validity</li>
+<li><strong>Claim pointer</strong> Edgar correlated with experimental folding energies but did not reproduce their absolute scale, supporting its use as a ranking heuristic. AliNA achieved a mean F1 of 0.757 on 339 PDB-derived RNA evaluation sequences.</li>
+<li><strong>Evidence pointer</strong> Results, Folding free energy estimation; Figure 6; Results, Predicting the secondary structure of candidate sequences; Materials and methods, Edgar folding-free-energy assessment; Materials and methods, Nucleic acid secondary structure prediction with AliNA</li>
+<li><strong>Concern</strong> Two issues affect the interpretation of these benchmarks. First, the Edgar internal test set is not homology-controlled for DNA because sequence augmentation preceded random partitioning, so augmented variants of one parent structure can appear in more than one subset; the reported R2 of 0.958 therefore measures approximation of the simulation reference and not generalization. The authors state this. Second, the AliNA evaluation set is disjoint from training at the Rfam-family level, but the lower-similarity stratum contains only 33 sequences and the pseudoknot analysis is restricted to the higher-similarity subset (n = 86) for RNA and is not scored for the lower-similarity RNA subset (n = 14) or ssDNA (n = 4). The reported mean F1 of 0.757 aggregates strata of very different size and does not characterize performance on sequences distant from training.</li>
+<li><strong>Why it matters</strong> Both modules are used as filters or ranking heuristics inside the pipeline, and their behavior on out-of-distribution inputs determines whether the pipeline can be expected to work on targets and sequences unlike those in training. The current benchmarks do not establish this.</li>
+<li>
+<p><strong>Resolution test</strong> For Edgar, report a homology-controlled DNA split and the corresponding metrics. For AliNA, report stratified metrics separately with confidence intervals, and state explicitly what the lower-similarity stratum can and cannot support given n = 33.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M5</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Generative scope and internal consistency</li>
+<li><strong>Claim pointer</strong> Xelari generates de novo DNA and RNA aptamers from protein structures. The current scaffold library contains approximately 12,000 RNA and 11,000 DNA single-chain scaffolds spanning 15 to 45 nt.</li>
+<li><strong>Evidence pointer</strong> Results, Generation and structural validation of the scaffold library; Results, Assembly of full-length aptamers from the scaffold library; Discussion; Materials and methods, Scaffold library construction; Materials and methods, Assembly of the full-length aptamers from the scaffold library</li>
+<li><strong>Concern</strong> The generative scope is narrower than the title and Abstract imply. G-quadruplex folds are not enumerated and MoNA does not generate them, yet G-quadruplex aptamers are a major and therapeutically validated class. The MoNA topology-recovery benchmark contains RNA assemblies only, so the DNA assembly path is not benchmarked at the assembly stage. The DNA branch reconstructs in RNA representation and converts to DNA, and the manuscript reports that 86.3 percent of converted chains classify as B-like after relaxation, but also states that this establishes backbone geometry and not that the tertiary fold or protein-binding energetics survive conversion. The DNA structural benchmark (median RMSD 2.52 Angstrom, median lDDT 0.724 over 58 structures) is computed over paired heavy atoms only and does not address binding competence.</li>
+<li><strong>Why it matters</strong> The prospective validation is entirely DNA, while the assembly benchmark is entirely RNA and the reconstruction path for DNA goes through an RNA intermediate. The evidence chain for the DNA branch, which is the branch that produced the only prospective functional results, is therefore the least directly benchmarked.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a DNA MoNA assembly benchmark analogous to the RNA benchmark. Report whether any of the four prospective DNA aptamers were tested for retention of the intended fold after conversion, or provide a binding-competence comparison between the RNA-intermediate model and the final DNA model for at least one case.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M6</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> INGA reliability and downstream propagation</li>
+<li><strong>Claim pointer</strong> INGA is used for conformational relaxation of the target and of the aptamer-protein complex, and is described as complementing conventional geometry optimization and molecular dynamics.</li>
+<li><strong>Evidence pointer</strong> Results, Target preparation; Figure 2; Table S1; Materials and methods, Conformational relaxation using the INGA neural network model</li>
+<li><strong>Concern</strong> The reported INGA behavior includes substantial geometric artifacts. Raw outputs increased mean potential energy by 170 to 211 eV relative to input, produced 2.51 to 14.36 unphysical bond lengths per structure on average, and up to 28 percent of outputs contained more than five unphysical bond lengths. GFN-FF refinement reduced the energy increase to 1.8 to 5.3 eV but did not resolve the bond-length artifacts, and the fail rate was slightly higher after refinement (up to 30 percent). Retention of structures already in the target cluster dropped from 96.4 percent with GFN-FF alone to 50.4 percent after the full INGA-GFN-FF step. INGA is used at two points in the pipeline, for target relaxation and for complex relaxation before ValentiNA scoring.</li>
+<li><strong>Why it matters</strong> A relaxation module that degrades already-correct conformations and introduces unphysical geometry in a substantial fraction of outputs will propagate error into site selection, seed construction, and final affinity ranking. The manuscript reports these numbers but does not quantify the downstream consequence.</li>
+<li>
+<p><strong>Resolution test</strong> Report the effect of INGA-introduced geometry on downstream stages, for example by comparing DiNA localization or ValentiNA ranking with and without INGA relaxation on a defined subset. Report the fraction of pipeline runs in which the final complex passed a geometry sanity check.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Abstract accuracy</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract</li>
+<li><strong>Issue</strong> The Abstract reports the ValentiNA MAE and Spearman rho and the InNA RMSE without the caveats that appear in the Results, specifically that the ValentiNA panel does not establish family-independent validation and that the Edgar benchmark is not homology-controlled for DNA. The Abstract does state that the analysis does not establish family-independent validation for ValentiNA, which is appropriate, but the InNA and AliNA numbers are reported without their scope conditions.</li>
+<li>
+<p><strong>Required correction</strong> Add a single clause to the Abstract stating the scope condition for each reported metric, or move the metrics to a summary sentence that carries the caveats.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Numerical reporting</li>
+<li><strong>Affected element</strong> Results, Folding free energy estimation; Figure 6</li>
+<li><strong>Evidence pointer</strong> Figure 6; Results, Folding free energy estimation</li>
+<li><strong>Issue</strong> The text reports a regression slope of 1.793 and intercept of minus 3.489 for predicted on experimental energy, while the Figure 6 legend reports a least-squares fit with predicted energy on the x axis and slope 0.400, intercept 0.255. The two regressions are of different variables and the text does not make the direction explicit at the point of use.</li>
+<li>
+<p><strong>Required correction</strong> State the regression direction explicitly in the text and in the figure legend, and label the axes so that the reported slope and intercept can be matched to the plotted line without ambiguity.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> Results, Complex relaxation and affinity prediction; Table S14</li>
+<li><strong>Evidence pointer</strong> Results, Complex relaxation and affinity prediction; Table S14</li>
+<li><strong>Issue</strong> The G4 and non-G4 strata are compared by point estimates only, and the manuscript correctly states that the point estimates do not establish equivalence. However, the G4 group is entirely thrombin-associated, so topology, target identity, chemistry, and assay conditions are fully confounded. The text notes this but the stratified statistics are still presented in a way that invites a topology interpretation.</li>
+<li>
+<p><strong>Required correction</strong> Either remove the G4 versus non-G4 stratified statistics from the main text and retain them only as a supplementary descriptive table, or add an explicit statement at the point of presentation that the comparison is uninterpretable with respect to topology.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology consistency</li>
+<li><strong>Affected element</strong> Results, Analysis of surface site specificity; Materials and methods, Target surface analysis and binding site selection with Ehrlich</li>
+<li><strong>Evidence pointer</strong> Results, Analysis of surface site specificity; Equation 1; Materials and methods, Target surface analysis and binding site selection with Ehrlich</li>
+<li><strong>Issue</strong> Equation 1 uses weights alpha_g and alpha_c with the statement that both components are combined with equal weights alpha_g = alpha_c, while the Materials and methods state that geometric and compositional components are combined with equal weights alpha = beta = 1. The notation is not consistent between the two locations.</li>
+<li>
+<p><strong>Required correction</strong> Use a single notation for the two weights throughout and state the numerical value once.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Figure and table completeness</li>
+<li><strong>Affected element</strong> Supplemental information listing</li>
+<li><strong>Evidence pointer</strong> Supplemental information</li>
+<li><strong>Issue</strong> Tables S1 through S15 and Figure S1 are referenced throughout the Results and Materials and methods but are not included in the supplied manuscript text. Several quantitative claims, including the INGA bond-length statistics, the AliNA stratified metrics, the MoNA benchmark, and the ValentiNA calibration and evaluation records, depend on these tables.</li>
+<li>
+<p><strong>Required correction</strong> Ensure that all referenced supplemental tables and figures are included in the version provided to reviewers and readers, and that the values cited in the main text can be verified directly against them.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m6</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Runtime claim</li>
+<li><strong>Affected element</strong> Abstract; Results, Xelari architecture; Results, Prospective live-cell binding</li>
+<li><strong>Evidence pointer</strong> Abstract; Results, Xelari architecture; Results, Prospective live-cell binding</li>
+<li><strong>Issue</strong> The title and Abstract emphasize design "in hours." The per-target computational time is reported as approximately 2 to 3 h on a single H200 GPU, with observed wall-clock time below 24 h on shared infrastructure including scheduling latency, and scaffold library construction performed offline. The prospective <em>T. pallidum</em> section also notes that the under-24-h figure refers to the module versions and hardware of that campaign and is not a runtime benchmark of the present pipeline version.</li>
+<li>
+<p><strong>Required correction</strong> State the runtime claim once, in a single location, with the hardware, the inclusion or exclusion of scheduling latency, and the exclusion of scaffold library construction and of synthesis and experimental confirmation, and use the same figure consistently in the title, Abstract, and Results.</p>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (prospective denominator and target engagement), R1-M2 (code and weights not deposited), R1-M3 (calibration and evaluation overlap), R1-M4 (Edgar DNA split and AliNA lower-similarity stratum), R1-M5 (DNA assembly path not benchmarked), R1-M6 (INGA geometry artifacts and downstream propagation).</p>
+</li>
+<li>
+<p><strong>Assessment against Nature-style criteria</strong></p>
+</li>
+<li><strong>Originality</strong> The individual components are largely adaptations of existing ideas: surrogate models for physics-based reference calculations, surface-patch descriptors for specificity, secondary-structure prediction, and graph-neural-network folding-energy estimation. The originality lies in the composition of these into a single structure-first pipeline for aptamer design and in the explicit decomposition of the design problem into separately benchmarked subproblems. This is a meaningful methodological contribution but not a conceptual advance of the kind associated with a broad multidisciplinary journal.</li>
+<li><strong>Scientific importance</strong> The problem is important, and the demonstration that structure-based design can produce experimentally functional aptamers without SELEX is a useful existence proof. The importance is currently limited by the small prospective sample, the absence of target-engagement confirmation in the cellular assay, the absence of an aptamer-only affinity for Tau441, and the proprietary nature of the pipeline. The work is more likely to be of high interest to the specialized aptamer and nucleic-acid therapeutics community than to a general readership.</li>
+<li><strong>Interdisciplinary readership</strong> The manuscript is written for a computationally literate but biologically oriented audience, and the modular framing is accessible. The relevance to adjacent fields (protein design, molecular recognition, assay development) is plausible but would be strengthened by a clearer statement of what a non-specialist should take from the results.</li>
+<li><strong>Technical soundness</strong> The InNA benchmark is technically strong. The Ehrlich benchmarks are reasonable. The DiNA localization benchmark is reported under two aggregation schemes and the authors are explicit about the difference. The Edgar, AliNA, INGA, MoNA, and ValentiNA benchmarks each carry stated limitations that the authors disclose. The principal soundness gap is that the module benchmarks do not compose into an end-to-end accuracy estimate, and the prospective evidence does not close that gap.</li>
+<li>
+<p><strong>Readability for nonspecialists</strong> The manuscript is generally well organized and the limitations are stated clearly. The density of module names and acronyms is high, and a reader outside the field will need the architecture figure and a glossary to follow the Results. The Abstract is readable but carries several numerical claims whose scope conditions appear only later.</p>
+</li>
+<li>
+<p><strong>Recommendation posture</strong> Currently not established from the provided evidence for the full claim as framed in the title and Abstract. Supportive of publication in a specialized venue if the technical concerns are resolved, specifically if the prospective candidate denominator and target-engagement data are provided, if the calibration and evaluation overlap is quantified at the family level, if the DNA assembly path is benchmarked, and if the code and weights are made available or the reproducibility boundary is stated explicitly. The narrower claim, that a structure-first pipeline can produce experimentally functional DNA aptamers in two assay settings without SELEX, is supported by the supplied material.</p>
+</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that Xelari enables de novo aptamer design "in hours" is supported only for the computational candidate generation step on a specific GPU, excludes scaffold library construction, and excludes synthesis and experimental confirmation. The title and Abstract do not carry these exclusions.</li>
+<li>The claim that the three <em>T. pallidum</em> aptamers bind their intended lipoprotein targets is not supported. Binding was measured on intact cells and was not confirmed against purified intended targets.</li>
+<li>The claim that the Tau441 aptamer binds Tau441 with a defined affinity is not supported. The reported KD of 0.92 nM is a workflow prediction, and the manuscript states it is not treated as experimentally validated.</li>
+<li>The claim that ValentiNA achieves MAE of 0.931 kcal/mol and Spearman rho of 0.795 as a general performance figure is weak, because the evaluation panel is not demonstrably independent of the calibration panel at the aptamer-family or target-family level.</li>
+<li>The claim that Edgar reproduces folding free energies is not supported in absolute terms. The manuscript reports predictive R2 of minus 3.976 and a regression slope of 1.793, and correctly restricts the claim to ranking.</li>
+<li>The claim that AliNA generalizes to sequences distant from training is weak, because the lower-similarity stratum contains 33 sequences and the pseudoknot analysis is restricted to the higher-similarity subset.</li>
+<li>The claim that the DNA branch of the pipeline produces binding-competent DNA folds is not established. The reported structural benchmark covers paired heavy atoms only and the manuscript states that it does not address protein-binding energetics after conversion.</li>
+<li>The claim that the pipeline is modular and that failure modes are separately inspectable is not independently testable, because source code, model weights, and internal datasets are not deposited.</li>
+<li>The claim that the prospective studies constitute independent validation is not supported. The manuscript itself states that the <em>T. pallidum</em> characterization was authored predominantly by Xelari-affiliated individuals and should not be regarded as fully independent third-party validation, and that neither study constitutes fully independent third-party validation.</li>
+<li>The claim that the approach is a complement to experimental selection is a positioning statement rather than a tested proposition. No head-to-head comparison with SELEX on a matched target is reported.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>De novo Protein Generating Model via Structure-Aware Graph Neural Networks · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>De novo Protein Generating Model via Structure-Aware Graph Neural Networks</h1>
+      <div class="meta">Chance M Gammill; Lakshman Tamil</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-28
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.10.27.762190">原文</a>
+      </div>
+      <p class="one-liner">该文提出一种基于结构感知图神经网络和可微结构预测（ESMFold）的蛋白质从头生成模型，以结构精度而非序列恢复为优化目标，直接针对蛋白质结构计算建模问题，方法创新且与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">The focus of this paper is to create a protein conformation prediction model that is optimized for structural accuracy rather than sequence recovery. To achieve this goal, we created a graph neural network (GNN) [19] for the design of computational proteins that integrates differentiable structure prediction through ESMFold [13] via a structural loss function, allowing direct optimization of the 3D conformational accuracy. Our model takes protein backbone coordinates as input and predicts an amino acid sequence using a composite loss that heavily weights structural similarity. On a matched evaluation sample, our model achieves structural precision (RMSD, TM-score, and GDT-TS) that is statistically indistinguishable from ProteinMPNN, a leading sequence recovery-focused method, despite training with no direct sequence recovery supervision and substantially lower native sequence recovery. Our results demonstrate that sequence recovery is not necessary to achieve competitive structural accuracy and that proteins can possess multiple non-unique solutions, suggesting that protein sequence prediction models may perform comparably well under purely structural conformation training. This distinction in training data and model structure allows for the training of a protein-generating model on non-natural proteins. Creating a model designed for de novo protein generation.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">本文的重点是构建一个以结构精度而非序列恢复为优化目标的蛋白质构象预测模型。为实现这一目标，我们创建了一个用于计算蛋白质设计的图神经网络（GNN）[19]，通过ESMFold [13]集成可微分的结构预测，并采用结构损失函数，从而能够直接优化三维构象的准确性。我们的模型以蛋白质骨架坐标为输入，利用一个高度加权结构相似性的复合损失来预测氨基酸序列。在匹配的评估样本上，尽管训练过程中没有直接的序列恢复监督，且天然序列恢复率显著较低，我们的模型在结构精度（RMSD、TM-score和GDT-TS）上与以序列恢复为重点的领先方法ProteinMPNN在统计上无显著差异。我们的结果表明，序列恢复并非实现竞争性结构精度的必要条件，且蛋白质可能存在多个非唯一解，这提示蛋白质序列预测模型在纯结构构象训练下可能表现同样出色。训练数据和模型结构的这一区别使得我们能够在非天然蛋白质上训练蛋白质生成模型，从而创建一个专为从头蛋白质生成设计的模型。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li>标题：De novo Protein Generating Model via Structure-Aware Graph Neural Networks</li>
+<li>作者与单位：Chance M Gammill; Lakshman Tamil（单位未提供）</li>
+<li>期刊/预印本平台：bioRxiv</li>
+<li>年份：2026-10-28</li>
+<li>论文类型：预印本（方法类）</li>
+<li>领域：蛋白质结构相关计算研究 × AI/深度学习（结构感知 GNN + 可微结构预测）</li>
+<li>关键词：未提供（正文未列关键词）</li>
+<li>DOI/arXiv 号：10.64898/2026.10.27.762190</li>
+<li>代码：https://github.com/Justworkname/GenomeGenerator（见 Footnotes）</li>
+<li>数据：未提供（正文未给出数据集名称/来源）</li>
+<li>阅读日期：未提供</li>
+<li>在「蛋白质结构相关计算研究 × AI 方法/物理模拟」方向中的位置：属于「序列设计/生成」分支，但目标函数从 sequence recovery 转向结构精度；通过将 ESMFold 作为可微结构预测器嵌入训练回路，属于「结构感知生成 + 可微 folding loss」路线，与 ProteinMPNN 这类以序列恢复为核心的方法形成对照。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>该文用结构感知 GNN 以蛋白 backbone 坐标为输入预测氨基酸序列，并以 ESMFold 可微结构预测构造以结构相似度为主的复合损失，在匹配评测样本上取得与 ProteinMPNN 在 RMSD、TM-score、GDT-TS 上统计不可区分的结构精度，尽管其 native sequence recovery 显著更低且未使用直接序列恢复监督。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li>具体问题：能否在不以 sequence recovery 为训练目标的情况下，仅通过结构导向的损失（含可微结构预测）训练序列生成模型，从而获得与序列恢复导向方法相当的结构精度？</li>
+<li>为什么重要：若结构精度不依赖序列恢复监督，则模型可训练于非天然蛋白数据，面向 de novo 蛋白生成；同时提示蛋白序列解的非唯一性。</li>
+<li>现有方法为何不足：以 sequence recovery 为核心的方法（如 ProteinMPNN）优化的是与天然序列的一致性，而非直接优化 3D 构象精度；作者主张 sequence recovery 并非达到竞争性结构精度的必要条件。</li>
+<li>精确研究问题（Can ... ?）：Can a sequence-generating model trained without direct sequence recovery supervision, using a structure-aware loss with differentiable structure prediction, achieve structural accuracy statistically indistinguishable from a sequence recovery-focused method on a matched evaluation sample?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<ul>
+<li>阶段与代表方法（仅本文框架）：</li>
+<li>序列恢复导向的序列设计：ProteinMPNN（本文作为主要对照与基线）。</li>
+<li>结构预测模型：ESMFold（本文作为可微结构预测器嵌入损失）。</li>
+<li>图神经网络用于蛋白设计：GNN（本文引用 [19]）。</li>
+<li>优点：序列恢复方法在序列一致性指标上强；结构预测模型提供可微结构信号。</li>
+<li>局限（作者主张）：序列恢复导向不直接优化 3D 构象精度；结构精度与序列恢复可能解耦。</li>
+<li>本文主张的位置：将可微结构预测（ESMFold）接入 GNN 序列生成训练，以结构损失为主，弱化/去除序列恢复监督，从而面向 de novo 生成。</li>
+<li>脉络核验状态：仅本文框架（未提供外部核验的完整文献综述）。</li>
+</ul>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列恢复与结构精度目标不一致</td>
+<td>序列恢复导向方法不直接优化 3D 构象精度</td>
+<td>作者主张 sequence recovery 非结构精度的必要条件</td>
+<td>Abstract；Results（与 ProteinMPNN 对比）</td>
+</tr>
+<tr>
+<td>天然序列监督限制 de novo 生成</td>
+<td>依赖天然序列会限制在非天然蛋白上训练</td>
+<td>作者主张可转向纯结构训练以支持非天然蛋白训练</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>序列解非唯一</td>
+<td>蛋白可有多个非唯一解</td>
+<td>作者主张</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>结构精度评测需匹配样本</td>
+<td>需 matched evaluation sample 才能公平比较</td>
+<td>作者设置 matched evaluation sample</td>
+<td>Abstract</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p>1) 表面方法：GNN 以 backbone 坐标为输入预测序列；用复合损失，其中结构相似度权重很高；结构信号来自 ESMFold 的可微结构预测。
+2) 核心洞察：结构精度可由结构损失直接优化，而不必通过 sequence recovery 间接获得；因此可在无直接序列恢复监督下达到竞争性结构精度。
+3) 可能的普适教训 [Analysis]：在结构相关生成/设计任务中，将可微结构预测器作为「结构 oracle」嵌入训练回路，可把优化目标从序列空间迁移到结构空间；对构象采样/生成与对接等任务，类似「可微物理/结构评估器 + 生成器」的回路可能比代理指标更贴近最终目标。</p>
+<h2>07 方法总览</h2>
+<ul>
+<li>输入：protein backbone coordinates</li>
+<li>输出：amino acid sequence</li>
+<li>模块：结构感知 GNN（序列预测）；ESMFold（可微结构预测）；复合损失（重权结构相似度）</li>
+<li>训练：以复合损失训练，结构相似度权重高；无直接 sequence recovery 监督</li>
+<li>工具：ESMFold [13]；GNN [19]；代码仓库 GitHub</li>
+<li>反馈回路：预测序列 → ESMFold 预测结构 → 结构损失 → 反传更新 GNN（可微结构预测）</li>
+<li>假设：结构精度可由结构损失直接优化；序列解非唯一；可在非天然蛋白上训练</li>
+<li>文字流程：backbone 坐标 → GNN → 预测序列 → ESMFold 折叠 → 结构相似度损失（重权）+ 其他损失项 → 梯度回传 → 更新 GNN</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构感知 GNN</td>
+<td>由 backbone 坐标预测序列</td>
+<td>生成序列</td>
+<td>输入 backbone 坐标；输出序列</td>
+<td>Abstract</td>
+<td>预期无法生成序列（预期效应）</td>
+</tr>
+<tr>
+<td>ESMFold 可微结构预测</td>
+<td>提供可微结构信号</td>
+<td>直接优化 3D 构象精度</td>
+<td>输入序列；输出结构</td>
+<td>Abstract</td>
+<td>预期失去结构损失来源（预期效应）</td>
+</tr>
+<tr>
+<td>复合损失（重权结构相似度）</td>
+<td>以结构相似度为主优化</td>
+<td>使训练目标对齐结构精度</td>
+<td>输入预测结构与参考结构；输出损失</td>
+<td>Abstract</td>
+<td>预期结构精度下降（预期效应）</td>
+</tr>
+<tr>
+<td>无直接序列恢复监督</td>
+<td>去除序列恢复目标</td>
+<td>支持非天然蛋白训练</td>
+<td>—</td>
+<td>Abstract</td>
+<td>预期 sequence recovery 降低（实测：substantially lower native sequence recovery）</td>
+</tr>
+</tbody>
+</table>
+<p>注：文中未提供消融实验细节；「实测消融效应」未提供，表中除 sequence recovery 降低外均为预期效应。</p>
+<h2>09 关键公式符号</h2>
+<p>不适用（提供的材料未给出公式）。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li>数据集/群体：未提供（仅提及 matched evaluation sample）</li>
+<li>规模：未提供</li>
+<li>指标：RMSD、TM-score、GDT-TS；native sequence recovery</li>
+<li>基线：ProteinMPNN</li>
+<li>预算：未提供</li>
+<li>骨干/仪器：GNN + ESMFold</li>
+<li>oracle 输入：ESMFold 作为可微结构预测器（训练回路内）</li>
+<li>评测协议：matched evaluation sample 上比较结构精度与序列恢复</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>匹配样本结构精度对比</td>
+<td>无序列恢复监督也能达到竞争性结构精度</td>
+<td>本文模型 vs ProteinMPNN</td>
+<td>RMSD、TM-score、GDT-TS 统计不可区分</td>
+<td>结构精度不依赖序列恢复监督</td>
+<td>不支持「优于 ProteinMPNN」或跨数据集泛化</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>序列恢复对比</td>
+<td>序列恢复非必要</td>
+<td>本文模型 vs ProteinMPNN</td>
+<td>本文 native sequence recovery 显著更低</td>
+<td>序列恢复与结构精度可解耦</td>
+<td>不支持「序列恢复无用」的普遍结论</td>
+<td>Abstract</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li>任务范围：backbone 坐标 → 序列生成；结构精度评测。</li>
+<li>oracle/真值输入：训练回路使用 ESMFold 可微结构预测；评测使用 matched evaluation sample（真值来源未提供）。</li>
+<li>端到端状态：训练端到端可微（GNN + ESMFold）；推理端是否使用 ESMFold 未提供。</li>
+<li>算力成本：未提供。</li>
+<li>历史数据依赖：未提供（是否使用天然结构数据未明确）。</li>
+<li>模型依赖：结论依赖 ESMFold 与 GNN 架构；未提供跨结构预测器替换实验。</li>
+<li>最难情形：未提供。</li>
+<li>群体/领域边界：仅限本文 matched evaluation sample；未提供跨数据集/跨长度/跨折叠类型边界。</li>
+<li>不确定性：统计不可区分的具体检验方法与置信区间未提供。</li>
+<li>有边界复述：在本文 matched evaluation sample 上，无直接序列恢复监督的结构感知 GNN + ESMFold 可微结构损失模型，其 RMSD、TM-score、GDT-TS 与 ProteinMPNN 统计不可区分，同时 native sequence recovery 显著更低。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<p>作者提及的相关约束（非正式局限）：
+| 约束 | 具体表现 | 作者提出的未来方向 | 来源 |
+|---|---|---|---|
+| 序列恢复低 | native sequence recovery 显著低于 ProteinMPNN | 未提供 | Abstract |
+| 依赖匹配评测样本 | 结论基于 matched evaluation sample | 未提供 | Abstract |</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构精度「统计不可区分」缺检验细节</td>
+<td>可能是样本量不足导致无差异</td>
+<td>影响结论强度</td>
+<td>报告检验方法、效应量、置信区间</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>ESMFold 作为训练 oracle 可能引入其偏差</td>
+<td>结构精度可能反映 ESMFold 偏好而非真实构象精度</td>
+<td>影响 de novo 生成可信度</td>
+<td>替换不同结构预测器（如 AlphaFold2/物理模拟）复测</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>未提供数据集与规模</td>
+<td>无法判断泛化与过拟合</td>
+<td>影响可复现性</td>
+<td>公开数据划分与规模</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>未提供消融</td>
+<td>无法归因结构损失权重与 ESMFold 的贡献</td>
+<td>影响方法可迁移性</td>
+<td>消融结构损失项与 ESMFold</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>推理端是否用 ESMFold 未说明</td>
+<td>端到端成本与可用性不明</td>
+<td>影响实际部署</td>
+<td>报告推理流程与耗时</td>
+<td>Abstract</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<h3>Agent 提炼的知识候选</h3>
+<ul>
+<li>可迁移概念：以可微结构预测器（ESMFold）作为结构 oracle 嵌入生成模型训练回路，将优化目标从序列空间迁移到结构空间。</li>
+<li>可迁移方法：复合损失中重权结构相似度（RMSD/TM-score/GDT-TS 类信号），弱化或去除 sequence recovery 监督。</li>
+<li>可迁移实验设计：matched evaluation sample 上同时报告结构指标与序列恢复指标，以检验目标解耦。</li>
+<li>面向本课题的迁移：</li>
+<li>构象采样/生成：用可微结构评估器替代代理指标，直接优化构象精度。</li>
+<li>分子对接：将对接打分或结构相似度作为可微损失嵌入生成器。</li>
+<li>MD/物理模拟：以物理能量或模拟导出的结构指标作为可微/半可微信号。</li>
+<li>结构/序列设计：在非天然蛋白数据上训练，弱化天然序列监督。</li>
+<li>注意：以上迁移为 [Analysis]，本文未提供跨任务验证。</li>
+</ul>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li>相似：ProteinMPNN（序列恢复导向的序列设计，本文基线）。</li>
+<li>组合：ESMFold（可微结构预测）+ GNN（序列生成）。</li>
+<li>冲突：本文主张 sequence recovery 非结构精度必要条件，与序列恢复导向方法的隐含假设形成张力。</li>
+<li>可迁移领域：构象采样、分子对接、MD 模拟中的「可微评估器 + 生成器」回路。</li>
+<li>核验状态：以上连接基于本文引用与 Abstract；外部文献细节未在提供材料中核验。</li>
+</ul>
+<h2>16 研究想法</h2>
+<h3>Agent 生成的研究候选</h3>
+<p>1) 名称：可微结构 oracle 替换鲁棒性研究
+- 来源局限/观察：本文仅用 ESMFold 作为结构 oracle。
+- 核心假设：结构精度结论对结构预测器选择敏感。
+- 相对本文的增量：跨 oracle（AlphaFold2、物理模拟）复测。
+- 初步方法：替换 ESMFold 为不同结构预测器，保持 GNN 与损失不变。
+- 验证方式：matched sample 上比较 RMSD/TM-score/GDT-TS。
+- 可能的失败模式：不同 oracle 偏差导致结论翻转。
+- 创新状态：unverified</p>
+<p>2) 名称：结构损失权重消融
+- 来源局限/观察：未提供消融。
+- 核心假设：结构损失权重是结构精度的主要驱动。
+- 相对本文的增量：量化各损失项贡献。
+- 初步方法：网格搜索结构损失权重，记录结构指标与序列恢复。
+- 验证方式：消融曲线。
+- 可能的失败模式：权重不敏感。
+- 创新状态：unverified</p>
+<p>3) 名称：非天然蛋白训练验证
+- 来源局限/观察：作者主张可训练于非天然蛋白，但未提供实验。
+- 核心假设：纯结构训练可在非天然数据上泛化。
+- 相对本文的增量：在非天然蛋白数据集上训练与评测。
+- 初步方法：构建非天然 backbone 数据集，训练并评测结构精度。
+- 验证方式：与天然训练对比。
+- 可能的失败模式：非天然数据分布偏移导致精度下降。
+- 创新状态：unverified</p>
+<p>4) 名称：推理端成本与端到端可用性评估
+- 来源局限/观察：推理端是否使用 ESMFold 未说明。
+- 核心假设：推理端可脱离 ESMFold 或需其参与。
+- 相对本文的增量：明确推理流程与成本。
+- 初步方法：对比有无 ESMFold 的推理路径。
+- 验证方式：耗时与精度对比。
+- 可能的失败模式：无 ESMFold 时精度显著下降。
+- 创新状态：unverified</p></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose a graph neural network for de novo protein sequence design that integrates differentiable structure prediction via ESMFold and optimizes a structural loss function. They report that on a matched evaluation sample, their model achieves structural accuracy statistically indistinguishable from ProteinMPNN despite substantially lower native sequence recovery and no direct sequence recovery supervision. They conclude that sequence recovery is not necessary for competitive structural accuracy and that their training paradigm enables de novo protein generation.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, statistical details, dataset descriptions, or model architecture specifications are provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, all figures and tables, training and evaluation dataset details, statistical analysis details, model architecture specifications, and code repository contents</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents an interesting hypothesis, namely that structural accuracy can serve as a sufficient training signal for protein sequence design without explicit sequence recovery objectives. However, the evidence provided in the abstract is insufficient to evaluate the validity of this claim. Key quantitative results are mentioned but not reported, the statistical comparison to ProteinMPNN is described but not substantiated, and the relationship between the reported findings and the stated goal of de novo protein generation is not clearly established. The work may be of interest to the protein design community, but the current abstract does not provide enough information to assess technical soundness or scientific significance.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational protein designers and machine learning researchers working on protein sequence-structure relationships would be interested in this work. The claim that sequence recovery is not necessary for structural accuracy challenges a common assumption in the protein design field and could have implications for how training objectives are formulated. Researchers focused on de novo protein design and generative models for proteins would also find the proposed approach relevant.</li>
+<li><strong>Major strengths</strong> The central hypothesis is clearly stated and potentially impactful. The use of a differentiable structure prediction module within a GNN framework is a reasonable methodological direction. The authors explicitly acknowledge the trade-off between sequence recovery and structural accuracy, which frames the contribution in a useful way.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The model achieves structural precision statistically indistinguishable from ProteinMPNN on a matched evaluation sample</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract states that structural precision is statistically indistinguishable from ProteinMPNN but provides no numerical values for RMSD, TM-score, or GDT-TS. No sample sizes, confidence intervals, or statistical test details are reported. The phrase "matched evaluation sample" is undefined.</li>
+<li><strong>Why it matters</strong> The central claim of the paper rests on this statistical comparison. Without quantitative results and statistical details, the claim cannot be evaluated or reproduced. The term "statistically indistinguishable" is ambiguous without knowing the power of the comparison and the variability in the measurements.</li>
+<li><strong>Resolution test</strong> Report the actual RMSD, TM-score, and GDT-TS values for both models, the number of test proteins, the statistical test used, and the resulting p-values or confidence intervals. Provide a description of how the evaluation sample was matched.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Claim substantiation</li>
+<li><strong>Claim pointer</strong> Sequence recovery is not necessary to achieve competitive structural accuracy</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> This is the main conceptual claim of the paper, but the abstract does not provide the native sequence recovery values for the proposed model or for ProteinMPNN. The phrase "substantially lower" is not quantified. The relationship between sequence recovery and structural accuracy is asserted rather than demonstrated across a range of conditions.</li>
+<li><strong>Why it matters</strong> The conclusion that sequence recovery is unnecessary depends on demonstrating that the model achieves competitive structural accuracy across diverse protein targets while showing consistently low sequence recovery. Without quantitative recovery values and a demonstration that the finding generalizes beyond the specific evaluation set, the claim remains unsupported.</li>
+<li><strong>Resolution test</strong> Provide native sequence recovery percentages for both models on the same evaluation set. Show that the structural accuracy results hold across different protein families, lengths, and structural classes. Discuss any cases where structural accuracy is achieved despite low sequence recovery and whether this pattern is consistent.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Scope justification</li>
+<li><strong>Claim pointer</strong> The distinction in training data and model structure allows for the training of a protein-generating model on non-natural proteins, creating a model designed for de novo protein generation</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract does not describe any experiments involving non-natural proteins or de novo generation. No results are presented that demonstrate the model can generate novel proteins beyond the evaluation on a matched sample. The connection between the reported evaluation and the stated goal of de novo generation is not established.</li>
+<li><strong>Why it matters</strong> The title and the final claims of the abstract emphasize de novo protein generation, but the described evaluation appears to be a sequence design task on existing protein backbones. These are related but distinct tasks. Without evidence that the model can generate novel, foldable proteins, the de novo claim is not supported.</li>
+<li><strong>Resolution test</strong> Describe and present results from de novo generation experiments, including how novel backbones were obtained, whether the generated sequences fold to the intended structures, and how structural accuracy was validated for generated proteins.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Model description</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The abstract states that the model "takes protein backbone coordinates as input and predicts an amino acid sequence" but does not clarify whether the model operates on backbone-only information or uses additional features. The role of the GNN relative to ESMFold is also unclear.</li>
+<li><strong>Required correction</strong> Clarify the input features, the architecture of the GNN, and how ESMFold is integrated into the training and inference pipeline.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Code availability</li>
+<li><strong>Evidence pointer</strong> Footnote, GitHub repository link</li>
+<li><strong>Issue</strong> A GitHub repository is listed but no details are provided about its contents, whether it contains the model code, training scripts, or evaluation scripts, and whether it is publicly accessible.</li>
+<li><strong>Required correction</strong> State explicitly what is included in the repository and confirm that it is publicly available and documented.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Use of the term "de novo"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The term "de novo protein generation" is used in the title and abstract, but the described evaluation appears to be fixed-backbone sequence design. These are different tasks in the protein design literature.</li>
+<li><strong>Required correction</strong> Define what is meant by "de novo" in this context and ensure the terminology is consistent with the experiments described.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3. The abstract does not provide sufficient quantitative evidence to support the central claims of statistical equivalence to ProteinMPNN, the dispensability of sequence recovery, or the suitability of the model for de novo generation.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: the hypothesis that structural accuracy alone can drive competitive protein sequence design is a potentially original contribution, but the abstract does not provide enough context to assess novelty relative to existing work. Scientific importance: if substantiated, the finding could influence training objective design in protein sequence models, but the current evidence is insufficient to establish importance. Interdisciplinary readership: the work sits at the intersection of machine learning and structural biology and could appeal to both communities, but the abstract assumes familiarity with protein design metrics without sufficient explanation. Technical soundness: cannot be assessed from the abstract alone; no architectural details, training procedures, or evaluation protocols are provided. Readability for nonspecialists: the abstract uses field-specific terms without adequate definition and does not provide context for why the findings matter beyond the immediate community.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract presents an interesting hypothesis but lacks the quantitative detail and experimental scope needed to support the central claims. A full manuscript with detailed methods, results, and statistical analyses would be required to evaluate the work properly.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of statistical indistinguishability from ProteinMPNN is unsupported because no numerical results or statistical details are provided.</li>
+<li>The claim that sequence recovery is not necessary for competitive structural accuracy is unsupported because no sequence recovery values are reported.</li>
+<li>The claim that the model is suitable for de novo protein generation is unsupported because no de novo generation experiments are described.</li>
+<li>The claim that the model can be trained on non-natural proteins is mentioned but not supported by any described experiments.</li>
+<li>The relationship between the reported evaluation and the title's emphasis on "de novo" generation is not established.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

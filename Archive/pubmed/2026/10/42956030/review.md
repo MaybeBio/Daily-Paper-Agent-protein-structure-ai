@@ -1,0 +1,98 @@
+## Review setup
+- **Input scope** Abstract only, as provided in the submission record
+- **Assessment boundary** Evaluation is restricted to the abstract text and associated metadata. No full text, figures, tables, methods, supplementary information, or reference list were supplied, so mechanistic, structural, and statistical claims cannot be verified against primary data.
+- **Shared manuscript claim summary** The authors report that the TrkB agonist antibody ZEB85 binds the TrkB extracellular juxtamembrane domain, that a sulfotyrosine modification at residue 400 is required for ZEB85 interaction and for activation of TrkB signaling, that ZEB85 and BDNF engage distinct but overlapping sites on human TrkB, that the BDNF binding site extends into the juxtamembrane domain yet does not require sulfotyrosine 400 for activation, and that BDNF can displace ZEB85 through an overlapping epitope. The work further claims these features are unique to TrkB relative to TrkA and TrkC.
+- **Visible evidence base** Abstract-level statements only. Referenced but unavailable elements include structures of ZEB85 and BDNF bound to TrkB, structure-guided TrkB mutants, ligand sequestration assays in cultured human neurons, biophysical analysis, and AlphaFold modeling. No section, figure, or table identifiers were provided.
+- **Missing materials affecting confidence** Full text, figures with legends, tables, methods, statistics, structural data and validation metrics, mutant characterization, replication details, and supplementary material. Confidence in the central mechanistic and structural conclusions is therefore limited.
+
+## Reviewer
+- **Overall assessment** The abstract describes a potentially interesting and clinically motivated study on the mechanism of a TrkB agonist antibody and on the role of a post-translational modification in receptor activation. The central claims are specific and testable, and the combination of structural determination, mutagenesis, cell-based sequestration assays, biophysics, and modeling is appropriate in principle. However, the supplied material is an abstract only, and several of the strongest claims, particularly the requirement for sulfotyrosine 400, the independence versus overlap of the ZEB85 and BDNF sites, and the uniqueness relative to TrkA and TrkC, cannot be evaluated without the underlying data. The abstract also contains an internal tension worth resolving, since it states that the two ligands occupy independent sites while also concluding that BDNF displaces ZEB85 through an overlapping epitope. As presented, the case is not yet established from the available evidence.
+- **Who would be interested in the results, and why** Researchers in neurotrophin signaling, TrkB biology, and synaptic plasticity, given the therapeutic interest in selective TrkB activation without p75-mediated effects. Structural biologists and protein engineers interested in antibody agonist mechanisms and in post-translational modifications within receptor ectodomains. Scientists studying tyrosine sulfation and its regulatory roles. Groups developing TrkB-targeted biologics for neurodegenerative and neuropsychiatric indications.
+- **Major strengths** The question is well motivated, since selective TrkB activation avoids the unfavorable properties of exogenous BDNF and the p75-mediated cell death pathway. The proposed role for a sulfotyrosine in the TrkB juxtamembrane region is a distinctive and potentially generalizable mechanistic idea. The study design as described combines structural, mutational, cell-based, biophysical, and computational approaches, which is a reasonable multi-line strategy. The comparison with TrkA and TrkC, if substantiated, would place the finding in a broader receptor-family context.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Evidence sufficiency for the central claim
+    - **Claim pointer** A sulfotyrosine modification at TrkB residue 400 is crucial for ZEB85 interaction and for activation of TrkB signaling.
+    - **Evidence pointer** Location not provided
+    - **Concern** The abstract asserts a requirement for sulfotyrosine 400 but supplies no information on how the modification was detected, how its occupancy was controlled, whether the modification is stoichiometric or substoichiometric, or whether the activation defect observed with mutation reflects loss of the modification specifically rather than a structural perturbation at the antibody interface.
+    - **Why it matters** This is the central mechanistic claim of the manuscript. If the requirement is not separable from general effects of mutating residue 400, the proposed mechanism is not established.
+    - **Resolution test** Provide direct detection of sulfation at residue 400 in the relevant expression system, show that a non-sulfatable but structurally conservative substitution reproduces the loss of ZEB85 binding and activation, and demonstrate rescue of binding and signaling by restoring the sulfated residue or by an independent sulfation-mimetic strategy.
+  - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Internal consistency of the mechanistic model
+    - **Claim pointer** ZEB85 and BDNF bind independent sites on human TrkB, yet BDNF can displace ZEB85 from TrkB through an overlapping epitope.
+    - **Evidence pointer** Location not provided
+    - **Concern** The abstract presents independent binding sites and an overlapping epitope as simultaneous conclusions. These are not obviously compatible without a defined model, for example partial epitope overlap, allosteric competition, or conformational coupling between sites. The abstract does not specify which interpretation is supported.
+    - **Why it matters** The displacement result is used to explain the relationship between the two ligands, and an unresolved contradiction undermines the mechanistic conclusion and its therapeutic implications.
+    - **Resolution test** Provide a quantitative binding model with defined epitopes, competition or displacement data with appropriate controls, and an explicit statement of whether competition is direct, partial, or allosteric, supported by the structural data.
+  - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Structural evidence and validation
+    - **Claim pointer** Structures of ZEB85 and BDNF bound to their respective binding sites on human TrkB were determined.
+    - **Evidence pointer** Location not provided
+    - **Concern** No information is given on resolution, data quality, model validation, or how the sulfotyrosine was modeled or its presence confirmed in the structure. The AlphaFold modeling is also invoked without stating how predictions were validated against experimental data.
+    - **Why it matters** Structural claims about epitope location and overlap depend on the quality and interpretation of the maps, particularly for a modified residue that may be poorly resolved.
+    - **Resolution test** Report crystallographic or cryo-EM statistics, map quality at residue 400, evidence for the modification in the density, and explicit benchmarking of AlphaFold models against the experimental structures.
+  - **Concern ID** R1-M4
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Specificity of the receptor-family comparison
+    - **Claim pointer** The findings reveal unique features of TrkB not present in the related neurotrophin receptors TrkA and TrkC.
+    - **Evidence pointer** Location not provided
+    - **Concern** The abstract does not state whether TrkA and TrkC were examined experimentally for the equivalent residue, modification, or ZEB85-type antibody interaction, or whether the comparison rests on sequence or structural inference alone.
+    - **Why it matters** The claim of uniqueness is a significant generalization and requires direct comparative evidence rather than inference.
+    - **Resolution test** Provide aligned sequence and structural comparisons plus, where feasible, experimental tests of the corresponding positions in TrkA and TrkC.
+  - **Concern ID** R1-M5
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Functional relevance of the cell-based assays
+    - **Claim pointer** Structure-guided BDNF- and ZEB85-binding deficient TrkB mutants were used to assess ligand sequestration from full-length TrkB in cultured human neurons.
+    - **Evidence pointer** Location not provided
+    - **Concern** The abstract does not specify the neuronal model, the readouts for TrkB activation, the expression levels of mutant versus endogenous receptor, or how sequestration was distinguished from direct signaling effects.
+    - **Why it matters** Conclusions about activation and displacement depend on the physiological relevance and the controls of the cellular system.
+    - **Resolution test** Describe the neuronal source and validation, quantify receptor expression, and include controls showing that sequestration measurements are not confounded by altered surface trafficking or expression.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Terminology and precision
+    - **Affected element** Use of "independent sites" and "overlapping epitope"
+    - **Evidence pointer** Abstract, location not provided
+    - **Issue** The two terms are used without operational definitions, which makes the binding model ambiguous.
+    - **Required correction** Define what is meant by independent and overlapping in terms of epitope residues and binding thermodynamics, and use the terms consistently.
+  - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Quantitative reporting
+    - **Affected element** Claims of crucial requirement and displacement
+    - **Evidence pointer** Abstract, location not provided
+    - **Issue** No effect sizes, affinity values, or statistical support are given for the key assertions.
+    - **Required correction** Include quantitative binding and activation parameters with appropriate statistical reporting in the abstract or in the cited figures.
+  - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Scope of the modification claim
+    - **Affected element** Sulfotyrosine 400
+    - **Evidence pointer** Abstract, location not provided
+    - **Issue** It is not stated whether sulfation at residue 400 occurs endogenously in human tissue or only in the recombinant systems used.
+    - **Required correction** Clarify the endogenous occurrence of the modification and the systems in which it was observed.
+  - **Concern ID** R1-m4
+    - **Severity** Minor
+    - **Axis** Clarity for nonspecialists
+    - **Affected element** Overall abstract framing
+    - **Evidence pointer** Abstract, location not provided
+    - **Issue** Terms such as juxtamembrane domain and sulfotyrosine are used without brief contextual explanation, and the relationship between the structural and functional findings is compressed.
+    - **Required correction** Add brief explanatory context and a clearer logical sequence from binding site mapping to structural determination to functional validation.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4, R1-M5. The most critical are R1-M1 and R1-M2, since they bear directly on the central mechanistic claim and on the internal consistency of the proposed model.
+- **Assessment against Nature-style criteria** Originality is plausible, since a sulfotyrosine-dependent antibody agonist mechanism in TrkB is a distinctive proposition, but it cannot be confirmed without the full text and prior-literature context. Scientific importance is potentially high given the therapeutic interest in selective TrkB activation, though the abstract does not establish whether the findings change the current understanding of TrkB activation or are specific to one antibody. Interdisciplinary readership is likely, spanning neurobiology, structural biology, and biologics development, provided the mechanistic model is made coherent. Technical soundness cannot be judged from the abstract alone, and the internal tension between independent sites and an overlapping epitope is a specific concern. Readability for nonspecialists is moderate, with several specialized terms used without explanation and a dense presentation of the causal chain.
+- **Recommendation posture** Currently not established from the provided evidence. The claims are of interest, but the supplied material is insufficient to evaluate the central mechanistic, structural, and comparative conclusions, and the binding model requires clarification.
+
+## Risk / unsupported claims
+- The requirement for sulfotyrosine 400 in ZEB85 interaction and TrkB activation is asserted but not supported by any visible evidence, and the specificity of the modification effect versus a general structural perturbation is not addressed.
+- The simultaneous claims of independent binding sites and an overlapping epitope for ZEB85 and BDNF are not reconciled and are not evaluable from the abstract.
+- The claim that BDNF does not require sulfotyrosine 400 for activation is stated without supporting data in the visible material.
+- The claim that the identified features are unique to TrkB relative to TrkA and TrkC is not supported by any described comparative experiment.
+- The structural determinations and AlphaFold modeling are referenced without quality metrics, validation, or evidence that the sulfotyrosine was resolved.
+- The neuronal sequestration assays are described without model details, controls, or quantitative outcomes.
+- The assertion that prior evidence indicated direct competition between BDNF and ZEB85 is referenced without citation or detail in the supplied material.

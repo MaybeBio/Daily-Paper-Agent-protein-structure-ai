@@ -1,0 +1,842 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EquiDesign: a versatile computational framework for de novo protein sequence design. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>EquiDesign: a versatile computational framework for de novo protein sequence design.</h1>
+      <div class="meta">Gao, Qiang; Xu, Zhongyu; Chen, Kai; Cen, Xiaochen; Yan, Ke; Liu, Jinxin; Ji, Zhiwei</div>
+      <div class="meta muted">
+        
+        <span class="journal">Briefings in bioinformatics</span>
+        · 2026-10-26
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42932845/">原文</a>
+      </div>
+      <p class="one-liner">该文提出基于Equiformer增强架构的深度学习框架EquiDesign，用于蛋白质逆折叠序列设计，通过等变编码和多尺度几何注意力实现高精度序列恢复与结构稳定性，直接命中蛋白质结构计算与序列设计核心课题。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Designing amino acid sequences that uniquely fold into target three-dimensional conformations defines the protein inverse folding problem, a formidable bottleneck in de novo protein design. Current computational paradigms, including deep learning-based approaches, often struggle to reconcile high sequence accuracy with structural stability, computational efficiency, and generalizability across diverse protein families. Here, we present EquiDesign, a deep learning framework that surmounts these constraints via a novel multistep Equiformer-enhanced architecture. By disentangling geometric features into invariant scalars and equivariant vectors, EquiDesign preserves the intrinsic directional topology of the protein backbone during message passing. This is achieved through spatial K-nearest neighbor graph construction and geometric attention mechanisms that hierarchically fuse multiscale contextual information, yielding a physically grounded representation of protein conformations. Extensive benchmarking demonstrates that EquiDesign achieves superior sequence recovery on standard and challenging test sets compared with state-of-the-art methods. Critically, the generated sequences exhibit exceptional structural fidelity, folding stability, and sequence diversity, as validated by comprehensive controls against training-set memorization, compositional bias, and physical energy landscapes, alongside targeted diversity sampling. These results establish EquiDesign as a robust, scalable, and generalizable inverse folding solution, driven by SE(3)-equivariant encoding and multiscale geometric attention, thus propelling de novo protein design toward unprecedented structural precision.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">设计能够唯一折叠成目标三维构象的氨基酸序列，定义了蛋白质逆折叠问题，这是从头蛋白质设计中的一个重大瓶颈。当前的计算范式，包括基于深度学习的方法，往往难以在高序列准确性与结构稳定性、计算效率以及跨多样蛋白质家族的泛化能力之间取得平衡。在此，我们提出EquiDesign，一种深度学习框架，通过新颖的多步骤Equiformer增强架构克服了这些限制。通过将几何特征解耦为不变标量和等变向量，EquiDesign在消息传递过程中保留了蛋白质主链的内在方向拓扑。这是通过空间K近邻图构建和几何注意力机制实现的，这些机制分层融合多尺度上下文信息，生成蛋白质构象的物理基础表示。广泛基准测试表明，与最先进方法相比，EquiDesign在标准及挑战性测试集上实现了更优的序列恢复率。关键的是，生成的序列展现出卓越的结构保真度、折叠稳定性和序列多样性，这通过对训练集记忆、组成偏差和物理能量景观的全面对照验证，以及针对性多样性采样得到确认。这些结果确立了EquiDesign作为一种稳健、可扩展且泛化的逆折叠解决方案，由SE(3)-等变编码和多尺度几何注意力驱动，从而推动从头蛋白质设计迈向前所未有的结构精度。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：EquiDesign: a versatile computational framework for de novo protein sequence design</li>
+<li><strong>作者</strong>：Gao, Qiang; Xu, Zhongyu; Chen, Kai; Cen, Xiaochen; Yan, Ke; Liu, Jinxin; Ji, Zhiwei</li>
+<li><strong>单位</strong>：南京农业大学（Nanjing Agricultural University），作者贡献信息中提及 Bioinformatics Center, NJAU</li>
+<li><strong>期刊/平台</strong>：Briefings in Bioinformatics</li>
+<li><strong>年份</strong>：2026（在线日期 2026-10-26）</li>
+<li><strong>论文类型</strong>：方法学（深度学习框架）</li>
+<li><strong>领域</strong>：蛋白质逆折叠（inverse folding）/ 蛋白质序列设计</li>
+<li><strong>关键词</strong>：inverse folding; protein sequence design; Equiformer; geometric deep learning; SE(3) equivariance</li>
+<li><strong>DOI/arXiv</strong>：10.1093/bib/bbag581</li>
+<li><strong>代码</strong>：https://github.com/NJAU-CDSIC/EquiDesign</li>
+<li><strong>数据</strong>：CATH 4.4、TS50、TS500、IDRome-120、TS45（均为公开数据集）</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>序列设计（inverse folding）</strong>子方向，核心贡献是将 Equiformer（SE(3)-等变 Transformer）引入逆折叠任务，通过等变向量通道显式建模主链方向拓扑，属于几何深度学习在蛋白质设计中的应用。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出 EquiDesign，一个基于 Equiformer 的深度学习框架，通过将几何特征解耦为不变标量与等变向量、结合空间 KNN 图与几何注意力，在 CATH 4.4、TS50、TS500、IDRome-120 和 TS45 五个基准上实现优于现有方法的序列恢复率，并生成经 ESMFold/AF3 验证可正确折叠的多样序列。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：给定一个目标蛋白质主链三维结构，如何设计出能折叠为该结构的氨基酸序列（蛋白质逆折叠问题）。</li>
+<li><strong>为什么重要</strong>：逆折叠是 de novo 蛋白质设计的核心瓶颈——只有先解决序列设计，才能实现功能性蛋白质的从头设计，对治疗性蛋白、工业酶、生物传感器等有直接应用价值。</li>
+<li><strong>现有方法为何不足</strong>：</li>
+<li>物理方法（Rosetta 等）依赖经验力场，计算昂贵且精度有限；</li>
+<li>早期统计方法受限于同源数据；</li>
+<li>现有深度学习方法（如 ProteinMPNN、PiFold）虽有效，但多基于消息传递或不变特征，未能显式建模主链的方向性几何信息（如 N→C 方向、局部坐标系取向），导致对结构拓扑的捕捉不完整。</li>
+<li><strong>精确研究问题</strong>：Can an SE(3)-equivariant architecture with disentangled scalar-vector representations achieve higher sequence recovery and better generalization across diverse protein families than existing message-passing and invariant-feature-based inverse folding methods?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文 Introduction 的叙述框架，标注为「仅本文框架」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表方法</th>
+<th>优点</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>物理方法</td>
+<td>Rosetta 等基于分子力场</td>
+<td>物理可解释</td>
+<td>经验力场不精确、组合空间指数爆炸、可扩展性差</td>
+</tr>
+<tr>
+<td>统计方法</td>
+<td>基于多序列比对/同源结构</td>
+<td>直观</td>
+<td>受限于数据稀缺，难以处理新折叠</td>
+</tr>
+<tr>
+<td>早期机器学习</td>
+<td>SVM、HMM</td>
+<td>可处理模式识别</td>
+<td>特征粗糙，无法捕捉精细几何</td>
+</tr>
+<tr>
+<td>深度学习（非几何）</td>
+<td>SPIN、SPIN2、SPIN-CNN 等</td>
+<td>端到端学习</td>
+<td>缺乏 3D 结构感知</td>
+</tr>
+<tr>
+<td>图神经网络</td>
+<td>ProteinMPNN、PiFold、GeoSeqBuilder、ProtSeqGen</td>
+<td>直接在残基图上消息传递，序列恢复率大幅提升</td>
+<td>多为不变特征，未显式建模方向性/等变几何</td>
+</tr>
+<tr>
+<td>等变几何深度学习</td>
+<td>EquiDesign（本文）</td>
+<td>显式建模 SE(3) 等变向量，保留主链方向拓扑</td>
+<td>计算复杂度较高，需平衡表达力与效率</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在 GNN 方法的基础上，用 Equiformer 替代传统 MPNN 层，实现不变标量与等变向量的联合优化，从而在序列恢复率、泛化性和计算效率上同时超越现有方法。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列恢复率不足</td>
+<td>现有方法在标准基准上恢复率有限</td>
+<td>消息传递机制隐式传播信息，未显式保留主链方向性几何</td>
+<td>Introduction 对 ProteinMPNN 等方法的评述</td>
+</tr>
+<tr>
+<td>泛化性差</td>
+<td>在 IDP/无同源模板（FM）目标上性能下降明显</td>
+<td>模型过度依赖训练分布，缺乏对结构拓扑的物理理解</td>
+<td>Results 图 3A/B 中所有方法在 IDRome-120 和 TS45 上性能下降</td>
+</tr>
+<tr>
+<td>几何信息利用不充分</td>
+<td>现有方法多使用不变特征（距离、角度），忽略方向向量</td>
+<td>不变特征丢失了局部坐标系的取向信息</td>
+<td>Methods 中关于等变向量通道的动机说明</td>
+</tr>
+<tr>
+<td>计算效率与表达力难以平衡</td>
+<td>深层等变模型计算开销大</td>
+<td>等变操作（如张量积）计算成本高</td>
+<td>Discussion 中关于三层 Equiformer 最优权衡的讨论</td>
+</tr>
+<tr>
+<td>序列多样性不足</td>
+<td>确定性解码只产生单一序列</td>
+<td>使用 argmax 解码，未利用概率分布采样</td>
+<td>Methods 中确定性解码的描述</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：
+EquiDesign 是一个端到端的深度学习框架，输入为蛋白质主链原子坐标，输出为每个残基的氨基酸类型概率分布。其核心流程为：① 将主链分割为重叠的二残基片段，构建局部正交基；② 提取六种互补的几何特征矩阵（残基内距离/角度/方向 + 残基间距离/角度/方向）；③ 通过 Equiformer 网络进行等变消息传递，联合优化不变标量与等变向量；④ 用 MLP 分类器输出 20 类氨基酸概率。</p>
+<p><strong>2) 核心洞察</strong>：
+- 蛋白质主链的几何信息可解耦为<strong>不变标量</strong>（距离、角度）和<strong>等变向量</strong>（方向、取向），二者互补：标量提供尺度信息，向量提供方向拓扑。
+- 传统 MPNN 仅传播标量特征，丢失了主链的<strong>方向性</strong>（如 N→C 极性、β-折叠的平行/反平行取向），而等变向量通道能显式保留这些信息。
+- 空间 KNN 图比序列邻域图更符合蛋白质折叠的物理本质——相互作用由空间邻近决定，而非序列邻近。</p>
+<p><strong>3) 可能的普适教训</strong> [Analysis]：
+- 在结构相关的学习任务中，<strong>显式建模几何对称性</strong>（如 SE(3) 等变）比堆叠更多层或更大模型更有效——物理先验可以替代部分数据驱动。
+- <strong>特征解耦</strong>（标量 vs 向量）是一种有效的表征策略，可推广到其他结构生物学任务（如对接、构象生成），其中方向信息同样关键。
+- 将「局部坐标系」作为中间表征，可提高模型对全局旋转/平移的鲁棒性，这一思想可迁移到分子生成、MD 模拟的粗粒化建模等场景。</p>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质主链原子坐标（N, Cα, C, O），以及可选的 Cβ 坐标（由 N/Cα/C 通过标准肽几何计算）</li>
+<li><strong>输出</strong>：每个残基的 20 类氨基酸概率分布（经 softmax）</li>
+<li><strong>模块</strong>：
+  1. <strong>局部正交基构建</strong>：对每个残基 i，由 N、Cα、C 三个原子构建局部坐标系 Q_i = [b⃗, a⃗, c⃗]
+  2. <strong>残基内特征提取</strong>：计算残基内原子对的距离（RBF 编码）、角度、方向，生成 D^V、A^V、Q^V
+  3. <strong>残基间特征提取</strong>：计算残基间原子对的距离、角度、方向，生成 D^E、A^E、Q^E
+  4. <strong>空间 KNN 图构建</strong>：基于 Cα 间距离构建 K 近邻图，定义消息传递范围
+  5. <strong>Equiformer 网络</strong>：多层等变 Transformer 块，联合处理标量特征和向量特征，进行几何感知的消息传递
+  6. <strong>MLP 分类器</strong>：将最终残基嵌入映射为 20 维 logits</li>
+<li><strong>训练</strong>：Adam + weight decay + label smoothing，Noam scheduler 线性 warm-up，混合精度训练，梯度裁剪，固定随机种子</li>
+<li><strong>推理</strong>：确定性解码（argmax），单序列输出</li>
+<li><strong>文字流程</strong>：输入主链坐标 → 构建局部坐标系 → 提取六种几何特征 → 构建 KNN 图 → Equiformer 等变消息传递（多层）→ 残基嵌入 → MLP 分类 → 氨基酸概率分布 → argmax 得到序列</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>局部正交基构建</td>
+<td>为每个残基建立局部坐标系</td>
+<td>将全局坐标转换为局部不变表征，是等变性的基础</td>
+<td>输入：N/Cα/C 全局坐标；输出：Q_i 正交基</td>
+<td>Methods 节公式 (1)-(2)</td>
+<td>[预期] 失去旋转等变性，模型需学习所有旋转方向，泛化性下降</td>
+</tr>
+<tr>
+<td>残基内特征提取</td>
+<td>捕获单残基内部几何</td>
+<td>描述残基自身的构象状态</td>
+<td>输入：残基内原子坐标；输出：D^V, A^V, Q^V</td>
+<td>Methods 节</td>
+<td>[预期] 残基内构象信息丢失，侧链预测精度下降</td>
+</tr>
+<tr>
+<td>残基间特征提取</td>
+<td>捕获残基对空间关系</td>
+<td>描述残基间的相互作用几何</td>
+<td>输入：残基对原子坐标；输出：D^E, A^E, Q^E</td>
+<td>Methods 节</td>
+<td>[实测] 移除残基间特征（M1）导致恢复率显著下降（Table 3）</td>
+</tr>
+<tr>
+<td>空间 KNN 图</td>
+<td>定义消息传递的邻域</td>
+<td>空间邻近比序列邻近更符合物理折叠规律</td>
+<td>输入：Cα 坐标；输出：K 近邻图</td>
+<td>Methods 节</td>
+<td>[预期] 使用序列邻域图会丢失远程空间接触信息</td>
+</tr>
+<tr>
+<td>Equiformer 网络</td>
+<td>等变消息传递与特征精炼</td>
+<td>核心创新：联合优化标量与向量特征</td>
+<td>输入：初始标量/向量嵌入 + KNN 图；输出：精炼残基嵌入</td>
+<td>Results 表 3 中 M3 对比</td>
+<td>[实测] 替换为 MPNN 层（M3）导致恢复率下降，验证 Equiformer 优势</td>
+</tr>
+<tr>
+<td>MLP 分类器</td>
+<td>最终氨基酸类型预测</td>
+<td>将嵌入映射到 20 类概率</td>
+<td>输入：残基嵌入 h_i^(N)；输出：20 维 logits</td>
+<td>Methods 节</td>
+<td>[预期] 分类头简化会降低预测精度</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ol>
+<li>
+<p><strong>局部正交基构建</strong>：
+   - 方向向量：a⃗ = (Cα_i − N_i)/‖Cα_i − N_i‖，b⃗ = (C_i − Cα_i)/‖C_i − Cα_i‖，c⃗ = a⃗ × b⃗
+   - 正交基：Q_i = [b⃗, a⃗, c⃗]，其中 a⃗ 为归一化后的 a⃗，b⃗ 为 a⃗ × c⃗ 归一化
+   - 用途：将原子坐标投影到局部坐标系，实现旋转不变性
+   - 直觉：每个残基有自己的「参考系」，特征在该参考系内表达，天然具有 SE(3) 等变性</p>
+</li>
+<li>
+<p><strong>Cβ 坐标计算</strong>：
+   - Cβ_i 由 N、Cα、C 通过标准肽几何推导（具体公式未在摘要中给出，Methods 节有详细推导）
+   - 用途：Cβ 是侧链的起点，对侧链构象预测至关重要</p>
+</li>
+<li>
+<p><strong>残基内距离特征</strong>：
+   - D^V = RBF(‖m_i − m_j‖)，其中 m_i, m_j ∈ {N, Cα, C, O, Cβ}
+   - 用途：编码残基内原子间距离
+   - 直觉：RBF 将距离映射到高维空间，增强表达力</p>
+</li>
+<li>
+<p><strong>残基间距离特征</strong>：
+   - D^E = RBF(‖m_i − m_j‖)，其中 m_i ∈ {N, Cα, C, O, Cβ}，m_j ∈ {N, Cα, C, O, Cβ}
+   - 用途：编码残基间原子距离
+   - 直觉：捕获远程空间接触</p>
+</li>
+<li>
+<p><strong>方向特征</strong>：
+   - Q^V、Q^E：将原子相对位置投影到局部坐标系后归一化
+   - 用途：编码方向信息，保留主链极性
+   - 直觉：方向向量区分 N→C 与 C→N，对 β-折叠平行/反平行判别重要</p>
+</li>
+<li>
+<p><strong>角度特征</strong>：
+   - A^V、A^E：由局部坐标系内原子位置计算的角度
+   - 用途：补充距离和方向的几何信息</p>
+</li>
+<li>
+<p><strong>等变消息传递</strong>（Equiformer 核心）：
+   - 标量通道：h_i' = h_i + Σ_j α_ij W h_j
+   - 向量通道：v_i' = v_i + Σ_j α_ij W_v v_j（旋转时向量同步旋转）
+   - 用途：联合更新标量和向量特征，保持等变性
+   - 直觉：标量描述「多少」，向量描述「方向」，二者互补</p>
+</li>
+</ol>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集与规模</strong>：
+- 训练集：CATH 4.4，29,453 个训练结构，1,732 验证，3,466 测试（40% 序列同一性去冗余，残基长度 40–500）
+- 标准基准：TS50（50 个蛋白）、TS500（500 个蛋白）
+- 挑战基准：IDRome-120（120 个含 IDR 的蛋白，&lt;200 残基）、TS45（CASP15 的 45 个 FM 目标）
+- 设计验证：9 个代表性蛋白（涵盖 all-α、all-β、α/β、α+β、膜蛋白、TIM-barrel）</p>
+<p><strong>指标</strong>：
+- 序列恢复率（Sequence Recovery）
+- 困惑度（Perplexity）
+- 训练损失（Loss）
+- 结构验证：RMSD、TM-score（经 ESMFold/AF3 预测）
+- 折叠稳定性：ESM-2 伪似然、半掩码 ESMFold pLDDT
+- 多样性：成对 Hamming 距离、KL 散度</p>
+<p><strong>基线</strong>：16 种方法，分 5 类：MLP（SPIN、SPIN2、Wang's）、CNN（SPROF、ProDCoNN、DenseCPD、ScFold）、消息传递 GNN（ProteinMPNN、PiFold、GeoSeqBuilder、ProtSeqGen）、全局感知 GNN（GraphTrans、GVP、GCA、AlphaDesign）、结构+表面（SurFold）</p>
+<p><strong>评测协议</strong>：所有模型在 CATH 4.4 上训练，在 5 个测试集上评估；消融实验在 CATH 4.4 测试集上进行；设计验证用 AF3 预测结构并与天然结构比对。</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CATH 4.4 基准测试</td>
+<td>EquiDesign 在标准基准上优于 SOTA</td>
+<td>16 个基线，相同训练集</td>
+<td>恢复率 56.59%，困惑度 3.95，损失 1.37，全面最优</td>
+<td>EquiDesign 在标准条件下优于所有对比方法</td>
+<td>未提供显著性检验</td>
+<td>Results 表 4</td>
+</tr>
+<tr>
+<td>TS50/TS500 泛化测试</td>
+<td>模型可泛化到未见结构</td>
+<td>预训练模型直接评估</td>
+<td>恢复率 59.47%（TS50）、61.08%（TS500），优于多数基线</td>
+<td>泛化能力良好</td>
+<td>与 SOTA 差异未做统计检验</td>
+<td>Results 表 5、6</td>
+</tr>
+<tr>
+<td>IDRome-120 测试</td>
+<td>对 IDP 的鲁棒性</td>
+<td>预训练模型直接评估</td>
+<td>恢复率最高，性能下降幅度最小</td>
+<td>对无序区域鲁棒</td>
+<td>未与专门针对 IDP 的方法对比</td>
+<td>Results 图 3A</td>
+</tr>
+<tr>
+<td>TS45 测试</td>
+<td>对无同源模板目标的泛化</td>
+<td>预训练模型直接评估</td>
+<td>恢复率 54.71%，最优</td>
+<td>对 FM 目标有效</td>
+<td>样本量小（45）</td>
+<td>Results 图 3B</td>
+</tr>
+<tr>
+<td>消融：移除残基间特征（M1）</td>
+<td>残基间特征的必要性</td>
+<td>完整模型 vs M1</td>
+<td>恢复率显著下降</td>
+<td>残基间特征对性能关键</td>
+<td>未报告具体数值</td>
+<td>Results 表 3</td>
+</tr>
+<tr>
+<td>消融：移除残基内特征（M2）</td>
+<td>残基内特征的必要性</td>
+<td>完整模型 vs M2</td>
+<td>恢复率下降（42.64%）</td>
+<td>残基内特征有贡献但不如残基间特征关键</td>
+<td>未报告具体数值</td>
+<td>Results 表 3</td>
+</tr>
+<tr>
+<td>消融：移除向量嵌入（M3）</td>
+<td>等变向量的必要性</td>
+<td>完整模型 vs M3</td>
+<td>恢复率下降（53.76%）</td>
+<td>等变向量提供额外增益</td>
+<td>增益幅度中等</td>
+<td>Results 表 3</td>
+</tr>
+<tr>
+<td>消融：Equiformer 层数</td>
+<td>深度的影响</td>
+<td>2/3/4 层</td>
+<td>3 层最优</td>
+<td>深度与性能存在最优平衡</td>
+<td>未测试更深层</td>
+<td>Results 表 3</td>
+</tr>
+<tr>
+<td>9 蛋白设计验证</td>
+<td>生成序列可折叠为目标结构</td>
+<td>AF3 预测 + RMSD/TM-score</td>
+<td>平均 RMSD 0.903 Å，多数蛋白 TM-score 高</td>
+<td>生成序列具有结构保真度</td>
+<td>未做湿实验验证</td>
+<td>Results 表 8、图 4</td>
+</tr>
+<tr>
+<td>多样性采样</td>
+<td>可生成多样且可折叠的序列</td>
+<td>top-k 采样（k=5），4 序列/蛋白</td>
+<td>与天然序列同一性 35.2%–65.2%，Hamming 距离平均 15.3，50%–100% 可折叠</td>
+<td>模型可探索多样序列空间</td>
+<td>未验证功能活性</td>
+<td>Results 表 S11</td>
+</tr>
+<tr>
+<td>折叠稳定性</td>
+<td>生成序列具有热力学稳定性</td>
+<td>ESM-2 伪似然 + ESMFold pLDDT</td>
+<td>多数设计稳定性优于基线</td>
+<td>生成序列物理上合理</td>
+<td>未用 MD 或实验验证</td>
+<td>Results 表 S15、S16</td>
+</tr>
+<tr>
+<td>记忆效应控制</td>
+<td>非简单记忆训练集</td>
+<td>MMseqs2 同源搜索 + Foldseek 结构搜索</td>
+<td>多数目标与训练集有高同源性，但 TM-score &lt; 1.0</td>
+<td>模型非简单记忆</td>
+<td>未完全排除记忆效应</td>
+<td>Discussion、表 S17</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文结论仅适用于<strong>单链蛋白质的逆折叠</strong>（给定主链坐标 → 设计序列），不涉及多链组装、复合物界面设计或功能位点设计。</li>
+<li><strong>输入条件</strong>：所有评估基于「仅主链输入」的标准协议；SurFold 的对比显示，加入侧链/表面信息可进一步提升性能，但 EquiDesign 在标准条件下已最优。</li>
+<li><strong>验证深度</strong>：结构验证依赖 ESMFold/AF3 预测，非实验解析结构；作者明确承认缺乏高通量实验验证。</li>
+<li><strong>泛化边界</strong>：在 IDP 和 FM 目标上性能有下降（虽然幅度小于基线），说明模型对高度无序或全新折叠的泛化仍有局限。</li>
+<li><strong>多样性-保真度权衡</strong>：采样序列与天然序列同一性最低至 35.2%，虽然可折叠，但功能活性完全未验证。</li>
+<li><strong>计算成本</strong>：作者声称 EquiDesign 在推理时比 SOTA 更高效（Supplementary Table S12），但未提供训练成本对比。</li>
+<li><strong>有边界的复述</strong>：EquiDesign 在 CATH 4.4 训练的模型，在 5 个测试集上达到当前最优的序列恢复率，生成的序列经计算预测可折叠为目标结构，但功能活性与实验验证尚未完成。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>依赖预设主链</td>
+<td>逆折叠假设输入主链是最优的，但 de novo 设计中主链本身可能需优化</td>
+<td>与生成式主链模型（如扩散模型）集成</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>缺乏实验验证</td>
+<td>设计序列仅经计算验证，无湿实验数据</td>
+<td>高通量实验验证设计序列</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>功能活性未评估</td>
+<td>序列恢复率不等同于功能</td>
+<td>引入功能评分或实验反馈</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>对其他蛋白类的迁移性未验证</td>
+<td>主要验证了球状蛋白、膜蛋白、TIM-barrel</td>
+<td>扩展到更多蛋白类</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>训练策略需定制</td>
+<td>针对不同蛋白类可能需要专门训练策略</td>
+<td>开发类特异训练方案</td>
+<td>Discussion</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>与 ProtSeqGen 的差异主要在于 Equiformer 替换 MPNN</td>
+<td>性能提升可能来自更多参数或训练技巧，而非等变架构本身</td>
+<td>需确认等变性的真实贡献</td>
+<td>控制参数量的等变 vs 非等变对比</td>
+<td>Methods 中「adapted from ProtSeqGen」</td>
+</tr>
+<tr>
+<td>消融实验中 M3（移除向量嵌入）恢复率 53.76%，仅比完整模型低约 3%</td>
+<td>等变向量的增益可能有限，主要贡献来自标量特征</td>
+<td>影响架构设计决策</td>
+<td>更细粒度的消融（如仅保留向量通道）</td>
+<td>Results 表 3</td>
+</tr>
+<tr>
+<td>9 个设计蛋白中部分与训练集高同源（&gt;90%）</td>
+<td>高恢复率可能部分来自记忆效应而非泛化</td>
+<td>影响对模型真实泛化能力的判断</td>
+<td>用与训练集低同源的蛋白测试</td>
+<td>Discussion 表 S17</td>
+</tr>
+<tr>
+<td>未报告推理时间的具体数值</td>
+<td>「高效」的声明缺乏量化支持</td>
+<td>影响实际应用可行性评估</td>
+<td>提供与基线的推理时间对比</td>
+<td>Supplementary Table S12 仅提及</td>
+</tr>
+<tr>
+<td>多样性采样中 50%–100% 可折叠率范围过大</td>
+<td>部分蛋白可能折叠率很低，但被平均值掩盖</td>
+<td>影响对模型鲁棒性的判断</td>
+<td>报告每个蛋白的折叠率</td>
+<td>Results 表 S11</td>
+</tr>
+<tr>
+<td>与 SurFold 的对比存在输入条件不一致</td>
+<td>SurFold 全模型使用额外特征，EquiDesign 仅主链</td>
+<td>对比公平性存疑</td>
+<td>在相同输入条件下对比</td>
+<td>Results 表 4 注释</td>
+</tr>
+<tr>
+<td>未与其他等变架构（如 GVP、SE(3)-Transformer）直接对比</td>
+<td>「优于 SOTA」的声明可能依赖特定基线选择</td>
+<td>影响对方法定位的判断</td>
+<td>增加等变基线对比</td>
+<td>Results 表 4 中 GVP 为基线之一</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>等变向量通道的价值</strong>：在结构相关任务中，将特征显式解耦为不变标量（距离、角度）和等变向量（方向），可同时捕获「多少」和「朝哪」的信息。这一设计可迁移到：
+   - 分子对接：等变向量可编码结合方向/取向
+   - 构象生成：向量通道可保留局部坐标系的方向连续性
+   - MD 模拟的 ML 力场：等变特征天然满足物理对称性</p>
+</li>
+<li>
+<p><strong>局部坐标系作为中间表征</strong>：为每个残基建立局部正交基，将全局坐标投影到局部参考系，是实现 SE(3) 等变性的实用策略。此思想可推广到：
+   - 任意分子体系的局部片段表征
+   - 粗粒化模型中的残基/原子局部框架</p>
+</li>
+<li>
+<p><strong>空间 KNN 图优于序列邻域图</strong>：基于 Cα 距离构建 KNN 图，更符合蛋白质相互作用的物理本质。这一设计选择可迁移到：
+   - 任意 3D 结构上的图神经网络构建
+   - 接触图预测、残基间相互作用建模</p>
+</li>
+<li>
+<p><strong>几何特征的多尺度融合</strong>：同时使用残基内（intra-residue）和残基间（inter-residue）特征，覆盖局部构象和全局拓扑。此策略可迁移到：
+   - 蛋白质-配体结合位点表征
+   - 多域蛋白的域间相互作用建模</p>
+</li>
+<li>
+<p><strong>消融实验的系统性</strong>：通过逐步移除残基间特征、残基内特征、向量嵌入来验证各组件贡献，这种消融设计值得借鉴——先验证数据特征的重要性，再验证架构组件的必要性。</p>
+</li>
+<li>
+<p><strong>Cβ 的虚拟坐标计算</strong>：对于仅主链输入的任务，通过标准肽几何计算虚拟 Cβ 坐标，可提供侧链起点信息而不增加输入复杂度。此技巧可迁移到：
+   - 仅主链输入的任意预测任务
+   - 粗粒化表示中的侧链近似</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>Equiformer</strong>：本文核心架构源自 [22]（Equiformer: SE(3)-equivariant graph neural networks），原用于分子性质预测。本文将其改造用于蛋白质逆折叠，验证了等变架构从分子到蛋白质的跨尺度迁移性。</li>
+<li><strong>ProtSeqGen</strong> [21]：本文的几何特征提取（局部正交基、残基内/间特征）继承自 ProtSeqGen，但将 MPNN 替换为 Equiformer。两文对比可揭示等变架构 vs 非等变架构在逆折叠中的差异。</li>
+<li><strong>ProteinMPNN</strong> [15]：作为消息传递 GNN 的代表，ProteinMPNN 是逆折叠领域的强基线。本文在多个基准上超越 ProteinMPNN，且消融实验显示 Equiformer 替换 MPNN 带来增益。</li>
+<li><strong>AlphaFold 2/3</strong>：本文使用 AF3 作为结构验证工具，属于「设计-预测-验证」闭环。与 AlphaDesign [18]（将 AF2 集成到设计流程）形成互补——EquiDesign 关注序列设计，AF3 关注结构验证。</li>
+<li><strong>IDRome-120</strong> [21]：该数据集由 ProtSeqGen 论文引入，本文沿用并作为挑战基准，便于直接对比。</li>
+<li><strong>Rosetta</strong>：本文用 Rosetta 能量最小化验证设计序列的热力学稳定性，连接了深度学习设计与物理能量函数。</li>
+<li><strong>与 MD 模拟的关联</strong> [Analysis]：本文的等变架构和局部坐标系思想，与 MD 模拟中常用的局部框架（如 Z-matrix 内部坐标）有概念上的相似性。将 Equiformer 的等变消息传递用于 MD 力场学习或构象采样，是自然的迁移方向。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：EquiDesign-MD：将等变逆折叠与 MD 模拟耦合的闭环设计框架
+   - <strong>来源局限/观察</strong>：EquiDesign 仅做静态结构→序列设计，未考虑主链柔性；MD 模拟可提供构象系综，但需要序列输入。
+   - <strong>核心假设</strong>：在 MD 采样的多构象上联合训练逆折叠模型，可提高设计序列对主链柔性的鲁棒性。
+   - <strong>初步方法</strong>：对每个目标蛋白运行 MD 模拟，提取多个构象快照作为 EquiDesign 的输入；用多构象平均损失训练；设计后用 MD 验证折叠稳定性。
+   - <strong>验证方式</strong>：对比单构象 vs 多构象训练的序列恢复率和 MD 折叠成功率。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：EquiDesign-Dock：等变逆折叠特征用于蛋白质-配体共设计
+   - <strong>来源局限/观察</strong>：EquiDesign 仅考虑蛋白质自身折叠，未涉及配体结合位点设计；配体结合需要序列与结合口袋的协同优化。
+   - <strong>核心假设</strong>：将配体原子纳入等变图，可同时优化结合位点序列和配体结合姿态。
+   - <strong>初步方法</strong>：扩展 EquiDesign 的图构建，将配体原子作为额外节点；在结合位点残基上增加配体接触损失；用对接评分（如 AutoDock Vina）验证。
+   - <strong>验证方式</strong>：对比有无配体信息时的序列恢复率和对接评分。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：EquiDesign-Ensemble：利用 AlphaFold 预测置信度引导的序列多样性采样
+   - <strong>来源局限/观察</strong>：EquiDesign 的确定性解码只产生单一序列，多样性采样虽可行但缺乏引导。
+   - <strong>核心假设</strong>：用 AF2/3 的 pLDDT 或 PAE 作为反馈信号，引导采样朝向高置信度区域。
+   - <strong>初步方法</strong>：在采样过程中，对候选序列计算 AF3 预测的 pLDDT，用强化学习或重加权优化采样分布。
+   - <strong>验证方式</strong>：对比随机采样与 pLDDT 引导采样的折叠率和多样性。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：EquiDesign-Transfer：跨物种/跨蛋白类迁移的等变逆折叠预训练
+   - <strong>来源局限/观察</strong>：EquiDesign 在 CATH 4.4 上训练，对膜蛋白、IDP 等特殊类别的迁移性有限。
+   - <strong>核心假设</strong>：在大规模多类蛋白上预训练，再对特定类别微调，可提升迁移性能。
+   - <strong>初步方法</strong>：收集多来源结构数据（如 PDB、AlphaFold DB），预训练 EquiDesign，再在膜蛋白/IDP 子集上微调。
+   - <strong>验证方式</strong>：对比直接训练 vs 预训练+微调在各类别上的恢复率。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：EquiDesign-Phys：将物理能量项注入等变逆折叠的混合损失
+   - <strong>来源局限/观察</strong>：EquiDesign 纯数据驱动，未利用物理能量函数；Rosetta 能量验证显示部分设计能量较高。
+   - <strong>核心假设</strong>：在训练损失中加入可微的物理能量项（如范德华、溶剂化），可提高设计序列的物理合理性。
+   - <strong>初步方法</strong>：将 Rosetta 或 OpenMM 的能量函数近似为可微层，与交叉熵损失联合优化。
+   - <strong>验证方式</strong>：对比有无物理损失时的 Rosetta 能量和折叠成功率。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, methods, results, discussion, conclusion, data availability) as provided.</li>
+<li><strong>Assessment boundary</strong> Scientific and technical evaluation of the described framework, methodology, experimental design, reported results, and claims. No evaluation of editorial fit or journal policy.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present EquiDesign, a deep learning framework for inverse protein folding that uses an Equiformer-enhanced architecture with multistep feature extraction, spatial K-nearest neighbor graph construction, and geometric attention. They claim superior sequence recovery on standard and challenging benchmarks compared to state-of-the-art methods, along with generated sequences exhibiting high structural fidelity, folding stability, and diversity.</li>
+<li><strong>Visible evidence base</strong> Abstract, introduction, methods (dataset preprocessing, model architecture, training, evaluation metrics, comparison baselines, ablation study, sampling strategy, simulation environment), results (ablation, benchmark comparisons, per-residue accuracy, generalization, de novo design), discussion, conclusion, data availability statement. Tables and figures referenced but not provided in full.</li>
+<li><strong>Missing materials affecting confidence</strong> Full tables (Tables 1-8), all figures (Figs 1-4), all supplementary materials (Tables S1-S17, Figs S1-S5), detailed hyperparameter configurations, baseline implementation details, statistical test specifications, and the actual numerical results. Without these, quantitative claims cannot be independently verified.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> The manuscript describes a technically plausible architecture for inverse protein folding that combines established components (Equiformer, geometric graph construction, multistep feature extraction) in a coherent manner. The methodological description is largely clear, and the evaluation strategy covers multiple benchmark types. However, the provided text lacks the quantitative results, full tables, and figures necessary to assess whether the claimed improvements are real, substantial, and statistically robust. Several claims in the abstract and results appear stronger than what the visible evidence can support. The relationship to prior work, particularly ProtseqGen, is acknowledged but the incremental contribution needs sharper delineation. The manuscript would benefit from clearer reporting of experimental conditions, baseline fairness, and statistical rigor.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Computational protein designers, researchers working on inverse folding and sequence design, and developers of geometric deep learning methods for biomolecular applications. The framework addresses a recognized bottleneck in de novo protein design, and the equivariant architecture is of general interest to the machine learning for structural biology community. Practitioners seeking improved sequence recovery tools for fixed backbones would also find the work relevant.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong>
+  1. The architectural design is well motivated: separating invariant scalar and equivariant vector features is a principled approach for preserving geometric information during message passing.
+  2. The evaluation spans multiple benchmark types (standard, disordered, free-modeling), which is more comprehensive than many prior studies.
+  3. The ablation study is thoughtfully designed to isolate contributions of specific components.
+  4. The authors address important confounds: training-set memorization, compositional bias, and physical energy landscapes.
+  5. Code and data availability statements are provided, supporting reproducibility.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "EquiDesign achieves superior sequence recovery on standard and challenging test sets compared with state-of-the-art methods" (Abstract); "EquiDesign achieved recovery rates of 59.47% on TS50 and 61.08% on TS500, outperforming most SOTA methods" (Results)</li>
+<li><strong>Evidence pointer</strong> Tables 4, 5, 6; location not provided for actual numerical values</li>
+<li><strong>Concern</strong> The central quantitative claims of the manuscript cannot be evaluated because the actual results tables are not included in the provided text. The reader is told that EquiDesign outperforms baselines, but the magnitude of improvement, the variance across runs, and the specific comparison values are absent. Without these data, the claim of "superior" performance is unverifiable.</li>
+<li><strong>Why it matters</strong> The primary contribution of this work is empirical: a new architecture that improves sequence recovery. If the numerical evidence is not presented, the case for the method's utility is not established.</li>
+<li>
+<p><strong>Resolution test</strong> Provide full results tables with mean and standard deviation for all methods on all benchmarks, including per-metric breakdowns. State clearly which differences are statistically significant and with what test.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Baseline fairness</li>
+<li><strong>Claim pointer</strong> "EquiDesign is benchmarked against 16 representative baselines, categorized into five architectural families" (Methods)</li>
+<li><strong>Evidence pointer</strong> Methods section, "Evaluation metrics" and "EquiDesign model training and calibration"; location not provided for baseline training details</li>
+<li><strong>Concern</strong> The manuscript does not describe how baselines were trained or configured. Were all models trained on the same data splits? Were hyperparameters optimized per model or fixed? Were the same evaluation protocols used? Unequal training conditions can produce misleading comparisons.</li>
+<li><strong>Why it matters</strong> Benchmark comparisons are only meaningful if all methods are evaluated under equivalent conditions. Without this information, observed differences could reflect tuning effort rather than architectural merit.</li>
+<li>
+<p><strong>Resolution test</strong> Describe the training and evaluation protocol for each baseline, including data splits, hyperparameter selection, and any differences in input features. State whether baselines were run with their default settings or re-tuned.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Claim pointer</strong> "EquiDesign significantly outperforms the other four methods across all metrics" (Results, referring to Supplementary Table S3)</li>
+<li><strong>Evidence pointer</strong> Supplementary Tables S3-S5; location not provided</li>
+<li><strong>Concern</strong> The claim of statistical significance is made, but the statistical test used is not specified in the visible text. The number of paired comparisons, correction for multiple testing, and the distributional assumptions are not described. With 10 training runs per model, the effective sample size is small, and the choice of test matters.</li>
+<li><strong>Why it matters</strong> Significance claims require transparent reporting of the test procedure. Without this, the reader cannot assess whether the reported differences are robust or could arise from chance.</li>
+<li>
+<p><strong>Resolution test</strong> Specify the statistical test used, whether it was paired or unpaired, how multiple comparisons were handled, and report effect sizes alongside p-values.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Validation depth</li>
+<li><strong>Claim pointer</strong> "the generated sequences exhibit exceptional structural fidelity, folding stability, and sequence diversity" (Abstract); "50%–100% of the generated sequences were predicted to be foldable (scRMSD &lt;2.0 Å) by both ESMFold and AF3" (Results)</li>
+<li><strong>Evidence pointer</strong> Table 8, Supplementary Table S11, Fig 4; location not provided</li>
+<li><strong>Concern</strong> The validation of designed sequences relies entirely on computational predictors (ESMFold, AF3, Rosetta). No experimental validation is presented. While this is common in computational papers, the claim of "exceptional" fidelity is strong given that computational predictors can be biased toward their training distributions. The diversity analysis is also limited to sequence-level metrics without functional assays.</li>
+<li><strong>Why it matters</strong> The ultimate goal of protein design is functional proteins. Computational metrics are necessary but not sufficient evidence of design quality. The strength of the claims should match the evidence level.</li>
+<li>
+<p><strong>Resolution test</strong> Soften claims about "exceptional" fidelity, or add experimental validation for at least a subset of designs. If experimental data are not available, clearly state this as a limitation and frame claims accordingly.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Novelty delineation</li>
+<li><strong>Claim pointer</strong> "The key methodological novelty lies in replacing the conventional Message Passing Neural Network (MPNN) layers with an Equiformer-driven architecture" (Discussion)</li>
+<li><strong>Evidence pointer</strong> Discussion section; location not provided</li>
+<li><strong>Concern</strong> The manuscript states that the initial feature extraction is inherited from ProtseqGen, and the novelty is the Equiformer replacement. However, the specific advantages of this replacement are not demonstrated through targeted experiments. The ablation study shows component contributions, but does not directly compare Equiformer against alternative equivariant or attention-based encoders.</li>
+<li><strong>Why it matters</strong> The contribution of the work depends on showing that the Equiformer architecture provides a meaningful improvement over other possible choices, not just over the specific baselines tested.</li>
+<li>
+<p><strong>Resolution test</strong> Add an ablation that replaces Equiformer with an alternative modern encoder (e.g., a standard transformer or another equivariant network) to demonstrate the specific benefit of the chosen architecture.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Methods, "Dataset collection and preprocessing"</li>
+<li><strong>Evidence pointer</strong> "This yielded 29 453 training, 1732 validation, and 3466 test structures [25]"</li>
+<li><strong>Issue</strong> The reference [25] for the data split is not described. It is unclear whether this split is standard in the field or specific to this work.</li>
+<li>
+<p><strong>Required correction</strong> Describe the split procedure or cite the original source of the split.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Methods, "EquiDesign model training and calibration"</li>
+<li><strong>Evidence pointer</strong> "Manual hyperparameter tuning (Supplementary Tables S1 and S2) precedes evaluation"</li>
+<li><strong>Issue</strong> The hyperparameter search space and selection criterion are not described in the main text.</li>
+<li>
+<p><strong>Required correction</strong> Briefly describe the hyperparameter ranges explored and the selection criterion used.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Methods, "Simulation environment"</li>
+<li><strong>Evidence pointer</strong> "EquiDesign was implemented in PyTorch 2.4.1 and Python 3.10.10"</li>
+<li><strong>Issue</strong> The number of training epochs, batch size, and total training time are not reported.</li>
+<li>
+<p><strong>Required correction</strong> Add these training details to the methods section.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Abstract and throughout</li>
+<li><strong>Evidence pointer</strong> "multistep Equiformer-enhanced architecture"</li>
+<li><strong>Issue</strong> The term "multistep" is not clearly defined. It is unclear whether this refers to multiple Equiformer layers, multiple stages of feature extraction, or something else.</li>
+<li>
+<p><strong>Required correction</strong> Define "multistep" in the methods section when the architecture is first described.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Consistency</li>
+<li><strong>Affected element</strong> Results, "Generalization evaluation on canonical benchmarks"</li>
+<li><strong>Evidence pointer</strong> "After removing all overlapping proteins with the training set, the evaluation comprised 26 and 243 previously unseen samples for TS50 and TS500, respectively"</li>
+<li><strong>Issue</strong> The original TS50 and TS500 contain 50 and 500 proteins. The reduction to 26 and 243 is substantial, but the filtering criteria are not described in the main text.</li>
+<li>
+<p><strong>Required correction</strong> Describe the overlap removal procedure and report results on both the full and filtered sets if possible.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m6</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Presentation</li>
+<li><strong>Affected element</strong> Results, "Perresidue accuracy and prediction confidence"</li>
+<li><strong>Evidence pointer</strong> "Fig 2A" and "Fig 2B"</li>
+<li><strong>Issue</strong> The text describes trends in the figures, but the figures are not available for review. The description is qualitative.</li>
+<li>
+<p><strong>Required correction</strong> Provide quantitative summaries of the per-residue accuracy data in the text or tables.</p>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong>
+  1. Missing numerical results for all benchmark comparisons (R1-M1).
+  2. Undescribed baseline training and evaluation protocol (R1-M2).
+  3. Unspecified statistical testing procedure (R1-M3).
+  4. No direct comparison of Equiformer against alternative modern encoders (R1-M4).
+  5. Computational-only validation with strong claims of "exceptional" fidelity (R1-M4).</p>
+</li>
+<li>
+<p><strong>Assessment against Nature-style criteria</strong></p>
+</li>
+<li><strong>Originality</strong>: Moderate. The combination of Equiformer with inverse folding is a reasonable extension of existing work, but the core idea of using equivariant networks for protein sequence design is not entirely new. The specific architectural choices and their justification are somewhat incremental.</li>
+<li><strong>Scientific importance</strong>: Potentially relevant to the protein design community, but the importance depends on the magnitude of improvement over existing methods, which cannot be assessed from the provided text.</li>
+<li><strong>Interdisciplinary readership</strong>: The work sits at the intersection of machine learning and structural biology. The methods section is technical and may be challenging for non-specialists, but the problem framing is accessible.</li>
+<li><strong>Technical soundness</strong>: The architecture is plausible, and the evaluation strategy is thoughtful. However, the lack of visible numerical results and statistical details prevents a full assessment of technical soundness.</li>
+<li>
+<p><strong>Readability for nonspecialists</strong>: The abstract and introduction are readable, but the methods section assumes significant familiarity with geometric deep learning and protein design terminology. The manuscript would benefit from a brief explanation of key concepts for a broader audience.</p>
+</li>
+<li>
+<p><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript describes a plausible and potentially useful framework, but the central quantitative claims cannot be verified without the full results tables, figures, and statistical details. The authors should be invited to provide the complete results and address the methodological reporting gaps. If the numerical evidence supports the claims, the work could be of interest to the community.</p>
+</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

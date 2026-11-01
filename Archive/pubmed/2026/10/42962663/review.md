@@ -1,0 +1,85 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors present ERIS2, an attention-convolutional deep learning framework combining contextual sequence embeddings with atomistic and residue-level structural features, trained on large-scale experimental measurements and curated ProTherm data. A 5-fold ensemble achieves Pearson correlation coefficients of 0.69 on S461, 0.51 on S669, and 0.60 on S96, with negligible anti-symmetry bias on Ssym. The tool is available as a structure-based web server without registration.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary data provided
+- **Missing materials affecting confidence** Full manuscript, methods description, training and test dataset details, benchmark definitions, figure panels, statistical analyses, and web server implementation details
+
+## Reviewer
+- **Overall assessment** The abstract reports a potentially useful deep learning platform for protein stability prediction, with competitive benchmark performance and a freely accessible web server. However, the evidence base is limited to the abstract, which prevents verification of the methodological soundness, dataset handling, benchmark rigor, and statistical claims. The reported correlations are plausible but require detailed scrutiny of training-test separation, data leakage risks, and comparison with existing methods.
+- **Who would be interested in the results, and why** Protein engineers, computational biologists, and therapeutic developers interested in rapid and accurate stability prediction for variant effect assessment, rational design, and clinical variant interpretation. The web server availability without registration increases practical utility for experimental laboratories.
+- **Major strengths** The integration of contextual sequence embeddings with atomistic and residue-level structural features is a reasonable design choice. The use of multiple blind-test datasets (S461, S669, S96) that are sequence-disjoint from training configurations addresses a common weakness in the field. The negligible anti-symmetry bias on Ssym is a valuable property for mutation directionality. The free web server without registration lowers access barriers.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The 5-fold ERIS2 ensemble achieved Pearson correlation coefficients of 0.69 on S461, 0.51 on S669, and 0.60 on S96, three blind-test datasets sequence-disjoint from all training configurations.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not describe how the 5-fold ensemble was constructed, how the training data were partitioned, or how sequence-disjointness was enforced. Without details on the training-test split, the possibility of data leakage through homologous sequences or shared structural templates cannot be excluded. The performance differences across datasets (0.69 vs 0.51 vs 0.60) are not explained.
+  - **Why it matters** Benchmark credibility depends on rigorous separation of training and test data. If sequence-disjointness is incomplete or if the ensemble averaging masks high variance across folds, the reported correlations may not generalize to real-world applications.
+  - **Resolution test** Provide a detailed description of the data partitioning strategy, including sequence identity thresholds, and report per-fold performance with standard deviations. Demonstrate that no test sequence shares significant homology with training sequences.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** Trained on large-scale experimental measurements combined with curated ProTherm data.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not specify the size of the training dataset, the source of the large-scale experimental measurements, the curation criteria for ProTherm data, or how redundancy and conflicting measurements were handled. The balance of mutation types (e.g., alanine scanning, charged-to-neutral, etc.) is not described.
+  - **Why it matters** Training data composition directly affects model bias and generalization. Small or imbalanced datasets are cited as a limitation of existing models, so the authors must demonstrate that their training data are sufficiently large and balanced to support the claimed advantage.
+  - **Resolution test** Report the number of unique mutations, the number of proteins, the distribution of mutation types, and the curation protocol. Provide a comparison of training data size and composition with existing models.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Comparative performance
+  - **Claim pointer** ERIS2 achieved Pearson correlation coefficients of 0.69 on S461, 0.51 on S669, and 0.60 on S96.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not compare ERIS2 performance with existing state-of-the-art methods on the same benchmarks. Without such comparison, the significance of these correlation values is unclear.
+  - **Why it matters** The field has multiple established predictors, and a new method must demonstrate improvement or at least parity to justify its contribution. Reporting absolute correlations without context does not establish the platform's value.
+  - **Resolution test** Include a benchmark table comparing ERIS2 with at least three existing methods on S461, S669, and S96, with statistical significance tests where appropriate.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Reproducibility
+  - **Claim pointer** ERIS2 is freely available as a structure-based web server without registration.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not provide the web server URL, nor does it describe the input requirements (e.g., PDB format, mutation notation), output format, or computational limits. No information is given on whether the server supports batch queries or high-throughput use.
+  - **Why it matters** Reproducibility and practical utility depend on clear access and usage documentation. A web server that is not described in sufficient detail cannot be evaluated or used effectively by the community.
+  - **Resolution test** Provide the URL, a usage example, and documentation of input-output specifications in the manuscript or supplementary materials.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The phrase "attention-convolutional deep learning framework" is not elaborated. The abstract does not clarify how attention and convolution are combined or why this architecture is suited to the problem.
+  - **Required correction** Add one or two sentences describing the architectural rationale and the specific roles of attention and convolution components.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Performance metrics
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** Only Pearson correlation coefficients are reported. No root-mean-square error, mean absolute error, or confidence intervals are provided.
+  - **Required correction** Report additional error metrics and confidence intervals for the correlation coefficients.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** "Negligible anti-symmetry bias"
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "negligible" is not quantified. The abstract does not state the actual bias value or the threshold for negligibility.
+  - **Required correction** Provide the numerical value of the anti-symmetry bias and the criterion used to define it as negligible.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (data partitioning and ensemble details), R1-M2 (training data composition and curation), R1-M3 (comparison with existing methods)
+- **Assessment against Nature-style criteria** 
+  - Originality: The abstract suggests an incremental advance combining known architectural elements (attention, convolution, sequence embeddings, structural features) rather than a fundamentally new approach. Originality is moderate but not clearly established from the abstract alone.
+  - Scientific importance: Protein stability prediction is a relevant problem in protein engineering and therapeutics, but the abstract does not demonstrate a major advance over existing methods. Importance is plausible but not established.
+  - Interdisciplinary readership: The topic bridges computational biology, structural biology, and protein engineering. The abstract is accessible to these audiences, but the lack of methodological detail limits broader appeal.
+  - Technical soundness: Cannot be assessed from the abstract. The reported metrics are promising but unverifiable without methods and benchmark details.
+  - Readability for nonspecialists: The abstract is concise and understandable, though terms like "attention-convolutional" and "contextual sequence embeddings" may require background knowledge.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract reports promising results, but the absence of methodological detail, comparative benchmarks, and dataset descriptions prevents verification of the core claims. Supportive if the technical concerns are resolved in the full manuscript.
+
+## Risk / unsupported claims
+- The claim that ERIS2 "provides a robust framework" is unsupported without comparison to existing methods and error analysis.
+- The claim of "negligible anti-symmetry bias" is unquantified and cannot be evaluated.
+- The claim that the three benchmark datasets are "sequence-disjoint from all training configurations" is unverifiable without details on the partitioning method.
+- The claim of "large-scale experimental measurements" is unquantified.
+- The overall performance advantage of ERIS2 over existing tools is not established from the abstract alone.

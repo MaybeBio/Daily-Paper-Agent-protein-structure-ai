@@ -1,0 +1,103 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, main text, tables, figure legends) as provided
+- **Assessment boundary** Scientific content, technical soundness, completeness of evidence, and alignment with stated review scope
+- **Shared manuscript claim summary** The manuscript is a narrative review summarizing computational methods (molecular docking, MD simulation, protein structure prediction, virtual screening, de novo design, multi-target directed ligands, drug repurposing) and AI applications in Alzheimer's disease drug discovery and development, including biomarker discovery and precision medicine.
+- **Visible evidence base** Abstract, Introduction, sections on AD pathogenesis and therapeutic targets, MD simulation of Aβ and tau, target identification, structure prediction, binding site prediction, virtual screening, de novo generation, multi-target directed ligands, drug repurposing, AI in biomarker discovery and precision medicine, industry applications, conclusion, tables (Tables 1–5), figures (Figures 1–5)
+- **Missing materials affecting confidence** No line numbers, no page numbers, no supplementary information, no full reference list, no figure images (only legends), no table data beyond what is embedded in text, no experimental validation data, no systematic search methodology or inclusion criteria for the review
+
+## Reviewer
+- **Overall assessment** This is a broad narrative review covering computational and AI-based approaches in AD drug discovery. The topic is timely and of potential interest to a wide readership. However, the manuscript is largely descriptive and lacks critical synthesis, quantitative benchmarking, or a clear methodological framework for how the literature was selected. Several claims are made without supporting data or citations visible in the provided material. The review would benefit from a more structured approach, critical evaluation of the methods discussed, and clearer distinction between established results and speculative potential. The depth of coverage varies considerably across sections, with some areas (e.g., MD simulation of tau) receiving detailed treatment while others (e.g., AI in precision medicine) remain superficial.
+- **Who would be interested in the results, and why** Researchers in computational chemistry, medicinal chemistry, and drug discovery, particularly those working on Alzheimer's disease and other neurodegenerative disorders. The review may also be of interest to AI researchers seeking biomedical application areas, and to pharmaceutical scientists evaluating computational approaches for CNS drug development. The breadth of topics covered could serve as an entry point for newcomers to the field.
+- **Major strengths** The manuscript covers a wide range of computational methods relevant to AD drug discovery, from classical molecular docking to modern AI-based generative models. The inclusion of tables summarizing specific studies (e.g., MD simulations of tau inhibitors, virtual screening campaigns) provides useful reference material. The section on multi-target directed ligands addresses an important and growing area in AD drug design. The discussion of AI in biomarker discovery and precision medicine, while brief, touches on clinically relevant applications. The authors have experience in the field, as evidenced by their prior work cited in the text.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The review claims to provide "a thorough summary of recent progresses in computational-based methodologies in the study of AD drug development" and states that "AI pharmaceutical companies have revolutionized the traditional drug development pipeline."
+  - **Evidence pointer** Abstract; Section "Biotech start-ups and pharmaceutical companies leveraged AI and ML for AD drug discovery"
+  - **Concern** The review lacks a systematic methodology for literature selection. There is no description of search strategies, inclusion/exclusion criteria, or time frame for the literature covered. The claim of being "thorough" cannot be evaluated without this information. Additionally, the statement that AI companies have "revolutionized" the drug development pipeline is an overstatement not supported by the evidence presented, which consists of a few anecdotal examples without quantitative outcomes (e.g., clinical trial success rates, time/cost reductions).
+  - **Why it matters** A review without explicit methodology cannot be reproduced or verified, undermining its scientific value. Overstated claims about AI's impact may mislead readers, particularly those new to the field.
+  - **Resolution test** Provide a clear methodology section describing literature search strategies, databases used, inclusion/exclusion criteria, and the time period covered. Substantiate claims about AI's impact with quantitative data (e.g., number of compounds advanced to clinical trials, success rates, comparative timelines) or temper the language to reflect the current evidence base.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The manuscript states that "MD simulations have demonstrated unique advantages in the study of IDP conformations" and that "the accuracy of simulation outcomes is often depending on the precision of FF parameters and the duration of the simulations."
+  - **Evidence pointer** Section "Misfolding and aggregation mechanism of Aβ and tau proteins"; Section "Introduction to molecular dynamic simulation"
+  - **Concern** The discussion of MD simulation force fields and their limitations is superficial. The authors mention that force fields for disordered proteins require adjustments but do not provide a critical comparison of available force fields (e.g., ff14IDPs, ff03ws, CHARMM36m, a99SB-disp) in terms of their performance for Aβ and tau. The claim that "the accuracy of simulation outcomes is often depending on the precision of FF parameters" is trivially true and does not offer practical guidance. The section would benefit from a more critical assessment of what MD simulations have actually contributed to understanding Aβ and tau aggregation, including known limitations (e.g., timescale issues, force field artifacts, concentration effects).
+  - **Why it matters** For a review aimed at a broad audience, the MD simulation section should provide readers with a balanced view of what the method can and cannot do. Without critical evaluation, the review risks presenting an overly optimistic picture of computational methods.
+  - **Resolution test** Expand the MD simulation section to include a critical comparison of force fields, a discussion of known limitations and challenges (e.g., timescale, sampling, force field accuracy), and a summary of key findings from MD studies that have been validated experimentally. Provide specific examples where MD simulations have led to testable predictions or mechanistic insights.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scientific importance
+  - **Claim pointer** The review states that "the purpose of this review is to comprehensively summarize the applications of computational strategies in target identification, biomarker discovery, three-dimensional structure prediction, lead compound discovery, de novo molecule generation, multi-target directed ligands, and drug repurposing."
+  - **Evidence pointer** Introduction; Sections "Target identification and lead compounds discovery of AD"; "Multi-target directed ligands of AD"; "Drug repurposing in AD"
+  - **Concern** The review is overly broad, covering many topics at a superficial level without providing depth or critical insight. For example, the section on virtual screening lists several studies in Table 3 but does not critically discuss the success rates, limitations, or lessons learned from these campaigns. The section on multi-target directed ligands describes a few examples but does not address the challenges of designing drugs with balanced activity at multiple targets. The review would be more valuable if it focused on a smaller number of topics and treated them in depth, or if it provided a critical framework for evaluating the methods discussed.
+  - **Why it matters** A review that covers too much ground superficially risks becoming a list of methods and studies rather than a critical synthesis. This limits its value to both experts and newcomers.
+  - **Resolution test** Either narrow the scope to a few key topics and treat them in depth, or restructure the review to provide a critical framework (e.g., comparing methods, discussing success rates, identifying gaps) for each topic covered. Ensure that each section provides not just a summary but also a critical evaluation of the state of the art.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Technical soundness
+  - **Claim pointer** The manuscript states that "the recent approval by the FDA of monoclonal antibodies (mAbs) such as aducanumab, lecaneMab, and donanemab, all of which target Aβ, marks significant advancements in the field of DMT."
+  - **Evidence pointer** Introduction
+  - **Concern** The discussion of FDA-approved mAbs is incomplete and potentially misleading. Aducanumab's approval was controversial, and its clinical benefit has been debated. Lecanemab and donanemab have shown modest effects in clinical trials, but the review does not discuss the controversies, the limited efficacy, or the safety concerns (e.g., ARIA). The statement that these approvals "mark significant advancements" is an oversimplification that does not reflect the nuanced clinical picture.
+  - **Why it matters** For a review on computational methods in AD drug discovery, the clinical context is important. Misrepresenting the clinical landscape could mislead readers about the current state of AD therapeutics and the role of computational methods in addressing unmet needs.
+  - **Resolution test** Revise the discussion of FDA-approved mAbs to include a balanced view of their efficacy, safety, and the controversies surrounding their approval. Provide context on the limitations of current AD therapies and how computational methods might address these gaps.
+  - **Concern ID** R1-M5
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interdisciplinary readership
+  - **Claim pointer** The review claims to cover "AI pharmaceutical companies" and their role in AD drug discovery.
+  - **Evidence pointer** Section "Biotech start-ups and pharmaceutical companies leveraged AI and ML for AD drug discovery"
+  - **Concern** This section is very brief and provides only a few examples without critical analysis. The claim that AI companies have "revolutionized" drug development is not supported by the evidence presented. The section would benefit from a more detailed discussion of specific AI platforms, their successes and failures, and the challenges of integrating AI into drug development pipelines.
+  - **Why it matters** The role of AI in drug discovery is a topic of great interest to a broad audience, but the current treatment is too superficial to be informative. A more detailed and critical discussion would enhance the value of the review.
+  - **Resolution test** Expand this section to include specific examples of AI-driven drug discovery programs in AD, with details on the methods used, the outcomes, and the challenges encountered. Provide a balanced assessment of the potential and limitations of AI in this context.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Introduction
+  - **Evidence pointer** Introduction, first paragraph
+  - **Issue** The introduction provides a general overview of AD but does not clearly define the scope of the review or the intended audience. The transition from AD pathology to computational methods is abrupt.
+  - **Required correction** Add a brief paragraph at the end of the introduction that clearly states the scope of the review, the intended audience, and the structure of the manuscript.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Section "Misfolding and aggregation mechanism of Aβ and tau proteins"
+  - **Evidence pointer** Section "Introduction to molecular dynamic simulation"
+  - **Issue** The description of MD simulation is basic and does not provide sufficient detail for readers unfamiliar with the method. Terms such as "force fields," "enhanced sampling," and "Markov state models" are introduced without adequate explanation.
+  - **Required correction** Provide a brief explanation of key terms and concepts for nonspecialist readers, or add a glossary of technical terms.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Tables 1, 3, 4, 5
+  - **Evidence pointer** Tables 1, 3, 4, 5
+  - **Issue** The tables are dense and contain a mix of information (e.g., compound names, methods, activity values) without clear organization. Some entries lack context (e.g., what assay was used, what the IC50 values mean in a biological context).
+  - **Required correction** Reorganize the tables to make them more readable, and add a brief description of the columns and the significance of the reported values.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Section "Biotech start-ups and pharmaceutical companies leveraged AI and ML for AD drug discovery"
+  - **Evidence pointer** Section "Biotech start-ups and pharmaceutical companies leveraged AI and ML for AD drug discovery"
+  - **Issue** The section is very brief and reads more like a list of company names than a substantive discussion. It is unclear what the reader should take away from this section.
+  - **Required correction** Expand this section to provide more detail on the specific AI approaches used by these companies and the outcomes of their programs. Alternatively, integrate this content into other sections of the review.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Section "Conclusion and future prospects"
+  - **Evidence pointer** Section "Conclusion and future prospects"
+  - **Issue** The conclusion is brief and does not synthesize the main findings of the review. It also introduces new topics (e.g., PROTACs, allosteric modulators) that were not discussed in the main text.
+  - **Required correction** Revise the conclusion to summarize the key points of the review and avoid introducing new topics. If PROTACs and allosteric modulators are to be discussed, they should be covered in the main text.
+- **Technical failings that need to be addressed before the case is established** The review lacks a systematic methodology for literature selection, which is a fundamental requirement for a review article. The claims about AI's impact on drug development are overstated and not supported by quantitative evidence. The MD simulation section lacks critical depth and does not provide a balanced view of the method's capabilities and limitations. The discussion of FDA-approved mAbs is incomplete and potentially misleading.
+- **Assessment against Nature-style criteria** Originality: The review covers a broad range of topics but does not offer a novel perspective or framework for understanding the field. Scientific importance: The topic is important, but the review does not provide critical insights that would advance the field. Interdisciplinary readership: The review is accessible to a broad audience but lacks depth in several areas. Technical soundness: The review is descriptive rather than critical, and the lack of methodology undermines its technical soundness. Readability for nonspecialists: The review is generally readable but would benefit from clearer explanations of technical terms and concepts.
+- **Recommendation posture** Currently not established from the provided evidence. The review has potential but requires substantial revisions to provide a systematic, critical, and balanced synthesis of the field. The lack of methodology, overstatement of AI's impact, and superficial treatment of several topics are significant issues that need to be addressed.
+
+## Risk / unsupported claims
+- The claim that "AI pharmaceutical companies have revolutionized the traditional drug development pipeline" is not supported by the evidence presented.
+- The statement that "the recent approval by the FDA of monoclonal antibodies (mAbs) such as aducanumab, lecanemab, and donanemab, all of which target Aβ, marks significant advancements in the field of DMT" is an oversimplification that does not reflect the controversies and limitations of these therapies.
+- The claim that the review provides "a thorough summary of recent progresses" cannot be evaluated without a description of the literature search methodology.
+- Several statements about the capabilities of MD simulation and AI methods are made without specific examples or quantitative evidence.
+- The section on biotech start-ups and pharmaceutical companies provides anecdotal examples without critical analysis or quantitative outcomes.

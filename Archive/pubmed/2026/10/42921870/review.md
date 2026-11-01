@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors present Cooper-Beta, a chain-resolved framework that detects beta-barrel-like folds from DSSP-assigned strand connectivity using four measurements evaluated by either direct rules or logistic regression. They report high recall and specificity on held-out benchmarks, robustness to structural perturbation, and successful application to a large viral structural database, yielding candidate sequences lacking sequence homology to known matches.
+- **Visible evidence base** Abstract text only; no methodological details, benchmark definitions, statistical analyses, or dataset descriptions are available
+- **Missing materials affecting confidence** Full methods, benchmark construction details, classifier calibration procedures, perturbation protocol, database screening pipeline, candidate validation criteria, and all figures and tables
+
+## Reviewer
+- **Overall assessment** The abstract describes a potentially useful and interpretable approach for fold screening in predicted structural repositories. The reported performance metrics are encouraging, and the application to viral structural dark matter addresses a timely question. However, the abstract alone does not provide sufficient detail to assess methodological rigor, benchmark validity, or the robustness of the screening results. Several claims, particularly regarding resource efficiency and the biological significance of the candidates, cannot be evaluated from the supplied material.
+- **Who would be interested in the results, and why** Structural biologists and virologists interested in discovering novel folds in undercharacterized viral proteomes; computational biologists developing interpretable tools for protein structure analysis; researchers working on the functional annotation of structural dark matter.
+- **Major strengths** The approach addresses a clear gap in scalable and interpretable fold detection beyond sequence homology. The use of DSSP-assigned strand connectivity is mechanistically grounded. The inclusion of both direct and learned classifiers with comparable performance suggests methodological flexibility. The application to a large viral database with subsequent sequence-based filtering demonstrates a practical workflow.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The classifiers achieved high recall and specificity on a grouped held-out benchmark of 466 positive and 1063 negative chains.
+  - **Evidence pointer** Abstract, benchmark description; location not provided
+  - **Concern** The abstract does not describe how the positive and negative sets were defined, how grouping was performed, or how the benchmark was split. Without this information, the reported recall and specificity cannot be interpreted. In particular, the nature of the negative set is critical: if negatives are structurally dissimilar to beta-barrels, the specificity values may be inflated.
+  - **Why it matters** Benchmark construction directly determines whether the reported performance reflects genuine discriminative ability or artifacts of easy negatives. The claim of high specificity is central to the utility of the method for screening large databases.
+  - **Resolution test** Provide a detailed description of benchmark construction, including sequence and structure redundancy reduction, definition of positive and negative classes, and the grouping criterion. Report performance on a negative set that includes structurally similar non-barrel folds.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** Both classifiers retained prediction-flip rates below 3% through 1.0 A Gaussian Calpha perturbation.
+  - **Evidence pointer** Abstract, robustness evaluation; location not provided
+  - **Concern** The perturbation protocol is not described. It is unclear how many perturbation replicates were performed, whether the perturbation was applied to predicted or experimental structures, and how prediction flips were defined. A 3% flip rate under a single perturbation level may not adequately characterize robustness.
+  - **Why it matters** Robustness to structural noise is a key selling point for application to predicted structures, which contain errors. Inadequate perturbation testing could lead to overconfidence in real-world applicability.
+  - **Resolution test** Describe the perturbation protocol in full, including the number of replicates, the definition of a prediction flip, and the range of perturbation amplitudes tested. Show the distribution of flip rates across replicates.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scientific importance
+  - **Claim pointer** Screening 351 242 structures from the Big Fantastic Virus Database yielded 5803 joint-positive candidates; sequential Swiss-Prot and UniRef50 searches identified 1568 sequence-available candidates without a passing Swiss-Prot or UniRef50 match.
+  - **Evidence pointer** Abstract, database screening; location not provided
+  - **Concern** The abstract does not state how many of the 1568 candidates were ultimately predicted to be beta-barrel-like after manual inspection or additional filtering, nor does it provide any evidence that these candidates represent genuine novel folds. The absence of a passing sequence match is suggestive but not confirmatory.
+  - **Why it matters** The claim of discovering structural dark matter hinges on the biological validity of the candidates. Without any validation, the screening results remain an uninterpreted enumeration.
+  - **Resolution test** Provide a detailed breakdown of the screening funnel, including the number of candidates at each filtering step. Include structural validation of a subset of candidates, such as manual inspection of predicted structures or comparison to known folds.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract, terminology
+  - **Evidence pointer** Abstract, title; location not provided
+  - **Issue** The term "structural dark matter" is used without definition. Nonspecialist readers may not understand what this refers to.
+  - **Required correction** Define the term at first use, for example as "protein structures with no detectable sequence or structural similarity to characterized folds."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Abstract, classifier description
+  - **Evidence pointer** Abstract, methods summary; location not provided
+  - **Issue** The abstract states that four measurements are evaluated using "calibrated direct rules or logistic regression" but does not specify what the four measurements are.
+  - **Required correction** List the four measurements in the abstract or indicate that they are described in the main text.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Abstract, performance metrics
+  - **Evidence pointer** Abstract, benchmark results; location not provided
+  - **Issue** The abstract reports recall and specificity but not precision or F1 score. For a screening tool, precision is important because it indicates the fraction of candidates that are true positives.
+  - **Required correction** Report precision or F1 score, or explain why these metrics are omitted.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Interdisciplinary readership
+  - **Affected element** Abstract, motivation
+  - **Evidence pointer** Abstract, first sentence; location not provided
+  - **Issue** The claim that "predicted protein structures now enable fold discovery beyond the reach of sequence homology" is presented without citation or context. Readers from outside structural biology may not appreciate the significance of this statement.
+  - **Required correction** Add a brief contextual statement or citation to support this claim.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (benchmark construction), R1-M2 (perturbation protocol), R1-M3 (candidate validation)
+
+## Risk / unsupported claims
+- The claim of "resource-efficient" screening is not supported by any runtime, memory, or scalability data in the abstract.
+- The claim that the method provides "an interpretable route" is plausible but not demonstrated; no examples of interpretable outputs are provided.
+- The biological significance of the 1568 candidates without sequence matches is unsubstantiated; no validation is presented.
+- The robustness claim is based on an unspecified perturbation protocol and cannot be evaluated.
+- The benchmark performance metrics cannot be interpreted without knowledge of the negative set composition and grouping strategy.

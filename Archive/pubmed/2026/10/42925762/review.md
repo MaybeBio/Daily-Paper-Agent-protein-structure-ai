@@ -1,0 +1,69 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no access to methods, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report a proteome-wide reverse virtual screening of five sugar-free anthraquinone derivatives against 67,000 human protein structures using AutoDock Vina, yielding 123 non-redundant targets, 64 overlapping pathways, 10 key pathways, and six core protein targets prioritized by multi-ligand convergence. Predicted binding affinities for prioritized targets range from -9.0 to -10.7 kcal/mol. Molecular dynamics simulations (100 ns) of 27 complexes showed 19 retaining the predicted binding mode. ADMET analysis indicated acceptable drug-like properties. The authors propose an integrative computational framework for multi-target anticancer mechanism elucidation.
+- **Visible evidence base** Abstract text only; no figures, tables, methods details, or supplementary data provided
+- **Missing materials affecting confidence** Full methods, docking parameters, protein structure sources and preparation, target redundancy criteria, pathway analysis tools and thresholds, MD simulation protocols, ADMET software and endpoints, all numerical results, and any validation or benchmarking data
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting computational workflow that combines several established techniques in a proteome-scale reverse screening context. The scale of the screen (67,000 structures) and the multi-ligand convergence strategy are notable. However, the abstract lacks sufficient methodological detail and quantitative validation to assess the reliability of the findings. Several claims, particularly regarding target prioritization, binding mode retention in MD, and drug-like properties, cannot be evaluated from the provided material. The work may be of interest to computational chemists and cancer biologists, but the evidence base is currently insufficient to establish the case.
+- **Who would be interested in the results, and why** Computational drug discovery researchers interested in reverse screening methodologies and multi-target profiling; natural product chemists studying anthraquinone derivatives; cancer biologists seeking candidate targets for experimental validation of anthraquinone-based therapeutics. The proteome-scale approach and the prioritization framework may serve as a template for similar studies on other compound classes.
+- **Major strengths** The proteome-wide scale of the screen is ambitious and potentially impactful. The multi-ligand convergence strategy for target prioritization is a sensible approach to identify shared mechanisms across structurally related compounds. The integration of multiple computational layers (docking, pathway analysis, MD, ADMET) provides a systems-level perspective that is more comprehensive than typical single-method studies. The inclusion of MD simulations to assess binding mode stability adds a validation layer beyond static docking.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "67,000 human protein structures were screened using AutoDock Vina, followed by binding energy-based filtering and removal of redundant targets, resulting in 123 non-redundant proteins"
+  - **Evidence pointer** Abstract; methods not provided
+  - **Concern** The abstract does not specify the source of the 67,000 structures, the preparation protocol, the docking parameters, the binding energy threshold used for filtering, or the criteria for redundancy removal. Without these details, the reproducibility and validity of the screen cannot be assessed. The reduction from 67,000 to 123 proteins represents a very stringent filter, and the rationale for this threshold is not stated.
+  - **Why it matters** The core claim of a proteome-scale screen depends entirely on the rigor and appropriateness of the docking and filtering parameters. If the threshold is too permissive, false positives inflate the target list; if too stringent, true targets may be missed. The lack of methodological transparency prevents any assessment of the screen's reliability.
+  - **Resolution test** Provide full methods including structure database version, preparation steps, docking grid and exhaustiveness settings, binding energy cutoff with justification, and redundancy criteria (e.g., sequence identity threshold). Ideally, include a validation of the docking protocol against known ligand-protein complexes.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "100 ns molecular dynamics simulations showed that 19 of the 27 simulated ligand-protein complexes retained the predicted binding mode, while the remainder underwent partial or complete ligand dissociation"
+  - **Evidence pointer** Abstract; MD methods and results not provided
+  - **Concern** The abstract reports that 8 of 27 complexes did not retain the predicted binding mode, which is a substantial failure rate. However, no details are given on the MD protocol (force field, water model, temperature/pressure coupling, equilibration), the criteria for defining "retained binding mode," or the structural analysis performed. The implications of the failed complexes for the overall conclusions are not discussed.
+  - **Why it matters** A 30% failure rate in MD validation could indicate that the docking predictions are unreliable for a significant fraction of the prioritized targets. Without understanding why these complexes failed and whether this affects the prioritization, the confidence in the proposed targets is substantially weakened.
+  - **Resolution test** Provide full MD methods, define the criteria for binding mode retention (e.g., RMSD threshold, contact persistence), show representative trajectories for both stable and unstable complexes, and discuss whether the unstable complexes were excluded from the final target list or whether this affects the pathway analysis.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scientific importance
+  - **Claim pointer** "Comparative pathway analysis identified 64 overlapping pathways, from which 10 key pathways and six core protein targets were prioritized based on multi-ligand convergence"
+  - **Evidence pointer** Abstract; pathway analysis methods and results not provided
+  - **Concern** The criteria for prioritizing 10 pathways and six targets from 64 overlapping pathways are not described. The term "multi-ligand convergence" is introduced but not defined. It is unclear whether the prioritization was based on statistical significance, number of ligands targeting a pathway, biological relevance, or a combination of factors. The six core targets are not named, and their functional relevance to cancer is not specified.
+  - **Why it matters** The prioritization step is the key translational output of the study, as it identifies the targets proposed for experimental validation. Without transparent and objective criteria, the selection may appear arbitrary, and the scientific importance of the identified targets cannot be evaluated.
+  - **Resolution test** Define the prioritization algorithm or criteria explicitly, list the 10 pathways and six targets with their supporting evidence (e.g., number of ligands, enrichment scores), and provide a biological rationale for why these are the most promising candidates.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract
+  - **Issue** The abstract uses technical terms such as "reverse virtual screening," "multi-ligand convergence," and "LigPlot + analysis" without brief explanations. Nonspecialist readers may struggle to understand the significance of these methods.
+  - **Required correction** Add brief parenthetical explanations or a sentence contextualizing these methods for a broader audience.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness of reporting
+  - **Affected element** ADMET claim
+  - **Evidence pointer** Abstract
+  - **Issue** The claim that "in silico ADMET analysis indicated acceptable drug-like properties and pharmacokinetic profiles" is vague. No specific ADMET endpoints (e.g., solubility, permeability, CYP inhibition, toxicity) or software are mentioned.
+  - **Required correction** Specify which ADMET properties were evaluated, the software used, and provide representative values or ranges for the five compounds.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Binding affinity range
+  - **Evidence pointer** Abstract
+  - **Issue** The reported binding affinity range of -9.0 to -10.7 kcal/mol is presented without context. It is unclear whether these values are from AutoDock Vina scoring or from a more rigorous method such as MM-PBSA or MM-GBSA after MD.
+  - **Required correction** Clarify the source of the affinity values and, if possible, compare them to known binders or decoys to demonstrate their significance.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (docking and filtering methodology), R1-M2 (MD validation and failure analysis), R1-M3 (prioritization criteria and target identification)
+
+## Risk / unsupported claims
+- The claim that the identified targets are "cancer-related" is based on pathway analysis, but the specific pathways and their statistical support are not provided, making this claim unverifiable.
+- The claim that the framework "provides a systems-level perspective on the potential multi-target anticancer mechanisms" is an interpretation that extends beyond the presented data, as no experimental validation is included.
+- The claim of "acceptable drug-like properties" is unsupported without specific ADMET data.
+- The overall conclusion that the identified targets are "candidate targets for future experimental validation" is reasonable as a proposal but is not supported by any experimental evidence within the abstract.
+- The binding affinity range and its significance cannot be assessed without knowing the scoring function context and comparison baselines.

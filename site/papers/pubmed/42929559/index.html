@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mapping Functional Transitions across Protein Homologues from a Single Simulation: Application of gEDES-HM to Adenylate Kinases. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Mapping Functional Transitions across Protein Homologues from a Single Simulation: Application of gEDES-HM to Adenylate Kinases.</h1>
+      <div class="meta">Kurt, Han; Athar, Mohd; Basciu, Andrea; Reys, Victor; Bonvin, Alexandre M J J; Vargiu, Attilio V</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of chemical information and modeling</span>
+        · 2026-10-26
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42929559/">原文</a>
+      </div>
+      <p class="one-liner">该文提出gEDES-HM协议，通过增强采样和同源建模将单一蛋白的构象系综映射到同源家族，加速构象采样并用于对接，核心贡献在蛋白质构象采样与结构计算建模。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Proteins fluctuate across different conformational states, which constitute a dynamic ensemble that regulates their interaction networks and functions. Predicting the conformational landscape remains a computational challenge, and even more difficult is capturing the link between state distributions and specific functions within protein homologues. Here, we present gEDES-HM (generalized Ensemble Docking with Enhanced sampling of pocket Shape-Homology Modeling), a scalable computational protocol enabling us to remap conformational ensembles obtained from enhanced sampling simulations of a single protein to its homologous family members, removing the need to perform individual simulations for all of them and thus speeding up the whole process by orders of magnitude. Specifically, we exploit our recent gEDES protocol to bias through metadynamics simulations the shape and volume of the binding site(s) of a reference protein. Next, a number of maximally diverse conformations of the protein are extracted from a multistep cluster analysis and used together as a multitemplate library for comparative modeling of the conformational ensemble of each homologue in the pool. This enables the functional conformational ensemble of one protein to be transferred to its homologues and used, for example, in restrained ensemble docking. We validated the protocol on 22 homologues of the E. coli adenylate kinase (hereafter, ADK), corresponding to 26 protein-ligand complexes and spanning 31% to 99% sequence identity to the reference. Our protocol retrieves a bound-like conformation of the protein binding site (corresponding to experimental substrate/inhibitor-bound states) for almost all targets, which allows reproducing native-like binding modes for 92% of the investigated complexes in ensemble docking calculations. Validated so far within a single family, gEDES-HM could provide a practical route to generate binding-competent structural libraries for homologues lacking experimental structures suitable for downstream structure-based modeling.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质在不同构象状态之间波动，构成一个动态系综，调控其相互作用网络和功能。预测构象景观仍是一项计算挑战，而更难的是捕捉蛋白质同源物中状态分布与特定功能之间的联系。在此，我们提出gEDES-HM（广义系综对接与口袋形状增强采样-同源建模，generalized Ensemble Docking with Enhanced sampling of pocket Shape-Homology Modeling），这是一种可扩展的计算协议，使我们能够将从单一蛋白质的增强采样模拟中获得的构象系综重新映射到其同源家族成员上，无需对所有成员进行单独模拟，从而将整个过程加速数个数量级。具体而言，我们利用最近的gEDES协议，通过元动力学模拟偏置参考蛋白质结合位点的形状和体积。接下来，通过多步聚类分析提取蛋白质的多个最大多样性构象，并将其作为多模板库，用于对池中每个同源物的构象系综进行比较建模。这使得一个蛋白质的功能性构象系综能够转移到其同源物上，并可用于例如约束系综对接。我们在大肠杆菌腺苷酸激酶（以下简称ADK）的22个同源物上验证了该协议，这些同源物对应26个蛋白质-配体复合物，与参考序列的序列同一性范围为31%至99%。我们的协议为几乎所有目标检索到蛋白质结合位点的结合样构象（对应于实验底物/抑制剂结合状态），从而在系综对接计算中为92%的研究复合物重现了天然样结合模式。目前仅在单一家族内验证，gEDES-HM可能为缺乏实验结构的同源物生成结合能力结构库提供一条实用途径，适用于下游基于结构的建模。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Mapping Functional Transitions across Protein Homologues from a Single Simulation: Application of gEDES-HM to Adenylate Kinases</li>
+<li><strong>作者</strong>: Kurt, Han; Athar, Mohd; Basciu, Andrea; Reys, Victor; Bonvin, Alexandre M J J; Vargiu, Attilio V</li>
+<li><strong>单位</strong>: 未提供（根据致谢推测涉及意大利 University of Cagliari、Angelini Pharma、荷兰 Utrecht University 等，但原文未明确列出单位列表）</li>
+<li><strong>期刊/平台</strong>: Journal of Chemical Information and Modeling</li>
+<li><strong>年份</strong>: 2026（在线日期 2026-10-26）</li>
+<li><strong>论文类型</strong>: 方法学验证研究</li>
+<li><strong>领域</strong>: 蛋白质构象采样 × 同源建模 × 集合对接</li>
+<li><strong>关键词</strong>: gEDES-HM, enhanced sampling, homology modeling, ensemble docking, adenylate kinase, metadynamics, conformational ensemble transfer</li>
+<li><strong>DOI/arXiv</strong>: 10.1021/acs.jcim.6c02521</li>
+<li><strong>代码</strong>: 未提供</li>
+<li><strong>数据</strong>: 22 个 ADK 同源物结构（PDB），26 个蛋白-配体复合物；PDB ID 列表见原文 Table 1（未在摘要中列出）</li>
+<li><strong>阅读日期</strong>: 2026-10-26</li>
+<li><strong>在本课题方向中的位置</strong>: 该文属于「蛋白质结构相关计算研究 × 物理模拟（增强采样）+ 同源建模 + 对接」交叉方向，核心贡献在于将单一蛋白的增强采样构象集合通过同源建模迁移至整个蛋白家族，避免对每个同源物单独进行昂贵模拟，属于构象集合迁移/共享策略的代表性工作。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>该文提出 gEDES-HM 协议，利用 gEDES 增强采样（metadynamics）对单一参考蛋白（E. coli ADK）生成多样化构象集合，通过多模板同源建模将该集合迁移至 22 个 ADK 同源物，并在 26 个蛋白-配体复合物上以 HADDOCK3 集合对接验证，成功复现 92% 复合物的近天然结合模式。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 能否将单一蛋白通过增强采样获得的构象集合（含配体结合态/类结合态）迁移至同源家族成员，从而避免对每个同源物分别进行昂贵的增强采样模拟？</li>
+<li><strong>为什么重要</strong>: 蛋白质功能依赖构象集合而非单一结构；同源蛋白家族成员众多，逐一进行增强采样计算成本极高；若构象集合可迁移，则能大幅加速家族尺度的构象-功能关系研究和基于结构的药物发现。</li>
+<li><strong>现有方法不足</strong>: (1) AI 生成式方法（如 AlphaFlow、BioEmu、Str2Str）受限于训练数据多样性，常低估高能区域和谱系特异性状态，且缺乏物理热力学精度；(2) 传统 MD 增强采样虽物理上严谨，但计算成本高，难以在家族尺度推广；(3) 传统同源建模通常使用单一静态模板，丢失构象多样性。</li>
+<li><strong>精确研究问题</strong>: Can a conformational ensemble generated from enhanced sampling of a single reference protein be transferred to homologous family members via multi-template homology modeling, such that the resulting ensembles contain binding-competent conformations sufficient for native-like docking pose recovery?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络部分基于本文框架，部分经外部核验，具体见各条目）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>静态结构预测</td>
+<td>AlphaFold2 等</td>
+<td>单结构精度高</td>
+<td>输出单一构象，忽略构象集合</td>
+<td>本文不依赖单结构，而是利用构象集合</td>
+</tr>
+<tr>
+<td>构象集合生成（AI）</td>
+<td>AlphaFlow, BioEmu, Str2Str</td>
+<td>可生成多样构象</td>
+<td>受训练数据限制，高能态/稀有态欠采样，缺乏物理热力学一致性</td>
+<td>本文采用物理增强采样（metadynamics），保留热力学信息</td>
+</tr>
+<tr>
+<td>构象集合生成（物理）</td>
+<td>MD, metadynamics, gEDES</td>
+<td>物理严谨，可采样功能相关构象</td>
+<td>计算成本高，难以家族尺度推广</td>
+<td>本文核心：将单一蛋白的 gEDES 集合迁移至家族</td>
+</tr>
+<tr>
+<td>同源建模</td>
+<td>MODELLER 单模板</td>
+<td>简单快速</td>
+<td>单模板丢失构象多样性</td>
+<td>本文使用 101 个构象模板的多模板同源建模</td>
+</tr>
+<tr>
+<td>集合对接</td>
+<td>HADDOCK3 等</td>
+<td>利用受体柔性</td>
+<td>需要高质量构象集合</td>
+<td>本文验证迁移集合在对接中的有效性</td>
+</tr>
+</tbody>
+</table>
+<p><em>（注：AI 方法局限性的描述来自本文 Introduction 的作者主张，经外部核验部分——AlphaFold2 输出单结构、MD 计算成本高——为领域共识。）</em></p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>构象集合生成成本高</td>
+<td>每个蛋白需独立增强采样模拟</td>
+<td>增强采样计算昂贵，家族尺度不可行</td>
+<td>Introduction: "removing the need to perform individual simulations for all of them and thus speeding up the whole process by orders of magnitude"</td>
+</tr>
+<tr>
+<td>AI 方法欠采样功能相关状态</td>
+<td>高能态、谱系特异性状态缺失</td>
+<td>训练数据多样性有限，缺乏物理约束</td>
+<td>Introduction: "constrained by the conformational diversity of their training data, often underrepresenting high-energy regions... lack the physical rigor"</td>
+</tr>
+<tr>
+<td>传统同源建模丢失构象多样性</td>
+<td>单模板只能生成单一构象</td>
+<td>静态模板无法反映构象集合</td>
+<td>Introduction: "Traditional homology modeling typically uses a single static template structure, potentially missing the conformational diversity essential for function"</td>
+</tr>
+<tr>
+<td>构象集合与功能关联难建立</td>
+<td>集合中哪些构象是功能相关的难以判断</td>
+<td>需要实验结构或对接验证</td>
+<td>本文通过 26 个实验复合物验证迁移集合的功能相关性</td>
+</tr>
+<tr>
+<td>同源物间构象差异</td>
+<td>不同同源物可能具有不同功能状态</td>
+<td>谱系特异性演化、配体差异</td>
+<td>"both failures reported here belong to the AK3-type GTP:AMP phosphotransferases, that is to the subfamily whose triphosphate substrate differs from that of the reference enzyme"</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>gEDES-HM 是一个三阶段流水线：(a) 对单一参考蛋白（E. coli ADK 无配体 apo 态）运行 gEDES 增强采样（metadynamics 偏置口袋形状和体积描述符）；(b) 从轨迹中提取 101 个构象聚类代表，作为多模板库；(c) 对每个同源物，以这 101 个构象为模板进行多模板同源建模（MODELLER），生成每个同源物的 101 个构象集合，用于 HADDOCK3 集合对接。</p>
+<h3>2) 核心洞察</h3>
+<p><strong>构象集合可迁移性</strong>：蛋白质家族的构象空间（尤其是配体结合相关的口袋形状变化）在进化上保守，即使序列同一性低至 30%，单一参考蛋白的增强采样构象集合仍能覆盖家族成员的功能相关构象。关键在于：不是迁移单个结构，而是迁移整个构象多样性谱。</p>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>集合优于单点</strong>：在结构预测和对接中，构象集合比任何单一结构（无论多精确）都更能捕捉功能相关状态。</li>
+<li><strong>物理采样 + 同源建模的组合</strong>：物理增强采样提供热力学上合理的构象多样性，同源建模将其映射到序列不同的同源物上，两者互补——前者保证物理合理性，后者保证序列可迁移性。</li>
+<li><strong>"参考蛋白"策略</strong>：在家族中选择一个代表性成员进行昂贵计算，其余成员通过映射获得构象集合，这种"计算一次、迁移多次"的策略可推广到其他蛋白家族。</li>
+<li><strong>选择瓶颈</strong>：本文指出 DOPE 全局打分可能丢弃口袋局部最优的模型，提示在构象选择中需要局部（口袋级）与全局（全蛋白级）标准的平衡。</li>
+</ul>
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>：
+- 参考蛋白：E. coli ADK apo 结构（PDB: 4AKE）
+- 目标同源物：22 个 ADK 同源物序列（UniProt 获取），26 个蛋白-配体复合物实验结构（验证用）
+- 配体：各复合物中的底物/抑制剂（AMP、ADP、AP5、G5P、GP5 等）</p>
+<p><strong>输出</strong>：
+- 每个同源物的 101 构象集合（HMgEDES）
+- 每个复合物的对接 pose 集合及 RMSD 评估</p>
+<p><strong>模块</strong>：
+1. <strong>gEDES 增强采样</strong>：对 4AKE 运行 metadynamics，偏置口袋形状和体积描述符，生成多样化构象轨迹
+2. <strong>构象聚类</strong>：从轨迹中提取 101 个最大化多样性的构象代表
+3. <strong>多序列比对</strong>：Clustal Omega 进行目标序列与参考序列的比对
+4. <strong>多模板同源建模</strong>：MODELLER v10.6，AutoModel 类，VTFM 优化，101 个模板 × 10 个随机种子 = 1010 模型/靶标
+5. <strong>模型选择</strong>：DOPE 打分，每个模板选最优模型 → 101 模型/靶标
+6. <strong>集合对接</strong>：HADDOCK3 v2026.3.0，配体保持实验构象（刚性），受体为 101 构象集合，ambiguous interaction restraints 基于实验结合位点残基
+7. <strong>评估</strong>：RMSD_BS（结合位点重原子）、RMSD_prot（Cα）、RMSD_lig（配体）、RMSD_BM（结合模式）、F_nat（天然接触分数）</p>
+<p><strong>流程</strong>：</p>
+<pre><code>4AKE (apo) → gEDES metadynamics → 轨迹 → 聚类 → 101 构象模板
+    ↓
+22 个同源物序列 → 多序列比对 → MODELLER 多模板建模 → 101 模型/靶标
+    ↓
+DOPE 选择 → HMgEDES 集合 → HADDOCK3 集合对接 → RMSD 评估
+</code></pre>
+<p><strong>关键假设</strong>：
+- 参考蛋白的构象空间覆盖家族功能相关构象
+- 同源物具有与参考蛋白相同的结构域组织（构象迁移的前提）
+- 配体在对接中保持实验构象（评估受体模型质量，而非配体柔性）</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gEDES 增强采样</td>
+<td>生成参考蛋白的多样化构象集合</td>
+<td>标准 MD 无法在可行时间内采样开放/闭合转变</td>
+<td>输入：4AKE apo 结构；输出：构象轨迹</td>
+<td>作者前期工作（引用 ref）；本文图 2 显示构象覆盖开放到闭合区间</td>
+<td>[预期] 移除后无构象多样性，同源建模只能生成单一构象，对接无法捕捉结合态</td>
+</tr>
+<tr>
+<td>构象聚类</td>
+<td>从轨迹中提取 101 个代表性构象</td>
+<td>减少冗余，保证模板多样性</td>
+<td>输入：轨迹；输出：101 构象</td>
+<td>Methods 节描述</td>
+<td>[预期] 聚类过粗会丢失中间态，过细则模板冗余增加计算量</td>
+</tr>
+<tr>
+<td>多序列比对</td>
+<td>建立参考与目标序列的残基对应关系</td>
+<td>同源建模需要序列-结构比对</td>
+<td>输入：目标序列 + 参考序列；输出：比对</td>
+<td>Methods 节：Clustal Omega</td>
+<td>[预期] 比对错误直接导致建模错误，尤其影响口袋残基映射</td>
+</tr>
+<tr>
+<td>多模板同源建模</td>
+<td>将参考构象集合映射到目标序列</td>
+<td>核心迁移步骤</td>
+<td>输入：101 模板 + 比对；输出：1010 模型/靶标</td>
+<td>Methods 节：MODELLER AutoModel</td>
+<td>[预期] 移除后无法生成同源物构象集合，整个协议失效</td>
+</tr>
+<tr>
+<td>DOPE 打分选择</td>
+<td>每个模板选最优模型</td>
+<td>过滤低质量模型</td>
+<td>输入：1010 模型；输出：101 模型/靶标</td>
+<td>Methods 节</td>
+<td>[实测] 作者指出 DOPE 可能丢弃口袋局部最优模型（见 Limitations），但整体仍有效</td>
+</tr>
+<tr>
+<td>HADDOCK3 集合对接</td>
+<td>验证构象集合的对接能力</td>
+<td>评估迁移构象的功能相关性</td>
+<td>输入：101 构象 + 配体 + 结合位点残基；输出：pose 集</td>
+<td>Results 图 3、表 S6</td>
+<td>[预期] 移除后无法评估构象集合的功能价值</td>
+</tr>
+<tr>
+<td>构象集合投影分析</td>
+<td>将构象投影到 (d1,d2) 和 (θ1,θ2) 坐标</td>
+<td>验证构象覆盖范围</td>
+<td>输入：构象集合；输出：投影图</td>
+<td>Results 图 2、S2、S3</td>
+<td>[预期] 移除后无法定量评估构象多样性</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>本文核心方法为计算流程而非数学公式，未提供显式方程。以下为隐含的关键定义：</p>
+<ol>
+<li>
+<p><strong>d₁, d₂（质心距离）</strong>：
+   - d₁ = LID 域与 CORE 域质心间距离
+   - d₂ = NMP 域与 CORE 域质心间距离
+   - 残基范围：LID 118–160，NMP 30–67，CORE 1–29/68–117/161–214（E. coli 编号）</p>
+</li>
+<li>
+<p><strong>θ₁, θ₂（域间角度）</strong>：
+   - θ₁ = LID(123–155)、hinge(161–165)、CORE(1–8, 79–85, 104–110, 190–198) 三质心形成的角
+   - θ₂ = NMP(50–59)、CORE、hinge 三质心形成的角
+   - 定义来自 Beckstein et al. 和 Li et al.</p>
+</li>
+<li>
+<p><strong>RMSD 指标</strong>：
+   - RMSD_BS：结合位点重原子 RMSD（结合位点残基 = 实验结构中距配体 3.5 Å 内的残基）
+   - RMSD_BM：结合位点 + 配体重原子的联合 RMSD
+   - RMSD_lig：配体重原子 RMSD（无叠加）
+   - RMSD_prot：全蛋白 Cα RMSD</p>
+</li>
+<li>
+<p><strong>F_nat</strong>：天然接触分数（native contacts fraction），对接 pose 中重现实验复合物残基-配体接触的比例</p>
+</li>
+<li>
+<p><strong>Spearman 秩相关系数 ρ</strong>：用于评估 RMSD_BS 与 productive conformer 数量之间的相关性（ρ = −0.86, p = 1.8 × 10⁻⁸）</p>
+</li>
+</ol>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集</strong>：
+- 22 个 ADK 同源物，序列同一性 31%–99%（相对 E. coli ADK）
+- 26 个蛋白-配体复合物（部分同源物含多个配体复合物）
+- 配体类型：AMP、ADP、AP5（二腺苷五磷酸）、G5P、GP5 等
+- 参考蛋白：E. coli ADK（4AKE，apo 开放态；1AKE，holo 闭合态）</p>
+<p><strong>基线/对照</strong>：
+- HM4AKE(apo)：以实验 apo 结构为单一模板的同源建模
+- HM1AKE(holo)：以实验 holo 结构为单一模板的同源建模
+- HOLOexpt：配体对接回自身实验 holo 受体（上限基准）</p>
+<p><strong>评测协议</strong>：
+- 建模阶段：DOPE 打分选择
+- 对接阶段：HADDOCK3 刚性配体对接，ambiguous interaction restraints 基于实验结合位点
+- 成功标准：RMSD_BM ≤ 2.5 Å 视为天然结合模式恢复
+- 统计：Spearman 相关性分析</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gEDES 构象集合覆盖分析</td>
+<td>gEDES 采样覆盖开放到闭合转变</td>
+<td>投影到 (d1,d2) 和 (θ1,θ2)，对比 4AKE/1AKE 实验结构</td>
+<td>构象覆盖 17.5–32.0 Å (d1)，17.5–22.1 Å (d2)；θ₁ 55.9–120.9°，θ₂ 28.0–67.1°</td>
+<td>gEDES 集合包含开放、闭合及中间态</td>
+<td>不代表热力学权重正确（作者明确说明是 biased selection）</td>
+<td>Results 图 2</td>
+</tr>
+<tr>
+<td>HMgEDES 集合建模</td>
+<td>多模板同源建模可生成结合位点构象</td>
+<td>对比 HM4AKE(apo) 和 HM1AKE(holo)</td>
+<td>22/26 复合物获得 RMSD_BS ≤ 2.5 Å 的模型</td>
+<td>迁移构象集合可覆盖同源物结合态</td>
+<td>不能证明对所有蛋白家族有效</td>
+<td>Results 图 3、表 S2</td>
+</tr>
+<tr>
+<td>HADDOCK3 集合对接</td>
+<td>迁移构象可用于天然结合模式恢复</td>
+<td>HMgEDES vs HM4AKE(apo) vs HM1AKE(holo) vs HOLOexpt</td>
+<td>24/26 复合物获得 RMSD_BM ≤ 2.5 Å（HMgEDES）；HM4AKE(apo) 仅 2/26；HM1AKE(holo) 24/26；HOLOexpt 25/26</td>
+<td>HMgEDES 与 HM1AKE(holo) 相当，远优于 HM4AKE(apo)</td>
+<td>HMgEDES 未超过 HOLOexpt（中位 RMSD_BM 2.1 Å vs 0.6 Å）</td>
+<td>Results 图 3、表 S6</td>
+</tr>
+<tr>
+<td>序列同一性 vs 成功率</td>
+<td>迁移效果不依赖高序列同一性</td>
+<td>按序列同一性分层分析</td>
+<td>成功率与序列同一性无显著相关（图 S6）</td>
+<td>构象迁移在低同一性（~30%）下仍有效</td>
+<td>样本量有限（22 个同源物）</td>
+<td>Results 图 S6</td>
+</tr>
+<tr>
+<td>失败案例分析</td>
+<td>识别协议边界</td>
+<td>系统 12、14 详细分析</td>
+<td>两系统 RMSD_BS 最大；F_nat 仍较高（0.75、0.74）</td>
+<td>失败源于口袋局部构象偏差而非配体错位</td>
+<td>无法区分是采样不足还是建模误差</td>
+<td>Results "Analysis of Unsuccessful Cases"</td>
+</tr>
+<tr>
+<td>productive conformer 数量 vs RMSD_BS</td>
+<td>结合位点模型质量决定对接成功</td>
+<td>Spearman 相关分析</td>
+<td>ρ = −0.86, p = 1.8 × 10⁻⁸</td>
+<td>结合位点保真度是对接成功的关键预测因子</td>
+<td>相关性不等于因果</td>
+<td>Results 节</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<p><strong>任务范围</strong>：
+- 仅验证于 ADK 家族（22 个同源物，26 个复合物），该家族以大规模域运动（LID/NMP 开闭）为特征
+- 仅测试了配体保持实验构象的刚性对接，未测试柔性配体对接或虚拟筛选富集
+- 仅使用无配体 apo 态参考蛋白（4AKE）的 gEDES 轨迹</p>
+<p><strong>oracle/真值输入</strong>：
+- 对接使用了实验结合位点残基信息（ambiguous interaction restraints），这在实际前瞻性应用中可能未知
+- 配体坐标来自实验结构（非对接预测）
+- 评估基于实验复合物结构</p>
+<p><strong>端到端状态</strong>：
+- 协议并非全自动端到端：需要实验结合位点知识、配体坐标、人工检查
+- 从序列到功能构象的完整流程中，对接步骤依赖先验知识</p>
+<p><strong>算力成本</strong>：
+- 作者声称"orders of magnitude"加速，但未提供具体基准测试数据
+- 实际成本：1 次 gEDES 模拟（参考蛋白）+ 22 个同源物 × 1010 次同源建模 + 26 个复合物 × 101 构象对接</p>
+<p><strong>历史数据依赖</strong>：
+- 依赖参考蛋白的 gEDES 轨迹（需预先计算）
+- 依赖 UniProt 序列、PDB 结构</p>
+<p><strong>模型依赖</strong>：
+- 依赖 MODELLER 的同源建模精度
+- 依赖 HADDOCK3 的打分函数
+- 依赖 DOPE 统计势的选择能力</p>
+<p><strong>最难情形</strong>：
+- 短型 ADK（系统 15–20，缺失 63–72% LID 残基）：productive conformer 数量最少
+- 系统 12、14：结合位点构象偏差最大，无法恢复天然结合模式
+- 不同底物特异性亚家族（AK3 型 GTP:AMP 磷酸转移酶）：参考蛋白构象可能不覆盖</p>
+<p><strong>群体/领域边界</strong>：
+- 结论仅对 ADK 家族有效，作者明确声明扩展到其他家族需验证
+- 适用于以域运动为主的蛋白；对以局部侧链重排为主的蛋白可能不适用
+- 要求同源物具有与参考蛋白相同的结构域组织</p>
+<p><strong>不确定性</strong>：
+- 未提供置信区间或统计显著性检验（除 Spearman 相关性）
+- 成功率（92%）基于单一阈值（RMSD_BM ≤ 2.5 Å），未报告分布宽度
+- 未报告阴性对照（如随机构象集合的对接成功率）</p>
+<p><strong>有边界的复述</strong>：gEDES-HM 在 ADK 家族中，利用单一参考蛋白的增强采样构象集合，通过多模板同源建模和集合对接，能够为 92% 的测试复合物恢复天然结合模式，其效果与使用实验 holo 结构作为模板相当，且不依赖高序列同一性；但该结论受限于 ADK 家族、刚性配体对接、实验结合位点先验知识等条件。</p>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>假设参考蛋白构象覆盖同源物相关状态</td>
+<td>"The protocol assumes that the conformational states relevant to every homologue are already represented in the reference ensemble"</td>
+<td>未明确提及</td>
+<td>"Analysis of Unsuccessful Cases and Limitations" 节</td>
+</tr>
+<tr>
+<td>谱系特异性功能状态可能缺失</td>
+<td>系统 12、14 属于 AK3 型 GTP:AMP 磷酸转移酶，底物与参考蛋白不同</td>
+<td>未明确提及</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>构象多样性依赖结构域保守性</td>
+<td>"The conformational diversity sampled across the reference ensemble is transferred to family members only insofar as they possess the domains whose motion generates that diversity"</td>
+<td>未明确提及</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>短型 ADK 的 LID 缺失导致迁移受限</td>
+<td>系统 15–20 缺乏 63–72% LID 残基，productive conformer 最少</td>
+<td>未明确提及</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>无 Mg²⁺ 的模拟条件</td>
+<td>gEDES 模拟在无 Mg²⁺ 条件下进行，而生理反应需要该离子</td>
+<td>"The inclusion of Mg²⁺ (and more generally, additional cofactors) in gEDES simulations will be addressed in follow-up projects"</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>选择步骤的脆弱性</td>
+<td>DOPE 全局打分可能丢弃口袋局部最优的模型</td>
+<td>"Future versions of the workflow could therefore combine global model quality with local criteria, such as pocket geometry, side-chain packing, and binding-site stereochemistry, in a pocket-aware or multicriteria selection score"</td>
+<td>Concluding Remarks</td>
+</tr>
+<tr>
+<td>仅验证于单一蛋白家族</td>
+<td>"Validated so far within a single family"</td>
+<td>未明确提及，但暗示需跨家族验证</td>
+<td>Abstract / Concluding Remarks</td>
+</tr>
+<tr>
+<td>对接需要结合位点先验知识</td>
+<td>使用了实验结合位点残基信息</td>
+<td>提及可自动检测口袋（引用前期工作）</td>
+<td>Methods / Concluding Remarks</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>92% 成功率可能受限于评估标准</td>
+<td>RMSD_BM ≤ 2.5 Å 阈值较宽松；F_nat 较高但未报告分布</td>
+<td>成功率可能高估实际对接精度</td>
+<td>使用更严格阈值（如 ≤ 1.0 Å）重新评估；报告 RMSD 分布而非仅二值化</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>使用实验结合位点残基作为 restraints 可能引入偏差</td>
+<td>前瞻性应用中结合位点未知，需自动预测</td>
+<td>实际应用效果可能低于论文报告</td>
+<td>使用自动口袋预测工具（如 FPocket）替代实验信息重跑</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>未与 AI 生成式构象采样方法直接对比</td>
+<td>论文仅与实验结构模板对比，未与 AlphaFlow/BioEmu 等对比</td>
+<td>无法判断 gEDES-HM 相对 AI 方法的优劣</td>
+<td>在相同数据集上运行 AI 方法并对比构象质量和对接成功率</td>
+<td>Introduction 提及但未对比</td>
+</tr>
+<tr>
+<td>无 Mg²⁺ 条件可能影响构象集合质量</td>
+<td>作者承认此局限，但未评估影响程度</td>
+<td>金属离子可能影响结合位点构象</td>
+<td>在含 Mg²⁺ 条件下重跑 gEDES 并对比结果</td>
+<td>Limitations 节</td>
+</tr>
+<tr>
+<td>构象多样性来源单一（仅一个参考蛋白）</td>
+<td>若参考蛋白本身构象空间有限，迁移效果受限</td>
+<td>选择多个参考蛋白可能提高覆盖</td>
+<td>使用多个参考蛋白（如不同亚家族代表）生成构象集合并对比</td>
+<td>未提及</td>
+</tr>
+<tr>
+<td>DOPE 选择可能系统性偏向某些构象</td>
+<td>作者承认 DOPE 可能丢弃口袋最优模型，但未量化</td>
+<td>选择策略影响下游对接效果</td>
+<td>对比不同选择策略（DOPE vs 口袋局部打分）的对接成功率</td>
+<td>Limitations 节</td>
+</tr>
+<tr>
+<td>未报告计算成本的具体数据</td>
+<td>声称"orders of magnitude"加速但无数值</td>
+<td>无法评估实际性价比</td>
+<td>提供 CPU/GPU 时间对比（gEDES-HM vs 直接增强采样）</td>
+<td>全文未提供</td>
+</tr>
+<tr>
+<td>同源物选择可能存在选择偏差</td>
+<td>22 个同源物是否代表 ADK 家族多样性未明确</td>
+<td>可能高估泛化能力</td>
+<td>在更广泛、更偏远的同源物上测试</td>
+<td>Table 1 未在摘要中展示</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong></p>
+<h3>可迁移概念</h3>
+<ol>
+<li><strong>构象集合迁移（Ensemble Transfer）</strong>：单一参考蛋白的增强采样构象集合可通过同源建模迁移至家族成员，避免重复昂贵模拟。适用于本课题中任何需要多同源物构象集合的场景（如家族规模的虚拟筛选、突变效应分析）。</li>
+<li><strong>多模板构象库（Multi-template Conformational Library）</strong>：以 101 个构象聚类代表作为同源建模模板，比单一模板（无论 apo 或 holo）更有效。可迁移至其他蛋白家族的构象建模。</li>
+<li><strong>"计算一次、迁移多次"策略</strong>：选择家族中一个代表成员进行昂贵计算，其余成员通过映射获得构象集合。适用于计算资源有限的大规模家族研究。</li>
+<li><strong>全局打分 + 局部保真度的张力</strong>：DOPE 全局打分可能丢弃口袋局部最优的构象，提示在构象选择中需要多尺度评价标准。</li>
+</ol>
+<h3>可迁移方法</h3>
+<ol>
+<li><strong>gEDES 协议</strong>：metadynamics 偏置口袋形状/体积描述符，可迁移至其他靶标的口袋构象采样。</li>
+<li><strong>构象聚类 + 多模板建模流水线</strong>：从增强采样轨迹中提取多样化构象 → 多模板同源建模 → 集合对接，该流水线可复用于其他蛋白-配体系统。</li>
+<li><strong>集合对接评估框架</strong>：以 RMSD_BS、RMSD_BM、F_nat 多指标评估构象集合质量，并设置 HOLOexpt 作为上限基线、apo 单模板作为下限基线。</li>
+<li><strong>失败案例分析范式</strong>：对未恢复的复合物进行逐案分析，区分是采样不足、建模误差还是配体错位。</li>
+</ol>
+<h3>可迁移实验设计</h3>
+<ol>
+<li><strong>基线设置</strong>：同时设置"实验 holo 单模板"（上限）和"实验 apo 单模板"（下限）作为对照，清晰界定方法增益。</li>
+<li><strong>相关性分析</strong>：用 Spearman 相关评估构象质量指标与对接成功率的关联，识别关键瓶颈。</li>
+<li><strong>分层分析</strong>：按序列同一性分层评估迁移效果，验证方法在低同一性下的鲁棒性。</li>
+</ol>
+<h3>对本课题的启示</h3>
+<ul>
+<li><strong>AI 方法与物理采样的互补</strong>：本文指出 AI 生成式方法受训练数据限制，而物理增强采样可补充高能态/稀有态；本课题可探索 AI 生成 + 物理精修（如 gEDES-HM 式迁移）的混合策略。</li>
+<li><strong>构象集合作为"可迁移资产"</strong>：在蛋白质结构预测中，构象集合比单一结构更有信息量；可考虑将构象集合作为中间表示，用于下游对接、虚拟筛选或突变分析。</li>
+<li><strong>口袋级评价的重要性</strong>：全局打分（DOPE）可能误导构象选择，提示在 AI 模型训练或评估中应加入口袋局部保真度指标。</li>
+<li><strong>家族规模的高通量构象生成</strong>：gEDES-HM 为"一个家族一套构象"提供了范式，可结合 AlphaFold 家族预测结果作为模板库，进一步降低成本。</li>
+</ul></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text including abstract, introduction, methods, results, discussion, and concluding remarks. Figures, tables, and supplementary material referenced but not provided.</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological soundness, clarity of claims, and alignment with stated evidence. Assessment limited to the supplied text; figures, tables, and supplementary files were not available for direct inspection.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present gEDES-HM, a protocol that transfers conformational ensembles generated by enhanced sampling simulations of a single reference protein (E. coli adenylate kinase) to homologous family members via homology modeling using a multitemplate library. They report recovery of native-like binding modes for 92% of 26 protein-ligand complexes across 22 homologues, with performance approaching that of redocking into experimental holo structures.</li>
+<li><strong>Visible evidence base</strong> Text descriptions of methods and results, including quantitative success rates, RMSD thresholds, correlation coefficients, and comparative performance across model sets. Specific numerical values for docking success rates and statistical correlations are reported in the text.</li>
+<li><strong>Missing materials affecting confidence</strong> All figures, tables (including Tables S2, S4, S5, S6, S7), and supplementary figures (S1, S2, S3) are referenced but not provided. These contain the primary quantitative data supporting the claims. Without them, the accuracy of reported numbers and the validity of statistical analyses cannot be independently verified.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> The manuscript describes a conceptually appealing and potentially useful extension of the authors' prior gEDES methodology, addressing a real bottleneck in structure-based modeling of protein families. The core idea, transferring conformational ensembles from a single reference to homologues via homology modeling, is logical and the validation design is thoughtful, including appropriate controls (single-template apo and holo models, and redocking into experimental structures). However, the manuscript as presented has several significant issues. The most critical is the absence of the actual data: all figures and tables are missing from the provided material, making it impossible to verify the quantitative claims. Beyond this, there are conceptual concerns about the interpretation of the results, particularly the claim that the approach "transfers functional transitions" when the validation is based on reproducing static bound structures. The discussion of limitations is honest and well-developed, which is a strength. The writing is generally clear, though some methodological details require clarification. Overall, the idea has merit, but the evidence base as presented is insufficient to fully establish the claims.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Computational structural biologists, particularly those working on ensemble docking, homology modeling, and structure-based drug discovery. The protocol offers a practical way to generate conformational libraries for protein families without running expensive simulations for each member, which could be valuable for virtual screening campaigns targeting multiple homologues. Researchers studying conformational transitions in enzyme families, especially those interested in adenylate kinases, would also find the results relevant. The work may also interest method developers in the enhanced sampling community, as it demonstrates a downstream application of gEDES.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong>
+  1. The core concept is elegant and addresses a genuine practical need: reducing computational cost of generating conformational ensembles for multiple homologues.
+  2. The validation design is rigorous, with multiple control sets (apo-only, holo-only templates, and experimental redocking) that allow clear attribution of performance to the ensemble transfer approach.
+  3. The honest and detailed discussion of limitations, including the analysis of unsuccessful cases, is commendable and adds credibility.
+  4. The use of multiple collective coordinate systems (distances and angles) to characterize the conformational space is thorough.
+  5. The statistical analysis (Spearman correlations with p-values) is appropriate for the non-linear relationships being examined.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence completeness</li>
+<li><strong>Claim pointer</strong> The manuscript claims 92.3% success in reproducing native-like binding modes across 26 complexes, and 84.6% success in generating native-like binding-site conformations.</li>
+<li><strong>Evidence pointer</strong> Figures 1-4, Tables S2, S4, S5, S6, S7; location not provided</li>
+<li><strong>Concern</strong> All quantitative results are presented in figures and tables that were not included in the provided material. The text alone is insufficient to verify the accuracy of the reported percentages, the distribution of RMSD values, the cluster characteristics, or the statistical correlations. Without access to the actual data, the central claims of the paper cannot be independently assessed.</li>
+<li><strong>Why it matters</strong> The core contribution of this work is empirical: the demonstration that gEDES-HM achieves high success rates across a diverse set of homologues. If the underlying data contain errors, outliers, or are less favorable than summarized, the conclusions would be substantially weakened. The absence of the data makes the manuscript impossible to evaluate as a scientific contribution.</li>
+<li>
+<p><strong>Resolution test</strong> Provide all figures and tables with full data. The reviewer must be able to inspect the distribution of RMSD values per complex, the cluster rankings, and the correlation plots to verify the reported summary statistics.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Claim-evidence alignment</li>
+<li><strong>Claim pointer</strong> The title and abstract state that the method enables "mapping functional transitions across protein homologues from a single simulation."</li>
+<li><strong>Evidence pointer</strong> Abstract, Introduction, Results and Discussion; location not provided</li>
+<li><strong>Concern</strong> The validation presented in the manuscript demonstrates that gEDES-HM can generate conformations resembling bound states, as measured by RMSD to experimental holo structures. However, this is not equivalent to mapping functional transitions. A transition implies a dynamical process or at least a characterization of the pathway between states. The manuscript does not present any analysis of transition pathways, intermediate states along a defined reaction coordinate, or kinetic/thermodynamic information about the interconversion between open and closed states. The claim of "mapping functional transitions" is therefore overstated relative to what is actually demonstrated.</li>
+<li><strong>Why it matters</strong> The title and framing of the work promise more than the validation delivers. If the contribution is about generating binding-competent conformations for docking, that is a valuable but more modest claim. Overstating the scope could mislead readers about the method's capabilities and may invite inappropriate applications.</li>
+<li>
+<p><strong>Resolution test</strong> Either revise the title and abstract to accurately reflect that the method generates conformational libraries that include bound-like states, or add analyses that explicitly characterize transitions (e.g., transition paths, free energy profiles, or dynamical information) between the open and closed states in the transferred ensembles.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Methodological clarity</li>
+<li><strong>Claim pointer</strong> The methods state that 101 conformational clusters from gEDES simulations were used as templates for homology modeling, and that 10 models per template were generated, yielding 1010 models per target, from which the best-scoring model per template was selected by DOPE score.</li>
+<li><strong>Evidence pointer</strong> Methods, Homology Modeling, Model Generation; location not provided</li>
+<li><strong>Concern</strong> The selection of the "best-scoring model" by DOPE score for each of the 101 conformations is a critical step, but the manuscript does not discuss the variability of DOPE scores across the 10 models generated per template. If the DOPE score varies substantially between models generated from the same template, the selection of a single model may introduce stochastic bias. Conversely, if the scores are tightly clustered, the selection is robust but the generation of 10 models is wasteful. The manuscript does not address this.</li>
+<li><strong>Why it matters</strong> The reproducibility and robustness of the model selection step directly affect the reliability of the downstream docking results. If the selection is noisy, the reported success rates may not be reproducible across independent runs. This is particularly important given the authors' own acknowledgment that success depends on a small number of productive conformers surviving the selection process.</li>
+<li>
+<p><strong>Resolution test</strong> Provide an analysis of DOPE score distributions across the 10 models per template for a representative subset of targets. If variability is high, discuss the implications for reproducibility. Alternatively, demonstrate that the docking results are insensitive to the specific model selected per template.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Generalizability</li>
+<li><strong>Claim pointer</strong> The abstract and conclusion suggest that gEDES-HM "could provide a practical route to generate binding-competent structural libraries for homologues lacking experimental structures."</li>
+<li><strong>Evidence pointer</strong> Abstract, Concluding Remarks; location not provided</li>
+<li><strong>Concern</strong> The validation is performed exclusively on adenylate kinases, a family with a well-characterized, conserved domain motion. The authors acknowledge this limitation in the discussion, but the framing in the abstract and conclusion is more general. The key question is whether the approach would work for families with different types of conformational changes, such as loop rearrangements, domain rotations, or allosteric transitions that do not involve a simple open-to-closed motion. The manuscript provides no evidence or argument for why the approach would generalize.</li>
+<li><strong>Why it matters</strong> The practical value of the method depends on its applicability beyond the test case. If the approach only works for families with large, well-defined domain motions similar to ADK, its utility is more limited than suggested. The authors should either temper the generalizability claims or provide a reasoned argument, based on the mechanism of the method, for why it should work more broadly.</li>
+<li>
+<p><strong>Resolution test</strong> Add a discussion of the types of conformational changes for which the approach is likely to be applicable, based on the nature of the gEDES bias and the homology modeling transfer. If possible, include a preliminary test on a family with a different type of conformational change.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Methods, Projection of Conformational Ensembles</li>
+<li><strong>Evidence pointer</strong> Methods, Projection of Conformational Ensembles onto Collective Coordinates; location not provided</li>
+<li><strong>Issue</strong> The manuscript states that for six short-form targets, the LID-based distance d1 is computed over 28-37% of the residue range, while the angle θ1 is computed over 12-21%. The text notes that the d1 selection is identical between models and experimental structures, but the θ1 selection is slightly smaller in the experimental structures because some residues are unresolved. This is a subtle but important detail that affects the comparability of the angle measurements.</li>
+<li>
+<p><strong>Required correction</strong> Clarify whether the θ1 values for these six targets are directly comparable to those of the long-form targets, given the different fractional coverage. If they are not directly comparable, state this explicitly in the figure captions and in the text where these values are discussed.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> Results and Discussion, correlation analyses</li>
+<li><strong>Evidence pointer</strong> Results and Discussion, first paragraph; location not provided</li>
+<li><strong>Issue</strong> The manuscript reports Spearman correlation coefficients with p-values for the relationship between productive conformer count and minimum RMSDBS. However, the sample size (26 complexes) is modest, and the text does not report confidence intervals for the correlations.</li>
+<li>
+<p><strong>Required correction</strong> Report 95% confidence intervals for the Spearman correlations, or at minimum state the sample size explicitly in the text where the correlations are discussed.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Throughout</li>
+<li><strong>Evidence pointer</strong> Abstract, Introduction, Results; location not provided</li>
+<li><strong>Issue</strong> The term "functional transitions" is used in the title and abstract, but the manuscript does not define what constitutes a functional transition in this context. The term could be interpreted as referring to the open-to-closed conformational change, the catalytic cycle, or the ligand binding process.</li>
+<li>
+<p><strong>Required correction</strong> Define "functional transitions" explicitly in the introduction, and ensure that the usage throughout the manuscript is consistent with this definition.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Methods, Ensemble Docking</li>
+<li><strong>Evidence pointer</strong> Methods, Ensemble Docking, Docking Protocol; location not provided</li>
+<li><strong>Issue</strong> The manuscript states that the HADDOCK3 software version 2026.3.0 was used, which is a future-dated version. This may be a typographical error, or it may reflect a version numbering scheme that differs from what the community expects.</li>
+<li>
+<p><strong>Required correction</strong> Verify the software version number and correct if necessary. If the version is correct, provide a citation or reference for it.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Methods, Homology Modeling</li>
+<li><strong>Evidence pointer</strong> Methods, Homology Modeling, Model Generation; location not provided</li>
+<li><strong>Issue</strong> The manuscript does not specify the version of MODELLER used, nor the exact parameters for the "AutoModel" class beyond the refinement level. This limits reproducibility.</li>
+<li><strong>Required correction</strong> Provide the MODELLER version and any non-default parameters used in the modeling protocol.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "mapping functional transitions" (title, abstract) is not supported by the presented evidence, which demonstrates generation of bound-like conformations rather than characterization of transitions.</li>
+<li>The generalizability claim that gEDES-HM "could provide a practical route" for families beyond ADK is speculative, as validation is limited to a single family with a conserved domain motion.</li>
+<li>The reported success rates (92.3% for docking, 84.6% for binding-site generation) cannot be verified without access to the figures and tables containing the underlying data.</li>
+<li>The statement that "the accuracy obtained in docking calculations using HMgEDES is marginally higher than that recorded at the homology modeling stage" is presented as a meaningful result, but the difference (84.6% vs 92.3%) is based on a small number of cases (2 additional targets recovered) and may not be statistically robust.</li>
+<li>The claim that "every target for which a sub-2.5 Å binding-site model was available also produced a native-like pose" is presented as a positive result, but it also implies that the docking step adds no value beyond the modeling step for these cases, which is not discussed.</li>
+<li>The assertion that "failures cannot be attributed clearly to the use of transferred ensembles only" is based on the observation that the same systems fail with experimental structures, but the sample size (2 systems) is too small to draw strong conclusions.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,91 @@
+## Review setup
+- **Input scope** Abstract only, as provided in the submission record.
+- **Assessment boundary** Evaluation is restricted to the abstract text and the associated bibliographic metadata. No full text, figures, tables, supplementary information, methods, or data files were supplied.
+- **Shared manuscript claim summary** The authors report that a distal allosteric hot spot in dihydrofolate reductase regulates catalysis by shifting the populations of two globally similar conformations, one catalytically competent and one not. They further report that the mutant transition between these states proceeds through stepwise local rearrangements rather than a concerted global motion, and that a rationally designed compensatory second-site mutation partially restores activity. The claimed contribution is a unified thermodynamic and kinetic account of allostery plus a general framework for engineering allosteric regulation.
+- **Visible evidence base** The abstract states the use of enhanced conformational sampling, reactive free-energy calculations of the chemical step, perturbation-induced nonequilibrium molecular dynamics, evolutionary analysis, and experimental kinetics. No quantitative results, effect sizes, error estimates, convergence diagnostics, or experimental validation details are visible.
+- **Missing materials affecting confidence** Full text, figures, tables, methods, simulation parameters, force-field and sampling details, free-energy convergence data, kinetic traces, evolutionary alignment statistics, mutation design rationale, and statistical analysis are all absent. Confidence in any technical judgment is therefore low.
+
+## Reviewer
+- **Overall assessment** The abstract describes a coherent and potentially valuable multi-method study that links distal allosteric perturbation to catalytic competence through conformational population shifts and nonequilibrium relaxation pathways. The conceptual framing is clear and the combination of simulation, evolutionary analysis, and experimental kinetics is appropriate for the question. However, the supplied material is an abstract only, and it does not permit verification of the central mechanistic claims, the quantitative support for population redistribution, the convergence of the free-energy calculations, or the strength of the compensatory rescue. The work is interesting in principle but currently not established from the provided evidence.
+- **Who would be interested in the results, and why** Researchers in enzymology, protein allostery, computational biophysics, and protein engineering would be interested because the study addresses how distal perturbations propagate to active-site chemistry and proposes a mechanism-guided route to restore or tune activity. The evolutionary dimension may also interest groups studying sequence-function relationships and the evolution of latent allostery.
+- **Major strengths** The abstract identifies a specific and testable mechanistic hypothesis, namely that allosteric regulation operates through population redistribution between two globally similar but catalytically distinct conformations. The integration of enhanced sampling, reactive free-energy calculations, nonequilibrium molecular dynamics, evolutionary analysis, and experimental kinetics is methodologically well matched to the question. The claim of a rationally engineered compensatory second-site mutation that partially restores activity, if substantiated, would provide a functional test of the proposed mechanism rather than a purely correlative account.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Mechanistic support
+    - **Claim pointer** A mutational perturbation at the allosteric hot spot redistributes the populations of two globally similar conformations, one catalytically competent and one not.
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Concern** The abstract asserts a population redistribution between two conformational states but provides no quantitative populations, no definition of the states, no measure of the structural difference, and no demonstration that the population shift is causally linked to the observed activity change rather than merely correlated with it.
+    - **Why it matters** The central mechanistic claim depends on establishing that the two conformations are distinct, that their populations change upon mutation, and that this change accounts for the catalytic effect. Without this, the proposed allosteric mechanism remains an assertion.
+    - **Resolution test** Provide quantitative state populations for wild type and mutant, a structural metric that distinguishes the two states, and a quantitative relationship between population shift and measured catalytic activity.
+  - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Technical soundness of free-energy calculations
+    - **Claim pointer** Reactive free-energy calculations of the chemical step support the catalytic competence of one conformation and not the other.
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Concern** No information is given on the reaction coordinate, the free-energy method, convergence, statistical uncertainty, or the treatment of the chemical step. The abstract does not report whether the free-energy difference between competent and incompetent states is large enough to explain the kinetic effect.
+    - **Why it matters** Reactive free-energy calculations are central to the claim that one conformation is catalytically competent and the other is not. Without convergence and uncertainty data, the reported energetics cannot be evaluated.
+    - **Resolution test** Report the free-energy protocol, reaction coordinate, convergence diagnostics, statistical errors, and the computed barrier differences relative to experimental kinetics.
+  - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Nonequilibrium dynamics interpretation
+    - **Claim pointer** The transition between the two states in the mutant proceeds through a stepwise sequence of local structural rearrangements rather than a concerted global motion.
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Concern** The abstract does not specify how the nonequilibrium relaxation simulations were initiated, how many independent trajectories were analyzed, how the stepwise sequence was identified, or how alternative concerted pathways were excluded.
+    - **Why it matters** The kinetic mechanism is a principal claim of the paper. Without trajectory statistics and pathway analysis, the stepwise interpretation is not distinguishable from a concerted or heterogeneous transition.
+    - **Resolution test** Provide the number of independent nonequilibrium trajectories, the order parameters used to define local rearrangements, and a quantitative comparison of stepwise versus concerted pathway models.
+  - **Concern ID** R1-M4
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Functional validation
+    - **Claim pointer** A rationally engineered compensatory second-site mutation partially restores activity.
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Concern** The abstract does not report the magnitude of restoration, the assay used, the number of replicates, or whether the rescue is specific to the proposed mechanism. Partial restoration could arise from nonspecific effects.
+    - **Why it matters** The compensatory mutation is the main functional test of the proposed mechanism. Without quantitative rescue data and controls, the engineering claim is not established.
+    - **Resolution test** Report absolute and relative activity values for wild type, hot-spot mutant, and compensatory double mutant, with replicates, errors, and controls showing that rescue is mechanism specific.
+  - **Concern ID** R1-M5
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Evolutionary analysis
+    - **Claim pointer** Evolutionary analysis contributes to the identification and interpretation of the allosteric hot spot.
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Concern** The abstract does not describe the evolutionary dataset, the conservation or coevolution metrics, or how the evolutionary signal was used to guide the mechanistic or engineering claims.
+    - **Why it matters** The evolutionary component is presented as part of the evidence base. Without details, its contribution to the central claims cannot be assessed.
+    - **Resolution test** Describe the sequence dataset, alignment, statistical tests, and the specific evolutionary predictions that were tested experimentally or computationally.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Terminology
+    - **Affected element** Use of the term allosteric hot spot.
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Issue** The abstract does not define what constitutes a hot spot in this context or how it was identified.
+    - **Required correction** Provide a definition and the criteria used to designate the residue or region as an allosteric hot spot.
+  - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Claim scope
+    - **Affected element** Claim of a general framework for engineering allosteric regulation.
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Issue** Generality is asserted from a single enzyme system.
+    - **Required correction** Either restrict the generality claim or provide evidence from additional systems or a clear argument for transferability.
+  - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Quantitative reporting
+    - **Affected element** Abstract reporting of activity changes.
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Issue** No numerical values are given for activity changes, population shifts, or rescue efficiency.
+    - **Required correction** Include key quantitative results in the abstract or ensure they are clearly reported in the main text.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4. The supplied material does not allow verification of the population redistribution, the reactive free-energy calculations, the nonequilibrium pathway analysis, or the compensatory rescue. R1-M5 is non-blocking but should be addressed to support the evolutionary component.
+- **Assessment against Nature-style criteria** Originality is plausible, since the combination of population redistribution, nonequilibrium pathway analysis, and compensatory engineering in a benchmark enzyme addresses a recognized problem in allostery. Scientific importance is potentially high if the mechanism is quantitatively established, because it would connect distal perturbation to catalytic chemistry and provide a design strategy. Interdisciplinary readership is likely, spanning enzymology, biophysics, computational chemistry, and protein engineering. Technical soundness cannot be judged from the abstract alone, and the central quantitative claims are currently unsupported by visible evidence. Readability for nonspecialists is reasonable at the abstract level, but the mechanistic terminology would require clearer definition in the full text.
+- **Recommendation posture** Currently not established from the provided evidence. Supportive if technical concerns are resolved with quantitative data on state populations, free-energy convergence, nonequilibrium pathway statistics, and compensatory rescue.
+
+## Risk / unsupported claims
+- The claim that the two conformations are globally similar but differ in catalytic competence is not supported by visible structural or energetic data.
+- The claim that the mutation redistributes conformational populations is not supported by quantitative population estimates.
+- The claim that reactive free-energy calculations establish catalytic competence is not supported by convergence or uncertainty data.
+- The claim that the transition proceeds through a stepwise sequence rather than a concerted motion is not supported by trajectory statistics or pathway analysis.
+- The claim that the compensatory second-site mutation partially restores activity is not supported by quantitative activity data or controls.
+- The claim of a general framework for engineering allosteric regulation is not supported beyond the single system described.
+- The contribution of evolutionary analysis to the mechanistic conclusions is not evaluable from the supplied material.

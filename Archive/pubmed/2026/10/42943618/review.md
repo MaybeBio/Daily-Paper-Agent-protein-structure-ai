@@ -1,0 +1,105 @@
+## Review setup
+- **Input scope** Full manuscript text
+- **Assessment boundary** Scientific content, technical soundness, and internal consistency of the provided manuscript only
+- **Shared manuscript claim summary** The manuscript argues that AI-driven drug repurposing for antifungal therapy is uniquely challenging due to the "eukaryotic paradox" (fungal-host homology), and proposes that next-generation computational methods (e.g., physics-informed neural networks, organ-on-a-chip validation) are needed to overcome these barriers.
+- **Visible evidence base** Full text including abstract, introduction, sections 2-8, and references cited in text
+- **Missing materials affecting confidence** Figures and tables (including Table 1 referenced in Sections 1 and 7) were not provided; reference list not provided; no experimental data or case studies with quantitative results
+
+## Reviewer
+- **Overall assessment** This is a narrative review that synthesizes known challenges in antifungal drug repurposing and proposes a comparative framework across pathogen classes. The topic is timely and relevant, but the manuscript suffers from significant structural disorganization, unsupported claims, and a lack of depth in several key areas. The "eukaryotic paradox" concept is introduced but not rigorously defined or systematically developed. The comparative analysis promised in the abstract and introduction is only superficially delivered. The manuscript reads more as a collection of observations than a coherent, critical synthesis. Several claims about AI capabilities and limitations are made without adequate citation or technical explanation. The final section introduces virology-related content that is tangential to the stated scope. Overall, the manuscript has potential but requires substantial revision to meet the standards of a rigorous scientific review.
+- **Who would be interested in the results, and why** Researchers in computational drug discovery, medical mycology, and antimicrobial resistance would find the comparative framework potentially useful. Those working at the interface of AI and infectious disease would be interested in the proposed integration of physics-informed models and organ-on-a-chip validation. However, the lack of depth and specificity may limit its utility for specialists in any single domain.
+- **Major strengths** The manuscript addresses a genuinely important and under-discussed problem: the unique computational challenges posed by fungal pathogens due to their eukaryotic nature. The comparative approach across bacteria, viruses, and fungi is a useful organizing principle. The review highlights several concrete technical limitations (e.g., lack of negative training data, static structural modeling, biofilm transport barriers) that are relevant to the field. The proposed future directions, particularly the call for standardized benchmark datasets and physics-informed models, are sensible and actionable.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Structural organization and coherence
+  - **Claim pointer** The manuscript claims to provide a "critical and comparative analysis" and a "comparative synthesis across pathogen classes," with a "comprehensive comparative summary" in Table 1.
+  - **Evidence pointer** Sections 1, 7; Table 1 (not provided)
+  - **Concern** The manuscript does not deliver the promised comparative synthesis. Section 7 is a single paragraph that merely refers to Table 1 without any substantive synthesis. The table itself was not provided, making it impossible to assess the claimed comparison. The structure is disjointed: Section 5 introduces "methodological pillars" that are not clearly connected to the preceding pathogen-specific sections, and Section 6 introduces new topics (PINNs, organ-on-a-chip, pangenomics, ADMET, biosecurity) without a clear logical progression. The concluding section introduces virology content (Rivers criteria, PCR-based variant definition) that is unrelated to the manuscript's stated focus on antifungal resistance.
+  - **Why it matters** A review that promises a comparative framework must deliver that framework in a coherent, integrated manner. The current structure undermines the manuscript's central thesis and makes it difficult for readers to extract the intended insights.
+  - **Resolution test** Restructure the manuscript to explicitly develop the comparative framework throughout, with each pathogen section feeding into a culminating synthesis. Provide Table 1 and ensure it is directly discussed and interpreted in the text. Remove or substantially integrate the virology content in Section 8, or justify its inclusion in relation to the antifungal focus.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness of AI claims
+  - **Claim pointer** The manuscript makes several specific claims about AI methods, including that "deep learning scoring functions often fail to discriminate between subtle active site variations" and that "current AI models lack the biophysical parameters needed to simulate molecular diffusion dynamics through this complex carbohydrate mesh."
+  - **Evidence pointer** Sections 4, 5; location not provided
+  - **Concern** These claims are presented as established facts but are not supported by specific citations or technical explanation. The manuscript does not explain what "deep learning scoring functions" are being referenced, what benchmarks demonstrate their failure, or what specific "biophysical parameters" are missing. The discussion of AlphaFold and ESMFold is superficial and does not address their actual capabilities and limitations in the context of drug repurposing. The claim that these tools provide ">98% predicted proteomic coverage" is presented without context or caveats about prediction confidence.
+  - **Why it matters** For a review aimed at informing computational strategy, the technical claims about AI methods must be accurate, specific, and well-supported. Vague or overstated claims undermine the manuscript's credibility and its utility to researchers who might act on its recommendations.
+  - **Resolution test** Provide specific citations for each technical claim about AI limitations. Explain the technical basis for these limitations (e.g., what scoring functions are used, what benchmarks show). Add nuance to the discussion of structure prediction tools, including their confidence metrics and known failure modes.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence base and support for key claims
+  - **Claim pointer** The manuscript states that "Invasive fungal infections (IFIs) account for over 1.5 million deaths annually worldwide" and that "medical mycology remains historically under-funded and under-researched compared to bacteriology and virology."
+  - **Evidence pointer** Section 1, Section 4; location not provided
+  - **Concern** The mortality figure is presented without citation. While this statistic is commonly cited in the literature, it should be referenced. The claim about under-funding is made without any comparative data or citation. More broadly, the manuscript makes numerous assertions about the state of the field (e.g., "the baseline training datasets for machine learning models lack chemical diversity") without supporting evidence or quantification.
+  - **Why it matters** A review must be built on verifiable evidence. Unsupported claims, even if plausible, weaken the manuscript's authority and make it difficult for readers to distinguish established facts from author opinion.
+  - **Resolution test** Add citations for all statistical claims and factual assertions. For claims about the state of the field, provide comparative data or cite studies that document these disparities.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Depth of analysis
+  - **Claim pointer** The manuscript claims to provide a "critical" analysis of AI-driven drug repurposing for antifungal therapy.
+  - **Evidence pointer** Sections 2-6; location not provided
+  - **Concern** The review is largely descriptive rather than critical. For example, the discussion of successful AI applications (Chai et al., Li et al., Wang et al.) presents results without critical evaluation of their limitations, reproducibility, or generalizability. The section on antibacterial AI (Section 2) discusses halicin but does not critically examine why similar successes have not been achieved in antifungals beyond the stated homology problem. The manuscript does not engage with counterarguments or alternative perspectives on the feasibility of AI-driven antifungal discovery.
+  - **Why it matters** A critical review should evaluate the strength of evidence for and against the central thesis. The current manuscript reads as advocacy for a particular approach rather than a balanced assessment.
+  - **Resolution test** Add critical discussion of the cited case studies, including their limitations and the conditions under which they succeeded. Engage with literature that questions the efficacy of AI-driven drug repurposing. Acknowledge alternative approaches and explain why the proposed framework is preferable.
+  - **Concern ID** R1-M5
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scope and focus
+  - **Claim pointer** The manuscript is framed as a review of AI-driven computational strategies against antifungal resistance.
+  - **Evidence pointer** Sections 2, 3, 6, 8; location not provided
+  - **Concern** Significant portions of the manuscript are not directly relevant to the stated focus. Section 2 on antibacterial AI and Section 3 on antiviral AI are presented as background but are not clearly connected to the antifungal challenge. Section 6 introduces multiple topics (pangenomics, ADMET, biosecurity) that are mentioned but not developed in the context of antifungal drug repurposing. Section 8's discussion of virology and Rivers criteria is entirely tangential.
+  - **Why it matters** A focused review should maintain relevance to its stated scope. Tangential content dilutes the manuscript's impact and may confuse readers about its intended contribution.
+  - **Resolution test** Either substantially expand the comparative analysis to make the bacterial and viral sections integral to the antifungal argument, or condense them to brief background. Remove or justify the virology content in Section 8. Develop the topics in Section 6 with specific antifungal examples.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** "Eukaryotic paradox"
+  - **Evidence pointer** Abstract, Section 1
+  - **Issue** The term "eukaryotic paradox" is introduced but never formally defined. The concept of homology between fungal and human cells is well-known, and the term "paradox" is not standard in the literature.
+  - **Required correction** Define the term explicitly at first use and explain why it constitutes a "paradox" rather than simply a challenge. Alternatively, use more standard terminology such as "eukaryotic conservation problem."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Internal consistency
+  - **Affected element** Section 5, third pillar
+  - **Evidence pointer** Section 5, paragraph on NLP
+  - **Issue** The third methodological pillar (NLP) is described, but the paragraph ends with a sentence about "fine-grained thermodynamic resolution" that appears to belong to the discussion of physics-informed models in Section 6, not NLP.
+  - **Required correction** Move the sentence about thermodynamic resolution to the appropriate section, or remove it if it is not relevant to the NLP discussion.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Citation practice
+  - **Affected element** Multiple sections
+  - **Evidence pointer** Sections 1-8; location not provided
+  - **Issue** Several claims are made without citations, including the mortality statistic, the under-funding claim, and various statements about AI limitations. The reference list was not provided, so it is unclear whether citations exist but were omitted from the text or are genuinely missing.
+  - **Required correction** Ensure all factual claims and assertions about the state of the field are supported by citations. Verify that the reference list is complete and that all in-text citations appear in the list.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Readability
+  - **Affected element** Section 4, paragraph on Chai et al.
+  - **Evidence pointer** Section 4; location not provided
+  - **Issue** The sentence "This compound alters cellular iron homeostasis and effectively circumvents traditional azole resistance mechanisms" is presented without explanation of how iron homeostasis relates to azole resistance.
+  - **Required correction** Add a brief explanation of the mechanistic link between iron homeostasis and azole resistance, or provide a citation for this claim.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Table 1
+  - **Evidence pointer** Sections 1, 7
+  - **Issue** Table 1 is referenced as a "comprehensive comparative summary" but was not provided. Its absence makes it impossible to assess the claimed comparison.
+  - **Required correction** Provide Table 1 and ensure it is discussed in the text with specific interpretation of its contents.
+
+## Risk / unsupported claims
+- The claim that "Invasive fungal infections (IFIs) account for over 1.5 million deaths annually worldwide" is presented without citation.
+- The claim that "medical mycology remains historically under-funded and under-researched compared to bacteriology and virology" is presented without supporting data.
+- The claim that "current AI models lack the biophysical parameters needed to simulate molecular diffusion dynamics through this complex carbohydrate mesh" is presented as fact without specific technical evidence.
+- The claim that "deep learning scoring functions often fail to discriminate between subtle active site variations" is presented without specific examples or benchmarks.
+- The claim that AlphaFold and ESMFold provide ">98% predicted proteomic coverage" is presented without context about prediction confidence or validation.
+- The claim that "the baseline training datasets for machine learning models lack chemical diversity" is presented without quantification or citation.
+- The claim that PINNs "have been proposed as a computational paradigm to model reaction-diffusion kinetics through the complex extracellular polymeric substance (EPS) matrix of fungal biofilms" is presented with citations [39,40,41] but the specific proposals are not described.
+- The claim that "contemporary pipelines are also implementing early-stage multi-objective ADMET profiling" is presented as a general trend without specific examples or citations.
+- The claim that "the scientific community is establishing responsible AI governance and biosecurity guardrails" is presented without specific examples of such initiatives in the antifungal context.
+- The relevance of the virology content in Section 8 (Rivers criteria, PCR-based variant definition) to the manuscript's stated focus on antifungal resistance is not established.

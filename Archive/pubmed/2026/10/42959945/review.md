@@ -1,0 +1,105 @@
+## Review setup
+- **Input scope** Full manuscript text provided (Abstract, Introduction, Results, Discussion, Methods, Acknowledgements). Supporting Information referenced but not supplied.
+- **Assessment boundary** Assessment is limited to the main text and the claims it makes. All Supporting Information (Figures S1–S7, Tables S1–S10) is unavailable, so any claim whose support resides primarily in the SI is treated as not independently verifiable.
+- **Shared manuscript claim summary** The authors present ViPER, an iterative structure- and physics-based workflow (coarse-grained MD, in silico site-saturated mutagenesis, structure-based property scoring) that retrospectively simulates directed evolution of a ketoreductase (KRED) from a dimeric state (KRED-15) toward a monomeric state. They claim ViPER predicted >70% of sites crucial for toggling oligomerization after five rounds, identified a distal mutation (W291Y) incorporated during experiment-based directed evolution, and outperformed multiple zero-shot prediction methods at identifying engineerable interfacial patches.
+- **Visible evidence base** Main-text descriptions of the five-round workflow; CGMD (1 µs) and AAMD (200 ns) simulation protocols; AggScore-based selection; interface interaction energy and contact area comparisons; overlap statistics with experiment-based directed evolution (reported as 71% hydrophobic-patch capture, 42% surface-mutation capture, 62% solvent-tolerance positions); a comparison to zero-shot methods (Table S7, not shown).
+- **Missing materials affecting confidence** Figures S1–S7, Tables S1–S10, benchmarking details for the elastic network model, and the zero-shot comparison table. These are load-bearing for several quantitative claims and for reproducibility.
+
+## Reviewer
+- **Overall assessment** The manuscript describes a coherent, well-motivated physics-based workflow and applies it to a chemically relevant problem (toggling oligomerization of an industrial KRED). The narrative is clear and the iterative logic is easy to follow. However, the central quantitative claims rest heavily on Supporting Information that is not available in the supplied material, the retrospective design creates a substantial risk of hindsight bias in the reported capture rates, and the comparison against zero-shot methods is asserted without visible evidence. As presented, the work is a plausible proof-of-concept but the headline performance claims are not independently established from the supplied text.
+- **Who would be interested in the results, and why** Computational protein engineers and enzyme engineers interested in oligomerization and protein–protein interfaces; practitioners of MD-based and coarse-grained design workflows; groups comparing physics-based versus generative-AI mutation proposal; and biocatalysis researchers interested in solvent tolerance of ketoreductases. The retrospective framing and the interface-focused selection pressure make it most directly relevant to those already working on oligomeric enzymes.
+- **Major strengths** The workflow is explicitly iterative and physics-based, which is a meaningful complement to sequence-only generative models. The use of a coarse-grained step to gain roughly 5x throughput (863 vs 182 ns/day) is a practical and clearly reported engineering choice. The authors are candid that the search space is biased toward the interface and that distal mutations are largely missed, which is an honest limitation statement. The identification of the reverse mutation W291Y at a distal surface site, if reproducible, is a genuinely non-trivial observation. The parallel-trajectory design (up to five parents per round) is a sensible way to exploit the low cost of in silico screening.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Retrospective bias and circularity of the capture-rate claim
+    - **Claim pointer** ViPER "successfully predicting >70% of sites that are crucial for toggling the oligomerization of this KRED enzyme (after only five rounds)" and the reported 71% hydrophobic-patch capture rate.
+    - **Evidence pointer** Results, "Evolutionary Space Prioritized by ViPER"; Table (final variants); Figure S6; Tables S8–S9 (not provided).
+    - **Concern** The study is explicitly retrospective and the selection pressure (AggScore at the dimer interface) was chosen with a priori knowledge of the engineered hydrophobic patch, as the authors state in the Discussion. The ">70%" figure is therefore computed against a target set the method was tuned to hit. No negative control, no shuffled or scrambled selection pressure, and no blinded holdout set is described in the main text.
+    - **Why it matters** Without a control that removes the prior knowledge, the capture rate cannot distinguish genuine predictive skill from informed target selection. This is the manuscript's headline quantitative claim.
+    - **Resolution test** Report capture rates under a selection pressure or scoring metric chosen without reference to the known hydrophobic patch, and/or a scrambled-target control, and show that performance degrades in a way consistent with genuine prediction rather than target leakage.
+  - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Unverifiable comparative claim against zero-shot methods
+    - **Claim pointer** "the ViPER workflow outperformed multiple, zero-shot prediction methods based on their ability to identify these engineerable patches at the interface."
+    - **Evidence pointer** Results, "Evolutionary Space Prioritized by ViPER"; Table S7 (not provided).
+    - **Concern** The comparison is stated in the main text but its entire evidentiary basis is Table S7, which is not in the supplied material. The identity of the zero-shot methods, the metric used, the number of methods, and whether the comparison is fair (same target set, same definition of "engineerable patch") are all unspecified in the visible text.
+    - **Why it matters** This is a competitive claim that positions the method against the current state of the art. It cannot be evaluated, and if the comparison is not like-for-like it would be misleading.
+    - **Resolution test** Provide the comparison table in the main text with named methods, the exact metric, the target set, and a statement of comparability. If the comparison is not apples-to-apples, soften or remove the claim.
+  - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Statistical support for simulation-derived conclusions
+    - **Claim pointer** Claims about transient versus prolonged contacts, dimer dissociation after hundreds of nanoseconds, and interface interaction energy increases of ~5–20%.
+    - **Evidence pointer** Results, "Late-Round Evolution" and "Modification of Structural Interactions and Properties"; Figure S3; Table S6; Table S10 (not provided).
+    - **Concern** The number of independent CGMD and AAMD replicas per variant is not stated in the main text. Dissociation events are described as "uncommon," and the interaction-energy shifts are small (5–20%) relative to what is typically observed across independent MD replicas. Table S10 is cited for contact-sampling statistics but is not available.
+    - **Why it matters** Single-trajectory observations of rare events such as dissociation, and small energy differences, are not reliable without replica statistics. The mechanistic interpretation of the workflow depends on these observations.
+    - **Resolution test** State the number of replicas per variant, report distributions rather than single values, and show that the reported energy and contact differences exceed replica-to-replica variability.
+  - **Concern ID** R1-M4
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Validity of AggScore as a surrogate for oligomerization
+    - **Claim pointer** AggScore is used as the selection pressure and as the primary readout of "aggregation propensity" throughout, including the final ranking of variants.
+    - **Evidence pointer** Methods, "Structure-Based Variant Evaluation and Selection"; Results, "Early-Round Evolution"; Tables S1–S5 (not provided).
+    - **Concern** AggScore is a structure-based aggregation descriptor, and the manuscript does not present any validation that AggScore tracks the monomer/dimer equilibrium of this specific KRED, nor that it correlates with the experimental solvent-tolerance phenotype. The workflow optimizes AggScore, then reports AggScore improvements as evidence of success, which is internally consistent but not externally validated.
+    - **Why it matters** If AggScore is not a faithful proxy for the oligomeric state of this system, the entire selection trajectory and the final variant ranking lose their physical interpretation.
+    - **Resolution test** Show a correlation between AggScore and an independent measure of oligomerization (for example experimental or longer-timescale simulation-derived monomer/dimer populations) for a set of variants spanning the AggScore range.
+  - **Concern ID** R1-M5
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Reproducibility of the coarse-grained setup
+    - **Claim pointer** The CGMD protocol and the ~5x speedup claim, and the use of CGMD contacts to define mutagenesis targets.
+    - **Evidence pointer** Methods, "Coarse-Grained Modeling" and "Coarse-Grained Molecular Dynamics Simulations and Analysis"; Figure S7; benchmarking details in Supporting Information (not provided).
+    - **Concern** The elastic network model parameters, the martinize2 settings, and the benchmarking that justifies the coarse-grained representation are all placed in the Supporting Information. The main text reports a 20 fs time step for production CGMD, which is aggressive and requires justification that is not visible here.
+    - **Why it matters** The coarse-grained step is the throughput-enabling core of the workflow. If the representation distorts interfacial dynamics, the contact sets that drive target selection are unreliable.
+    - **Resolution test** Provide the elastic network and martinize2 parameters, the time-step stability evidence, and the RMSD comparison to all-atom in the main text or as a clearly summarized main-text table.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Terminology consistency
+    - **Affected element** Mutation nomenclature
+    - **Evidence pointer** Results, "Early-Round Evolution" and "Late-Round Evolution"; Table (final variants).
+    - **Issue** The manuscript alternates between forward and reverse mutation nomenclature (for example P106T versus T106P, M183L versus E183M, W291Y versus Y291W) when referring to the same position across the in silico and experimental directions. This is explained in places but is easy to misread.
+    - **Required correction** Add a short nomenclature note or a position-indexed table clarifying directionality for each mutation discussed.
+  - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Quantitative reporting
+    - **Affected element** Capture-rate denominators
+    - **Evidence pointer** Results, "Evolutionary Space Prioritized by ViPER"; Figure S6.
+    - **Issue** The 71%, 62%, and 42% capture rates are reported without stating the denominator sets in the main text, and the exclusion of buried and distal positions from the 62% figure is described only in passing.
+    - **Required correction** State each denominator explicitly and report the excluded categories alongside each rate.
+  - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Figure and table self-containment
+    - **Affected element** Main-text figures
+    - **Evidence pointer** Results, all subsections; Figure captions.
+    - **Issue** Several main-text figures are referenced only by letter (for example "Figure a", "Figure b") in the supplied text, and the captions are not included, so the figures cannot be assessed for whether they support the associated claims.
+    - **Required correction** Ensure each figure caption states the quantity plotted, the number of replicas, and the variant set, so the figure is interpretable without the SI.
+  - **Concern ID** R1-m4
+    - **Severity** Minor
+    - **Axis** Claim scope
+    - **Affected element** Distal mutation interpretation
+    - **Evidence pointer** Results, "Late-Round Evolution"; Discussion.
+    - **Issue** The W291Y result is described as demonstrating "predictive capabilities," but it is a single distal event recovered in the final round, and the manuscript itself notes that distal mutations were largely not identified by the interface-biased pressure.
+    - **Required correction** Reframe as an anecdotal observation rather than a demonstrated capability, or provide additional distal cases.
+  - **Concern ID** R1-m5
+    - **Severity** Minor
+    - **Axis** Methods completeness
+    - **Affected element** AAMD protocol
+    - **Evidence pointer** Methods, "All-Atom Molecular Dynamics Simulations and Analysis".
+    - **Issue** The AAMD section does not state the number of replicas, the total aggregate sampling per variant, or how the 200 ns length was chosen relative to the 1 µs CGMD runs.
+    - **Required correction** Add replica counts and a brief justification for the simulation length.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (retrospective bias in the headline capture rate), R1-M2 (unverifiable zero-shot comparison), R1-M3 (replica statistics for rare events and small energy differences), R1-M4 (external validation of AggScore), R1-M5 (coarse-grained parameter and time-step justification).
+- **Assessment against Nature-style criteria** Originality is moderate. Iterative physics-based in silico directed evolution is not new in itself, but the specific combination of coarse-grained contact discovery, site-saturated Rosetta mutagenesis, and structure-based aggregation scoring applied to an oligomerization toggle is a reasonable incremental contribution. Scientific importance is currently limited by the retrospective design and the absence of prospective validation; the work is a proof-of-concept rather than a demonstrated design capability. Interdisciplinary readership is plausible, spanning computational chemistry, biocatalysis, and protein engineering, but the current evidence would need the controls above to interest a broad audience. Technical soundness is the weakest axis as presented, because the key quantitative claims depend on unavailable Supporting Information and on single-trajectory or unreplicated observations. Readability for nonspecialists is good; the workflow is explained clearly and the motivation is accessible, though the mutation-nomenclature switching and the reliance on SI figure letters will slow non-expert readers.
+- **Recommendation posture** Currently not established from the provided evidence. The workflow is coherent and the direction is promising, but the headline performance claims, the comparative claim against zero-shot methods, and the mechanistic simulation conclusions cannot be verified from the supplied material and are vulnerable to retrospective bias. Supportive if the technical concerns, in particular R1-M1 and R1-M2, are resolved with visible controls and data.
+
+## Risk / unsupported claims
+- The ">70%" site-prediction figure is not supported as an unbiased performance estimate given the retrospective, prior-informed selection pressure (R1-M1).
+- The claim that ViPER "outperformed multiple, zero-shot prediction methods" is unsupported in the visible material; the supporting table is not provided (R1-M2).
+- The claim that dimer dissociation "takes place after hundreds of nanoseconds" for specific variants is based on observations the manuscript itself calls uncommon, with no visible replica statistics (R1-M3).
+- The interpretation of interface interaction energy increases of ~5–20% as evidence of interface disruption is weak without replica-level variability (R1-M3).
+- The use of AggScore as a validated proxy for oligomerization and solvent tolerance is asserted rather than demonstrated (R1-M4).
+- The W291Y result is presented as evidence of predictive capability from a single distal event (R1-m4).
+- The coarse-grained speedup and representation fidelity claims depend on benchmarking placed in unavailable Supporting Information (R1-M5).

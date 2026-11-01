@@ -1,0 +1,122 @@
+## Review setup
+- **Input scope** Full manuscript text provided (Abstract, Main, Methods, Data/Code availability, Author contributions, Competing interests, Acknowledgements). No separate Supplementary Information files, no individual figure files, no line numbers.
+- **Assessment boundary** Assessment is restricted to the text supplied. All quantitative claims, supplementary figures, tables, and the PDB/Zenodo/GitHub deposits were not independently inspectable. No external literature verification was performed.
+- **Shared manuscript claim summary** The authors report computational de novo design of soluble proteins that bind 11-cis-retinal via a protonated Schiff base, and of coupled multi-state designs (SPARC) in which retinal cis-to-trans isomerisation drives a backbone conformational change that unveils a conformation-specific protein-peptide interface. They report light-activated heterodimers with up to >30-fold increased binding on illumination, tunability of wavelength, sensitivity, orthogonality and effector scaffolding, light-dependent control of intracellular PPIs and FGFR1-driven calcium release in cells, a crystal structure of the dark state, and real-time light-activated NMR evidence for a defined conformational change.
+- **Visible evidence base** Main text narrative; figure callouts (Fig. 1a-c, Fig. 2a-c, Fig. 3a-i, Fig. 4a-f, Fig. 5a-c); Supplementary figure and table callouts (Supplementary Figs. 1-30, Supplementary Tables 1-2); Methods (computational and experimental); Data availability (PDB 34XO, Zenodo 10.5281/zenodo.23063068); Code availability (GitHub LPDI-EPFL/sparc).
+- **Missing materials affecting confidence** Supplementary figures and tables are cited but not supplied, so most design success rates, screening statistics, controls, and replicate structures cannot be verified. No figure files, no line numbers, no source data tables, no sequence or model files, no statistical analysis section, no replicate counts or error definitions for most assays, no description of blinding or randomisation, and no independent validation dataset.
+
+## Reviewer
+- **Overall assessment** The manuscript addresses a genuinely difficult and worthwhile design problem, namely building a light-responsive protein from the bottom up rather than re-engineering a natural photoreceptor. The conceptual pipeline is coherent and the work combines design, biophysics, structural biology, spectroscopy, and cell assays. However, the evidence as presented is uneven. The central quantitative claim of a >30-fold light-dependent increase in binding rests on a split-luciferase reconstitution readout that is an indirect proxy for interaction, and the relationship between luminescence fold-change and actual binding affinity or fractional occupancy is not established. Several key mechanistic claims, including the assignment of the light-activated conformational change and the interpretation of the ultrafast spectra, depend on supplementary material that is not available for inspection. The cellular data are described as weak and dependent on a covalent SpyTag/SpyCatcher lock, which the authors themselves acknowledge. The crystallographic evidence does not visualise the chromophore. Taken together, the work is promising and the design logic is of interest, but the case for a defined, quantitatively characterised light-controlled conformational switch is not yet fully established from the supplied material.
+- **Who would be interested in the results, and why** Protein designers and computational structural biologists interested in multi-state design and ligand-conditioned dynamics; optogenetics and synthetic biology groups looking for new photoreceptor scaffolds with potentially orthogonal, spectrally tunable behaviour; biophysicists using NMR and ultrafast spectroscopy to characterise designed switches; and cell-signalling researchers interested in light-controlled receptor dimerisation. The appeal is the prospect of a designable, retinal-based, soluble switch that is not derived from a natural rhodopsin scaffold.
+- **Major strengths** The problem framing is clear and the gap in de novo stimulus-responsive conformational switches is real. The design pipeline is described in enough detail to be plausibly reproducible, including the use of partial diffusion, motif grafting of the Schiff base lysine and counter-ion, ligand-conditioned sequence design, and multi-state tied-position design. The combination of native MS, top-down MS fragmentation, CD thermostability, a crystal structure of the dark state, ultrafast transient absorption, and in situ light-activated NMR is a strong multi-technique strategy in principle. The demonstration that single-state designs appear to restrict isomerisation while multi-state designs permit it is a mechanistically informative comparison. The reported engineering routes to orthogonality, red-shift, and improved sensitivity suggest a tractable platform rather than a single lucky design.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Quantitative support for the central claim
+    - **Claim pointer** The designed heterodimers show an over 30-fold increase in binding upon illumination, with the strongest response from SPARC-111.
+    - **Evidence pointer** Fig. 3e, Supplementary Fig. 10, Methods (split-luciferase lysate and purified protein assays)
+    - **Concern** The >30-fold figure is derived from split-luciferase luminescence, which reports reconstitution of a reporter enzyme rather than directly measuring bound complex. The manuscript does not report an independent equilibrium binding measurement (for example ITC, SPR, BLI, or NMR titration) for any SPARC pair, nor does it convert luminescence fold-change into affinity, occupancy, or a bound fraction. The relationship between the readout and the physical interaction is therefore uncalibrated.
+    - **Why it matters** The headline quantitative claim of the paper is a binding increase. Without an orthogonal binding measurement or a calibration of the reporter, the magnitude and even the interpretation of the fold-change are not established, and comparisons across designs, mutants, and cellular contexts are not on a common scale.
+    - **Resolution test** Provide at least one direct equilibrium binding measurement for a representative pair in dark and illuminated states, and show how luminescence fold-change maps onto bound fraction or affinity for that pair.
+  - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Mechanistic evidence for the light-activated conformational change
+    - **Claim pointer** The designs undergo a defined light-activated conformational change driven by retinal cis-to-trans isomerisation, with at least four observable conformational states.
+    - **Evidence pointer** Fig. 5a-c, Supplementary Figs. 25-30, Supplementary Table 2, Methods (NMR)
+    - **Concern** The NMR interpretation depends on comparison of dark, illuminated, all-trans-loaded, and peptide-bound spectra, but the supporting spectra are in supplementary figures that were not supplied. The text states that intermediate conformations were not captured, that crosspeak broadening and splitting occur after illumination, and that the light-activated spectrum overlays with the all-trans-loaded spectrum. Overlay with an all-trans reference is consistent with isomerisation but does not by itself establish that the observed chemical shift perturbations report the designed backbone rearrangement rather than local chromophore-driven environmental changes, partial unfolding, or aggregation. The claim of four distinct states is asserted rather than demonstrated with population or exchange analysis.
+    - **Why it matters** The central mechanistic novelty is that ligand isomerisation is coupled to a designed protein conformational change. If the NMR changes cannot be tied to the designed backbone motion, the mechanistic claim reduces to ligand binding plus nonspecific spectral perturbation.
+    - **Resolution test** Provide the full NMR spectra with assignments, quantify CSPs against the design model at residue level, report exchange timescales and populations, and show that the perturbed residues map onto the designed mobile element rather than globally.
+  - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Structural evidence for the chromophore and the active state
+    - **Claim pointer** The crystal structure of SPARC-117 prot confirms high structural fidelity of the dark state, with Cα RMSD 0.92 Å to the design model.
+    - **Evidence pointer** Fig. 3g, Supplementary Table 1, Methods (crystallography), Data availability (PDB 34XO)
+    - **Concern** The authors state that 11-cis-retinal was not clearly distinguishable in the electron density, possibly due to photodamage or Schiff base hydrolysis. The deposited structure therefore documents the apoprotein fold, not the holoprotein dark state. No structure of the illuminated or peptide-bound state is presented. The design model comparison is made against a ligand-free interpretation of the map.
+    - **Why it matters** The design claims concern a retinal-bound ground state and a peptide-bound active state. A ligand-free crystal structure supports fold accuracy but not the chromophore placement, the Schiff base geometry, or the conformational transition that the paper is built around.
+    - **Resolution test** Provide either a structure with modelled retinal density, or explicit documentation that the deposited model is ligand-free, and temper the fidelity claim accordingly. A structure or credible model of the active state would substantially strengthen the case.
+  - **Concern ID** R1-M4
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Interpretation of ultrafast spectroscopy
+    - **Claim pointer** The four multi-state designs show successful retinal isomerisation, whereas the single-state design is trapped and prevents isomerisation.
+    - **Evidence pointer** Fig. 3h, Fig. 3i, Supplementary Fig. 13, Methods (transient absorption)
+    - **Concern** The interpretation rests on comparison with bovine rhodopsin intermediates and on the appearance of a depletion at 480 nm with a rise near 400 nm. The text does not report isomerisation quantum yields, species-associated spectra from global analysis, or a direct measurement of the trans isomer. The conclusion that the single-state design is trapped is inferred from long-lived excited state absorption and a hot ground state, which is plausible but not uniquely diagnostic.
+    - **Why it matters** The mechanistic distinction between single-state and multi-state designs is a key conceptual claim. If the spectroscopic signatures are not uniquely assigned, the claim that multi-state design enabled isomerisation is weakened.
+    - **Resolution test** Provide global or target analysis with species-associated spectra and lifetimes, and where feasible a chromatographic or MS-based quantification of the trans isomer after illumination.
+  - **Concern ID** R1-M5
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Cellular efficacy and generality
+    - **Claim pointer** The designed heterodimers control intracellular PPIs and cell-surface receptor clustering in a light-dependent manner.
+    - **Evidence pointer** Fig. 4e, Fig. 4f, Supplementary Figs. 22-24, Methods (HEK-293T and CHO-R1c assays)
+    - **Concern** The cellular PPI response is reported, but the text states that the switch-improving mutations did not increase the luminescence signal in cells. The FGFR1 calcium response is described as weak and required addition of SpyTag/SpyCatcher as a covalent lock. The authors acknowledge that cellular efficacy is not on par with contemporary optogenetic tools. The number of biological replicates, effect sizes, and statistical treatment are not given in the main text.
+    - **Why it matters** The translational value of the platform depends on function in cells. A weak, lock-dependent response limits the claim that this is a usable optogenetic module and raises the question of whether the in vitro improvements transfer.
+    - **Resolution test** Report effect sizes with replicate counts and statistics for each cellular assay, show dose and light dependence, and demonstrate function without the covalent lock or explicitly bound the claim to lock-assisted operation.
+  - **Concern ID** R1-M6
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Design success rate and selection
+    - **Claim pointer** Design success rates ranged from 2.5% (β-barrel) to 13.5% (5-helix bundle), and 1 of 92 initial heterodimers and 23 of 60 optimised designs showed light-dependent increases.
+    - **Evidence pointer** Supplementary Figs. 1, 2, 6, 9, 10, Main text
+    - **Concern** The success rates and screening outcomes are reported only in the main text and supplementary figures that were not supplied. The screening used unverified transformants for the initial round, and hits were only sequence-verified afterwards. The criteria for calling a hit, the number of biological or technical replicates per design, and the false-positive rate of the luminescence screen are not stated in the main text.
+    - **Why it matters** The credibility of a design campaign depends on how hits were defined and how many designs were tested. Without these details, the reported success rates cannot be assessed and the single initial hit may reflect screening noise.
+    - **Resolution test** Provide the screening dataset with per-design replicate values, the hit-calling threshold, and the sequence verification status for all reported designs.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Terminology and mechanism
+    - **Affected element** Use of "light-activated conformational change" and "switch"
+    - **Evidence pointer** Abstract, Main, Conclusions
+    - **Issue** The manuscript uses "light-activated" and "light-controlled" interchangeably, but the data show light-triggered isomerisation that shifts an equilibrium, not a switch in the strict sense. The NMR data indicate increased dynamics after illumination and partial suppression on peptide binding, which is an equilibrium shift rather than a discrete two-state toggle.
+    - **Required correction** Define the operational meaning of "switch" used here and state explicitly that the mechanism is an equilibrium shift, with the relevant populations where known.
+  - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Spectral tuning claim
+    - **Affected element** Wavelength tuning and orthogonality
+    - **Evidence pointer** Fig. 4a, Fig. 4b, Supplementary Figs. 16, 17
+    - **Issue** The red-shift of up to 30 nm is reported, but the authors state that wavelength-shifting mutations are insufficient to achieve orthogonality of activation and that most designs still absorb at shorter wavelengths than rhodopsins. The relationship between the absorbance shift and the activation wavelength used in functional assays is not made explicit.
+    - **Required correction** Report absorbance maxima and the illumination wavelength used for each tuned variant, and state clearly which properties are and are not orthogonal.
+  - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Sequence space analysis
+    - **Affected element** ESM2 embedding and UMAP claim
+    - **Evidence pointer** Fig. 2c, Methods (embedding analysis)
+    - **Issue** The claim that designed RBPs explore novel sequence space rests on a 2D UMAP projection of mean-pooled ESM2 embeddings. Mean pooling discards positional information, and UMAP distances are not a rigorous measure of sequence novelty. The comparison set is 27 de novo proteins against tens of thousands of natural sequences, which will dominate the projection.
+    - **Required correction** Add a quantitative novelty metric, for example nearest-neighbour sequence identity or structural comparison to known rhodopsins, and acknowledge the limitations of UMAP for this inference.
+  - **Concern ID** R1-m4
+    - **Severity** Minor
+    - **Axis** Retinal availability and delivery
+    - **Affected element** Cellular and in vivo relevance
+    - **Evidence pointer** Conclusions, Methods (retinal handling)
+    - **Issue** The authors note uncertainty about retinal availability to the soluble proteome and suggest hydroxy-retinal derivatives as mitigation. Cellular assays use 10 µM exogenous retinal in ethanol. The dependence of the cellular response on exogenous retinal concentration is not shown.
+    - **Required correction** Report a retinal dose-response for at least one cellular assay and discuss the implications for tissue or in vivo use.
+  - **Concern ID** R1-m5
+    - **Severity** Minor
+    - **Axis** Reproducibility and data availability
+    - **Affected element** Deposited structures and models
+    - **Evidence pointer** Data availability, Code availability
+    - **Issue** PDB 34XO, a Zenodo record, and a GitHub repository are cited. The manuscript does not state whether the Zenodo record includes the design models, the raw screening data, or the NMR assignments in a machine-readable form, and the GitHub repository contents are not described.
+    - **Required correction** Specify the contents of each deposit and confirm that design models, screening data, and NMR assignments are included.
+  - **Concern ID** R1-m6
+    - **Severity** Minor
+    - **Axis** Statistics and replication
+    - **Affected element** All quantitative assays
+    - **Evidence pointer** Methods, figure legends (not supplied)
+    - **Issue** The main text and Methods do not consistently report the number of independent replicates, the definition of error bars, or the statistical tests used for the luminescence, calcium imaging, and NMR comparisons.
+    - **Required correction** Add a statistics subsection and per-figure replicate and error definitions.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (absence of a direct binding measurement underpinning the >30-fold claim), R1-M2 (mechanistic NMR claim not verifiable from supplied material), R1-M3 (chromophore not visualised in the only crystal structure), R1-M4 (spectroscopic assignment of isomerisation not uniquely established), R1-M5 (weak and lock-dependent cellular efficacy), R1-M6 (screening and success-rate evidence not verifiable).
+- **Assessment against Nature-style criteria** Originality is high in concept, since de novo soluble retinal-binding switches with a designed conformation-specific interface are not a well-populated design space, and the integration of chromophore binding, isomerisation-coupled motion, and a designed PPI in one scaffold is a meaningful advance over single-property designs. Scientific importance is potentially significant for optogenetics and synthetic biology, but the current evidence supports a proof of concept rather than a demonstrated tool, given the weak cellular responses, the need for a covalent lock, and the absence of a direct binding measurement. Interdisciplinary readership is plausible, spanning protein design, biophysics, spectroscopy, and cell signalling, and the manuscript is written to be accessible to that breadth. Technical soundness is mixed. The design methodology is described in commendable detail and the multi-technique validation strategy is appropriate, but the central quantitative and mechanistic claims are not fully supported by the material provided, and several key results are only in unavailable supplementary figures. Readability for nonspecialists is generally good, with clear motivation and a logical structure, though the abstract and conclusions overstate the maturity of the system relative to the cellular data and the authors' own stated limitations. Overall, the work is closer to a strong specialized-journal contribution than to a broadly decisive advance in its current form.
+- **Recommendation posture** Supportive in principle, but currently not established from the provided evidence. The central binding and mechanistic claims require direct binding measurements, verifiable NMR and spectroscopic analysis, and clearer reporting of cellular effect sizes before the case for a defined light-controlled conformational switch can be considered made.
+
+## Risk / unsupported claims
+- The claim of an over 30-fold increase in binding upon illumination is supported only by an indirect split-luciferase readout and is not calibrated to a physical binding quantity. Status: weak.
+- The claim that the designs undergo a defined light-activated conformational change with at least four distinct states is not verifiable from the supplied material because the supporting NMR spectra and tables are absent. Status: not assessable.
+- The claim that multi-state designs enable retinal isomerisation while single-state designs prevent it rests on qualitative comparison to rhodopsin intermediates without quantum yields or direct isomer quantification. Status: weak.
+- The claim that the crystal structure confirms high structural fidelity of the dark state is qualified by the absence of visible retinal density, so the holoprotein dark state is not structurally demonstrated. Status: weak.
+- The claim that the system controls cell-surface receptor clustering in a light-dependent manner is supported only with a SpyTag/SpyCatcher covalent lock and a weak calcium response. Status: weak.
+- The claim that the designed proteins explore novel sequence space is based on a 2D UMAP of mean-pooled embeddings without a quantitative novelty metric. Status: weak.
+- The claim that the platform can meet or exceed natural photoreceptors is a forward-looking assertion not supported by the reported cellular performance. Status: unsupported.
+- The claim that the design logic generalises to other stimulus-responsive prosthetic groups is proposed but not tested. Status: unsupported.

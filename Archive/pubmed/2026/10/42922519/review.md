@@ -1,0 +1,69 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; full text not available for verification
+- **Shared manuscript claim summary** The authors report that common large language models (LLMs), including Claude, ChatGPT, and Gemini, can generate de novo protein sequences that adopt desired folds and bind target ligands (metals and perfluorooctanoic acid) without copying existing sequences. They report experimental hit rates of 25% for metal binders in one round and 25% for perfluorooctanoic acid binders in a second round, with LLMs providing design rationales. The authors position this as a case study demonstrating LLM utility in making protein design more comprehensible and accessible.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary materials provided
+- **Missing materials affecting confidence** Full text, experimental protocols, sequence data, structure prediction details, hit definitions, negative controls, and any statistical analyses are not available. The absence of these materials substantially limits the ability to evaluate the validity and robustness of the reported results.
+
+## Reviewer
+- **Overall assessment** The abstract presents an intriguing and potentially valuable application of LLMs to de novo protein design, with claims of experimental success in generating metal and small-molecule binders. However, the evidence base is limited to the abstract, which lacks critical details on methodology, hit criteria, reproducibility, and controls. The central claims are plausible but not verifiable from the supplied material. The conceptual contribution, namely the use of LLMs to provide design rationales, is interesting but its significance depends on the quality and novelty of those rationales, which cannot be assessed here. The reported hit rates are modest and the absence of negative controls or baseline comparisons weakens the strength of the claims. Overall, the work has potential but the case is not established from the abstract alone.
+- **Who would be interested in the results, and why** Researchers in protein design and engineering, particularly those interested in generative models and accessible design tools, would find this work relevant. The claim that LLMs can generate functional binders with accompanying rationales may appeal to a broader computational biology audience and to experimentalists seeking more interpretable design pipelines. The emphasis on accessibility for users without sophisticated design expertise could also attract interest from the synthetic biology and biotechnology communities.
+- **Major strengths** The use of widely available LLMs for protein design is a timely and accessible approach. The inclusion of LLM-generated design rationales is a distinctive feature that could enhance interpretability. The reported experimental validation, albeit with modest hit rates, suggests some practical utility. The focus on metals and a lipophilic small molecule (perfluorooctanoic acid) covers chemically distinct targets, which adds breadth to the claim.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims that LLMs alone can generate de novo proteins that bind metals and perfluorooctanoic acid, with hit rates of 25% in one or two rounds of design.
+  - **Evidence pointer** Abstract only; no methods, figures, or tables provided
+  - **Concern** The abstract reports experimental hit rates but provides no details on how "hits" were defined, how binding was measured, what thresholds were used, or how many designs were tested per round. Without this information, the hit rates are not interpretable. Additionally, no negative controls (e.g., designs generated without LLM rationale or random sequences) or baseline comparisons are mentioned, so the specificity of the LLM contribution cannot be evaluated.
+  - **Why it matters** The central claim of the paper is that LLMs can generate functional binders. If hit rates are based on weak or non-stringent binding criteria, or if the success is not significantly above what would be expected by chance, the claim would be substantially weakened. The lack of controls also prevents assessment of whether the LLM's design rationale is causally linked to success or merely post hoc.
+  - **Resolution test** Provide full experimental details, including binding assay methods, hit thresholds, number of designs tested, and results from appropriate negative controls (e.g., random sequences or designs without LLM rationale). Show that the hit rates are statistically significant relative to these controls.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility and specificity
+  - **Claim pointer** The abstract states that LLMs generate sequences to "adopt a desired fold and bind the target ligand" and that successful designs have "some deviations from the prompted parameters and LLM-articulated design rationale."
+  - **Evidence pointer** Abstract only; no sequence or structure data provided
+  - **Concern** The abstract acknowledges deviations from the prompted parameters and rationale but does not describe the nature or extent of these deviations. It is unclear whether the designs actually adopt the intended fold, whether binding is specific to the target ligand, or whether the deviations are minor or substantial. Without sequence and structure validation data, the claim that the designs "adopt a desired fold" is unverifiable.
+  - **Why it matters** The claim of de novo design implies that the proteins are not merely random sequences that happen to bind. If the folds are not as intended or if binding is non-specific, the design process is not validated. The deviations could indicate that the LLM is not following its own rationale, which would undermine the interpretability claim.
+  - **Resolution test** Provide structural characterization (e.g., experimental structures or high-confidence predictions) for successful designs, showing that they adopt the intended fold. Include binding specificity data (e.g., against off-target ligands) and a detailed analysis of the deviations from the prompted parameters and rationale.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Novelty and significance
+  - **Claim pointer** The abstract implies that this is a novel application of LLMs to reasoned design, stating that "reasoned design... has not seen the same benefits from generative machine learning models."
+  - **Evidence pointer** Abstract only; no literature comparison provided
+  - **Concern** The abstract does not compare this work to existing LLM-based protein design methods or to other generative models that incorporate design principles. It is unclear what is genuinely new here versus incremental. The claim that reasoned design has not benefited from generative models may be overstated, as other works have used language models for protein design with rationales.
+  - **Why it matters** For a Nature-style audience, the significance of the work depends on its novelty relative to the state of the art. If similar approaches have been reported, the contribution is diminished. The abstract does not provide enough context to judge this.
+  - **Resolution test** Add a clear comparison to prior LLM-based design methods, highlighting specific differences in approach or outcomes. Cite and discuss relevant prior work to establish the novelty of the contribution.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract, "25% hit rate" statements
+  - **Issue** The hit rates are reported without context on the number of designs tested or the variability across different LLMs or targets. This makes the rates difficult to interpret.
+  - **Required correction** Specify the number of designs tested per round and per target, and report hit rates with confidence intervals or ranges across replicates or different LLMs.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** "De novo" claim
+  - **Evidence pointer** Abstract, "without copying existing sequences"
+  - **Issue** The abstract claims the designs do not copy existing sequences but does not describe how this was verified (e.g., sequence similarity searches against known proteins). The term "de novo" is used loosely.
+  - **Required correction** Describe the method used to confirm that generated sequences are not homologous to known proteins, and report the maximum sequence identity to any existing protein.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Generalizability
+  - **Affected element** Scope of claims
+  - **Evidence pointer** Abstract, "common LLMs (e.g. Claude, ChatGPT, and Gemini)"
+  - **Issue** The abstract implies that the results are general across LLMs, but it is unclear if all three models were tested for all targets or if the hit rates are pooled or per-model.
+  - **Required correction** Clarify which LLMs were used for which targets and report per-model results to support the generalizability claim.
+
+## Risk / unsupported claims
+- The claim that LLMs can generate proteins that "adopt a desired fold" is unsupported without structural data.
+- The claim of "de novo" design is unsupported without evidence of sequence novelty relative to known proteins.
+- The hit rates are uninterpretable without definitions of "hit" and details on assay methods and thresholds.
+- The claim that LLMs provide "detailed justification" that serves as a "conceptual framework" is not verifiable from the abstract, as no examples of such rationales are provided.
+- The novelty claim relative to prior LLM-based design methods is not assessable without a literature comparison.
+- The generalizability claim across LLMs is not assessable without per-model results.

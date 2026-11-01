@@ -1,0 +1,80 @@
+## Review setup
+- **Input scope** Abstract only, as supplied for a book chapter in Methods in Molecular Biology
+- **Assessment boundary** Evaluation is restricted to the supplied abstract text. No full text, figures, tables, datasets, model descriptions, or benchmark results were provided, so claims about performance, case studies, and framework validity cannot be verified.
+- **Shared manuscript claim summary** The manuscript claims that pseudoknots are biologically important for RNA-RNA interactions (RRIs) but are commonly excluded from computational models because they increase complexity; that traditional dynamic programming methods are limited to pseudoknot-free models; that machine learning (ML) and deep learning can implicitly learn pseudoknot-associated interaction patterns from large-scale sequence and structural data and thereby improve predictive power over thermodynamics-based methods alone; and that the chapter provides a framework for integrating pseudoknot-aware modeling into ML-based RRI detection pipelines, supported by discussion of features, a survey of ML approaches, case studies, and benchmarking strategies.
+- **Visible evidence base** The abstract itself. It references biological roles of pseudoknots in ribozymes, viral RNAs, telomerase, and ribosomal RNA, and refers generally to case studies, benchmarking methods, datasets, and performance evaluation strategies, but supplies no specific data, model names, metrics, or results.
+- **Missing materials affecting confidence** Full chapter text; specific ML architectures and feature representations; datasets used; benchmark protocols; quantitative performance results; definitions of case studies; comparison baselines; code or reproducibility information; figure and table contents. These omissions prevent verification of the central performance and framework claims.
+
+## Reviewer
+- **Overall assessment** The abstract addresses a relevant and well-motivated problem, namely the exclusion of pseudoknots from RRI detection and the potential of ML to address this gap. The framing is coherent and biologically grounded. However, the supplied material is an abstract only, and it is entirely programmatic. It asserts improved predictive power and outlines a framework without presenting any verifiable evidence, quantitative comparison, named methods, datasets, or results. As it stands, the contribution cannot be assessed for technical soundness or originality beyond its stated intent.
+- **Who would be interested in the results, and why** Researchers in RNA structural bioinformatics, RNA-RNA interaction prediction, and computational biology would be interested, because pseudoknot-aware modeling remains an open problem and ML-based approaches are an active area. Molecular biologists studying ribozymes, viral RNAs, telomerase, and ribosomal RNA may also be interested if the framework yields practical detection improvements. The interest is currently potential rather than demonstrated.
+- **Major strengths** The problem selection is well justified and biologically important. The abstract correctly identifies a genuine limitation of pseudoknot-free dynamic programming models and a plausible rationale for ML-based alternatives. The stated scope, covering biological relevance, computational challenges, feature design, a survey of classical and deep learning approaches, case studies, and benchmarking, is appropriately comprehensive for a methods-oriented chapter. The writing is clear and accessible.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Unsupported performance claim
+    - **Claim pointer** ML models "can implicitly learn interaction patterns associated with pseudoknotted regions, offering improved predictive power over thermodynamics-based methods alone."
+    - **Evidence pointer** Abstract only; location not provided
+    - **Concern** The claim of improved predictive power is asserted without any supporting benchmark, metric, dataset, or comparison. No quantitative or even qualitative result is presented in the supplied material.
+    - **Why it matters** This is the central scientific claim of the chapter. Without evidence, the reader cannot determine whether the proposed advantage is real, marginal, or context-dependent.
+    - **Resolution test** Provide at least one concrete comparison between an ML-based pseudoknot-aware method and a thermodynamics-based baseline on a defined dataset, with reported performance metrics and evaluation protocol.
+  - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Framework specification
+    - **Claim pointer** The chapter "outlines a framework for improving the fidelity of RRI detection in the presence of pseudoknots."
+    - **Evidence pointer** Abstract only; location not provided
+    - **Concern** The framework is described only in general terms. No components, inputs, outputs, feature extraction procedure, model integration step, or workflow is specified in the supplied material.
+    - **Why it matters** A framework claim requires an inspectable structure. Without it, the contribution cannot be distinguished from a general review or a proposal.
+    - **Resolution test** Present the framework explicitly, including its stages, the role of pseudoknot features, and how it integrates with existing RRI detection pipelines.
+  - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Evidence for case studies
+    - **Claim pointer** "Case studies are presented to demonstrate practical applications."
+    - **Evidence pointer** Abstract only; location not provided
+    - **Concern** No case study is identified, described, or quantified in the supplied material. It is unclear what biological systems, datasets, or tasks are covered.
+    - **Why it matters** Case studies are the main vehicle for demonstrating practical utility. Without specifics, the practical application claim is unverifiable.
+    - **Resolution test** Name each case study, state the biological context, the data used, and the observed outcome.
+  - **Concern ID** R1-M4
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Benchmarking and evaluation
+    - **Claim pointer** The chapter includes "a review of benchmarking methods, datasets, and performance evaluation strategies."
+    - **Evidence pointer** Abstract only; location not provided
+    - **Concern** No datasets, benchmark tasks, or evaluation metrics are named. It is not possible to judge whether the evaluation approach is adequate for pseudoknot-aware RRI detection, where class imbalance, structural ambiguity, and dataset bias are known issues.
+    - **Why it matters** Evaluation design determines whether reported improvements are meaningful. A review that does not specify evaluation criteria cannot support the framework's credibility.
+    - **Resolution test** List the datasets, benchmark tasks, and metrics discussed, and state the criteria used to judge model performance.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Terminology precision
+    - **Affected element** Use of "pseudoknot-aware modeling"
+    - **Evidence pointer** Abstract only; location not provided
+    - **Issue** The term is used without definition of what constitutes awareness, for example explicit feature encoding versus implicit learning.
+    - **Required correction** Define the term and distinguish explicit from implicit pseudoknot handling.
+  - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Scope clarity
+    - **Affected element** Survey of ML approaches
+    - **Evidence pointer** Abstract only; location not provided
+    - **Issue** The abstract states that classical and deep learning models are surveyed but names none, so the coverage and currency of the survey cannot be judged.
+    - **Required correction** Identify representative methods and the time range covered.
+  - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Claim calibration
+    - **Affected element** Statement that oversimplification "can compromise the accuracy of predictions"
+    - **Evidence pointer** Abstract only; location not provided
+    - **Issue** The statement is plausible but presented without citation or example in the supplied material.
+    - **Required correction** Provide at least one cited example where ignoring pseudoknots degrades prediction accuracy.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The performance advantage and the framework itself are not established from the supplied material. R1-M3 and R1-M4 further weaken the practical and evaluative claims.
+- **Assessment against Nature-style criteria** Originality is asserted rather than demonstrated; the abstract positions the work within an existing gap but does not show a novel method or finding. Scientific importance is plausible given the biological role of pseudoknots, but remains unproven without results. Interdisciplinary readership potential is moderate, since the topic spans computational and molecular biology, yet the abstract offers no concrete advance to attract a broad audience. Technical soundness cannot be evaluated because no methods, data, or metrics are provided. Readability for nonspecialists is good; the abstract is clear and avoids unnecessary jargon.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a reasonable and well-motivated scope, but the central claims of improved predictive power and a usable framework cannot be assessed without the full text, specific methods, datasets, and quantitative results.
+
+## Risk / unsupported claims
+- Improved predictive power of ML models over thermodynamics-based methods alone is asserted without supporting evidence (unsupported in supplied material).
+- The existence and effectiveness of a framework for pseudoknot-aware RRI detection is claimed but not specified (unsupported in supplied material).
+- Case studies demonstrating practical applications are claimed but not identified or described (unverifiable from supplied material).
+- Benchmarking methods, datasets, and evaluation strategies are claimed to be reviewed but none are named (unverifiable from supplied material).
+- The assertion that excluding pseudoknots compromises prediction accuracy is plausible but uncited in the supplied material (weakly supported).

@@ -1,0 +1,70 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report functional and structural differences among three group-6 propane monooxygenases (PRMs) from distinct phylogenetic clusters, expressed heterologously in Mycolicibacterium smegmatis, and propose implications for propane-stimulated bioremediation of 1,4-dioxane.
+- **Visible evidence base** Abstract text only; no kinetic data, structural coordinates, phylogenetic trees, or experimental methods are provided
+- **Missing materials affecting confidence** Full methods, kinetic parameters, inhibition data, structural models, phylogenetic analyses, statistical details, and all figures/tables
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially valuable comparative study of group-6 PRMs with clear relevance to bioremediation. The central claim of functional divergence across phylogenetic clusters is plausible and interesting. However, the evidence base available for review is limited to the abstract, which precludes verification of quantitative claims, structural interpretations, and the strength of the phylogenetic and compositional analyses. The work appears technically sound in concept, but the case for the mechanistic conclusions is not fully established from the supplied material.
+- **Who would be interested in the results, and why** Researchers in environmental microbiology and bioremediation, particularly those working on emerging contaminants such as 1,4-dioxane, would find these results relevant. The study also speaks to enzymologists interested in monooxygenase structure-function relationships and to practitioners developing biostimulation strategies for contaminated sites.
+- **Major strengths** The study addresses a clear knowledge gap regarding functional differences among group-6 PRMs. The use of heterologous expression in a defined host is a rigorous approach for comparing enzyme properties. The integration of kinetic, inhibition, and structural analyses is commendable. The potential practical relevance for propane-based biostimulation is well articulated.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims that "variation in substrate affinity and catalytic turnover is consistent with differences in active-site pocket hydrophobicity, rigidity, and catalytic geometry."
+  - **Evidence pointer** Location not provided
+  - **Concern** The structural interpretation is presented as a key mechanistic conclusion, but no structural data, computational models, or experimental validation are described in the abstract. It is unclear whether these are based on solved crystal structures, homology models, or molecular dynamics simulations, and whether the inferred properties were quantitatively tested.
+  - **Why it matters** Without details on how the structural features were determined and how they correlate with the kinetic data, the mechanistic claim remains speculative. This is central to the paper's contribution beyond a descriptive comparison.
+  - **Resolution test** Provide the structural evidence, including model quality metrics or experimental structures, and a quantitative or statistical demonstration that the proposed structural features correlate with the observed kinetic differences.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract states that "phylogenetic and compositional analyses further suggested horizontal transfer in Clusters I and III."
+  - **Evidence pointer** Location not provided
+  - **Concern** The basis for inferring horizontal gene transfer is not described. It is unclear what compositional analyses were performed, what statistical support was obtained, and how alternative explanations such as gene duplication or differential loss were excluded.
+  - **Why it matters** This claim extends the study's significance to evolutionary biology, but without methodological detail and statistical support, it cannot be evaluated. Overinterpretation of phylogenetic signals is a common pitfall.
+  - **Resolution test** Describe the phylogenetic and compositional methods, report support values, and provide a formal test for recombination or horizontal transfer with appropriate controls.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Quantitative rigor
+  - **Claim pointer** The abstract reports qualitative differences in substrate affinity, catalytic capacity, and inhibitor sensitivity among the three PRMs.
+  - **Evidence pointer** Location not provided
+  - **Concern** No kinetic parameters, error estimates, or statistical comparisons are provided. Terms such as "low affinity but high catalytic capacity" and "high affinity but lower capacity" are relative and lack quantitative context.
+  - **Why it matters** Without numerical values and statistical tests, the reader cannot assess the magnitude or significance of the reported differences, which are central to the paper's conclusions.
+  - **Resolution test** Report kinetic constants with replicates and statistical comparisons, and provide effect sizes for the differences described.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The term "propane monooxygenases" is used without specifying the enzyme family or subunit composition, which may confuse readers unfamiliar with group-6 PRMs.
+  - **Required correction** Define the enzyme class and subunit architecture at first mention, or provide a brief contextual description.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Strain selection rationale
+  - **Evidence pointer** Abstract, methods description
+  - **Issue** The choice of the three representative PRMs is stated but the rationale for selecting these specific strains is not explained.
+  - **Required correction** Briefly justify why these three PRMs are representative of their respective clusters and how they were chosen.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Bioremediation implications
+  - **Evidence pointer** Abstract, final sentence
+  - **Issue** The claim that the results "offer mechanistic insights for optimizing microbial populations" is broad and not directly supported by the data described.
+  - **Required correction** Soften the claim or specify which mechanistic insights would directly inform optimization strategies.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking because the structural and evolutionary claims are central to the paper's novelty and cannot be evaluated from the abstract. R1-M3, while not blocking, requires quantitative support for the core comparative claims.
+- **Assessment against Nature-style criteria** Originality: The comparative approach across phylogenetic clusters is a useful contribution, though not unprecedented. Scientific importance: The topic is relevant to environmental biotechnology, but the significance is moderate and applied rather than fundamental. Interdisciplinary readership: The work will appeal primarily to environmental microbiologists and bioremediation specialists, with limited reach beyond these fields. Technical soundness: The experimental design appears reasonable, but the available evidence is insufficient to fully assess rigor. Readability for nonspecialists: The abstract is accessible, though some terminology could be clarified.
+- **Recommendation posture** Supportive if technical concerns are resolved. The core comparative kinetic study is promising, but the structural and evolutionary claims require substantial additional evidence. The manuscript may be better suited to a specialized environmental microbiology or biotechnology journal than to a broad high-impact venue.
+
+## Risk / unsupported claims
+- The structural interpretation linking active-site properties to kinetic differences is unsupported without structural data or models.
+- The inference of horizontal gene transfer is unsupported without phylogenetic and compositional methodological details.
+- The relative kinetic and inhibition differences are unquantified and cannot be assessed for significance.
+- The practical implications for optimizing bioremediation are stated without direct experimental evidence.

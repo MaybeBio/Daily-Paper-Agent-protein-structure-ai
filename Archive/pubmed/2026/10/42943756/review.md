@@ -1,0 +1,113 @@
+## Review setup
+- **Input scope** Full manuscript text provided (Abstract, Introduction, Results, Discussion, Materials and Methods, Conclusions, Acknowledgments). No separate figures, tables, or supplementary files were supplied as standalone items.
+- **Assessment boundary** Evaluation is limited to the supplied text. Numerical values, figure content, and supplementary items are assessed only as reported in the text; no independent verification of trajectories, code, or deposited data was possible.
+- **Shared manuscript claim summary** Under a uniform 300 ns explicit-solvent budget, nine sampling protocols for apo E. coli adenylate kinase are compared. The authors report that TMD was the only method that reached and maintained a reference-closed basin defined from ligand-stripped 1AKE, that metadynamics and simulated tempering expanded collective-variable coverage largely through LID over-opening, that BioEmu generated closed-like seeds that did not persist under short unbiased MD, and that CV coverage, target-state reaching, and stable target-state occupancy are distinct aspects of sampling.
+- **Visible evidence base** Text-reported metrics only: Table 1 (as cited), Figures 1 to 8 (as cited), Supplementary Figures S1 to S17 and Supplementary Section S5 (as cited), Methods Sections 4.1 to 4.4, and a public repository URL. No raw trajectories, no numerical tables, no figure panels, and no supplementary text were provided for inspection.
+- **Missing materials affecting confidence** Figure panels and captions, Table 1 contents, Supplementary Section S5 and Figures S1 to S17, the analysis scripts and numerical tables at the stated repository, force-field and BioEmu version details beyond those named, and any convergence or reproducibility diagnostics for the biased runs.
+
+## Reviewer
+- **Overall assessment** The manuscript addresses a legitimate and useful question, namely how different sampling strategies behave when applied to the same system under a matched computational budget. The framing is careful, the limitations are stated explicitly, and the authors repeatedly avoid over-interpreting biased distributions as thermodynamics. The central comparative claim, that CV coverage, target-state reaching, and stable occupancy are distinct, is internally consistent with the reported numbers. However, the study rests on a single protein, a single force field, a single 300 ns budget, and a reference-closed basin derived from a ligand-bound crystal. Several quantitative statements, particularly the metadynamics free-energy values and the coverage-efficiency comparison, are presented with more precision than the underlying convergence supports. The BioEmu comparison uses six relaxed seeds, which is too few to support general statements about sequence-based generative ensembles. As written, the work is a reasonable methodological comparison but does not yet establish a generalizable conclusion, and key evidence is deferred to figures and supplementary material that were not available for assessment.
+- **Who would be interested in the results, and why** Computational biophysicists and method developers working on enhanced sampling and generative structure models would find the protocol-to-question mapping useful as a practical reference. Researchers studying adenylate kinase conformational dynamics would be interested in the reported LID-versus-NMP mobility asymmetry and the TMD closure order. Groups applying sequence-based generative models as ensemble generators would be interested in the observation that closed-like generated seeds did not persist under explicit-solvent MD, although the small seed count limits how far this can be generalized.
+- **Major strengths** The comparison is executed under a genuinely shared system preparation, force field, solvent, and production budget, which is the main methodological value of the work. The authors explicitly separate nonequilibrium from equilibrium interpretations, for example for TMD occupancy and for the metadynamics and simulated-tempering distributions. The negative controls, namely wrong-CV metadynamics and interpolation MD, are well chosen and strengthen the argument that proximity to a target structure at seeding time does not imply stable occupancy. The limitations paragraph in the Discussion is unusually candid and correctly identifies the absence of experimental validation, the single force field, and the unrestored reweighting.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Technical soundness and statistical support
+    - **Claim pointer** The manuscript reports that reconstruction of a free-energy surface from the deposited metadynamics bias placed the closed reference approximately 46 kJ mol−1 above the open crystal, with grid regions reaching approximately 129 kJ mol−1, while also stating these values should not be interpreted as an open–closed free-energy difference.
+    - **Evidence pointer** Section 2.5 and Figure 8; location not provided for the underlying grid data.
+    - **Concern** Reporting specific numerical free-energy values from a biased, admittedly unconverged, and unreweighted distribution creates a quantitative claim that the surrounding caveat does not neutralize. A reader can extract the 46 kJ mol−1 figure without the caveat. If the distribution is not converged and not reweighted, the numbers carry no interpretable meaning and should not be stated as values at all.
+    - **Why it matters** Free-energy differences are among the most citable quantities in this literature. Presenting an unconverged number, even with a disclaimer, risks propagating an unsupported value into subsequent work and undermines the otherwise careful interpretive stance of the paper.
+    - **Resolution test** Either remove the numerical free-energy values and present Figure 8 purely as a qualitative biased-landscape illustration, or provide convergence diagnostics, block analysis, and a reweighted estimate with an uncertainty range. If reweighting is not feasible, state explicitly that no free-energy value is reported.
+  - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Generalizability of the central comparison
+    - **Claim pointer** The manuscript concludes that different sampling methods provide different types of conformational information and that sampling strategy should be matched to the scientific objective, based on nine protocols applied to one protein, one force field, and one 300 ns budget.
+    - **Evidence pointer** Sections 2.1 to 2.8, Section 3, Section 5; location not provided for any replicate runs.
+    - **Concern** Every protocol was run once. No replicate seeds, no independent starting velocities, and no statistical uncertainty are reported for any metric, including closed-like frame fractions, minimum RMSDs, bin counts, and hitting times. Single-trajectory comparisons cannot distinguish method behavior from trajectory-specific stochastic variation, particularly for rare-event metrics such as the 0.03% and 0.43% closed-like fractions.
+    - **Why it matters** The central claim is comparative. Without replication or uncertainty estimates, differences such as 0.43% versus 0.93% closed-like frames, or 198 versus 212 occupied bins, are not interpretable as method differences. This directly affects whether the protocol-to-question mapping is established.
+    - **Resolution test** Provide at least three independent replicates per protocol with different initial velocities, report means and dispersions for the primary metrics, and state whether the reported method differences exceed the between-replicate spread. If replication is not feasible, the comparative claims must be softened to single-trajectory observations and the abstract and conclusions adjusted accordingly.
+  - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Evidence base for the generative-model claim
+    - **Claim pointer** The manuscript states that BioEmu generated closed-like conformations that were not maintained during subsequent short MD, and the Discussion proposes a hybrid workflow combining sequence-based generation with explicit-solvent relaxation.
+    - **Evidence pointer** Section 2.7, Section 4.3 Method I, Supplementary Figure S7; location not provided for the sixteen generated samples.
+    - **Concern** Sixteen samples were generated and six were extracted and relaxed. The selection criterion for those six is not stated. The reported RMSD range of 1.94 to 3.81 Å and the statement that five of six were below the 3.5 Å cutoff are therefore based on a small, possibly non-random subset. No comparison is made to the distribution of all sixteen samples, and no thermodynamic weighting was applied.
+    - **Why it matters** Conclusions about a generative ensemble model require either a representative sample of its output distribution or an explicit statement that the extracted seeds are illustrative. As written, the claim that closed-like BioEmu states are not maintained may reflect seed selection rather than model behavior, and the proposed hybrid workflow rests on this limited evidence.
+    - **Resolution test** Report the selection criterion for the six seeds, provide the RMSD and domain-distance distributions for all sixteen generated samples, and state whether the six are representative. If the full set cannot be relaxed, restrict the claim to the specific relaxed seeds and remove general statements about BioEmu ensemble behavior.
+  - **Concern ID** R1-M4
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Validity of the reference-closed basin
+    - **Claim pointer** Closed-state occupancy is evaluated relative to a reference-closed basin defined from ligand-stripped PDB 1AKE, and the 3.5 Å Cα RMSD cutoff is used throughout to classify frames as closed-like.
+    - **Evidence pointer** Section 1, Section 2.3, Section 4.1, Section 4.4.
+    - **Concern** The reference is a ligand-bound crystal after inhibitor removal, and the authors acknowledge it is not an experimentally determined apo closed state. The 3.5 Å cutoff is applied uniformly, but no sensitivity analysis is reported for this threshold, and no alternative reference or alternative metric is used to confirm that the classification is robust. The reported open–closed crystal RMSD is 7.13 Å, so the 3.5 Å cutoff sits near the midpoint and small changes could reclassify substantial frame fractions.
+    - **Why it matters** Nearly every headline number, including 54.88% closed-like frames for TMD and 0.03% for BioEmu-relaxation, depends on this threshold and this reference. If the classification is threshold-sensitive, the comparative ranking may not be stable.
+    - **Resolution test** Report closed-like frame fractions and minimum RMSDs as a function of the RMSD cutoff, for example at 3.0, 3.5, and 4.0 Å, and confirm that the qualitative ranking of protocols is unchanged. Discuss explicitly how the ligand-bound origin of 1AKE may bias the reference basin relative to a true apo closed state.
+  - **Concern ID** R1-M5
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Interpretation of coverage-efficiency comparison
+    - **Claim pointer** The manuscript reports that functional metadynamics achieved approximately 77 occupied CV bins per GPU hour versus 13 to 19 bins per GPU hour for most other protocols, and concludes that metadynamics provided substantially greater CV-plane coverage per unit computational cost.
+    - **Evidence pointer** Section 2.8, Section 4.4.
+    - **Concern** Coverage is defined as occupied bins in a 0.05 nm by 0.05 nm grid over the domain-distance plane. This metric is sensitive to grid resolution, to the extent of the sampled region, and to the fact that over-open conformations contribute bins without contributing functional information. Normalizing this metric by GPU time produces a quantity whose interpretation is unclear, since a method that over-opens more will score higher by construction. The authors acknowledge this qualitatively but still report the normalized values as a comparative result.
+    - **Why it matters** The coverage-efficiency numbers could be read as a performance ranking, which the authors state they do not intend. Without a functional weighting, the metric rewards exploration of non-functional regions.
+    - **Resolution test** Either remove the normalized bins-per-GPU-hour comparison, or supplement it with a coverage metric restricted to the region bounded by the two crystal structures, and report both so that the distinction between total and functional coverage is explicit.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Reporting completeness
+    - **Affected element** Table 1 and Figures 1 to 8
+    - **Evidence pointer** Section 2, Table 1, Figures 1 to 8; location not provided for the actual table and figure contents.
+    - **Issue** The manuscript cites Table 1 and Figures 1 to 8 as the primary evidence for the comparative metrics, but the supplied material contains only the text references. The numerical values in the text cannot be checked against the table or figures.
+    - **Required correction** Ensure that Table 1 reports all nine protocols with the same metric set, including minimum RMSD, closed-like fraction, occupied bins, and GPU hours, and that figure captions define all axes, units, and classification thresholds.
+  - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Methodological detail
+    - **Affected element** Method I, BioEmu protocol
+    - **Evidence pointer** Section 4.3 Method I.
+    - **Issue** The text states that sixteen samples were generated and six frames were extracted, but does not state how the six were chosen, whether they were the most closed-like, or whether they were randomly selected.
+    - **Required correction** State the selection criterion explicitly and, if selection was based on proximity to the closed reference, acknowledge the resulting bias in the interpretation.
+  - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Methodological detail
+    - **Affected element** Method F, dihedral GaMD
+    - **Evidence pointer** Section 2.6, Section 4.3 Method F.
+    - **Issue** The applied boost is described as relatively mild with k0 approximately 0.107, and the authors note that stronger boosting would require separate assessment. No justification is given for selecting this boost level, and no comparison to standard GaMD boost regimes is provided.
+    - **Required correction** Justify the chosen boost level relative to established GaMD practice, or state explicitly that the GaMD result is conditional on this specific and possibly suboptimal boost setting.
+  - **Concern ID** R1-m4
+    - **Severity** Minor
+    - **Axis** Reproducibility
+    - **Affected element** Analysis scripts and numerical tables
+    - **Evidence pointer** Section 4.4, repository URL.
+    - **Issue** The repository is cited as containing analysis scripts and numerical tables, but the supplied material does not include the repository contents, and no version, commit hash, or archival identifier is given.
+    - **Required correction** Provide a versioned or archived identifier for the repository and confirm that all numerical values reported in the text can be regenerated from the deposited scripts and data.
+  - **Concern ID** R1-m5
+    - **Severity** Minor
+    - **Axis** Terminology consistency
+    - **Affected element** Use of "closed reference" and "closed-like"
+    - **Evidence pointer** Throughout Sections 1 to 5.
+    - **Issue** The terms "closed reference", "reference-closed basin", and "closed-like" are used interchangeably in places, and the distinction between reaching the reference and occupying a basin defined relative to it is not always clear.
+    - **Required correction** Define each term once in the Methods and use them consistently, distinguishing structural proximity from basin occupancy.
+  - **Concern ID** R1-m6
+    - **Severity** Minor
+    - **Axis** Numerical precision
+    - **Affected element** Reported percentages and distances
+    - **Evidence pointer** Sections 2.1 to 2.8.
+    - **Issue** Values such as 54.88%, 0.93%, 0.43%, and 0.03% are reported to two significant figures without uncertainty, which implies more precision than single-trajectory estimates support.
+    - **Required correction** Round reported percentages and distances to a precision consistent with the underlying sampling, or attach uncertainty estimates if replicates are provided.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (unconverged free-energy values reported numerically), R1-M2 (no replication or uncertainty for any comparative metric), R1-M3 (six-seed BioEmu basis for generative-model claims), R1-M4 (threshold and reference sensitivity untested), R1-M5 (coverage-efficiency metric rewards non-functional exploration).
+- **Assessment against Nature-style criteria** Originality is moderate. The individual methods are established, and the contribution is the controlled same-system comparison rather than a new method or a new biological finding. Scientific importance is limited by the single-protein, single-force-field scope and by the absence of experimental validation, which the authors acknowledge. Interdisciplinary readership is plausible but narrow, since the results speak primarily to computational method selection rather than to biology, and the adenylate kinase findings are largely consistent with prior literature. Technical soundness is the weakest axis, because the comparative claims rest on single trajectories without uncertainty, the free-energy values are reported despite acknowledged non-convergence, and the generative-model comparison uses six seeds. Readability for nonspecialists is reasonable in the Introduction and Discussion, but the Results section assumes familiarity with collective variables, reweighting, and domain nomenclature, and a nonspecialist would struggle to extract the practical guidance the authors intend to provide.
+- **Recommendation posture** Currently not established from the provided evidence. The comparison is well motivated and the interpretive caution is commendable, but the central comparative claims require replication with uncertainty estimates, removal or proper support of the numerical free-energy values, a representative BioEmu sample, and a sensitivity analysis of the closed-state classification before the protocol-to-question mapping can be considered established.
+
+## Risk / unsupported claims
+- The reported free-energy values of approximately 46 kJ mol−1 and approximately 129 kJ mol−1 are not supported as interpretable quantities, since the authors state the distribution was neither converged nor reweighted.
+- The comparative ranking of protocols by closed-like frame fraction, minimum RMSD, and occupied bins is not supported by replicate runs or uncertainty estimates, and single-trajectory differences of the reported magnitude may not be method-specific.
+- The claim that BioEmu closed-like conformations are not maintained during explicit-solvent MD is based on six selected seeds out of sixteen generated samples, with the selection criterion unstated, and cannot be generalized to the model's ensemble behavior.
+- The coverage-efficiency comparison in bins per GPU hour is reported as a quantitative result but is not interpretable as a performance measure because the metric includes non-functional over-open regions.
+- The proposed hybrid workflow combining sequence-based generation with explicit-solvent relaxation is a recommendation rather than a tested protocol, since no such workflow was executed end to end in this study.
+- The statement that the LID is more mobile than the NMP domain in unbiased MD is consistent with prior literature but is derived here from a single 300 ns trajectory and is therefore weakly supported within this work.
+- The TMD closure order, NMP before LID, is correctly described by the authors as restraint-dependent kinematics, and any reading of it as an equilibrium mechanism is unsupported.
+- The classification of frames as open-like, closed-like, or intermediate depends on a single 3.5 Å cutoff applied to a ligand-stripped reference, and no sensitivity analysis is provided to show that the resulting fractions are robust.

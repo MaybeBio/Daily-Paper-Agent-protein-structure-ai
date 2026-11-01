@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meta-Scoring Approach to Curate Synthetic RNA 3D Structures. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>Meta-Scoring Approach to Curate Synthetic RNA 3D Structures.</h1>
+      <div class="meta">Bernard, Clement; Justyna, Marek; Postic, Guillaume; Antczak, Maciej; Tahi, Fariza; Szachniuk, Marta</div>
+      <div class="meta muted">
+        
+        <span class="journal">Methods in molecular biology (Clifton, N.J.)</span>
+        · 2026-10-30
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42961746/">原文</a>
+      </div>
+      <p class="one-liner">构建RNA合成3D结构数据集并开发元评分筛选流程，方法可迁移至蛋白质结构生成与筛选。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">The structural diversity of RNA is central to molecular medicine, RNA-targeted drug discovery, and synthetic biology, where engineered RNA molecules are increasingly used in therapeutic, regulatory, and nanotechnology applications. While the rapid development of deep learning methods has heightened the demand for large, diverse structural datasets, high-quality RNA data remain scarce compared to protein datasets. Synthetic RNA structure datasets can help address this gap by enabling large-scale exploration of conformational space; however, their practical utility depends on careful curation and validation to ensure reliability. Here, we present a pipeline, RNA-SyntHub, for systematically constructing curated synthetic RNA datasets. The workflow integrates data from multiple structure-generation approaches with a meta-scoring function to identify low-quality models and select high-confidence candidates. As a proof of concept, we applied this method to a dataset of 447,402 synthetic RNA structures predicted by RFDiffusion, obtaining a curated subset of approximately 16,000 structures, further complemented with predictions from Boltz-1 and RNAComposer. This study provides both a methodological framework for generating and curating large collections of synthetic RNA 3D models under explicitly stated assumptions and a concrete dataset that supports methodological development, exploratory analyses, decoy-based applications, and selected deep learning workflows in RNA design, synthetic biology, and nanotechnology.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">RNA的结构多样性对于分子医学、RNA靶向药物发现以及合成生物学至关重要，在这些领域中，工程化RNA分子越来越多地被用于治疗、调控和纳米技术应用。尽管深度学习方法的快速发展加大了对大规模、多样化结构数据集的需求，但与蛋白质数据集相比，高质量的RNA数据仍然稀缺。合成RNA结构数据集可以通过实现构象空间的大规模探索来帮助弥补这一差距；然而，其实用性依赖于细致的筛选和验证以确保可靠性。在此，我们提出一个流程，RNA-SyntHub，用于系统构建经过筛选的合成RNA数据集。该工作流程整合了多种结构生成方法的数据，并采用元评分函数来识别低质量模型并选择高置信度候选。作为概念验证，我们将此方法应用于由RFDiffusion预测的447,402个合成RNA结构数据集，获得约16,000个结构的筛选子集，并进一步补充了来自Boltz-1和RNAComposer的预测。本研究既提供了一个在明确假设下生成和筛选大规模合成RNA 3D模型集合的方法学框架，也提供了一个具体数据集，支持RNA设计、合成生物学和纳米技术中的方法开发、探索性分析、基于诱饵的应用以及选定的深度学习工作流程。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li>标题：Meta-Scoring Approach to Curate Synthetic RNA 3D Structures</li>
+<li>作者：Bernard, Clement; Justyna, Marek; Postic, Guillaume; Antczak, Maciej; Tahi, Fariza; Szachniuk, Marta</li>
+<li>单位：未提供（摘要中未列出作者单位）</li>
+<li>期刊/预印本平台：Methods in molecular biology (Clifton, N.J.)</li>
+<li>年份：2026-10-30（在线日期）</li>
+<li>论文类型：方法学章节（Methods chapter / pipeline 描述 + proof of concept）</li>
+<li>领域：RNA 3D 结构计算、合成数据集构建、结构生成与筛选、深度学习数据准备</li>
+<li>关键词：未提供（摘要未列关键词）</li>
+<li>DOI/arXiv 号：10.1007/978-1-0716-5583-2_12</li>
+<li>代码：未提供（摘要未提及代码仓库）</li>
+<li>数据：447,402 个 RFDiffusion 预测的合成 RNA 结构；筛选后约 16,000 个结构；并补充 Boltz-1 与 RNAComposer 预测</li>
+<li>阅读日期：未提供</li>
+<li>在「蛋白质结构相关计算研究 × AI 方法/物理模拟」方向中的位置：本文对象为 RNA 而非蛋白质，但其核心贡献——用 meta-scoring 对大规模生成模型输出做质量筛选与数据集 curation——与蛋白质结构预测/生成（如 RFDiffusion、AlphaFold 类方法）的数据集构建、decoy 筛选、生成模型输出验证高度可迁移，属于「生成式结构模型 × 数据质量评估」交叉位置。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>针对高质量 RNA 结构数据稀缺的问题，本文提出 RNA-SyntHub 流程，将多种结构生成方法与一个 meta-scoring 函数结合，用于识别低质量模型并筛选高置信候选，在 447,402 个 RFDiffusion 合成 RNA 结构上得到约 16,000 个经筛选的子集，并补充 Boltz-1 与 RNAComposer 预测，从而在明确假设下提供一个可支持方法开发与 decoy 应用的合成 RNA 数据集。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li>具体问题：如何系统性地构建并筛选大规模合成 RNA 3D 结构数据集，使其在可靠性上足以支撑下游方法开发与深度学习工作流？</li>
+<li>为什么重要：RNA 结构多样性对分子医学、RNA 靶向药物发现和合成生物学至关重要；深度学习方法需要大规模、多样化的结构数据，但高质量 RNA 数据远少于蛋白质数据。</li>
+<li>现有方法为何不足：合成数据集可扩大构象空间探索，但其实际效用取决于 curation 与 validation；缺乏系统性筛选会导致低质量模型混入，影响下游可靠性。</li>
+<li>精确研究问题（Can ... ?）：Can a meta-scoring function, applied across multiple structure-generation approaches, reliably identify low-quality synthetic RNA 3D models and select high-confidence candidates to produce a curated dataset suitable for methodological development and deep learning workflows?（基于摘要重构，原文未以该句式明确给出）</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<ul>
+<li>阶段一：RNA 结构实验测定（如 X 射线、NMR、冷冻电镜）——优点：高可信；局限：数量少、覆盖构象空间有限。</li>
+<li>阶段二：计算/知识驱动的 RNA 3D 结构预测（如 RNAComposer 类片段组装方法）——优点：可批量生成；局限：依赖模板与片段库，多样性受限。</li>
+<li>阶段三：深度学习方法（如 RFDiffusion、Boltz-1）用于结构生成/预测——优点：可大规模采样构象空间；局限：输出质量参差，需要筛选与验证。</li>
+<li>本文主张的位置：在阶段三之后补上「curation 层」，即用 meta-scoring 对多来源生成结果做质量分层与高置信筛选，形成可用的合成数据集。</li>
+<li>脉络标注：以上脉络为「仅本文框架」下的重构，摘要未逐条引用具体文献；未做外部核验。</li>
+</ul>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>高质量 RNA 结构数据稀缺</td>
+<td>RNA 数据远少于蛋白质数据</td>
+<td>摘要指出深度学习发展提高了对大规模多样结构数据集的需求，而高质量 RNA 数据稀缺</td>
+<td>摘要背景陈述</td>
+</tr>
+<tr>
+<td>合成数据可靠性不足</td>
+<td>合成数据集的实际效用取决于 curation 与 validation</td>
+<td>作者认为若不仔细筛选，合成结构难以保证可靠性</td>
+<td>摘要「their practical utility depends on careful curation and validation」</td>
+</tr>
+<tr>
+<td>低质量生成模型输出混入</td>
+<td>需要识别 low-quality models</td>
+<td>多来源生成方法输出质量不一</td>
+<td>摘要「identify low-quality models and select high-confidence candidates」</td>
+</tr>
+<tr>
+<td>单一生成方法覆盖有限</td>
+<td>需整合多种结构生成方法</td>
+<td>作者采用多方法整合策略</td>
+<td>摘要「integrates data from multiple structure-generation approaches」</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p>1) 表面方法：构建 RNA-SyntHub 流程，整合多种结构生成方法的输出，用一个 meta-scoring 函数对模型打分，剔除低质量模型，保留高置信候选，形成 curated synthetic RNA 数据集。
+2) 核心洞察：合成结构数据的价值不取决于生成数量，而取决于筛选机制；通过跨方法的 meta-scoring 可以在明确假设下把海量低置信输出压缩为可用的高置信子集（447,402 → 约 16,000）。
+3) 可能的普适教训 [Analysis]：对生成式结构模型（无论 RNA 还是蛋白质）的大规模输出，建立独立的、跨方法的打分/筛选层，可能是让生成数据真正可用的关键步骤；这一「生成 + meta-scoring curation」范式可迁移到蛋白质构象采样与 decoy 筛选。</p>
+<h2>07 方法总览</h2>
+<ul>
+<li>输入：多来源结构生成方法的输出，包括 RFDiffusion 预测的 447,402 个合成 RNA 结构，以及 Boltz-1 与 RNAComposer 的预测。</li>
+<li>输出：经 meta-scoring 筛选的 curated 合成 RNA 数据集（约 16,000 个高置信结构），并补充其他方法预测。</li>
+<li>模块：数据整合模块（多生成方法）、meta-scoring 函数（质量评估与分层）、筛选模块（低质量剔除、高置信选择）。</li>
+<li>训练：摘要未说明是否涉及模型训练；meta-scoring 函数的具体形式未提供。</li>
+<li>工具：RFDiffusion、Boltz-1、RNAComposer、RNA-SyntHub 流程。</li>
+<li>反馈回路：摘要未提供。</li>
+<li>假设：作者强调方法在「explicitly stated assumptions」下运行；具体假设内容摘要未列出。</li>
+<li>文字流程：多来源生成方法产生大规模合成 RNA 结构 → 汇总进入 RNA-SyntHub → meta-scoring 函数对每个模型打分 → 识别低质量模型并剔除 → 选出高置信候选 → 形成约 16,000 结构的 curated 子集 → 补充 Boltz-1 与 RNAComposer 预测 → 输出可用于方法开发、探索性分析、decoy 应用与深度学习工作流的数据集。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多来源结构生成整合</td>
+<td>汇集 RFDiffusion、Boltz-1、RNAComposer 等输出</td>
+<td>单一方法覆盖与质量有限，需多样性与互补</td>
+<td>输入：各方法预测；输出：统一候选池</td>
+<td>摘要</td>
+<td>预期：多样性下降，筛选基础变窄（预期效应，未实测）</td>
+</tr>
+<tr>
+<td>meta-scoring 函数</td>
+<td>对模型打分，识别低质量、选高置信</td>
+<td>合成数据可靠性依赖筛选</td>
+<td>输入：候选结构；输出：分数/分层</td>
+<td>摘要</td>
+<td>预期：无法区分质量，curated 子集不可得（预期效应，未实测）</td>
+</tr>
+<tr>
+<td>筛选/curation</td>
+<td>从 447,402 中选出约 16,000</td>
+<td>压缩规模、提升置信</td>
+<td>输入：打分结果；输出：curated 子集</td>
+<td>摘要</td>
+<td>实测效应：规模由 447,402 降至约 16,000（摘要给出的结果，非消融实验）</td>
+</tr>
+<tr>
+<td>补充预测（Boltz-1、RNAComposer）</td>
+<td>补充 curated 数据集</td>
+<td>增加方法覆盖</td>
+<td>输入：补充方法；输出：扩展数据集</td>
+<td>摘要</td>
+<td>预期：覆盖减少（预期效应，未实测）</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>不适用（摘要未给出任何公式或符号定义；meta-scoring 函数的具体数学形式未提供）。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li>数据集/群体：447,402 个 RFDiffusion 预测的合成 RNA 结构；补充 Boltz-1 与 RNAComposer 预测。</li>
+<li>规模：447,402 → 约 16,000（curated 子集）。</li>
+<li>指标：未提供（摘要未说明 meta-scoring 的具体指标或阈值）。</li>
+<li>基线：未提供。</li>
+<li>预算：未提供。</li>
+<li>骨干/仪器：RFDiffusion、Boltz-1、RNAComposer。</li>
+<li>oracle 输入：未提供。</li>
+<li>评测协议：未提供（摘要仅称 proof of concept）。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>proof of concept：对 447,402 个 RFDiffusion 结构应用 RNA-SyntHub</td>
+<td>meta-scoring 可筛选出高置信子集</td>
+<td>无对比基线，单一数据集</td>
+<td>得到约 16,000 个 curated 结构</td>
+<td>流程可在大规模合成 RNA 结构上运行并产出筛选子集</td>
+<td>不能证明筛选后结构全部正确，也不能证明优于其他筛选方法</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>补充 Boltz-1 与 RNAComposer 预测</td>
+<td>多方法可互补扩展数据集</td>
+<td>未说明对比条件</td>
+<td>数据集被补充</td>
+<td>多来源整合可行</td>
+<td>不能证明补充预测质量或互补性程度</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li>任务范围：本文是方法学章节，核心是流程框架与 proof of concept，而非全面基准评测。</li>
+<li>oracle/真值输入：未提供；无法判断筛选是否以实验结构为参照。</li>
+<li>端到端状态：从生成到筛选的流程被描述为可运行，但筛选质量未与独立真值对比。</li>
+<li>算力成本：未提供。</li>
+<li>历史数据依赖：依赖 RFDiffusion、Boltz-1、RNAComposer 等已有方法。</li>
+<li>模型依赖：结果依赖所用生成模型与 meta-scoring 函数的具体实现。</li>
+<li>最难情形：摘要未讨论失败案例或最难构象。</li>
+<li>群体/领域边界：面向 RNA，非蛋白质；结论边界限于合成 RNA 结构 curation。</li>
+<li>不确定性：meta-scoring 的具体形式、假设内容、验证标准均未在摘要中给出。</li>
+<li>有边界的复述：在明确假设下，RNA-SyntHub 能把 447,402 个 RFDiffusion 合成 RNA 结构筛选为约 16,000 个高置信候选，并补充其他方法预测；该结果支持流程可行性，但不构成对筛选准确性或下游性能的证明。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。摘要仅强调方法在「explicitly stated assumptions」下运行，但未列出这些假设或局限。</p>
+<p>作者提及的相关约束（非正式局限）：方法效用依赖 curation 与 validation；合成数据集的可靠性需谨慎保证。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>meta-scoring 函数细节未在摘要中给出</td>
+<td>筛选可能依赖未公开的启发式或阈值</td>
+<td>决定结果可复现性与可迁移性</td>
+<td>获取全文方法节，检查打分项与阈值</td>
+<td>摘要未提供</td>
+</tr>
+<tr>
+<td>无独立真值对比</td>
+<td>约 16,000 个「高置信」结构未必物理正确</td>
+<td>影响下游深度学习与 decoy 应用可靠性</td>
+<td>与实验 RNA 结构或独立验证集比对</td>
+<td>摘要仅称 proof of concept</td>
+</tr>
+<tr>
+<td>447,402 → 约 16,000 的压缩比约 3.6%</td>
+<td>可能剔除大量有效构象，或保留仍含噪声</td>
+<td>影响数据集多样性与覆盖</td>
+<td>分析被剔除结构的分布与质量</td>
+<td>摘要数值</td>
+</tr>
+<tr>
+<td>多方法整合但未说明互补性</td>
+<td>Boltz-1/RNAComposer 补充可能引入方法偏差</td>
+<td>影响数据集代表性</td>
+<td>分方法统计质量与覆盖</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>「explicitly stated assumptions」未列出</td>
+<td>假设可能限制适用范围</td>
+<td>影响结论边界</td>
+<td>查阅全文假设节</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<h3>Agent 提炼的知识候选</h3>
+<ul>
+<li>可迁移概念：生成式结构模型（RFDiffusion 类）的大规模输出需要独立的 curation 层；meta-scoring 可作为跨方法的质量仲裁机制。</li>
+<li>可迁移方法：多来源生成 + 统一打分 + 高置信筛选的三段式流程，可直接迁移到蛋白质构象采样与 decoy 筛选（如对 MD 轨迹或生成模型输出做 meta-scoring）。</li>
+<li>可迁移实验设计：以「生成总量 → 筛选后子集」的压缩比作为流程有效性的初步证据；但需补充独立真值验证。</li>
+<li>面向本课题的迁移：在蛋白质结构预测/生成中，可借鉴 RNA-SyntHub 思路，构建跨 AlphaFold/RFDiffusion/MD 的 meta-scoring 筛选管线，用于构建高质量训练集或 decoy 集。</li>
+<li>注意：本文未提供公式与阈值，迁移时需自行设计打分项。</li>
+</ul>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li>相似：RFDiffusion 用于蛋白质/核酸结构生成；Boltz-1 为结构预测模型；RNAComposer 为片段组装式 RNA 3D 预测——均属结构生成/预测方法，与蛋白质领域 AlphaFold/RFDiffusion 生态平行。</li>
+<li>组合：meta-scoring 与 decoy 筛选思想可组合到蛋白质构象采样评估中。</li>
+<li>冲突：未发现直接冲突；但 RNA 数据稀缺的论断与蛋白质数据丰富的对比是本文动机。</li>
+<li>可迁移领域：蛋白质结构预测、构象生成、分子对接中的 pose 筛选、MD 轨迹聚类与质量评估。</li>
+<li>标注：以上连接基于摘要中提及的方法名与领域常识，未做外部文献核验。</li>
+</ul>
+<h2>16 研究想法</h2>
+<h3>Agent 生成的研究候选</h3>
+<ol>
+<li>
+<p>名称：蛋白质版 Meta-Scoring Curation Pipeline
+   - 来源局限/观察：本文 meta-scoring 仅用于 RNA，且未公开打分细节。
+   - 核心假设：跨 AlphaFold/RFDiffusion/MD 的 meta-scoring 可提升蛋白质合成结构数据集质量。
+   - 相对本文的增量：迁移到蛋白质并引入独立真值验证。
+   - 初步方法：收集多来源蛋白质结构预测，设计 meta-scoring，筛选后与实验结构比对。
+   - 验证方式：与 PDB 实验结构比较 RMSD/物理合理性。
+   - 可能的失败模式：打分项在蛋白质上不适用。
+   - 创新状态：unverified。</p>
+</li>
+<li>
+<p>名称：Meta-Scoring 作为 Decoy 选择器
+   - 来源局限/观察：本文提到 decoy-based applications。
+   - 核心假设：meta-scoring 可区分 native-like 与 decoy 构象。
+   - 相对本文的增量：将 curation 打分直接用于对接/折叠 decoy 选择。
+   - 初步方法：在已知 decoy 集上评估 meta-scoring 的排序能力。
+   - 验证方式：enrichment factor、ROC。
+   - 可能的失败模式：打分与真实质量不相关。
+   - 创新状态：unverified。</p>
+</li>
+<li>
+<p>名称：RNA-SyntHub 假设显式化与消融
+   - 来源局限/观察：摘要称在「explicitly stated assumptions」下运行但未列出。
+   - 核心假设：明确假设并做消融可揭示各打分项贡献。
+   - 相对本文的增量：把黑箱流程变为可解释、可消融的框架。
+   - 初步方法：逐项移除 meta-scoring 组件，观察筛选子集变化。
+   - 验证方式：消融实验 + 独立验证集。
+   - 可能的失败模式：假设过多导致流程不可用。
+   - 创新状态：unverified。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present RNA-SyntHub, a pipeline for curating synthetic RNA 3D structure datasets. The workflow integrates multiple structure-generation approaches with a meta-scoring function to filter low-quality models. As a proof of concept, they applied the pipeline to 447,402 RFDiffusion-predicted structures, yielding a curated subset of approximately 16,000 structures, further complemented by Boltz-1 and RNAComposer predictions. The authors claim this provides both a methodological framework and a concrete dataset for downstream applications.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative validation metrics, benchmark comparisons, or dataset quality assessments are reported</li>
+<li><strong>Missing materials affecting confidence</strong> Full methods, scoring function details, validation benchmarks, dataset composition statistics, comparison with existing RNA structure curation tools, and any downstream application demonstrations</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract describes a potentially useful pipeline for curating synthetic RNA 3D structures, addressing a genuine need in the field. However, the evidence presented is insufficient to evaluate the technical soundness of the meta-scoring approach, the quality of the curated dataset, or the claimed utility for downstream applications. The core claims are plausible but currently unsubstantiated from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in RNA structural biology, computational RNA design, and deep learning for biomolecular structure prediction would be interested. The dataset could serve as training or benchmarking data for RNA structure prediction models, and the curation methodology may be relevant to those building large structural datasets for protein or RNA applications.</li>
+<li><strong>Major strengths</strong> The problem addressed is timely and relevant, given the growing demand for large RNA structural datasets. The proposed pipeline integrates multiple generation approaches, which is a sensible strategy. The scale of the proof-of-concept application (447,402 structures) is substantial.</li>
+<li><strong>Major Concerns</strong> </li>
+<li>R1-M1</li>
+<li>R1-M2</li>
+<li>R1-M3</li>
+<li><strong>Minor Comments</strong> </li>
+<li>R1-m1</li>
+<li>R1-m2</li>
+<li>R1-m3</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The meta-scoring function is not described in sufficient detail to assess its validity. No validation of the curated subset against known RNA structures or experimental data is reported. The criteria for "low-quality" and "high-confidence" are not defined. The complementarity of Boltz-1 and RNAComposer predictions is asserted but not demonstrated.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The concept of meta-scoring for RNA structure curation is not entirely novel, but the specific application to synthetic RNA datasets may offer a new contribution. The abstract does not clearly differentiate this approach from existing curation methods.</li>
+<li>Scientific importance: The need for curated RNA structural datasets is real and growing. If the method is validated, it could be valuable. However, the abstract does not demonstrate that the curated dataset is superior to existing alternatives.</li>
+<li>Interdisciplinary readership: The topic bridges computational biology, structural biology, and machine learning, which could attract a broad audience. The abstract is written in accessible language.</li>
+<li>Technical soundness: Cannot be assessed from the abstract alone. The meta-scoring approach, validation strategy, and quality metrics are not described.</li>
+<li>Readability for nonspecialists: The abstract is clear and well-structured, with technical terms appropriately introduced.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract presents a reasonable framework, but the absence of validation details and quality metrics prevents a supportive recommendation. A revised version with concrete validation results and methodological clarity could change this assessment.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The meta-scoring function identifies low-quality models and selects high-confidence candidates.</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract does not describe the meta-scoring function, its inputs, weights, or how it was calibrated. No evidence is presented that the scoring function accurately distinguishes high-quality from low-quality RNA structures.</li>
+<li><strong>Why it matters</strong> The entire pipeline's utility depends on the validity of the meta-scoring approach. Without a description of the scoring methodology or validation against known structures, the curated dataset's reliability cannot be established.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a detailed description of the meta-scoring function, including its components, training or calibration data, and validation against experimentally determined RNA structures or established quality metrics.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence quality</li>
+<li><strong>Claim pointer</strong> The curated subset of approximately 16,000 structures is of high quality and suitable for downstream applications.</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> No quantitative metrics are provided to support the quality of the curated subset. The abstract does not report any benchmarks, comparisons with experimental structures, or independent validation of the selected models.</li>
+<li><strong>Why it matters</strong> The claim that the dataset supports "methodological development, exploratory analyses, decoy-based applications, and selected deep learning workflows" requires evidence that the structures are accurate and representative. Without such evidence, the dataset's practical value is unsubstantiated.</li>
+<li>
+<p><strong>Resolution test</strong> Include validation results such as RMSD comparisons to known structures, assessment using established RNA quality metrics (e.g., MolProbity scores, RNA-specific scoring functions), or performance benchmarks in downstream tasks.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> The workflow integrates data from multiple structure-generation approaches.</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract does not specify how the outputs from RFDiffusion, Boltz-1, and RNAComposer are integrated, how conflicts are resolved, or whether the complementarity of these methods was systematically assessed. The criteria for including Boltz-1 and RNAComposer predictions are not stated.</li>
+<li><strong>Why it matters</strong> Reproducibility and transparency are essential for a methodological pipeline. Without clear integration rules and inclusion criteria, other researchers cannot apply or evaluate the method.</li>
+<li><strong>Resolution test</strong> Provide a step-by-step description of the integration workflow, including data preprocessing, scoring, filtering thresholds, and the rationale for combining multiple generation methods.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Definition of "synthetic RNA structures"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The term "synthetic RNA structures" is used without explicit definition. It is unclear whether this refers to computationally generated models, chemically synthesized RNA molecules, or both.</li>
+<li>
+<p><strong>Required correction</strong> Define "synthetic RNA structures" explicitly in the abstract or introduction to avoid ambiguity.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Dataset availability</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract does not state where the curated dataset will be made available or in what format.</li>
+<li>
+<p><strong>Required correction</strong> Include a statement on data availability, including repository links and access conditions.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Context</li>
+<li><strong>Affected element</strong> Comparison with existing methods</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract does not compare RNA-SyntHub with existing RNA structure curation tools or datasets, making it difficult to assess the novelty or advantage of the proposed approach.</li>
+<li><strong>Required correction</strong> Add a brief comparison with existing curation methods or datasets in the abstract or introduction.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that the curated dataset supports "selected deep learning workflows" is unsupported, as no demonstration or benchmark is provided.</li>
+<li>The claim that the pipeline "systematically constructs curated synthetic RNA datasets" is plausible but not verifiable from the abstract alone.</li>
+<li>The assertion that the curated subset is "high-confidence" is unsupported without defined quality criteria or validation metrics.</li>
+<li>The complementarity of Boltz-1 and RNAComposer predictions is asserted but not demonstrated.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

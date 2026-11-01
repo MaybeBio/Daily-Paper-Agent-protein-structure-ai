@@ -1,0 +1,922 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>In Silico Structural Dynamics and Downstream Bioprocess of Recombinant Human SUMO-IL-33. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>In Silico Structural Dynamics and Downstream Bioprocess of Recombinant Human SUMO-IL-33.</h1>
+      <div class="meta">Nguyen, Kim-Hung; Mai, Tan Thanh; Lam, Thua-Phong; Pham, Long-Hung Dinh; Do, Hoang-Han; Quach, Minh-Thanh; Thai, Khac-Minh; Le, Minh-Quan; Nguyen, Quoc-Thai</div>
+      <div class="meta muted">
+        
+        <span class="journal">Biomolecules</span>
+        · 2026-10-27
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42939705/">原文</a>
+      </div>
+      <p class="one-liner">用AlphaFold/RoseTTAFold预测SUMO-IL-33融合蛋白结构并做MD模拟分析结构域动态，结合下游生物工艺优化实现IL-33高产量制备，属蛋白质结构计算与工程化应用结合但方法创新有限。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Interleukin-33 (IL-33) is a therapeutic target in inflammatory diseases, yet inhibitor screening is hindered by high commercial protein costs. While expressing IL-33 as a SUMO fusion protein overcomes yield limitations in Escherichia coli, whether this intact chimera can directly serve as a screening surrogate remains unresolved. Here, we combined in silico simulations with empirical bioprocess optimization to establish a high-yield pipeline for native human IL-33 production. AI-based structure predictions (AlphaFold and RoseTTAFold) revealed distinct inter-domain dynamics mediated by a flexible linker. Molecular dynamics simulations of the compact RoseTTAFold model suggested potential steric occlusion near receptor-binding interfaces, whereas AlphaFold models exhibited extended conformations, highlighting model-dependent variations that warrant further structural verification. To restore accessibility, tag cleavage was optimized using 1.0% (mol/mol) SUMO protease at 4  degrees C for 1 h, achieving near-complete digestion. Sandwich ELISA demonstrated an 87.6% molar epitope recognition recovery for cleaved IL-33 versus only 12.0% for the intact fusion, providing empirical evidence of substantial functional epitope masking by the SUMO tag. Two-step IMAC purification yielded ~19% mass recovery (~32.6% molar recovery). These findings demonstrate that tag removal is operationally essential for IL-33 functional availability in screening applications.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">白细胞介素-33（IL-33）是炎症性疾病的一个治疗靶点，然而抑制剂筛选受到商业蛋白高成本的阻碍。尽管将IL-33表达为SUMO融合蛋白可克服大肠杆菌中的产量限制，但这种完整嵌合体是否能直接作为筛选替代物仍悬而未决。在此，我们结合计算机模拟与经验性生物工艺优化，建立了一条用于天然人IL-33生产的高产流程。基于AI的结构预测（AlphaFold和RoseTTAFold）揭示了由柔性连接子介导的明显结构域间动态。紧凑型RoseTTAFold模型的分子动力学模拟提示受体结合界面附近可能存在空间位阻，而AlphaFold模型则呈现延伸构象，突显了依赖模型的差异，这有待进一步的结构验证。为恢复可及性，使用1.0%（摩尔/摩尔）SUMO蛋白酶在4°C下优化标签切割1小时，实现了近乎完全的消化。夹心ELISA显示，切割后的IL-33摩尔表位识别恢复率为87.6%，而完整融合蛋白仅为12.0%，为SUMO标签导致显著功能表位掩蔽提供了经验证据。两步IMAC纯化实现了约19%的质量回收率（约32.6%的摩尔回收率）。这些发现表明，在筛选应用中，标签去除对于IL-33的功能可用性在操作上是必不可少的。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：In Silico Structural Dynamics and Downstream Bioprocess of Recombinant Human SUMO-IL-33</li>
+<li><strong>作者</strong>：Nguyen, Kim-Hung; Mai, Tan Thanh; Lam, Thua-Phong; Pham, Long-Hung Dinh; Do, Hoang-Han; Quach, Minh-Thanh; Thai, Khac-Minh; Le, Minh-Quan; Nguyen, Quoc-Thai</li>
+<li><strong>单位</strong>：未提供（PubMed 记录未列出单位信息）</li>
+<li><strong>期刊/平台</strong>：Biomolecules</li>
+<li><strong>年份</strong>：2026（在线日期 2026-10-27）</li>
+<li><strong>论文类型</strong>：研究论文（计算模拟 + 实验生物工艺优化）</li>
+<li><strong>领域</strong>：蛋白质结构预测、分子动力学模拟、蛋白-蛋白对接、重组蛋白表达与纯化</li>
+<li><strong>关键词</strong>：IL-33；SUMO 融合蛋白；AlphaFold；RoseTTAFold；分子动力学；蛋白-蛋白对接；IMAC 纯化；表位掩蔽</li>
+<li><strong>DOI/arXiv</strong>：10.3390/biom16101451</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供（补充材料有 Table S1、Figures S1–S5，但未公开提供）</li>
+<li><strong>阅读日期</strong>：2026-05-13（按当前日期推算）</li>
+<li><strong>在课题方向中的位置</strong>：本文处于「蛋白质结构相关计算研究 × AI 方法/物理模拟」交叉点，具体为：利用 AI 结构预测（AlphaFold2/3、RoseTTAFold）生成融合蛋白构象，结合 MD 模拟与蛋白-蛋白对接评估 SUMO 标签对 IL-33 受体结合界面的空间掩蔽效应，并以 ELISA 实验验证计算预测。其核心价值在于：展示了 AI 预测结构作为 MD 模拟初始构象时，模型选择对结论的显著影响，以及计算-实验联合验证融合蛋白标签效应的完整范式。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文通过 AI 结构预测（AlphaFold/RoseTTAFold）结合 200 ns 分子动力学模拟与 HADDOCK 蛋白-蛋白对接，预测 SUMO 标签可能掩蔽 IL-33 的 ST2 受体结合位点，并通过优化 SUMO 蛋白酶切割条件（1.0% mol/mol，4°C，1 h）和两步 IMAC 纯化，以 87.6% 的表位识别恢复率（ELISA 验证）证明标签切割对 IL-33 功能可用性具有必要性。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：重组 SUMO-IL-33 融合蛋白能否直接作为 IL-33/ST2 抑制剂筛选的替代靶标，还是必须去除 SUMO 标签才能恢复 IL-33 的功能表位？</li>
+<li><strong>为什么重要</strong>：IL-33 是炎症性疾病（哮喘、COPD、IBD、类风湿关节炎等）的治疗靶点，但商业 IL-33 蛋白成本高昂，限制了抑制剂筛选。SUMO 融合表达可解决大肠杆菌中 IL-33 产量低的问题，但融合标签是否干扰受体结合界面尚不清楚。若融合蛋白可直接用于筛选，可大幅降低成本；若不能，则需要优化切割工艺。</li>
+<li><strong>现有方法为何不足</strong>：以往研究多直接假设 SUMO 融合蛋白可切割后使用，缺乏对融合状态下 IL-33 结构完整性和表位可及性的系统评估。静态结构预测无法捕捉柔性连接肽介导的域间动态重排，而实验上缺乏对融合蛋白与天然 IL-33 表位暴露差异的定量比较。</li>
+<li><strong>精确研究问题</strong>：Can the intact SUMO-IL-33 fusion protein serve as a functional surrogate for IL-33 in binding assays, or is enzymatic tag removal operationally required to restore epitope accessibility?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文引言与讨论，标注为「仅本文框架」——即作者在文中呈现的领域发展叙事，未经外部文献系统核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IL-33 生物学发现</td>
+<td>细胞因子功能研究、ST2 受体鉴定</td>
+<td>明确 IL-33/ST2 为治疗靶点</td>
+<td>缺乏高性价比重组蛋白来源</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>重组蛋白表达</td>
+<td>大肠杆菌直接表达 IL-33</td>
+<td>成本低</td>
+<td>易降解、包涵体、N 端甲硫氨酸切割不完全</td>
+<td>本文要解决的问题</td>
+</tr>
+<tr>
+<td>融合标签策略</td>
+<td>SUMO 融合表达（pET-SUMO 系统）</td>
+<td>提高可溶性、抗蛋白酶降解、可切割无痕</td>
+<td>标签是否干扰靶蛋白结构/功能未系统评估</td>
+<td>本文核心关注点</td>
+</tr>
+<tr>
+<td>结构预测</td>
+<td>I-TASSER/C-I-TASSER（模板法）→ AlphaFold2/3、RoseTTAFold（深度学习）</td>
+<td>高精度单链结构预测</td>
+<td>柔性连接肽/域间取向预测不可靠；不同模型给出不同构象</td>
+<td>本文使用多工具对比</td>
+</tr>
+<tr>
+<td>动态构象采样</td>
+<td>MD 模拟（GROMACS + CHARMM27）</td>
+<td>捕捉柔性域运动</td>
+<td>力场偏向紧凑态；初始构象依赖</td>
+<td>本文核心方法</td>
+</tr>
+<tr>
+<td>蛋白-蛋白对接</td>
+<td>HADDOCK</td>
+<td>可评估结合亲和力趋势</td>
+<td>刚性/半柔性假设；评分函数精度有限</td>
+<td>本文用于比较融合 vs 天然 IL-33 结合</td>
+</tr>
+<tr>
+<td>表位验证</td>
+<td>夹心 ELISA</td>
+<td>定量表位可及性</td>
+<td>无法区分位点特异性掩蔽 vs 全局构象变化</td>
+<td>本文实验验证</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在「AI 结构预测 + MD 模拟 + 对接 + 实验验证」的集成框架下，首次系统评估 SUMO-IL-33 融合蛋白作为筛选替代靶标的可行性，并给出明确的工艺优化方案。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IL-33 重组表达困难</td>
+<td>直接表达易降解、形成包涵体、N 端不完整</td>
+<td>IL-33 对宿主蛋白酶敏感；N 端甲硫氨酸切割不完全</td>
+<td>Introduction 第 2 段</td>
+</tr>
+<tr>
+<td>商业 IL-33 成本高</td>
+<td>抑制剂筛选难以规模化</td>
+<td>依赖进口试剂，资源受限环境（如越南）负担重</td>
+<td>Discussion 末段</td>
+</tr>
+<tr>
+<td>融合标签可能干扰功能</td>
+<td>SUMO-IL-33 表位识别率仅 12.0%（ELISA）</td>
+<td>SUMO 标签（~12.8 kDa）空间掩蔽 IL-33 表位</td>
+<td>Results 3.5 节、Table 2</td>
+</tr>
+<tr>
+<td>静态结构预测不足以评估掩蔽</td>
+<td>初始 RoseTTAFold 模型显示位点暴露，但 MD 后出现掩蔽</td>
+<td>柔性连接肽（Glu105–Ser111）允许域间重排；静态快照无法捕捉</td>
+<td>Results 3.1.2、3.2.2 节</td>
+</tr>
+<tr>
+<td>不同 AI 预测模型给出不同域间取向</td>
+<td>AlphaFold 预测伸展构象，RoseTTAFold 预测紧凑构象</td>
+<td>柔性连接肽区域置信度低；模型对域间取向的建模能力有限</td>
+<td>Results 3.1.1、Discussion 第 3 段</td>
+</tr>
+<tr>
+<td>MD 模拟结果依赖初始构象</td>
+<td>不同初始结构导致不同最终构象</td>
+<td>标准力场（CHARMM + TIP3P）偏向紧凑态；采样不收敛</td>
+<td>Discussion 第 4 段</td>
+</tr>
+<tr>
+<td>标签切割效率低</td>
+<td>0.1% 酶量 3 h 仍不完全</td>
+<td>酶与底物比例不足</td>
+<td>Results 3.4 节</td>
+</tr>
+<tr>
+<td>纯化收率损失</td>
+<td>两步 IMAC 后质量收率仅 ~19%</td>
+<td>多步操作累积损失</td>
+<td>Results 3.4 节、图 7</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IL-33 重组表达困难</td>
+<td>直接表达易降解、形成包涵体、N 端不完整</td>
+<td>IL-33 对宿主蛋白酶敏感；N 端甲硫氨酸切割不完全</td>
+<td>Introduction 第 2 段</td>
+</tr>
+<tr>
+<td>商业 IL-33 成本高</td>
+<td>抑制剂筛选难以规模化</td>
+<td>依赖进口试剂，资源受限环境（如越南）负担重</td>
+<td>Discussion 末段</td>
+</tr>
+<tr>
+<td>融合标签可能干扰功能</td>
+<td>SUMO-IL-33 表位识别率仅 12.0%（ELISA）</td>
+<td>SUMO 标签（~12.8 kDa）空间掩蔽 IL-33 表位</td>
+<td>Results 3.5 节、Table 2</td>
+</tr>
+<tr>
+<td>静态结构预测不足以评估掩蔽</td>
+<td>初始 RoseTTAFold 模型显示位点暴露，但 MD 后出现掩蔽</td>
+<td>柔性连接肽（Glu105–Ser111）允许域间重排；静态快照无法捕捉</td>
+<td>Results 3.1.2、3.2.2 节</td>
+</tr>
+<tr>
+<td>不同 AI 预测模型给出不同域间取向</td>
+<td>AlphaFold 预测伸展构象，RoseTTAFold 预测紧凑构象</td>
+<td>柔性连接肽区域置信度低；模型对域间取向的建模能力有限</td>
+<td>Results 3.1.1、Discussion 第 3 段</td>
+</tr>
+<tr>
+<td>MD 模拟结果依赖初始构象</td>
+<td>不同初始结构导致不同最终构象</td>
+<td>标准力场（CHARMM + TIP3P）偏向紧凑态；采样不收敛</td>
+<td>Discussion 第 4 段</td>
+</tr>
+<tr>
+<td>标签切割效率低</td>
+<td>0.1% 酶量 3 h 仍不完全</td>
+<td>酶与底物比例不足</td>
+<td>Results 3.4 节</td>
+</tr>
+<tr>
+<td>纯化收率损失</td>
+<td>两步 IMAC 后质量收率仅 ~19%</td>
+<td>多步操作累积损失</td>
+<td>Results 3.4 节、图 7</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>本文表面上是「计算预测 + 实验验证」的常规组合：用 AlphaFold2/3、RoseTTAFold 预测 SUMO-IL-33 融合蛋白结构 → 选最优模型做 MD 模拟 → 用 HADDOCK 对接评估与 ST2 的结合 → 实验上优化 SUMO 蛋白酶切割和 IMAC 纯化 → 用 ELISA 定量表位恢复。</p>
+<h3>2) 核心洞察</h3>
+<p><strong>融合标签的干扰不是静态的，而是动态的。</strong> 初始 RoseTTAFold 模型显示 IL-33 的两个 ST2 结合位点均暴露，但 MD 模拟揭示 SUMO 域在柔性连接肽介导下可折叠到 IL-33 核心表面，导致位点 2 部分被掩蔽。这一「静态暴露、动态掩蔽」的现象，解释了为什么仅凭结构预测无法判断融合蛋白是否可用——必须考虑域间动力学。</p>
+<p><strong>计算预测的结论高度依赖初始模型选择。</strong> AlphaFold 预测伸展构象（标签远离 IL-33），RoseTTAFold 预测紧凑构象（标签靠近 IL-33），两者 MD 后行为截然不同。这提示：对于含柔性连接肽的融合蛋白，单一 AI 模型的结构预测不足以支撑结论，需要多模型交叉验证 + 实验确认。</p>
+<p><strong>ELISA 是验证计算预测的「金标准」简化代理。</strong> 12.0% vs 87.6% 的表位识别差异，为计算预测的掩蔽效应提供了定量实验证据，尽管 ELISA 无法区分位点特异性掩蔽与全局构象变化。</p>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>对含柔性连接肽的融合蛋白/多域蛋白，静态结构预测（无论多先进）只能作为初始构象，不能作为功能结论的依据。</strong> MD 模拟是必要的中间步骤，但 MD 结果本身也依赖初始构象和力场选择。</li>
+<li><strong>「计算预测 + 一个实验读出」的验证模式，比「纯计算」或「纯实验」都更有说服力。</strong> 本文的 ELISA 实验虽然简单，但直接锚定了计算预测的功能含义。</li>
+<li><strong>资源受限环境下的研究策略</strong>：先用免费/低成本计算工具（ColabFold、RoseTTAFold、GROMACS、HADDOCK）缩小实验变量空间，再用最小化实验（ELISA）验证关键结论，最后才投入昂贵的纯化工艺优化。这种「计算先行、实验最小化」的范式值得借鉴。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>：
+- SUMO-IL-33 融合蛋白氨基酸序列（8× His-SUMO 标签 + 人 IL-33 成熟肽，共 270 残基）
+- 实验材料：pET-SUMO-IL-33 质粒、E. coli BL21(DE3)、SUMO 蛋白酶、HisTrap HP 柱、商业 ELISA 试剂盒</p>
+<p><strong>输出</strong>：
+- 最优 3D 结构模型（RoseTTAFold RF-1）
+- MD 模拟轨迹（3 × 200 ns）
+- HADDOCK 对接复合物结构及评分
+- 纯化后 IL-33 蛋白（38.56 mg/L 培养物）
+- ELISA 表位识别率（融合 12.0% vs 切割后 87.6%）</p>
+<p><strong>模块</strong>：</p>
+<ol>
+<li><strong>结构预测模块</strong>：4 种工具（I-TASSER、C-I-TASSER、AlphaFold2、RoseTTAFold），各生成 5 个模型；用 Ramachandran 图、MolProbity 评分筛选最优模型</li>
+<li><strong>MD 模拟模块</strong>：GROMACS 2021 + CHARMM27 力场 + TIP3P 水模型 + 0.15 M NaCl；200 ns × 3 轨迹；监测 RMSD、RMSF、SASA、Rg</li>
+<li><strong>对接模块</strong>：HADDOCK 2.4；先验证（重对接天然 IL-33/ST2，RMSD = 0.53 Å），再对接 SUMO-IL-33 与 ST2</li>
+<li><strong>表达模块</strong>：ZYP-5052 自动诱导培养基，25°C，40 h，200 rpm</li>
+<li><strong>切割优化模块</strong>：SUMO 蛋白酶用量（0.1% vs 1.0% mol/mol）× 温度（4/25/37°C）× 时间（1/2/3 h）</li>
+<li><strong>纯化模块</strong>：两步 IMAC（第一步捕获融合蛋白，第二步切割后收集流穿液中的天然 IL-33）</li>
+<li><strong>定量验证模块</strong>：Bradford 总蛋白定量 + 夹心 ELISA 表位定量</li>
+</ol>
+<p><strong>流程</strong>：</p>
+<pre><code>序列 → 4 种结构预测 → MolProbity 筛选 → RF-1 模型
+     → MD 模拟（3×200ns）→ 动态构象分析 → 掩蔽假说
+     → HADDOCK 对接（天然 vs 融合）→ 结合趋势比较
+     → 实验表达 → 切割优化 → 两步 IMAC → ELISA 验证
+</code></pre>
+<p><strong>假设</strong>：
+- CHARMM27 + TIP3P 力场适用于该融合蛋白体系
+- HADDOCK 评分可反映结合亲和力趋势
+- ELISA 表位识别率可代理功能表位可及性
+- 200 ns 模拟时间足以捕捉域间重排</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多工具结构预测</td>
+<td>生成候选 3D 结构</td>
+<td>单一工具可能给出偏差构象；多工具交叉验证</td>
+<td>输入：序列；输出：4 组各 5 个模型</td>
+<td>Table S1、图 1、图 S1</td>
+<td>预期影响：仅用单一工具可能错过域间取向差异，导致 MD 结论偏差 [Analysis]</td>
+</tr>
+<tr>
+<td>MolProbity 验证</td>
+<td>筛选立体化学质量最优模型</td>
+<td>结构质量影响下游模拟可靠性</td>
+<td>输入：候选模型；输出：MolProbity 评分、Ramachandran 统计</td>
+<td>Table 1、图 S2</td>
+<td>预期影响：无筛选直接 MD 可能引入不良几何起始结构</td>
+</tr>
+<tr>
+<td>MD 模拟（3×200 ns）</td>
+<td>评估域间动态与掩蔽效应</td>
+<td>静态结构无法捕捉柔性连接肽介导的构象变化</td>
+<td>输入：RF-1 模型；输出：轨迹、RMSD/RMSF/SASA/Rg 时间序列</td>
+<td>图 3A–E、图 S4</td>
+<td>实测影响：MD 揭示 SUMO 域折叠事件，改变了对掩蔽状态的判断</td>
+</tr>
+<tr>
+<td>HADDOCK 对接</td>
+<td>比较融合 vs 天然 IL-33 与 ST2 的结合</td>
+<td>评估掩蔽的功能后果</td>
+<td>输入：MD 终态构象 + ST2 结构；输出：复合物评分、ΔG</td>
+<td>图 4、图 5</td>
+<td>预期影响：无对接则掩蔽假说缺乏功能关联 [Analysis]</td>
+</tr>
+<tr>
+<td>表达系统（pET-SUMO/E. coli）</td>
+<td>生产重组融合蛋白</td>
+<td>解决 IL-33 直接表达困难</td>
+<td>输入：质粒；输出：可溶性融合蛋白</td>
+<td>Methods 2.4 节</td>
+<td>实测影响：成功获得 203.35 mg 融合蛋白</td>
+</tr>
+<tr>
+<td>切割优化</td>
+<td>确定最佳酶切条件</td>
+<td>低酶量切割不完全</td>
+<td>输入：融合蛋白 + SUMO 蛋白酶；输出：切割效率数据</td>
+<td>Results 3.4 节、图 6</td>
+<td>实测影响：1.0% 酶量 4°C 1 h 实现近完全切割</td>
+</tr>
+<tr>
+<td>两步 IMAC</td>
+<td>分离天然 IL-33</td>
+<td>去除标签和未切割融合蛋白</td>
+<td>输入：切割混合物；输出：纯化 IL-33（38.56 mg）</td>
+<td>Results 3.4 节、图 7</td>
+<td>实测影响：质量收率 ~19%，摩尔收率 ~32.6%</td>
+</tr>
+<tr>
+<td>夹心 ELISA</td>
+<td>定量表位可及性</td>
+<td>提供功能层面的掩蔽证据</td>
+<td>输入：融合/切割后 IL-33；输出：表位识别率</td>
+<td>Table 2</td>
+<td>实测影响：12.0% vs 87.6%，直接支持切割必要性</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>本文为实验与模拟结合型论文，未使用复杂数学公式。以下为理解所需的关键量化关系：</p>
+<p><strong>1. 摩尔收率计算（隐含）</strong></p>
+<p>[
+\text{摩尔收率} = \frac{\text{纯化 IL-33 摩尔数}}{\text{起始融合蛋白摩尔数}} \times 100\%
+]</p>
+<ul>
+<li>质量收率 ~19%，摩尔收率 ~32.6%</li>
+<li>差异源于融合蛋白（30.8 kDa）与 IL-33（17.9 kDa）分子量差异：32.6% ≈ 19% × (30.8/17.9)</li>
+</ul>
+<p><strong>2. 表位识别恢复率</strong></p>
+<p>[
+\text{表位识别率} = \frac{\text{ELISA 检测浓度（摩尔）}}{\text{Bradford 总蛋白浓度（摩尔）}} \times 100\%
+]</p>
+<ul>
+<li>融合蛋白：12.0 ± 0.8%</li>
+<li>切割后 IL-33：87.6 ± 3.6%</li>
+</ul>
+<p><strong>3. HADDOCK 评分（定性比较）</strong></p>
+<ul>
+<li>天然 IL-33/ST2：ΔG = −14.5 kcal/mol（参考基准）</li>
+<li>SUMO-IL-33/ST2：ΔG = −12.2 kcal/mol（融合后降低）</li>
+</ul>
+<p><strong>4. 结构验证指标</strong></p>
+<ul>
+<li>Ramachandran favored regions：RF-1 = 94.8%</li>
+<li>MolProbity score：RF-1 = 1.60（92nd percentile）</li>
+<li>Clash score：AF-1 = 1.17（99th percentile）</li>
+</ul>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<h3>数据集/群体</h3>
+<ul>
+<li><strong>计算</strong>：SUMO-IL-33 融合蛋白序列（270 aa）；ST2 受体结构（PDB: 4KC3）</li>
+<li><strong>实验</strong>：1 L E. coli 培养物；203.35 mg 融合蛋白起始量</li>
+</ul>
+<h3>规模</h3>
+<ul>
+<li>结构预测：4 工具 × 5 模型 = 20 个候选结构</li>
+<li>MD：3 条独立 200 ns 轨迹</li>
+<li>HADDOCK：120 个复合物（天然）+ 105 个复合物（融合）</li>
+<li>切割条件：3 温度 × 3 时间 × 2 酶量</li>
+</ul>
+<h3>指标</h3>
+<ul>
+<li>结构质量：Ramachandran favored %、MolProbity score、clash score</li>
+<li>构象变化：RMSD、RMSF、SASA、Rg</li>
+<li>结合预测：HADDOCK score、ΔG</li>
+<li>工艺：切割效率、质量收率、摩尔收率</li>
+<li>功能：ELISA 表位识别率</li>
+</ul>
+<h3>基线</h3>
+<ul>
+<li>天然 IL-33/ST2 对接（ΔG = −14.5 kcal/mol）</li>
+<li>未切割融合蛋白的 ELISA 识别率（12.0%）</li>
+</ul>
+<h3>骨干/仪器</h3>
+<ul>
+<li>计算：ColabFold（AlphaFold2）、RoseTTAFold、GROMACS 2021、HADDOCK 2.4、MOE 2022.02</li>
+<li>实验：超声破碎仪、HisTrap HP 柱（GE Healthcare）、ÄKTA 纯化系统（推断）、酶标仪（ELISA）</li>
+</ul>
+<h3>Oracle 输入</h3>
+<ul>
+<li>天然 IL-33/ST2 晶体结构（PDB: 4KC3）用于对接验证</li>
+<li>已知 IL-33 关键结合残基（Site 1: Glu144, Glu148, Asp149, Asp244；Site 2: Tyr163, Glu165, Leu182）</li>
+</ul>
+<h3>评测协议</h3>
+<ul>
+<li>结构预测 → Ramachandran + MolProbity 筛选 → 选 RF-1</li>
+<li>MD → 3 轨迹交叉验证构象变化一致性</li>
+<li>对接 → 先验证（重对接 RMSD = 0.53 Å）再应用</li>
+<li>实验 → Bradford 定量 + ELISA 表位定量</li>
+</ul>
+<h3>实验列表</h3>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4 工具结构预测</td>
+<td>不同算法给出不同域间取向</td>
+<td>I-TASSER vs C-I-TASSER vs AF2 vs RF</td>
+<td>RF-1 立体化学最优（favored 94.8%，MolProbity 1.60）</td>
+<td>RoseTTAFold 适合作为 MD 初始结构</td>
+<td>不证明 RF-1 是天然构象</td>
+<td>Results 3.1.1、Table 1</td>
+</tr>
+<tr>
+<td>MD 模拟（轨迹 1）</td>
+<td>SUMO 域可折叠掩蔽位点 2</td>
+<td>0–200 ns 构象演变</td>
+<td>20 ns 内 RMSD 从 12→20 Å，SUMO 域折叠</td>
+<td>动态掩蔽可能发生</td>
+<td>单条轨迹不足以代表整体</td>
+<td>Results 3.2.2、图 3A–E</td>
+</tr>
+<tr>
+<td>MD 模拟（轨迹 2、3）</td>
+<td>掩蔽事件可重复</td>
+<td>不同随机速度种子</td>
+<td>均观察到 SUMO 域折叠，主要影响位点 2</td>
+<td>掩蔽趋势具有一致性</td>
+<td>最终构象不完全一致</td>
+<td>Results 3.2.2、图 3F</td>
+</tr>
+<tr>
+<td>AlphaFold3 MD</td>
+<td>初始构象影响结论</td>
+<td>AF3 伸展构象 vs RF 紧凑构象</td>
+<td>AF3 保持伸展，无掩蔽</td>
+<td>结论依赖初始模型选择</td>
+<td>不证明哪个模型更正确</td>
+<td>Results 3.2.2、图 S4</td>
+</tr>
+<tr>
+<td>HADDOCK 重对接验证</td>
+<td>对接协议可靠</td>
+<td>天然 IL-33/ST2 重对接 vs 晶体结构</td>
+<td>RMSD = 0.53 Å</td>
+<td>对接协议可准确重现已知复合物</td>
+<td>不保证融合蛋白对接同样准确</td>
+<td>Results 3.3.1、图 4A–C</td>
+</tr>
+<tr>
+<td>融合蛋白对接</td>
+<td>掩蔽降低结合亲和力</td>
+<td>天然 ΔG = −14.5 vs 融合 ΔG = −12.2 kcal/mol</td>
+<td>结合减弱</td>
+<td>掩蔽具有功能后果</td>
+<td>ΔG 差异在评分函数误差范围内</td>
+<td>Results 3.3.2、图 5</td>
+</tr>
+<tr>
+<td>切割条件优化</td>
+<td>高酶量低温短时最优</td>
+<td>0.1% vs 1.0% × 4/25/37°C × 1/2/3 h</td>
+<td>1.0%，4°C，1 h 近完全切割</td>
+<td>温和条件避免降解</td>
+<td>未系统检测切割后 IL-33 活性</td>
+<td>Results 3.4、图 6</td>
+</tr>
+<tr>
+<td>两步 IMAC</td>
+<td>纯化方案可行</td>
+<td>流穿液 vs 洗脱液</td>
+<td>38.56 mg IL-33（~19% 质量收率）</td>
+<td>方案可规模化</td>
+<td>未报告纯度百分比</td>
+<td>Results 3.4、图 7</td>
+</tr>
+<tr>
+<td>ELISA 对比</td>
+<td>切割恢复表位识别</td>
+<td>融合 12.0% vs 切割 87.6%</td>
+<td>7.3 倍恢复</td>
+<td>切割是功能必需</td>
+<td>ELISA 无法定位掩蔽位点</td>
+<td>Results 3.5、Table 2</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<h3>任务范围</h3>
+<ul>
+<li>本文仅评估 SUMO-IL-33 融合蛋白在 <strong>E. coli 表达系统</strong> 中的可生产性和表位可及性，不涉及 IL-33 在哺乳动物系统中的表达或体内活性。</li>
+<li>计算部分仅针对 <strong>一个融合蛋白构型</strong>（N 端 SUMO + C 端 IL-33），不涵盖其他标签或连接肽设计。</li>
+</ul>
+<h3>Oracle/真值输入</h3>
+<ul>
+<li>对接验证使用 PDB: 4KC3 晶体结构作为真值，但该结构为 <strong>天然 IL-33/ST2 复合物</strong>，不含 SUMO 标签。</li>
+<li>ELISA 使用商业试剂盒，其抗体识别表位未精确定位，无法区分位点特异性掩蔽与全局构象变化。</li>
+</ul>
+<h3>端到端状态</h3>
+<ul>
+<li><strong>计算→实验全链路已完成</strong>：从序列到纯化蛋白再到功能验证，但计算预测（掩蔽）与实验证据（ELISA 降低）之间的因果链是 <strong>间接的</strong>——ELISA 无法直接证明是位点 2 被掩蔽导致识别率下降。</li>
+<li>未进行 SPR 或 ITC 等直接结合实验，ΔG 值仅为计算预测。</li>
+</ul>
+<h3>算力成本</h3>
+<ul>
+<li>未报告具体算力需求。MD 为 3 × 200 ns 显式溶剂模拟，属于中等规模；AlphaFold2/3 通过 ColabFold 运行，成本可控。</li>
+</ul>
+<h3>历史数据依赖</h3>
+<ul>
+<li>依赖 PDB: 4KC3 的晶体结构作为对接验证基准。</li>
+<li>依赖 UniProtKB/Swiss-Prot 序列注释（IL-33 残基 112–270）。</li>
+</ul>
+<h3>模型依赖</h3>
+<ul>
+<li><strong>结构预测依赖</strong>：结论高度依赖 RoseTTAFold 模型选择；AlphaFold3 模拟给出相反结果。</li>
+<li><strong>力场依赖</strong>：CHARMM27 + TIP3P 已知偏向紧凑构象，可能高估掩蔽效应。</li>
+<li><strong>对接评分依赖</strong>：HADDOCK 评分函数对柔性域体系精度有限。</li>
+</ul>
+<h3>最难情形</h3>
+<ul>
+<li>连接肽（Glu105–Ser111）区域的构象采样是最大不确定性来源——该区域在 AlphaFold 预测中置信度低，且 MD 中驱动了关键构象转变。</li>
+<li>融合蛋白的域间取向在溶液中可能是动态平衡，而非单一构象。</li>
+</ul>
+<h3>群体/领域边界</h3>
+<ul>
+<li>结论仅适用于 <strong>SUMO-IL-33 这一特定融合蛋白</strong>，不可外推至其他 SUMO 融合细胞因子。</li>
+<li>资源受限环境（越南）背景下的成本考量可能不适用于其他地区。</li>
+</ul>
+<h3>不确定性</h3>
+<ul>
+<li>计算预测的掩蔽效应是「探索性假说」而非确定性结论，作者明确承认需要 SAXS、定点突变和 SPR 进一步验证。</li>
+<li>收率数据（~19% 质量，~32.6% 摩尔）来自单次培养，未报告批次间变异。</li>
+</ul>
+<h3>有边界的复述</h3>
+<blockquote>
+<p>在 E. coli 中表达的 SUMO-IL-33 融合蛋白，其 SUMO 标签在 MD 模拟中表现出向 IL-33 核心折叠的倾向，可能部分掩蔽 ST2 结合位点 2；ELISA 实验证实融合蛋白的表位识别率（12.0%）远低于切割后 IL-33（87.6%），因此该融合蛋白 <strong>不能直接作为筛选替代靶标</strong>，必须经 SUMO 蛋白酶切割（1.0% mol/mol，4°C，1 h）和两步 IMAC 纯化后方可用于下游应用。该结论受限于单一结构预测模型、CHARMM27 力场的紧凑偏好，以及 ELISA 无法定位掩蔽位点的分辨率。</p>
+</blockquote>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单一初始结构模型</td>
+<td>仅选 RoseTTAFold RF-1 作为 MD 起点，未系统探索其他模型</td>
+<td>需对多种预测构象进行更全面的构象空间采样</td>
+<td>Discussion 第 3 段</td>
+</tr>
+<tr>
+<td>MD 采样不收敛</td>
+<td>3 × 200 ns 轨迹未完全收敛，域间取向存在不确定性</td>
+<td>延长模拟时间或使用增强采样方法</td>
+<td>Discussion 第 4 段</td>
+</tr>
+<tr>
+<td>力场偏好紧凑态</td>
+<td>CHARMM27 + TIP3P 可能过度压缩柔性区域</td>
+<td>使用更现代力场（如 CHARMM36m）或显式验证</td>
+<td>Discussion 第 4 段</td>
+</tr>
+<tr>
+<td>缺乏直接结合实验</td>
+<td>ΔG 值来自计算预测，无 SPR/ITC 验证</td>
+<td>未来需进行 SPR 动力学和 ITC 热力学测量</td>
+<td>Discussion 第 5 段</td>
+</tr>
+<tr>
+<td>ELISA 分辨率有限</td>
+<td>无法区分位点特异性掩蔽 vs 全局构象变化</td>
+<td>需 SAXS 测量 Rg 和 P(r) 以验证溶液构象</td>
+<td>Discussion 第 5 段</td>
+</tr>
+<tr>
+<td>未做定点突变验证</td>
+<td>未通过突变预测的掩蔽接触残基来验证机制</td>
+<td>建议对预测接触残基进行定点突变</td>
+<td>Discussion 第 5 段</td>
+</tr>
+<tr>
+<td>单批次收率数据</td>
+<td>收率数据来自单次培养，无重复</td>
+<td>未明确提及</td>
+<td>Results 3.4 节</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅选 RF-1 作为 MD 起点</td>
+<td>AlphaFold3 模拟显示伸展构象无掩蔽，说明结论可能依赖初始结构选择</td>
+<td>若结论不稳健，则「掩蔽效应」可能只是特定模型的人为产物</td>
+<td>对全部 20 个候选模型各做 MD，统计掩蔽发生率</td>
+<td>Results 3.2.2 明确报告 AF3 与 RF 行为相反</td>
+</tr>
+<tr>
+<td>CHARMM27 力场偏旧</td>
+<td>该力场对 intrinsically disordered regions 和柔性连接肽的描述能力有限</td>
+<td>力场偏差可能系统性高估紧凑/掩蔽状态</td>
+<td>用 CHARMM36m 或 AMBER ff19SB 重复 MD</td>
+<td>Discussion 第 4 段作者自认</td>
+</tr>
+<tr>
+<td>ELISA 12.0% vs 87.6% 的解读</td>
+<td>低识别率可能源于抗体表位与 SUMO 标签的空间邻近（非掩蔽），而非构象变化</td>
+<td>若为邻近效应，则「动态掩蔽」假说不成立</td>
+<td>使用针对不同表位的多种抗体进行 ELISA 对比</td>
+<td>Results 3.5 节未做此区分</td>
+</tr>
+<tr>
+<td>HADDOCK ΔG 差异（−14.5 vs −12.2）</td>
+<td>2.3 kcal/mol 差异可能落在评分函数误差范围内（通常 ±2–3 kcal/mol）</td>
+<td>若差异不显著，则「结合减弱」结论缺乏计算支持</td>
+<td>重复对接多次，报告标准差；或用 MM-PBSA 重算</td>
+<td>Results 3.3.2 未报告误差范围</td>
+</tr>
+<tr>
+<td>未报告纯度数据</td>
+<td>38.56 mg 收率未说明纯度百分比</td>
+<td>低纯度可能影响 ELISA 结果解释</td>
+<td>需 SDS-PAGE 灰度扫描或 SEC-HPLC 纯度数据</td>
+<td>Results 3.4 节仅报告收率</td>
+</tr>
+<tr>
+<td>无阴性对照</td>
+<td>未测试无关蛋白或单独 SUMO 标签的 ELISA 交叉反应</td>
+<td>无法排除抗体非特异性结合</td>
+<td>增加 SUMO 标签单独作为 ELISA 对照</td>
+<td>Methods 2.6 节未提及</td>
+</tr>
+<tr>
+<td>计算与实验的时间尺度不匹配</td>
+<td>MD 为纳秒-微秒尺度，而 ELISA 反映的是平衡态表位可及性</td>
+<td>短时间模拟可能捕捉到非平衡的瞬时掩蔽事件</td>
+<td>使用增强采样（如 metadynamics）验证掩蔽态是否热力学稳定</td>
+<td>图 3A 显示 20 ns 内即发生折叠，但未做自由能分析</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<h3>Agent 提炼的知识候选</h3>
+<p><strong>1. 「静态暴露 ≠ 功能可用」：融合蛋白评估必须包含动态模拟</strong>
+- 本文最核心的可迁移教训：初始结构预测显示位点暴露，但 MD 揭示动态掩蔽。对于任何含柔性连接肽的融合蛋白（SUMO、GST、MBP、GFP 等），仅凭静态结构判断功能可用性是不可靠的。
+- <strong>迁移到本课题</strong>：在设计融合蛋白用于结构研究或筛选时，应默认加入 MD 模拟步骤，评估标签对功能位点的动态掩蔽风险。</p>
+<p><strong>2. 多模型交叉验证是柔性体系结构预测的必要策略</strong>
+- AlphaFold2 和 RoseTTAFold 对同一融合蛋白给出截然不同的域间取向，且 MD 后行为相反。这提示：对多域/柔性蛋白，单一 AI 模型预测不可作为唯一依据。
+- <strong>迁移到本课题</strong>：在结构预测类研究中，对柔性体系应至少使用 2-3 种预测器 + 多模型集成，并在论文中报告模型间差异。</p>
+<p><strong>3. 「计算预测 + 单一实验读出」的验证模式</strong>
+- 本文用 ELISA 一个实验就锚定了计算预测的功能含义，避免了昂贵的 SPR/ITC 初筛。这种「计算先行、实验最小化」的策略在资源受限时尤其有效。
+- <strong>迁移到本课题</strong>：当计算预测提出掩蔽/界面干扰假说时，可先用 ELISA、pull-down 等低成本实验验证，再决定是否投入高成本生物物理表征。</p>
+<p><strong>4. 收率报告应区分质量收率与摩尔收率</strong>
+- 本文报告 19% 质量收率与 32.6% 摩尔收率，差异源于标签分子量。这种区分对评估工艺效率至关重要。
+- <strong>迁移到本课题</strong>：在重组蛋白生产相关研究中，应同时报告两种收率，避免因标签分子量造成效率误判。</p>
+<p><strong>5. 连接肽区域是融合蛋白设计的「阿喀琉斯之踵」</strong>
+- 连接肽（Glu105–Ser111）在 AlphaFold 中置信度低，在 MD 中驱动了关键构象转变。连接肽的长度、柔性和序列组成直接决定域间行为。
+- <strong>迁移到本课题</strong>：在设计融合蛋白时，连接肽应作为独立设计变量进行系统优化（长度、刚性/柔性、亲疏水性），而非随意选择。</p>
+<p><strong>6. 计算-实验不一致时的「双轨报告」策略</strong>
+- 本文同时报告 RF-1 的紧凑掩蔽态和 AF3 的伸展暴露态，不强行统一结论，而是承认模型依赖性并建议实验验证。这种诚实报告增强了论文可信度。
+- <strong>迁移到本课题</strong>：当不同计算方法给出矛盾结论时，应并列报告而非选择性呈现，并明确说明需要何种实验来区分。</p>
+<p><strong>7. 资源受限环境下的研究路径设计</strong>
+- 本文展示了从免费计算工具（ColabFold、GROMACS、HADDOCK）到低成本实验（ELISA）再到必要工艺优化的完整路径，为预算有限的研究组提供了可复制的模板。
+- <strong>迁移到本课题</strong>：在设计研究方案时，可先列出「零成本计算 → 低成本实验 → 高成本验证」的三级路径，最大化每单位预算的信息产出。</p></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text provided (Abstract, Introduction, Materials and Methods, Results, Discussion, Conclusions, Acknowledgments). Supplementary items referenced but not supplied.</li>
+<li><strong>Assessment boundary</strong> Assessment is restricted to the supplied manuscript text. All Supplementary Material (Table S1, Figures S1–S5) and any raw data, spectra, or statistical files are unavailable and therefore cannot be verified.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors report that (i) AI-based structure prediction plus MD and docking suggest the SUMO tag can sterically occlude IL-33 receptor-binding interfaces in a model-dependent manner; (ii) intact SUMO-IL-33 shows only 12.0% molar epitope recognition by sandwich ELISA versus 87.6% for cleaved IL-33; (iii) an optimized cleavage protocol (1.0% mol/mol SUMO protease, 4 °C, 1 h) plus subtractive IMAC yields 38.56 mg native IL-33 from 203.35 mg fusion input (~19% mass, ~32.6% molar recovery); and (iv) tag removal is operationally necessary for IL-33 functional availability in screening.</li>
+<li><strong>Visible evidence base</strong> Main-text descriptions of modeling (I-TASSER, C-I-TASSER, AlphaFold2, AlphaFold3, RoseTTAFold), MD (GROMACS, CHARMM27/TIP3P, 200 ns × 3 plus 100 ns AlphaFold3), HADDOCK docking, SDS-PAGE cleavage optimization, subtractive IMAC recovery, Bradford quantification, and sandwich ELISA. Quantitative values are reported in the text; the corresponding figures (Figures 1–7), Table 1, Table 2, and all Supplementary items are referenced but not included in the supplied material.</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary Table S1, Figures S1–S5, the primary Figures 1–7 and Tables 1–2 as actual data objects, raw ELISA and Bradford datasets, replicate counts and dispersion statistics, SDS-PAGE gel images, and the docking/MD parameter files. These are needed to verify the central quantitative claims.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> The manuscript addresses a practical and legitimate bottleneck in IL-33/ST2 drug-discovery workflows, namely whether an intact SUMO fusion can substitute for tag-cleaved cytokine in screening assays. The combination of structural modeling with an empirical bioprocess readout is a reasonable framing, and the ELISA comparison (12.0% versus 87.6% molar epitope recognition) is the strongest and most decision-relevant element. However, the computational arm is explicitly exploratory and self-acknowledged as model-dependent, the docking comparison is a single-snapshot analysis with a small ΔG difference, and the recovery and purity claims rest on figures and tables that are not available for inspection. As presented, the bioprocess conclusion is plausible but not yet independently verifiable, and the structural conclusion is presented with more confidence than the underlying sampling supports.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Groups producing recombinant IL-33 or other SUMO-fused cytokines in E. coli for screening or biophysical assays; laboratories in resource-limited settings seeking an in-house alternative to commercial IL-33 reagents; researchers using AI structure prediction plus MD to reason about fusion-tag interference in PPI interfaces; and groups developing IL-33/ST2 axis inhibitors who need a defined, accessible target protein source.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong> The question posed is operationally meaningful and directly tied to assay cost and feasibility. The ELISA molar comparison between intact fusion and cleaved cytokine provides a concrete, functionally interpretable readout of tag interference. The cleavage optimization is described with defined parameters (enzyme ratio, temperature, time) and a stated standardized condition. The authors repeatedly and explicitly flag the exploratory nature of the MD and docking results and identify the specific experimental validations (SAXS, mutagenesis, SPR) that would be required, which is an appropriate framing of computational uncertainty.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness / quantitative support</li>
+<li><strong>Claim pointer</strong> The manuscript reports a mass recovery of ~19% and a molar recovery of ~32.6% (38.56 mg native IL-33 from 203.35 mg desalted SUMO-IL-33), and uses these values to support the claim of a high-yield, cost-effective production pipeline.</li>
+<li><strong>Evidence pointer</strong> Section 3.4 and Figure 7; Table 2; location not provided for raw quantification data.</li>
+<li><strong>Concern</strong> The recovery figures are stated as single point values without replicate counts, dispersion, or an accounting of losses at each step (clarification, first IMAC, desalting/concentration, cleavage, subtractive IMAC). The Bradford assay used for quantification is a total-protein method and cannot distinguish native IL-33 from co-eluting contaminants or from residual uncleaved fusion in the flow-through. The purity of the final 38.56 mg preparation is asserted but not demonstrated in the supplied material.</li>
+<li><strong>Why it matters</strong> The central bioprocess claim depends on both the yield and the identity/purity of the recovered species. Without purity assessment and loss accounting, the reported recovery cannot be attributed specifically to native IL-33, and the "high-yield" characterization is not established.</li>
+<li>
+<p><strong>Resolution test</strong> Provide replicate recovery measurements with means and dispersion, a step-by-step mass balance, and purity determination for the final preparation (for example densitometry of a documented SDS-PAGE gel, or an orthogonal method such as RP-HPLC or intact mass spectrometry) confirming that the flow-through fraction is native IL-33 and quantifying residual fusion and tag.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness / statistical inference</li>
+<li><strong>Claim pointer</strong> Intact SUMO-IL-33 exhibits 12.0 ± 0.8% molar epitope recognition versus 87.6 ± 3.6% for cleaved IL-33, interpreted as substantial steric masking by the SUMO tag.</li>
+<li><strong>Evidence pointer</strong> Section 3.5 and Table 2; location not provided for raw ELISA data.</li>
+<li><strong>Concern</strong> The number of independent ELISA replicates, the number of independent protein preparations tested, and the calibration approach used to convert between Bradford mass concentrations and ELISA-derived molar concentrations are not specified in the supplied text. The molar conversion relies on assumed molecular weights (30.8 kDa fusion, 17.9 kDa native) and on the assumption that Bradford and ELISA standard curves are both accurate for the two different species. Any systematic difference in Bradford response between the fusion and the cleaved protein would propagate directly into the reported percentages.</li>
+<li><strong>Why it matters</strong> The 12.0% versus 87.6% contrast is the principal empirical pillar of the paper's conclusion that tag removal is operationally necessary. If the molar normalization is biased, the magnitude of the reported masking effect is not established.</li>
+<li>
+<p><strong>Resolution test</strong> Report the number of biological and technical replicates, the ELISA standard curve and dynamic range, spike-recovery or dilution-linearity controls for both protein species, and an independent orthogonal concentration determination (for example A280 with calculated extinction coefficients) to validate the Bradford-based molar inputs.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical soundness / computational inference</li>
+<li><strong>Claim pointer</strong> MD simulations and HADDOCK docking suggest that the SUMO tag may sterically occlude IL-33 receptor-binding interfaces, with reduced binding propensity for the fusion (ΔG = −12.2 versus −14.5 kcal/mol).</li>
+<li><strong>Evidence pointer</strong> Sections 3.2.2, 3.3.2, and 4; Figures 3 and 5; Figure S4; location not provided for trajectory and docking parameter files.</li>
+<li><strong>Concern</strong> The docking comparison rests on a single end-point snapshot from trajectory 1 of a single starting model, and the reported ΔG difference is small relative to the stated HADDOCK score uncertainties (for example −154.9 ± 19.7 for the fusion cluster). The authors themselves note that the trajectories are non-convergent, that CHARMM/TIP3P tends to over-compact flexible segments, and that the AlphaFold3 trajectory adopts an extended orientation with no occlusion. The manuscript therefore contains internal evidence that the occlusion result is one outcome among several rather than a robust structural finding.</li>
+<li><strong>Why it matters</strong> The structural arm is presented as providing a mechanistic explanation for the ELISA result, but the computational evidence as described is consistent with multiple inter-domain orientations, only some of which produce occlusion. The mechanistic link is therefore weaker than the narrative implies.</li>
+<li>
+<p><strong>Resolution test</strong> Either (a) present ensemble-based docking across multiple snapshots from all trajectories and all starting models with explicit reporting of the fraction of conformations showing site 1 or site 2 occlusion, or (b) explicitly downgrade the structural claim to a hypothesis and remove language implying mechanistic explanation of the ELISA data.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical soundness / model selection</li>
+<li><strong>Claim pointer</strong> The RoseTTAFold model RF-1 was selected as the optimal structure based on Ramachandran and MolProbity criteria and used for all downstream MD and docking.</li>
+<li><strong>Evidence pointer</strong> Sections 3.1.1, 3.1.2, and 4; Table 1; Figures S1–S3; location not provided for the underlying validation outputs.</li>
+<li><strong>Concern</strong> The selection criterion is local stereochemistry, which the authors correctly note does not assess interdomain orientation across a flexible linker. The chosen model is then used to generate the compact, occluded state that drives the paper's structural narrative, while the AlphaFold models that adopt extended conformations are set aside. The manuscript acknowledges this as a scope limitation, but the selection nonetheless determines the direction of the downstream result.</li>
+<li><strong>Why it matters</strong> Model selection based on a criterion orthogonal to the property under study (interdomain orientation) creates a risk that the reported occlusion is a consequence of the selection procedure rather than a property of the fusion protein.</li>
+<li>
+<p><strong>Resolution test</strong> Report the interdomain orientation distributions for all twenty generated models, state explicitly how many adopt compact versus extended arrangements, and either analyze a representative subset of each class or justify why a single model is adequate for the stated conclusion.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reporting completeness</li>
+<li><strong>Affected element</strong> Cleavage optimization</li>
+<li><strong>Evidence pointer</strong> Section 3.4 and Figure 6</li>
+<li><strong>Issue</strong> The text states that 0.1% and 1.0% enzyme ratios, three temperatures, and three time points were evaluated, but only the selected condition is described quantitatively. The comparative data for the non-selected conditions are not summarized in the text.</li>
+<li>
+<p><strong>Required correction</strong> Provide a summary of cleavage efficiency across all tested conditions, with a quantitative measure of digestion completeness and replicate information.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> MD simulation setup</li>
+<li><strong>Evidence pointer</strong> Section 2.3</li>
+<li><strong>Issue</strong> The force field is stated as CHARMM27, which is an older parameter set for proteins; the manuscript does not specify the water model version details, thermostat/barostat, timestep, or how the three independent trajectories differed beyond random initial velocities.</li>
+<li>
+<p><strong>Required correction</strong> Specify the full simulation parameters and confirm whether a more current CHARMM variant was considered, or justify the choice of CHARMM27.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Internal consistency</li>
+<li><strong>Affected element</strong> Molecular weight values</li>
+<li><strong>Evidence pointer</strong> Sections 3.4, 3.5, and 4</li>
+<li><strong>Issue</strong> The fusion is described as ~32 kDa in Section 2.4 and as 30.8 kDa in Section 3.5, and the SUMO partner as 12.8 kDa, while the construct includes an 8× His tag plus SUMO plus IL-33 residues 112–270. The basis for each value is not stated.</li>
+<li>
+<p><strong>Required correction</strong> Reconcile the molecular weight values and state whether they are theoretical (sequence-derived) or experimentally determined.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Claim calibration</li>
+<li><strong>Affected element</strong> Abstract and Conclusions</li>
+<li><strong>Evidence pointer</strong> Abstract; Section 5</li>
+<li><strong>Issue</strong> The Abstract states that the work establishes a "high-yield pipeline," while the recovery is ~19% by mass and the structural findings are described in the same Abstract as model-dependent and requiring further verification. The strength of the yield claim and the strength of the structural claim are not aligned with the reported uncertainty.</li>
+<li>
+<p><strong>Required correction</strong> Qualify the yield characterization and ensure the Abstract's confidence level matches the exploratory framing used in the Results and Discussion.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Contextual framing</li>
+<li><strong>Affected element</strong> Discussion and Conclusions</li>
+<li><strong>Evidence pointer</strong> Section 4; Section 5</li>
+<li><strong>Issue</strong> The claim of cost-effectiveness and value in resource-constrained settings is asserted without any cost comparison against commercial IL-33 or against alternative expression strategies.</li>
+<li>
+<p><strong>Required correction</strong> Either provide a cost estimate per milligram of purified IL-33 relative to commercial reagent pricing, or remove the cost-effectiveness claim.</p>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (recovery and purity not verifiable), R1-M2 (ELISA molar normalization and replicate structure not specified), R1-M3 (single-snapshot docking and non-convergent trajectories), R1-M4 (model selection criterion orthogonal to the property under study).</p>
+</li>
+<li>
+<p><strong>Assessment against Nature-style criteria</strong> Originality is moderate. The individual components (SUMO fusion expression, MD of a fusion construct, ELISA-based epitope comparison) are established approaches; the novelty lies in the specific combination applied to the question of whether an intact SUMO-IL-33 chimera can serve as a screening surrogate. Scientific importance is currently limited by the fact that the central operational conclusion, that tag removal is necessary, is supported primarily by a single ELISA comparison whose normalization is not fully documented, while the structural explanation is explicitly exploratory. Interdisciplinary readership potential exists at the interface of structural biology, bioprocess development, and drug discovery, but the manuscript as supplied does not deliver a structural result robust enough to interest structural biologists, nor a sufficiently characterized reagent to serve as a standalone bioprocess reference. Technical soundness is partial. The experimental design is reasonable, but key quantitative claims lack the replicate structure, purity evidence, and normalization detail needed for independent verification, and the computational arm is internally acknowledged to be model-dependent and non-convergent. Readability for nonspecialists is adequate in the Introduction and Discussion, though the Results contain dense methodological detail and the distinction between exploratory and established findings could be signaled more clearly at the section level rather than only in caveats.</p>
+</li>
+<li>
+<p><strong>Recommendation posture</strong> Currently not established from the provided evidence. The operational conclusion regarding tag removal is plausible and may be correct, but the recovery, purity, and ELISA normalization claims require the missing data before the case can be considered made. The structural claims should be reframed as hypotheses unless ensemble-based analysis is provided.</p>
+</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of a "high-yield pipeline" is not supported as stated, because purity of the final preparation and stepwise loss accounting are not provided (Section 3.4, Figure 7).</li>
+<li>The claim that the SUMO tag sterically occludes the ST2-binding interface is supported only by a single-snapshot docking result from one trajectory of one starting model, while the manuscript's own AlphaFold3 trajectory shows an extended, non-occluding orientation (Sections 3.2.2, 3.3.2, Figure S4).</li>
+<li>The quantitative magnitude of epitope masking (12.0% versus 87.6%) is not independently verifiable because the molar normalization procedure, replicate structure, and raw ELISA data are not supplied (Section 3.5, Table 2).</li>
+<li>The claim that the intact fusion is "not a suitable direct surrogate for screening applications" is supported by the ELISA data in direction but not in magnitude, and is not corroborated by any direct binding measurement such as SPR or ITC, which the authors themselves identify as necessary (Section 4).</li>
+<li>The cost-effectiveness claim relative to commercial reagents is asserted without supporting cost data (Sections 4 and 5).</li>
+<li>The docking-derived ΔG values (−12.2 versus −14.5 kcal/mol) are presented as indicators of reduced binding propensity, but the difference is small relative to the reported score uncertainties and is derived from a single conformation (Section 3.3.2, Figure 5).</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,114 @@
+## Review setup
+- **Input scope** Abstract only, as supplied in the submission record.
+- **Assessment boundary** Evaluation is restricted to the abstract text and the bibliographic metadata provided. No full text, figures, tables, methods, supplementary information, or source data were available.
+- **Shared manuscript claim summary** The authors report a predictive workflow that couples all-atom molecular dynamics to locate mechanical soft spots, AlphaFold3 to assess feasibility of engineered metal-chelating sites, and single-molecule force spectroscopy to validate designs. Applied to two AI-designed mechanostable beta-sheet proteins from the SuperMyo series, Ni2+ coordination is claimed to yield site-dependent reinforcement, cumulative reinforcement when sites are combined, a triple-site variant with more than 110 percent gain in unfolding force, and an unfolding force above 400 pN.
+- **Visible evidence base** Abstract-level statements only. No numerical distributions, replicate counts, force-loading rates, pulling geometries, ion concentrations, control constructs, structural models, or statistical tests are visible.
+- **Missing materials affecting confidence** Full text, figures, tables, methods, statistics, AlphaFold3 confidence metrics, MD trajectories and force profiles, experimental force histograms, construct sequences and design coordinates, and any independent validation or negative controls.
+
+## Reviewer
+- **Overall assessment** The abstract describes a conceptually coherent closed-loop strategy that links computational soft-spot identification, AI-based structural feasibility screening, and single-molecule force validation. The problem framing, namely that metal coordination has been incorporated largely empirically, is reasonable and the proposed workflow is potentially useful. However, the supplied material is an abstract only, and every quantitative and mechanistic claim is unverifiable at this level. The central assertion of predictive capability cannot be distinguished from post hoc selection of successful sites, and the reported reinforcement magnitudes lack the methodological and statistical context needed for assessment. The work is interesting in principle but currently not established from the provided evidence.
+- **Who would be interested in the results, and why** Researchers in protein engineering and de novo design, mechanobiology and single-molecule biophysics, computational chemistry and molecular dynamics, and groups using AlphaFold-family models for design triage. If substantiated, the workflow would interest those seeking programmable routes to tune mechanical stability in beta-sheet scaffolds, and those developing mechanostable proteins for materials or nanomechanical applications.
+- **Major strengths** The abstract identifies a genuine gap, namely the absence of a rational method for choosing reinforcement sites in engineered proteins. The proposed combination of MD-derived soft-spot mapping, AF3-based feasibility assessment, and single-molecule force spectroscopy is a sensible closed-loop architecture. The reported site-dependent and cumulative effects, if supported, would be a useful demonstration that reinforcement is tunable rather than binary. The use of previously AI-designed SuperMyo scaffolds provides a defined starting point for comparison.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Predictive validity
+    - **Claim pointer** The workflow is described as predictive, with MD identifying mechanical soft spots and AF3 assessing structural feasibility of engineered metal-chelating sites.
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Concern** No information is given on how predictions were made before experiments, whether predicted sites were tested blindly, how many candidate sites were proposed versus tested, or what the hit rate was. Without a prospective design-test cycle, the claim of prediction cannot be separated from retrospective rationalization of sites that happened to work.
+    - **Why it matters** The central novelty claim is predictive capability. If site selection was informed by experimental outcomes or by trial and error, the methodological advance is not demonstrated.
+    - **Resolution test** Provide the prospective prediction set, the ranking or scoring rule, the number of candidates tested, the number of successes and failures, and a comparison against a naive or random site-selection baseline.
+  - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Technical soundness of mechanical measurements
+    - **Claim pointer** Single-site variants produce substantial increases in unfolding force, and a triple-site variant achieves more than 110 percent gain with unfolding force exceeding 400 pN.
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Concern** No experimental parameters are reported, including loading rate, pulling geometry, linker and handle design, number of molecules, force distributions, or the model used to extract unfolding forces. Unfolding force in single-molecule pulling is strongly loading-rate dependent, so a bare force value cannot be interpreted or compared across constructs.
+    - **Why it matters** The quantitative reinforcement claims are the principal experimental support for the workflow. Without loading-rate context and distribution-level statistics, the reported gains are not evaluable.
+    - **Resolution test** Report force distributions with replicate counts, loading rates, pulling geometry, and the kinetic model used, and show that comparisons across variants were made at matched loading rates.
+  - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Causal attribution to metal coordination
+    - **Claim pointer** Ni2+ coordination produces site-dependent reinforcement and cumulative reinforcement when multiple sites are combined.
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Concern** The abstract does not state whether metal-free controls, non-coordinating mutant controls, or alternative-metal controls were performed. It also does not address whether the added chelating residues themselves, rather than the coordination bond, alter folding, stability, or the unfolding pathway.
+    - **Why it matters** Reinforcement is attributed specifically to metal coordination. Without appropriate controls, the effect could arise from sequence perturbation, altered local structure, or changes in unfolding pathway rather than from the coordination bond.
+    - **Resolution test** Include apo-state and non-coordinating-mutant controls under identical conditions, plus metal titration or competition experiments, and show that reinforcement tracks occupancy of the designed site.
+  - **Concern ID** R1-M4
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Structural feasibility assessment
+    - **Claim pointer** AlphaFold3 was used to assess the structural feasibility of engineered metal-chelating sites.
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Concern** It is not stated how AF3 outputs were converted into a feasibility decision, whether metal ions and coordination geometry were modeled explicitly, what confidence metrics were used, or whether AF3 predictions agreed with any experimental structure or spectroscopic evidence of coordination geometry.
+    - **Why it matters** AF3 is used here as a design filter. Without a defined decision rule and validation of predicted coordination geometry, the role of AF3 in the workflow is not assessable.
+    - **Resolution test** Specify the AF3 protocol, input composition, scoring or threshold used, and provide structural or spectroscopic validation of at least one designed coordination site.
+  - **Concern ID** R1-M5
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Generality and scope
+    - **Claim pointer** The workflow enables systematic tuning of mechanical properties in beta-sheet protein scaffolds.
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Concern** The demonstration is limited to two related SuperMyo scaffolds. The abstract does not establish whether the approach transfers to unrelated beta-sheet folds, to alpha-helical or mixed folds, or to proteins with different mechanical topologies.
+    - **Why it matters** The generality claim extends beyond the tested system. Overreach here would misrepresent the scope of the method.
+    - **Resolution test** Either demonstrate application to at least one unrelated scaffold or restrict the generality claim to the SuperMyo series and state the boundary explicitly.
+  - **Concern ID** R1-M6
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Additivity mechanism
+    - **Claim pointer** Combining multiple coordination sites produced cumulative reinforcement.
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Concern** Cumulative reinforcement is asserted without evidence on whether the combined effect is additive, synergistic, or saturating, and without evidence on whether multiple sites act on the same or distinct unfolding barriers.
+    - **Why it matters** The claim of cumulative reinforcement implies a specific mechanical model. Without per-site and combined quantification, the additivity statement is descriptive rather than mechanistic.
+    - **Resolution test** Report single-site, double-site, and triple-site values with uncertainties and test whether the combined effect deviates from the sum of individual contributions.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Terminology precision
+    - **Affected element** Use of the term mechanostable
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Issue** Mechanostable is used without definition or a stated quantitative criterion.
+    - **Required correction** Define the metric and threshold used to classify a construct as mechanostable.
+  - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Reporting completeness
+    - **Affected element** Percent gain reporting
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Issue** A greater than 110 percent gain is reported without a baseline value, uncertainty, or sample size.
+    - **Required correction** Report baseline and variant values with uncertainties and replicate counts.
+  - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Experimental conditions
+    - **Affected element** Ni2+ coordination conditions
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Issue** Ion concentration, buffer, pH, and incubation conditions are not stated.
+    - **Required correction** State the coordination conditions and confirm they are consistent across all constructs.
+  - **Concern ID** R1-m4
+    - **Severity** Minor
+    - **Axis** Nomenclature
+    - **Affected element** SuperMyo series description
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Issue** The two SuperMyo proteins are not identified, and their prior design provenance is only briefly referenced.
+    - **Required correction** Identify the specific scaffolds and cite their design origin.
+  - **Concern ID** R1-m5
+    - **Severity** Minor
+    - **Axis** Claim scope
+    - **Affected element** Closed-loop characterization
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Issue** The workflow is described as closed-loop, but the abstract does not indicate whether predictions were iterated or fed back into redesign.
+    - **Required correction** Clarify whether any design cycle was repeated based on experimental feedback.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. These concern prospective predictive validation, loading-rate-resolved mechanical measurement, and control-based causal attribution to metal coordination. R1-M4, R1-M5, and R1-M6 further limit confidence in the AF3 decision rule, the generality claim, and the additivity claim.
+- **Assessment against Nature-style criteria** Originality is moderate to potentially high, since the individual components are established but their integration into a predictive reinforcement workflow is a plausible advance. Scientific importance is currently unproven because the predictive claim and the reinforcement magnitudes cannot be evaluated from the abstract. Interdisciplinary readership is plausible, spanning protein design, biophysics, and computational modeling, though the abstract does not yet demonstrate results of broad enough scope to compel a wide audience. Technical soundness is not established, as no methods, statistics, controls, or distributions are visible. Readability for nonspecialists is adequate at the abstract level, but the absence of defined metrics and conditions limits interpretation even for specialist readers.
+- **Recommendation posture** Currently not established from the provided evidence. Supportive if technical concerns are resolved, in particular prospective prediction validation, loading-rate-resolved force measurements with controls, and a defined AF3 decision rule.
+
+## Risk / unsupported claims
+- The claim of predictive site identification is unsupported at the abstract level, since no prospective prediction set, scoring rule, or hit rate is provided.
+- The claim that Ni2+ coordination causes reinforcement is unsupported without apo, non-coordinating mutant, or metal-substitution controls.
+- The reported greater than 110 percent gain and unfolding force above 400 pN are not evaluable without loading rate, distributions, replicate counts, and uncertainties.
+- The claim of cumulative reinforcement is not supported by per-site and combined quantification or by a test of additivity.
+- The claim that the workflow enables systematic tuning across beta-sheet scaffolds is not supported beyond two related SuperMyo proteins.
+- The role of AlphaFold3 as a feasibility filter is not assessable without a stated protocol, scoring rule, and structural or spectroscopic validation.
+- The characterization of the strategy as closed-loop is not supported without evidence of iterative design feedback.

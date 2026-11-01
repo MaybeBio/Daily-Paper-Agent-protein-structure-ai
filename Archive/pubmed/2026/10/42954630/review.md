@@ -1,0 +1,97 @@
+## Review setup
+- **Input scope** Abstract only, as provided in the submission record.
+- **Assessment boundary** Evaluation is restricted to the abstract text and associated metadata. No full text, figures, tables, supporting information, or computational parameters were supplied, so all judgments about methodological execution, statistical robustness, and reproducibility are necessarily provisional.
+- **Shared manuscript claim summary** The authors report a multiscale computational study (MD, QM/MM, EPR parameter calculations) of two LPMOs, NcAA9C (AA9, axial tyrosine) and BaAA10A (AA10, axial phenylalanine), claiming that the structural response to Cu(I)/Cu(II) redox cycling resides predominantly in exogenous ligands rather than the histidine brace, that the oxidized state shows higher and longer-lived water coordination, that a second-sphere glutamate anchors the equatorial water in BaAA10A with no NcAA9C counterpart, that Asp76 (NcAA9C) and Glu68 (BaAA10A) are the dominant stabilizing residues of the catalytic core via water-mediated hydrogen bonds enhanced in Cu(II), and that computed EPR parameters track copper displacement from planarity with the equatorial water position dominating the differentiation between the two enzymes.
+- **Visible evidence base** Abstract-level statements only. No simulation trajectories, convergence data, QM/MM partitioning schemes, EPR tensor values, or comparative statistics are visible.
+- **Missing materials affecting confidence** Full text, all figures and tables, computational methods and force-field/QM region definitions, sampling lengths and convergence diagnostics, EPR calculation protocol and benchmark comparisons, statistical treatment of residue contributions, and any experimental validation.
+
+## Reviewer
+- **Overall assessment** The abstract describes a coherent and potentially useful computational comparison of two LPMO scaffolds in two redox states, and the framing around second-sphere control of the copper site is timely. However, the supplied material is an abstract only, and several of the central claims are stated at a level of specificity (dominant residues, dominant EPR determinant, redox-dependent water lifetimes) that cannot be assessed without methods, convergence evidence, and numerical results. The work is interesting in principle but currently unverifiable from the provided evidence.
+- **Who would be interested in the results, and why** Computational biochemists and biophysicists working on copper enzymes and metalloprotein active sites; enzymologists studying LPMO mechanism and redox cycling; researchers using QM/MM and EPR parameter prediction as a combined tool; and the broader polysaccharide-degradation and biomass-conversion community, for whom second-sphere effects on LPMO reactivity are mechanistically relevant.
+- **Major strengths** The comparison is well chosen, pairing an AA9 member with an axial tyrosine against an AA10 member with an axial phenylalanine, which provides a natural contrast for testing second-sphere contributions. Combining MD, QM/MM, and EPR parameter calculations is an appropriate multiscale strategy for a paramagnetic copper site where geometry and electronic structure are coupled. The stated focus on exogenous ligand dynamics rather than the histidine brace itself is a specific and testable mechanistic proposition rather than a generic structural description.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Technical soundness and evidential support
+    - **Claim pointer** The claim that the structural response to oxidation-state change is seen almost entirely in the exogenous ligands rather than in the histidine brace itself.
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Concern** The abstract asserts a near-exclusive localization of the redox-induced structural response to exogenous ligands, but no quantitative comparison of histidine brace geometry changes versus exogenous ligand changes is presented. Without per-state coordination metrics, bond-length and angle distributions, and an explicit null comparison, the word "almost entirely" is not supported.
+    - **Why it matters** This is the central mechanistic claim of the paper. If the histidine brace also responds appreciably, the interpretive framework and the downstream QM/MM and EPR analysis would need to be reframed.
+    - **Resolution test** Provide per-state distributions of Cu-N(His) bond lengths and brace angles alongside the corresponding exogenous ligand metrics, with a quantitative statement of relative magnitude and its uncertainty.
+  - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Technical soundness
+    - **Claim pointer** The claim that the oxidized form shows markedly higher and longer-lived water coordination.
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Concern** "Longer-lived" implies residence-time or exchange-kinetics analysis, which requires adequate sampling and a defined residence-time estimator. No simulation lengths, number of independent replicas, or convergence diagnostics are reported, and no residence-time values are given.
+    - **Why it matters** Water residence times at a metal site are notoriously sensitive to sampling and to the treatment of the copper center in classical MD. Without convergence evidence, the redox-dependent lifetime difference may be an artifact of insufficient sampling or of the non-polarizable or bonded model used for the copper.
+    - **Resolution test** Report simulation lengths, number of replicas, residence-time distributions with errors, and a convergence analysis; state and justify the copper model used in the classical phase and its validation against QM/MM or experimental data.
+  - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Technical soundness and interpretive validity
+    - **Claim pointer** The claim that Asp76 (NcAA9C) and Glu68 (BaAA10A) are the dominant stabilizing residues of the catalytic core, acting through water-mediated hydrogen-bond bridges more pronounced in Cu(II).
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Concern** "Dominant" is a strong ranking claim. The abstract refers to a QM/MM electrostatic perturbation analysis but gives no decomposition values, no comparison against other second-sphere candidates, and no error estimates. It is also unclear whether dominance is defined by energetic contribution, geometric persistence, or both.
+    - **Why it matters** Residue-level mechanistic assignments of this kind are frequently over-interpreted from single-structure or short-trajectory analyses. If the ranking is not robust, the proposed second-sphere control model is weakened.
+    - **Resolution test** Provide per-residue decomposition values with uncertainties, the full ranked list of contributing residues, the definition of the dominance metric, and a sensitivity analysis with respect to QM region size and snapshot selection.
+  - **Concern ID** R1-M4
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Technical soundness
+    - **Claim pointer** The claim that computed EPR parameters respond to copper displacement from planarity and that the equatorial water position has the dominant effect, differentiating the two LPMOs.
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Concern** No computed g-tensors, hyperfine couplings, or comparison to experimental EPR data are shown. The assertion that the equatorial water position is the dominant determinant of the EPR differences is a partitioning claim that requires either systematic coordinate variation or a decomposition of the EPR response.
+    - **Why it matters** EPR parameters are a key validation channel for the electronic-structure description. Without numerical values and experimental comparison, the EPR component functions as an assertion rather than as evidence.
+    - **Resolution test** Report computed g and A tensors for both enzymes in both redox states, compare with available experimental values, and demonstrate the dominance of the equatorial water by controlled geometric variation or response decomposition.
+  - **Concern ID** R1-M5
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Reproducibility
+    - **Claim pointer** The overall multiscale workflow combining MD, QM/MM optimization, and EPR parameter calculations.
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Concern** The abstract does not specify system sizes, protonation states, QM region composition and size, functional and basis sets, solvation treatment, or the EPR calculation method. These choices materially affect all reported conclusions.
+    - **Why it matters** Without these details the study cannot be reproduced or independently evaluated, and the sensitivity of the conclusions to methodological choices cannot be judged.
+    - **Resolution test** Provide a complete methods description with all parameters, system composition, protonation assignments, and software versions, ideally with a sensitivity check on at least the QM region size and functional.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Clarity
+    - **Affected element** Terminology for the redox states
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Issue** The abstract refers to "oxidized" and "reduced" forms and to Cu(I)/Cu(II) cycling, but does not consistently map these terms, and it is not stated whether the resting Cu(II) state or a catalytically relevant intermediate is modeled.
+    - **Required correction** Define the redox state nomenclature explicitly and state which catalytically relevant species each modeled state corresponds to.
+  - **Concern ID** R1-m2
+    - **Severity** Minor
+    **Axis** Clarity
+    - **Affected element** Second-sphere residue numbering
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Issue** Asp76 and Glu68 are named without stating the numbering convention or the source structures, which complicates cross-referencing with the literature on these enzymes.
+    - **Required correction** State the PDB entries or sequence references used for numbering and confirm the residue identities in each construct.
+  - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Scope and framing
+    - **Affected element** Generalization from two enzymes
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Issue** Conclusions are drawn from one AA9 and one AA10 representative, but the abstract does not acknowledge the limits of generalization across the LPMO family.
+    - **Required correction** Add an explicit statement of the scope of inference and, where possible, indicate whether the second-sphere motif is conserved across broader AA9 and AA10 sequence sets.
+  - **Concern ID** R1-m4
+    - **Severity** Minor
+    **Axis** Reporting completeness
+    - **Affected element** Quantitative reporting
+    - **Evidence pointer** Abstract only; location not provided.
+    - **Issue** The abstract is entirely qualitative, with no numerical values for water coordination numbers, residence times, interaction energies, or EPR parameters.
+    - **Required correction** Include representative numerical values with uncertainties in the abstract to allow readers to gauge effect sizes.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4, R1-M5.
+- **Assessment against Nature-style criteria** Originality is moderate, since redox-dependent active-site dynamics in LPMOs have been examined computationally before, though the paired AA9/AA10 second-sphere comparison is a reasonable incremental contribution. Scientific importance is potentially meaningful for LPMO mechanism and for second-sphere engineering, but is not yet demonstrated because the key claims lack quantitative support in the supplied material. Interdisciplinary readership is plausible, spanning computational chemistry, enzymology, and biomass conversion, but the abstract is written for a specialist physical chemistry audience and does not make the broader significance explicit. Technical soundness cannot be confirmed from an abstract alone, and the specific claims about dominance and near-exclusive localization require the supporting analyses described above. Readability for nonspecialists is limited, as terms such as histidine brace, second sphere, and EPR parameter response are used without brief explanation.
+- **Recommendation posture** Currently not established from the provided evidence. The study is potentially supportive if the technical concerns, in particular the quantitative support for the localization, residence-time, residue-dominance, and EPR-dominance claims, are resolved with full methods and numerical results.
+
+## Risk / unsupported claims
+- The claim that the structural response to oxidation state is seen "almost entirely" in exogenous ligands rather than the histidine brace is unsupported at the abstract level, since no comparative geometric metrics are provided.
+- The claim of "markedly higher and longer-lived" water coordination in the oxidized form is unsupported, as no residence times, sampling lengths, or convergence data are given.
+- The identification of Asp76 and Glu68 as the "dominant" stabilizing residues is unsupported without decomposition values, error estimates, and a full ranked comparison.
+- The claim that the equatorial water position has the "dominant effect" on EPR parameter differences is unsupported without computed tensor values, experimental comparison, or a response decomposition.
+- The claim that the second-sphere glutamate in BaAA10A has "no counterpart" in NcAA9C is stated without sequence or structural alignment evidence.
+- The generalizability of the findings beyond the two modeled enzymes is not addressed and cannot be evaluated from the supplied material.

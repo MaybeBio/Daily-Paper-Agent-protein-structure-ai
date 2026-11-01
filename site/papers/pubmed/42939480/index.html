@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Microbial Rhodopsins: Structural-Functional Mechanisms and the Design of Optogenetic Silencing Tools-With Emphasis on Halorubrum Archaeorhodopsins. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">5</span>
+    <div>
+      <h1>Microbial Rhodopsins: Structural-Functional Mechanisms and the Design of Optogenetic Silencing Tools-With Emphasis on Halorubrum Archaeorhodopsins.</h1>
+      <div class="meta">Chao, Luomeng; Yang, Yuxia</div>
+      <div class="meta muted">
+        
+        <span class="journal">Biology</span>
+        · 2026-10-27
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42939480/">原文</a>
+      </div>
+      <p class="one-liner">综述微生物视紫红质（含Halorubrum古视紫红质HeAR）的结构功能机制与光遗传沉默工具设计，提及结构预测、MD与机器学习辅助工程但以实验表征和综述为主，与蛋白质结构计算课题仅间接相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Microbial rhodopsins are light-sensitive membrane proteins that use retinal as a covalent chromophore and adopt a seven-transmembrane alpha-helical fold. They are widely distributed across archaea, bacteria, algae, and fungi and mediate diverse functions, including light-driven ion transport, light-gated ion conduction, and photosensory signaling. Since the discovery of bacteriorhodopsin in 1971, the microbial rhodopsin family has expanded continuously, and channelrhodopsin-based optogenetics has revolutionized neuroscience by enabling millisecond-scale optical control of neuronal activity. However, compared with excitatory tools, optogenetic silencing tools have developed more slowly and remain limited by insufficient photosensitivity, poor membrane localization, ion-homeostasis perturbation, and phototoxicity. Because these properties are largely constrained by the structural and functional features of the parent microbial proteins, the discovery and in-depth characterization of natural rhodopsins remain essential for tool innovation. This narrative review focuses on ion-pumping archaeorhodopsins, with emphasis on the genus Halorubrum and on HeAR, and describes how the literature was selected. We first summarize the functional classification, structural basis, photocycle, and ion-pumping mechanisms of microbial rhodopsins. We then discuss the diversity of Halorubrum archaeorhodopsins and the structural-functional features of HeAR, a recently characterized archaeorhodopsin from a halophilic archaeon isolated from Ejinoor Salt Lake in Inner Mongolia, China. HeAR absorbs at 550 nm (dark-adapted) and 560 nm (light-adapted), essentially the same maximum as AR3 (559 nm). Its Schiff-base counterion Asp-95 has a pKa of 3.5 +/- 0.1, about one unit higher than BR Asp-85 ( approximately 2.6) and AR3 Asp-95 (2.5 +/- 0.2), but matched by AR4 Asp-85 (3.6); thus, this is a property that HeAR shares with its closest relative rather than one that sets it apart. Its photocycle ( approximately 100 ms) is prolonged-roughly ten times longer than the overall cycle of BR (11 ms), of AR4 ( approximately 10 ms) and of the O-decay of AR3 (tau  approximately  14 ms)-while its M intermediate forms and decays faster than in BR; relative to AR3 and AR4, however, the M decay is slower (3.3 ms against  approximately 390 micros and 0.55/3 ms) and the overall cycle is longer. These are established in vitro properties of the heterologously expressed protein, and because a pump moves a fixed, small number of charges per photocycle, low-light performance remains a hypothesis to be tested rather than a demonstrated advantage. In this review &#34;red-shifted&#34; is used in one sense only: HeAR&#39;s 550-560 nm window lies  approximately 80-90 nm to the red of excitatory channelrhodopsins ( approximately 470 nm); relative to BR it is blue-shifted by  approximately 18 nm, and relative to AR3 the two absorption maxima coincide. We further review the evolution of optogenetic silencing tools, from inward chloride pumps and outward proton pumps to light-gated anion channels and potassium channels, and discuss structure-guided rational design strategies, including structure prediction, molecular dynamics simulation, directed evolution, and machine learning-assisted engineering. Finally, we outline current challenges and future opportunities in phototoxicity, deep-tissue light delivery, clinical translation and the exploitation of halophilic archaeal resources, and we specify which experiments are required before HeAR can be judged as a silencing tool. Clinically validated optogenetics is kept separate throughout from speculative applications of newly characterized archaeorhodopsins. This review aims to provide a comparative framework linking the structural-functional properties of natural rhodopsins to the rational design of next-generation optogenetic silencing tools.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">微生物视紫红质（microbial rhodopsins）是一类光敏膜蛋白，以视黄醛（retinal）作为共价发色团，采用七次跨膜α-螺旋折叠。它们广泛分布于古菌、细菌、藻类和真菌中，介导多种功能，包括光驱动离子转运、光门控离子传导和光感受信号传导。自1971年细菌视紫红质（bacteriorhodopsin）被发现以来，微生物视紫红质家族不断扩展，基于通道视紫红质（channelrhodopsin）的光遗传学（optogenetics）通过实现对神经元活动的毫秒级光学控制，彻底改变了神经科学。然而，与兴奋性工具相比，光遗传学沉默工具发展更为缓慢，仍受限于光敏性不足、膜定位差、离子稳态扰动和光毒性。由于这些特性在很大程度上受母体微生物蛋白的结构和功能特征制约，天然视紫红质的发现和深入表征对于工具创新仍然至关重要。本叙述性综述聚焦于离子泵型古菌视紫红质（archaeorhodopsins），重点关注盐红菌属（Halorubrum）和HeAR，并描述了文献的筛选方式。我们首先总结微生物视紫红质的功能分类、结构基础、光循环（photocycle）和离子泵送机制。然后讨论盐红菌属古菌视紫红质的多样性以及HeAR的结构-功能特征，HeAR是一种最近表征的古菌视紫红质，来源于从中国内蒙古额吉淖尔盐湖分离的嗜盐古菌。HeAR在550 nm（暗适应）和560 nm（光适应）处吸收，与AR3（559 nm）的最大吸收基本相同。其席夫碱（Schiff-base）反离子Asp-95的pKa为3.5 +/- 0.1，比BR Asp-85（约2.6）和AR3 Asp-95（2.5 +/- 0.2）高约一个单位，但与AR4 Asp-85（3.6）相当；因此，这是HeAR与其最近亲共享的性质，而非使其与众不同的特征。其光循环（约100 ms）被延长——大约比BR的总循环（11 ms）、AR4的总循环（约10 ms）和AR3的O衰减（tau 约 14 ms）长十倍——而其M中间态的形成和衰减比BR更快；然而，相对于AR3和AR4，M衰减更慢（3.3 ms对约390 micros和0.55/3 ms），总循环更长。这些是异源表达蛋白已确立的体外性质，并且由于泵在每个光循环中移动固定且少量的电荷，低光性能仍是一个有待检验的假设，而非已证明的优势。在本综述中，“红移”仅在一个意义上使用：HeAR的550-560 nm窗口位于兴奋性通道视紫红质（约470 nm）红侧约80-90 nm处；相对于BR，它蓝移约18 nm，而相对于AR3，两个吸收最大值重合。我们进一步综述光遗传学沉默工具的演变，从内向氯离子泵和外向质子泵到光门控阴离子通道和钾通道，并讨论结构导向的理性设计策略，包括结构预测、分子动力学（molecular dynamics）模拟、定向进化和机器学习辅助工程。最后，我们概述当前在光毒性、深部组织光递送、临床转化和嗜盐古菌资源利用方面的挑战和未来机遇，并明确在HeAR可被判定为沉默工具之前需要哪些实验。经临床验证的光遗传学在全文中与 newly characterized archaeorhodopsins 的推测性应用保持区分。本综述旨在提供一个比较框架，将天然视紫红质的结构-功能特性与下一代光遗传学沉默工具的理性设计联系起来。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Microbial Rhodopsins: Structural–Functional Mechanisms and the Design of Optogenetic Silencing Tools—With Emphasis on Halorubrum Archaeorhodopsins</li>
+<li><strong>作者与单位</strong>：Chao, Luomeng; Yang, Yuxia（具体单位未在提供材料中列出）</li>
+<li><strong>期刊/预印本平台</strong>：Biology (MDPI)</li>
+<li><strong>年份</strong>：2026-10-27（按提供信息）</li>
+<li><strong>论文类型</strong>：Narrative review（叙述性综述，作者明确声明非 systematic review）</li>
+<li><strong>领域</strong>：Microbial rhodopsin 结构–功能机制；optogenetics 抑制工具设计；halophilic archaea 资源挖掘</li>
+<li><strong>关键词</strong>：microbial rhodopsin, archaeorhodopsin, bacteriorhodopsin, proteorhodopsin, retinal, photocycle, optogenetics, neural silencing, cryo-EM, XFEL, directed evolution, machine learning（据 Literature Selection 节检索词）</li>
+<li><strong>DOI/arXiv 号</strong>：10.3390/biology15201879</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供独立数据仓库；定量 HeAR 数据引自作者团队自身开放获取文章 Ref. [24]（CC BY 4.0）</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在「蛋白质结构相关计算研究 × AI 方法/物理模拟」方向中的位置</strong>：本文主体是 rhodopsin 结构–功能与 optogenetic 工具的综述，非计算方法学论文。与本课题的相关性集中在第 6 节：AlphaFold 单链结构预测、ChimeraX 结构比较、MD（GROMACS 微秒级光循环模拟）、molecular docking 筛选 chromophore analogs、XFEL/SFX 与同步辐射 serial crystallography、以及 machine learning 辅助的 ChR 变体设计与吸收波长预测/离子泵分类器。对做结构预测、构象采样、MD、对接、序列/结构设计的读者，本文提供的是「结构–功能参数 → 可工程化变量」的问题清单与可迁移的 inverse-design 工作流描述，而非新算法或新 benchmark。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文以叙述性综述方式，把 microbial rhodopsin 的 7TM 骨架、photocycle 与离子泵机制、Halorubrum 来源 archaeorhodopsin（重点 HeAR）的实测结构–功能参数，与 optogenetic silencing 工具谱系和结构引导/机器学习设计策略并置比较，指出 HeAR 的实测特性（≈100 ms 整体光循环、Asp-95 pKa 3.5 ± 0.1、550/560 nm 吸收）中只有「延长的整体光循环」真正区别于 BR、AR3、AR4 三个对照，并明确声明 HeAR 尚无神经元电生理、膜运输、光毒性、剂量–反应沉默曲线与头对头工具比较数据，因此只能作为「有可测性质、有待检验潜力」的蛋白而非已证实的沉默工具。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：在抑制性 optogenetic 工具落后于兴奋性工具的背景下，新发现的 Halorubrum archaeorhodopsin（尤其 HeAR）的实测结构–功能参数，相对已有对照蛋白（BR、AR3、AR4）究竟哪些是真正独特的？这些参数如何映射到 silencing 工具所需的功能要求（单位电导、光强需求、离子选择性、膜定位、光毒性）？结构预测、MD、定向进化与机器学习各自能在多大程度上支撑「从盐湖资源到定制工具」的设计闭环？</li>
+<li><strong>为什么重要</strong>：作者主张 silencing 工具的理化性质（pumping rate、ion selectivity、spectral window、phototoxicity）直接受其微生物源蛋白的结构–功能特征约束，因此新天然 rhodopsin 的发现与深度表征是工具创新的必要来源（Introduction 节）。</li>
+<li><strong>现有方法为何不足</strong>：Chow et al. 2010 指出当时 halide 与 proton pump 在 photosensitivity、membrane localization、silencing efficiency 上受限；Wiegert et al. 与 Rost et al. 指出在 presynaptic terminal 等对离子稳态敏感的场景中，现有工具的效力与副作用仍特别成问题（Section 5.1）。</li>
+<li><strong>精确研究问题（Can ... ?）</strong>：Can the measured kinetic signature of HeAR (fast M formation/decay combined with a slow overall photocycle and slow dark adaptation) enable sustained steady-state pumping at low light doses? 作者明确回答：未建立，必须实测而非从动力学特征推断（Section 4.3、Section 6.6、Table 1）。</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><strong>声明：以下脉络为「仅本文框架」，即按本文 Introduction、Section 2、Section 5、Section 6 的叙述顺序整理，未经外部文献独立核验。</strong></p>
+<ul>
+<li><strong>阶段 1（1971–1977，范式建立）</strong>：Oesterhelt &amp; Stoeckenius 发现 BR 并证明其光驱动质子外排；Hartmann &amp; Oesterhelt 证明该质子梯度足以经 ATP synthase 驱动 ATP 合成。优点：确立最简单的光合能量转换系统与膜蛋白结构生物学起点。局限：单一模式蛋白。</li>
+<li><strong>阶段 2（半世纪内，家族扩张）</strong>：HR（Cl⁻ 内泵）、NaR（Na⁺ 外泵）、ChR（光门控阳离子通道）、ACR（天然阴离子通道）、KCR（钾选择性通道）、heliorhodopsin（反向拓扑）相继被鉴定。优点：功能多样性远超最初认知。局限：功能分类与运输方向并非由所运输离子固定（xenorhodopsin、schizorhodopsin 为天然内向 H⁺ 泵）。</li>
+<li><strong>阶段 3（2005 起，optogenetics 时代）</strong>：Boyden et al. 在哺乳动物神经元表达 ChR2，实现毫秒级光控兴奋。优点：神经环路解析、心脏起搏、听觉、视网膜修复快速铺开。局限：抑制性工具发展更慢。</li>
+<li><strong>阶段 4（2010 前后，抑制工具瓶颈被系统指出）</strong>：Chow et al. 系统比较指出 halide/proton pump 在 photosensitivity、membrane localization、silencing efficiency 受限；eNpHR3.0 通过加膜运输信号序列改善定位。优点：工程化改造见效。局限：质子泵引起细胞外 pH 漂移并干扰突触传递。</li>
+<li><strong>阶段 5（结构引导的通道工程）</strong>：iC1C2（由阳离子通道定点突变转为 Cl⁻ 选择性）、iC++（消除残余质子电流）、天然 GtACR1/2、KCR（P(K)/P(Na) ≈ 23，1 ms 内强超极化）。优点：结构引导成为范式。局限：机制与选择性来源各异，需逐个解析。</li>
+<li><strong>阶段 6（数据驱动设计）</strong>：Bedbrook et al. 用机器学习指导 ChR 变体设计实现低光强高效光控；color-tuning 规则与吸收波长预测模型、genotype–phenotype 映射数据库、ion-pump 分类器构成初步 inverse-design 工作流。优点：从「筛选」转向「按目标谱/功能反推序列」。局限：本文未给出这些工具的定量性能对比。</li>
+<li><strong>本文主张的位置</strong>：作者把自身团队自 2015 年起对内蒙古 Ejinoor 盐湖 Halorubrum 的资源挖掘与 HeAR 系统表征，定位为「天然多样性 = 待开发的 sequence–function mapping library」这一主张的具体实例，并明确声明该部分证据来自作者自身工作（Introduction 节末、Section 4.2）。</li>
+</ul>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>抑制性工具落后于兴奋性工具</td>
+<td>halide/proton pump 在 photosensitivity、membrane localization、silencing efficiency 上受限</td>
+<td>作者归因于 silencing 工具的理化性质直接受其微生物源蛋白结构–功能特征约束，而天然源蛋白研究不足</td>
+<td>Introduction 节引 Chow et al. 2010 [20]；Section 5.1 引 [19,21]</td>
+</tr>
+<tr>
+<td>质子泵的副作用</td>
+<td>引起细胞外 pH 漂移，对突触传递产生混杂效应</td>
+<td>作者解释为质子泵机制的固有结果</td>
+<td>Section 5.3 引 [110]</td>
+</tr>
+<tr>
+<td>轴突末梢等场景效力与副作用突出</td>
+<td>对离子稳态高度敏感区域，现有工具仍特别成问题</td>
+<td>作者引 Wiegert et al.、Rost et al. 的总结</td>
+<td>Section 5.1 引 [22]</td>
+</tr>
+<tr>
+<td>NpHR 类氯泵受限</td>
+<td>膜定位差、依赖胞内 Cl⁻ 稳态、运输动力学受氯梯度严格约束</td>
+<td>作者归因于膜运输与离子梯度依赖</td>
+<td>Section 5.2 引 [20,114]</td>
+</tr>
+<tr>
+<td>HeAR 被误读为已证实的沉默工具</td>
+<td>缺乏神经元电生理、哺乳动物细胞膜运输、光毒性、剂量–反应沉默曲线、与既有工具头对头比较</td>
+<td>作者明确说明所有定量 HeAR 值均来自 E. coli 异源表达与纯化蛋白体外生物物理</td>
+<td>Simple Summary；Section 4.3；Section 7.3</td>
+</tr>
+<tr>
+<td>「bistable」「red-shifted」等术语被误用</td>
+<td>HeAR 未被证明具双向光切换；HeAR 相对 BR 实为蓝移 ≈18 nm</td>
+<td>作者指出 bistability 需直接双向光切换证据；「red-shifted」仅相对兴奋性 ChR（≈470 nm）成立</td>
+<td>Section 4.3；Section 6.6</td>
+</tr>
+<tr>
+<td>比较研究间参数不可直接对齐</td>
+<td>激发波长/强度、pH、温度、去垢剂、拟合模型均不同</td>
+<td>作者明确说明这些比值是指示性而非精确</td>
+<td>Section 4.3（AR3、AR4 比较处）</td>
+</tr>
+<tr>
+<td>制备形式改变被测性质</td>
+<td>去垢剂 Triton X-100 溶解 AR4 使 proton-release complex pKa 降至 7.0 以下，并在中性 pH 反转质子释放/摄取顺序</td>
+<td>作者据此强调物理形式本身可改变被测性质</td>
+<td>Section 4.3 引 [105]</td>
+</tr>
+<tr>
+<td>综述方法学自身的局限</td>
+<td>仅标题/摘要层面筛选，会漏检相关工作；未注册预定义方案，故无自身定量合成</td>
+<td>作者在 Literature Selection 节主动声明</td>
+<td>Literature Selection 节</td>
+</tr>
+<tr>
+<td>临床转化壁垒</td>
+<td>基因载体剂量控制、长期免疫与安全性评价、监管路径未建立</td>
+<td>作者列为实际转化障碍</td>
+<td>Section 7.3 引 [154,216]</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：以叙述性综述形式，先建立 microbial rhodopsin 的功能分类（ion pump / ion channel / photosensor / enzyme rhodopsin）与 7TM 共同骨架，再展开 photocycle 与质子泵级联，随后聚焦 Halorubrum 属 archaeorhodopsin 并把 HeAR 与 BR、AR3、AR4 逐参数对照，最后按沉默机制梳理 optogenetic 工具谱系与结构引导/定向进化/机器学习设计策略。</li>
+<li><strong>核心洞察</strong>：作者反复执行的一个操作是「把被宣传为 HeAR 特色的性质逐一拆解到对照上」——延长的整体光循环（≈100 ms vs BR 11 ms、AR4 ≈10 ms、AR3 O-decay τ ≈ 14 ms）是唯一真正区分 HeAR 与全部三个对照的性质；升高的 counterion pKa（3.5 ± 0.1）与 AR4（3.6）共享，只把二者与 BR（2.6）、AR3（2.5 ± 0.2）分开；「红移」只在相对兴奋性 ChR（≈470 nm）时成立，相对 BR 实为蓝移 ≈18 nm，相对 AR3 基本重合。第二个洞察是：天然源蛋白的「非典型」生物物理性质（荧光、pH 效应、慢恢复）往往正是其工具价值来源（Section 4.4 以 AR3 为例）。第三个洞察是：运输方向本身是可工程化属性——天然内向 H⁺ 泵（xenorhodopsin、schizorhodopsin）与把细菌感光 rhodopsin 改造为内向质子泵的实验共同表明 7TM 骨架支持双向（Section 2.1、Section 6.3）。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：
+   - 在把新蛋白宣称为「工具」之前，应先把每个被强调的性质拆到最近缘同源物与经典对照上逐参数核验；同属内 5–7% 序列差异意味着「特色」很可能只是共享性质。
+   - 术语（bistable、red-shifted、slow recovery）必须绑定到可操作定义与直接测量，否则会把不同物理量（光–暗适应再平衡 vs 单次光循环时长）混为一谈。
+   - 制备条件（去垢剂、pH、宿主膜、温度）是被测性质的组成部分而非中性变量，跨研究比较必须显式声明这些差异。
+   - 对结构计算方向：本文给出的可迁移模式是「计算预测性质 → 突变/光谱/晶体学/电生理验证」的闭环（如吸收蓝移约 100 nm 的原子级设计变体经光谱、X 射线晶体学与电生理确认），而非单纯结构解析。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：PubMed、Web of Science Core Collection、Google Scholar 中以「microbial rhodopsin」「archaeorhodopsin」「bacteriorhodopsin」「proteorhodopsin」「retinal」「photocycle」「optogenetics」「neural silencing」「cryo-EM」「XFEL」「directed evolution」「machine learning」组合检索到的文献（无下限日期，1970 年代基础工作保留）。</li>
+<li><strong>输出</strong>：一张比较参数框架（Table 1 对 HeAR vs BR/AR3/AR4 逐参数区分「已测」「文献未报道」「本工作未测定」；Table 2 汇总代表性 Halorubrum archaeorhodopsin 基本性质；Table 3 与 Figure 3 比较沉默工具谱系），以及面向工具设计的策略综述与挑战清单。</li>
+<li><strong>模块</strong>：① 功能分类与 7TM 结构基础；② photocycle 与离子泵机制；③ Halorubrum 多样性与 HeAR 结构–功能表征；④ optogenetic 沉默工具演化（按机制分节）；⑤ 结构引导理性设计（结构预测/比较结构生物学、计算模拟与动态结构生物学、定向进化与半理性工程、机器学习辅助设计、从结构到应用的功能工程）；⑥ 挑战与展望（光毒性/发色团稳态/工具稳定性、光递送与深部组织、临床转化、盐湖资源）。</li>
+<li><strong>训练</strong>：不适用（综述，无模型训练）。</li>
+<li><strong>工具</strong>：AlphaFold（单链结构预测）、ChimeraX（大规模结构比较）、GROMACS（微秒级光循环 MD）、molecular docking（chromophore analogs 虚拟筛选）、同步辐射室温 serial crystallography、XFEL-based SFX、cryo-EM、时间分辨 UV-Vis、瞬态红外、固体核磁、高速原子力显微镜 + 圆二色、拉曼单细胞分型、定向进化、机器学习（ChR 变体设计、吸收波长预测、ion-pump 分类器）。</li>
+<li><strong>反馈回路</strong>：作者描述的理性设计闭环为「盐湖资源 → 深度表征 → 结构预测/机器学习 → 定制工具」，即天然多样性提供模板，计算与进化提供变体，功能表征回填参数（Section 8）。</li>
+<li><strong>假设</strong>：① silencing 工具的理化性质受源蛋白结构–功能特征直接约束；② 天然多样性可视为待开发的 sequence–function mapping library；③ 同属内高度同源蛋白（HeAR 与 AR4 95% 同一性）的表达、稳定化与光谱表征步骤可复用。</li>
+<li><strong>从输入到输出的文字流程</strong>：检索并保留报道定量结构/光谱/动力学/optogenetic 数据或工具间定量比较的同行评审原始论文与权威综述 → 按功能分类与结构基础建立共同骨架 → 展开 photocycle 与质子传递级联 → 聚焦 Halorubrum 属并把 HeAR 逐参数与 BR/AR3/AR4 对照，标注哪些是实测、哪些文献未报道、哪些本工作未测定 → 按沉默机制（内向卤素泵、外向质子泵、光门控阴离子通道、钾选择性通道/代谢型/酶偶联）梳理工具谱系 → 汇总结构预测、MD、对接、定向进化、机器学习的设计策略 → 列出光毒性、发色团稳态、光递送、临床转化与资源开发挑战 → 给出「从盐湖资源到定制工具」的闭环判断与边界声明。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>功能分类（四组：ion pump / ion channel / photosensor / enzyme rhodopsin）</td>
+<td>按光激活后生物输出划分家族</td>
+<td>运输方向与离子是离子泵的定义属性，决定其是否属于沉默机制</td>
+<td>输入：家族成员文献；输出：Figure 1 分类框架</td>
+<td>Section 2.1；Figure 1</td>
+<td>预期：无法说明为何内向 H⁺ 泵被保留讨论却不列入 Section 5 沉默机制（实测消融未提供）</td>
+</tr>
+<tr>
+<td>7TM 骨架与功能位点</td>
+<td>建立共同支架与 BR 核心残基（Asp85/Asp212、Asp96、Glu194/Glu204）</td>
+<td>提供跨家族比较与工程化的结构坐标系</td>
+<td>输入：高分辨率结构；输出：保守位点清单</td>
+<td>Section 2.2 引 [5,6,25,42,44]</td>
+<td>预期：失去「同一骨架支持不同底物与方向」的论证基础</td>
+</tr>
+<tr>
+<td>寡聚态作为设计变量</td>
+<td>指出 BR 三聚体、真细菌五聚体，寡聚态与系统发育共变</td>
+<td>寡聚态影响膜行为与工具表现，不应视为固定属性</td>
+<td>输入：高速 AFM + 圆二色；输出：寡聚态与 exciton couplet 关系</td>
+<td>Section 2.2 引 [53]</td>
+<td>预期：工程化时忽略寡聚态这一变量</td>
+</tr>
+<tr>
+<td>Photocycle 与质子传递级联</td>
+<td>给出 K→L→M→N→O→recovery 通用图景与限速步骤</td>
+<td>是理解泵速、M 态动力学与工具时间精度的基础</td>
+<td>输入：时间分辨 UV-Vis、瞬态红外、固体 NMR；输出：中间态与速率</td>
+<td>Section 3.1、3.3 引 [25,44,49,63,64,65,66,68–76]</td>
+<td>预期：无法解释 HeAR「快 M 态 + 慢整体循环」这一组合</td>
+</tr>
+<tr>
+<td>HeAR 结构–功能表征</td>
+<td>提供吸收谱、光循环动力学、counterion pKa、视黄醛异构化、能量耦合效率数据集</td>
+<td>是评估其工具潜力的直接实验证据</td>
+<td>输入：E. coli 异源表达纯化蛋白；输出：550/560 nm、100 ms 循环、M 态 60 µs 形成/3.3 ms 衰减、Asp-95 pKa 3.5 ± 0.1、暗适应半时 160 min、129 kDa 三聚体、0.1→0.3 ng H⁺/(mg·s)、ATP 0.3 nmol/mg</td>
+<td>Section 3.2、3.4、4.3；Figure 2A–F；引 [24]</td>
+<td>实测消融未提供；预期：失去本文全部 HeAR 相关论断</td>
+</tr>
+<tr>
+<td>逐参数对照（Table 1）</td>
+<td>把 HeAR 三个被强调性质拆到 BR/AR3/AR4 上核验</td>
+<td>防止把共享性质误报为独有特色</td>
+<td>输入：各蛋白文献值；输出：区分「已测/文献未报道/本工作未测定」</td>
+<td>Section 4.3；Table 1</td>
+<td>预期：读者会把升高的 counterion pKa 与「红移」误认为 HeAR 独有</td>
+</tr>
+<tr>
+<td>沉默工具谱系（按机制分节）</td>
+<td>按内向卤素泵、外向质子泵、光门控阴离子通道、钾通道/代谢型/酶偶联组织</td>
+<td>明确 HeAR 所属类别在工具谱系中的位置与替代路线</td>
+<td>输入：工具文献；输出：Table 3、Figure 3</td>
+<td>Section 5.2–5.6</td>
+<td>预期：无法说明 proton-pumping archaeorhodopsin 并非唯一微生物 rhodopsin 沉默路线（RoCK 为例）</td>
+</tr>
+<tr>
+<td>结构引导设计策略</td>
+<td>汇总结构预测、MD、对接、定向进化、机器学习</td>
+<td>支撑「从盐湖资源到定制工具」闭环</td>
+<td>输入：AlphaFold/ChimeraX/GROMACS/docking/ML 工具与案例；输出：设计策略清单</td>
+<td>Section 6.1–6.5</td>
+<td>预期：失去对 inverse-design 工作流可行性的论证</td>
+</tr>
+<tr>
+<td>边界声明模块</td>
+<td>明确 HeAR 无神经元电生理、无哺乳动物膜运输、无光毒性、无剂量–反应曲线、无头对头比较；临床仅限动物型 opsin 与工程化 ChR</td>
+<td>防止把体外生物物理数据外推为工具性能</td>
+<td>输入：作者自述证据边界；输出：Simple Summary、Section 7.3、Section 8 的限定表述</td>
+<td>Simple Summary；Section 7.3；Section 8</td>
+<td>预期：全文结论会被过度推广</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>不适用。本文为叙述性综述，未给出需理解其论证所必需的公式；文中出现的定量内容均为参数值（吸收波长、时间常数、pKa、速率、产率），以文字与图表形式呈现，未以公式形式定义。Henderson–Hasselbalch fit 仅在描述 AR4 counterion 滴定（pKa 3.6, n = 0.9）时被提及，未给出方程形式（Section 4.3 引 [104]）。</p>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/群体、规模、指标、基线、预算、骨干/仪器、oracle 输入、评测协议（本文为综述，以下为文中涉及的证据来源特征）</strong>：
+- <strong>数据集/群体</strong>：文献集合（PubMed / Web of Science Core Collection / Google Scholar 检索，无下限日期）；HeAR 定量数据来自 E. coli BL21(DE3) 异源表达与纯化蛋白体外生物物理（Ref. [24]）；AR4 数据来自 claret membrane（pH 7.1, 20 °C）与 Halobacterium salinarum L33 重组表达；AR3 数据来自去垢剂溶解样品与 E. coli 膜（pH 6）。
+- <strong>规模</strong>：未提供（叙述性综述，无定量合成）。
+- <strong>指标</strong>：吸收最大波长、暗/光适应 all-trans:13-cis 比、暗适应半时、光循环时长、M 态形成/衰减时间常数、O 态形成/衰减、counterion pKa、质子外排速率、胞内 ATP 水平、寡聚态与分子量、K⁺ 选择性 P(K)/P(Na)、重组产率。
+- <strong>基线</strong>：BR（多数参数的经典对照）、AR3、AR4；兴奋性工具 ChR（≈470 nm）作为光谱对照。
+- <strong>预算</strong>：未提供。
+- <strong>骨干/仪器</strong>：时间分辨 UV-Vis、瞬态红外、固体核磁、cryo-EM、XFEL/SFX、同步辐射 serial crystallography、高速 AFM + 圆二色、HPLC、拉曼单细胞分型、电生理（用于其他工具，非 HeAR）。
+- <strong>oracle 输入</strong>：不适用（无预测任务的真值输入设定）。
+- <strong>评测协议</strong>：无统一协议；作者明确指出跨研究比较中激发波长/强度、pH、温度、去垢剂、拟合模型均不同，故比值「indicative rather than exact」。</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HeAR 暗/光适应异构体比与暗适应半时</td>
+<td>HeAR 暗态 13-cis 富集低于 BR，暗适应更慢</td>
+<td>HeAR vs BR；HPLC 类分析</td>
+<td>HeAR 暗/光适应 all-trans:13-cis = 2:1 与 6:1；BR 约 1:1 与 6:1；HeAR 暗适应半时 160 min，BR 80 min</td>
+<td>HeAR 暗适应显著慢于 BR</td>
+<td>不能推出低光沉默更优；作者明确该提议需直接测量</td>
+<td>Section 3.2；Figure 2C,D；引 [24,67]</td>
+</tr>
+<tr>
+<td>HeAR 光循环动力学</td>
+<td>HeAR 整体循环慢于 BR 但 M 态更快</td>
+<td>HeAR vs BR</td>
+<td>整体循环 ≈100 ms（BR 11 ms）；M 态 60 µs 内饱和（BR ≈0.2 ms）、3.3 ms 内完全衰减（BR ≈11 ms）</td>
+<td>「快 M 态 + 慢整体循环」的动力学特征成立（仅对 BR）</td>
+<td>对 AR3 该特征反转；比值因条件差异仅为指示性</td>
+<td>Section 4.3；Figure 2A,B；引 [24,103]</td>
+</tr>
+<tr>
+<td>HeAR counterion pKa</td>
+<td>HeAR Asp-95 pKa 高于 BR 与 AR3</td>
+<td>HeAR vs BR Asp-85 (2.6)、AR3 Asp-95 (2.5 ± 0.2)、AR4 Asp-85 (3.6)</td>
+<td>HeAR 3.5 ± 0.1</td>
+<td>升高的 counterion pKa 把 HeAR 与 AR4 同 BR、AR3 分开</td>
+<td>不能称为 HeAR 独有；AR4 与之匹配</td>
+<td>Section 4.3；Table 1；引 [24,102,104]</td>
+</tr>
+<tr>
+<td>HeAR 能量耦合</td>
+<td>HeAR 具光驱动质子外排与 ATP 提升能力</td>
+<td>E. coli BL21(DE3)；± DCCD</td>
+<td>净外排 ≈0.1 ng H⁺/(mg·s)，加 DCCD 升至 0.3；30 s 光照使胞内 ATP 稳态 ≈0.3 nmol/mg protein，暗态 ATP 水解仅 0.02 nmol/(mg·s)</td>
+<td>HeAR 具能量耦合能力，可作合成生物学光能转换模块</td>
+<td>不能推出神经元层面的沉默效力</td>
+<td>Section 3.4；Figure 2E,F；引 [24]</td>
+</tr>
+<tr>
+<td>HeAR 寡聚态与分子量</td>
+<td>HeAR 在 E. coli 中形成稳定三聚体</td>
+<td>与 BR 去垢剂结合性质比较</td>
+<td>129 kDa 三聚体，去垢剂结合性质与 BR 相似</td>
+<td>重组表达可形成稳定三聚体</td>
+<td>未提供哺乳动物细胞中的组装与运输数据</td>
+<td>Section 4.3；引 [24]</td>
+</tr>
+<tr>
+<td>HeAR 序列同源性与保守位点</td>
+<td>HeAR 与 AR4 最近缘，功能核心受强进化约束</td>
+<td>与 AR4/AR1/AR3/AR2/BR 比较</td>
+<td>同源 95%/94%/93%/86%，与 BR 仅 57% 同一性；11 个关键质子泵残基严格保守</td>
+<td>功能核心保守；同属内差异仅 5–7%</td>
+<td>不能把共享性质当作 HeAR 特色</td>
+<td>Section 4.3；引 [24]</td>
+</tr>
+<tr>
+<td>AR4 重组表达与表征</td>
+<td>同属蛋白可高产量重组并保留三聚体堆积与泵动力学</td>
+<td>Halobacterium salinarum L33</td>
+<td>产率高达 20 mg L⁻¹，保留三聚体堆积与质子泵动力学，二维固体核磁原位表征</td>
+<td>HeAR 类工具所需的表达/稳定化/光谱表征步骤在同属中已有先例</td>
+<td>不能直接外推到 HeAR</td>
+<td>Section 4.3、6.6；引 [106]</td>
+</tr>
+<tr>
+<td>AR4 去垢剂效应</td>
+<td>制备形式可改变被测性质</td>
+<td>Triton X-100 溶解 AR4</td>
+<td>proton-release complex pKa 降至 7.0 以下，中性 pH 下质子释放/摄取顺序反转</td>
+<td>去垢剂不是中性变量</td>
+<td>不能据此推断其他去垢剂或 HeAR 的相同行为</td>
+<td>Section 4.3；引 [105]</td>
+</tr>
+<tr>
+<td>KCR 钾选择性</td>
+<td>KCR 通过独立进化机制实现 K⁺ 选择性</td>
+<td>HcKCR1/2</td>
+<td>P(K)/P(Na) ≈ 23，光照后 1 ms 内强超极化</td>
+<td>存在非经典选择性过滤器的光门控 K⁺ 通道</td>
+<td>与 HeAR 无直接可比性</td>
+<td>Section 5.5；引 [12,48]</td>
+</tr>
+<tr>
+<td>机器学习指导 ChR 变体设计</td>
+<td>ML 可指导变体设计实现低光强高效光控</td>
+<td>未提供定量对比</td>
+<td>实现低光强下高效光控</td>
+<td>ML 辅助 rhodopsin 工程可行</td>
+<td>未提供与本文其他工具的定量性能对比</td>
+<td>Section 6.4；引 [182]</td>
+</tr>
+<tr>
+<td>原子级设计变体吸收蓝移</td>
+<td>计算预测性质可经实验验证</td>
+<td>光谱 + X 射线晶体学 + 电生理</td>
+<td>吸收蓝移最多约 100 nm 并经三重实验确认</td>
+<td>「计算预测 → 实验验证」闭环可行</td>
+<td>未说明该变体的其他功能性质</td>
+<td>Section 6.2；引 [174]</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文是 narrative review，作者明确声明非 systematic review，无自身定量合成；筛选在标题/摘要层面完成，会漏检相关工作（Literature Selection 节）。</li>
+<li><strong>oracle/真值输入</strong>：不适用。本文无预测任务，无真值输入设定。</li>
+<li><strong>端到端状态</strong>：HeAR 的端到端工具验证完全缺失——无神经元电生理记录、无哺乳动物细胞膜运输分析、无光毒性测试、无剂量–反应沉默曲线、无与既有沉默工具的头对头比较（Simple Summary）。所有定量 HeAR 值来自 E. coli 异源表达与纯化蛋白体外生物物理。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：HeAR 参数依赖作者团队自身 Ref. [24]；跨研究比较依赖 BR、AR3、AR4 的历史文献值，且这些研究的激发波长/强度、pH、温度、去垢剂、拟合模型均不同，作者自述比值「indicative rather than exact」。</li>
+<li><strong>模型依赖</strong>：结构预测依赖 AlphaFold（作者称其把单链结构预测推进到接近实验精度）；MD 依赖 GROMACS 等框架；ML 依赖 color-tuning 规则、吸收波长预测模型、genotype–phenotype 数据库、ion-pump 分类器。本文未对这些工具的误差或适用范围做定量评估。</li>
+<li><strong>最难情形</strong>：轴突末梢等对离子稳态高度敏感的区域，现有工具效力与副作用仍特别成问题（Section 5.1）；深部组织光递送受可见光强散射与吸收限制（Section 7.2）。</li>
+<li><strong>群体/领域边界</strong>：临床验证目前全部是动物型 opsin 或工程化 channelrhodopsin（视网膜疗法），无任何 archaeorhodopsin 进入临床；本文讨论的新表征 archaeorhodopsin（含 HeAR）连神经元验证都没有（Section 7.3、Section 8）。</li>
+<li><strong>不确定性</strong>：① HeAR 低光沉默优势未建立，且因每次光循环只转移一个质子，延长的整体循环降低单分子最大周转，低光性能必须实测；② 「bistable」不适用于 HeAR，未被证明具双向光切换；③ 「red-shifted」仅相对兴奋性 ChR（≈470 nm）成立，相对 BR 实为蓝移 ≈18 nm，相对 AR3 基本重合；④ 同属内 5–7% 序列差异意味着被强调的性质很可能被近缘蛋白共享；⑤ 盐湖中 pump-type 与 sensory-type 基因在不同光照条件下被保留这一命题，作者明确标注为「待检验的解释而非既定结果」（Section 2.3）。</li>
+<li><strong>有边界的复述</strong>：本文提供了一张把 HeAR 与 BR/AR3/AR4 逐参数对照的比较框架，其可辩护的结论是——在已测参数中，只有延长的整体光循环（≈100 ms）真正把 HeAR 与全部三个对照分开；升高的 counterion pKa 与 AR4 共享；「红移」只在相对兴奋性 ChR 时成立。HeAR 是一个具有可测性质与可检验潜力的 archaeorhodopsin 支架，不是已证实的沉默工具，也不具备与已进入临床的视网膜 optogenetic 疗法相提并论的时间线。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>综述方法学：仅标题/摘要层面筛选</td>
+<td>会漏检相关工作</td>
+<td>未提出具体补救方向，仅声明该局限</td>
+<td>Literature Selection 节</td>
+</tr>
+<tr>
+<td>综述方法学：未注册预定义方案</td>
+<td>综述本身不携带任何定量合成</td>
+<td>未提出具体补救方向，仅声明该局限</td>
+<td>Literature Selection 节</td>
+</tr>
+<tr>
+<td>HeAR 证据边界</td>
+<td>所有定量值来自 E. coli 异源表达与纯化蛋白体外生物物理；无神经元电生理、无哺乳动物细胞膜运输分析、无光毒性测试、无剂量–反应沉默曲线、无与既有工具头对头比较</td>
+<td>未来工作应聚焦增强单位电导与基于其结构优化膜靶向</td>
+<td>Simple Summary；Section 6.6；Section 7.3</td>
+</tr>
+<tr>
+<td>HeAR 低光优势未建立</td>
+<td>泵每次光循环只转移一个质子，延长的整体循环降低单分子最大周转，低光性能必须实测而非从动力学特征推断</td>
+<td>需直接测量</td>
+<td>Section 4.3；Section 6.6；Table 1</td>
+</tr>
+<tr>
+<td>跨研究参数比较不可精确对齐</td>
+<td>激发波长/强度、pH、温度、去垢剂、拟合模型均不同，比值仅为指示性</td>
+<td>未提出具体统一协议</td>
+<td>Section 4.3</td>
+</tr>
+<tr>
+<td>盐湖基因保留命题未证实</td>
+<td>现场数据与「pump-type 与 sensory-type 基因在不同光照条件下被保留」一致，但不能证明该命题</td>
+<td>作者将其呈现为待检验的解释</td>
+<td>Section 2.3</td>
+</tr>
+<tr>
+<td>临床转化壁垒</td>
+<td>基因载体剂量控制、长期免疫与安全性评价、监管路径未建立</td>
+<td>未提出具体路径</td>
+<td>Section 7.3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>作者提及的相关约束（非正式局限）</strong>：作者声明本文对 HeAR 的强调部分源于其自身团队对 Ejinoor 盐湖 haloarchaea 的工作，并在 Section 4 中把 HeAR 与 AR3、AR4 批判性比较而非作为特权案例呈现（Introduction 节）。作者亦声明 Figure 1–3 为原创，Figure 2 定量值取自其自身开放获取文章 Ref. [24]（Acknowledgments）。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HeAR 的核心卖点「慢暗适应（160 min）」与「慢整体循环（100 ms）」被并列讨论，但二者物理意义不同</td>
+<td>替代解释：慢暗适应只改变暗适应池的异构体组成，不增加单分子电荷周转；作者自己也指出这一点，但 Section 6.6 仍把二者并列为「三个 implications」之一</td>
+<td>若读者把慢暗适应当作低光沉默优势的来源，会做出错误工具选择</td>
+<td>在神经元中测低光强下的剂量–反应沉默曲线，并与 BR/AR3/AR4 对照</td>
+<td>Section 3.2；Section 4.3；Section 6.6</td>
+</tr>
+<tr>
+<td>「只有延长的整体光循环真正区分 HeAR」这一结论依赖跨研究数值比较</td>
+<td>替代解释：AR3 的 O-decay τ ≈ 14 ms 与 HeAR 100 ms 的差距可能部分来自去垢剂/温度/pH 差异而非蛋白本身</td>
+<td>该结论是全文对 HeAR 独特性的唯一正面判定，若比较不可靠则全文定位需重估</td>
+<td>在同一宿主、同一去垢剂、同一温度/pH 下平行测量 HeAR 与 AR3/AR4 的完整光循环</td>
+<td>Section 4.3（作者自述比值 indicative rather than exact）</td>
+</tr>
+<tr>
+<td>同属内 5–7% 序列差异下，HeAR 的「特色」很可能被近缘蛋白共享</td>
+<td>替代解释：HeAR 的工具价值可能不在独特性，而在其作为同属可用支架的又一实例</td>
+<td>影响资源投入决策：是继续深挖 HeAR 还是转向属内筛选</td>
+<td>对 AR1/AR2/AR4 做与 HeAR 同等的完整参数表征</td>
+<td>Section 4.3；Section 6.6</td>
+</tr>
+<tr>
+<td>综述把 AlphaFold、GROMACS、docking、ML 列为设计工具，但未给出任何误差、适用范围或失败案例</td>
+<td>替代解释：这些工具在 rhodopsin 这类含共价发色团、需光化学中间态采样的体系中的适用性可能远低于文中暗示</td>
+<td>对结构计算方向读者，缺少可操作的能力边界信息</td>
+<td>检索并汇总这些工具在 rhodopsin 体系中的 benchmark 与失败报告</td>
+<td>Section 6.1–6.4</td>
+</tr>
+<tr>
+<td>文中把「计算预测 → 实验验证」闭环作为可迁移教训，但所引案例（吸收蓝移约 100 nm）未说明是否同时保持泵功能</td>
+<td>替代解释：单性质优化可能以功能损失为代价，闭环的「成功」定义过窄</td>
+<td>影响 inverse-design 工作流的目标函数设计</td>
+<td>对该变体做完整光循环与泵功能表征</td>
+<td>Section 6.2 引 [174]</td>
+</tr>
+<tr>
+<td>综述声明排除 LOV-domain 光开关（Ref. [196]）以保持蛋白家族边界，但同时纳入代谢型 optoGPCR 与 eOPN3 作为「完整性」列出</td>
+<td>替代解释：家族边界标准在「排除」与「纳入」之间不完全一致</td>
+<td>影响读者对「微生物 rhodopsin 沉默路线」范围的判断</td>
+<td>明确重述纳入/排除判据并逐条应用</td>
+<td>Section 5.5；Section 6.5</td>
+</tr>
+<tr>
+<td>临床转化一节把 MCO-010、synthetic opsin therapy 与 HeAR 并列在同一「转化」叙事下</td>
+<td>替代解释：作者已明确声明二者不在同一时间线，但并置结构仍可能造成读者误读</td>
+<td>影响对 HeAR 转化前景的预期管理</td>
+<td>在图表层面把「已进入临床」与「仅体外表征」分区呈现</td>
+<td>Section 7.3；Section 8</td>
+</tr>
+<tr>
+<td>综述未提供任何自身定量合成，却给出 Table 1 的逐参数对照</td>
+<td>替代解释：Table 1 的「已测/文献未报道/本工作未测定」三分法本身是一种定性合成，其判据未完全公开</td>
+<td>影响表格可复用性</td>
+<td>公开每个单元格的取值来源与判定规则</td>
+<td>Literature Selection 节；Table 1</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong></p>
+<ul>
+<li><strong>可迁移概念：把「新蛋白特色」拆到最近缘同源物上逐参数核验</strong>。本文对 HeAR 三个被强调性质的处理方式（延长的整体光循环 = 独有；升高的 counterion pKa = 与 AR4 共享；红移 = 仅相对兴奋性 ChR 成立）可直接迁移到蛋白质结构/序列设计工作：任何声称「新设计体具有性质 X」的结论，都应先在最近缘天然同源物与经典对照上做同条件核验，并显式区分「已测 / 文献未报道 / 本工作未测定」。</li>
+<li><strong>可迁移概念：制备条件是被测性质的组成部分</strong>。AR4 在 Triton X-100 中 proton-release complex pKa 降至 7.0 以下并反转质子释放/摄取顺序，说明去垢剂/膜环境可改变被测量本身。对 MD 与对接研究，这意味着力场/膜模型/去垢剂建模的选择不是中性技术细节，而应作为结论的一部分报告。</li>
+<li><strong>可迁移概念：运输方向是可工程化属性</strong>。天然内向 H⁺ 泵（xenorhodopsin 由初级质子给体–受体静电相互作用强度决定方向；schizorhodopsin 通过螺旋 2/6/7 胞质半段缩短使受体靠近胞质）与把细菌感光 rhodopsin 改造为内向质子泵的实验共同表明 7TM 骨架支持双向。对构象采样与设计，这提示「方向/极性」可作为设计目标而非固定约束。</li>
+<li><strong>可迁移方法：计算预测 → 突变/光谱/晶体学/电生理验证的闭环</strong>。文中原子级设计变体吸收蓝移约 100 nm 并经光谱、X 射线晶体学与电生理三重确认，是结构计算方向可直接借用的验证范式。</li>
+<li><strong>可迁移方法：inverse-design 工作流的组件清单</strong>。color-tuning 规则与吸收波长预测模型、genotype–phenotype 映射数据库、ion-pump 分类器，构成「输入目标谱/功能 → 输出候选序列」的初步流程。对做序列/结构设计的读者，这是一份可对照自身 pipeline 缺哪一环的清单。</li>
+<li><strong>可迁移实验设计：用同一蛋白的定点突变定位功能决定簇</strong>。AR2 突变分析首次鉴定 helix E 末端极性残基段对光驱动质子泵关键；HeAR 同源蛋白中替换 helix E 末端连续极性残基 Thr164/Ser165 延长整体光循环并加速 M 衰减，说明视黄醛口袋之外的残基也设定周转率。对构象采样，这提示采样目标不应局限于活性位点。</li>
+<li><strong>可迁移实验设计：寡聚态作为设计变量</strong>。高速 AFM + 圆二色显示古菌 rhodopsin 以三聚体为主、真细菌以五聚体为主，两类给出相反的 exciton couplet。对结构预测与组装建模，寡聚态应与系统发育共变而非固定。</li>
+<li><strong>可迁移概念：术语必须绑定可操作定义</strong>。作者拒绝把 HeAR 称为 bistable（需直接双向光切换证据），并区分「光–暗适应再平衡」与「单次光循环时长」两个时间尺度。对任何涉及构象态切换的计算工作，这是避免概念混淆的模板。</li>
+<li><strong>可迁移概念：天然多样性 = sequence–function mapping library</strong>。作者把盐湖 haloarchaea 资源定位为待开发的映射库，并指出同属内已有 AR4 在 H. salinarum L33 中 20 mg L⁻¹ 重组表达并保留三聚体堆积与泵动力学的先例，说明表达/稳定化/表征步骤可在属内复用。</li>
+</ul>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似（可核验外部文献）</strong>：Bedbrook et al. 用机器学习指导 ChR 变体设计实现低光强高效光控（Section 6.4 引 [182]）；AlphaFold 把单链结构预测推进到接近实验精度（Section 6.1 引 [159]）；GROMACS 使微秒级完整光循环模拟成为可能（Section 6.2 引 [169,170]）；cryo-EM 的 2.0 Å ChRmine 结构被直接用于设计光谱与动力学改变的变体（Section 6.1 引 [34]），以及 ChRmine 在脂质 nanodisc 中的 cryo-EM 解析出 retinal-bound 与 apo 态并得到关闭动力学慢十倍/快两倍的变体（引 [167]）。</li>
+<li><strong>组合（本文把多条线并置）</strong>：本文把「天然资源挖掘（Ejinoor 盐湖 Halorubrum）→ 结构–功能参数表征 → 结构预测/MD/对接/定向进化/ML → 定制工具」组合成一个闭环叙事（Section 8），并明确该闭环「正在形成」而非已实现。</li>
+<li><strong>冲突（本文内部或与常见表述的冲突）</strong>：HeAR 常被期待为「红移」工具，但作者指出相对 BR 实为蓝移 ≈18 nm、相对 AR3 基本重合，红移只在相对兴奋性 ChR（≈470 nm）时成立（Section 4.3、Section 6.6）；HeAR 的「慢恢复」常被期待带来低光优势，但作者指出泵每次光循环只转移一个质子，延长的整体循环降低单分子最大周转（Section 4.3）。</li>
+<li><strong>可迁移领域（仅在可支撑时）</strong>：动物型 rhodopsin 的胞外质子释放域与 GPCR 的螺旋重排，与 BR 面临同一个机制问题——7TM 束如何把发色团异构化耦合到不对称输出；作者明确说明可迁移的是方法学（视黄醛口袋静电可被预测并经突变检验），而非残基身份，因为两家族无可检测序列同源（Section 6.2）。</li>
+<li><strong>用户已有知识的候选连接点（标注为候选方向）</strong>：若读者熟悉 protein structure prediction 的 single-chain 精度评估，本文提供了一个「预测精度 ≠ 功能可设计性」的实例——AlphaFold 降低建模门槛，但 HeAR 的工具价值判定仍完全依赖体外生物物理实测。若读者熟悉 enhanced sampling 用于构象转变，本文的「快 M 态 + 慢整体循环」组合是一个值得作为采样目标的多时间尺度问题（60 µs 至 160 min，跨约 9 个数量级）。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong></p>
+<ol>
+<li>
+<p><strong>名称</strong>：HeAR/AR3/AR4 同条件平行光循环基准
+   - <strong>来源局限/观察</strong>：作者自述跨研究比较中激发波长/强度、pH、温度、去垢剂、拟合模型均不同，比值「indicative rather than exact」（Section 4.3）。
+   - <strong>核心假设</strong>：在同一宿主、同一去垢剂、同一温度与 pH 下平行测量，HeAR 相对 AR3/AR4 的整体光循环延长幅度会显著小于文中跨研究估计的 3–10 倍。
+   - <strong>相对本文的增量</strong>：把 Table 1 的定性对照升级为同条件定量对照，直接检验「只有延长的整体光循环真正区分 HeAR」这一全文唯一正面判定。
+   - <strong>初步方法</strong>：同一 E. coli 表达体系纯化三种蛋白，统一去垢剂与温度，时间分辨 UV-Vis 采集完整光循环，统一拟合模型。
+   - <strong>验证方式</strong>：比较同条件与跨研究两种方式下各时间常数的差异；报告去垢剂种类作为第二因素。
+   - <strong>可能的失败模式</strong>：三种蛋白在同一去垢剂中稳定性差异导致无法统一条件；某一蛋白在该条件下不形成三聚体。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：HeAR 慢暗适应的低光沉默优势直接检验
+   - <strong>来源局限/观察</strong>：作者明确指出慢暗适应不增加单分子电荷周转，低光优势「必须实测而非从动力学特征推断」（Section 3.2、Section 4.3、Section 6.6）。
+   - <strong>核心假设</strong>：在低光强、长时程照明下，HeAR 的稳态泵电流不低于 BR，且其优势（若有）来自暗适应池异构体组成而非单分子周转。
+   - <strong>相对本文的增量</strong>：把作者标注为「未建立」的关键命题转为可测命题，并区分两种可能机制。
+   - <strong>初步方法</strong>：在神经元或 proteoliposome 中测低光强下的剂量–反应沉默曲线与稳态光电流，与 BR/AR3/AR4 头对头比较；同时测暗适应池异构体比。
+   - <strong>验证方式</strong>：剂量–反应曲线 + 稳态电流 + 异构体比三者联合分析。
+   - <strong>可能的失败模式</strong>：HeAR 在哺乳动物细胞中膜定位差导致无法获得可解释的沉默曲线；低光强下信号低于检测限。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：7TM 骨架运输方向可设计性的计算–实验闭环
+   - <strong>来源局限/观察</strong>：作者指出天然内向 H⁺ 泵（xenorhodopsin 由初级质子给体–受体静电相互作用强度决定方向；schizorhodopsin 通过螺旋 2/6/7 胞质半段缩短）与把细菌感光 rhodopsin 改造为内向质子泵的实验共同表明运输方向是可工程化属性（Section 2.1、Section 6.3）。
+   - <strong>核心假设</strong>：在 HeAR 或 AR4 骨架上，通过调整初级质子给体–受体静电相互作用强度（而非改变整体架构），可预测性地翻转或消除净运输方向。
+   - <strong>相对本文的增量</strong>：把「方向可工程化」从对已有案例的归纳，转为在 Halorubrum archaeorhodopsin 骨架上的前瞻性预测–验证。
+   - <strong>初步方法</strong>：MD/自由能计算评估候选突变对给体–受体静电相互作用的影响；定点突变；proteoliposome 电学测量实时跨膜电荷位移。
+   - <strong>验证方式</strong>：计算预测方向变化 → 电学测量确认方向 → 光谱确认光循环未崩溃。
+   - <strong>可能的失败模式</strong>：方向翻转伴随光循环崩溃或蛋白不稳定；计算对质子化态与长程静电的处理误差导致预测失败。
+   - <strong>创新状态</strong>：partially checked（作者已给出天然与工程案例，但未在 Halorubrum 骨架上做前瞻预测）</p>
+</li>
+<li>
+<p><strong>名称</strong>：把「制备条件」作为显式变量纳入 rhodopsin 结构–功能数据库
+   - <strong>来源局限/观察</strong>：AR4 在 Triton X-100 中 proton-release complex pKa 降至 7.0 以下并反转质子释放/摄取顺序（Section 4.3 引 [105]）；作者据此强调物理形式可改变被测性质。
+   - <strong>核心假设</strong>：文献中 rhodopsin 参数值的相当一部分方差可由去垢剂/膜模拟环境解释，而非蛋白序列差异。
+   - <strong>相对本文的增量</strong>：把作者的方法学警告转为可量化的元分析变量，为 ML 训练集提供去偏依据。
+   - <strong>初步方法</strong>：从文献抽取参数值并标注去垢剂/脂质/宿主/pH/温度；做方差分解；对同一蛋白跨条件的数据做配对分析。
+   - <strong>验证方式</strong>：方差分解结果能否预测留出蛋白的参数值；对同一蛋白多条件数据的一致性检验。
+   - <strong>可能的失败模式</strong>：文献元数据报告不全导致大量样本不可用；条件与序列效应共线。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：面向 rhodopsin 的 ML 设计工具能力边界基准
+   - <strong>来源局限/观察</strong>：本文把 AlphaFold、GROMACS、docking、ML（color-tuning 规则、吸收波长预测、ion-pump 分类器）列为设计工具，但未给出任何误差、适用范围或失败案例（Section 6.1–6.4）。
+   - <strong>核心假设</strong>：这些工具在含共价发色团、需光化学中间态采样的 rhodopsin 体系上的实际误差显著大于其在通用蛋白任务上的报告值，且误差随目标性质（吸收波长 vs 离子选择性 vs 动力学）系统性变化。
+   - <strong>相对本文的增量</strong>：为「从盐湖资源到定制工具」闭环提供可操作的能力边界，而非工具清单。
+   - <strong>初步方法</strong>：构建留出集（按序列同源性划分），对吸收波长预测、ion-pump 分类、结构预测分别评估；对 MD 评估光循环中间态的可复现性。
+   - <strong>验证方式</strong>：留出集误差 + 与实验值的偏差分布 + 同源性与误差的相关性分析。
+   - <strong>可能的失败模式</strong>：留出集规模不足；实验值本身因制备条件差异噪声过大（与候选 4 耦合）。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：多时间尺度构象采样目标——「快中间态 + 慢整体循环」的物理起源
+   - <strong>来源局限/观察</strong>：HeAR 的 M 态在 60 µs 内饱和、3.3 ms 内完全衰减（均约为 BR 的三倍快），而整体光循环 ≈100 ms、暗适应半时 160 min（Section 4.3）。作者未解释这一组合的物理起源。
+   - <strong>核心假设</strong>：该组合源于视黄醛口袋外残基（如 helix E 末端极性残基）对质子释放/摄取通道水网络的调控，而非口袋内静电。
+   - <strong>相对本文的增量</strong>：把作者观察到的动力学特征转为可计算的机制问题，并指向视黄醛口袋外的采样区域。
+   - <strong>初步方法</strong>：对 HeAR 与 BR 做微秒级 MD 采样水网络与质子传递路径；对 helix E 末端极性残基做突变并测光循环；比较水网络构象分布。
+   - <strong>验证方式</strong>：MD 预测的水网络差异 → 突变体光谱/动力学验证 → 若可能，室温 serial crystallography 直接观察水网络。
+   - <strong>可能的失败模式</strong>：MD 力场对质子化态与长程质子的处理不足以区分两种蛋白；水网络差异在统计上不显著。
+   - <strong>创新状态</strong>：partially checked（作者已引 AR2 与 HeAR 同源蛋白的 helix E 突变证据，但未做机制计算）</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (review article), including Simple Summary, main text, and Acknowledgments. No figures, tables, or reference list were provided.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the scientific content, logical coherence, internal consistency, and evidentiary support of the narrative review as presented in the text. Claims about specific quantitative values are assessed against the internal consistency of the manuscript and the stated provenance of the data. No external verification of cited literature was performed.</li>
+<li><strong>Shared manuscript claim summary</strong> The manuscript is a narrative review of microbial rhodopsins, focusing on structural-functional mechanisms and their application to optogenetic silencing tool design. It places particular emphasis on a newly characterized archaeorhodopsin, HeAR, from a Halorubrum strain isolated from Ejinoor Salt Lake, Inner Mongolia. The authors summarize the rhodopsin family, photocycle dynamics, and ion-pumping mechanisms, then compare HeAR quantitatively with established rhodopsins (BR, AR3, AR4), and finally review the landscape of optogenetic silencing tools and rational design strategies. A central claim is that HeAR possesses a distinctive kinetic signature (fast M-state formation/decay, slow overall photocycle, slow dark adaptation) that may have implications for low-light silencing, though the authors explicitly state this remains a hypothesis requiring direct testing.</li>
+<li><strong>Visible evidence base</strong> The manuscript cites a body of literature (references numbered [1]–[223]) and draws on the authors' own prior work (Ref. [24]) for quantitative HeAR data. Specific quantitative values are presented for HeAR (absorption maxima, photocycle kinetics, pKa, proton extrusion rates, ATP levels) and for comparators (BR, AR3, AR4). Figures 1–3 are described but not visible. Tables 1–3 are referenced but not provided.</li>
+<li><strong>Missing materials affecting confidence</strong> Figures 1–3, Tables 1–3, and the full reference list were not provided. This limits verification of quantitative comparisons, figure-data consistency, and citation accuracy. The absence of Table 1 is particularly significant given its central role in the HeAR comparison.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> This is a well-structured and thoughtfully written narrative review that addresses a timely and important topic: the gap between excitatory and inhibitory optogenetic tools, and the potential of newly characterized archaeorhodopsins to fill that gap. The authors are commendably explicit about the limits of their evidence, repeatedly distinguishing measured properties from hypotheses, and clearly labeling the provenance of quantitative data. The treatment of HeAR is appropriately cautious, and the authors resist overclaiming its utility. The review is likely to be of interest to researchers in microbial rhodopsin biophysics and optogenetic tool development. However, the manuscript has several weaknesses that need to be addressed. The most significant is the tension between the stated emphasis on HeAR and the relatively thin, single-source evidence base for its distinctive properties. The review also suffers from some internal inconsistencies in quantitative claims, a tendency toward overlong and occasionally repetitive prose, and a lack of critical depth in some sections where the literature is summarized rather than interrogated. The absence of the tables and figures in the provided material makes full assessment of the comparative framework impossible. Overall, the manuscript is promising but requires revision to sharpen its claims, resolve inconsistencies, and fully deliver on its stated aims.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Researchers in optogenetics, particularly those developing or applying inhibitory tools for neural silencing; biophysicists studying microbial rhodopsin structure-function relationships, photocycle kinetics, and ion transport mechanisms; synthetic biologists interested in light-driven energy conversion modules; and neuroscientists using optogenetic tools in circuit dissection or translational research. The comparative framework for evaluating silencing tools, and the explicit discussion of what has and has not been measured for HeAR, will be valuable to these communities.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong> The manuscript has several notable strengths. First, the authors are exceptionally transparent about the evidentiary status of their claims, explicitly distinguishing measured properties from hypotheses and clearly labeling the provenance of quantitative data. This is a model of scientific honesty in a review context. Second, the comparative framework, particularly the quantitative comparison of HeAR with BR, AR3, and AR4, is a valuable contribution that goes beyond typical narrative reviews. Third, the authors demonstrate strong command of the historical and current literature, from foundational work in the 1970s to recent cryo-EM and machine-learning approaches. Fourth, the review is well-organized, with a logical progression from basic rhodopsin biology to tool design and application. Fifth, the authors are careful to classify tools and strategies by molecular mechanism, avoiding the conflation that often plagues this literature. Finally, the explicit statement of literature selection criteria and their limitations is commendable and should be a model for other narrative reviews.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency for central claim</li>
+<li><strong>Claim pointer</strong> The manuscript's central emphasis is that HeAR possesses a distinctive combination of properties—fast M-state formation and decay, slow overall photocycle, slow dark adaptation, and a raised counterion pKa—that may have implications for low-light silencing. The authors state this is a hypothesis requiring direct testing, but the framing of the review gives this hypothesis substantial prominence.</li>
+<li><strong>Evidence pointer</strong> Section 4.3, Section 6.6, Table 1 (not provided)</li>
+<li><strong>Concern</strong> The entire case for HeAR's distinctiveness rests on a single source (Ref. [24], the authors' own work) and a single expression system (E. coli, in vitro biophysics of purified protein). The authors acknowledge this, but the review's structure gives HeAR disproportionate weight relative to the evidence base. The comparison with AR3 and AR4 is based on literature values from different laboratories, expression systems, and measurement conditions, which the authors acknowledge but do not systematically address. The absence of Table 1 in the provided material makes it impossible to assess whether the comparison is appropriately qualified.</li>
+<li><strong>Why it matters</strong> A review that emphasizes a specific protein as a potential tool platform must establish that the protein's distinctive properties are robust and not artifacts of a single measurement context. If the HeAR data are not reproducible across expression systems or measurement conditions, the review's central emphasis is undermined. The current presentation does not allow the reader to assess this.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should either (a) provide a more systematic and critical comparison of measurement conditions across studies, explicitly discussing how differences in expression system, membrane environment, pH, temperature, and detergent might affect the quantitative values, or (b) explicitly reframe the review to present HeAR as a case study in how new rhodopsins should be characterized, rather than as a protein with established distinctive properties. The latter would be more appropriate given the evidence base.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Internal consistency of quantitative claims</li>
+<li><strong>Claim pointer</strong> The manuscript states that HeAR's slow dark adaptation "does not by itself increase per-molecule charge turnover" and that "the proposal that it improves low-light silencing therefore needs direct measurement." However, in Section 6.6, the authors list as a design implication that "the coupling between M-state kinetics and silencing efficacy merits reassessment," citing the same kinetic features.</li>
+<li><strong>Evidence pointer</strong> Section 3.2, Section 6.6</li>
+<li><strong>Concern</strong> There is a tension between the cautious framing in Section 3.2, where the authors correctly note that slow dark adaptation does not imply improved silencing, and the more speculative framing in Section 6.6, where the same features are presented as design implications. The authors do not clearly resolve this tension. If slow dark adaptation does not increase per-molecule charge turnover, then its relevance to silencing is unclear, and the review should say so more directly.</li>
+<li><strong>Why it matters</strong> The review's stated aim is to provide a comparative framework for tool design. If the implications drawn from HeAR's kinetics are not clearly grounded in the measured properties, the framework risks being misleading.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should either (a) provide a more explicit mechanistic argument for why slow dark adaptation might matter for silencing, despite not increasing per-molecule charge turnover, or (b) remove or substantially qualify the design implication in Section 6.6.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Critical depth of literature review</li>
+<li><strong>Claim pointer</strong> The review covers a broad range of topics, from rhodopsin family classification to optogenetic tool applications, but in several sections the treatment is largely descriptive rather than critical.</li>
+<li><strong>Evidence pointer</strong> Sections 2, 5, 7</li>
+<li><strong>Concern</strong> In several places, the review summarizes findings without critically evaluating them. For example, the discussion of optogenetic silencing tools in Section 5 catalogs tools and their properties but does not systematically compare their relative strengths and weaknesses for specific applications. Similarly, the discussion of machine-learning approaches in Section 6.4 is brief and does not critically assess the limitations of these methods. The review would be stronger if it provided a more analytical framework, identifying open questions and controversies in the field.</li>
+<li><strong>Why it matters</strong> A Nature-style review is expected to provide not just a summary but a critical synthesis that advances the field's understanding. The current manuscript is more descriptive than analytical in places.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should add critical analysis to at least the following: (a) a systematic comparison of silencing tool performance metrics across studies, (b) a discussion of the limitations and failure modes of machine-learning approaches to rhodopsin design, and (c) an explicit statement of the most important open questions in the field.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Reproducibility and provenance of quantitative data</li>
+<li><strong>Claim pointer</strong> The manuscript presents quantitative values for HeAR (absorption maxima, photocycle kinetics, pKa, proton extrusion rates, ATP levels) and for comparators (BR, AR3, AR4) without providing sufficient detail on measurement conditions for the comparators.</li>
+<li><strong>Evidence pointer</strong> Section 4.3, Table 1 (not provided)</li>
+<li><strong>Concern</strong> The authors state that "excitation wavelength and intensity, pH, temperature, detergent and the fitting model all differ between these studies" for the kinetic comparison, but they do not provide a systematic account of these differences. Without this, the reader cannot assess the validity of the quantitative comparisons. The absence of Table 1, which presumably contains this information, is a significant gap in the provided material.</li>
+<li><strong>Why it matters</strong> Quantitative comparisons across studies are only meaningful if measurement conditions are comparable or if differences are explicitly accounted for. The current presentation does not allow the reader to make this assessment.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should provide a table (or expand Table 1) that systematically lists measurement conditions for each quantitative value cited, including expression system, membrane environment, pH, temperature, detergent, and fitting model. This would allow readers to assess the robustness of the comparisons.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity of terminology</li>
+<li><strong>Affected element</strong> Section 3.2, use of "slow recovery"</li>
+<li><strong>Evidence pointer</strong> Section 3.2</li>
+<li><strong>Issue</strong> The term "slow recovery" is used ambiguously. The authors clarify that it refers to light-dark adaptation, not photocycle duration, but the term could be confused with recovery from the photocycle itself.</li>
+<li>
+<p><strong>Required correction</strong> Use a more specific term, such as "slow dark adaptation" or "slow light-dark re-equilibration," throughout, and define it clearly at first use.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability</li>
+<li><strong>Affected element</strong> Section 4.3, long and complex sentences</li>
+<li><strong>Evidence pointer</strong> Section 4.3</li>
+<li><strong>Issue</strong> Some sentences in Section 4.3 are very long and contain multiple qualifications, making them difficult to follow. For example, the sentence beginning "The comparison must, however, be read with care..." is a single sentence with multiple clauses.</li>
+<li>
+<p><strong>Required correction</strong> Break long sentences into shorter, more digestible units. Consider using bullet points or a table for the detailed comparisons.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness of figure descriptions</li>
+<li><strong>Affected element</strong> Figures 1–3</li>
+<li><strong>Evidence pointer</strong> Figures 1–3 (not provided)</li>
+<li><strong>Issue</strong> The figure descriptions in the text are brief and do not fully convey the content. For example, Figure 1 is described as showing the four major groups of rhodopsins, but the specific structural features illustrated are not described.</li>
+<li>
+<p><strong>Required correction</strong> Provide more detailed figure legends that describe the specific content of each panel, including any structural features, kinetic traces, or comparative data shown.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Consistency of classification</li>
+<li><strong>Affected element</strong> Section 2.1, classification of rhodopsins</li>
+<li><strong>Evidence pointer</strong> Section 2.1</li>
+<li><strong>Issue</strong> The classification of rhodopsins into four major groups (ion pumps, ion channels, photosensors, enzyme rhodopsins) is presented as a standard framework, but the placement of some members (e.g., heliorhodopsins) within this framework is not fully discussed.</li>
+<li>
+<p><strong>Required correction</strong> Briefly acknowledge that the classification is a working framework and note any members that do not fit neatly into the four groups.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Citation completeness</li>
+<li><strong>Affected element</strong> Section 5.5, discussion of optoGPCR and eOPN3</li>
+<li><strong>Evidence pointer</strong> Section 5.5</li>
+<li><strong>Issue</strong> The discussion of optoGPCR and eOPN3 is brief and does not provide sufficient context for readers unfamiliar with these tools.</li>
+<li>
+<p><strong>Required correction</strong> Add a sentence or two describing the mechanism of action of these tools and their relative advantages or disadvantages compared to rhodopsin-based tools.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m6</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity of scope</li>
+<li><strong>Affected element</strong> Section 7.3, clinical translation</li>
+<li><strong>Evidence pointer</strong> Section 7.3</li>
+<li><strong>Issue</strong> The discussion of clinical translation is somewhat scattered, covering retinal therapies, brain-computer interfaces, and plant/Drosophila applications in a short space.</li>
+<li>
+<p><strong>Required correction</strong> Consider reorganizing this section to focus more clearly on the most important clinical opportunities and barriers, and to distinguish more clearly between near-term and long-term prospects.</p>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong> The central case for HeAR's distinctive properties rests on a single source and a single expression system. The authors acknowledge this, but the review's structure gives HeAR disproportionate weight. The absence of Table 1 in the provided material is a significant gap. The internal tension between the cautious framing in Section 3.2 and the more speculative framing in Section 6.6 needs to be resolved. The review would benefit from a more systematic and critical comparison of measurement conditions across studies.</p>
+</li>
+<li>
+<p><strong>Assessment against Nature-style criteria</strong> </p>
+</li>
+<li><strong>Originality</strong>: The review is not entirely original in its topic, as microbial rhodopsins and optogenetics have been reviewed extensively. However, the specific emphasis on HeAR as a newly characterized archaeorhodopsin, and the explicit comparative framework for evaluating silencing tools, provides a degree of originality. The authors' transparency about the evidentiary status of their claims is also a distinctive feature.</li>
+<li><strong>Scientific importance</strong>: The topic is of high scientific importance. The gap between excitatory and inhibitory optogenetic tools is a well-recognized problem, and the review addresses it directly. The comparative framework for evaluating silencing tools is potentially valuable. However, the importance of the HeAR-specific claims is not yet established, as the authors themselves acknowledge.</li>
+<li><strong>Interdisciplinary readership</strong>: The review is likely to appeal to a broad interdisciplinary audience, including biophysicists, neuroscientists, synthetic biologists, and optogenetics researchers. The authors make an effort to explain concepts clearly, and the Simple Summary is accessible. However, some sections are dense and may be challenging for non-specialists.</li>
+<li><strong>Technical soundness</strong>: The review is generally technically sound, with appropriate caveats about the limits of the evidence. However, the internal inconsistency in the kinetic comparison (M-state decay of 3.3 ms vs. 3.5 ms) and the lack of systematic accounting for measurement conditions across studies are weaknesses. The absence of Table 1 in the provided material limits assessment.</li>
+<li>
+<p><strong>Readability for nonspecialists</strong>: The Simple Summary is clear and accessible. The main text is generally well-written but is dense in places and would benefit from more careful editing to improve readability. Some sentences are overly long and complex.</p>
+</li>
+<li>
+<p><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The review addresses an important topic, is well-structured, and demonstrates commendable scientific honesty. However, the central emphasis on HeAR needs to be better supported by a more systematic and critical comparison of measurement conditions, and the internal inconsistency in the kinetic comparison needs to be resolved. The absence of Table 1 in the provided material makes full assessment impossible, but the text suggests the table would address many of these concerns. With these revisions, the review would be a valuable contribution to the field.</p>
+</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that HeAR's slow dark adaptation "may help maintain spectral and kinetic stability under extracellular environmental fluctuations" (Section 6.6) is presented as a design implication but is not directly supported by any measurement of stability under fluctuating conditions. This is an inference from the measured pKa and kinetics, and should be labeled as such.</li>
+<li>The claim that "the longer cycle lowers maximal per-molecule turnover relative to BR, so any low-light advantage must be measured rather than inferred" (Section 4.3) is appropriately cautious, but the framing in Section 6.6 that the kinetic signature is a design implication is not fully consistent with this caution.</li>
+<li>The statement that "AR4, which is 95% identical to HeAR, has been produced recombinantly in Halobacterium salinarum L33 at yields of up to 20 mg L−1 with its trimeric packing and proton-pumping kinetics retained" (Section 6.6) is presented as evidence that HeAR-based tools are feasible, but this is an inference from homology, not a direct demonstration for HeAR. The authors should clarify this.</li>
+<li>The claim that "the authors' team's work on Ejinoor Salt Lake shows that in-depth characterization of a single strain can yield a complete structural-functional parameter set with tool value" (Section 7.4) is an assertion about the value of the work that is not directly supported by the evidence presented in this review.</li>
+<li>The statement that "no archaeorhodopsin has entered clinical testing" (Section 7.3) is presented as a fact, but the source for this claim is not provided in the text.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

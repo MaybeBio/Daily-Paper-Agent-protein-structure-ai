@@ -1,0 +1,112 @@
+## Review setup
+- **Input scope** Full manuscript text provided (Abstract, Introduction, Materials and methods, Results, Discussion, Supporting information listing, Acknowledgements). No figure images, no supporting tables/figures content, no line numbers.
+- **Assessment boundary** Assessment is restricted to the supplied text. Numerical values, figure content, and supporting items referenced but not shown cannot be verified. No external literature, data, or code were consulted.
+- **Shared manuscript claim summary** Three GH1 β-glucosidases (BsBgl1A, 9UPT, LQBG8) with a conserved (β/α)8 TIM-barrel fold but different optimal temperatures (~45, 65, 70 °C) were compared using structural analysis, three independent 1 μs MD simulations at 300/325/350 K, neural relational inference (NRI) of residue-level dynamic coupling, and family-level coevolutionary analysis. The authors report distinct dynamic strategies, a recurrent βα5–βα7 coupling sector, and spatial convergence of coevolutionary enrichment on that sector, concluding that thermal adaptation is not explained by uniform rigidification and is associated with persistence or reorganization of a βα5–βα7-centered coupling pattern.
+- **Visible evidence base** Textual descriptions of structural comparisons, MD metrics (RMSD, Rg, RMSF, DSSP, catalytic glutamate distance, RMSD–Q landscapes, contact survival), NRI network metrics and held-out reproducibility, and family-level coevolutionary mapping. All quantitative support resides in figures (Fig 1–9) and supporting items (S1–S11 Figs, S1–S3 Tables) whose contents are not provided.
+- **Missing materials affecting confidence** Figure images and captions; supporting figures and tables; numerical values underlying reported trends; NRI training/validation details (data splits, loss curves, hyperparameter selection); coevolutionary score distributions and statistical testing; sequence and alignment files; simulation parameter files and replicate-level statistics; structural model quality assessments (e.g., Ramachandran, loop validation); protonation-state assignments and their sensitivity.
+
+## Reviewer
+- **Overall assessment** The manuscript addresses a legitimate and interesting question, namely whether thermal adaptation in a conserved TIM-barrel enzyme family is better described by reorganization of correlated motion than by uniform rigidification. The integrative design (MD + NRI + coevolution) is ambitious and the authors are unusually explicit about the correlational and descriptive nature of their network claims. However, the central comparative claim rests on three enzymes, two of which are homology models, and on inferred networks whose statistical robustness, threshold dependence, and null behavior are not demonstrated in the supplied text. The coevolution–dynamics convergence, which is the conceptual core, is presented without any statistical test against structural or geometric nulls. As supplied, the evidence supports a hypothesis-generating report rather than an established case.
+- **Who would be interested in the results, and why** Researchers in protein biophysics and molecular evolution interested in thermal adaptation, conformational dynamics, and coevolution; computational biologists working on graph-based inference of residue coupling from MD; enzyme engineers interested in GH1 β-glucosidases and TIM-barrel scaffolds; and groups studying whether dynamic networks are evolutionarily constrained units.
+- **Major strengths** The comparative design holds fold roughly constant while varying thermal phenotype, which is a sensible way to isolate dynamic correlates of adaptation. The manuscript is candid about interpretation limits, repeatedly stating that NRI edges are statistical dependencies and not physical pathways, and that network architecture is not established as an independent selection target. The inclusion of three independent replicas per enzyme per temperature, block-wise RMSD/Rg analysis, threshold-sensitivity analysis over 0.02–0.30, and held-out network reconstruction indicates awareness of the main failure modes of MD-derived network inference. The RMSD–Q landscape analysis usefully separates redistribution within a folded ensemble from unfolding, and the catalytic glutamate distance provides a minimal functional-geometry control.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Comparative design and statistical power
+    - **Claim pointer** Greater thermal adaptation in GH1 β-glucosidases is associated with persistence or reorganization of a βα5–βα7-centered dynamic coupling pattern, and thermal adaptation is not adequately explained by uniform rigidification.
+    - **Evidence pointer** Results 3.2–3.4; Fig 3, Fig 5, Fig 6, Fig 7, Fig 8; S4–S6 Figs; location not provided for replicate-level statistics.
+    - **Concern** The comparative series contains three enzymes, and the thermal phenotypes are confounded with other variables. BsBgl1A and LQBG8 differ in pH optimum (8.5 versus 5.6), protonation state, template identity, sequence identity to template (77.75% versus 46.97%), and model quality (GMQE 0.92 versus 0.82; QMEANDisCo 0.88 versus 0.80). 9UPT is an experimental structure from a different organism. Any of these differences could produce the observed differences in flexibility and inferred coupling without any relationship to thermal adaptation. No replicate-level uncertainty is reported in the text for the key comparative quantities, and no statistical framework is offered for the three-enzyme comparison.
+    - **Why it matters** The central claim is a comparative claim about thermal phenotype. If the comparison is confounded by pH, protonation, template, and model quality, the association between thermal adaptation and coupling persistence is not identifiable from the design.
+    - **Resolution test** Report replicate-level distributions and effect sizes for all comparative metrics; demonstrate that conclusions are unchanged when protonation states are harmonized or when pH-matched control simulations are performed; show that results are robust to using AF2 models or alternative templates for BsBgl1A and LQBG8; and state explicitly which observed differences survive these controls.
+  - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Methodological validity of NRI-based coupling inference
+    - **Claim pointer** NRI reconstructs directed residue–residue and module–module coupling networks that reveal distinct temperature-dependent dynamic strategies, including intermediate-temperature overcoupling in BsBgl1A and persistent βα5–βα7 coupling in 9UPT and LQBG8.
+    - **Evidence pointer** Materials and methods 2.4; Results 3.3; Fig 7, Fig 8; S7–S10 Figs; S3 Table; location not provided for training/validation curves, data splits, or null models.
+    - **Concern** The manuscript does not report how trajectories were partitioned into training, validation, and test sets, whether splits were by frame or by replica, or how class imbalance and the sparsity prior (0.91/0.03/0.03/0.03) interact with the reported edge probabilities. The threshold of 0.1 is used for the main networks, and although sensitivity over 0.02–0.30 is claimed, the text does not state whether the qualitative ranking of enzymes is preserved at every threshold or only in aggregate. Critically, no null model is provided to establish that inferred edges exceed what would be expected from trivial sources such as sequence adjacency, spatial proximity, secondary-structure class, or module membership. Without such controls, the repeated emergence of βα5–βα7 as a coupling center is not distinguishable from the geometric centrality of the barrel core.
+    - **Why it matters** The entire dynamic argument depends on the inferred networks carrying information beyond trivial structural proximity. If the networks largely recapitulate contact density and fold topology, the claim of distinct dynamic strategies is not supported.
+    - **Resolution test** Provide explicit data-split definitions, training and validation loss behavior, and per-replica network reconstruction. Provide null models that preserve sequence separation, Cα contact degree, solvent accessibility, secondary-structure class, and module membership, and show that observed edge probabilities and module-level coupling exceed the null. Show that the enzyme ranking on network metrics is preserved across the full threshold range and across leave-one-replica-out analyses.
+  - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Coevolution–dynamics convergence and statistical inference
+    - **Claim pointer** Coevolutionary couplings are enriched in TIM-barrel-associated regions that spatially converge on the βα5–βα7 sector, and this correspondence is consistent with long-term evolutionary constraint on this sector.
+    - **Evidence pointer** Materials and methods 2.5; Results 3.4; Fig 9A–9D; S2 Table; S11 Fig; location not provided for coupling score distributions or statistical tests.
+    - **Concern** The coevolutionary analysis is described qualitatively. No coupling score distributions, no significance thresholds, no correction for multiple testing, and no comparison against structure-aware nulls are reported in the text. The authors themselves note in the Discussion that residue-level permutation tests or structure-aware null models are required and have not been performed. Additionally, the family dataset construction is internally inconsistent: the Methods state an initial set of 323 GH-1 structures, whereas Results 3.4 states 179 structures were collected and 178 retained. The filtering criteria (length 400–500 aa, backbone RMSD < 3 Å, TM-score > 0.80 relative to BsBgl1A or LQBG8) are applied to structures, but the coevolutionary model requires a multiple sequence alignment; the text does not describe how alignments were generated, how gaps and occupancy were handled, or how many effective sequences contributed.
+    - **Why it matters** The convergence between coevolution and dynamics is the conceptual core of the paper. Without statistical testing against appropriate nulls, and without a coherent description of the family dataset, the convergence cannot be distinguished from the expected behavior of structurally central, highly packed regions.
+    - **Resolution test** Reconcile the 323 versus 179/178 structure counts. Report the alignment construction pipeline, effective sequence number, and gap handling. Provide coupling score distributions, significance thresholds with multiple-testing correction, and enrichment tests against nulls preserving contact degree, solvent accessibility, sequence separation, secondary-structure class, and module membership. Report whether the βα5–βα7 enrichment survives these controls.
+  - **Concern ID** R1-M4
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Structural model reliability and its effect on dynamics
+    - **Claim pointer** Structural and dynamic differences among the three enzymes reflect their distinct thermal phenotypes rather than differences in starting model quality.
+    - **Evidence pointer** Materials and methods 2.1; Results 3.1; S1 Table; S1 Fig; location not provided for model validation metrics.
+    - **Concern** Two of the three starting structures are homology models with substantially different template sequence identities (77.75% and 46.97%) and quality scores. The manuscript reports a comparison between AF2 and homology models in the Methods but does not report the outcome in the Results. Loop regions, which are precisely where the largest structural deviations and the largest RMSF peaks are reported, are the least reliable parts of homology models and the most sensitive to template choice. No Ramachandran, rotamer, or loop-quality assessment is provided.
+    - **Why it matters** If the peripheral flexibility differences that drive the dynamic and network differences are partly artifacts of model quality, the comparative interpretation is weakened.
+    - **Resolution test** Report the AF2 versus homology model comparison results, including TM-scores and regional RMSDs, in the Results. Provide model validation statistics. Show that the key dynamic and network conclusions are reproduced when simulations are initiated from AF2 models or from an alternative template for LQBG8.
+  - **Concern ID** R1-M5
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Functional interpretation of catalytic-site preservation
+    - **Claim pointer** Differences in conformational dynamics were not accompanied by pronounced disruption of catalytic-site geometry, so the observed network differences occur within ensembles retaining catalytic organization.
+    - **Evidence pointer** Results 3.2; S6 Fig; Discussion limitations paragraph.
+    - **Concern** The only functional-geometry metric reported is the Cα–Cα distance between the two catalytic glutamates. This is a weak proxy for catalytic competence. Side-chain carboxylate orientation, hydrogen-bonding geometry to the nucleophile and acid/base, substrate-pocket volume, and loop closure over the active site are not assessed. The authors acknowledge this in the Discussion but the Results section still uses the metric to support a functional-context claim.
+    - **Why it matters** The manuscript's framing connects dynamic organization to functional resilience under thermal stress. If functional geometry is not actually monitored, the functional half of the argument is unsupported.
+    - **Resolution test** Report side-chain-level catalytic geometry (carboxylate oxygen distances and angles), substrate-pocket solvent accessibility and volume distributions, and, if feasible, ligand-bound or substrate-docked simulations. Alternatively, soften the functional claim in the Results to match the metric actually measured.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Internal consistency
+    - **Affected element** Family dataset size
+    - **Evidence pointer** Materials and methods 2.5 versus Results 3.4
+    - **Issue** Methods state 323 GH-1 structures were initially collected; Results state 179 were collected and 178 retained.
+    - **Required correction** Reconcile the numbers and describe the filtering cascade explicitly.
+  - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Reproducibility
+    - **Affected element** NRI training protocol
+    - **Evidence pointer** Materials and methods 2.4
+    - **Issue** Batch size of one, 500 epochs, and a fixed sparsity prior are reported, but no information is given on random seeds, number of independent training runs, or how the best model was selected across replicas.
+    - **Required correction** Report seeds, number of training runs, and model selection criterion.
+  - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Equation presentation
+    - **Affected element** Interaction probability and network density definitions
+    - **Evidence pointer** Materials and methods 2.4
+    - **Issue** Two equations are referenced but the expressions themselves are absent from the supplied text.
+    - **Required correction** Ensure all equations are present and correctly typeset in the submitted version.
+  - **Concern ID** R1-m4
+    - **Severity** Minor
+    - **Axis** Terminology precision
+    - **Affected element** Use of "communication," "relay," and "hub"
+    - **Evidence pointer** Results 3.3, 3.4; Discussion
+    - **Issue** The manuscript correctly disclaims causal communication in places but still uses "communication hubs" and "relay capacity" in Results 3.4 and the Discussion.
+    - **Required correction** Use consistently descriptive terms such as "highly coupled" or "high-connectivity" throughout, or define these terms explicitly as statistical descriptors at first use.
+  - **Concern ID** R1-m5
+    - **Severity** Minor
+    - **Axis** Figure referencing
+    - **Affected element** Fig 7 subpanel labels
+    - **Evidence pointer** Results 3.3
+    - **Issue** Subpanel labels such as "7Ci," "7Cii," and "7Ciii" are used inconsistently with the "Fig 7A, ii" style used elsewhere.
+    - **Required correction** Standardize subpanel labeling.
+  - **Concern ID** R1-m6
+    - **Severity** Minor
+    - **Axis** Data availability
+    - **Affected element** Simulation and analysis inputs
+    - **Evidence pointer** Materials and methods; Supporting information
+    - **Issue** No statement is provided on deposition of trajectories, inferred networks, alignments, or analysis code.
+    - **Required correction** Provide accession or repository information for trajectories, networks, alignments, and code.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (confounded three-enzyme comparison without replicate-level statistics or pH/template controls), R1-M2 (NRI inference without null models, split definitions, or demonstrated robustness of enzyme ranking), R1-M3 (coevolution–dynamics convergence without statistical testing and with an inconsistent family dataset description). R1-M4 and R1-M5 are important but not by themselves blocking.
+- **Assessment against Nature-style criteria** Originality is moderate. The individual components (MD, NRI, coevolution) are established, and the authors explicitly disclaim novelty for dynamic networks as a concept. The integrative framing applied to a conserved fold with divergent thermal phenotypes is the main novel element. Scientific importance is potentially interesting for the thermal adaptation and protein dynamics communities but is currently limited by the small comparative set and the absence of statistical support for the central convergence claim. Interdisciplinary readership is plausible, spanning biophysics, computational biology, and enzyme evolution, but the manuscript would need clearer separation of what is measured versus what is inferred to be accessible to a broad audience. Technical soundness is the weakest axis. The simulation protocol is standard and reasonably described, but the network inference lacks null models and robustness demonstrations, the coevolutionary analysis lacks statistical testing, and the comparative design is confounded. Readability for nonspecialists is fair. The writing is generally clear and the limitations section is unusually thorough, but the density of inferred-network terminology and the repeated hedging make it difficult for a nonspecialist to extract what is actually established.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript is a well-intentioned and self-aware hypothesis-generating study, but the central comparative and convergence claims require the controls, null models, and statistical tests specified in R1-M1 through R1-M3 before the case can be considered made.
+
+## Risk / unsupported claims
+- The claim that greater thermal adaptation is associated with persistence or reorganization of a βα5–βα7-centered coupling pattern is supported only by qualitative description of three enzymes and is not statistically established from the supplied material.
+- The claim that coevolutionary couplings spatially converge on the βα5–βα7 sector and that this reflects long-term evolutionary constraint is unsupported without null models and significance testing, as the authors themselves acknowledge.
+- The claim that the observed network differences are not artifacts of threshold selection is asserted but the supporting sensitivity analysis is only summarized, not shown, and the preservation of enzyme ranking across thresholds is not demonstrated.
+- The claim that structural and dynamic differences reflect thermal phenotype rather than model quality or protonation state is not supported given the confounds between BsBgl1A and LQBG8.
+- The claim that catalytic-site geometry is preserved is supported only by a Cα–Cα distance between catalytic glutamates, which is a weak proxy and does not establish side-chain or pocket integrity.
+- The characterization of BsBgl1A at 325 K as "overcoupling" is an interpretation of increased inferred edge probability and is not independently validated as a physical or functional state.
+- The family dataset description is internally inconsistent (323 versus 179/178 structures), so the scope and composition of the coevolutionary analysis cannot be evaluated as reported.

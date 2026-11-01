@@ -1,0 +1,185 @@
+{
+  "identity": {
+    "pmid": "42932845",
+    "doi": "10.1093/bib/bbag581",
+    "title": "EquiDesign: a versatile computational framework for de novo protein sequence design."
+  },
+  "content": {
+    "abstract": "Designing amino acid sequences that uniquely fold into target three-dimensional conformations defines the protein inverse folding problem, a formidable bottleneck in de novo protein design. Current computational paradigms, including deep learning-based approaches, often struggle to reconcile high sequence accuracy with structural stability, computational efficiency, and generalizability across diverse protein families. Here, we present EquiDesign, a deep learning framework that surmounts these constraints via a novel multistep Equiformer-enhanced architecture. By disentangling geometric features into invariant scalars and equivariant vectors, EquiDesign preserves the intrinsic directional topology of the protein backbone during message passing. This is achieved through spatial K-nearest neighbor graph construction and geometric attention mechanisms that hierarchically fuse multiscale contextual information, yielding a physically grounded representation of protein conformations. Extensive benchmarking demonstrates that EquiDesign achieves superior sequence recovery on standard and challenging test sets compared with state-of-the-art methods. Critically, the generated sequences exhibit exceptional structural fidelity, folding stability, and sequence diversity, as validated by comprehensive controls against training-set memorization, compositional bias, and physical energy landscapes, alongside targeted diversity sampling. These results establish EquiDesign as a robust, scalable, and generalizable inverse folding solution, driven by SE(3)-equivariant encoding and multiscale geometric attention, thus propelling de novo protein design toward unprecedented structural precision.",
+    "keywords": [
+      "de novo",
+      "Equiformer",
+      "protein design",
+      "residue",
+      "sequence"
+    ],
+    "mesh_terms": [
+      "*Proteins/chemistry",
+      "Protein Folding",
+      "Amino Acid Sequence",
+      "*Computational Biology/methods",
+      "Protein Conformation",
+      "Algorithms",
+      "*Deep Learning",
+      "*Protein Engineering/methods",
+      "Sequence Analysis, Protein/methods",
+      "*Software",
+      "Models, Molecular"
+    ],
+    "pub_types": [
+      "Journal Article"
+    ]
+  },
+  "contributors": {
+    "medline": {
+      "full_names": [
+        "Gao, Qiang",
+        "Xu, Zhongyu",
+        "Chen, Kai",
+        "Cen, Xiaochen",
+        "Yan, Ke",
+        "Liu, Jinxin",
+        "Ji, Zhiwei"
+      ],
+      "short_names": [
+        "Gao Q",
+        "Xu Z",
+        "Chen K",
+        "Cen X",
+        "Yan K",
+        "Liu J",
+        "Ji Z"
+      ],
+      "auids": [
+        "ORCID: 0000-0002-0891-7118"
+      ],
+      "affiliations": [
+        "College of Artificial Intelligence, Nanjing Agricultural University, No. 666 Binjiang Avenue, Nanjing, Jiangsu 211800, China.",
+        "Center for Data Science and Intelligent Computing, Nanjing Agricultural University, No. 666 Binjiang Avenue, Nanjing, Jiangsu 211800, China.",
+        "College of Artificial Intelligence, Nanjing Agricultural University, No. 666 Binjiang Avenue, Nanjing, Jiangsu 211800, China.",
+        "Center for Data Science and Intelligent Computing, Nanjing Agricultural University, No. 666 Binjiang Avenue, Nanjing, Jiangsu 211800, China.",
+        "Research and Development-Statistics, Eli Lilly and Company, Lilly Corporate Center, Indianapolis, IN 46285, United States.",
+        "College of Artificial Intelligence, Nanjing Agricultural University, No. 666 Binjiang Avenue, Nanjing, Jiangsu 211800, China.",
+        "Center for Data Science and Intelligent Computing, Nanjing Agricultural University, No. 666 Binjiang Avenue, Nanjing, Jiangsu 211800, China.",
+        "Department of the Built Environment, College of Design and Engineering, National University of Singapore, 4 Architecture Drive, Singapore 117566, Singapore.",
+        "College of Mechanical and Vehicle Engineering, Hunan University, Changsha 410082, China.",
+        "Laboratory of Gastrointestinal Microbiology, College of Animal Science and Technology, Nanjing Agricultural University, No. 1 Weigang Road, Nanjing 210095, China.",
+        "College of Artificial Intelligence, Nanjing Agricultural University, No. 666 Binjiang Avenue, Nanjing, Jiangsu 211800, China.",
+        "Center for Data Science and Intelligent Computing, Nanjing Agricultural University, No. 666 Binjiang Avenue, Nanjing, Jiangsu 211800, China."
+      ]
+    },
+    "xml": [
+      {
+        "full_name": "Gao, Qiang",
+        "short_name": "Gao Q",
+        "identifiers": [],
+        "affiliations": [
+          "College of Artificial Intelligence, Nanjing Agricultural University, No. 666 Binjiang Avenue, Nanjing, Jiangsu 211800, China.",
+          "Center for Data Science and Intelligent Computing, Nanjing Agricultural University, No. 666 Binjiang Avenue, Nanjing, Jiangsu 211800, China."
+        ]
+      },
+      {
+        "full_name": "Xu, Zhongyu",
+        "short_name": "Xu Z",
+        "identifiers": [],
+        "affiliations": [
+          "College of Artificial Intelligence, Nanjing Agricultural University, No. 666 Binjiang Avenue, Nanjing, Jiangsu 211800, China.",
+          "Center for Data Science and Intelligent Computing, Nanjing Agricultural University, No. 666 Binjiang Avenue, Nanjing, Jiangsu 211800, China."
+        ]
+      },
+      {
+        "full_name": "Chen, Kai",
+        "short_name": "Chen K",
+        "identifiers": [],
+        "affiliations": [
+          "Research and Development-Statistics, Eli Lilly and Company, Lilly Corporate Center, Indianapolis, IN 46285, United States."
+        ]
+      },
+      {
+        "full_name": "Cen, Xiaochen",
+        "short_name": "Cen X",
+        "identifiers": [],
+        "affiliations": [
+          "College of Artificial Intelligence, Nanjing Agricultural University, No. 666 Binjiang Avenue, Nanjing, Jiangsu 211800, China.",
+          "Center for Data Science and Intelligent Computing, Nanjing Agricultural University, No. 666 Binjiang Avenue, Nanjing, Jiangsu 211800, China."
+        ]
+      },
+      {
+        "full_name": "Yan, Ke",
+        "short_name": "Yan K",
+        "identifiers": [],
+        "affiliations": [
+          "Department of the Built Environment, College of Design and Engineering, National University of Singapore, 4 Architecture Drive, Singapore 117566, Singapore.",
+          "College of Mechanical and Vehicle Engineering, Hunan University, Changsha 410082, China."
+        ]
+      },
+      {
+        "full_name": "Liu, Jinxin",
+        "short_name": "Liu J",
+        "identifiers": [],
+        "affiliations": [
+          "Laboratory of Gastrointestinal Microbiology, College of Animal Science and Technology, Nanjing Agricultural University, No. 1 Weigang Road, Nanjing 210095, China."
+        ]
+      },
+      {
+        "full_name": "Ji, Zhiwei",
+        "short_name": "Ji Z",
+        "identifiers": [
+          "0000-0002-0891-7118"
+        ],
+        "affiliations": [
+          "College of Artificial Intelligence, Nanjing Agricultural University, No. 666 Binjiang Avenue, Nanjing, Jiangsu 211800, China.",
+          "Center for Data Science and Intelligent Computing, Nanjing Agricultural University, No. 666 Binjiang Avenue, Nanjing, Jiangsu 211800, China."
+        ]
+      }
+    ]
+  },
+  "source": {
+    "journal_title": [
+      "Briefings in bioinformatics"
+    ],
+    "journal_abbrev": [
+      "Brief Bioinform"
+    ],
+    "pub_date": "2026 Sep 1",
+    "pub_year": "2026",
+    "pub_types": [
+      "Journal Article"
+    ]
+  },
+  "metadata": {
+    "entrez_date": "2026/10/26 17:31",
+    "fetched_at": "2026-11-01 11:10:50"
+  },
+  "links": {
+    "cites": [],
+    "refs": [],
+    "similar": [
+      "42932845"
+    ],
+    "review": [
+      "42932845"
+    ],
+    "pmc": [
+      "13704781"
+    ],
+    "entrez": {},
+    "external": [
+      {
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/pmid/42932845/",
+        "provider": "PubMed Central",
+        "category": "Full Text Sources",
+        "attribute": "free resource",
+        "linkname": ""
+      },
+      {
+        "url": "https://academic.oup.com/bib/article-lookup/doi/10.1093/bib/bbag581",
+        "provider": "Silverchair Information Systems",
+        "category": "Full Text Sources",
+        "attribute": "free resource",
+        "linkname": ""
+      }
+    ],
+    "text_mined": []
+  }
+}

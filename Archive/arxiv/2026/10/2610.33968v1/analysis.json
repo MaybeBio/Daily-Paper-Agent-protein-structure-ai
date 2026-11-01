@@ -1,0 +1,24 @@
+{
+  "source": "arxiv",
+  "id": "2610.33968v1",
+  "title": "Hierarchical Cooperative GFlowNets",
+  "authors": "Pedro Dall'Antonia; Juan Belieni; Ana Carolina Erthal; Saullo H. G. de Oliveira; Eliezer de Souza da Silva; Diego Mesquita",
+  "journal": "",
+  "published_date": "2026-10-25",
+  "window": {
+    "start": "2026-10-25",
+    "end": "2026-10-31"
+  },
+  "score": 5,
+  "one_liner_zh": "提出分层协作GFlowNets以增强组合空间采样覆盖，并在生物序列设计上验证，其采样框架可迁移至蛋白质序列/结构生成任务。",
+  "abstract": "Generative Flow Networks (GFlowNets) are trained to sample objects from compositional spaces with probability proportional to a reward function, but ineffective exploration can cause learned samplers to concentrate on a few high-reward regions. An intuitive remedy is to train multiple GFlowNets independently in parallel and combine their samples. However, this does not prevent multiple models from collapsing onto the same high-reward areas, leaving large regions of the state space unexplored. With this in mind, we propose Hierarchical Cooperative GFlowNets (HCG), an approach that dynamically partitions the search space to coordinate discovery without relying on hand-crafted boundaries. HCG imposes an ordering in which the highest-ranked model may explore the entire space, while lower-ranked models are progressively pushed toward regions not covered by higher-ranked ones. We provide a theoretical characterization of how specific learning objectives can shift probability mass away from designated areas, instantiating this mechanism within our architecture. A shared classifier coordinates the hierarchy by partitioning the search space, keeping the GFlowNets independently parameterized and enabling asynchronous training. Furthermore, we derive a normalizer-weighted aggregation rule for the ensemble and prove that it recovers the target reward-proportional distribution under the stated assumptions. Finally, experiments across multimodal distributions, sequence generation, combinatorial optimization, and biological sequence design show that HCG improves mode coverage and target approximation, translating increases in the number of coordinated samplers into broader, complementary exploration.",
+  "abstract_zh": "生成流网络 (Generative Flow Networks, GFlowNets) 被训练用于从组合空间中采样对象，其概率与奖励函数成正比，但低效的探索可能导致学习到的采样器集中在少数高奖励区域。一种直观的补救方法是并行独立训练多个 GFlowNet 并合并其样本。然而，这并不能阻止多个模型坍缩到相同的高奖励区域，从而使状态空间的大片区域未被探索。有鉴于此，我们提出分层协作 GFlowNet (Hierarchical Cooperative GFlowNets, HCG)，一种动态划分搜索空间以协调发现的方法，且不依赖于手工设计的边界。HCG 施加一种排序，其中排名最高的模型可以探索整个空间，而排名较低的模型则被逐步推向未被排名较高模型覆盖的区域。我们提供了关于特定学习目标如何将概率质量从指定区域移开的理论刻画，并在我们的架构中实例化了这一机制。一个共享分类器通过对搜索空间进行划分来协调该层次结构，使各 GFlowNet 保持独立参数化并支持异步训练。此外，我们为集成推导出一种归一化器加权聚合规则，并证明在所述假设下它能够恢复目标奖励比例分布。最后，在多模态分布、序列生成、组合优化和生物序列设计上的实验表明，HCG 改善了模态覆盖和目标近似，将协调采样器数量的增加转化为更广泛、互补的探索。",
+  "has_fulltext": true,
+  "fulltext_source": "ar5iv",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://arxiv.org/abs/2610.33968v1",
+  "source_url": "https://arxiv.org/abs/2610.33968v1",
+  "paper_page_path": "papers/arxiv/2610.33968v1/index.html"
+}

@@ -1,0 +1,136 @@
+## Review setup
+- **Input scope** Full manuscript text provided (Abstract, Introduction, Results, Discussion, Materials and Methods, Conclusions, Acknowledgments). No separate supplementary materials, raw data files, or line-numbered submission file were supplied.
+- **Assessment boundary** Evaluation is limited to the claims and evidence contained in the supplied text. No independent verification of data, no access to primary spectra, fitted residuals, docking files, or statistical outputs. Assessment does not presume the manuscript belongs to any specific journal.
+- **Shared manuscript claim summary** α-Halogenated curcumins (α-bromocurcumin, α-chlorocurcumin) bind Aβ1-42 with binding properties differing from parent curcumin; α-chlorocurcumin shows the highest apparent affinity (Kd ≈ 285 nM) and the most favorable binding free energy; binding is temperature-dependent and thermodynamically favorable; binding is accompanied by changes in Aβ1-42 secondary structure that are more pronounced for the halogenated derivatives; molecular docking predicts a binding pose for α-chlorocurcumin involving Glu22 and Gln15.
+- **Visible evidence base** Fluorescence titration data (Figures 2, 3, 5A, 5B), Scatchard analysis (Figure 4, Table 1), temperature-dependent Kd (Table 2), Van 't Hoff and thermodynamic parameters (Figure 6, Table 3), molecular docking (Figure 7), far-UV CD spectra and deconvolution (Figures 8, 9, 10), cross-reactivity fluorescence panel (Figure 11), and Methods sections 4.1–4.9.
+- **Missing materials affecting confidence** No raw fluorescence titration curves with residuals, no representative CD spectra with error bands for all ligands, no aggregation assays (ThT, TEM, AFM), no controls for ligand intrinsic fluorescence/absorbance at 280 nm, no docking validation or control docking, no replicate-level data, no statistical tables for CD comparisons, no line numbers.
+
+## Reviewer
+- **Overall assessment** The manuscript addresses a focused and potentially useful question, namely how α-halogenation of curcumin alters binding to Aβ1-42 and the associated conformational response. The topic is relevant to amyloid biology and to structure–activity exploration of curcuminoids. However, the central quantitative claims rest on fluorescence quenching and Scatchard analysis that are not fully substantiated by the presented material, and the conformational claims are weakened by internal inconsistencies between the CD narrative and the stated deconvolution approach. The docking is presented as supporting evidence but is not experimentally validated. The manuscript is generally candid about several limitations, which is a strength, but the evidence as supplied does not yet establish the core binding and structural conclusions with the rigor implied by the abstract and conclusions.
+- **Who would be interested in the results, and why** Researchers in amyloid biology, Alzheimer's disease drug discovery, and natural-product medicinal chemistry would be interested because curcuminoids are widely studied anti-amyloid scaffolds and α-halogenation is a plausible route to tune binding and conformational effects. The work would also interest groups performing ligand–peptide binding studies by fluorescence and CD, since the methodological caveats raised here are broadly relevant.
+- **Major strengths** The study compares parent curcumin with two defined α-halogenated derivatives under matched conditions, which is a reasonable comparative design. The manuscript explicitly acknowledges several interpretive limits, including that quenching magnitude does not establish affinity, that ellipticity at 218 nm does not directly measure β-sheet content, and that docking scores are computational estimates. The inclusion of temperature-dependent measurements and thermodynamic analysis adds a dimension beyond simple endpoint binding. The cross-reactivity panel, while limited, is a useful attempt to assess preferential response.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Technical soundness / binding quantification
+    - **Claim pointer** α-Chlorocurcumin exhibits higher binding affinity for Aβ1-42 (Kd ≈ 285 nM) than curcumin (Kd ≈ 524 nM), with α-bromocurcumin intermediate (Kd ≈ 441 nM).
+    - **Evidence pointer** Figures 2, 3, 4; Tables 1 and 2; Sections 2.1, 4.3, 4.4
+    - **Concern** The binding constants are derived from quenching of Aβ1-42 intrinsic fluorescence at 280 nm excitation. The ligands are curcuminoids with extended conjugated aromatic systems that absorb strongly in the 300–450 nm range and may contribute to inner-filter effects and to direct absorbance at or near the excitation/emission wavelengths. The manuscript states that absorbance at the excitation wavelength was maintained below 0.02 and that no inner-filter correction was applied, but no absorbance spectra, no ligand-only emission spectra at 280 nm excitation, and no correction verification are shown. In addition, the Scatchard analysis is applied to the same data already fitted by nonlinear regression, so the two analyses are not independent. The reported agreement between Kd and 1/Ka is therefore expected rather than confirmatory.
+    - **Why it matters** The central quantitative claim of differential affinity, and the specific ranking of α-chlorocurcumin > α-bromocurcumin > curcumin, depends on the validity of the quenching model and on the absence of optical artifacts. If ligand absorbance or ligand emission contributes to the measured signal, the apparent Kd values and the ranking could change.
+    - **Resolution test** Provide ligand-only absorbance and emission spectra under the exact assay conditions, demonstrate that inner-filter effects are negligible or apply and report a validated inner-filter correction, and show that Kd values are stable across at least two independent fitting models and across independent replicate datasets. Report residuals and confidence intervals for each fit.
+  - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Technical soundness / model validity
+    - **Claim pointer** Binding stoichiometry (n) values close to unity indicate approximately one-to-one binding for all three curcuminoids.
+    - **Evidence pointer** Table 1; Section 2.1; Section 4.4
+    - **Concern** The reported n values are 0.89 ± 0.08, 0.92 ± 0.04, and 1.08 ± 0.06. The manuscript acknowledges deviation from unity but attributes it to variability or model limitations without testing alternative binding models. The Scatchard equation as written in Section 4.4 contains a term [R − Q][Aβ1-42]T whose dimensional consistency and derivation are not explained, and the relationship between Q, [C], and the fitted parameters is not fully specified. No simulation or goodness-of-fit comparison against a two-site or cooperative model is presented.
+    - **Why it matters** If binding is not one-to-one, the interpretation of Kd and Ka as intrinsic affinities is not warranted, and the comparison across compounds may reflect different binding modes rather than different affinities.
+    - **Resolution test** Present the full binding equation with defined units, compare fits for one-site, two-site, and cooperative models using information criteria, and report whether the data support a single-site model. Provide simulated datasets to show the expected n distribution under the stated noise level.
+  - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Technical soundness / structural interpretation
+    - **Claim pointer** α-Halogenated curcumins induce more pronounced secondary-structure changes in Aβ1-42, with α-chlorocurcumin reducing β-sheet content from 100% to 65% at 1000 nM and increasing α-helical content.
+    - **Evidence pointer** Figures 8, 9, 10; Sections 2.5, 4.8, 4.9
+    - **Concern** There is an internal inconsistency in the CD analysis. Section 4.8 states that secondary-structure composition was estimated using CDNN deconvolution from full spectra and that ellipticity at 218 nm was not converted into β-sheet or α-helical percentages. Section 4.9 states that spectra were deconvoluted using the CONTIN algorithm on DICHROWEB. Section 2.5 reports a reduction of β-sheet content from 100% to 65% and an increase in α-helical content, which is a quantitative secondary-structure claim. The manuscript does not reconcile the use of CDNN versus CONTIN, does not present the deconvolution output tables, and does not report errors on the secondary-structure percentages. In addition, the CD samples contain curcuminoids at concentrations up to 1 μM, and the compound-only background subtraction is stated but not shown; residual ligand contributions to the far-UV CD signal are not excluded.
+    - **Why it matters** The claim that halogenation produces greater conformational change, and the specific β-sheet-to-α-helix interpretation, are central to the structural conclusion. Without consistent deconvolution methodology, reported percentages, and ligand artifact controls, the structural claim is not established.
+    - **Resolution test** State a single deconvolution method, provide full deconvolution output tables with errors for each ligand and concentration, show compound-only CD spectra at all concentrations, and demonstrate that background subtraction removes ligand contributions. Report replicate-level secondary-structure percentages and the statistical test used.
+  - **Concern ID** R1-M4
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Technical soundness / computational evidence
+    - **Claim pointer** Molecular docking predicts that α-chlorocurcumin occupies a defined binding pocket and forms hydrogen bonds with Glu22 and Gln15, with additional π-cation, π–π stacking, and π-alkyl contacts.
+    - **Evidence pointer** Figure 7; Sections 2.4, 4.7
+    - **Concern** Docking was performed with a blind grid covering the entire peptide, and the top-scoring pose is reported. No control docking with parent curcumin under identical conditions is presented, so the claim that α-chlorocurcumin has a specific or favorable predicted binding mode relative to curcumin is not supported. The docking score of −5.7 kcal/mol is reported without comparison to a decoy set, without redocking validation against the 6SZF structure, and without reporting the score distribution across poses. The choice of the fifth position for chlorine addition is stated but not justified relative to the synthesized compound.
+    - **Why it matters** Docking is used to provide a structural hypothesis for the binding preference. Without comparative docking and validation, the predicted contacts cannot be interpreted as specific to α-chlorocurcumin or as supporting the affinity ranking.
+    - **Resolution test** Report docking of curcumin and α-bromocurcumin under identical grid and parameter settings, report score distributions and pose clusters, validate the docking protocol by redocking a known ligand or by RMSD assessment, and confirm that the modeled chlorine position matches the synthesized α-chlorocurcumin.
+  - **Concern ID** R1-M5
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Scientific importance / functional relevance
+    - **Claim pointer** The findings suggest that α-halogenated curcumins may modulate the structural behavior of Aβ1-42 and potentially influence its aggregation propensity.
+    - **Evidence pointer** Abstract; Sections 2.5, 3, 5
+    - **Concern** No aggregation assay is presented. The manuscript explicitly states that the findings do not provide direct evidence for inhibition of oligomerization or fibril formation, yet the abstract and conclusions frame the results in terms of modulation of Aβ-related processes and potential influence on aggregation propensity. The link between binding, CD spectral change, and aggregation behavior is asserted as a basis for further investigation rather than demonstrated.
+    - **Why it matters** The stated significance of the work depends on its relevance to amyloid aggregation. Without ThT kinetics, oligomerization assays, or morphological analysis, the functional implication remains speculative.
+    - **Resolution test** Either add aggregation assays under matched conditions or revise the abstract and conclusions to restrict claims to binding and conformational changes, removing language that implies aggregation modulation.
+  - **Concern ID** R1-M6
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Technical soundness / specificity
+    - **Claim pointer** α-Chlorocurcumin shows a preferential fluorescence response to Aβ1-42 among the tested biomolecules.
+    - **Evidence pointer** Figure 11; Sections 2.6, 4.3
+    - **Concern** The cross-reactivity panel includes free amino acids, collagen, gelatin, and BSA, but not related amyloidogenic peptides or proteins. The manuscript acknowledges this limitation. In addition, the assay uses a different fluorescence mode (excitation 430 nm, emission 537 nm) from the binding experiments (excitation 280 nm, emission 332 nm), and the relationship between the two readouts is not established. The statistical reporting is inconsistent, with ** p < 0.001 stated in Section 2.6 while Section 4.9 defines significance as p < 0.05.
+    - **Why it matters** The specificity claim is weak without relevant comparators, and the inconsistent significance thresholds raise concerns about statistical reporting.
+    - **Resolution test** Include at least one related amyloidogenic peptide or protein as a comparator, clarify the relationship between the two fluorescence readouts, and harmonize the statistical significance threshold across sections.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Reporting consistency
+    - **Affected element** Statistical significance threshold
+    - **Evidence pointer** Sections 2.6 and 4.9
+    - **Issue** Section 2.6 reports ** p < 0.001, while Section 4.9 defines significance as p < 0.05.
+    - **Required correction** Use a single consistent significance threshold and report exact p values where possible.
+  - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Reporting consistency
+    - **Affected element** Deconvolution software
+    - **Evidence pointer** Sections 4.8 and 4.9
+    - **Issue** CDNN 2.1 is stated in Section 4.8 and CONTIN on DICHROWEB in Section 4.9.
+    - **Required correction** State which software was used for the reported secondary-structure percentages and reconcile the two statements.
+  - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Reporting completeness
+    - **Affected element** Figure 9B citation for α-chlorocurcumin data
+    - **Evidence pointer** Section 2.5
+    - **Issue** The 65% β-sheet value for α-chlorocurcumin at 1000 nM is attributed to Figure 9B, but Figure 9B is described as the α-bromocurcumin panel.
+    - **Required correction** Correct the figure citation and ensure each data point is attributed to the correct panel.
+  - **Concern ID** R1-m4
+    - **Severity** Minor
+    - **Axis** Reporting completeness
+    - **Affected element** Units and equations
+    - **Evidence pointer** Section 4.4
+    - **Issue** The Scatchard equation is presented without defined units for Q, [C], and [R − Q], and the relationship to the plotted axes is not fully specified.
+    - **Required correction** Provide the equation with defined units and a clear derivation of the plotted quantities.
+  - **Concern ID** R1-m5
+    - **Severity** Minor
+    - **Axis** Reporting completeness
+    - **Affected element** Ligand stock and final DMSO concentration
+    - **Evidence pointer** Section 4.2
+    - **Issue** Stock solutions are 50 mM in DMSO, but the final DMSO concentration in assay buffer is not reported, and no vehicle control is described.
+    - **Required correction** Report final DMSO concentration and include vehicle controls in fluorescence and CD experiments.
+  - **Concern ID** R1-m6
+    - **Severity** Minor
+    - **Axis** Reporting completeness
+    - **Affected element** Peptide quality control
+    - **Evidence pointer** Section 4.2
+    - **Issue** The HFIP pretreatment and DMSO resuspension are described, but no evidence is provided that Aβ1-42 remains monomeric at the start of experiments, and no characterization of the peptide stock is shown.
+    - **Required correction** Provide quality-control data such as mass spectrometry, size-exclusion chromatography, or ThT baseline to confirm monomeric starting material.
+  - **Concern ID** R1-m7
+    - **Severity** Minor
+    - **Axis** Readability
+    - **Affected element** Terminology consistency
+    - **Evidence pointer** Throughout
+    - **Issue** The terms α-halogenated curcumins, α-halogenated curcumin, chloro-curcumin, and α-chlorocurcumin are used interchangeably, and "A-halogenation" appears once in the Introduction.
+    - **Required correction** Use consistent nomenclature throughout.
+  - **Concern ID** R1-m8
+    - **Severity** Minor
+    - **Axis** Reporting completeness
+    - **Affected element** Docking methodology
+    - **Evidence pointer** Section 4.7
+    - **Issue** The peptide structure 6SZF is used, but its suitability as a model for the Aβ1-42 monomer under the assay conditions is not discussed, and the protonation states of Glu22 and His residues are not reported.
+    - **Required correction** Justify the choice of 6SZF, report protonation states, and discuss how the model relates to the experimental conditions.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (binding quantification and inner-filter control), R1-M2 (binding model validity and stoichiometry), R1-M3 (CD deconvolution consistency and ligand artifact control). These are blocking because the central affinity ranking and the central structural claim cannot be established from the supplied evidence without them. R1-M4, R1-M5, and R1-M6 are non-blocking but materially weaken the specificity, computational, and functional relevance claims.
+- **Assessment against Nature-style criteria** Originality is moderate. The comparison of α-halogenated curcumins with parent curcumin is a reasonable incremental extension of known curcumin–Aβ work, but the conceptual advance is limited and no new mechanism is established. Scientific importance is currently limited because the study reports binding and spectral changes without demonstrating functional consequences for aggregation or toxicity. Interdisciplinary readership potential is modest, as the work sits at the interface of medicinal chemistry and amyloid biophysics but does not yet provide broadly generalizable insight. Technical soundness is the main weakness, with unresolved issues in binding quantification, model selection, and CD analysis. Readability for nonspecialists is acceptable in the Introduction and Discussion, but the Results contain internal inconsistencies and undefined terms that would hinder a general audience.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript would become supportive if the binding analysis is validated with inner-filter controls and model comparison, the CD methodology is reconciled and reported with full deconvolution outputs and ligand controls, and the docking is made comparative and validated. The aggregation-related framing should be removed or supported by direct aggregation data.
+
+## Risk / unsupported claims
+- The claim that α-chlorocurcumin has higher binding affinity than curcumin is supported only by fluorescence quenching data that lack demonstrated inner-filter correction and independent confirmation. Status: weak.
+- The claim that binding stoichiometry is approximately one-to-one is not supported by model comparison and rests on n values with overlapping errors. Status: weak.
+- The claim that α-chlorocurcumin reduces β-sheet content from 100% to 65% and increases α-helical content is not supported by a consistent, fully reported deconvolution analysis and lacks ligand artifact controls. Status: weak.
+- The claim that α-halogenation produces more pronounced structural alterations than curcumin is based on ellipticity changes at 218 nm that the manuscript itself states do not directly measure β-sheet content. Status: weak.
+- The claim that α-chlorocurcumin forms specific hydrogen bonds with Glu22 and Gln15 is a computational prediction without experimental validation or comparative docking. Status: unsupported as a specific interaction claim.
+- The claim that these compounds may modulate aggregation propensity or inhibit Aβ aggregation is not supported by any aggregation assay. Status: unsupported.
+- The claim of preferential specificity for Aβ1-42 over other biomolecules is not supported because the comparator panel lacks related amyloidogenic peptides and proteins. Status: weak.
+- The thermodynamic interpretation that halogenation alters enthalpic and entropic contributions is internally consistent with the Van 't Hoff analysis, but the reliability depends on the accuracy of the underlying Kd values, which are affected by R1-M1 and R1-M2. Status: conditionally supported pending resolution of binding concerns.

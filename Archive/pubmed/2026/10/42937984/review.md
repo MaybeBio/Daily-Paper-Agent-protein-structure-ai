@@ -1,0 +1,97 @@
+## Review setup
+- **Input scope** Abstract only, as supplied for manuscript 10.1021/jacs.6c13500
+- **Assessment boundary** Evaluation is restricted to the supplied abstract text. No full text, figures, tables, schemes, supporting information, crystallographic data, NMR spectra, computational coordinates, or mutagenesis datasets were provided. Conclusions about internal validity, data quality, and reproducibility cannot be fully established.
+- **Shared manuscript claim summary** The authors report discovery and mechanistic characterization of a bacteria-derived sesquiterpene synthase, AceS, that converts farnesyl diphosphate to acorenol ether (1) through syn-protoetherification. They claim a unique 5/6 spiro-fused acorane skeleton with an ether ring bridging C3 and C7, elucidated by NMR and XRD of a cytochrome P450-modified derivative. Using deuterium-scanning labeling, they claim a 1,2-hydride shift from C10 to C11, a hydride shift from C6 to C10, and syn-stereochemistry of protoetherification. DFT calculations, structure-guided site-directed mutagenesis, product characterization of mutants, and protein-ligand docking are claimed to support cyclization through bisabolyl-dunnienyl cations as favored, with a carotenyl cation pathway also possible. Y186 is proposed to redirect water to trap the C7 carbocation and promote syn-protoetherification.
+- **Visible evidence base** Abstract-level statements only. No primary data, spectra, structures, computational details, or statistics are visible.
+- **Missing materials affecting confidence** Full text, experimental procedures, compound characterization, NMR assignments, XRD data and refinement, deuterium-scanning datasets, DFT methods and energetics, mutagenesis design and product profiles, docking protocols, sequence and phylogenetic context, enzyme kinetics, and controls.
+
+## Reviewer
+- **Overall assessment** The abstract describes a potentially interesting enzyme discovery and mechanistic study on a bacterial sesquiterpene ether synthase. The central claims are mechanistically specific and testable, but the supplied material is insufficient to evaluate technical soundness. Key structural, stereochemical, and computational claims are asserted without visible supporting data. The work is not currently established from the provided evidence.
+- **Who would be interested in the results, and why** Enzymologists and mechanistic biochemists studying terpene synthases, natural product chemists interested in ether-forming termination steps, synthetic and computational chemists modeling carbocation cascades, and biochemists engineering terpenoid biosynthesis. If supported, the results would inform the limited set of enzymes known to perform syn-protoetherification and expand the known acorane skeleton chemistry.
+- **Major strengths** The abstract addresses a defined mechanistic gap in terpene synthase termination chemistry. The combination of isotopic labeling, DFT, mutagenesis, and docking is appropriate in principle for a mechanistic claim. The proposed role of Y186 as a water-directing residue is a concrete, testable hypothesis. The reported acorane ether scaffold, if fully characterized, would be a notable addition to sesquiterpene diversity.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Structural evidence
+    - **Claim pointer** The unique 5/6 spiro-fused acorane skeleton with an ether ring bridging C3 and C7 of compound 1 was elucidated based on NMR analysis and XRD of a cytochrome P450-modified derivative.
+    - **Evidence pointer** Abstract only; no figures, tables, or crystallographic data provided. location not provided.
+    - **Concern** The structural assignment of 1 rests on NMR and on XRD of a modified derivative rather than the native compound. The abstract does not state whether the P450 modification preserves the C3-C7 ether connectivity or the spiro ring system, nor does it provide crystallographic resolution, refinement statistics, or NMR assignment tables.
+    - **Why it matters** The entire mechanistic interpretation depends on the correct structure and connectivity of 1. If the derivative differs from 1 at the ether bridge or spiro center, the mechanistic conclusions about protoetherification are not supported.
+    - **Resolution test** Provide full NMR assignments, key NOE or coupling evidence for the C3-C7 ether bridge and spiro junction, XRD data for the derivative with refinement statistics, and explicit evidence that the derivative retains the native C3-C7 ether connectivity and spiro skeleton.
+  - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Stereochemical evidence
+    - **Claim pointer** Deuterium-scanning labeling characterized the syn-stereochemistry of the protoetherification process during cyclization.
+    - **Evidence pointer** Abstract only; no labeling schemes, mass spectra, or NMR data provided. location not provided.
+    - **Concern** The syn-stereochemistry claim is central to the novelty relative to 1,8-cineole synthase. The abstract does not show how deuterium incorporation patterns distinguish syn from anti addition, nor does it report controls for non-enzymatic or rearrangement processes.
+    - **Why it matters** Without direct stereochemical evidence, the claim of syn-protoetherification is not established, and the comparison to the only previously characterized syn-protoetherification enzyme is unsupported.
+    - **Resolution test** Provide deuterium-scanning datasets with labeling positions, quantitative incorporation, control reactions, and a clear stereochemical argument linking the observed label patterns to syn addition at the relevant carbons.
+  - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Mechanistic pathway assignment
+    - **Claim pointer** DFT calculations, mutagenesis, mutant product characterization, and docking suggest cyclization through bisabolyl-dunnienyl cations as the favored pathway, albeit the coexistence of a pathway through carotenyl cations is also possible.
+    - **Evidence pointer** Abstract only; no computational or experimental data provided. location not provided.
+    - **Concern** The abstract asserts a favored pathway while also allowing a competing pathway, but provides no energetic values, transition-state structures, kinetic isotope effects, or product distributions that would discriminate between them. The basis for favoring bisabolyl-dunnienyl over carotenyl cations is not visible.
+    - **Why it matters** The mechanistic conclusion is the core scientific claim. If the two pathways are energetically close or if mutant product profiles are ambiguous, the favored pathway assignment is not justified.
+    - **Resolution test** Provide DFT relative energies for all relevant intermediates and transition states, methods and functional validation, experimental product distributions for wild type and mutants, and a quantitative argument for why one pathway is favored over the other.
+  - **Concern ID** R1-M4
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Residue function
+    - **Claim pointer** Y186 may play as a key residue to redirect water to trap the C7 carbocation and to promote the syn-protoetherification reaction.
+    - **Evidence pointer** Abstract only; no mutagenesis data, structures, or docking figures provided. location not provided.
+    - **Concern** The Y186 claim is stated with "may," which is appropriately tentative, but the abstract does not report which mutants were made, their product profiles, or whether loss of the ether product is accompanied by alternative products. Docking alone cannot establish a water-redirection function.
+    - **Why it matters** The proposed catalytic role of Y186 is a major mechanistic element. Without mutant product quantification and structural context, the residue-level mechanism remains speculative.
+    - **Resolution test** Provide site-directed mutagenesis data for Y186 and surrounding residues, quantitative product profiles, kinetic parameters where possible, and structural or computational evidence for water positioning relative to the C7 carbocation.
+  - **Concern ID** R1-M5
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Enzyme discovery and assignment
+    - **Claim pointer** Discovery of a bacteria-derived sesquiterpene synthase AceS converting farnesyl diphosphate to acorenol ether (1).
+    - **Evidence pointer** Abstract only; no sequence, phylogenetic, expression, or kinetic data provided. location not provided.
+    - **Concern** The abstract does not describe the origin organism, sequence identity to known terpene synthases, whether AceS was heterologously expressed and purified, or whether the reaction was reconstituted in vitro with defined substrates and cofactors.
+    - **Why it matters** The discovery claim requires a clear link between the assigned gene and the observed enzyme activity. Without this, the identity of AceS as the responsible synthase is not established.
+    - **Resolution test** Provide the source organism and accession, sequence alignment or phylogenetic placement, expression and purification evidence, in vitro assay conditions, substrate specificity, and product quantification.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Terminology
+    - **Affected element** Use of "protoetherification"
+    - **Evidence pointer** Abstract, first and second sentences. location not provided.
+    - **Issue** The term protoetherification is used without definition in the abstract. Its relationship to water quenching and intramolecular hydroxy trapping is described but not precisely delimited.
+    - **Required correction** Define protoetherification explicitly and distinguish it from related termination modes at first use.
+  - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Novelty framing
+    - **Affected element** Comparison to 1,8-cineole synthase
+    - **Evidence pointer** Abstract, second sentence. location not provided.
+    - **Issue** The abstract states that 1,8-cineole synthase is the only characterized enzyme catalyzing syn-protoetherification, but does not specify the basis for this exclusivity or the search criteria used.
+    - **Required correction** Clarify the literature basis for the exclusivity claim and specify whether the comparison is mechanistic, taxonomic, or both.
+  - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Computational reporting
+    - **Affected element** DFT calculations
+    - **Evidence pointer** Abstract only. location not provided.
+    - **Issue** No level of theory, solvation model, or conformational sampling strategy is mentioned.
+    - **Required correction** Report computational methods and validation in the main text or supporting information.
+  - **Concern ID** R1-m4
+    - **Severity** Minor
+    - **Axis** Nomenclature
+    - **Affected element** Compound 1 and acorane skeleton
+    - **Evidence pointer** Abstract only. location not provided.
+    - **Issue** The abstract does not state whether acorenol ether (1) is a known compound or a new natural product, nor whether the acorane skeleton assignment follows established numbering.
+    - **Required correction** State the novelty status of 1 and provide the numbering scheme used for the acorane skeleton.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. These are blocking because the structural assignment, the stereochemical claim, and the favored pathway assignment are the central conclusions and are not evaluable from the supplied material.
+- **Assessment against Nature-style criteria** Originality is potentially present in the reported bacterial syn-protoetherification and the acorane ether scaffold, but cannot be confirmed without full structural and literature context. Scientific importance would be moderate to high for terpene synthase mechanism and enzymology if the claims hold. Interdisciplinary readership could include enzymology, natural product chemistry, and computational chemistry, though the abstract is specialized. Technical soundness is not established from the supplied material because no primary data are visible. Readability for nonspecialists is limited by undefined terminology and dense mechanistic language.
+- **Recommendation posture** Currently not established from the provided evidence. Supportive if technical concerns are resolved with full structural, stereochemical, and computational data.
+
+## Risk / unsupported claims
+- The claim that the P450-modified derivative retains the native C3-C7 ether connectivity and spiro skeleton of 1 is not supported by the supplied material.
+- The claim of syn-protoetherification is not supported by visible stereochemical data.
+- The claim that bisabolyl-dunnienyl cations are the favored pathway over carotenyl cations is not supported by visible energetic or product distribution data.
+- The proposed water-redirecting role of Y186 is speculative from the supplied material.
+- The discovery claim for AceS is not supported by visible sequence, expression, or in vitro activity data.
+- The exclusivity claim regarding 1,8-cineole synthase as the only characterized syn-protoetherification enzyme is not supported by a visible literature analysis.

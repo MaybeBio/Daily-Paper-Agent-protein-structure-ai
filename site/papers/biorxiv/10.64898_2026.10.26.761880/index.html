@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>De novo design of light-controlled conformational protein switches · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>De novo design of light-controlled conformational protein switches</h1>
+      <div class="meta">Alexander T. Hilditch; Nicolas M. Goldbach; Chenxuan Liu; Luciano A. Abriata; Ann-Sophie Kröll; Friederike C. Reinhardt; Sabine Aschenbrenner; Natalia Gasilova; Sarah Warrelmann; René Rasche; Yassine Faik; Kimali Pilet; Elisabetta Occelli; Sandrine Georgeon; Joseph Schmidt; Laure Menin; Joerg Standfuss; Josef Wachtveitl; Dominik Niopek; Bruno E. Correia</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-28
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.10.26.761880">原文</a>
+      </div>
+      <p class="one-liner">该文从头计算设计光控蛋白构象开关，将视黄醛发色团结合与蛋白构象切换运动耦合，实现光激活异二聚体，核心涉及蛋白结构设计与构象变化计算建模，与本课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Light-responsive proteins offer the ability to control biology at an unmatched resolution. Yet, optogenetics is limited to a relatively small number of natural and engineered photoreceptors. The design of light-responsive proteins with native-like complexity is challenging as they must incorporate a light-responsive chromophore, couple chemical changes in the chromophore to structural changes in the protein, and ultimately propagate these changes to downstream effectors. Here, we present the computational design of new light-responsive proteins entirely from the bottom-up. We design de novo proteins that accurately bind a retinal chromophore and further design a protein conformational switching motion linked to retinal isomerisation. This switch unlocks a new protein-peptide interaction, creating light-activated heterodimers with an over 30-fold increase in binding upon illumination. Moreover, we show that the designed heterodimers are customisable, with tuneable wavelengths, sensitivities, and specificities. Further, we use the designed heterodimers to control biological function, regulating intracellular protein-protein interactions and cell-signalling receptors. Finally, we use real-time light-activated NMR to demonstrate that they undergo a defined light-activated conformational change. Overall, we computationally design a new class of light-responsive proteins that may open a new optogenetics toolbox with applications in biology.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">光响应蛋白能够在无与伦比的分辨率下控制生物学过程。然而，光遗传学仅限于相对较少的天然和工程改造的光受体。设计具有类天然复杂性的光响应蛋白颇具挑战，因为它们必须整合光响应发色团，将发色团中的化学变化耦合到蛋白质的结构变化，并最终将这些变化传递给下游效应器。在此，我们展示了全新自下而上计算设计的新型光响应蛋白。我们设计了能够精确结合视黄醛发色团的从头蛋白质，并进一步设计了与视黄醛异构化相连接的蛋白质构象切换运动。这种切换解锁了一种新的蛋白质-肽相互作用，从而在光照下产生结合亲和力增加超过30倍的光激活异二聚体。此外，我们展示了所设计的异二聚体具有可定制性，其波长、敏感性和特异性均可调节。进一步地，我们利用所设计的异二聚体控制生物学功能，调节细胞内蛋白质-蛋白质相互作用和细胞信号受体。最后，我们使用实时光激活核磁共振（NMR）证明它们经历明确的、光激活的构象变化。总体而言，我们计算设计了一类新型光响应蛋白，可能开启一个新的光遗传学工具箱，并在生物学中具有应用前景。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：De novo design of light-controlled conformational protein switches</li>
+<li><strong>作者</strong>：Alexander T. Hilditch; Nicolas M. Goldbach; Chenxuan Liu; Luciano A. Abriata; Ann-Sophie Kröll; Friederike C. Reinhardt; Sabine Aschenbrenner; Natalia Gasilova; Sarah Warrelmann; René Rasche; Yassine Faik; Kimali Pilet; Elisabetta Occelli; Sandrine Georgeon; Joseph Schmidt; Laure Menin; Joerg Standfuss; Josef Wachtveitl; Dominik Niopek; Bruno E. Correia</li>
+<li><strong>单位</strong>：未在提供材料中逐条列出（通讯作者 Bruno E. Correia 隶属 EPFL，据致谢与 GitHub 组织 LPDI-EPFL 推断；其余单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>：bioRxiv</li>
+<li><strong>年份</strong>：2026（日期 2026-10-28）</li>
+<li><strong>论文类型</strong>：预印本（研究论文，含计算设计 + 实验验证）</li>
+<li><strong>领域</strong>：计算蛋白质设计 / 光遗传学 / 蛋白质构象开关</li>
+<li><strong>关键词</strong>：未提供（可据内容归纳：de novo design, retinal, conformational switch, optogenetics, RFdiffusion, ProteinMPNN, AlphaFold, NMR）</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.10.26.761880</li>
+<li><strong>代码</strong>：https://github.com/LPDI-EPFL/sparc</li>
+<li><strong>数据</strong>：PDB 34XO（SPARC-117 prot 晶体结构）；Zenodo 10.5281/zenodo.23063068（设计指标、模型、SPARC-152 主链归属）</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在课题方向中的位置</strong>：本文是「蛋白质结构相关计算研究 × AI/物理模拟」中<strong>多构象设计（multistate design）</strong> 的代表性工作：用 RFdiffusionAllAtom 生成配体异构驱动的替代构象、用 ProteinMPNN/LigandMPNN 做跨构象 tied 序列设计、用 AF2/AF3 做构象态过滤，并用 NMR/超快光谱/晶体学做物理验证。对构象采样、构象生成、结构/序列设计、蛋白-肽对接与光控 PPI 均有直接可迁移价值。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文用 RFdiffusionAllAtom 在 11-cis-retinal 结合蛋白上扩散出与 all-trans-retinal 兼容的替代构象并同时扩散出肽结合位点，再用 ProteinMPNN/LigandMPNN 做跨构象 tied 序列设计、AF2/AF3 过滤，得到光照后结合增强 &gt;30 倍的光激活异源二聚体（SPARC），并在 NMR 中观察到由 retinal 异构驱动的构象变化。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：能否完全从零（bottom-up）设计出同时具备（i）retinal 结合、（ii）retinal 异构驱动的构象变化、（iii）构象特异性的全新蛋白-蛋白相互作用（PPI）的蛋白质，从而在光照下形成异源二聚体？</li>
+<li><strong>为什么重要</strong>：光遗传学工具箱依赖数量有限的天然光受体，其波长、动力学、动态范围、可改造性受限；de novo 设计可提供可定制、非天然优化的光响应模块。</li>
+<li><strong>现有方法为何不足</strong>：已工程化的光响应蛋白多借用天然骨架与机制，或直接在 PPI 界面上挂光响应基团而绕过构象变化；小分子结合与构象变化仍是困难设计目标；构象集合生成/动态条件化 inverse folding 的通用性落后于单态方法。</li>
+<li><strong>精确研究问题</strong>：Can de novo proteins be designed to couple retinal isomerisation to a defined backbone conformational change that unveils a conformation-specific protein-peptide interface, yielding light-activated heterodimers?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<ul>
+<li><strong>阶段 1｜天然光受体借用</strong>：以 rhodopsin、LOV、BLUF、Cry2、phytochrome 等天然模块为基础。优点：机制成熟、动态范围好；局限：波长多限于蓝光、分子量大、难以改造、跨语境移植差。</li>
+<li><strong>阶段 2｜光响应基团直接接界面</strong>：用非天然氨基酸/光响应 moiety 直接调控 PPI，绕过构象变化。优点：设计简单；局限：需 genetic code expansion，缺乏天然光受体的构象耦合复杂度。</li>
+<li><strong>阶段 3｜de novo 单态设计</strong>：深度学习推动小分子结合与单态结构设计。优点：可探索新序列空间；局限：多构象/动态设计仍困难。</li>
+<li><strong>阶段 4｜de novo 多构象/刺激响应设计</strong>：钙控动态蛋白、helical hinge proteins、protein phosphoswitches 等。优点：证明构象变化可设计；局限：数量少，光控 + 配体异构耦合 + 构象特异 PPI 三者集成尚未实现。</li>
+<li><strong>本文主张的位置</strong>：把 chromophore 结合、光驱动构象变化、构象特异 PPI 集成到同一 minimal scaffold，声称是「new-to-nature photoreceptors」。</li>
+<li><strong>脉络标注</strong>：以上脉络为<strong>仅本文框架</strong>（依据 Introduction 与 Conclusions 的叙述整理），未做外部文献核验。</li>
+</ul>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>光遗传学可用光受体少</td>
+<td>工具箱依赖少量天然 photoreceptors</td>
+<td>天然蛋白按宿主需求进化，难移植、难改造</td>
+<td>Introduction</td>
+</tr>
+<tr>
+<td>光响应蛋白机制复杂</td>
+<td>需整合 chromophore、化学变化→构象变化→下游效应</td>
+<td>需定义并生成两个以上可设计且可过渡的构象</td>
+<td>Introduction</td>
+</tr>
+<tr>
+<td>小分子结合与构象变化设计困难</td>
+<td>单态方法通用性好，动态/多态方法落后</td>
+<td>多构象设计需同时满足可设计性与可行结构过渡</td>
+<td>Introduction</td>
+</tr>
+<tr>
+<td>retinal 在可溶蛋白中未被使用</td>
+<td>其与可溶光响应蛋白的兼容性未被探索</td>
+<td>retinal 天然用于膜结合 rhodopsin</td>
+<td>Introduction</td>
+</tr>
+<tr>
+<td>单态设计限制异构化</td>
+<td>单态 RBP 只显示长寿命 ESA/GSB→HGS，无异构</td>
+<td>结构刚性阻碍 retinal 异构</td>
+<td>Results 图 3h</td>
+</tr>
+<tr>
+<td>初始光激活响应弱</td>
+<td>SPARC-39 仅 1.5 倍</td>
+<td>未明确归因，作者通过扩大可设计位点优化</td>
+<td>Results 图 3b、Supplementary Fig. 6</td>
+</tr>
+<tr>
+<td>正交性难实现</td>
+<td>前四名设计两两不正交</td>
+<td>序列与结构高度相似</td>
+<td>Results、Supplementary Figs. 14 &amp; 15</td>
+</tr>
+<tr>
+<td>细胞内受体激活弱</td>
+<td>初始 SPARC 对 FGFR1 几乎无响应</td>
+<td>作者推测异源二聚体解离过快</td>
+<td>Results、Supplementary Fig. 24</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：从实验验证的 retinal 结合蛋白（RBP）出发，in silico 把 11-cis-retinal 异构为 all-trans，用 RFdiffusionAllAtom 扩散与 all-trans 冲突的部分并同时扩散一段 25–30 aa 肽，形成光激活构象；用 ProteinMPNN/LigandMPNN 跨两态 tied 设计序列，AF2/AF3 过滤。</li>
+<li><strong>核心洞察</strong>：把「配体异构」当作构象切换的驱动力，把「新构象」当作构象特异 PPI 的载体；即用配体状态耦合蛋白构象态，再用构象态门控 PPI。单态设计会锁死异构化，多态设计才释放功能。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：多构象设计不只是「生成两个结构」，而是要让两态共享同一序列（tied design）且过渡可行；配体/辅基可作为外部刺激把构象平衡推向功能态，这一逻辑可推广到其他刺激响应（pH、金属、光）体系。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：实验验证的 RBP 结构（AF3 模型）、11-cis-retinal、目标折叠（4/5/6-helix bundle、β-barrel）、天然 rhodopsin 序列库（UniRef100）。</li>
+<li><strong>输出</strong>：光激活异源二聚体（SPARC prot + SPARC pep）序列与模型；晶体结构；NMR 归属；细胞内功能数据。</li>
+<li><strong>模块</strong>：RBP 设计（RFdiffusion partial diffusion + SolubleMPNN + AF2 + Rosetta MotifGraft + Gnina docking + LigandMPNN + AF2/AF3）；SPARC 设计（RDKit 异构 + RFdiffusionAllAtom + ProteinMPNN/LigandMPNN tied + AF2/AF3）；序列空间分析（ESM2 + UMAP）；实验验证（吸收光谱、native/top-down MS、CD、split-luciferase、超快光谱、晶体学、NMR、细胞内钙成像）。</li>
+<li><strong>训练</strong>：无新模型训练；使用预训练 RFdiffusion/RFdiffusionAllAtom、ProteinMPNN、LigandMPNN、SolubleMPNN、AF2、AF3、ESM2、Gnina。</li>
+<li><strong>工具</strong>：RFdiffusion、ProteinMPNN、LigandMPNN、SolubleMPNN、AlphaFold2/3、Rosetta MotifGraft、Gnina、RDKit、ESM2、UMAP、DSSP、NMRtist/ARTINA、Sparky、BIOP-Desktop、Cellpose-SAM。</li>
+<li><strong>反馈回路</strong>：计算设计 → 实验筛选（吸收/发光）→ 命中 → 计算优化（扩大可设计位点）→ 再实验 → 理性工程（电荷互换、红移突变、亲和力突变、scaffolding）。</li>
+<li><strong>假设</strong>：retinal 异构可传递为 backbone 构象变化；两态可共享序列；新构象可承载构象特异 PPI。</li>
+<li><strong>文字流程</strong>：选折叠 → 生成多样化 backbone → 嫁接 Schiff base 关键 Lys/Glu → dock 11-cis-retinal → 重设计核心 → AF2/AF3 过滤 → 实验验证 RBP → RDKit 异构为 all-trans → RFdiffusionAllAtom 扩散冲突区 + 扩散肽 → tied 多态序列设计 → AF2/AF3 过滤 → split-luciferase 筛选 → 优化与工程 → 细胞与 NMR 验证。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RFdiffusion partial diffusion</td>
+<td>生成多样化 backbone</td>
+<td>增加可设计性</td>
+<td>起始折叠→500 backbones</td>
+<td>Methods</td>
+<td>预期降低设计成功率（未实测消融）</td>
+</tr>
+<tr>
+<td>SolubleMPNN + AF2 单序列</td>
+<td>筛选可设计 backbone</td>
+<td>AF 模型比 RFdiffusion backbone 更可设计</td>
+<td>backbone→序列/结构</td>
+<td>Methods</td>
+<td>预期保留低质量 backbone（未实测）</td>
+</tr>
+<tr>
+<td>Rosetta MotifGraft</td>
+<td>植入 Schiff base 的 Lys/Glu</td>
+<td>需要质子化 Schiff base 与 counter-ion</td>
+<td>backbone→graft</td>
+<td>Methods</td>
+<td>预期无法形成质子化 Schiff base（未实测）</td>
+</tr>
+<tr>
+<td>Gnina docking</td>
+<td>共价 dock 11-cis-retinal</td>
+<td>需要合理配体姿态</td>
+<td>graft→10 poses</td>
+<td>Methods</td>
+<td>预期配体姿态错误（未实测）</td>
+</tr>
+<tr>
+<td>LigandMPNN 核心重设计</td>
+<td>围绕配体设计口袋</td>
+<td>生成结合序列</td>
+<td>pose→50 序列</td>
+<td>Methods</td>
+<td>预期结合失败（未实测）</td>
+</tr>
+<tr>
+<td>AF2/AF3 过滤（RBP）</td>
+<td>选配体 pLDDT&gt;70、姿态一致</td>
+<td>提高命中率</td>
+<td>序列→筛选</td>
+<td>Methods</td>
+<td>预期命中率下降（未实测）</td>
+</tr>
+<tr>
+<td>RDKit 异构</td>
+<td>生成 all-trans 构象</td>
+<td>模拟光激活</td>
+<td>11-cis→all-trans</td>
+<td>Methods</td>
+<td>无异构则无切换（概念必需）</td>
+</tr>
+<tr>
+<td>RFdiffusionAllAtom</td>
+<td>扩散冲突区 + 扩散肽</td>
+<td>生成替代构象与结合位点</td>
+<td>RBP→新构象+肽</td>
+<td>Methods</td>
+<td>预期无光激活 PPI（未实测消融）</td>
+</tr>
+<tr>
+<td>ProteinMPNN/LigandMPNN tied design</td>
+<td>两态共享序列</td>
+<td>保证同一序列可访问两态</td>
+<td>两态→序列</td>
+<td>Methods</td>
+<td>预期两态不兼容（未实测）</td>
+</tr>
+<tr>
+<td>AF2/AF3 双态过滤</td>
+<td>选 pLDDT&gt;80、iPTM&gt;0.7、异构态、4–6 Å RMSD</td>
+<td>保证构象变化</td>
+<td>序列→筛选</td>
+<td>Methods</td>
+<td>预期假阳性升高（未实测）</td>
+</tr>
+<tr>
+<td>Split-luciferase 筛选</td>
+<td>检测光激活结合</td>
+<td>高通量</td>
+<td>裂解液→发光</td>
+<td>Results 图 3a</td>
+<td>无此筛选则无法快速筛选 92+60 设计</td>
+</tr>
+<tr>
+<td>超快光谱</td>
+<td>检测 retinal 异构</td>
+<td>验证机制</td>
+<td>蛋白→瞬态吸收</td>
+<td>Results 图 3h,i</td>
+<td>无法区分单态/多态机制</td>
+</tr>
+<tr>
+<td>NMR in situ 光照</td>
+<td>观察构象变化</td>
+<td>溶液实时验证</td>
+<td>蛋白→HSQC</td>
+<td>Results 图 5</td>
+<td>无法证明构象变化与肽结合</td>
+</tr>
+<tr>
+<td>晶体学</td>
+<td>验证暗态结构</td>
+<td>结构保真度</td>
+<td>蛋白→结构</td>
+<td>Results 图 3g</td>
+<td>仅暗态，无法验证光态</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ul>
+<li><strong>MRE 计算</strong>（Methods，CD）：MRE = θ / (c · l · b)，θ 为毫度椭圆率差，c 为蛋白浓度 (mM)，l 为光程 (cm)，b 为酰胺键数。用途：归一化 CD 信号。</li>
+<li><strong>mCSP</strong>（Methods，NMR）：对 cis-retinal 蛋白中每个已归属 crosspeak，计算其到目标谱所有 crosspeak 在 CSP 空间的距离，取最近者赋给该残基。用途：量化化学位移扰动。</li>
+<li><strong>Schiff base 质量偏移</strong>：+266.2035 Da（retinal Schiff base 单同位素质量，C20H26）。用途：MS 验证。</li>
+<li>其余公式未提供。</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：92 个初始异源二聚体设计 + 60 个优化设计；40 个 scaffolded miniprotein；天然 rhodopsin 序列 71,663 条（过滤后 60,273 microbial + 11,365 visual）+ 27 个 de novo 蛋白；HEK-293T、CHO-R1c 细胞。</li>
+<li><strong>规模</strong>：RBP 设计成功率 2.5%（β-barrel）–13.5%（5-helix bundle）；SPARC-39 1.5 倍；优化后 23/60 有响应，4 个 &gt;7 倍，SPARC-111 &gt;30 倍；SPARC-111 + SPARC-141pep-S14A + I28D 组合 95 倍。</li>
+<li><strong>指标</strong>：发光 fold-change、吸收红移、MS 质量偏移、CD 热稳定性、Cα RMSD、NMR CSP、钙响应。</li>
+<li><strong>基线</strong>：无 retinal 对照、K76A 突变、单态 RBP 5HB-87、天然 bovine rhodopsin 光谱。</li>
+<li><strong>预算</strong>：未提供。</li>
+<li><strong>骨干/仪器</strong>：Tecan Spark/Infinite MPLEX、Orbitrap Exploris 240、Chirascan V100、Bruker 800 MHz NMR、Nikon Crest X-Light V3、Diamond i24。</li>
+<li><strong>oracle 输入</strong>：晶体结构、NMR 归属、MS 碎片为实验真值；AF2/AF3 为计算 oracle。</li>
+<li><strong>评测协议</strong>：裂解液/纯化蛋白 split-luciferase、三次连续光照、细胞内 NanoGlo Live Cell、钙成像 300–400 细胞。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RBP 吸收筛选</td>
+<td>de novo 可结合 retinal</td>
+<td>多种折叠，±retinal</td>
+<td>红移 440–530 nm，成功率 2.5–13.5%</td>
+<td>可 de novo 设计 retinal 结合</td>
+<td>不证明高亲和力或天然级光谱</td>
+<td>Results 图 2a</td>
+</tr>
+<tr>
+<td>Native/top-down MS</td>
+<td>Schiff base 形成与位点</td>
+<td>+266 Da</td>
+<td>确认修饰与位点</td>
+<td>共价结合正确</td>
+<td>不证明异构效率</td>
+<td>Results 图 2b</td>
+</tr>
+<tr>
+<td>ESM2+UMAP</td>
+<td>探索新序列空间</td>
+<td>vs 天然 rhodopsin</td>
+<td>de novo 独立聚类</td>
+<td>序列空间新颖</td>
+<td>不证明功能更优</td>
+<td>Results 图 2c</td>
+</tr>
+<tr>
+<td>Split-luciferase 筛选</td>
+<td>光激活结合</td>
+<td>92 设计，±retinal，±光照</td>
+<td>1/92 命中（SPARC-39，1.5 倍）</td>
+<td>概念可行</td>
+<td>不证明高动态范围</td>
+<td>Results 图 3b</td>
+</tr>
+<tr>
+<td>K76A / 无 retinal</td>
+<td>响应特异性</td>
+<td>突变/缺配体</td>
+<td>完全消失</td>
+<td>依赖 retinal Schiff base</td>
+<td>不证明唯一机制</td>
+<td>Results</td>
+</tr>
+<tr>
+<td>优化设计</td>
+<td>扩大可设计位点提升响应</td>
+<td>60 设计</td>
+<td>23 有响应，4 个 &gt;7 倍，SPARC-111 &gt;30 倍</td>
+<td>多态设计可优化</td>
+<td>不证明可预测</td>
+<td>Results 图 3e</td>
+</tr>
+<tr>
+<td>晶体学</td>
+<td>暗态结构保真</td>
+<td>SPARC-117 prot</td>
+<td>Cα RMSD 0.92 Å</td>
+<td>设计结构准确</td>
+<td>未解析 retinal 密度，未验证光态</td>
+<td>Results 图 3g</td>
+</tr>
+<tr>
+<td>超快光谱</td>
+<td>retinal 异构</td>
+<td>单态 vs 多态</td>
+<td>单态无异构，多态有异构</td>
+<td>多态设计释放异构</td>
+<td>不证明异构速率天然级</td>
+<td>Results 图 3h,i</td>
+</tr>
+<tr>
+<td>电荷互换</td>
+<td>正交性</td>
+<td>SPARC-111 ortho</td>
+<td>保持响应且正交</td>
+<td>界面可理性改造</td>
+<td>仅一对</td>
+<td>Results 图 4a</td>
+</tr>
+<tr>
+<td>红移突变</td>
+<td>波长可调</td>
+<td>I28D 等</td>
+<td>红移 ≤30 nm，I28D 提升响应</td>
+<td>波长可调</td>
+<td>未达正交激活</td>
+<td>Results 图 4b</td>
+</tr>
+<tr>
+<td>亲和力突变</td>
+<td>灵敏度可调</td>
+<td>S14A 等</td>
+<td>4.5 倍提升，组合 95 倍</td>
+<td>亲和力可调</td>
+<td>细胞内未提升</td>
+<td>Results 图 4c</td>
+</tr>
+<tr>
+<td>Scaffolding</td>
+<td>肽可折叠化</td>
+<td>40 miniprotein</td>
+<td>&gt;半数有响应</td>
+<td>效应域可改造</td>
+<td>未全部优于亲本</td>
+<td>Results 图 4d</td>
+</tr>
+<tr>
+<td>细胞内 split-luc</td>
+<td>活细胞 PPI</td>
+<td>HEK-293T</td>
+<td>光激活，多次可重复</td>
+<td>活细胞可用</td>
+<td>优化突变未提升</td>
+<td>Results 图 4e</td>
+</tr>
+<tr>
+<td>FGFR1 钙成像</td>
+<td>控制受体信号</td>
+<td>±SpyTag/SpyCatcher</td>
+<td>需共价锁，改进组合响应更好</td>
+<td>可控制受体聚类</td>
+<td>需共价锁，弱于现有工具</td>
+<td>Results 图 4f</td>
+</tr>
+<tr>
+<td>NMR in situ</td>
+<td>构象变化机制</td>
+<td>±肽，±光照，all-trans</td>
+<td>四态，光激活后谱变宽/分裂</td>
+<td>支持设计机制</td>
+<td>未捕获中间态</td>
+<td>Results 图 5</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：设计并验证光激活异源二聚体，非通用光遗传学工具。</li>
+<li><strong>oracle/真值输入</strong>：晶体结构、NMR 归属、MS 为实验真值；AF2/AF3 为计算过滤，非真值。</li>
+<li><strong>端到端状态</strong>：从计算设计到细胞功能已打通，但细胞内效力需共价锁辅助。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：依赖预训练模型与天然 rhodopsin 序列库。</li>
+<li><strong>模型依赖</strong>：RFdiffusionAllAtom、ProteinMPNN/LigandMPNN、AF2/AF3 的偏差会影响结果。</li>
+<li><strong>最难情形</strong>：正交激活、红移、细胞内高信噪比、retinal 在可溶蛋白组中的可用性。</li>
+<li><strong>群体/领域边界</strong>：体外 + 两种细胞系；未在体内/神经元验证。</li>
+<li><strong>不确定性</strong>：晶体中 retinal 密度未解析；NMR 未捕获中间态；优化突变在细胞内未提升。</li>
+<li><strong>有边界复述</strong>：本文证明 de novo 多态设计可产生光激活异源二聚体，并在体外与细胞中实现光控 PPI 与受体聚类，但动态范围、正交性、细胞内效力仍有限。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>波长红移不足</td>
+<td>多数设计吸收短于 rhodopsin，红移突变不足以正交激活</td>
+<td>创建红移激活波长以改善穿透</td>
+<td>Conclusions</td>
+</tr>
+<tr>
+<td>细胞内效力不足</td>
+<td>需共价锁辅助受体激活</td>
+<td>进一步探索细胞内更广功能</td>
+<td>Conclusions</td>
+</tr>
+<tr>
+<td>retinal 可溶蛋白组可用性不明</td>
+<td>因 retinal 溶解度</td>
+<td>可用 hydroxy-retinal 衍生物缓解</td>
+<td>Conclusions</td>
+</tr>
+<tr>
+<td>信号信噪比</td>
+<td>未明确量化</td>
+<td>改善 switch 信噪比</td>
+<td>Conclusions</td>
+</tr>
+</tbody>
+</table>
+<p><strong>作者提及的相关约束（非正式局限）</strong>：SPARC-39 响应弱；优化突变在细胞内未提升；晶体中 retinal 密度未解析。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>92 设计仅 1 命中</td>
+<td>命中率低，可能依赖筛选噪声</td>
+<td>影响可重复性与通用性</td>
+<td>独立重复筛选、统计置信区间</td>
+<td>Results 图 3b</td>
+</tr>
+<tr>
+<td>SPARC-111 与 SPARC-39 序列差异 23.5% 但结构几乎相同</td>
+<td>功能提升可能来自表达/稳定性而非构象切换</td>
+<td>影响机制归因</td>
+<td>测表达量、热稳定性、动力学</td>
+<td>Results 图 3f</td>
+</tr>
+<tr>
+<td>超快光谱仅 4 个多态设计</td>
+<td>样本小，异构结论可能不普遍</td>
+<td>影响机制普适性</td>
+<td>扩大样本、测更多设计</td>
+<td>Results 图 3i</td>
+</tr>
+<tr>
+<td>NMR 未捕获中间态</td>
+<td>构象路径可能非设计路径</td>
+<td>影响机制模型</td>
+<td>时间分辨 NMR/停流</td>
+<td>Results 图 5</td>
+</tr>
+<tr>
+<td>细胞内优化突变未提升</td>
+<td>体外-体内不一致</td>
+<td>影响转化</td>
+<td>测细胞内表达/定位/半衰期</td>
+<td>Results 图 4e</td>
+</tr>
+<tr>
+<td>FGFR1 需 SpyTag/SpyCatcher</td>
+<td>共价锁可能改变机制</td>
+<td>影响「光控」纯度</td>
+<td>无锁条件下测动力学</td>
+<td>Results 图 4f</td>
+</tr>
+<tr>
+<td>晶体未解析 retinal 密度</td>
+<td>暗态配体姿态未直接验证</td>
+<td>影响设计保真度</td>
+<td>更高分辨率/不同晶体形式</td>
+<td>Results 图 3g</td>
+</tr>
+<tr>
+<td>正交性仅一对</td>
+<td>通用性未知</td>
+<td>影响并行控制</td>
+<td>设计更多正交对</td>
+<td>Results 图 4a</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>
+- <strong>多构象 tied design 流程</strong>：用配体异构生成替代构象 → 扩散冲突区 → 同时扩散结合伙伴 → 跨态 tied 序列设计 → 双态 AF 过滤。可迁移到构象采样/构象生成与结构/序列设计。
+- <strong>配体作为构象开关</strong>：把配体状态耦合到蛋白构象平衡，再用构象态门控 PPI。可迁移到金属/pH/光响应设计。
+- <strong>单态 vs 多态机制验证</strong>：超快光谱可区分「结合但不异构」与「结合且异构」，是构象设计的重要物理验证手段。
+- <strong>NMR in situ 光照</strong>：光纤耦合 LED 在磁体内实时光照，可追踪构象景观。可迁移到其他光响应蛋白。
+- <strong>理性工程组合</strong>：电荷互换实现正交、红移突变、亲和力突变、scaffolding。可迁移到 PPI 设计。
+- <strong>序列空间分析</strong>：ESM2 + UMAP 评估设计新颖性。可迁移到设计评估。
+- <strong>筛选策略</strong>：split-luciferase 裂解液筛选 + 纯化验证 + 细胞内验证的分层策略。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似</strong>：RFdiffusion/RFdiffusionAllAtom、ProteinMPNN/LigandMPNN、AF2/AF3 为课题常用工具；多态设计与 phosphoswitch、hinge protein 等工作同源（本文引用）。</li>
+<li><strong>组合</strong>：retinal 化学 + 构象设计 + PPI 设计 + 细胞信号控制。</li>
+<li><strong>冲突</strong>：与「单态设计足够」的假设冲突；本文显示单态锁死异构。</li>
+<li><strong>可迁移领域</strong>：构象采样、构象生成、分子对接（Gnina）、MD/超快光谱、结构/序列设计、光遗传学。</li>
+<li><strong>外部核验</strong>：未提供；以上连接基于本文引用与课题常识，未做外部文献核验。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>
+1. <strong>名称</strong>：多刺激耦合的多态蛋白开关
+   - <strong>来源局限</strong>：本文仅用 retinal 光控。
+   - <strong>核心假设</strong>：同一 scaffold 可耦合两种刺激（光 + pH/金属）到不同构象态。
+   - <strong>增量</strong>：从单刺激扩展到多刺激逻辑门。
+   - <strong>初步方法</strong>：在 SPARC 口袋引入金属配位残基，用 RFdiffusionAllAtom 生成第三态。
+   - <strong>验证</strong>：吸收/NMR/发光。
+   - <strong>失败模式</strong>：态间过渡不可行。
+   - <strong>创新状态</strong>：unverified。
+2. <strong>名称</strong>：用 MD 验证 SPARC 构象过渡路径
+   - <strong>来源局限</strong>：本文未做 MD，NMR 未捕获中间态。
+   - <strong>核心假设</strong>：all-trans 态到肽结合态存在可行路径。
+   - <strong>增量</strong>：补足构象过渡的物理证据。
+   - <strong>初步方法</strong>：增强采样 MD（metadynamics/REMD）。
+   - <strong>验证</strong>：与 NMR CSP 对比。
+   - <strong>失败模式</strong>：力场偏差。
+   - <strong>创新状态</strong>：unverified。
+3. <strong>名称</strong>：正交 SPARC 对的自动化设计
+   - <strong>来源局限</strong>：仅一对正交。
+   - <strong>核心假设</strong>：电荷模式可系统化生成正交对。
+   - <strong>增量</strong>：并行光控。
+   - <strong>初步方法</strong>：界面电荷设计 + AF3 过滤。
+   - <strong>验证</strong>：交叉配对发光。
+   - <strong>失败模式</strong>：交叉反应。
+   - <strong>创新状态</strong>：unverified。
+4. <strong>名称</strong>：红移 SPARC 的定向进化
+   - <strong>来源局限</strong>：红移 ≤30 nm。
+   - <strong>核心假设</strong>：口袋极性可进一步红移。
+   - <strong>增量</strong>：改善组织穿透。
+   - <strong>初步方法</strong>：易错 PCR + 吸收筛选。
+   - <strong>验证</strong>：光谱 + 发光。
+   - <strong>失败模式</strong>：牺牲异构效率。
+   - <strong>创新状态</strong>：unverified。
+5. <strong>名称</strong>：SPARC 用于构象特异 PPI 的通用平台
+   - <strong>来源局限</strong>：仅验证少数 PPI。
+   - <strong>核心假设</strong>：SPARC prot 可替换效应肽。
+   - <strong>增量</strong>：通用光控 PPI 工具箱。
+   - <strong>初步方法</strong>：RFdiffusion 生成新肽 + tied design。
+   - <strong>验证</strong>：发光/细胞。
+   - <strong>失败模式</strong>：肽不折叠。
+   - <strong>创新状态</strong>：unverified。</p></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text provided (Abstract, Main, Methods, Data/Code availability, Author contributions, Competing interests, Acknowledgements). No separate Supplementary Information files, no individual figure files, no line numbers.</li>
+<li><strong>Assessment boundary</strong> Assessment is restricted to the text supplied. All quantitative claims, supplementary figures, tables, and the PDB/Zenodo/GitHub deposits were not independently inspectable. No external literature verification was performed.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors report computational de novo design of soluble proteins that bind 11-cis-retinal via a protonated Schiff base, and of coupled multi-state designs (SPARC) in which retinal cis-to-trans isomerisation drives a backbone conformational change that unveils a conformation-specific protein-peptide interface. They report light-activated heterodimers with up to &gt;30-fold increased binding on illumination, tunability of wavelength, sensitivity, orthogonality and effector scaffolding, light-dependent control of intracellular PPIs and FGFR1-driven calcium release in cells, a crystal structure of the dark state, and real-time light-activated NMR evidence for a defined conformational change.</li>
+<li><strong>Visible evidence base</strong> Main text narrative; figure callouts (Fig. 1a-c, Fig. 2a-c, Fig. 3a-i, Fig. 4a-f, Fig. 5a-c); Supplementary figure and table callouts (Supplementary Figs. 1-30, Supplementary Tables 1-2); Methods (computational and experimental); Data availability (PDB 34XO, Zenodo 10.5281/zenodo.23063068); Code availability (GitHub LPDI-EPFL/sparc).</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary figures and tables are cited but not supplied, so most design success rates, screening statistics, controls, and replicate structures cannot be verified. No figure files, no line numbers, no source data tables, no sequence or model files, no statistical analysis section, no replicate counts or error definitions for most assays, no description of blinding or randomisation, and no independent validation dataset.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript addresses a genuinely difficult and worthwhile design problem, namely building a light-responsive protein from the bottom up rather than re-engineering a natural photoreceptor. The conceptual pipeline is coherent and the work combines design, biophysics, structural biology, spectroscopy, and cell assays. However, the evidence as presented is uneven. The central quantitative claim of a &gt;30-fold light-dependent increase in binding rests on a split-luciferase reconstitution readout that is an indirect proxy for interaction, and the relationship between luminescence fold-change and actual binding affinity or fractional occupancy is not established. Several key mechanistic claims, including the assignment of the light-activated conformational change and the interpretation of the ultrafast spectra, depend on supplementary material that is not available for inspection. The cellular data are described as weak and dependent on a covalent SpyTag/SpyCatcher lock, which the authors themselves acknowledge. The crystallographic evidence does not visualise the chromophore. Taken together, the work is promising and the design logic is of interest, but the case for a defined, quantitatively characterised light-controlled conformational switch is not yet fully established from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Protein designers and computational structural biologists interested in multi-state design and ligand-conditioned dynamics; optogenetics and synthetic biology groups looking for new photoreceptor scaffolds with potentially orthogonal, spectrally tunable behaviour; biophysicists using NMR and ultrafast spectroscopy to characterise designed switches; and cell-signalling researchers interested in light-controlled receptor dimerisation. The appeal is the prospect of a designable, retinal-based, soluble switch that is not derived from a natural rhodopsin scaffold.</li>
+<li><strong>Major strengths</strong> The problem framing is clear and the gap in de novo stimulus-responsive conformational switches is real. The design pipeline is described in enough detail to be plausibly reproducible, including the use of partial diffusion, motif grafting of the Schiff base lysine and counter-ion, ligand-conditioned sequence design, and multi-state tied-position design. The combination of native MS, top-down MS fragmentation, CD thermostability, a crystal structure of the dark state, ultrafast transient absorption, and in situ light-activated NMR is a strong multi-technique strategy in principle. The demonstration that single-state designs appear to restrict isomerisation while multi-state designs permit it is a mechanistically informative comparison. The reported engineering routes to orthogonality, red-shift, and improved sensitivity suggest a tractable platform rather than a single lucky design.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Quantitative support for the central claim</li>
+<li><strong>Claim pointer</strong> The designed heterodimers show an over 30-fold increase in binding upon illumination, with the strongest response from SPARC-111.</li>
+<li><strong>Evidence pointer</strong> Fig. 3e, Supplementary Fig. 10, Methods (split-luciferase lysate and purified protein assays)</li>
+<li><strong>Concern</strong> The &gt;30-fold figure is derived from split-luciferase luminescence, which reports reconstitution of a reporter enzyme rather than directly measuring bound complex. The manuscript does not report an independent equilibrium binding measurement (for example ITC, SPR, BLI, or NMR titration) for any SPARC pair, nor does it convert luminescence fold-change into affinity, occupancy, or a bound fraction. The relationship between the readout and the physical interaction is therefore uncalibrated.</li>
+<li><strong>Why it matters</strong> The headline quantitative claim of the paper is a binding increase. Without an orthogonal binding measurement or a calibration of the reporter, the magnitude and even the interpretation of the fold-change are not established, and comparisons across designs, mutants, and cellular contexts are not on a common scale.</li>
+<li><strong>Resolution test</strong> Provide at least one direct equilibrium binding measurement for a representative pair in dark and illuminated states, and show how luminescence fold-change maps onto bound fraction or affinity for that pair.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-M2<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Mechanistic evidence for the light-activated conformational change</li>
+<li><strong>Claim pointer</strong> The designs undergo a defined light-activated conformational change driven by retinal cis-to-trans isomerisation, with at least four observable conformational states.</li>
+<li><strong>Evidence pointer</strong> Fig. 5a-c, Supplementary Figs. 25-30, Supplementary Table 2, Methods (NMR)</li>
+<li><strong>Concern</strong> The NMR interpretation depends on comparison of dark, illuminated, all-trans-loaded, and peptide-bound spectra, but the supporting spectra are in supplementary figures that were not supplied. The text states that intermediate conformations were not captured, that crosspeak broadening and splitting occur after illumination, and that the light-activated spectrum overlays with the all-trans-loaded spectrum. Overlay with an all-trans reference is consistent with isomerisation but does not by itself establish that the observed chemical shift perturbations report the designed backbone rearrangement rather than local chromophore-driven environmental changes, partial unfolding, or aggregation. The claim of four distinct states is asserted rather than demonstrated with population or exchange analysis.</li>
+<li><strong>Why it matters</strong> The central mechanistic novelty is that ligand isomerisation is coupled to a designed protein conformational change. If the NMR changes cannot be tied to the designed backbone motion, the mechanistic claim reduces to ligand binding plus nonspecific spectral perturbation.</li>
+<li><strong>Resolution test</strong> Provide the full NMR spectra with assignments, quantify CSPs against the design model at residue level, report exchange timescales and populations, and show that the perturbed residues map onto the designed mobile element rather than globally.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-M3<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Structural evidence for the chromophore and the active state</li>
+<li><strong>Claim pointer</strong> The crystal structure of SPARC-117 prot confirms high structural fidelity of the dark state, with Cα RMSD 0.92 Å to the design model.</li>
+<li><strong>Evidence pointer</strong> Fig. 3g, Supplementary Table 1, Methods (crystallography), Data availability (PDB 34XO)</li>
+<li><strong>Concern</strong> The authors state that 11-cis-retinal was not clearly distinguishable in the electron density, possibly due to photodamage or Schiff base hydrolysis. The deposited structure therefore documents the apoprotein fold, not the holoprotein dark state. No structure of the illuminated or peptide-bound state is presented. The design model comparison is made against a ligand-free interpretation of the map.</li>
+<li><strong>Why it matters</strong> The design claims concern a retinal-bound ground state and a peptide-bound active state. A ligand-free crystal structure supports fold accuracy but not the chromophore placement, the Schiff base geometry, or the conformational transition that the paper is built around.</li>
+<li><strong>Resolution test</strong> Provide either a structure with modelled retinal density, or explicit documentation that the deposited model is ligand-free, and temper the fidelity claim accordingly. A structure or credible model of the active state would substantially strengthen the case.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-M4<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Interpretation of ultrafast spectroscopy</li>
+<li><strong>Claim pointer</strong> The four multi-state designs show successful retinal isomerisation, whereas the single-state design is trapped and prevents isomerisation.</li>
+<li><strong>Evidence pointer</strong> Fig. 3h, Fig. 3i, Supplementary Fig. 13, Methods (transient absorption)</li>
+<li><strong>Concern</strong> The interpretation rests on comparison with bovine rhodopsin intermediates and on the appearance of a depletion at 480 nm with a rise near 400 nm. The text does not report isomerisation quantum yields, species-associated spectra from global analysis, or a direct measurement of the trans isomer. The conclusion that the single-state design is trapped is inferred from long-lived excited state absorption and a hot ground state, which is plausible but not uniquely diagnostic.</li>
+<li><strong>Why it matters</strong> The mechanistic distinction between single-state and multi-state designs is a key conceptual claim. If the spectroscopic signatures are not uniquely assigned, the claim that multi-state design enabled isomerisation is weakened.</li>
+<li><strong>Resolution test</strong> Provide global or target analysis with species-associated spectra and lifetimes, and where feasible a chromatographic or MS-based quantification of the trans isomer after illumination.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-M5<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Cellular efficacy and generality</li>
+<li><strong>Claim pointer</strong> The designed heterodimers control intracellular PPIs and cell-surface receptor clustering in a light-dependent manner.</li>
+<li><strong>Evidence pointer</strong> Fig. 4e, Fig. 4f, Supplementary Figs. 22-24, Methods (HEK-293T and CHO-R1c assays)</li>
+<li><strong>Concern</strong> The cellular PPI response is reported, but the text states that the switch-improving mutations did not increase the luminescence signal in cells. The FGFR1 calcium response is described as weak and required addition of SpyTag/SpyCatcher as a covalent lock. The authors acknowledge that cellular efficacy is not on par with contemporary optogenetic tools. The number of biological replicates, effect sizes, and statistical treatment are not given in the main text.</li>
+<li><strong>Why it matters</strong> The translational value of the platform depends on function in cells. A weak, lock-dependent response limits the claim that this is a usable optogenetic module and raises the question of whether the in vitro improvements transfer.</li>
+<li><strong>Resolution test</strong> Report effect sizes with replicate counts and statistics for each cellular assay, show dose and light dependence, and demonstrate function without the covalent lock or explicitly bound the claim to lock-assisted operation.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-M6<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Design success rate and selection</li>
+<li><strong>Claim pointer</strong> Design success rates ranged from 2.5% (β-barrel) to 13.5% (5-helix bundle), and 1 of 92 initial heterodimers and 23 of 60 optimised designs showed light-dependent increases.</li>
+<li><strong>Evidence pointer</strong> Supplementary Figs. 1, 2, 6, 9, 10, Main text</li>
+<li><strong>Concern</strong> The success rates and screening outcomes are reported only in the main text and supplementary figures that were not supplied. The screening used unverified transformants for the initial round, and hits were only sequence-verified afterwards. The criteria for calling a hit, the number of biological or technical replicates per design, and the false-positive rate of the luminescence screen are not stated in the main text.</li>
+<li><strong>Why it matters</strong> The credibility of a design campaign depends on how hits were defined and how many designs were tested. Without these details, the reported success rates cannot be assessed and the single initial hit may reflect screening noise.</li>
+<li><strong>Resolution test</strong> Provide the screening dataset with per-design replicate values, the hit-calling threshold, and the sequence verification status for all reported designs.</li>
+</ul>
+</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology and mechanism</li>
+<li><strong>Affected element</strong> Use of "light-activated conformational change" and "switch"</li>
+<li><strong>Evidence pointer</strong> Abstract, Main, Conclusions</li>
+<li><strong>Issue</strong> The manuscript uses "light-activated" and "light-controlled" interchangeably, but the data show light-triggered isomerisation that shifts an equilibrium, not a switch in the strict sense. The NMR data indicate increased dynamics after illumination and partial suppression on peptide binding, which is an equilibrium shift rather than a discrete two-state toggle.</li>
+<li><strong>Required correction</strong> Define the operational meaning of "switch" used here and state explicitly that the mechanism is an equilibrium shift, with the relevant populations where known.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-m2<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Spectral tuning claim</li>
+<li><strong>Affected element</strong> Wavelength tuning and orthogonality</li>
+<li><strong>Evidence pointer</strong> Fig. 4a, Fig. 4b, Supplementary Figs. 16, 17</li>
+<li><strong>Issue</strong> The red-shift of up to 30 nm is reported, but the authors state that wavelength-shifting mutations are insufficient to achieve orthogonality of activation and that most designs still absorb at shorter wavelengths than rhodopsins. The relationship between the absorbance shift and the activation wavelength used in functional assays is not made explicit.</li>
+<li><strong>Required correction</strong> Report absorbance maxima and the illumination wavelength used for each tuned variant, and state clearly which properties are and are not orthogonal.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-m3<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Sequence space analysis</li>
+<li><strong>Affected element</strong> ESM2 embedding and UMAP claim</li>
+<li><strong>Evidence pointer</strong> Fig. 2c, Methods (embedding analysis)</li>
+<li><strong>Issue</strong> The claim that designed RBPs explore novel sequence space rests on a 2D UMAP projection of mean-pooled ESM2 embeddings. Mean pooling discards positional information, and UMAP distances are not a rigorous measure of sequence novelty. The comparison set is 27 de novo proteins against tens of thousands of natural sequences, which will dominate the projection.</li>
+<li><strong>Required correction</strong> Add a quantitative novelty metric, for example nearest-neighbour sequence identity or structural comparison to known rhodopsins, and acknowledge the limitations of UMAP for this inference.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-m4<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Retinal availability and delivery</li>
+<li><strong>Affected element</strong> Cellular and in vivo relevance</li>
+<li><strong>Evidence pointer</strong> Conclusions, Methods (retinal handling)</li>
+<li><strong>Issue</strong> The authors note uncertainty about retinal availability to the soluble proteome and suggest hydroxy-retinal derivatives as mitigation. Cellular assays use 10 µM exogenous retinal in ethanol. The dependence of the cellular response on exogenous retinal concentration is not shown.</li>
+<li><strong>Required correction</strong> Report a retinal dose-response for at least one cellular assay and discuss the implications for tissue or in vivo use.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-m5<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility and data availability</li>
+<li><strong>Affected element</strong> Deposited structures and models</li>
+<li><strong>Evidence pointer</strong> Data availability, Code availability</li>
+<li><strong>Issue</strong> PDB 34XO, a Zenodo record, and a GitHub repository are cited. The manuscript does not state whether the Zenodo record includes the design models, the raw screening data, or the NMR assignments in a machine-readable form, and the GitHub repository contents are not described.</li>
+<li><strong>Required correction</strong> Specify the contents of each deposit and confirm that design models, screening data, and NMR assignments are included.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-m6<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistics and replication</li>
+<li><strong>Affected element</strong> All quantitative assays</li>
+<li><strong>Evidence pointer</strong> Methods, figure legends (not supplied)</li>
+<li><strong>Issue</strong> The main text and Methods do not consistently report the number of independent replicates, the definition of error bars, or the statistical tests used for the luminescence, calcium imaging, and NMR comparisons.</li>
+<li><strong>Required correction</strong> Add a statistics subsection and per-figure replicate and error definitions.</li>
+</ul>
+</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (absence of a direct binding measurement underpinning the &gt;30-fold claim), R1-M2 (mechanistic NMR claim not verifiable from supplied material), R1-M3 (chromophore not visualised in the only crystal structure), R1-M4 (spectroscopic assignment of isomerisation not uniquely established), R1-M5 (weak and lock-dependent cellular efficacy), R1-M6 (screening and success-rate evidence not verifiable).</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality is high in concept, since de novo soluble retinal-binding switches with a designed conformation-specific interface are not a well-populated design space, and the integration of chromophore binding, isomerisation-coupled motion, and a designed PPI in one scaffold is a meaningful advance over single-property designs. Scientific importance is potentially significant for optogenetics and synthetic biology, but the current evidence supports a proof of concept rather than a demonstrated tool, given the weak cellular responses, the need for a covalent lock, and the absence of a direct binding measurement. Interdisciplinary readership is plausible, spanning protein design, biophysics, spectroscopy, and cell signalling, and the manuscript is written to be accessible to that breadth. Technical soundness is mixed. The design methodology is described in commendable detail and the multi-technique validation strategy is appropriate, but the central quantitative and mechanistic claims are not fully supported by the material provided, and several key results are only in unavailable supplementary figures. Readability for nonspecialists is generally good, with clear motivation and a logical structure, though the abstract and conclusions overstate the maturity of the system relative to the cellular data and the authors' own stated limitations. Overall, the work is closer to a strong specialized-journal contribution than to a broadly decisive advance in its current form.</li>
+<li><strong>Recommendation posture</strong> Supportive in principle, but currently not established from the provided evidence. The central binding and mechanistic claims require direct binding measurements, verifiable NMR and spectroscopic analysis, and clearer reporting of cellular effect sizes before the case for a defined light-controlled conformational switch can be considered made.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of an over 30-fold increase in binding upon illumination is supported only by an indirect split-luciferase readout and is not calibrated to a physical binding quantity. Status: weak.</li>
+<li>The claim that the designs undergo a defined light-activated conformational change with at least four distinct states is not verifiable from the supplied material because the supporting NMR spectra and tables are absent. Status: not assessable.</li>
+<li>The claim that multi-state designs enable retinal isomerisation while single-state designs prevent it rests on qualitative comparison to rhodopsin intermediates without quantum yields or direct isomer quantification. Status: weak.</li>
+<li>The claim that the crystal structure confirms high structural fidelity of the dark state is qualified by the absence of visible retinal density, so the holoprotein dark state is not structurally demonstrated. Status: weak.</li>
+<li>The claim that the system controls cell-surface receptor clustering in a light-dependent manner is supported only with a SpyTag/SpyCatcher covalent lock and a weak calcium response. Status: weak.</li>
+<li>The claim that the designed proteins explore novel sequence space is based on a 2D UMAP of mean-pooled embeddings without a quantitative novelty metric. Status: weak.</li>
+<li>The claim that the platform can meet or exceed natural photoreceptors is a forward-looking assertion not supported by the reported cellular performance. Status: unsupported.</li>
+<li>The claim that the design logic generalises to other stimulus-responsive prosthetic groups is proposed but not tested. Status: unsupported.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

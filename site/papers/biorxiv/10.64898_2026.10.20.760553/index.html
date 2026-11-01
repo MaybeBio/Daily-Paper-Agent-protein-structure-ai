@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Building from the ground up: augmentation strategies to improve protein language model performance on protein sets · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>Building from the ground up: augmentation strategies to improve protein language model performance on protein sets</h1>
+      <div class="meta">Emily Stump; Hayden Dennison; Pietro Strobbia; George Stan; Ruxandra I. Dima</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-25
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.10.20.760553">原文</a>
+      </div>
+      <p class="one-liner">该文研究在有限数据集下通过数据增强策略提升蛋白质语言模型在蛋白质复合物集合上的预测性能，涉及蛋白质结构相关计算但方法创新有限。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">An important underlying requirement for deep learning models is the availability of large datasets, however, in sciences such as chemistry and biology, generating experimental data of sufficient size represents a significant bottleneck. In this work, we probed the extent and nature of limited input data, characterize how several protein language models (pLMs) learned on suboptimal datasets, and investigated augmentation approaches to improve predictive model performance. We found that narrowing the distribution of protein-protein complexes in a limited dataset permits an order-ofmagnitude decrease in training dataset size, if a model is only expected to generalize to in-distribution data. Similar results were found in active learning (AL), where both inand out-of-distribution Matthews Correlation Coefficient (MCC) showed a small but consistent increase upon augmentation of the training set with complexes produced by ESM-3, a generative pLM.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">深度学习模型的一个重要基础要求是具备大规模数据集的可用性，然而，在化学和生物学等科学领域，生成足够规模的实验数据构成了一个显著的瓶颈。在本研究中，我们探讨了有限输入数据的程度和性质，刻画了几种蛋白质语言模型（pLMs）在次优数据集上的学习方式，并研究了增强方法以提升预测模型的性能。我们发现，在有限数据集中缩小蛋白质-蛋白质复合物的分布范围，可以使训练数据集的大小降低一个数量级，前提是模型仅需泛化到分布内数据。在主动学习（active learning, AL）中也观察到了类似结果，其中分布内和分布外的马修斯相关系数（Matthews Correlation Coefficient, MCC）在通过生成式pLM ESM-3产生的复合物增强训练集后，均显示出小幅但一致的提升。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Building from the ground up: augmentation strategies to improve protein language model performance on protein sets</li>
+<li><strong>作者</strong>：Emily Stump; Hayden Dennison; Pietro Strobbia; George Stan; Ruxandra I. Dima（¶ 标注 Stump 与 Dennison 为共同第一作者）</li>
+<li><strong>单位</strong>：未在提供材料中明确列出（仅致谢提及 NSF/NIH 资助与 ACCESS 计算资源分配）</li>
+<li><strong>期刊/预印本平台</strong>：bioRxiv</li>
+<li><strong>年份</strong>：2026-10-25（预印本日期）</li>
+<li><strong>论文类型</strong>：方法学/实证研究（数据集消融 + 主动学习增强实验）</li>
+<li><strong>领域</strong>：蛋白质语言模型（pLM）、蛋白质-蛋白质复合物接触图预测、数据增强、主动学习</li>
+<li><strong>关键词</strong>：未提供（原文无关键词列表）</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.10.20.760553</li>
+<li><strong>代码</strong>：https://github.com/DimaUClab/protein-complex-ml</li>
+<li><strong>数据</strong>：Zenodo 10.5281/zenodo.23453970；预测接触图（&gt;1.5 TB）需向作者索取</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI」中的<strong>数据效率与数据增强</strong>分支——用 pLM（ESM-2、AminoBERT、ProtBERT）做残基-残基接触图预测，研究训练集<strong>规模 vs 分布范围（size vs scope）</strong>的权衡，并用生成式 pLM（ESM-3）做主动学习式数据增强。与结构预测（接触图是结构预测的中间表征）、构象/复合物生成（ESM-3 生成复合物序列）直接相关，但<strong>不涉及 MD/对接/物理模拟</strong>。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>在 DIPS-Plus 蛋白质-蛋白质复合物数据集上，通过按界面面积或接触残基对数做「均匀消融」与「定向（窄分布）消融」并训练三种 BERT 式 pLM 预测接触图，发现缩小数据分布范围可在仅保留 20% 数据时维持甚至提升训练/验证 MCC（但测试 MCC 下降、过拟合），且用 ESM-3 基于模型分歧（CKA）选种生成复合物做增强，仅在初始集规模较大（50%/80%）时带来小幅一致的 MCC 提升，在 20% 极端消融下增强反而有害。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：在生物/化学领域标注数据稀缺的约束下，(1) 训练集<strong>规模</strong>与<strong>分布范围（scope）</strong>如何分别影响 pLM 的学习与泛化？(2) 能否用基于不确定性的主动学习（AL）+ 生成式 pLM（ESM-3）合成数据来补偿被移除的数据？</li>
+<li><strong>为何重要</strong>：化学/生物数据生成成本高（需实验材料与人力），而现代模型参数量达百万至十亿级，数据需求与可获得性之间存在结构性矛盾；理解「小数据下如何构建数据集」对 pLM 落地至关重要。</li>
+<li><strong>现有方法为何不足</strong>：SMOTE/ADASYN 依赖最近邻插值，难以处理<strong>变长样本</strong>（如蛋白质复合物）；AL 在化学 ML 中多用于小分子/寡肽，尚未系统检验 pLM 场景；LLM 合成数据在 NLP 中有效，但蛋白质「语言」由随机进化压力驱动，与人类文本语料不同。</li>
+<li><strong>精确研究问题</strong>：Can uncertainty-based active learning with generative pLMs produce useful synthetic protein complexes that improve contact-map prediction, and how does this depend on the size and scope of the initial training set?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><strong>注：以下脉络为「仅本文框架」梳理，未做外部独立核验。</strong>
+- <strong>阶段 1：数据稀缺与 AL</strong>。AL 是 model-agnostic 方法，假设存在有限标注预算的 oracle，优先标注模型低置信度样本。代表：Smith &amp; Roitberg 用 MLIP 集成分歧选分子训练可迁移势；An et al. 结合遗传算法与 AL 研究生物分子凝聚体。
+- <strong>阶段 2：自适应采样（adaptive sampling）</strong>。MD 采样不足时，先跑随机轨迹，再定位欠采样区域构造新轨迹种子；Li et al. 用 MLIP 集成预测标准差排序构象做量子计算并加入训练集。本文将其类比为 AL 的迭代扩集。
+- <strong>阶段 3：过采样</strong>。SMOTE、ADASYN 通过最近邻插值平衡类别；局限是变长样本不适用、ADASYN 不支持纯类别数据。
+- <strong>阶段 4：生成式模型作为数据增强器</strong>。AlphaFold、ESM-3 在进化记录上训练，可模仿天然蛋白结构/序列分布，甚至充当 oracle；LLM 作为通用数据增强器（Li et al. 发现小原始集 + 合成数据有一致提升，但纯合成不如纯原始）。
+- <strong>本文主张的位置</strong>：把 AL 从「小分子/寡肽」推进到「蛋白质复合物接触图预测」，用 CKA 度量模型分歧选种，用 ESM-3 生成新复合物，并系统扫描数据集 size × scope 的二维条件。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>化学/生物标注数据稀缺</td>
+<td>无法像 NLP 那样利用互联网级语料</td>
+<td>数据生成需实验室材料与熟练人力，成本高</td>
+<td>Introduction 引文 3、4</td>
+</tr>
+<tr>
+<td>大模型在小数据上失效</td>
+<td>ProtBERT（420M）训练 MCC 难超 0.2，而 ESM-2（8M）/AminoBERT（87M）可达 ~0.5</td>
+<td>作者推断 DIPS-Plus 对该规模模型太小</td>
+<td>Results 图 4 及正文</td>
+</tr>
+<tr>
+<td>过采样方法不适用于变长样本</td>
+<td>SMOTE/ADASYN 依赖最近邻插值</td>
+<td>蛋白质复合物样本尺寸可变，插值困难</td>
+<td>Introduction</td>
+</tr>
+<tr>
+<td>合成数据可能偏离目标分布</td>
+<td>ESM-3 生成复合物偏向其自身训练分布中心，而非 DIPS-Plus 或消融后分布</td>
+<td>作者推断 ESM-3 在全部已知结构上训练，DIPS-Plus 是其子集；微调使其把「重建已有蛋白」当作通用标准</td>
+<td>Results 图 9、图 10；引 Hou et al. 39</td>
+</tr>
+<tr>
+<td>增强在极小数据集上有害</td>
+<td>20% 消融增强后 MCC 不升反降（targeted 20% 甚至下降）</td>
+<td>作者推断数据太少时模型对不确定性的估计不可靠，选种误导</td>
+<td>Results 图 11；Conclusions</td>
+</tr>
+<tr>
+<td>定向消融严重过拟合</td>
+<td>训练/验证 MCC 可超全量数据集，但测试 MCC 显著低</td>
+<td>缩小分布方差、提高偏差，模型只学到窄空间</td>
+<td>Results 图 4、图 5</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：用双塔 BERT 编码器 + 逐位置 MLP 预测复合物接触图；对 DIPS-Plus 做两种消融（uniform 保分布 / targeted 窄分布）× 三种保留比例（20/50/80%）；用 AminoBERT 与 ESM-2 的 CKA 分歧挑出「难例」，掩码 ~20% 序列后用 ESM-3（pTM 引导、温度 0.3、每步解掩 3 token）生成新复合物，加入训练集再训练。</li>
+<li><strong>核心洞察</strong>：数据集的<strong>分布范围（scope）</strong>与<strong>规模（size）</strong>是两个可独立调节的轴；当只要求 in-distribution 泛化时，缩小 scope 可换取一个数量级的规模缩减；但一旦要求 out-of-distribution 泛化，窄分布反而有害。增强的有效性存在<strong>下界</strong>：初始集太小则不确定性估计不可靠，合成数据有害。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：在数据稀缺的科学领域，「先建一个窄而密的可信核心集，再向外扩展」可能优于「在全空间均匀稀疏采样」；生成式模型的增强能力受其自身训练分布偏置限制，需刻意设计 prompt 才能越出预训练分布。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：复合物两条链的氨基酸序列（忽略 DIPS-Plus 的残基/原子级特征）。</li>
+<li><strong>输出</strong>：L₁ × L₂ 的残基-残基接触图（Cα-Cα ≤ 6 Å 定义为接触），逐位置二分类概率，阈值 0.5 二值化。</li>
+<li><strong>模块</strong>：① 双塔预训练 BERT 编码器（ESM-2 8M / AminoBERT 87M / ProtBERT 420M）；② 拼接数组 M_ij = concat(emb_i, emb_j)，尺寸 L₁×L₂×2D；③ 逐位置 MLP（单 sigmoid 输出）。</li>
+<li><strong>训练</strong>：BCE 损失 + position weight（应对接触图稀疏）；MCC 评估；Optuna 做 HPO（架构超参仅作用于 MLP），HPO 在全量训练集上做一次，最优参数复用于所有消融试验。</li>
+<li><strong>工具</strong>：Python（Pandas/NumPy/SciPy/scikit-learn）、PyTorch、Optuna、Hugging Face（ESM-2/ProtBERT 权重）、AminoBERT GitHub、ESM-3（生成）、ESM-C 6B（隐空间嵌入）。</li>
+<li><strong>反馈回路</strong>：训练 → 计算验证集 CKA 分歧 → 取最低 20 百分位复合物 → 掩码 → ESM-3 生成 → 加入训练集 → 重训。</li>
+<li><strong>假设</strong>：界面面积（或接触残基对数）可作为界面复杂度的代理；CKA 分歧可标识「数据缺失区域」；ESM-3 生成物质量足够（pTM &gt; 0.2）可作训练数据。</li>
+<li><strong>文字流程</strong>：DIPS-Plus → 去重 → 消融（uniform/targeted × 20/50/80%）→ 训练 pLM 接触图预测器 → 验证集 CKA 分歧排序 → 取 bottom 20% 作种子 → 掩码 ~20% → ESM-3 引导生成 → 5 候选/种子选 1 → 加入训练集 → 重训并比较 MCC。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>双塔 BERT 编码器</td>
+<td>提取两条链的残基级上下文嵌入</td>
+<td>利用预训练 pLM 的进化知识</td>
+<td>序列 → L_k × D 嵌入</td>
+<td>Methods「Models」节</td>
+<td>无预训练则退化为从头训练，预期性能大幅下降（未实测）</td>
+</tr>
+<tr>
+<td>逐位置 MLP</td>
+<td>将残基对嵌入映射为接触概率</td>
+<td>建模跨链残基对交互</td>
+<td>2D 向量 → 标量概率</td>
+<td>Methods「Models」节</td>
+<td>未做消融（预期无法输出接触图）</td>
+</tr>
+<tr>
+<td>Position weight BCE</td>
+<td>缓解接触图类别不平衡</td>
+<td>接触图稀疏</td>
+<td>损失加权</td>
+<td>Methods「Models」节</td>
+<td>未做消融（预期少数类被忽略）</td>
+</tr>
+<tr>
+<td>消融方案（uniform/targeted）</td>
+<td>控制数据集 size 与 scope</td>
+<td>分离两个变量</td>
+<td>全量集 → 子集</td>
+<td>Results 图 4、图 5</td>
+<td>实测：targeted 提升 train/val MCC 但降 test MCC</td>
+</tr>
+<tr>
+<td>CKA 分歧度量</td>
+<td>量化两模型预测一致性</td>
+<td>作为不确定性/难例代理</td>
+<td>两张接触图 → [0,1] 分数</td>
+<td>Methods「Measuring the similarity of contact maps」；图 S1 对比四种度量</td>
+<td>若换用其他度量，作者称 CKA 在 train/val/test 分布重叠最小（图 S1）</td>
+</tr>
+<tr>
+<td>ESM-3 生成</td>
+<td>合成新复合物</td>
+<td>无需实验即可扩集</td>
+<td>掩码序列 + SASA/二级结构 track → 新序列/结构</td>
+<td>Methods「Generating novel protein complexes by unmasking」；图 1、图 3</td>
+<td>实测：增强效果依赖初始集规模（图 11）</td>
+</tr>
+<tr>
+<td>ESM-C 6B 嵌入</td>
+<td>隐空间距离分析</td>
+<td>检验生成物是否靠近被移除样本</td>
+<td>复合物 → 嵌入向量</td>
+<td>Methods「Measuring distances...」；图 8、图 9</td>
+<td>未做消融</td>
+</tr>
+</tbody>
+</table>
+<p><strong>实测消融效应 vs 预期效应</strong>：消融方案与增强的效应为<strong>实测</strong>（图 4、5、11）；编码器/MLP/position weight 的移除影响为<strong>预期</strong>（文中未做对应消融）。</p>
+<h2>09 关键公式符号</h2>
+<ol>
+<li><strong>CKA 分数（Eq. 1）</strong>：CKA(A_i, E_i) = ⟨K_A, K_E⟩_F / (‖K_A‖_F ‖K_E‖_F)，其中 K 为线性核 K = CΩ_iΩ_iᵀC，C 为按列均值中心化矩阵，Ω_i = {A_i, E_i}，1 为全 1 矩阵。<strong>用途</strong>：度量 AminoBERT 与 ESM-2 对同一复合物预测的一致性；<strong>直觉</strong>：0 = 无对齐，1 = 完全相同；<strong>来源</strong>：Methods「Measuring the similarity of contact maps」。</li>
+<li><strong>pTM 分数（Eq. 2）</strong>：pTM = (1/L_N) Σ_i 1/(1 + (d_i/d_0)²)，其中 L_N 为生成/天然结构残基数，L_T 为与模板对齐的残基数，d_i 为对齐残基间距离（Å），d_0 为归一化常数（Å）。<strong>用途</strong>：引导 ESM-3 生成高质量结构；<strong>直觉</strong>：&lt;0.2 表示与任何模板匹配差（随机两结构平均 0.17）；<strong>来源</strong>：Methods「Generating novel protein complexes by unmasking」。</li>
+<li><strong>余弦距离</strong>：distance(v₁, v₂) = 1 − cos(v₁, v₂)。<strong>用途</strong>：在 ESM-C 隐空间度量复合物间距离；<strong>来源</strong>：Methods「Measuring distances between protein complexes in latent space」。</li>
+</ol>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：DIPS-Plus（&gt;40,000 复合物），目标为 Cα-Cα ≤ 6 Å 的残基接触图；使用作者提供的 train/val 划分，额外去除跨 split 重复（序列与接触图均重复才算重复），从训练集删除。</li>
+<li><strong>消融规模</strong>：20%/50%/80%（extensive/moderate/limited）；每种规模 × 两种风格（uniform/targeted）× 5 次独立消融 = 30 个子集（界面面积），另 30 个（接触残基对数）。</li>
+<li><strong>测试集</strong>：从验证集随机留出一小部分作为固定 unseen test set，不做任何消融。</li>
+<li><strong>指标</strong>：MCC（逐位置二分类后全图平均）；CKA；余弦距离；JS 散度。</li>
+<li><strong>基线</strong>：全量 DIPS-Plus 训练；未增强的消融集。</li>
+<li><strong>预算/骨干</strong>：ESM-2 8M、AminoBERT 87M、ProtBERT 420M；ESM-3 生成；ESM-C 6B 嵌入；ACCESS 计算资源（BIO210094、MCB170020）。</li>
+<li><strong>oracle 输入</strong>：AL 中 ESM-3 充当生成式 oracle；实验中已知全量 DIPS-Plus 与被移除样本（真实场景不可得）。</li>
+<li><strong>评测协议</strong>：HPO 在全量训练集上做一次，最优超参复用于所有消融试验。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全量 vs 消融训练</td>
+<td>数据 size/scope 如何影响 MCC</td>
+<td>ESM-2/AminoBERT/ProtBERT × uniform/targeted × 20/50/80%</td>
+<td>ProtBERT 训练 MCC &lt;0.2；ESM-2/AminoBERT 全量 val/test ~0.5；targeted train/val 更高但 test 更低</td>
+<td>分布比规模更重要；大模型在小数据上失效</td>
+<td>不能推广到其他数据集/模型族</td>
+<td>图 4、图 S3</td>
+</tr>
+<tr>
+<td>CKA 分布分析</td>
+<td>分歧是否反映数据缺失</td>
+<td>train/val/test 的 CKA 分布</td>
+<td>targeted 下 train/val CKA 更接近 1，test 相反；消融越轻分布越趋同</td>
+<td>分歧与分布覆盖相关</td>
+<td>不能证明 CKA 是唯一/最优不确定性度量</td>
+<td>图 5、S4–S6</td>
+</tr>
+<tr>
+<td>相似/相异复合物表征</td>
+<td>分歧复合物的界面面积特征</td>
+<td>高/低 CKA 复合物的界面面积密度</td>
+<td>全范围消融中相异复合物落在 DIPS-Plus 众数之间/长尾；窄范围消融中落在采样区间两端</td>
+<td>分歧由底层分布驱动</td>
+<td>不能排除其他界面特征的作用</td>
+<td>图 6、图 7、S7、S8</td>
+</tr>
+<tr>
+<td>隐空间距离</td>
+<td>相异复合物是否更靠近被移除样本</td>
+<td>相异 vs 相似复合物到被移除复合物的余弦距离</td>
+<td>相异分布中位数 0.195 &lt; 相似 0.320 &lt; 全量 0.212</td>
+<td>低 CKA 可定位数据缺失区域</td>
+<td>不能证明生成物也落在该区域</td>
+<td>图 8、S10</td>
+</tr>
+<tr>
+<td>生成物分布</td>
+<td>生成物是否匹配目标分布</td>
+<td>生成 vs 原始界面面积分布、JS 散度</td>
+<td>生成物偏向 ESM-3 训练分布中心；extensive 消融下 JS 大，moderate/limited 下显著缩小；生成物不占据被移除样本的隐空间区域</td>
+<td>生成模型有自身分布偏置</td>
+<td>不能说明偏置不可通过 prompt 缓解</td>
+<td>图 9、图 10、S9</td>
+</tr>
+<tr>
+<td>增强后重训（10% 子采样）</td>
+<td>合成数据能否提升 MCC</td>
+<td>800 元素 ± 166 生成物</td>
+<td>targeted 50%/80% 提升；uniform 仅 80% 提升；20% 不提升甚至下降</td>
+<td>增强存在最小数据量下界</td>
+<td>不能推广到其他 AL 协议</td>
+<td>图 11、S11</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅接触图预测（非全结构预测、非对接、非 MD）；仅 DIPS-Plus 一个数据集；仅三种 pLM，其中仅两种进入 AL 流程。</li>
+<li><strong>oracle/真值输入</strong>：实验中已知全量 DIPS-Plus 及被移除样本，真实场景不可得；ESM-3 作为生成 oracle 有其自身偏置。</li>
+<li><strong>端到端状态</strong>：增强实验在 10% 子采样（800 元素）上进行，MCC 尺度显著低于真实 20/50/80% 消融，属小规模验证而非端到端生产流程。</li>
+<li><strong>算力成本</strong>：未量化报告；依赖 ACCESS 分配。</li>
+<li><strong>历史数据依赖</strong>：DIPS-Plus 偏向结构解析良好的稳定复合物，不覆盖全部复合物多样性。</li>
+<li><strong>模型依赖</strong>：结论依赖 ESM-2/AminoBERT/ESM-3/ESM-C 的具体版本与训练数据。</li>
+<li><strong>最难情形</strong>：extensive（20%）消融下增强有害；targeted 消融严重过拟合，test MCC 低。</li>
+<li><strong>群体/领域边界</strong>：作者称结论「likely applicable beyond protein sets to wide varieties of LLMs and datasets」，但这是<strong>推测</strong>，未在本文验证。</li>
+<li><strong>不确定性</strong>：AminoBERT 在 uniform 消融上偶发训练失败（换初始化后成功）；生成过程随机（5 候选选 1）。</li>
+<li><strong>有边界的复述</strong>：在 DIPS-Plus 接触图预测任务上，缩小训练分布范围可在 in-distribution 场景下以 20% 数据达到甚至超过全量训练/验证 MCC，但损害 out-of-distribution 泛化；ESM-3 增强在初始集 ≥50% 时带来小幅一致提升，在 20% 时无效或有害。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅一个数据集、三种 pLM</td>
+<td>仅两种能 finetune 到可用于 AL</td>
+<td>在其他数据集、问题类型、AL 协议上做更多研究</td>
+<td>Limitations and Future Directions</td>
+</tr>
+<tr>
+<td>DIPS-Plus 覆盖不全</td>
+<td>主要含结构解析良好的稳定复合物</td>
+<td>同上</td>
+<td>Limitations and Future Directions</td>
+</tr>
+<tr>
+<td>AL 协议较简单</td>
+<td>存在更复杂的 AL 协议，本文无法对其低数据表现下结论</td>
+<td>同上</td>
+<td>Limitations and Future Directions</td>
+</tr>
+<tr>
+<td>生成模型有内置偏置</td>
+<td>需额外小心才能成功使用</td>
+<td>同上</td>
+<td>Limitations and Future Directions</td>
+</tr>
+</tbody>
+</table>
+<p><strong>作者提及的相关约束（非正式局限）</strong>：预测接触图总量 &gt;1.5 TB，需向作者索取；增强实验因规模问题改用 10% 子采样。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>增强实验在 10% 子采样（800 元素）上做，MCC 尺度远低于主实验</td>
+<td>增强结论可能只在极小数据 regime 成立，与主实验的 20/50/80% 不可直接比较</td>
+<td>影响「增强何时有效」结论的可迁移性</td>
+<td>在真实 20/50/80% 消融集上做增强（需更大生成量）</td>
+<td>图 11 与图 4 对比</td>
+</tr>
+<tr>
+<td>生成物不落在被移除样本的隐空间区域</td>
+<td>增强提升可能来自正则化/多样性而非「补回缺失数据」</td>
+<td>若如此，AL 选种机制的必要性被削弱</td>
+<td>用随机种子生成等量复合物做对照增强</td>
+<td>图 9</td>
+</tr>
+<tr>
+<td>界面面积与接触残基对数两种消融变量结论不一致</td>
+<td>作者归因于 SASA track 偏置，但未做无 SASA track 的对照</td>
+<td>决定增强协议是否依赖特定输入 track</td>
+<td>关闭 SASA track 重跑 residue-count 消融增强</td>
+<td>图 S11 与图 11</td>
+</tr>
+<tr>
+<td>CKA 被选为分歧度量，但仅与三种替代度量比较（图 S1）</td>
+<td>其他不确定性度量（如 ensemble 方差、MC dropout）可能更优</td>
+<td>影响 AL 选种质量</td>
+<td>用多种不确定性度量并行做 AL 对比</td>
+<td>Methods；图 S1</td>
+</tr>
+<tr>
+<td>targeted 消融 train/val MCC 超全量但 test 低</td>
+<td>可能是 HPO 在全量集上做、超参不匹配窄分布所致</td>
+<td>影响「窄分布更优」的因果解释</td>
+<td>对每个消融集单独做 HPO</td>
+<td>Methods「Models」节</td>
+</tr>
+<tr>
+<td>5 候选/种子选 1 的筛选标准未明确说明</td>
+<td>选择可能引入乐观偏置</td>
+<td>影响增强效果的可靠性</td>
+<td>报告筛选标准并做随机选择对照</td>
+<td>Methods「Changes in Model Performance...」</td>
+</tr>
+<tr>
+<td>作者称结论可推广到「wide varieties of LLMs and datasets」</td>
+<td>仅在蛋白质接触图任务验证</td>
+<td>过度推广风险</td>
+<td>在 NLP/小分子任务上复现</td>
+<td>Conclusions</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>
+- <strong>可迁移概念：size vs scope 二维数据设计</strong>。在蛋白质结构计算中（如构象采样训练集、对接打分训练集），可显式区分「数据量」与「分布范围」，先建窄而密的核心集再扩展，而非在全构象空间均匀稀疏采样。
+- <strong>可迁移方法：CKA 作为模型分歧/不确定性代理</strong>。可用于 MD 自适应采样中「哪些构象区域采样不足」的判定，替代或补充 ensemble 标准差。
+- <strong>可迁移方法：生成式 pLM 作为 oracle 的 AL 回路</strong>。ESM-3 掩码-解掩码 + pTM 引导生成，可迁移到「生成新构象/新复合物加入训练集」的主动学习流程；注意需 ≥50% 初始数据量。
+- <strong>可迁移实验设计：消融 × 分布 × 多模型 × 多随机种子</strong>。30 个子集 × 5 次独立消融的设计，可作为结构计算中数据效率研究的模板。
+- <strong>可迁移警示：生成模型的分布偏置</strong>。ESM-3 生成物偏向其预训练分布中心，提示在构象生成/结构设计中，生成样本可能无法覆盖目标分布尾部，需刻意设计 prompt 或引导。
+- <strong>可迁移公式</strong>：CKA（Eq. 1）与 pTM（Eq. 2）可直接用于结构计算中的相似性度量与生成质量筛选。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似</strong>：Smith &amp; Roitberg 的 MLIP 集成分歧选样（AL + 势函数）；Li et al. 的 MLIP 集成标准差排序构象做量子计算（自适应采样 + ML）；An et al. 的遗传算法 + AL 研究生物分子凝聚体。</li>
+<li><strong>组合</strong>：AL + 生成式 pLM（ESM-3）的组合，将「不确定性选种」与「生成式扩集」串联，类似 LLM 作为通用数据增强器的思路。</li>
+<li><strong>冲突</strong>：Li et al. 发现纯原始数据优于原始+合成混合，但小原始集 + 合成有一致提升——本文在蛋白质复合物上复现了「小集增强有效」的边界条件（≥50%）。</li>
+<li><strong>可迁移领域</strong>：MD 自适应采样、分子对接训练集构建、构象生成模型的数据效率评估、结构/序列设计中的生成模型偏置研究。</li>
+<li><strong>候选方向（未核验）</strong>：将 CKA 分歧用于 MD 轨迹的构象选择；用 ESM-3 生成复合物做对接训练集增强。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong></p>
+<ol>
+<li>
+<p><strong>名称</strong>：CKA-guided adaptive sampling for MD conformational ensembles
+   - <strong>来源局限</strong>：本文 CKA 仅用于接触图预测的 AL 选种，未用于 MD 构象采样。
+   - <strong>核心假设</strong>：两个独立训练的 pLM/MLIP 对同一构象的 CKA 分歧可标识 MD 采样不足的区域。
+   - <strong>相对本文增量</strong>：把 CKA 从「复合物选种」迁移到「构象选种」，与自适应采样结合。
+   - <strong>初步方法</strong>：训练两个 MLIP 集成，对 MD 轨迹构象计算 CKA，取低 CKA 构象做量子/高精度计算并加入训练集。
+   - <strong>验证方式</strong>：对比随机采样与 CKA 选样的自由能面收敛速度。
+   - <strong>失败模式</strong>：CKA 在构象空间区分度不足；MLIP 分歧与真实采样不足不相关。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：Debiasing generative pLM augmentation via distribution-aware prompting
+   - <strong>来源局限</strong>：作者发现 ESM-3 生成物偏向其预训练分布中心，且需刻意 prompt 才能越出。
+   - <strong>核心假设</strong>：在生成时显式加入目标分布（如界面面积分位数）作为引导 track，可减小生成物与目标分布的 JS 散度。
+   - <strong>相对本文增量</strong>：本文仅用 SASA/二级结构 track，未做分布引导。
+   - <strong>初步方法</strong>：以界面面积分位数为条件，用 classifier guidance 或 rejection sampling 筛选生成物。
+   - <strong>验证方式</strong>：测量生成物与目标分布的 JS 散度及增强后 test MCC。
+   - <strong>失败模式</strong>：引导过强导致生成物质量下降（pTM &lt; 0.2）。
+   - <strong>创新状态</strong>：partially checked（作者已指出偏置存在）</p>
+</li>
+<li>
+<p><strong>名称</strong>：Minimum-data threshold for generative augmentation across structural tasks
+   - <strong>来源局限</strong>：本文发现 20% 消融下增强有害，但仅在一个数据集/任务上。
+   - <strong>核心假设</strong>：存在与任务复杂度、模型规模相关的增强最小数据量阈值，可用「模型在初始集上的 MCC」预测。
+   - <strong>相对本文增量</strong>：把「下界」从定性观察变为可预测的定量关系。
+   - <strong>初步方法</strong>：在多个结构任务（接触图、二级结构、对接打分）上扫描初始集规模，拟合阈值与初始 MCC 的关系。
+   - <strong>验证方式</strong>：留出任务验证预测的阈值。
+   - <strong>失败模式</strong>：阈值高度任务依赖，无法统一。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：Ensemble-variance vs CKA as AL acquisition functions for protein complexes
+   - <strong>来源局限</strong>：本文仅用 CKA，未与其他不确定性度量系统对比。
+   - <strong>核心假设</strong>：在 pLM 场景下，CKA 与 ensemble 方差选种效果不同，且最优度量依赖消融风格。
+   - <strong>相对本文增量</strong>：直接对比 acquisition function。
+   - <strong>初步方法</strong>：同一 AL 回路下分别用 CKA、ensemble 方差、MC dropout 选种，比较增强后 MCC。
+   - <strong>验证方式</strong>：多随机种子统计检验。
+   - <strong>失败模式</strong>：差异不显著，度量选择无关紧要。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, methods, results, conclusions, availability statements) as provided</li>
+<li><strong>Assessment boundary</strong> Scientific claims, methodological soundness, evidence quality, and presentation as inferable from the supplied text. Figures and tables are referenced but not directly inspected.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors investigate how protein language models (pLMs) perform on limited protein-protein complex datasets, and whether targeted (distribution-narrowing) ablation and active learning (AL) with generative model (ESM-3) augmentation can improve predictive performance on residue-residue contact map prediction.</li>
+<li><strong>Visible evidence base</strong> Text descriptions of results, figure and table references, methodological descriptions. No actual figures, tables, or numerical data were provided for direct inspection.</li>
+<li><strong>Missing materials affecting confidence</strong> All figures (Figures 1–11, S1–S11), tables (Tables 1–3), hyperparameter details, and quantitative results. Statistical significance testing, error bars, and exact numerical values are not directly verifiable.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript addresses a timely and practically important question: how to train protein language models when data are scarce. The framing around dataset distribution versus dataset size is conceptually useful, and the use of generative models for augmentation is a relevant direction. However, the evidence as presented is largely qualitative, with key quantitative results and visualizations not directly available for inspection. Several claims about model performance, augmentation benefits, and distributional effects rest on descriptions that are difficult to fully evaluate without the underlying data. The manuscript would benefit from clearer reporting of effect sizes, variability, and statistical comparisons.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers working on protein language models, protein-protein interaction prediction, and machine learning in structural biology. The findings on data augmentation strategies and the interaction between dataset size and distribution are relevant to practitioners developing predictive models for proteins, particularly in low-data regimes. The work may also interest those studying the behavior of generative models in scientific data augmentation.</li>
+<li><strong>Major strengths</strong> The question is well-motivated and practically relevant. The experimental design includes multiple pLM sizes, two ablation strategies (uniform vs targeted), and a clear AL pipeline. The use of ESM-3 as a generative augmenter is a current and interesting approach. The authors also acknowledge limitations and discuss potential biases in generative models.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence quality</li>
+<li><strong>Claim pointer</strong> The claim that targeted ablation permits an order-of-magnitude decrease in training dataset size while maintaining in-distribution generalization performance.</li>
+<li><strong>Evidence pointer</strong> Figure 4, Figure S3, Results section "Effects of Dataset Ablation on Model Performance"</li>
+<li><strong>Concern</strong> The central quantitative claim of an order-of-magnitude reduction in dataset size is presented without direct numerical evidence in the text. The described MCC values are qualitative ("struggle to surpass 0.2", "as high as 0.5"), and the comparison between targeted and uniform ablation at matched dataset sizes is not quantified. The claim that targeted ablation to 20% yields train/validation MCCs exceeding those on the full dataset is striking but not supported by visible data.</li>
+<li><strong>Why it matters</strong> This is the primary finding of the paper. Without clear quantitative evidence, including effect sizes and variability across the five trials, the claim cannot be assessed for robustness or practical significance.</li>
+<li><strong>Resolution test</strong> Provide the actual MCC values (mean and standard error) for all models, ablation types, and dataset sizes, with a direct comparison between targeted and uniform ablation at matched sizes. Include statistical tests or confidence intervals to support the order-of-magnitude claim.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence quality</li>
+<li><strong>Claim pointer</strong> The claim that AL augmentation with ESM-3-generated complexes produces a "small but consistent increase" in both in- and out-of-distribution MCC.</li>
+<li><strong>Evidence pointer</strong> Figure 11, Figure S11, Results section "Changes in Model Performance When Ablated Sets are Augmented With Generated Samples"</li>
+<li><strong>Concern</strong> The reported improvements are described as "small but consistent," but no numerical values, error bars, or statistical tests are provided in the text. The claim of consistency across trials is not verifiable. Additionally, the observation that 20% ablations fail to improve or even decrease in performance upon augmentation is presented without quantitative detail.</li>
+<li><strong>Why it matters</strong> The effectiveness of the proposed AL pipeline is a key contribution. Without quantitative evidence, the practical value of the augmentation strategy cannot be determined.</li>
+<li><strong>Resolution test</strong> Report exact MCC values before and after augmentation for each ablation condition, with measures of variability. Include statistical comparisons (e.g., paired tests across trials) to substantiate the "consistent increase" claim.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Methodological clarity</li>
+<li><strong>Claim pointer</strong> The claim that CKA scores are a suitable measure of model disagreement for selecting uncertain complexes.</li>
+<li><strong>Evidence pointer</strong> Methods section "Measuring the similarity of contact maps", Figure S1</li>
+<li><strong>Concern</strong> The choice of CKA over other similarity measures is justified only by a reference to Figure S1, which is not available for inspection. The text states that CKA exhibited "the least overlap between the train, validation, and test sets," but the basis for selecting this criterion is not explained. It is unclear why minimal overlap between sets is the desired property for a similarity measure in this context.</li>
+<li><strong>Why it matters</strong> The AL pipeline depends critically on the reliability of the uncertainty measure. If the choice of CKA is not well justified, the validity of the entire augmentation approach is in question.</li>
+<li><strong>Resolution test</strong> Provide the comparison of similarity measures (Figure S1) and explain the rationale for selecting CKA. Clarify why minimal overlap between train/validation/test distributions is the appropriate criterion.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Generalizability</li>
+<li><strong>Claim pointer</strong> The claim that findings are "likely applicable beyond the realm of protein sets to wide varieties of LLMs and datasets."</li>
+<li><strong>Evidence pointer</strong> Conclusions section</li>
+<li><strong>Concern</strong> This generalization is asserted without supporting evidence or a clear argument for why the results should transfer to other domains. The study uses a single dataset (DIPS-Plus), a specific task (contact map prediction), and a limited set of pLMs. The conditions under which the findings might generalize are not discussed.</li>
+<li><strong>Why it matters</strong> Overclaiming generalizability can mislead readers. The scope of the conclusions should match the evidence.</li>
+<li><strong>Resolution test</strong> Either temper the claim to reflect the specific conditions studied, or provide a reasoned argument for generalizability based on the mechanisms observed.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Methods, "Selecting disagreed-upon protein complexes"</li>
+<li><strong>Evidence pointer</strong> Table 2</li>
+<li><strong>Issue</strong> The text states that complexes are selected from the 20th percentile of CKA scores, but the number of complexes selected is only shown in Table 2, which is not available. The relationship between the percentile threshold and the number of selected complexes is unclear.</li>
+<li><strong>Required correction</strong> State the number of selected complexes for each ablation condition in the text, or explain how the percentile threshold translates to a fixed count.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Methods, "Generating novel protein complexes by unmasking"</li>
+<li><strong>Evidence pointer</strong> Methods section</li>
+<li><strong>Issue</strong> The generation parameters (temperature 0.3, 3 tokens per step) are stated, but the rationale for these choices is not given. The number of generation steps and the total compute required are not specified.</li>
+<li><strong>Required correction</strong> Provide a brief justification for the chosen generation parameters and state the total number of generation steps or compute budget.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Presentation</li>
+<li><strong>Affected element</strong> Results, "Effects of Dataset Ablation on Model Performance"</li>
+<li><strong>Evidence pointer</strong> Figure 4</li>
+<li><strong>Issue</strong> The text describes MCC differences between models and ablation types but does not report the actual values. The reader cannot assess the magnitude of the effects described.</li>
+<li><strong>Required correction</strong> Include key numerical values in the text or refer to a table with the full results.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Affected element</strong> Results, "Changes in Model Performance When Ablated Sets are Augmented With Generated Samples"</li>
+<li><strong>Evidence pointer</strong> Figure 11</li>
+<li><strong>Issue</strong> The claim of "consistent increase" is not supported by statistical analysis. It is unclear whether the five trials are independent and whether the observed increases are significant.</li>
+<li><strong>Required correction</strong> Report the variability across trials and perform a statistical test (e.g., paired t-test or Wilcoxon signed-rank test) to support the claim.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Methods, "Measuring distances between protein complexes in latent space"</li>
+<li><strong>Evidence pointer</strong> Methods section</li>
+<li><strong>Issue</strong> The choice of the ESM model with 6 billion parameters for embedding is not justified. It is unclear why this specific model was chosen over other available embedding models.</li>
+<li><strong>Required correction</strong> Briefly explain the choice of embedding model and whether the results are sensitive to this choice.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The primary quantitative claims (order-of-magnitude dataset reduction, consistent augmentation benefit) are not supported by directly visible numerical evidence. The manuscript relies heavily on figures and tables that were not provided for review. Statistical significance and variability are not reported. The choice of CKA as the uncertainty measure requires clearer justification.</li>
+<li><strong>Assessment against Nature-style criteria</strong><br />
+<em>Originality</em>: The combination of dataset distribution control with generative augmentation for pLMs is a reasonable and somewhat novel angle, though the individual components (AL, data augmentation, pLMs) are established. The originality is moderate.<br />
+<em>Scientific importance</em>: The question of data efficiency in protein machine learning is important, and the findings could be useful for practitioners. However, the importance is somewhat limited by the narrow scope (one dataset, one task).<br />
+<em>Interdisciplinary readership</em>: The work sits at the intersection of machine learning, structural biology, and chemistry. The framing is accessible, but the results are likely to appeal mainly to a specialized audience.<br />
+<em>Technical soundness</em>: The experimental design is reasonable, but the lack of visible quantitative results and statistical analysis prevents a full assessment. The CKA choice needs stronger justification.<br />
+<em>Readability for nonspecialists</em>: The manuscript is generally well-written and the concepts are explained clearly. The abstract is accessible. However, some methodological details (e.g., CKA, pTM) may be challenging for readers outside the field.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The topic is relevant and the approach is sensible, but the evidence as presented is insufficient to fully establish the main claims. The authors should provide the underlying quantitative data, statistical analyses, and clearer justifications for methodological choices.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of an order-of-magnitude reduction in dataset size with maintained performance is not supported by visible numerical evidence.</li>
+<li>The claim of a "small but consistent increase" in MCC upon augmentation is not supported by visible numerical evidence or statistical analysis.</li>
+<li>The claim that findings generalize beyond protein sets to "wide varieties of LLMs and datasets" is unsupported.</li>
+<li>The statement that CKA is the best measure of model disagreement is not fully justified without the comparison in Figure S1.</li>
+<li>The claim that ESM-3-generated proteins are biased toward the center of ESM-3's training distribution is plausible but not directly demonstrated with quantitative comparisons.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

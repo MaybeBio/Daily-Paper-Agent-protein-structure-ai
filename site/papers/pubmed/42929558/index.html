@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GroScore: Automated Scoring of Protein-Protein Interactions Using Bidirectional Steered Molecular Dynamics. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>GroScore: Automated Scoring of Protein-Protein Interactions Using Bidirectional Steered Molecular Dynamics.</h1>
+      <div class="meta">Perthold, Jan Walther; Petrov, Drazen; Oostenbrink, Chris</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of chemical information and modeling</span>
+        · 2026-10-26
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42929558/">原文</a>
+      </div>
+      <p class="one-liner">该文开发了基于双向拉伸分子动力学模拟的蛋白质-蛋白质相互作用自动打分工具GroScore，直接针对蛋白结构计算中的相互作用评分问题，方法上采用物理模拟并验证了与实验亲和力的相关性，对蛋白结构计算课题有直接贡献。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">GroScore is an open-source Python toolkit that automates the scoring of protein-protein structures using bidirectional steered molecular dynamics (SMD) simulations with explicit solvent. Building on a previously published unidirectional pulling approach, the current version introduces bidirectional pulling (unbinding and rebinding), interface cutout for reduced computational cost, support for three force fields (AMBER19SB, CHARMM36m, GROMOS 54A8), and automated handling of small molecules and noncanonical amino acids (using OpenFF), structural ions, and crystal waters. GroScore integrates with GROMACS and SLURM for high-performance computing and is validated on protein-protein affinity benchmarks, showing significant correlation between computed scores and experimental binding affinities across all tested force fields. The software is freely available at https://github.com/jwperthold/GroScore under the MIT License.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">GroScore是一个开源Python工具包，利用显式溶剂的双向转向分子动力学（SMD）模拟自动评分蛋白质-蛋白质结构。基于先前发表的单向拉动方法，当前版本引入了双向拉动（解绑和再绑定）、界面切割以降低计算成本、支持三种力场（AMBER19SB、CHARMM36m、GROMOS 54A8），以及自动处理小分子和非规范氨基酸（使用OpenFF）、结构离子和晶体水。GroScore与GROMACS和SLURM集成用于高性能计算，并在蛋白质-蛋白质亲和力基准上得到验证，显示在所有测试力场下计算得分与实验结合亲和力之间存在显著相关性。该软件在MIT许可证下免费提供，网址为https://github.com/jwperthold/GroScore。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li>标题：GroScore: Automated Scoring of Protein-Protein Interactions Using Bidirectional Steered Molecular Dynamics</li>
+<li>作者与单位：Perthold, Jan Walther; Petrov, Drazen; Oostenbrink, Chris（单位未在提供材料中列出）</li>
+<li>期刊/预印本平台：Journal of Chemical Information and Modeling</li>
+<li>年份：2026-10-26（按提供日期）</li>
+<li>论文类型：方法/软件工具论文（open-source toolkit + benchmark validation）</li>
+<li>领域：计算生物物理 / 分子模拟 / 蛋白质–蛋白质相互作用打分</li>
+<li>关键词：protein–protein interactions; steered molecular dynamics; bidirectional pulling; Crooks Gaussian Intersection; interface cutout; force fields; molecular glues; PROTACs（部分为 [Analysis] 归纳）</li>
+<li>DOI/arXiv 号：10.1021/acs.jcim.6c01771</li>
+<li>代码：https://github.com/jwperthold/GroScore （MIT License）</li>
+<li>数据：HADDOCK protein–protein affinity benchmark（46 complexes）；PPB-Affinity aggregate（2529 complexes）；CAPRI Score_set；19 ternary complexes（14 MGs + 5 PROTACs）</li>
+<li>阅读日期：未提供</li>
+<li>在「蛋白质结构相关计算研究 × AI 方法/物理模拟」方向中的位置：属于物理模拟一侧的 post hoc 打分/重排序方法，定位为 AI co-folding/docking 生成候选结构后的物理复核环节（hybrid workflow 中的 physics-based re-evaluation）。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>针对 AI co-folding/docking 生成的蛋白复合物候选结构难以可靠打分的问题，GroScore 用双向（unbinding + rebinding）steered MD 在显式溶剂中计算 work 分布，并通过简单平均或 Crooks Gaussian Intersection 估计结合分数，在 HADDOCK benchmark 上得到 Pearson r = 0.51–0.66，在更大更异质的 PPB-Affinity 上仅得到弱相关（r ≈ 0.16–0.40），作者明确将其定位为 scoring scheme 而非严格结合自由能方法。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li>具体问题：如何对蛋白–蛋白复合物结构（实验或计算预测）进行自动化、可迁移、基于物理的打分，以区分近天然 pose 与非天然 pose，并量化结合强度。</li>
+<li>为什么重要：AI co-folding（AlphaFold-Multimer、AlphaFold 3、RoseTTAFold all-atom、Boltz 等）可快速生成大量候选复合物，但其内部置信度指标（ipTM、pDockQ）存在假阳性、抗体–抗原/瞬态界面可靠性下降、数据泄漏导致相关性虚高等问题；采样不再是瓶颈后，可靠打分成为持续开放问题（CAPRI scoring、CASP15-CAPRI joint assessment）。</li>
+<li>现有方法为何不足：AI/ML 打分快但继承训练集偏倚、泛化差；经验/统计势参数化于窄 benchmark、对输入 pose 几何敏感；端点自由能方法（MM/PBSA）只采样输入附近窄构象区并依赖连续溶剂近似；显式溶剂 MD 原则上可迁移但计算昂贵、需大量手工设置。</li>
+<li>精确研究问题（[Analysis] 归纳）：Can bidirectional steered MD with interface cutout produce protein–protein scores that correlate with experimental binding affinities across diverse system classes at tractable computational cost?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p>（该脉络主要依据本文 Introduction 叙述；标注为「仅本文框架」，未做外部核验）
+- 阶段 1：AI co-folding 革命——AlphaFold-Multimer、AlphaFold 3、RoseTTAFold all-atom、Boltz 等从序列直接生成复合物模型，并以 ipTM/pDockQ 作为 de facto scoring function。优点：快、广覆盖；局限：假阳性、抗体–抗原/瞬态界面可靠性下降、可能记忆训练数据、benchmark 相关性受数据泄漏影响。
+- 阶段 2：专用 post hoc scoring functions——经验/力场组合（HADDOCK、pyDock）、知识统计势（SOAP-PP）、整合方法（iScore）、深度学习（DeepRank 家族）、端点自由能（MM/PBSA）。优点：各有针对性；局限：参数化窄、几何敏感、连续溶剂近似。
+- 阶段 3：path-sampling MD-based scoring——Hou 等粗粒化 equilibrium umbrella sampling；Kingsley 等原子级 steered MD + PMF；Zacharias 组沿解离坐标 umbrella sampling 与 repulsive-scaling replica-exchange；Wang 等 ensemble metadynamics 沿分子间距离坐标解离并平均自由能面。优点：显式采样解离/结合过程、力场可迁移；局限：计算成本高。
+- 本文主张的位置：在阶段 3 脉络中，将此前单向 SMD 版本升级为双向 pulling + interface cutout + 多力场 + 杂原子自动化，定位为 AI 快速生成/打分与物理严格复核之间的 hybrid workflow 组件。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单向 pulling 的指数平均统计偏倚</td>
+<td>估计量被稀有低 work 轨迹主导</td>
+<td>作者解释为 exponential work averaging 的已知统计偏倚</td>
+<td>Introduction 对原版 GroScore 局限 (i) 的陈述</td>
+</tr>
+<tr>
+<td>分数与 buried surface area 强相关</td>
+<td>几何大小与结合强度混淆</td>
+<td>作者归因于单向 pulling 协议</td>
+<td>Introduction 局限 (ii)；双向方法「substantially reduces the anticorrelation」</td>
+</tr>
+<tr>
+<td>全溶剂原子级 SMD 计算成本高 + 手工设置多</td>
+<td>只能处理少量结构，难以常规采用</td>
+<td>作者归因于全复合物显式溶剂模拟与手工工作流</td>
+<td>Introduction 局限 (iii)</td>
+</tr>
+<tr>
+<td>AI 置信度指标不可靠</td>
+<td>非相互作用对假阳性；抗体–抗原、瞬态界面可靠性下降</td>
+<td>作者归因于训练集偏倚/冗余、共进化信号有限</td>
+<td>Introduction 对 ipTM/pDockQ 的评述</td>
+</tr>
+<tr>
+<td>benchmark 相关性可能被数据泄漏抬高</td>
+<td>蛋白–配体 benchmark 相关性虚高；ΔΔG 模型在序列一致性 cutoff 下相关性下降约 63%</td>
+<td>作者引用近期工作</td>
+<td>Introduction 引用性陈述</td>
+</tr>
+<tr>
+<td>大而异质的 PPB-Affinity 上相关性弱</td>
+<td>总体 Pearson r = 0.16, Spearman ρ = 0.24</td>
+<td>作者归因于打分方案近似、力场限制、非平衡采样有限时间尺度、文献亲和数据异质性</td>
+<td>Validation 节；Conclusion</td>
+</tr>
+<tr>
+<td>抗体–抗原与 TCR–pMHC 子集信号弱</td>
+<td>SAbDab r = 0.17；ATLAS 仅 9 个复合物、亲和跨度约 2 pKd、CI 跨零</td>
+<td>作者归因于 CDR（尤其 H3）环缺失/无序、结合构象差异、动态范围窄</td>
+<td>Validation 节</td>
+</tr>
+<tr>
+<td>输入几何 vs 形成自由能</td>
+<td>报告的是解离输入几何的自由能，而非从单体形成复合物的自由能</td>
+<td>作者以 brefeldin-A/ARF1/Sec7 为例说明</td>
+<td>Validation 节第二类非显著案例</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p>1) 表面方法：用 GROMACS 自动化执行双向（unbinding 5 ns + rebinding 5 ns）steered MD，对界面非氢原子对施加距离限制并逐步拉开/推回，从 work 分布用简单平均或 CGI 估计结合分数；可选 interface cutout 只保留界面 2.0 nm 内残基以降低计算量。
+2) 核心洞察：双向 pulling 同时采样解离与结合过程，可克服单向指数平均的统计偏倚并降低分数与 buried surface area 的反相关；界面附近才是打分关键区域，cutout 可在几乎不损失分数的情况下大幅省算力；显式溶剂 MD 原则上跨系统类可迁移，适合作为 AI 生成候选的物理复核。
+3) 可能的普适教训 [Analysis]：在非平衡采样打分中，forward/reverse 双向采样 + 分布交点估计（CGI）比单向指数平均更稳健；对昂贵物理模拟，用「只模拟关键区域 + 弹性网络维持结构完整性」可在保持排序能力的同时换取吞吐；物理打分器应被定位为相对排序/复核工具而非绝对 ΔG 预测器。</p>
+<h2>07 方法总览</h2>
+<ul>
+<li>输入：PDB 文件（实验测定或计算预测的蛋白–蛋白复合物结构）。</li>
+<li>输出：每个复合物的 binding affinity score（pull/push work 的简单平均或 CGI 估计），含 bootstrap CI（N = 50,000 resamples）；score 文件每完成一个 cycle 更新以监控收敛。</li>
+<li>模块：结构准备与 GROMACS topology 生成；可选 interface cutout（默认 2.0 nm）；溶剂化（0.15 M NaCl，dodecahedron box，最小 protein-wall 距离 1.5 nm）+ 能量最小化；初始平衡生成距离限制；N 个独立 pull/push cycles（默认 5），每 cycle 从新平衡 + 新随机速度开始。</li>
+<li>训练：不适用（无机器学习训练）。</li>
+<li>工具：GROMACS（模拟）、SLURM（HPC 调度）、OpenFF Sage 2.2.1 + Open Babel（小分子参数化）、Vienna-PTM（GROMOS 54A8 翻译后修饰）。</li>
+<li>反馈回路：score 文件随 cycle 更新，可据收敛情况决定是否增加 cycle（如 CGI 推荐 ≥20 cycles）。</li>
+<li>假设：复合物具有明确、可分离的界面；短 re-equilibration（100 ps）足以让水–蛋白相互作用平衡；界面非氢原子对限制可限制相对旋转并允许短时正确 rebinding。</li>
+<li>文字流程：输入 PDB → 结构准备/topology →（可选）interface cutout + 弹性网络限制 → 溶剂化 + 最小化 → 平衡生成距离限制 → 重复 N 次 {新平衡 → 5 ns unbinding（0.0002 nm/ps，位移至 1.0 nm）→ 100 ps re-equilibration → 5 ns rebinding} → 汇总 work 分布 → 简单平均或 CGI → 分数 + bootstrap CI。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bidirectional pulling</td>
+<td>同时模拟 unbinding 与 rebinding</td>
+<td>克服指数平均偏倚、降低与 buried surface area 的反相关</td>
+<td>输入：平衡后复合物；输出：forward/reverse work 分布</td>
+<td>Introduction；Implementation「Bidirectional Pulling」</td>
+<td>实测：CAPRI Score_set 上双向 Top-10 近天然 pose 49 个 vs 单向 40 个（含高质量 13 vs 9，中等 23 vs 21）</td>
+</tr>
+<tr>
+<td>Interface cutout</td>
+<td>只保留界面 2.0 nm 内残基</td>
+<td>降低 box 尺寸与计算成本</td>
+<td>输入：全复合物；输出：截短体系 + 人工断链处 Cα 弹性网络限制（0.4–0.9 nm，250 kJ·mol⁻¹·nm⁻²）</td>
+<td>Implementation「Interface Cutout」；Validation</td>
+<td>实测：cutout vs no-cutout 的 per-complex 分数强相关（r = 0.93, 0.96, 0.93, 0.87）；聚合相关性几乎相同；≥95% 轨迹 rebound RMSD 在 5 Å 内</td>
+</tr>
+<tr>
+<td>多力场支持</td>
+<td>AMBER19SB/OPC3（默认）、AMBER19SB/OPC、CHARMM36m/TIP3P、GROMOS 54A8/SPC</td>
+<td>跨力场可迁移性</td>
+<td>输入：体系；输出：topology + 模拟</td>
+<td>Implementation「Force Field Support」；Validation</td>
+<td>实测：所有力场均得显著正相关（r = 0.51–0.66），性能相似</td>
+</tr>
+<tr>
+<td>杂原子处理</td>
+<td>自动检测结构金属离子（topology 级谐振限制）、小分子（OpenFF Sage 2.2.1）、非标准氨基酸（capped tripeptide + OpenFF 侧链 + 母残基骨架）、晶体水保留</td>
+<td>扩大适用范围</td>
+<td>输入：含杂原子 PDB；输出：参数化 topology</td>
+<td>Implementation「Heteroatom Handling」</td>
+<td>预期：移除后含小分子/修饰残基体系无法处理（未提供消融）</td>
+</tr>
+<tr>
+<td>两种打分估计</td>
+<td>简单平均；CGI（拟合 forward/reverse 高斯并取交点）</td>
+<td>分布等方差时简单平均无偏；不等方差时 CGI 更有效</td>
+<td>输入：work 分布；输出：ΔG 估计 + bootstrap CI</td>
+<td>Implementation「Scoring Methods」；Validation</td>
+<td>实测：TIR1/auxin/IAA7（2P1O）与 CRBN/lenalidomide/CK1α（5FQD）5 cycles 简单平均不显著，30 cycles CGI 显著；CGI CI 有时更宽</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ul>
+<li>简单平均：score = mean of pull and push works across all cycles。符号：pull work（unbinding）、push work（rebinding）。用途：在 forward/reverse work 分布为等方差高斯时无偏。直觉：双向平均抵消单向偏倚。来源：Implementation「Scoring Methods」。</li>
+<li>Crooks Gaussian Intersection (CGI)：对 unbinding 与 rebinding work 分布分别拟合独立高斯，取其交点作为 ΔG。符号：forward 分布、reverse 分布、交点 ΔG。用途：分布不等方差时统计效率更高，推荐 ≥20 cycles。直觉：利用 forward/reverse 分布的不对称性。来源：Implementation「Scoring Methods」。</li>
+<li>Bootstrap CI：N = 50,000 resamples。用途：给出分数不确定性。来源：Implementation「Scoring Methods」。</li>
+<li>注：文中未给出显式数学表达式（如 Jarzynski 等式或 Crooks 关系的完整公式），仅以文字描述；具体公式形式未提供。</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<p>数据集/规模/指标/基线/预算/骨干/评测协议：
+- HADDOCK protein–protein affinity benchmark：46 个复合物，实验亲和力跨度约 8 pKd 单位；三力场 × cutout/no-cutout；5 cycles；指标 Pearson r。
+- PPB-Affinity aggregate：2529 个复合物，2431 成功（96%）；仅 cutout + AMBER19SB + OpenFF Sage/OPC3；5 cycles；指标 Pearson r、Spearman ρ；按 5 个来源数据集分层。
+- CAPRI Score_set：单 cycle；比较双向 vs 单向 Top-10 近天然 pose 数；硬件 NVIDIA RTX 5080 GPU，单 cycle 吞吐 56 poses/day（T32 目标）与 53 poses/day。
+- 小分子/三元复合物：19 个三元复合物（14 MGs + 5 PROTACs），有/无 inducer；5 cycles 简单平均与 30 cycles CGI。
+- 基线：原版单向 GroScore（CAPRI 对比）；无其他外部打分器直接对比（未提供）。
+- oracle 输入：使用实验测定或计算预测的输入结构；未使用 oracle 亲和力作为输入。</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HADDOCK benchmark 三力场</td>
+<td>双向 SMD 分数与实验亲和力相关</td>
+<td>三力场 × cutout/no-cutout，5 cycles</td>
+<td>Pearson r = 0.51–0.66，均显著</td>
+<td>跨力场可迁移</td>
+<td>不支持绝对 ΔG 定量</td>
+<td>Validation；SI Figures S1–S4</td>
+</tr>
+<tr>
+<td>cutout vs no-cutout</td>
+<td>cutout 不损失精度</td>
+<td>同力场对比</td>
+<td>per-complex 分数 r = 0.93/0.96/0.93/0.87；聚合相关性几乎相同；≥95% 轨迹 RMSD &lt; 5 Å</td>
+<td>cutout 可行省算力</td>
+<td>不支持 cutout 在所有体系均无损</td>
+<td>Validation；SI Figure S9</td>
+</tr>
+<tr>
+<td>PPB-Affinity 总体</td>
+<td>大规模异质数据上仍相关</td>
+<td>cutout + AMBER19SB/OPC3，5 cycles</td>
+<td>Pearson r = 0.16，Spearman ρ = 0.24</td>
+<td>弱但显著相关</td>
+<td>不支持强相关或绝对预测</td>
+<td>Validation；Table</td>
+</tr>
+<tr>
+<td>PPB-Affinity 分层</td>
+<td>性能随数据来源变化</td>
+<td>5 个来源子集</td>
+<td>Affinity Benchmark v5.5 r = 0.40；PDBbind v2020 PPI r = 0.20；SKEMPI v2.0 WT r = 0.20；SAbDab r = 0.17；ATLAS 9 个复合物、跨度约 2 pKd、CI 跨零</td>
+<td>数据质量与动态范围影响性能</td>
+<td>不支持 ATLAS 负相关为真实信号</td>
+<td>Validation；Table；SI Figure S10</td>
+</tr>
+<tr>
+<td>CAPRI Score_set</td>
+<td>双向优于单向</td>
+<td>单 cycle，双向 vs 单向</td>
+<td>Top-10 近天然 49（13 high + 23 medium）vs 40（9 high + 21 medium）</td>
+<td>双向改善近天然 pose 排序</td>
+<td>不支持在所有目标均改善</td>
+<td>Validation；SI Figure S11、Table S1</td>
+</tr>
+<tr>
+<td>三元复合物</td>
+<td>小分子实现可用</td>
+<td>5 cycles 简单平均 vs 30 cycles CGI</td>
+<td>CGI 下 19 中 13 显著负移（稳定化）；6 个非显著分三类</td>
+<td>小分子/glue 可处理</td>
+<td>不支持 PROTAC linker 桥接体系无歧义</td>
+<td>Validation；Figure</td>
+</tr>
+<tr>
+<td>CGI vs 简单平均</td>
+<td>CGI 更有效</td>
+<td>2P1O、5FQD</td>
+<td>5 cycles 简单平均不显著，30 cycles CGI 显著</td>
+<td>CGI 推荐 ≥20 cycles</td>
+<td>不支持 CGI CI 总是更窄</td>
+<td>Validation</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li>任务范围：post hoc scoring/重排序，不是绝对结合自由能预测；作者明确「by design a scoring scheme rather than a rigorous binding free-energy method」，省略了绝对标准态 ΔG 所需的 restraint corrections。</li>
+<li>oracle/真值输入：输入为实验或预测结构，非 oracle 亲和力；但打分对象是输入几何的解离自由能，而非从单体形成复合物的自由能（brefeldin-A/ARF1/Sec7 案例）。</li>
+<li>端到端状态：从 PDB 到分数的自动化流程已实现；但依赖 GROMACS + SLURM + HPC/GPU 资源。</li>
+<li>算力成本：单 cycle 在 RTX 5080 上 53–56 poses/day；CGI 推荐 ≥20 cycles，成本相应上升。</li>
+<li>历史数据依赖：benchmark 亲和力来自文献，异质；PPB-Affinity 子集性能差异大。</li>
+<li>模型依赖：结果依赖力场（三力场性能相似但非等价）、水模型、cutout 设置。</li>
+<li>最难情形：intertwined interfaces（需更大分离与不同反应坐标）、抗体–抗原（CDR 环缺失/无序、动态范围窄）、TCR–pMHC（动态范围极窄）、linker-bridging PROTACs（分配歧义）。</li>
+<li>群体/领域边界：结论基于 HADDOCK、PPB-Affinity、CAPRI Score_set、19 个三元复合物；未覆盖膜蛋白、多聚体、大幅构象变化体系。</li>
+<li>不确定性：CGI CI 有时比简单平均更宽；ATLAS 子集 CI 跨零。</li>
+<li>有边界的复述：GroScore 在受控 benchmark 上给出与实验亲和力显著但绝对偏弱的相关，能改善近天然 pose 排序并处理小分子/修饰残基，但不应被解读为通用绝对亲和力预测器。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>是 scoring scheme 而非严格结合自由能方法</td>
+<td>采样仅限直接相互作用贡献，省略绝对标准态 ΔG 所需 restraint corrections</td>
+<td>以可处理性与广适用性换取定量亲和力</td>
+<td>Conclusion</td>
+</tr>
+<tr>
+<td>PPB-Affinity 子集相关性绝对偏弱</td>
+<td>Pearson r ≈ 0.2–0.4</td>
+<td>归因于打分近似、力场限制、非平衡采样有限时间尺度、文献亲和数据异质性；motivate 改进采样与结合诱导构象变化处理</td>
+<td>Conclusion</td>
+</tr>
+<tr>
+<td>分离策略适用于界面明确可分离的复合物</td>
+<td>intertwined interfaces 需更大分离与不同反应坐标</td>
+<td>类比 center-of-mass pulling</td>
+<td>Implementation「Bidirectional Pulling」</td>
+</tr>
+<tr>
+<td>报告解离输入几何的自由能</td>
+<td>非从单体形成复合物的自由能</td>
+<td>以 brefeldin-A/ARF1/Sec7 为例说明</td>
+<td>Validation</td>
+</tr>
+<tr>
+<td>PROTAC linker 桥接体系分配歧义</td>
+<td>方差更大</td>
+<td>未明确</td>
+<td>Validation</td>
+</tr>
+<tr>
+<td>CGI CI 有时更宽</td>
+<td>依赖 forward/reverse 分布方差，收敛慢</td>
+<td>未明确</td>
+<td>Validation</td>
+</tr>
+</tbody>
+</table>
+<p>作者提及的相关约束（非正式局限）：AI 仅用于语言编辑与文本扩写，未生成科学结果（Acknowledgements）。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PPB-Affinity 总体 r = 0.16 的弱相关可能部分来自数据集异质性而非方法本身</td>
+<td>分层后 Affinity Benchmark v5.5 达 r = 0.40，提示数据质量主导</td>
+<td>影响方法适用边界的判断</td>
+<td>在统一 curated 数据集上重测，或对异质数据做分层建模</td>
+<td>Validation；Table</td>
+</tr>
+<tr>
+<td>5 cycles 简单平均在 HADDOCK 已「converged」，但 CGI 需 ≥20 cycles 才能分辨小效应</td>
+<td>收敛判据依赖指标与体系；小效应可能被 5 cycles 掩盖</td>
+<td>影响常规使用成本与灵敏度权衡</td>
+<td>系统扫描 cycles 数 vs 效应量检测力</td>
+<td>Validation；SI Figures S5–S8</td>
+</tr>
+<tr>
+<td>cutout 的 per-complex 分数相关高，但仅验证了 RMSD &lt; 5 Å 的结构完整性</td>
+<td>5 Å 阈值较宽松，局部界面重排可能未被捕捉</td>
+<td>影响 cutout 在柔性界面体系的可靠性</td>
+<td>对界面残基做更细粒度 RMSD/接触分析</td>
+<td>Validation；SI Figure S9</td>
+</tr>
+<tr>
+<td>三元复合物中 inducer 被分配给一个 partner，PROTAC linker 桥接时歧义</td>
+<td>分配规则可能系统性影响 PROTAC 结果</td>
+<td>影响小分子打分推广性</td>
+<td>对同一 PROTAC 尝试不同分配并比较</td>
+<td>Validation</td>
+</tr>
+<tr>
+<td>未与其他 post hoc scoring functions（如 MM/PBSA、DeepRank、iScore）直接对比</td>
+<td>无法判断相对优势</td>
+<td>影响方法选择</td>
+<td>在同一 benchmark 上做 head-to-head</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>CAPRI 对比仅单 cycle，且仅报告 Top-10 计数</td>
+<td>单 cycle 可能未发挥双向全部优势；Top-10 计数对目标数敏感</td>
+<td>影响双向优势的稳健性</td>
+<td>多 cycle + 多指标（如 I-RMSD 分布）</td>
+<td>Validation；SI Table S1</td>
+</tr>
+<tr>
+<td>力场性能相似但未报告统计检验</td>
+<td>「similar」缺乏显著性支撑</td>
+<td>影响力场选择建议</td>
+<td>对力场间相关性差异做配对检验</td>
+<td>Validation</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<h3>Agent 提炼的知识候选</h3>
+<ul>
+<li>可迁移概念：双向非平衡采样（unbinding + rebinding）可缓解单向指数平均偏倚；CGI 估计利用 forward/reverse 分布不对称性，在 ≥20 cycles 时更有效。</li>
+<li>可迁移方法：interface cutout + 人工断链处 Cα 弹性网络限制（0.4–0.9 nm，250 kJ·mol⁻¹·nm⁻²）作为降低显式溶剂模拟成本的通用策略，可迁移到蛋白–配体、蛋白–核酸打分。</li>
+<li>可迁移实验设计：用 per-complex 分数相关（而非仅聚合相关）验证近似方法的保真度；用 bootstrap CI 报告分数不确定性；按数据来源分层报告性能。</li>
+<li>可迁移工程实践：score 文件随 cycle 更新以监控收敛；SLURM + GROMACS 自动化；OpenFF + capped tripeptide 混合参数化处理非标准残基。</li>
+<li>面向本课题的迁移：在「AI 生成候选结构 → 物理复核」hybrid workflow 中，GroScore 可作为重排序器；其 cutout 思路可用于 AlphaFold 生成复合物的快速物理打分；其分层 benchmark 分析提醒在评估 AI 结构预测/设计方法时需注意数据来源异质性与动态范围。</li>
+</ul>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li>相似：Hou 等 coarse-grained equilibrium umbrella sampling；Kingsley 等原子级 steered MD + PMF；Zacharias 组 umbrella sampling 与 repulsive-scaling replica-exchange；Wang 等 ensemble metadynamics（均见 Introduction）。</li>
+<li>组合：与 AI co-folding（AlphaFold-Multimer、AlphaFold 3、RoseTTAFold all-atom、Boltz）形成 hybrid workflow；与 ipTM/pDockQ 互补。</li>
+<li>冲突：作者指出 AI 置信度指标在抗体–抗原、瞬态界面可靠性下降，且 benchmark 相关性可能受数据泄漏抬高；与「AI 打分已足够」的观点存在张力。</li>
+<li>可迁移领域：小分子相对自由能计算中「只模拟关键区域」的思路（Introduction 引用）；蛋白突变 ΔΔG 计算。</li>
+<li>注：以上连接均基于本文 Introduction 的引用性陈述，未做外部核验。</li>
+</ul>
+<h2>16 研究想法</h2>
+<h3>Agent 生成的研究候选</h3>
+<ol>
+<li>名称：GroScore-CGI 自适应 cycle 调度
+   - 来源局限/观察：CGI 推荐 ≥20 cycles，但 5 cycles 在 HADDOCK 已收敛；固定 cycle 数可能浪费或不足。
+   - 核心假设：基于 bootstrap CI 宽度或 forward/reverse 分布方差比的自适应停止准则，可在保持 CGI 灵敏度的同时降低平均算力。
+   - 相对本文的增量：将固定 cycle 数改为自适应。
+   - 初步方法：在 PPB-Affinity 子集上扫描 cycle 数，拟合 CI 宽度 vs 效应检测力曲线。
+   - 验证方式：与固定 5/30 cycles 比较算力–灵敏度权衡。
+   - 可能的失败模式：CI 宽度与效应检测力关系不稳定。
+   - 创新状态：unverified。</li>
+<li>名称：cutout 阈值与界面柔性联合评估
+   - 来源局限/观察：cutout 仅用 RMSD &lt; 5 Å 验证结构完整性。
+   - 核心假设：对柔性界面体系，2.0 nm cutout 可能截断关键变构/界面重排区域。
+   - 相对本文的增量：系统扫描 cutout 阈值 × 界面柔性指标。
+   - 初步方法：在 HADDOCK + PPB-Affinity 上比较 1.5/2.0/2.5/3.0 nm。
+   - 验证方式：per-complex 分数相关 + 界面残基接触分析。
+   - 可能的失败模式：阈值效应被体系异质性掩盖。
+   - 创新状态：unverified。</li>
+<li>名称：GroScore 与 AI 打分器的混合重排序
+   - 来源局限/观察：AI 置信度指标有假阳性；GroScore 计算贵但物理可迁移。
+   - 核心假设：先用 ipTM/pDockQ 粗筛，再用 GroScore 单 cycle 重排序 Top-K，可在有限算力下优于任一单独方法。
+   - 相对本文的增量：明确 hybrid 协议与算力分配。
+   - 初步方法：在 CAPRI Score_set 上比较纯 AI、纯 GroScore、混合。
+   - 验证方式：Top-10 近天然 pose 数 + 算力。
+   - 可能的失败模式：AI 粗筛漏掉近天然 pose。
+   - 创新状态：partially checked（本文已提出 hybrid workflow 概念但未做该实验）。</li>
+<li>名称：PROTAC linker 分配歧义的多假设打分
+   - 来源局限/观察：linker-bridging PROTACs 分配歧义导致大方差。
+   - 核心假设：对同一 PROTAC 枚举多种 inducer 分配并聚合分数，可降低方差并提高显著性。
+   - 相对本文的增量：从单一分配改为多假设聚合。
+   - 初步方法：在 5 个 PROTAC 上枚举分配并比较。
+   - 验证方式：与实验亲和力/降解活性比较。
+   - 可能的失败模式：分配枚举成本高且仍无法覆盖真实结合模式。
+   - 创新状态：unverified。</li>
+<li>名称：结合诱导构象变化的双向 SMD 扩展
+   - 来源局限/观察：作者指出 GroScore 报告解离输入几何的自由能，非形成自由能；结合诱导构象变化未处理。
+   - 核心假设：在 rebinding 阶段允许界面侧链/环区松弛（如降低限制强度或分段释放），可更好捕捉结合诱导构象变化。
+   - 相对本文的增量：从刚性限制到部分柔性。
+   - 初步方法：在抗体–抗原子集上比较不同限制强度。
+   - 验证方式：与实验亲和力及 unbound–bound 构象变化比较。
+   - 可能的失败模式：松弛导致 rebinding 失败或分数噪声增大。
+   - 创新状态：unverified。</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, implementation, validation, conclusion) without figures, tables, or supplementary material</li>
+<li><strong>Assessment boundary</strong> Scientific and technical evaluation of the described methodology, validation strategy, and reported results; software usability and reproducibility considerations</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present GroScore, an open-source Python toolkit for automated scoring of protein–protein interaction (PPI) structures using bidirectional steered molecular dynamics (SMD) with explicit solvent. The tool introduces bidirectional pulling (unbinding and rebinding), an interface-cutout mode for computational efficiency, support for three force fields, and automated handling of small molecules, noncanonical amino acids, structural ions, and crystal waters. Validation on the HADDOCK benchmark (46 complexes) shows significant correlations (Pearson r = 0.51–0.66) across force fields; on the larger PPB-Affinity dataset (2431 successful simulations), weak but significant correlations are reported (Pearson r = 0.16 overall; subset-dependent, up to r = 0.40). CAPRI Score_set testing shows improved near-native pose ranking (49 vs. 40 Top-10) compared to the unidirectional predecessor. Small-molecule ternary complex tests (19 systems) show significant stabilization for 13 cases using the CGI estimator.</li>
+<li><strong>Visible evidence base</strong> Main text descriptions of validation results; references to Figures 1–3, Table 1, and Supplementary Figures S1–S11 and Table S1 (none of which were provided)</li>
+<li><strong>Missing materials affecting confidence</strong> All figures, tables, and supplementary material; benchmark dataset composition details; specific correlation values with confidence intervals for individual force fields; computational cost comparisons; software documentation and test suite details</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> The manuscript describes a timely and potentially useful software tool that addresses a real need in the PPI scoring field. The bidirectional SMD approach is a sensible methodological improvement over the unidirectional predecessor, and the interface-cutout strategy for computational efficiency is pragmatic. However, the validation results as described are mixed: while the HADDOCK benchmark correlations are encouraging, the PPB-Affinity results are weak in absolute terms, and the authors' explanations for subset-dependent performance, while plausible, are not quantitatively supported in the provided text. The small-molecule ternary complex results are interesting but raise questions about the physical interpretation of the scoring scheme. The manuscript would benefit from clearer presentation of the statistical methods, more detailed reporting of benchmark results, and a more critical discussion of the limitations of the approach for absolute affinity prediction.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Computational structural biologists and bioinformaticians working on protein–protein interaction prediction, docking, and scoring will be the primary audience. Researchers developing or using AI-based structure prediction methods (AlphaFold, RoseTTAFold, etc.) who need post-hoc scoring functions to rank candidate complexes will find this tool relevant. The open-source, automated nature of the software and its integration with GROMACS and SLURM make it potentially attractive for high-throughput applications. The small-molecule handling may also interest researchers working on proximity-inducing compounds (molecular glues, PROTACs), though this application is less thoroughly validated.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong>
+  1. The bidirectional pulling approach directly addresses a known limitation (exponential work averaging bias) of the unidirectional predecessor, and the authors provide a clear rationale for this methodological choice.
+  2. The interface-cutout mode is a practical and well-motivated strategy for reducing computational cost, and the reported correlation between cutout and no-cutout scores (r = 0.87–0.96) provides evidence that this approximation preserves per-complex ranking.
+  3. The software is open-source, automated, and integrates with widely used tools (GROMACS, SLURM), which lowers the barrier to adoption.
+  4. Validation across multiple benchmarks (HADDOCK, PPB-Affinity, CAPRI Score_set) and force fields provides a reasonably broad assessment of performance.
+  5. The authors are transparent about the limitations of the approach, including the weak absolute correlations on heterogeneous datasets and the deliberate omission of standard-state corrections.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Statistical rigor and result interpretation</li>
+<li><strong>Claim pointer</strong> "Significant positive correlations (Pearson r = 0.51–0.66) of calculated scores to experimental binding affinities were obtained for all tested force fields" (HADDOCK benchmark); "weak but significant correlation (Pearson r = 0.16, Spearman ρ = 0.24)" (PPB-Affinity overall)</li>
+<li><strong>Evidence pointer</strong> Validation section, Figure 1, Table 1, Figures S1–S4, S10 (none provided)</li>
+<li><strong>Concern</strong> The manuscript reports correlation coefficients without providing confidence intervals, p-values, or details on the statistical testing procedure. For the HADDOCK benchmark (n = 46), a Pearson r of 0.51–0.66 would have wide confidence intervals, and the authors do not state whether these are significantly different from each other across force fields. For the PPB-Affinity dataset, the overall r = 0.16 with n = 2431 would be statistically significant but practically weak; the authors should report the distribution of scores and residuals, not just the correlation. The subset-dependent results (r = 0.17–0.40) are presented with qualitative explanations but no statistical comparison of whether these differences are significant.</li>
+<li><strong>Why it matters</strong> The central claim of the paper is that GroScore produces scores that correlate with experimental binding affinities. Without proper uncertainty quantification and statistical testing, the reader cannot assess the reliability of this claim or compare performance across force fields, datasets, or modes (cutout vs. no-cutout). The weak overall correlation on PPB-Affinity raises questions about the practical utility of the method for heterogeneous datasets, and the authors' explanations need quantitative support.</li>
+<li>
+<p><strong>Resolution test</strong> Provide 95% confidence intervals for all reported correlation coefficients; state the statistical test used (e.g., t-test for Pearson r) and whether correlations across force fields or datasets are significantly different; include scatter plots with regression lines and residual analysis for the PPB-Affinity subsets; report the distribution of scores for each subset to support claims about dynamic range limitations.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Validation of small-molecule ternary complex application</li>
+<li><strong>Claim pointer</strong> "With CGI, a significant negative shift indicating ternary-complex stabilization by the small molecule was obtained for 13 of the 19 systems" and the subsequent categorization of the six nonsignificant cases</li>
+<li><strong>Evidence pointer</strong> Validation section, Figure 3 (not provided)</li>
+<li><strong>Concern</strong> The small-molecule ternary complex validation is presented with only 19 systems, and the authors provide qualitative explanations for the six nonsignificant cases. However, the physical interpretation of the "GroScore difference (glued – non-glued)" is unclear. The authors state that the inducer is "assigned to one of the two binding partners according to its chain identifier" and that "no restraints tether it to its host partner; its association with the host is therefore maintained only by the physical force field." This raises questions about whether the simulation setup adequately samples the inducer's dissociation from its host, and whether the scoring scheme can distinguish between specific stabilization and nonspecific effects. The categorization of the six nonsignificant cases into three groups is based on literature knowledge, but the authors do not provide quantitative criteria for these categories or a statistical framework for evaluating the sensitivity of the method.</li>
+<li><strong>Why it matters</strong> The small-molecule application is a significant extension of the tool beyond protein-only systems, and the authors claim practical utility for molecular glue and PROTAC scoring. However, with only 19 systems and a 68% success rate, the evidence is preliminary. The physical interpretation of the scoring scheme for ternary complexes needs clarification, and the authors should demonstrate that the method can distinguish between true stabilizers and non-stabilizers with appropriate controls.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a more detailed description of the simulation setup for ternary complexes, including how the inducer is positioned and how its dissociation from the host is sampled. Include control experiments with non-binding or weakly binding small molecules. Report the distribution of GroScore differences for all 19 systems with confidence intervals, and provide quantitative criteria for the categorization of nonsignificant cases. If possible, expand the validation set or clearly state the limitations of the current dataset.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Benchmark representativeness and generalizability</li>
+<li><strong>Claim pointer</strong> "Validation on the curated HADDOCK affinity benchmark and the larger and more heterogeneous PPB-Affinity aggregate shows significant correlations with experimental binding data across diverse system classes"</li>
+<li><strong>Evidence pointer</strong> Validation section, Table 1 (not provided)</li>
+<li><strong>Concern</strong> The PPB-Affinity dataset is described as "much larger" but the authors report only the overall correlation (r = 0.16) and subset-specific values (r = 0.17–0.40). The subset-dependent performance varies substantially, and the authors attribute this to dataset curation quality and dynamic range. However, the manuscript does not provide details on the composition of each subset (e.g., number of complexes, range of affinities, structural diversity) or the criteria for inclusion. The HADDOCK benchmark (46 complexes) is described as "highly curated" but the overlap with the Affinity Benchmark v5.3 subset of PPB-Affinity is not discussed. The CAPRI Score_set results are presented as a ranking improvement (49 vs. 40 Top-10) but without statistical significance testing or comparison to other scoring methods.</li>
+<li><strong>Why it matters</strong> The generalizability of GroScore across different types of PPIs is a key claim. Without detailed information on benchmark composition and subset characteristics, the reader cannot assess whether the weak overall correlation reflects method limitations or dataset heterogeneity. The CAPRI results are presented as an improvement over the predecessor but not compared to other state-of-the-art scoring functions, limiting the assessment of GroScore's competitive position.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a detailed breakdown of each PPB-Affinity subset (number of complexes, affinity range, structural characteristics, source). Discuss the overlap between the HADDOCK benchmark and the Affinity Benchmark v5.3 subset. For the CAPRI results, report the statistical significance of the improvement (e.g., Wilcoxon signed-rank test) and, if possible, compare to other scoring methods on the same set.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Computational cost and practical utility</li>
+<li><strong>Claim pointer</strong> "interface cutout for reduced computational cost" and "showcasing the scoring efficiency of GroScore on consumer-grade hardware"</li>
+<li><strong>Evidence pointer</strong> Implementation section, Validation section (CAPRI results)</li>
+<li><strong>Concern</strong> The manuscript claims that the interface cutout mode "dramatically reduces computational cost" and reports throughput of 56 poses/day on an NVIDIA RTX 5080 GPU, but no quantitative comparison of computational cost between cutout and no-cutout modes is provided in the text. The authors mention "small differences in the simulation wall-times without cutout mode between the force fields" but do not report actual wall-times or speedup factors. For a tool intended for high-throughput scoring, the computational cost is a critical practical consideration.</li>
+<li><strong>Why it matters</strong> The practical utility of GroScore depends on its computational efficiency. If the cutout mode provides only marginal speedup, or if the full-system simulations are prohibitively expensive, the tool's applicability to large-scale screening would be limited. The authors should provide concrete timing data to support their efficiency claims.</li>
+<li>
+<p><strong>Resolution test</strong> Report wall-times for cutout vs. no-cutout modes for representative complexes across all force fields, including the speedup factor. Provide a breakdown of computational cost by simulation stage (equilibration, pulling, analysis). Discuss the scaling of computational cost with system size and the practical limits of the approach.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility and software documentation</li>
+<li><strong>Affected element</strong> Software availability and documentation</li>
+<li><strong>Evidence pointer</strong> Abstract, Implementation section</li>
+<li><strong>Issue</strong> The manuscript states that GroScore is available on GitHub under the MIT License, but no version number, dependency list, or link to documentation is provided in the text. The description of the pipeline is high-level, and the specific parameters used for the validation simulations (e.g., pulling rate, spring constant, simulation temperature) are not stated in the main text.</li>
+<li>
+<p><strong>Required correction</strong> Provide a specific version number and a link to the documentation in the manuscript. Include a table of key simulation parameters used in the validation studies, or refer to a specific section of the SI where these are listed.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity of methodological description</li>
+<li><strong>Affected element</strong> Interface cutout procedure</li>
+<li><strong>Evidence pointer</strong> Implementation section, Interface Cutout subsection</li>
+<li><strong>Issue</strong> The description of the interface cutout procedure is brief. The authors state that residues within 2.0 nm of the interface are retained, but it is unclear how the "interface" is defined (e.g., based on interatomic distances, solvent-accessible surface area, or a combination). The elastic network distance restraints at chain breaks are described, but the choice of force constant (250 kJ·mol–1·nm–2) and the range (0.4–0.9 nm) are not justified.</li>
+<li>
+<p><strong>Required correction</strong> Provide a more detailed description of the interface definition and the rationale for the elastic network parameters. If this information is in the SI, refer to the specific section.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> CAPRI Score_set results</li>
+<li><strong>Evidence pointer</strong> Validation section</li>
+<li><strong>Issue</strong> The CAPRI results are reported as "49 (including 13 high-quality and 23 medium-quality) near-native poses were ranked within the Top-10 of each target, compared to 40 (including 9 high-quality and 21 medium-quality) with the original unidirectional setup." The authors do not report the total number of targets or poses, the distribution of ranks, or any statistical test for the improvement.</li>
+<li>
+<p><strong>Required correction</strong> Report the total number of targets and poses, the distribution of ranks (e.g., median, interquartile range), and the result of a paired statistical test comparing the bidirectional and unidirectional methods.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation of weak correlations</li>
+<li><strong>Affected element</strong> PPB-Affinity results</li>
+<li><strong>Evidence pointer</strong> Validation section</li>
+<li><strong>Issue</strong> The authors report a weak overall correlation (r = 0.16) on the PPB-Affinity dataset and attribute this to dataset heterogeneity and dynamic range limitations. However, they do not discuss whether this level of correlation is practically useful for ranking candidate complexes in a screening context, or how it compares to other scoring methods on the same dataset.</li>
+<li>
+<p><strong>Required correction</strong> Add a brief discussion of the practical implications of the weak correlation, including a comparison to other scoring methods if available, and a statement about the expected utility of GroScore for ranking in a screening context.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology and scope</li>
+<li><strong>Affected element</strong> Title and abstract</li>
+<li><strong>Evidence pointer</strong> Title, Abstract</li>
+<li><strong>Issue</strong> The title states "Automated Scoring of Protein–Protein Interactions" but the validation includes small-molecule ternary complexes (molecular glues and PROTACs). The abstract mentions "automated handling of small molecules" but does not clearly state that the tool can score ternary complexes. This may be misleading for potential users.</li>
+<li>
+<p><strong>Required correction</strong> Clarify in the abstract that the tool supports scoring of ternary complexes involving small-molecule inducers, or adjust the title to reflect the broader scope.</p>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong>
+  1. Lack of confidence intervals and statistical tests for all reported correlation coefficients (R1-M1).
+  2. Insufficient detail on the small-molecule ternary complex validation, including simulation setup and controls (R1-M2).
+  3. Missing quantitative data on computational cost and speedup from the interface cutout mode (R1-M4).
+  4. No comparison to other state-of-the-art scoring methods on the same benchmarks, limiting the assessment of GroScore's competitive position.</p>
+</li>
+<li>
+<p><strong>Assessment against Nature-style criteria</strong></p>
+</li>
+<li><strong>Originality</strong>: The bidirectional SMD approach with interface cutout is a reasonable incremental improvement over existing SMD-based scoring methods, but the core concept of using nonequilibrium work measurements for PPI scoring is not new. The combination of features (bidirectional pulling, multiple force fields, automated small-molecule handling) is somewhat novel, but the methodological advance is modest.</li>
+<li><strong>Scientific importance</strong>: PPI scoring is an important problem in structural biology, and a reliable, automated, open-source tool would be valuable. However, the weak correlations on heterogeneous datasets suggest that the method has limited predictive power for absolute affinity prediction, and the authors themselves acknowledge this limitation. The practical utility for high-throughput screening remains to be demonstrated.</li>
+<li><strong>Interdisciplinary readership</strong>: The work is primarily of interest to computational structural biologists and bioinformaticians. The methods and results are unlikely to attract a broad interdisciplinary audience beyond this niche.</li>
+<li><strong>Technical soundness</strong>: The methodological choices are generally sound and well-motivated, but the statistical reporting is incomplete, and the validation on the small-molecule ternary complex set is preliminary. The lack of comparison to other methods weakens the technical case.</li>
+<li>
+<p><strong>Readability for nonspecialists</strong>: The manuscript is generally well-written and accessible to readers with a background in molecular dynamics and PPI prediction. The introduction provides a good overview of the field and the limitations of existing methods. However, some technical details (e.g., the CGI estimator) may be challenging for nonspecialists.</p>
+</li>
+<li>
+<p><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The manuscript describes a useful and potentially valuable software tool, and the methodological improvements over the predecessor are sensible. However, the statistical reporting needs to be strengthened, the small-molecule validation needs more detail and controls, and the computational cost claims need quantitative support. The authors should also provide a comparison to other scoring methods to establish the competitive position of GroScore.</p>
+</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that bidirectional pulling "overcomes the numerical bias of exponential work averaging" is not quantitatively supported in the provided text; the authors should show a direct comparison of unidirectional vs. bidirectional results on the same systems.</li>
+<li>The claim that the interface cutout mode "dramatically reduces computational cost" is not supported by quantitative data in the provided text.</li>
+<li>The categorization of the six nonsignificant small-molecule ternary complex cases into three groups is based on literature knowledge but is not quantitatively justified.</li>
+<li>The claim that "bidirectional pulling... substantially reduces the anticorrelation between scores and buried surface area" is mentioned but not quantified in the provided text.</li>
+<li>The overall PPB-Affinity correlation (r = 0.16) is described as "weak but significant," but the practical utility of this level of correlation for ranking candidate complexes is not discussed.</li>
+<li>The CAPRI Score_set improvement (49 vs. 40 Top-10) is reported without statistical significance testing or comparison to other methods.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

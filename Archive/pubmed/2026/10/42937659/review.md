@@ -1,0 +1,98 @@
+## Review setup
+- **Input scope** Abstract only, as supplied in the manuscript record
+- **Assessment boundary** Evaluation is restricted to the claims and evidence visible in the abstract. No full text, figures, tables, methods, statistics, or supplementary materials were provided, so mechanistic, structural, and quantitative assertions cannot be independently verified.
+- **Shared manuscript claim summary** The three human YTHDF proteins share an essentially identical m6A-RNA binding mode that requires rare protonation of m6A and a similar open-closed recognition-loop switch, yet they differ in recognition-loop flexibility and conformational preference; only YTHDF1 homodimerizes, and homodimerization prevents m6A-RNA binding; a hybrid model is proposed to reconcile the redundancy versus specificity debate.
+- **Visible evidence base** Abstract-level statements referencing mutagenesis, X-ray crystallography, isothermal titration calorimetry (ITC), and molecular dynamics simulations. No data values, structure identifiers, resolution limits, sample sizes, error estimates, or statistical tests are visible.
+- **Missing materials affecting confidence** Full text, all figures and tables, methods, simulation parameters and force fields, crystallographic statistics, ITC raw and fitted data, mutagenesis validation, replicate information, and any supplementary material. Location not provided for every quantitative or structural claim.
+
+## Reviewer
+- **Overall assessment** The manuscript addresses a genuinely interesting and timely question, namely how highly homologous m6A reader proteins can combine near-identical binding chemistry with reported functional differentiation. The proposed hybrid model is conceptually attractive and the multi-method strategy is appropriate in principle. However, from the supplied material the central mechanistic claims are not established. The abstract asserts a protonation-dependent binding mode, a shared open-closed switch, protein-specific recognition-loop flexibility, and a homodimerization-dependent block of RNA binding, but no quantitative, structural, or statistical support is visible. The work is potentially publishable if the technical concerns below are resolved with explicit data.
+- **Who would be interested in the results, and why** Researchers in RNA epigenetics and m6A biology, structural and computational biophysicists studying protein-RNA recognition, and groups working on YTH domain function and reader-protein specificity. The results would also interest those modeling protonation-coupled or conformational-selection binding mechanisms, and scientists trying to reconcile redundancy versus specificity in paralogous protein families.
+- **Major strengths** The question is well motivated and targets a real tension in the literature. The combination of experimental biophysics with molecular dynamics is a sensible way to connect structure, energetics, and dynamics. The explicit proposal of a hybrid model, together with a stated discussion of limitations and validation experiments, is a constructive framing. Comparing binding capacity, conformational change, and homodimerization within one study is a coherent design.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Mechanistic claim support
+    - **Claim pointer** Binding of m6A-RNA requires rare protonation of m6A.
+    - **Evidence pointer** Abstract statement only; location not provided
+    - **Concern** The claim of a protonation-dependent binding mode is asserted without any visible pKa estimate, protonation-state analysis, pH-dependent measurement, or computational free-energy support. It is unclear whether this is inferred from simulations, from ITC at a single pH, or from structural interpretation.
+    - **Why it matters** A rare protonation event would be a central mechanistic determinant and would need to be quantitatively consistent with measured affinities and with physiological pH. Without this, the shared binding-mode conclusion is not substantiated.
+    - **Resolution test** Provide pH-dependent binding data or computed protonation free energies, report the relevant pKa values with uncertainty, and show that the proposed protonated state is populated enough to account for the measured affinities.
+  - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Structural evidence
+    - **Claim pointer** The YTHDF proteins share an identical binding mode of m6A-RNA and a similar open-closed recognition-loop switch.
+    - **Evidence pointer** Abstract statement referencing X-ray crystallography; location not provided
+    - **Concern** No crystal structures, resolution, refinement statistics, electron density for the methylated base, or conformational states are shown. The assertion of identical binding mode and a shared switch cannot be evaluated without structural detail and without specifying which states were captured.
+    - **Why it matters** The identity of binding mode is the foundation for the redundancy argument. If the structures sample different loop states or lack clear m6A density, the claim is unsupported.
+    - **Resolution test** Present structures with data collection and refinement statistics, show electron density or omit maps for m6A and the recognition loop, and classify the observed loop conformations across the three proteins.
+  - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Quantitative support
+    - **Claim pointer** ITC data and crystal structures provide consistent evidence that the YTHDF proteins differ significantly in recognition-loop flexibility and conformational preferences.
+    - **Evidence pointer** Abstract statement referencing ITC and crystallography; location not provided
+    - **Concern** No ITC values, stoichiometries, dissociation constants, enthalpies, entropies, or fit quality are visible, and no measure of flexibility is defined. The word significantly is used without a statistical basis.
+    - **Why it matters** The distinction between shared and distinct features rests on these comparisons. Without numbers and uncertainty, the differential-flexibility claim is not testable.
+    - **Resolution test** Report ITC parameters with errors and replicate counts, define the flexibility metric, and provide a statistical comparison across YTHDF1-3.
+  - **Concern ID** R1-M4
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Functional claim support
+    - **Claim pointer** Only YTHDF1 can homodimerize, which prevents binding to m6A-RNA.
+    - **Evidence pointer** Abstract statement; location not provided
+    - **Concern** The homodimerization claim and its proposed inhibitory effect on RNA binding are stated without visible oligomeric-state data, interface characterization, or a binding assay distinguishing monomer from dimer. The causal direction is asserted rather than demonstrated.
+    - **Why it matters** This is one of the few concrete specificity mechanisms proposed. If dimerization is not quantified or if the RNA-binding block is not separated from other effects, the hybrid model loses a key pillar.
+    - **Resolution test** Provide oligomeric-state measurements, identify the dimer interface, and show directly that dimerization state controls m6A-RNA binding, for example by interface mutation or concentration-dependent binding.
+  - **Concern ID** R1-M5
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Computational methodology
+    - **Claim pointer** Molecular dynamics simulations are used to compare conformational changes and recognition-loop dynamics.
+    - **Evidence pointer** Abstract statement; location not provided
+    - **Concern** No simulation length, force field, water model, replicate count, or convergence assessment is visible. The reliability of dynamics-based conclusions about flexibility cannot be judged.
+    - **Why it matters** Loop flexibility and conformational preference are sensitive to sampling and force-field choice. Unconverged or single-replicate simulations would weaken the differential-flexibility claim.
+    - **Resolution test** Report simulation protocols, aggregate sampling per system, number of independent replicates, and convergence or uncertainty estimates for the reported observables.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Terminology
+    - **Affected element** Use of the term identical binding mode
+    - **Evidence pointer** Abstract; location not provided
+    - **Issue** Identical is a strong descriptor for a comparison across three proteins and is not operationally defined.
+    - **Required correction** Define the criteria for identical binding mode, for example shared hydrogen-bonding pattern, base stacking geometry, and comparable affinities within error.
+  - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Model framing
+    - **Affected element** Hybrid model reconciling redundancy and specificity
+    - **Evidence pointer** Abstract; location not provided
+    - **Issue** The model is described but its assumptions and predictive content are not stated in the visible material.
+    - **Required correction** State the model assumptions explicitly and list the predictions that distinguish it from the pure redundancy and pure specificity views.
+  - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Reproducibility
+    - **Affected element** Mutagenesis, ITC, crystallography, and simulation reporting
+    - **Evidence pointer** Abstract; location not provided
+    - **Issue** No construct boundaries, mutations, buffer and pH conditions, or software versions are visible.
+    - **Required correction** Provide construct details, experimental conditions, and software and force-field versions in the methods.
+  - **Concern ID** R1-m4
+    - **Severity** Minor
+    - **Axis** Scope of evidence
+    - **Affected element** Integration of available biophysical and biochemical evidence
+    - **Evidence pointer** Abstract; location not provided
+    - **Issue** It is unclear which prior evidence is integrated and how conflicts among sources are handled.
+    - **Required correction** Specify the sources integrated and the criteria used to weigh or reconcile them.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4. These concern the protonation-dependent binding mechanism, the structural basis of the shared binding mode and loop switch, the quantitative basis for differential flexibility, and the homodimerization-dependent block of RNA binding. R1-M5 affects confidence in the dynamics claims and should be addressed for completeness.
+- **Assessment against Nature-style criteria** Originality is moderate to high, since the hybrid reconciliation of redundancy and specificity is a useful conceptual contribution if supported. Scientific importance is potentially significant for m6A biology, but it currently depends on unverified mechanistic claims. Interdisciplinary readership is plausible, spanning RNA biology, structural biology, and computation, though the abstract is written for a specialized audience. Technical soundness cannot be confirmed from the supplied material because no data, statistics, or methodological detail are visible. Readability for nonspecialists is limited, as terms such as recognition loop, open-closed switch, and rare protonation are used without explanation.
+- **Recommendation posture** Currently not established from the provided evidence. Supportive if the technical concerns, in particular R1-M1 through R1-M4, are resolved with explicit quantitative, structural, and statistical support.
+
+## Risk / unsupported claims
+- The claim that m6A binding requires rare protonation of m6A is unsupported in the visible material, with no pKa, pH dependence, or free-energy evidence provided.
+- The claim of an identical m6A-RNA binding mode across YTHDF1-3 is not verifiable without structures, density maps, and defined comparison criteria.
+- The claim of a shared open-closed recognition-loop switch is not evaluable without conformational assignments and state populations.
+- The claim that the proteins differ significantly in recognition-loop flexibility and conformational preferences is unsupported because no metric, values, or statistical test are visible.
+- The claim that only YTHDF1 homodimerizes and that this prevents m6A-RNA binding is unsupported without oligomeric-state data, interface identification, and a direct binding test.
+- The hybrid model is not evaluable because its assumptions, inputs, and predictions are not stated in the supplied material.
+- All quantitative statements in the abstract are unverifiable at this stage because no numerical values, errors, replicates, or statistical analyses are provided.

@@ -1,0 +1,97 @@
+## Review setup
+- **Input scope** Abstract only, as supplied for manuscript titled "A Metadynamics-Based Protocol for Sampling and Scoring Peptide Nanofibril Conformations" by Yang, Chao-Yu; Miller, Aline F; Saiani, Alberto; Bryce, Richard A, listed for The Journal of Physical Chemistry B, DOI 10.1021/acs.jpcb.6c02235.
+- **Assessment boundary** Assessment is restricted to the supplied abstract text. No full text, figures, tables, supporting information, methods detail, parameter sets, or data are available. Conclusions about technical validity, statistical robustness, and reproducibility cannot be fully established from this material.
+- **Shared manuscript claim summary** The authors propose a metadynamics-based protocol that uses collective variables based on supramolecular twist to sample morphologically distinct cross-beta peptide nanofibrils, including ribbon to rod conformations. They construct an artificial search space of integral fibril structures, run metadynamics in water to cross energy barriers, compute a "resistance score" to rank morphology propensity, and apply the protocol to examine effects of fibril length and peptide sequence on supramolecular twist, comparing results with electron microscopy observations.
+- **Visible evidence base** Abstract-level statements only. No methods section, no collective variable definitions, no convergence data, no free energy surfaces, no resistance score formulation, no simulation sizes or timescales, no experimental comparison details, and no figures or tables are provided.
+- **Missing materials affecting confidence** Full manuscript text, methods, collective variable definitions, metadynamics parameters, convergence and reweighting diagnostics, resistance score derivation, simulation system sizes and compositions, statistical uncertainty estimates, electron microscopy data and matching criteria, and any validation or benchmarking are all unavailable. Confidence in technical soundness and reproducibility is therefore limited.
+
+## Reviewer
+- **Overall assessment** The abstract describes a conceptually interesting and potentially useful computational protocol for exploring conformational landscapes of peptide nanofibrils, an area where all-atom sampling is genuinely difficult. The central ideas, namely twist-based collective variables and a resistance score for morphology propensity, are plausible and of interest to the peptide self-assembly and biomolecular simulation communities. However, from the supplied material alone, the work is not technically established. Key elements required to judge whether the protocol samples the intended landscape, whether the resistance score is meaningful and well-defined, and whether the electron microscopy comparison is quantitative and unbiased are absent. The claims are therefore currently supported only at the level of stated intent, not demonstrated evidence.
+- **Who would be interested in the results, and why** Researchers in peptide and protein self-assembly, amyloid and cross-beta fibril structure, biomolecular simulation method development, enhanced sampling, and soft matter computational chemistry would be interested. Interest would stem from the possibility of a transferable protocol for sampling large supramolecular assemblies and from a proposed scoring scheme that could guide design of peptide architectures. Experimentalists using electron microscopy to characterize fibril morphology may also be interested if the computational predictions are shown to align quantitatively with observed morphologies.
+- **Major strengths** The problem is well motivated, since all-atom exploration of large peptide assemblies is limited by trapping in local minima. The introduction of supramolecular twist as a collective variable is a reasonable and potentially original direction for this class of systems. Combining enhanced sampling with a morphology-oriented score and comparing against electron microscopy is a sensible overall workflow. The stated aim of aiding design of new self-assembled architectures gives the work clear application relevance.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Technical soundness and sampling validity
+    - **Claim pointer** Metadynamics with twist-based collective variables overcomes energy barriers and traverses the rugged conformational landscape of large peptide assemblies in water.
+    - **Evidence pointer** Abstract only; methods, collective variable definitions, and convergence diagnostics location not provided.
+    - **Concern** The abstract asserts barrier crossing and landscape traversal but provides no information on how the collective variables are defined, whether they distinguish the target morphologies, how bias factors and Gaussian parameters were chosen, whether simulations converged, or whether reweighting was validated. For large assemblies in water, convergence is a central and nontrivial issue.
+    - **Why it matters** Without demonstrated convergence and well-chosen collective variables, the sampled landscape and any derived score may reflect bias protocol artifacts rather than physically meaningful morphology preferences.
+    - **Resolution test** Provide explicit collective variable definitions, metadynamics parameters, convergence diagnostics such as block analysis or multiple independent runs, reweighted free energy surfaces, and a demonstration that the chosen coordinates distinguish ribbon, rod, and intermediate morphologies.
+  - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Definition and interpretability of the proposed metric
+    - **Claim pointer** The resistance score identifies the propensity of distinct fibril morphologies across the conformational space.
+    - **Evidence pointer** Abstract only; resistance score formulation location not provided.
+    - **Concern** The resistance score is introduced by name but not defined in the supplied material. It is unclear whether it is a free energy quantity, a kinetic proxy, a geometric order parameter, or a heuristic. Its units, normalization, dependence on system size, and sensitivity to sampling depth are unknown.
+    - **Why it matters** A score intended to rank morphology propensity must have a clear physical or statistical meaning and demonstrated robustness. Otherwise, comparisons across fibril lengths and sequences may not be interpretable.
+    - **Resolution test** Provide a formal definition, derivation, and units of the resistance score, together with tests of its stability under different sampling lengths, seeds, and system sizes, and a demonstration that it correlates with an independent measure of morphology propensity.
+  - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Construction of the search space and physical realism
+    - **Claim pointer** An artificially constructed search space consistent with integral fibril structures is used to perform metadynamics.
+    - **Evidence pointer** Abstract only; search space construction location not provided.
+    - **Concern** The phrase "artificially construct a search space consistent with integral fibril structures" is not elaborated. It is unclear how structures are generated, whether they preserve steric and hydrogen-bonding constraints, whether they include solvent and ions explicitly, and whether the artificial space biases the resulting morphology distribution.
+    - **Why it matters** If the search space predefines or excludes relevant morphologies, the reported preferences may be a consequence of construction choices rather than of the underlying energetics.
+    - **Resolution test** Describe the construction procedure in full, show that generated structures are physically valid and locally stable, and demonstrate that results are not sensitive to reasonable variations in how the space is built.
+  - **Concern ID** R1-M4
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Experimental validation
+    - **Claim pointer** Results are compared with fibril morphologies observed in electron microscopy.
+    - **Evidence pointer** Abstract only; electron microscopy comparison location not provided.
+    - **Concern** The abstract states a comparison with electron microscopy but gives no indication of which systems were imaged, how morphologies were classified, whether the comparison was quantitative or qualitative, or whether the computational predictions were made before or after seeing the experimental data.
+    - **Why it matters** The strength of the validation claim depends on whether the comparison is independent, quantitative, and covers the same sequences and conditions as the simulations.
+    - **Resolution test** Provide the electron microscopy datasets, morphology classification criteria, matching conditions between simulation and experiment, and a quantitative agreement metric, ideally with a blinded or preregistered comparison.
+  - **Concern ID** R1-M5
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Scope of conclusions on sequence and length effects
+    - **Claim pointer** The protocol is used to investigate the impact of fibril length and peptide sequence on supramolecular twist.
+    - **Evidence pointer** Abstract only; sequence and length study location not provided.
+    - **Concern** The abstract does not state how many sequences or lengths were examined, whether the effects are monotonic or system specific, or whether the observed trends exceed statistical uncertainty.
+    - **Why it matters** General claims about sequence and length dependence require a sufficiently broad and well-characterized set of systems, with uncertainty quantification, to be credible.
+    - **Resolution test** Report the number and identity of sequences and lengths studied, effect sizes with uncertainties, and whether trends are consistent across independent simulations and, where available, experiments.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Terminology
+    - **Affected element** Term "resistance score"
+    - **Evidence pointer** Abstract, location not provided
+    - **Issue** The term is introduced without definition or motivation in the abstract, which may confuse readers unfamiliar with the intended physical meaning.
+    - **Required correction** Define the resistance score briefly at first use and state what it is intended to measure.
+  - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Clarity of morphological classification
+    - **Affected element** Morphology descriptors "ribbon" and "rod"
+    - **Evidence pointer** Abstract, location not provided
+    - **Issue** The abstract refers to ribbon to rod conformations without specifying the geometric or energetic criteria used to distinguish them.
+    - **Required correction** State the operational definition of each morphology class used in the analysis.
+  - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Reproducibility
+    - **Affected element** Simulation and analysis workflow
+    - **Evidence pointer** Abstract, location not provided
+    - **Issue** No software, force field, water model, or analysis code information is given in the supplied material.
+    - **Required correction** Provide software versions, force field and water model, and availability of scripts or data.
+  - **Concern ID** R1-m4
+    - **Severity** Minor
+    - **Axis** Overstatement
+    - **Affected element** Claim that the workflow "demonstrates an ability to identify a preferred morphology"
+    - **Evidence pointer** Abstract, location not provided
+    - **Issue** The abstract asserts demonstrated ability without presenting the supporting evidence in the supplied text.
+    - **Required correction** Either temper the claim to match the evidence presented or ensure the full text provides direct supporting results.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. These concern sampling validity, definition and robustness of the resistance score, and the construction of the search space. Until these are resolved with explicit methods and diagnostics, the central protocol claim cannot be considered established. R1-M4 and R1-M5 further affect the strength of the validation and generality claims but are not by themselves blocking at the abstract stage.
+- **Assessment against Nature-style criteria** Originality is plausible, since twist-based collective variables and a morphology propensity score for peptide nanofibrils are not obviously standard, but originality cannot be confirmed without comparison to prior enhanced sampling work on fibrils. Scientific importance could be significant for peptide design and for understanding fibril polymorphism, yet the supplied material does not demonstrate impact beyond a stated workflow. Interdisciplinary readership is possible, spanning computational chemistry, soft matter, and structural biology, but the abstract is written for a specialist simulation audience and does not make the broader relevance concrete. Technical soundness is not established from the supplied material because methods, convergence, score definition, and validation details are absent. Readability for nonspecialists is moderate, as the abstract is concise but relies on undefined terms such as resistance score and supramolecular twist without explanation.
+- **Recommendation posture** Currently not established from the provided evidence. The work is potentially supportive if technical concerns R1-M1, R1-M2, and R1-M3 are resolved with full methodological detail, convergence diagnostics, a formal score definition, and a quantitative experimental comparison.
+
+## Risk / unsupported claims
+- The claim that metadynamics overcomes energy barriers and traverses the rugged conformational landscape is unsupported at the abstract level because no convergence or sampling diagnostics are provided.
+- The resistance score is not defined in the supplied material, so its ability to identify morphology propensity is not evaluable.
+- The claim that the artificially constructed search space is consistent with integral fibril structures is not substantiated without construction details and stability checks.
+- The comparison with electron microscopy is asserted but not described, so agreement between computation and experiment is not evaluable.
+- The claim that the workflow demonstrates an ability to identify a preferred morphology is not supported by visible evidence in the supplied abstract.
+- General statements about the impact of fibril length and peptide sequence on supramolecular twist are not evaluable without the number of systems, effect sizes, and uncertainty estimates.

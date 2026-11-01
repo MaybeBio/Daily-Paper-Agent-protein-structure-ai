@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report that human thymidine kinase 1 (hTK1) exhibits maximal structural stability and catalytic activity at pH 8.0, with reduced activity and increased conformational heterogeneity under acidic and alkaline conditions, based on experimental biophysical assays and molecular dynamics simulations.
+- **Visible evidence base** Abstract text only; specific numerical values for Vmax and relative activity are provided, but no methodological details, statistical analyses, or raw data are available
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, experimental protocols, simulation parameters, statistical analysis details, and any supplementary information
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible and potentially useful study on the pH dependence of hTK1 structure and function. The combination of experimental and computational approaches is appropriate for the stated aims. However, the abstract alone provides insufficient detail to evaluate the rigor of the methods, the robustness of the conclusions, or the novelty relative to existing literature. Several claims, particularly those linking specific structural features to catalytic outcomes, cannot be assessed without access to the underlying data.
+- **Who would be interested in the results, and why** Researchers in enzymology, structural biology, and cancer biology would find these results relevant, given hTK1's role as a proliferation biomarker and therapeutic target. Those studying pH-dependent enzyme regulation or nucleotide metabolism may also be interested. The potential translational implications for diseases involving altered nucleotide metabolism could attract a broader biomedical audience.
+- **Major strengths** The study addresses a relevant gap in understanding pH effects on hTK1. The use of multiple complementary techniques (ANS fluorescence, ThT fluorescence, light scattering, DLS, MD simulations) is commendable. The identification of pH 8.0 as the optimal condition for stability and activity provides a clear, testable finding.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that hTK1 exhibits "highest structural stability and catalytic activity at pH 8.0" with "the greatest Vmax (1.363 +/- 0.06 muM s(-1)) and 100% relative activity"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract reports a single Vmax value and relative activity percentage without any indication of the number of replicates, error bars beyond the stated standard deviation, or statistical comparison across pH conditions. It is unclear whether the differences in activity across pH values are statistically significant.
+  - **Why it matters** Without statistical validation, the central claim of pH 8.0 being optimal cannot be distinguished from experimental noise. This is the foundational finding of the study.
+  - **Resolution test** Provide full kinetic data with replicates, statistical tests (e.g., ANOVA or appropriate pairwise comparisons), and confidence intervals for Vmax and relative activity across all tested pH values.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that "under extreme pH conditions, the structures were more flexible, hydrogen-bonding networks changed, solvent accessibility increased, and correlated residue motions were disrupted" based on MD simulations and spectroscopic data
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not specify the pH values tested, the simulation timescales, the force field used, or the specific spectroscopic metrics that support each structural conclusion. The link between simulation-derived parameters and experimental observables is not described.
+  - **Why it matters** These structural claims are central to the proposed mechanism linking pH to function. Without methodological detail, the reliability and reproducibility of the simulations and their correlation with experimental data cannot be evaluated.
+  - **Resolution test** Provide full methods for MD simulations (force field, water model, simulation length, pH handling) and specify which experimental data correspond to each structural claim. Show quantitative agreement between simulation and experiment where applicable.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Originality
+  - **Claim pointer** The implicit claim that this study provides novel insights into pH-dependent hTK1 regulation
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not reference prior work on hTK1 structure or pH effects, nor does it state what is new relative to existing knowledge. Without a clear statement of novelty, the contribution of this work is unclear.
+  - **Why it matters** For a study to be impactful, its novel contribution must be explicit. If prior studies have already characterized pH effects on hTK1 or similar kinases, the incremental value of this work may be limited.
+  - **Resolution test** Add a brief statement in the abstract or introduction that explicitly contrasts the present findings with prior work and highlights the specific new insights.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract uses technical terms (ANS fluorescence, ThT fluorescence, DLS) without brief explanations, which may limit accessibility for readers outside biophysics.
+  - **Required correction** Add brief parenthetical explanations for these techniques or rephrase to describe their purpose in plain language.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Scientific importance
+  - **Affected element** Concluding statement
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The final sentence claims the study "further strengthen[s] hTK1's potential as a therapeutic target," but the abstract does not describe any direct therapeutic implications or disease relevance beyond a general statement.
+  - **Required correction** Either provide a specific example of how the findings inform therapeutic targeting or temper the claim to match the evidence presented.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** pH range tested
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract refers to "acidic and alkaline conditions" and "extreme pH" without specifying the actual pH values used.
+  - **Required correction** State the full range of pH values tested and define what constitutes "extreme" in this context.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (statistical validation of activity data), R1-M2 (methodological detail for simulations and structural claims), R1-M3 (explicit novelty statement)
+- **Assessment against Nature-style criteria** 
+  - Originality: Not assessable from the abstract alone. The authors do not state how this work advances beyond existing hTK1 studies. 
+  - Scientific importance: Potentially moderate. pH-dependent regulation of a cancer biomarker enzyme is of interest, but the abstract does not demonstrate broad significance beyond a descriptive characterization. 
+  - Interdisciplinary readership: Limited. The abstract is written primarily for biochemists and biophysicists; the translational relevance is asserted but not developed. 
+  - Technical soundness: Not assessable. Key methodological details and statistical analyses are absent. 
+  - Readability for nonspecialists: Acceptable but could be improved with brief explanations of techniques and clearer framing of significance.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents an interesting hypothesis and preliminary data, but the lack of methodological detail, statistical validation, and explicit novelty prevents a supportive recommendation. The authors should provide the full manuscript and address the major concerns before the case can be evaluated.
+
+## Risk / unsupported claims
+- The claim of "highest structural stability" at pH 8.0 is unsupported without quantitative stability metrics (e.g., melting temperatures, free energy values).
+- The claim that "correlated residue motions were disrupted" under extreme pH is not assessable without simulation details and analysis methods.
+- The statement that findings "provide molecular insights into hTK1 regulation under physiological and pathological conditions" is speculative, as no physiological or pathological context is described in the abstract.
+- The therapeutic relevance claim is unsupported by any direct evidence or mechanistic link to disease states.

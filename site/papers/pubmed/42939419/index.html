@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RASSF2 Under the Computational Microscope: Prediction of Destabilizing Missense Variants. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>RASSF2 Under the Computational Microscope: Prediction of Destabilizing Missense Variants.</h1>
+      <div class="meta">Al-Eitan, Laith Naser; Abusalem, Mohammad Tareq; Alghamdi, Mansour Abdullah</div>
+      <div class="meta muted">
+        
+        <span class="journal">Biology</span>
+        · 2026-10-27
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42939419/">原文</a>
+      </div>
+      <p class="one-liner">用AlphaFold复合物与多种计算工具预测RASSF2错义突变的致病性与去稳定效应，属蛋白质结构计算的应用型研究，方法创新有限。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">BACKGROUND: RASSF2 is a tumor suppressor gene involved in multiple cancers such as colorectal and lung cancer. Different studies have focused on promoter hypermethylation as the main inactivation pathway of this gene, which leads to cancer proliferation and metastasis. Here, using a comprehensive in silico pipeline, we investigate, for the first time, the impact of missense variants on protein structure, stability, and interactions. METHODS: Multitiered computational tools were used to predict the most likely pathogenic and destabilizing nsSNPs; the impact of coding mutations on different gene expression was analyzed, and the impact of nsSNPs on PPIs using mCSM-PPI2 and MutPred-PPI was analyzed using predicted AlphaFold protein complexes. RESULTS: Of 454 variants, 19 variants were consistently predicted to be likely pathogenic and destabilizing, 14 variants were in the RA domain, and two variants were in the SARAH domain. V193D, L235P, L247P, and Y275C were conserved and exhibited severe structural and molecular alterations. Also, Y275C was at the interface, and it was predicted to disrupt the RASSF2-MST2 complex. KRT23 and BCL2L14 were significantly downregulated in samples containing mutated RASSF2 in COAD and LUAD, respectively. STRING illustrates the Hippo signaling pathway as the main pathway involved in the network. CONCLUSIONS: These findings provide promising candidates that can be important for future functional investigations. However, in vivo and in vitro experiments to validate our findings are necessary.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">背景：RASSF2是一种参与多种癌症（如结直肠癌和肺癌）的抑癌基因。不同研究聚焦于启动子高甲基化作为该基因的主要失活途径，从而导致癌症增殖和转移。在此，我们使用综合的计算机模拟流程，首次研究错义变异对蛋白质结构、稳定性和相互作用的影响。方法：使用多层计算工具预测最可能致病和去稳定的nsSNP；分析编码突变对不同基因表达的影响，并使用预测的AlphaFold蛋白质复合物，通过mCSM-PPI2和MutPred-PPI分析nsSNP对PPI的影响。结果：在454个变异中，19个变异被一致预测为可能致病和去稳定，14个变异位于RA结构域，2个变异位于SARAH结构域。V193D、L235P、L247P和Y275C具有保守性，并表现出严重的结构和分子改变。此外，Y275C位于界面，并被预测会破坏RASSF2-MST2复合物。在COAD和LUAD中，分别含有突变RASSF2的样本中KRT23和BCL2L14显著下调。STRING显示Hippo信号通路是该网络涉及的主要通路。结论：这些发现提供了有前景的候选者，可能对未来功能研究具有重要意义。然而，需要体内和体外实验来验证我们的发现。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：RASSF2 Under the Computational Microscope: Prediction of Destabilizing Missense Variants</li>
+<li><strong>作者与单位</strong>：Al-Eitan, Laith Naser; Abusalem, Mohammad Tareq; Alghamdi, Mansour Abdullah（致谢提及 Jordan University of Science and Technology, JUST, Irbid, Jordan 提供行政与技术支持的作者单位线索；具体署名单位未在提供材料中逐条列出）</li>
+<li><strong>期刊/预印本平台</strong>：Biology（MDPI）</li>
+<li><strong>年份</strong>：2026（日期字段 2026-10-27）</li>
+<li><strong>论文类型</strong>：计算/生物信息学变异优先级排序研究（in silico pipeline，无湿实验验证）</li>
+<li><strong>领域</strong>：癌症遗传学 × 蛋白质变异效应预测 × 结构生物信息学</li>
+<li><strong>关键词</strong>：未提供（正文未列关键词表）</li>
+<li><strong>DOI/arXiv 号</strong>：10.3390/biology15201818</li>
+<li><strong>代码</strong>：未提供（全部使用公开 web server，无自研代码）</li>
+<li><strong>数据</strong>：NCBI dbSNP（Gene ID 9770，MANE transcript NM_014737.3）、UniProt P50749、AlphaFold DB（AF-P50749-F1 v6；AF-0000000210953970 v1 NVIDIA dataset）、gnomAD v4.1.1、ClinVar、cBioPortal、AACR GENIE、muTarget、STRING v12.0；补充表 S1–S16</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在「蛋白质结构相关计算研究 × AI/物理模拟」方向中的位置</strong>：属于<strong>变异效应预测（variant effect prediction）的集成式 in silico 优先级排序</strong>工作，而非方法学创新。它把 AlphaFold/AlphaFold 3 结构预测、AlphaMissense、DDMut/DynaMut2/ThermoMPNN（ΔΔG 预测）、mCSM-PPI2/MutPred-PPI（界面与 edgetic 效应）等已有工具串成一条「多工具一致性过滤」流水线，用于一个此前未被系统分析过的靶点（RASSF2）。对本课题的价值在于：可作为<strong>多工具共识筛选 + 结构置信度审计</strong>的流程范例，以及一个「预测复合物置信度不足时结论如何降级」的案例。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>针对 RASSF2 的 454 个 nsSNP，用五个致病性预测工具取交集筛出 75 个，再用三个 ΔΔG 工具取交集筛出 19 个一致预测去稳定化的变异，并借助 AlphaFold/AlphaFold 3 结构与 PPI 工具描述其可能的结构、修饰与互作影响，结论为<strong>算法优先级排序结果、需实验验证</strong>，且 PPI 相关结论受预测复合物低–中等置信度限制。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：RASSF2 的哪些错义变异最可能破坏其蛋白质稳定性、结构、翻译后修饰与蛋白–蛋白相互作用（尤其 RA 域–KRAS、SARAH 域–MST1/MST2）？</li>
+<li><strong>为什么重要</strong>：RASSF2 是抑癌基因，通过 RA 域以 GTP 依赖方式结合 KRAS、通过 SARAH 域与 MST1(STK4)/MST2(STK3) 形成复合物行使凋亡功能；其失活与结直肠癌、肺癌、胃癌、乳腺癌、甲状腺癌相关。错义变异可改变电荷、几何与疏水性并削弱 PPI，但实验表征成本高。</li>
+<li><strong>现有方法为何不足</strong>：单一预测工具假阳性/假阴性高；作者引用文献[15]主张多工具一致性可提高准确度与性能。此外，RASSF2 的 nsSNP 此前<strong>未被系统研究</strong>（作者称本文为首个）。</li>
+<li><strong>精确研究问题（Can ... ?）</strong>：Can an integrative in silico pipeline, requiring consensus across five pathogenicity predictors and three ΔΔG predictors, identify a small set of RASSF2 missense variants that are consistently predicted to be destabilizing and to affect RA/SARAH-domain structure and interactions?（[Analysis] 该问句为基于 Methods 的改写，非原文原句）</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><strong>注：以下脉络为「仅本文框架」——即作者在 Introduction 中给出的叙述顺序，未做外部文献核验。</strong></p>
+<ol>
+<li><strong>阶段一：序列/进化保守性 + 理化性质的单工具预测</strong>（SIFT、PolyPhen2）。优点：快速、无需结构。局限：单工具一致性差。</li>
+<li><strong>阶段二：机器学习二分类器与蛋白语言模型嵌入</strong>（PhD-SNPg 用 ClinVar ~104,000 变异训练；E-SNPs&amp;GO 用 SVM + ESM-1v/ProtT5 嵌入 + GO 注释）。优点：可利用大规模标注与嵌入表征。局限：仍为序列层面，不直接给出结构机制。</li>
+<li><strong>阶段三：基于群体频率微调的深度模型</strong>（AlphaMissense，AlphaFold 微调于人类/灵长类变异群体频率）。优点：SOTA 致病性打分。局限：不直接给 ΔΔG 或界面效应。</li>
+<li><strong>阶段四：结构基 ΔΔG 与界面预测</strong>（DDMut 图签名、DynaMut2 振动熵、ThermoMPNN 深度学习 ΔΔG；mCSM-PPI2 图签名结合亲和力、MutPred-PPI 图注意力网络 + pLM 嵌入 + AlphaFold 3 接触图）。优点：给出机制性量（稳定性、亲和力）。局限：依赖输入结构质量；ΔΔG 在 ±0.5 kcal/mol 区间不可靠（作者引文献[31]）。</li>
+<li><strong>本文主张的位置</strong>：不提出新算法，而是<strong>把上述阶段一至四的工具按「全票一致」规则串联</strong>，首次应用于 RASSF2，产出 19 个候选变异供后续实验。</li>
+</ol>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单工具致病性预测不可靠</td>
+<td>五个工具对同一 454 变异集给出的阳性数差异大：SIFT 196、PolyPhen2 297、PhD-SNP 301、E-SNPs&amp;GO 134、AlphaMissense 210</td>
+<td>作者引文献[15]：多工具一致性可提高 accuracy/precision/performance</td>
+<td>Results 3.2；Table S2–S6</td>
+</tr>
+<tr>
+<td>ΔΔG 预测在近中性区间不可靠</td>
+<td>需要人为设阈值排除 |ΔΔG| ≤ 0.5 kcal/mol 的预测</td>
+<td>作者引文献[31]：稳定性预测器在 ±0.5 kcal/mol 内结果不可靠</td>
+<td>Methods 2.4；Results 3.4</td>
+</tr>
+<tr>
+<td>实验表征 nsSNP 成本高、耗时长</td>
+<td>无法对 454 个变异逐一做实验</td>
+<td>作者陈述（Introduction）</td>
+<td>Introduction 末段</td>
+</tr>
+<tr>
+<td>RASSF2 的 nsSNP 缺乏系统研究</td>
+<td>作者称「据我们所知，这是首个针对 RASSF2 nsSNP 的研究」</td>
+<td>未提供成因解释</td>
+<td>Introduction 末段</td>
+</tr>
+<tr>
+<td>缺乏实验结构，PPI 结论受限</td>
+<td>RASSF2–KRAS 复合物 pTM=0.63、ipTM=0.52（低–中）；RASSF2–MST1 pTM=0.68、ipTM=0.66（中）；RASSF2–MST2 ipSAE=0.73、ipTM=0.68、pDockQ2=0.62（中）</td>
+<td>作者解释：预测复合物只是结构假设，缺乏实验结构</td>
+<td>Results 3.12；Discussion 局限段</td>
+</tr>
+<tr>
+<td>临床注释缺失</td>
+<td>19 个变异在 ClinVar 均无明确致病性分类；AACR GENIE 中无 RASSF2 数据</td>
+<td>未提供成因解释</td>
+<td>Results 3.5；Results 3.8</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：构建一条「多工具全票一致」的过滤漏斗——454 nsSNP →（5 个致病性工具全阳性）75 →（3 个 ΔΔG 工具全去稳定化且超 ±0.5 阈值）19 → 对 19 个做保守性、结构域定位、二级结构/可及性、癌症驱动、磷酸化位点、分子机制、结构冲击、PPI 影响、表达关联与网络富集的多角度描述。</li>
+<li><strong>核心洞察</strong>：在缺乏实验数据的新靶点上，<strong>用「跨工具一致性」替代「单一工具置信度」作为筛选准则</strong>，可以把假阳性率压到可人工审阅的规模（19 个），同时用 AlphaFold 系列结构把序列层面的预测「落到」具体结构域与界面上（14/19 落在 RA 域，2/19 落在 SARAH 域）。作者同时明确：一致性 ≠ 生物学真实性，且结构置信度低时 PPI 结论必须降级。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：
+   - 多工具共识筛选是<strong>召回率换精确率</strong>的操作，本文未报告任何工具的假阳性/假阴性率，因此「19 个」的绝对可信度不可评估；可迁移的是<strong>流程模板</strong>而非具体阈值。
+   - 当预测复合物 ipTM &lt; 0.6 时（本文 RASSF2–KRAS ipTM=0.52），基于该复合物的界面突变效应预测应被视为<strong>假设生成</strong>而非结论——本文对此做了显式降级声明，这是值得复制的报告规范。
+   - 用「结构域定位 + 保守性 + 二级结构变化」三重交叉来给候选变异排优先级，是一种低成本、可迁移的<strong>证据叠加（evidence stacking）</strong>策略。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：NCBI dbSNP 中 RASSF2（Gene ID 9770，MANE NM_014737.3）的全部 nsSNP（454 个，多等位 rsID 按不同氨基酸改变拆分为独立变异）；UniProt P50749 FASTA 序列。</li>
+<li><strong>输出</strong>：19 个一致预测去稳定化的候选变异及其多维注释（保守性、结构域、SS/RSA、致癌性、磷酸化、分子机制、结构冲击、PPI 影响、表达关联）。</li>
+<li><strong>模块</strong>：① 变异获取与拆分；② 五工具致病性共识（SIFT / PolyPhen2 / PhD-SNPg / E-SNPs&amp;GO / AlphaMissense）；③ 结构获取与质量评估（AlphaFold DB + ERRAT + PROCHECK）；④ 三工具 ΔΔG 共识（DDMut / DynaMut2 / ThermoMPNN）；⑤ 群体频率与临床注释（gnomAD v4.1.1 / ClinVar）；⑥ 保守性（ConSurf）；⑦ 结构域（InterPro）；⑧ SS/可及性/无序（NetSurfP-3.0）；⑨ 致癌性（CScape + cBioPortal + AACR GENIE）；⑩ 磷酸化（NetPhos3.1 / GPS 6.0）；⑪ 分子机制（MutPred2）；⑫ 结构冲击（Project HOPE）；⑬ PPI 影响（AlphaFold 3 建模 + mCSM-PPI2 + MutPred-PPI + ChimeraX 可视化）；⑭ 表达关联（muTarget，COAD/LUAD）；⑮ PPI 网络与富集（STRING v12.0）。</li>
+<li><strong>训练</strong>：本文不训练任何模型，全部使用预训练/预构建的公开工具与数据库。</li>
+<li><strong>工具</strong>：见上；复合物建模用 AlphaFold 3（seeds=auto，每次 5 个模型，取 pTM/ipTM 最高者；多次独立运行界面一致）。</li>
+<li><strong>反馈回路</strong>：无迭代优化回路；为<strong>单向漏斗式过滤</strong>（454 → 75 → 19）。</li>
+<li><strong>假设</strong>：</li>
+<li>多工具一致阳性 ⇒ 更可能是真阳性（引文献[15]）。</li>
+<li>|ΔΔG| ≤ 0.5 kcal/mol 的预测不可靠，故设阈值排除（引文献[31]）。</li>
+<li>保守位置（ConSurf 7–9）的变异更可能致病（引文献[58]）。</li>
+<li>预测复合物可用于界面突变效应分析，但置信度低时需降级解读。</li>
+<li><strong>文字流程</strong>：dbSNP 取 454 nsSNP → 五工具全阳性得 75 → AlphaFold DB 取 AF-P50749-F1 v6 结构（平均 pLDDT 77.88；ERRAT 92.4%；PROCHECK 83.8% 最 favored）→ 三工具 ΔΔG 共识（DDMut&lt;−0.5 且 DynaMut2&lt;−0.5 且 ThermoMPNN&gt;0.5）得 19 → 对 19 做 gnomAD/ClinVar/ConSurf/InterPro/NetSurfP/CScape/cBioPortal/NetPhos/GPS/MutPred2/HOPE 注释 → AlphaFold 3 建 RASSF2–KRAS、RASSF2–MST1 复合物，AlphaFold DB 取 RASSF2–MST2 → mCSM-PPI2 + MutPred-PPI 评界面效应 → muTarget 与 STRING 做表达与网络层面的上下文分析。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>五工具致病性共识</td>
+<td>454 → 75</td>
+<td>单工具假阳性高</td>
+<td>输入：454 变异列表；输出：75 个全阳性变异</td>
+<td>Results 3.2；Table S7、Table 1</td>
+<td><strong>实测消融效应</strong>：无消融实验。<strong>预期效应</strong>：若只用单工具，候选集规模在 134–301 之间，下游 ΔΔG 计算量与人工审阅负担显著上升</td>
+</tr>
+<tr>
+<td>三工具 ΔΔG 共识（含 ±0.5 阈值）</td>
+<td>75 → 19</td>
+<td>ΔΔG 预测在近中性区不可靠</td>
+<td>输入：75 变异 + PDB 结构；输出：19 个一致去稳定化变异</td>
+<td>Results 3.4；Table 2、Table S11</td>
+<td><strong>实测消融效应</strong>：无消融实验。<strong>预期效应</strong>：若去掉 ±0.5 阈值，仅按符号取交集，候选数会多于 19（DDMut 51、DynaMut2 54、ThermoMPNN 64 个去稳定化，符号交集未报告）</td>
+</tr>
+<tr>
+<td>AlphaFold 结构获取与质量评估</td>
+<td>提供 ΔΔG 与界面分析的坐标</td>
+<td>结构基工具需要坐标</td>
+<td>输入：UniProt P50749；输出：AF-P50749-F1 v6 + pLDDT/PAE/ERRAT/PROCHECK</td>
+<td>Results 3.3；Figure 2、Figure S1A</td>
+<td><strong>预期效应</strong>：无结构则 DDMut/DynaMut2/ThermoMPNN/mCSM-PPI2 无法运行</td>
+</tr>
+<tr>
+<td>AlphaFold 3 复合物建模</td>
+<td>生成 RASSF2–KRAS、RASSF2–MST1</td>
+<td>PPI 效应预测需要复合物</td>
+<td>输入：RA 域 + GTP 结合 KRAS（含 GTP、Mg²⁺）；SARAH 域 + MST1 SARAH 域；输出：5 模型/次，取 pTM/ipTM 最高</td>
+<td>Results 3.12；Figure S1B、S1C</td>
+<td><strong>实测消融效应</strong>：无。<strong>预期效应</strong>：无复合物则 mCSM-PPI2/MutPred-PPI 无法评估界面</td>
+</tr>
+<tr>
+<td>ConSurf 保守性</td>
+<td>判断变异位点进化保守度</td>
+<td>保守位点变异更可能致病</td>
+<td>输入：RASSF2 PDB；输出：1–9 分</td>
+<td>Results 3.6；Figure 3</td>
+<td><strong>实测消融效应</strong>：无。<strong>预期效应</strong>：不改变 19 个候选集，仅提供支持性证据</td>
+</tr>
+<tr>
+<td>InterPro 结构域定位</td>
+<td>定位变异在 RA/SARAH 域</td>
+<td>结构域决定功能解读</td>
+<td>输入：序列；输出：域边界</td>
+<td>Results 3.6；Table 4、Table S13</td>
+<td><strong>实测消融效应</strong>：无。<strong>预期效应</strong>：不改变候选集，但决定后续 PPI 分析的分组</td>
+</tr>
+<tr>
+<td>NetSurfP-3.0</td>
+<td>SS/RSA/Pdisorder 野生型 vs 突变体</td>
+<td>检测二级结构破坏</td>
+<td>输入：WT 与突变序列；输出：SS、RSA、ASA、Pdisorder、phi/psi</td>
+<td>Results 3.7；Figure 4、Table 5、Table S14</td>
+<td><strong>实测消融效应</strong>：无。<strong>预期效应</strong>：不改变候选集</td>
+</tr>
+<tr>
+<td>CScape + cBioPortal + GENIE</td>
+<td>致癌性打分与临床队列核对</td>
+<td>连接变异与癌症</td>
+<td>输入：GRCh38 坐标格式变异；输出：&gt;0.5 致癌、&gt;0.9 高置信</td>
+<td>Results 3.8；Table 6</td>
+<td><strong>实测消融效应</strong>：无。<strong>预期效应</strong>：不改变候选集</td>
+</tr>
+<tr>
+<td>MutPred2</td>
+<td>致病性 + &gt;50 种分子机制</td>
+<td>提供机制假设</td>
+<td>输入：序列 + 变异；输出：g-score 与机制概率/p 值</td>
+<td>Results 3.10；Table 8</td>
+<td><strong>实测消融效应</strong>：无。<strong>预期效应</strong>：不改变候选集</td>
+</tr>
+<tr>
+<td>Project HOPE</td>
+<td>结构冲击的定性描述</td>
+<td>提供可读的机制叙述</td>
+<td>输入：序列 + WT/突变残基；输出：文本化结构影响</td>
+<td>Results 3.11；Table 9</td>
+<td><strong>实测消融效应</strong>：无。<strong>预期效应</strong>：不改变候选集</td>
+</tr>
+<tr>
+<td>mCSM-PPI2 + MutPred-PPI</td>
+<td>界面结合亲和力与 edgetic 效应</td>
+<td>评估 PPI 破坏</td>
+<td>输入：复合物 + 变异；输出：Δaffinity（&lt;0 降低）、0–1 破坏分数</td>
+<td>Results 3.12；Table 10</td>
+<td><strong>实测消融效应</strong>：无。<strong>预期效应</strong>：不改变候选集</td>
+</tr>
+<tr>
+<td>muTarget</td>
+<td>突变–表达关联</td>
+<td>提供下游通路上下文</td>
+<td>输入：基因名 + coding 突变；输出：COAD 217 下调/31 上调；LUAD 168 下调/6 上调</td>
+<td>Results 3.13；Figure 6、Table S16</td>
+<td><strong>实测消融效应</strong>：无。<strong>预期效应</strong>：不改变候选集</td>
+</tr>
+<tr>
+<td>STRING v12.0</td>
+<td>PPI 网络与 GO/KEGG 富集</td>
+<td>提供网络层面上下文</td>
+<td>输入：RASSF2；输出：8 节点 19 边，p&lt;0.000149</td>
+<td>Results 3.14；Figure 7</td>
+<td><strong>实测消融效应</strong>：无。<strong>预期效应</strong>：不改变候选集</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>本文未提出新公式，仅使用既有工具的阈值判据。理解所需的关键判据如下：</p>
+<table>
+<thead>
+<tr>
+<th>判据</th>
+<th>表达式/阈值</th>
+<th>符号含义</th>
+<th>用途</th>
+<th>直觉</th>
+<th>来源指针</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SIFT</td>
+<td>TI &lt; 0.05 为 deleterious；≥ 0.05 为 tolerated</td>
+<td>TI = Tolerance Index</td>
+<td>序列同源 + 理化性质判致病</td>
+<td>越保守位置被替换越不容忍</td>
+<td>Methods 2.2</td>
+</tr>
+<tr>
+<td>PolyPhen2</td>
+<td>0.0（benign）–1.0（probably damaging）</td>
+<td>PSIC = position-specific independent count</td>
+<td>结构 + 比较判致病</td>
+<td>分数越高越可能破坏</td>
+<td>Methods 2.2</td>
+</tr>
+<tr>
+<td>PhD-SNPg</td>
+<td>&gt; 0.5 为 pathogenic</td>
+<td>—</td>
+<td>ClinVar 训练的二元分类器</td>
+<td>概率阈值</td>
+<td>Methods 2.2</td>
+</tr>
+<tr>
+<td>E-SNPs&amp;GO</td>
+<td>校准概率 ≥ 0.5 为 pathogenic</td>
+<td>—</td>
+<td>SVM + ESM-1v/ProtT5 嵌入 + GO</td>
+<td>概率阈值</td>
+<td>Methods 2.2</td>
+</tr>
+<tr>
+<td>AlphaMissense</td>
+<td>&gt; 0.5 为 likely pathogenic</td>
+<td>—</td>
+<td>AlphaFold 微调于群体频率</td>
+<td>概率阈值</td>
+<td>Methods 2.2</td>
+</tr>
+<tr>
+<td>DDMut / DynaMut2</td>
+<td>ΔΔG &lt; 0 为 destabilizing；本文要求 &lt; −0.5</td>
+<td>ΔΔG = 突变体与野生型吉布斯自由能差</td>
+<td>稳定性预测</td>
+<td>负值=不稳定</td>
+<td>Methods 2.4</td>
+</tr>
+<tr>
+<td>ThermoMPNN</td>
+<td>ΔΔG &gt; 0 为 destabilizing；本文要求 &gt; 0.5</td>
+<td>同上（符号约定相反）</td>
+<td>稳定性预测</td>
+<td>正值=不稳定</td>
+<td>Methods 2.4</td>
+</tr>
+<tr>
+<td>pLDDT</td>
+<td>0–100；&gt;90 很可靠，70–90 中等，50–70 低，&lt;50 很低</td>
+<td>predicted Local Distance Difference Test</td>
+<td>残基级结构置信度</td>
+<td>越高越可信</td>
+<td>Methods 2.3</td>
+</tr>
+<tr>
+<td>pTM</td>
+<td>&gt; 0.5 表示整体折叠与真实结构相符</td>
+<td>predicted template modelling</td>
+<td>整体结构置信度</td>
+<td>越高越可信</td>
+<td>Methods 2.3</td>
+</tr>
+<tr>
+<td>ipTM</td>
+<td>&gt; 0.8 自信；0.6–0.8 灰区；&lt; 0.6 可能失败</td>
+<td>interface predicted TM</td>
+<td>复合物亚基相对位置准确度</td>
+<td>越高越可信</td>
+<td>Methods 2.3</td>
+</tr>
+<tr>
+<td>ipSAE</td>
+<td>≥ 0.8 很自信；0.8&gt;·≥0.7 自信；0.7&gt;·≥0.6 低置信</td>
+<td>interaction prediction score from aligned errors</td>
+<td>界面建模准确度</td>
+<td>越高越可信</td>
+<td>Methods 2.3</td>
+</tr>
+<tr>
+<td>pDockQ2</td>
+<td>&gt; ~0.23 表示界面可能可接受</td>
+<td>—</td>
+<td>界面质量</td>
+<td>越高越好</td>
+<td>Methods 2.3</td>
+</tr>
+<tr>
+<td>ConSurf</td>
+<td>1–9；9 为高度保守</td>
+<td>—</td>
+<td>进化保守性</td>
+<td>越高越保守</td>
+<td>Methods 2.6</td>
+</tr>
+<tr>
+<td>MutPred2</td>
+<td>g-score &gt; 0.5 致病；0.68 = 10% FPR；0.80 = 5% FPR</td>
+<td>g-score = 各子分数均值</td>
+<td>致病性 + 机制</td>
+<td>越高越可能致病</td>
+<td>Methods 2.11</td>
+</tr>
+<tr>
+<td>CScape</td>
+<td>&gt; 0.5 致癌；&gt; 0.9 高置信</td>
+<td>—</td>
+<td>癌症驱动预测</td>
+<td>越高越可能致癌</td>
+<td>Methods 2.9</td>
+</tr>
+<tr>
+<td>mCSM-PPI2</td>
+<td>&lt; 0 亲和力下降；界面残基定义：距伙伴 ≤ 5 Å</td>
+<td>—</td>
+<td>界面结合亲和力变化</td>
+<td>负值=结合变弱</td>
+<td>Methods 2.13</td>
+</tr>
+<tr>
+<td>MutPred-PPI</td>
+<td>&gt; 0.5 互作可能被破坏</td>
+<td>—</td>
+<td>edgetic 效应</td>
+<td>概率阈值</td>
+<td>Methods 2.13</td>
+</tr>
+<tr>
+<td>NetPhos3.1 / GPS 6.0</td>
+<td>&gt; 0.5 / &gt; 0.76 为预测磷酸化位点</td>
+<td>—</td>
+<td>磷酸化位点预测</td>
+<td>概率阈值</td>
+<td>Methods 2.10</td>
+</tr>
+</tbody>
+</table>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/群体与规模</strong>：NCBI dbSNP 中 RASSF2 全部 SNP 19,303 个，其中 nsSNP 454 个（全部对应唯一氨基酸替换）。gnomAD v4.1.1 用于 19 个候选的 MAF。ClinVar 用于临床注释。cBioPortal 与 AACR GENIE 用于体细胞变异核对。muTarget 含 24 种实体瘤亚型、&gt;9,300 患者样本，本文仅用 COAD 与 LUAD。STRING 富集以全人类蛋白质组为统计背景。</p>
+<p><strong>指标</strong>：各工具自带的分数/阈值（见第 09 节）；无统一性能指标（无 AUC、无精确率/召回率报告）。</p>
+<p><strong>基线</strong>：无基线方法对比。本文的「基线」实质是<strong>单工具结果</strong>（如 SIFT 196、PolyPhen2 297 等），但未做统计比较。</p>
+<p><strong>预算</strong>：未提供（无算力/时间成本报告）。</p>
+<p><strong>骨干/仪器</strong>：无自训练骨干网络；使用 AlphaFold DB v6 结构、AlphaFold 3 复合物建模、以及各第三方 web server。</p>
+<p><strong>oracle 输入</strong>：无。本文不使用实验真值标签；所有「致病/去稳定」判定均来自预测工具。</p>
+<p><strong>评测协议</strong>：多工具全票一致（AND 逻辑）+ 阈值过滤；无独立测试集、无交叉验证、无留出验证。</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>五工具致病性共识</td>
+<td>多工具一致可缩小候选集</td>
+<td>454 变异分别过 5 个工具</td>
+<td>SIFT 196 / PolyPhen2 297 / PhD-SNP 301 / E-SNPs&amp;GO 134 / AlphaMissense 210；交集 75</td>
+<td>一致性过滤把候选从数百降到 75</td>
+<td>不支持「75 个都是真致病」——无实验真值</td>
+<td>Results 3.2；Table S2–S7</td>
+</tr>
+<tr>
+<td>AlphaFold 结构质量评估</td>
+<td>结构足够可靠以支撑下游</td>
+<td>AF-P50749-F1 v6</td>
+<td>平均 pLDDT 77.88；ERRAT 92.4%；PROCHECK 83.8% 最 favored；RA 与 SARAH 域 PAE 低</td>
+<td>整体结构质量可接受</td>
+<td>不支持「所有 75 个变异位点都落在高置信区」——原文仅称「most」</td>
+<td>Results 3.3；Figure 2、Figure S1A</td>
+</tr>
+<tr>
+<td>三工具 ΔΔG 共识</td>
+<td>一致去稳定化可进一步缩小候选</td>
+<td>75 变异过 3 个工具，阈值 ±0.5</td>
+<td>DDMut 51 个 ΔΔG&lt;0；DynaMut2 54 个 ΔΔG&lt;0；ThermoMPNN 64 个 ΔΔG&gt;0；三工具一致且超阈值 19 个</td>
+<td>19 个候选在三个独立方法下均被预测去稳定化</td>
+<td>不支持「19 个是唯一生物学重要变异」——作者明确声明这是算法优先级排序</td>
+<td>Results 3.4；Table 2、Table S11</td>
+</tr>
+<tr>
+<td>gnomAD/ClinVar 注释</td>
+<td>候选是否常见或已有临床分类</td>
+<td>19 变异查 gnomAD v4.1.1 与 ClinVar</td>
+<td>18 个全球极罕见；M260I 无 gnomAD 记录；全部无 ClinVar 明确致病性分类</td>
+<td>候选多为罕见变异，临床意义未定</td>
+<td>不支持「罕见 ⇒ 致病」</td>
+<td>Results 3.5；Table 3、Table S12</td>
+</tr>
+<tr>
+<td>ConSurf + InterPro</td>
+<td>候选是否位于保守位点与功能域</td>
+<td>19 变异</td>
+<td>全部保守（7–9），13 个为 9；14 个在 RA 域，2 个在 SARAH 域（共 16 个在功能域）</td>
+<td>候选集中于功能重要区域</td>
+<td>不支持「保守 ⇒ 必然致病」</td>
+<td>Results 3.6；Figure 3、Table 4、Table S13</td>
+</tr>
+<tr>
+<td>NetSurfP-3.0</td>
+<td>变异是否改变 SS/可及性</td>
+<td>WT vs 19 突变体</td>
+<td>W60R（α-helix→coil）、L235P（coil→β-sheet）、L247P（α-helix→coil，RSA 24%→45%）；其余 15 个无变化</td>
+<td>3 个变异预测改变二级结构</td>
+<td>不支持「其余 15 个无结构影响」——工具仅覆盖 SS/RSA/disorder</td>
+<td>Results 3.7；Figure 4、Table 5、Table S14</td>
+</tr>
+<tr>
+<td>CScape + cBioPortal + GENIE</td>
+<td>候选是否致癌/见于患者</td>
+<td>19 变异</td>
+<td>CScape 全部 19 个潜在致癌，9 个高置信（W60R、R67S、V193F、V193D、L235P、R245Q、L247P、G249V、A273T）；cBioPortal 中 R245Q 见于结肠腺癌，另发现 L235R、P241R、L247F、G249S 等密码子位置变异；GENIE 无 RASSF2 数据</td>
+<td>部分候选位点在患者样本中有体细胞改变</td>
+<td>不支持「这些变异是体细胞驱动」——作者声明 CScape 仅为风险打分工具</td>
+<td>Results 3.8；Table 6</td>
+</tr>
+<tr>
+<td>NetPhos3.1 + GPS 6.0</td>
+<td>变异是否影响磷酸化位点</td>
+<td>19 变异</td>
+<td>Y224C 被两工具预测为磷酸化位点；Y275C 被 GPS 3.0 预测</td>
+<td>2 个酪氨酸变异可能影响磷酸化</td>
+<td>不支持「磷酸化状态已被实验证实」</td>
+<td>Results 3.9；Table 7、Table S15</td>
+</tr>
+<tr>
+<td>MutPred2</td>
+<td>变异致病性与分子机制</td>
+<td>19 变异</td>
+<td>全部 g-score&gt;0.5；W60R 0.945（gain of disorder, p=0.001）、V193D 0.93（alteration of ordered interface, p=0.00035）、L235P 0.896（gain of disorder, p=0.02）、Y275C 0.833（loss of phosphorylation, p=0.01）；L247P 与 G249V 未预测出机制</td>
+<td>候选具高致病性打分与可解释机制</td>
+<td>不支持「机制预测即真实机制」</td>
+<td>Results 3.10；Table 8</td>
+</tr>
+<tr>
+<td>Project HOPE</td>
+<td>结构冲击的定性机制</td>
+<td>19 变异</td>
+<td>W60R 疏水互作丢失+同电荷排斥；V193D 域功能丧失+位阻；Y224C 氢键丢失；L247P 脯氨酸破坏 α-helix；G249V 异常扭转角</td>
+<td>提供可读的机制假设</td>
+<td>不支持定量结论</td>
+<td>Results 3.11；Table 9</td>
+</tr>
+<tr>
+<td>AlphaFold 3 复合物 + PPI 工具</td>
+<td>变异是否破坏 RASSF2–KRAS/MST1/MST2</td>
+<td>3 个复合物 + 19 变异</td>
+<td>RASSF2–KRAS pTM=0.63/ipTM=0.52（低–中）；RASSF2–MST1 pTM=0.68/ipTM=0.66（中）；RASSF2–MST2 ipSAE=0.73/ipTM=0.68/pDockQ2=0.62（中）。mCSM-PPI2 预测除 A273T 外全部降低亲和力；MutPred-PPI 预测 RASSF2–KRAS 中 8 个、RASSF2–STK3 中 1 个破坏互作；两工具共同指向 V193D（KRAS）与 Y275C（MST2）</td>
+<td>部分变异可能破坏界面</td>
+<td>不支持强结论——作者明确要求对 RASSF2–KRAS 结果谨慎解读</td>
+<td>Results 3.12；Table 10、Figure 5、Figure S1B–D</td>
+</tr>
+<tr>
+<td>muTarget</td>
+<td>RASSF2 编码突变与下游表达关联</td>
+<td>COAD、LUAD</td>
+<td>COAD：217 下调/31 上调；KRT23 表达缺失、NR1I2 与 GAS6-AS1 下调、ME2/LAG3/CAVIN3 上调。LUAD：168 下调/6 上调；BCL2L14 与 RACK1 下调、CTAG2/KRT40/GPR15 上调</td>
+<td>提供下游通路上下文</td>
+<td>不支持「RASSF2 直接转录调控这些基因」——作者明确声明这是相关性而非直接转录效应</td>
+<td>Results 3.13；Figure 6、Table S16</td>
+</tr>
+<tr>
+<td>STRING</td>
+<td>RASSF2 互作网络与富集</td>
+<td>置信度 &gt;0.7，最多 10 个伙伴</td>
+<td>8 节点 19 边，p&lt;0.000149；STK3 0.99、STK4 0.95、RASSF4 0.90、RASSF5 0.89、KRAS 0.821、RASSF7 0.77、RASSF1 0.75；KEGG 最强为 Hippo 通路</td>
+<td>RASSF2 为网络 hub，与 Hippo/RAS 通路相关</td>
+<td>不支持「网络边均为物理直接互作」——STRING 含功能关联</td>
+<td>Results 3.14；Figure 7</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文是<strong>变异优先级排序（prioritization）</strong>，不是变异效应测定，也不是致病机制证明。产出是「值得做实验的候选清单」。</li>
+<li><strong>oracle/真值输入</strong>：<strong>无</strong>。全流程无实验真值标签，所有「致病/去稳定/致癌/破坏互作」判定均来自预测工具。因此本文无法报告任何准确率、精确率或召回率。</li>
+<li><strong>端到端状态</strong>：端到端为<strong>纯计算</strong>，无湿实验闭环。作者在 Discussion 与 Conclusions 中明确要求 site-directed mutagenesis、protein stability assays、cellular assays 与群体研究来验证。</li>
+<li><strong>算力成本</strong>：未提供。全部依赖公开 web server，无自训练成本。</li>
+<li><strong>历史数据依赖</strong>：依赖 dbSNP（2026-08-06 访问）、gnomAD v4.1.1、ClinVar、cBioPortal、GENIE、muTarget、STRING v12.0 的当时快照；数据库更新会改变结果。</li>
+<li><strong>模型依赖</strong>：结论强依赖 AlphaFold DB v6 结构（平均 pLDDT 77.88）与 AlphaFold 3 复合物（RASSF2–KRAS ipTM 仅 0.52）。换结构来源或换建模条件，界面相关结论可能改变。</li>
+<li><strong>最难情形</strong>：RASSF2–KRAS 复合物置信度最低（ipTM=0.52，低于 0.6 的「可能失败」阈值），而 RA 域恰好承载 14/19 个候选——即<strong>候选最集中的区域，其复合物模型最不可靠</strong>。</li>
+<li><strong>群体/领域边界</strong>：gnomAD 显示 18/19 极罕见，M260I 无记录；ClinVar 无分类；GENIE 无 RASSF2 数据。因此人群频率与临床证据几乎为空，结论不具群体遗传学支撑。</li>
+<li><strong>不确定性</strong>：作者自认 PPI 结果需谨慎、muTarget 为相关性、纯计算需实验验证。</li>
+<li><strong>有边界的复述</strong>：在 454 个 RASSF2 nsSNP 中，19 个被五个致病性工具与三个 ΔΔG 工具一致预测为去稳定化，其中 16 个位于 RA/SARAH 功能域，V193D 与 Y275C 在两个 PPI 工具下均被预测影响界面；这些是<strong>待验证的算法候选</strong>，其 PPI 相关部分受预测复合物低–中等置信度限制，不构成致病性或致癌性的证据。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅用计算方法</td>
+<td>预测性方法限制了对去稳定化 nsSNP 影响蛋白质结构与功能的理解</td>
+<td>需 site-directed mutagenesis 与 protein stability assays 确认精准肿瘤学效用</td>
+<td>Discussion 局限段</td>
+</tr>
+<tr>
+<td>PPI 破坏预测依赖低–中等置信度的预测复合物</td>
+<td>RASSF2–KRAS ipTM=0.52；RASSF2–MST1 ipTM=0.66；RASSF2–MST2 ipTM=0.68</td>
+<td>结果须谨慎解读；缺乏实验结构限制了对 PPI 影响的完整理解</td>
+<td>Discussion 局限段；Results 3.12</td>
+</tr>
+<tr>
+<td>muTarget 结果为相关性</td>
+<td>代表一般下游相关模式，非 RASSF2 的直接转录效应</td>
+<td>未明确给出未来方向</td>
+<td>Discussion 局限段</td>
+</tr>
+<tr>
+<td>候选集为算法优先级排序</td>
+<td>被排除的致病变异可能在互作特异性、调控位点、蛋白动力学、定位、PTM、RNA 剪接等机制中起作用</td>
+<td>未明确给出未来方向</td>
+<td>Discussion 第 2 段</td>
+</tr>
+<tr>
+<td>需实验与群体研究验证</td>
+<td>19 个候选需验证</td>
+<td>site-directed mutagenesis 或 cellular assays；群体研究</td>
+<td>Conclusions</td>
+</tr>
+</tbody>
+</table>
+<p><strong>作者提及的相关约束（非正式局限）</strong>：CScape 指标仅作为风险打分工具，而非体细胞转化的确定性证据（Methods 2.9）；CAVIN3 表达高于 RASSF2 是代偿反应还是次级下游改变仍是待功能验证的开放假设（Discussion）。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全流程无任何实验真值或独立测试集，因此「19 个」的假阳性率完全未知</td>
+<td>19 个可能只是三个 ΔΔG 工具共享同一类训练偏差（如都偏向埋藏疏水残基）的产物，而非真实去稳定化</td>
+<td>若工具间误差相关，则「一致性」不带来独立证据增益，多工具共识的统计前提被削弱</td>
+<td>在 SKEMPI/ProTherm 等有实验 ΔΔG 的基准上计算三工具预测的误差相关性；或对 19 个候选做定点突变 + 热稳定性测定</td>
+<td>Results 3.4；Methods 2.4</td>
+</tr>
+<tr>
+<td>阈值 ±0.5 kcal/mol 被用来排除近中性预测，但该阈值本身来自外部文献[31]，未在本文数据上校准</td>
+<td>该阈值可能系统性排除真实的中等效应变异，同时保留工具系统性高估的变异</td>
+<td>阈值选择直接决定候选集规模与组成，是结论的核心自由度</td>
+<td>做阈值敏感性分析：报告 ±0.3、±0.5、±1.0 下候选集的变化与重叠</td>
+<td>Methods 2.4；Results 3.4</td>
+</tr>
+<tr>
+<td>候选最集中的 RA 域（14/19）对应的 RASSF2–KRAS 复合物置信度最低（ipTM=0.52，低于 0.6 的失败阈值）</td>
+<td>基于该复合物的 mCSM-PPI2/MutPred-PPI 界面预测可能建立在错误界面上</td>
+<td>论文的核心机制叙事（RA 域–KRAS）恰恰建立在最不可靠的结构上</td>
+<td>用实验结构（若有）或独立对接/MD 模拟验证 RA–KRAS 界面；比较不同建模条件下的界面残基集合</td>
+<td>Results 3.12；Methods 2.3</td>
+</tr>
+<tr>
+<td>五工具中 E-SNPs&amp;GO 阳性数（134）显著低于其他工具（196–301），但交集仍取「全票」</td>
+<td>最严格的工具主导了候选集边界；换用不同工具组合会得到不同候选集</td>
+<td>「全票一致」的结论对工具选择高度敏感，可复现性依赖工具集合的具体构成</td>
+<td>做留一工具分析（leave-one-tool-out），报告去掉任一工具后的候选集变化</td>
+<td>Results 3.2；Table S2–S7</td>
+</tr>
+<tr>
+<td>19 个候选全部被 CScape 预测为潜在致癌，9 个高置信</td>
+<td>CScape 的训练集与 RASSF2 的变异谱可能不匹配；「全部阳性」也可能是工具偏向高召回</td>
+<td>若 CScape 对任何罕见错义变异都给高致癌分，则该结果不提供区分度</td>
+<td>用一组已知良性 RASSF2 常见错义变异作为阴性对照，检验 CScape 的特异性</td>
+<td>Results 3.8；Table 6</td>
+</tr>
+<tr>
+<td>作者称本文为 RASSF2 nsSNP 的首个研究，但未与任何 RASSF2 的实验变异数据对照</td>
+<td>若已有零散的 RASSF2 突变功能实验（如 RA 域缺失实验[53]），未做交叉验证</td>
+<td>错失用已有实验锚点校准流程的机会</td>
+<td>检索 RASSF2 突变功能文献，检查 19 个候选是否与已知功能丧失位点重叠</td>
+<td>Introduction 末段；Discussion 引[53]</td>
+</tr>
+<tr>
+<td>muTarget 报告 COAD 217 个下调/31 个上调、LUAD 168 个下调/6 个上调，但仅讨论各 3 个基因</td>
+<td>选择性报告可能夸大特定通路的显著性</td>
+<td>下游通路解读的可靠性取决于是否报告完整列表与多重检验校正</td>
+<td>检查 Table S16 的完整列表与 FDR 校正；对讨论的基因做独立队列验证</td>
+<td>Results 3.13；Methods 2.14</td>
+</tr>
+<tr>
+<td>论文日期字段为 2026-10-27，且所有数据库访问日期为 2026-08</td>
+<td>时间线异常（若为预印本或未来日期标注），可能影响可复现性核对</td>
+<td>数据库快照不可回溯，读者无法复现同一版本结果</td>
+<td>核对期刊实际出版日期与数据库版本存档</td>
+<td>基本信息；Methods 各节访问日期</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong></p>
+<ul>
+<li><strong>可迁移概念：多工具全票一致（unanimous consensus）作为候选集收缩算子</strong>。本文用 5 个致病性工具 + 3 个 ΔΔG 工具的两级 AND 过滤，把 454 压到 19。迁移到本课题：在做大规模突变扫描（如设计突变体库、评估 AlphaFold 预测结构的突变鲁棒性）时，可用同样的两级漏斗先收缩候选空间，再上昂贵的 MD 或对接。<strong>注意</strong>：必须先检验工具间误差相关性，否则一致性不构成独立证据（见第 13 节）。</li>
+<li><strong>可迁移概念：ΔΔG 近中性区不可靠 → 设死区（dead zone）</strong>。本文用 ±0.5 kcal/mol 死区排除近中性预测。迁移到本课题：任何用 DDMut/DynaMut2/ThermoMPNN 类工具做突变筛选的工作，都应报告死区选择并做敏感性分析。</li>
+<li><strong>可迁移方法：结构置信度驱动的结论降级（confidence-gated claim downgrading）</strong>。本文对 ipTM=0.52 的 RASSF2–KRAS 复合物明确声明「结果须谨慎解读」，而对 ipTM=0.66/0.68 的 MST1/MST2 复合物语气稍强。迁移到本课题：在使用 AlphaFold 3 或 AlphaFold-Multimer 做界面突变分析时，应按 ipTM/ipSAE/pDockQ2 分档设定结论强度，并在论文中显式写出分档规则。</li>
+<li><strong>可迁移方法：证据叠加（evidence stacking）排序</strong>。本文用「保守性（ConSurf 7–9）+ 结构域定位（InterPro）+ 二级结构变化（NetSurfP）+ 分子机制（MutPred2）+ 结构冲击（HOPE）」五路证据交叉描述同一批候选。迁移到本课题：在设计突变体的优先级排序时，可把「是否在功能域」「是否保守」「是否改变 SS/RSA」「是否在界面 5 Å 内」作为正交证据维度叠加。</li>
+<li><strong>可迁移工具链组合</strong>：AlphaFold DB 取单体结构 → ERRAT/PROCHECK 做质量门控 → AlphaFold 3 建复合物 → mCSM-PPI2（亲和力）+ MutPred-PPI（edgetic）双工具评界面 → ChimeraX 可视化。这套组合可直接迁移到任何「突变如何影响 PPI」的问题。</li>
+<li><strong>可迁移实验设计教训</strong>：本文的最大方法论缺口是<strong>无阴性对照、无阈值敏感性分析、无留一工具分析</strong>。迁移到本课题时，任何多工具共识流程都应至少包含这三项，否则「一致性」的统计意义无法评估。</li>
+<li><strong>可迁移的边界意识</strong>：muTarget 类相关性分析必须声明为「下游相关模式，非直接调控」；CScape 类风险打分必须声明为「非体细胞转化证据」。这种显式降级声明值得在写作中复制。</li>
+</ul>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似（可核验）</strong>：本文引用的 AlphaMissense[24] 与 AlphaFold 3[16,17] 是当前变异效应与复合物预测的主流工具；本文是它们在<strong>单一靶点上的集成应用</strong>，而非改进。若读者熟悉 AlphaMissense 的群体频率微调机制，可理解本文为何把它作为五工具之一。</li>
+<li><strong>组合（可核验）</strong>：DDMut[28]（图签名）、DynaMut2[29]（振动熵）、ThermoMPNN[30]（深度学习 ΔΔG）三者代表三类不同的 ΔΔG 建模范式；本文把它们组合使用。读者若在做 ΔΔG 预测方法比较，本文提供了一个「三范式交集」的实例。</li>
+<li><strong>冲突（可核验）</strong>：本文引文献[31] 指出稳定性预测器在 ±0.5 kcal/mol 内不可靠——这与「多工具一致即更可信」的乐观假设存在张力：若所有工具在同一区间都不可靠，一致性也无法救回。这一张力在本文中未被进一步讨论。</li>
+<li><strong>可迁移领域（可核验）</strong>：MutPred-PPI[46] 使用 AlphaFold 3 接触图 + pLM 嵌入 + 图注意力网络，报告 seen proteins AUC 0.85、unseen proteins AUC 0.72。这一「结构图 + 语言模型嵌入」的架构可直接迁移到本课题的界面突变效应预测任务。</li>
+<li><strong>用户已有知识的候选连接点（标注为候选，未核验）</strong>：若读者熟悉 MD 模拟的自由能微扰（FEP）或热力学积分（TI），可把本文的 ΔΔG 预测视为 FEP 的廉价代理，并用 FEP 对 19 个候选中的高优先级者（如 W60R、V193D、L235P、Y275C）做独立验证——这是本文未做但直接可行的下一步。</li>
+<li><strong>候选方向（未核验）</strong>：RASSF2 的 RA 域–KRAS 界面在本文中置信度最低，若读者有 KRAS 效应蛋白复合物的实验结构或高质量 MD 轨迹，可用其替换 AlphaFold 3 模型重跑 mCSM-PPI2/MutPred-PPI，检验 V193D 的界面破坏预测是否稳健。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong></p>
+<p><strong>候选 1：多工具共识的误差相关性审计</strong>
+- <strong>名称</strong>：Consensus Redundancy Audit for Variant Prioritization Pipelines
+- <strong>来源局限/观察</strong>：本文用 5+3 工具全票一致，但未检验工具间误差是否相关（第 13 节第 1 行）。
+- <strong>核心假设</strong>：在错义变异致病性/稳定性预测任务上，常用工具（SIFT、PolyPhen2、PhD-SNPg、E-SNPs&amp;GO、AlphaMissense；DDMut、DynaMut2、ThermoMPNN）的预测误差存在显著正相关，因此「全票一致」带来的独立证据增益远低于二项分布假设。
+- <strong>相对本文的增量</strong>：本文只报告交集大小，不报告交集的统计意义；本候选量化「一致性」的真实信息量。
+- <strong>初步方法</strong>：在 ProTherm/SKEMPI 等有实验 ΔΔG 的数据集上，计算 8 个工具预测的两两误差相关系数矩阵与条件错误率；用该矩阵估计「全票一致」的期望假阳性率。
+- <strong>验证方式</strong>：若误差相关性高（如 ρ&gt;0.5），则本文 19 个候选的实际假阳性率应显著高于独立假设下的估计；可用定点突变 + 热稳定性测定对 19 个候选抽样验证。
+- <strong>可能的失败模式</strong>：实验 ΔΔG 数据集与 RASSF2 的变异分布不匹配，导致相关性估计不可外推。
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 2：置信度门控的界面突变效应报告规范</strong>
+- <strong>名称</strong>：Confidence-Gated Reporting Standard for AlphaFold-3-Based Interface Mutation Analysis
+- <strong>来源局限/观察</strong>：本文对 ipTM=0.52 的复合物仍报告了界面突变预测，仅以文字降级（第 13 节第 3 行）。
+- <strong>核心假设</strong>：按 ipTM/ipSAE/pDockQ2 分档设定结论强度（如 ipTM&lt;0.6 时只报告「界面残基集合」而不报告「亲和力变化方向」），可显著降低下游误用率。
+- <strong>相对本文的增量</strong>：本文是定性降级；本候选给出可操作的分档规则与量化边界。
+- <strong>初步方法</strong>：构建一组已知实验界面突变效应的复合物（如 SKEMPI 中的复合物），用 AlphaFold 3 建模并按 ipTM 分档，比较各档内 mCSM-PPI2/MutPred-PPI 的预测准确率。
+- <strong>验证方式</strong>：若低 ipTM 档的预测准确率接近随机，则支持「低置信度时不应报告方向性结论」。
+- <strong>可能的失败模式</strong>：ipTM 与界面突变预测准确率之间无单调关系，分档规则无效。
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 3：用 MD/FEP 独立验证 RASSF2 RA 域–KRAS 界面候选</strong>
+- <strong>名称</strong>：MD/FEP Cross-Validation of RASSF2 RA-Domain Variants Predicted to Disrupt KRAS Binding
+- <strong>来源局限/观察</strong>：本文 RASSF2–KRAS 复合物 ipTM=0.52，且 14/19 候选位于 RA 域；V193D 被两工具共同预测破坏界面（Results 3.12）。
+- <strong>核心假设</strong>：若 V193D 确实破坏 RA–KRAS 界面，则 MD 轨迹中该位点的界面接触概率与 FEP 计算的结合自由能变化应显著区别于野生型；若 AlphaFold 3 界面本身错误，则 MD 会显示该位点并不在稳定界面上。
+- <strong>相对本文的增量</strong>：本文只有静态预测；本候选引入物理模拟做独立验证，同时检验 AlphaFold 3 界面正确性。
+- <strong>初步方法</strong>：以 AlphaFold 3 模型为起点，做显式溶剂 MD（≥3 复制 × 100 ns）评估界面稳定性；对 V193D 及野生型做 FEP/TI 计算 ΔΔG_bind；与 mCSM-PPI2/MutPred-PPI 预测对比。
+- <strong>验证方式</strong>：若 MD 显示 V193D 位点在野生型中稳定接触 KRAS 而在突变体中接触丢失，且 FEP 给出正 ΔΔG_bind，则支持本文预测。
+- <strong>可能的失败模式</strong>：AlphaFold 3 界面本身错误，MD 从错误起点出发无法收敛到真实界面；GTP 与 Mg²⁺ 的参数化引入额外不确定性。
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 4：RASSF2 候选变异的实验锚定基准集</strong>
+- <strong>名称</strong>：An Experimental Anchor Set for RASSF2 Missense Variant Effect Prediction
+- <strong>来源局限/观察</strong>：本文 19 个候选在 ClinVar 无分类、GENIE 无数据、gnomAD 中 18/19 极罕见，因此无任何实验锚点（第 11 节）。
+- <strong>核心假设</strong>：对 19 个候选中的高优先级者（W60R、V193D、L235P、L247P、Y275C）做定点突变 + 蛋白稳定性测定 + KRAS/MST 结合测定，可建立一个 5–10 个变异的小型基准集，用于校准所有 RASSF2 变异预测工具。
+- <strong>相对本文的增量</strong>：本文止于预测；本候选提供真值，使后续任何 RASSF2 变异预测工作可被定量评估。
+- <strong>初步方法</strong>：定点突变构建 5–10 个 RASSF2 突变体；用圆二色/热变性测稳定性；用 pull-down 或 SPR 测 KRAS/MST1/MST2 结合；与本文 ΔΔG 与 PPI 预测逐一对照。
+- <strong>验证方式</strong>：计算预测与实验的 Spearman 相关；若相关性低，则本文流程的实用性受限。
+- <strong>可能的失败模式</strong>：RASSF2 重组蛋白表达/纯化困难（尤其 SARAH 域介导的聚集）；体外结合测定无法反映细胞内 GTP 依赖的 KRAS 结合。
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 5：阈值敏感性与留一工具分析作为变异优先级排序的标准报告项</strong>
+- <strong>名称</strong>：Threshold Sensitivity and Leave-One-Tool-Out as Mandatory Reporting for Consensus Variant Prioritization
+- <strong>来源局限/观察</strong>：本文的 ±0.5 kcal/mol 阈值与五工具集合均未做敏感性分析（第 13 节第 2、4 行）。
+- <strong>核心假设</strong>：在共识式变异优先级排序中，候选集对阈值与工具集合的敏感性通常很高，报告这些敏感性可显著提高结论的可复现性与可信度。
+- <strong>相对本文的增量</strong>：本文报告单一候选集；本候选提出并示范一套标准报告项。
+- <strong>初步方法</strong>：对本文流程做网格扫描（ΔΔG 阈值 ∈ {0.3, 0.5, 0.8, 1.0}；工具集合做 8 种留一组合），报告候选集大小、Jaccard 重叠与核心稳定候选（在所有配置下都出现的变异）。
+- <strong>验证方式</strong>：若存在一组在所有配置下都稳定出现的「核心候选」，则这些应优先进入实验；若不存在，则说明结论高度依赖任意选择。
+- <strong>可能的失败模式</strong>：核心候选集为空，说明该流程不产生稳健结论——这本身也是有价值的负面结果。
+- <strong>创新状态</strong>：unverified</p></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text provided (Simple Summary, Introduction, Materials and Methods, Results, Discussion, Conclusions, Acknowledgments). Supplementary tables and figures are referenced but not supplied.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the supplied manuscript text. All supplementary items (Tables S1–S16, Figures S1A–S1D) and the primary data underlying the reported tool outputs were not available for inspection. No reanalysis of tool outputs was possible.</li>
+<li><strong>Shared manuscript claim summary</strong> The manuscript reports an integrative in silico pipeline applied to 454 missense variants of RASSF2 retrieved from dbSNP, yielding 75 variants concordant across five pathogenicity predictors, then 19 variants concordant across three stability predictors, which are proposed as candidate destabilizing, oncogenic, and interaction-disrupting variants warranting experimental follow-up.</li>
+<li><strong>Visible evidence base</strong> Main-text descriptions of methods and results, including reported counts, thresholds, tool versions, database access dates, and summary statistics (for example average pLDDT 77.88, ERRAT 92.4 percent, PROCHECK most-favored 83.8 percent, STRING network of 8 nodes and 19 edges). Underlying per-variant tables are referenced but not visible.</li>
+<li><strong>Missing materials affecting confidence</strong> Tables S1–S16, Figures S1A–S1D, the full variant-level output of each predictor, the exact input files and parameter settings submitted to each server, and any code or workflow documentation. These are required to verify the reported counts and the concordance-based prioritization.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript addresses a legitimate and understudied target, RASSF2, and assembles a broad panel of established in silico predictors into a sequential filtering pipeline. The writing is generally clear and the limitations section is candid about the absence of experimental validation. However, the central contribution is a prioritized candidate list, and the evidence supporting that list cannot be verified from the supplied material because all variant-level tables are supplementary and unavailable. Several methodological choices are either internally inconsistent or insufficiently justified, and at least one reported result appears to contradict the stated selection criteria. As presented, the work is a hypothesis-generating computational survey rather than an established set of destabilizing variants.</li>
+<li><strong>Who would be interested in the results, and why</strong> Cancer geneticists and computational biologists working on RAS effector and Hippo pathway tumor suppressors would find the candidate list of interest as a starting point for functional work. Pharmacogenomics and variant-curation groups may find the prioritization framework useful if the pipeline is made reproducible. The broader clinical oncology readership is unlikely to be served directly, because no variant is experimentally or clinically validated.</li>
+<li>
+<p><strong>Major strengths</strong> The target gene is biologically well motivated and the introduction links RASSF2 function to KRAS and MST1/MST2 signaling with appropriate citations. The use of concordance across multiple orthogonal predictors, rather than a single tool, is a reasonable design. The inclusion of AlphaMissense and AlphaFold-based structural analysis reflects current practice. The authors explicitly acknowledge that predictions are hypotheses and that experimental validation is required, and they note the low-to-moderate confidence of the RASSF2–KRAS complex. The discussion attempts to connect prioritized positions to domain architecture and to previously observed somatic positions in cBioPortal.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Verifiability and reporting completeness</li>
+<li><strong>Claim pointer</strong> The manuscript claims that 454 missense variants were retrieved, that 75 were concordant across five tools, and that 19 were concordant across three stability tools.</li>
+<li><strong>Evidence pointer</strong> Sections 3.1, 3.2, 3.4; Tables S1–S11 (not provided); Table 1 and Table 2 (not provided)</li>
+<li><strong>Concern</strong> Every quantitative claim in the Results depends on supplementary tables that were not supplied. The per-tool counts, the identity of the 75 and 19 variants, and the per-variant scores cannot be checked. The main text also does not report the score distributions or the overlap structure needed to judge whether the concordance filter is doing meaningful work or simply intersecting correlated predictors.</li>
+<li><strong>Why it matters</strong> The entire downstream analysis, including domain mapping, conservation, oncogenicity, and PPI disruption, is conditioned on the 19-variant set. If that set cannot be reconstructed, none of the secondary conclusions can be evaluated.</li>
+<li>
+<p><strong>Resolution test</strong> Provide all supplementary tables with per-variant scores for every tool, the exact input files, and a reproducible description of how multiallelic rsIDs were split and how ties or missing scores were handled. Report the full contingency structure of tool agreement.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Internal consistency of the selection criteria</li>
+<li><strong>Claim pointer</strong> The manuscript states that only variants with ΔΔG &lt; −0.5 in DDMut and DynaMut2 and ΔΔG &gt; 0.5 in ThermoMPNN were prioritized, and that 19 variants met this criterion.</li>
+<li><strong>Evidence pointer</strong> Section 2.4; Section 3.4; Table 2 and Table S11 (not provided)</li>
+<li><strong>Concern</strong> The sign conventions as written are not mutually consistent in a way that can be verified. DDMut and DynaMut2 are described as destabilizing when the score is negative, and ThermoMPNN as destabilizing when ΔΔG is positive, which is internally coherent, but the text of Section 3.4 states that ThermoMPNN predicted 64 variants to decrease stability with ΔΔG &gt; 0 while also stating that DDMut and DynaMut2 predicted decreases with ΔΔG &lt; 0. Without the tables, it is impossible to confirm that the 19-variant intersection was computed with the correct signs, and the reported counts (51, 54, 64) are not reconcilable with the stated thresholds from the text alone.</li>
+<li><strong>Why it matters</strong> A sign error or threshold misapplication would invalidate the prioritized set, which is the core output of the study.</li>
+<li>
+<p><strong>Resolution test</strong> Provide the per-variant ΔΔG values from all three tools with explicit sign conventions, and state the number of variants passing each individual threshold as well as the intersection.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Structural model validity for interface claims</li>
+<li><strong>Claim pointer</strong> The manuscript claims that specific variants, notably V193D and Y275C, are predicted to destabilize or disrupt the RASSF2–KRAS and RASSF2–MST2 interfaces.</li>
+<li><strong>Evidence pointer</strong> Section 3.12; Figure S1B–S1D (not provided); Table 10 (not provided)</li>
+<li><strong>Concern</strong> The authors themselves report low-to-moderate confidence for the RASSF2–KRAS complex (pTM 0.63, ipTM 0.52) and moderate confidence for RASSF2–MST1 (pTM 0.68, ipTM 0.66) and RASSF2–MST2 (ipSAE 0.73, ipTM 0.68, pDockQ2 0.62). By the manuscript's own stated criteria, ipTM below 0.6 indicates a likely failed or low-confidence prediction. Interface-level variant effects computed on a low-confidence interface are not interpretable as evidence about binding.</li>
+<li><strong>Why it matters</strong> The PPI disruption claims are presented in the Results and Conclusions as substantive findings, but they rest on models the authors describe as unreliable. This is a claim-evidence mismatch.</li>
+<li>
+<p><strong>Resolution test</strong> Either restrict interface claims to complexes meeting a pre-specified confidence threshold, or present them explicitly as exploratory and remove them from the Conclusions. Report per-residue confidence at the mutated positions and the distance to the interface for each variant analyzed.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Redundancy and independence of the predictor ensemble</li>
+<li><strong>Claim pointer</strong> The manuscript treats agreement across five pathogenicity tools and across three stability tools as evidence of robustness.</li>
+<li><strong>Evidence pointer</strong> Sections 2.2, 2.4, 3.2, 3.4</li>
+<li><strong>Concern</strong> Several of the tools share training data, features, or architectural lineage. SIFT, PolyPhen2, and PhD-SNPg draw on related conservation and physicochemical signals; E-SNPs&amp;GO and AlphaMissense both use protein language model embeddings; DDMut, DynaMut2, and ThermoMPNN are all structure-based ΔΔG predictors with overlapping training sets. Concordance among correlated predictors does not provide independent support, and the manuscript does not report any measure of predictor correlation or any benchmark of the ensemble against a labeled reference set.</li>
+<li><strong>Why it matters</strong> The strength of the central claim rests on the assumption that agreement implies reliability. If the tools are correlated, the effective number of independent tests is much smaller than stated.</li>
+<li>
+<p><strong>Resolution test</strong> Report pairwise agreement and, if possible, correlation among tool scores on the 454-variant set. Benchmark the ensemble on a held-out set of RASSF2 or RASSF-family variants with known functional or clinical labels, if any exist.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M5</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Interpretation of oncogenicity and clinical annotation</li>
+<li><strong>Claim pointer</strong> The manuscript claims that all 19 variants are potentially oncogenic and that nine are oncogenic with high confidence, and it links these to cancer.</li>
+<li><strong>Evidence pointer</strong> Sections 2.9, 3.8; Table 6 (not provided)</li>
+<li><strong>Concern</strong> CScape is trained on somatic driver mutations, whereas the input here is germline dbSNP variation. The manuscript acknowledges this once in the Methods but then interprets the output in oncogenic terms throughout the Results and Discussion. In addition, the cBioPortal findings are positional coincidences at codons 235, 241, 245, 247, and 249 with different amino acid substitutions, which does not constitute evidence that the specific prioritized variants occur in tumors. The statement that no RASSF2 data are deposited in AACR GENIE is also a negative database result that should not be framed as a finding.</li>
+<li><strong>Why it matters</strong> The oncogenicity framing may overstate the clinical relevance of germline variants that have no ClinVar classification and, in 18 of 19 cases, are extremely rare.</li>
+<li>
+<p><strong>Resolution test</strong> Reframe CScape output as a computational risk score applied out of its intended domain, separate germline from somatic evidence explicitly, and remove or clearly qualify the codon-position argument.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M6</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Downstream analyses disconnected from the prioritized variants</li>
+<li><strong>Claim pointer</strong> The manuscript reports muTarget expression correlations and STRING network enrichment as part of the variant analysis.</li>
+<li><strong>Evidence pointer</strong> Sections 2.14, 2.15, 3.13, 3.14; Tables S16 (not provided); Figure 6 and Figure 7 (not provided)</li>
+<li><strong>Concern</strong> The muTarget analysis uses RASSF2 coding mutations in COAD and LUAD cohorts and does not test the 19 prioritized variants. The STRING analysis uses the RASSF2 gene name and does not incorporate any variant. Neither analysis can support conclusions about the prioritized missense variants, yet both appear in the Results and are discussed at length as if variant-specific.</li>
+<li><strong>Why it matters</strong> These sections inflate the apparent scope of the study without adding variant-level evidence, and they may mislead readers about what was actually tested.</li>
+<li>
+<p><strong>Resolution test</strong> Either remove these analyses or relabel them clearly as gene-level context that is not variant-specific, and remove variant-related interpretive language from those sections.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Tool version and citation accuracy</li>
+<li><strong>Affected element</strong> Methods Sections 2.2, 2.10, 2.13</li>
+<li><strong>Evidence pointer</strong> Sections 2.2, 2.10, 2.13</li>
+<li><strong>Issue</strong> PhD-SNPg is referred to as "PhD-SNP" in Section 3.2. GPS 6.0 is introduced in Section 2.10 but the threshold is attributed to "GPS 3.0," and Section 3.9 refers to "GPS 3.0." The version used is therefore ambiguous.</li>
+<li>
+<p><strong>Required correction</strong> Use a single consistent tool name and version throughout, and state the version actually executed.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Threshold justification</li>
+<li><strong>Affected element</strong> Methods Sections 2.2, 2.4, 2.9, 2.11</li>
+<li><strong>Evidence pointer</strong> Sections 2.2, 2.4, 2.9, 2.11</li>
+<li><strong>Issue</strong> Thresholds are stated but not justified against the tools' own recommended operating points. For example, AlphaMissense is used with a 0.5 cutoff although the developers recommend class-specific thresholds, and MutPred2 is used with 0.5 although the manuscript itself notes 0.68 and 0.80 correspond to 10 percent and 5 percent false-positive rates.</li>
+<li>
+<p><strong>Required correction</strong> Justify each threshold with a citation or a sensitivity analysis showing that the prioritized set is stable across reasonable threshold choices.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Database access dates</li>
+<li><strong>Affected element</strong> Methods Sections 2.1 through 2.15</li>
+<li><strong>Evidence pointer</strong> Sections 2.1 through 2.15</li>
+<li><strong>Issue</strong> All access dates are in August 2026 and the manuscript date is October 2026. This is internally consistent but should be confirmed as correct, since future-dated accessions will confuse readers and reviewers.</li>
+<li>
+<p><strong>Required correction</strong> Verify and correct all access dates, or explain the dating convention.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Numerical reporting</li>
+<li><strong>Affected element</strong> Results Sections 3.6 and 3.7</li>
+<li><strong>Evidence pointer</strong> Sections 3.6, 3.7</li>
+<li><strong>Issue</strong> Section 3.6 states that 14 variants are in the RA domain and two in the SARAH domain, and the Discussion states that 16 of 19 are in functionally important domains. Section 3.7 states that three variants showed structural changes and that "all the remaining 15 variants" were unchanged, which is consistent with 19 but should be stated explicitly. The arithmetic should be presented so readers can follow it without the supplementary tables.</li>
+<li>
+<p><strong>Required correction</strong> State the domain distribution and the structural-change counts explicitly and consistently in both Results and Discussion.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Nomenclature and typography</li>
+<li><strong>Affected element</strong> Throughout</li>
+<li><strong>Evidence pointer</strong> Sections 2.3, 3.13, Discussion</li>
+<li><strong>Issue</strong> "plDDT" and "pLDDT" are used interchangeably. "NRI12" appears where NR1I2 is intended. "Also." appears as a sentence fragment in the Discussion. "ipSAE" and "pDockQ2" are introduced without citation.</li>
+<li>
+<p><strong>Required correction</strong> Standardize nomenclature, correct the gene symbol, fix the fragment, and cite the interface metrics.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m6</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Redundant and unsupported interpretive language</li>
+<li><strong>Affected element</strong> Discussion</li>
+<li><strong>Evidence pointer</strong> Discussion paragraphs on muTarget and STRING</li>
+<li><strong>Issue</strong> Several statements assert mechanistic roles for downstream genes, for example that CAVIN3 upregulation may be compensatory, that KRT40 upregulation points to epithelial reprogramming, and that GPR15 is tumor-suppressive in colon cancer, without variant-level evidence and in some cases without direct citation support in the supplied text.</li>
+<li>
+<p><strong>Required correction</strong> Soften or remove mechanistic assertions that are not supported by the presented data, and ensure each claim carries an appropriate citation.</p>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3. These concern the verifiability of the prioritized variant set, the internal consistency of the stability selection, and the use of low-confidence structural models to support interface-level claims. R1-M4, R1-M5, and R1-M6 additionally weaken the interpretive framework and should be addressed for the manuscript to be considered technically sound.</p>
+</li>
+<li>
+<p><strong>Assessment against Nature-style criteria</strong> Originality is moderate. RASSF2 missense variant prioritization has not, to the authors' knowledge, been reported previously, but the methodological approach is a conventional stacking of existing web tools rather than a new method or resource. Scientific importance is currently limited because no variant is experimentally validated and the clinical annotations are absent; the work is hypothesis-generating. Interdisciplinary readership is plausible for cancer biology and computational genomics but not for the broader audience implied by a high-impact general journal, since the findings are predictions about a single gene. Technical soundness is not established from the supplied material, because the variant-level evidence is entirely supplementary and unavailable, the stability selection criteria cannot be verified, and the interface claims rest on models the authors describe as low confidence. Readability for nonspecialists is adequate in the Introduction and Simple Summary, but the Results are dense with tool names and thresholds and would benefit from a schematic of the filtering pipeline and a clear statement of what each stage does and does not establish.</p>
+</li>
+<li>
+<p><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript could become supportable as a computational prioritization study if the full variant-level data are provided, the stability selection is shown to be internally consistent, interface claims are either removed or restricted to adequately confident models, and the oncogenicity and gene-level analyses are reframed to match what was actually tested.</p>
+</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that 19 variants are destabilizing across three tools is not verifiable from the supplied material and depends on supplementary tables that were not provided.</li>
+<li>The claim that V193D and Y275C disrupt specific protein–protein interfaces is not supported, because the underlying complexes are reported by the authors as low to moderate confidence, and the RASSF2–KRAS ipTM of 0.52 falls below the manuscript's own threshold for a likely failed prediction.</li>
+<li>The claim that all 19 variants are potentially oncogenic is weakly supported, because CScape is applied outside its somatic training domain to germline variants, and no ClinVar classification exists for any of them.</li>
+<li>The claim that codon positions 235, 241, 245, 247, and 249 are mutation-sensitive is weakly supported, because the cBioPortal observations involve different amino acid substitutions at those positions and do not demonstrate occurrence of the prioritized variants.</li>
+<li>The muTarget expression correlations and the STRING network enrichment are not variant-specific and cannot be used to support conclusions about the 19 prioritized variants.</li>
+<li>The statement that no RASSF2 data are deposited in AACR GENIE is a negative database query result and should not be presented as a finding.</li>
+<li>The assertion that this is the first study to address nsSNPs in RASSF2 is a novelty claim that cannot be independently confirmed from the supplied material.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

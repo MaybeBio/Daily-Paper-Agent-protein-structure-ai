@@ -1,0 +1,92 @@
+## Review setup
+- **Input scope** Full manuscript text, including abstract, introduction, results and discussion, methods, and supporting information references.
+- **Assessment boundary** Scientific content, technical soundness, structural and functional claims, and alignment with Nature-style criteria. Editorial or formatting issues are noted only where they affect comprehension.
+- **Shared manuscript claim summary** The authors report the cryo-EM structure of the E. coli lipid II flippase MurJ in complex with the phage lysis protein SglPP7 at 3.2 Å resolution. They propose that SglPP7 inhibits MurJ by binding along the intramembrane cleft and inserting its C-terminal tail into the internal cavity, stabilizing MurJ in an outward-facing conformation. Through structural comparison with LysM and SglC3, they suggest convergent evolution of distinct binding modes toward MurJ inhibition.
+- **Visible evidence base** Cryo-EM structure determination and refinement statistics (S1 Table, S1 Fig), lysis assays with truncation and point mutants (Figs 1D, 2C, S4, S5, S9), MD simulations (Fig 3), structural comparisons with previously reported complexes (Fig 4, S7, S8), and in vivo crosslinking data referenced from prior work.
+- **Missing materials affecting confidence** The cryo-EM map quality for the N-terminal region of SglPP7 (residues 1–25) is described as poor, and these residues are not modeled. The lipid-like feature is not identified at the molecular level. The MD simulation trajectories and convergence metrics are not fully described. The alanine-scanning data are presented only as a summary without quantitative details. The structural comparison with SglC3 relies on a previously reported structure, but the coordinate files and superposition details are not provided in the visible text.
+
+## Reviewer
+- **Overall assessment** This manuscript presents a technically sound cryo-EM structure of the MurJ/SglPP7 complex at 3.2 Å resolution, with supporting functional assays and MD simulations. The structural findings are clear and the comparison with LysM and SglC3 is informative. However, several claims regarding the mechanism of inhibition and the evolutionary interpretation are not fully supported by the presented evidence. The functional significance of the embedded tail, the role of the lipid-like feature, and the convergence argument require additional experimental or computational support. The manuscript is of interest to the structural biology and antimicrobial discovery communities, but the case for convergent evolution and the detailed inhibitory mechanism is not fully established from the provided materials.
+- **Who would be interested in the results, and why** Structural biologists studying membrane transporters and phage-host interactions, microbiologists investigating peptidoglycan biosynthesis and cell lysis mechanisms, and researchers developing new antibacterial strategies against drug-resistant pathogens. The structure provides a new example of how phage proteins target essential bacterial membrane proteins, which is relevant for protein antibiotic design.
+- **Major strengths** The cryo-EM structure is determined at a higher resolution than a recently reported comparable structure, using full-length SglPP7 in lipid nanodiscs. The functional assays with truncation and point mutants directly link the structural observations to lytic activity. The MD simulations provide a dynamic view of MurJ stabilization. The structural comparison across three Sgl proteins is a valuable addition to the field.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Functional validation
+  - **Claim pointer** The authors claim that the C-terminal embedded tail of SglPP7, particularly W53, is important for stabilizing the interaction with MurJ and that this is essential for inhibition.
+  - **Evidence pointer** Figs 2A–2C, S5; location not provided for specific residue positions in the text.
+  - **Concern** The mutational analysis shows that W53A retains full activity, and only W53K and W53R lose activity. The authors interpret this as W53 being important, but the data are more consistent with a charge-based disruption rather than a specific side-chain interaction. The truncation analysis shows that residues through position 53 are required, but the contribution of residues 54–55 is not dissected. The claim that the embedded tail is a key determinant is not strongly supported by the mutagenesis data, which show only modest effects for most substitutions.
+  - **Why it matters** The proposed mechanism of inhibition relies on the embedded tail being a critical feature. If the tail is not essential, the model for how SglPP7 blocks MurJ would need revision. The distinction between a specific interaction and a general steric or electrostatic effect is important for understanding the mechanism and for designing inhibitors.
+  - **Resolution test** Provide a more comprehensive mutagenesis of the tail region, including alanine substitutions at each position and double or triple mutants. Quantify lytic activity with a dose-response or time-course assay. Alternatively, perform MD simulations with the W53 mutants to show whether the tail remains inserted and whether MurJ stability is affected.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Structural interpretation
+  - **Claim pointer** The authors state that the lipid-like feature observed in the putative lipid II-binding groove suggests that a lipid may be accommodated in this region even in the SglPP7-bound state.
+  - **Evidence pointer** S6 Fig; location not provided for the specific map contour level or the identity of the feature.
+  - **Concern** The lipid-like feature is not identified at the molecular level, and the authors state that the map does not contain features corresponding to the hydrophilic headgroup of lipid II. Without identification, the claim that this is a lipid and that it is in the lipid II-binding groove is speculative. The feature could be a detergent molecule, a lipid with a different headgroup, or an artifact of the reconstruction. The authors do not provide any biochemical or biophysical evidence to support the assignment.
+  - **Why it matters** The presence of a lipid in the binding groove could have implications for the mechanism of MurJ inhibition and for how SglPP7 competes with lipid II. If the feature is not a lipid, the interpretation of the binding site and the inhibitory mechanism would be affected.
+  - **Resolution test** Perform mass spectrometry or thin-layer chromatography on the purified complex to identify the lipid species. Alternatively, use a lipid with a known headgroup in the reconstitution and show that the feature corresponds to that lipid. Provide a more detailed analysis of the map features, including the contour level and the fit of a candidate lipid model.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Evolutionary interpretation
+  - **Claim pointer** The authors suggest that the structural similarities among SglPP7, LysM, and SglC3, despite sequence divergence, are consistent with convergent evolution toward MurJ inhibition.
+  - **Evidence pointer** Fig 4, S7, S8; location not provided for the sequence alignment or the phylogenetic analysis.
+  - **Concern** The argument for convergent evolution is based on structural similarity and distinct binding modes. However, the authors do not provide a phylogenetic or evolutionary analysis to support this claim. The three Sgl proteins are encoded by different phages, but the authors do not rule out the possibility of horizontal gene transfer or common ancestry. The term "convergent evolution" implies independent acquisition, which requires a phylogenetic framework to establish.
+  - **Why it matters** The evolutionary interpretation is a key conclusion of the manuscript and is highlighted in the title. If the claim is not supported, the title and the broader significance of the work would need to be revised.
+  - **Resolution test** Provide a phylogenetic analysis of Sgl proteins, including SglPP7, LysM, and SglC3, with appropriate outgroups. Show that the structural similarities are not due to shared ancestry. Alternatively, soften the claim to "independent acquisition" or "parallel evolution" if the phylogenetic evidence is not available.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Computational validation
+  - **Claim pointer** The authors state that MD simulations show that SglPP7 stabilizes MurJ in an outward-facing conformation and that the embedded tail remains positioned within the internal cavity.
+  - **Evidence pointer** Fig 3; location not provided for the simulation parameters or the convergence analysis.
+  - **Concern** The MD simulations are performed for 120 ns, which is relatively short for a membrane protein system. The authors do not provide a convergence analysis, such as RMSD plateau or block averaging, to show that the simulations have reached equilibrium. The comparison between the MurJ/SglPP7 complex and MurJ alone is based on RMSD values, but the authors do not show whether the differences are statistically significant. The choice of the AMBER14 force field and the YASARA membrane setup is not justified.
+  - **Why it matters** The MD simulations are used to support the claim that SglPP7 stabilizes the outward-facing conformation. If the simulations are not converged or the analysis is not robust, the conclusion is weakened.
+  - **Resolution test** Extend the simulations to at least 500 ns and provide a convergence analysis. Show the RMSD as a function of time for each replicate and provide a statistical comparison between the two conditions. Justify the force field and the membrane composition, or perform additional simulations with a different force field to confirm the results.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The phrase "protein antibiotics" is used without definition or context. It is not clear whether this is a widely accepted term or a new concept introduced by the authors.
+  - **Required correction** Define the term or provide a reference to its first use in the literature.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Methods, MD simulations
+  - **Evidence pointer** Methods, MD simulations section
+  - **Issue** The methods for MD simulations do not specify the temperature, pressure, or the number of water molecules and ions. The equilibration protocol is described only briefly.
+  - **Required correction** Provide the full simulation parameters, including the ensemble, temperature, pressure, and the composition of the solvent and ions.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Data presentation
+  - **Affected element** Fig 2C
+  - **Evidence pointer** Fig 2C
+  - **Issue** The lytic activity data are presented as a qualitative spot assay. The authors do not provide a quantitative measure of lysis, such as optical density over time or a plaque assay.
+  - **Required correction** Provide a quantitative assay for at least the key mutants, or state that the spot assay is semi-quantitative and describe the criteria for scoring.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Results, "A lipid-like feature" section
+  - **Evidence pointer** S6 Fig
+  - **Issue** The authors state that the lipid-like feature is located near F22, R24, and R270, but they do not discuss whether these residues are part of the lipid II-binding site or whether they are involved in the conformational changes during transport.
+  - **Required correction** Provide a brief discussion of the functional relevance of these residues in the context of the transport cycle.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Literature context
+  - **Affected element** Introduction
+  - **Evidence pointer** Introduction, paragraph 1
+  - **Issue** The authors mention that another group reported the structure of a stable mutant MurJ/SglPP3 complex during preparation of this manuscript, but they do not provide a citation or a detailed comparison.
+  - **Required correction** Provide the citation and a brief comparison of the two structures, highlighting any differences in the binding mode or the functional implications.
+- **Technical failings that need to be addressed before the case is established** The mutagenesis data do not strongly support the claim that the embedded tail is a key determinant of inhibition. The lipid-like feature is not identified at the molecular level. The MD simulations lack convergence analysis and statistical comparison. The evolutionary claim of convergent evolution is not supported by phylogenetic analysis.
+
+## Risk / unsupported claims
+- The claim that the C-terminal embedded tail is a key determinant of SglPP3 function is not strongly supported by the mutagenesis data, which show only modest effects for most substitutions.
+- The assignment of the lipid-like feature as a lipid in the putative lipid II-binding groove is speculative, as the molecular identity is not determined.
+- The claim of convergent evolution toward MurJ inhibition is not supported by phylogenetic or evolutionary analysis.
+- The MD simulation results are presented without convergence analysis or statistical comparison, making the claim of stabilization of the outward-facing conformation not fully established.
+- The functional significance of the N-terminal region of SglPP3 (residues 1–25) is not assessed, as the cryo-EM map for this region is poor and the truncation analysis shows that residues through position 22 are dispensable.

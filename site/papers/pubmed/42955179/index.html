@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PNPShift: an NMR chemical shift predictor for purine-nucleotide-bound and unliganded proteins. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>PNPShift: an NMR chemical shift predictor for purine-nucleotide-bound and unliganded proteins.</h1>
+      <div class="meta">Zeng, Mingfei; Liu, Dan; Shui, Leilei; Wang, Hao; Long, Dong</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of biomolecular NMR</span>
+        · 2026-10-29
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42955179/">原文</a>
+      </div>
+      <p class="one-liner">PNPShift是一个基于人工神经网络的NMR化学位移预测器，专门提升嘌呤核苷酸结合蛋白的化学位移预测精度，并用于结构系综精修和构象判别，属于蛋白质结构计算建模中的AI方法。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Accurate prediction of protein chemical shifts is important for NMR-based structural and ensemble modeling. However, most existing predictors are designed for unliganded proteins and cannot quantitatively calculate the chemical shifts of purine nucleotide-bound proteins, which are encoded by approximately 10% of the human genome and play critical roles in signal transduction, energy metabolism, and other cellular processes. Here, we introduce PNPShift, an artificial neural network-based program designed to improve chemical shift prediction accuracy for purine nucleotide-bound proteins. By incorporating the PNPShift-X(PN) correction, PNPShift reduces (1)H(N) prediction errors in nucleotide-binding regions by up to ~ 30% across 28 tested purine nucleotide-bound proteins. PNPShift also improves (1)H(N) predictions for unliganded proteins, achieving a ~ 6% reduction in RMSE across an independent test set of 60 proteins. The utility of PNPShift in structural and dynamics modeling is demonstrated by its superior performance in maximum-entropy (MEM)-based ensemble refinement and its greater ability to discriminate native states from decoy conformations compared with other leading programs. PNPShift not only extends accurate chemical-shift prediction to purine nucleotide-bound proteins critical for diverse cellular functions, but also illustrates a general framework for developing predictors for other liganded protein systems.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质化学位移的准确预测对于基于核磁共振的结构和系综建模至关重要。然而，现有的大多数预测器是为未结合配体的蛋白质设计的，无法定量计算嘌呤核苷酸结合蛋白的化学位移，这类蛋白质由人类基因组中约10%的基因编码，在信号转导、能量代谢及其他细胞过程中发挥关键作用。在此，我们介绍PNPShift，一种基于人工神经网络的程序，旨在提高嘌呤核苷酸结合蛋白的化学位移预测准确性。通过整合PNPShift-X(PN)校正，PNPShift在28个测试的嘌呤核苷酸结合蛋白中，将核苷酸结合区域的(1)H(N)预测误差最多降低约30%。PNPShift还改善了未结合配体蛋白的(1)H(N)预测，在包含60个蛋白质的独立测试集上，均方根误差（RMSE）降低约6%。PNPShift在结构和动力学建模中的实用性，通过其在基于最大熵（MEM）的系综精修中的优越性能，以及与其他领先程序相比，在区分天然态与诱饵构象方面的更强能力得到证明。PNPShift不仅将准确的化学位移预测扩展到对多种细胞功能至关重要的嘌呤核苷酸结合蛋白，而且为开发其他配体结合蛋白系统的预测器提供了一个通用框架。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：PNPShift: an NMR chemical shift predictor for purine-nucleotide-bound and unliganded proteins</li>
+<li><strong>作者</strong>：Zeng, Mingfei; Liu, Dan; Shui, Leilei; Wang, Hao; Long Dong</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/预印本平台</strong>：Journal of Biomolecular NMR</li>
+<li><strong>年份</strong>：2026（在线日期 2026-10-29）</li>
+<li><strong>论文类型</strong>：方法学（工具开发 + 验证）</li>
+<li><strong>领域</strong>：NMR 化学位移预测 × 蛋白质-配体（嘌呤核苷酸）结合 × 神经网络</li>
+<li><strong>关键词</strong>：化学位移预测、嘌呤核苷酸结合蛋白、人工神经网络、系综精修、decoy 判别</li>
+<li><strong>DOI/arXiv 号</strong>：10.1007/s10858-026-00499-w</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：28 个嘌呤核苷酸结合蛋白（测试）、60 个无配体蛋白（独立测试集）</li>
+<li><strong>阅读日期</strong>：2026-05-12（按系统日期）</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的化学位移预测子领域，聚焦配体结合态蛋白的化学位移预测，与结构精修（MEM 系综）和构象判别（decoy 识别）直接相关，可迁移至分子对接与构象采样中的打分/验证环节。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>针对现有化学位移预测器无法处理嘌呤核苷酸结合蛋白的问题，PNPShift 通过引入 PNPShift-X(PN) 校正项，在 28 个嘌呤核苷酸结合蛋白上将 ¹H(N) 预测误差降低约 30%，同时使无配体蛋白的 RMSE 降低约 6%，并在 MEM 系综精修与 decoy 判别中表现优于现有程序。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何准确预测嘌呤核苷酸结合蛋白的 NMR 化学位移（特别是 ¹H(N)）？</li>
+<li><strong>为什么重要</strong>：嘌呤核苷酸结合蛋白约占人类基因组的 10%，参与信号转导、能量代谢等关键过程；NMR 化学位移是结构解析与系综建模的核心约束。</li>
+<li><strong>现有方法为何不足</strong>：主流化学位移预测器（如 SPARTA+、SHIFTX2 等）基于无配体蛋白训练，未编码配体-蛋白相互作用对化学环境的扰动，因此对配体结合态蛋白预测误差大。</li>
+<li><strong>精确研究问题</strong>：Can a neural-network-based correction term (PNPShift-X(PN)) trained on purine-nucleotide-bound proteins reduce ¹H(N) chemical shift prediction error in both liganded and unliganded proteins, and improve downstream structural modeling (ensemble refinement and decoy discrimination)?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「仅本文框架」，基于摘要中隐含的对比与领域常识，未经外部文献核验。）</em>
+- <strong>阶段一：经验/统计方法</strong>（如 SHIFTX、SPARTA）——基于化学环境经验规则或数据库统计，速度快但精度有限，不适用于配体结合态。
+- <strong>阶段二：机器学习方法</strong>（如 SPARTA+、SHIFTX2、UCSF 系列）——引入随机森林/神经网络，精度提升，但训练集几乎全为无配体蛋白，对配体结合态泛化差。
+- <strong>阶段三：配体感知预测</strong>（本文位置）——PNPShift 在现有预测器基础上增加配体特异性校正模块（PNPShift-X(PN)），显式编码嘌呤核苷酸结合环境，同时保持对无配体蛋白的兼容性。
+- <strong>本文主张的位置</strong>：不是从头训练新预测器，而是提出「通用预测器 + 配体特异性校正」的模块化框架，可推广到其他配体-蛋白系统。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>配体结合态化学位移预测误差大</td>
+<td>现有预测器在嘌呤核苷酸结合区域 ¹H(N) 误差显著高于无配体区域</td>
+<td>训练集不含配体结合态蛋白，无法编码配体对化学环境的扰动</td>
+<td>摘要：现有预测器「cannot quantitatively calculate the chemical shifts of purine nucleotide-bound proteins」</td>
+</tr>
+<tr>
+<td>无配体蛋白预测精度已近瓶颈</td>
+<td>通用预测器在无配体蛋白上 RMSE 难以进一步降低</td>
+<td>缺乏针对特定化学环境的校正机制</td>
+<td>摘要：PNPShift 在无配体蛋白上仍实现 ~6% RMSE 降低</td>
+</tr>
+<tr>
+<td>下游建模受预测误差影响</td>
+<td>系综精修与 decoy 判别受化学位移预测精度限制</td>
+<td>预测误差直接传播到能量/打分函数</td>
+<td>摘要：PNPShift 在 MEM 精修与 decoy 判别中表现更优</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：训练一个神经网络校正模块 PNPShift-X(PN)，对现有化学位移预测器的输出进行修正，专门针对嘌呤核苷酸结合蛋白。</li>
+<li><strong>核心洞察</strong>：配体结合对化学位移的影响是局域化且可学习的——通过编码配体类型与结合位点残基环境，可以系统性地校正预测偏差，而不需要重新训练整个预测器。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：对于任何「配体-蛋白」体系，与其从头训练新预测器，不如在通用模型上叠加「配体特异性校正层」，这既保留了通用模型的泛化能力，又引入了配体化学环境的先验知识。此思路可迁移到分子对接打分函数、MD 力场参数校正等场景。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质结构（坐标）、嘌呤核苷酸配体类型（如 ATP、GTP 等）、残基序列信息</li>
+<li><strong>输出</strong>：校正后的 ¹H(N) 化学位移预测值</li>
+<li><strong>模块</strong>：
+  1. 基础预测器（未具名，推测为现有通用化学位移预测器）
+  2. PNPShift-X(PN) 校正网络（神经网络，输入为配体-残基环境特征）</li>
+<li><strong>训练</strong>：基于 28 个嘌呤核苷酸结合蛋白的已知化学位移数据（训练/测试划分未在摘要中说明）</li>
+<li><strong>工具</strong>：人工神经网络（具体架构未提供）</li>
+<li><strong>反馈回路</strong>：预测误差 → 网络权重更新（标准监督学习）</li>
+<li><strong>假设</strong>：配体对化学位移的影响可由局部结构/化学特征编码；校正项对无配体蛋白不产生负面干扰</li>
+<li><strong>流程</strong>：输入结构 → 基础预测器输出初始位移 → PNPShift-X(PN) 根据配体-残基环境计算校正量 → 输出最终预测值 → 用于 MEM 系综精修或 decoy 判别</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基础化学位移预测器</td>
+<td>提供无配体状态下的初始位移预测</td>
+<td>作为通用基线，保证无配体蛋白的预测能力</td>
+<td>输入：结构；输出：初始位移</td>
+<td>摘要：PNPShift 在无配体蛋白上仍优于现有预测器</td>
+<td>预期：无配体蛋白预测精度下降（未实测）</td>
+</tr>
+<tr>
+<td>PNPShift-X(PN) 校正网络</td>
+<td>对配体结合区域的位移预测进行系统校正</td>
+<td>编码嘌呤核苷酸对化学环境的扰动</td>
+<td>输入：配体类型+残基环境特征；输出：位移校正量</td>
+<td>摘要：结合区域误差降低 ~30%</td>
+<td>实测：结合区域误差显著上升（由 30% 改善反推）</td>
+</tr>
+<tr>
+<td>集成/输出层</td>
+<td>合并基础预测与校正量</td>
+<td>生成最终预测值</td>
+<td>输入：初始位移+校正量；输出：最终位移</td>
+<td>摘要：整体性能提升</td>
+<td>预期：校正量错误叠加会导致更差预测（未实测）</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ul>
+<li><strong>不适用</strong>（摘要中未提供任何数学公式或符号定义）</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：</li>
+<li>训练/测试集：28 个嘌呤核苷酸结合蛋白（具体划分未提供）</li>
+<li>独立测试集：60 个无配体蛋白</li>
+<li><strong>指标</strong>：¹H(N) 化学位移预测误差（RMSE）、误差降低百分比</li>
+<li><strong>基线</strong>：现有领先化学位移预测器（未具名，推测为 SPARTA+、SHIFTX2 等）</li>
+<li><strong>评测协议</strong>：独立测试集评估（无配体蛋白）；配体结合蛋白上评估结合区域误差</li>
+<li><strong>下游任务</strong>：MEM 系综精修、decoy 判别</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>配体结合蛋白预测</td>
+<td>PNPShift 降低结合区域 ¹H(N) 误差</td>
+<td>28 个嘌呤核苷酸结合蛋白，对比现有预测器</td>
+<td>误差降低 ~30%</td>
+<td>校正模块有效编码配体效应</td>
+<td>未说明是否所有 28 个蛋白均一致改善</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>无配体蛋白泛化</td>
+<td>PNPShift 不损害无配体蛋白预测</td>
+<td>60 个独立无配体蛋白</td>
+<td>RMSE 降低 ~6%</td>
+<td>校正模块具有正向迁移</td>
+<td>未说明是否统计显著</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>MEM 系综精修</td>
+<td>PNPShift 改善系综建模</td>
+<td>对比其他领先程序</td>
+<td>表现更优</td>
+<td>预测精度提升转化为建模优势</td>
+<td>未提供具体指标</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>Decoy 判别</td>
+<td>PNPShift 更好区分天然态与 decoy</td>
+<td>对比其他领先程序</td>
+<td>判别能力更强</td>
+<td>预测精度提升可用于构象评估</td>
+<td>未提供具体指标</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对 ¹H(N) 化学位移，未涉及 ¹³C、¹⁵N 等其他核；仅针对嘌呤核苷酸（ATP/GTP 类）结合蛋白，未覆盖其他配体类型。</li>
+<li><strong>Oracle/真值输入</strong>：使用实验测定的化学位移作为训练/评估真值；输入结构为已知结构（来源未说明，推测为晶体或 NMR 结构）。</li>
+<li><strong>端到端状态</strong>：PNPShift 是预测器而非端到端建模工具；下游 MEM 精修与 decoy 判别是独立应用。</li>
+<li><strong>算力成本</strong>：未提供训练/推理时间。</li>
+<li><strong>历史数据依赖</strong>：训练数据来自 28 个嘌呤核苷酸结合蛋白，可能受限于数据多样性。</li>
+<li><strong>模型依赖</strong>：依赖基础预测器的质量；校正网络的有效性受基础预测器误差模式影响。</li>
+<li><strong>最难情形</strong>：未说明在低分辨率结构、多域蛋白或非标准核苷酸类似物上的表现。</li>
+<li><strong>群体/领域边界</strong>：适用于嘌呤核苷酸结合蛋白；对无配体蛋白有正向迁移，但改善幅度较小（~6%）。</li>
+<li><strong>不确定性</strong>：未提供误差条、置信区间或统计显著性检验。</li>
+<li><strong>有边界的复述</strong>：PNPShift 在 28 个嘌呤核苷酸结合蛋白上降低了 ¹H(N) 预测误差约 30%，在 60 个无配体蛋白上降低约 6%，并在两个下游任务中表现优于现有工具；但其适用范围限于嘌呤核苷酸体系与 ¹H(N) 核，且具体统计细节未披露。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 仅针对嘌呤核苷酸结合蛋白，其他配体系统未覆盖（摘要中作为未来方向暗示：「illustrates a general framework for developing predictors for other liganded protein systems」）。
+- 仅报告 ¹H(N) 位移，未涉及其他核。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练集仅 28 个蛋白</td>
+<td>样本量小，可能过拟合特定折叠/序列家族；~30% 改善可能来自少数蛋白的极端误差</td>
+<td>影响泛化性结论</td>
+<td>交叉验证按蛋白家族划分；报告每个蛋白的误差变化分布</td>
+<td>摘要：28 个蛋白</td>
+</tr>
+<tr>
+<td>未披露基础预测器身份</td>
+<td>改善幅度可能依赖特定基线的弱点；换用更强基线后改善可能缩小</td>
+<td>影响方法普适性</td>
+<td>与多个基线（SPARTA+、SHIFTX2、UCSF 等）对比</td>
+<td>摘要：未具名</td>
+</tr>
+<tr>
+<td>无配体蛋白改善 ~6%</td>
+<td>可能来自网络对整体位移分布的系统性偏移校正，而非真正的物理化学建模</td>
+<td>影响对校正机制的理解</td>
+<td>分析校正项与配体-残基距离/化学环境的相关性</td>
+<td>摘要：~6%</td>
+</tr>
+<tr>
+<td>下游任务对比未量化</td>
+<td>「更优」缺乏具体数值与统计检验</td>
+<td>影响结论强度</td>
+<td>提供 MEM 精修 RMSD 改善、decoy 判别 AUC 等指标</td>
+<td>摘要：定性描述</td>
+</tr>
+<tr>
+<td>未报告训练/测试划分</td>
+<td>无法排除数据泄漏（如同源蛋白跨集）</td>
+<td>影响结果可信度</td>
+<td>检查序列同源性过滤</td>
+<td>摘要：未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>配体特异性校正层（可迁移）</strong>：在通用预测器上叠加配体感知的校正模块，而非从头训练——可迁移到分子对接打分函数中，对配体结合姿态的化学位移/能量预测进行局域校正。
+2. <strong>局域化误差修正策略</strong>：针对结合位点残基的预测误差进行专项优化，而非全局重训练——可迁移到 MD 模拟中力场参数对配体结合区域的局部优化。
+3. <strong>下游任务验证范式</strong>：用 MEM 系综精修和 decoy 判别作为预测器的下游验证，证明预测精度提升能转化为结构建模收益——可迁移到构象生成/采样方法评估中，用化学位移预测作为打分函数。
+4. <strong>「通用 + 专用」模块化设计</strong>：保留通用模型泛化能力，同时引入专用模块处理特定化学环境——可迁移到 AlphaFold 类结构预测器中，对配体结合态进行微调。
+5. <strong>嘌呤核苷酸结合蛋白作为测试床</strong>：这类蛋白约占人类基因组 10%，可作为配体-蛋白相互作用预测方法的基准体系。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>：SPARTA+（Shen &amp; Bax, 2013）、SHIFTX2（Han et al., 2011）——均为化学位移预测器，但未处理配体结合态；PNPShift 的「校正层」思路与 Delta 学习（在粗粒度模型上叠加细粒度校正）类似。</li>
+<li><strong>组合方向</strong>：PNPShift 的校正输出可作为 NMR 结构计算（如 Xplor-NIH、CNS）中的约束项，或与 MD 模拟中的化学位移回溯计算（如 ShiftX2 嵌入）结合。</li>
+<li><strong>冲突/对比</strong>：与基于物理的化学位移预测（如密度泛函理论计算）相比，PNPShift 是数据驱动方法，精度可能更高但可解释性较低。</li>
+<li><strong>可迁移领域</strong>：分子对接中的配体结合姿态评估、构象系综的 Boltzmann 权重分配、蛋白质-配体结合亲和力预测中的结构验证。</li>
+<li><strong>候选方向（未验证）</strong>：PNPShift 的框架可扩展到其他配体类型（如黄素、血红素、金属离子），或扩展到 ¹³C/¹⁵N 化学位移预测。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：Ligand-Aware Chemical Shift Correction for Docking Pose Scoring
+   - <strong>来源局限/观察</strong>：PNPShift 证明配体特异性校正可提升化学位移预测；分子对接中配体结合姿态的打分函数常忽略 NMR 可观测量的约束。
+   - <strong>核心假设</strong>：将 PNPShift 类校正项集成到对接打分函数中，可提升天然姿态的识别率。
+   - <strong>初步方法</strong>：在 AutoDock Vina 或 Glide 打分函数中增加化学位移预测一致性项（使用 PNPShift 或类似校正器），对 top 姿态进行重排序。
+   - <strong>验证方式</strong>：在 PDBbind 或专用对接基准集上比较有无校正项的 top-1 成功率。
+   - <strong>可能的失败模式</strong>：化学位移预测误差可能掩盖姿态差异；校正项可能对非天然姿态产生假阳性。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：Transferable Ligand Correction Module for MD Chemical Shift Back-Calculation
+   - <strong>来源局限/观察</strong>：MD 模拟中回溯计算化学位移通常使用无配体训练的预测器，对配体结合态误差大。
+   - <strong>核心假设</strong>：PNPShift-X(PN) 的校正逻辑可迁移到 MD 轨迹的逐帧化学位移计算中，提升系综与实验数据的吻合度。
+   - <strong>初步方法</strong>：将 PNPShift 校正项作为 MD 轨迹后处理模块，对每帧结构计算校正后的化学位移，用于系综筛选。
+   - <strong>验证方式</strong>：在已知实验化学位移的嘌呤核苷酸结合蛋白 MD 轨迹上比较校正前后的 χ² 吻合度。
+   - <strong>可能的失败模式</strong>：MD 采样的构象空间与训练集分布不匹配；校正项对非平衡构象失效。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：Generalized Ligand-Specific Correction Framework for Chemical Shift Prediction
+   - <strong>来源局限/观察</strong>：PNPShift 仅覆盖嘌呤核苷酸；摘要中提出「general framework」但未验证其他配体。
+   - <strong>核心假设</strong>：PNPShift 的架构（基础预测器 + 配体校正层）可泛化到其他配体类型（如 FAD、NAD、血红素）。
+   - <strong>初步方法</strong>：收集多种配体结合蛋白的化学位移数据，训练多配体校正网络，评估跨配体迁移能力。
+   - <strong>验证方式</strong>：对每种配体类型留一法交叉验证，比较校正前后的误差降低。
+   - <strong>可能的失败模式</strong>：不同配体的化学环境影响差异过大，单一校正网络容量不足；数据量不足。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：Chemical Shift-Guided Conformational Ensemble Selection for Liganded Proteins
+   - <strong>来源局限/观察</strong>：PNPShift 在 MEM 系综精修中表现更优，但摘要未提供细节。
+   - <strong>核心假设</strong>：使用 PNPShift 校正后的化学位移作为 MEM 精修的目标函数，可更准确恢复实验系综的构象分布。
+   - <strong>初步方法</strong>：对嘌呤核苷酸结合蛋白生成大规模构象池，用 PNPShift 预测化学位移，通过 MEM 加权选择与实验位移吻合的子集。
+   - <strong>验证方式</strong>：与无校正预测器生成的系综比较，用 Rg、二级结构含量等指标评估系综质量。
+   - <strong>可能的失败模式</strong>：化学位移对构象变化的敏感性有限；MEM 加权可能过拟合噪声。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no access to methods, figures, tables, or supplementary material</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present PNPShift, an artificial neural network-based chemical shift predictor that incorporates a correction term (PNPShift-X(PN)) to improve (1)H(N) chemical shift prediction for purine nucleotide-bound proteins, with reported error reductions of up to ~30% in nucleotide-binding regions across 28 tested proteins and ~6% RMSE reduction for unliganded proteins across 60 proteins. The program is further claimed to outperform other leading programs in maximum-entropy-based ensemble refinement and native-state discrimination from decoys.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative data, statistical details, benchmark definitions, or methodological descriptions are provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, all figures and tables, training and test set compositions, benchmark definitions, comparison baselines, and code or data availability statements</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a potentially useful contribution to the field of protein NMR chemical shift prediction, addressing a genuine gap for purine nucleotide-bound proteins. However, the evidence base available for this review is limited to the abstract, which precludes verification of the central claims. The reported improvements are plausible but not independently assessable without methodological detail and benchmark transparency. The general framework claim is intriguing but under-supported at this level of description.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in NMR spectroscopy, structural biology, and computational biophysics who use chemical shift prediction for protein structure determination, ensemble modeling, and dynamics studies. Those working on nucleotide-binding proteins or other liganded systems would find the extension beyond unliganded proteins particularly relevant. Developers of machine learning-based predictors for biomolecular NMR parameters would also be interested in the proposed correction framework.</li>
+<li><strong>Major strengths</strong> The problem addressed is well-defined and of practical importance, as most existing predictors are limited to unliganded proteins. The reported improvements, if reproducible, would be meaningful for both liganded and unliganded systems. The demonstration of utility in ensemble refinement and decoy discrimination suggests practical relevance beyond raw prediction accuracy.</li>
+<li><strong>Major Concerns</strong> </li>
+<li>R1-M1</li>
+<li>R1-M2</li>
+<li>R1-M3</li>
+<li><strong>Minor Comments</strong> </li>
+<li>R1-m1</li>
+<li>R1-m2</li>
+<li>R1-m3</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The abstract does not provide sufficient methodological detail to assess the validity of the correction approach, the statistical significance of the reported improvements, or the fairness of comparisons with other programs. The lack of information on training and test set separation, cross-validation procedures, and potential data leakage prevents assessment of generalizability.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: the extension to purine nucleotide-bound proteins is a novel contribution, though the underlying neural network approach is not itself new. Scientific importance: the work addresses a real gap with potential impact on NMR-based studies of a protein class relevant to human biology. Interdisciplinary readership: the topic is of interest to NMR spectroscopists, structural biologists, and computational chemists, but the abstract is written in a way that is accessible to these groups. Technical soundness: cannot be assessed from the abstract alone; the reported metrics lack statistical context and methodological transparency. Readability for nonspecialists: the abstract is concise and understandable, though some terms (e.g., MEM-based ensemble refinement) assume domain familiarity.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The core idea is promising and the reported results are potentially significant, but the current evidence base is insufficient to establish the case. Full manuscript review with access to methods and data is required.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> PNPShift reduces (1)H(N) prediction errors in nucleotide-binding regions by up to ~30% across 28 tested purine nucleotide-bound proteins.</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The abstract reports a reduction of "up to ~30%" in prediction errors, but no statistical details are provided. It is unclear whether this figure represents a mean improvement, a best-case scenario, or a median across the 28 proteins. The variability across proteins, the error bars, and the significance of the improvement relative to baseline predictors are not reported.</li>
+<li><strong>Why it matters</strong> Without measures of central tendency, dispersion, and statistical significance, the reader cannot determine whether the improvement is consistent and reliable or driven by a few favorable cases. This is critical for assessing the practical utility of the predictor.</li>
+<li>
+<p><strong>Resolution test</strong> Provide per-protein error reductions with mean, median, and standard deviation, along with paired statistical tests (e.g., Wilcoxon signed-rank) comparing PNPShift to baseline predictors. Report the distribution of improvements across the 28 proteins.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> PNPShift also improves (1)H(N) predictions for unliganded proteins, achieving a ~6% reduction in RMSE across an independent test set of 60 proteins.</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The claim of a ~6% RMSE reduction for unliganded proteins is presented without context. It is unclear what the baseline RMSE is, which predictor is used as the reference, and whether the improvement is statistically significant. The term "independent test set" is used, but the relationship of this set to the training data is not described.</li>
+<li><strong>Why it matters</strong> The improvement for unliganded proteins is a secondary but important claim, as it suggests the method does not sacrifice performance on the original domain. Without baseline values and significance testing, the magnitude of the improvement cannot be interpreted.</li>
+<li>
+<p><strong>Resolution test</strong> Report absolute RMSE values for PNPShift and the baseline predictor on the 60-protein test set, along with confidence intervals or p-values. Clarify the composition of the test set and its non-overlap with training data.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> PNPShift demonstrates superior performance in maximum-entropy (MEM)-based ensemble refinement and greater ability to discriminate native states from decoy conformations compared with other leading programs.</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The abstract claims superiority over "other leading programs" in two distinct applications, but no details are given on which programs were compared, what metrics were used, how the decoy sets were generated, or how the MEM refinement was evaluated. The criteria for "superior" and "greater ability" are not defined.</li>
+<li><strong>Why it matters</strong> These application-based claims are central to demonstrating the practical value of PNPShift. Without clear benchmarks and comparison protocols, the claims are not falsifiable and cannot be independently verified.</li>
+<li><strong>Resolution test</strong> Specify the comparison programs, the evaluation metrics (e.g., ensemble RMSD to reference, discrimination power as area under the ROC curve), the decoy generation protocol, and the statistical significance of the performance differences.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Terminology</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The term "PNPShift-X(PN) correction" is introduced without explanation of what "X" and "PN" denote or how the correction is computed.</li>
+<li>
+<p><strong>Required correction</strong> Define the correction term explicitly in the abstract or provide a brief description of its functional form.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Scope of evaluation</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract reports improvements only for (1)H(N) shifts. It is unclear whether PNPShift predicts other nuclei (e.g., (13)C, (15)N) and whether similar improvements are observed.</li>
+<li>
+<p><strong>Required correction</strong> State explicitly which nuclei are predicted and whether the reported improvements are specific to (1)H(N) or general.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Accessibility</li>
+<li><strong>Affected element</strong> Availability</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> No mention is made of the availability of PNPShift (e.g., open-source code, web server, or executable) or the training data.</li>
+<li><strong>Required correction</strong> Include a statement on code and data availability, as is standard for computational tools.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "up to ~30%" error reduction is not supported by statistical evidence in the abstract.</li>
+<li>The claim of "~6% RMSE reduction" for unliganded proteins lacks baseline values and significance testing.</li>
+<li>The claim of "superior performance" in MEM-based ensemble refinement and decoy discrimination is not supported by defined benchmarks or comparison protocols.</li>
+<li>The general framework claim for developing predictors for other liganded protein systems is plausible but not evidenced in the abstract.</li>
+<li>The statement that purine nucleotide-binding proteins are "encoded by approximately 10% of the human genome" is presented without citation and cannot be verified from the abstract.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

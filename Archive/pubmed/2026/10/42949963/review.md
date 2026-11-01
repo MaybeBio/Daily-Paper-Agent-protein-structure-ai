@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no figures, tables, methods, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors report atomistic molecular dynamics simulations revealing cooperative residue interactions in intrinsically disordered protein (IDP) condensates, manifesting as higher-order interactions (HOIs) among 3 to 5 residue motifs with lifetimes three orders of magnitude longer than typical residue contacts. They attribute a significant nonadditive free energy of HOIs to a local low-dielectric environment, identify specific sequence patterns, and propose that condensates behave as HOI-crosslinked networks capable of reproducing experimental measurements of saturation concentration, viscoelasticity, and interfacial tension.
+- **Visible evidence base** Abstract text only; no simulation details, system descriptions, force field parameters, validation data, or comparison figures were accessible
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, methods section, simulation protocols, force field specifications, system compositions, sequence information, error analyses, and the quantitative comparison between model predictions and experimental data
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting claim about cooperative residue interactions in IDP condensates, with a proposed mechanistic origin and a network model that reportedly reproduces experimental observables. However, the evidence base available for assessment is limited to the abstract, which precludes verification of the central quantitative claims. The conceptual framing is clear and the potential implications for understanding condensate physical properties are substantial, but the strength of the case cannot be evaluated from the supplied material alone.
+- **Who would be interested in the results, and why** Researchers in the fields of biomolecular condensates, intrinsically disordered proteins, and protein phase separation would find these results relevant. The proposed HOI-crosslinked network model and its ability to reproduce macroscopic physical properties could interest computational biophysicists and experimentalists studying condensate material properties. The identification of specific sequence patterns may also appeal to those working on sequence determinants of phase behavior.
+- **Major strengths** The abstract addresses a question of genuine interest, namely whether cooperativity exists in IDP condensates, which extends concepts from folded protein biophysics to disordered systems. The proposed mechanism linking nonadditive free energy to a local low-dielectric environment is physically plausible and testable. The claim that the model reproduces multiple experimental observables suggests a potentially broad explanatory scope.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that cooperative residue interactions in IDP condensates manifest as packing between finite residue motifs of 3 to 5 residues with lifetimes three orders of magnitude longer than residue contacts.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract provides no information on how HOIs were defined, detected, or distinguished from ordinary residue contacts in the simulations. The lifetime comparison lacks context regarding the absolute timescales involved, the dependence on force field choice, and whether the result is robust across different IDP sequences and simulation conditions.
+  - **Why it matters** The central claim of the paper rests on the identification and characterization of HOIs. Without methodological details and validation, the reader cannot assess whether HOIs are an artifact of the simulation protocol or a genuine physical feature. The three-orders-of-magnitude lifetime claim is striking and requires careful demonstration that it is not a consequence of how contacts versus HOIs are operationally defined.
+  - **Resolution test** Provide a clear operational definition of HOIs, demonstrate their detection across multiple independent simulation systems, show convergence of lifetime estimates, and establish robustness to force field and system size variations.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that HOIs exhibit a significant nonadditive free energy originating from a local low-dielectric environment.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states the origin of the nonadditive free energy but provides no quantitative values, no comparison to additive baselines, and no direct evidence linking the effect to dielectric properties. The causal chain from local dielectric environment to nonadditive free energy is asserted rather than demonstrated.
+  - **Why it matters** The mechanistic explanation is a key contribution of the work. If the dielectric argument is not supported by direct calculations or control simulations, the proposed mechanism remains speculative. The magnitude of the nonadditive free energy is also critical for assessing whether HOIs are thermodynamically significant relative to thermal fluctuations and other interaction types.
+  - **Resolution test** Report computed nonadditive free energy values with error estimates, show how the dielectric environment was calculated or modulated in simulations, and provide control simulations where the dielectric contribution is altered to confirm causality.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence quality
+  - **Claim pointer** The claim that the HOI-crosslinked network model successfully reproduces experimental results of condensate physical properties, including saturation concentration, viscoelasticity, and interfacial tension.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states that the model reproduces experimental results but provides no quantitative comparison, no statistical measures of agreement, and no indication of which experimental systems were used for validation. The range of conditions over which the model was tested is unspecified.
+  - **Why it matters** The predictive power of the model is a major selling point of the work. Without quantitative comparisons and an indication of the breadth of validation, the claim of successful reproduction cannot be evaluated. The choice of experimental datasets and the treatment of parameter uncertainty are essential for assessing whether the agreement is meaningful or the result of fitting.
+  - **Resolution test** Provide quantitative comparisons between model predictions and experimental measurements for multiple condensate systems, including error bars on both sides, and state clearly which parameters were fitted versus predicted from first principles.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract
+  - **Issue** The term "higher-order interactions" is introduced without a brief definition in the abstract, which may confuse readers unfamiliar with the concept of nonpairwise additivity in residue interactions.
+  - **Required correction** Add a brief parenthetical definition of HOIs in the abstract, such as interactions involving three or more residues that cannot be decomposed into pairwise contributions.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Sequence pattern identification
+  - **Evidence pointer** Abstract
+  - **Issue** The abstract lists specific sequence patterns like "Y-X-Q", "D-X-R", and "S-Y-X" but does not indicate how many patterns were identified, how statistically significant they are, or whether they are enriched relative to random expectation.
+  - **Required Correction** Provide a brief statement on the statistical significance and prevalence of the identified patterns, or refer to a figure that presents this information.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Generalizability
+  - **Affected element** Scope of conclusions
+  - **Evidence pointer** Abstract
+  - **Issue** The abstract states that HOIs are present in "various IDP condensates" but does not specify the number or diversity of sequences studied, leaving uncertainty about the generality of the findings.
+  - **Required Correction** State the number of distinct IDP systems simulated and the range of sequence compositions covered.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The central claims regarding HOI identification, the dielectric mechanism, and the model's predictive success cannot be verified from the abstract alone. Each requires detailed methodological and quantitative support from the full manuscript.
+- **Assessment against Nature-style criteria** Originality: The concept of cooperativity in IDP condensates is a reasonable extension of existing ideas, but the abstract does not clearly distinguish the findings from prior work on multivalent interactions or pi-cation contacts in condensates. Scientific importance: If substantiated, the work could provide a new framework for understanding condensate cohesion and material properties, which would be of broad interest. Interdisciplinary readership: The topic bridges biophysics, physical chemistry, and cell biology, and the abstract is written in a way that is largely accessible across these fields. Technical soundness: Cannot be assessed from the abstract; the simulation methodology, force field choices, and analysis procedures are not described. Readability for nonspecialists: The abstract is generally clear, though the term HOIs and the dielectric mechanism could benefit from brief elaboration.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents an interesting hypothesis and a potentially powerful model, but the absence of methodological detail and quantitative validation prevents assessment of whether the claims are supported. A full review of the complete manuscript would be required to determine whether the technical concerns can be resolved.
+
+## Risk / unsupported claims
+- The claim that HOIs have lifetimes three orders of magnitude longer than residue contacts is unsupported without knowledge of the operational definitions and absolute timescales.
+- The claim that the nonadditive free energy originates from a local low-dielectric environment is unsupported without direct evidence or control simulations.
+- The claim that the HOI-crosslinked network model reproduces experimental saturation concentration, viscoelasticity, and interfacial tension is unsupported without quantitative comparisons.
+- The generality of HOIs across "various IDP condensates" is unverifiable without knowing the number and diversity of systems studied.
+- The statistical significance and prevalence of the identified sequence patterns are not assessable from the abstract.

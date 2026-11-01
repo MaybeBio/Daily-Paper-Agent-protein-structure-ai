@@ -1,0 +1,94 @@
+## Review setup
+
+- **Input scope** Full manuscript text (abstract, introduction, methods, case study, discussion, declarations)
+- **Assessment boundary** Assessment is limited to the claims and evidence presented in the provided manuscript text. No external code, data, or supplementary materials were examined.
+- **Shared manuscript claim summary** The authors present a lightweight, interactive web-based server that integrates a structure-aware GNN for de novo sequence design and ESMFold for structure prediction into a bidirectional design loop. The tool provides visualization, per-residue confidence, and a Kabsch alignment overlay with RMSD reporting. The paper claims the tool lowers the barrier for non-experts, supports hypothesis-driven design, and is reusable with compatible checkpoints.
+- **Visible evidence base** Abstract; Sections 1 through 10; Figures 1, 2, 4, 5, 7, 8, 9, 10 referenced; one quantitative result (Cα RMSD 1.174 Å for GNN round trip, 0.999 Å for native sequence refolding); one timing measurement (0.63 s GNN, 0.91 s ESMFold for a 100-residue sequence).
+- **Missing materials affecting confidence** No figures or screenshots were provided. No code repository contents, configuration files, or model checkpoints were accessible. No benchmark datasets, evaluation splits, or statistical analyses were included. No comparison against existing tools was quantified. The companion papers [3, 4] were not available for cross-reference.
+
+## Reviewer
+
+- **Overall assessment** The manuscript describes a useful and thoughtfully designed software tool that addresses a real gap in the de novo protein design workflow: the lack of an accessible, interactive interface for bidirectional sequence-structure analysis. The motivation is clear and the design choices are sensible. However, the paper is primarily a software description with minimal quantitative validation. The single case study and single timing measurement are insufficient to establish the tool's reliability, generalizability, or practical utility beyond a demonstration. The claims about accessibility, reusability, and workflow improvement are plausible but not rigorously supported by evidence presented here.
+- **Who would be interested in the results, and why** Researchers in computational protein design and structural biology, particularly those working with structure-conditioned sequence design models. The tool could be valuable for experimentalists who need to visually inspect and iteratively refine designs without deep programming expertise. Educators and students in protein engineering may also find the interactive interface useful for learning and hypothesis testing.
+- **Major strengths** The tool addresses a clear and practical need in the field. The bidirectional design loop (sequence-to-structure and structure-to-sequence) within a single interface is a genuinely useful feature. The emphasis on visual and quantitative feedback, including per-residue confidence and Kabsch alignment, is well aligned with the needs of practitioners. The open-source, configurable design (checkpoint path and model config) is a thoughtful approach to reusability. The writing is clear and the workflow description is logical.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The tool "can also be used to validate design hypotheses interactively" and the case study "shows that the tool surfaces enough information for a user to inspect and judge a single result themselves."
+  - **Evidence pointer** Section 6, Figures 7-10, location not provided
+  - **Concern** The case study is based on a single imported protein chain. No details are given about the choice of this chain, its size, fold class, or why it is representative. The RMSD values (1.174 Å and 0.999 Å) are presented without context, such as what range of RMSD would be considered acceptable for different design tasks, or how these values compare to typical performance of the underlying models. The claim that the tool enables hypothesis validation is not supported by any systematic demonstration, such as testing multiple hypotheses or showing how the tool's feedback led to a design improvement.
+  - **Why it matters** A single anecdotal example cannot establish that the tool reliably supports the claimed workflow. Without a broader evaluation, readers cannot assess whether the tool would perform adequately on diverse proteins, different design tasks, or with different checkpoints. The central value proposition of the tool, as stated in the abstract and introduction, depends on its general utility, which is not demonstrated.
+  - **Resolution test** Provide a more extensive evaluation, such as a diverse set of test cases (e.g., different protein lengths, folds, and design objectives), with quantitative summaries of RMSD distributions, confidence scores, and success rates. Alternatively, include a user study or structured demonstration showing how the tool's feedback informs design decisions and leads to improved outcomes.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "The GNN performs random decoding and returns the predicted amino acid sequence" and "the system requires that both structures contain the same number of residues."
+  - **Evidence pointer** Sections 4.2, 4.4, location not provided
+  - **Concern** The manuscript does not describe the GNN's decoding procedure in sufficient detail. "Random decoding" is mentioned, but it is unclear whether this means sampling from the output distribution, using a stochastic search, or something else. The implications for reproducibility are significant: if the decoding is stochastic, different runs may produce different sequences for the same backbone, and the user has no way to control or understand this variability. Additionally, the requirement that both structures contain the same number of residues is a significant limitation for practical use, as many design scenarios involve comparing sequences of different lengths (e.g., loop insertions or deletions). The manuscript does not discuss how the tool handles such cases or whether it provides any guidance to the user.
+  - **Why it matters** Reproducibility and flexibility are essential for a research tool. If the decoding is not deterministic or not well-specified, users cannot reliably reproduce their own results or compare designs across sessions. The length-matching requirement restricts the tool's applicability to a narrow set of design tasks, which is not acknowledged in the introduction or workflow sections.
+  - **Resolution test** Clarify the decoding procedure, including whether it is deterministic or stochastic, and if stochastic, how the randomness is controlled (e.g., seed, temperature). Describe how the tool handles length mismatches, or explicitly state this limitation in the introduction and workflow sections. Provide a rationale for the length-matching requirement and suggest potential workarounds.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Benchmarking and comparison
+  - **Claim pointer** "Few freely available tools support both folding methods within the same session against the same visual model, which is an important step in a hand-designed protein workflow."
+  - **Evidence pointer** Section 2, location not provided
+  - **Concern** The related work section mentions PyMOL, ChimeraX, and ProteinMPNN, but does not provide a systematic comparison of features, usability, or performance. The claim that "few freely available tools" support both directions is not substantiated with a survey or a table. The authors do not discuss how their tool compares to other integrated platforms (e.g., ColabFold, Rosetta's web interfaces, or other interactive design tools) in terms of functionality, ease of use, or computational requirements.
+  - **Why it matters** The novelty and contribution of the tool depend on its position relative to existing solutions. Without a clear comparison, readers cannot judge whether the tool offers a meaningful advantage or fills a genuine gap. The claim of being "lightweight" and "accessible" needs to be contextualized against alternatives.
+  - **Resolution test** Expand the related work section to include a broader survey of existing tools, with a feature comparison table (e.g., supported models, interactivity, visualization, alignment, open-source status). Provide a clear statement of what the tool offers that existing tools do not, and justify the claim of uniqueness.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Section 4.2, description of interaction tools
+  - **Evidence pointer** Section 4.2, location not provided
+  - **Issue** The description of the four interaction tools is somewhat dense and could benefit from a clearer structure, such as a numbered list or a table summarizing each tool's purpose and usage.
+  - **Required correction** Reorganize the description of the interaction tools into a clear list or table, with a brief explanation of when and why a user would use each tool.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Section 6, case study
+  - **Evidence pointer** Section 6, location not provided
+  - **Issue** The case study does not specify the protein chain used, its source, or its characteristics. This makes it impossible for readers to reproduce or contextualize the reported RMSD values.
+  - **Required correction** Provide the PDB identifier or a description of the protein chain used in the case study, including its length and any relevant structural features.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical detail
+  - **Affected element** Section 4.4, Kabsch alignment
+  - **Evidence pointer** Section 4.4, location not provided
+  - **Concern** The manuscript states that the Kabsch alignment uses the quaternion formulation, but does not explain why this formulation was chosen over the more common SVD-based approach. A brief justification would be helpful.
+  - **Required correction** Add a sentence explaining the rationale for using the quaternion formulation, such as numerical stability or computational efficiency in the browser environment.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Section 8, Discussion
+  - **Evidence pointer** Section 8, location not provided
+  - **Issue** The discussion mentions that the iterative refinement procedure from the companion paper [4] was not integrated due to time constraints, but does not discuss whether this is a planned future feature or a permanent limitation.
+  - **Required correction** Clarify whether integration of the refinement procedure is planned for future releases, and if so, provide a rough timeline or roadmap.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Data availability
+  - **Affected element** Section 10, Data availability
+  - **Evidence pointer** Section 10, location not provided
+  - **Issue** The data availability statement says PDB accession identifiers and evaluation splits "will be deposited" with the code release, but the code repository link is provided. It is unclear whether the data is currently available or only planned.
+  - **Required correction** Clarify the current status of the data deposition. If the data is not yet available, state when it is expected to be released.
+- **Technical failings that need to be addressed before the case is established** The lack of a systematic evaluation of the tool's performance across multiple test cases is the primary technical failing. The single case study and single timing measurement are anecdotal and do not establish reliability or generalizability. The decoding procedure is underspecified, and the length-matching requirement is a significant limitation that is not acknowledged. The related work section does not provide a sufficient basis for the claim of novelty.
+- **Assessment against Nature-style criteria** 
+  - **Originality** The tool is a combination of existing components (GNN, ESMFold, Kabsch alignment) into a new integrated interface. While the integration is useful, it does not represent a fundamentally new method or concept. The originality is moderate and primarily in the software engineering and user experience domain.
+  - **Scientific importance** The tool addresses a practical need in the protein design community, but its scientific importance is limited by the lack of demonstrated impact on design outcomes. The paper does not show that the tool enables new science or improves design success rates.
+  - **Interdisciplinary readership** The tool could appeal to computational biologists, structural biologists, and protein engineers. However, the paper is written primarily for a computational audience and may not be fully accessible to experimentalists without additional context on the underlying models.
+  - **Technical soundness** The technical implementation appears sound based on the description, but the lack of code access and the minimal evaluation prevent a full assessment. The underspecified decoding procedure and the unaddressed length-matching limitation are concerns.
+  - **Readability for nonspecialists** The paper is generally well-written and the workflow is described clearly. However, some sections, such as the description of the interaction tools and the Kabsch algorithm, may be dense for nonspecialists. The abstract is accessible.
+- **Recommendation posture** Currently not established from the provided evidence. The tool is promising and the concept is valuable, but the manuscript does not provide sufficient evidence to support the claims of general utility, reliability, and workflow improvement. A revised manuscript with a more extensive evaluation, clearer technical specifications, and a more thorough comparison to existing tools would be needed to establish the case.
+
+## Risk / unsupported claims
+
+- The claim that the tool "lowers the barrier to using and analyzing a model" is plausible but not directly measured or demonstrated with user studies or usability metrics.
+- The claim that the tool "can also be used to validate design hypotheses interactively" is not supported by any systematic demonstration.
+- The claim that "few freely available tools support both folding methods within the same session" is not substantiated with a comprehensive survey.
+- The single timing measurement (0.63 s GNN, 0.91 s ESMFold) is presented as evidence of interactive usability, but no details on hardware variability, network conditions, or scaling with sequence length are provided.
+- The case study results (RMSD 1.174 Å vs. 0.999 Å) are presented as evidence that "both components operate as expected," but no statistical analysis or comparison to baseline performance is provided.
+- The statement that the tool is "indifferent to which compatible checkpoint they serve" is not verified, as no demonstration with multiple checkpoints is shown.

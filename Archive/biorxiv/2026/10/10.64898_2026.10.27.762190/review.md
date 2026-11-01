@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors propose a graph neural network for de novo protein sequence design that integrates differentiable structure prediction via ESMFold and optimizes a structural loss function. They report that on a matched evaluation sample, their model achieves structural accuracy statistically indistinguishable from ProteinMPNN despite substantially lower native sequence recovery and no direct sequence recovery supervision. They conclude that sequence recovery is not necessary for competitive structural accuracy and that their training paradigm enables de novo protein generation.
+- **Visible evidence base** Abstract text only; no quantitative results, statistical details, dataset descriptions, or model architecture specifications are provided
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, training and evaluation dataset details, statistical analysis details, model architecture specifications, and code repository contents
+
+## Reviewer
+- **Overall assessment** The abstract presents an interesting hypothesis, namely that structural accuracy can serve as a sufficient training signal for protein sequence design without explicit sequence recovery objectives. However, the evidence provided in the abstract is insufficient to evaluate the validity of this claim. Key quantitative results are mentioned but not reported, the statistical comparison to ProteinMPNN is described but not substantiated, and the relationship between the reported findings and the stated goal of de novo protein generation is not clearly established. The work may be of interest to the protein design community, but the current abstract does not provide enough information to assess technical soundness or scientific significance.
+- **Who would be interested in the results, and why** Computational protein designers and machine learning researchers working on protein sequence-structure relationships would be interested in this work. The claim that sequence recovery is not necessary for structural accuracy challenges a common assumption in the protein design field and could have implications for how training objectives are formulated. Researchers focused on de novo protein design and generative models for proteins would also find the proposed approach relevant.
+- **Major strengths** The central hypothesis is clearly stated and potentially impactful. The use of a differentiable structure prediction module within a GNN framework is a reasonable methodological direction. The authors explicitly acknowledge the trade-off between sequence recovery and structural accuracy, which frames the contribution in a useful way.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The model achieves structural precision statistically indistinguishable from ProteinMPNN on a matched evaluation sample
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract states that structural precision is statistically indistinguishable from ProteinMPNN but provides no numerical values for RMSD, TM-score, or GDT-TS. No sample sizes, confidence intervals, or statistical test details are reported. The phrase "matched evaluation sample" is undefined.
+  - **Why it matters** The central claim of the paper rests on this statistical comparison. Without quantitative results and statistical details, the claim cannot be evaluated or reproduced. The term "statistically indistinguishable" is ambiguous without knowing the power of the comparison and the variability in the measurements.
+  - **Resolution test** Report the actual RMSD, TM-score, and GDT-TS values for both models, the number of test proteins, the statistical test used, and the resulting p-values or confidence intervals. Provide a description of how the evaluation sample was matched.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim substantiation
+  - **Claim pointer** Sequence recovery is not necessary to achieve competitive structural accuracy
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** This is the main conceptual claim of the paper, but the abstract does not provide the native sequence recovery values for the proposed model or for ProteinMPNN. The phrase "substantially lower" is not quantified. The relationship between sequence recovery and structural accuracy is asserted rather than demonstrated across a range of conditions.
+  - **Why it matters** The conclusion that sequence recovery is unnecessary depends on demonstrating that the model achieves competitive structural accuracy across diverse protein targets while showing consistently low sequence recovery. Without quantitative recovery values and a demonstration that the finding generalizes beyond the specific evaluation set, the claim remains unsupported.
+  - **Resolution test** Provide native sequence recovery percentages for both models on the same evaluation set. Show that the structural accuracy results hold across different protein families, lengths, and structural classes. Discuss any cases where structural accuracy is achieved despite low sequence recovery and whether this pattern is consistent.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scope justification
+  - **Claim pointer** The distinction in training data and model structure allows for the training of a protein-generating model on non-natural proteins, creating a model designed for de novo protein generation
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract does not describe any experiments involving non-natural proteins or de novo generation. No results are presented that demonstrate the model can generate novel proteins beyond the evaluation on a matched sample. The connection between the reported evaluation and the stated goal of de novo generation is not established.
+  - **Why it matters** The title and the final claims of the abstract emphasize de novo protein generation, but the described evaluation appears to be a sequence design task on existing protein backbones. These are related but distinct tasks. Without evidence that the model can generate novel, foldable proteins, the de novo claim is not supported.
+  - **Resolution test** Describe and present results from de novo generation experiments, including how novel backbones were obtained, whether the generated sequences fold to the intended structures, and how structural accuracy was validated for generated proteins.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Model description
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract states that the model "takes protein backbone coordinates as input and predicts an amino acid sequence" but does not clarify whether the model operates on backbone-only information or uses additional features. The role of the GNN relative to ESMFold is also unclear.
+  - **Required correction** Clarify the input features, the architecture of the GNN, and how ESMFold is integrated into the training and inference pipeline.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Code availability
+  - **Evidence pointer** Footnote, GitHub repository link
+  - **Issue** A GitHub repository is listed but no details are provided about its contents, whether it contains the model code, training scripts, or evaluation scripts, and whether it is publicly accessible.
+  - **Required correction** State explicitly what is included in the repository and confirm that it is publicly available and documented.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Use of the term "de novo"
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The term "de novo protein generation" is used in the title and abstract, but the described evaluation appears to be fixed-backbone sequence design. These are different tasks in the protein design literature.
+  - **Required correction** Define what is meant by "de novo" in this context and ensure the terminology is consistent with the experiments described.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The abstract does not provide sufficient quantitative evidence to support the central claims of statistical equivalence to ProteinMPNN, the dispensability of sequence recovery, or the suitability of the model for de novo generation.
+- **Assessment against Nature-style criteria** Originality: the hypothesis that structural accuracy alone can drive competitive protein sequence design is a potentially original contribution, but the abstract does not provide enough context to assess novelty relative to existing work. Scientific importance: if substantiated, the finding could influence training objective design in protein sequence models, but the current evidence is insufficient to establish importance. Interdisciplinary readership: the work sits at the intersection of machine learning and structural biology and could appeal to both communities, but the abstract assumes familiarity with protein design metrics without sufficient explanation. Technical soundness: cannot be assessed from the abstract alone; no architectural details, training procedures, or evaluation protocols are provided. Readability for nonspecialists: the abstract uses field-specific terms without adequate definition and does not provide context for why the findings matter beyond the immediate community.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents an interesting hypothesis but lacks the quantitative detail and experimental scope needed to support the central claims. A full manuscript with detailed methods, results, and statistical analyses would be required to evaluate the work properly.
+
+## Risk / unsupported claims
+- The claim of statistical indistinguishability from ProteinMPNN is unsupported because no numerical results or statistical details are provided.
+- The claim that sequence recovery is not necessary for competitive structural accuracy is unsupported because no sequence recovery values are reported.
+- The claim that the model is suitable for de novo protein generation is unsupported because no de novo generation experiments are described.
+- The claim that the model can be trained on non-natural proteins is mentioned but not supported by any described experiments.
+- The relationship between the reported evaluation and the title's emphasis on "de novo" generation is not established.

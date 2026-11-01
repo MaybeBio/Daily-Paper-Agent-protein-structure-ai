@@ -1,0 +1,120 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, main text, methods, acknowledgements) as provided
+- **Assessment boundary** Scientific content, methodological soundness, and claims as presented in the supplied material; no external data or supplementary figures were available for inspection
+- **Shared manuscript claim summary** The authors present MINT, a computational framework combining structure-guided sequence design (ProteinMPNN) with MHC-I epitope prediction (NetMHCpan4.1) to tune CD8⁺ T cell immunogenicity of designed proteins while preserving function. Using a de novo-designed luciferase (LuxSit-i), they demonstrate in silico epitope minimization across 5 mouse and 25 human MHC-I alleles, and in vivo validation in mice showing reduced CD8⁺ T cell responses to predicted low-epitope variants.
+- **Visible evidence base** Abstract, main text narrative, methods section; figures referenced but not provided (Figures 1, 2, S1, S2); no raw data, statistical analyses, or supplementary materials
+- **Missing materials affecting confidence** All figures and supplementary figures; raw experimental data (flow cytometry, luminescence measurements); statistical analysis details; sequence information for designed variants; details of NetMHCpan allele selection criteria; LNP characterization data; gating strategies for flow cytometry
+
+## Reviewer
+- **Overall assessment** The manuscript addresses a timely and important problem in protein design and adoptive cell therapy: reducing immunogenicity of therapeutic proteins without compromising function. The conceptual framework is sound and the integration of established computational tools (ProteinMPNN, NetMHCpan4.1) with in vivo validation is a logical and potentially impactful approach. However, the provided material is insufficient to fully evaluate the claims. Key experimental details, quantitative results, and figure data are absent from the supplied text. The in vivo experiments, while well-designed in concept, lack presentation of actual data. The methods section contains algorithmic descriptions but omits critical parameters and validation metrics. The claim of "function-preserving" immunogenicity minimization rests on limited functional data (luciferase activity) without comprehensive characterization. The manuscript has potential but requires substantial additional information and possibly additional experiments to establish the case convincingly.
+- **Who would be interested in the results, and why** Researchers in protein design and engineering, particularly those working on therapeutic proteins, cell therapy, and immunogenicity prediction. Computational biologists developing deimmunization algorithms. Immunologists studying T cell responses to engineered proteins. The broader synthetic biology community interested in designing proteins with tailored immunological properties. The work could also interest clinicians and translational researchers developing adoptive cell therapies, as reducing immunogenicity of therapeutic proteins is a major clinical barrier.
+- **Major strengths** 1) Addresses a clinically relevant and technically challenging problem with a clear conceptual framework. 2) Integration of established computational tools (ProteinMPNN, NetMHCpan4.1) in a modular pipeline that can incorporate improved prediction methods. 3) In vivo validation using mRNA-LNP immunization is an appropriate and sensitive approach. 4) The "5+1" fusion design for comparing multiple variants within a shared immunization context is clever and controls for inter-animal variability. 5) The computational optimizations (caching, early rejection, allele grouping) demonstrate practical attention to scalability. 6) The demonstration of both low- and high-immunogenicity designs from the same starting protein provides a useful contrast for understanding immunogenicity determinants.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "variants designed to have few MHC-I epitopes elicited little detectable CD8⁺ T cell response, whereas variants designed to include multiple epitopes induced robust responses"
+  - **Evidence pointer** Figures 2C, 2D, S2B–D; location not provided
+  - **Concern** The central in vivo claim is presented without any quantitative data in the provided text. No numerical values for cytokine-positive cell frequencies, no statistical comparisons, no representative flow cytometry plots, and no information on effect sizes or variability are given. The statement "minimal detectable responses" and "robust responses" are qualitative and cannot be evaluated without the underlying data.
+  - **Why it matters** This is the primary experimental validation of the computational approach. Without quantitative evidence, the reader cannot assess the magnitude of the immunogenicity reduction, the consistency across biological replicates, or whether the differences are statistically significant. The claim that immunogenicity can be "tuned" requires demonstration of a graded or at least reproducible binary response.
+  - **Resolution test** Provide quantitative data showing frequencies of cytokine-producing CD8⁺ T cells for each variant, with appropriate statistical tests (e.g., ANOVA with multiple comparison correction), effect sizes, and variability measures. Include representative flow cytometry plots and gating strategies. Ideally, show a dose-response or correlation between predicted epitope burden and measured T cell response.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Functional preservation
+  - **Claim pointer** "we demonstrate epitope elimination while preserving function" and "The resulting sequences exhibited substantial diversity in amino acid composition"
+  - **Evidence pointer** Figures 1D, S1A; location not provided
+  - **Concern** The claim of function preservation rests on luciferase activity measurements, but the provided text gives no quantitative activity data. The statement that low and high immunogenicity variants "retained comparable luciferase activity" is not supported by any numbers, statistical analysis, or comparison to the parent enzyme. Additionally, only a single functional readout (enzymatic activity) is used; protein stability, expression levels, and biophysical properties are not assessed.
+  - **Why it matters** The central premise of the work is that immunogenicity can be minimized "without compromising protein function." If the designed variants have substantially reduced activity, stability, or expression, the practical utility of the approach is diminished. The lack of quantitative functional data makes it impossible to assess the trade-off between immunogenicity reduction and functional preservation.
+  - **Resolution test** Provide quantitative luciferase activity measurements (e.g., relative light units normalized to expression) for parent and designed variants, with statistical comparisons. Include additional functional characterization such as thermal stability, expression yield, and kinetic parameters (Km, kcat) if feasible. Show that the activity of low-immunogenicity variants is within an acceptable range of the parent enzyme.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological completeness
+  - **Claim pointer** "MINT (MHC-I Immunogenicity Tuning; Figure 1A)" and the iterative optimization strategy
+  - **Evidence pointer** Methods section, Figure 1A; location not provided
+  - **Concern** The methods section describes the algorithmic framework but omits several critical parameters needed for reproducibility. The scoring function is described with equations that are incompletely specified (the actual equations are not shown in the provided text). The selection of the 25 human HLA alleles is not justified. The criteria for "zero-shot" success versus when cycling is required are not defined. The termination criteria are described but not quantified. The relationship between the described "non-cycling" and "cycling" methods and their respective performance is unclear.
+  - **Why it matters** Reproducibility is a fundamental requirement for computational methods. Without complete specification of the algorithm, parameters, and allele selection, other researchers cannot implement or benchmark MINT. The choice of HLA alleles is particularly important as it determines the generalizability of the approach to different human populations.
+  - **Resolution test** Provide complete algorithmic specifications including all equations, parameter values, and pseudocode. Justify the selection of the 25 HLA alleles (e.g., coverage of common alleles in target populations). Define clear criteria for when zero-shot design is sufficient versus when iterative cycling is needed. Provide a step-by-step example of the algorithm applied to a single design task.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Generalizability
+  - **Claim pointer** "approaches such as MINT should be broadly applicable for reducing their immunogenicity"
+  - **Evidence pointer** Discussion section; location not provided
+  - **Concern** The manuscript validates MINT on a single protein (LuxSit-i, a luciferase). The claim of broad applicability is speculative without demonstration on multiple proteins with different folds, sizes, and functions. The choice of a small (117 residue) de novo protein may not represent the challenges of larger, more complex therapeutic proteins.
+  - **Why it matters** The clinical relevance of the approach depends on its applicability to diverse therapeutic proteins. A single demonstration, while valuable, does not establish generalizability. The computational cost and success rate may vary substantially with protein size and complexity.
+  - **Resolution test** Apply MINT to at least 2-3 additional proteins with different structural classes and functions. Report success rates, computational costs, and functional preservation across these test cases. If additional experiments are not feasible, clearly frame the current work as a proof-of-concept with explicit limitations.
+  - **Concern ID** R1-M5
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Immunogenicity prediction validation
+  - **Claim pointer** "variants designed to have few MHC-I epitopes elicited little detectable CD8⁺ T cell response"
+  - **Evidence pointer** Figures 2C, 2D; location not provided
+  - **Concern** The in vivo validation relies on NetMHCpan4.1 predictions as the basis for design, but the correlation between predicted epitope burden and actual T cell immunogenicity is not directly assessed. The manuscript does not report whether the predicted epitopes that were removed or retained correspond to the actual T cell epitopes recognized in the mouse experiments. This is a critical validation step for the computational predictions.
+  - **Why it matters** NetMHCpan predictions are imperfect, and the success of the approach depends on the accuracy of these predictions for the specific protein and alleles tested. Without epitope-level validation, it is unclear whether the reduced immunogenicity results from successful epitope removal or from other unintended consequences of the sequence changes.
+  - **Resolution test** Perform epitope mapping studies (e.g., overlapping peptide libraries) to identify the actual T cell epitopes recognized in immunized mice. Compare these to the predicted epitopes that were targeted for removal. Report the concordance between predictions and experimental epitope identification.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states "efficiently tune protein immunogenicity" but the efficiency is not quantified anywhere in the provided text. The term "efficiently" is vague and could be interpreted as computational efficiency, experimental success rate, or both.
+  - **Required correction** Specify what is meant by "efficiently" or remove the qualifier. If computational efficiency is meant, provide runtime or cost metrics in the abstract or main text.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** In vivo experiments
+  - **Evidence pointer** Figures 2C, 2D; location not provided
+  - **Issue** No information is provided on the number of biological replicates, the statistical tests used, or the criteria for significance in the in vivo experiments.
+  - **Required correction** Include sample sizes, statistical methods, and significance thresholds in the figure legends or methods. Report exact p-values or confidence intervals for key comparisons.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** "deimmunized" and "immunized" variants
+  - **Evidence pointer** Methods section; location not provided
+  - **Issue** The terms "deimmunized" and "immunized" are used to describe the designed variants, but the criteria for these classifications are not explicitly defined. It is unclear whether these terms refer to predicted epitope counts, experimental immunogenicity, or both.
+  - **Required correction** Define these terms explicitly in the methods or results section. Clarify whether they are based on computational predictions, experimental measurements, or a combination.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Benchmarking
+  - **Evidence pointer** Benchmarking section; location not provided
+  - **Issue** The benchmarking section mentions comparison between non-cycling and cycling methods but does not report the results of this comparison in the provided text. The claim of improved efficiency is not supported by data.
+  - **Required correction** Report the benchmarking results, including computational cost, success rate, and final immunogenicity scores for both methods. If the comparison is shown in a figure, reference it explicitly and summarize the key findings in the text.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Experimental design
+  - **Affected element** Mouse strain choice
+  - **Evidence pointer** Mice and immunization section; location not provided
+  - **Issue** The manuscript uses C57BL/6N mice, which express H-2b MHC haplotypes. The choice of 5 mouse alleles for design is not justified in the context of the mouse strain used. It is unclear whether the designed alleles match the H-2b haplotype.
+  - **Required correction** Clarify the relationship between the mouse alleles used for design and the H-2b haplotype of C57BL/6N mice. If the designed alleles do not match, explain the rationale for the chosen alleles.
+  - **Concern ID** R1-m6
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Computational code
+  - **Evidence pointer** Methods section; location not provided
+  - **Issue** No information is provided on code availability, software versions, or computational environment. This limits reproducibility of the computational pipeline.
+  - **Required correction** Provide a statement on code availability, including repository links, software versions, and any custom scripts used. Consider depositing the MINT pipeline in a public repository.
+- **Technical failings that need to be addressed before the case is established** 1) Absence of quantitative in vivo data supporting the central immunogenicity claim (R1-M1). 2) Lack of quantitative functional data for designed variants (R1-M2). 3) Incomplete specification of the computational algorithm and parameters (R1-M3). 4) No validation of predicted epitopes against experimentally identified T cell epitopes (R1-M5). 5) Benchmarking results not reported in the provided text (R1-m4).
+
+## Risk / unsupported claims
+- The claim that CD8⁺ T cell immunogenicity can be "systematically modulated" is not supported by the provided data, as no quantitative immunogenicity measurements are presented.
+- The claim of "function-preserving" design is only weakly supported by a single functional assay (luciferase activity) with no quantitative data shown.
+- The claim that MINT is "broadly applicable" to therapeutic proteins is speculative, as only one protein was tested.
+- The claim of computational efficiency improvements from caching and other optimizations is not supported by benchmarking data in the provided text.
+- The statement that "variants designed to include multiple epitopes induced robust responses" implies a positive control for immunogenicity, but the design rationale for these variants and their relationship to the low-epitope variants is not fully explained.
+- The generalizability of the approach to human MHC alleles is based on computational predictions only, with no experimental validation in humanized models or human cells.
+- The manuscript does not address potential off-target effects of the sequence modifications, such as altered protein stability, aggregation propensity, or changes in post-translational modification sites.
+
+## Assessment against Nature-style criteria
+- **Originality** The concept of integrating structure-based protein design with immunogenicity prediction is not entirely novel, as the authors acknowledge prior work using ProteinMPNN for deimmunization. However, the systematic framework (MINT) with iterative optimization, multi-allele coverage, and in vivo validation represents a meaningful advance. The "5+1" fusion design for comparative immunogenicity assessment is a creative experimental approach. The originality is moderate to good, but the field is competitive and the incremental advance over prior work needs to be clearly articulated.
+- **Scientific importance** The problem addressed is clinically important, as immunogenicity of therapeutic proteins is a major barrier to adoptive cell therapy. A reliable computational method for reducing immunogenicity while preserving function would have significant translational value. However, the importance is somewhat diminished by the limited experimental validation presented and the focus on a single model protein. The potential impact on the field is high if the method proves generalizable, but this is not yet established.
+- **Interdisciplinary readership** The work bridges computational protein design, immunology, and cell therapy, which could attract readers from multiple disciplines. The conceptual framework is accessible, but the methods section is highly technical and may be challenging for non-specialists. The clinical relevance to adoptive cell therapy provides a compelling hook for a broad audience. The interdisciplinary appeal is good but could be strengthened by clearer explanations of the immunology concepts for computational readers and vice versa.
+- **Technical soundness** The computational approach is based on established tools (ProteinMPNN, NetMHCpan4.1, AF3) and the algorithmic logic is reasonable. However, the incomplete specification of the algorithm, missing parameters, and absence of benchmarking data prevent a full assessment of technical soundness. The in vivo experimental design is appropriate, but the lack of quantitative data is a significant concern. The functional assay (luciferase activity) is straightforward but limited in scope.
+- **Readability for nonspecialists** The abstract and introduction are clearly written and accessible. The main text is generally readable, but the methods section assumes significant expertise in both computational protein design and immunology. The discussion effectively contextualizes the work for a broad audience. The manuscript would benefit from a figure summarizing the MINT workflow in a visually accessible manner. Overall readability is adequate but could be improved with additional context for non-specialist readers.
+
+## Recommendation posture
+Supportive if technical concerns are resolved. The conceptual framework is promising and the experimental approach is well-designed, but the current manuscript does not provide sufficient evidence to establish the central claims. The authors must provide quantitative in vivo data, complete functional characterization, full algorithmic specifications, and benchmarking results. If these concerns are addressed, the work could make a valuable contribution to the field. However, as presented, the case is not fully established from the provided evidence.

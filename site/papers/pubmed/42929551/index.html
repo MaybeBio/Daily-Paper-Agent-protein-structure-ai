@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CS-SelectFold: Chemical-Shift-Guided Selection of Protein Hidden Conformations from a Generative Protein Structure Model. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>CS-SelectFold: Chemical-Shift-Guided Selection of Protein Hidden Conformations from a Generative Protein Structure Model.</h1>
+      <div class="meta">Tang, Wanjia; Wang, Qianqian; Xiao, Xiongjie; Zhang, Xu; Jiang, Bin; Liu, Maili</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of chemical information and modeling</span>
+        · 2026-10-26
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42929551/">原文</a>
+      </div>
+      <p class="one-liner">该文提出CS-SelectFold框架，结合生成式构象采样与NMR化学位移引导的后验选择，从序列中恢复低群体蛋白隐藏构象，核心贡献在蛋白质构象采样与结构计算，方法创新且验证充分。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Low-populated protein excited states can play decisive roles in function, ligand recognition, and misfolding, but their structural characterization remains difficult because these conformations are transient and sparsely populated. Here, we present CS-SelectFold, a framework that combines generative conformational sampling with NMR chemical-shift-guided post hoc selection to recover low-populated protein conformations without additional training or fine-tuning of its pretrained components. CS-SelectFold uses SimpleFold to sample diverse candidate structures from sequence, applies structural prescreening to enrich models that escape the dominant ground-state basin, predicts chemical shifts with UCBShift 2.0, and ranks candidates by agreement with experimentally determined excited-state chemical shifts. We benchmarked CS-SelectFold on two proteins with experimentally characterized low-populated states. For the T4 lysozyme L99A cavity mutant, a canonical excited-state system, the method recovered the defining excited-state-like local rearrangement around the engineered cavity, including inward placement of Phe114, consistent with the NMR/CS-Rosetta-derived excited-state model. A retrospective two-reference hotspot analysis using internal-distance RMSD (dRMSD) horizontal line the root-mean-square difference between corresponding pairwise distances within the hotspot rather than conventional coordinate RMSD after structural superposition horizontal line further showed that chemical-shift-based ranking enriched conformations that moved away from the ground-state basin and toward the experimentally defined excited-state basin. For the A39V/N53P/V55L Fyn SH3 domain, which populates an aggregation-prone hidden folding intermediate, CS-SelectFold recovered the key topological signature of the experimentally characterized intermediate: loss of the C-terminal beta-strand present in the native state, as confirmed by both three-dimensional structural comparison and secondary-structure analysis. These results provide proof-of-concept support for CS-SelectFold and suggest that the same sample-and-select principle may extend to broader low-populated hidden conformations, including folding intermediates.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">低丰度蛋白质激发态在功能、配体识别和错误折叠中可发挥决定性作用，但其结构表征仍然困难，因为这些构象是瞬态且稀疏分布的。在此，我们提出CS-SelectFold，一个结合生成性构象采样与NMR化学位移引导的事后选择的框架，以恢复低丰度蛋白质构象，无需对其预训练组件进行额外训练或微调。CS-SelectFold使用SimpleFold从序列中采样多样化的候选结构，应用结构预筛选以富集逃逸主导基态盆地（ground-state basin）的模型，使用UCBShift 2.0预测化学位移，并根据与实验确定的激发态化学位移的一致性对候选进行排序。我们在两个具有实验表征低丰度态的蛋白质上对CS-SelectFold进行了基准测试。对于T4溶菌酶L99A空腔突变体，一个典型的激发态系统，该方法恢复了围绕工程空腔的定义性激发态样局部重排，包括Phe114的内向放置，与NMR/CS-Rosetta衍生的激发态模型一致。一项使用内部距离RMSD（dRMSD）的回顾性双参考热点分析——即热点内相应成对距离之间的均方根差，而非结构叠加后的常规坐标RMSD——进一步表明，基于化学位移的排序富集了从基态盆地移向实验定义激发态盆地的构象。对于A39V/N53P/V55L Fyn SH3结构域，其群体化一个易聚集的隐藏折叠中间体，CS-SelectFold恢复了实验表征中间体的关键拓扑特征：天然态中存在的C端β-链的丢失，这通过三维结构比较和二级结构分析均得到确认。这些结果为CS-SelectFold提供了概念验证支持，并表明相同的采样-选择原则可能扩展到更广泛的低丰度隐藏构象，包括折叠中间体。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li>标题：CS-SelectFold: Chemical-Shift-Guided Selection of Protein Hidden Conformations from a Generative Protein Structure Model</li>
+<li>作者：Tang, Wanjia; Wang, Qianqian; Xiao, Xiongjie; Zhang, Xu; Jiang, Bin; Liu, Maili</li>
+<li>单位：未提供（摘要中未列出作者单位）</li>
+<li>期刊/预印本平台：Journal of chemical information and modeling</li>
+<li>年份：2026-10-26（按所给日期）</li>
+<li>论文类型：方法类研究论文（framework + benchmark，proof-of-concept）</li>
+<li>领域：蛋白质构象采样 / 生成式结构模型 / NMR 化学位移引导筛选</li>
+<li>关键词：未提供（摘要未列关键词）</li>
+<li>DOI/arXiv 号：10.1021/acs.jcim.6c02266</li>
+<li>代码：未提供</li>
+<li>数据：未提供（摘要未给出数据获取地址）</li>
+<li>阅读日期：未提供</li>
+<li>在「蛋白质结构相关计算研究 × AI 方法/物理模拟」方向中的位置：属于「生成式结构模型 + 实验可观测量后验筛选」的混合范式，位于结构预测/构象生成与 NMR 实验约束之间；不训练新模型，而是把预训练生成模型（SimpleFold）与化学位移预测器（UCBShift 2.0）组合成 sample-and-select 流水线，用于低占据（low-populated）激发态/隐藏构象的回收。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>针对低占据蛋白激发态结构难以表征的问题，CS-SelectFold 用预训练生成模型 SimpleFold 从序列采样多样构象、经结构预筛富集脱离基态盆地的候选、再用 UCBShift 2.0 预测化学位移并与实验激发态化学位移排序匹配，在 T4 lysozyme L99A 与 Fyn SH3 变体上回收出与实验激发态/隐藏折叠中间体一致的关键结构特征，作为 proof-of-concept 支持「采样—筛选」原则可扩展到更广的低占据隐藏构象。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li>具体问题：低占据（low-populated）、瞬时的蛋白激发态构象难以用常规结构方法表征；能否在不额外训练或微调预训练组件的前提下，从生成式结构模型的采样结果中「挑出」与实验激发态化学位移一致的构象？</li>
+<li>为什么重要：低占据激发态在功能、配体识别、错误折叠中可能起决定性作用，但因其瞬时、稀疏占据而难以直接测定结构。</li>
+<li>现有方法为何不足：摘要指出这些构象 transient and sparsely populated，导致结构表征困难；未在摘要中展开对具体既有方法（如 CS-Rosetta、MD）的逐条批评。</li>
+<li>精确研究问题（Can ... ?）：Can a pretrained generative structure model, combined with chemical-shift-guided post hoc selection and no additional training/fine-tuning, recover low-populated protein excited-state conformations consistent with experimentally characterized states?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<ul>
+<li>阶段与代表性方法（仅本文框架，摘要提及）：1) 实验/NMR 侧：实验表征的低占据态与 CS-Rosetta 导出的激发态模型（T4 lysozyme L99A 被描述为 canonical excited-state system）；2) 生成式结构模型侧：SimpleFold 用于从序列采样多样候选结构；3) 化学位移预测侧：UCBShift 2.0 用于预测化学位移。</li>
+<li>优点：生成模型可产生多样构象；化学位移是实验可得的、对局部环境敏感的观测量，可作为后验筛选信号。</li>
+<li>局限（摘要层面）：低占据态本身瞬时、稀疏，直接结构表征困难；本文未在摘要中系统列举既有方法局限。</li>
+<li>本文主张的位置：提出 sample-and-select 原则，把生成采样与实验化学位移筛选组合，且不训练/微调预训练组件，作为 proof-of-concept。</li>
+<li>脉络标注：以上脉络为「仅本文框架」，未经外部核验。</li>
+</ul>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>低占据激发态难以结构表征</td>
+<td>构象 transient and sparsely populated</td>
+<td>作者解释：因瞬时、稀疏占据导致表征困难</td>
+<td>摘要（Introduction/背景句）</td>
+</tr>
+<tr>
+<td>生成模型采样未必落在目标盆地</td>
+<td>候选可能停留在 dominant ground-state basin</td>
+<td>作者以「structural prescreening to enrich models that escape the dominant ground-state basin」应对</td>
+<td>摘要（方法描述）</td>
+</tr>
+<tr>
+<td>需要实验一致的判据</td>
+<td>需与实验激发态化学位移一致</td>
+<td>作者用 UCBShift 2.0 预测化学位移并按与实验激发态化学位移的一致性排序</td>
+<td>摘要（方法描述）</td>
+</tr>
+<tr>
+<td>避免额外训练成本</td>
+<td>不额外训练/微调预训练组件</td>
+<td>作者主张 without additional training or fine-tuning</td>
+<td>摘要（方法描述）</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p>1) 表面方法：SimpleFold 从序列采样多样候选结构 → 结构预筛富集脱离基态盆地的模型 → UCBShift 2.0 预测化学位移 → 按与实验激发态化学位移的一致性排序候选。
+2) 核心洞察：低占据态虽难直接测定结构，但其化学位移是可实验获得的；因此可把「生成多样构象」与「用实验化学位移做后验筛选」解耦，无需重新训练生成模型即可回收目标构象。
+3) 可能的普适教训 [Analysis]：对难以直接观测的构象态，可用「生成采样 + 实验可观测量后验排序」的 sample-and-select 组合，把实验约束作为筛选器而非训练信号，从而复用现成预训练模型。</p>
+<h2>07 方法总览</h2>
+<ul>
+<li>输入：蛋白序列；实验测定的激发态化学位移。</li>
+<li>输出：排序后的候选构象集合（富集脱离基态、趋向实验激发态盆地的构象）。</li>
+<li>模块：1) SimpleFold 生成式采样；2) 结构预筛（structural prescreening）；3) UCBShift 2.0 化学位移预测；4) 基于与实验激发态化学位移一致性的排序。</li>
+<li>训练：无额外训练或微调（摘要明确）。</li>
+<li>工具：SimpleFold、UCBShift 2.0。</li>
+<li>反馈回路：摘要未描述迭代反馈回路。</li>
+<li>假设：实验激发态化学位移可作为筛选低占据构象的有效判据；生成模型采样空间包含目标构象。</li>
+<li>文字流程：序列 → SimpleFold 采样多样候选 → 结构预筛保留脱离基态盆地的模型 → UCBShift 2.0 预测各候选化学位移 → 与实验激发态化学位移比对排序 → 输出富集候选。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SimpleFold 生成采样</td>
+<td>从序列采样多样候选结构</td>
+<td>提供覆盖目标构象的候选池</td>
+<td>输入序列 → 多样结构</td>
+<td>摘要</td>
+<td>无候选池，方法不成立（预期效应）</td>
+</tr>
+<tr>
+<td>结构预筛</td>
+<td>富集脱离 dominant ground-state basin 的模型</td>
+<td>避免候选集中在基态</td>
+<td>候选结构 → 富集后的候选</td>
+<td>摘要</td>
+<td>候选可能滞留基态盆地（预期效应）</td>
+</tr>
+<tr>
+<td>UCBShift 2.0 化学位移预测</td>
+<td>为候选预测化学位移</td>
+<td>提供与实验可比的可观测量</td>
+<td>结构 → 预测化学位移</td>
+<td>摘要</td>
+<td>无法与实验化学位移比对（预期效应）</td>
+</tr>
+<tr>
+<td>化学位移一致性排序</td>
+<td>按与实验激发态化学位移一致性排序</td>
+<td>选出与实验激发态一致的构象</td>
+<td>预测与实验化学位移 → 排序候选</td>
+<td>摘要；T4L 与 Fyn SH3 结果</td>
+<td>无法定向富集目标盆地（预期效应）</td>
+</tr>
+<tr>
+<td>- 注：摘要未提供消融实验，故上表「移除后影响」均为预期效应，非实测消融效应。</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ul>
+<li>摘要未给出公式。dRMSD 被描述为「the root-mean-square difference between corresponding pairwise distances within the hotspot rather than conventional coordinate RMSD after structural superposition」，但未给出数学表达式。</li>
+<li>结论：不适用（在提供的材料中无公式与符号定义）。</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li>数据集/群体：两个具有实验表征低占据态的蛋白——T4 lysozyme L99A cavity mutant；A39V/N53P/V55L Fyn SH3 domain。</li>
+<li>规模：2 个蛋白体系（摘要）。</li>
+<li>指标：与实验激发态化学位移的一致性；dRMSD（hotspot 内对应成对距离的 RMSD，而非叠加后坐标 RMSD）；三维结构比较；二级结构分析。</li>
+<li>基线：摘要提及与 NMR/CS-Rosetta 导出的激发态模型一致（作为参照），未列出其他计算基线。</li>
+<li>预算：未提供。</li>
+<li>骨干/仪器：SimpleFold、UCBShift 2.0；实验侧为 NMR 化学位移。</li>
+<li>oracle 输入：实验测定的激发态化学位移（作为筛选判据）。</li>
+<li>评测协议：retrospective two-reference hotspot analysis（T4L）；三维结构比较与二级结构分析（Fyn SH3）。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T4 lysozyme L99A</td>
+<td>能否回收定义性激发态样局部重排</td>
+<td>与 NMR/CS-Rosetta 导出激发态模型对比</td>
+<td>回收了工程化 cavity 周围的激发态样局部重排，包括 Phe114 向内放置</td>
+<td>方法可回收该体系的激发态样特征</td>
+<td>不能推广到所有蛋白或所有激发态类型</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>T4L retrospective two-reference hotspot analysis (dRMSD)</td>
+<td>化学位移排序是否富集脱离基态、趋向实验激发态盆地的构象</td>
+<td>使用 dRMSD（hotspot 内成对距离 RMSD）</td>
+<td>化学位移排序富集了远离基态盆地、趋向实验定义激发态盆地的构象</td>
+<td>支持排序的有效性</td>
+<td>不能证明对所有体系普遍有效</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>Fyn SH3 A39V/N53P/V55L</td>
+<td>能否回收聚集倾向隐藏折叠中间体的关键拓扑特征</td>
+<td>三维结构比较 + 二级结构分析</td>
+<td>回收了关键拓扑特征：native 态中 C 端 β-strand 的丢失</td>
+<td>方法可回收该折叠中间体的拓扑签名</td>
+<td>不能推广到其他折叠中间体</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li>任务范围：两个具体蛋白体系的低占据态/隐藏折叠中间体回收，属 proof-of-concept。</li>
+<li>oracle/真值输入：使用实验测定的激发态化学位移作为筛选判据（oracle 输入），因此不是纯预测，而是实验引导的后验筛选。</li>
+<li>端到端状态：从序列到候选构象的采样为端到端生成，但筛选依赖实验化学位移。</li>
+<li>算力成本：未提供。</li>
+<li>历史数据依赖：依赖已有实验表征的低占据态化学位移。</li>
+<li>模型依赖：依赖 SimpleFold 与 UCBShift 2.0 两个预训练组件。</li>
+<li>最难情形：摘要未讨论失败或最难情形。</li>
+<li>群体/领域边界：仅两个蛋白体系，未涉及更广蛋白家族。</li>
+<li>不确定性：摘要称结果为 proof-of-concept support，并「suggest」可扩展，属建议性而非确证。</li>
+<li>有边界的复述：在两个具有实验表征低占据态的蛋白上，CS-SelectFold 在不额外训练的前提下，通过生成采样加化学位移后验筛选，回收了与实验激发态/隐藏中间体一致的关键结构特征；其普适性尚未被证明。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限（摘要未设 Limitation 段落）。</p>
+<p>作者提及的相关约束（非正式局限）：
+| 约束 | 具体表现 | 作者提出的未来方向 | 来源 |
+|---|---|---|---|
+| 结果为 proof-of-concept | 仅在两个蛋白体系上验证 | 建议同一 sample-and-select 原则可扩展到更广的低占据隐藏构象，包括折叠中间体 | 摘要 |</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>筛选使用实验激发态化学位移作为判据</td>
+<td>可能构成对目标态信息的「泄漏」，回收成功部分来自判据本身而非生成能力</td>
+<td>影响对方法预测能力的解读</td>
+<td>在无实验激发态化学位移、仅用基态化学位移或留出化学位移的条件下评测</td>
+<td>摘要（oracle 输入描述）</td>
+</tr>
+<tr>
+<td>仅两个体系验证</td>
+<td>普适性证据不足</td>
+<td>决定能否推广到更广隐藏构象</td>
+<td>扩展到更多蛋白与更多激发态类型</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>未提供消融</td>
+<td>无法区分各模块（预筛、UCBShift、排序）的独立贡献</td>
+<td>影响方法可解释性与改进方向</td>
+<td>逐模块移除的消融实验</td>
+<td>摘要（无消融信息）</td>
+</tr>
+<tr>
+<td>依赖 SimpleFold 采样空间</td>
+<td>若目标构象不在采样池中，筛选无法回收</td>
+<td>决定方法上限</td>
+<td>评估采样覆盖率与目标构象是否在池中</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>依赖 UCBShift 2.0 预测精度</td>
+<td>化学位移预测误差可能误导排序</td>
+<td>影响筛选可靠性</td>
+<td>用已知结构评估 UCBShift 2.0 在该类构象上的误差</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<h3>Agent 提炼的知识候选</h3>
+<ul>
+<li>可迁移概念：sample-and-select 范式——用生成模型产生候选，用实验可观测量做后验筛选，避免重新训练。</li>
+<li>可迁移方法：结构预筛以富集脱离基态盆地的构象，可作为构象采样中的「多样性/新颖性」过滤步骤。</li>
+<li>可迁移指标：dRMSD（hotspot 内对应成对距离的 RMSD，而非叠加后坐标 RMSD），适用于比较局部重排而不受整体叠加影响。</li>
+<li>可迁移实验设计：retrospective two-reference hotspot analysis，用两个参照（基态与实验激发态）评估候选是否向目标盆地移动。</li>
+<li>面向本课题的迁移：在蛋白质结构预测/构象生成 × AI/物理模拟中，可把 NMR 化学位移（或其他实验可观测量）作为后验排序信号，与 MD/对接/生成模型组合；dRMSD 可用于评估局部构象变化；预筛策略可减少基态主导的候选。</li>
+</ul>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li>相似：CS-Rosetta 类方法用化学位移构建激发态模型（摘要提及 T4L 的 NMR/CS-Rosetta 导出模型），本文与之在「用化学位移约束构象」上相似，但改为后验筛选而非直接建模。</li>
+<li>组合：生成式结构模型（SimpleFold）+ 化学位移预测器（UCBShift 2.0）的组合，属 AI 生成与实验可观测量结合。</li>
+<li>冲突：未在摘要中发现与既有方法的直接冲突声明。</li>
+<li>可迁移领域：NMR 约束的结构建模、低占据态/折叠中间体表征、构象采样筛选。</li>
+<li>注：以上连接基于摘要提及，未做外部文献核验。</li>
+</ul>
+<h2>16 研究想法</h2>
+<h3>Agent 生成的研究候选</h3>
+<ol>
+<li>
+<p>名称：无实验激发态化学位移条件下的 sample-and-select
+   - 来源局限/观察：本文筛选依赖实验激发态化学位移（oracle 输入）。
+   - 核心假设：仅用基态化学位移或留出部分化学位移即可富集目标构象。
+   - 相对本文的增量：去除对目标态实验数据的依赖。
+   - 初步方法：用基态化学位移排序，或留出部分激发态化学位移做评测。
+   - 验证方式：在 T4L 与 Fyn SH3 上比较回收效果。
+   - 可能的失败模式：无法区分基态与激发态。
+   - 创新状态：unverified。</p>
+</li>
+<li>
+<p>名称：模块消融以量化各组件贡献
+   - 来源局限/观察：摘要未提供消融。
+   - 核心假设：结构预筛与 UCBShift 排序各自贡献可分离。
+   - 相对本文的增量：明确方法有效性来源。
+   - 初步方法：逐模块移除实验。
+   - 验证方式：比较 dRMSD 与化学位移一致性。
+   - 可能的失败模式：模块间强耦合导致贡献不可分。
+   - 创新状态：unverified。</p>
+</li>
+<li>
+<p>名称：dRMSD 作为构象采样通用评估指标
+   - 来源局限/观察：本文用 dRMSD 做 hotspot 分析。
+   - 核心假设：dRMSD 可推广到其他局部构象变化评估。
+   - 相对本文的增量：把指标从本文体系推广为通用工具。
+   - 初步方法：在 MD/对接/生成模型输出上计算 dRMSD。
+   - 验证方式：与坐标 RMSD 对比，评估对局部重排的敏感性。
+   - 可能的失败模式：hotspot 定义依赖先验知识。
+   - 创新状态：unverified。</p>
+</li>
+<li>
+<p>名称：把 sample-and-select 扩展到 MD 或对接采样
+   - 来源局限/观察：本文用 SimpleFold 采样。
+   - 核心假设：同一筛选原则可作用于 MD/对接产生的构象池。
+   - 相对本文的增量：替换采样器，检验范式通用性。
+   - 初步方法：用 MD 轨迹或对接构象替换 SimpleFold 候选，保留化学位移筛选。
+   - 验证方式：在相同两个体系上比较回收效果。
+   - 可能的失败模式：MD/对接采样空间与生成模型不同，筛选失效。
+   - 创新状态：unverified。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only, as supplied for manuscript DOI 10.1021/acs.jcim.6c02266</li>
+<li><strong>Assessment boundary</strong> Evaluation is restricted to the claims and evidence visible in the abstract. No full text, figures, tables, methods, supplementary information, or numerical results were provided.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present CS-SelectFold, a framework that couples generative conformational sampling (SimpleFold) with structural prescreening, chemical-shift prediction (UCBShift 2.0), and ranking against experimental excited-state chemical shifts, without retraining or fine-tuning. They claim proof-of-concept recovery of low-populated conformations for two systems, the T4 lysozyme L99A cavity mutant and the A39V/N53P/V55L Fyn SH3 domain.</li>
+<li><strong>Visible evidence base</strong> Two benchmark systems are described. For T4 lysozyme L99A, the reported evidence is recovery of an excited-state-like local rearrangement around the engineered cavity, inward placement of Phe114, and a retrospective two-reference hotspot analysis using internal-distance RMSD (dRMSD) showing enrichment of conformations displaced from the ground-state basin toward the excited-state basin. For Fyn SH3, the reported evidence is recovery of the loss of the C-terminal beta-strand, supported by three-dimensional structural comparison and secondary-structure analysis.</li>
+<li><strong>Missing materials affecting confidence</strong> Full text, methods, sampling parameters, candidate pool sizes, prescreening criteria, chemical-shift datasets and their uncertainty, ranking metrics, statistical tests, negative controls, baselines, figures, tables, and supplementary data are all absent. Confidence in the technical soundness and generality of the claims is therefore limited.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract describes a conceptually reasonable sample-and-select strategy for accessing low-populated protein conformations, and the choice of two experimentally characterized systems is appropriate for a proof-of-concept study. However, the supplied material does not allow the central claims to be independently evaluated. Key elements such as how candidates are prescreened, how chemical-shift agreement is scored, how enrichment is quantified, and how the method performs against baselines or controls are not visible. The work is potentially interesting but currently not established from the provided evidence.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in computational structural biology, NMR spectroscopy, protein folding and misfolding, and generative protein modeling would be interested, because a reliable method to select hidden or excited conformations from generative models without retraining would be broadly useful for mechanistic and ligand-recognition studies.</li>
+<li><strong>Major strengths</strong> The problem is well motivated and functionally relevant. The framework is modular and avoids retraining pretrained components, which is a practical advantage. The use of two distinct test systems, an excited-state cavity mutant and an aggregation-prone folding intermediate, suggests an intent to test generality. The reported use of dRMSD-based hotspot analysis is a sensible way to assess movement between basins rather than relying only on coordinate superposition.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> CS-SelectFold recovers low-populated conformations for the two benchmark systems.</li>
+<li><strong>Evidence pointer</strong> Abstract only; methods, figures, and tables not provided (location not provided)</li>
+<li><strong>Concern</strong> The abstract does not describe the sampling protocol, the size and diversity of the candidate pool, the structural prescreening criteria, the chemical-shift ranking function, or the threshold used to declare recovery. Without these, the reported recoveries cannot be distinguished from chance enrichment or from selection bias introduced by prescreening.</li>
+<li><strong>Why it matters</strong> The central claim depends on whether the selected conformations are genuinely enriched relative to an unbiased or baseline selection. If the prescreening step already removes ground-state-like structures, the subsequent chemical-shift ranking may not be the effective driver of recovery.</li>
+<li><strong>Resolution test</strong> Provide the full sampling and selection pipeline, candidate pool statistics, prescreening criteria, ranking metric, and a comparison against random selection and against chemical-shift ranking without prescreening.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-M2<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> Chemical-shift-based ranking enriched conformations that moved away from the ground-state basin and toward the experimentally defined excited-state basin.</li>
+<li><strong>Evidence pointer</strong> Abstract only; retrospective two-reference hotspot analysis described but no data shown (location not provided)</li>
+<li><strong>Concern</strong> The enrichment claim is reported qualitatively. No effect sizes, distributions, statistical significance, or number of independent runs are visible. The retrospective nature of the analysis also raises the possibility that the reference excited-state model informed the evaluation in a way that favors the method.</li>
+<li><strong>Why it matters</strong> Enrichment is the core quantitative support for the selection principle. Without numerical and statistical detail, the claim remains unverifiable.</li>
+<li><strong>Resolution test</strong> Report dRMSD distributions for selected versus unselected candidates, effect sizes, confidence intervals, and significance tests, and clarify whether the evaluation references were used only for assessment or also during selection.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-M3<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Generalizability</li>
+<li><strong>Claim pointer</strong> The same sample-and-select principle may extend to broader low-populated hidden conformations, including folding intermediates.</li>
+<li><strong>Evidence pointer</strong> Abstract only; two systems reported (location not provided)</li>
+<li><strong>Concern</strong> Generality is asserted from two cases, one of which is a cavity mutant with a well-characterized local rearrangement. The Fyn SH3 case involves a larger topological change, but the abstract does not show whether the method recovers it reproducibly or whether it fails on other systems.</li>
+<li><strong>Why it matters</strong> The stated scope of the method is broad, but the evidence base is narrow. Overgeneralization could mislead readers about applicability.</li>
+<li><strong>Resolution test</strong> Either temper the generality claim or provide additional systems, including at least one negative or unsuccessful case, and report success rates across independent sampling runs.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-M4<ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Validation independence</li>
+<li><strong>Claim pointer</strong> Recovered conformations are consistent with the NMR/CS-Rosetta-derived excited-state model and with the experimentally characterized folding intermediate.</li>
+<li><strong>Evidence pointer</strong> Abstract only; comparison described but no quantitative agreement metrics shown (location not provided)</li>
+<li><strong>Concern</strong> The abstract does not specify how agreement was quantified, whether the experimental references were used in any way during model selection, or how the method would perform if the reference structure were unavailable. The Fyn SH3 validation relies on loss of a C-terminal beta-strand, which is a coarse topological feature that could be reproduced by many non-native conformations.</li>
+<li><strong>Why it matters</strong> Independent validation is essential to establish that the selected conformations correspond to the experimentally observed states rather than to plausible but incorrect alternatives.</li>
+<li><strong>Resolution test</strong> Provide blinded or held-out validation, quantitative agreement metrics against experimental data not used in selection, and a more discriminating structural comparison for the Fyn SH3 intermediate.</li>
+</ul>
+</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Definition of dRMSD</li>
+<li><strong>Evidence pointer</strong> Abstract (location not provided)</li>
+<li><strong>Issue</strong> The abstract defines dRMSD in a parenthetical that is difficult to parse and interrupts the sentence.</li>
+<li><strong>Required correction</strong> Rewrite the definition concisely and move detailed metric definitions to the methods.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-m2<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reporting completeness</li>
+<li><strong>Affected element</strong> Benchmark description</li>
+<li><strong>Evidence pointer</strong> Abstract (location not provided)</li>
+<li><strong>Issue</strong> The abstract does not state how many candidates were sampled, how many were selected, or how long the procedure takes.</li>
+<li><strong>Required correction</strong> Add brief quantitative details on candidate pool size, selection count, and computational cost.</li>
+</ul>
+</li>
+<li><strong>Concern ID</strong> R1-m3<ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Use of "proof-of-concept"</li>
+<li><strong>Evidence pointer</strong> Abstract (location not provided)</li>
+<li><strong>Issue</strong> The term is used without specifying what would constitute a failed proof of concept.</li>
+<li><strong>Required correction</strong> State explicit success criteria for the proof-of-concept claim.</li>
+</ul>
+</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M4</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality is moderate, as sample-and-select with chemical shifts has precedents, but the combination with a generative model without retraining is a reasonable incremental contribution. Scientific importance is potentially high if the method generalizes, but it is not demonstrated from the supplied material. Interdisciplinary readership is plausible across computational and experimental structural biology. Technical soundness cannot be assessed because methods and quantitative results are absent. Readability for nonspecialists is limited by undefined terms and the absence of a clear statement of success criteria.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. Supportive if technical concerns are resolved with full methods, quantitative enrichment statistics, baseline comparisons, and independent validation.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that CS-SelectFold recovers low-populated conformations is not supported by visible quantitative evidence.</li>
+<li>The claim that chemical-shift-based ranking enriches conformations toward the excited-state basin is not supported by visible statistics or effect sizes.</li>
+<li>The claim that the method extends to broader hidden conformations, including folding intermediates, is not supported beyond two systems.</li>
+<li>The claim that recovered conformations are consistent with experimental references is not supported by visible agreement metrics or blinded validation.</li>
+<li>The claim that no additional training or fine-tuning is required is plausible but not verifiable without methods details.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

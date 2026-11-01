@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LPT: Orchestrating bounded agentic loops for automated protein binder design · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>LPT: Orchestrating bounded agentic loops for automated protein binder design</h1>
+      <div class="meta">Michael Uckelmann</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-30
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.10.29.762730">原文</a>
+      </div>
+      <p class="one-liner">该文提出LPT框架，用LLM编排有界智能体循环，从自然语言提示自动完成蛋白质结合剂设计，涉及结构选择、热点残基识别和候选设计，属于蛋白质结构设计计算研究，方法上结合LLM与文献数据库，虽非传统AI结构预测，但核心是蛋白设计且方法有创新。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Current large language models (LLMs) can reason over scientific information and use code-based tools, but their training knowledge is broad rather than specialized, can be out of date and is hard to attribute to sources. Furthermore, unconstrained agentic workflows and unlimited tool use can consume large amounts of tokens. Here we present LPT (little protein tiger), a framework for fixed orchestration of LLM stages, each running a bounded agentic loop with custom system prompts and tool access, to enable de novo protein binder design from a single natural language prompt. The LLM stages can query a curated literature database, containing ~14000 papers digested into key findings, enabling recall of specialized information. An LLM with database access answered 41/48 test questions drawn from database key findings correctly, while a model without access answered none. In three end-to-end design campaigns, initiated from a single prompt, LPT autonomously identified the design intent, selected targets, structures and hotspot residues and designed candidate binders to disrupt CALCRL/RAMP1, PD-1/PD-L1 and PVR-TIGIT interactions. Cross-validation with multiple folding models confirms a high in silico success rate at minimal token consumption and low computational costs.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">当前大型语言模型（LLMs）能够对科学信息进行推理并使用基于代码的工具，但其训练知识广泛而非专门化，可能过时且难以溯源。此外，不受约束的智能体工作流程和无限制的工具使用会消耗大量令牌。在此，我们提出LPT（little protein tiger），一种用于LLM阶段固定编排的框架，每个阶段运行一个受限的智能体循环，配备自定义系统提示和工具访问权限，以实现从单一自然语言提示出发的从头蛋白质结合物设计。LLM阶段可查询一个精选文献数据库，其中包含约14000篇论文，提炼为关键发现，从而能够回忆专门信息。具备数据库访问权限的LLM正确回答了从数据库关键发现中抽取的48个测试问题中的41个，而无访问权限的模型则一个未答对。在三项端到端设计活动中，从单一提示启动，LPT自主识别设计意图，选择靶标、结构和热点残基，并设计候选结合物以破坏CALCRL/RAMP1、PD-1/PD-L1和PVR-TIGIT相互作用。与多个折叠模型的交叉验证确认，在最小令牌消耗和低计算成本下，具有较高的计算机模拟成功率。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：LPT: Orchestrating bounded agentic loops for automated protein binder design</li>
+<li><strong>作者</strong>：Michael Uckelmann（单位未提供）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026-10-30</li>
+<li><strong>论文类型</strong>：预印本（方法学/框架论文）</li>
+<li><strong>领域</strong>：蛋白质设计 × 大语言模型（LLM）智能体（Agentic AI）</li>
+<li><strong>关键词</strong>：protein binder design, LLM agent, agentic loop, literature database, de novo design</li>
+<li><strong>DOI/ID</strong>：10.64898/2026.10.29.762730</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：~14,000 篇论文摘要数据库（未提供公开访问链接）</li>
+<li><strong>阅读日期</strong>：2026-11-01</li>
+<li><strong>该文在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的 <strong>LLM 智能体编排</strong> 子方向，聚焦于用固定编排的 bounded agentic loops 实现从自然语言提示到蛋白 binder 设计的全流程自动化。与 AlphaFold 等结构预测方法不同，本文不提出新的结构预测或生成模型，而是将现有工具（结构预测、折叠验证等）编排为智能体工作流，属于「AI 方法 × 蛋白质设计」交叉中的 <strong>工作流/管线层</strong> 贡献。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出 LPT（little protein tiger）框架，通过固定编排多个 LLM 阶段、每个阶段运行有界 agentic loop（受限工具访问 + 定制 system prompt），并接入含 ~14,000 篇论文的文献数据库，实现从单一自然语言提示出发的自动化 de novo 蛋白 binder 设计，在三个靶点（CALCRL/RAMP1、PD-1/PD-L1、PVR-TIGIT）上以极低 token 消耗获得高 in silico 成功率。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何让 LLM 智能体在无需人工干预、token 消耗可控的前提下，完成从自然语言提示到蛋白 binder 设计的全流程？</li>
+<li><strong>为什么重要</strong>：现有 LLM 智能体在科学任务中常因无界工具使用导致 token 爆炸、结果不可控；同时 LLM 训练知识泛而不专、易过时、难以溯源。蛋白 binder 设计需要多步骤决策（靶点选择、结构获取、热点残基识别、序列设计、验证），是检验智能体科学推理能力的理想场景。</li>
+<li><strong>现有方法为何不足</strong>：</li>
+<li>无约束 agentic 工作流 token 消耗大、易发散；</li>
+<li>LLM 缺乏领域专精知识，且无法引用来源；</li>
+<li>现有自动化设计工具缺乏端到端编排，需人工干预各步骤。</li>
+<li><strong>精确研究问题</strong>：Can a fixed-orchestration, bounded agentic LLM framework with curated literature database access perform de novo protein binder design from a single natural language prompt with high in silico success rate and minimal token consumption?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文框架及作者引用推断，部分经外部核验，标注如下。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统计算设计</td>
+<td>Rosetta、FlexPepDock 等</td>
+<td>物理建模可靠</td>
+<td>需专家操作、耗时、难以自动化</td>
+<td>本文将其作为底层工具调用</td>
+</tr>
+<tr>
+<td>深度学习结构预测</td>
+<td>AlphaFold2/3、ESMFold</td>
+<td>高精度结构预测</td>
+<td>仅预测结构，不直接生成 binder</td>
+<td>本文将其作为验证工具</td>
+</tr>
+<tr>
+<td>深度生成模型</td>
+<td>RFdiffusion、ProteinMPNN</td>
+<td>可生成 binder 序列/结构</td>
+<td>需人工指定靶点、热点残基</td>
+<td>本文将其作为设计工具调用</td>
+</tr>
+<tr>
+<td>LLM 智能体</td>
+<td>AutoGPT、ChemCrow 等</td>
+<td>可自主推理、调用工具</td>
+<td>token 消耗大、不可控、知识过时</td>
+<td>本文提出 bounded loop 解决此问题</td>
+</tr>
+<tr>
+<td><strong>本文 LPT</strong></td>
+<td>固定编排 + bounded agentic loop + 文献数据库</td>
+<td>可控、可溯源、低 token</td>
+<td>依赖底层工具质量</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>脉络核验状态：<strong>部分经外部核验</strong>（LLM 智能体无界消耗问题、RFdiffusion/ProteinMPNN 为已知工具），部分基于本文框架推断。</p>
+</blockquote>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LLM 知识泛而不专</td>
+<td>无法回答领域专精问题</td>
+<td>训练数据广泛但深度不足，知识易过时</td>
+<td>Abstract: "training knowledge is broad rather than specialized, can be out of date"</td>
+</tr>
+<tr>
+<td>知识难以溯源</td>
+<td>无法引用来源</td>
+<td>LLM 参数化知识无显式来源链接</td>
+<td>Abstract: "hard to attribute to sources"</td>
+</tr>
+<tr>
+<td>无界 agentic 工作流 token 消耗大</td>
+<td>工具调用无限制，token 用量爆炸</td>
+<td>未限制工具使用次数和范围</td>
+<td>Abstract: "unconstrained agentic workflows and unlimited tool use can consume large amounts of tokens"</td>
+</tr>
+<tr>
+<td>无文献数据库时检索失败</td>
+<td>无数据库访问的模型答对 0/48</td>
+<td>缺乏领域专精知识来源</td>
+<td>Abstract: "a model without access answered none"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：
+LPT 将蛋白 binder 设计流程分解为多个固定顺序的 LLM 阶段（stages），每个阶段运行一个 bounded agentic loop——即 LLM 在受限的工具集和有限的迭代次数内完成任务。各阶段有定制 system prompt 和专属工具访问权限。整个流程从单一自然语言提示开始，自动完成设计意图识别、靶点选择、结构获取、热点残基识别、binder 设计、交叉验证。</p>
+<p><strong>2) 核心洞察</strong>：
+- <strong>有界性（boundedness）是关键</strong>：不是让 LLM 自由探索，而是将复杂任务分解为固定阶段，每阶段限制工具和迭代次数，既保证可控性又降低 token 消耗。
+- <strong>文献数据库弥补 LLM 知识短板</strong>：~14,000 篇论文摘要的 curated 数据库使 LLM 能检索专精知识并溯源，解决了 LLM 知识泛而不专的问题。
+- <strong>编排优于自由发挥</strong>：固定编排（orchestration）比无约束 agentic 工作流更适合科学任务，因为科学流程本身有固定逻辑顺序。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：
+- 在科学任务中，「约束智能体」可能比「自由智能体」更有效——科学流程的固定逻辑顺序可以被显式编码为编排结构，而非依赖 LLM 自主发现。
+- 外部知识库（curated database）是弥补 LLM 知识短板的有效手段，尤其当任务需要专精、可溯源知识时。
+- 对蛋白设计任务而言，LLM 智能体的价值不在于替代专用工具（如 RFdiffusion），而在于编排这些工具、做决策和解释结果。</p>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：单一自然语言提示（如"设计一个 disrupt CALCRL/RAMP1 相互作用的 binder"）</li>
+<li><strong>输出</strong>：候选 binder 序列/结构 + 设计报告（含靶点、热点残基、验证结果）</li>
+<li><strong>模块</strong>：
+  1. 设计意图识别模块（LLM 解析用户提示）
+  2. 靶点选择模块（LLM + 文献数据库检索）
+  3. 结构获取模块（调用结构数据库或预测工具）
+  4. 热点残基识别模块（LLM + 文献/结构分析）
+  5. Binder 设计模块（调用 RFdiffusion/ProteinMPNN 等生成工具）
+  6. 交叉验证模块（多折叠模型验证）</li>
+<li><strong>工具</strong>：LLM（具体型号未提供）、文献数据库（~14,000 篇论文）、结构预测/折叠验证工具（具体名称未提供）</li>
+<li><strong>训练</strong>：未提及训练过程，推测为 prompt engineering + 固定编排，无模型微调</li>
+<li><strong>反馈回路</strong>：bounded agentic loop 内 LLM 可基于工具输出迭代修正，但迭代次数受限</li>
+<li><strong>假设</strong>：</li>
+<li>科学设计流程可被分解为固定顺序阶段</li>
+<li>文献数据库能提供足够专精知识</li>
+<li>多折叠模型交叉验证能可靠评估 in silico 成功率</li>
+</ul>
+<p><strong>文字流程</strong>：
+用户输入自然语言提示 → 阶段 1：LLM 解析设计意图 → 阶段 2：LLM 查询文献数据库选择靶点 → 阶段 3：获取靶点结构 → 阶段 4：识别热点残基 → 阶段 5：调用生成工具设计候选 binder → 阶段 6：多折叠模型交叉验证 → 输出候选 binder 及设计报告。</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文献数据库</td>
+<td>提供专精、可溯源知识</td>
+<td>LLM 训练知识泛而不专</td>
+<td>输入：查询；输出：相关论文要点</td>
+<td>Abstract: 有数据库访问答对 41/48，无访问答对 0/48</td>
+<td><strong>预期</strong>：移除后 LLM 无法选择正确靶点/热点残基，设计成功率大幅下降</td>
+</tr>
+<tr>
+<td>Bounded agentic loop</td>
+<td>限制工具使用和迭代次数</td>
+<td>防止 token 爆炸、保证可控</td>
+<td>输入：阶段任务；输出：阶段结果</td>
+<td>Abstract: "minimal token consumption"</td>
+<td><strong>预期</strong>：移除后 token 消耗显著增加，流程可能发散不可控</td>
+</tr>
+<tr>
+<td>固定编排（orchestration）</td>
+<td>确定阶段顺序和依赖</td>
+<td>科学流程有固定逻辑顺序</td>
+<td>输入：各阶段；输出：最终结果</td>
+<td>Abstract: "fixed orchestration of LLM stages"</td>
+<td><strong>预期</strong>：移除后 LLM 可能跳过关键步骤或顺序错乱</td>
+</tr>
+<tr>
+<td>定制 system prompt</td>
+<td>引导 LLM 在各阶段的行为</td>
+<td>不同阶段需要不同推理模式</td>
+<td>输入：阶段任务描述；输出：LLM 行为约束</td>
+<td>Abstract: "custom system prompts"</td>
+<td><strong>预期</strong>：移除后 LLM 行为不可控，可能偏离任务目标</td>
+</tr>
+<tr>
+<td>多折叠模型交叉验证</td>
+<td>评估候选 binder 质量</td>
+<td>单一模型可能有偏差</td>
+<td>输入：候选 binder 序列；输出：验证分数</td>
+<td>Abstract: "Cross-validation with multiple folding models confirms a high in silico success rate"</td>
+<td><strong>预期</strong>：移除后无法确认设计质量，in silico 成功率不可信</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：以上「预期影响」均为 [Analysis] 推断，原文未提供消融实验数据。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>。本文为 LLM 智能体框架方法学论文，未提供数学公式或算法伪代码。核心方法为编排逻辑和 prompt 设计，无量化公式。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/群体</strong>：
+- 文献数据库：~14,000 篇论文摘要（curated）
+- 知识检索测试：48 个问题（从数据库关键要点中抽取）
+- 端到端设计：3 个靶点（CALCRL/RAMP1、PD-1/PD-L1、PVR-TIGIT）</p>
+<p><strong>指标</strong>：
+- 知识检索准确率（41/48 vs 0/48）
+- In silico 设计成功率（多折叠模型交叉验证）
+- Token 消耗量（"minimal"）</p>
+<p><strong>基线</strong>：
+- 无数据库访问的 LLM（知识检索测试）
+- 未提供其他 agentic 框架作为基线</p>
+<p><strong>评测协议</strong>：
+- 知识检索：48 个问题，对比有/无数据库访问
+- 端到端设计：3 个靶点，从单一提示出发，多折叠模型验证</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>知识检索测试</td>
+<td>文献数据库提升 LLM 专精知识</td>
+<td>有数据库 vs 无数据库访问</td>
+<td>41/48 vs 0/48</td>
+<td>数据库访问显著提升专精知识 recall</td>
+<td>未测试泛化到数据库外问题</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>端到端设计（CALCRL/RAMP1）</td>
+<td>LPT 能从单一提示设计 binder</td>
+<td>无对比基线</td>
+<td>成功设计候选 binder</td>
+<td>LPT 可完成该靶点设计</td>
+<td>未提供 wet-lab 验证</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>端到端设计（PD-1/PD-L1）</td>
+<td>LPT 能设计免疫检查点 disruptor</td>
+<td>无对比基线</td>
+<td>成功设计候选 binder</td>
+<td>LPT 可完成该靶点设计</td>
+<td>未提供 wet-lab 验证</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>端到端设计（PVR-TIGIT）</td>
+<td>LPT 能设计该靶点 binder</td>
+<td>无对比基线</td>
+<td>成功设计候选 binder</td>
+<td>LPT 可完成该靶点设计</td>
+<td>未提供 wet-lab 验证</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>Token 消耗评估</td>
+<td>LPT 消耗 minimal tokens</td>
+<td>无量化对比数据</td>
+<td>"minimal token consumption"</td>
+<td>LPT 有界循环控制 token 消耗</td>
+<td>未提供具体 token 数字</td>
+<td>Abstract</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文结论仅限于 <strong>in silico</strong> 蛋白 binder 设计，不涉及 wet-lab 实验验证。所有「成功率」均为计算预测，非实验确认。</li>
+<li><strong>Oracle/真值输入</strong>：多折叠模型交叉验证作为 oracle，但未说明具体模型名称、版本、阈值标准。</li>
+<li><strong>端到端状态</strong>：从自然语言提示到候选 binder 的端到端流程已实现，但「端到端」仅指计算流程，不包含实验闭环。</li>
+<li><strong>算力成本</strong>：声称「low computational costs」和「minimal token consumption」，但未提供具体数字或与基线对比。</li>
+<li><strong>历史数据依赖</strong>：文献数据库为 curated 数据，其覆盖范围、更新频率、选择标准未说明。</li>
+<li><strong>模型依赖</strong>：未说明使用的具体 LLM 型号、版本、温度等超参数，可复现性受限。</li>
+<li><strong>最难情形</strong>：仅测试 3 个靶点，均为蛋白-蛋白相互作用 disruptor，未测试更复杂场景（如构象变化、变构设计）。</li>
+<li><strong>群体/领域边界</strong>：结论适用于「有明确靶点结构信息、热点残基可识别」的 binder 设计场景，不适用于无结构信息或需全新表位设计的情形。</li>
+</ul>
+<p><strong>有边界复述</strong>：LPT 框架在 3 个测试靶点上，通过固定编排的 bounded agentic loops 和文献数据库访问，能够从单一自然语言提示出发，在计算层面完成 binder 设计，并通过多折叠模型交叉验证获得高 in silico 成功率，同时保持低 token 消耗。该结论不扩展到 wet-lab 验证、其他靶点类型或未测试的 LLM 配置。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（Abstract）中，作者未明确列出局限性。Abstract 仅报告正面结果，未讨论失败案例、边界条件或方法缺陷。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 文献数据库为 curated 而非全量，覆盖范围有限（~14,000 篇）
+- 知识检索测试仅 48 个问题，样本量小
+- 端到端设计仅 3 个靶点，均为 PPI disruptor 类型</p>
+<blockquote>
+<p>注：以上为 [Analysis] 从 Abstract 推断的隐含约束，非作者明确承认的局限。</p>
+</blockquote>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无 wet-lab 验证</td>
+<td>In silico 成功率可能高估实际 binder 活性</td>
+<td>计算预测与实验结合率通常较低</td>
+<td>对候选 binder 进行 SPR/ITC 结合实验</td>
+<td>Abstract 仅提及 in silico 验证</td>
+</tr>
+<tr>
+<td>无基线对比</td>
+<td>未与 AutoGPT、ChemCrow 等通用 agent 框架对比</td>
+<td>无法判断 LPT 的编排是否优于通用方案</td>
+<td>在相同任务上运行其他框架对比 token 消耗和成功率</td>
+<td>Abstract 未提供对比实验</td>
+</tr>
+<tr>
+<td>无消融实验</td>
+<td>未验证各模块（数据库、bounded loop、编排）的独立贡献</td>
+<td>无法确定哪些设计决策是关键</td>
+<td>逐一移除模块测试性能变化</td>
+<td>Abstract 未提及消融</td>
+</tr>
+<tr>
+<td>知识检索测试设计可能有利</td>
+<td>48 个问题从数据库要点中抽取，可能偏向数据库内容</td>
+<td>高准确率可能反映「开卷考试」而非真实检索能力</td>
+<td>用外部专家设计的问题测试</td>
+<td>Abstract: "drawn from database key findings"</td>
+</tr>
+<tr>
+<td>未说明 LLM 型号和超参数</td>
+<td>结果可能高度依赖特定 LLM</td>
+<td>影响可复现性和泛化性</td>
+<td>在不同 LLM 上测试 LPT</td>
+<td>Abstract 未提供模型信息</td>
+</tr>
+<tr>
+<td>3 个靶点均为 PPI disruptor</td>
+<td>可能无法泛化到其他设计类型（如酶设计、构象设计）</td>
+<td>限制了方法适用范围</td>
+<td>测试酶活性设计、变构设计等任务</td>
+<td>Abstract 仅列出 3 个 PPI 靶点</td>
+</tr>
+<tr>
+<td>Token 消耗「minimal」无量化</td>
+<td>缺乏具体数字和对比基准</td>
+<td>无法评估实际成本效益</td>
+<td>报告具体 token 数和与基线对比</td>
+<td>Abstract 仅定性描述</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>有界智能体循环（Bounded Agentic Loop）设计模式</strong>：将复杂科学任务分解为固定阶段，每阶段限制工具访问和迭代次数，可同时保证可控性和效率。可迁移到本课题的构象采样、分子对接等任务中，将每个计算步骤封装为有界 agent 阶段。</p>
+</li>
+<li>
+<p><strong>Curated 文献数据库作为 LLM 知识外挂</strong>：~14,000 篇论文的 curated 数据库使 LLM 从「泛而不专」变为「专精可溯源」。可迁移到本课题：构建蛋白结构预测/设计领域的 curated 文献库（如 AlphaFold 相关论文、MD 模拟方法论文），作为 LLM 智能体的知识检索源。</p>
+</li>
+<li>
+<p><strong>固定编排优于自由探索</strong>：科学流程有固定逻辑顺序（如：靶点选择 → 结构获取 → 热点识别 → 设计 → 验证），显式编码为编排结构比让 LLM 自主规划更可靠。可迁移到本课题：将 MD 模拟、对接、结构预测等步骤编排为固定流水线，而非依赖 LLM 自主决定顺序。</p>
+</li>
+<li>
+<p><strong>多模型交叉验证作为 oracle</strong>：用多个折叠模型交叉验证设计结果，降低单一模型偏差。可迁移到本课题：在构象生成或 binder 设计中，用 AlphaFold + ESMFold + MD 模拟等多方法交叉验证候选结构。</p>
+</li>
+<li>
+<p><strong>自然语言提示作为任务接口</strong>：从单一自然语言提示出发完成全流程，降低使用门槛。可迁移到本课题：开发面向蛋白设计的自然语言接口，用户描述设计目标，系统自动完成结构预测、采样、验证。</p>
+</li>
+<li>
+<p><strong>Token 消耗作为设计指标</strong>：将 token 消耗作为框架评估指标之一，推动高效智能体设计。可迁移到本课题：在开发 AI 辅助蛋白设计工具时，将计算成本（token、GPU 时间）作为显式优化目标。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：ChemCrow（LLM 化学智能体）、AutoGPT（通用 agent 框架）、Coscientist（科学发现智能体）——均探索 LLM 智能体在科学任务中的应用，但 LPT 的差异在于 <strong>固定编排 + 有界循环</strong>，而非自由 agent 行为。</li>
+<li><strong>蛋白设计工具</strong>：RFdiffusion、ProteinMPNN 为 LPT 可能调用的底层生成工具（原文未明确列出，[Analysis] 推断）；AlphaFold2/3、ESMFold 为可能的验证工具。LPT 的贡献在于编排层，而非新的生成模型。</li>
+<li><strong>知识增强 LLM</strong>：RAG（Retrieval-Augmented Generation）相关工作是 LPT 文献数据库设计的理论基础，但 LPT 使用 curated 数据库而非通用语料。</li>
+<li><strong>可迁移领域</strong>：MD 模拟工作流自动化（如用 LLM 智能体编排 MD 采样、自由能计算步骤）、分子对接虚拟筛选自动化、构象生成与评估闭环。</li>
+<li><strong>候选方向（未验证）</strong>：LPT 的 bounded loop 模式可迁移到「结构预测 → MD 模拟 → 结合自由能计算」的自动化流程中，但需验证 LLM 在物理模拟参数选择上的可靠性。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：Bounded Agentic MD Simulation Orchestrator
+   - <strong>来源局限/观察</strong>：LPT 展示了有界 agent 循环在蛋白设计中的有效性，但未涉及 MD 模拟的参数选择与轨迹分析
+   - <strong>核心假设</strong>：固定编排的 LLM 智能体能自动选择 MD 模拟参数（力场、溶剂模型、模拟时长）并分析轨迹，达到专家水平
+   - <strong>相对本文的增量</strong>：将 LPT 模式从 binder 设计扩展到 MD 模拟自动化
+   - <strong>初步方法</strong>：构建 MD 模拟知识库（力场选择指南、常见陷阱），设计固定阶段（体系准备 → 参数选择 → 模拟运行 → 轨迹分析），每阶段 bounded loop
+   - <strong>验证方式</strong>：在标准蛋白体系上对比 LLM 选择的参数与专家选择，用 RMSD/自由能计算评估结果质量
+   - <strong>可能的失败模式</strong>：LLM 对物理模拟的数值稳定性判断不足，参数选择可能合理但运行失败
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Cross-Validation Agent for Conformational Sampling
+   - <strong>来源局限/观察</strong>：LPT 用多折叠模型交叉验证 binder 设计，但未涉及构象采样的验证
+   - <strong>核心假设</strong>：LLM 智能体能协调多种构象采样方法（MD、MCMC、生成模型）并交叉验证采样充分性
+   - <strong>相对本文的增量</strong>：将交叉验证思想从 binder 设计迁移到构象采样
+   - <strong>初步方法</strong>：设计 agent 阶段：采样方法选择 → 并行采样 → 收敛性评估 → 构象多样性验证
+   - <strong>验证方式</strong>：在已知多构象蛋白（如激酶）上测试采样覆盖率
+   - <strong>可能的失败模式</strong>：LLM 对采样收敛性的判断可能过于乐观，需结合统计检验工具
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Literature-Grounded Docking Parameter Selection
+   - <strong>来源局限/观察</strong>：LPT 的文献数据库显著提升知识 recall，但未应用于分子对接
+   - <strong>核心假设</strong>：curated 文献数据库能帮助 LLM 选择正确的对接工具和参数（如搜索空间、打分函数）
+   - <strong>相对本文的增量</strong>：将文献增强思想从 binder 设计迁移到分子对接
+   - <strong>初步方法</strong>：构建对接方法文献库，设计 agent 阶段：靶点分析 → 工具选择 → 参数设置 → 结果评估
+   - <strong>验证方式</strong>：在基准集（如 DUD-E）上对比 LLM 选择的对接流程与默认流程
+   - <strong>可能的失败模式</strong>：文献库覆盖不足，LLM 可能推荐过时或不适用的方法
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Natural Language Interface for Protein Design Pipelines
+   - <strong>来源局限/观察</strong>：LPT 从单一提示出发完成全流程，但仅覆盖 binder 设计
+   - <strong>核心假设</strong>：统一的自然语言接口能编排更广泛的蛋白设计任务（结构预测、序列设计、构象分析）
+   - <strong>相对本文的增量</strong>：扩展 LPT 的接口设计到多任务场景
+   - <strong>初步方法</strong>：设计任务路由层，将用户提示映射到不同设计流水线
+   - <strong>验证方式</strong>：用多种类型的蛋白设计任务测试接口的鲁棒性
+   - <strong>可能的失败模式</strong>：任务歧义导致路由错误，需设计澄清机制
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Token-Efficient Agent Design for Protein Tasks
+   - <strong>来源局限/观察</strong>：LPT 声称 minimal token 消耗但未提供量化分析
+   - <strong>核心假设</strong>：有界循环的 token 效率可通过系统化设计进一步优化
+   - <strong>相对本文的增量</strong>：建立 token 效率的量化评估框架
+   - <strong>初步方法</strong>：对比不同 bounded loop 设计（迭代次数、工具粒度、prompt 长度）的 token 消耗与任务成功率
+   - <strong>验证方式</strong>：在标准蛋白设计任务集上建立 token-质量 Pareto 曲线
+   - <strong>可能的失败模式</strong>：token 效率与任务质量可能存在不可调和的权衡
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present LPT (little protein tiger), a framework that orchestrates fixed LLM stages, each running a bounded agentic loop with custom system prompts and tool access, to enable de novo protein binder design from a single natural language prompt. The framework includes a curated literature database of approximately 14,000 papers. The authors report that an LLM with database access answered 41/48 test questions correctly, while a model without access answered none. In three end-to-end design campaigns, LPT autonomously identified design intent, selected targets, structures and hotspot residues, and designed candidate binders to disrupt CALCRL/RAMP1, PD-1/PD-L1 and PVR-TIGIT interactions. Cross-validation with multiple folding models reportedly confirms a high in silico success rate at minimal token consumption and low computational costs.</li>
+<li><strong>Visible evidence base</strong> Abstract text only. No figures, tables, methods, or supplementary materials were provided for review.</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript text, methods section, all figures and tables, supplementary materials, benchmark details, database construction details, design campaign outputs, folding model validation results, and token consumption data.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract describes a potentially useful framework for structured LLM orchestration in protein design, with a plausible motivation around bounded agentic loops and token efficiency. However, the evidence presented is insufficient to evaluate the core claims. The benchmark result (41/48 versus 0/48) is striking but lacks methodological detail. The three design campaigns are described only at the level of interaction targets, with no quantitative outcomes reported. The claim of high in silico success rate is not supported by any data in the abstract. The framework's novelty relative to existing LLM orchestration and protein design methods is not established from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in computational protein design, LLM applications in biology, and automated scientific discovery would be interested if the full manuscript substantiates the claims. The bounded agentic loop concept and the curated literature database could appeal to those working on token-efficient AI workflows for scientific tasks. The specific design campaigns targeting immune checkpoint interactions (PD-1/PD-L1, PVR-TIGIT) and GPCR-related complexes (CALCRL/RAMP1) may interest structural biologists and drug discovery groups.</li>
+<li><strong>Major strengths</strong> The motivation for bounded agentic loops to control token consumption is timely and practically relevant. The curated literature database approach addresses a real limitation of LLM training knowledge. The benchmark design (with versus without database access) provides a clear comparative framing. The choice of three distinct protein-protein interaction targets suggests some breadth of application.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "In three end-to-end design campaigns, initiated from a single prompt, LPT autonomously identified the design intent, selected targets, structures and hotspot residues and designed candidate binders to disrupt CALCRL/RAMP1, PD-1/PD-L1 and PVR-TIGIT interactions."</li>
+<li><strong>Evidence pointer</strong> Abstract only, location not provided</li>
+<li><strong>Concern</strong> The abstract reports that three design campaigns were conducted and that candidate binders were designed, but provides no quantitative results. No binding affinity measurements, no experimental validation, no success metrics, and no comparison to existing design methods are presented. The phrase "designed candidate binders" is ambiguous regarding whether any of these candidates were shown to actually bind their targets.</li>
+<li><strong>Why it matters</strong> The central claim of the paper is that LPT enables automated protein binder design. Without any quantitative evidence that the designed candidates are functional binders, the claim is not established. In silico design without experimental or at least rigorous computational validation does not demonstrate binder design capability.</li>
+<li><strong>Resolution test</strong> Provide per-campaign results including number of candidates designed, predicted binding affinities, folding model scores, and any experimental validation. If experimental data are not available, clearly state this limitation and provide computational benchmarks against established design methods.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "Cross-validation with multiple folding models confirms a high in silico success rate at minimal token consumption and low computational costs."</li>
+<li><strong>Evidence pointer</strong> Abstract only, location not provided</li>
+<li><strong>Concern</strong> The claim of high in silico success rate is presented without any numerical data. No success rate percentage, no definition of what constitutes success, no details on which folding models were used, and no comparison to baseline methods are provided. The claim of minimal token consumption and low computational costs is similarly unsupported by any quantitative comparison.</li>
+<li><strong>Why it matters</strong> These are quantitative claims that require quantitative support. Without specific numbers and definitions, the claims cannot be evaluated or reproduced. The token consumption claim is central to the paper's motivation, yet no token usage data are presented.</li>
+<li><strong>Resolution test</strong> Report the specific success rate with a clear definition of success, list the folding models used, provide token consumption figures compared to unconstrained agentic baselines, and report computational cost in concrete terms.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "An LLM with database access answered 41/48 test questions drawn from database key findings correctly, while a model without access answered none."</li>
+<li><strong>Evidence pointer</strong> Abstract only, location not provided</li>
+<li><strong>Concern</strong> The benchmark result is reported without methodological detail. The nature of the test questions, the selection process, the LLM used, the prompting strategy, and the evaluation criteria are not described. The result that the model without access answered zero questions correctly is surprising and suggests the questions may be designed in a way that makes them unanswerable without the database, which could indicate a benchmark design that inflates the apparent value of the database.</li>
+<li><strong>Why it matters</strong> The database access benchmark is a key supporting claim for the framework's utility. Without methodological transparency, the result cannot be assessed for fairness or generalizability. A zero-score baseline raises questions about question design and whether the comparison is meaningful.</li>
+<li><strong>Resolution test</strong> Provide the full benchmark methodology including question examples, selection criteria, LLM configuration, and evaluation rubric. Discuss whether the zero baseline reflects question design or genuine knowledge limitations.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Framework description</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The term "fixed orchestration of LLM stages" is not defined. It is unclear whether "fixed" refers to a predetermined sequence of stages, fixed prompts, or something else. The relationship between the stages and the bounded agentic loops is also not explained.</li>
+<li><strong>Required correction</strong> Define the orchestration architecture clearly, including the number of stages, their functions, and how the bounded loops operate within each stage.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Literature database description</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The database is described as containing approximately 14,000 papers "digested into key findings," but the digestion process, the format of the key findings, and the curation methodology are not described.</li>
+<li><strong>Required correction</strong> Describe how papers were selected, how key findings were extracted, and how the database is queried by the LLM.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> "de novo protein binder design"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The term "de novo" is used, but the abstract describes selection of existing targets, structures, and hotspot residues, which may not constitute de novo design in the strict sense. The design process appears to involve choosing from known options rather than generating entirely new binders from first principles.</li>
+<li><strong>Required correction</strong> Clarify what aspect of the design is de novo, or use more precise terminology that reflects the actual design process.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> LLM configuration</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The specific LLM or LLMs used in the framework are not identified. This information is essential for reproducibility.</li>
+<li><strong>Required correction</strong> Specify the LLM models used in each stage.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3. The absence of quantitative results for the design campaigns, the unsupported success rate and cost claims, and the lack of benchmark methodology all prevent the case from being established from the supplied material.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The bounded agentic loop concept and the curated literature database are potentially original contributions, but the abstract does not provide enough detail to assess novelty relative to existing LLM orchestration frameworks. Scientific importance: The application to protein binder design for immune checkpoint and GPCR-related targets is scientifically relevant, but the importance cannot be assessed without evidence that the designed binders are functional. Interdisciplinary readership: The work spans AI, structural biology, and drug discovery, which could attract broad interest, but the abstract is too thin to engage specialists in any of these fields. Technical soundness: Cannot be assessed from the abstract alone. The benchmark design raises questions, and the lack of quantitative results for the main claims is a significant concern. Readability for nonspecialists: The abstract is readable and the motivation is clear, but the technical claims are underspecified.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The framework concept is interesting and the motivation is sound, but the abstract does not provide sufficient quantitative evidence to support the central claims of successful binder design, high success rate, and token efficiency. A full manuscript with detailed methods and results would be required to evaluate the work properly.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "high in silico success rate" is unsupported by any numerical data in the abstract.</li>
+<li>The claim of "minimal token consumption and low computational costs" is unsupported by any comparative data.</li>
+<li>The claim that LPT "designed candidate binders" to disrupt the three named interactions is unverifiable without results showing the candidates have any predicted or measured binding activity.</li>
+<li>The benchmark result (41/48 versus 0/48) is reported without methodology and cannot be evaluated for fairness or validity.</li>
+<li>The description of the literature database and its query mechanism is insufficient to assess its functionality or coverage.</li>
+<li>The term "de novo" is used in a way that may not match the described design process, which appears to involve selection from known structures and hotspots.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "source": "pubmed",
+  "id": "42926731",
+  "title": "A Shortcut to Structure in AlphaFold 3.",
+  "authors": "Feldman, Jonathan; Skolnick, Jeffrey",
+  "journal": "ArXiv",
+  "published_date": "2026-10-25",
+  "window": {
+    "start": "2026-10-25",
+    "end": "2026-10-31"
+  },
+  "score": 8,
+  "one_liner_zh": "通过因果干预和探针分析AlphaFold 3内部表示，揭示MSA作为结构捷径如何驱动蛋白质全局几何形成，属于蛋白质结构预测模型的可解释性研究，与课题高度相关。",
+  "abstract": "AlphaFold 3 predicts protein structures with remarkable accuracy, yet how structural information emerges within the model remains poorly understood. Here, through causal interventions on internal representations and direct probing of every Pairformer block, we trace the formation of global protein geometry and identify the multiple sequence alignment (MSA) as a structural shortcut to the fold. Removing the MSA largely preserves local secondary structure while disrupting the long-range relationships that define global topology. Restoring the MSA-enriched pair representation at only forty residues recovers most of this lost organization, including at pairs never directly modified. This contribution depends on the detailed direction of the MSA module's output rather than its magnitude. The Pairformer rapidly converts this signal into global geometry: the final fold becomes recoverable by approximately block 9 of 48 for a majority of proteins, roughly twenty-seven blocks before the model's decoder can render it, whereas without the MSA it remains inaccessible for most proteins throughout the pass. Which homologs are supplied shapes this trajectory more strongly than which query is supplied; it persists for a designed query that never evolved but collapses for a shuffled sequence. Most importantly, an alignment built for a different protein that shares the fold, supplied only at the structurally corresponding columns, raises the median TM-score against experiment from 0.44 to 0.72, while the same alignment shifted a few residues along the chain performs worse than supplying no alignment at all. What AlphaFold 3 reads from an alignment is therefore a description of the fold itself, transferable between proteins that share one, rather than the query's own evolutionary history. This explains both its accuracy and the limits of what it has solved.",
+  "abstract_zh": "AlphaFold 3 以惊人的准确度预测蛋白质结构，但结构信息如何在模型内部涌现仍鲜为人知。在此，我们通过对内部表征进行因果干预，并直接探测每一个 Pairformer 模块，追踪了全局蛋白质几何结构的形成过程，并将多序列比对 (multiple sequence alignment, MSA) 识别为通往折叠的结构捷径。移除 MSA 在很大程度上保留了局部二级结构，同时破坏了定义全局拓扑的长程关系。仅在四十个残基处恢复富含 MSA 的配对表征，即可恢复大部分丢失的组织结构，包括从未被直接修改的配对。这一贡献取决于 MSA 模块输出的详细方向而非其幅度。Pairformer 迅速将该信号转化为全局几何结构：对于大多数蛋白质，最终折叠在 48 个模块中的约第 9 个模块即可被恢复，大约比模型的解码器能够呈现它早二十七个模块，而在没有 MSA 的情况下，它在整个过程中对大多数蛋白质始终不可及。所提供的同源序列比所提供的查询序列更强地塑造了这一轨迹；它对于一个从未进化过的设计查询持续存在，但对于一个打乱的序列则崩溃。最重要的是，为另一个共享该折叠的蛋白质构建的比对，仅在结构对应的列上提供，即可将相对于实验的中位 TM-score 从 0.44 提升至 0.72，而同一比对沿链移动几个残基后，其表现比完全不提供比对更差。因此，AlphaFold 3 从比对中读取的是折叠本身的描述，可在共享同一折叠的蛋白质之间转移，而非查询自身的进化历史。这既解释了其准确性，也解释了它所解决问题的局限。",
+  "has_fulltext": true,
+  "fulltext_source": "pmc",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42926731/",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/42926731/",
+  "paper_page_path": "papers/pubmed/42926731/index.html"
+}

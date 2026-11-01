@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors argue that foldability is an intrinsic property of protein sequences, demonstrated through lattice model simulations of 27-, 48-, and 64-residue heteropolymers. They propose an information-theoretic criterion for folding transitions, relate it to minimal frustration, and report that unsupervised variational autoencoders can distinguish folding ensembles and recover known thermodynamic quantities.
+- **Visible evidence base** Abstract text only; no quantitative results, statistical measures, model details, or validation procedures are visible
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, methods section, simulation protocols, hyperparameter choices, statistical analyses, and any comparison to prior work
+
+## Reviewer
+- **Overall assessment** The abstract presents an ambitious and potentially interesting synthesis of statistical thermodynamics, information theory, and unsupervised machine learning applied to a classic model system. However, the claims as stated substantially exceed what can be evaluated from the abstract alone. The central assertion that foldability is an intrinsic property of sequences is plausible within the lattice model framework, but the evidence base is not visible. The information-theoretic criterion relating self-information to Shannon entropy of compact states is a specific and testable claim, but its derivation and validation are not shown. The machine learning results are described in qualitative terms without any quantitative support. The manuscript may contain valuable contributions, but the case is not established from the provided material.
+- **Who would be interested in the results, and why** Researchers in protein folding theory, statistical mechanics of biopolymers, and computational biophysics would be the primary audience. Those working on the physical principles underlying foldability, the random-energy model, and minimal frustration would find the information-theoretic reformulation of interest. The machine learning component may attract researchers at the interface of unsupervised learning and biophysical simulation, particularly those interested in learned reaction coordinates and latent representations of conformational ensembles.
+- **Major strengths** The abstract addresses a fundamental and unresolved question in protein science, namely why some sequences fold while others do not. The proposed information-theoretic criterion is conceptually elegant and potentially unifying, connecting thermodynamic stability, kinetic accessibility, and the random-energy model. The use of unsupervised machine learning to recover known physical quantities without labels is a compelling approach that could demonstrate the utility of data-driven methods in biophysics. The claim that results are independent of the initial denatured ensemble is a strong reproducibility statement, if properly supported.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "Native populations, folding probabilities and free-energy surfaces are reproducible and independent of the initial denatured ensemble, so foldability is an intrinsic property of the sequence at a given temperature and solvent."
+  - **Evidence pointer** Location not provided
+  - **Concern** The abstract asserts that foldability is an intrinsic property of sequences based on reproducibility across initial denatured ensembles. However, no quantitative measures of reproducibility are provided, and the scope of the claim is unclear. The statement appears to be limited to lattice heteropolymers at specific temperatures and solvent conditions, yet the title generalizes to protein sequences broadly. The abstract does not specify how many sequences were tested, how the denatured ensembles were generated, or what statistical criteria were used to establish independence.
+  - **Why it matters** The central thesis of the manuscript rests on this claim. If the evidence is limited to a small number of sequences or specific simulation conditions, the generalization to protein sequences in general is not justified. The distinction between intrinsic sequence properties and environment-dependent behavior is critical for the conceptual contribution of the work.
+  - **Resolution test** Provide quantitative reproducibility metrics across multiple initial ensembles, specify the number and diversity of sequences tested, and clearly delineate the conditions under which the intrinsic property claim holds. If the claim is restricted to lattice models, the title and framing should be adjusted accordingly.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Theoretical derivation
+  - **Claim pointer** "Stability is governed by an information balance: the information content (self-information) of the native energy relative to the maximum-entropy description of compact alternatives, ℐtail, must exceed their Shannon entropy, 𝑆c = ln𝛺c. This is the random-energy-model condition for a folding transition, and ℐtail/𝑆c fixes the ratio of folding to glass temperatures, recasting minimal frustration in information units."
+  - **Evidence pointer** Location not provided
+  - **Concern** The abstract presents a specific mathematical criterion for folding transitions without showing its derivation, assumptions, or validation. The connection to the random-energy model is asserted but not demonstrated. The claim that ℐtail/𝑆c fixes the ratio of folding to glass temperatures is a strong quantitative statement that requires explicit derivation and numerical verification. The recasting of minimal frustration in information units is conceptually interesting but needs a clear mapping between the information-theoretic quantities and the physical parameters of the system.
+  - **Why it matters** This is the theoretical core of the manuscript. If the derivation is flawed or the assumptions are too restrictive, the entire framework collapses. The connection to the random-energy model must be made rigorous, and the predictive power of the criterion must be demonstrated on the lattice systems studied.
+  - **Resolution test** Present the full derivation of the information balance condition, state all assumptions explicitly, and show numerical evidence that the criterion correctly predicts folding transitions across the sequence ensembles studied. Provide a quantitative comparison between the predicted and measured folding-to-glass temperature ratios.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Machine learning validation
+  - **Claim pointer** "Variational autoencoders trained without labels distinguish sequences by their folding ensembles, supply a six-variable reaction coordinate that retains 91% of the kinetic information in the full native-contact map, and rediscover the native energy gap from the density of compact states."
+  - **Evidence pointer** Location not provided
+  - **Concern** The machine learning results are stated without any supporting quantitative details. The 91% retention figure is specific but its computation is not described. The claim that the VAE "rediscover[s] the native energy gap" is vague and requires a clear definition of what rediscovery means in this context. No information is given about the VAE architecture, training procedure, dataset size, or how the six-variable reaction coordinate was extracted and validated.
+  - **Why it matters** The machine learning component is presented as a significant contribution, but without methodological details and validation metrics, the claims cannot be assessed. The 91% figure could be misleading if the metric is not properly defined or if the comparison baseline is inappropriate. The biological or physical significance of the learned reaction coordinate needs to be demonstrated.
+  - **Resolution test** Provide full methodological details for the VAE, including architecture, training, and hyperparameters. Define precisely how the 91% kinetic information retention was computed and compared to the full contact map. Show that the learned reaction coordinate captures physically meaningful features and that the rediscovered energy gap matches independently computed values.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The phrase "Protein structure prediction has been largely solved" is an overstatement that may distract readers and is not essential to the manuscript's contribution. It invites unnecessary debate and could be seen as provocative without adding scientific content.
+  - **Required correction** Rephrase to acknowledge recent advances in structure prediction while focusing on the distinct question of foldability, for example "Recent advances in protein structure prediction have been remarkable, but the question of why a given sequence is foldable remains open."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Scope definition
+  - **Affected element** Generalization claim
+  - **Evidence pointer** Title and abstract
+  - **Issue** The title claims foldability is an intrinsic property of "protein sequences" broadly, but the study is conducted on lattice heteropolymers of 27, 48, and 64 residues. The abstract does not address how results from these simplified models transfer to real proteins with side chains, secondary structure, and complex interactions.
+  - **Required correction** Either temper the title to reflect the lattice model scope or include a discussion in the abstract of how the results are expected to generalize to real proteins and what limitations remain.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Hierarchical folding claim
+  - **Evidence pointer** Abstract, "No hierarchical folding order is found"
+  - **Issue** The negative result regarding hierarchical folding order is stated without context. It is unclear what definition of hierarchical folding was tested, what evidence would have supported it, and how this finding relates to existing literature on folding pathways.
+  - **Required correction** Provide a brief definition of the hierarchical folding hypothesis being tested and specify the analysis that led to this conclusion. If space permits, mention how this relates to prior experimental or computational findings.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Mutual information claim
+  - **Evidence pointer** Abstract, "Mutual and conditional information show that stability is an approximately sufficient statistic for kinetic accessibility of compact 27-mers"
+  - **Issue** The term "approximately sufficient statistic" is used without defining the approximation or providing quantitative measures of sufficiency. It is unclear how this was assessed and what threshold was used.
+  - **Required correction** Define the criterion for approximate sufficiency and report the relevant quantitative measures that support this conclusion.
+
+## Risk / unsupported claims
+- The claim that foldability is an intrinsic property of protein sequences, generalized from lattice model simulations, is not supported by the abstract alone. The evidence base is limited to specific lattice systems, and the generalization to real proteins is asserted without argument.
+- The information-theoretic criterion for folding transitions (ℐtail > 𝑆c) and its connection to the random-energy model and minimal frustration is presented without derivation or numerical validation. This is a central theoretical claim that cannot be evaluated from the abstract.
+- The statement that ℐtail/𝑆c fixes the ratio of folding to glass temperatures is a quantitative prediction that requires explicit derivation and comparison to simulation results.
+- The VAE results, including the 91% kinetic information retention and the rediscovery of the native energy gap, are stated without methodological details or validation metrics. These claims are not assessable from the provided material.
+- The claim that no hierarchical folding order is found is a negative result that lacks context regarding the definition of hierarchical folding and the analysis performed.
+- The assertion that stability is an approximately sufficient statistic for kinetic accessibility is stated without quantitative support or a defined criterion for sufficiency.

@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full methods, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors propose that a conserved interaction hotspot (CPINKC) in the prefusion RSV F glycoprotein exhibits heterogeneous structural and energetic responses to mutation, and that integrating evolutionary conservation, energetic analysis, residue interaction networks, and molecular dynamics simulations provides complementary insight into mutation-induced adaptation.
+- **Visible evidence base** Abstract text only; no figures, tables, methods details, or statistical analyses provided
+- **Missing materials affecting confidence** Full methods, sequence alignment details, energetic calculation parameters, MD simulation setup and validation, structural figures, quantitative results, statistical analyses, and any comparison with experimental mutagenesis data
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually interesting question about the interplay between conservation, energetic tolerance, and dynamic adaptation at a protein interaction hotspot. The use of multiple computational approaches is commendable. However, the evidence as presented is insufficient to fully support the central claims. Key quantitative results, methodological details, and validation steps are absent, limiting the ability to assess technical soundness and the robustness of the conclusions. The claim that the three approaches provide "complementary information" is plausible but not rigorously demonstrated from the abstract alone.
+- **Who would be interested in the results, and why** Researchers in virology, particularly those studying respiratory syncytial virus entry and antibody neutralization; computational biophysicists interested in protein engineering, mutational scanning, and dynamic allostery; and structural biologists studying conserved interaction interfaces. The work may also inform therapeutic antibody design by clarifying mutation tolerance at a clinically relevant epitope.
+- **Major strengths** The study addresses a timely and important problem in protein science, namely how conserved interfaces respond to perturbation. The integration of multiple computational techniques is a strength, and the focus on a clinically relevant target (RSV F, MEDI8897 interface) enhances translational relevance. The reported simulation scale (10.5 microseconds total) is substantial for a comparative study.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "Saturation mutagenesis and structural analysis revealed pronounced heterogeneity in calculated energetic response to substitution."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states that saturation mutagenesis was performed, but no details are given on the method (e.g., computational alanine scanning, FoldX, Rosetta, or other), the number of substitutions, the scoring function, or the criteria for classifying "unfavorable" versus "neutral" energetic responses. Without this information, the reliability and interpretability of the energetic calculations cannot be assessed.
+  - **Why it matters** The central conclusion that energetic cost is heterogeneous across hotspot residues depends entirely on the validity of the energetic calculations. If the method is not benchmarked or if thresholds are arbitrary, the claim is not established.
+  - **Resolution test** Provide a detailed description of the energetic method, including validation against experimental data (e.g., known binding affinities or mutational studies), and report quantitative energetic values with error estimates for all substitutions.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "Aggregate MD sampling comprised three independent 500-ns simulations for each of seven systems, yielding 10.5 microseconds of total simulation time. All systems retained the overall prefusion architecture over the simulated timescale but exhibited distinct local and interprotomer responses."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract reports simulation time but provides no details on the force field, water model, temperature/pressure coupling, equilibration protocol, or convergence assessment. More critically, no quantitative metrics are given for "local perturbation," "hotspot flexibility," or "interprotomer contact occupancy." The claim that systems "retained the overall prefusion architecture" is vague without structural metrics such as RMSD or RMSF.
+  - **Why it matters** Molecular dynamics results are only meaningful if the simulations are well-converged and if the reported dynamic differences are statistically distinguishable from noise. Without these details, the comparative conclusions about N208R, P205R, and I206R are not verifiable.
+  - **Resolution test** Provide full simulation parameters, convergence analyses (e.g., block averaging, replicate consistency), and quantitative metrics with standard errors for flexibility and contact occupancy, along with statistical tests comparing mutants to wild type.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Support for conclusions
+  - **Claim pointer** "These findings indicate that energetic cost, residue interaction topology, and conformational dynamics provide complementary information for characterizing mutation-induced structural adaptation."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract asserts complementarity among the three approaches, but no integrative analysis is shown. For example, it is not demonstrated that residues with high energetic cost are distinct from those with high centrality or those with dynamic responses. The three observations (energetic penalty for P205R, topological centrality for I206, dynamic perturbation for N208R) are presented as separate findings without a formal framework linking them.
+  - **Why it matters** The stated conclusion is the main conceptual contribution of the work. If the integration is only qualitative or anecdotal, the claim of complementarity is overstated.
+  - **Resolution test** Provide a quantitative integrative analysis, such as a correlation matrix or multivariate model, showing how energetic, topological, and dynamic metrics relate across all hotspot residues and mutants.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The phrase "calculated energetic response" is used repeatedly but is not defined. It is unclear whether this refers to binding free energy changes, folding free energy changes, or another quantity.
+  - **Required correction** Define the energetic quantity explicitly and specify the reference state (e.g., wild type) and the context (e.g., monomer stability, dimer interface binding).
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Sequence analysis
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract mentions "1848 RSV F sequences" but does not specify the sequence identity threshold, the alignment method, or how conservation was quantified (e.g., Shannon entropy, ConSurf score).
+  - **Required correction** Provide details on the sequence dataset, alignment procedure, and conservation metric used to define the CPINKC hotspot as "strongly conserved."
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interpretability
+  - **Affected element** Residue interaction network analysis
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The claim that I206 has "the highest betweenness and closeness centrality" is presented without context. It is unclear whether this is statistically significant relative to other residues in the hotspot or the entire protein.
+  - **Required correction** Report centrality values for all hotspot residues and provide a statistical comparison or a null model to support the claim of topological centrality.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of methodological details for energetic calculations and MD simulations, and the lack of an integrative quantitative analysis, prevent the central claims from being evaluated.
+- **Assessment against Nature-style criteria** Originality: The question of how conserved hotspots accommodate mutation is not entirely new, but the specific focus on RSV F and the integration of three computational approaches offers a fresh angle. Scientific importance: The work has potential relevance for understanding antibody escape and for protein engineering, but the significance is not fully demonstrated without experimental validation. Interdisciplinary readership: The topic bridges virology and computational biophysics, which could appeal to a broad audience, but the abstract is too technical for nonspecialists without context. Technical soundness: Not assessable from the abstract alone; the lack of methodological detail is a major limitation. Readability for nonspecialists: The abstract is dense and assumes familiarity with computational methods; key terms are not explained.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual framework is promising, but the abstract does not provide sufficient methodological detail or quantitative support to validate the claims. I would be supportive if the full manuscript addresses the technical concerns and provides a rigorous integrative analysis.
+
+## Risk / unsupported claims
+- The claim that "saturation mutagenesis and structural analysis revealed pronounced heterogeneity" is unsupported because the method and quantitative results are not provided.
+- The claim that "all systems retained the overall prefusion architecture" is unsupported without structural metrics.
+- The claim that the three approaches provide "complementary information" is not demonstrated by any integrative analysis.
+- The assertion that I206 is "topologically central" is not supported by comparative or statistical evidence.
+- The relevance of the findings to the MEDI8897-binding interface is mentioned but not elaborated, leaving the translational significance unclear.

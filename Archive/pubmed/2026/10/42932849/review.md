@@ -1,0 +1,54 @@
+## Review setup
+- **Input scope** Correction notice only, comprising a short main text that identifies the original article and states a single authorship correction.
+- **Assessment boundary** Evaluation is limited to the supplied correction text. The original research article (Briefings in Bioinformatics, Volume 27, Issue 2, March 2026, bbag078) was not provided, so its methods, data, results, and conclusions cannot be assessed.
+- **Shared manuscript claim summary** The notice claims that in the originally published version of the article, Claudia Andreini was inadvertently not designated as a co-corresponding author, and that she has now been added as a co-corresponding author with the listed affiliations and email. It further states that the original article has been corrected online.
+- **Visible evidence base** The correction text itself, including the original article citation, the named individual, her affiliations, her email address, and the statement that the original article was corrected online. No figures, tables, supplementary files, or versioned documents are provided.
+- **Missing materials affecting confidence** The original article, the pre-correction and post-correction versions of the article front matter, the publisher's correction metadata, and any editorial record documenting the error and its resolution. These are absent, so the accuracy and completeness of the correction cannot be independently verified from the supplied material.
+
+## Reviewer
+- **Overall assessment** The supplied material is a brief correction notice concerning authorship designation. It is internally coherent and narrowly scoped. It does not present research claims, methods, or data for scientific evaluation. The only assessable content is whether the correction is clearly stated and adequately identifies the affected article and the change made. On that limited basis, the notice is clear and specific. However, because the original article and version records are not provided, the factual basis for the correction and the completeness of the remedy cannot be verified.
+- **Who would be interested in the results, and why** Readers interested in the original article on graph neural network prediction of zinc binding sites, and more specifically those tracking authorship attribution, corresponding-author designation, and research record integrity for that publication. The notice is also relevant to bibliographic and indexing services that must reconcile the corrected record.
+- **Major strengths** The notice precisely identifies the original article by authors, title, journal, volume, issue, date, article number, and DOI. It names the individual affected, states the nature of the omission, and provides her affiliations and contact email. It states that the original article has been corrected online, which gives a clear pointer to the remedy.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Verifiability of the correction
+    - **Claim pointer** The notice claims that Claudia Andreini was inadvertently not designated as a co-corresponding author and has now been added as a co-corresponding author.
+    - **Evidence pointer** Main Text, location not provided
+    - **Concern** The supplied material does not include the original article, the corrected article, or any version record showing the before and after state of the author byline and corresponding-author designations. The correction is therefore asserted but not demonstrable from the provided evidence.
+    - **Why it matters** A correction notice functions as the authoritative record of a change to the published literature. Without the pre-correction and post-correction records, readers and indexing services cannot confirm what changed, whether the change is complete, or whether other author designations were affected.
+    - **Resolution test** Provide the pre-correction and post-correction article front matter, or an equivalent versioned record, showing the corresponding-author designations before and after the correction.
+  - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Completeness of the correction
+    - **Claim pointer** The notice states that the original article has been corrected online.
+    - **Evidence pointer** Main Text, location not provided
+    - **Concern** The notice does not specify whether the correction is limited to the corresponding-author designation or whether related elements such as author contribution statements, correspondence footnotes, metadata, or indexing records were also updated. It also does not state whether a separate corrected version with its own citation is issued.
+    - **Why it matters** Partial corrections can leave the published record internally inconsistent, particularly where corresponding-author status affects correspondence routing and attribution.
+    - **Resolution test** State explicitly the full scope of the correction and confirm which elements of the article record were updated, with reference to the corrected version.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Clarity of notice structure
+    - **Affected element** Main Text
+    - **Evidence pointer** Main Text, location not provided
+    - **Issue** The notice does not carry an explicit heading or label identifying it as a correction notice within the body text, relying on the title for that function.
+    - **Required correction** Add an explicit statement in the body identifying the document type and the article to which it applies.
+  - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Bibliographic completeness
+    - **Affected element** Original article citation
+    - **Evidence pointer** Main Text, location not provided
+    - **Issue** The citation of the original article is complete and well formed, but the notice does not provide a DOI or citation for the correction notice itself within the body.
+    - **Required correction** Include the correction notice's own DOI or citation identifier in the body text.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2. The correction's factual basis and scope are not verifiable from the supplied material alone.
+- **Assessment against Nature-style criteria** Originality is not applicable, as this is a correction notice rather than a research report. Scientific importance is not applicable in the research sense, though record integrity is important to the community using the original article. Interdisciplinary readership is limited, since the notice concerns authorship attribution for a specialized computational biology article. Technical soundness cannot be evaluated because no methods, data, or analyses are presented. Readability for nonspecialists is adequate, as the notice is short and plainly worded, though it assumes familiarity with corresponding-author conventions.
+- **Recommendation posture** Currently not established from the provided evidence. The notice is clearly written, but the correction cannot be verified or confirmed as complete without the original and corrected article records.
+
+## Risk / unsupported claims
+- The claim that Claudia Andreini was inadvertently not designated as a co-corresponding author is asserted but not verifiable from the supplied material (unsupported by provided evidence).
+- The claim that the original article has been corrected online is asserted but not verifiable from the supplied material (unsupported by provided evidence).
+- The completeness of the correction, including whether all affected metadata and records were updated, is not assessable from the supplied material (not evaluable).
+- No research claims, data, or conclusions from the original article are present in the supplied material, so none can be assessed (not evaluable).

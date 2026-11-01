@@ -1,0 +1,226 @@
+{
+  "identity": {
+    "pmid": "42929504",
+    "doi": "10.1063/5.0350170",
+    "title": "Enhanced diffusion sampling: Efficient rare event sampling and free energy calculation with diffusion models."
+  },
+  "content": {
+    "abstract": "The rare-event sampling problem has long been the central limiting factor in molecular dynamics, especially in biomolecular simulation. Recently, diffusion models such as BioEmu have emerged as powerful equilibrium samplers that generate independent samples from complex molecular distributions, eliminating the cost of sampling rare transition events. However, a sampling problem remains when computing observables that rely on states which are rare in equilibrium, for example, folding free energies. Here, we introduce enhanced diffusion sampling, enabling efficient exploration of rare-event regions while preserving unbiased thermodynamic estimators. The key idea is to perform quantitatively accurate steering protocols to generate biased ensembles and subsequently recover equilibrium statistics via exact reweighting. We instantiate our framework in three algorithms: UmbrellaDiff (umbrella sampling with diffusion models), MetaDiff (a batchwise analog for metadynamics), and DeltaG-Diff (free-energy differences via tilted ensembles). We demonstrate the three methods on toy free-energy landscapes and apply DeltaG-Diff to protein folding free-energy calculations with BioEmu. Our methods reduce the cost of rare-state estimation, enabling protein folding free-energy calculations in minutes to hours of graphics processing unit time per system.",
+    "keywords": [],
+    "mesh_terms": [],
+    "pub_types": [
+      "Journal Article"
+    ]
+  },
+  "contributors": {
+    "medline": {
+      "full_names": [
+        "Xie, Yu",
+        "Winkler, Ludwig",
+        "Sun, Lixin",
+        "Lewis, Sarah",
+        "Foster, Adam E",
+        "Jimenez Luna, Jose",
+        "Hempel, Tim",
+        "Gastegger, Michael",
+        "Chen, Yaoyi",
+        "Zaporozhets, Iryna",
+        "Clementi, Cecilia",
+        "Bishop, Christopher M",
+        "Noe, Frank"
+      ],
+      "short_names": [
+        "Xie Y",
+        "Winkler L",
+        "Sun L",
+        "Lewis S",
+        "Foster AE",
+        "Jimenez Luna J",
+        "Hempel T",
+        "Gastegger M",
+        "Chen Y",
+        "Zaporozhets I",
+        "Clementi C",
+        "Bishop CM",
+        "Noe F"
+      ],
+      "auids": [
+        "ORCID: 0000-0002-0088-5123",
+        "ORCID: 0000-0002-7971-5222",
+        "ORCID: 0000-0002-0073-9353",
+        "ORCID: 0000-0001-9221-2358",
+        "ORCID: 0000-0003-4169-9324"
+      ],
+      "affiliations": [
+        "Microsoft Research AI for Science, Berlin, Germany.",
+        "Microsoft Research AI for Science, Berlin, Germany.",
+        "Microsoft Research AI for Science, Cambridge, United Kingdom.",
+        "Microsoft Research AI for Science, Cambridge, United Kingdom.",
+        "Microsoft Research AI for Science, Cambridge, United Kingdom.",
+        "Microsoft Research AI for Science, Cambridge, United Kingdom.",
+        "Microsoft Research AI for Science, Berlin, Germany.",
+        "Microsoft Research AI for Science, Berlin, Germany.",
+        "Microsoft Research AI for Science, Berlin, Germany.",
+        "Microsoft Research AI for Science, Berlin, Germany.",
+        "Department of Physics, Freie Universitat Berlin, Berlin, Germany.",
+        "Microsoft Research AI for Science, Cambridge, United Kingdom.",
+        "Microsoft Research AI for Science, Berlin, Germany."
+      ]
+    },
+    "xml": [
+      {
+        "full_name": "Xie, Yu",
+        "short_name": "Xie Y",
+        "identifiers": [
+          "0000-0002-0088-5123"
+        ],
+        "affiliations": [
+          "Microsoft Research AI for Science, Berlin, Germany."
+        ]
+      },
+      {
+        "full_name": "Winkler, Ludwig",
+        "short_name": "Winkler L",
+        "identifiers": [],
+        "affiliations": [
+          "Microsoft Research AI for Science, Berlin, Germany."
+        ]
+      },
+      {
+        "full_name": "Sun, Lixin",
+        "short_name": "Sun L",
+        "identifiers": [
+          "0000-0002-7971-5222"
+        ],
+        "affiliations": [
+          "Microsoft Research AI for Science, Cambridge, United Kingdom."
+        ]
+      },
+      {
+        "full_name": "Lewis, Sarah",
+        "short_name": "Lewis S",
+        "identifiers": [],
+        "affiliations": [
+          "Microsoft Research AI for Science, Cambridge, United Kingdom."
+        ]
+      },
+      {
+        "full_name": "Foster, Adam E",
+        "short_name": "Foster AE",
+        "identifiers": [],
+        "affiliations": [
+          "Microsoft Research AI for Science, Cambridge, United Kingdom."
+        ]
+      },
+      {
+        "full_name": "Jiménez Luna, José",
+        "short_name": "Jiménez Luna J",
+        "identifiers": [],
+        "affiliations": [
+          "Microsoft Research AI for Science, Cambridge, United Kingdom."
+        ]
+      },
+      {
+        "full_name": "Hempel, Tim",
+        "short_name": "Hempel T",
+        "identifiers": [
+          "0000-0002-0073-9353"
+        ],
+        "affiliations": [
+          "Microsoft Research AI for Science, Berlin, Germany."
+        ]
+      },
+      {
+        "full_name": "Gastegger, Michael",
+        "short_name": "Gastegger M",
+        "identifiers": [],
+        "affiliations": [
+          "Microsoft Research AI for Science, Berlin, Germany."
+        ]
+      },
+      {
+        "full_name": "Chen, Yaoyi",
+        "short_name": "Chen Y",
+        "identifiers": [],
+        "affiliations": [
+          "Microsoft Research AI for Science, Berlin, Germany."
+        ]
+      },
+      {
+        "full_name": "Zaporozhets, Iryna",
+        "short_name": "Zaporozhets I",
+        "identifiers": [],
+        "affiliations": [
+          "Microsoft Research AI for Science, Berlin, Germany."
+        ]
+      },
+      {
+        "full_name": "Clementi, Cecilia",
+        "short_name": "Clementi C",
+        "identifiers": [
+          "0000-0001-9221-2358"
+        ],
+        "affiliations": [
+          "Department of Physics, Freie Universität Berlin, Berlin, Germany."
+        ]
+      },
+      {
+        "full_name": "Bishop, Christopher M",
+        "short_name": "Bishop CM",
+        "identifiers": [],
+        "affiliations": [
+          "Microsoft Research AI for Science, Cambridge, United Kingdom."
+        ]
+      },
+      {
+        "full_name": "Noé, Frank",
+        "short_name": "Noé F",
+        "identifiers": [
+          "0000-0003-4169-9324"
+        ],
+        "affiliations": [
+          "Microsoft Research AI for Science, Berlin, Germany."
+        ]
+      }
+    ]
+  },
+  "source": {
+    "journal_title": [
+      "The Journal of chemical physics"
+    ],
+    "journal_abbrev": [
+      "J Chem Phys"
+    ],
+    "pub_date": "2026 Oct 28",
+    "pub_year": "2026",
+    "pub_types": [
+      "Journal Article"
+    ]
+  },
+  "metadata": {
+    "entrez_date": "2026/10/26 11:29",
+    "fetched_at": "2026-11-01 11:10:50"
+  },
+  "links": {
+    "cites": [],
+    "refs": [],
+    "similar": [
+      "42929504"
+    ],
+    "review": [
+      "42929504"
+    ],
+    "pmc": [],
+    "entrez": {},
+    "external": [
+      {
+        "url": "https://pubs.aip.org/aip/jcp/article-lookup/doi/10.1063/5.0350170",
+        "provider": "Silverchair Information Systems",
+        "category": "Full Text Sources",
+        "attribute": "subscription/membership/fee required",
+        "linkname": ""
+      }
+    ],
+    "text_mined": []
+  }
+}

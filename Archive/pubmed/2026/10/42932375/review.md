@@ -1,0 +1,91 @@
+## Review setup
+- **Input scope** Full manuscript text including abstract, introduction, results, discussion, materials and methods, and supporting information references.
+- **Assessment boundary** Scientific content, methodological rigor, internal consistency, and support of claims by presented evidence. Editorial or stylistic preferences are noted only where they affect comprehension.
+- **Shared manuscript claim summary** The authors propose that the A475V substitution in the SARS-CoV-2 RBD large loop (residues 475–490) attenuates ACE2 binding and viral fitness through hydrophobic remodeling and conformational reorganization, in contrast to the L455S substitution in JN.1 which primarily affects local receptor contacts. They further propose that the large loop is a structurally plastic yet functionally constrained element balancing receptor recognition, conformational stability, and antigenic diversification.
+- **Visible evidence base** Cryo-EM structures of JN.4 spike in complex with ACE2 (global 2.90 Å, local 3.73 Å), biolayer interferometry binding measurements, pseudovirus infectivity assays, cell-cell fusion assays, thermal shift assays, molecular dynamics simulations, and phylogenetic analyses.
+- **Missing materials affecting confidence** Raw cryo-EM maps and validation reports (half-map FSC curves, model vs map Q-scores) are not provided. Statistical details for binding measurements (number of replicates, error bars) are not fully specified. MD simulation convergence criteria and replicate information are not provided. Pseudovirus infectivity data are presented without numerical values or statistical comparisons in the text. Supporting figures (S1–S7) and tables (S1–S2) are referenced but not available for review.
+
+## Reviewer
+- **Overall assessment** This manuscript addresses a relevant question in SARS-CoV-2 evolution: how a hydrophobic substitution in a flexible RBD loop affects receptor engagement and viral fitness. The combination of structural, biophysical, and functional approaches is appropriate and potentially informative. However, the central claim that A475V attenuates viral fitness through a specific structural mechanism is only partially supported by the presented evidence. The structural analysis is descriptive and lacks quantitative validation of the proposed conformational differences. The functional data are presented without sufficient statistical detail, and the connection between reduced ACE2 affinity and viral fitness is inferred rather than directly demonstrated. The manuscript would benefit from clearer presentation of quantitative results and a more rigorous treatment of the structural comparisons.
+- **Who would be interested in the results, and why** Researchers studying SARS-CoV-2 evolution, spike protein structure-function relationships, and viral entry mechanisms. The work may also interest those investigating how structural flexibility in protein interfaces constrains or permits sequence diversification under immune pressure.
+- **Major strengths** The study combines multiple complementary approaches (cryo-EM, BLI, pseudovirus assays, MD simulations) to address a focused question. The comparison between JN.1 and JN.4 provides a natural experiment for dissecting region-specific effects of mutations. The identification of A475 and F486 as functionally constrained hydrophobic residues within a variable loop is a potentially useful conceptual contribution.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency for structural claims
+  - **Claim pointer** The authors claim that A475V induces "local remodeling of the receptor-binding motif" and "alters the RBD–ACE2 interaction geometry," and that this results in a "substantial reorganization of loop geometry" based on a distance change from 3.8 Å to 8.5 Å between residues 475 and 486.
+  - **Evidence pointer** Results section "Region-specific remodeling mechanisms at the RBD-ACE2 interfaces," Fig 2
+  - **Concern** The structural interpretation relies on a single cryo-EM structure of JN.4 at 3.73 Å local resolution. The claim of "substantial reorganization" is based on a single distance measurement between two residues, without statistical comparison across multiple structures or states. The RMSD values reported (1.1 Å and 1.058 Å against JN.1 and BA.2.86, respectively) suggest overall structural conservation, yet the authors emphasize local differences without providing quantitative measures of local conformational change (e.g., per-residue RMSF, dihedral angle changes, or interaction energy calculations). The proposed mechanism of steric hindrance from the bulkier valine side chain is plausible but not directly demonstrated.
+  - **Why it matters** The central mechanistic claim of the paper rests on the structural interpretation. If the conformational differences are within the noise of the cryo-EM maps at this resolution, the proposed mechanism is not established.
+  - **Resolution test** Provide quantitative comparison of local conformational differences (e.g., per-residue RMSD or RMSF between structures), map-to-model validation metrics (Q-scores) for the loop region, and ideally multiple independent reconstructions or focused classification to demonstrate that the observed loop conformation is stable and not an artifact of local resolution limitations.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Statistical rigor of functional data
+  - **Claim pointer** The authors claim that A475V causes a 3.5-fold reduction in ACE2-binding affinity compared with BA.2.86, and that various mutations cause 1.3- to 1.9-fold reductions in pseudovirus infectivity.
+  - **Evidence pointer** Results sections "Kinetic binding analysis" and "Infectivity and fusogenicity," Figs 4 and 5
+  - **Concern** The binding data are presented as KD values with standard deviations, but the number of independent replicates is not stated. The pseudovirus infectivity data are described in the text without numerical values, error bars, or statistical test results in the visible text. The statement that "all the mutations exhibited low infectivity compared to BA.2.86 (1.3- to 1.9-fold decrease; p < 0.001)" lacks specification of which statistical test was used and whether multiple comparisons were corrected for. The cell-cell fusion data are described qualitatively without quantitative metrics.
+  - **Why it matters** The conclusion that A475V attenuates viral fitness depends on the reliability and statistical significance of the functional measurements. Without proper statistical reporting, the reader cannot assess whether the observed differences are robust.
+  - **Resolution test** Provide complete statistical details: number of independent experiments, exact p-values, confidence intervals, and specification of statistical tests. Present pseudovirus infectivity and cell-cell fusion data as quantified values with error bars and statistical comparisons.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Logical connection between structural and functional observations
+  - **Claim pointer** The authors propose that A475V "attenuates ACE2 engagement and viral fitness" through "hydrophobic remodeling" and that this explains the limited epidemiological expansion of JN.4 compared to JN.1.
+  - **Evidence pointer** Abstract, Discussion
+  - **Concern** The manuscript does not directly demonstrate that the reduced ACE2 binding affinity of A475V translates to reduced viral fitness in a physiological context. The pseudovirus infectivity assay uses a single cell line (293T-ACE2) and does not account for other factors that influence viral fitness, such as immune evasion, replication kinetics, or stability in respiratory secretions. The connection between the in vitro measurements and the epidemiological observation that JN.4 exhibited limited expansion is speculative.
+  - **Why it matters** The title and abstract make a claim about viral fitness that is not directly tested. Overinterpretation of in vitro data as evidence of fitness differences in humans could mislead readers.
+  - **Resolution test** Either temper the claims about viral fitness to reflect the in vitro nature of the measurements, or provide additional evidence (e.g., competition assays, replication kinetics in relevant cell types, or animal models) that directly links A475V to reduced fitness.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Support for the "functionally constrained" conclusion
+  - **Claim pointer** The authors conclude that A475 and F486 are "functionally constrained hydrophobic residues" that "preserve the structural framework of ACE2 engagement despite extensive sequence variation within the surrounding loop."
+  - **Evidence pointer** Results section "Evolutionary conservation of hydrophobic anchors within the plastic large loop," Fig 3
+  - **Concern** The evidence for functional constraint is based on sequence comparisons and structural observations, but the manuscript does not include a systematic mutagenesis scan of the loop region that would demonstrate which residues are functionally constrained. The text mentions "systematic mutagenesis" in the abstract but the results section does not describe such an experiment in detail. The conclusion that A475 and F486 are uniquely constrained is not supported by comparative mutagenesis data.
+  - **Why it matters** The claim of functional constraint is a key conceptual contribution. Without direct experimental evidence (e.g., alanine scanning or saturation mutagenesis of the loop), the conclusion is speculative.
+  - **Resolution test** Provide the systematic mutagenesis data referenced in the abstract, or revise the conclusion to reflect that the constraint is inferred from sequence conservation and structural analysis rather than directly demonstrated.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity of methods
+  - **Affected element** Materials and methods, "Protein expression and purification"
+  - **Evidence pointer** Location not provided
+  - **Issue** The methods section describes cloning of "WT-S, XAB.1.5-S, and BA.2.86-S" but the text later refers to JN.1 and JN.4 constructs. The nomenclature is inconsistent and confusing.
+  - **Required correction** Clarify which constructs were used for which experiments and ensure consistent naming throughout.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness of figure legends
+  - **Affected element** Figs 4 and 5
+  - **Evidence pointer** Location not provided
+  - **Issue** Figure legends do not specify the number of replicates, error bar definitions, or statistical tests used.
+  - **Required correction** Add complete statistical information to figure legends.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Internal consistency
+  - **Affected element** Results section "Evolutionary conservation of hydrophobic anchors"
+  - **Evidence pointer** Location not provided
+  - **Issue** The text contains a duplicated paragraph: "Despite the lack of conserved hydrophobic residues within this region, hydrophobic substitutions occur recurrently, often leading to distinct structural shifts within the 475–490 loop. Within this region, residues 475, 483, 484, 486, and 490 show particularly frequent hydrophobic substitutions across circulating variants." This information is presented twice in consecutive paragraphs.
+  - **Required correction** Remove the redundant paragraph.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Methodological detail
+  - **Affected element** Materials and methods, "Molecular Dynamics"
+  - **Evidence pointer** Location not provided
+  - **Issue** The MD simulation section states that "the V475A structure was obtained from the A475V structure" but does not specify how the mutation was introduced or whether the system was equilibrated before the production run. The simulation time (300 ns) is stated but convergence is not demonstrated.
+  - **Required correction** Provide details on mutation introduction, equilibration protocol, and convergence assessment (e.g., RMSD plateau, block averaging).
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Referencing
+  - **Affected element** Introduction and Discussion
+  - **Evidence pointer** Location not provided
+  - **Issue** Several statements about epidemiological trends (e.g., JN.4 limited expansion) are made without citations to epidemiological data.
+  - **Required correction** Add appropriate references to support claims about viral spread and prevalence.
+
+## Risk / unsupported claims
+- The claim that A475V "attenuates viral fitness" is not directly supported by the presented data, which are limited to in vitro binding and pseudovirus infectivity assays in a single cell line.
+- The claim that A475 and F486 are "functionally constrained" is inferred from sequence conservation and structural analysis but is not directly tested by mutagenesis experiments, despite the abstract mentioning "systematic mutagenesis."
+- The proposed mechanism of steric hindrance from the A475V substitution altering loop conformation and reducing ACE2 binding is plausible but not quantitatively validated.
+- The epidemiological relevance of the findings (limited expansion of JN.4) is speculative and not supported by direct evidence in this manuscript.
+- The MD simulation results are described qualitatively; free energy calculations are mentioned but numerical values are not provided in the visible text.

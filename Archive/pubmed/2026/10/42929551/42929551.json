@@ -1,0 +1,164 @@
+{
+  "identity": {
+    "pmid": "42929551",
+    "doi": "10.1021/acs.jcim.6c02266",
+    "title": "CS-SelectFold: Chemical-Shift-Guided Selection of Protein Hidden Conformations from a Generative Protein Structure Model."
+  },
+  "content": {
+    "abstract": "Low-populated protein excited states can play decisive roles in function, ligand recognition, and misfolding, but their structural characterization remains difficult because these conformations are transient and sparsely populated. Here, we present CS-SelectFold, a framework that combines generative conformational sampling with NMR chemical-shift-guided post hoc selection to recover low-populated protein conformations without additional training or fine-tuning of its pretrained components. CS-SelectFold uses SimpleFold to sample diverse candidate structures from sequence, applies structural prescreening to enrich models that escape the dominant ground-state basin, predicts chemical shifts with UCBShift 2.0, and ranks candidates by agreement with experimentally determined excited-state chemical shifts. We benchmarked CS-SelectFold on two proteins with experimentally characterized low-populated states. For the T4 lysozyme L99A cavity mutant, a canonical excited-state system, the method recovered the defining excited-state-like local rearrangement around the engineered cavity, including inward placement of Phe114, consistent with the NMR/CS-Rosetta-derived excited-state model. A retrospective two-reference hotspot analysis using internal-distance RMSD (dRMSD) horizontal line the root-mean-square difference between corresponding pairwise distances within the hotspot rather than conventional coordinate RMSD after structural superposition horizontal line further showed that chemical-shift-based ranking enriched conformations that moved away from the ground-state basin and toward the experimentally defined excited-state basin. For the A39V/N53P/V55L Fyn SH3 domain, which populates an aggregation-prone hidden folding intermediate, CS-SelectFold recovered the key topological signature of the experimentally characterized intermediate: loss of the C-terminal beta-strand present in the native state, as confirmed by both three-dimensional structural comparison and secondary-structure analysis. These results provide proof-of-concept support for CS-SelectFold and suggest that the same sample-and-select principle may extend to broader low-populated hidden conformations, including folding intermediates.",
+    "keywords": [],
+    "mesh_terms": [
+      "Protein Conformation",
+      "*Models, Molecular",
+      "Nuclear Magnetic Resonance, Biomolecular",
+      "*Proteins/chemistry",
+      "*Muramidase/chemistry/genetics"
+    ],
+    "pub_types": [
+      "Journal Article"
+    ]
+  },
+  "contributors": {
+    "medline": {
+      "full_names": [
+        "Tang, Wanjia",
+        "Wang, Qianqian",
+        "Xiao, Xiongjie",
+        "Zhang, Xu",
+        "Jiang, Bin",
+        "Liu, Maili"
+      ],
+      "short_names": [
+        "Tang W",
+        "Wang Q",
+        "Xiao X",
+        "Zhang X",
+        "Jiang B",
+        "Liu M"
+      ],
+      "auids": [
+        "ORCID: 0009-0001-3850-6029",
+        "ORCID: 0009-0005-7323-0610",
+        "ORCID: 0000-0003-2481-946X"
+      ],
+      "affiliations": [
+        "Wuhan National Laboratory for Optoelectronics, Huazhong University of Science and Technology, State Key Laboratory of Magnetic Resonance Spectroscopy and Imaging, National Center for Magnetic Resonance in Wuhan, Wuhan Institute of Physics and Mathematics, Innovation Academy for Precision Measurement Science and Technology, Chinese Academy of Sciences, Wuhan430071, China.",
+        "Wuhan National Laboratory for Optoelectronics, Huazhong University of Science and Technology, State Key Laboratory of Magnetic Resonance Spectroscopy and Imaging, National Center for Magnetic Resonance in Wuhan, Wuhan Institute of Physics and Mathematics, Innovation Academy for Precision Measurement Science and Technology, Chinese Academy of Sciences, Wuhan430071, China.",
+        "Wuhan National Laboratory for Optoelectronics, Huazhong University of Science and Technology, State Key Laboratory of Magnetic Resonance Spectroscopy and Imaging, National Center for Magnetic Resonance in Wuhan, Wuhan Institute of Physics and Mathematics, Innovation Academy for Precision Measurement Science and Technology, Chinese Academy of Sciences, Wuhan430071, China.",
+        "University of Chinese Academy of Sciences, Beijing100049, China.",
+        "Wuhan National Laboratory for Optoelectronics, Huazhong University of Science and Technology, State Key Laboratory of Magnetic Resonance Spectroscopy and Imaging, National Center for Magnetic Resonance in Wuhan, Wuhan Institute of Physics and Mathematics, Innovation Academy for Precision Measurement Science and Technology, Chinese Academy of Sciences, Wuhan430071, China.",
+        "University of Chinese Academy of Sciences, Beijing100049, China.",
+        "Wuhan National Laboratory for Optoelectronics, Huazhong University of Science and Technology, State Key Laboratory of Magnetic Resonance Spectroscopy and Imaging, National Center for Magnetic Resonance in Wuhan, Wuhan Institute of Physics and Mathematics, Innovation Academy for Precision Measurement Science and Technology, Chinese Academy of Sciences, Wuhan430071, China.",
+        "University of Chinese Academy of Sciences, Beijing100049, China.",
+        "Wuhan National Laboratory for Optoelectronics, Huazhong University of Science and Technology, State Key Laboratory of Magnetic Resonance Spectroscopy and Imaging, National Center for Magnetic Resonance in Wuhan, Wuhan Institute of Physics and Mathematics, Innovation Academy for Precision Measurement Science and Technology, Chinese Academy of Sciences, Wuhan430071, China.",
+        "University of Chinese Academy of Sciences, Beijing100049, China."
+      ]
+    },
+    "xml": [
+      {
+        "full_name": "Tang, Wanjia",
+        "short_name": "Tang W",
+        "identifiers": [
+          "0009-0001-3850-6029"
+        ],
+        "affiliations": [
+          "Wuhan National Laboratory for Optoelectronics, Huazhong University of Science and Technology, State Key Laboratory of Magnetic Resonance Spectroscopy and Imaging, National Center for Magnetic Resonance in Wuhan, Wuhan Institute of Physics and Mathematics, Innovation Academy for Precision Measurement Science and Technology, Chinese Academy of Sciences, Wuhan430071, China."
+        ]
+      },
+      {
+        "full_name": "Wang, Qianqian",
+        "short_name": "Wang Q",
+        "identifiers": [],
+        "affiliations": [
+          "Wuhan National Laboratory for Optoelectronics, Huazhong University of Science and Technology, State Key Laboratory of Magnetic Resonance Spectroscopy and Imaging, National Center for Magnetic Resonance in Wuhan, Wuhan Institute of Physics and Mathematics, Innovation Academy for Precision Measurement Science and Technology, Chinese Academy of Sciences, Wuhan430071, China."
+        ]
+      },
+      {
+        "full_name": "Xiao, Xiongjie",
+        "short_name": "Xiao X",
+        "identifiers": [
+          "0009-0005-7323-0610"
+        ],
+        "affiliations": [
+          "Wuhan National Laboratory for Optoelectronics, Huazhong University of Science and Technology, State Key Laboratory of Magnetic Resonance Spectroscopy and Imaging, National Center for Magnetic Resonance in Wuhan, Wuhan Institute of Physics and Mathematics, Innovation Academy for Precision Measurement Science and Technology, Chinese Academy of Sciences, Wuhan430071, China.",
+          "University of Chinese Academy of Sciences, Beijing100049, China."
+        ]
+      },
+      {
+        "full_name": "Zhang, Xu",
+        "short_name": "Zhang X",
+        "identifiers": [
+          "0000-0003-2481-946X"
+        ],
+        "affiliations": [
+          "Wuhan National Laboratory for Optoelectronics, Huazhong University of Science and Technology, State Key Laboratory of Magnetic Resonance Spectroscopy and Imaging, National Center for Magnetic Resonance in Wuhan, Wuhan Institute of Physics and Mathematics, Innovation Academy for Precision Measurement Science and Technology, Chinese Academy of Sciences, Wuhan430071, China.",
+          "University of Chinese Academy of Sciences, Beijing100049, China."
+        ]
+      },
+      {
+        "full_name": "Jiang, Bin",
+        "short_name": "Jiang B",
+        "identifiers": [],
+        "affiliations": [
+          "Wuhan National Laboratory for Optoelectronics, Huazhong University of Science and Technology, State Key Laboratory of Magnetic Resonance Spectroscopy and Imaging, National Center for Magnetic Resonance in Wuhan, Wuhan Institute of Physics and Mathematics, Innovation Academy for Precision Measurement Science and Technology, Chinese Academy of Sciences, Wuhan430071, China.",
+          "University of Chinese Academy of Sciences, Beijing100049, China."
+        ]
+      },
+      {
+        "full_name": "Liu, Maili",
+        "short_name": "Liu M",
+        "identifiers": [],
+        "affiliations": [
+          "Wuhan National Laboratory for Optoelectronics, Huazhong University of Science and Technology, State Key Laboratory of Magnetic Resonance Spectroscopy and Imaging, National Center for Magnetic Resonance in Wuhan, Wuhan Institute of Physics and Mathematics, Innovation Academy for Precision Measurement Science and Technology, Chinese Academy of Sciences, Wuhan430071, China.",
+          "University of Chinese Academy of Sciences, Beijing100049, China."
+        ]
+      }
+    ]
+  },
+  "source": {
+    "journal_title": [
+      "Journal of chemical information and modeling"
+    ],
+    "journal_abbrev": [
+      "J Chem Inf Model"
+    ],
+    "pub_date": "2026 Oct 26",
+    "pub_year": "2026",
+    "pub_types": [
+      "Journal Article"
+    ]
+  },
+  "metadata": {
+    "entrez_date": "2026/10/26 11:29",
+    "fetched_at": "2026-11-01 11:10:50"
+  },
+  "links": {
+    "cites": [],
+    "refs": [],
+    "similar": [
+      "42929551"
+    ],
+    "review": [
+      "42929551"
+    ],
+    "pmc": [],
+    "entrez": {},
+    "external": [
+      {
+        "url": "https://assays.cancer.gov/CPTAC-1792",
+        "provider": "NCI CPTAC Assay Portal",
+        "category": "Miscellaneous",
+        "attribute": "free resource",
+        "linkname": ""
+      },
+      {
+        "url": "https://pubs.acs.org/jcisd8/article-lookup/doi/10.1021/acs.jcim.6c02266",
+        "provider": "Silverchair Information Systems",
+        "category": "Full Text Sources",
+        "attribute": "subscription/membership/fee required",
+        "linkname": ""
+      }
+    ],
+    "text_mined": []
+  }
+}
