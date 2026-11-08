@@ -1,0 +1,70 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no access to methods, figures, tables, or supplementary material
+- **Shared manuscript claim summary** The authors use molecular dynamics simulations to compare unbound and bound AICD, including YENPTY-motif mutants, and report that FE65 binding does not induce a full disorder-to-order transition but rather redistributes the conformational ensemble toward interaction-compatible substates, with localized interaction hotspots dominating the bound-state contact network.
+- **Visible evidence base** Abstract text only; no simulation details, force fields, sampling lengths, convergence metrics, or quantitative results are provided
+- **Missing materials affecting confidence** Full methods, simulation parameters, force field selection, system setup, convergence and validation analyses, all figures and tables, quantitative contact analyses, and any statistical error assessments
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible and potentially interesting mechanistic hypothesis for AICD recognition by FE65, consistent with emerging views of intrinsically disordered protein interactions. However, the current evidence base is insufficient to evaluate the technical soundness of the simulations or the robustness of the conclusions. The claims are qualitatively framed and lack quantitative support in the abstract. The work may be of interest to the disordered-protein and APP-signaling communities, but the case is not established from the supplied material.
+- **Who would be interested in the results, and why** Researchers studying intrinsically disordered proteins and their recognition mechanisms, particularly those focused on APP processing and FE65-mediated signaling. The broader claim about ensemble reweighting as a recognition strategy for disordered motifs would also interest computational biophysicists developing and applying enhanced sampling or ensemble-based methods.
+- **Major strengths** The hypothesis that FE65 recognition proceeds via ensemble reweighting rather than induced folding is timely and aligns with current literature on disordered protein interactions. The focus on residue-resolved contact hotspots and the inclusion of YENPTY mutants addresses both mechanistic and regulatory aspects. The framing is accessible to a broad biophysical audience.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims that molecular dynamics simulations reveal ensemble redistribution and localized interaction hotspots upon FE65 binding.
+  - **Evidence pointer** Methods and simulation details not provided
+  - **Concern** No information is given about the simulation methodology, including force field, water model, simulation length, number of replicas, temperature coupling, or whether enhanced sampling was used. For intrinsically disordered proteins, standard MD is often insufficient to achieve converged ensembles, and the absence of any convergence or validation metrics is a critical gap.
+  - **Why it matters** Without evidence of ensemble convergence and adequate sampling, the reported conformational distributions and contact networks may be artifacts of insufficient sampling. This directly affects the validity of the central mechanistic claim.
+  - **Resolution test** Provide simulation details, convergence analyses (e.g., block averaging, replica overlap), and validation against experimental data if available. Show that the unbound and bound ensembles are converged and that the observed differences are robust to simulation length and starting conditions.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence strength
+  - **Claim pointer** The abstract states that mutations within the YENPTY motif alter the balance between compact and extended conformations while preserving disorder.
+  - **Evidence pointer** Quantitative results not provided
+  - **Concern** No quantitative data are presented to support the claim that mutant ensembles differ from wild-type in their compactness or extension. Terms such as "alter the balance" are qualitative and cannot be assessed without numerical descriptors such as radius of gyration distributions, end-to-end distances, or contact probability maps.
+  - **Why it matters** The mutant comparison is a key part of the mechanistic argument, linking sequence perturbations to ensemble changes. Without quantitative support, the claim is not verifiable.
+  - **Resolution test** Provide quantitative ensemble descriptors for wild-type and mutant systems, with statistical comparisons and error estimates. Show that observed differences exceed sampling noise.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Reproducibility
+  - **Claim pointer** The abstract implies a general mechanism for disordered motif recognition via ensemble reweighting.
+  - **Evidence pointer** Methods not provided
+  - **Concern** The abstract does not specify how the bound-state simulations were constructed, including the starting structure of the AICD-FE65 complex, the treatment of the PTB domain, or whether the peptide was restrained or free. This limits reproducibility and the ability to judge whether the bound ensemble is biased by the initial configuration.
+  - **Why it matters** The bound-state ensemble is central to the conclusion. If the starting configuration or restraints bias the sampling, the observed redistribution may not reflect the true binding mechanism.
+  - **Resolution test** Describe the system construction in detail, including any restraints, equilibration protocol, and the number of independent simulations. Provide evidence that the bound ensemble is independent of starting conditions.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract, "partially organized AICD ensemble"
+  - **Issue** The phrase "partially organized" is vague and could be interpreted in multiple ways, such as transient secondary structure, persistent contacts, or a specific subpopulation.
+  - **Required correction** Define "partially organized" with reference to specific structural or dynamical descriptors, such as residual secondary structure propensity or persistent contact clusters.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, "localized interaction hotspots"
+  - **Issue** The abstract does not specify which residues constitute the hotspots beyond "aromatic and polar residues," which is too general to be informative.
+  - **Required correction** Name the specific residues or provide a residue-range reference in the abstract, or state that details are in the main text.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Context
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, "ensemble reweighting"
+  - **Issue** The term "reweighting" may imply a specific computational technique (e.g., reweighting from enhanced sampling). If this is not the method used, the term could mislead readers.
+  - **Required correction** Clarify whether "reweighting" refers to a computational procedure or is used descriptively to indicate a shift in ensemble populations.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The absence of simulation details and quantitative ensemble descriptors prevents any assessment of technical soundness or evidence strength. R1-M3, while not blocking, is important for reproducibility.
+- **Assessment against Nature-style criteria** Originality: the hypothesis is not entirely novel, as ensemble reweighting has been proposed for other disordered systems, but its application to AICD-FE65 may offer new insight. Scientific importance: moderate, as the findings would refine understanding of APP tail recognition but do not fundamentally challenge existing paradigms. Interdisciplinary readership: the abstract is written accessibly and could appeal to biophysicists, cell biologists, and computational chemists. Technical soundness: not assessable from the abstract alone. Readability for nonspecialists: the abstract is clear and avoids excessive jargon, though terms like "ensemble reweighting" may need definition.
+- **Recommendation posture** Currently not established from the provided evidence. The hypothesis is interesting and the work may be publishable after major revisions, but the abstract alone does not provide sufficient technical or quantitative support. A full manuscript with methods, convergence analyses, and quantitative results would be required to assess the claims.
+
+## Risk / unsupported claims
+- The claim that FE65 binding redistributes the AICD ensemble toward interaction-compatible substates is unsupported without quantitative ensemble comparisons.
+- The claim that YENPTY mutations alter compactness while preserving disorder is unsupported without numerical descriptors.
+- The claim that localized interaction hotspots dominate the bound-state contact network is unsupported without residue-resolved contact data.
+- The general mechanistic conclusion about disordered motif recognition via ensemble reweighting is not established from the abstract alone.

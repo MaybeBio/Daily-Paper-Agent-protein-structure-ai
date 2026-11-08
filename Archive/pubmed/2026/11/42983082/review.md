@@ -1,0 +1,86 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors present structRFM, a structure-guided RNA foundation model pre-trained on 21 million RNA sequence-structure pairs using a pair-matching operation integrated into masked language modelling. They also introduce MUSES, a multi-source ensemble of secondary structures, and a dynamic masking ratio. The model is claimed to achieve high performance in zero-shot homology classification, secondary-structure prediction, tertiary-structure adaptation via Zfold (comparable to AlphaFold3 on CASP15-natural, CASP16, and RNA-Puzzles), function-prediction tasks, and generalization to new RNA families and long non-coding RNAs. Data, weights, and code are stated to be openly available.
+- **Visible evidence base** Abstract text only; no quantitative results, benchmark tables, statistical analyses, or methodological details are provided
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, supplementary information, dataset descriptions, benchmark protocols, and code availability verification
+
+## Reviewer
+- **Overall assessment** The abstract describes a potentially significant contribution to RNA foundation modelling by incorporating structural information into pre-training. The claimed breadth of improvements across structural and functional tasks is notable. However, the abstract alone provides no quantitative evidence, no benchmark comparisons with error bars or significance tests, and no methodological detail sufficient to evaluate novelty or technical soundness. The claim of performance comparable to AlphaFold3 is particularly consequential and cannot be assessed without detailed comparison protocols and metrics. The case is currently not established from the provided evidence.
+- **Who would be interested in the results, and why** Computational biologists working on RNA structure prediction, machine learning researchers developing foundation models for biomolecular sequences, and experimental biologists who rely on accurate RNA structure and function annotations. The open release of data and weights would also interest method developers seeking to build on or benchmark against structRFM.
+- **Major strengths** The conceptual motivation is clear and well grounded, namely that RNA function depends on hierarchical structure and that existing pre-training approaches underuse structural information. The introduction of MUSES to mitigate predictor bias and a dynamic masking ratio addresses known limitations in structure-guided pre-training. The stated commitment to open data, weights, and code is commendable and aligns with reproducibility expectations. The breadth of downstream evaluations, from homology to tertiary structure, suggests a comprehensive benchmarking effort.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** "structRFM learns joint sequence and structure representations as sequence-level, nucleotide-level and pairwise features for broad downstream adaptation. It ranks highly in zero-shot homology classification and establishes new benchmarks for secondary-structure prediction."  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The abstract asserts high ranking and new benchmarks without reporting any quantitative results, such as accuracy metrics, comparison baselines, or dataset specifications. No effect sizes, confidence intervals, or statistical tests are mentioned.  
+  - **Why it matters** Without quantitative evidence, the reader cannot judge whether the improvements are meaningful or within noise. Benchmark claims in particular require explicit comparison against state-of-the-art methods on standardized datasets.  
+  - **Resolution test** Provide performance tables with metrics, baselines, and statistical significance for each claimed task in the full manuscript.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Claim substantiation  
+  - **Claim pointer** "Its tertiary-structure adaptation, Zfold, consistently improves both three-dimensional predictions and their extracted secondary structures, with performance comparable to AlphaFold3(1) across CASP15-natural, CASP16 and RNA-Puzzles."  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The comparison to AlphaFold3 is a strong and specific claim. The abstract provides no details on the evaluation metrics, the specific targets used, the version of AlphaFold3, or the statistical basis for "comparable." Consistency of improvement is asserted but not demonstrated.  
+  - **Why it matters** AlphaFold3 is a widely used and highly cited benchmark. A claim of comparable performance carries substantial weight and requires rigorous, reproducible comparison protocols. Without these, the claim is unverifiable and potentially misleading.  
+  - **Resolution test** Include detailed comparison tables with per-target metrics, aggregate statistics, and a clear description of the AlphaFold3 inference setup and version.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Methodological transparency  
+  - **Claim pointer** "integrating base-pairing interactions into masked language modelling through a pair-matching operation" and "a dynamic masking ratio that balances structure-guided and nucleotide-level masking"  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The abstract describes the core methodological innovations at a high level but provides no formal definition of the pair-matching operation, the dynamic masking schedule, or how MUSES combines multiple structure predictors. No training details, hyperparameters, or ablation results are mentioned.  
+  - **Why it matters** Reproducibility and assessment of novelty require a precise description of the architecture and training procedure. Without ablations, it is unclear which components contribute to the claimed performance.  
+  - **Resolution test** Provide a full methods section with algorithmic descriptions, training configurations, and ablation studies isolating the contributions of pair-matching, MUSES, and dynamic masking.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Generalizability evidence  
+  - **Claim pointer** "structRFM also improves performance on function-prediction tasks and generalizes to newly released RNA families and long non-coding RNAs."  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The claim of generalization to new RNA families and lncRNAs is stated without specifying which tasks, datasets, or evaluation protocols were used. The term "generalizes" is ambiguous and could refer to zero-shot performance, fine-tuning, or transfer learning.  
+  - **Why it matters** Generalization is a central selling point for foundation models. Without a clear definition and supporting data, the claim cannot be evaluated or compared with other models.  
+  - **Resolution test** Specify the generalization protocol, datasets, and metrics, and show comparisons with sequence-only baselines in the full manuscript.
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Abstract wording  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The phrase "ranks highly" is vague and does not convey the magnitude or context of the performance.  
+  - **Required correction** Replace with specific rank and score, or rephrase to state the exact metric and comparison set.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Reproducibility  
+  - **Affected element** Data and code availability statement  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The abstract states that data, weights, and code are openly available, but no repository names, accession numbers, or licensing terms are provided.  
+  - **Required correction** Include repository URLs or accession identifiers and a clear license statement in the full manuscript.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Completeness  
+  - **Affected element** Benchmark scope  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The abstract mentions CASP15-natural, CASP16, and RNA-Puzzles but does not specify whether the evaluation covers all targets or a subset, nor whether the same protocol was used across benchmarks.  
+  - **Required correction** Clarify the target selection and evaluation protocol for each benchmark in the methods.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of quantitative results, the unsubstantiated AlphaFold3 comparison, and the lack of methodological detail collectively prevent the core claims from being verified.
+- **Assessment against Nature-style criteria**  
+  - Originality: The idea of integrating base-pairing interactions into masked language modelling is plausible and potentially novel, but the abstract does not provide enough detail to distinguish it from prior structure-aware pre-training approaches. Assessment is currently limited.  
+  - Scientific importance: If the claims hold, the work could be important for RNA structure and function prediction. However, importance cannot be confirmed without evidence of substantial improvement over existing methods.  
+  - Interdisciplinary readership: The topic bridges machine learning and RNA biology, which is of broad interest. The abstract is written accessibly, but the lack of quantitative context reduces its impact for nonspecialists.  
+  - Technical soundness: Cannot be assessed from the abstract. The methodological descriptions are too high level, and no validation results are shown.  
+  - Readability for nonspecialists: The abstract is generally clear and avoids excessive jargon, though terms such as "pair-matching operation" and "dynamic masking ratio" are introduced without explanation.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a promising direction and a broad evaluation plan, but the absence of quantitative results, methodological detail, and a verifiable AlphaFold3 comparison means the core claims cannot be assessed. A full manuscript with rigorous benchmarking and ablations would be required to support the claims.
+
+## Risk / unsupported claims
+- The claim of "new benchmarks for secondary-structure prediction" is unsupported without quantitative comparisons.
+- The claim of performance "comparable to AlphaFold3" is unsupported without detailed comparison protocols and metrics.
+- The claim of "consistent improvement" in tertiary-structure adaptation is unsupported without per-target results.
+- The claim of generalization to new RNA families and lncRNAs is unsupported without task definitions and datasets.
+- The effectiveness of MUSES and the dynamic masking ratio is asserted but not demonstrated through ablations.
+- The open availability of data, weights, and code is stated but not verifiable from the abstract alone.

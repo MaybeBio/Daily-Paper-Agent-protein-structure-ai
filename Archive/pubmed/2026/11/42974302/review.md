@@ -1,0 +1,101 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, results, discussion, conclusions, methods, data availability)
+- **Assessment boundary** Scientific validity, methodological soundness, reproducibility, and claims as supported by the provided evidence
+- **Shared manuscript claim summary** The authors present LM2KM, a framework combining pretrained protein and molecular language model embeddings with quantum mechanics-derived descriptors to predict Michaelis constants (KM). They report that a configuration using 70 principal components from ProtT5 last-four-layer embeddings and 20 from MolFormer CLS embeddings, augmented with QM descriptors, achieves an R2 of 0.537, and that the model generalizes to unseen molecules and protein sequences.
+- **Visible evidence base** Main text figures (Fig. 1–9), tables (Table 1–3), supplementary figure and table references, dataset statistics, and methodological descriptions
+- **Missing materials affecting confidence** Actual figure images, supplementary figures S1–S2, supplementary tables, source code, dataset files, and detailed hyperparameter settings were not provided. The benchmark comparison against KmPred is described but the underlying data are not shown.
+
+## Reviewer
+- **Overall assessment** The manuscript addresses a relevant problem in enzyme kinetics prediction and proposes a reasonable integration of language model embeddings with QM descriptors. The systematic evaluation of multiple PLM/MLM combinations and feature dimensionalities is commendable. However, the reported performance (R2 ≈ 0.54) is modest, and the manuscript lacks critical details on model training, hyperparameter selection, and statistical rigor. The generalizability analysis is suggestive but incomplete. The benchmark comparison is described only qualitatively. The claims of practical utility and broad applicability are not fully supported by the evidence presented.
+- **Who would be interested in the results, and why** Researchers in enzyme kinetics, computational enzymology, and PBPK modeling would be interested. The framework's potential for substrate screening and enzyme engineering could attract those working in drug metabolism and protein design. The comparison of language model representations for a specific biophysical prediction task may interest the machine learning for chemistry and biology community.
+- **Major strengths** 1) Systematic evaluation of multiple pretrained language models and feature extraction strategies. 2) Inclusion of QM descriptors as complementary physics-based features is a thoughtful addition. 3) Sequence-level data curation avoiding EC number ambiguity is a methodological improvement. 4) Generalizability analysis toward unseen molecules and protein sequences addresses an important concern. 5) Code and data availability are stated.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that the identified feature configuration (70 ProtT5_last4 PCs + 20 MolFormer_cls PCs + QM) is "well-balanced and effective" and achieves R2 = 0.537.
+  - **Evidence pointer** Results section, Fig. 7, Table 2, Table 3
+  - **Concern** The manuscript does not report the variance or confidence intervals for the R2 values. The improvement from QM features is reported as statistically significant via paired t-tests, but the effect size is not quantified. The R2 of 0.537 is only marginally higher than the best model without QM (which is not explicitly stated). The practical significance of this improvement is unclear.
+  - **Why it matters** Without measures of variance or effect size, the reader cannot assess whether the reported performance is stable or whether the QM feature contribution is practically meaningful. The claim of "consistent improvement" requires quantitative support.
+  - **Resolution test** Provide confidence intervals or standard deviations for R2 across multiple train/test splits. Report the exact R2 values for models with and without QM features under identical conditions, and quantify the improvement (e.g., delta R2 with confidence intervals).
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility
+  - **Claim pointer** The claim that the model is reproducible and the framework is "flexible and extensible."
+  - **Evidence pointer** Methods section, Data availability
+  - **Concern** The methods lack critical details for reproduction: the exact architecture of the ensemble bagged trees (number of trees, max depth, etc.), the hyperparameter tuning procedure, the weighting scheme for the top and bottom 10% of data, and the specific random seeds used. The PCA implementation details (e.g., scaling before PCA) are not described. The QM feature calculation is described but the exact set of descriptors used in the model is not enumerated.
+  - **Why it matters** Reproducibility is a core requirement for computational studies. Without these details, independent verification is impossible, undermining the scientific value of the work.
+  - **Resolution test** Provide complete hyperparameter settings, the full list of QM descriptors used, the weighting scheme, and the random seeds. Consider releasing the trained model or a detailed configuration file.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scientific importance
+  - **Claim pointer** The claim that the model "retained predictive capability across a broad range of molecular structures and protein sequence identities."
+  - **Evidence pointer** Results section, Fig. 8
+  - **Concern** The generalizability analysis is based on a single train/test split. The analysis of sequence identity (Fig. 8C) is described as showing "no apparent correlation," but no statistical test is reported. The analysis of unseen molecules (Fig. 8A) is similarly qualitative. The manuscript does not report how many unseen molecules or proteins were in the test set, nor the distribution of sequence identities.
+  - **Why it matters** The claim of generalizability is central to the practical utility of the model. Without quantitative analysis, the claim is not established.
+  - **Resolution test** Report the number of unseen molecules and proteins in the test set. Perform a statistical test for the correlation between sequence identity and prediction error. Consider stratifying the analysis by sequence identity bins.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that the benchmark comparison against KmPred demonstrates competitive performance.
+  - **Evidence pointer** Discussion section
+  - **Concern** The benchmark comparison is described only in text. The actual results (R2 values, dataset size, train/test split) are not shown in a table or figure. The statement that the benchmark "should be regarded as a conservative estimate" is not supported by any data.
+  - **Why it matters** A fair comparison against existing methods is essential to position the contribution. Without showing the benchmark results, the claim of competitiveness is unverifiable.
+  - **Resolution test** Provide a table or figure showing the benchmark results, including the dataset size, train/test split, and R2 values for both KmPred and LM2KM.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract
+  - **Issue** The abstract states "the model R2 of 0.537" without specifying which model configuration this refers to. It is unclear whether this is the best model or the "well-balanced" model.
+  - **Required correction** Specify the exact configuration (e.g., "the model using 70 ProtT5_last4 PCs, 20 MolFormer_cls PCs, and QM descriptors achieved an R2 of 0.537").
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Results section, Fig. 7
+  - **Evidence pointer** Results section, Fig. 7
+  - **Issue** The description of Fig. 7 is brief. It is unclear what exactly is plotted (e.g., R2 vs. number of PCs? R2 for different feature sets?).
+  - **Required correction** Provide a more detailed description of Fig. 7 in the text, including the axes and what each line/bar represents.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Methods, QM feature section
+  - **Evidence pointer** Methods section
+  - **Issue** The equations for IP and EA are presented but not numbered. The text states "we calculated the following term according to the equations" but does not list all the derived descriptors (chemical potential, hardness, etc.) explicitly.
+  - **Required correction** Number the equations and explicitly list all QM descriptors used in the model.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Statistical rigor
+  - **Affected element** Results section, Table 2
+  - **Evidence pointer** Table 2
+  - **Issue** The paired t-test is mentioned, but the table does not show the test statistic or degrees of freedom. It is unclear how many comparisons were made and whether multiple testing correction was applied.
+  - **Required correction** Report the t-statistic, degrees of freedom, and p-values in Table 2. State whether multiple testing correction was applied.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Readability
+  - **Affected element** Introduction
+  - **Evidence pointer** Introduction
+  - **Issue** The introduction is dense and could benefit from a clearer statement of the specific gap being addressed and the novelty of the approach relative to prior work.
+  - **Required correction** Add a sentence explicitly stating what is new about this work compared to previous KM prediction studies.
+
+## Risk / unsupported claims
+- The claim that the model "retained predictive capability across a broad range of molecular structures and protein sequence identities" is not quantitatively supported.
+- The claim that the benchmark comparison demonstrates competitive performance is not supported by shown data.
+- The claim that QM descriptors "consistently improved prediction performance" is supported by the t-test but the effect size is not reported.
+- The claim that the framework is "flexible and extensible" is plausible but not demonstrated with examples of extension.
+- The claim that the model can "facilitate enzyme pathway identification, drug and lead screening, and sequence-based protein design" is speculative and not demonstrated.
+
+## Assessment against Nature-style criteria
+- **Originality** Moderate. The combination of language model embeddings with QM descriptors for KM prediction is a reasonable incremental contribution, but similar hybrid approaches have been explored for other enzyme kinetic parameters. The systematic comparison of multiple PLMs/MLMs is useful but not conceptually novel.
+- **Scientific importance** Moderate. KM prediction is relevant for drug metabolism and enzyme engineering, but the reported performance (R2 ≈ 0.54) is modest and may not represent a significant advance over existing methods. The practical utility is not clearly demonstrated.
+- **Interdisciplinary readership** Moderate. The work bridges machine learning, computational chemistry, and enzymology, which could attract readers from multiple fields. However, the technical depth may limit accessibility for non-specialists.
+- **Technical soundness** The core methodology is reasonable, but the lack of variance reporting, incomplete benchmark data, and missing reproducibility details undermine confidence. The statistical analysis is underpowered.
+- **Readability for nonspecialists** The manuscript is generally well-structured, but the results section is dense and some figures are not clearly described. The abstract is accessible, but the methods require domain expertise.
+
+## Recommendation posture
+Currently not established from the provided evidence. The manuscript addresses a relevant problem and the methodological approach is reasonable, but the reported performance is modest, the statistical rigor is insufficient, and key details for reproducibility and benchmarking are missing. The claims of generalizability and practical utility are not quantitatively supported. The manuscript would require substantial revision, including variance reporting, complete benchmark data, and full methodological details, before the case is established.

@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report a computational screening strategy combining structure prediction and molecular dynamics simulations to identify a novel carbohydrate-binding module, AmCBM116, from GH82 iota-carrageenases. They claim AmCBM116 binds kappa- and iota-carrageenan with high affinity (Ka values of 1.97 x 10^5 M^-1 and 1.82 x 10^6 M^-1, respectively), that key ligand-recognition residues were identified, and that AmCBM116 and homologues define a new CBM family, CBM116.
+- **Visible evidence base** Abstract text only; no experimental methods, binding assay details, computational parameters, sequence alignments, or structural data provided
+- **Missing materials affecting confidence** Full methods for computational screening and MD simulations; experimental binding assay protocols and replicates; sequence and structural data supporting the new family designation; phylogenetic or clustering analysis for CBM116; specificity data against other polysaccharides; statistical analysis of Ka values; any negative controls
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially useful computational pipeline for discovering polysaccharide-binding modules and reports a novel CBM with claimed high affinity for carrageenans. The concept is timely and the target application in food quality control is relevant. However, the abstract alone provides insufficient evidence to evaluate the robustness of the computational strategy, the reliability of the affinity measurements, or the validity of the new family assignment. Several core claims are currently not established from the supplied material.
+- **Who would be interested in the results, and why** Researchers in carbohydrate biochemistry, enzyme engineering, and food science, particularly those working on polysaccharide recognition tools, CBM discovery, and quality control of hydrocolloids used in food products. The computational screening framework may also interest method developers in protein-ligand interaction prediction.
+- **Major strengths** The study addresses a genuine gap in high-affinity carrageenan-specific CBMs. The integration of structure prediction and MD-based binding free energy calculations prior to experimental validation is a rational and potentially generalizable approach. The identification of a new CBM family adds taxonomic value to the field.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The computational screening strategy integrating structure prediction and MD simulations enables targeted high-affinity CBM discovery through binding free energy calculations prior to experimental validation.
+  - **Evidence pointer** Abstract, methods not provided
+  - **Concern** The abstract provides no details on the computational pipeline, including the training or selection criteria for candidate CBMs, the force field used, the length and convergence of MD simulations, or the method for calculating binding free energies (e.g., MM-PBSA, MM-GBSA, thermodynamic integration). Without these details, the reliability and generalizability of the screening strategy cannot be assessed.
+  - **Why it matters** The central methodological claim is that the computational approach successfully predicted high-affinity binders. If the computational parameters are not robust or the validation set is biased, the framework may not be reproducible or transferable to other polysaccharide systems.
+  - **Resolution test** Provide full computational methods, including benchmark validation against known CBMs, convergence criteria, and error estimates for binding free energy calculations. Demonstrate that the strategy would have identified known carrageenan-binding CBMs in a blind test.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence quality
+  - **Claim pointer** AmCBM116 specifically recognizes both kappa- and iota-carrageenan with high affinity, with association constants of 1.97 x 10^5 M^-1 and 1.82 x 10^6 M^-1, respectively.
+  - **Evidence pointer** Abstract, experimental section not provided
+  - **Concern** The Ka values are presented without experimental context. No assay method (e.g., isothermal titration calorimetry, surface plasmon resonance, affinity electrophoresis) is stated, nor are replicates, error bars, or statistical comparisons. The claim of specificity is unsupported because no data on binding to other polysaccharides (e.g., lambda-carrageenan, agarose, other sulfated polysaccharides) are mentioned.
+  - **Why it matters** High affinity and specificity are the core functional claims that justify the utility of AmCBM116 as a recognition tool. Without rigorous binding data and specificity controls, the practical value of the module is not established.
+  - **Resolution test** Provide full binding assay details, including replicates, standard deviations, and a specificity panel against relevant polysaccharide controls. Show that the Ka values are reproducible and that specificity is quantitatively demonstrated.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim validity
+  - **Claim pointer** AmCBM116 and its homologues reveal a novel CBM family, CBM116.
+  - **Evidence pointer** Abstract, sequence and phylogenetic data not provided
+  - **Concern** The designation of a new CBM family requires robust sequence-based classification, typically including multiple homologues with significant sequence identity, conserved fold features, and phylogenetic separation from existing families. The abstract provides no sequence identity thresholds, alignment data, or comparison with known CBM families.
+  - **Why it matters** Incorrect family assignment can propagate errors in databases and mislead future functional annotations. The novelty claim is a key contribution and must be rigorously supported.
+  - **Resolution test** Provide a phylogenetic tree with bootstrap support, sequence identity matrix against all known CBM families, and structural comparison if available. Confirm that the family assignment meets the criteria used by the CAZy database.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract, "high affinity" descriptor
+  - **Issue** The term "high affinity" is used for both kappa- and iota-carrageenan, but the Ka values differ by nearly an order of magnitude (1.97 x 10^5 vs 1.82 x 10^6 M^-1). The relative affinity is not discussed.
+  - **Required correction** Clarify whether both values are considered high affinity in context, and discuss the differential affinity in the abstract or results.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Abstract, key residues
+  - **Evidence pointer** Abstract, "Key residues involved in ligand recognition were identified"
+  - **Issue** The abstract states that key residues were identified but gives no indication of how they were determined (e.g., mutagenesis, computational prediction) or their functional validation.
+  - **Required correction** Specify the method of residue identification and whether the residues were experimentally validated, or state that this is a computational prediction.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Abstract, computational strategy
+  - **Evidence pointer** Abstract, "computationally driven screening strategy"
+  - **Issue** The abstract does not state whether the computational predictions were validated against a set of known non-binders or negative controls, which is essential for assessing false positive rates.
+  - **Required correction** Mention the inclusion of negative controls or benchmark datasets in the screening strategy.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (computational methodology not described), R1-M2 (binding data and specificity not substantiated), R1-M3 (new family assignment not supported)
+- **Assessment against Nature-style criteria** Originality: The computational screening approach for CBM discovery is a reasonable extension of existing methods, but the abstract does not demonstrate a fundamentally new concept. Scientific importance: High-affinity carrageenan-binding modules have practical relevance for food quality control, but the significance is moderate and application-oriented rather than broadly transformative. Interdisciplinary readership: The work may appeal to food scientists and carbohydrate biochemists, but the abstract does not frame the findings for a wider audience. Technical soundness: Not assessable from the abstract; the absence of methodological detail and experimental validation prevents evaluation. Readability for nonspecialists: The abstract is concise and understandable, though terms such as GH82 and CBM116 assume domain familiarity.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a plausible pipeline and a potentially useful new CBM, but the core claims regarding computational strategy effectiveness, binding affinity and specificity, and new family designation require full experimental and methodological details. Supportive if technical concerns are resolved in the full manuscript.
+
+## Risk / unsupported claims
+- The effectiveness of the computational screening strategy in predicting high-affinity binders is unsupported without methodological details and validation benchmarks.
+- The claimed high affinity of AmCBM116 for kappa- and iota-carrageenan is not assessable without assay data, replicates, and statistical analysis.
+- The specificity of AmCBM116 for carrageenans over other polysaccharides is unsubstantiated.
+- The designation of a new CBM family, CBM116, is not supported without sequence, phylogenetic, and structural evidence.
+- The identification of key ligand-recognition residues is not verifiable without details on the method of identification and any experimental validation.

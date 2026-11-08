@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Omics-scale decoding of protein N-glycosylation using protein language model embeddings · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">5</span>
+    <div>
+      <h1>Omics-scale decoding of protein N-glycosylation using protein language model embeddings</h1>
+      <div class="meta">Xiao Zhou; Xingyue Guan; Yao Zhou; Jie Wang; Zhiyu Peng; Weitong Ren; Wei Wang; Ran Xie; Wenfei Li</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-11-04
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.11.02.763593">原文</a>
+      </div>
+      <p class="one-liner">该文利用蛋白语言模型嵌入和共进化分析零样本预测N-糖基化位点，虽涉及蛋白序列特征和结构相关区域，但核心是翻译后修饰位点预测而非蛋白质结构计算建模，方法可迁移但对象和问题偏离本课题核心。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein language models (pLMs) learn rich sequence semantics from vast volume of protein sequences, yet the information encoded in their high-dimensional embeddings remains largely a black box, posing an interpretability challenge. Here we show that semantic features learned by pLMs can be decoded to reveal biologically meaningful signals using coevolutionary analysis without downstream supervised-training. Building on this insight, we developed MaskNGly, a zero-shot framework that identifies protein N‑glycosylation sites directly from PLM-embeddings while achieving performance comparable to state-of-the-art supervised predictors. MaskNGly is computationally efficient and intrinsically transferable, enabling omics-scale characterization of protein glycosylation landscape. Applied across proteomes, it reveals that canonical N-X-S/T motifs gain higher glycosylation propensities with increasing organismal complexity and that glycosylation preferentially occurs at structured, solvent‑exposed regions. Mutations altering high-scoring motifs are more frequently disease-associated. The framework also captures signatures of glycosylation‑mediated protein allostery. These results establish an interpretable and scalable route to study glycobiology from pLM-embeddings.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质语言模型（pLMs）从海量蛋白质序列中学习丰富的序列语义，但其高维嵌入中编码的信息在很大程度上仍是一个黑箱，构成了可解释性挑战。在此，我们展示了pLMs学习到的语义特征可以通过共进化分析解码，以揭示具有生物学意义的信号，而无需下游监督训练。基于这一洞见，我们开发了MaskNGly，一个零样本框架，直接从PLM嵌入中识别蛋白质N-糖基化位点，同时实现与最先进的监督预测器相当的性能。MaskNGly计算高效且本质可迁移，能够实现蛋白质糖基化景观的组学规模表征。应用于全蛋白质组时，它揭示了经典的N-X-S/T基序随着生物体复杂性的增加而获得更高的糖基化倾向，且糖基化优先发生在结构化、溶剂暴露区域。改变高评分基序的突变更常与疾病相关。该框架还捕捉了糖基化介导的蛋白质变构信号。这些结果建立了一条从pLM嵌入研究糖生物学的可解释且可扩展的途径。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Omics-scale decoding of protein N-glycosylation using protein language model embeddings</li>
+<li><strong>作者</strong>：Xiao Zhou; Xingyue Guan; Yao Zhou; Jie Wang; Zhiyu Peng; Weitong Ren; Wei Wang; Ran Xie; Wenfei Li</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026（预印本日期 2026-11-04）</li>
+<li><strong>论文类型</strong>：预印本（方法学 + 组学应用研究）</li>
+<li><strong>领域</strong>：蛋白质翻译后修饰（N-糖基化）预测 × 蛋白质语言模型（pLM）可解释性</li>
+<li><strong>关键词</strong>：protein language model (pLM)、N-glycosylation、zero-shot prediction、coevolutionary analysis、embeddings、interpretability、omics-scale</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.11.02.763593</li>
+<li><strong>代码</strong>：未提供（有配套网站 https://maskngly.com，但代码仓库未在摘要中说明）</li>
+<li><strong>数据</strong>：未提供（摘要中提及跨蛋白质组应用，但具体数据集未列出）</li>
+<li><strong>阅读日期</strong>：2026-11-05（按预印本日期推算）</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>翻译后修饰位点预测</strong>子方向，但核心创新在于<strong>不依赖监督训练</strong>，直接从 pLM embedding 中通过共进化分析解码生物学信号。与 AlphaFold 等结构预测任务不同，本文聚焦于<strong>序列-功能映射</strong>，且强调<strong>可解释性</strong>与<strong>零样本迁移</strong>，为 pLM 在蛋白质功能注释中的应用提供了新范式。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出 MaskNGly——一个零样本（zero-shot）框架，通过共进化分析直接解码蛋白质语言模型（pLM）embedding 中的语义特征来预测 N-糖基化位点，无需下游监督训练即可达到与有监督预测器相当的性能，并揭示了糖基化倾向性与生物复杂度、结构暴露度及疾病关联之间的规律。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：pLM 的高维 embedding 中编码的信息是否包含可解码的、生物学上有意义的信号（具体到 N-糖基化位点）？能否在不进行下游监督训练的情况下直接利用这些信号进行功能预测？</li>
+<li><strong>为什么重要</strong>：pLM 已在蛋白质结构预测、功能注释等任务中展现强大能力，但其 embedding 的"黑箱"特性限制了可解释性和科学发现能力。若能直接从 embedding 中解码生物学信号，将极大提升 pLM 的实用性和可解释性，并避免监督学习对标注数据的依赖。</li>
+<li><strong>现有方法为何不足</strong>：现有 pLM 下游应用几乎都依赖监督微调（supervised fine-tuning），需要大量标注数据，且预测结果缺乏可解释性；同时，有监督预测器在跨物种、跨组学迁移时泛化能力受限。</li>
+<li><strong>精确研究问题</strong>：Can coevolutionary analysis applied to pLM embeddings reveal N-glycosylation site signals with zero-shot predictive power comparable to supervised predictors?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文摘要及该领域公开知识构建，标注为「经外部核验」的部分来自领域常识，其余为「仅本文框架」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 序列基序预测</td>
+<td>NetNGlyc、ScanProsite 等基于序列模式（N-X-S/T）</td>
+<td>简单、快速</td>
+<td>高假阳性率，无法区分真实与潜在位点</td>
+<td>本文超越简单基序匹配</td>
+</tr>
+<tr>
+<td>2. 有监督机器学习</td>
+<td>基于序列特征（氨基酸组成、进化保守性）的 SVM/RF 分类器</td>
+<td>比基序方法更准确</td>
+<td>依赖手工特征工程，泛化有限</td>
+<td>本文无需特征工程</td>
+</tr>
+<tr>
+<td>3. 深度有监督预测</td>
+<td>DeepNGlyc、GlycoNet 等基于 CNN/LSTM/Transformer 的预测器</td>
+<td>性能高，自动学习特征</td>
+<td>需要大量标注数据，黑箱，跨物种迁移差</td>
+<td>本文达到可比性能但零样本</td>
+</tr>
+<tr>
+<td>4. pLM + 微调</td>
+<td>用 ESM、ProtBERT 等 pLM embedding 作为输入，微调分类头</td>
+<td>利用预训练语义</td>
+<td>仍需监督训练，可解释性差</td>
+<td>本文跳过微调，直接解码</td>
+</tr>
+<tr>
+<td>5. pLM + 无监督解码（本文）</td>
+<td>MaskNGly：共进化分析直接作用于 pLM embedding</td>
+<td>零样本、可解释、高效、可迁移</td>
+<td>仅验证于 N-糖基化，需验证其他 PTM</td>
+<td><strong>本文位置</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pLM embedding 不可解释</td>
+<td>高维向量无法直接映射到生物学功能</td>
+<td>pLM 通过自监督学习优化的是序列建模目标，而非特定功能目标；embedding 中信息以分布式方式编码</td>
+<td>Abstract: "information encoded in their high-dimensional embeddings remains largely a black box"</td>
+</tr>
+<tr>
+<td>有监督预测依赖标注数据</td>
+<td>N-糖基化位点标注数据有限，尤其对非模式物种</td>
+<td>实验验证糖基化位点成本高、覆盖不全</td>
+<td>Abstract: "without downstream supervised-training" 作为本文卖点</td>
+</tr>
+<tr>
+<td>有监督预测器跨物种泛化差</td>
+<td>在组学尺度（omics-scale）应用中性能下降</td>
+<td>训练数据偏向模式物种，序列分布偏移</td>
+<td>Abstract: "intrinsically transferable, enabling omics-scale characterization"</td>
+</tr>
+<tr>
+<td>糖基化位点预测精度不足</td>
+<td>简单基序（N-X-S/T）预测假阳性率高</td>
+<td>基序是必要非充分条件，真实糖基化受结构、溶剂暴露度等多因素调控</td>
+<td>Abstract: "canonical N-X-S/T motifs gain higher glycosylation propensities" 暗示基序本身不够</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>MaskNGly 框架：输入蛋白质序列 → 通过 pLM 获得 embedding → 对 embedding 进行共进化分析（coevolutionary analysis）→ 输出 N-糖基化位点预测分数。全程无监督，无下游分类头训练。</p>
+<h3>2) 核心洞察</h3>
+<p>pLM 在预训练过程中隐式编码了<strong>共进化信息</strong>——即序列中协同变异的位点对。这些共进化信号不仅反映结构约束（如 AlphaFold 利用共进化预测结构），也反映<strong>功能约束</strong>（如糖基化位点的保守性及其与周围残基的协同关系）。因此，直接对 embedding 进行共进化分析即可解码出与糖基化相关的功能信号，无需显式监督。</p>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li>pLM embedding 中编码的信息远超序列模式本身，包含<strong>隐式功能约束</strong>，可通过适当的"解码"策略（如共进化分析）直接提取。</li>
+<li><strong>零样本预测</strong>的可行性：对于标注数据稀缺的蛋白质功能任务，直接从 pLM 先验知识中解码可能优于有监督微调。</li>
+<li>共进化分析作为"通用解码器"的潜力：不仅适用于结构预测（AlphaFold 的 precedent），也适用于 PTM 预测。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质氨基酸序列（单条或多条，支持蛋白质组规模输入）</li>
+<li><strong>输出</strong>：每个潜在 N-糖基化位点（N-X-S/T 基序中的天冬酰胺残基）的糖基化倾向性分数/二分类预测</li>
+<li><strong>模块</strong>：
+  1. pLM embedding 生成模块（具体 pLM 型号未在摘要中说明）
+  2. 共进化分析模块（对 embedding 进行协变计算）
+  3. 位点评分模块（将共进化信号映射到 N-X-S/T 位点）</li>
+<li><strong>训练</strong>：无监督，无下游训练；pLM 本身为预训练模型</li>
+<li><strong>工具</strong>：pLM（具体型号未提供）、共进化分析算法（具体方法未提供）</li>
+<li><strong>反馈回路</strong>：不适用（无训练循环）</li>
+<li><strong>假设</strong>：</li>
+<li>pLM embedding 中编码的共进化信息包含糖基化相关功能约束</li>
+<li>糖基化位点的共进化模式与结构/功能约束相关，可通过统计方法捕捉</li>
+<li><strong>文字流程</strong>：
+  输入蛋白质序列 → 通过 pLM 前向传播获得每个残基的 embedding 向量 → 对 embedding 矩阵进行共进化/协变分析，识别协同变异的残基对 → 聚焦于 N-X-S/T 基序中的天冬酰胺残基，聚合其与周围残基的共进化信号 → 输出糖基化倾向性分数 → 阈值判定为糖基化位点或非糖基化位点。</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pLM embedding 生成</td>
+<td>将序列转换为高维向量表示</td>
+<td>提供丰富的序列语义信息</td>
+<td>输入：氨基酸序列；输出：残基级 embedding</td>
+<td>Abstract: "pLMs learn rich sequence semantics"</td>
+<td>移除后无 embedding 可用，框架失效（核心依赖）</td>
+</tr>
+<tr>
+<td>共进化分析</td>
+<td>从 embedding 中提取协同变异信号</td>
+<td>解码 embedding 中的功能约束</td>
+<td>输入：残基级 embedding 矩阵；输出：协变分数矩阵</td>
+<td>Abstract: "decoded to reveal biologically meaningful signals using coevolutionary analysis"</td>
+<td>移除后无法从 embedding 中提取信号，预测退化为随机（核心依赖）</td>
+</tr>
+<tr>
+<td>位点评分</td>
+<td>将共进化信号映射到 N-X-S/T 位点</td>
+<td>将全局共进化信息聚焦到具体候选位点</td>
+<td>输入：协变分数 + 序列基序位置；输出：位点糖基化分数</td>
+<td>Abstract: "identifies protein N-glycosylation sites directly from PLM-embeddings"</td>
+<td>移除后无法输出位点级预测（核心依赖）</td>
+</tr>
+<tr>
+<td>零样本决策阈值</td>
+<td>将连续分数转为二分类预测</td>
+<td>输出可操作的预测结果</td>
+<td>输入：位点分数；输出：糖基化/非糖基化</td>
+<td>Abstract: "zero-shot framework"</td>
+<td>阈值选择可能影响精度-召回权衡（预期影响，未提供消融）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：所有模块的消融效应均为「预期效应」，摘要中未提供模块级消融实验。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<blockquote>
+<p>摘要中未提供具体公式。以下为基于方法描述的合理推断，标注 [Analysis]。</p>
+</blockquote>
+<p><strong>不适用</strong>（摘要层面）。但可推断框架涉及以下概念性公式：</p>
+<ul>
+<li>共进化分数：$C_{ij} = f(\text{embedding}_i, \text{embedding}_j)$，其中 $i, j$ 为残基索引，$f$ 为协变度量（如互信息、协方差等）——具体形式未提供。</li>
+<li>位点分数：$S_{\text{site}} = g({C_{ij} : j \in \text{neighborhood}(i)})$，其中 $i$ 为天冬酰胺残基——具体聚合方式未提供。</li>
+</ul>
+<blockquote>
+<p>由于摘要未给出任何数学形式，本节严格标记为「不适用」，以上仅为概念性推断。</p>
+</blockquote>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<blockquote>
+<p>摘要中未提供详细的实验设计信息（数据集、规模、指标、基线等）。以下基于摘要可提取的信息：</p>
+</blockquote>
+<ul>
+<li><strong>数据集</strong>：未提供（提及"Applied across proteomes"，但具体物种/蛋白质组列表未给出）</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供（提及"performance comparable to state-of-the-art supervised predictors"，但具体指标如 AUC、F1 等未给出）</li>
+<li><strong>基线</strong>：state-of-the-art supervised predictors（具体模型未列出）</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>零样本糖基化位点预测</td>
+<td>pLM embedding 可直接解码糖基化信号</td>
+<td>对比 SOTA 有监督预测器</td>
+<td>"performance comparable to state-of-the-art supervised predictors"</td>
+<td>零样本预测可行且性能可比</td>
+<td>未提供具体数值，无法判断是否超越或仅接近</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>跨蛋白质组应用</td>
+<td>框架可迁移至组学尺度</td>
+<td>多物种蛋白质组</td>
+<td>"enabling omics-scale characterization"</td>
+<td>框架具有可扩展性</td>
+<td>未提供具体物种数、计算成本等</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>基序倾向性 vs 生物复杂度</td>
+<td>糖基化倾向性与生物复杂度相关</td>
+<td>不同复杂度物种的 N-X-S/T 基序</td>
+<td>"canonical N-X-S/T motifs gain higher glycosylation propensities with increasing organismal complexity"</td>
+<td>糖基化倾向性随复杂度增加</td>
+<td>未提供统计显著性、效应量</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>结构偏好分析</td>
+<td>糖基化偏好结构化、溶剂暴露区域</td>
+<td>结构注释 vs 糖基化位点</td>
+<td>"glycosylation preferentially occurs at structured, solvent-exposed regions"</td>
+<td>糖基化与结构特征相关</td>
+<td>未提供结构数据集、分析方法</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>疾病关联分析</td>
+<td>高评分基序突变与疾病相关</td>
+<td>突变数据库 vs 糖基化分数</td>
+<td>"Mutations altering high-scoring motifs are more frequently disease-associated"</td>
+<td>糖基化分数有疾病相关性</td>
+<td>未提供具体疾病类型、统计方法</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>变构信号捕获</td>
+<td>框架可捕获糖基化介导的变构信号</td>
+<td>变构蛋白案例</td>
+<td>"captures signatures of glycosylation-mediated protein allostery"</td>
+<td>框架可捕获变构信号</td>
+<td>未提供具体案例、验证方法</td>
+<td>Abstract</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅验证了 N-糖基化位点预测，未涉及其他 PTM 类型；结论不应外推至所有翻译后修饰。</li>
+<li><strong>零样本的含义</strong>：零样本指无下游监督训练，但 pLM 本身经过大规模无监督预训练，因此并非"无学习"，而是"无任务特定监督"。</li>
+<li><strong>性能可比性</strong>："comparable"不等于"超越"，具体差距未知；且未提供与每个 SOTA 方法的逐一对比。</li>
+<li><strong>组学尺度</strong>：摘要声称可组学尺度应用，但未提供计算资源需求、运行时间等实际可行性数据。</li>
+<li><strong>生物学发现</strong>：复杂度-倾向性关联、结构偏好、疾病关联均为相关性发现，未提供因果证据。</li>
+<li><strong>变构信号</strong>：摘要仅提及"captures signatures"，未说明验证方式，应视为初步观察而非确证。</li>
+<li><strong>可解释性</strong>：本文声称"decoded"，但解码的是共进化信号而非直接的生物学机制，解释深度有限。</li>
+<li><strong>有边界复述</strong>：本文证明了一种从 pLM embedding 中通过共进化分析零样本预测 N-糖基化位点的方法，在未提供具体数值的对比中达到与有监督方法相当的性能，并观察到若干与糖基化相关的生物学关联；但具体性能数值、数据集细节、统计显著性均未在摘要中披露。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<blockquote>
+<p>在提供的摘要材料中，作者未明确列出局限性。摘要末尾仅有 Competing Interest Statement 和 Funder Information，无 limitations 段落。</p>
+</blockquote>
+<p><strong>在提供的材料中未发现作者明确承认的局限。</strong></p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Comparable" 表述模糊</td>
+<td>可能仅在部分指标/数据集上接近，而非全面可比；可能选择性报告</td>
+<td>性能声明是本文核心卖点，模糊表述影响可信度</td>
+<td>要求提供完整对比表（各数据集、各指标、各基线）</td>
+<td>Abstract: "performance comparable to..."</td>
+</tr>
+<tr>
+<td>共进化分析的具体方法未披露</td>
+<td>不同共进化方法（MI、DCA、耦合分析等）结果差异大；pLM embedding 上的共进化计算方式不明确</td>
+<td>方法可复现性是预印本的基本要求</td>
+<td>检查全文 Methods 部分是否提供算法细节和超参数</td>
+<td>Abstract 仅提及 "coevolutionary analysis"</td>
+</tr>
+<tr>
+<td>生物学发现的因果性存疑</td>
+<td>复杂度-倾向性关联可能受物种采样偏差、N-X-S/T 基序频率差异等混淆因素影响</td>
+<td>若为相关性，不应过度解读为生物学规律</td>
+<td>控制基序频率、系统发育关系后重新分析</td>
+<td>Abstract: "gain higher glycosylation propensities with increasing organismal complexity"</td>
+</tr>
+<tr>
+<td>疾病关联分析的方向性</td>
+<td>高评分基序突变更频繁与疾病相关——可能是由于高评分基序本身更保守，突变更易致病，而非糖基化特异性</td>
+<td>需要区分糖基化特异性效应与一般保守性效应</td>
+<td>以非糖基化保守位点为对照</td>
+<td>Abstract: "Mutations altering high-scoring motifs are more frequently disease-associated"</td>
+</tr>
+<tr>
+<td>变构信号捕获缺乏验证</td>
+<td>"Signatures" 可能只是相关性模式，未证明功能因果性</td>
+<td>变构是动态过程，静态序列分析难以确证</td>
+<td>需要分子动力学模拟或实验验证</td>
+<td>Abstract: "captures signatures of glycosylation-mediated protein allostery"</td>
+</tr>
+<tr>
+<td>pLM 选择未说明</td>
+<td>不同 pLM（ESM、ProtBERT、ProtT5 等）的 embedding 特性差异大，结果可能依赖特定模型</td>
+<td>泛化性声明需要多模型验证</td>
+<td>在多个 pLM 上重复实验</td>
+<td>Abstract 未提及具体 pLM</td>
+</tr>
+<tr>
+<td>零样本 vs 隐式监督</td>
+<td>pLM 预训练语料中可能包含糖基化相关序列（如 UniProt 注释），存在"数据泄漏"可能</td>
+<td>若预训练语料已含糖基化注释，则"零样本"声明被削弱</td>
+<td>检查预训练语料是否包含糖基化位点注释</td>
+<td>Abstract: "without downstream supervised-training"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>pLM embedding 作为"可解码的生物学信号载体"</strong>：本文的核心可迁移思路是——pLM embedding 不仅可用于监督微调，还可通过无监督的统计方法（如共进化分析）直接解码功能信号。对于蛋白质结构相关计算研究，这意味着：
+   - 可尝试对 pLM embedding 进行共进化分析来辅助<strong>结构接触图预测</strong>（类似 AlphaFold 的共进化思路，但基于 embedding 而非 MSA）
+   - 可探索将 embedding 共进化信号用于<strong>构象采样中的约束生成</strong>，指导 MD 模拟的增强采样</p>
+</li>
+<li>
+<p><strong>零样本预测范式</strong>：对于标注数据稀缺的任务（如特定物种的 PTM 预测、罕见突变效应预测），零样本解码策略可能优于监督微调。可迁移到：
+   - <strong>蛋白质设计</strong>中的功能位点筛选（无需实验标注即可初步筛选候选残基）
+   - <strong>分子对接</strong>中的结合位点预筛选（从 embedding 共进化信号推断功能关键残基）</p>
+</li>
+<li>
+<p><strong>共进化分析作为"通用解码器"</strong>：共进化分析从 MSA 扩展到 pLM embedding 空间，这一思路可推广到：
+   - 从 embedding 中解码<strong>结构域边界</strong>、<strong>蛋白-蛋白相互作用界面</strong>等结构特征
+   - 将 embedding 共进化信号与 MD 模拟的自由能景观分析结合，识别功能相关构象</p>
+</li>
+<li>
+<p><strong>跨尺度生物学规律的发现路径</strong>：本文展示了从序列 embedding 直接跳到组学尺度生物学规律的路径（复杂度-倾向性关联、结构偏好）。类似思路可用于：
+   - 蛋白质结构预测中的<strong>构象多样性</strong>与物种复杂度的关联分析
+   - 蛋白质设计中的<strong>可设计性</strong>与进化保守性的跨物种分析</p>
+</li>
+<li>
+<p><strong>疾病关联的 embedding 信号</strong>：高评分基序突变与疾病关联的发现提示，pLM embedding 信号可能编码了<strong>功能重要性</strong>信息。可迁移到：
+   - 蛋白质结构预测中的<strong>突变效应预测</strong>（结合 AlphaFold 结构 + embedding 共进化信号）
+   - 构象采样中的<strong>致病突变优先采样</strong>策略</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold 的共进化先例</strong>：AlphaFold 利用 MSA 中的共进化信息预测结构接触，本文将其扩展到 pLM embedding 空间，是共进化分析应用场景的延伸。可连接至 Jumper et al. (2021) Nature 的 AlphaFold2 工作。</li>
+<li><strong>pLM 可解释性研究</strong>：已有工作尝试通过注意力分析、探针任务等解释 pLM embedding（如 Rives et al. 2021 的 ESM 工作），本文提供了一种新的解码路径（共进化分析）。</li>
+<li><strong>PTM 预测的监督方法</strong>：NetNGlyc (Gupta &amp; Brunak 2002)、DeepNGlyc (Li et al. 2020) 等有监督方法代表传统路径，本文的零样本方法与之形成对比。</li>
+<li><strong>蛋白质语言模型的零样本能力</strong>：ESM 系列已展示零样本突变效应预测能力（Meier et al. 2021），本文将其扩展到 PTM 预测，属于同一范式。</li>
+<li><strong>糖基化与结构生物学</strong>：糖基化对蛋白质折叠、稳定性和构象的影响已有大量实验研究，本文的"结构化、溶剂暴露区域偏好"发现与已知糖基化发生在 loop/表面区域的认知一致。</li>
+<li><strong>[Analysis] 候选连接</strong>：本文的 embedding 共进化解码思路与 MD 模拟中的<strong>协同运动分析</strong>（如动态互信息、相关性网络分析）有方法论上的类比——都是通过统计协变识别功能相关残基网络，可探索将两者结合。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<h3>候选 1：pLM embedding 共进化信号辅助的构象采样约束生成</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：本文证明 pLM embedding 共进化信号可解码功能位点；MD 模拟中功能位点常作为增强采样目标</li>
+<li><strong>核心假设</strong>：pLM embedding 共进化信号识别的功能关键残基可作为 MD 增强采样（如 GaMD、REMD）的偏好约束，提高采样效率</li>
+<li><strong>相对本文的增量</strong>：将静态的位点预测扩展到动态构象采样</li>
+<li><strong>初步方法</strong>：对目标蛋白计算 pLM embedding 共进化分数 → 识别高共进化残基簇 → 在 MD 模拟中施加偏置势促进这些残基的构象重排 → 比较采样效率与构象多样性</li>
+<li><strong>验证方式</strong>：在已知构象变化功能的蛋白（如激酶、GPCR）上测试，比较增强采样前后的构象空间覆盖</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 2：跨物种糖基化倾向性作为蛋白质可设计性指标</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：本文发现糖基化倾向性随生物复杂度增加；蛋白质设计常需考虑翻译后修饰对稳定性的影响</li>
+<li><strong>核心假设</strong>：pLM embedding 解码的糖基化倾向性可作为蛋白质设计中的可设计性/可表达性指标</li>
+<li><strong>相对本文的增量</strong>：将糖基化预测从"注释工具"转化为"设计准则"</li>
+<li><strong>初步方法</strong>：在蛋白质设计流程（如 RFdiffusion + ProteinMPNN）中，将糖基化倾向性分数作为筛选条件之一 → 比较设计序列的糖基化倾向性分布与天然蛋白的差异</li>
+<li><strong>验证方式</strong>：对设计蛋白进行实验表达和糖基化检测，或与已知糖基化蛋白数据库比对</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 3：embedding 共进化信号与 MD 协同运动网络的整合分析</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：本文的共进化解码与 MD 中的动态互信息分析在数学形式上有相似性，但尚未整合</li>
+<li><strong>核心假设</strong>：pLM embedding 共进化网络与 MD 模拟的动态相关性网络在功能关键残基上高度一致，可互为验证和补充</li>
+<li><strong>相对本文的增量</strong>：建立序列空间（embedding 共进化）与构象空间（MD 相关性）的统一分析框架</li>
+<li><strong>初步方法</strong>：对同一蛋白分别计算 embedding 共进化矩阵和 MD 动态互信息矩阵 → 比较网络拓扑相似性 → 识别两个网络中均高分的"共识功能残基" → 验证这些残基的突变效应</li>
+<li><strong>验证方式</strong>：在具有已知功能残基注释的蛋白家族上测试，比较共识残基与已知功能位点的重叠率</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 4：零样本 PTM 预测框架向其他修饰类型的扩展</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：本文仅验证了 N-糖基化；但 pLM embedding 共进化解码的逻辑应适用于其他 PTM（磷酸化、泛素化、乙酰化等）</li>
+<li><strong>核心假设</strong>：pLM embedding 共进化信号可泛化解码多种 PTM 位点，且零样本性能优于或接近有监督方法</li>
+<li><strong>相对本文的增量</strong>：验证方法的通用性，建立多 PTM 零样本预测平台</li>
+<li><strong>初步方法</strong>：对磷酸化、泛素化等 PTM 位点数据集重复 MaskNGly 流程 → 比较各 PTM 类型的零样本预测性能 → 分析不同 PTM 的共进化信号特征差异</li>
+<li><strong>验证方式</strong>：在标准 PTM 基准数据集（如 PhosphoSitePlus、dbPTM）上评估 AUC、F1</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 5：糖基化介导变构信号的 MD 验证</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：本文声称捕获了糖基化介导的变构信号，但未提供机制验证</li>
+<li><strong>核心假设</strong>：高糖基化倾向性位点的糖基化修饰可通过变构效应远程调控蛋白质功能构象</li>
+<li><strong>相对本文的增量</strong>：从序列预测走向动态机制解释</li>
+<li><strong>初步方法</strong>：选择本文识别的变构相关糖基化位点 → 对糖基化/非糖基化状态分别进行 MD 模拟 → 比较构象系综、自由能景观和变构路径差异</li>
+<li><strong>验证方式</strong>：计算糖基化前后构象转变的自由能差，与实验变构数据比对</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors claim that protein language model (pLM) embeddings can be decoded via coevolutionary analysis without supervised training to identify protein N-glycosylation sites, and that this zero-shot framework (MaskNGly) achieves performance comparable to state-of-the-art supervised predictors. They further claim that application across proteomes reveals biological insights including increased glycosylation propensity with organismal complexity, preferential glycosylation at structured and solvent-exposed regions, disease association of mutations in high-scoring motifs, and signatures of glycosylation-mediated allostery.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, methodological details, or validation data are provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, all figures and tables, supplementary material, benchmark datasets, and code availability details</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents an ambitious and potentially interesting claim: that pLM embeddings can be decoded in a zero-shot manner to predict N-glycosylation sites at omics scale. The biological findings described are intriguing and would be of interest to the glycobiology and computational biology communities. However, the abstract alone provides no quantitative evidence, no methodological detail, and no validation strategy. The core claims of performance comparability to supervised predictors and the biological insights cannot be assessed from the supplied material. The manuscript may have merit, but the case is not established from the evidence provided.</li>
+<li><strong>Who would be interested in the results, and why</strong> Glycobiologists interested in large-scale glycosylation prediction and its functional implications; computational biologists working on protein language model interpretability; researchers studying post-translational modification prediction; and those interested in the evolutionary and structural determinants of glycosylation.</li>
+<li><strong>Major strengths</strong> The conceptual framing is novel, proposing an interpretable and zero-shot use of pLM embeddings for glycosylation prediction. The claimed scalability to omics-scale analysis is practically valuable. The biological findings, if well-supported, would provide new insights into glycosylation determinants and disease associations.</li>
+<li><strong>Major Concerns</strong> </li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "MaskNGly, a zero-shot framework that identifies protein N-glycosylation sites directly from PLM-embeddings while achieving performance comparable to state-of-the-art supervised predictors"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The claim of performance comparable to state-of-the-art supervised predictors is made without any quantitative metrics, benchmark datasets, or comparison details. No AUC, precision, recall, F1, or other standard evaluation measures are reported. The choice of supervised baselines and the evaluation protocol are not described.</li>
+<li><strong>Why it matters</strong> This is the central technical claim of the manuscript. Without quantitative evidence, the reader cannot judge whether the zero-shot approach is genuinely competitive or whether the comparison is favorable due to dataset selection, threshold choices, or other factors. The claim as stated is unverifiable from the abstract.</li>
+<li><strong>Resolution test</strong> Provide benchmark results on standard glycosylation prediction datasets with clear metrics, comparison to multiple established supervised predictors, and statistical significance testing.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "semantic features learned by pLMs can be decoded to reveal biologically meaningful signals using coevolutionary analysis without downstream supervised-training"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The methodological basis for decoding pLM embeddings via coevolutionary analysis is not described. It is unclear how coevolutionary analysis is applied to embeddings, what specific signals are extracted, and how these signals map to glycosylation propensity. The mechanism by which this decoding works is a black box within the abstract.</li>
+<li><strong>Why it matters</strong> The interpretability claim is a key selling point of the manuscript. Without a clear description of the decoding methodology, the claim that the framework is interpretable cannot be evaluated. The novelty of the approach depends on this methodological contribution.</li>
+<li><strong>Resolution test</strong> Provide a detailed methods section describing the coevolutionary decoding procedure, including mathematical formulation, parameter choices, and a demonstration of what biological signals are recovered.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence quality</li>
+<li><strong>Claim pointer</strong> "it reveals that canonical N-X-S/T motifs gain higher glycosylation propensities with increasing organismal complexity and that glycosylation preferentially occurs at structured, solvent-exposed regions"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The biological findings are stated as established results, but no supporting data are shown. No statistics, effect sizes, or comparisons across species are provided. The claim about structured and solvent-exposed regions requires structural data or predictions that are not described.</li>
+<li><strong>Why it matters</strong> These findings are presented as major biological insights. If they are robust, they would be of significant interest. However, without quantitative support, they remain assertions. The relationship between organismal complexity and glycosylation propensity is a strong claim that requires careful phylogenetic analysis and confounding control.</li>
+<li><strong>Resolution test</strong> Provide figures with statistical analyses for the cross-species comparison, including species counts, statistical tests, and effect sizes. For the structural claim, provide structural data or predictions with appropriate validation.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence quality</li>
+<li><strong>Claim pointer</strong> "Mutations altering high-scoring motifs are more frequently disease-associated" and "The framework also captures signatures of glycosylation-mediated protein allostery"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> These two claims are presented without any supporting evidence. The disease association claim requires a clear definition of the comparison group, statistical framework, and control for confounding factors. The allostery claim is particularly strong and would require dedicated experimental or computational validation.</li>
+<li><strong>Why it matters</strong> These claims extend the framework beyond prediction into functional inference. If supported, they would substantially increase the impact of the work. As presented, they are unsupported assertions that cannot be evaluated.</li>
+<li><strong>Resolution test</strong> Provide detailed statistical analyses for the disease association claim, including cohort definitions and controls. For the allostery claim, provide case studies with structural or experimental evidence.</li>
+<li><strong>Minor Comments</strong> </li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract uses the term "coevolutionary analysis" without explaining how this applies to pLM embeddings. This is a non-standard usage that may confuse readers.</li>
+<li><strong>Required correction</strong> Clarify the meaning of coevolutionary analysis in this context, or use a more precise term.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract mentions a website (https://maskngly.com) but does not state whether code and data are available for reproducibility.</li>
+<li><strong>Required correction</strong> State explicitly whether code, models, and datasets are publicly available and under what license.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The phrase "Omics-scale characterization" is used but the scale of the analysis is not quantified. It is unclear how many proteomes or species were analyzed.</li>
+<li><strong>Required correction</strong> Provide the number of proteomes analyzed and the taxonomic range covered.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3, R1-M4. The abstract does not provide sufficient quantitative or methodological evidence to support any of the four major claims. The manuscript must be reviewed in full to assess whether these concerns are addressed.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The concept of zero-shot glycosylation prediction from pLM embeddings is original and potentially novel. However, the abstract does not clearly differentiate this approach from existing pLM-based prediction methods that may also avoid task-specific fine-tuning.</li>
+<li>Scientific importance: Glycosylation is a major post-translational modification with broad biological relevance. Large-scale prediction tools are valuable. The biological findings, if validated, would be important. The importance is potentially high but not established from the abstract.</li>
+<li>Interdisciplinary readership: The work bridges computational biology, glycobiology, and evolutionary biology. The abstract is written in a way that is accessible to a broad audience, though some terms may require clarification.</li>
+<li>Technical soundness: Cannot be assessed from the abstract. No methodological detail or quantitative validation is provided.</li>
+<li>Readability for nonspecialists: The abstract is generally readable, but the methodological claims are vague and would benefit from more precise language.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract presents interesting claims but provides no quantitative or methodological support. A full manuscript review is required to determine whether the technical and biological claims are substantiated. The recommendation is conditional on the full manuscript addressing the major concerns listed above.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of performance comparable to state-of-the-art supervised predictors is unsupported by any quantitative data.</li>
+<li>The claim that coevolutionary analysis of pLM embeddings reveals biological signals is methodologically undefined and unsupported.</li>
+<li>The biological findings regarding organismal complexity, structural preferences, disease association, and allostery are unsupported by any data.</li>
+<li>The claim of omics-scale applicability is unquantified.</li>
+<li>The interpretability claim is not substantiated without a description of the decoding mechanism.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

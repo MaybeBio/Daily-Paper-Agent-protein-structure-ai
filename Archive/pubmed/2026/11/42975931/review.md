@@ -1,0 +1,79 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors use extensive molecular dynamics simulations of the Trp-cage miniprotein to characterize the effects of vitrification during cryo-EM sample preparation on biomolecular conformational ensembles. They report that water vitrification is unaffected by the protein, that Markov State Model states with slow kinetics are more robust to cooling artifacts, that some equilibrium states at 230 K vanish in equilibrium but not in nonequilibrium cooled ensembles, and that a thermodynamic inference framework can recover equilibrium populations from vitrified ensembles. They conclude that cryo-EM can be accurate for studying biomolecular ensembles.
+- **Visible evidence base** Abstract text only; no figures, tables, methods details, or simulation parameters provided
+- **Missing materials affecting confidence** Full manuscript, simulation protocols, force field parameters, MSM construction details, convergence criteria, error estimates, validation of the thermodynamic inference framework, and all quantitative results
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially important investigation into a fundamental question in cryo-EM, namely whether vitrification perturbs biomolecular ensembles. The computational approach is ambitious, with over 50 ms of total simulation time and seven cooling rates spanning three orders of magnitude. However, the abstract alone provides insufficient detail to evaluate the technical soundness of the methods or the robustness of the conclusions. The central claims, particularly the recovery of equilibrium populations via thermodynamic inference and the assertion that cryo-EM can be accurate for ensemble studies, require substantial supporting evidence that is not visible in the abstract. The work is likely of interest to the structural biology and computational biophysics communities, but the case is not fully established from the provided material.
+- **Who would be interested in the results, and why** Structural biologists using cryo-EM to study conformational ensembles, computational biophysicists developing methods for nonequilibrium systems, and researchers interested in the physical chemistry of vitrification. The results could inform experimental design and data interpretation in cryo-EM, and the thermodynamic inference framework may have broader applicability.
+- **Major strengths** The study addresses a timely and important question with direct relevance to a widely used experimental technique. The simulation scale is substantial, and the inclusion of cooling rates matching experimental conditions is a notable strength. The development of a thermodynamic inference framework is a potentially valuable methodological contribution.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that a thermodynamic inference framework can recover equilibrium populations from vitrified ensembles.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract states that a thermodynamic inference framework was developed but provides no description of its theoretical basis, assumptions, or validation. It is unclear how the framework accounts for the nonequilibrium nature of vitrification, what inputs it requires, and how its accuracy was assessed.
+  - **Why it matters** This is a central claim of the paper. Without details on the framework's derivation and validation, the claim that equilibrium populations can be recovered from vitrified ensembles is not substantiated. If the framework is not rigorously tested, the conclusion that cryo-EM can be accurate for ensemble studies is unsupported.
+  - **Resolution test** The full manuscript must provide a complete derivation of the thermodynamic inference framework, specify its assumptions and limitations, and demonstrate its accuracy on test systems with known equilibrium populations, including error analysis.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that MSM states with a characteristic time longer than the duration of the nonequilibrium cooling tend to be more robust to artifacts induced by such cooling.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The relationship between state characteristic times and robustness to cooling artifacts is stated qualitatively. No quantitative definition of "robust" is given, and no statistical measures of uncertainty are provided. It is unclear how the characteristic times were estimated and whether the observed trend is statistically significant.
+  - **Why it matters** This claim underpins the physical interpretation of which conformational states are preserved during vitrification. Without quantitative support, the claim is anecdotal and cannot be evaluated.
+  - **Resolution test** The full manuscript must provide a clear definition of robustness, statistical tests comparing state survival across cooling rates, and uncertainty estimates for characteristic times.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that some states vanish in the equilibrium ensemble at 230 K but none do in the nonequilibrium cooled ensembles.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** This observation is presented without quantitative detail. It is unclear how many states were identified, how "vanish" was defined, and whether the difference between equilibrium and nonequilibrium ensembles is statistically significant given the finite sampling.
+  - **Why it matters** This is a key empirical observation that motivates the need for the thermodynamic inference framework. If the observation is not robust, the framework's necessity is weakened.
+  - **Resolution test** The full manuscript must provide the number of states, the criteria for state disappearance, and statistical significance tests comparing equilibrium and nonequilibrium populations.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility
+  - **Claim pointer** The authors claim to have carried out extensive molecular dynamics simulations of Trp-cage at equilibrium and undergoing rapid cooling, with seven cooling rates spanning three orders of magnitude.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** No simulation details are provided, including force field, water model, system size, simulation box, temperature and pressure control methods, or the specific cooling rates used. The total simulation time of over 50 ms is stated, but the distribution of this time across conditions is unclear.
+  - **Why it matters** Reproducibility is a fundamental requirement for computational studies. Without these details, the simulations cannot be replicated or independently verified.
+  - **Resolution test** The full manuscript must provide complete simulation protocols, including software, force field parameters, and analysis scripts, ideally as supplementary material.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The phrase "a powerful class of techniques" is vague and could be more specific about what distinguishes cryo-EM from other structural biology methods.
+  - **Required correction** Consider revising to specify the unique capabilities of cryo-EM, such as its ability to capture multiple conformations without crystallization.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract, statement on water vitrification
+  - **Issue** The claim that "water vitrification is unaltered by the protein" is stated without context on how this was determined or why it is significant.
+  - **Required correction** Provide a brief explanation of the metric used to assess vitrification and why the absence of protein effects is notable.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, final sentence
+  - **Issue** The conclusion that "cryo-EM has the capacity to be an accurate technique for the study of biomolecular ensembles" is broad and may overstate the implications given that only one miniprotein was studied.
+  - **Required correction** Qualify the conclusion to reflect the scope of the study, such as "for small proteins under the conditions tested."
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4
+- **Assessment against Nature-style criteria** Originality: The question of vitrification effects on biomolecular ensembles is important and the computational approach is novel in its scale and scope. Scientific importance: High, as the results could influence how cryo-EM data are interpreted. Interdisciplinary readership: The work bridges structural biology, physical chemistry, and computational biophysics, which is well suited to a broad audience. Technical soundness: Cannot be assessed from the abstract alone; the lack of methodological detail is a significant limitation. Readability for nonspecialists: The abstract is generally accessible, but some terms such as "Markov State Model" and "thermodynamic inference framework" are introduced without explanation.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a promising study, but the central claims require substantial additional detail and validation that are not visible in the abstract. A supportive recommendation would be contingent on the full manuscript addressing the technical concerns raised.
+
+## Risk / unsupported claims
+- The claim that a thermodynamic inference framework can recover equilibrium populations from vitrified ensembles is unsupported without derivation and validation details.
+- The claim that MSM states with longer characteristic times are more robust to cooling artifacts is unsupported without quantitative definitions and statistical tests.
+- The observation that some states vanish in equilibrium at 230 K but not in nonequilibrium cooled ensembles is unsupported without quantitative criteria and significance testing.
+- The conclusion that cryo-EM can be accurate for studying biomolecular ensembles is an overgeneralization from a single miniprotein system and is not fully supported by the abstract.

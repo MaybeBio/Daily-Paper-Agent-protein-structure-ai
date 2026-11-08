@@ -1,0 +1,775 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phyfold: environment aware mathematical modeling for protein folding dynamics integrated with physics informed neural network. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Phyfold: environment aware mathematical modeling for protein folding dynamics integrated with physics informed neural network.</h1>
+      <div class="meta">Ul Rahman, Jamshaid; Noureen, Iqra; Mannan, Abdul; Uwitije, Rongin</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of cheminformatics</span>
+        · 2026-11-06
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42989395/">原文</a>
+      </div>
+      <p class="one-liner">该文提出PhyFold，将反应扩散方程与物理信息神经网络及ProtT5序列嵌入结合，实现环境依赖的蛋白质折叠动力学建模，是对静态结构预测向动态物理一致模拟的扩展，与蛋白质结构计算课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein folding remains a fundamental problem in computational biology, where understanding folding trajectories and dynamic behavior under physiological conditions is critical for linking structure to function. Recent advances such as AlphaFold have revolutionized sequence to structure prediction, establishing a powerful and robust foundation for computational protein modeling. Building upon this success, we introduce a novel physics informed computational framework that expands static structure prediction toward dynamic and physically consistent modeling of protein folding processes. The proposed framework unifies a mathematically grounded reaction diffusion model of folding kinetics with deep sequence embeddings through a physics informed neural network (PINN), ensuring consistency with governing physical laws while remaining biologically grounded. We refer to this unified framework as PhyFold. Our results illustrate that the proposed approach effectively captures environment dependent folding dynamics and shows strong agreement with both numerical reference solutions and experimental fluorescence measurements under physiologically relevant conditions. By explicitly integrating environmental factors such as temperature, pressure, and pH, PhyFold enables realistic, physics aware simulation of protein folding dynamics. This approach offers a natural extension of modern structure prediction methods and opens new directions for protein design, structure guided drug discovery, and personalized medicine. The code to reproduce the work is available at https://github.com/jamshaidwarraich/PhyFold.git .Scientific contributionPhyFold introduces a hybrid Bio-Physics Informed Neural Network framework that models protein folding kinetics as a reaction diffusion partial differential equation with environmentally modulated kinetic coefficients, integrated with ProtT5 sequence embeddings for sequence specific spatiotemporal prediction an approach not previously demonstrated in the literature. Unlike purely data driven or static structure prediction methods, PhyFold explicitly encodes temperature, pH, and pressure dependence into governing kinetic coefficients, enabling physically interpretable simulation of cooperative folding transitions across diverse physiological conditions. Dual validation against finite difference reference solutions and experimental GFP fluorescence measurements confirms mathematical consistency and biological relevance, establishing PhyFold as a computationally efficient surrogate for environment aware protein folding dynamics.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质折叠仍然是计算生物学中的一个基本问题，理解生理条件下的折叠轨迹和动态行为对于将结构连接至功能至关重要。AlphaFold等近期进展彻底改变了从序列到结构的预测，为计算蛋白质建模建立了强大而稳健的基础。在此成功之上，我们引入了一种新颖的物理信息计算框架，将静态结构预测扩展至蛋白质折叠过程的动态和物理一致性建模。所提出的框架通过物理信息神经网络（PINN）将折叠动力学的数学基础反应扩散模型与深度序列嵌入统一起来，确保与主导物理定律的一致性，同时保持生物学基础。我们将此统一框架称为PhyFold。我们的结果表明，所提出的方法有效捕捉了环境依赖的折叠动力学，并在生理相关条件下与数值参考解和实验荧光测量均表现出强烈一致性。通过明确整合温度、压力和pH等环境因素，PhyFold实现了蛋白质折叠动力学的现实、物理感知模拟。该方法为现代结构预测方法提供了自然扩展，并为蛋白质设计、结构引导的药物发现和个性化医学开辟了新方向。复现本工作的代码可在 https://github.com/jamshaidwarraich/PhyFold.git 获取。科学贡献PhyFold引入了一种混合生物物理信息神经网络框架，将蛋白质折叠动力学建模为具有环境调制动力学系数的反应扩散偏微分方程，并与ProtT5序列嵌入集成，用于序列特异性时空预测，这种方法在文献中尚未有先例。与纯数据驱动或静态结构预测方法不同，PhyFold明确将温度、pH和压力依赖性编码到控制动力学系数中，使得在不同生理条件下对协同折叠转变进行物理可解释的模拟成为可能。通过有限差分参考解和实验GFP荧光测量的双重验证，确认了数学一致性和生物学相关性，确立了PhyFold作为环境感知蛋白质折叠动力学的计算高效替代模型。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Phyfold: environment aware mathematical modeling for protein folding dynamics integrated with physics informed neural network</li>
+<li><strong>作者与单位</strong>: Ul Rahman, Jamshaid; Noureen, Iqra; Mannan, Abdul; Uwitije, Rongin（单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>: Journal of Cheminformatics</li>
+<li><strong>年份</strong>: 2026-11-06（在线发表日期）</li>
+<li><strong>论文类型</strong>: 研究论文（含方法学贡献）</li>
+<li><strong>领域</strong>: 蛋白质折叠动力学 × 物理信息神经网络（PINN）× 深度学习序列嵌入</li>
+<li><strong>关键词</strong>: 蛋白质折叠、反应扩散方程、物理信息神经网络、序列嵌入、环境感知</li>
+<li><strong>DOI/arXiv 号</strong>: 10.1186/s13321-026-01271-w</li>
+<li><strong>代码</strong>: https://github.com/jamshaidwarraich/PhyFold.git</li>
+<li><strong>数据</strong>: GFP 荧光数据集（Sarkisyan 2016，经 DeepBenchmark 获取），21,446 条序列</li>
+<li><strong>阅读日期</strong>: 2026-05-14</li>
+<li><strong>在课题方向中的位置</strong>: 该文属于「蛋白质结构相关计算研究 × AI/物理模拟」交叉方向，具体位于「基于 PDE 的蛋白质折叠动力学建模 × PINN 求解 × 预训练语言模型嵌入」这一细分路径。与 AlphaFold 等静态结构预测方法互补，聚焦折叠过程的时间演化与动态行为，属于 mesoscopic 尺度的动力学建模方法。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>该文提出 PhyFold 框架，将反应扩散方程（RDE）作为物理约束嵌入 PINN 损失函数，并以 ProtT5 序列嵌入作为条件输入，实现对蛋白质折叠分数 u(x,t) 的时空动态预测；在 GFP 荧光数据集上，最优条件下预测与实验荧光的相关性达 r=0.822，并系统评估了温度、pH、压力等环境因素对折叠动力学的影响。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 如何在保持物理一致性的前提下，实现蛋白质折叠过程的时空动态预测，并显式纳入环境因素（温度、pH、压力）的影响？</li>
+<li><strong>为什么重要</strong>: 蛋白质折叠是连接序列与功能的中心问题。现有深度学习方法（如 AlphaFold）主要预测静态平衡结构，无法捕捉折叠动力学过程；而传统 MD 模拟计算成本极高，难以覆盖生理相关时间尺度。理解折叠动力学对于蛋白质设计、错误折叠疾病研究和药物发现至关重要。</li>
+<li><strong>现有方法不足</strong>:</li>
+<li>AlphaFold 等深度学习方法预测静态结构，不提供动力学信息</li>
+<li>MD 模拟计算成本高，时间尺度受限</li>
+<li>传统 PINN 应用多采用固定系数 PDE，缺乏序列特异性</li>
+<li>缺乏将环境因素（温度、pH、压力）显式纳入折叠动力学模型的方法</li>
+<li><strong>精确的 Can 问题</strong>: Can a physics-informed neural network, conditioned on deep sequence embeddings and governed by an environment-modulated reaction-diffusion equation, accurately predict protein folding dynamics that are both mathematically consistent and biologically validated against experimental fluorescence measurements?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文框架整理，未经外部系统核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>经典理论</td>
+<td>能量景观理论、Kramers 扩散理论</td>
+<td>提供折叠的物理图像</td>
+<td>难以定量预测具体蛋白</td>
+<td>理论基础</td>
+</tr>
+<tr>
+<td>原子模拟</td>
+<td>MD 模拟</td>
+<td>高分辨率、物理精确</td>
+<td>计算成本高、时间尺度受限</td>
+<td>替代方案</td>
+</tr>
+<tr>
+<td>深度结构预测</td>
+<td>AlphaFold2、RoseTTAFold</td>
+<td>高精度静态结构预测</td>
+<td>缺乏动力学信息</td>
+<td>互补方法</td>
+</tr>
+<tr>
+<td>序列嵌入</td>
+<td>ProtT5、ESM-2</td>
+<td>捕获进化与生物物理信息</td>
+<td>本身不提供动力学预测</td>
+<td>条件输入</td>
+</tr>
+<tr>
+<td>物理信息学习</td>
+<td>PINN</td>
+<td>将 PDE 约束嵌入网络</td>
+<td>多用于通用 PDE，缺乏生物特异性</td>
+<td>核心方法</td>
+</tr>
+<tr>
+<td>本文</td>
+<td>PhyFold = RDE + PINN + ProtT5</td>
+<td>物理一致 + 序列特异 + 环境感知</td>
+<td>一维反应坐标简化</td>
+<td>本文贡献</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>静态预测缺乏动力学</td>
+<td>AlphaFold 等只输出平衡结构，无法描述折叠过程</td>
+<td>深度学习方法以静态结构为训练目标</td>
+<td>Introduction: "predict equilibrium conformations and not kinetic folding pathways"</td>
+</tr>
+<tr>
+<td>MD 模拟计算成本高</td>
+<td>难以覆盖微秒-秒级折叠时间尺度</td>
+<td>原子级分辨率计算量随体系增大急剧增长</td>
+<td>Introduction: "computational cost of these techniques is prohibitive"</td>
+</tr>
+<tr>
+<td>传统 PINN 缺乏生物特异性</td>
+<td>通用 PDE 求解器无法区分不同蛋白</td>
+<td>未将序列信息纳入模型</td>
+<td>PhyFold framework: 引入 ProtT5 嵌入作为条件输入</td>
+</tr>
+<tr>
+<td>环境因素未纳入模型</td>
+<td>温度、pH、压力对折叠的影响未显式建模</td>
+<td>现有模型多假设固定环境条件</td>
+<td>环境参数 Θ={T, pH, P} 直接嵌入反应系数</td>
+</tr>
+<tr>
+<td>缺乏实验验证</td>
+<td>多数动力学模型仅做数值验证</td>
+<td>缺少与实验数据的直接对比</td>
+<td>使用 GFP 荧光数据作为生物学验证</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>:
+PhyFold 将蛋白质折叠建模为反应扩散 PDE（式 1），其中折叠分数 u(x,t) 由扩散项 D∂²u/∂x² 和反应项 f(u;Θ) 共同控制。反应项采用环境调制的 logistic 形式（式 2），折叠速率 α(Θ) 和展开速率 β(Θ) 分别依赖温度、pH、压力。PINN 以空间坐标 x、时间 t 和 ProtT5 序列嵌入 e 为输入，通过复合损失函数（PDE 残差 + 初始条件 + 边界条件 + 数据拟合）训练，实现对折叠动力学的预测。</p>
+<p><strong>2) 核心洞察</strong>:
+- <strong>降维建模</strong>: 将高维原子坐标空间压缩为一维反应坐标 x ∈ [0,1]，基于能量景观理论，认为折叠可沿主导反应坐标描述
+- <strong>环境调制</strong>: 将环境因素（温度、pH、压力）通过高斯函数和线性项直接嵌入反应系数，使模型具有环境感知能力
+- <strong>序列条件化</strong>: 通过 ProtT5 嵌入将序列特异性信息注入 PINN，使同一物理模型可适应不同蛋白
+- <strong>双重验证</strong>: 数学验证（与 FDM 对比）+ 生物学验证（与实验荧光对比）</p>
+<p><strong>3) 可能的普适教训</strong> [Analysis]:
+- 物理约束（PDE 残差）与数据拟合的平衡是 PINN 成功的关键，本文通过消融实验证明移除 PDE 项导致 r 从 0.822 降至 0.699
+- 预训练语言模型嵌入可作为连接序列空间与物理模型的通用桥梁
+- 一维反应坐标模型虽简化，但对双态折叠蛋白（如 GFP）足够有效，提示「适度简化」在复杂生物系统中的价值</p>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: 空间坐标 x ∈ [0,1]，时间 t ∈ [0,1]，ProtT5 序列嵌入 e ∈ R^1024，环境参数 Θ={T, pH, P}</li>
+<li><strong>输出</strong>: 折叠分数 u(x,t) ∈ [0,1] 的时空分布</li>
+<li><strong>网络架构</strong>: 全连接前馈网络，输入层 1026 神经元（x, t, e），两个隐藏层各 64 神经元，tanh 激活，输出层 sigmoid 激活，Xavier 初始化</li>
+<li><strong>物理模型</strong>: 反应扩散方程 ∂u/∂t = D∂²u/∂x² + f(u;Θ)，其中 f(u;Θ) = α(Θ)u(1-u) - β(Θ)u</li>
+<li><strong>环境调制</strong>: α(Θ) = α₀·exp(-κ_T(T-T_opt)²)·exp(-κ_pH(pH-pH_opt)²)，β(Θ) = β₀(1+γ_P(P-P₀))</li>
+<li><strong>损失函数</strong>: L = λ_PDE·L_PDE + λ_data·L_data + λ_IC·L_IC + λ_BC·L_BC，其中 λ_data=190, λ_PDE=10, λ_IC=100, λ_BC=50</li>
+<li><strong>训练</strong>: Adam 优化器，初始学习率 5×10⁻³，ReduceLROnPlateau 调度器（patience=5000），早停（patience=5000）</li>
+<li><strong>验证</strong>: ① 与 FDM 数值解对比（数学一致性）；② 与 GFP 实验荧光数据对比（生物学验证）</li>
+<li><strong>数据</strong>: GFP 荧光数据集（Sarkisyan 2016），21,446 条序列，80/20 随机划分（seed=1234），训练 17,157 条，测试 4,289 条</li>
+</ul>
+<p><strong>文字流程</strong>:
+1. 对每条蛋白序列，通过 ProtT5 生成 1024 维嵌入向量 e
+2. 将 (x, t, e) 拼接输入 PINN，网络输出预测折叠分数 u(x,t)
+3. 在训练中同时最小化 PDE 残差（物理约束）、初始/边界条件误差和实验数据拟合误差
+4. 训练完成后，对给定蛋白序列和环境条件，预测其折叠动力学的时空演化
+5. 将预测的时空平均折叠分数与实验荧光值对比，评估生物学一致性</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ProtT5 序列嵌入</td>
+<td>将氨基酸序列编码为 1024 维向量</td>
+<td>提供序列特异性信息，使模型可区分不同蛋白</td>
+<td>输入：氨基酸序列；输出：e∈R^1024</td>
+<td>方法节描述</td>
+<td>[预期] 模型退化为通用 PDE 求解器，无法区分不同蛋白的折叠行为</td>
+</tr>
+<tr>
+<td>反应扩散 PDE 模型</td>
+<td>描述折叠分数的时空演化</td>
+<td>提供物理约束，确保预测符合扩散-反应动力学</td>
+<td>输入：u, x, t, Θ；输出：∂u/∂t</td>
+<td>式(1)-(4)</td>
+<td>[实测] 移除 PDE 损失后 r 从 0.822 降至 0.699（表3）</td>
+</tr>
+<tr>
+<td>环境调制系数</td>
+<td>将温度、pH、压力映射到反应速率</td>
+<td>实现环境感知的折叠动力学</td>
+<td>输入：Θ={T,pH,P}；输出：α(Θ), β(Θ)</td>
+<td>式(3)-(4)</td>
+<td>[预期] 模型无法响应环境变化，丧失环境感知能力</td>
+</tr>
+<tr>
+<td>PINN 网络</td>
+<td>学习从 (x,t,e) 到 u(x,t) 的映射</td>
+<td>作为 PDE 的神经求解器，同时拟合数据</td>
+<td>输入：(x,t,e)；输出：u(x,t)</td>
+<td>方法节、图2</td>
+<td>无网络则无法实现数据驱动的 PDE 求解</td>
+</tr>
+<tr>
+<td>复合损失函数</td>
+<td>平衡物理约束与数据拟合</td>
+<td>确保预测既符合物理规律又匹配实验数据</td>
+<td>输入：PDE残差、IC/BC误差、数据误差；输出：标量损失</td>
+<td>式(7)</td>
+<td>[实测] 权重配置影响性能（表3）</td>
+</tr>
+<tr>
+<td>FDM 参考求解器</td>
+<td>生成数值参考解</td>
+<td>验证 PINN 的数学一致性</td>
+<td>输入：PDE 参数；输出：数值解</td>
+<td>方法节、图3-6</td>
+<td>[预期] 缺少独立验证手段</td>
+</tr>
+<tr>
+<td>荧光数据验证</td>
+<td>生物学验证预测的折叠分数</td>
+<td>连接理论模型与实验观测</td>
+<td>输入：预测 u(x,t)；输出：与实验荧光的相关性</td>
+<td>图9、表2</td>
+<td>[预期] 模型仅数学一致但缺乏生物学意义</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>式(1) 反应扩散方程</strong>:
+∂u/∂t = D·∂²u/∂x² + f(u;Θ)</p>
+<ul>
+<li>u(x,t): 折叠分数，u=0 完全展开，u=1 完全折叠</li>
+<li>x ∈ [0,1]: 归一化反应坐标（非物理空间维度）</li>
+<li>t ≥ 0: 时间</li>
+<li>D: 扩散系数，控制构象空间中的扩散速率</li>
+</ul>
+<p><strong>式(2) 反应项</strong>:
+f(u;Θ) = α(Θ)·u·(1-u) - β(Θ)·u</p>
+<ul>
+<li>α(Θ)u(1-u): 协同折叠项（logistic 增长），描述成核-传播机制</li>
+<li>β(Θ)u: 展开项（线性衰减），描述热涨落和环境应力导致的去稳定化</li>
+</ul>
+<p><strong>式(3) 折叠速率环境调制</strong>:
+α(Θ) = α₀·exp(-κ_T·(T-T_opt)²)·exp(-κ_pH·(pH-pH_opt)²)</p>
+<ul>
+<li>α₀ = 2.0: 最优条件下的基础折叠速率</li>
+<li>κ_T ∈ [0.001, 0.01]: 温度敏感系数</li>
+<li>κ_pH ∈ [0.5, 5.0]: pH 敏感系数</li>
+<li>T_opt = 37°C, pH_opt = 7.4: 生理最优条件</li>
+</ul>
+<p><strong>式(4) 展开速率环境调制</strong>:
+β(Θ) = β₀·(1 + γ_P·(P - P₀))</p>
+<ul>
+<li>β₀ = 0.2: 参考条件下的基础展开速率</li>
+<li>γ_P ∈ [0.001, 0.1]: 压力敏感系数</li>
+<li>P₀ = 1.0 atm: 参考大气压</li>
+</ul>
+<p><strong>式(5) 初始条件</strong>:
+u(x,0) = A·exp(-(x-x₀)²/(2σ²))，其中 A=0.3, x₀=0.5, σ=0.1，并裁剪至 [0,1]</p>
+<p><strong>式(6) 边界条件</strong>:
+∂u/∂x = 0 在 x=0 和 x=1（Neumann 条件）</p>
+<p><strong>式(7) 复合损失函数</strong>:
+L = λ_PDE·L_PDE + λ_data·L_data + λ_IC·L_IC + λ_BC·L_BC</p>
+<ul>
+<li>λ_data = 190, λ_PDE = 10, λ_IC = 100, λ_BC = 50</li>
+</ul>
+<p><strong>式(8) FDM 离散格式</strong>:
+(U_i^{n+1} - U_i^n)/Δt = D·(U_{i+1}^{n+1} - 2U_i^{n+1} + U_{i-1}^{n+1})/Δx² + α(Θ)U_i^{n+1}(1-U_i^{n+1}) - β(Θ)U_i^{n+1}</p>
+<p><strong>式(9)-(12) 评估指标</strong>:
+- RMSE = √(1/N Σ(y_i - ŷ_i)²)
+- MAE = (1/N) Σ|y_i - ŷ_i|
+- R² = 1 - Σ(y_i - ŷ_i)² / Σ(y_i - ȳ)²
+- r = Pearson 相关系数</p>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集与规模</strong>:
+- GFP 荧光数据集（Sarkisyan 2016），21,446 条序列
+- 训练/测试划分：80/20 随机划分（seed=1234），训练 17,157 条，测试 4,289 条
+- 标签：对数荧光强度（实验测量）</p>
+<p><strong>评测协议</strong>:
+- 数学验证：PINN 预测 vs FDM 数值解（图3-6）
+- 生物学验证：预测折叠分数 vs 实验荧光（图9，表2）
+- 消融研究：移除 PDE 损失、改变权重配置（表3）
+- 参数敏感性：扰动 D, α₀, β₀（表4）</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数值验证（图3-5）</td>
+<td>PINN 能准确求解 RDE</td>
+<td>PINN vs FDM，相同初始/边界条件</td>
+<td>空间剖面、时空热图、时间演化均高度一致</td>
+<td>PINN 是可靠的 PDE 求解器</td>
+<td>未提供定量误差数值（如 L2 误差）</td>
+<td>Results 图3-5</td>
+</tr>
+<tr>
+<td>定量误差分析（图6）</td>
+<td>PINN 数值精度稳定</td>
+<td>MAE/RMSE 随时间变化</td>
+<td>误差低且稳定</td>
+<td>PINN 数值精度可靠</td>
+<td>未提供具体数值</td>
+<td>Results 图6</td>
+</tr>
+<tr>
+<td>最优条件生物学验证（图9）</td>
+<td>预测折叠分数与实验荧光一致</td>
+<td>4,289 条测试序列，最优条件</td>
+<td>r=0.822±0.012, RMSE=0.169±0.005, MAE=0.101±0.004, R²=0.676±0.020</td>
+<td>模型预测与实验生物学趋势一致</td>
+<td>相关性不等于因果；荧光是折叠的间接指标</td>
+<td>Results 图9、表2</td>
+</tr>
+<tr>
+<td>亚最优条件验证（表2）</td>
+<td>环境因素影响预测精度</td>
+<td>不同温度/pH/压力条件</td>
+<td>精度随条件偏离最优而下降</td>
+<td>模型对环境变化敏感</td>
+<td>未与实验数据直接对比各条件</td>
+<td>表2</td>
+</tr>
+<tr>
+<td>消融：移除 PDE 损失</td>
+<td>PDE 约束贡献预测能力</td>
+<td>λ_PDE=0 vs 名义配置</td>
+<td>r 从 0.822 降至 0.699</td>
+<td>物理约束显著提升预测</td>
+<td>未报告其他指标变化</td>
+<td>表3</td>
+</tr>
+<tr>
+<td>消融：权重配置</td>
+<td>名义权重最优</td>
+<td>等权 vs 物理重 vs 名义</td>
+<td>名义配置最优</td>
+<td>权重平衡重要</td>
+<td>未系统搜索权重空间</td>
+<td>表3</td>
+</tr>
+<tr>
+<td>参数敏感性（表4）</td>
+<td>名义参数最优</td>
+<td>扰动 D, α₀, β₀</td>
+<td>名义配置 r=0.822 最优</td>
+<td>参数选择合理</td>
+<td>仅局部敏感性，未做全局分析</td>
+<td>表4</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<p><strong>任务范围</strong>: 本文聚焦于双态折叠蛋白（以 GFP 为代表）的 mesoscopic 尺度折叠动力学建模，不涉及多结构域蛋白、 intrinsically disordered proteins（IDPs）或共翻译折叠等复杂场景。</p>
+<p><strong>输入/真值依赖</strong>: 
+- 生物学验证依赖 GFP 荧光数据作为折叠状态的代理指标，荧光强度与折叠分数并非严格等价
+- 序列嵌入来自预训练 ProtT5 模型，其表示质量影响下游预测
+- 环境参数（温度、pH、压力）通过反应系数间接影响，非直接物理模拟</p>
+<p><strong>端到端状态</strong>: 模型并非端到端的「序列→折叠动态」预测器。它需要先通过 ProtT5 获取嵌入，再通过 PINN 求解 PDE，且 PDE 参数（D, α₀, β₀, κ_T, κ_pH, γ_P）为全局固定值，不随序列变化。</p>
+<p><strong>算力成本</strong>: 相比 MD 模拟显著降低，但训练 PINN 需要大量 PDE 残差计算；推理时需对每个 (x,t) 点进行网络前向传播。</p>
+<p><strong>历史数据依赖</strong>: 模型训练依赖 GFP 荧光数据集，该数据集仅包含 GFP 变体，跨蛋白家族的泛化能力未验证。</p>
+<p><strong>最难情形</strong>: 碱性应激（pH ≥ 8.0）条件下预测精度显著下降（R² = -0.264），表明模型对极端环境条件的建模能力有限。</p>
+<p><strong>群体/领域边界</strong>: 结论仅适用于与 GFP 类似的 cooperatively folding 的双态蛋白；对多态折叠、knotted proteins、膜蛋白等未验证。</p>
+<p><strong>有边界的复述</strong>: PhyFold 在 GFP 变体数据集上，通过将反应扩散方程嵌入 PINN 并结合 ProtT5 序列嵌入，实现了与实验荧光高度相关的折叠动力学预测（r=0.822），并在温度、pH、压力变化时表现出物理一致的响应；但该方法的可靠性边界为近生理条件，对极端碱性环境预测能力有限，且跨蛋白家族的泛化性尚未验证。</p>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一维反应坐标的简化</td>
+<td>无法解析三维结构复杂性和非局部接触</td>
+<td>开发更高维的 collective variable 空间</td>
+<td>Conclusion</td>
+</tr>
+<tr>
+<td>碱性应激下预测精度不足</td>
+<td>pH ≥ 8.0 时 R² = -0.264</td>
+<td>引入非对称 pH 响应函数和显式静电相互作用算子</td>
+<td>Conclusion、Environmental sensitivity 节</td>
+</tr>
+<tr>
+<td>对称高斯 pH 响应函数的局限</td>
+<td>无法捕捉碱性条件下多机制协同去稳定化</td>
+<td>非对称 pH 响应函数</td>
+<td>Conclusion</td>
+</tr>
+<tr>
+<td>适用范围限于双态折叠蛋白</td>
+<td>对多结构域蛋白和 IDPs 不适用</td>
+<td>更高维表示</td>
+<td>Conclusion</td>
+</tr>
+<tr>
+<td>扩散系数为常数</td>
+<td>未考虑序列依赖的扩散行为</td>
+<td>序列依赖扩散系数</td>
+<td>Conclusion</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一维反应坐标的充分性</td>
+<td>真实蛋白质折叠涉及高维构象空间，一维坐标可能过度简化</td>
+<td>若一维坐标不足以描述折叠，则模型预测的动力学可能失真</td>
+<td>对已知存在中间态或多路径折叠的蛋白进行测试</td>
+<td>作者自认局限</td>
+</tr>
+<tr>
+<td>荧光作为折叠代理的可靠性</td>
+<td>荧光强度受多种因素影响（淬灭、环境敏感发色团），并非严格的折叠分数</td>
+<td>若荧光与折叠分数非线性相关，则 r=0.822 可能高估或低估模型性能</td>
+<td>与圆二色谱、NMR 等正交实验对比</td>
+<td>方法学常识</td>
+</tr>
+<tr>
+<td>全局固定 PDE 参数</td>
+<td>D, α₀, β₀ 等对所有蛋白相同，序列特异性仅通过嵌入体现</td>
+<td>不同蛋白的折叠动力学参数差异可能很大，固定参数可能限制泛化</td>
+<td>在多家族蛋白上测试，比较不同蛋白的预测精度</td>
+<td>方法节</td>
+</tr>
+<tr>
+<td>消融实验范围有限</td>
+<td>仅测试了损失权重配置，未测试架构变化、嵌入维度等</td>
+<td>无法确定哪些设计选择对性能贡献最大</td>
+<td>系统消融：嵌入 vs 无嵌入、不同网络深度等</td>
+<td>表3</td>
+</tr>
+<tr>
+<td>与 FDM 的对比条件</td>
+<td>对比仅在特定参数设置下进行，未报告不同 D、α、β 下的误差</td>
+<td>若 PDE 参数变化，PINN 精度可能下降</td>
+<td>在参数空间中系统对比 PINN vs FDM</td>
+<td>图3-6</td>
+</tr>
+<tr>
+<td>缺乏不确定性量化</td>
+<td>未报告预测的置信区间或多次运行的方差</td>
+<td>实际应用中需要知道预测的可靠性</td>
+<td>多次随机初始化训练，报告方差</td>
+<td>全文未提及</td>
+</tr>
+<tr>
+<td>与 MD 模拟的对比缺失</td>
+<td>未与 MD 模拟或实验折叠速率常数对比</td>
+<td>无法评估模型在定量预测折叠速率方面的能力</td>
+<td>对已知折叠速率的蛋白进行预测对比</td>
+<td>全文未提及</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>PDE 约束 + 预训练嵌入的混合架构</strong>：将领域物理定律（反应扩散方程）作为硬约束嵌入神经网络损失，同时用预训练语言模型（ProtT5）提供序列条件信息。这种「物理约束 + 序列条件」的范式可迁移到其他蛋白质计算任务，如结合 AlphaFold 的结构预测与分子动力学模拟。</p>
+</li>
+<li>
+<p><strong>环境参数显式建模</strong>：将温度、pH、压力等环境因素通过解析函数（高斯、线性）直接嵌入反应系数，而非作为黑箱输入。这种「可解释环境调制」策略可迁移到蛋白质稳定性预测、酶活性预测等需要考虑环境条件的任务。</p>
+</li>
+<li>
+<p><strong>双重验证框架</strong>：数学验证（与数值解对比）+ 生物学验证（与实验数据对比）的验证策略，为计算模型提供了从理论正确性到实际相关性的完整证据链。可迁移到其他蛋白质计算模型的评估设计。</p>
+</li>
+<li>
+<p><strong>降维建模的边界意识</strong>：作者明确承认一维反应坐标的局限，并指出需要更高维表示。这种「明确模型边界」的做法值得借鉴——任何简化模型都应清楚标注其适用边界。</p>
+</li>
+<li>
+<p><strong>消融实验设计</strong>：通过系统移除 PDE 损失和改变权重配置来验证各组件贡献，为混合模型的组件贡献分析提供了范例。</p>
+</li>
+<li>
+<p><strong>GFP 荧光数据集的复用</strong>：将实验荧光数据作为折叠状态的代理指标，为计算模型提供了可扩展的验证资源。类似策略可用于其他具有实验可测指标的蛋白质性质预测。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li>
+<p><strong>AlphaFold2 (Jumper et al., 2021)</strong>: 本文明确以 AlphaFold 为对比对象，指出其静态预测局限。PhyFold 可视为对 AlphaFold 的补充——在结构预测基础上增加动力学维度。两者可组合使用：AlphaFold 预测终态结构，PhyFold 预测折叠路径。</p>
+</li>
+<li>
+<p><strong>RoseTTAFold (Baek et al., 2021)</strong>: 与 AlphaFold 类似，同为静态结构预测方法，本文将其归入「equilibrium conformations」预测类别。</p>
+</li>
+<li>
+<p><strong>ProtT5 (Elnaggar et al., 2021)</strong>: 本文直接使用 ProtT5 作为序列嵌入提取器，属于蛋白质语言模型在下游任务中的应用。ProtT5 的表示能力是 PhyFold 序列特异性的基础。</p>
+</li>
+<li>
+<p><strong>PINN (Raissi et al., 2019)</strong>: 本文的 PINN 方法直接继承自该框架，将 PDE 残差作为损失项。本文的创新在于将 PINN 应用于蛋白质折叠这一生物物理问题，并引入序列嵌入条件。</p>
+</li>
+<li>
+<p><strong>反应扩散方程 (Turing, 1952)</strong>: 本文的 PDE 模型基于经典反应扩散理论，但将其应用于蛋白质折叠这一新场景，并引入环境调制系数。</p>
+</li>
+<li>
+<p><strong>能量景观理论 (Bryngelson &amp; Wolynes, 1987; Onuchic et al., 1997)</strong>: 本文的一维反应坐标建模基于能量景观理论，将折叠视为沿主导反应坐标的扩散过程。</p>
+</li>
+<li>
+<p><strong>Kramers 扩散理论 (Kramers, 1940)</strong>: 本文在结论中提及 Kramers 扩散形式主义作为一维反应坐标的理论基础。</p>
+</li>
+<li>
+<p><strong>DeepBenchmark (Xia et al., 2023)</strong>: 本文通过该基准获取 GFP 荧光数据集，属于蛋白质功能预测基准的复用。</p>
+</li>
+<li>
+<p><strong>Sarkisyan et al. (2016)</strong>: GFP 荧光数据集的原始来源，包含 21,446 个 GFP 变体的荧光测量。</p>
+</li>
+<li>
+<p><strong>候选连接方向</strong>: 与 MD 模拟的粗粒化模型（如 Martini）、增强采样方法（如 metadynamics）存在潜在互补关系；与蛋白质设计工具（如 ProteinMPNN）可组合用于设计具有特定折叠动力学的蛋白。</p>
+</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>: PhyFold-MD：物理约束神经网络与分子动力学模拟的协同折叠动力学预测
+   - <strong>来源局限/观察</strong>: PhyFold 的一维反应坐标无法解析三维结构细节，而 MD 模拟计算成本高但提供原子级分辨率
+   - <strong>核心假设</strong>: 将 PhyFold 的 mesoscopic 预测作为 MD 模拟的初始条件或偏置势，可加速 MD 采样并保持物理精度
+   - <strong>初步方法</strong>: 使用 PhyFold 预测的折叠路径作为 metadynamics 的 collective variable 定义；或使用 PhyFold 预测的折叠分数作为 MD 模拟的增强采样偏置
+   - <strong>验证方式</strong>: 对已知折叠路径的蛋白（如 villin headpiece、BPTI）比较 PhyFold-MD 与纯 MD 的折叠时间预测和路径一致性
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 序列条件化的环境感知折叠速率预测器
+   - <strong>来源局限/观察</strong>: PhyFold 使用全局固定的 PDE 参数（D, α₀, β₀），序列特异性仅通过嵌入间接体现；不同蛋白的折叠动力学参数差异可能很大
+   - <strong>核心假设</strong>: 通过预测序列特异的反应扩散参数（而非仅预测 u(x,t)），可提升跨蛋白泛化能力
+   - <strong>初步方法</strong>: 训练一个参数预测头，从 ProtT5 嵌入直接预测 D, α₀, β₀, κ_T, κ_pH, γ_P，再将这些参数输入 PDE 求解器
+   - <strong>验证方式</strong>: 在多家族蛋白数据集上测试，比较参数预测 vs 固定参数的预测精度
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 非对称环境响应模型：面向极端 pH 条件的折叠动力学
+   - <strong>来源局限/观察</strong>: PhyFold 在碱性应激（pH ≥ 8.0）下预测精度显著下降（R² = -0.264），作者归因于对称高斯 pH 响应函数的局限
+   - <strong>核心假设</strong>: 引入非对称 pH 响应函数（如分段高斯或 skewed Gaussian）可捕获碱性条件下多机制协同去稳定化
+   - <strong>初步方法</strong>: 将式(3)中的对称高斯替换为非对称形式，或在反应项中增加 pH 依赖的静电相互作用项
+   - <strong>验证方式</strong>: 在碱性 pH 条件下的荧光数据上重新评估，比较 R² 和 r
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 多维 collective variable 空间的 PhyFold 扩展
+   - <strong>来源局限/观察</strong>: 作者明确承认一维反应坐标无法解析三维结构复杂性和非局部接触
+   - <strong>核心假设</strong>: 将一维反应坐标扩展为多维 collective variable 空间（如结合折叠分数、二级结构含量、接触序等），可提升对多态折叠蛋白的建模能力
+   - <strong>初步方法</strong>: 使用多个反应坐标定义多维 PDE 系统，或使用图神经网络编码非局部接触
+   - <strong>验证方式</strong>: 对已知存在中间态的蛋白（如 α-lysozyme、RNase H）测试，比较一维 vs 多维模型的预测精度
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: PhyFold-Design：基于折叠动力学的蛋白质稳定性设计
+   - <strong>来源局限/观察</strong>: PhyFold 可预测环境因素对折叠的影响，但未用于蛋白质设计
+   - <strong>核心假设</strong>: 通过优化序列嵌入使 PhyFold 预测的折叠分数在目标环境条件下最大化，可设计出具有特定稳定性特征的蛋白
+   - <strong>初步方法</strong>: 将 PhyFold 作为可微分的适应度函数，通过梯度上升优化序列（类似 ProteinMPNN 的逆折叠方法）
+   - <strong>验证方式</strong>: 设计若干 GFP 变体，实验测量其荧光/稳定性，与 PhyFold 预测对比
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 跨蛋白家族的 PhyFold 泛化性系统评估
+   - <strong>来源局限/观察</strong>: PhyFold 仅在 GFP 数据集上验证，跨家族泛化性未知
+   - <strong>核心假设</strong>: PhyFold 的物理约束使其在非 GFP 蛋白上仍具一定预测能力，但精度取决于蛋白的折叠机制与双态假设的匹配度
+   - <strong>初步方法</strong>: 在多个具有实验折叠数据的蛋白家族（如 IgG 结合域、spectrin 重复域）上测试 PhyFold
+   - <strong>验证方式</strong>: 比较不同家族的 r、RMSE、R²，分析误差与蛋白结构特征的相关性
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, methods, results, discussion, conclusion) as provided.</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological soundness, novelty, and clarity of the proposed PhyFold framework, based solely on the supplied text. No external data, code, or supplementary materials were accessed.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose PhyFold, a physics-informed neural network (PINN) framework that integrates a reaction-diffusion equation (RDE) with ProtT5 protein sequence embeddings to model protein folding dynamics under varying environmental conditions (temperature, pH, pressure). The model is validated against finite difference method (FDM) solutions and experimental GFP fluorescence data, reporting a Pearson correlation of 0.822 on a held-out test set.</li>
+<li><strong>Visible evidence base</strong> Abstract, introduction, related work, model formulation (equations 1-6), PINN architecture description, FDM benchmark description, experimental setup (GFP dataset, train/test split), results (Figures 3-21, Tables 1-4), ablation study, parameter sensitivity analysis, and conclusion.</li>
+<li><strong>Missing materials affecting confidence</strong> Figures 1-21 are referenced but not visible in the provided text. Table 2 is partially visible (values for some conditions are cut off). No code, hyperparameters (beyond learning rate), training epochs, loss curves, or statistical significance tests are provided. The exact definition of the "effective folding fraction" and its relationship to fluorescence intensity is not fully formalized.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript presents a conceptually interesting hybrid approach that combines a mesoscopic reaction-diffusion model with deep sequence embeddings via a PINN. The idea of using PINNs for protein folding dynamics with environmental modulation is timely and could be of interest to the computational biology community. However, the current manuscript has significant methodological gaps and validation weaknesses that prevent the claims from being fully established. The mathematical well-posedness analysis is superficial, the biological validation is indirect and lacks rigor, and the comparison with existing methods is insufficient. The work is at an early stage and requires substantial revisions and additional experiments before it can be considered for publication.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists and bioinformaticians working on protein folding prediction, particularly those interested in moving beyond static structure prediction toward dynamic modeling. Researchers in the PINN community interested in new applications of physics-informed machine learning to biological systems. Scientists studying protein folding under stress conditions (e.g., pH, temperature) may find the environmental modulation aspect relevant.</li>
+<li><strong>Major strengths</strong>
+  1. The conceptual integration of a reaction-diffusion PDE with sequence embeddings via a PINN is a novel combination not commonly seen in the literature.
+  2. The explicit inclusion of environmental parameters (T, pH, P) into the governing equation is a thoughtful step toward physiologically relevant modeling.
+  3. The dual validation approach (numerical vs. biological) is commendable in principle, even if execution is lacking.
+  4. The authors acknowledge limitations (e.g., 1D reaction coordinate, alkaline stress) and suggest future directions, showing scientific honesty.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>R1-M1</strong> (Blocking: Yes)<ul>
+<li><strong>Axis</strong> Scientific importance / Technical soundness</li>
+<li><strong>Claim pointer</strong> The authors claim that PhyFold "effectively captures environment dependent folding dynamics and shows strong agreement with both numerical reference solutions and experimental fluorescence measurements."</li>
+<li><strong>Evidence pointer</strong> Results section, Figures 3-21, Tables 2-4</li>
+<li><strong>Concern</strong> The biological validation is fundamentally flawed. The model predicts a "folding fraction" u(x,t) from a 1D reaction-diffusion equation, but this is compared to fluorescence intensity, which is a bulk, ensemble-averaged property. The mapping between the two is not rigorously defined. The authors state that "the spatially and temporally averaged folding fraction was computed as a scalar summary per protein sequence and compared against normalized experimental fluorescence labels," but the exact averaging procedure, the time point at which the average is taken, and the normalization of the fluorescence data are not specified. Moreover, the GFP dataset from Sarkisyan et al. measures fluorescence as a proxy for folding stability, but the relationship between the model's u and fluorescence is not a direct one. The reported Pearson correlation of 0.822 could be an artifact of the averaging procedure or the specific normalization chosen. Without a clear, mechanistic link between the model output and the experimental observable, the biological validation is not convincing.</li>
+<li><strong>Why it matters</strong> The central claim of the paper is that PhyFold produces biologically meaningful predictions. If the validation metric is not properly aligned with the model output, the entire premise of the work is undermined. The reader cannot assess whether the model is genuinely capturing folding dynamics or merely fitting a curve to fluorescence data through an arbitrary post-processing step.</li>
+<li><strong>Resolution test</strong> The authors must provide a clear, mathematical definition of how u(x,t) is converted to a predicted fluorescence value. This should include: (1) the exact spatial and temporal averaging scheme, (2) the time point(s) at which predictions are compared to experimental data, (3) the normalization procedure for both predicted and experimental values, and (4) a justification for why this mapping is physically meaningful. Additionally, the authors should show a scatter plot of predicted vs. experimental values with error bars and discuss the distribution of residuals, not just the correlation coefficient.</li>
+</ul>
+</li>
+<li><strong>R1-M2</strong> (Blocking: Yes)<ul>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The authors state that "the proposed reaction diffusion model is mathematically well posed and admits a unique, bounded, and physically meaningful solution."</li>
+<li><strong>Evidence pointer</strong> "Existence and uniqueness of solution" subsection</li>
+<li><strong>Concern</strong> The well-posedness analysis is superficial and incomplete. The authors show that the reaction term is Lipschitz continuous, but they do not address several critical aspects: (1) the regularity of the solution given the Gaussian initial condition and Neumann boundary conditions, (2) the long-time behavior of the solution (does it converge to a steady state?), (3) the dependence of the solution on the environmental parameters Θ, and (4) whether the solution remains in the physically meaningful range [0,1] for all times. The claim that the "parabolic maximum principle" ensures boundedness is not sufficient, as the reaction term f(u;Θ) can drive u outside [0,1] if α(Θ) &gt; β(Θ) and u is near 1. The authors need to provide a more rigorous analysis or at least numerical evidence that the solution stays within the admissible range.</li>
+<li><strong>Why it matters</strong> The mathematical foundation of the model is a key selling point of the paper. If the well-posedness is not properly established, the reliability of all subsequent numerical results is questionable. Moreover, if the solution can leave the physically meaningful range, the biological interpretation of the results is compromised.</li>
+<li><strong>Resolution test</strong> The authors should provide a complete well-posedness proof, including: (1) existence and uniqueness in the appropriate Sobolev or Hölder spaces, (2) a proof or numerical demonstration that u(x,t) ∈ [0,1] for all t &gt; 0 given the initial and boundary conditions, and (3) a sensitivity analysis of the solution with respect to the environmental parameters. Alternatively, they could add a projection or clipping step in the PINN architecture to enforce the physical bounds and discuss the implications of this choice.</li>
+</ul>
+</li>
+<li><strong>R1-M3</strong> (Blocking: Yes)<ul>
+<li><strong>Axis</strong> Scientific importance / Technical soundness</li>
+<li><strong>Claim pointer</strong> The authors claim that "PhyFold introduces a hybrid Bio-Physics Informed Neural Network framework... an approach not previously demonstrated in the literature."</li>
+<li><strong>Evidence pointer</strong> Introduction, Related works</li>
+<li><strong>Concern</strong> The novelty claim is overstated. While the specific combination of a reaction-diffusion PDE with ProtT5 embeddings in a PINN may be new, the general idea of using PINNs for protein folding or biophysical processes is not. The authors do not adequately compare their approach with existing PINN-based methods for protein modeling or with other hybrid physics-ML approaches. For example, there are works on using PINNs for molecular dynamics, for solving Fokker-Planck equations related to folding, and for integrating sequence information into physical models. The authors should provide a more thorough literature review and clearly delineate what is genuinely novel about their approach.</li>
+<li><strong>Why it matters</strong> The scientific contribution of the paper depends on its novelty. If the approach is largely an incremental combination of existing ideas, the impact is significantly reduced. The authors need to convince the reader that their framework offers a distinct advantage over existing methods.</li>
+<li><strong>Resolution test</strong> The authors should add a dedicated section comparing their method with at least 3-5 existing approaches (e.g., other PINN-based protein models, traditional kinetic models, deep learning-based folding predictors). The comparison should include both methodological differences and, ideally, quantitative performance comparisons on the same dataset.</li>
+</ul>
+</li>
+<li><strong>R1-M4</strong> (Blocking: No)<ul>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The authors state that "the shared reaction diffusion parameters D, α₀, and β₀ represent universal physical mechanisms governing folding kinetics, while protein specific variability is captured through the high dimensional embedding conditioning."</li>
+<li><strong>Evidence pointer</strong> "Formulation of PINN" subsection</li>
+<li><strong>Concern</strong> The mechanism by which the ProtT5 embedding conditions the PINN is not described in sufficient detail. The authors mention that the input layer receives [x, t, e] where e ∈ R^1024, but it is unclear how the embedding interacts with the PDE parameters. Does the embedding modify the reaction term f(u;Θ) directly? Does it affect the diffusion coefficient D? Is the embedding used as a global conditioning vector that modulates the entire solution, or is it concatenated at every spatial point? The architecture description is too vague to be reproducible.</li>
+<li><strong>Why it matters</strong> Reproducibility is a core requirement for scientific publication. Without a clear description of how the sequence embedding influences the PDE solution, other researchers cannot implement or build upon the method.</li>
+<li><strong>Resolution test</strong> The authors should provide a detailed architectural diagram and a precise mathematical description of how the embedding is incorporated into the PINN. This should include the exact dimensions of all layers, the activation functions, and the forward pass equations.</li>
+</ul>
+</li>
+<li><strong>R1-M5</strong> (Blocking: No)<ul>
+<li><strong>Axis</strong> Interdisciplinary readership / Readability</li>
+<li><strong>Claim pointer</strong> The authors claim that the model is "computationally efficient surrogate for environment aware protein folding dynamics."</li>
+<li><strong>Evidence pointer</strong> Abstract, Conclusion</li>
+<li><strong>Concern</strong> No computational cost analysis is provided. The authors do not report training time, inference time, or hardware requirements. The claim of computational efficiency is unsubstantiated. Moreover, the comparison with FDM is only for a 1D problem; the computational advantage of PINNs over traditional numerical methods is well-known for high-dimensional problems, but for a 1D problem, FDM is typically very fast. The authors need to demonstrate a concrete computational advantage.</li>
+<li><strong>Why it matters</strong> The practical utility of the method depends on its computational efficiency. If the PINN is slower than a simple FDM solver, the advantage of the approach is unclear.</li>
+<li><strong>Resolution test</strong> The authors should report wall-clock training and inference times, and compare them with the FDM solver for the same problem. They should also discuss the scaling of the method to larger systems (e.g., multi-domain proteins).</li>
+</ul>
+</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>R1-m1</strong><ul>
+<li><strong>Axis</strong> Readability for nonspecialists</li>
+<li><strong>Affected element</strong> Introduction</li>
+<li><strong>Evidence pointer</strong> Introduction, first paragraph</li>
+<li><strong>Issue</strong> The introduction contains several grammatical errors and awkward phrasings (e.g., "Simulations A wealth of information on folding pathways and energy landscapes [9, 10] has been obtained"). The flow is disrupted, and the text reads as if it was not carefully proofread.</li>
+<li><strong>Required correction</strong> The authors should thoroughly revise the introduction for language and clarity. Consider having a native English speaker review the manuscript.</li>
+</ul>
+</li>
+<li><strong>R1-m2</strong><ul>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Table 2</li>
+<li><strong>Evidence pointer</strong> Table 2</li>
+<li><strong>Issue</strong> The table is incomplete in the provided text. The values for some conditions (e.g., "Sub-optimal (cool, acidic)") are partially cut off, and the column headers are not fully visible. This makes it impossible to fully assess the results.</li>
+<li><strong>Required correction</strong> The authors should ensure that all tables are complete and properly formatted in the final submission.</li>
+</ul>
+</li>
+<li><strong>R1-m3</strong><ul>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Ablation study</li>
+<li><strong>Evidence pointer</strong> Table 3</li>
+<li><strong>Issue</strong> The ablation study only varies the loss weights. It does not test the contribution of the ProtT5 embedding itself. A more informative ablation would include a version of the model without the embedding (i.e., a pure PINN) to demonstrate the added value of the sequence information.</li>
+<li><strong>Required correction</strong> The authors should add an ablation experiment where the ProtT5 embedding is removed or replaced with a random vector, to isolate the contribution of the sequence information.</li>
+</ul>
+</li>
+<li><strong>R1-m4</strong><ul>
+<li><strong>Axis</strong> Scientific importance</li>
+<li><strong>Affected element</strong> Discussion</li>
+<li><strong>Evidence pointer</strong> "Biological interpretation and implications" subsection</li>
+<li><strong>Issue</strong> The biological interpretation is largely qualitative and does not provide specific, testable predictions. For example, the authors state that "atypical alkaline stress specifically disrupts electrostatic interactions and hydrogen bonding network" but do not connect this to specific residues or structural features of GFP.</li>
+<li><strong>Required correction</strong> The authors should provide more specific biological insights, such as identifying which residues or structural regions are most affected by environmental stress, and how these predictions could be experimentally tested.</li>
+</ul>
+</li>
+<li><strong>R1-m5</strong><ul>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Experimental setup</li>
+<li><strong>Evidence pointer</strong> "Experimental setup" subsection</li>
+<li><strong>Issue</strong> The authors do not describe how the environmental parameters (T, pH, P) are varied in the dataset. The GFP dataset from Sarkisyan et al. contains mutations, but it is unclear how temperature, pH, and pressure are assigned to each sequence. Are these parameters derived from experimental conditions, or are they simulated?</li>
+<li><strong>Required correction</strong> The authors should clarify the source of the environmental parameter values and how they are incorporated into the model for each sequence.</li>
+</ul>
+</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong></li>
+<li>R1-M1: Lack of a rigorous mapping between model output (folding fraction) and experimental observable (fluorescence).</li>
+<li>R1-M2: Incomplete well-posedness analysis, particularly regarding solution bounds.</li>
+<li>R1-M3: Overstated novelty without adequate comparison to existing methods.</li>
+<li>R1-M4: Insufficient architectural detail for reproducibility.</li>
+<li><strong>Assessment against Nature-style criteria</strong></li>
+<li><strong>Originality</strong> Moderate. The combination of RDE + PINN + sequence embeddings is somewhat novel, but the individual components are well-established. The approach does not represent a fundamental conceptual breakthrough.</li>
+<li><strong>Scientific importance</strong> Moderate. The problem of dynamic protein folding under environmental conditions is important, but the current validation is too weak to demonstrate significant practical impact. The method does not yet offer clear advantages over existing approaches.</li>
+<li><strong>Interdisciplinary readership</strong> Limited. The work sits at the intersection of ML and biophysics, but the presentation is likely too technical for a general biology audience and not rigorous enough for a specialized ML or biophysics audience.</li>
+<li><strong>Technical soundness</strong> Weak. The validation methodology has significant flaws (R1-M1), the mathematical analysis is incomplete (R1-M2), and the implementation details are insufficient (R1-M4).</li>
+<li><strong>Readability for nonspecialists</strong> Poor. The manuscript contains numerous grammatical errors and the logical flow is often disrupted. The technical sections are dense and not well-explained for a broader audience.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript has a promising concept but requires major revisions to address the validation flaws, strengthen the mathematical analysis, and improve the presentation. I would be willing to reconsider after substantial revision.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that PhyFold "effectively captures environment dependent folding dynamics" is not supported by the current validation, as the link between the model output and the experimental data is not rigorously established.</li>
+<li>The claim that the model "shows strong agreement with experimental fluorescence measurements" is based solely on a Pearson correlation coefficient, which is insufficient without a proper error analysis and a mechanistic justification for the comparison.</li>
+<li>The claim of "computational efficiency" is unsubstantiated, as no performance benchmarks are provided.</li>
+<li>The claim that the model is "biologically grounded" is weakened by the lack of a clear connection between the 1D reaction coordinate and actual protein structural features.</li>
+<li>The statement that "the mathematical validity established under optimal conditions therefore directly extends to all stress condition simulations" is an assertion without proof, as the authors do not demonstrate that the solution properties (e.g., boundedness, uniqueness) hold for all parameter ranges.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

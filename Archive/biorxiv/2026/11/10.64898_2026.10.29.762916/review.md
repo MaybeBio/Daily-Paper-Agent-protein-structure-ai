@@ -1,0 +1,100 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, results, methods, data/code availability, author contributions, competing interests)
+- **Assessment boundary** Scientific validity, methodological soundness, claims vs. evidence, clarity, and alignment with Nature-style criteria. No line numbers were provided; references to sections/figures are based on the manuscript structure.
+- **Shared manuscript claim summary** The authors present a differentiable spin-center (SC) diffusion model of spin labels with tunable rotameric width, integrated with a frozen Boltz-2 structure generator, to produce DEER-guided weighted conformational ensembles of proteins. They claim this pipeline recovers known populations from synthetic DEER data, generates condition-specific ensembles for four membrane transporters (PfMATE, LmrP, MhsT, P-glycoprotein), and yields free energy differences between conformational states that track experimental shifts. They further claim the approach adds thermodynamic grounding to generative protein structure prediction.
+- **Visible evidence base** Abstract, Introduction, Results (including descriptions of Figures 1–5 and Supplementary Figures/Tables), Methods (including model architecture, training data, DEER targets, baselines, loss functions, and analysis procedures), Data and Code availability statements.
+- **Missing materials affecting confidence** Figures and Supplementary Figures/Tables themselves were not provided; only their descriptions in text. No line numbers. No supplementary information content beyond what is described. No raw data or code were inspected. No validation of the GitHub repository contents.
+
+## Reviewer
+- **Overall assessment** This manuscript presents a technically ambitious and potentially valuable method for interpreting DEER spectroscopy data as conformational ensembles using a generative structure prediction model. The core idea, embedding a differentiable spin-label model with tunable width into a frozen diffusion-based structure generator, is novel and addresses a real limitation in the field. The validation on synthetic data and application to four transporters with condition-dependent DEER data is compelling in principle. However, the evidence as presented in the text is insufficient to fully assess the robustness of the method, the statistical significance of the results, and the validity of the free energy calculations. Several claims, particularly regarding the thermodynamic interpretation and the comparison to existing methods, require stronger quantitative support. The manuscript is well-written and likely to interest a broad readership in structural biology and computational chemistry, but the current evidence base does not fully establish the case.
+- **Who would be interested in the results, and why** Structural biologists using EPR/DEER spectroscopy to study conformational dynamics of membrane proteins; computational biologists developing generative models for protein structure; researchers in integrative structural biology seeking to combine experimental restraints with deep learning-based structure prediction; method developers in the area of ensemble modeling and free energy estimation from sparse experimental data.
+- **Major strengths** 1. The concept of a differentiable spin-label model with tunable rotameric width is a significant conceptual advance over existing rotamer library approaches. 2. The integration with a frozen, state-of-the-art generative model (Boltz-2) at inference time is elegant and avoids retraining. 3. The application to multiple biologically relevant transporters with condition-dependent DEER data demonstrates practical utility. 4. The authors are transparent about limitations, such as generator bias and the design choice of τ. 5. The manuscript is clearly written and the logic of the pipeline is easy to follow.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness / Validation
+  - **Claim pointer** The claim that the pipeline "recovers the ensemble populations, including both components of a bimodal profile" from synthetic DEER data.
+  - **Evidence pointer** Results section "Pipeline validation with synthetic ensembles", Figure 2D, Supplementary Figures 5–10, Supplementary Table 1.
+  - **Concern** The text states that the bimodal profile is recovered, but the quantitative accuracy of the recovered populations is not reported. The text mentions "of 0.28 to 0.35 Å" for the fit, but this is a measure of distribution fit, not population recovery. The authors need to report the actual recovered weights of the two modes versus the true weights (e.g., 50/50) and the uncertainty across replicates. The statement that the ensemble "resided closest to its own target" is qualitative. Without a quantitative error analysis on the recovered populations, the claim of "recovering" the populations is not substantiated.
+  - **Why it matters** The central premise of the method is that it can convert DEER data into a weighted ensemble. If the population weights are not accurately recovered even in ideal synthetic cases, the method's utility for real biological questions is severely compromised. This is the core validation of the entire approach.
+  - **Resolution test** Provide a quantitative comparison of the true and recovered population weights for the bimodal target, including the mean and standard deviation across the three replicates. Report the error in the recovered free energy difference (ΔG) between the two states and compare it to the known value from the imposed populations. Show that the recovered populations are statistically distinguishable from the prior (uniform) distribution.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness / Thermodynamic interpretation
+  - **Claim pointer** The claim that "free energy differences derived from the ensembles" are meaningful and that the sign of the change in free energy differences reflects the experimental equilibrium shift.
+  - **Evidence pointer** Results section "Free energy analysis from DEER-guided ensembles", Figures 2E, 4F, 5E, Supplementary Table 2.
+  - **Concern** The free energy differences are derived from the populations of the generated ensembles. The authors correctly note that the frequencies of the generated models reflect generator sampling bias, not equilibrium populations. They attempt to correct this by fitting weights (θ*), but the text does not explain how this weighting corrects for the generator's prior bias. The free energy values are reported as "kcal mol⁻¹" with an assumed temperature of 298.15 K, but the statistical uncertainty in these values is not reported. The comparison to "expected" shifts is qualitative. The text states that the sign of the change is correct for 12/12 pairs of conditions, but the magnitude of the changes is not compared to any experimental or theoretical estimate. Without error bars and a clear explanation of how the weighting removes generator bias, these free energy values are not yet established as thermodynamically meaningful.
+  - **Why it matters** The title and abstract emphasize the "thermodynamic grounding" of the method. If the free energy differences are not robust and unbiased, this is an overclaim. The biological interpretation of the results for the transporters depends on the reliability of these numbers.
+  - **Resolution test** Provide a detailed explanation of how the θ* weighting corrects for the generator's prior. Report the statistical uncertainty (e.g., bootstrap or replicate-based standard error) for the free energy differences in Figure 5E and Supplementary Table 2. For the synthetic case, compare the computed ΔG to the known value from the imposed populations. For the experimental cases, compare the magnitude of the ΔG changes to any available experimental estimates (e.g., from titration or kinetic experiments) or clearly state that only the sign is claimed.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Technical soundness / Comparison to existing methods
+  - **Claim pointer** The claim that existing rotamer models (MMM, MTSSLwizard) are "inadequate to deconvolve the spin label rotamer contribution from that of conformational heterogeneity" because they overestimate width.
+  - **Evidence pointer** Results section "A differentiable spin-label model with tunable rotameric width", Figure 1A.
+  - **Concern** The benchmark shows that MMM and MTSSLwizard overestimate the width for 68% and 74% of pairs, respectively. However, the text does not report the magnitude of this overestimation. Is it a 10% or a 100% overestimation? The choice of τ=0.2 for SC diffusion is a design choice, and the text states that this yields a width of ~1 Å. The comparison in Figure 1G shows that SC diffusion is the only method whose mean width falls below the DEER mean in all groups, but this is a consequence of the chosen τ. The claim of "inadequacy" is too strong without reporting the distribution of width errors. It is possible that for many pairs, the overestimation is small and within experimental error.
+  - **Why it matters** The motivation for developing SC diffusion rests on this benchmark. If the existing methods are only marginally overestimating width, the need for a new model is less compelling. The comparison should be quantitative and fair.
+  - **Resolution test** Report the distribution of the ratio of predicted to experimental width for MMM, MTSSLwizard, and SC diffusion (at τ=0.2). Show the median and interquartile range of this ratio. Discuss whether the overestimation by MMM/MTSSLwizard is systematic and significant relative to the experimental uncertainty in the DEER width.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Reproducibility / Technical detail
+  - **Claim pointer** The claim that the method is a "generative pipeline" that can be applied to other proteins.
+  - **Evidence pointer** Methods section "DEER-guided ensemble generator", "DEER loss", "Gradient-norm budget".
+  - **Concern** The Methods section describes the pipeline, but several critical details are missing or unclear. (a) The number of optimization steps (outer and inner) is not specified. (b) The learning rate schedule for the outer optimizer is not described. (c) The text states that "each model receives its own gradients and diffusion noise," but it is unclear how the models are initialized and how they diverge. (d) The selection of the 48 quantile levels is not justified. (e) The "restrained energy minimization" step is mentioned but not described in detail. These details are essential for reproducibility.
+  - **Why it matters** For a methods paper, reproducibility is paramount. The lack of these details prevents other groups from implementing and testing the method.
+  - **Resolution test** Provide a complete description of the optimization procedure, including all hyperparameters, initialization, and termination criteria. Justify the choice of 48 quantiles. Describe the energy minimization protocol in detail.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, last sentence.
+  - **Issue** The phrase "adding a missing thermodynamic grounding to generative protein structure prediction methods" is a strong claim. The method does not perform thermodynamic sampling; it fits populations to data. The word "thermodynamic" may be misleading.
+  - **Required correction** Rephrase to something like "enabling the interpretation of generative model outputs as weighted ensembles consistent with experimental data."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity / Technical detail
+  - **Affected element** Results section "A differentiable spin-label model with tunable rotameric width"
+  - **Evidence pointer** Figure 1C, 1D.
+  - **Issue** The text states that "lowering τ from 1 to 0.2 narrows the predicted nitroxide distribution from a root-mean-square spread of 5.36 Å... to 1.50 Å." It is unclear if this is the spread of the spin label positions or the width of the distance distribution. Please clarify.
+  - **Required correction** Clarify the metric being reported.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Statistical rigor
+  - **Affected element** Results section "DEER-guided ensembles track condition-dependent conformational shifts"
+  - **Evidence pointer** Figure 3F.
+  - **Issue** The text states that "Both low-pH ensembles are shifted toward IF relative to high pH." This is based on the projection onto the OF-IF axis. The statistical significance of this shift is not reported.
+  - **Required correction** Provide a measure of uncertainty (e.g., bootstrap confidence intervals) for the distribution of the projection coordinate t.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Technical detail
+  - **Affected element** Methods section "DEER-guided ensemble generator"
+  - **Evidence pointer** Methods, "Gradient-norm budget".
+  - **Issue** The gradient-norm budget is described, but the specific values of the weights (λ_MP, λ_CCD) are not reported. The text says they are "recomputed at every guided step," but the formula is not given.
+  - **Required correction** Provide the exact formula for the gradient combination and the resulting weight values.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Results section "DEER-guided ensembles of Pgp reveal previously unobserved conformations"
+  - **Evidence pointer** Figure 4C.
+  - **Issue** The claim of "previously unobserved conformations" is based on the asymmetry of the NBS pairs. It is unclear if these conformations are truly novel or just a redistribution of known states. The text should be more cautious.
+  - **Required correction** Rephrase to "conformations that reproduce the local asymmetry captured by the experimental P(r)".
+- **Technical failings that need to be addressed before the case is established** 1. Lack of quantitative error analysis on recovered populations and free energies (R1-M1, R1-M2). 2. Insufficient detail on the optimization procedure for reproducibility (R1-M4). 3. The comparison to existing rotamer models is not quantitative enough to support the claim of "inadequacy" (R1-M3).
+- **Assessment against Nature-style criteria** 
+  - **Originality** High. The concept of a differentiable spin-label model with tunable width for guiding generative models is novel and not present in the literature to my knowledge.
+  - **Scientific importance** High. If validated, this method could become a standard tool for interpreting DEER data and linking it to structural ensembles, addressing a long-standing challenge in the field.
+  - **Interdisciplinary readership** High. The work bridges EPR spectroscopy, machine learning, and membrane protein biology, and would be of interest to researchers in all three communities.
+  - **Technical soundness** Medium. The core idea is sound, but the validation is incomplete. The lack of quantitative error analysis and the unclear statistical treatment of the free energy calculations are significant gaps.
+  - **Readability for nonspecialists** Good. The manuscript is well-structured and explains the concepts clearly, although the Methods section is dense and assumes familiarity with diffusion models and EPR spectroscopy.
+- **Recommendation posture** Supportive if technical concerns are resolved. The core concept is promising and the potential impact is high. However, the current evidence base does not fully establish the validity of the population recovery and free energy claims. The authors must provide a more rigorous quantitative validation, including error analysis, and clarify the methodological details to make the case convincing.
+
+## Risk / unsupported claims
+- The claim that the pipeline "recovers the ensemble populations" is not quantitatively supported; only a qualitative statement is provided.
+- The claim that "free energy differences derived from the ensembles" are meaningful is not supported by error analysis or comparison to known values.
+- The claim that existing rotamer models are "inadequate" is not quantitatively substantiated.
+- The claim of "previously unobserved conformations" for Pgp is overstated without structural validation.
+- The statement that the method provides "thermodynamic grounding" is an overinterpretation of the population fitting approach.
+- The claim that the pipeline is robust across different proteins is based on a single run per condition, with no assessment of run-to-run variability for experimental data.

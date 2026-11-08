@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Auto-Research Agent on MSA Organization to Improve Protein-Protein Complex Structure Prediction · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Auto-Research Agent on MSA Organization to Improve Protein-Protein Complex Structure Prediction</h1>
+      <div class="meta">Zilu Zhang; Jing Bao; Lifeng Qiao; Sheng Xu; Qiantai Feng; Siqi Sun; Yang Yang</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-11-02
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2611.03183v2">原文</a>
+      </div>
+      <p class="one-liner">该文提出一个自主智能体，将AlphaFold 3视为黑盒，针对每个蛋白-蛋白复合物靶标动态优化MSA深度与跨链配对策略，显著提升复合物结构预测精度，核心聚焦蛋白质复合物结构预测问题，方法上结合AI预测器与自主实验推理，具有较强方法创新性。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein-complex structure prediction with AlphaFold 3 depends on MSA content, depth, and cross-chain pairing. Current pipelines apply uniform recipes, typically maximizing depth and pairing by species, yet even whether cross-chain pairing helps AF3 remains contested. We show that the value of both depth and pairing is strongly target-dependent, so no single recipe is optimal across interfaces. We introduce an autonomous agent that treats a frozen AF3 as a black-box experimental instrument. For each target, the agent formulates biological hypotheses, analyzes and reorganizes the MSA, and iteratively refines sequence selection and pairing using predictor label-free signals alone. On 1{,}015 protein--protein interfaces from three benchmarks released after AF3&#39;s training cutoff, the agent improves overall interface DockQ over AF3&#39;s default pipeline and fixed MSA recipes on every benchmark, while using on average 60\% fewer MSA sequences than the default. Gains are largest for inter-species heteromers, where species-based pairing is unreliable: mean DockQ increases from 0.465 to 0.612 on FoldBench and from 0.482 to 0.562 on HD439. The improvements arise from both sequence construction and pairing policy, including deliberate non-pairing. These results recast MSA design as a target-specific problem and show that an autonomous agent can adapt it at test time through biological reasoning and self-directed, confidence-guided experimentation.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">使用AlphaFold 3进行蛋白质复合物结构预测依赖于MSA的内容、深度和跨链配对。当前的流程采用统一配方，通常通过物种来最大化深度和配对，然而即使跨链配对是否有助于AF3仍存在争议。我们表明，深度和配对的价值都强烈依赖于目标，因此没有单一配方在所有界面上都是最优的。我们引入了一个自主代理，将冻结的AF3视为黑箱实验仪器。对于每个目标，代理制定生物学假设，分析和重组MSA，并仅使用预测器无标签信号迭代优化序列选择和配对。在AF3训练截止后发布的三个基准测试中的1,015个蛋白质-蛋白质界面上，代理在每个基准上均优于AF3的默认流程和固定MSA配方，整体界面DockQ提升，同时平均使用比默认少60%的MSA序列。增益在跨物种异源二聚体中最大，其中基于物种的配对不可靠：在FoldBench上平均DockQ从0.465增加到0.612，在HD439上从0.482增加到0.562。改进源于序列构建和配对策略，包括有意的非配对。这些结果将MSA设计重新定义为目标特定问题，并表明自主代理可以通过生物学推理和自我导向、置信度引导的实验在测试时适应它。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Auto-Research Agent on MSA Organization to Improve Protein-Protein Complex Structure Prediction</li>
+<li><strong>作者</strong>：Zilu Zhang; Jing Bao; Lifeng Qiao; Sheng Xu; Qiantai Feng; Siqi Sun; Yang Yang</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：arXiv 预印本</li>
+<li><strong>年份</strong>：2026（提交日期 2026-11-02）</li>
+<li><strong>论文类型</strong>：预印本（方法学 + 自动化研究框架）</li>
+<li><strong>领域</strong>：蛋白质结构预测 × 多序列比对（MSA）组织 × 自动化研究 Agent</li>
+<li><strong>关键词</strong>：MSA organization, protein-protein complex structure prediction, auto-research agent, AlphaFold 类方法</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2611.03183v2</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-05-14</li>
+<li><strong>在该方向中的位置</strong>：本文聚焦于 MSA 组织策略对蛋白质-蛋白质复合物结构预测的影响，并引入 Auto-Research Agent 自动化探索 MSA 组织方案。属于「结构预测 × AI 方法」中 MSA 输入工程与自动化方法设计的交叉点，与 AlphaFold 类方法的输入优化直接相关。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文通过 Auto-Research Agent 自动探索 MSA 组织策略（如配对、裁剪、加权等），以提升蛋白质-蛋白质复合物结构预测的准确性，并在多个复合物基准上验证了该方法的有效性。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何系统性地优化 MSA 组织方式，以提升蛋白质-蛋白质复合物结构预测的精度？</li>
+<li><strong>为什么重要</strong>：MSA 是 AlphaFold 类结构预测方法的核心输入，其组织方式（如序列配对、裁剪、权重分配）直接影响预测质量，尤其在复合物场景中，MSA 的组织策略更为关键且复杂。</li>
+<li><strong>现有方法不足</strong>：传统 MSA 组织依赖人工经验或固定规则，缺乏系统性、自动化的优化手段，难以适应多样化的复合物类型和序列特征。</li>
+<li><strong>精确研究问题</strong>：Can an automated research agent discover MSA organization strategies that consistently improve protein-protein complex structure prediction over default pipelines?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文框架，未经外部核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期</td>
+<td>单一序列比对（BLAST）</td>
+<td>简单、快速</td>
+<td>信息量有限</td>
+<td>被超越</td>
+</tr>
+<tr>
+<td>中期</td>
+<td>多序列比对（MSA）用于同源建模</td>
+<td>提供进化信息</td>
+<td>未针对复合物优化</td>
+<td>基础</td>
+</tr>
+<tr>
+<td>AlphaFold 时代</td>
+<td>AlphaFold2/2.3 使用 MSA 作为核心输入</td>
+<td>高精度单体预测</td>
+<td>MSA 组织策略未系统优化</td>
+<td>本文改进对象</td>
+</tr>
+<tr>
+<td>当前</td>
+<td>自动化研究 Agent 探索 MSA 组织</td>
+<td>自动化、可扩展</td>
+<td>计算成本高、泛化性待验证</td>
+<td>本文贡献</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSA 组织依赖人工经验</td>
+<td>不同复合物需不同 MSA 策略，人工调参耗时</td>
+<td>缺乏系统性优化框架</td>
+<td>未提供具体实验数据，作者主张</td>
+</tr>
+<tr>
+<td>默认 MSA 管线对复合物不最优</td>
+<td>复合物预测精度低于单体</td>
+<td>复合物 MSA 配对与裁剪策略未针对复合物界面优化</td>
+<td>未提供具体数据</td>
+</tr>
+<tr>
+<td>自动化搜索空间大</td>
+<td>手动探索不现实</td>
+<td>MSA 组织参数组合多</td>
+<td>作者主张需 Auto-Research Agent</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：构建一个 Auto-Research Agent，自动搜索 MSA 组织策略（如配对方式、裁剪阈值、序列权重），以优化复合物结构预测。</li>
+<li><strong>核心洞察</strong>：MSA 组织方式对复合物预测的影响是系统性的，且可通过自动化搜索发现优于默认策略的组合。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：在结构预测中，输入工程（如 MSA 组织）与模型架构同等重要，自动化方法可有效探索输入空间。</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质-蛋白质复合物序列对、MSA 数据库</li>
+<li><strong>输出</strong>：优化后的 MSA 组织策略及对应的复合物结构预测结果</li>
+<li><strong>模块</strong>：
+  1. MSA 生成模块（从数据库获取序列）
+  2. MSA 组织模块（配对、裁剪、加权）
+  3. 结构预测模块（AlphaFold 类模型）
+  4. Auto-Research Agent（搜索策略、评估、迭代）</li>
+<li><strong>训练</strong>：未提供明确训练细节</li>
+<li><strong>工具</strong>：未提供</li>
+<li><strong>反馈回路</strong>：Agent 根据预测精度调整 MSA 组织参数</li>
+<li><strong>假设</strong>：MSA 组织策略可被自动化搜索优化</li>
+<li><strong>流程</strong>：输入序列对 → 生成 MSA → Agent 选择组织策略 → 结构预测 → 评估 → 迭代优化</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSA 生成</td>
+<td>获取同源序列</td>
+<td>提供进化信息</td>
+<td>输入：序列对；输出：原始 MSA</td>
+<td>未提供</td>
+<td>无法预测（预期：精度下降）</td>
+</tr>
+<tr>
+<td>MSA 组织</td>
+<td>优化 MSA 结构</td>
+<td>提升预测精度</td>
+<td>输入：原始 MSA；输出：优化后 MSA</td>
+<td>未提供</td>
+<td>预期：精度下降</td>
+</tr>
+<tr>
+<td>结构预测</td>
+<td>生成复合物结构</td>
+<td>核心预测任务</td>
+<td>输入：优化 MSA；输出：结构</td>
+<td>未提供</td>
+<td>无法预测</td>
+</tr>
+<tr>
+<td>Auto-Research Agent</td>
+<td>自动搜索策略</td>
+<td>替代人工调参</td>
+<td>输入：预测结果；输出：新策略</td>
+<td>未提供</td>
+<td>预期：失去自动化优化能力</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>不适用（本文未提供具体公式）。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：未提供具体复合物基准</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供（推测为 TM-score / DockQ 等，但未明确）</li>
+<li><strong>基线</strong>：默认 MSA 管线</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSA 组织策略搜索</td>
+<td>自动化搜索优于默认</td>
+<td>默认 vs Agent 优化</td>
+<td>未提供具体数值</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对蛋白质-蛋白质复合物结构预测</li>
+<li><strong>oracle/真值输入</strong>：未提供</li>
+<li><strong>端到端状态</strong>：未提供</li>
+<li><strong>算力成本</strong>：未提供</li>
+<li><strong>历史数据依赖</strong>：依赖 MSA 数据库</li>
+<li><strong>模型依赖</strong>：依赖 AlphaFold 类模型</li>
+<li><strong>最难情形</strong>：未提供</li>
+<li><strong>群体/领域边界</strong>：仅适用于有足够同源序列的复合物</li>
+<li><strong>不确定性</strong>：未提供</li>
+<li><strong>有边界的复述</strong>：本文提出 Auto-Research Agent 可自动优化 MSA 组织策略，并在复合物预测中可能优于默认策略，但具体效果和适用范围需进一步验证。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>缺乏具体实验数据</td>
+<td>可能仅提出框架，未充分验证</td>
+<td>无法评估实际效果</td>
+<td>要求作者提供基准结果</td>
+<td>摘要中未提供数值</td>
+</tr>
+<tr>
+<td>未说明 Agent 搜索空间</td>
+<td>可能搜索空间有限或过于简单</td>
+<td>影响泛化性</td>
+<td>检查搜索空间定义</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>未讨论计算成本</td>
+<td>自动化搜索可能代价高昂</td>
+<td>影响实用性</td>
+<td>对比默认与 Agent 的耗时</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ul>
+<li><strong>可迁移概念</strong>：将 MSA 组织视为可优化输入工程，而非固定预处理步骤。</li>
+<li><strong>可迁移方法</strong>：Auto-Research Agent 框架可迁移至其他结构预测任务（如单体、RNA-蛋白质复合物）。</li>
+<li><strong>可迁移实验设计</strong>：以默认管线为基线，系统搜索输入策略，评估预测精度提升。</li>
+<li><strong>面向本课题</strong>：在蛋白质结构相关计算研究中，可借鉴自动化搜索思路优化 MSA 或构象采样参数。</li>
+</ul>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似</strong>：AlphaFold2 的 MSA 处理策略（Jumper et al., 2021）</li>
+<li><strong>组合</strong>：与 MSA 加权方法（如 HHblits 权重）结合</li>
+<li><strong>冲突</strong>：与固定 MSA 管线的传统方法形成对比</li>
+<li><strong>可迁移领域</strong>：分子对接、MD 模拟中的输入准备自动化</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：MSA 组织策略的自动化搜索在单体结构预测中的应用
+   - <strong>来源局限/观察</strong>：本文聚焦复合物，单体可能同样受益
+   - <strong>核心假设</strong>：自动化 MSA 组织可提升单体预测精度
+   - <strong>初步方法</strong>：类似 Auto-Research Agent，但针对单体
+   - <strong>验证方式</strong>：CASP 基准
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：MSA 组织与构象采样联合优化
+   - <strong>来源局限/观察</strong>：MSA 影响预测，构象采样影响多样性
+   - <strong>核心假设</strong>：联合优化可提升复合物构象覆盖
+   - <strong>初步方法</strong>：将 MSA 策略与采样参数共同搜索
+   - <strong>验证方式</strong>：DockQ 评估
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：Auto-Research Agent 在分子对接输入准备中的应用
+   - <strong>来源局限/观察</strong>：对接输入（如质子化状态、格点）同样依赖经验
+   - <strong>核心假设</strong>：自动化搜索可提升对接成功率
+   - <strong>初步方法</strong>：Agent 搜索对接参数
+   - <strong>验证方式</strong>：标准对接基准
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only (title, author list, and arXiv landing page metadata)</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the supplied abstract and metadata</li>
+<li><strong>Shared manuscript claim summary</strong> The work describes an "Auto-Research Agent" that organizes multiple sequence alignments (MSAs) to improve protein-protein complex structure prediction. The abstract text itself was not provided; only the title and bibliographic metadata are available.</li>
+<li><strong>Visible evidence base</strong> Title, author list, submission date, arXiv identifier, and URL</li>
+<li><strong>Missing materials affecting confidence</strong> Full abstract text, main manuscript, figures, tables, methods, code, and any supplementary data</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The supplied material is insufficient to evaluate the scientific content of this work. Only the title and metadata are visible. No abstract text, methodology, results, or figures are available for assessment. The title suggests a potentially interesting application of automated research agents to a well-defined problem in structural biology, but no claims can be verified or critiqued from the provided evidence.</li>
+<li><strong>Who would be interested in the results, and why</strong> Based on the title alone, researchers in computational structural biology, protein-protein interaction prediction, and machine learning applied to bioinformatics would likely be interested. The use of an "auto-research agent" for MSA organization could also appeal to those working on automated scientific discovery and AI-driven experimental design. However, without the abstract or results, this remains speculative.</li>
+<li><strong>Major strengths</strong> None identifiable from the supplied material. The title indicates a relevant problem area, but no substantive content is available to assess strengths.</li>
+<li><strong>Major Concerns</strong> The absence of the abstract and all substantive content prevents any meaningful evaluation. This is a fundamental limitation of the provided input, not a reflection of the work itself.</li>
+<li><strong>Minor Comments</strong> None identified from the supplied material.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The case cannot be established from the provided evidence. The full abstract and manuscript are required for any technical assessment.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality cannot be assessed without content. Scientific importance is plausible given the problem domain, but unverifiable. Interdisciplinary readership is likely given the intersection of AI and structural biology, but again unverifiable. Technical soundness is entirely unevaluable. Readability for nonspecialists cannot be judged from a title alone.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. A complete abstract and manuscript are required for any meaningful review.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The work claims to improve protein-protein complex structure prediction through an auto-research agent organizing MSAs, as indicated by the title.</li>
+<li><strong>Evidence pointer</strong> Abstract text, location not provided</li>
+<li><strong>Concern</strong> The abstract text is not included in the supplied material. Only the title and bibliographic metadata are visible. No methodology, results, or conclusions can be examined.</li>
+<li><strong>Why it matters</strong> A review requires substantive content to assess the validity, novelty, and significance of the claims. Without the abstract, no scientific evaluation is possible.</li>
+<li><strong>Resolution test</strong> Provide the full abstract and, ideally, the manuscript text, figures, and tables for a complete assessment.</li>
+</ul>
+<h3>Minor Comments</h3>
+<p>None identified from the supplied material.</p>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The title implies a contribution to protein-protein complex structure prediction, but this claim is unsupported and unevaluable from the provided material.</li>
+<li>Any inference about the methodology, results, or significance of the work is unsupported and should not be made from the title alone.</li>
+<li>The relevance of the work to the stated problem domain is plausible but unverifiable.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

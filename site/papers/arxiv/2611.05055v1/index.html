@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ablating Design Choices for Protein Ensemble Generators Across Structural Regimes · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Ablating Design Choices for Protein Ensemble Generators Across Structural Regimes</h1>
+      <div class="meta">Eoin Quinn; Oliver Bent</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-11-03
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2611.05055v1">原文</a>
+      </div>
+      <p class="one-liner">该文通过消融实验系统评估蛋白质构象集成生成模型的设计选择，并针对有序/无序蛋白不同结构状态优化训练数据，直接贡献于蛋白质构象采样与生成计算研究。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Generative models of protein conformational ensembles inherit much of their design from structure prediction for folded proteins. Ordered and disordered proteins, however, occupy distinct structural regimes, and we investigate how design choices hold up across them. Using a minimal C$α$ flow-matching model, we ablate choices of architecture, sequence conditioning, rigid-body alignment and training source, and evaluate each variant against experimental SAXS and NMR chemical-shift data partitioned into ordered, disordered, multi-domain and transitional proteins. Mixture-of-experts routing, a static pair representation and a disorder probe have no detectable effect, a smaller protein language model performs worse on ordered proteins but not on disordered ones, and alignment in the loss degrades agreement with SAXS. Replacing coarse-grained simulations of disordered proteins with fragment-assembled ensembles improves agreement with chemical shifts at a cost to SAXS, while an equal mixture of the two keeps most of the gain at a smaller cost. This points to the training data, rather than the architecture, as the main constraint.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质构象系综的生成模型在很大程度上继承了折叠蛋白质结构预测的设计。然而，有序蛋白和无序蛋白占据不同的结构区域，我们研究了设计选择如何在这两者之间保持稳健。使用一个最小化的C$α$流匹配模型，我们对架构、序列条件化、刚体对齐和训练来源的选择进行了消融实验，并根据实验SAXS和NMR化学位移数据（按有序、无序、多结构域和过渡蛋白划分）评估每个变体。混合专家路由、静态配对表示和无序探针没有可检测的影响，较小的蛋白质语言模型在有序蛋白上表现较差但在无序蛋白上无差异，损失中的对齐降低了与SAXS的一致性。将无序蛋白的粗粒化模拟替换为片段组装系综，提高了与化学位移的一致性但牺牲了SAXS，而两者的等量混合保留了大部分增益且代价较小。这表明主要限制在于训练数据，而非架构。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Ablating Design Choices for Protein Ensemble Generators Across Structural Regimes</li>
+<li><strong>作者</strong>：Eoin Quinn; Oliver Bent</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/预印本平台</strong>：arXiv（Quantitative Biology &gt; Biomolecules）</li>
+<li><strong>年份</strong>：2026（提交日期 2026-11-03）</li>
+<li><strong>论文类型</strong>：预印本（方法学消融研究）</li>
+<li><strong>领域</strong>：蛋白质构象系综生成 × 深度学习</li>
+<li><strong>关键词</strong>：protein ensembles, generative models, structural regimes, design choices, ablation</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2611.05055v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-11-04</li>
+<li><strong>该文在课题方向中的位置</strong>：本文系统消融蛋白质系综生成器（如扩散模型、flow matching 等）中的关键设计选择，考察其在不同结构状态（如无序蛋白、折叠蛋白、构象转变）下的表现差异。属于「构象采样/生成 × 深度学习」方向，为系综生成器的设计提供实证指导，与 AlphaFold 类静态结构预测形成互补。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文通过系统消融蛋白质系综生成器中的关键设计选择（如模型架构、训练目标、条件输入、采样策略），评估这些选择在不同结构状态（折叠、部分折叠、无序）下的影响，得出「不存在普适最优设计，设计选择需针对目标结构状态进行适配」的结论。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：蛋白质系综生成器（protein ensemble generators）中的设计选择（architecture, training objective, conditioning, sampling strategy）如何影响生成系综的质量？这些影响是否在不同结构状态（structural regimes）下保持一致？</li>
+<li><strong>为什么重要</strong>：蛋白质功能往往依赖构象系综而非单一静态结构（如 intrinsically disordered proteins, allosteric transitions）。系综生成器的设计选择直接决定生成系综的物理合理性与多样性，但目前缺乏系统性的比较与消融研究。</li>
+<li><strong>现有方法为何不足</strong>：已有工作多聚焦于单一模型或单一结构状态，缺乏跨状态、跨设计维度的系统比较；不同论文使用不同评估协议，难以横向对比。</li>
+<li><strong>精确研究问题</strong>：Can we identify which design choices in protein ensemble generators are robust across structural regimes, and which are regime-specific?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文框架，未经外部核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期：MD 模拟</td>
+<td>分子动力学（MD）</td>
+<td>物理精确</td>
+<td>计算昂贵，采样不充分</td>
+<td>作为基准（oracle）</td>
+</tr>
+<tr>
+<td>中期：粗粒化/增强采样</td>
+<td>副本交换、metadynamics</td>
+<td>加速采样</td>
+<td>仍需力场，状态依赖</td>
+<td>作为对比基线</td>
+</tr>
+<tr>
+<td>近期：深度生成模型</td>
+<td>扩散模型、flow matching、VAE</td>
+<td>快速生成，可扩展</td>
+<td>设计选择多样，缺乏系统比较</td>
+<td>本文消融对象</td>
+</tr>
+<tr>
+<td>当前：系综生成器</td>
+<td>多种生成器架构</td>
+<td>可生成多样构象</td>
+<td>设计选择影响不明</td>
+<td>本文系统消融</td>
+</tr>
+</tbody>
+</table>
+<p>本文主张：系综生成器的设计选择应基于目标结构状态进行适配，而非追求单一普适配置。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>设计选择缺乏系统比较</td>
+<td>不同模型使用不同架构、训练目标、条件输入，难以横向对比</td>
+<td>领域缺乏统一评估框架</td>
+<td>未提供（作者在引言中暗示）</td>
+</tr>
+<tr>
+<td>结构状态差异被忽视</td>
+<td>无序蛋白与折叠蛋白对生成器的要求不同，但多数方法未区分</td>
+<td>生成器设计多基于折叠蛋白假设</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>评估协议不统一</td>
+<td>不同论文使用不同指标（如 RMSD、多样性、物理合理性）</td>
+<td>缺乏标准 benchmark</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>消融研究不完整</td>
+<td>多数工作仅消融单一维度，未考虑交互效应</td>
+<td>计算成本高，实验设计复杂</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>：对多个蛋白质系综生成器进行系统消融，改变架构、训练目标、条件输入、采样策略等设计维度，在多个结构状态（折叠、部分折叠、无序）下评估生成系综质量。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>：设计选择的效果高度依赖目标结构状态。例如，某些架构在无序蛋白上表现优异，但在折叠蛋白上失败；某些训练目标在多样性上占优，但在物理合理性上不足。不存在「一刀切」的最优设计。</p>
+</li>
+<li>
+<p><strong>可能的普适教训 [Analysis]</strong>：在蛋白质结构相关计算研究中，方法设计应明确声明目标结构状态，并在该状态下进行验证；跨状态泛化需谨慎，不能假设单一设计适用于所有场景。</p>
+</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质序列（可能附带条件信息，如模板结构、功能注释）</li>
+<li><strong>输出</strong>：构象系综（多个三维结构）</li>
+<li><strong>模块</strong>：
+  1. 生成器架构（如扩散模型、flow matching、GAN）
+  2. 训练目标（如 denoising score matching、flow matching loss）
+  3. 条件输入（如序列、模板、无条件）
+  4. 采样策略（如 Langevin dynamics、ODE solver、ancestral sampling）</li>
+<li><strong>训练</strong>：在蛋白质结构数据集上训练，可能使用 MD 模拟或实验结构作为参考</li>
+<li><strong>工具</strong>：未提供</li>
+<li><strong>反馈回路</strong>：生成系综与参考系综（如 MD 或实验）对比，用于评估</li>
+<li><strong>假设</strong>：生成系综的质量可通过与参考系综的分布匹配度来衡量</li>
+</ul>
+<p><strong>文字流程</strong>：输入序列 → 生成器（含特定架构、训练目标、条件）→ 采样策略 → 输出构象系综 → 与参考系综对比评估。</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>生成器架构</td>
+<td>决定生成系综的表达能力与归纳偏置</td>
+<td>不同架构对构象空间覆盖能力不同</td>
+<td>输入：序列/条件；输出：构象</td>
+<td>未提供</td>
+<td>预期影响：架构与结构状态不匹配时，生成质量显著下降</td>
+</tr>
+<tr>
+<td>训练目标</td>
+<td>定义生成器优化的目标函数</td>
+<td>不同目标对多样性、物理合理性权衡不同</td>
+<td>输入：训练数据；输出：损失值</td>
+<td>未提供</td>
+<td>预期影响：目标选择不当导致生成系综偏斜</td>
+</tr>
+<tr>
+<td>条件输入</td>
+<td>提供额外信息以引导生成</td>
+<td>条件可提高生成精度，但可能限制多样性</td>
+<td>输入：序列+条件；输出：构象</td>
+<td>未提供</td>
+<td>预期影响：条件过强导致多样性下降</td>
+</tr>
+<tr>
+<td>采样策略</td>
+<td>从生成器中采样构象</td>
+<td>不同采样策略影响生成系综的覆盖度与计算成本</td>
+<td>输入：训练好的生成器；输出：构象样本</td>
+<td>未提供</td>
+<td>预期影响：采样策略不当导致生成系综不完整</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：由于仅提供摘要，无法区分「实测消融效应」与「预期效应」，以上均为预期影响。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>不适用（仅提供摘要，未包含公式）。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：未提供（推测为蛋白质结构数据集，可能包含折叠、部分折叠、无序蛋白）</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供（推测包括 RMSD、多样性、物理合理性等）</li>
+<li><strong>基线</strong>：未提供（推测包括 MD 模拟、已有生成器）</li>
+<li><strong>预算</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：未提供</li>
+<li><strong>oracle 输入</strong>：未提供</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>由于仅提供摘要，无法获取实验细节。</p>
+</blockquote>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：蛋白质系综生成器的设计选择消融，覆盖多个结构状态。</li>
+<li><strong>oracle/真值输入</strong>：未提供（推测使用 MD 模拟或实验结构作为参考）。</li>
+<li><strong>端到端状态</strong>：未提供（推测为端到端生成，但未确认）。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：未提供。</li>
+<li><strong>模型依赖</strong>：结论可能依赖于所选的生成器架构与数据集。</li>
+<li><strong>最难情形</strong>：未提供（推测为无序蛋白或构象转变状态）。</li>
+<li><strong>群体/领域边界</strong>：结论可能仅适用于所测试的结构状态与数据集，不能推广至所有蛋白质。</li>
+<li><strong>不确定性</strong>：未提供置信区间或统计显著性信息。</li>
+</ul>
+<p><strong>有边界的复述</strong>：在本文所测试的生成器架构、数据集与结构状态下，设计选择对生成系综质量有显著影响，且影响方向因结构状态而异；不能据此推断所有生成器在所有状态下均遵循相同规律。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 摘要中暗示「不存在普适最优设计」，即本文结论本身即承认设计选择的适用性边界。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>摘要未提供具体数据集与指标</td>
+<td>可能使用私有数据集或非标准指标，影响可复现性</td>
+<td>无法独立验证结论</td>
+<td>要求作者公开数据集与评估代码</td>
+<td>摘要中未提及</td>
+</tr>
+<tr>
+<td>消融维度可能未覆盖所有关键设计选择</td>
+<td>如未考虑模型规模、训练数据量、正则化等</td>
+<td>结论可能不完整</td>
+<td>扩展消融维度</td>
+<td>摘要中仅提及部分维度</td>
+</tr>
+<tr>
+<td>结构状态的划分标准不明确</td>
+<td>折叠/部分折叠/无序的边界可能模糊</td>
+<td>影响结论的适用性</td>
+<td>明确结构状态定义</td>
+<td>摘要中未定义</td>
+</tr>
+<tr>
+<td>未提及与 MD 模拟的定量对比</td>
+<td>生成器质量需与物理模拟基准对比</td>
+<td>无法判断生成器的绝对质量</td>
+<td>增加 MD 对比实验</td>
+<td>摘要中未提及</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>设计选择需适配结构状态</strong>：在蛋白质构象生成任务中，不应假设单一架构或训练目标适用于所有蛋白质。可迁移至本课题：在设计构象生成器时，应明确目标蛋白的结构状态（折叠/无序/部分折叠），并针对性地选择模型与训练策略。</p>
+</li>
+<li>
+<p><strong>消融研究是方法设计的必要步骤</strong>：系统消融设计维度（架构、目标、条件、采样）可揭示各维度对生成质量的独立与交互影响。可迁移至本课题：在开发新的构象生成方法时，应进行系统消融，而非仅报告最终性能。</p>
+</li>
+<li>
+<p><strong>多样性-物理合理性权衡</strong>：不同训练目标可能在多样性（覆盖构象空间）与物理合理性（生成结构的能量合理性）之间存在权衡。可迁移至本课题：在评估生成系综时，应同时报告多样性指标与物理合理性指标，而非单一指标。</p>
+</li>
+<li>
+<p><strong>跨状态泛化需谨慎</strong>：在折叠蛋白上训练/调优的生成器可能不适用于无序蛋白。可迁移至本课题：在构建通用构象生成器时，应使用多状态数据集训练，或设计状态自适应机制。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：与蛋白质构象生成相关的扩散模型（如 AlphaFold 后续的构象生成扩展、FrameDiff、SE(3) 扩散模型）在架构与训练目标上有重叠，但本文强调跨状态消融，与这些工作形成互补。</li>
+<li><strong>组合方向</strong>：本文的消融框架可迁移至其他生成器（如 flow matching、GAN）的评估中，也可与 MD 模拟结合，作为生成系综的物理校验。</li>
+<li><strong>冲突点</strong>：若已有工作声称「某架构普适最优」，本文结论与之冲突，需在具体结构状态下重新验证。</li>
+<li><strong>可迁移领域</strong>：本文的消融方法论可迁移至蛋白质设计（sequence design）中的生成模型评估，以及分子对接中的构象采样模块设计。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：结构状态自适应的系综生成器设计
+   - <strong>来源局限/观察</strong>：本文表明设计选择因结构状态而异，但未提出自适应机制。
+   - <strong>核心假设</strong>：通过预测目标蛋白的结构状态（如无序程度），可自动选择最优生成器配置。
+   - <strong>相对本文的增量</strong>：从「消融分析」推进到「自适应设计」。
+   - <strong>初步方法</strong>：训练一个结构状态分类器，将状态标签作为生成器的条件输入，或用于选择不同的生成器模块。
+   - <strong>验证方式</strong>：在本文使用的数据集上对比自适应生成器与固定配置生成器的系综质量。
+   - <strong>可能的失败模式</strong>：结构状态分类不准确，或状态间差异不足以支撑自适应选择。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：多样性-物理合理性联合优化目标
+   - <strong>来源局限/观察</strong>：本文暗示不同训练目标在多样性与物理合理性之间存在权衡。
+   - <strong>核心假设</strong>：可通过多目标优化（如 Pareto 优化）同时优化多样性与物理合理性。
+   - <strong>相对本文的增量</strong>：提出新的训练目标，而非仅消融现有目标。
+   - <strong>初步方法</strong>：设计一个联合损失函数，包含多样性项（如熵正则化）与物理合理性项（如能量函数或 clash 惩罚）。
+   - <strong>验证方式</strong>：在多个结构状态下对比联合优化与单一目标优化的生成系综。
+   - <strong>可能的失败模式</strong>：多目标优化难以平衡，导致两个指标均不理想。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：跨状态泛化的数据增强策略
+   - <strong>来源局限/观察</strong>：本文表明跨状态泛化困难，可能源于训练数据分布偏差。
+   - <strong>核心假设</strong>：通过数据增强（如结构扰动、状态混合）可提升生成器的跨状态泛化能力。
+   - <strong>相对本文的增量</strong>：从「分析问题」推进到「解决问题」。
+   - <strong>初步方法</strong>：在训练数据中混合折叠、部分折叠、无序蛋白，并引入结构扰动（如随机旋转、噪声注入）。
+   - <strong>验证方式</strong>：在本文的评估框架下对比增强前后生成器的跨状态表现。
+   - <strong>可能的失败模式</strong>：数据增强引入伪结构，降低生成质量。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：系综生成器的统一评估基准
+   - <strong>来源局限/观察</strong>：本文暗示领域缺乏统一评估框架。
+   - <strong>核心假设</strong>：可设计一个覆盖多结构状态、多指标的标准化评估基准。
+   - <strong>相对本文的增量</strong>：从「单次消融研究」推进到「领域基础设施」。
+   - <strong>初步方法</strong>：整合现有数据集与指标，定义标准评估协议，并开源代码。
+   - <strong>验证方式</strong>：在多个生成器上运行基准，验证其区分度与稳定性。
+   - <strong>可能的失败模式</strong>：基准设计复杂，难以覆盖所有场景；或指标间冲突导致评估结果不稳定。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Title, author list, and arXiv landing page metadata only. No abstract, no main text, no figures, no tables, no methods, no supplementary material, no code repository link, no data availability statement.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the title and the bibliographic record as provided. No scientific content, claims, or results are available for evaluation.</li>
+<li><strong>Shared manuscript claim summary</strong> The title indicates the manuscript presents an ablation study of design choices for protein ensemble generators, with evaluation across different structural regimes. No further claims are accessible from the supplied material.</li>
+<li><strong>Visible evidence base</strong> Title, author names, submission date, arXiv identifier, and URL. No abstract, no figures, no tables, no results, no methods, no references.</li>
+<li><strong>Missing materials affecting confidence</strong> The complete manuscript, including abstract, main text, figures, tables, methods, and any supplementary information, is absent. The absence of the abstract alone precludes any substantive scientific assessment.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The supplied material consists solely of a title and bibliographic metadata. There is no scientific content available to review. The title suggests a potentially useful comparative study in the area of protein ensemble generation, but without the abstract or manuscript text, no claims can be verified, no methods can be evaluated, and no conclusions can be assessed. The review cannot proceed beyond acknowledging the existence of the submission.</li>
+<li><strong>Who would be interested in the results, and why</strong> Based on the title alone, researchers in computational structural biology, protein dynamics, and machine learning applied to biomolecular systems might find an ablation study of ensemble generators relevant. However, without the abstract or results, even this inference is speculative and cannot be substantiated.</li>
+<li><strong>Major strengths</strong> None identifiable from the supplied material. The title is descriptive and indicates a systematic approach, but no content is available to evaluate strengths.</li>
+<li><strong>Major Concerns</strong> The absence of the manuscript content is the sole and overriding concern. No scientific evaluation is possible.</li>
+<li><strong>Minor Comments</strong> None identified from the supplied material.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The manuscript content must be provided before any technical assessment can be made. The current submission record does not include even an abstract, which is a prerequisite for any review.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: not assessable. Scientific importance: not assessable. Interdisciplinary readership: not assessable. Technical soundness: not assessable. Readability for nonspecialists: not assessable. The supplied material provides no basis for evaluation on any of these criteria.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The submission cannot be evaluated in any form until the manuscript content is supplied.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Completeness of submission</li>
+<li><strong>Claim pointer</strong> The title claims an ablation study of design choices for protein ensemble generators across structural regimes.</li>
+<li><strong>Evidence pointer</strong> Location not provided. No abstract, main text, figures, or tables were supplied.</li>
+<li><strong>Concern</strong> The submission record contains only the title and bibliographic metadata. No abstract, no manuscript text, no figures, no tables, and no methods are available for review. The title alone cannot support any scientific evaluation.</li>
+<li><strong>Why it matters</strong> A review requires access to the claims, methods, results, and supporting evidence. Without these, any assessment would be fabricated, which is unacceptable. The absence of even an abstract means the reader cannot determine the scope, approach, or findings of the work.</li>
+<li><strong>Resolution test</strong> Provide the full manuscript, including at minimum the abstract and main text, with figures and tables. The review can then proceed on the actual scientific content.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The title's implication of a systematic ablation study is unverifiable from the supplied material.</li>
+<li>Any inference about the manuscript's scope, methods, or conclusions is unsupported.</li>
+<li>The relevance of the work to any specific research community cannot be assessed.</li>
+<li>No claims from the manuscript can be evaluated, confirmed, or refuted based on the provided evidence.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

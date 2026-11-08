@@ -1,0 +1,72 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report a structure-guided dual-cluster engineering strategy applied to nicotinamide mononucleotide adenylyltransferase from *Methanothermobacter thermautotrophicus*. They claim that a triple mutant (V6C/Q10E/P11T) increases catalytic efficiency 5.1-fold over wild type, that molecular dynamics simulations reveal a compaction of the substrate-binding pocket, a 1.4 Å reduction in catalytic distance, and electrostatic reshaping that stabilizes a near-attack conformation, and that a 30-L bioreactor run achieved 85.3% conversion and 112.5 g L-1 NAD+ titer within 8 h.
+- **Visible evidence base** Abstract text only; no kinetic data, simulation parameters, structural coordinates, or bioreactor details are provided
+- **Missing materials affecting confidence** Full methods, kinetic characterization data, MD simulation setup and validation, structural figures, sequence alignments, epistasis analysis details, bioreactor operating conditions, and statistical analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting engineering strategy with a clear industrial endpoint. However, the evidence base is too limited to evaluate the central claims about mechanism, generality, or even the magnitude of the reported improvement. The dual-cluster concept and the claim of low epistatic coupling are stated without supporting data. The simulation-based mechanistic interpretation is plausible but unverifiable from the abstract alone. The process-scale result is impressive if accurate, but no operational details are given. The work may be of interest to biocatalysis and metabolic engineering communities, but the current abstract does not establish the case.
+- **Who would be interested in the results, and why** Researchers in enzyme engineering, particularly those working on multi-substrate enzymes and NAD+ biosynthesis; industrial biocatalysis groups seeking high-titer production routes; computational enzymologists interested in structure-guided design and MD-based mechanistic interpretation.
+- **Major strengths** The reported 5.1-fold improvement in catalytic efficiency and the 112.5 g L-1 NAD+ titer are notable quantitative outcomes. The combination of structural analysis, simulation, and process-scale validation is a commendable arc. The focus on avoiding trade-offs through epistatic coupling is a conceptually useful framing.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The dual-cluster engineering strategy exploits low epistatic coupling among conserved residues to independently tune electronic and geometric active-site features.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract asserts that the strategy exploits low epistatic coupling and that this enables independent tuning of electronic and geometric features. No data on epistasis measurements, residue conservation analysis, or the design of the dual clusters are presented. The claim that trade-offs are avoided is central to the conceptual novelty but is entirely unsupported in the abstract.
+  - **Why it matters** If the epistasis claim is not substantiated, the strategy reduces to a standard site-directed mutagenesis exercise. The novelty of the work hinges on demonstrating that the dual-cluster approach is generalizable and that the independence of tuning is real, not assumed.
+  - **Resolution test** Provide epistasis measurements (e.g., pairwise mutant combinations) showing that the two clusters act independently, and show that single-cluster mutants do not achieve the same combined effect. Include conservation analysis supporting the choice of targeted residues.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic evidence
+  - **Claim pointer** Molecular dynamics simulations revealed that the mutations synergistically compact the substrate-binding pocket, reduce the catalytic distance by 1.4 A, and reshape local electrostatics to stabilize a near-attack conformation, thereby lowering the reaction barrier.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The MD-based mechanistic claims are presented as definitive findings. No simulation parameters, force field, sampling time, convergence criteria, or comparison with wild-type simulations are given. The 1.4 A reduction in catalytic distance and the electrostatic reshaping are stated without error bars or statistical significance. The link between the near-attack conformation and the lowered reaction barrier is asserted, not demonstrated.
+  - **Why it matters** The mechanistic narrative is a major part of the paper's contribution. If the simulations are under-sampled, poorly converged, or not compared rigorously with wild type, the conclusions may be artifacts. The abstract does not allow the reader to assess the reliability of these claims.
+  - **Resolution test** Provide simulation details, convergence metrics, replicate runs, and statistical comparison of key distances and electrostatic potentials between wild type and MT3. Ideally, include QM/MM or enhanced sampling to support the barrier-lowering claim.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Process-scale validation
+  - **Claim pointer** In a 30-L bioreactor, MT3 achieved 85.3% conversion and a titer of 112.5 g L-1 NAD+ within 8 h.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The bioreactor result is reported as a single set of numbers with no context. Substrate loading, feeding strategy, cell density, temperature, pH, aeration, and the form of the enzyme (whole cell, lysate, purified) are not stated. The conversion percentage is ambiguous without a defined substrate concentration. The titer is impressive but cannot be evaluated without knowing the starting substrate amount and the product isolation method.
+  - **Why it matters** The industrial potential claim rests entirely on this result. If the conditions are highly optimized or the titer is measured in a way that inflates the value, the claim would be misleading. The abstract does not allow the reader to judge whether this is a realistic process or a one-off demonstration.
+  - **Resolution test** Provide full bioreactor conditions, substrate and product quantification methods, time-course data, and reproducibility across at least three independent runs. Clarify whether the titer refers to extracellular or total NAD+.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Title and abstract framing
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The title emphasizes "multi-substrate binding pocket" but the abstract does not specify which substrates are coordinated or how the pocket remodeling affects each substrate individually.
+  - **Required correction** Specify the substrates (NMN, ATP, and possibly others) and state whether the mutations affect binding of all substrates equally or preferentially.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Quantitative reporting
+  - **Affected element** Catalytic efficiency improvement
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The 5.1-fold increase in kcat/Km is reported without individual kcat and Km values. It is unclear whether the improvement comes from increased turnover, improved substrate binding, or both.
+  - **Required correction** Report kcat and Km for each substrate separately, with standard errors and the number of replicates.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Generality
+  - **Affected element** Transferability claim
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract claims a "transferable framework" but provides no evidence that the strategy works on any enzyme other than the single case presented.
+  - **Required correction** Either temper the claim to "potentially transferable" or provide a second example, even a preliminary one, to support generality.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (epistasis claim unsupported), R1-M2 (MD-based mechanism not verifiable), R1-M3 (bioreactor result lacks context and reproducibility data)
+- **Assessment against Nature-style criteria** Originality: the dual-cluster concept is a reasonable framing but is not demonstrated as distinct from standard multi-site mutagenesis. Scientific importance: NAD+ production is of practical interest, but the abstract does not show a conceptual advance that would elevate it beyond a solid applied study. Interdisciplinary readership: the work bridges structural biology, computational chemistry, and bioprocess engineering, which is appealing, but the abstract is too thin to engage specialists in any of these fields. Technical soundness: cannot be assessed from the abstract; the missing kinetic, simulation, and process details are critical. Readability for nonspecialists: the abstract is clear and well-structured, but the mechanistic claims are presented without sufficient context for a general reader to judge their validity.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract is promising but does not provide enough detail to support the central mechanistic and strategic claims. A revised version with full data on epistasis, simulation validation, and bioreactor reproducibility would be needed to assess whether the case can be made.
+
+## Risk / unsupported claims
+- The claim that the dual-cluster strategy exploits low epistatic coupling is unsupported.
+- The claim that the mutations independently tune electronic and geometric features is unsupported.
+- The claim that MD simulations revealed a synergistic compaction, a 1.4 A catalytic distance reduction, and electrostatic reshaping is unverifiable without simulation details.
+- The claim that the near-attack conformation lowers the reaction barrier is asserted without energetic calculations.
+- The claim that the 30-L bioreactor result underscores industrial potential is unverifiable without process conditions and reproducibility data.
+- The claim that the framework is transferable is unsupported by any second example.

@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AmyloDeep: protein language model-based ensemble model for predicting amyloid propensity from the amino acid sequence. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>AmyloDeep: protein language model-based ensemble model for predicting amyloid propensity from the amino acid sequence.</h1>
+      <div class="meta">Davtyan, Alisa; Khachatryan, Anahit; Petrosyan, Rafayel</div>
+      <div class="meta muted">
+        
+        <span class="journal">Bioinformatics advances</span>
+        · 2026-11-04
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42979591/">原文</a>
+      </div>
+      <p class="one-liner">该文利用蛋白语言模型ESM2和UniRep构建集成模型，从氨基酸序列预测淀粉样蛋白倾向，属于蛋白质序列-结构性质预测的AI方法，但未直接涉及结构预测或构象采样，方法创新性一般。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">MOTIVATION: Amyloids are predominantly beta-sheet-rich, stable protein structures that can maintain their presence in the human body for multiple years. Amyloid protein aggregates contribute to the development of multiple neurodegenerative diseases, such as Alzheimer&#39;s, Parkinson&#39;s, and Huntington&#39;s, and are involved in different vital functions, such as memory formation and immune system function. RESULTS: Here, we used advanced machine learning and deep learning techniques to predict amyloid propensity from the amino acid sequence. First, we aggregated labeled amino acid sequence data from multiple sources, obtaining a roughly balanced dataset of 2365 sequences for binary classification. We leveraged that data to both fine-tune the ESM2 model and to train new models based on protein embeddings from ESM2 and UniRep. The predictions from these models were then unified into a single soft voting ensemble model, yielding highly robust and accurate results. We further made a tool where users can provide the amino acid sequence and get the amyloid formation probabilities of different segments of the input sequence. AVAILABILITY AND IMPLEMENTATION: Users can access the light version of AmyloDeep through the web server at https://amylodeep.com/, and the full model is available as a Python package at https://pypi.org/project/amylodeep/.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">动机：淀粉样蛋白主要是富含β-折叠的稳定蛋白质结构，能在人体内存在多年。淀粉样蛋白聚集体参与多种神经退行性疾病的发展，如阿尔茨海默病、帕金森病和亨廷顿病，并涉及不同重要功能，如记忆形成和免疫系统功能。结果：在此，我们使用先进的机器学习和深度学习技术，从氨基酸序列预测淀粉样蛋白倾向性。首先，我们汇总了来自多个来源的标记氨基酸序列数据，获得了一个大致平衡的数据集，包含2365条序列，用于二分类。我们利用这些数据对ESM2模型进行微调，并基于ESM2和UniRep的蛋白质嵌入训练新模型。这些模型的预测随后被统一到一个软投票集成模型中，产生高度稳健且准确的结果。我们进一步制作了一个工具，用户可提供氨基酸序列，并获得输入序列不同片段的淀粉样蛋白形成概率。可用性与实现：用户可通过网页服务器访问AmyloDeep的轻量版，网址为https://amylodeep.com/，完整模型作为Python包可在https://pypi.org/project/amylodeep/获取。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: AmyloDeep: protein language model-based ensemble model for predicting amyloid propensity from the amino acid sequence</li>
+<li><strong>作者与单位</strong>: Davtyan, Alisa; Khachatryan, Anahit; Petrosyan, Rafayel（美国亚美尼亚大学，AUA）</li>
+<li><strong>期刊/预印本平台</strong>: Bioinformatics Advances</li>
+<li><strong>年份</strong>: 2026（在线日期 2026-11-04）</li>
+<li><strong>论文类型</strong>: 方法学/工具开发（含基准测试）</li>
+<li><strong>领域</strong>: 蛋白质淀粉样倾向性预测 × 蛋白质语言模型（pLM）+ 集成学习</li>
+<li><strong>关键词</strong>: amyloid propensity, protein language model, ESM2, UniRep, ensemble model, binary classification</li>
+<li><strong>DOI/arXiv 号</strong>: 10.1093/bioadv/vbag296</li>
+<li><strong>代码</strong>: Python 包 https://pypi.org/project/amylodeep/；轻量版 Web 服务器 https://amylodeep.com/</li>
+<li><strong>数据</strong>: 2365 条序列（1236 淀粉样阳性 / 1129 阴性），测试集 305 条（"Test set 305.csv"）及 48 条（"Reduced test set 48.csv"）见补充材料</li>
+<li><strong>阅读日期</strong>: 2026-05-13（未提供，按当前日期推断）</li>
+<li><strong>在课题方向中的位置</strong>: 该文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>序列-表型（淀粉样倾向性）预测</strong>子方向，与结构预测（AlphaFold）互补：不预测三维结构，而是预测序列中哪些区域倾向于形成淀粉样纤维（β-sheet 富集结构）。其方法（pLM 嵌入 + 多模型集成 + 校准）可迁移至其他序列-功能/结构属性预测任务。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>该文构建了一个基于 ESM2（150M/650M）和 UniRep 嵌入、由五个二分类模型（微调 ESM2-150M、FNN、SVM、XGBoost、FNN-ESM2-650M）经软投票集成的模型 AmyloDeep，在 2365 条实验验证序列上训练，用于从氨基酸序列预测淀粉样形成概率，并在 305 条测试集上优于 AMYPred-FRL 和 Cross-Beta 等现有方法。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 如何从氨基酸序列准确预测哪些区域具有淀粉样形成倾向（amyloid propensity）？</li>
+<li><strong>为什么重要</strong>: 淀粉样蛋白聚集与多种神经退行性疾病（阿尔茨海默病、帕金森病、亨廷顿病）相关，同时功能性淀粉样蛋白参与记忆形成和免疫调节。准确预测淀粉样区域是研究其致病机制和设计干预手段的第一步。</li>
+<li><strong>现有方法为何不足</strong>:
+  1. 传统方法（TANGO、ZipperDB、AGGRESCAN）依赖物理模型或经验尺度，主要针对疏水性、β-sheet 倾向的序列，对 prion-like 低复杂度极性结构域等非典型淀粉样区域表现不佳。
+  2. 多数方法使用小规模数据集训练，泛化能力有限。
+  3. 未充分利用 pLM 提供的长程序列依赖信息。</li>
+<li><strong>精确研究问题</strong>: Can a protein language model-based ensemble model, trained on aggregated experimentally validated amyloid/non-amyloid sequences, achieve higher accuracy in predicting amyloid propensity from amino acid sequence than existing physics-based and ML-based tools?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文引言及作者引用，经外部核验（引用文献可查证），标记为「经外部核验」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表方法</th>
+<th>优点</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>物理模型</td>
+<td>TANGO (Fernandez-Escamilla 2004)、ZipperDB (Goldschmidt 2010)</td>
+<td>基于热力学/结构能量，可解释性强</td>
+<td>依赖特定结构假设（如 steric zipper），对非典型淀粉样区域不敏感</td>
+</tr>
+<tr>
+<td>经验尺度/统计</td>
+<td>AGGRESCAN (Conchillo-Solé 2007)、WALTZ (Maurer-Stroh 2010)</td>
+<td>计算快，基于实验突变数据</td>
+<td>尺度校准于特定蛋白（如 Aβ42），迁移性有限</td>
+</tr>
+<tr>
+<td>共识/集成</td>
+<td>AMYLPRED2 (Tsolis 2011)</td>
+<td>多方法投票，提高鲁棒性</td>
+<td>受限于底层方法性能</td>
+</tr>
+<tr>
+<td>机器学习</td>
+<td>AMYPred-FRL (Charoenkwan 2022)、Cross-Beta (Gonay 2025)</td>
+<td>可学习复杂特征</td>
+<td>特征工程依赖人工设计，未利用 pLM 表示</td>
+</tr>
+<tr>
+<td><strong>pLM 嵌入 + 集成（本文）</strong></td>
+<td><strong>AmyloDeep</strong></td>
+<td><strong>利用 pLM 长程依赖表示，多模型集成提高鲁棒性，校准输出概率</strong></td>
+<td><strong>依赖 pLM 嵌入质量，训练数据规模仍有限</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>: 首次将 ESM2 和 UniRep 两种 pLM 嵌入与多种 ML 分类器结合，通过软投票集成和概率校准，在统一基准上超越现有工具。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据规模有限</td>
+<td>仅 2365 条序列用于训练</td>
+<td>实验验证的淀粉样序列稀缺，标注成本高</td>
+<td>Methods 2.1 节</td>
+</tr>
+<tr>
+<td>传统方法对非典型淀粉样区域不敏感</td>
+<td>对 prion-like 低复杂度极性结构域预测差</td>
+<td>依赖疏水性/β-sheet 尺度，未捕捉极性残基驱动的聚集</td>
+<td>Introduction 第 2 段</td>
+</tr>
+<tr>
+<td>现有工具未利用 pLM 表示</td>
+<td>多数方法使用手工特征或浅层模型</td>
+<td>pLM 是近年新工具，尚未被淀粉样预测领域充分采用</td>
+<td>Introduction 第 3 段</td>
+</tr>
+<tr>
+<td>单一模型泛化不足</td>
+<td>单个模型在不同数据集上表现波动</td>
+<td>不同模型捕捉不同特征，缺乏集成</td>
+<td>Results 3.1 节</td>
+</tr>
+<tr>
+<td>概率输出未校准</td>
+<td>原始概率不可直接用于决策阈值</td>
+<td>未进行校准处理</td>
+<td>Methods 2.3 节</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>: 使用 ESM2（150M 和 650M）和 UniRep 三种 pLM 生成序列嵌入，分别训练五个二分类模型（微调 ESM2-150M、FNN-ESM2-650M、SVM-ESM2-650M、XGBoost-ESM2-650M、FNN-UniRep），经校准后软投票集成，输出淀粉样形成概率。</li>
+<li><strong>核心洞察</strong>: 
+   - pLM 嵌入（特别是 ESM2）能捕捉序列中长程依赖和进化信息，这些信息对预测淀粉样倾向性至关重要，而传统氨基酸尺度无法编码。
+   - 不同 pLM（ESM2 vs UniRep）和不同分类器（神经网络 vs SVM vs 树模型）捕捉序列特征的不同方面，集成可互补。
+   - 概率校准（Platt/isotonic）使输出概率具有实际决策意义。</li>
+<li><strong>可能的普适教训</strong> [Analysis]: 对于序列-属性预测任务（包括结构相关属性），pLM 嵌入 + 多模型集成 + 概率校准是一个通用且有效的框架。该框架不依赖特定结构假设，可迁移至其他序列-表型任务（如溶解性、稳定性、聚集倾向等）。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: 氨基酸序列（长度可变）</li>
+<li><strong>输出</strong>: 淀粉样形成概率（0-1），以及基于滑动窗口的淀粉样区域图谱</li>
+<li><strong>模块</strong>:
+  1. <strong>数据聚合模块</strong>: 整合 CPAD 2.0、Waltz-DB 2.0、Amyloid Atlas、AmyPro、AmyLoad、AmyloBase 六个数据库，去重后得 2365 条序列
+  2. <strong>嵌入生成模块</strong>: ESM2-150M（微调）、ESM2-650M（冻结嵌入）、UniRep（冻结嵌入）
+  3. <strong>分类器模块</strong>: 五个模型——微调 ESM2-150M（分类头）、FNN-ESM2-650M、SVM-ESM2-650M、XGBoost-ESM2-650M、FNN-UniRep
+  4. <strong>校准模块</strong>: 对每个模型应用 Platt 或 isotonic 校准
+  5. <strong>集成模块</strong>: 软投票（算术平均五个校准后概率）
+  6. <strong>滑动窗口模块</strong>: 用户可指定窗口大小（默认 10），生成序列的淀粉样区域图谱</li>
+<li><strong>训练</strong>: 70% 训练 / 15% 验证 / 15% 测试；MMseqs2 以 40% 序列同一性聚类去冗余；最终模型在 A100 GPU 上训练约 30 小时</li>
+<li><strong>假设</strong>: 淀粉样倾向性可从序列直接预测，无需结构信息；pLM 嵌入包含足够信息区分淀粉样/非淀粉样区域</li>
+<li><strong>流程</strong>: 输入序列 → pLM 嵌入 → 五个分类器分别预测 → 概率校准 → 软投票集成 → 输出淀粉样概率 + 区域图谱</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据聚合</td>
+<td>整合 6 个数据库，去重</td>
+<td>扩大训练数据规模，覆盖多样淀粉样类型</td>
+<td>输入：6 个数据库原始数据；输出：2365 条标注序列</td>
+<td>Methods 2.1 节</td>
+<td>数据量减少将降低模型泛化能力 [预期]</td>
+</tr>
+<tr>
+<td>ESM2-150M 微调</td>
+<td>端到端微调 pLM 分类</td>
+<td>利用 pLM 表示 + 任务特定微调</td>
+<td>输入：序列；输出：淀粉样概率</td>
+<td>Results 表 1</td>
+<td>移除后集成多样性降低，性能可能下降 [预期]</td>
+</tr>
+<tr>
+<td>ESM2-650M 嵌入 + FNN</td>
+<td>冻结嵌入 + 神经网络分类</td>
+<td>650M 参数提供更丰富表示</td>
+<td>输入：序列；输出：概率</td>
+<td>Results 表 1</td>
+<td>同上 [预期]</td>
+</tr>
+<tr>
+<td>ESM2-650M 嵌入 + SVM</td>
+<td>冻结嵌入 + 线性 SVM</td>
+<td>线性分类器提供不同决策边界</td>
+<td>输入：序列；输出：概率</td>
+<td>Results 表 1</td>
+<td>同上 [预期]</td>
+</tr>
+<tr>
+<td>ESM2-650M 嵌入 + XGBoost</td>
+<td>冻结嵌入 + 梯度提升树</td>
+<td>树模型捕捉非线性特征交互</td>
+<td>输入：序列；输出：概率</td>
+<td>Results 表 1</td>
+<td>同上 [预期]</td>
+</tr>
+<tr>
+<td>UniRep 嵌入 + FNN</td>
+<td>另一种 pLM 嵌入 + 神经网络</td>
+<td>UniRep 基于 LSTM，捕捉不同序列特征</td>
+<td>输入：序列；输出：概率</td>
+<td>Results 表 1</td>
+<td>移除后集成多样性降低 [预期]</td>
+</tr>
+<tr>
+<td>概率校准</td>
+<td>Platt/isotonic 校准</td>
+<td>使概率具有实际决策意义</td>
+<td>输入：模型原始概率；输出：校准概率</td>
+<td>Methods 2.3 节</td>
+<td>未校准概率可能导致阈值决策偏差 [预期]</td>
+</tr>
+<tr>
+<td>软投票集成</td>
+<td>算术平均五个校准概率</td>
+<td>综合多模型预测，提高鲁棒性</td>
+<td>输入：五个校准概率；输出：最终概率</td>
+<td>Results 3.1 节</td>
+<td>集成性能优于任何单一模型（作者实测）</td>
+</tr>
+<tr>
+<td>滑动窗口</td>
+<td>生成淀粉样区域图谱</td>
+<td>提供区域级预测，而非仅整序列</td>
+<td>输入：序列 + 窗口大小；输出：区域概率图谱</td>
+<td>Results 3.3 节</td>
+<td>无窗口则无法定位具体淀粉样区域 [预期]</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>本文为纯 ML 方法论文，无显式数学公式。核心操作可形式化如下：</p>
+<ul>
+<li><strong>软投票集成</strong>: ( P_{\text{ensemble}}(x) = \frac{1}{5} \sum_{i=1}^{5} \hat{p}_i(x) )</li>
+<li>( \hat{p}_i(x) )：第 i 个模型对序列 x 的校准后淀粉样概率</li>
+<li>用途：综合五个模型预测</li>
+<li>
+<p>直觉：多模型平均，降低单一模型偏差</p>
+</li>
+<li>
+<p><strong>滑动窗口预测</strong>: ( P_{\text{window}}(x_{j:j+w}) = P_{\text{ensemble}}(x_{j:j+w}) )</p>
+</li>
+<li>( w )：窗口大小（默认 10）</li>
+<li>用途：生成序列的淀粉样区域图谱</li>
+<li>直觉：对每个窗口独立预测，形成沿序列的概率分布</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>: 2365 条序列（1236 阳性 / 1129 阴性），来自 6 个数据库聚合；测试集 305 条（MMseqs2 40% 聚类去冗余后）；额外 48 条测试集（长度 ≥15 aa）用于与 Cross-Beta 比较</li>
+<li><strong>指标</strong>: 准确率（Accuracy）、精确率（Precision）、召回率（Sensitivity）、F1 分数；ROC 曲线、特异性-敏感性曲线</li>
+<li><strong>基线</strong>: AMYPred-FRL、Cross-Beta predictor</li>
+<li><strong>评测协议</strong>: 70/15/15 划分；五折交叉验证；测试集经序列聚类去冗余</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>集成模型 vs 单一模型</td>
+<td>集成优于任何单一组件</td>
+<td>五个组件模型 vs 集成，同一测试集</td>
+<td>集成性能优于所有组件（作者声称）</td>
+<td>软投票集成有效</td>
+<td>未提供各组件具体数值</td>
+<td>Results 3.1 节</td>
+</tr>
+<tr>
+<td>AmyloDeep vs AMYPred-FRL</td>
+<td>AmyloDeep 优于现有 ML 方法</td>
+<td>48 条测试集（≥15 aa）</td>
+<td>AmyloDeep 在精确率、召回率、F1、准确率上均优于 AMYPred-FRL</td>
+<td>AmyloDeep 在短序列上表现更好</td>
+<td>样本量小（48 条）</td>
+<td>Results 3.3 节、图 3</td>
+</tr>
+<tr>
+<td>AmyloDeep vs Cross-Beta</td>
+<td>AmyloDeep 优于物理/ML 混合方法</td>
+<td>同上 48 条测试集</td>
+<td>AmyloDeep 优于 Cross-Beta</td>
+<td>同上</td>
+<td>同上</td>
+<td>Results 3.3 节、图 3</td>
+</tr>
+<tr>
+<td>定性比较：PrP 蛋白</td>
+<td>AmyloDeep 能定位已知淀粉样区域</td>
+<td>人 PrP（P04156），已知纤维区域 170-229（PDB: 6LNI）</td>
+<td>三种工具均预测该区域</td>
+<td>AmyloDeep 与现有工具一致</td>
+<td>定性比较，非定量</td>
+<td>Results 3.3 节、图 4a</td>
+</tr>
+<tr>
+<td>定性比较：hnRNP D-like</td>
+<td>AmyloDeep 比现有工具更准确</td>
+<td>人 hnRNP D-like（O14979），已知纤维区域 345-395（PDB: 7ZIR）</td>
+<td>AmyloDeep 准确预测该区域，ZipperDB/AGGRESCAN 未准确预测</td>
+<td>AmyloDeep 在非典型淀粉样区域上更优</td>
+<td>单一案例，需更多验证</td>
+<td>Results 3.3 节、图 4b</td>
+</tr>
+<tr>
+<td>ESM3 评估</td>
+<td>ESM3 嵌入是否优于 ESM2</td>
+<td>ESM3-sm-open-v1 微调 vs ESM2-150M</td>
+<td>ESM3 表现不如 ESM2-150M</td>
+<td>ESM2 更适合该任务</td>
+<td>仅测试一个 ESM3 变体</td>
+<td>Discussion 节</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 二分类（淀粉样/非淀粉样）和区域级预测（滑动窗口），仅基于序列，不涉及结构预测。</li>
+<li><strong>oracle/真值输入</strong>: 训练标签来自实验验证的淀粉样序列数据库，但具体实验条件（pH、浓度、温度等）未纳入模型。</li>
+<li><strong>端到端状态</strong>: 是端到端可用的工具（Web 服务器 + Python 包），但推理需 GPU（尤其 ESM2-650M 嵌入）。</li>
+<li><strong>算力成本</strong>: 训练约 30 小时（A100 GPU）；推理成本主要来自 pLM 嵌入生成，与序列长度线性相关。</li>
+<li><strong>历史数据依赖</strong>: 训练数据来自 6 个数据库，时间跨度大，实验条件异质。</li>
+<li><strong>模型依赖</strong>: 依赖 ESM2 和 UniRep 的预训练表示；ESM3 测试失败表明并非所有 pLM 都适用。</li>
+<li><strong>最难情形</strong>: 短序列（&lt;15 aa）无法用 Cross-Beta 比较；非典型淀粉样区域（如 prion-like 结构域）仍是挑战。</li>
+<li><strong>群体/领域边界</strong>: 训练数据以已知淀粉样蛋白为主，对全新蛋白家族的泛化能力未验证。</li>
+<li><strong>不确定性</strong>: 未报告置信区间或不确定性估计；概率校准后可用于阈值决策，但未提供校准曲线细节。</li>
+<li><strong>有边界的复述</strong>: AmyloDeep 在聚合的实验验证序列数据集上训练，在独立测试集上优于 AMYPred-FRL 和 Cross-Beta，并能准确定位已知淀粉样区域；但其性能受限于训练数据规模和异质性，对短序列和非典型淀粉样区域的泛化能力仍需更多验证。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练数据有限</td>
+<td>仅 2365 条序列，短序列占比高</td>
+<td>未明确提及</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>计算资源限制</td>
+<td>无法训练更大模型（如 ESM2-15B）</td>
+<td>未明确提及</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>ESM3 表现不佳</td>
+<td>ESM3-sm-open-v1 不如 ESM2-150M</td>
+<td>未明确提及</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>未考虑外部条件</td>
+<td>pH、温度等环境因素未纳入模型</td>
+<td>提及 AGGRESCAN4D 已考虑 pH，暗示未来方向</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>与结构预测工具整合不足</td>
+<td>未与 AlphaFold 等结构预测工具结合</td>
+<td>提出 AmyloDeep 可作为结构预测工具的辅助模块</td>
+<td>Discussion 节</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>测试集仅 305 条（48 条用于比较）</td>
+<td>样本量小，统计功效有限；48 条比较可能不足以支持"优于"结论</td>
+<td>小样本比较可能高估性能差异</td>
+<td>在更大独立测试集上验证；报告置信区间</td>
+<td>Results 3.3 节</td>
+</tr>
+<tr>
+<td>未报告各组件模型的独立性能</td>
+<td>无法判断集成增益是否显著</td>
+<td>集成有效性需与最佳组件比较</td>
+<td>补充各组件在测试集上的详细指标</td>
+<td>Results 3.1 节</td>
+</tr>
+<tr>
+<td>定性比较仅两个案例</td>
+<td>案例选择可能有偏</td>
+<td>定性案例不足以证明普适优越性</td>
+<td>在更多已知淀粉样蛋白上系统比较</td>
+<td>Results 3.3 节、图 4</td>
+</tr>
+<tr>
+<td>数据聚合未说明标签冲突处理</td>
+<td>不同数据库对同一序列可能标注不一致</td>
+<td>标签质量直接影响模型性能</td>
+<td>说明跨数据库标签一致性检查流程</td>
+<td>Methods 2.1 节</td>
+</tr>
+<tr>
+<td>未报告类别不平衡处理</td>
+<td>1236 阳性 vs 1129 阴性接近平衡，但未说明</td>
+<td>类别权重影响模型训练</td>
+<td>说明损失函数或采样策略</td>
+<td>Methods 2.2 节</td>
+</tr>
+<tr>
+<td>滑动窗口大小 10 的选取依据未说明</td>
+<td>可能影响区域级预测精度</td>
+<td>窗口大小是超参数，需调优</td>
+<td>对不同窗口大小做敏感性分析</td>
+<td>Results 3.3 节</td>
+</tr>
+<tr>
+<td>未与 AlphaFold 结构预测结果结合分析</td>
+<td>淀粉样区域可能具有结构特征</td>
+<td>结构信息可能提升预测精度</td>
+<td>比较加入结构特征前后的性能</td>
+<td>Discussion 节</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>:</p>
+<ol>
+<li>
+<p><strong>pLM 嵌入 + 多模型集成框架</strong>: 对于序列-属性预测任务，使用多种 pLM（如 ESM2 不同规模、UniProt 等）生成嵌入，配合多种分类器（神经网络、SVM、树模型）集成，可提高鲁棒性和准确性。<strong>可迁移至</strong>: 蛋白质溶解性、稳定性、聚集倾向等序列-表型预测任务。</p>
+</li>
+<li>
+<p><strong>概率校准的重要性</strong>: 对每个模型单独进行 Platt/isotonic 校准后再集成，使输出概率具有实际决策意义。<strong>可迁移至</strong>: 任何输出概率的 ML 预测任务，尤其是需要阈值决策的生物学预测。</p>
+</li>
+<li>
+<p><strong>数据聚合策略</strong>: 整合多个数据库时，使用 UniProt ID 作为标准键进行跨库匹配，并去除冗余序列。<strong>可迁移至</strong>: 其他需要整合多源生物数据的任务。</p>
+</li>
+<li>
+<p><strong>序列聚类去冗余</strong>: 使用 MMseqs2 以 40% 同一性阈值聚类，确保测试集与训练集无序列相似性泄漏。<strong>可迁移至</strong>: 任何序列-属性预测任务的训练/测试划分。</p>
+</li>
+<li>
+<p><strong>pLM 选择经验</strong>: 并非所有 pLM 都适合特定任务（ESM3 不如 ESM2），需针对任务评估不同 pLM。<strong>可迁移至</strong>: 其他蛋白质序列预测任务中的 pLM 选型。</p>
+</li>
+<li>
+<p><strong>与结构预测工具的整合思路</strong>: 作者提出 AmyloDeep 可作为 AlphaFold 等结构预测工具的辅助模块，提供淀粉样概率信息。<strong>可迁移至</strong>: 将序列-属性预测与结构预测结合，如用淀粉样概率引导构象采样或结构预测。</p>
+</li>
+<li>
+<p><strong>滑动窗口区域预测</strong>: 通过滑动窗口生成区域级预测图谱，而非仅整序列分类。<strong>可迁移至</strong>: 蛋白质功能域、结合位点等区域级预测任务。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>pLM 基础</strong>: ESM2 (Lin et al. 2023) 和 UniRep (Alley et al. 2019) 是蛋白质语言模型的代表，前者基于 Transformer，后者基于 LSTM。该文验证了这两种 pLM 嵌入在淀粉样预测中的有效性。</li>
+<li><strong>与 AlphaFold 的关系</strong>: 作者明确指出 AlphaFold 2/3 在预测淀粉样结构上表现不佳（Discussion 节），原因包括训练数据中淀粉样结构稀缺、同一序列可形成多种构象等。这提示结构预测与序列-表型预测是互补而非替代关系。</li>
+<li><strong>与经典淀粉样预测工具的关系</strong>: 该文与 TANGO、ZipperDB、AGGRESCAN、AMYLPRED2 等经典工具对比，后者基于物理模型或经验尺度，前者基于 pLM 嵌入 + ML。该文在 48 条测试集上优于 AMYLPRED2 和 Cross-Beta。</li>
+<li><strong>与 MD 模拟的关系</strong> [Analysis]: 该文未涉及 MD 模拟，但其预测的淀粉样区域可作为 MD 模拟的初始种子区域，或用于筛选 MD 模拟的候选序列。淀粉样概率图谱可与 MD 模拟的聚集倾向性分析相互验证。</li>
+<li><strong>与构象采样/生成的关系</strong> [Analysis]: 淀粉样蛋白的构象采样是难点，该文提供的序列级淀粉样概率可作为构象采样的先验约束，例如优先采样高概率区域的 β-sheet 构象。</li>
+<li><strong>与蛋白质设计的关系</strong> [Analysis]: 该文模型可用于负设计（避免设计出淀粉样倾向的序列），或用于筛选设计序列的淀粉样风险。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>:</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>: 淀粉样区域引导的构象采样（Amyloid-Guided Conformational Sampling）
+   - <strong>来源局限/观察</strong>: 该文仅预测序列淀粉样倾向，未与构象采样结合；AlphaFold 对淀粉样结构预测不佳。
+   - <strong>核心假设</strong>: 将 AmyloDeep 的淀粉样概率图谱作为先验约束，引导 MD 模拟或构象搜索算法优先采样高概率区域的 β-sheet 富集构象，可提高淀粉样纤维结构预测的准确性。
+   - <strong>初步方法</strong>: 在 MD 模拟中加入偏置势（如 metadynamics 的 collective variable 定义为 AmyloDeep 概率），或在扩散模型（如 AlphaFold 类）的采样过程中加入淀粉样概率作为条件。
+   - <strong>验证方式</strong>: 在已知淀粉样蛋白（如 PrP、Aβ）上比较加入先验前后的构象采样效率与结构准确性。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 多 pLM 嵌入融合的淀粉样预测框架扩展（Multi-pLM Fusion for Amyloid Prediction）
+   - <strong>来源局限/观察</strong>: 该文仅使用 ESM2 和 UniRep，未测试其他 pLM（如 ESM3、ProtTrans、Ankh）；ESM3 测试失败但仅测试一个变体。
+   - <strong>核心假设</strong>: 融合更多样化的 pLM 嵌入（包括不同架构、不同训练策略）可进一步提高淀粉样预测的泛化能力。
+   - <strong>初步方法</strong>: 系统评估 5-10 种 pLM 嵌入，使用注意力机制或门控网络融合多嵌入，在更大测试集上验证。
+   - <strong>验证方式</strong>: 在独立测试集上比较单 pLM vs 多 pLM 融合的性能；分析不同 pLM 的互补性。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 淀粉样倾向性作为蛋白质设计中的负筛选条件（Amyloid Propensity as Negative Design Filter）
+   - <strong>来源局限/观察</strong>: 该文模型可预测任意序列的淀粉样概率，但未应用于蛋白质设计。
+   - <strong>核心假设</strong>: 在蛋白质设计流程（如 RFdiffusion、ProteinMPNN）中加入 AmyloDeep 作为负筛选条件，可减少设计序列的淀粉样聚集风险。
+   - <strong>初步方法</strong>: 在设计的候选序列中计算 AmyloDeep 概率，过滤高淀粉样概率序列；或在设计目标函数中加入淀粉样概率作为惩罚项。
+   - <strong>验证方式</strong>: 设计一批蛋白质，比较加入淀粉样过滤前后的实验聚集倾向。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 淀粉样概率与 MD 模拟聚集倾向的交叉验证（Cross-Validation of Amyloid Propensity with MD Aggregation Assays）
+   - <strong>来源局限/观察</strong>: 该文仅用实验数据库验证，未与 MD 模拟的聚集倾向预测交叉验证。
+   - <strong>核心假设</strong>: AmyloDeep 预测的高概率区域在 MD 模拟中应表现出更高的 β-sheet 形成倾向和聚集倾向。
+   - <strong>初步方法</strong>: 选取若干 AmyloDeep 高/低概率序列，进行粗粒化或全原子 MD 模拟，比较聚集动力学指标（如 β-sheet 含量、聚集数）。
+   - <strong>验证方式</strong>: 统计 AmyloDeep 概率与 MD 模拟聚集指标的相关性。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 环境条件感知的淀粉样预测（Environment-Aware Amyloid Prediction）
+   - <strong>来源局限/观察</strong>: 该文模型仅输入序列，未考虑 pH、温度、离子强度等环境因素，而作者在 Discussion 中提及 AGGRESCAN4D 已考虑 pH。
+   - <strong>核心假设</strong>: 将环境条件（pH、温度等）作为额外输入特征，可提高淀粉样预测的准确性和适用性。
+   - <strong>初步方法</strong>: 在 AmyloDeep 框架中加入环境条件编码器，或在训练数据中标注环境条件。
+   - <strong>验证方式</strong>: 在 pH 依赖的淀粉样数据集上比较有无环境输入的模型性能。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, methods, results, discussion, data availability)</li>
+<li><strong>Assessment boundary</strong> Scientific and technical evaluation of the presented method, its validation, and claims; no editorial or formatting considerations</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present AmyloDeep, an ensemble model combining five machine learning predictors built on protein language model embeddings (ESM2, UniRep) to predict amyloid propensity from amino acid sequences. They report superior performance compared to existing tools and provide a web server and Python package.</li>
+<li><strong>Visible evidence base</strong> Main text with 4 figures and 1 table referenced; supplementary material mentioned but not provided; no quantitative performance metrics (e.g., AUC, accuracy values) are reported in the main text</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary figures and tables (including all performance metrics, cross-validation results, SHAP analysis details); test set files ("Test set 305.csv", "Reduced test set 48.csv"); details of hyperparameter tuning; exact data processing pipeline; comparison methodology details</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript addresses a relevant problem in protein science, namely the prediction of amyloidogenic regions from sequence. The use of protein language model embeddings is timely and the ensemble approach is reasonable. However, the main text lacks quantitative results, which severely limits the ability to evaluate the claimed performance. The comparison with existing tools is based on a very small test set (48 sequences), and the methodology for this comparison is not fully described. Several claims, including "state-of-the-art performance," are not supported by the evidence presented in the main text. The manuscript would benefit from a more rigorous and transparent presentation of results, including all performance metrics, statistical significance testing, and a more robust comparison strategy.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers working on protein aggregation, amyloid biology, and neurodegenerative disease would find this tool potentially useful for identifying amyloidogenic regions in proteins of interest. Computational biologists developing prediction tools for protein properties would also be interested in the methodological approach of combining pLM embeddings with ensemble learning. The web server and Python package make the tool accessible to experimental biologists without computational expertise.</li>
+<li><strong>Major strengths</strong> The problem is relevant and timely. The use of multiple pLM embeddings (ESM2 variants, UniRep) and diverse model architectures (FNN, SVM, XGBoost) is a sound methodological choice. The ensemble approach with calibration is appropriate. The authors provide both a web server and a Python package, which enhances usability. The discussion of limitations, including data scarcity and computational cost, is honest and useful.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence quality</li>
+<li><strong>Claim pointer</strong> The authors claim "highly robust and accurate results" and "state-of-the-art performance" for the ensemble model.</li>
+<li><strong>Evidence pointer</strong> Section 3.2, Table 1, Figure 2; location not provided for specific metric values</li>
+<li><strong>Concern</strong> The main text does not report any quantitative performance metrics. Table 1 is referenced but its contents are not described. No AUC, accuracy, sensitivity, specificity, F1 score, or Matthews correlation coefficient values are given in the text. The ROC curve and specificity-sensitivity curve are shown in Figure 2 but no numerical values are extracted or discussed. Without these numbers, the claimed performance cannot be evaluated.</li>
+<li><strong>Why it matters</strong> The central claim of the paper is that AmyloDeep achieves high accuracy. Without reporting the actual metric values, this claim is unverifiable. Readers cannot compare AmyloDeep with existing tools or assess whether it would be useful for their applications.</li>
+<li><strong>Resolution test</strong> Report all performance metrics (AUC, accuracy, sensitivity, specificity, F1, MCC) with confidence intervals in the main text or in a clearly referenced table. Provide the numerical values in the text when discussing Figure 2.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Experimental design</li>
+<li><strong>Claim pointer</strong> The authors claim that "AmyloDeep shows superior performance compared to these models on all of these metrics" when comparing with Cross-Beta predictor and AMYPred-FRL.</li>
+<li><strong>Evidence pointer</strong> Section 3.3, Figure 3; test set "Reduced test set 48.csv"</li>
+<li><strong>Concern</strong> The comparison with other tools is performed on only 48 sequences. This is a very small test set, and the results may not be statistically reliable. Furthermore, the selection criteria for these 48 sequences (only those with length ≥ 15) may introduce bias. The methodology for running the other tools (parameter settings, version, etc.) is not described. No statistical significance testing is reported.</li>
+<li><strong>Why it matters</strong> A claim of superiority over existing methods requires a robust and fair comparison. A 48-sequence test set is insufficient to establish generalizable performance differences. Without details on how the other tools were run and without statistical testing, the comparison is not convincing.</li>
+<li><strong>Resolution test</strong> Use a larger, more diverse test set. Describe the exact protocol for running each comparison tool. Perform and report statistical significance tests (e.g., McNemar's test or bootstrap confidence intervals for metric differences).</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Data accessibility</li>
+<li><strong>Claim pointer</strong> The authors state that the dataset was aggregated from six databases and that the test set is available as supplementary data.</li>
+<li><strong>Evidence pointer</strong> Section 2.1, Data availability section</li>
+<li><strong>Concern</strong> The full training dataset is not made available, and the data availability statement says "Full data can be made available upon reasonable request." For a machine learning paper, the training data should be publicly available to ensure reproducibility. The supplementary material, which contains the test sets and additional results, was not provided for this review.</li>
+<li><strong>Why it matters</strong> Reproducibility is a core requirement for computational biology papers. Without access to the training data and full results, other researchers cannot reproduce the experiments or build upon this work.</li>
+<li><strong>Resolution test</strong> Make the full dataset publicly available (e.g., on Zenodo or Figshare). Ensure all supplementary materials are accessible and complete.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The authors state that "we evaluated the feasibility of fine-tuning the open-access variant ESM3-sm-open-v1... However, we found that ESM3-sm-open-v1 underperformed compared to ESM2 150M for our specific use case."</li>
+<li><strong>Evidence pointer</strong> Section 4, Discussion; location not provided for the specific results of this comparison</li>
+<li><strong>Concern</strong> The claim that ESM3 underperforms ESM2 is made without presenting any data. No metrics, experimental details, or comparison results are shown. This is a significant claim given that ESM3 is a newer and larger model.</li>
+<li><strong>Why it matters</strong> If ESM3 indeed underperforms, this is an interesting finding that could inform future model choices. However, without evidence, this claim is unsubstantiated and could mislead readers.</li>
+<li><strong>Resolution test</strong> Provide the experimental details and results of the ESM3 comparison, either in the main text or in the supplementary material.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Section 2.1, data processing</li>
+<li><strong>Evidence pointer</strong> Section 2.1</li>
+<li><strong>Issue</strong> The description of data processing is brief. It is unclear how sequences from different databases were merged, how conflicts were resolved, and what exact criteria were used for labeling.</li>
+<li><strong>Required correction</strong> Provide a more detailed description of the data processing pipeline, including a flowchart or pseudocode.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Section 2.2, model training</li>
+<li><strong>Evidence pointer</strong> Section 2.2</li>
+<li><strong>Issue</strong> The hyperparameter tuning process is described as "grid search within the cross-validation framework" but no details are given on the search space, the number of trials, or the selection criteria.</li>
+<li><strong>Required correction</strong> Provide details on the hyperparameter search space and the final hyperparameter values for each model.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Section 3.3, comparison with other methods</li>
+<li><strong>Evidence pointer</strong> Section 3.3, Figure 3</li>
+<li><strong>Issue</strong> The comparison in Figure 3 is described in the text but the figure itself is not described in detail. It is unclear what exactly is plotted and how the metrics were computed.</li>
+<li><strong>Required correction</strong> Describe Figure 3 in more detail in the text, including the exact metrics plotted and the number of sequences used.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability</li>
+<li><strong>Affected element</strong> Section 4, Discussion</li>
+<li><strong>Evidence pointer</strong> Section 4</li>
+<li><strong>Issue</strong> The discussion of AlphaFold experiments is brief and lacks context. It is unclear what exactly was tested and what the results were.</li>
+<li><strong>Required correction</strong> Provide more detail on the AlphaFold experiments, including the specific proteins tested and the evaluation criteria.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Section 2.3, calibration</li>
+<li><strong>Evidence pointer</strong> Section 2.3</li>
+<li><strong>Issue</strong> The calibration procedure is described but no results of the calibration are shown. It is unclear how much the calibration improved the models.</li>
+<li><strong>Required correction</strong> Show calibration plots before and after calibration, and report the expected calibration error values.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>"Highly robust and accurate results" (Section 3.2) is unsupported because no quantitative metrics are reported in the main text.</li>
+<li>"State-of-the-art performance" (Section 4) is unsupported because the comparison is limited to two tools on a 48-sequence test set, and no statistical testing is reported.</li>
+<li>"AmyloDeep shows superior performance compared to these models on all of these metrics" (Section 3.3) is unsupported due to the small test set and lack of statistical analysis.</li>
+<li>The claim that ESM3 underperforms ESM2 (Section 4) is unsupported as no data are presented.</li>
+<li>The claim that AlphaFold 2 and 3 "performed poorly in predicting amyloid structures" (Section 4) is unsupported as no experimental details or results are provided.</li>
+<li>The optimal window size of 10 (Section 3.3) is stated without supporting data or analysis.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

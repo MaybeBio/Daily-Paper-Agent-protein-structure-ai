@@ -1,0 +1,87 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, methods, results, discussion, code availability)
+- **Assessment boundary** Scientific validity of claims, methodological soundness, evidence quality, and alignment with stated conclusions. No assessment of code functionality or reproducibility beyond what is described.
+- **Shared manuscript claim summary** The authors propose a targeted Markov Chain Monte Carlo (MCMC) protocol with periodic MD relaxation under harmonic backbone restraints to generate receptor ensembles from an apo structure. They report improved docking pose recovery (74.4% within 2 Å) compared to apo (51.0%) and restrained MD (59.5%) on the OpenBind 2A protease benchmark, with gains concentrated in complexes where side-chain displacement dominates over backbone displacement.
+- **Visible evidence base** Abstract, Introduction, Methods, Results and Discussion, Discussion and Conclusion, Code Availability. No figures or tables were provided in the supplied material.
+- **Missing materials affecting confidence** Figures 1–4 and Tables 1–2 are referenced but not included. Statistical details (e.g., exact p-values, confidence intervals) are partially reported in text but not fully reproducible without the figures. No supplementary information was provided.
+
+## Reviewer
+- **Overall assessment** The manuscript presents a computationally efficient approach to a well-recognized problem in structure-based drug design: generating docking-amenable receptor conformations from an apo structure. The core idea is sensible and the benchmark choice (OpenBind 2A protease) is appropriate given the availability of a large set of experimental complexes. The reported improvements in pose recovery are substantial and the analysis of structural determinants (side-chain vs. backbone displacement) adds interpretive value. However, several methodological confounds and missing details prevent full confidence in the attribution of the gains to the MCMC protocol itself. The manuscript is promising but requires additional controls and clarifications before the central claims can be considered fully established.
+- **Who would be interested in the results, and why** Computational chemists and structural biologists working on docking, virtual screening, and receptor flexibility. Developers of ensemble-docking pipelines may find the MCMC approach a practical alternative to more expensive MD-based sampling. The study also speaks to the broader community interested in benchmarking flexible-receptor docking methods.
+- **Major strengths** 1) The problem addressed is practically important and the proposed method is computationally efficient relative to long MD simulations. 2) The use of a large, consistent benchmark (859 complexes) provides statistical power. 3) The analysis linking recovery gains to the nature of pocket rearrangement (side-chain vs. backbone) is insightful and goes beyond a simple performance comparison. 4) The authors are appropriately cautious in limiting claims to pose recovery rather than ranking or enrichment.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological confound
+  - **Claim pointer** "MCMC recovered a ligand pose within 2 Å of the experimental pose for 74.4% of complexes, compared with 51.0% for apo and 59.5% for restrained MD."
+  - **Evidence pointer** Table 1, Figure 3 (not provided)
+  - **Concern** The MCMC and MD protocols differ in multiple aspects beyond the sampling algorithm itself: nonbonded treatment (NoCutoff vs. CutoffNonPeriodic), bond constraints (none vs. all H-bonds constrained), hydrogen masses (unmodified vs. 1.5 amu), and center-of-mass motion removal (disabled vs. enabled). These differences could independently affect conformational sampling and docking outcomes. The reported improvement cannot be unambiguously attributed to the MCMC sampling strategy.
+  - **Why it matters** The central claim of the paper is that the MCMC protocol is superior to MD-based approaches. If the comparison is confounded by protocol differences, the conclusion is not supported. A reader cannot determine whether the gains arise from the sampling method or from the simulation settings.
+  - **Resolution test** Repeat the comparison with matched system configurations (e.g., same nonbonded treatment, constraints, hydrogen masses) for both MCMC and MD. Alternatively, provide a sensitivity analysis showing that the recovery differences persist when these settings are varied one at a time.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence completeness
+  - **Claim pointer** "The largest gains occurred for complexes with greater side-chain displacement relative to pocket backbone displacement."
+  - **Evidence pointer** Figure 4A (not provided)
+  - **Concern** The stratified analysis by displacement ratio is a key interpretive result, but the figure is not available. The text states the relationship is "not strictly monotonic," which raises questions about the robustness of the trend. Without the figure or a table of bin-wise recovery rates with confidence intervals, the claim cannot be evaluated.
+  - **Why it matters** This analysis is central to the mechanistic interpretation of the method's utility. If the trend is weak or non-monotonic, the conclusion that the method is specifically suited to side-chain-dominated rearrangements is undermined.
+  - **Resolution test** Provide the figure or a table with bin-wise recovery rates, confidence intervals, and sample sizes. Report the correlation or trend statistic (e.g., Spearman's rho) between displacement ratio and recovery gain.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Statistical rigor
+  - **Claim pointer** "Paired Wilcoxon tests supported differences in the corresponding RMSD distributions, with p < 10⁻⁸⁹ for the comparison to apo and p < 10⁻³⁴ for the comparison to restrained MD."
+  - **Evidence pointer** Results section, location not provided
+  - **Concern** The reported p-values are extremely small, which is plausible given the large sample size, but the text does not report the test statistic or effect size. More importantly, the analysis does not account for multiple comparisons across the multiple thresholds and methods tested. The authors state "The analysis did not implement a multiple-comparison correction," which is a limitation for a study with many pairwise comparisons.
+  - **Why it matters** Without correction, the risk of false positives is inflated. While the primary comparison (MCMC vs. apo) is likely robust, secondary comparisons (e.g., MCMC vs. restrained MD at different thresholds) may be less reliable.
+  - **Resolution test** Apply a multiple-comparison correction (e.g., Bonferroni or Benjamini-Hochberg) to the pairwise tests, or report effect sizes and confidence intervals for the differences to provide a more complete statistical picture.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Generalizability
+  - **Claim pointer** "These findings support targeted side-chain sampling as a practical approach to generating apo-derived docking ensembles."
+  - **Evidence pointer** Discussion and Conclusion
+  - **Concern** The study is limited to a single protein target (EV-A71 2A protease). While the benchmark is large, the generalizability of the approach to other targets with different pocket geometries, flexibility profiles, or ligand properties is unknown. The authors acknowledge this in the conclusion, but the claim of "practical approach" is still somewhat broad given the single-target evidence.
+  - **Why it matters** For a method to be adopted in practice, evidence across multiple targets is typically needed. The current study establishes proof-of-concept on one system but does not yet demonstrate broad utility.
+  - **Resolution test** Acknowledge more explicitly that the findings are single-target and require validation on additional systems. Alternatively, include preliminary data on a second target if available.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Methods, MCMC section
+  - **Evidence pointer** "Every 2000 accepted moves, we run 1 picosecond of classical MD"
+  - **Issue** The frequency of MD relaxation is tied to accepted moves, but the total number of accepted moves is not reported. The computational cost (3.3 GPU-hours) is given, but the relationship between accepted moves, wall-clock time, and the number of MD relaxations is unclear.
+  - **Required correction** Report the total number of accepted moves and the number of MD relaxation events. Clarify whether the 3.3 GPU-hours includes the MD relaxation steps.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Methods, Docking protocol
+  - **Evidence pointer** "we docked ligands into the representative receptor structures using SMINA"
+  - **Issue** The docking protocol is described briefly, but key parameters (e.g., exhaustiveness, number of poses, scoring function settings) are only partially specified. The box size definition is given, but the number of docking runs per receptor and the handling of receptor side-chain flexibility during docking are not described.
+  - **Required correction** Provide a complete description of the docking protocol, including all SMINA parameters, the number of independent docking runs, and whether receptor side chains were held rigid.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Results, Pocket geometry analysis
+  - **Evidence pointer** "MCMC representatives retained pocket geometries within the experimentally observed range, whereas unrestrained-MD representatives exhibited reduced pocket free volume and poor recovery."
+  - **Issue** The causal relationship between pocket free volume and docking recovery is implied but not directly tested. It is possible that reduced free volume is a consequence of the unrestrained MD protocol rather than the cause of poor recovery.
+  - **Required correction** Clarify whether the free-volume analysis is descriptive or causal. Consider a correlation analysis between pocket free volume and recovery rate across all methods.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Presentation
+  - **Affected element** Abstract
+  - **Evidence pointer** "The reported improvements measure best-case pose coverage across generated poses and receptors; their extension to prospective pose ranking and virtual screening remains to be established."
+  - **Issue** This caveat is appropriately placed in the abstract, but the phrase "best-case pose coverage" could be misinterpreted. It is not immediately clear that the metric is the minimum RMSD across all generated poses and receptors.
+  - **Required correction** Consider rephrasing to "minimum RMSD across all generated poses and receptor conformations" for clarity.
+- **Technical failings that need to be addressed before the case is established** 1) The protocol differences between MCMC and MD (R1-M1) must be resolved with matched comparisons. 2) The key figure (Figure 4A) supporting the displacement-ratio analysis must be provided and the trend quantified. 3) Statistical corrections for multiple comparisons should be applied or justified.
+- **Assessment against Nature-style criteria** Originality: Moderate. The combination of targeted side-chain MCMC with periodic MD relaxation is not entirely novel, but the systematic evaluation on a large benchmark and the analysis linking recovery to displacement character adds value. Scientific importance: Moderate. The problem is relevant, but the single-target scope limits immediate impact. Interdisciplinary readership: Limited. The manuscript is primarily of interest to computational chemists and structural biologists; the clinical or biological implications are not developed. Technical soundness: Partially established. The methods are described in detail, but the confounds noted above prevent full confidence. Readability for nonspecialists: Acceptable. The writing is clear, but the methods section assumes familiarity with docking and sampling terminology.
+- **Recommendation posture** Supportive if technical concerns are resolved. The core idea is promising and the benchmark is appropriate, but the protocol confounds and missing figure data must be addressed before the central claims can be considered fully established.
+
+## Risk / unsupported claims
+- The claim that MCMC outperforms restrained MD is not fully supported due to protocol differences (R1-M1).
+- The claim that gains are largest for side-chain-dominated rearrangements is not evaluable without Figure 4A (R1-M2).
+- The claim that unrestrained MD "exhibited reduced pocket free volume and poor recovery" is descriptive but the causal link is not established.
+- The generalizability of the approach beyond the single target is not supported by the data presented.
+- The computational cost comparison (3.3 GPU-hours for MCMC vs. 19.1 for unrestrained MD) is reported but not contextualized in terms of total cost to achieve a given recovery level.

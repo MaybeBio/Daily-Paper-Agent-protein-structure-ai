@@ -1,0 +1,105 @@
+{
+  "identity": {
+    "pmid": "42968374",
+    "doi": "10.1093/bioinformatics/btag804",
+    "title": "Domain-Aware Enzyme Classification via Multiple Instance Learning."
+  },
+  "content": {
+    "abstract": "MOTIVATION: Accurate Enzyme Commission (EC) number prediction is fundamental to protein function annotation and metabolic pathway reconstruction. Recent methods based on protein language model embeddings or 3D structure have improved EC prediction, but important limitations remain. Whole-sequence embeddings can dilute local functional signals, such as catalytic residues and functional domains, whereas structure-based methods depend on accurate protein structures and are therefore difficult to apply broadly. RESULTS: We present MIL-BC, a multiple instance learning framework for EC prediction that models each protein as a bag of domains rather than a single sequence-level object. This design is motivated by the observation that enzymatic function is often determined by constituent functional domains instead of the full-length sequence alone. Domain instances are generated automatically using our DCTdomain algorithm, avoiding dependence on curated domain annotations. MIL-BC aggregates domain-level evidence into protein-level EC predictions and assigns interpretable weights to domains that contribute most strongly to each prediction. We further combine the domain embedding with global embedding in MIL-BC+. MIL-BC+ achieved F1 improvements of 0.03 - 0.17 over the sequence-based baseline on all four test sets. The largest gains were observed for proteins with multiple enzymatic functions, where domain-level modeling better separates mixed functional signals. These results show that domain-centric multiple instance learning is an accurate and interpretable strategy for enzyme classification. By improving EC prediction without requiring structural data or curated domain labels, MIL-BC provides a scalable framework for large-scale protein function annotation. AVAILABILITY: Code is available as a GitHub repository at https://github.com/omics-ai/enzyme-mil.git.",
+    "keywords": [
+      "Enzyme Commission (EC) numbers",
+      "enzyme function prediction",
+      "multiple instance learning",
+      "protein domains"
+    ],
+    "mesh_terms": [],
+    "pub_types": [
+      "Journal Article"
+    ]
+  },
+  "contributors": {
+    "medline": {
+      "full_names": [
+        "Xiao, Qingyang",
+        "Ye, Yuzhen",
+        "Tang, Haixu"
+      ],
+      "short_names": [
+        "Xiao Q",
+        "Ye Y",
+        "Tang H"
+      ],
+      "auids": [],
+      "affiliations": [
+        "Luddy School of Informatics, Computing and Engineering, Indiana University, 700 N. Woodlawn Avenue, Bloomington, IN, 47408.",
+        "Luddy School of Informatics, Computing and Engineering, Indiana University, 700 N. Woodlawn Avenue, Bloomington, IN, 47408.",
+        "Luddy School of Informatics, Computing and Engineering, Indiana University, 700 N. Woodlawn Avenue, Bloomington, IN, 47408."
+      ]
+    },
+    "xml": [
+      {
+        "full_name": "Xiao, Qingyang",
+        "short_name": "Xiao Q",
+        "identifiers": [],
+        "affiliations": [
+          "Luddy School of Informatics, Computing and Engineering, Indiana University, 700 N. Woodlawn Avenue, Bloomington, IN, 47408."
+        ]
+      },
+      {
+        "full_name": "Ye, Yuzhen",
+        "short_name": "Ye Y",
+        "identifiers": [],
+        "affiliations": [
+          "Luddy School of Informatics, Computing and Engineering, Indiana University, 700 N. Woodlawn Avenue, Bloomington, IN, 47408."
+        ]
+      },
+      {
+        "full_name": "Tang, Haixu",
+        "short_name": "Tang H",
+        "identifiers": [],
+        "affiliations": [
+          "Luddy School of Informatics, Computing and Engineering, Indiana University, 700 N. Woodlawn Avenue, Bloomington, IN, 47408."
+        ]
+      }
+    ]
+  },
+  "source": {
+    "journal_title": [
+      "Bioinformatics (Oxford, England)"
+    ],
+    "journal_abbrev": [
+      "Bioinformatics"
+    ],
+    "pub_date": "2026 Oct 30",
+    "pub_year": "2026",
+    "pub_types": [
+      "Journal Article"
+    ]
+  },
+  "metadata": {
+    "entrez_date": "2026/11/02 05:29",
+    "fetched_at": "2026-11-08 11:11:09"
+  },
+  "links": {
+    "cites": [],
+    "refs": [],
+    "similar": [
+      "42968374"
+    ],
+    "review": [
+      "42968374"
+    ],
+    "pmc": [],
+    "entrez": {},
+    "external": [
+      {
+        "url": "https://academic.oup.com/bioinformatics/article-lookup/doi/10.1093/bioinformatics/btag804",
+        "provider": "Silverchair Information Systems",
+        "category": "Full Text Sources",
+        "attribute": "free resource",
+        "linkname": ""
+      }
+    ],
+    "text_mined": []
+  }
+}

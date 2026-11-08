@@ -1,0 +1,102 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report that rosmarinic acid (RA) suppresses beta-sheet and beta-hairpin formation in full-length human islet amyloid polypeptide (hIAPP) dimers, as studied by replica-exchange molecular dynamics (REMD). They claim that RA remodels the dimer ensemble toward disordered, hyper-solvated topologies by disrupting interpeptide contacts and stabilizing localized turn and bend motifs at the C-terminus. They further claim that RA binds preferentially to the N-terminus via residues K1 and R11 and engages the hydrophobic core via pi-pi stacking, outcompeting peptide-peptide interactions.
+- **Visible evidence base** Abstract text only; no simulation details, convergence metrics, force field parameters, system setup, or quantitative results are provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, simulation protocols, force field and water model specifications, replica exchange parameters, convergence and equilibration analyses, free energy calculations, binding affinity estimates, and any experimental validation
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible and mechanistically detailed computational study of RA action on hIAPP dimerization. The central claims are internally coherent and align with current interests in early amyloid oligomerization. However, the abstract alone provides no quantitative evidence, no methodological validation, and no convergence assessment, which are essential for evaluating the reliability of REMD-based conclusions. The claim that RA "outcompetes" peptide-peptide interactions is strong and would require free energy comparisons that are not visible here. The study is potentially valuable but currently not assessable beyond the level of a research proposal.
+- **Who would be interested in the results, and why** Researchers in computational biophysics and molecular simulation of amyloid proteins, medicinal chemists and structural biologists working on type 2 diabetes therapeutics, and investigators studying polyphenol-based inhibitors of protein misfolding. The proposed mechanism of localized C-terminal stabilization and N-terminal anchoring could inform rational design of amyloid inhibitors.
+- **Major strengths** The study addresses a biologically relevant target, the hIAPP dimer, which is a critical early species in type 2 diabetes pathology. The use of REMD is appropriate for exploring conformational ensembles of disordered and partially structured peptides. The proposed mechanism is specific and testable, involving residue-level interactions and secondary structure remodeling. The distinction between global beta-sheet suppression and localized turn/bend stabilization is a nuanced and potentially informative finding.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "RA drastically suppresses overall beta-sheet propensities and truncates extended, aggregation-competent beta-strands"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract provides no quantitative data, such as beta-sheet propensity values, population shifts, or statistical uncertainties, to support the claim of "drastic" suppression. Without numerical results and error estimates, the magnitude of the effect cannot be evaluated.
+  - **Why it matters** The central conclusion of the paper rests on the magnitude and statistical significance of the observed conformational changes. A qualitative statement without supporting numbers is insufficient to establish the effect.
+  - **Resolution test** Provide quantitative beta-sheet propensity values for RA-bound versus RA-free systems, with standard errors or confidence intervals, and demonstrate that the differences are statistically significant across independent simulations.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "RA outcompetes peptide-peptide interactions via a multimodal strategy"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The claim of "outcompeting" implies a thermodynamic comparison between RA-peptide and peptide-peptide interactions. The abstract does not report any free energy calculations, binding affinities, or interaction energy distributions that would support this competitive relationship.
+  - **Why it matters** This is a strong mechanistic claim that goes beyond describing RA binding. Without energetic comparisons, the statement is unsupported and potentially misleading.
+  - **Resolution test** Report free energy differences or potential of mean force calculations comparing RA-peptide and peptide-peptide interaction strengths, or provide interaction energy distributions with statistical analysis demonstrating that RA interactions are thermodynamically favored.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "This conformational remodeling is driven by spatially heterogeneous thermodynamic perturbations"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not describe how thermodynamic perturbations were quantified, which residues or regions were analyzed, or what statistical measures were used to establish spatial heterogeneity. The term "thermodynamic perturbations" is vague without a defined observable.
+  - **Why it matters** The proposed mechanism depends on identifying specific regions where RA exerts its effects. Without a clear definition of the perturbation metric and its spatial resolution, the claim cannot be verified.
+  - **Resolution test** Define the thermodynamic observable used (for example, per-residue free energy differences, entropy or enthalpy decomposition, or local contact probabilities) and show spatial maps with statistical significance thresholds.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "RA preferentially anchoring to the hIAPP N-terminus through residues K1 and R11"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not report any binding site analysis, occupancy values, or contact frequency data for K1 and R11. The claim of preferential anchoring requires a comparison with other possible binding sites.
+  - **Why it matters** Residue-specific binding claims are central to the proposed mechanism and to potential drug design implications. Without quantitative occupancy or contact analysis, the claim is anecdotal.
+  - **Resolution test** Provide per-residue contact maps or binding site occupancy analysis showing that K1 and R11 are statistically preferred over other residues, with appropriate error bars.
+  - **Concern ID** R1-M5
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "RA outcompetes peptide-peptide interactions via a multimodal strategy, preferentially anchoring to the hIAPP N-terminus through residues K1 and R11 while simultaneously engaging the hydrophobic core via pi-pi stacking"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not report any REMD convergence analysis, such as replica exchange acceptance rates, temperature distribution overlap, or convergence of secondary structure populations over time. Without this information, the reliability of the ensemble sampling cannot be assessed.
+  - **Why it matters** REMD results are only meaningful if the simulations have converged and sampled equilibrium distributions. Lack of convergence metrics undermines all downstream claims.
+  - **Resolution test** Provide replica exchange acceptance rates, demonstrate that secondary structure and contact populations are stable over simulation time, and show that independent runs yield consistent results.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "hyper-solvated topologies" is not defined and may be unclear to readers unfamiliar with simulation jargon.
+  - **Required correction** Define what is meant by hyper-solvation, for example, increased water contact or reduced peptide-peptide burial, and provide a physical interpretation.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not state the simulation length, number of replicas, or force field used, which are standard details expected in computational studies.
+  - **Required correction** Include key simulation parameters in the abstract or refer to the methods section for these details.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Scientific importance
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not discuss the relationship between the observed dimer conformations and known amyloidogenic or non-amyloidogenic states, which would help contextualize the relevance of the findings.
+  - **Required correction** Briefly state how the RA-stabilized conformations compare with previously characterized hIAPP dimer structures or with conformations known to be on or off the amyloid pathway.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not mention whether the simulations were performed with explicit or implicit solvent, which affects the interpretation of solvation-related claims.
+  - **Required correction** Specify the solvent model used and, if explicit, the water model and ion conditions.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4, R1-M5. The absence of quantitative results, free energy comparisons, defined perturbation metrics, binding site analysis, and convergence assessment collectively prevent the case from being established from the provided material.
+- **Assessment against Nature-style criteria**  
+  - Originality: The specific combination of RA with hIAPP dimer REMD simulations and the proposed C-terminal stabilization mechanism appears novel, but the abstract does not clearly differentiate this work from prior computational studies of polyphenol inhibitors of hIAPP.  
+  - Scientific importance: The hIAPP dimer is a relevant target, and understanding early inhibition mechanisms could have therapeutic implications. However, the importance is not fully demonstrated without quantitative evidence of the effect size.  
+  - Interdisciplinary readership: The topic bridges computational chemistry, biophysics, and diabetes research, which could attract a broad audience. The abstract is written in a way that is largely accessible, though some jargon remains.  
+  - Technical soundness: Not assessable from the abstract alone. The absence of methodological details and convergence metrics is a significant limitation.  
+  - Readability for nonspecialists: The abstract is generally clear but uses terms such as "hyper-solvated topologies" and "pi-pi stacking" without sufficient explanation for a general scientific audience.
+- **Recommendation posture** Currently not established from the provided evidence. The study has potential merit, and the mechanistic hypothesis is interesting, but the abstract alone does not provide the quantitative and methodological support needed to evaluate the claims. A full review of the manuscript would be required to determine whether the technical concerns can be resolved.
+
+## Risk / unsupported claims
+- The claim that RA "drastically suppresses" beta-sheet propensities is unsupported without quantitative data.
+- The claim that RA "outcompetes" peptide-peptide interactions is unsupported without free energy or interaction energy comparisons.
+- The claim of "spatially heterogeneous thermodynamic perturbations" is unsupported without a defined observable and spatial analysis.
+- The claim of preferential binding to K1 and R11 is unsupported without occupancy or contact analysis.
+- The claim that RA "stabilizes localized C-terminal motifs" is not supported by any structural or dynamic data in the abstract.
+- The overall conclusion that RA provides "a defined biophysical framework for the rational design of amyloid inhibitors" is premature given the lack of quantitative evidence.

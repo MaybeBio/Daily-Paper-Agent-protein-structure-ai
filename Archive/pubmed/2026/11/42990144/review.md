@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract
+- **Shared manuscript claim summary** The authors report that the C-terminal intrinsically disordered region (IDR) of the transcription factor RUNX2 is required for chromatin binding and gene regulation during osteogenesis. They claim that linear IDR motifs are dispensable for function, and that conformational dynamics of the IDR predict function. They further report development of an algorithm for rational IDR design based on biophysical principles, and use of this algorithm to generate functional IDRs de novo. The authors position this work as extending generative protein design beyond the folded proteome.
+- **Visible evidence base** Abstract text only. No figures, tables, methods, or supplementary materials were provided.
+- **Missing materials affecting confidence** Full manuscript text, all figures and tables, methods descriptions, statistical analyses, sequence data, algorithm details, experimental validation protocols, and any supplementary information. Without these, the core claims cannot be independently evaluated.
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially significant advance in the design of intrinsically disordered regions, a field that has lagged behind folded protein design. The claim that conformational dynamics, rather than linear motifs, encode function in the RUNX2 IDR is conceptually interesting and would be of broad interest if rigorously supported. However, the abstract alone provides insufficient evidence to assess the validity of the central claims. The key assertions regarding dispensability of motifs, the predictive power of conformational dynamics, and the success of de novo designed functional IDRs are stated without quantitative support, experimental detail, or statistical context. The work may be important, but the case is not established from the supplied material.
+- **Who would be interested in the results, and why** Researchers in protein biophysics, intrinsically disordered protein biology, transcription factor regulation, developmental biology, and computational protein design would be interested. The work addresses a fundamental gap in understanding how IDR sequence encodes function, and the proposed design algorithm could have practical applications in synthetic biology and therapeutic protein engineering. The connection to osteogenesis and RUNX2 may also attract interest from the bone biology community.
+- **Major strengths** The conceptual framing is clear and addresses a recognized gap in the field. The choice of a developmental transcription factor with a well-defined functional readout (stem cell differentiation) provides a biologically meaningful test system. The claim that conformational dynamics, rather than linear motifs, drive function is a testable and potentially transformative hypothesis. The stated goal of extending generative design to IDRs is timely and relevant.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The authors claim that linear IDR motifs are dispensable for RUNX2 function during osteogenesis.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract states that linear motifs are dispensable, but provides no experimental detail on how this was tested. It is unclear whether all putative motifs were systematically mutated, whether motif prediction was comprehensive, or whether residual function was quantitatively assessed. The claim of dispensability is strong and requires evidence that motif disruption does not impair chromatin binding or gene expression.
+  - **Why it matters** If linear motifs are not required, this challenges a dominant paradigm in IDR biology. The claim must be supported by rigorous mutagenesis and functional assays to rule out redundant or compensatory motif activity.
+  - **Resolution test** Provide data showing that systematic mutation or deletion of all predicted linear motifs in the RUNX2 IDR has no significant effect on chromatin binding, gene expression, or osteogenic differentiation, with appropriate statistical power and controls.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The authors claim that conformational dynamics of the IDR predict function.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract does not specify which conformational features were measured, how they were quantified, or how predictive power was established. No correlation coefficients, effect sizes, or validation on independent sequences are reported. The claim that dynamics predict function requires a defined metric and a demonstrated relationship across multiple variants.
+  - **Why it matters** This is the central mechanistic claim of the work. Without a clear definition of the dynamic property and evidence of its predictive value, the claim is not falsifiable from the provided material.
+  - **Resolution test** Define the specific conformational parameter (e.g., radius of gyration, end-to-end distance, transient secondary structure propensity) and show that it correlates with functional output across a panel of IDR variants, with statistical significance and predictive validation on held-out sequences.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The authors claim to have developed an algorithm for rational IDR design and used it to generate functional IDRs de novo.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** No details of the algorithm are provided, including its inputs, biophysical principles, optimization criteria, or validation strategy. The claim that de novo designed IDRs are functional requires evidence that these sequences are unrelated to the native RUNX2 IDR and that they rescue function in a relevant assay.
+  - **Why it matters** The generative design claim is the headline advance. Without algorithmic details and functional validation data, the claim cannot be assessed for novelty, robustness, or generalizability.
+  - **Resolution test** Provide a full description of the algorithm, including its design principles and training or optimization data, and show that multiple de novo sequences with no significant homology to native IDRs rescue RUNX2 function in cellular or biochemical assays.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The phrase "conformational dynamics of the IDR predict function" is vague. It is unclear whether the authors refer to a specific biophysical measurement or a computational prediction.
+  - **Required correction** Specify the exact conformational property measured or computed, and clarify whether the prediction is correlative or causal.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Context
+  - **Affected element** Abstract framing
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract does not state how the findings relate to existing IDR design efforts or prior work on RUNX2. This limits the reader's ability to gauge novelty.
+  - **Required correction** Add one or two sentences situating the work relative to prior IDR design studies and known RUNX2 biology.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Abstract claims
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** No mention of replication, sample sizes, or statistical methods is made in the abstract.
+  - **Required correction** Include brief statements on the number of independent experiments and the statistical tests used for key comparisons.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The abstract does not provide sufficient experimental or computational detail to support the central claims of motif dispensability, dynamics-based prediction, and successful de novo design. All three are blocking concerns.
+- **Assessment against Nature-style criteria** 
+  - Originality: The concept of designing functional IDRs based on conformational dynamics rather than linear motifs is original and would represent a conceptual advance if supported. However, originality cannot be fully assessed without comparison to prior IDR design literature.
+  - Scientific importance: The work addresses a fundamental question in IDR biology and has potential implications for protein design and developmental biology. The importance is high if the claims hold.
+  - Interdisciplinary readership: The topic bridges biophysics, computational biology, and developmental biology, and would appeal to a broad readership. The abstract is written in accessible language.
+  - Technical soundness: Not assessable from the abstract. No methods, data, or statistical analyses are presented.
+  - Readability for nonspecialists: The abstract is clear and concise, with minimal jargon. The key concepts are understandable to a general scientific audience.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual framing is promising and the work could be significant, but the abstract alone does not provide sufficient evidence to support the central claims. A full manuscript with detailed methods, quantitative results, and validation data would be required to assess whether the case is made.
+
+## Risk / unsupported claims
+- The claim that linear IDR motifs are dispensable for RUNX2 function is unsupported without mutagenesis data.
+- The claim that conformational dynamics predict function is unsupported without a defined metric and correlative evidence.
+- The claim that the algorithm generates functional IDRs de novo is unsupported without algorithmic details and functional validation.
+- The general claim that this work extends generative protein design beyond the folded proteome is not evaluable from the abstract alone.

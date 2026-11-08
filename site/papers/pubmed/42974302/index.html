@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LM2KM: feature extraction from pretrained protein and molecular language models combined with quantum mechanics (QM) features for K (M) predictions. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">5</span>
+    <div>
+      <h1>LM2KM: feature extraction from pretrained protein and molecular language models combined with quantum mechanics (QM) features for K (M) predictions.</h1>
+      <div class="meta">Zhai, Jingchen; Cai, Lianjin; Niu, Taoyu; Xie, Lei; Wang, Junmei</div>
+      <div class="meta muted">
+        
+        <span class="journal">Digital discovery</span>
+        · 2026-11-03
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42974302/">原文</a>
+      </div>
+      <p class="one-liner">该文利用预训练蛋白和分子语言模型结合量子力学特征预测酶动力学参数K(M)，虽涉及蛋白序列特征提取和酶工程应用，但核心对象是酶动力学参数而非蛋白质结构计算问题，方法上无结构建模或采样生成贡献，仅作为可借鉴的序列-性质预测框架。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">The Michaelis constant (K (M)) is a key parameter for characterizing enzyme-substrate interactions and plays an essential role in enzyme kinetics modeling and physiologically based pharmacokinetic (PBPK) applications. However, experimental determination of K (M) is labor-intensive, and existing computational prediction approaches remain limited in accuracy and scalability. In this study, we systematically evaluated pretrained protein and molecule language models for K (M) prediction by integrating four protein language models (PLMs) and two molecule language models (MLMs) to encode enzyme sequences and substrate structures, respectively. Principal component analysis (PCA) was applied to reduce feature dimensionality, and a wide range of representation combinations were assessed. Our results indicated that protein representations derived from the last four layers of ProtT5 using approximately 70 features, combined with 20 CLS-based molecular features from MolFormer, provided a well-balanced and efficient representation for K (M) prediction. In addition, the incorporation of quantum mechanics (QM) descriptors consistently improved prediction performance across all tested configurations, with the model R (2) of 0.537. In summary, this work provides a flexible and extensible framework for large-scale K (M) prediction, with strong potential to facilitate enzyme pathway identification, drug and lead screening, and sequence-based protein design, supporting broader applications in enzyme kinetics-driven modeling and drug development.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">米氏常数（K (M)）是表征酶-底物相互作用的关键参数，在酶动力学建模和基于生理的药代动力学（PBPK）应用中发挥着重要作用。然而，实验测定K (M)耗时费力，现有计算预测方法在准确性和可扩展性方面仍有限。在本研究中，我们通过整合四种蛋白质语言模型（PLMs）和两种分子语言模型（MLMs），分别对酶序列和底物结构进行编码，系统评估了预训练蛋白质和分子语言模型在K (M)预测中的表现。采用主成分分析（PCA）降低特征维度，并评估了多种表示组合。结果表明，来自ProtT5最后四层、约70个特征的蛋白质表示，结合来自MolFormer的20个基于CLS的分子特征，为K (M)预测提供了均衡且高效的表示。此外，量子力学（QM）描述符的引入在所有测试配置中一致地提升了预测性能，模型R (2)达到0.537。总之，本研究为大规模K (M)预测提供了一个灵活且可扩展的框架，具有促进酶通路识别、药物和先导化合物筛选以及基于序列的蛋白质设计的强大潜力，支持酶动力学驱动建模和药物开发中的更广泛应用。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: LM2KM: feature extraction from pretrained protein and molecular language models combined with quantum mechanics (QM) features for K(M) predictions</li>
+<li><strong>作者与单位</strong>: Zhai, Jingchen; Cai, Lianjin; Niu, Taoyu; Xie, Lei; Wang, Junmei（单位未提供，据致谢推测含 University of Pittsburgh）</li>
+<li><strong>期刊/预印本平台</strong>: Digital Discovery</li>
+<li><strong>年份</strong>: 2026-11-03</li>
+<li><strong>论文类型</strong>: 方法学研究（系统评估 + 预测模型构建）</li>
+<li><strong>领域</strong>: 酶动力学参数预测（KM） × 蛋白质/分子语言模型 × 量子力学描述符</li>
+<li><strong>关键词</strong>: Michaelis constant (KM), protein language models, molecular language models, quantum mechanics descriptors, enzyme kinetics, PBPK</li>
+<li><strong>DOI/arXiv 号</strong>: 10.1039/d6dd00139d</li>
+<li><strong>代码</strong>: 提供（Jupyter Notebook/IPYNB，Zenodo: https://doi.org/10.5281/zenodo.23020002）</li>
+<li><strong>数据</strong>: 提供（PKL 格式，含 20,462 条 KM 记录及嵌入特征）</li>
+<li><strong>阅读日期</strong>: 2026-11-03（检索日期）</li>
+<li><strong>在课题方向中的位置</strong>: 该文属于「蛋白质结构相关计算研究 × AI 方法」中酶动力学参数（KM）预测方向，核心创新在于系统比较多种预训练蛋白质语言模型（PLM）和分子语言模型（MLM）的嵌入特征，并首次将量子力学（QM）描述符与语言模型特征融合用于 KM 预测。与结构预测（AlphaFold 类）不同，本文聚焦序列-功能映射，但其中 PLM 特征提取策略、滑动窗口处理长序列、PCA 降维、QM 特征融合等思路可迁移至结构相关任务（如突变效应预测、底物特异性分析）。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文构建 LM2KM 框架，系统评估 4 种 PLM 与 2 种 MLM 的嵌入特征组合用于 KM 预测，发现 ProtT5 最后四层平均嵌入（70 PCs）+ MolFormer CLS 嵌入（20 PCs）+ QM 描述符的组合达到 R²=0.537，且模型对未见分子和蛋白序列具有泛化能力。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 如何从蛋白质序列和底物分子结构（SMILES）中提取有效特征，实现高精度、可泛化的 KM 预测？</li>
+<li><strong>为什么重要</strong>: KM 是酶-底物亲和力的关键参数，对酶动力学建模、PBPK 药物开发、代谢通路识别至关重要。实验测定 KM 耗时费力，计算预测可大规模补充数据缺口。</li>
+<li><strong>现有方法不足</strong>: (1) 传统 QSAR 依赖手工描述符，缺乏序列上下文信息；(2) 已有 ML 方法多基于 EC 编号进行数据划分，忽略了同一序列对应多个 EC 注释的歧义问题；(3) 语言模型嵌入维度高、冗余大，直接用于回归易过拟合；(4) 缺乏对 PLM/MLM 组合及特征维度的系统比较；(5) QM 描述符虽能反映反应性，但鲜有与语言模型特征融合的研究。</li>
+<li><strong>精确研究问题</strong>: Can pretrained protein and molecular language model embeddings, when systematically combined with QM descriptors and optimized feature dimensionality, achieve competitive KM prediction performance with generalizability to unseen molecules and protein sequences?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p>（标注：以下脉络主要基于本文 Introduction 和 Discussion 的叙述框架，部分经外部核验标注）</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>物理模拟时代</td>
+<td>QM/MM 计算活化自由能，过渡态理论推导 KM</td>
+<td>机理明确</td>
+<td>计算昂贵，难以大规模应用</td>
+<td>本文保留 QM 描述符作为补充特征</td>
+</tr>
+<tr>
+<td>经典 QSAR</td>
+<td>分子描述符 + 回归/统计模型</td>
+<td>计算快，可解释</td>
+<td>缺乏序列上下文，泛化差</td>
+<td>本文以语言模型嵌入替代手工描述符</td>
+</tr>
+<tr>
+<td>早期 ML</td>
+<td>手工特征 + 随机森林/SVM 等</td>
+<td>比 QSAR 灵活</td>
+<td>特征工程依赖专家知识</td>
+<td>本文采用集成树（bagged trees）作为回归器</td>
+</tr>
+<tr>
+<td>深度学习时代</td>
+<td>GNN、DNN 直接学习分子/序列表示</td>
+<td>自动特征提取</td>
+<td>数据需求大，可解释性差</td>
+<td>本文利用预训练语言模型避免从头训练</td>
+</tr>
+<tr>
+<td>预训练语言模型</td>
+<td>ProtT5, ESM-2, ProtBERT, Ankh (PLM); ChemBERTa, MolFormer (MLM)</td>
+<td>捕获序列/分子深层语义</td>
+<td>嵌入维度高，需降维；不同模型适用性未明</td>
+<td>本文系统比较 4 PLM × 2 MLM 组合</td>
+</tr>
+<tr>
+<td>混合特征（本文）</td>
+<td>PLM + MLM + QM 描述符 + PCA 降维 + 集成树</td>
+<td>兼顾序列、结构、电子反应性</td>
+<td>QM 计算成本高；未建模酶-底物相互作用</td>
+<td>本文核心贡献</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KM 实验测定成本高</td>
+<td>大量酶-底物对缺乏 KM 数据</td>
+<td>实验耗时费力，尤其早期药物发现阶段</td>
+<td>Introduction: "experimental measurement of KM is labor-intensive and often unavailable"</td>
+</tr>
+<tr>
+<td>现有预测方法精度有限</td>
+<td>已发表模型 R² 约 0.50</td>
+<td>特征表示不充分，或数据划分不合理</td>
+<td>Discussion: "Other published single-task KM prediction models typically report R2 values around 0.50"</td>
+</tr>
+<tr>
+<td>EC 编号歧义导致数据噪声</td>
+<td>同一序列对应多个 EC 注释</td>
+<td>以 EC 而非序列定义数据唯一性</td>
+<td>Introduction: "a single protein sequence may be associated with multiple EC numbers"</td>
+</tr>
+<tr>
+<td>语言模型嵌入维度高</td>
+<td>原始嵌入数千维，直接回归易过拟合</td>
+<td>PLM/MLM 输出为高维稠密向量</td>
+<td>Methods: "PCA was applied to each set of model outputs"</td>
+</tr>
+<tr>
+<td>长序列超出模型输入限制</td>
+<td>部分蛋白序列超过 PLM 最大长度</td>
+<td>模型架构固定输入窗口</td>
+<td>Methods: "overlapped sliding-window strategy was applied"</td>
+</tr>
+<tr>
+<td>QM 计算成本高</td>
+<td>部分分子 QM 优化不可行</td>
+<td>大分子或柔性分子几何优化昂贵</td>
+<td>Results: "A subset (n = 20,002) was constructed by removing molecules whose QM calculations were computationally prohibitive"</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：
+构建 LM2KM 流水线：输入蛋白序列和底物 SMILES → 分别通过 PLM 和 MLM 提取嵌入 → 对长序列用滑动窗口处理 → PCA 降维至 20/60/70 PCs → 拼接 PLM + MLM（+ 可选 QM）特征 → 训练集成袋装树（ensemble bagged trees）回归模型 → 输出 log2(KM) 预测值。</p>
+<p><strong>2) 核心洞察</strong>：
+- <strong>特征互补性</strong>：PLM 捕获蛋白序列的进化与结构语义，MLM 捕获底物分子的化学语义，QM 描述符补充电子反应性信息，三者互补而非替代。
+- <strong>维度不对称性</strong>：蛋白特征需要更高维度（60-70 PCs）才能充分表征，而分子特征在较低维度（20 PCs）即达饱和，反映两类生物分子信息复杂度的本质差异。
+- <strong>序列级而非 EC 级数据划分</strong>：以蛋白序列唯一性定义数据，避免同一序列多 EC 标签造成的训练/测试泄漏。
+- <strong>QM 的增量价值</strong>：QM 描述符（尤其硬度/软度）提供语言模型无法直接编码的电子结构信息，且预计算的非线性变换比原始 HOMO/LUMO 更利于树模型利用。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：
+- 预训练语言模型嵌入并非「即插即用」，需要针对下游任务做维度选择和层选择（如 ProtT5 最后四层优于最后一层）。
+- 物理化学描述符（如 QM）与深度表示学习并非对立，融合可带来稳健增益，尤其在数据量有限时。
+- 数据划分粒度（序列级 vs 注释级）对模型评估的公平性影响可能大于模型选择本身。</p>
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>: 蛋白氨基酸序列（FASTA）、底物 SMILES 字符串、KM 实验值（log2 变换）</p>
+<p><strong>输出</strong>: log2(KM) 回归预测值</p>
+<p><strong>模块</strong>:
+1. <strong>数据模块</strong>: BRENDA 数据库提取 → 序列级去重 → SMILES 标准化（InChIKey 映射）→ log2 变换
+2. <strong>蛋白嵌入模块</strong>: 4 种 PLM（ProtT5, ESM-2, ProtBERT, Ankh），长序列用滑动窗口（510 aa, step 256）
+3. <strong>分子嵌入模块</strong>: 2 种 MLM（ChemBERTa, MolFormer），提取 CLS token 或池化嵌入
+4. <strong>降维模块</strong>: PCA 保留 Top 20/60/70 PCs
+5. <strong>QM 模块</strong>: Gaussian 16 在 ωB97XD/6-31G* 水平优化几何，计算 HOMO/LUMO 衍生 8 个全局反应性描述符
+6. <strong>回归模块</strong>: 集成袋装树（ensemble bagged trees），对 top/bottom 10% 数据加权</p>
+<p><strong>训练</strong>: 固定随机种子划分训练/测试集；5 次独立实验（不同随机种子）评估稳定性；配对 t 检验比较模型差异</p>
+<p><strong>工具</strong>: Python（实现）、MATLAB（初步筛选）、Gaussian 16（QM 计算）</p>
+<p><strong>假设</strong>:
+- KM 的 log2 变换近似正态分布
+- 蛋白序列和底物结构信息足以预测 KM（无需显式 3D 结构）
+- QM 描述符在 ωB97XD/6-31G* 水平足够表征反应性</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列级去重</td>
+<td>以蛋白序列而非 EC 编号定义唯一性</td>
+<td>避免同一序列多 EC 标签造成数据泄漏</td>
+<td>输入: 55,965 原始记录；输出: 20,462 唯一序列-底物对</td>
+<td>Introduction: "protein uniqueness was defined at the amino acid sequence level"</td>
+<td>若移除，模型可能因训练/测试重叠而虚高 R²</td>
+</tr>
+<tr>
+<td>滑动窗口</td>
+<td>处理超过 PLM 输入限制的长序列</td>
+<td>PLM 有固定最大长度（如 510 aa）</td>
+<td>输入: 长蛋白序列；输出: 重叠窗口嵌入的平均</td>
+<td>Methods: "overlapped sliding-window strategy"</td>
+<td>若移除，长序列蛋白无法编码或信息丢失</td>
+</tr>
+<tr>
+<td>PCA 降维</td>
+<td>压缩高维嵌入至 20-70 维</td>
+<td>原始嵌入数千维，直接回归易过拟合</td>
+<td>输入: PLM/MLM 原始嵌入；输出: Top PCs</td>
+<td>Results 图 4: PCA 收敛分析</td>
+<td>若移除，模型性能下降（过拟合）或计算成本剧增</td>
+</tr>
+<tr>
+<td>QM 描述符</td>
+<td>补充电子反应性信息</td>
+<td>语言模型不直接编码电子结构</td>
+<td>输入: 优化后分子几何；输出: 8 个全局描述符</td>
+<td>Results 图 7: QM 一致提升性能</td>
+<td>若移除，R² 下降（文中报告 QM 带来显著增益）</td>
+</tr>
+<tr>
+<td>集成袋装树</td>
+<td>回归预测 log2(KM)</td>
+<td>对高维稀疏特征稳健，可处理非线性</td>
+<td>输入: 拼接特征向量；输出: 预测值</td>
+<td>Methods: "ensemble bagged trees achieved the best performance"</td>
+<td>若替换为线性模型，可能无法捕获非线性关系</td>
+</tr>
+<tr>
+<td>加权策略</td>
+<td>对 top/bottom 10% KM 值加权</td>
+<td>KM 分布集中在中部，尾部样本稀疏</td>
+<td>输入: 训练样本及权重；输出: 加权损失</td>
+<td>Methods: "additional weights were assigned to the top and bottom 10%"</td>
+<td>若移除，尾部预测精度可能下降</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>1) KM 对数变换</strong>:
+[
+y = \log_2(K_M)
+]
+- ( y ): 模型预测目标（log2 尺度）
+- ( K_M ): Michaelis 常数（实验值）</p>
+<p><strong>2) 电离能/电子亲和能近似</strong>:
+[
+IP \approx -E_{\text{HOMO}}
+]
+[
+EA \approx -E_{\text{LUMO}}
+]
+- ( IP ): 电离能
+- ( EA ): 电子亲和能
+- ( E_{\text{HOMO}} ): 最高占据分子轨道能量
+- ( E_{\text{LUMO}} ): 最低未占分子轨道能量</p>
+<p><strong>3) 决定系数 R²</strong>:
+[
+R^2 = 1 - \frac{\sum_{i=1}^{n}(y_i^{\text{obs}} - y_i^{\text{pred}})^2}{\sum_{i=1}^{n}(y_i^{\text{obs}} - \bar{y})^2}
+]
+- ( n ): 样本数
+- ( y_i^{\text{obs}} ): 第 i 个样本的观测 log2(KM)
+- ( y_i^{\text{pred}} ): 第 i 个样本的预测值
+- ( \bar{y} ): 观测值均值</p>
+<p><strong>4) 均方根误差 RMSE</strong>:
+[
+RMSE = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i^{\text{obs}} - y_i^{\text{pred}})^2}
+]</p>
+<p><strong>5) 全局反应性描述符</strong>（由 HOMO/LUMO 衍生）:
+- 化学势: ( \mu = (E_{\text{HOMO}} + E_{\text{LUMO}})/2 )
+- 化学硬度: ( \eta = (E_{\text{LUMO}} - E_{\text{HOMO}})/2 )
+- 化学软度: ( S = 1/(2\eta) )
+- 亲电指数: ( \omega = \mu^2/(2\eta) )
+- 供电子/受电子能力等（文中未给出完整公式，以上为标准定义）</p>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集</strong>: BRENDA 数据库（2025 年 1 月检索），55,965 条原始记录 → 序列级去重后 20,462 条唯一蛋白-底物对；QM 子集 20,002 条</p>
+<p><strong>特征集</strong>: 10 种蛋白特征（4 PLM × 多种提取策略）+ 4 种分子特征（2 MLM × CLS/pooled）</p>
+<p><strong>基线</strong>: 无明确外部基线，内部比较为「无 QM 特征」的对应模型</p>
+<p><strong>评测协议</strong>: 固定随机种子划分；5 次独立实验（不同种子）；配对 t 检验；R² 和 RMSE 指标</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PCA 收敛分析</td>
+<td>不同 PLM/MLM 嵌入的固有维度不同</td>
+<td>各特征集累计方差 vs PC 数</td>
+<td>ProtBERT 收敛最快（1-2 PCs 达 90%）；ProtT5_last1/ESM2_cls 等需 ~200 PCs</td>
+<td>不同模型信息冗余度差异大</td>
+<td>未直接证明最优 PC 数 = 90% 方差所需数</td>
+<td>Results 图 4</td>
+</tr>
+<tr>
+<td>PLM-MLM 组合评估</td>
+<td>存在最优 PLM-MLM 组合</td>
+<td>穷举 4 PLM × 2 MLM × 2 维度</td>
+<td>ProtT5_last4 + MolFormer_cls 最优</td>
+<td>模型选择影响显著</td>
+<td>未证明该组合在所有数据集上最优</td>
+<td>Results 图 5, S1, S2</td>
+</tr>
+<tr>
+<td>维度不对称性</td>
+<td>蛋白需更高维度，分子低维度即饱和</td>
+<td>20 vs 60 PCs 对比</td>
+<td>蛋白 60 PCs &gt; 20 PCs；分子 20 PCs 已足够</td>
+<td>两类特征信息复杂度不同</td>
+<td>未系统扫描中间维度</td>
+<td>Results 图 5, 6</td>
+</tr>
+<tr>
+<td>QM 特征贡献</td>
+<td>QM 描述符提升预测性能</td>
+<td>有/无 QM 特征对比</td>
+<td>所有维度下 QM 均带来显著提升（p=0.0084, 0.0077）</td>
+<td>QM 提供互补信息</td>
+<td>未证明 QM 对极端值（outliers）的改善</td>
+<td>Results 图 7, 表 2, 3</td>
+</tr>
+<tr>
+<td>单描述符分析</td>
+<td>硬度/软度贡献最大</td>
+<td>逐一添加 8 个 QM 描述符</td>
+<td>硬度、软度提升最显著</td>
+<td>电子结构信息对 KM 预测有价值</td>
+<td>未分析描述符间交互</td>
+<td>Results 图 9</td>
+</tr>
+<tr>
+<td>泛化性评估</td>
+<td>模型对未见分子/序列有效</td>
+<td>按分子/序列新颖性分层评估</td>
+<td>未见分子和序列的预测性能与总体相当</td>
+<td>模型未严重依赖记忆</td>
+<td>未测试跨物种/跨酶家族泛化</td>
+<td>Results 图 8</td>
+</tr>
+<tr>
+<td>基准对比</td>
+<td>LM2KM 与已发表方法可比</td>
+<td>KmPred 基准（相同划分）</td>
+<td>R²=0.509 vs KmPred R²=0.51</td>
+<td>性能与 SOTA 相当</td>
+<td>未证明显著优于 SOTA</td>
+<td>Discussion</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 仅限 KM 预测，不涉及 Kcat、催化效率等其它动力学参数；输入为序列+SMILES，不依赖 3D 结构。</li>
+<li><strong>Oracle/真值输入</strong>: 使用 BRENDA 实验 KM 值，经 log2 变换；QM 描述符来自 DFT 计算（ωB97XD/6-31G*），非实验测量。</li>
+<li><strong>端到端状态</strong>: 非端到端——特征提取（PLM/MLM/QM）与回归模型（袋装树）分离，特征提取器未针对 KM 任务微调。</li>
+<li><strong>算力成本</strong>: QM 计算是主要瓶颈（20,002 个分子的 DFT 优化），语言模型推理成本中等；训练成本低（袋装树）。</li>
+<li><strong>历史数据依赖</strong>: 训练数据来自 BRENDA（截至 2025 年 1 月），存在数据库偏差（如对模式生物、常见底物偏置）。</li>
+<li><strong>模型依赖</strong>: 袋装树为非线性模型，对特征缩放不敏感，但无法外推到训练分布之外；特征选择（PCA）在训练集上完成，存在轻微信息泄漏风险。</li>
+<li><strong>最难情形</strong>: 多蛋白复合物体系（1,556 条记录涉及多蛋白）可能更难预测，文中未单独分析。</li>
+<li><strong>群体/领域边界</strong>: 模型适用于序列-底物对，不适用于 apo 酶或非代谢底物；QM 特征仅对可优化几何的小分子有效。</li>
+<li><strong>不确定性</strong>: 文中未报告预测区间或置信度估计；R²=0.537 意味着仍有约 46% 方差未解释。</li>
+<li><strong>有边界的复述</strong>: LM2KM 在 BRENDA 来源的 20,462 条 KM 数据上，通过系统比较 4 PLM × 2 MLM 组合，确定 ProtT5_last4（70 PCs）+ MolFormer_cls（20 PCs）+ QM 描述符为最优特征配置，R²=0.537；在 KmPred 公共基准上 R²=0.509，与当前 SOTA 相当；模型对未见分子和序列具有泛化能力，但 QM 计算成本限制了大规模应用。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未显式建模酶-底物相互作用</td>
+<td>模型分别编码蛋白和分子，未捕捉二者互作模式</td>
+<td>探索蛋白-配体交互指纹等描述符</td>
+<td>Discussion: "do not explicitly capture variations in KM arising from enzyme-substrate interactions"</td>
+</tr>
+<tr>
+<td>QM 描述符未直接表征反应机理</td>
+<td>QM 特征仅反映底物电子结构，未涉及过渡态或催化机制</td>
+<td>引入更细粒度的 QM/MM 计算</td>
+<td>Discussion: "not intended to directly represent the mechanistic determinants of KM"</td>
+</tr>
+<tr>
+<td>未联合预测 Kcat</td>
+<td>单一任务预测 KM，未利用 Kcat 与 KM 的共享信息</td>
+<td>多任务学习联合预测 KM 和 Kcat</td>
+<td>Discussion: "extending the current framework to jointly predict KM and Kcat through multi-task learning"</td>
+</tr>
+<tr>
+<td>数据偏差</td>
+<td>BRENDA 数据库本身存在实验条件、物种、底物类型偏差</td>
+<td>未明确提及</td>
+<td>隐含于数据来源描述</td>
+</tr>
+<tr>
+<td>QM 计算成本</td>
+<td>20,002 个分子的 DFT 优化计算量大</td>
+<td>未明确提及</td>
+<td>Results: "computationally prohibitive"</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R²=0.537 的增量是否显著</td>
+<td>与无 QM 基线相比提升幅度未报告具体数值，仅报告 p 值</td>
+<td>统计显著 ≠ 实际显著，需效应量</td>
+<td>报告 ΔR² 及 95% CI</td>
+<td>Results 图 7, 表 2</td>
+</tr>
+<tr>
+<td>PCA 在训练集上拟合</td>
+<td>若 PCA 变换在训练集上计算后应用于测试集，存在轻微信息泄漏</td>
+<td>可能高估泛化性能</td>
+<td>使用嵌套交叉验证或仅在训练折叠内拟合 PCA</td>
+<td>Methods: "PCA was applied to each set of model outputs"</td>
+</tr>
+<tr>
+<td>袋装树对特征重要性的解释有限</td>
+<td>未报告特征重要性分析，无法判断 PLM/MLM/QM 各自贡献</td>
+<td>影响可解释性和后续优化</td>
+<td>计算置换重要性或 SHAP 值</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>未见分子/序列的泛化评估方法</td>
+<td>图 8 的「未见」定义不明确（是 scaffold split 还是随机 split？）</td>
+<td>影响泛化结论的可信度</td>
+<td>明确 split 策略并报告分子/序列聚类阈值</td>
+<td>Results 图 8</td>
+</tr>
+<tr>
+<td>与 KmPred 基准比较的公平性</td>
+<td>仅报告 R²=0.509 vs 0.51，未说明是否使用完全相同的训练/测试划分</td>
+<td>微小差异可能来自数据划分而非模型</td>
+<td>使用 KmPred 官方划分并报告多次运行均值±标准差</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>QM 描述符的冗余性</td>
+<td>8 个描述符均由 HOMO/LUMO 衍生，可能存在高度共线性</td>
+<td>可能夸大 QM 的独立贡献</td>
+<td>计算描述符间相关性矩阵，做消融</td>
+<td>Results 图 9</td>
+</tr>
+<tr>
+<td>未报告误差分布</td>
+<td>仅报告 R²/RMSE，未分析预测误差是否在低/高 KM 区间不均匀</td>
+<td>影响实际应用（如药物筛选阈值）</td>
+<td>绘制误差 vs 实验值散点图，分层评估</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>多蛋白体系处理方式</td>
+<td>1,556 条多蛋白记录如何编码？是拼接序列还是选择其一？</td>
+<td>多蛋白体系是代谢网络的常见场景</td>
+<td>明确多蛋白编码策略并单独评估</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>PLM 层选择策略</strong>：ProtT5 最后四层平均嵌入优于最后一层，提示深层语义需要跨层聚合。可迁移至结构预测任务（如突变效应预测），用最后 k 层平均替代单层嵌入。</p>
+</li>
+<li>
+<p><strong>维度不对称原则</strong>：蛋白序列信息复杂度高于小分子，需要更高维特征（60-70 PCs vs 20 PCs）。在设计多模态融合模型时，应允许不同模态使用不同特征维度，而非强制统一。</p>
+</li>
+<li>
+<p><strong>QM 描述符的增量价值</strong>：即使有强大的语言模型嵌入，物理化学描述符仍能提供互补信息。对结构相关任务（如结合亲和力预测），可考虑将 DFT 或半经验 QM 描述符与深度学习特征融合。</p>
+</li>
+<li>
+<p><strong>序列级数据去重</strong>：以序列而非注释（EC 编号）定义数据唯一性，避免标签歧义导致的数据泄漏。这一原则适用于所有序列-功能预测任务。</p>
+</li>
+<li>
+<p><strong>滑动窗口 + 重叠平均</strong>：处理超长序列时，用重叠窗口（510 aa, step 256）并在嵌入层平均，比截断或 padding 更保真。可迁移至长蛋白结构域预测或全长蛋白嵌入。</p>
+</li>
+<li>
+<p><strong>加权损失处理长尾分布</strong>：对 top/bottom 10% 数据加权，改善极端值预测。适用于 KM、IC50 等呈长尾分布的生化参数预测。</p>
+</li>
+<li>
+<p><strong>系统比较框架</strong>：穷举 PLM × MLM × 维度组合 + 配对 t 检验，是评估特征工程方案的可复制范式。</p>
+</li>
+<li>
+<p><strong>保守基准评估</strong>：在公共基准（KmPred）上使用相同划分进行头对头比较，比仅报告自建测试集更有说服力。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>PLM 选择</strong>：ProtT5 (Elnaggar et al., 2021, IEEE TPAMI)、ESM-2 (Lin et al., 2023, Science)、ProtBERT (Elnaggar et al., 2021)、Ankh (Elnaggar et al., 2023, bioRxiv)——均为蛋白质语言模型领域代表性工作，本文系统比较其在下游回归任务的表现。</li>
+<li><strong>MLM 选择</strong>：ChemBERTa (Chithrananda et al., 2020, arXiv)、MolFormer (Ross et al., 2022, ICLR)——分子 SMILES 语言模型代表。</li>
+<li><strong>KM 预测先验工作</strong>：KmPred (2026, 引用 23)——本文直接对比的 SOTA；其他 KM 预测 ML 方法（引用 8，R²≈0.50）。</li>
+<li><strong>QM 描述符</strong>：概念源自概念密度泛函理论（Parr &amp; Yang），HOMO/LUMO 衍生描述符广泛用于反应性预测（如 Mayr 亲电性尺度）。</li>
+<li><strong>集成树回归</strong>：袋装树（Breiman, 1996）在生化性质预测中常优于深度学习（如随机森林在 QSAR 中的基准表现）。</li>
+<li><strong>与 AlphaFold 类工作的关系</strong>：本文不涉及结构预测，但 PLM 嵌入（如 ESM-2）已被证明包含结构信息（Lin et al., 2023），因此本文的 PLM 特征选择策略可部分迁移至结构相关任务。</li>
+<li><strong>与 MD/对接的关系</strong>：本文未使用 MD 或对接，但 QM 描述符与 MD 导出的反应性描述符（如 MM-PBSA 能量项）在概念上互补，可考虑融合。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>: QM-enhanced PLM embeddings for binding affinity prediction
+   - <strong>来源局限/观察</strong>: 本文证明 QM 描述符提升 KM 预测，但 KM 是稳态参数，结合亲和力（Ki/Kd）预测可能同样受益于电子结构信息。
+   - <strong>核心假设</strong>: 将 QM 描述符与 PLM 嵌入融合可提升蛋白-配体结合亲和力预测精度，尤其在配体反应性主导结合的体系。
+   - <strong>初步方法</strong>: 在 PDBbind 等数据集上，用 ProtT5 编码蛋白序列 + 配体 QM 描述符（ωB97XD/6-31G* 水平），训练袋装树或轻量神经网络。
+   - <strong>验证方式</strong>: 与仅用 PLM 嵌入的基线对比，报告 ΔR² 和 ΔRMSE；按配体反应性分层分析。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: Cross-modal feature selection for enzyme kinetic parameter prediction
+   - <strong>来源局限/观察</strong>: 本文仅用 PCA 降维，未做特征选择或模态重要性分析；袋装树可提供特征重要性但未报告。
+   - <strong>核心假设</strong>: 基于置换重要性的特征选择可进一步压缩特征维度，提升模型可解释性和泛化性。
+   - <strong>初步方法</strong>: 在本文公开数据上，计算各 PLM/MLM/QM 特征的置换重要性，保留 top-k 特征重新训练，比较性能-维度曲线。
+   - <strong>验证方式</strong>: 与 PCA 基线对比；报告特征重要性排序的稳定性（多折交叉验证）。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: Multi-task learning for KM and Kcat co-prediction
+   - <strong>来源局限/观察</strong>: 作者在 Discussion 中明确提出多任务学习联合预测 KM 和 Kcat 是未来方向。
+   - <strong>核心假设</strong>: KM 和 Kcat 共享底物识别和催化机制信息，多任务学习可提升两者预测精度。
+   - <strong>初步方法</strong>: 构建共享 PLM/MLM 编码器 + 双任务输出头，在 BRENDA 数据上联合训练；比较单任务 vs 多任务性能。
+   - <strong>验证方式</strong>: 报告两个任务的 R²/RMSE，以及任务间迁移增益。
+   - <strong>创新状态</strong>: unverified（作者提及但未实施）</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: Sliding-window embedding aggregation for long protein language models
+   - <strong>来源局限/观察</strong>: 本文滑动窗口策略（510 aa, step 256）仅用于 ProtT5 等有长度限制的模型，未系统比较不同窗口大小和步长。
+   - <strong>核心假设</strong>: 窗口大小和重叠率影响长序列蛋白的嵌入质量，存在最优配置。
+   - <strong>初步方法</strong>: 在 KM 数据集上，对窗口大小（256/510/1024）和步长（128/256/512）做网格搜索，评估对预测性能的影响。
+   - <strong>验证方式</strong>: 报告各配置的 R² 和计算成本；分析窗口边界效应。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: Structure-aware QM descriptors for enzyme-substrate interaction modeling
+   - <strong>来源局限/观察</strong>: 本文 QM 描述符仅基于底物分子，未考虑酶活性位点环境；作者承认未建模酶-底物相互作用。
+   - <strong>核心假设</strong>: 在 QM 描述符中引入酶活性位点残基的静电/极化效应（如通过 QM/MM 或 Poisson-Boltzmann），可提升 KM 预测。
+   - <strong>初步方法</strong>: 对已知结构的酶-底物复合物，计算活性位点静电势或极化率作为额外特征；对无结构酶，用 AlphaFold 预测结构。
+   - <strong>验证方式</strong>: 与仅底物 QM 描述符对比；按结构可用性分层评估。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: Benchmarking PLM embeddings for enzyme engineering applications
+   - <strong>来源局限/观察</strong>: 本文聚焦 KM 预测，但 PLM 嵌入在突变效应预测（如 ΔΔG、热稳定性）中同样常用。
+   - <strong>核心假设</strong>: 本文确定的「最后四层平均 + PCA」策略可迁移至酶工程中的突变效应预测任务。
+   - <strong>初步方法</strong>: 在 ProTherm、FireProtDB 等数据集上，用相同特征提取策略训练突变效应预测模型，与现有方法对比。
+   - <strong>验证方式</strong>: 报告 ΔΔG 预测的 MAE/RMSE，与 SOTA 对比。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, results, discussion, conclusions, methods, data availability)</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological soundness, reproducibility, and claims as supported by the provided evidence</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present LM2KM, a framework combining pretrained protein and molecular language model embeddings with quantum mechanics-derived descriptors to predict Michaelis constants (KM). They report that a configuration using 70 principal components from ProtT5 last-four-layer embeddings and 20 from MolFormer CLS embeddings, augmented with QM descriptors, achieves an R2 of 0.537, and that the model generalizes to unseen molecules and protein sequences.</li>
+<li><strong>Visible evidence base</strong> Main text figures (Fig. 1–9), tables (Table 1–3), supplementary figure and table references, dataset statistics, and methodological descriptions</li>
+<li><strong>Missing materials affecting confidence</strong> Actual figure images, supplementary figures S1–S2, supplementary tables, source code, dataset files, and detailed hyperparameter settings were not provided. The benchmark comparison against KmPred is described but the underlying data are not shown.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript addresses a relevant problem in enzyme kinetics prediction and proposes a reasonable integration of language model embeddings with QM descriptors. The systematic evaluation of multiple PLM/MLM combinations and feature dimensionalities is commendable. However, the reported performance (R2 ≈ 0.54) is modest, and the manuscript lacks critical details on model training, hyperparameter selection, and statistical rigor. The generalizability analysis is suggestive but incomplete. The benchmark comparison is described only qualitatively. The claims of practical utility and broad applicability are not fully supported by the evidence presented.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in enzyme kinetics, computational enzymology, and PBPK modeling would be interested. The framework's potential for substrate screening and enzyme engineering could attract those working in drug metabolism and protein design. The comparison of language model representations for a specific biophysical prediction task may interest the machine learning for chemistry and biology community.</li>
+<li><strong>Major strengths</strong> 1) Systematic evaluation of multiple pretrained language models and feature extraction strategies. 2) Inclusion of QM descriptors as complementary physics-based features is a thoughtful addition. 3) Sequence-level data curation avoiding EC number ambiguity is a methodological improvement. 4) Generalizability analysis toward unseen molecules and protein sequences addresses an important concern. 5) Code and data availability are stated.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The claim that the identified feature configuration (70 ProtT5_last4 PCs + 20 MolFormer_cls PCs + QM) is "well-balanced and effective" and achieves R2 = 0.537.</li>
+<li><strong>Evidence pointer</strong> Results section, Fig. 7, Table 2, Table 3</li>
+<li><strong>Concern</strong> The manuscript does not report the variance or confidence intervals for the R2 values. The improvement from QM features is reported as statistically significant via paired t-tests, but the effect size is not quantified. The R2 of 0.537 is only marginally higher than the best model without QM (which is not explicitly stated). The practical significance of this improvement is unclear.</li>
+<li><strong>Why it matters</strong> Without measures of variance or effect size, the reader cannot assess whether the reported performance is stable or whether the QM feature contribution is practically meaningful. The claim of "consistent improvement" requires quantitative support.</li>
+<li><strong>Resolution test</strong> Provide confidence intervals or standard deviations for R2 across multiple train/test splits. Report the exact R2 values for models with and without QM features under identical conditions, and quantify the improvement (e.g., delta R2 with confidence intervals).</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> The claim that the model is reproducible and the framework is "flexible and extensible."</li>
+<li><strong>Evidence pointer</strong> Methods section, Data availability</li>
+<li><strong>Concern</strong> The methods lack critical details for reproduction: the exact architecture of the ensemble bagged trees (number of trees, max depth, etc.), the hyperparameter tuning procedure, the weighting scheme for the top and bottom 10% of data, and the specific random seeds used. The PCA implementation details (e.g., scaling before PCA) are not described. The QM feature calculation is described but the exact set of descriptors used in the model is not enumerated.</li>
+<li><strong>Why it matters</strong> Reproducibility is a core requirement for computational studies. Without these details, independent verification is impossible, undermining the scientific value of the work.</li>
+<li><strong>Resolution test</strong> Provide complete hyperparameter settings, the full list of QM descriptors used, the weighting scheme, and the random seeds. Consider releasing the trained model or a detailed configuration file.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Scientific importance</li>
+<li><strong>Claim pointer</strong> The claim that the model "retained predictive capability across a broad range of molecular structures and protein sequence identities."</li>
+<li><strong>Evidence pointer</strong> Results section, Fig. 8</li>
+<li><strong>Concern</strong> The generalizability analysis is based on a single train/test split. The analysis of sequence identity (Fig. 8C) is described as showing "no apparent correlation," but no statistical test is reported. The analysis of unseen molecules (Fig. 8A) is similarly qualitative. The manuscript does not report how many unseen molecules or proteins were in the test set, nor the distribution of sequence identities.</li>
+<li><strong>Why it matters</strong> The claim of generalizability is central to the practical utility of the model. Without quantitative analysis, the claim is not established.</li>
+<li><strong>Resolution test</strong> Report the number of unseen molecules and proteins in the test set. Perform a statistical test for the correlation between sequence identity and prediction error. Consider stratifying the analysis by sequence identity bins.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The claim that the benchmark comparison against KmPred demonstrates competitive performance.</li>
+<li><strong>Evidence pointer</strong> Discussion section</li>
+<li><strong>Concern</strong> The benchmark comparison is described only in text. The actual results (R2 values, dataset size, train/test split) are not shown in a table or figure. The statement that the benchmark "should be regarded as a conservative estimate" is not supported by any data.</li>
+<li><strong>Why it matters</strong> A fair comparison against existing methods is essential to position the contribution. Without showing the benchmark results, the claim of competitiveness is unverifiable.</li>
+<li><strong>Resolution test</strong> Provide a table or figure showing the benchmark results, including the dataset size, train/test split, and R2 values for both KmPred and LM2KM.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract</li>
+<li><strong>Issue</strong> The abstract states "the model R2 of 0.537" without specifying which model configuration this refers to. It is unclear whether this is the best model or the "well-balanced" model.</li>
+<li><strong>Required correction</strong> Specify the exact configuration (e.g., "the model using 70 ProtT5_last4 PCs, 20 MolFormer_cls PCs, and QM descriptors achieved an R2 of 0.537").</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Results section, Fig. 7</li>
+<li><strong>Evidence pointer</strong> Results section, Fig. 7</li>
+<li><strong>Issue</strong> The description of Fig. 7 is brief. It is unclear what exactly is plotted (e.g., R2 vs. number of PCs? R2 for different feature sets?).</li>
+<li><strong>Required correction</strong> Provide a more detailed description of Fig. 7 in the text, including the axes and what each line/bar represents.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Methods, QM feature section</li>
+<li><strong>Evidence pointer</strong> Methods section</li>
+<li><strong>Issue</strong> The equations for IP and EA are presented but not numbered. The text states "we calculated the following term according to the equations" but does not list all the derived descriptors (chemical potential, hardness, etc.) explicitly.</li>
+<li><strong>Required correction</strong> Number the equations and explicitly list all QM descriptors used in the model.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Affected element</strong> Results section, Table 2</li>
+<li><strong>Evidence pointer</strong> Table 2</li>
+<li><strong>Issue</strong> The paired t-test is mentioned, but the table does not show the test statistic or degrees of freedom. It is unclear how many comparisons were made and whether multiple testing correction was applied.</li>
+<li><strong>Required correction</strong> Report the t-statistic, degrees of freedom, and p-values in Table 2. State whether multiple testing correction was applied.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability</li>
+<li><strong>Affected element</strong> Introduction</li>
+<li><strong>Evidence pointer</strong> Introduction</li>
+<li><strong>Issue</strong> The introduction is dense and could benefit from a clearer statement of the specific gap being addressed and the novelty of the approach relative to prior work.</li>
+<li><strong>Required correction</strong> Add a sentence explicitly stating what is new about this work compared to previous KM prediction studies.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that the model "retained predictive capability across a broad range of molecular structures and protein sequence identities" is not quantitatively supported.</li>
+<li>The claim that the benchmark comparison demonstrates competitive performance is not supported by shown data.</li>
+<li>The claim that QM descriptors "consistently improved prediction performance" is supported by the t-test but the effect size is not reported.</li>
+<li>The claim that the framework is "flexible and extensible" is plausible but not demonstrated with examples of extension.</li>
+<li>The claim that the model can "facilitate enzyme pathway identification, drug and lead screening, and sequence-based protein design" is speculative and not demonstrated.</li>
+</ul>
+<h2>Assessment against Nature-style criteria</h2>
+<ul>
+<li><strong>Originality</strong> Moderate. The combination of language model embeddings with QM descriptors for KM prediction is a reasonable incremental contribution, but similar hybrid approaches have been explored for other enzyme kinetic parameters. The systematic comparison of multiple PLMs/MLMs is useful but not conceptually novel.</li>
+<li><strong>Scientific importance</strong> Moderate. KM prediction is relevant for drug metabolism and enzyme engineering, but the reported performance (R2 ≈ 0.54) is modest and may not represent a significant advance over existing methods. The practical utility is not clearly demonstrated.</li>
+<li><strong>Interdisciplinary readership</strong> Moderate. The work bridges machine learning, computational chemistry, and enzymology, which could attract readers from multiple fields. However, the technical depth may limit accessibility for non-specialists.</li>
+<li><strong>Technical soundness</strong> The core methodology is reasonable, but the lack of variance reporting, incomplete benchmark data, and missing reproducibility details undermine confidence. The statistical analysis is underpowered.</li>
+<li><strong>Readability for nonspecialists</strong> The manuscript is generally well-structured, but the results section is dense and some figures are not clearly described. The abstract is accessible, but the methods require domain expertise.</li>
+</ul>
+<h2>Recommendation posture</h2>
+<p>Currently not established from the provided evidence. The manuscript addresses a relevant problem and the methodological approach is reasonable, but the reported performance is modest, the statistical rigor is insufficient, and key details for reproducibility and benchmarking are missing. The claims of generalizability and practical utility are not quantitatively supported. The manuscript would require substantial revision, including variance reporting, complete benchmark data, and full methodological details, before the case is established.</p></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

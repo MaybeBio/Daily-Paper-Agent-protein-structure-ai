@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors report a comparative biophysical study of ubiquitin and four ubiquitin-like proteins (SUMO1, SUMO2, NEDD8, Hub1) using NMR spectroscopy, molecular dynamics simulations, and chemical denaturation. They claim that ubiquitin shows exceptional thermodynamic stability relative to the Ubls, that Ubls display a broad range of stability profiles without a uniform destabilization trend, and that reduced stability in Ubls is not linked to loss of the conserved beta-grasp fold but rather to local structural flexibility differences. They conclude that the conserved fold is maintained despite sequence divergence and stability/dynamics variation, supporting functional diversity while preserving structural integrity.
+- **Visible evidence base** Abstract text only; no experimental details, numerical data, statistical analyses, or methodological descriptions are available
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, NMR data and assignment details, MD simulation parameters and convergence criteria, chemical denaturation protocols and fitting results, statistical analyses, and any comparison with prior literature
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting question about how a conserved protein fold accommodates functional divergence, and the proposed multi-technique approach is appropriate in principle. However, the abstract provides insufficient quantitative or methodological detail to evaluate the robustness of the claims. The central conclusions, while plausible, are not verifiable from the supplied material. The work may be of interest to the protein biophysics and ubiquitin signaling communities, but the evidence base as presented is too thin to establish the case.
+- **Who would be interested in the results, and why** Researchers studying protein folding, stability, and dynamics, particularly those focused on the ubiquitin family and beta-grasp folds. Structural biologists using NMR and MD approaches would also find the comparative framework relevant. The potential link between fold conservation and functional diversification is of broad interest to evolutionary biochemists.
+- **Major strengths** The study addresses a well-defined and biologically meaningful question. The use of multiple complementary techniques (NMR, MD, chemical denaturation) is a strength if properly integrated. The inclusion of multiple Ubl family members with diverse functions provides a reasonable comparative design. The conclusion that stability variation does not equate to fold loss is conceptually valuable.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The claim that ubiquitin exhibits exceptional thermodynamic stability relative to other Ubls and that Ubls show a broad range of stability profiles
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract states these results but provides no quantitative stability values, no comparison metrics, no error estimates, and no statistical significance. Without numerical data from chemical denaturation experiments, the claim of "exceptional" stability and "broad range" of profiles cannot be assessed.
+  - **Why it matters** The central quantitative claim of the study depends on comparative stability measurements. If the differences are small or within experimental error, the conclusion would be unsupported. The abstract does not allow the reader to judge the magnitude or reliability of the reported stability differences.
+  - **Resolution test** Provide the free energy of unfolding values, their uncertainties, and statistical comparisons across all five proteins in the full manuscript, with clear reference to the relevant figures or tables.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological transparency
+  - **Claim pointer** The claim that the study uses an integrated approach combining solution NMR spectroscopy, molecular dynamics simulations, and chemical denaturation experiments
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract lists the techniques but provides no details on NMR experiments performed, MD force fields, simulation lengths, sampling convergence, or denaturation conditions. Without this information, the technical soundness of the approach cannot be evaluated.
+  - **Why it matters** The validity of the conclusions depends entirely on the quality and appropriateness of the methods. For example, MD simulations that are too short or poorly converged could produce misleading flexibility results, and NMR dynamics measurements require careful validation. The abstract gives no basis for judging these factors.
+  - **Resolution test** In the full manuscript, describe all experimental and simulation parameters, including validation and convergence checks, and show that the methods are appropriate for the questions asked.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim support
+  - **Claim pointer** The claim that reduced stability of Ubls is not associated with loss of the conserved fold but is accompanied by differences in local structural flexibility
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract asserts a causal or associative link between local flexibility differences and reduced stability, but no data are shown to support this link. It is unclear whether flexibility differences are correlated with stability, whether they are localized to specific regions, or whether they are functionally relevant.
+  - **Why it matters** This is the key mechanistic claim of the study. Without evidence linking flexibility to stability and to fold preservation, the conclusion remains speculative. The abstract does not indicate whether the flexibility differences are statistically significant or biologically meaningful.
+  - **Resolution test** Present quantitative flexibility data from NMR relaxation or MD root-mean-square fluctuation analyses, with clear statistical comparisons and mapping to structural regions, and demonstrate a relationship to stability measurements.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Definition of "exceptional" stability
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The term "exceptional" is subjective and not defined quantitatively.
+  - **Required correction** Define the threshold or basis for calling ubiquitin's stability exceptional, such as a specific free energy value or comparison to known protein stabilities.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Selection of Ubl representatives
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract does not justify why SUMO1, SUMO2, NEDD8, and Hub1 were chosen as representatives.
+  - **Required correction** Briefly state the rationale for selecting these specific Ubls, such as functional diversity or structural variation.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Conclusion about functional diversity
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract concludes that stability and dynamics variation supports functional diversity, but no functional data are presented.
+  - **Required correction** Clarify that this is an inference from biophysical data, not a direct functional demonstration, or add functional context from prior literature.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The abstract does not provide sufficient quantitative data, methodological detail, or mechanistic evidence to support the central claims.
+- **Assessment against Nature-style criteria** Originality: The question of fold conservation despite functional divergence is not new, but a systematic multi-technique comparison across several Ubls could offer a useful contribution. Scientific importance: Moderate, as the findings would primarily refine understanding of ubiquitin family biophysics rather than open a new area. Interdisciplinary readership: The topic would appeal to biophysicists, structural biologists, and biochemists, but the abstract does not frame the work for a broader audience. Technical soundness: Cannot be assessed from the abstract alone; the lack of methodological detail is a major limitation. Readability for nonspecialists: The abstract is clear in its language but assumes familiarity with the ubiquitin system and biophysical techniques.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a plausible study, but the absence of quantitative results, methodological transparency, and mechanistic support means the claims cannot be evaluated. A full manuscript with detailed data and analyses would be required to assess whether the case can be made.
+
+## Risk / unsupported claims
+- The claim that ubiquitin exhibits exceptional thermodynamic stability relative to other Ubls is unsupported without quantitative stability data.
+- The claim that Ubls display a broad range of stability profiles without a uniform destabilization trend is unsupported without numerical comparisons.
+- The claim that reduced stability is accompanied by differences in local structural flexibility is unsupported without flexibility data and statistical analysis.
+- The claim that the conserved fold is maintained despite stability and dynamics variation is only partially supported by the abstract, as no structural data are shown.
+- The conclusion that stability and dynamics variation supports functional diversity is an inference not directly supported by the presented evidence.

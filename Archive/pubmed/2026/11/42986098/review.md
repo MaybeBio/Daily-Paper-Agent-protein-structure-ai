@@ -1,0 +1,82 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors describe a novel undergraduate laboratory activity using a generative AI protein design server (GeoFlow-V3) to enable students to design antiviral nanobodies targeting influenza A virus hemagglutinin. They claim this is the first use of such a platform for teaching nanobody design at the undergraduate level and extend their prior pedagogical model from siRNA design to structural protein engineering.
+- **Visible evidence base** Abstract text only; no data, assessment instruments, student outcomes, or platform validation results are visible
+- **Missing materials affecting confidence** Full manuscript, figures, tables, supplementary materials, student assessment data, platform output examples, and any validation of designed nanobodies
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially valuable educational innovation that addresses a real gap in undergraduate access to nanobody discovery. The pedagogical rationale is sound and the connection to prior work is appropriate. However, the abstract provides insufficient evidence to evaluate the effectiveness of the activity, the validity of the platform outputs, or the accuracy of the novelty claim. The educational impact cannot be assessed from the supplied material.
+- **Who would be interested in the results, and why** Educators in undergraduate biology, biotechnology, and bioinformatics programs would be interested in this work as a model for integrating generative AI into teaching laboratory curricula. Instructors seeking to expose students to structure-based protein engineering without animal or wet-lab requirements would find this activity relevant. The broader community of microbiology and immunology educators may also find value in the antiviral application context.
+- **Major strengths** The activity addresses a genuine pedagogical barrier by replacing a 6 to 12 month animal-based discovery process with an accessible in silico exercise. The use of a freely available web server lowers institutional cost barriers. The extension of a previously published teaching model provides continuity and suggests iterative refinement of the authors' educational approach. The antiviral context, specifically influenza HA, gives the activity clear biomedical relevance.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The activity is described as effective for undergraduate students to design a novel antiviral nanobody against IAV HA
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract provides no data on student learning outcomes, student performance, or the quality of nanobody designs produced. There is no evidence that students successfully completed the design task, that the platform produced plausible nanobody structures, or that the activity achieved its stated educational objectives.
+  - **Why it matters** Without evidence of student engagement, learning gains, or output validity, the educational value of the activity cannot be established. A description of an activity is not sufficient to demonstrate its effectiveness in a teaching context.
+  - **Resolution test** Provide student assessment data, pre and post activity knowledge tests, examples of student-generated nanobody designs, and instructor evaluation criteria in the full manuscript.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Novelty claim substantiation
+  - **Claim pointer** "To our knowledge, this is the first use of a generative AI protein design platform for teaching nanobody design at the undergraduate level"
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The novelty claim is presented without any literature search evidence or comparative analysis of existing educational uses of AI protein design tools. The authors do not demonstrate that they surveyed relevant educational literature or databases to support the "first use" assertion.
+  - **Why it matters** Unsubstantiated novelty claims are difficult for readers to verify and may be inaccurate. The claim is central to the paper's contribution framing and requires explicit support.
+  - **Resolution test** Include a systematic literature search description, search terms, databases used, and the date of search in the full manuscript to substantiate the novelty claim.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Platform validity
+  - **Claim pointer** The GeoFlow-V3 server allows students to design a novel antiviral nanobody against IAV HA
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract does not describe any validation of the GeoFlow-V3 platform outputs. There is no indication of whether the designed nanobodies were assessed for structural plausibility, binding affinity, or any biophysical property. The platform is referenced by URL only with no description of its underlying methodology, accuracy, or limitations.
+  - **Why it matters** If the platform produces unreliable or biologically meaningless outputs, the educational value of the activity is compromised. Students may learn incorrect concepts about protein design if the tool's limitations are not addressed.
+  - **Resolution test** Include a description of the platform's methodology, any published validation of GeoFlow-V3, and how the authors addressed platform limitations in the educational context.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Activity description
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract does not specify the duration of the activity, the number of class sessions required, or the level of instructor expertise needed to facilitate the exercise.
+  - **Required correction** Provide activity duration, session structure, and instructor requirements in the full manuscript.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Accessibility
+  - **Affected element** Platform access
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract does not address whether the GeoFlow-V3 server requires registration, has usage limits, or requires computational resources beyond standard student laptops.
+  - **Required correction** Describe platform access requirements, any costs, and technical prerequisites for students.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Assessment design
+  - **Affected element** Learning outcomes
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract does not state the specific learning objectives or how student understanding of AI-driven protein design was assessed.
+  - **Required correction** List explicit learning objectives and describe the assessment instruments used to measure student achievement.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Generalizability
+  - **Affected element** Scope of the activity
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract focuses exclusively on influenza HA as the target antigen and does not discuss whether the activity could be adapted to other viral targets or therapeutic contexts.
+  - **Required correction** Briefly note the adaptability of the activity to other targets in the discussion section.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The absence of student outcome data and the unsubstantiated novelty claim prevent the educational contribution from being established. R1-M3, while not blocking, requires attention to ensure the platform's outputs are educationally meaningful.
+- **Assessment against Nature-style criteria** 
+  - Originality: The application of generative AI to undergraduate nanobody design appears novel, but the claim requires verification through a documented literature search.
+  - Scientific importance: The educational innovation addresses a real gap in undergraduate access to modern protein engineering tools, but the broader scientific impact is limited to pedagogy rather than new biological insight.
+  - Interdisciplinary readership: The work bridges AI, structural biology, immunology, and education, which could attract readers across these fields, though the primary audience is educators.
+  - Technical soundness: Cannot be assessed from the abstract. No data on platform performance, student outcomes, or activity effectiveness are provided.
+  - Readability for nonspecialists: The abstract is clearly written and accessible, with appropriate context for readers unfamiliar with nanobody discovery or generative AI.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a potentially valuable educational activity, but the absence of student outcome data and the unsubstantiated novelty claim prevent a supportive recommendation. The authors should be encouraged to resubmit with full evidence of educational effectiveness and a documented novelty search.
+
+## Risk / unsupported claims
+- The claim that this is the first use of a generative AI protein design platform for teaching nanobody design at the undergraduate level is unsupported by any literature search evidence.
+- The implied effectiveness of the activity for student learning is unsupported by any assessment data.
+- The suitability of GeoFlow-V3 for producing biologically plausible nanobody designs is unverified in the abstract.
+- The pedagogical model extension from siRNA design to protein engineering is asserted but not evidenced in terms of comparative effectiveness or transferability.

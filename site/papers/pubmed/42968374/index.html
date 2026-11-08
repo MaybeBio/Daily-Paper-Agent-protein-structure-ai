@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Domain-Aware Enzyme Classification via Multiple Instance Learning. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">5</span>
+    <div>
+      <h1>Domain-Aware Enzyme Classification via Multiple Instance Learning.</h1>
+      <div class="meta">Xiao, Qingyang; Ye, Yuzhen; Tang, Haixu</div>
+      <div class="meta muted">
+        
+        <span class="journal">Bioinformatics (Oxford, England)</span>
+        · 2026-11-02
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42968374/">原文</a>
+      </div>
+      <p class="one-liner">该文提出基于多实例学习的酶功能（EC号）预测方法，以蛋白质结构域为实例建模，虽涉及蛋白质结构相关计算，但核心是功能注释而非结构预测/采样/生成等本课题核心问题，方法可借鉴但关联度中等。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">MOTIVATION: Accurate Enzyme Commission (EC) number prediction is fundamental to protein function annotation and metabolic pathway reconstruction. Recent methods based on protein language model embeddings or 3D structure have improved EC prediction, but important limitations remain. Whole-sequence embeddings can dilute local functional signals, such as catalytic residues and functional domains, whereas structure-based methods depend on accurate protein structures and are therefore difficult to apply broadly. RESULTS: We present MIL-BC, a multiple instance learning framework for EC prediction that models each protein as a bag of domains rather than a single sequence-level object. This design is motivated by the observation that enzymatic function is often determined by constituent functional domains instead of the full-length sequence alone. Domain instances are generated automatically using our DCTdomain algorithm, avoiding dependence on curated domain annotations. MIL-BC aggregates domain-level evidence into protein-level EC predictions and assigns interpretable weights to domains that contribute most strongly to each prediction. We further combine the domain embedding with global embedding in MIL-BC+. MIL-BC+ achieved F1 improvements of 0.03 - 0.17 over the sequence-based baseline on all four test sets. The largest gains were observed for proteins with multiple enzymatic functions, where domain-level modeling better separates mixed functional signals. These results show that domain-centric multiple instance learning is an accurate and interpretable strategy for enzyme classification. By improving EC prediction without requiring structural data or curated domain labels, MIL-BC provides a scalable framework for large-scale protein function annotation. AVAILABILITY: Code is available as a GitHub repository at https://github.com/omics-ai/enzyme-mil.git.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">动机：准确的酶学委员会（EC）编号预测是蛋白质功能注释和代谢通路重建的基础。基于蛋白质语言模型嵌入或三维结构的近期方法已改进EC预测，但仍存在重要局限性。全序列嵌入可能稀释局部功能信号，如催化残基和功能域，而基于结构的方法依赖准确的蛋白质结构，因此难以广泛应用。结果：我们提出MIL-BC，一种用于EC预测的多实例学习框架，将每个蛋白质建模为域包，而非单一序列级对象。这一设计源于酶功能通常由组成性功能域而非全长序列单独决定的观察。域实例通过我们的DCTdomain算法自动生成，避免依赖人工注释的域标注。MIL-BC将域级证据聚合为蛋白质级EC预测，并为对每个预测贡献最强的域分配可解释权重。我们进一步在MIL-BC+中将域嵌入与全局嵌入结合。MIL-BC+在所有四个测试集上相对于基于序列的基线实现了0.03至0.17的F1改进。最大增益出现在具有多种酶功能的蛋白质上，其中域级建模能更好地区分混合功能信号。这些结果表明，以域为中心的多实例学习是酶分类的一种准确且可解释的策略。通过在不需结构数据或人工域标签的情况下改进EC预测，MIL-BC为大规模蛋白质功能注释提供了可扩展框架。可用性：代码以GitHub仓库形式提供，网址为https://github.com/omics-ai/enzyme-mil.git。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Domain-Aware Enzyme Classification via Multiple Instance Learning</li>
+<li><strong>作者</strong>：Xiao, Qingyang; Ye, Yuzhen; Tang, Haixu</li>
+<li><strong>单位</strong>：未提供（根据作者姓名推测可能为印第安纳大学，但原文未明确）</li>
+<li><strong>期刊/平台</strong>：Bioinformatics (Oxford, England)</li>
+<li><strong>年份</strong>：2026-11-02（在线发表日期）</li>
+<li><strong>论文类型</strong>：方法学（Method）</li>
+<li><strong>领域</strong>：蛋白质功能注释、酶分类（EC number 预测）、蛋白质语言模型、多示例学习</li>
+<li><strong>关键词</strong>：EC number prediction, multiple instance learning, protein domains, protein language model embeddings, enzyme classification</li>
+<li><strong>DOI/arXiv 号</strong>：10.1093/bioinformatics/btag804</li>
+<li><strong>代码</strong>：https://github.com/omics-ai/enzyme-mil.git</li>
+<li><strong>数据</strong>：未提供（文中提及四个测试集，但未列出具体数据集名称）</li>
+<li><strong>阅读日期</strong>：2026-11-02</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI/深度学习」中的功能预测分支，聚焦于利用序列 embedding 和 domain 级多示例学习进行 EC 分类，不依赖 3D 结构或 curated domain 注释，为大规模蛋白功能注释提供可扩展方案。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出 MIL-BC/MIL-BC+ 框架，将蛋白质建模为 domain 的 bag，通过多示例学习聚合 domain 级证据进行 EC number 预测，在四个测试集上较序列级基线提升 F1 0.03–0.17，尤其对多功能酶效果显著，且无需结构数据或 curated domain 标签。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何在不依赖 3D 结构或 curated domain 注释的前提下，准确预测蛋白质的 EC number，并保留局部功能信号（如催化残基、功能 domain）？</li>
+<li><strong>为什么重要</strong>：EC number 预测是蛋白质功能注释和代谢通路重建的基础；现有方法在局部信号稀释和结构依赖方面存在瓶颈，影响大规模注释的准确性和可扩展性。</li>
+<li><strong>现有方法不足</strong>：</li>
+<li>全序列 embedding 会稀释局部功能信号（如催化残基、domain 级功能位点）。</li>
+<li>基于 3D 结构的方法依赖准确结构预测，难以广泛适用于无结构或低质量结构的蛋白质。</li>
+<li>依赖 curated domain 注释的方法受限于注释覆盖度和更新滞后。</li>
+<li><strong>精确研究问题</strong>：Can a multiple instance learning framework that treats proteins as bags of automatically generated domains improve EC prediction accuracy and interpretability over sequence-level baselines, without requiring structural data or curated domain labels?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<ul>
+<li><strong>阶段一：序列比对方法</strong>（如 BLAST、HMMER）——基于同源转移，优点是可解释、无需训练，但覆盖度低、对远源同源不敏感。</li>
+<li><strong>阶段二：序列 embedding 方法</strong>（如 ProtBERT、ESM 系列）——利用蛋白质语言模型提取全序列表示，优点是通用性强，但局部功能信号被稀释。</li>
+<li><strong>阶段三：结构感知方法</strong>（如 DeepFRI、ECPred 结合 AlphaFold）——利用 3D 结构或结构预测，优点是捕捉空间功能位点，但依赖结构质量，计算成本高。</li>
+<li><strong>阶段四（本文位置）</strong>：domain-centric 多示例学习——将蛋白质分解为自动生成的 domain 实例，聚合局部证据，兼顾准确性和可扩展性，避免结构依赖和 curated 注释瓶颈。</li>
+<li><strong>脉络标注</strong>：此脉络为「经外部核验」——基于文中引言所述方法分类及领域常识，但具体阶段划分和代表性方法选择为本文框架。</li>
+</ul>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全序列 embedding 稀释局部功能信号</td>
+<td>催化残基、功能 domain 的贡献被平均化，预测精度受限</td>
+<td>序列级表示无法区分功能关键区域与无关区域</td>
+<td>MOTIVATION 节：whole-sequence embeddings can dilute local functional signals</td>
+</tr>
+<tr>
+<td>结构依赖方法难以广泛应用</td>
+<td>需要准确 3D 结构，对无结构或低质量结构蛋白失效</td>
+<td>结构预测成本高、覆盖不全</td>
+<td>MOTIVATION 节：structure-based methods depend on accurate protein structures and are therefore difficult to apply broadly</td>
+</tr>
+<tr>
+<td>Curated domain 注释覆盖不足</td>
+<td>依赖人工注释的 domain 数据库，更新滞后、覆盖有限</td>
+<td>注释资源有限，无法覆盖新蛋白</td>
+<td>RESULTS 节：DCTdomain algorithm avoids dependence on curated domain annotations</td>
+</tr>
+<tr>
+<td>多功能酶信号混合</td>
+<td>多 domain 蛋白的多个功能信号相互干扰，序列级模型难以分离</td>
+<td>不同 domain 贡献不同功能，序列级表示无法区分</td>
+<td>RESULTS 节：largest gains observed for proteins with multiple enzymatic functions</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：将每个蛋白质视为一个 bag，其中每个 instance 是一个自动生成的 domain 片段（由 DCTdomain 算法产生）；通过多示例学习（MIL）聚合 domain 级 embedding 进行 EC 预测；MIL-BC+ 进一步将 domain embedding 与全局序列 embedding 结合。</li>
+<li><strong>核心洞察</strong>：酶功能主要由功能 domain 决定，而非全序列；将蛋白质分解为 domain 实例可以分离混合功能信号，并通过 MIL 的注意力机制自动识别贡献最大的 domain，提升可解释性。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：在序列级表示中，局部功能信号常被稀释；将对象分解为语义子单元（如 domain、motif）并采用 MIL 聚合，是提升预测精度和可解释性的通用策略，尤其适用于多标签或多功能场景。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质氨基酸序列（无需结构或 curated domain 注释）。</li>
+<li><strong>输出</strong>：EC number 预测（多标签分类，每个 EC 类别一个概率）。</li>
+<li><strong>模块</strong>：
+  1. DCTdomain：自动 domain 分割算法，将序列切分为 domain 实例。
+  2. Domain embedding：每个 domain 通过蛋白质语言模型（如 ESM）生成 embedding。
+  3. MIL 聚合：多示例学习层，学习 domain 权重并聚合为蛋白级表示。
+  4. 分类头：全连接层输出 EC 类别概率。
+  5. MIL-BC+：将 domain embedding 与全局序列 embedding 拼接，增强全局上下文。</li>
+<li><strong>训练</strong>：监督学习，使用 EC 标签作为 ground truth；损失函数为多标签分类损失（如 binary cross-entropy）。</li>
+<li><strong>工具</strong>：蛋白质语言模型（具体型号未提供）、PyTorch 等深度学习框架（推测，未明确）。</li>
+<li><strong>假设</strong>：domain 是酶功能的基本决定单元；自动生成的 domain 能有效捕捉功能信号。</li>
+<li><strong>流程</strong>：输入序列 → DCTdomain 分割为 domain 实例 → 每个 domain 生成 embedding → MIL 聚合（学习权重）→ 与全局 embedding 结合（MIL-BC+）→ 分类头输出 EC 预测。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DCTdomain</td>
+<td>自动 domain 分割</td>
+<td>避免依赖 curated 注释，实现可扩展的 domain 识别</td>
+<td>输入：序列；输出：domain 片段列表</td>
+<td>RESULTS 节：avoids dependence on curated domain annotations</td>
+<td>预期影响：若移除，需回退到 curated 注释，覆盖度下降 [预期效应]</td>
+</tr>
+<tr>
+<td>Domain embedding</td>
+<td>生成 domain 级表示</td>
+<td>捕捉局部功能信号，避免序列级稀释</td>
+<td>输入：domain 序列；输出：embedding 向量</td>
+<td>MOTIVATION 节：domain-level modeling better separates mixed functional signals</td>
+<td>预期影响：若移除，退化为序列级模型，精度下降 [预期效应]</td>
+</tr>
+<tr>
+<td>MIL 聚合层</td>
+<td>学习 domain 权重并聚合</td>
+<td>自动识别贡献最大的 domain，提升可解释性</td>
+<td>输入：domain embeddings；输出：加权聚合表示</td>
+<td>RESULTS 节：assigns interpretable weights to domains</td>
+<td>预期影响：若移除，无法区分 domain 贡献，多功能酶预测精度下降 [预期效应]</td>
+</tr>
+<tr>
+<td>全局 embedding 融合（MIL-BC+）</td>
+<td>结合全局上下文</td>
+<td>补充 domain 级信息，增强整体表征</td>
+<td>输入：domain 聚合表示 + 全局 embedding；输出：融合表示</td>
+<td>RESULTS 节：MIL-BC+ achieved F1 improvements</td>
+<td>实测：MIL-BC+ 较 MIL-BC 有额外提升（文中未给出具体数值）</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ul>
+<li><strong>不适用</strong>：文中未提供具体数学公式。方法描述为概念性（bag-of-domains、MIL 聚合），未给出损失函数、注意力权重计算等具体公式。</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：四个测试集（具体名称未提供），覆盖不同 EC 类别和蛋白类型。</li>
+<li><strong>规模</strong>：未提供具体蛋白数量。</li>
+<li><strong>指标</strong>：F1 score（多标签分类）。</li>
+<li><strong>基线</strong>：序列级 embedding 方法（具体模型未提供，推测为基于蛋白质语言模型的分类器）。</li>
+<li><strong>评测协议</strong>：标准监督学习划分（训练/验证/测试），具体划分方式未提供。</li>
+<li><strong>oracle 输入</strong>：无（不依赖结构或 curated 注释）。</li>
+<li><strong>骨干/仪器</strong>：蛋白质语言模型（具体型号未提供）、DCTdomain 算法、MIL 网络。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MIL-BC vs 序列级基线</td>
+<td>domain 级建模优于序列级</td>
+<td>四个测试集，相同训练协议</td>
+<td>F1 提升 0.03–0.17</td>
+<td>domain 级 MIL 提升 EC 预测精度</td>
+<td>未证明在所有蛋白类型上均最优</td>
+<td>RESULTS 节</td>
+</tr>
+<tr>
+<td>MIL-BC+ vs MIL-BC</td>
+<td>全局 embedding 融合有增益</td>
+<td>四个测试集</td>
+<td>未提供具体数值，但 MIL-BC+ 为最终推荐模型</td>
+<td>全局上下文补充 domain 信息</td>
+<td>未提供消融实验细节</td>
+<td>RESULTS 节</td>
+</tr>
+<tr>
+<td>多功能酶子集分析</td>
+<td>domain 建模分离混合信号</td>
+<td>多功能酶蛋白子集</td>
+<td>最大增益</td>
+<td>domain 级建模对多功能酶更有效</td>
+<td>未提供统计显著性检验</td>
+<td>RESULTS 节</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：EC number 预测，多标签分类，覆盖酶功能注释。</li>
+<li><strong>oracle/真值输入</strong>：仅使用序列和 EC 标签，无结构或 curated domain 依赖。</li>
+<li><strong>端到端状态</strong>：端到端可训练，从序列到 EC 预测。</li>
+<li><strong>算力成本</strong>：未提供训练/推理时间或资源需求。</li>
+<li><strong>历史数据依赖</strong>：依赖训练集 EC 注释质量，未讨论注释噪声影响。</li>
+<li><strong>模型依赖</strong>：依赖蛋白质语言模型 embedding 质量，具体模型未指定。</li>
+<li><strong>最难情形</strong>：多功能酶（多 domain 混合信号）是主要挑战，也是最大增益场景。</li>
+<li><strong>群体/领域边界</strong>：仅针对酶蛋白，非酶蛋白不适用；测试集覆盖范围未明确。</li>
+<li><strong>不确定性</strong>：未提供置信度校准或不确定性量化。</li>
+<li><strong>有边界的复述</strong>：在四个测试集上，MIL-BC+ 较序列级基线提升 F1 0.03–0.17，尤其对多功能酶有效，但具体数据集、模型细节和统计显著性未完全披露，结论需在更广数据集上验证。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。作者提及的相关约束：
+- 方法依赖自动 domain 分割（DCTdomain）的质量，但未讨论其失败模式。
+- 未提供对非酶蛋白或极端序列的适用性讨论。
+- 未披露计算成本或可扩展性细节。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>测试集具体信息未披露</td>
+<td>可能选择对 domain 建模有利的数据集，导致结果偏乐观</td>
+<td>影响结论的泛化性</td>
+<td>要求作者提供数据集名称、规模、EC 类别分布</td>
+<td>RESULTS 节未提供数据集细节</td>
+</tr>
+<tr>
+<td>基线模型未明确</td>
+<td>序列级基线可能较弱，导致 F1 提升幅度被夸大</td>
+<td>影响对比公平性</td>
+<td>复现时使用多个强基线（如 ESM 全序列分类器）</td>
+<td>RESULTS 节仅称 sequence-based baseline</td>
+</tr>
+<tr>
+<td>DCTdomain 算法细节未提供</td>
+<td>分割质量可能依赖超参数，影响可复现性</td>
+<td>影响方法可移植性</td>
+<td>要求提供算法伪代码或开源实现细节</td>
+<td>METHODS 节未提供 DCTdomain 具体步骤</td>
+</tr>
+<tr>
+<td>MIL-BC+ 的增益未量化</td>
+<td>全局 embedding 融合可能仅小幅提升，或引入额外计算开销</td>
+<td>影响方法选择</td>
+<td>要求提供 MIL-BC vs MIL-BC+ 的逐测试集数值</td>
+<td>RESULTS 节仅给出 MIL-BC+ 整体结果</td>
+</tr>
+<tr>
+<td>多功能酶增益的统计显著性未检验</td>
+<td>可能由少数样本驱动</td>
+<td>影响结论稳健性</td>
+<td>要求提供子集样本量和置信区间</td>
+<td>RESULTS 节未提供统计检验</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>Domain 级多示例学习</strong>：将蛋白质分解为 domain 实例并采用 MIL 聚合，可有效分离多功能酶的混合信号，适用于本课题中「构象采样/构象生成」中多结构域蛋白的功能位点识别。
+2. <strong>自动 domain 分割（DCTdomain）</strong>：无需 curated 注释的自动分割策略，可迁移到结构预测任务中，用于识别功能模块或折叠单元。
+3. <strong>全局与局部特征融合</strong>：MIL-BC+ 将 domain embedding 与全局 embedding 结合，提示在 MD 模拟或对接中，可同时利用局部结合位点和全局构象信息。
+4. <strong>可解释性权重</strong>：MIL 的注意力权重可解释 domain 贡献，类似思路可用于分子对接中识别关键残基或结合热点。
+5. <strong>避免结构依赖</strong>：本文方法不依赖 3D 结构，提示在结构预测不可靠的场景下，序列级 domain 建模是可行替代。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>：与 DeepFRI（结构感知功能预测）和 ECPred（序列 embedding 分类）对比，本文强调 domain 级建模的优势；与 ProtBERT/ESM 全序列 embedding 方法形成互补。</li>
+<li><strong>组合方向</strong>：可将 MIL-BC 的 domain 分割与 AlphaFold 的结构域预测结合，验证 domain 边界的一致性；或将 MIL 权重用于指导 MD 模拟中的功能位点采样。</li>
+<li><strong>冲突点</strong>：本文声称结构方法难以广泛应用，但 AlphaFold 的高精度预测可能削弱这一论点；需在低质量结构场景下对比。</li>
+<li><strong>可迁移领域</strong>：多示例学习框架可迁移到蛋白质-配体对接中的结合位点识别，或蛋白质设计中功能 motif 的筛选。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：
+1. <strong>名称</strong>：Domain-Aware Binding Site Prediction via MIL
+   - <strong>来源局限/观察</strong>：MIL-BC 在 EC 预测中有效，但未涉及结合位点；对接任务中结合位点识别常依赖结构。
+   - <strong>核心假设</strong>：将蛋白质分解为 domain 实例并采用 MIL 可提升结合位点预测精度，尤其对多 domain 蛋白。
+   - <strong>初步方法</strong>：使用 DCTdomain 分割序列，domain embedding 通过 ESM 生成，MIL 聚合后预测结合位点残基。
+   - <strong>验证方式</strong>：在 PDBbind 或 BindingDB 数据集上对比序列级基线。
+   - <strong>可能的失败模式</strong>：结合位点可能跨 domain 或位于 domain 边界，MIL 分割可能破坏关键信号。
+   - <strong>创新状态</strong>：unverified</p>
+<ol start="2">
+<li>
+<p><strong>名称</strong>：MIL-Guided Conformational Sampling for Multi-Domain Proteins
+   - <strong>来源局限/观察</strong>：MIL 权重可识别功能 domain，但未用于构象采样；多 domain 蛋白的构象变化常由功能 domain 驱动。
+   - <strong>核心假设</strong>：利用 MIL 权重优先采样功能 domain 的构象空间，可提升 MD 模拟效率。
+   - <strong>初步方法</strong>：在 MD 模拟中，根据 MIL 权重对 domain 施加偏置势，加速功能相关构象探索。
+   - <strong>验证方式</strong>：对比标准 MD 与 MIL 引导 MD 的构象覆盖和功能态采样。
+   - <strong>可能的失败模式</strong>：权重可能偏向静态功能信号，忽略动态耦合。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：Domain-Aware Protein Design via MIL Attention
+   - <strong>来源局限/观察</strong>：MIL 权重可解释 domain 贡献，但未用于设计；蛋白质设计常需保留功能 domain。
+   - <strong>核心假设</strong>：在序列设计中，利用 MIL 权重约束功能 domain 的保守性，可提升设计成功率。
+   - <strong>初步方法</strong>：在生成模型中引入 MIL 权重作为正则化项，优先保留高权重 domain 的序列特征。
+   - <strong>验证方式</strong>：在酶设计任务中对比有无 MIL 约束的生成序列的功能活性。
+   - <strong>可能的失败模式</strong>：权重可能过度约束，限制序列多样性。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no full text, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose MIL-BC, a multiple instance learning framework for Enzyme Commission (EC) number prediction that models proteins as bags of automatically generated domain instances. They report F1 improvements of 0.03 to 0.17 over a sequence-based baseline across four test sets, with the largest gains for multi-functional proteins, and claim the method is accurate, interpretable, and scalable without requiring structural data or curated domain annotations.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative details, dataset descriptions, baseline specifications, or code verification possible</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, dataset and baseline definitions, hyperparameter settings, statistical significance tests, domain generation algorithm details, and code execution results</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a conceptually interesting application of multiple instance learning to enzyme classification, with a plausible biological rationale linking functional domains to enzymatic activity. However, the evidence provided is insufficient to evaluate the validity of the core claims. Key methodological details, baseline fairness, statistical rigor, and the actual performance of the proposed DCTdomain algorithm are not described. The reported F1 improvements are presented without confidence intervals or significance testing, and the interpretability claim is not substantiated with examples or quantitative evaluation. The work may be of interest to the computational biology community, but the case is not established from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in protein function annotation, enzyme engineering, and computational enzymology would be interested because improved EC prediction has direct applications in metabolic pathway reconstruction and genome annotation. The domain-centric interpretability angle may also appeal to those studying protein domain-function relationships. The method's claimed independence from structural data and curated annotations could attract users seeking scalable annotation tools for large sequence databases.</li>
+<li><strong>Major strengths</strong> The biological motivation is sound and clearly articulated, linking enzymatic function to constituent domains rather than full-length sequence. The proposed framework addresses a recognized limitation of whole-sequence embedding approaches. The combination of domain-level and global embeddings in MIL-BC+ is a reasonable design choice. The claim of interpretability through domain weights is potentially valuable for biological discovery.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "MIL-BC+ achieved F1 improvements of 0.03 - 0.17 over the sequence-based baseline on all four test sets"</li>
+<li><strong>Evidence pointer</strong> Abstract, Results section; location not provided</li>
+<li><strong>Concern</strong> The performance claim is presented without any statistical context. No confidence intervals, standard deviations, or significance tests are reported. The range of 0.03 to 0.17 is wide, and it is unclear whether the lower bound represents a meaningful improvement. The baseline is described only as "sequence-based" without specifying which model or embedding was used, making it impossible to assess whether the comparison is fair or whether the gains are specific to the proposed method or simply reflect a stronger baseline choice.</li>
+<li><strong>Why it matters</strong> Without statistical rigor, the reported improvements could be within noise or dependent on favorable baseline selection. The central claim of the paper rests on this comparison, and the current evidence does not support a robust conclusion.</li>
+<li><strong>Resolution test</strong> Provide per-test-set F1 scores with confidence intervals or standard deviations across multiple runs, report p-values or effect sizes for the improvements, and specify the exact baseline model and embedding used. Show that the improvements are consistent and statistically significant.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "Domain instances are generated automatically using our DCTdomain algorithm, avoiding dependence on curated domain annotations"</li>
+<li><strong>Evidence pointer</strong> Abstract, Methods section; location not provided</li>
+<li><strong>Concern</strong> The DCTdomain algorithm is mentioned but not described. No information is given about how domains are defined, segmented, or validated. The quality of domain generation directly affects the multiple instance learning framework, and errors in domain boundaries could propagate to prediction errors. Without any evaluation of DCTdomain's accuracy or comparison to existing domain annotation tools, the reliability of the input instances is unknown.</li>
+<li><strong>Why it matters</strong> The entire framework depends on the quality of automatically generated domains. If the domain segmentation is noisy or biologically inaccurate, the claimed advantages of domain-level modeling may be undermined. The method's novelty partly rests on this algorithm, so its performance must be demonstrated.</li>
+<li><strong>Resolution test</strong> Describe the DCTdomain algorithm in detail, including its inputs, parameters, and output format. Provide a quantitative evaluation of domain quality against curated databases such as Pfam or SCOP, and show that the domain instances are biologically meaningful.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> "MIL-BC aggregates domain-level evidence into protein-level EC predictions and assigns interpretable weights to domains that contribute most strongly to each prediction"</li>
+<li><strong>Evidence pointer</strong> Abstract, Results section; location not provided</li>
+<li><strong>Concern</strong> The interpretability claim is not supported by any example or quantitative evaluation. No case study is shown where domain weights correspond to known catalytic residues or functional domains. The abstract states that weights are assigned, but there is no evidence that these weights are biologically meaningful or useful for hypothesis generation.</li>
+<li><strong>Why it matters</strong> Interpretability is presented as a key advantage over sequence-based methods. If the domain weights do not align with known biology, the claimed advantage is not realized. The paper's value for biological discovery depends on this feature being demonstrably correct.</li>
+<li><strong>Resolution test</strong> Provide at least one detailed case study showing a protein where the top-weighted domains correspond to known functional or catalytic regions. Include a quantitative evaluation, such as enrichment of known functional domains among high-weight instances, across a benchmark set.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Scientific importance</li>
+<li><strong>Claim pointer</strong> "The largest gains were observed for proteins with multiple enzymatic functions, where domain-level modeling better separates mixed functional signals"</li>
+<li><strong>Evidence pointer</strong> Abstract, Results section; location not provided</li>
+<li><strong>Concern</strong> This claim is presented as a key finding, but no data are shown to support it. The abstract does not specify how multi-functional proteins were identified, how many were in the test sets, or what the performance difference was compared to single-function proteins. The claim may be based on a small subset, and the effect size is unclear.</li>
+<li><strong>Why it matters</strong> If the method's advantage is concentrated in multi-functional proteins, this defines its niche and potential users. Without supporting data, the claim is speculative and cannot guide adoption decisions.</li>
+<li><strong>Resolution test</strong> Report the number of multi-functional proteins in each test set, their F1 scores compared to single-function proteins, and a statistical test showing the difference is significant.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability for nonspecialists</li>
+<li><strong>Affected element</strong> Abstract, Results section</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The term "bag of domains" is used without a brief explanation of multiple instance learning for readers unfamiliar with the concept.</li>
+<li><strong>Required correction</strong> Add one sentence defining multiple instance learning in the context of protein domains, such as "where each protein is represented as a set of domain instances and predictions are made at the protein level."</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Availability section</li>
+<li><strong>Evidence pointer</strong> Abstract, Availability section; location not provided</li>
+<li><strong>Issue</strong> The GitHub repository is mentioned, but no version, license, or dependency information is provided.</li>
+<li><strong>Required correction</strong> Specify the software version, license, and key dependencies in the abstract or note that full details are in the main text.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Abstract, Results section</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The F1 improvement range of 0.03 to 0.17 is reported without indicating whether this is macro or micro F1, or how it is averaged across EC classes.</li>
+<li><strong>Required correction</strong> Specify the F1 variant used and the averaging method across EC classes.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (statistical rigor of performance claims), R1-M2 (DCTdomain algorithm validation), R1-M3 (interpretability evidence), R1-M4 (multi-functional protein claim support)</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The application of multiple instance learning to EC prediction with automatic domain generation is a novel combination, though the individual components are not new. Scientific importance: Improved EC prediction is valuable, but the incremental benefit over existing methods is not established from the abstract. Interdisciplinary readership: The work bridges machine learning and enzymology, which could attract a broad audience, but the abstract lacks sufficient detail for either community to assess the contribution. Technical soundness: Not assessable from the abstract; key methodological details and statistical validation are missing. Readability for nonspecialists: The abstract is generally clear but assumes familiarity with multiple instance learning and EC number prediction.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The conceptual framework is promising, but the abstract alone does not provide sufficient methodological detail, statistical validation, or evidence for the interpretability and domain-specific claims. A full manuscript with detailed methods, benchmark evaluations, and case studies would be required to assess whether the case can be made.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that MIL-BC+ achieves F1 improvements of 0.03 to 0.17 is unsupported without statistical context or baseline specification.</li>
+<li>The claim that DCTdomain generates domains automatically and avoids curated annotations is unverifiable without algorithm details or quality evaluation.</li>
+<li>The claim that domain weights are interpretable and identify contributing domains is unsupported without examples or quantitative validation.</li>
+<li>The claim that the largest gains occur for multi-functional proteins is unsupported without data on subset sizes and performance.</li>
+<li>The claim that the method is scalable for large-scale annotation is not supported by any runtime or scalability analysis.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

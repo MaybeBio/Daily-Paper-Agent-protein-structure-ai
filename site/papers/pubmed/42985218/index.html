@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>When does a funnel become a trap? A Gomboc-inspired model of protein folding landscapes. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>When does a funnel become a trap? A Gomboc-inspired model of protein folding landscapes.</h1>
+      <div class="meta">Shityakov, Sergey; Skorb, Ekaterina V; Nosonovsky, Michael</div>
+      <div class="meta muted">
+        
+        <span class="journal">RSC advances</span>
+        · 2026-11-05
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42985218/">原文</a>
+      </div>
+      <p class="one-liner">该文提出一个受Gomboc启发的蛋白质折叠景观计算模型，通过可调粗糙度参数模拟折叠动力学，并与Rosetta和AlphaFold3基准对比，虽非直接的结构预测或采样方法，但为蛋白质折叠景观质量提供了可迁移的启发式框架。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">The protein folding problem remains a fundamental challenge in biophysics. While energy landscape theory resolves Levinthal&#39;s paradox through funnel-shaped landscapes, the quantitative effects of landscape ruggedness on folding kinetics are not fully understood. We introduce a computational model inspired by Gomboc, a convex 3D shape with one stable equilibrium and one unstable equilibrium, as an analogy for protein folding landscapes. Using a tunable ruggedness parameter, we simulate &#34;folding&#34; across multiple ruggedness conditions (r = 0 and r = 10(-8) to 10(-3)), spanning five orders of magnitude in the positive-r regime. At minimal ruggedness (10(-8)), the model achieves 83% success in reaching native-like states. Increasing the ruggedness to 10(-7)-10(-5) reduces the success rate to 25-39%, reflecting landscape trapping as an analog for kinetic trapping in physical folding. Benchmarking against the TPR1 domain via Rosetta and AlphaFold3 reveals native-like coverages of 77% and 90%, respectively, showing qualitative correspondence with the Gomboc model&#39;s success rates at low ruggedness. These findings suggest that the Gomboc-inspired model captures essential features of folding landscape quality and may serve as a useful heuristic for comparing foldability across different systems, bridging mathematical topology with protein biophysics.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质折叠问题仍然是生物物理学中的一个基本挑战。虽然能量景观理论通过漏斗形景观解决了莱文塔尔悖论，但景观粗糙度对折叠动力学的定量影响尚未完全理解。我们引入了一个受Gomboc启发的计算模型，Gomboc是一种具有一个稳定平衡点和一个不稳定平衡点的凸三维形状，作为蛋白质折叠景观的类比。通过使用可调的粗糙度参数，我们在多种粗糙度条件下（r = 0 和 r = 10(-8) 到 10(-3)）模拟“折叠”，覆盖了正r区域中五个数量级的范围。在最小粗糙度（10(-8)）下，该模型达到83%的成功率以接近天然态。将粗糙度增加到10(-7)-10(-5)会将成功率降低到25-39%，反映了景观捕获作为物理折叠中动力学捕获的类比。通过与TPR1结构域进行基准测试，使用Rosetta和AlphaFold3分别显示出77%和90%的天然态覆盖率，与Gomboc模型在低粗糙度下的成功率具有定性对应关系。这些发现表明，受Gomboc启发的模型捕捉了折叠景观质量的基本特征，并可能作为比较不同系统可折叠性的有用启发式方法，连接数学拓扑与蛋白质生物物理学。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：When does a funnel become a trap? A Gömböc-inspired model of protein folding landscapes.</li>
+<li><strong>作者</strong>：Shityakov, Sergey; Skorb, Ekaterina V; Nosonovsky, Michael</li>
+<li><strong>单位</strong>：未提供（根据作者信息推测可能涉及俄罗斯研究机构，但原文未明确）</li>
+<li><strong>期刊/平台</strong>：RSC Advances</li>
+<li><strong>年份</strong>：2026-11-05（在线发表日期）</li>
+<li><strong>论文类型</strong>：计算建模研究（方法学 + 基准测试）</li>
+<li><strong>领域</strong>：蛋白质折叠能量景观理论 × 计算建模（Gō-like 模型）</li>
+<li><strong>关键词</strong>：蛋白质折叠、能量景观、粗糙度（ruggedness）、Gömböc、Gō-like 模型、Rosetta、AlphaFold3、TPR1 结构域</li>
+<li><strong>DOI/arXiv</strong>：10.1039/d6ra07903b</li>
+<li><strong>代码</strong>：https://github.com/virtualscreenlab/Gomboc</li>
+<li><strong>数据</strong>：GitHub 仓库（同上）</li>
+<li><strong>阅读日期</strong>：2026-05-14（基于当前日期推断）</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × 物理模拟」交叉方向，具体位于能量景观理论、Gō-like 粗粒化模型与结构预测工具（Rosetta、AlphaFold3）的交叉点。其核心贡献在于提出一个受 Gömböc 几何体启发的二维链模型，用可调粗糙度参数定量刻画折叠景观粗糙度对折叠成功率的影响，并与真实蛋白质结构预测工具的性能进行定性对照。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出一个受 Gömböc（单稳定平衡凸体）启发的二维闭合链计算模型，通过可调粗糙度参数 r 同时调控随机能量噪声和非天然长程相互作用的强度，发现当 r 从 10⁻⁸ 增至 10⁻⁷–10⁻⁵ 时，折叠成功率从 83% 骤降至 25–39%，并定性对照 TPR1 结构域的 Rosetta 与 AlphaFold3 预测结果，表明该模型可捕捉折叠景观质量的核心特征。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：蛋白质折叠能量景观的粗糙度（ruggedness）如何定量影响折叠动力学结果？在什么条件下，原本高效的折叠漏斗会转变为陷阱主导的动力学陷阱？</li>
+<li><strong>为什么重要</strong>：能量景观理论用漏斗形貌解决了 Levinthal 悖论，但景观粗糙度对折叠效率的定量影响尚未被系统理解。理解这一关系对蛋白质设计（避免误折叠）、疾病建模（错误折叠相关疾病）和折叠预测方法评估均有直接意义。</li>
+<li><strong>现有方法不足</strong>：传统 Gō-like 模型只编码天然接触，缺乏对非天然相互作用的显式建模；全原子模拟计算成本高，难以系统扫描粗糙度参数空间；实验方法难以直接测量景观粗糙度。</li>
+<li><strong>精确研究问题</strong>：Can a Gömböc-inspired 2D chain model with a tunable ruggedness parameter quantitatively capture the transition from funnel-dominated efficient folding to trap-dominated misfolding, and qualitatively correspond to the performance difference between AlphaFold3 and Rosetta on a minimally frustrated protein domain?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文引用与作者叙述整理，标注为「仅本文框架」——未逐一核验外部文献。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>热力学假说</td>
+<td>Anfinsen (1973)</td>
+<td>确立天然态为全局自由能最小</td>
+<td>无法解释折叠速率</td>
+<td>背景基础</td>
+</tr>
+<tr>
+<td>动力学悖论</td>
+<td>Levinthal (1968)</td>
+<td>指出随机搜索不可行</td>
+<td>未提供解决机制</td>
+<td>待解决问题</td>
+</tr>
+<tr>
+<td>能量景观理论</td>
+<td>Bryngelson &amp; Wolynes (1987) 等</td>
+<td>漏斗形貌解决悖论</td>
+<td>缺乏定量粗糙度效应</td>
+<td>理论框架</td>
+</tr>
+<tr>
+<td>结构基模型</td>
+<td>Gō-like 模型</td>
+<td>计算高效，聚焦天然接触</td>
+<td>忽略非天然相互作用</td>
+<td>本文扩展对象</td>
+</tr>
+<tr>
+<td>全原子模拟</td>
+<td>分子动力学</td>
+<td>高精度</td>
+<td>计算昂贵，难以系统扫描</td>
+<td>互补方法</td>
+</tr>
+<tr>
+<td>深度学习方法</td>
+<td>AlphaFold2/3</td>
+<td>高精度结构预测</td>
+<td>不直接提供景观粗糙度信息</td>
+<td>基准对照</td>
+</tr>
+<tr>
+<td>粗粒化景观模型</td>
+<td>本文 Gömböc 模型</td>
+<td>可调粗糙度参数，系统扫描</td>
+<td>二维简化，非真实蛋白质</td>
+<td><strong>本文贡献</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>景观粗糙度缺乏定量刻画</td>
+<td>现有理论定性描述漏斗，但无法预测粗糙度如何影响折叠成功率</td>
+<td>缺乏一个可调粗糙度参数的计算框架</td>
+<td>Introduction 第 2-3 段；Computational methods 中 Erug 与 Efrust 的设计</td>
+</tr>
+<tr>
+<td>Gō-like 模型忽略非天然相互作用</td>
+<td>传统 Gō 模型只编码天然接触，无法模拟 frustration</td>
+<td>能量函数仅含天然态吸引项</td>
+<td>Computational methods 中 Efrust 的引入说明</td>
+</tr>
+<tr>
+<td>折叠成功率对粗糙度高度敏感</td>
+<td>r 从 10⁻⁸ 增至 10⁻⁷ 时成功率从 83% 降至 39%</td>
+<td>随机能量噪声干扰梯度下降优化路径</td>
+<td>Results 表 1；图 2A-B</td>
+</tr>
+<tr>
+<td>高粗糙度下优化器提前终止</td>
+<td>r = 10⁻⁴–10⁻³ 时仅 4 步即终止，能量变化极小</td>
+<td>噪声主导导致梯度信号失效</td>
+<td>Results 表 1；Results 第 1 段</td>
+</tr>
+<tr>
+<td>高粗糙度下成功率"回升"是假象</td>
+<td>r = 10⁻³ 时成功率回升至 33%</td>
+<td>随机初始构象恰好落在近天然阈值内的基线概率</td>
+<td>Results 第 1 段明确说明</td>
+</tr>
+<tr>
+<td>模型与真实蛋白质预测的对应缺乏定量验证</td>
+<td>仅与 TPR1 一个蛋白定性对照</td>
+<td>二维模型与真实三维蛋白质的定量映射尚未建立</td>
+<td>Conclusion 中"further validation of diverse protein targets and explicit physical units is needed"</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：
+- 构建二维闭合链（N=48 点）表示蛋白质构象，目标天然态为 Gömböc 启发的非对称凸形（通过 Fourier 合成 + 多项式剪切生成）
+- 能量函数含 7 项：天然吸引（Enat）、约束（Econf）、排斥（Erep）、局部几何（Elocal）、键长（Ebond）、随机粗糙度（Erug）、非天然长程 frustration（Efrust）
+- 用可调参数 r 同时缩放 Erug 和 Efrust，系统扫描 r = 0 到 10⁻³
+- 两阶段优化：共轭梯度（2000 步）+ BFGS（6000 步），100 次独立实验 × 7 条件</p>
+<p><strong>2) 核心洞察</strong>：
+- Gömböc 的数学性质（单稳定平衡点）为蛋白质"单天然态"提供了几何类比：无论从哪个方向扰动，系统最终回到唯一稳定态
+- 将"景观粗糙度"分解为两个可调分量：随机能量噪声（Erug）和非天然长程相互作用（Efrust），二者由同一参数 r 控制，从而在保持 frustration 来源平衡的同时系统扫描粗糙度
+- 折叠成功率对 r 呈非线性响应：存在一个临界粗糙度阈值（约 10⁻⁷），超过后折叠效率急剧恶化——这一定性行为与真实蛋白质中"最小 frustration 原则"的预测一致</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：
+- 将几何拓扑性质（Gömböc 的单稳定平衡）映射为能量景观的全局最小值唯一性，是一种跨域类比建模的有效策略——但需注意二维模型与三维蛋白质的定量差异
+- 用单一参数同时控制多个能量项的做法，牺牲了独立调节的自由度，但换来了可解释性和参数扫描的可操作性——在粗粒化模型中这是一种务实的权衡
+- 将模型成功率与 AlphaFold3/Rosetta 的预测质量进行定性对照，为"计算模型验证"提供了一种低成本替代方案——但需警惕不同指标（成功率 vs 覆盖率）之间的可比性问题</p>
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>：目标天然态构象（Gömböc 启发的二维闭合链，N=48 点，由 Fourier 系数和剪切参数定义）；可调粗糙度参数 r（7 个条件：0, 10⁻⁸, 10⁻⁷, 10⁻⁶, 10⁻⁵, 10⁻⁴, 10⁻³）</p>
+<p><strong>输出</strong>：折叠轨迹分类（6 类：perfect ≤0.12, success ≤0.20, good ≤0.30, near-native ≤0.40, misfolded ≤0.55, poor &gt;0.55 RMSD）；能量降 ΔE = E_init − E_final；成功率统计</p>
+<p><strong>模块</strong>：
+1. <strong>天然态生成</strong>：Fourier 合成 r(θ) = C0 + C1 sinθ + C2 sin(k1θ + φ) + C3 cos(k2θ)，系数 C0=1.0, C1=0.20, C2=0.12, C3=0.08, k1=2.8, k2=4.5, φ=0.5；随后施加 x ← x + 0.12y² − 0.04y³ 剪切
+2. <strong>能量函数</strong>：7 项求和（见 06 节），其中 Erug 为随机噪声项（N(0,1) 高斯扰动，c=0.01, k=20），Efrust 为非天然长程对惩罚（α=15，链上间隔 ≥5 的残基对）
+3. <strong>优化器</strong>：两阶段混合策略——Stage I 共轭梯度（2000 步，容差 10⁻³）；Stage II BFGS（6000 步，容差 10⁻⁶）；终止条件为梯度范数 &lt; 10⁻⁶ 或达到 10000 步上限
+4. <strong>轨迹分类</strong>：按最终 RMSD 阈值分为 6 类</p>
+<p><strong>流程</strong>：生成天然态 → 随机初始化 100 条链 → 对每个 r 条件运行两阶段优化 → 记录最终 RMSD 和能量降 → 统计成功率 → 与 Rosetta/AF3 结果定性对照</p>
+<p><strong>工具</strong>：Python 3.9.12, NumPy 1.21.5, SciPy 1.7.3, Matplotlib；Rosetta 2020.03（ab initio relax，2500 decoys，24 核）；AlphaFold3 服务器；PyMOL（结构比对）</p>
+<p><strong>计算成本</strong>：全部 Gömböc 模型模拟约 4 CPU-小时（标准工作站）</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gömböc 启发的天然态生成</td>
+<td>生成具有唯一稳定平衡的二维凸形目标</td>
+<td>提供"单天然态"的几何类比，确保能量景观有明确全局最小</td>
+<td>输入：Fourier 系数 + 剪切参数；输出：48 点闭合链坐标</td>
+<td>Methods 中公式与参数；图 1B</td>
+<td>移除剪切项将产生对称退化，导致多个等价天然态，破坏单稳定假设</td>
+</tr>
+<tr>
+<td>能量函数（7 项）</td>
+<td>平衡天然吸引与多种约束/排斥/局部几何/键长/粗糙度/frustration</td>
+<td>模拟真实蛋白质的能量权衡</td>
+<td>输入：当前构象坐标 + 天然态坐标 + r；输出：标量能量</td>
+<td>Methods 中各项定义；表 1 结果</td>
+<td>移除 Erug 或 Efrust 将无法模拟 frustration 效应；移除 Enat 则无折叠驱动力</td>
+</tr>
+<tr>
+<td>可调粗糙度参数 r</td>
+<td>同时缩放 Erug 和 Efrust</td>
+<td>系统扫描景观粗糙度，无需重新设计能量函数</td>
+<td>输入：r ∈ {0, 10⁻⁸…10⁻³}；输出：缩放后的能量项</td>
+<td>表 1 中 7 个条件的系统结果</td>
+<td>若独立调节两项，将增加参数空间维度，但可能揭示不同 frustration 来源的差异化效应 [Analysis]</td>
+</tr>
+<tr>
+<td>两阶段优化器（CG + BFGS）</td>
+<td>全局探索 + 局部精修</td>
+<td>平衡初始搜索效率与最终收敛精度</td>
+<td>输入：初始随机构象 + 能量函数；输出：优化后构象</td>
+<td>Methods 中参数设置；图 2</td>
+<td>仅用 CG 可能收敛不足；仅用 BFGS 可能陷入局部极小</td>
+</tr>
+<tr>
+<td>轨迹分类系统</td>
+<td>按 RMSD 阈值将结果分为 6 类</td>
+<td>量化折叠成功率</td>
+<td>输入：最终 RMSD；输出：类别标签</td>
+<td>表 1 中 6 类统计</td>
+<td>无分类则无法定量比较不同 r 条件下的折叠质量</td>
+</tr>
+<tr>
+<td>Rosetta ab initio 基准</td>
+<td>生成 TPR1 结构域的能量- RMSD 图</td>
+<td>提供真实蛋白质折叠景观的参考</td>
+<td>输入：TPR1 序列 + 天然结构；输出：2500 decoys 能量/RMSD</td>
+<td>图 3A-C；表 1 对照</td>
+<td>无此基准则无法验证模型与真实系统的对应性</td>
+</tr>
+<tr>
+<td>AlphaFold3 基准</td>
+<td>预测 TPR1 结构并评估置信度</td>
+<td>提供深度学习方法的对照</td>
+<td>输入：TPR1 序列；输出：pTM, pLDDT, PAE, RMSD</td>
+<td>图 4A-B；Results 第 3 节</td>
+<td>无此对照则无法讨论模型与 SOTA 预测方法的关系</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>1) 天然态生成</strong>：
+r(θ) = C0 + C1 sinθ + C2 sin(k1θ + φ) + C3 cos(k2θ)
+- r(θ)：极坐标半径，θ ∈ [0, 2π)
+- C0 = 1.0, C1 = 0.20, C2 = 0.12, C3 = 0.08：Fourier 系数
+- k1 = 2.8, k2 = 4.5：频率参数（非整数，确保非周期不对称）
+- φ = 0.5：相位偏移</p>
+<p><strong>2) 坐标剪切</strong>：
+x ← x + 0.12y² − 0.04y³, y ← y
+- 二次项 0.12y²：对称横向变形
+- 三次项 −0.04y³：打破对称性，确保唯一稳定平衡</p>
+<p><strong>3) 能量函数</strong>：
+E = Enat + Econf + Erep + Elocal + Ebond + Erug + Efrust
+- Enat：天然吸引（RMSD 二次势）
+- Econf：约束能（防止膨胀）
+- Erep：排斥能（避免自交）
+- Elocal：局部几何能（保持 ~114.6° 键角）
+- Ebond：键长约束
+- Erug：随机粗糙度项，含 N(0,1) 高斯噪声，缩放因子 c = 0.01，空间频率 k = 20
+- Efrust：非天然长程惩罚，α = 15，作用于链上间隔 ≥5 的残基对</p>
+<p><strong>4) 折叠轨迹分类阈值</strong>：
+- perfect: RMSD ≤ 0.12
+- success: RMSD ≤ 0.20
+- good: RMSD ≤ 0.30
+- near-native: RMSD ≤ 0.40
+- misfolded: RMSD ≤ 0.55
+- poor: RMSD &gt; 0.55</p>
+<p><strong>5) 能量降</strong>：
+ΔE = E_init − E_final</p>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/群体</strong>：
+- Gömböc 模型：7 个粗糙度条件（r = 0, 10⁻⁸, 10⁻⁷, 10⁻⁶, 10⁻⁵, 10⁻⁴, 10⁻³），每条件 100 次独立实验，共 700 次
+- Rosetta：TPR1 结构域（PDB: 1ELW, chain A, 118 残基），2500 个独立 decoys
+- AlphaFold3：同一 TPR1 序列，单次预测</p>
+<p><strong>指标</strong>：
+- Gömböc 模型：成功率（6 类 RMSD 阈值的比例）、平均能量降、平均收敛步数
+- Rosetta：能量分数 vs Cα RMSD 散点图、能量-RMSD 相关性（r = 0.434 → 0.699，去异常值后）
+- AlphaFold3：pTM = 0.91, pLDDT ≥ 90 覆盖 &gt;95% 残基, PAE 大部分 &lt;5 Å, 最佳对齐 RMSD = 0.3 Å（90% 覆盖）</p>
+<p><strong>基线/对照</strong>：
+- Gömböc 模型内部：r = 0（理想漏斗）作为基线，与正 r 条件对比
+- 真实蛋白质：Rosetta（物理方法）vs AlphaFold3（深度学习方法）作为两种预测范式的对照</p>
+<p><strong>评测协议</strong>：
+- Gömböc 模型：固定随机种子集合，每条件 100 次独立运行，统计成功率
+- Rosetta：MPI 并行 ab initio relax，cycles = 10, Rg 权重 = 0.5 Å，helix/loop 权重 = 0.5
+- 异常值去除：3.8% decoys 被移除（标准未明说，但相关性从 0.434 提升至 0.699）</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gömböc 模型 r 扫描</td>
+<td>粗糙度增加降低折叠成功率</td>
+<td>7 个 r 条件，各 100 次</td>
+<td>r=0: 93% success; r=10⁻⁸: 83%; r=10⁻⁷–10⁻⁵: 25–39%; r=10⁻⁴–10⁻³: 33%（假象）</td>
+<td>存在临界粗糙度阈值，超过后折叠效率急剧恶化</td>
+<td>不能定量预测真实蛋白质的折叠速率</td>
+<td>表 1；图 2A-B</td>
+</tr>
+<tr>
+<td>Rosetta TPR1 折叠</td>
+<td>TPR1 是 minimally frustrated 系统</td>
+<td>2500 decoys, 能量-RMSD 图</td>
+<td>去异常值后 r = 0.699 (p &lt; 0.001)；能量间隙 ~30–40 REU</td>
+<td>TPR1 具有漏斗形景观，与模型低 r 行为一致</td>
+<td>不能证明所有 TPR1 折叠路径都高效</td>
+<td>图 3A-C；Results 第 2 节</td>
+</tr>
+<tr>
+<td>AlphaFold3 预测</td>
+<td>AF3 高置信度预测 TPR1</td>
+<td>pTM, pLDDT, PAE, RMSD</td>
+<td>pTM=0.91; pLDDT≥90 覆盖 &gt;95%; RMSD=0.3 Å (90% 覆盖)</td>
+<td>AF3 确认 TPR1 为单折叠、低歧义系统</td>
+<td>不能说明 AF3 能预测折叠动力学</td>
+<td>图 4A-B；Results 第 3 节</td>
+</tr>
+<tr>
+<td>模型 vs 真实系统对照</td>
+<td>模型成功率与预测方法性能定性对应</td>
+<td>AF3 90% 覆盖 vs 模型 93% (r=0); Rosetta 77% 覆盖 vs 模型 83% (r=10⁻⁸)</td>
+<td>定性一致</td>
+<td>模型可作折叠景观质量的启发式指标</td>
+<td>指标不同（成功率 vs 覆盖率），不能定量比较</td>
+<td>Results 第 3 节；Conclusion</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅研究二维闭合链模型的折叠成功率与粗糙度参数的关系，不涉及真实蛋白质的折叠速率预测、三维构象采样或序列设计。</li>
+<li><strong>oracle/真值输入</strong>：模型需要预先知道天然态构象（Gömböc 启发的目标形状），属于 Gō-like 模型范畴——即"给定目标，评估景观可达性"，而非从序列预测结构。</li>
+<li><strong>端到端状态</strong>：非端到端。模型是概念验证性的粗粒化框架，未与真实蛋白质序列/结构直接对接。</li>
+<li><strong>算力成本</strong>：极低（4 CPU-小时），但这是以二维简化和无全原子细节为代价的。</li>
+<li><strong>历史数据依赖</strong>：不依赖训练数据，但天然态生成参数（Fourier 系数、剪切系数）是人工选择的。</li>
+<li><strong>模型依赖</strong>：结果高度依赖能量函数形式（7 项的具体权重未完全披露）和优化器选择（CG+BFGS）；不同优化器可能改变临界 r 值 [Analysis]。</li>
+<li><strong>最难情形</strong>：模型在 r = 10⁻⁴–10⁻³ 时优化器提前终止，成功率"回升"被正确识别为基线概率假象——这提示高噪声条件下优化器失效是模型的核心局限。</li>
+<li><strong>群体/领域边界</strong>：结论仅适用于二维 Gō-like 模型框架；对真实三维蛋白质的推广是推测性的（作者明确承认需进一步验证）。</li>
+<li><strong>不确定性</strong>：未报告置信区间或统计检验（除 ANOVA F = 752.43, p &lt; 0.001 用于 Rosetta 能量差异）；成功率的标准误未给出。</li>
+</ul>
+<p><strong>有边界的复述</strong>：在二维 Gō-like 链模型框架下，当粗糙度参数 r 从 10⁻⁸ 增至 10⁻⁷ 时，折叠成功率从 83% 降至 39%，表明存在一个狭窄的临界区间；该行为与 TPR1 结构域在 Rosetta（77% 覆盖）和 AlphaFold3（90% 覆盖）下的预测质量差异存在定性对应，但模型尚不能作为定量预测工具。</p>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>二维简化</td>
+<td>模型使用二维闭合链，非真实三维蛋白质</td>
+<td>"extend the model to three dimensions"</td>
+<td>Conclusion</td>
+</tr>
+<tr>
+<td>缺乏序列特异性</td>
+<td>模型未纳入氨基酸序列信息</td>
+<td>"incorporate sequence-specific effects"</td>
+<td>Conclusion</td>
+</tr>
+<tr>
+<td>验证范围有限</td>
+<td>仅测试 TPR1 一个蛋白质</td>
+<td>"validate diverse protein targets"</td>
+<td>Conclusion</td>
+</tr>
+<tr>
+<td>缺乏物理单位</td>
+<td>能量和粗糙度参数为无量纲量</td>
+<td>"explicit physical units" 的引入</td>
+<td>Conclusion</td>
+</tr>
+<tr>
+<td>未覆盖无序蛋白</td>
+<td>模型假设单一稳定天然态</td>
+<td>探索"intrinsically disordered proteins and aggregation-prone systems"</td>
+<td>Conclusion</td>
+</tr>
+<tr>
+<td>非定量预测工具</td>
+<td>与 Rosetta/AF3 的对应是定性的</td>
+<td>需建立定量预测框架</td>
+<td>Conclusion</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：作者未在文中明确讨论优化器选择、能量函数权重敏感性、或二维-三维映射的数学基础等潜在局限——这些属于 [Analysis] 范畴。</p>
+</blockquote>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>成功率"回升"被归因于基线概率，但未给出定量基线估计</td>
+<td>33% 的"成功率"可能部分来自优化器在噪声下仍能找到近天然构象，而非纯随机</td>
+<td>若基线概率估计不准，高 r 条件下的行为可能被误读</td>
+<td>用随机构象分布直接计算 P(RMSD ≤ 0.55) 作为基线</td>
+<td>Results 第 1 段</td>
+</tr>
+<tr>
+<td>能量函数 7 项的相对权重未完全披露</td>
+<td>不同权重可能改变临界 r 值的位置</td>
+<td>模型可复现性受影响</td>
+<td>在 GitHub 代码中检查默认参数；做权重敏感性分析</td>
+<td>Methods 中能量函数定义</td>
+</tr>
+<tr>
+<td>二维链与三维蛋白质的映射缺乏数学基础</td>
+<td>Gömböc 类比是概念性的，非定量等价</td>
+<td>模型对真实蛋白质的指导价值有限</td>
+<td>将模型扩展到三维链并与 TPR1 的粗粒化模拟直接对比</td>
+<td>Introduction 中"conceptual analogy"表述</td>
+</tr>
+<tr>
+<td>Rosetta 与 AF3 的比较维度不同</td>
+<td>Rosetta 测能量-RMSD 关系，AF3 测预测置信度，两者非同一景观属性</td>
+<td>定性对应可能掩盖实质差异</td>
+<td>用 AF3 的 pLDDT 分布与 Rosetta 能量景观做更系统的对比</td>
+<td>Results 第 3 节</td>
+</tr>
+<tr>
+<td>优化器（CG+BFGS）是确定性梯度方法，未测试随机优化器</td>
+<td>真实蛋白质折叠是随机过程，确定性优化可能低估高 r 下的"逃逸"能力</td>
+<td>模型对动力学陷阱的模拟可能过于悲观</td>
+<td>对比模拟退火或 Langevin 动力学结果</td>
+<td>Methods 中优化器描述</td>
+</tr>
+<tr>
+<td>未报告成功率的标准误或置信区间</td>
+<td>每条件仅 100 次实验，临界 r 的估计可能不稳定</td>
+<td>结论的统计稳健性未知</td>
+<td>增加重复次数或使用 bootstrap 重采样</td>
+<td>表 1 数据</td>
+</tr>
+<tr>
+<td>模型未与已知的粗粒化蛋白质模型（如 Go model 的 3D 版本）直接对比</td>
+<td>无法判断 Gömböc 启发的改进是否优于现有 Gō-like 模型</td>
+<td>模型增量贡献不明确</td>
+<td>在相同能量函数下对比标准 Go model 与本文模型</td>
+<td>Methods 中"belongs to the class of structure-based (Gō-like) models"</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>可调粗糙度参数的设计策略</strong>：用单一参数 r 同时控制随机噪声（Erug）和非天然长程相互作用（Efrust），避免了多参数调优的复杂性，同时保持了 frustration 来源的平衡。→ 可迁移到蛋白质构象采样或生成模型中，作为控制"景观粗糙度"的旋钮。</p>
+</li>
+<li>
+<p><strong>Gömböc 几何类比</strong>：将"单稳定平衡"的拓扑性质映射为能量景观的全局最小唯一性，为设计具有明确单天然态的粗粒化模型提供了几何直觉。→ 可用于设计合成蛋白或评估设计蛋白的折叠鲁棒性。</p>
+</li>
+<li>
+<p><strong>成功率-粗糙度临界行为</strong>：模型显示存在一个狭窄的临界 r 区间（10⁻⁸→10⁻⁷），超过后折叠效率急剧恶化。→ 对蛋白质设计有启示：设计目标应保持在"低 frustration"区间，避免临界点附近的脆弱性。</p>
+</li>
+<li>
+<p><strong>基线概率校正</strong>：作者识别出高 r 条件下成功率"回升"是随机基线假象，而非真实折叠能力恢复。→ 在评估任何折叠/生成模型的成功率时，应始终与随机基线对比。</p>
+</li>
+<li>
+<p><strong>Rosetta vs AlphaFold3 的互补验证</strong>：用物理模拟（Rosetta）和深度学习方法（AF3）同时验证 TPR1 的 minimally frustrated 特性，为评估新模型提供了双轨验证范式。→ 可迁移到结构预测或设计方法的评估中。</p>
+</li>
+<li>
+<p><strong>二维链模型的低成本探索</strong>：用 4 CPU-小时完成 700 次折叠实验，展示了粗粒化模型在参数空间扫描中的效率优势。→ 在需要大规模探索折叠条件（如突变扫描、环境条件扫描）时，二维/粗粒化模型是可行的预筛选工具。</p>
+</li>
+<li>
+<p><strong>能量景观质量与预测工具性能的关联</strong>：模型成功率与 Rosetta/AF3 的预测质量存在定性对应，暗示"景观可折叠性"可能是预测难度的内在指标。→ 可用于预测哪些蛋白对现有结构预测工具最具挑战性。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>Anfinsen 热力学假说</strong>（Anfinsen, 1973）：本文的 Enat 项直接基于此假说，将天然态视为全局能量最小。可连接至蛋白质设计中的"稳定设计"原则。</li>
+<li><strong>Levinthal 悖论</strong>（Levinthal, 1968）：本文的漏斗景观模型是对此悖论的直接回应。可连接至能量景观理论综述（如 Onuchic &amp; Wolynes, 2004）。</li>
+<li><strong>Gō-like 模型</strong>（Go, 1983）：本文明确将模型归类为 Gō-like 模型，但增加了可调 frustration 项。可连接至结构基模型的综述（如 Clementi, 2008）。</li>
+<li><strong>Frustration 分析框架</strong>（Ferreiro et al., 2007; 2014）：本文的 frustration 概念与局部 frustration 分析（如 Frustratometer 工具）直接相关。可连接至蛋白质能量景观的定量分析工具。</li>
+<li><strong>最小 frustration 原则</strong>（Bryngelson &amp; Wolynes, 1987）：本文的"低 r 高效折叠"结果与此原则一致。可连接至能量景观理论的核心文献。</li>
+<li><strong>AlphaFold 系列</strong>（Jumper et al., 2021; Abramson et al., 2024）：本文用 AF3 作为 benchmark，可连接至深度学习结构预测方法的评估文献。</li>
+<li><strong>Rosetta 能量函数</strong>（Alford et al., 2017）：本文的 Rosetta 模拟基于此能量函数。可连接至 Rosetta 方法学文献。</li>
+<li><strong>Trp-cage 折叠研究</strong>（作者前期工作，引用 [20]）：本文与作者前期关于 Trp-cage 的分形维度分析直接相关，可连接至蛋白质折叠中间态的拓扑描述。</li>
+<li><strong>Gömböc 数学性质</strong>（Domokos &amp; Várkonyi, 2006）：本文的核心类比来源。可连接至单稳态几何体的数学文献。</li>
+<li><strong>候选连接方向</strong>：本文的二维链模型可连接至格点模型（lattice model）蛋白质折叠文献（如 Dill, 1985），以及近年来基于能量景观的生成模型（如 diffusion-based generative models for protein conformation）。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：三维 Gömböc 启发的粗粒化折叠模型
+   - <strong>来源局限/观察</strong>：本文模型是二维的，作者明确承认需扩展到三维
+   - <strong>核心假设</strong>：三维 Gömböc 启发的链模型能更定量地复现真实蛋白质的折叠成功率-粗糙度关系
+   - <strong>初步方法</strong>：将二维链推广为三维自回避链，用三维 Gömböc 形状作为目标态，保持 7 项能量函数结构，系统扫描 r
+   - <strong>验证方式</strong>：与 TPR1 及其他小蛋白（如 Trp-cage, WW domain）的粗粒化模拟结果对比
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：frustration 感知的 AlphaFold 置信度校正
+   - <strong>来源局限/观察</strong>：本文发现模型成功率与 AF3/Rosetta 性能存在定性对应，但未建立定量关系
+   - <strong>核心假设</strong>：蛋白质的局部 frustration 水平可预测 AlphaFold 的 pLDDT 低值区域
+   - <strong>初步方法</strong>：用 Frustratometer 计算 TPR1 及其他蛋白的局部 frustration，与 AF3 的 pLDDT 分布做回归分析
+   - <strong>验证方式</strong>：在多个蛋白上测试预测准确性，与现有 pLDDT 校准方法对比
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Gömböc 启发的生成模型目标函数
+   - <strong>来源局限/观察</strong>：本文的 Gömböc 类比强调了"单稳定平衡"对可折叠性的重要性
+   - <strong>核心假设</strong>：在蛋白质构象生成模型中引入"单稳定平衡"正则化项，可提高生成构象的可折叠性
+   - <strong>初步方法</strong>：在 diffusion-based 或 flow-based 生成模型的训练目标中加入 Gömböc 启发的稳定性约束
+   - <strong>验证方式</strong>：生成构象的折叠成功率（通过 MD 或 Rosetta 验证）与基线模型对比
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：粗糙度-可设计性相图
+   - <strong>来源局限/观察</strong>：本文揭示了临界 r 区间的存在，但未探索其与序列设计的关系
+   - <strong>核心假设</strong>：存在一个"可设计性窗口"——粗糙度太低（过度平滑）或太高（过度粗糙）都不利于设计
+   - <strong>初步方法</strong>：对一系列设计蛋白计算其有效粗糙度参数，与实验折叠率/表达量关联
+   - <strong>验证方式</strong>：使用 ProteinMPNN 或 RosettaDesign 设计蛋白，实验验证折叠率
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：二维链模型作为 MD 模拟的预筛选工具
+   - <strong>来源局限/观察</strong>：模型计算成本极低（4 CPU-小时/700 次折叠），适合大规模扫描
+   - <strong>核心假设</strong>：二维 Gömböc 模型的折叠成功率可预测全原子 MD 模拟中的折叠倾向
+   - <strong>初步方法</strong>：对一组蛋白（天然、设计、错误折叠倾向）分别运行二维模型和全原子 MD，比较折叠倾向排序
+   - <strong>验证方式</strong>：排序一致性分析（Spearman 相关）
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：frustration 来源分解分析
+   - <strong>来源局限/观察</strong>：本文用单一参数 r 同时控制 Erug 和 Efrust，无法区分两种 frustration 来源的独立效应
+   - <strong>核心假设</strong>：随机噪声型 frustration（Erug）和非天然长程型 frustration（Efrust）对折叠成功率有不同的影响模式
+   - <strong>初步方法</strong>：将 r 分解为 r₁（仅缩放 Erug）和 r₂（仅缩放 Efrust），在二维参数空间扫描
+   - <strong>验证方式</strong>：绘制折叠成功率等高线图，识别两种 frustration 的交互效应
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, computational methods, results and discussion, conclusion) for the article "When does a funnel become a trap? A Gomboc-inspired model of protein folding landscapes" by Shityakov, Skorb, and Nosonovsky.</li>
+<li><strong>Assessment boundary</strong> Scientific content, methodological soundness, validity of claims, and internal consistency of the presented evidence. No assessment of editorial fit or journal-specific policy matters.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose a two-dimensional computational model inspired by the Gömböc shape (a convex body with one stable and one unstable equilibrium) to study how landscape ruggedness affects protein folding outcomes. They report a sharp transition from efficient folding to trapping as a ruggedness parameter r increases, and claim qualitative correspondence between model success rates and the performance of Rosetta and AlphaFold3 on the TPR1 domain.</li>
+<li><strong>Visible evidence base</strong> Full text including equations, simulation parameters, results tables/figures referenced (Table 1, Figs 1–4, Fig S1), and benchmark comparisons against Rosetta and AlphaFold3 for the TPR1 domain (PDB 1ELW).</li>
+<li><strong>Missing materials affecting confidence</strong> Figures and Table 1 are referenced but not provided in the submitted text. Supplementary information (Fig S1A–F) is referenced but not available. The GitHub repository link is provided but its contents were not assessed. Exact numerical values for some reported statistics (e.g., success rates at each r value) are not fully specified in the text.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript presents an interesting conceptual analogy between the Gömböc shape and protein folding landscapes, and the computational model is clearly described. However, the central claim of qualitative correspondence between model success rates and Rosetta/AF3 performance rests on a comparison of non-equivalent metrics across different systems, and the manuscript does not establish that the Gömböc-inspired model captures features beyond what standard Gō-like models already provide. The sharp transition in success rate with increasing r is presented as a key finding, but the mechanistic interpretation is underdeveloped and the apparent recovery at high r is dismissed as an artifact without rigorous demonstration. The benchmark comparison is suggestive but not quantitatively grounded. The manuscript would benefit from a clearer articulation of what specific, testable prediction the model makes that distinguishes it from existing approaches.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in protein folding theory, energy landscape analysis, and computational biophysics may find the Gömböc analogy conceptually appealing. The model's simplicity and computational efficiency could interest those seeking coarse-grained or conceptual frameworks for teaching or for generating hypotheses about frustration effects. The bridging of topology and folding may also appeal to mathematicians working on shape optimization or dynamical systems with applications in biophysics.</li>
+<li><strong>Major strengths</strong> The manuscript is clearly written and the Gömböc analogy is pedagogically attractive. The computational model is simple, transparent, and reproducible in principle. The systematic sweep of the ruggedness parameter across five orders of magnitude is a reasonable approach. The use of two independent structure prediction methods (Rosetta and AF3) as benchmarks for the TPR1 domain is appropriate, and the reported energy landscape features for TPR1 are consistent with its known behavior as a well-folded domain.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Claim validity</li>
+<li><strong>Claim pointer</strong> "These findings suggest that the Gömböc-inspired model captures essential features of folding landscape quality and may serve as a useful heuristic for comparing foldability across different systems."</li>
+<li><strong>Evidence pointer</strong> Results and discussion, "Gömböc-inspired model reveals frustration-dependent folding behavior"; "Rosetta ab initio simulations"; "AF3 validates the TPR1 domain"</li>
+<li><strong>Concern</strong> The central claim of qualitative correspondence between model success rates and Rosetta/AF3 performance is based on comparing fundamentally different quantities. The Gömböc model reports the fraction of optimization trajectories reaching an RMSD threshold in a 2D toy landscape, while Rosetta and AF3 report structural prediction accuracy for a real 3D protein. The numerical values (93% vs 90%, 83% vs 77%) are presented as if they were comparable, but there is no theoretical or statistical framework linking these quantities. The model success rate at r = 0 is 93%, which is claimed to correspond to AF3's 90% coverage, yet the model at r = 0 has no frustration at all, while AF3 operates on a real protein with real sequence-specific interactions. The comparison is therefore not a validation of the model but an exercise in pattern matching.</li>
+<li><strong>Why it matters</strong> If the model is to serve as a heuristic for comparing foldability, the correspondence must be established on a principled basis, not by aligning two numbers that happen to be similar. Without a defined mapping between model parameters and physical quantities, or between model success rates and prediction confidence metrics, the claim is unfalsifiable and cannot be extended to other systems.</li>
+<li><strong>Resolution test</strong> Provide a quantitative framework linking model success rates to physical observables (e.g., folding rates, Φ-values, or prediction confidence scores) and demonstrate predictive validity on at least two additional proteins with known frustration properties. Alternatively, clearly reframe the claim as a purely conceptual analogy with no quantitative predictive content.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "At minimal ruggedness (10−8), the model achieves 83% success in reaching native-like states" and "At zero ruggedness (r = 0.0), the landscape acts as a near-perfect funnel, yielding an average energy drop of 129.5 ± 21.7 arbitrary units, convergence in 21 optimization steps, and a 93% success rate."</li>
+<li><strong>Evidence pointer</strong> Abstract; Results and discussion, "Gömböc-inspired model reveals frustration-dependent folding behavior"; Table 1 (referenced, not provided)</li>
+<li><strong>Concern</strong> The manuscript reports success rates at r = 0 (93%) and r = 10−8 (83%) but does not explain why adding even infinitesimal noise (10−8) causes a 10 percentage point drop. The energy function includes both a stochastic term (Erug) and a frustration term (Efrust), both scaled by r. At r = 10−8, the magnitude of these terms is negligible compared to the native attraction term, yet the success rate drops substantially. This is not explained mechanistically. Additionally, the text states that "the stochastic noise at extreme ruggedness values (10−4 and 10−3) causes the gradient-based optimizer to terminate prematurely; thus, the apparent recovery in the success rate is merely an artifact." This interpretation is plausible but not demonstrated. The manuscript does not report the distribution of final RMSD values, the fraction of trajectories terminating by iteration limit versus gradient tolerance, or any diagnostic to distinguish genuine folding from premature termination near the starting point.</li>
+<li><strong>Why it matters</strong> The sharp transition between r = 10−8 and r = 10−7 is the central quantitative finding of the model. If the transition is an artifact of the optimizer terminating prematurely rather than a property of the landscape, the model's relevance to physical folding is undermined. The manuscript must distinguish between landscape trapping (a physical effect) and optimizer failure (a numerical artifact).</li>
+<li><strong>Resolution test</strong> Report the fraction of trajectories that terminate by gradient tolerance versus iteration limit at each r value. Show the distribution of final RMSD values and energy drops. Demonstrate that the transition is robust to changes in optimizer (e.g., using a stochastic optimizer or simulated annealing) and to the choice of convergence criteria. If the transition is an optimizer artifact, the claim of landscape trapping must be revised.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Scientific importance</li>
+<li><strong>Claim pointer</strong> "Unlike conventional Gō models that encode only native contacts, the present formulation combines a monomonostatic (single-stable-equilibrium) geometric target with an explicit, tunable Efrust that penalizes non-native long-range distances and a stochastic ruggedness term Erug that injects local energy noise."</li>
+<li><strong>Evidence pointer</strong> Conclusion; Computational methods, "Energy function"</li>
+<li><strong>Concern</strong> The manuscript claims novelty relative to Gō-like models, but the energy function described is a standard structure-based model with added noise and a non-native contact penalty. The Gömböc analogy is presented as the conceptual motivation, but the model itself does not appear to use any property specific to Gömböc geometry. The native state is a 2D curve generated by Fourier synthesis, not a Gömböc shape, and the energy function does not encode monomonostatic properties. The connection to Gömböc is therefore purely metaphorical. The manuscript does not demonstrate that the Gömböc analogy generates any specific, testable prediction that a generic Gō-like model with tunable frustration would not also make.</li>
+<li><strong>Why it matters</strong> If the model is functionally equivalent to existing structure-based models with added noise, the Gömböc framing does not constitute a scientific contribution beyond the analogy itself. The manuscript must either demonstrate that the Gömböc-inspired construction leads to qualitatively different behavior than a generic Gō-like model, or reposition the work as a pedagogical or conceptual contribution rather than a novel computational method.</li>
+<li><strong>Resolution test</strong> Compare the model's behavior to a standard Gō-like model with the same native state and the same frustration terms but without the Gömböc-inspired construction. If the behavior is identical, the Gömböc framing is decorative. Alternatively, identify a specific prediction that arises from the monomonostatic property and test it.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract, first sentence</li>
+<li><strong>Issue</strong> The abstract states "the quantitative effects of landscape ruggedness on folding kinetics are not fully understood," but the manuscript does not measure kinetics. The model reports success rates of optimization trajectories, not folding rates or timescales. The term "kinetics" is used loosely and may mislead readers.</li>
+<li><strong>Required correction</strong> Replace "folding kinetics" with "folding outcomes" or "folding success rates" in the abstract, or add a discussion of how the model relates to kinetic observables.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical clarity</li>
+<li><strong>Affected element</strong> Computational methods, "Energy function"</li>
+<li><strong>Evidence pointer</strong> Equations for Erug and Efrust are referenced but not fully displayed in the text</li>
+<li><strong>Issue</strong> The equations for Erug and Efrust are described in words but the full mathematical forms are not given in the text. The equation for Erug is cut off ("according to the following equation:where N = 48") and the equation for Efrust is similarly incomplete. This makes the methods section incomplete as presented.</li>
+<li><strong>Required correction</strong> Provide the complete equations for Erug and Efrust in the methods section.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Affected element</strong> Results and discussion, "Gömböc-inspired model reveals frustration-dependent folding behavior"</li>
+<li><strong>Evidence pointer</strong> Table 1 (referenced, not provided)</li>
+<li><strong>Issue</strong> The manuscript reports means and standard deviations for energy drops (e.g., 129.5 ± 21.7) but does not state the number of independent simulations per condition beyond "n = 100 per condition" in the methods. It is unclear whether the reported uncertainties are standard deviations across the 100 runs or standard errors. The manuscript also does not report whether the differences between conditions are statistically significant.</li>
+<li><strong>Required correction</strong> Clarify the uncertainty metric and report the number of simulations. Consider adding a statistical test (e.g., ANOVA or permutation test) to support claims of significant differences between ruggedness conditions.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation</li>
+<li><strong>Affected element</strong> Results and discussion, "AF3 validates the TPR1 domain as a minimally frustrated benchmark"</li>
+<li><strong>Evidence pointer</strong> Section text</li>
+<li><strong>Issue</strong> The manuscript states that "High-confidence AF3 predictions (pLDdt ≥ 90) with a uniform PAE plot are characteristic of well-folded, minimally frustrated systems." This is an interpretive claim about what AF3 confidence metrics indicate about frustration. AF3 confidence reflects prediction certainty, not the physical frustration of the folding landscape. A protein with high frustration could still be predicted with high confidence if the training set contains similar folds. The claim conflates prediction confidence with biophysical properties.</li>
+<li><strong>Required correction</strong> Soften the claim or provide a citation supporting the link between AF3 confidence metrics and physical frustration. Alternatively, reframe the AF3 results as evidence of structural predictability rather than minimal frustration.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Results and discussion, "Gömböc-inspired model reveals frustration-dependent folding behavior"</li>
+<li><strong>Evidence pointer</strong> Section text</li>
+<li><strong>Issue</strong> The manuscript mentions "our earlier topological bioscaling analysis of Trp-cage folding" (reference 20) and states that the two approaches "provide a quantitative bridge between monomonostatic topology and the dimensional properties of native state recovery." However, the connection between the two models is not elaborated. It is unclear how the fractional-dimensional analysis relates to the Gömböc-inspired model or what new insight the combination provides.</li>
+<li><strong>Required correction</strong> Expand the discussion of how the two approaches complement each other, or remove the reference if it is not essential to the current work.</li>
+<li><strong>Concern ID</strong> R1-m6</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Computational methods, "Numerical optimization"</li>
+<li><strong>Evidence pointer</strong> Section text</li>
+<li><strong>Issue</strong> The manuscript states that the model is "pattern-reproducible but not bit-reproducible" and that "reruns give different individual trajectories but the same ensemble statistics." This is a useful clarification, but the manuscript does not specify the random seed policy or whether the reported results are from a single run or averaged over multiple runs with different seeds.</li>
+<li><strong>Required correction</strong> Specify the random seed policy and report whether the results are averaged over multiple independent runs.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (claim of qualitative correspondence without a principled link between model and benchmark metrics) and R1-M2 (incomplete reporting of simulation diagnostics to distinguish landscape trapping from optimizer failure) are the primary technical issues. The incomplete equations for Erug and Efrust (R1-m2) also need correction for reproducibility.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The Gömböc analogy is novel as a conceptual framing, but the computational model itself does not demonstrate new physics or methodology beyond standard structure-based models with tunable frustration. Scientific importance: The question of how landscape ruggedness affects folding is important, but the manuscript does not establish that the toy model provides insights beyond what is already known from Gō-like models and energy landscape theory. Interdisciplinary readership: The manuscript bridges topology and biophysics in a way that could appeal to a broad audience, but the lack of quantitative rigor in the central comparison limits its impact. Technical soundness: The model is simple and clearly described, but the incomplete reporting of equations and diagnostics, and the conflation of prediction confidence with physical frustration, undermine technical rigor. Readability for nonspecialists: The manuscript is generally well-written and accessible, with the Gömböc analogy providing an intuitive entry point. However, the abrupt transition from model results to benchmark comparisons without a clear logical bridge may confuse nonspecialist readers.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The conceptual framing is appealing and the model is simple enough to be useful as a pedagogical tool or a starting point for more rigorous work. However, the central claim of correspondence with Rosetta/AF3 performance must be either quantitatively grounded or explicitly reframed as a conceptual analogy. The simulation diagnostics must be reported to distinguish physical trapping from optimizer artifacts. If these issues are addressed, the manuscript could make a modest but useful contribution to the conceptual toolkit of protein folding research.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

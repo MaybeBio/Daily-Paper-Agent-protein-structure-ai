@@ -1,0 +1,85 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no figures, methods, or supporting data were provided
+- **Shared manuscript claim summary** The authors use molecular dynamics simulations to show that histidine tautomerism (delta vs epsilon) has minimal effect on beta-sheet propensity in PrP(106-126) A117 V monomers and dimers, but becomes decisive at the trimer and tetramer level, where specific tautomeric combinations promote beta-hairpin formation and define a nascent nucleation core. They propose a two-step primary nucleation mechanism involving template-driven recruitment of a second beta-hairpin.
+- **Visible evidence base** Abstract text only; no simulation details, force fields, sampling protocols, convergence analyses, or structural metrics are provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, simulation methodology, force field parameters, sampling times, replica or enhanced sampling details, convergence criteria, free energy calculations, and any experimental validation
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting hypothesis linking histidine tautomerism to amyloid nucleation, but the evidence base is entirely inaccessible from the supplied material. The central claims, particularly the tautomer-dependent switch at the trimer and tetramer level and the proposed two-step nucleation mechanism, cannot be evaluated without methodological detail and quantitative results. The work may be of interest to the amyloid and prion simulation community, but the current abstract alone does not establish the case.
+- **Who would be interested in the results, and why** Computational biophysicists and physical chemists studying amyloid nucleation mechanisms, particularly those focused on prion peptides and the role of protonation and tautomeric states in protein aggregation. Researchers developing coarse-grained or atomistic models of primary nucleation would also find the proposed two-step mechanism relevant, as would experimentalists seeking testable predictions about histidine mutation effects on nucleation kinetics.
+- **Major strengths** The abstract identifies a specific and understudied variable, histidine tautomerism, and proposes a clear structural hypothesis linking tautomeric state to beta-hairpin formation at specific oligomer sizes. The distinction between minimal effects at monomer and dimer level versus decisive effects at trimer and tetramer level is a testable and mechanistically meaningful claim. The proposed two-step nucleation mechanism is conceptually coherent and could guide future simulation and experimental work.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The claim that tautomerism "becomes decisive at the trimer and tetramer level" and that specific tautomeric combinations (deltadeltaepsilon trimer, deltaepsilonepsilonepsilon tetramer) adopt beta-hairpins defining a nucleation core  
+  - **Evidence pointer** Abstract only; no figures, tables, or quantitative metrics provided  
+  - **Concern** The abstract provides no quantitative evidence for the conformational assignments. No free energy differences, population fractions, hydrogen bonding patterns, or structural order parameters are reported. Without these, the assertion that specific tautomeric states "adopt" beta-hairpins is unsupported.  
+  - **Why it matters** The central mechanistic claim rests entirely on the ability to distinguish conformational ensembles across tautomeric states. If the populations are marginal or the assignments are based on subjective criteria, the conclusion collapses.  
+  - **Resolution test** Provide population distributions, free energy differences between beta-hairpin and disordered states for each tautomeric combination, and convergence metrics demonstrating that the observed differences are statistically robust.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The proposed two-step nucleation mechanism in which "one beta-hairpin then serves as a template to recruit and organize a second"  
+  - **Evidence pointer** Abstract only; no kinetic or mechanistic data provided  
+  - **Concern** The abstract presents this mechanism as a hypothesis, which is appropriate, but no evidence is offered to distinguish it from alternative pathways, such as concerted formation or disordered aggregation followed by reorganization. The template hypothesis requires demonstration of a temporal or causal ordering that is not visible in the abstract.  
+  - **Why it matters** The mechanistic claim is the primary conceptual contribution. Without evidence for the sequential, template-driven pathway, the hypothesis remains speculative and does not advance understanding beyond existing nucleation models.  
+  - **Resolution test** Provide time-resolved or pathway-specific analyses, such as transition path sampling, committor analysis, or free energy surfaces along reaction coordinates that distinguish sequential from concerted mechanisms.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Reproducibility  
+  - **Claim pointer** The study uses "molecular dynamics simulations" to characterize conformational ensembles from monomers through tetramers  
+  - **Evidence pointer** Abstract only; no methods section provided  
+  - **Concern** No simulation details are given, including force field, water model, temperature, pressure, salt concentration, simulation length, number of replicas, or enhanced sampling methods. Without these, the results cannot be reproduced or assessed for sampling adequacy.  
+  - **Why it matters** Amyloid peptide simulations are highly sensitive to force field and sampling protocol. The absence of this information prevents any assessment of whether the observed tautomer-dependent differences are artifacts of the chosen parameters.  
+  - **Resolution test** Provide a complete methods section with force field parameters, simulation setup, sampling times, and convergence checks, and demonstrate that the key findings are robust to reasonable variations in these choices.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Scientific importance  
+  - **Claim pointer** The claim that histidine tautomerism "gates the transition from disordered oligomers to ordered nuclei" and offers a framework for "prion and, more broadly, amyloidogenic systems"  
+  - **Evidence pointer** Abstract only; no comparative or generalizability data  
+  - **Concern** The abstract does not address whether the findings are specific to PrP(106-126) A117 V or generalizable to other amyloidogenic peptides. No comparison to other sequences or to the wild-type peptide is mentioned.  
+  - **Why it matters** The broader significance claim requires at least some evidence of generality, or a clearly stated rationale for why this specific peptide is representative. Without this, the framework may be overgeneralized.  
+  - **Resolution test** Provide comparative simulations or a discussion of sequence features that support generalizability, or temper the claim to the specific system studied.  
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Abstract wording  
+  - **Evidence pointer** Abstract, first sentence  
+  - **Issue** The phrase "In current study" is grammatically incorrect and should be "In the current study" or "In this study."  
+  - **Required correction** Revise to "In this study" or "In the current study."  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Abstract wording  
+  - **Evidence pointer** Abstract, description of the two-step mechanism  
+  - **Issue** The phrase "one beta-hairpin then serves as a template to recruit and organize a second" is ambiguous regarding whether the second hairpin forms within the same tetramer or in a subsequent association event.  
+  - **Required correction** Clarify the oligomeric context in which the second hairpin forms.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Completeness  
+  - **Affected element** Abstract  
+  - **Evidence pointer** Abstract, overall  
+  - **Issue** No mention is made of the protonation state of the histidine beyond tautomerism, such as whether the simulations were performed at a specific pH or with fixed protonation states.  
+  - **Required correction** State the protonation conditions or clarify that tautomerism was studied at a fixed protonation state.  
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of quantitative structural data, mechanistic evidence, and simulation methodology means the central claims are currently unsupported.
+- **Assessment against Nature-style criteria**  
+  - **Originality** The focus on histidine tautomerism as a regulator of amyloid nucleation is a relatively underexplored angle, and the specific claim of a size-dependent switch is potentially original. However, originality alone is insufficient without evidence.  
+  - **Scientific importance** The topic is relevant to prion biology and amyloid aggregation, but the abstract does not demonstrate that the findings extend beyond the specific peptide studied. The importance claim is plausible but not established.  
+  - **Interdisciplinary readership** The work could appeal to physical chemists, biophysicists, and structural biologists, but the abstract is written in a specialized manner that may limit broader accessibility.  
+  - **Technical soundness** Cannot be assessed from the abstract. The absence of methodology and quantitative results is a critical deficiency.  
+  - **Readability for nonspecialists** The abstract is reasonably clear for a specialist audience but uses jargon such as "nascent nucleation core" and "primary nucleation" without definition, which would hinder nonspecialist comprehension.  
+- **Recommendation posture** Currently not established from the provided evidence. The hypothesis is interesting and worth pursuing, but the abstract alone does not provide sufficient methodological or quantitative support. A full manuscript with detailed methods, convergence analyses, and quantitative structural data would be required to assess the claims.
+
+## Risk / unsupported claims
+- The claim that tautomerism "becomes decisive" at the trimer and tetramer level is unsupported without population or free energy data.
+- The proposed two-step nucleation mechanism is speculative and not evidenced by any kinetic or pathway analysis.
+- The assertion that the findings offer a framework for "prion and, more broadly, amyloidogenic systems" is unsupported without comparative data or a generalizability argument.
+- The claim that histidine tautomerism "gates the transition from disordered oligomers to ordered nuclei" is not substantiated by any quantitative measure of order or disorder.
+- All simulation-related claims are unverifiable due to the absence of methods and parameters.

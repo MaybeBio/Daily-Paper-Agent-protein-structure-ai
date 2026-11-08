@@ -1,0 +1,89 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the supplied abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors use advanced molecular dynamics simulations to propose that darunavir (DRV) and tipranavir (TPV) bind stably to an allosteric pocket in the C-terminal tail region of monomeric HIV-1 protease, that these drugs can reversibly exchange between the active site and this tail cavity via surface diffusion, and that tail-pocket binding induces extension of the C-terminal alpha-helix, sequestering dimerization-essential terminal residues. The authors further claim this mechanism explains the superior clinical efficacy of DRV and TPV and offers a route to drugs that bypass active-site mutation resistance.
+- **Visible evidence base** Abstract text only. No simulation protocols, force fields, system setup, convergence criteria, free-energy calculations, structural ensembles, or comparison with experimental data beyond a cited ESI-MS reference are visible.
+- **Missing materials affecting confidence** Full methods, simulation parameters, validation of the allosteric pocket, binding free-energy estimates, structural figures, trajectory analyses, statistical uncertainties, and the primary data supporting the surface-diffusion mechanism. The cited ESI-MS evidence is referenced but not reproduced or critically evaluated.
+
+## Reviewer
+- **Overall assessment** The abstract presents an interesting and potentially important hypothesis that DRV and TPV may act in part by binding an allosteric site in the HIV-1 protease C-terminal tail and disrupting dimerization. The proposed mechanism is plausible and clinically relevant given the resistance challenges facing active-site inhibitors. However, the evidence base visible in the abstract is insufficient to establish the central claims. No quantitative data, methodological details, or validation of the simulation approach are provided. The claim that the tail pocket is the operative mechanism for DRV and TPV efficacy, and the extrapolation to a new drug class, go beyond what can be supported from the supplied material. The work is potentially significant but currently not established from the provided evidence.
+- **Who would be interested in the results, and why** Structural biologists and computational chemists studying protein-protein interactions and allosteric regulation in enzymes would find the proposed mechanism of interest. Medicinal chemists and virologists working on HIV drug resistance and next-generation protease inhibitors would be directly interested, as the work suggests a new targeting strategy that could circumvent active-site mutation resistance. The broader community studying dimerization interfaces as drug targets would also find the conceptual framework relevant.
+- **Major strengths** The hypothesis is well motivated by the clinical observation that DRV and TPV outperform other protease inhibitors, and the proposed dual mechanism is a credible explanation worth testing. The focus on the C-terminal tail as a dimerization hotspot aligns with existing biophysical evidence, including the cited ESI-MS work. The potential to bypass cross-resistance is a compelling translational angle.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that "both inhibitors bind stably to an allosteric pocket located in the tail region of the enzyme" based on "advanced molecular dynamics simulation methods."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** No methodological details are provided. The reader cannot assess the simulation length, force field, water model, sampling methodology, or whether the binding was characterized by free-energy calculations, enhanced sampling, or simple unbiased trajectories. The term "advanced" is not defined. Without this information, the stability of binding cannot be evaluated.
+  - **Why it matters** Binding stability is a quantitative claim. A pocket identified in a short simulation or with inadequate sampling may be an artifact. The central premise of the paper rests on this claim, and it cannot be verified from the abstract.
+  - **Resolution test** Provide simulation protocols, convergence metrics, binding free-energy estimates with uncertainties, and replicate simulations. Show that the tail pocket is consistently occupied across independent runs and that the binding is thermodynamically favorable.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim "reversible association-dissociation of the drugs between the conventional active site and the newly identified tail cavity through surface diffusion."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** Surface diffusion between two distant binding sites is a strong mechanistic claim that requires direct observation of the transition pathway, not just the presence of the drug at both sites in separate simulations. No evidence of the transition itself, its timescale, or its free-energy profile is presented.
+  - **Why it matters** If the drugs do not actually transit between sites, the proposed dual mechanism is unsupported. The claim implies a specific kinetic process that is central to the paper's narrative.
+  - **Resolution test** Show trajectories or enhanced-sampling results that capture the drug moving from the active site to the tail pocket along the protein surface, with a computed free-energy barrier and residence times at each site.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scientific importance
+  - **Claim pointer** The authors claim that "drug binding to the tail pocket induces a conformational extension of the C-terminal alpha-helix, a change that sequesters the terminal residues required for stable dimer formation."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The structural consequence of tail-pocket binding is described qualitatively. No data are shown on the extent of helix extension, the specific residues sequestered, or the effect on dimerization free energy. The link between the observed conformational change and impaired dimerization is inferred, not demonstrated.
+  - **Why it matters** This is the mechanistic bridge between drug binding and the proposed therapeutic effect. Without a quantitative demonstration that the conformational change actually disrupts dimer formation, the clinical relevance of the tail pocket remains speculative.
+  - **Resolution test** Provide structural ensembles showing the apo and drug-bound monomer conformations, quantify the helix extension, and compute or measure the dimerization free-energy change upon drug binding. Ideally, compare with experimental dimerization assays.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scientific importance
+  - **Claim pointer** The authors state that their finding "aligns very well with the reported ESI-MS spectra showing the tail interface as a crucial domain in forming a stable HIV protease dimer."
+  - **Evidence pointer** Cited as "reported ESI-MS spectra"; location not provided
+  - **Concern** The alignment with ESI-MS data is asserted but not critically examined. The cited work may show the tail is important for dimer stability, but it does not necessarily show that DRV or TPV bind there or that drug binding disrupts dimerization. The connection between the simulation result and the experimental reference is not established.
+  - **Why it matters** The claim of experimental alignment lends credibility to the simulation. If the alignment is superficial, the paper overstates its support.
+  - **Resolution test** Provide a detailed comparison between the simulated binding site and the experimentally implicated tail residues, and discuss any discrepancies. If possible, include new experimental validation, such as mutagenesis or binding assays.
+  - **Concern ID** R1-M5
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interdisciplinary readership
+  - **Claim pointer** The authors conclude that their work "paves the way for designing a new class of HIVPR drugs that could target the C-terminal to effectively lock it in the monomeric form, potentially bypassing the cross-resistance due to active-site mutations."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The translational claim is speculative. No data are presented on whether the tail pocket is conserved across drug-resistant variants, whether small molecules can be optimized for this site, or whether monomer locking is a viable therapeutic strategy in vivo. The claim extends beyond the simulation results.
+  - **Why it matters** Overstating translational potential can mislead readers and dilute the credibility of the core findings. The paper should clearly separate what is demonstrated from what is hoped for.
+  - **Resolution test** Soften the conclusion to reflect the hypothesis-generating nature of the work, or provide additional data on pocket conservation and druggability.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract uses terms such as "advanced molecular dynamics simulation methods" and "surface diffusion" without defining them for a general biochemistry audience.
+  - **Required correction** Briefly define the simulation approach and the surface-diffusion concept in accessible language.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not state the simulation timescale or the number of replicates, which are essential for judging the reliability of the binding-stability claim.
+  - **Required correction** Include the total simulation time and number of independent runs in the abstract or methods summary.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Scientific importance
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not mention whether the tail pocket is present in drug-resistant protease variants, which is directly relevant to the resistance-bypass claim.
+  - **Required correction** Add a sentence addressing pocket conservation across known resistant mutants, or explicitly state that this is not yet examined.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, and R1-M3 are blocking. The abstract does not provide sufficient methodological detail to assess the binding-stability claim, does not show direct evidence for the surface-diffusion transition, and does not quantitatively link the conformational change to impaired dimerization. These are the core pillars of the paper, and none can be verified from the supplied material.
+- **Assessment against Nature-style criteria** Originality: The idea of targeting the C-terminal tail of HIVPR to disrupt dimerization is not entirely new, as dimerization inhibitors have been explored, but the specific claim that DRV and TPV act through this mechanism is a fresh angle. Scientific importance: If substantiated, the work would have clear clinical relevance for overcoming drug resistance, which is a major unmet need. Interdisciplinary readership: The topic bridges computational chemistry, structural biology, and antiviral drug design, which would appeal to a broad audience. Technical soundness: Not assessable from the abstract; the absence of methodological detail and quantitative results prevents evaluation. Readability for nonspecialists: The abstract is generally clear but uses some jargon without definition. Overall, the concept is promising, but the evidence base is insufficient to support the claims at the level required for a high-impact journal.
+- **Recommendation posture** Currently not established from the provided evidence. The hypothesis is interesting and worth pursuing, but the abstract alone does not provide the methodological transparency or quantitative support needed to validate the central claims. I would be supportive if the full manuscript provides rigorous simulation data, direct evidence for the surface-diffusion mechanism, and a quantitative link between tail-pocket binding and dimerization disruption.
+
+## Risk / unsupported claims
+- The claim that DRV and TPV bind stably to the tail pocket is unsupported without simulation details and free-energy data.
+- The claim of reversible surface diffusion between active site and tail cavity is unsupported without direct observation of the transition.
+- The claim that tail-pocket binding induces helix extension that sequesters dimerization residues is unsupported without structural and energetic analysis.
+- The claim that the findings align with ESI-MS data is unverifiable from the abstract.
+- The translational claim that this work paves the way for a new drug class bypassing resistance is speculative and not supported by the presented evidence.

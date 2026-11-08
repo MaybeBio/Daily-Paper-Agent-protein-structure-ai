@@ -1,0 +1,77 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report identification, heterologous expression, and characterization of Algtm3, a PL39 family alginate lyase from the thermophilic bacterium *Rhodothermus profundi*. They claim high thermostability, optimal activity at 70 degrees C and pH 8.0, domain essentiality for folding and activity, improved activity of a C-terminally truncated variant, structural insights from modeling and docking, and production of alginate oligosaccharides with degree of polymerization 1 to 4 via endolytic and exolytic modes.
+- **Visible evidence base** Abstract text only; no experimental details, numerical data beyond those stated, figures, tables, or methods are available
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, supplementary data, statistical analyses, raw activity measurements, structural model validation metrics, and chromatographic or mass spectrometric data
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially useful contribution to alginate lyase engineering, particularly regarding thermostability and domain truncation effects in a PL39 family enzyme. The reported 1.98-fold activity improvement upon C-terminal truncation and the thermostability profile are of interest. However, the abstract alone does not provide sufficient experimental detail to verify the robustness of the claims. Key quantitative data, statistical treatment, and validation of structural models are absent. The work appears technically sound in outline, but the evidence base available for this review is too limited to fully establish the conclusions.
+- **Who would be interested in the results, and why** Researchers in marine biotechnology, enzyme engineering, and carbohydrate-active enzyme research would find this work relevant. Those working on alginate oligosaccharide production for pharmaceutical or nutraceutical applications would be interested in the thermostable biocatalyst aspect. The domain dissection findings may also interest structural biologists studying polysaccharide lyase family organization.
+- **Major strengths** The study addresses a practical limitation of alginate lyases, namely thermostability, using a thermophilic source organism. The domain truncation approach is a logical strategy to improve heterologous expression performance. The combination of biochemical characterization, structural modeling, and product analysis provides a multi-angle perspective. The reported thermostability, retaining over 90% activity after 60 minutes at 65 degrees C, is a notable quantitative result.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** The claim that Algtm3 exhibits "excellent thermal stability" and that the truncated variant Algtm3dc shows "1.98-fold higher activity than the wild-type enzyme"  
+  - **Evidence pointer** Abstract text; location not provided  
+  - **Concern** The abstract reports specific quantitative values for thermostability and activity improvement, but no experimental replication information, error estimates, statistical significance, or assay conditions are provided. The 1.98-fold value is presented as a single point without confidence intervals or replicate numbers.  
+  - **Why it matters** Quantitative performance claims in enzyme characterization require demonstration of reproducibility and statistical robustness. Without these, the reader cannot assess whether the observed differences are meaningful or within experimental noise.  
+  - **Resolution test** Provide replicate measurements, standard deviations, and statistical tests for the activity comparison and thermostability data in the full manuscript.
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Claim support  
+  - **Claim pointer** The claim that "deletion of the C-terminal T9SS sorting domain improved enzyme performance" and that "C-terminal truncation preserved the catalytic core while inducing local changes in the substrate-binding region, which may contribute to enhanced catalytic efficiency"  
+  - **Evidence pointer** Abstract text; location not provided  
+  - **Concern** The causal link between structural changes and enhanced activity is speculative. The abstract states that modeling and docking "suggested" local changes, but no validation of the structural models, such as RMSD values, model confidence scores, or experimental validation of the predicted binding site changes, is presented.  
+  - **Why it matters** Structure-function claims require either experimentally determined structures or rigorously validated models. Speculative structural interpretation without validation weakens the mechanistic conclusion.  
+  - **Resolution test** Provide model validation metrics, such as Ramachandran statistics or QMEAN scores, and ideally experimental validation such as site-directed mutagenesis of predicted key residues.
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** The claim that "the Chondroitin AC/alginate lyase superfamily domain and the Hepar_II_III catalytic domain are essential for maintaining proper protein folding, soluble production, and catalytic activity"  
+  - **Evidence pointer** Abstract text; location not provided  
+  - **Concern** The abstract states domain essentiality but does not describe how this was determined. No information on which truncation constructs were tested, how many were made, or what the outcomes were for each is provided. The distinction between effects on folding, solubility, and activity is asserted without supporting data.  
+  - **Why it matters** Domain essentiality claims require systematic truncation analysis with clear readouts for each construct. Without this detail, the conclusion cannot be evaluated.  
+  - **Resolution test** Provide a table or figure showing all constructs tested, their expression levels, solubility, and activity, with appropriate controls.
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Product analysis description  
+  - **Evidence pointer** Abstract text; location not provided  
+  - **Issue** The abstract states that TLC and ESI-MS analyses demonstrated degradation producing oligosaccharides with degree of polymerization 1 to 4, but does not specify the relative proportions or whether the product profile differs between substrates or between wild-type and truncated enzyme.  
+  - **Required correction** Clarify whether product profiles were compared across enzyme variants and substrates, and provide representative data in the full manuscript.
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Completeness  
+  - **Affected element** Enzyme nomenclature and classification  
+  - **Evidence pointer** Abstract text; location not provided  
+  - **Concern** The abstract identifies Algtm3 as a PL39 family alginate lyase but does not provide sequence identity to known enzymes or a phylogenetic context.  
+  - **Required correction** Include sequence comparison data or a phylogenetic tree in the full manuscript to support family assignment and novelty.
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Precision  
+  - **Affected element** Temperature and pH optima  
+  - **Evidence pointer** Abstract text; location not provided  
+  - **Concern** The abstract reports optimal activity at 70 degrees C and pH 8.0, but does not indicate the range of conditions tested or the shape of the activity profiles.  
+  - **Required correction** Provide activity versus temperature and pH profiles in the full manuscript to contextualize the optima.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The quantitative claims lack statistical support, the structural interpretation lacks model validation, and the domain essentiality conclusion lacks systematic experimental detail. These must be addressed in the full manuscript before the central claims can be considered established.
+- **Assessment against Nature-style criteria**  
+  - Originality: Moderate. The use of a thermophilic source for a PL39 alginate lyase and the domain truncation strategy are not entirely novel but may offer new insights into this specific family.  
+  - Scientific importance: Moderate. Thermostable alginate lyases have practical value, and domain organization insights could inform enzyme engineering, but the advance appears incremental rather than transformative.  
+  - Interdisciplinary readership: Limited. The work is primarily of interest to enzyme biochemists and marine biotechnologists; broader appeal is not evident from the abstract.  
+  - Technical soundness: Cannot be fully assessed from the abstract. The experimental design appears reasonable in outline, but the lack of statistical detail and model validation prevents verification.  
+  - Readability for nonspecialists: The abstract is clearly written and accessible, with technical terms used appropriately, though some domain nomenclature may be unfamiliar to general readers.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a plausible and potentially useful study, but the evidence base is insufficient to verify the quantitative claims, structural interpretations, and domain essentiality conclusions. A full manuscript with detailed methods, statistical analyses, and model validation would be required to assess whether the case can be made.
+
+## Risk / unsupported claims
+- The 1.98-fold activity improvement of Algtm3dc over wild-type is unsupported without replicate data and statistical analysis.
+- The claim of "excellent thermal stability" is supported only by a single time point and temperature; broader stability data are needed.
+- The structural interpretation that C-terminal truncation induces local changes in the substrate-binding region contributing to enhanced activity is speculative without model validation or experimental mutagenesis.
+- The assertion that specific domains are "essential" for folding, solubility, and activity is unverifiable without systematic construct data.
+- The endolytic and exolytic degradation modes are asserted but not quantitatively supported in the abstract.
+- The claim of producing oligosaccharides with degree of polymerization 1 to 4 lacks quantitative product distribution data.

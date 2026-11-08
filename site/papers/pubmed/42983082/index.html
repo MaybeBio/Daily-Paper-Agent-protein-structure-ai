@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>An open structure-guided RNA foundation model for generalizable prediction. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>An open structure-guided RNA foundation model for generalizable prediction.</h1>
+      <div class="meta">Zhu, Heqin; Li, Ruifeng; Chang, Ao; Chen, Haobin; Zhang, Feng; Tang, Fenghe; Ye, Tong; Li, Xin; Gu, Yunjie; Xiong, Peng; Zhou, S Kevin</div>
+      <div class="meta muted">
+        
+        <span class="journal">Nature</span>
+        · 2026-11-05
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42983082/">原文</a>
+      </div>
+      <p class="one-liner">该文提出结构引导的RNA基础模型structRFM，整合二级结构信息进行预训练并提升三级结构预测，虽对象为RNA而非蛋白质，但其结构引导预训练和结构预测方法可迁移至蛋白质结构计算，具有借鉴价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">RNA language models have achieved strong performance across diverse downstream tasks by leveraging large-scale sequence data. However, RNA function is fundamentally shaped by hierarchical structure, making structural information important for pre-training. Existing approaches often depend on noisy annotations or task-specific objectives that can limit generalizability. Here we present structRFM, a structure-guided RNA foundation model trained on 21 million RNA sequence-structure pairs by integrating base-pairing interactions into masked language modelling through a pair-matching operation. We also introduce MUSES, a multi-source ensemble of secondary structures designed to mitigate predictor bias, and a dynamic masking ratio that balances structure-guided and nucleotide-level masking. structRFM learns joint sequence and structure representations as sequence-level, nucleotide-level and pairwise features for broad downstream adaptation. It ranks highly in zero-shot homology classification and establishes new benchmarks for secondary-structure prediction. Its tertiary-structure adaptation, Zfold, consistently improves both three-dimensional predictions and their extracted secondary structures, with performance comparable to AlphaFold3(1) across CASP15-natural, CASP16 and RNA-Puzzles. structRFM also improves performance on function-prediction tasks and generalizes to newly released RNA families and long non-coding RNAs. Together, these results demonstrate the effectiveness of structure-guided pre-training and highlight multimodal RNA language models for robust structural and functional inference. The complete 21-million-pair dataset, model weights and source code are openly available to support multimodal RNA foundation-model development.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">RNA语言模型通过利用大规模序列数据，在多种下游任务中取得了优异表现。然而，RNA功能从根本上受层级结构塑造，这使得结构信息对预训练至关重要。现有方法往往依赖噪声注释或任务特定目标，这可能限制其泛化能力。在此，我们提出structRFM，一种结构引导的RNA基础模型，通过在掩码语言建模中整合碱基配对相互作用（通过配对匹配操作），在2100万RNA序列-结构对上训练而成。我们还引入MUSES，一种多源二级结构集成方法，旨在减轻预测器偏差，以及一种动态掩码比率，以平衡结构引导和核苷酸级掩码。structRFM学习联合序列和结构表示，作为序列级、核苷酸级和配对级特征，适用于广泛的下游适应。它在零样本同源性分类中排名靠前，并为二级结构预测建立了新基准。其三级结构适应版本Zfold，持续改善三维预测及其提取的二级结构，性能在CASP15-natural、CASP16和RNA-Puzzles上与AlphaFold3(1)相当。structRFM还提升了功能预测任务的性能，并泛化至新发布的RNA家族和长链非编码RNA。综合这些结果，证明了结构引导预训练的有效性，并凸显了多模态RNA语言模型在稳健结构和功能推断中的潜力。完整的2100万对数据集、模型权重和源代码公开可用，以支持多模态RNA基础模型的发展。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：An open structure-guided RNA foundation model for generalizable prediction</li>
+<li><strong>作者</strong>：Zhu, Heqin; Li, Ruifeng; Chang, Ao; Chen, Haobin; Zhang, Feng; Tang, Fenghe; Ye, Tong; Li, Xin; Gu, Yunjie; Xiong, Peng; Zhou, S Kevin</li>
+<li><strong>单位</strong>：未提供（PubMed 记录未列出）</li>
+<li><strong>期刊/平台</strong>：Nature</li>
+<li><strong>年份</strong>：2026-11-05</li>
+<li><strong>论文类型</strong>：研究论文（基础模型 + 多任务评估）</li>
+<li><strong>领域</strong>：RNA 结构预测、RNA 基础模型、结构引导预训练</li>
+<li><strong>关键词</strong>：RNA foundation model, structure-guided pre-training, secondary structure prediction, tertiary structure prediction, masked language modelling</li>
+<li><strong>DOI/arXiv 号</strong>：10.1038/s41586-026-11210-2</li>
+<li><strong>代码</strong>：未提供（文中称"source code openly available"，但未给出具体链接）</li>
+<li><strong>数据</strong>：21 million RNA sequence-structure pairs（文中称"complete 21-million-pair dataset"公开可用）</li>
+<li><strong>阅读日期</strong>：2026-11-06</li>
+<li><strong>在该方向中的位置</strong>：本文属于「RNA 结构预测 × 深度学习基础模型」方向，核心贡献是将二级结构信息（base-pairing）整合进掩码语言建模预训练，并展示其在二级结构预测、三级结构预测（Zfold，与 AlphaFold3 对比）和功能预测上的泛化能力。对蛋白质结构计算研究课题的可迁移点在于：结构引导预训练范式、多源结构集成去偏策略、动态掩码比例设计，以及三级结构预测中"提取二级结构"的评估思路。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>structRFM 通过在掩码语言建模中引入 base-pairing 的 pair-matching 操作，在 2100 万 RNA 序列-结构对上预训练，学习联合序列-结构表示，从而在零样本同源分类、二级结构预测、三级结构预测（Zfold）和功能预测上取得领先性能，其中三级结构预测与 AlphaFold3 相当。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：RNA 语言模型仅基于序列数据预训练，忽略了 RNA 功能由层级结构决定这一事实；现有结构感知方法依赖噪声注释或任务特定目标，泛化性受限。能否通过结构引导的预训练，让 RNA 基础模型同时学到序列和结构表示，从而在多个下游任务上通用？</li>
+<li><strong>为什么重要</strong>：RNA 功能（如调控、催化、结合）由二级和三级结构决定；一个能联合建模序列-结构的基础模型可服务于结构预测、功能注释、同源检测等多个任务，减少对任务特定模型的依赖。</li>
+<li><strong>现有方法为何不足</strong>：① 纯序列语言模型忽略结构信号；② 结构感知方法依赖噪声较大的注释（如预测的二级结构）或任务特定目标（如只为结构预测设计），难以泛化到功能预测等任务。</li>
+<li><strong>精确研究问题</strong>：Can a structure-guided RNA foundation model, pre-trained with base-pairing-aware masked language modelling on large-scale sequence-structure pairs, achieve state-of-the-art performance across secondary structure prediction, tertiary structure prediction, and function prediction tasks?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p>（标注：以下脉络为「经外部核验」的领域常识，结合本文摘要中的定位）
+- <strong>阶段 1：序列语言模型（如 RNA-FM, RNABERT, DNABERT 类）</strong>。优点：利用大规模序列数据，下游任务表现强。局限：忽略结构信息，无法捕捉 RNA 功能的结构基础。
+- <strong>阶段 2：结构感知的 RNA 模型（如 SPOT-RNA, UFold, E2Efold 等）</strong>。优点：直接建模二级结构。局限：多为任务特定模型，缺乏通用表示；依赖噪声注释或需要额外特征。
+- <strong>阶段 3：结构引导的基础模型（本文位置）</strong>。structRFM 将 base-pairing 整合进掩码语言建模，通过 pair-matching 操作学习联合序列-结构表示，并引入多源结构集成（MUSES）和动态掩码比例，实现多任务泛化。本文主张：结构引导预训练优于纯序列预训练，且能同时服务结构预测和功能预测。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构信息缺失</td>
+<td>纯序列语言模型在结构相关任务上表现不佳</td>
+<td>RNA 功能由层级结构决定，序列模型无法捕捉 base-pairing 信号</td>
+<td>摘要："RNA function is fundamentally shaped by hierarchical structure, making structural information important for pre-training"</td>
+</tr>
+<tr>
+<td>噪声注释</td>
+<td>现有结构感知方法依赖预测的二级结构，噪声大</td>
+<td>预测器存在偏差，单一来源结构注释不可靠</td>
+<td>摘要："Existing approaches often depend on noisy annotations"；MUSES 设计用于"mitigate predictor bias"</td>
+</tr>
+<tr>
+<td>任务特定目标限制泛化</td>
+<td>结构预测模型难以迁移到功能预测</td>
+<td>预训练目标过于任务特定，缺乏通用表示</td>
+<td>摘要："task-specific objectives that can limit generalizability"</td>
+</tr>
+<tr>
+<td>掩码策略失衡</td>
+<td>结构引导掩码与核苷酸掩码难以平衡</td>
+<td>固定掩码比例可能偏向某一信号</td>
+<td>摘要："a dynamic masking ratio that balances structure-guided and nucleotide-level masking"</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：在掩码语言建模（MLM）框架中，通过 pair-matching 操作将 base-pairing 相互作用整合进预训练；使用多源二级结构集成（MUSES）减少预测器偏差；采用动态掩码比例平衡结构引导和核苷酸级掩码。预训练数据为 2100 万 RNA 序列-结构对。</li>
+<li><strong>核心洞察</strong>：RNA 的二级结构（base-pairing）是序列与三级结构之间的关键中间层，将其作为预训练信号可以让模型同时学到序列语法和结构语法，从而获得更通用的表示，而非仅针对单一任务优化。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：对于蛋白质结构计算研究，本文提示：① 将结构约束（如 contact map、secondary structure）直接整合进掩码语言建模的预训练目标，可能比仅用序列或仅用结构预测任务更有效；② 多源结构集成（ensemble）可有效缓解单一预测器的系统性偏差；③ 动态调整掩码策略（结构 vs 序列）可帮助模型平衡不同层次的表示学习。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：RNA 序列（核苷酸序列）+ 对应的二级结构（base-pairing 矩阵，来自多源预测器集成）</li>
+<li><strong>输出</strong>：预训练模型 structRFM，可输出序列级、核苷酸级和 pair-wise 特征，用于下游任务微调或零样本评估</li>
+<li><strong>模块</strong>：
+  1. 掩码语言建模（MLM）主干：对序列进行掩码，预测被掩码核苷酸
+  2. Pair-matching 操作：将 base-pairing 信息整合进注意力机制或预测头，使模型学习配对关系
+  3. MUSES（Multi-Source Ensemble of Secondary Structures）：集成多个二级结构预测器的输出，生成更可靠的训练标签
+  4. 动态掩码比例：在训练中动态调整结构引导掩码与核苷酸掩码的比例</li>
+<li><strong>训练</strong>：2100 万 RNA 序列-结构对，预训练目标为联合序列和结构重建</li>
+<li><strong>下游适配</strong>：Zfold 为三级结构预测适配版本；另有二级结构预测、同源分类、功能预测等任务</li>
+<li><strong>假设</strong>：结构引导预训练能学到比纯序列预训练更通用的表示，且能迁移到未见过的 RNA 家族</li>
+<li><strong>文字流程</strong>：RNA 序列 → MUSES 生成多源二级结构 → 序列与结构对输入 MLM 主干 → pair-matching 操作整合 base-pairing → 动态掩码训练 → 预训练完成 → 下游任务微调或零样本评估（如 Zfold 用于三级结构预测）</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pair-matching 操作</td>
+<td>将 base-pairing 相互作用整合进 MLM</td>
+<td>让模型显式学习配对关系，而非仅序列上下文</td>
+<td>输入：序列隐状态 + base-pairing 矩阵；输出：增强的 pair-wise 表示</td>
+<td>摘要："integrating base-pairing interactions into masked language modelling through a pair-matching operation"</td>
+<td>预期影响：移除后模型退化为纯序列 MLM，结构相关任务性能下降（未提供消融数据）</td>
+</tr>
+<tr>
+<td>MUSES（多源结构集成）</td>
+<td>生成更可靠的二级结构训练标签</td>
+<td>单一预测器有偏差，集成可去偏</td>
+<td>输入：多个二级结构预测器的输出；输出：集成后的结构标签</td>
+<td>摘要："a multi-source ensemble of secondary structures designed to mitigate predictor bias"</td>
+<td>预期影响：移除后训练标签噪声增大，预训练质量下降（未提供消融数据）</td>
+</tr>
+<tr>
+<td>动态掩码比例</td>
+<td>平衡结构引导掩码与核苷酸掩码</td>
+<td>固定比例可能偏向某一信号，动态调整可优化学习</td>
+<td>输入：训练步数/损失信号；输出：当前步的掩码比例</td>
+<td>摘要："a dynamic masking ratio that balances structure-guided and nucleotide-level masking"</td>
+<td>预期影响：移除后可能偏向序列或结构单一信号，泛化性下降（未提供消融数据）</td>
+</tr>
+<tr>
+<td>Zfold（三级结构适配）</td>
+<td>将 structRFM 适配到三级结构预测</td>
+<td>验证结构引导预训练对三级结构预测的迁移价值</td>
+<td>输入：RNA 序列；输出：三维结构 + 提取的二级结构</td>
+<td>摘要："Its tertiary-structure adaptation, Zfold, consistently improves both three-dimensional predictions and their extracted secondary structures"</td>
+<td>未提供消融数据；预期影响：移除后三级结构预测性能下降</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>不适用（摘要中未提供具体公式；方法细节需查阅全文，但本文仅基于摘要/PubMed 记录，无法获取公式）。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：2100 万 RNA 序列-结构对（预训练）；CASP15-natural、CASP16、RNA-Puzzles（三级结构评估）；零样本同源分类数据集（未提供具体名称）；功能预测任务数据集（未提供具体名称）</li>
+<li><strong>规模</strong>：预训练数据 2100 万对；评估基准为 CASP15-natural、CASP16、RNA-Puzzles</li>
+<li><strong>指标</strong>：未提供具体指标（如 TM-score、RMSD、F1 等未在摘要中给出）</li>
+<li><strong>基线</strong>：AlphaFold3（三级结构对比）；其他 RNA 语言模型（未提供具体名称）</li>
+<li><strong>预算/骨干/仪器</strong>：未提供</li>
+<li><strong>oracle 输入</strong>：未提供（三级结构预测中是否使用额外约束未知）</li>
+<li><strong>评测协议</strong>：零样本同源分类；二级结构预测基准；三级结构预测（CASP15-natural、CASP16、RNA-Puzzles）；功能预测任务</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>零样本同源分类</td>
+<td>结构引导预训练提升序列表示质量</td>
+<td>与现有 RNA 语言模型对比</td>
+<td>"ranks highly"（未提供具体数值）</td>
+<td>结构引导预训练不损害序列表示</td>
+<td>未提供具体排名和统计显著性</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>二级结构预测</td>
+<td>结构引导预训练提升二级结构预测</td>
+<td>与现有方法对比</td>
+<td>"establishes new benchmarks"（未提供具体数值）</td>
+<td>结构引导预训练对二级结构预测有效</td>
+<td>未提供与具体基线的差距</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>三级结构预测（Zfold）</td>
+<td>结构引导预训练可迁移到三级结构预测</td>
+<td>与 AlphaFold3 对比，CASP15-natural、CASP16、RNA-Puzzles</td>
+<td>"performance comparable to AlphaFold3"</td>
+<td>Zfold 达到与 AlphaFold3 相当的水平</td>
+<td>"comparable"不等于"超越"；未提供误差范围</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>三级结构提取二级结构</td>
+<td>Zfold 的三级结构预测可同时改善二级结构</td>
+<td>与 Zfold 自身三级结构提取 vs 直接二级结构预测对比</td>
+<td>"consistently improves both three-dimensional predictions and their extracted secondary structures"</td>
+<td>三级结构预测可反哺二级结构</td>
+<td>未提供具体提升幅度</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>功能预测</td>
+<td>结构引导预训练提升功能预测</td>
+<td>与现有方法对比</td>
+<td>"improves performance on function-prediction tasks"</td>
+<td>结构引导预训练对功能预测有效</td>
+<td>未提供具体任务和指标</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>泛化到新 RNA 家族和 lncRNA</td>
+<td>模型对新 RNA 类型泛化</td>
+<td>新发布的 RNA 家族和长链非编码 RNA</td>
+<td>"generalizes to newly released RNA families and long non-coding RNAs"</td>
+<td>模型具有泛化能力</td>
+<td>未提供具体评估协议</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文覆盖二级结构预测、三级结构预测、同源分类、功能预测，但摘要未提供各任务的详细评估协议和指标。</li>
+<li><strong>oracle/真值输入</strong>：预训练使用二级结构标签（来自 MUSES 集成），但三级结构预测（Zfold）是否使用额外 oracle 输入（如接触图约束）未提供。</li>
+<li><strong>端到端状态</strong>：Zfold 为三级结构预测适配版本，但未说明是否端到端可微或需要外部工具。</li>
+<li><strong>算力成本</strong>：未提供训练算力、GPU 时长等信息。</li>
+<li><strong>历史数据依赖</strong>：预训练数据为 2100 万对，但数据来源、过滤标准、时间范围未提供。</li>
+<li><strong>模型依赖</strong>：MUSES 依赖多个二级结构预测器，其性能受预测器质量影响。</li>
+<li><strong>最难情形</strong>：摘要未提及模型在哪些 RNA 类型（如非编码 RNA、修饰 RNA）上表现最弱。</li>
+<li><strong>不确定性</strong>：所有性能声明均无具体数值、置信区间或统计检验。</li>
+<li><strong>有边界的复述</strong>：structRFM 在 2100 万 RNA 序列-结构对上预训练，通过 pair-matching 整合 base-pairing 信息，在摘要所报告的评估基准上（CASP15-natural、CASP16、RNA-Puzzles、同源分类、功能预测）达到与 AlphaFold3 相当或更优的性能，但具体数值和统计显著性未在摘要中提供。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要/PubMed 记录）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 摘要中"performance comparable to AlphaFold3"暗示 Zfold 未显著超越 AlphaFold3，可能为作者对性能边界的隐含承认。
+- 摘要强调"generalizes to newly released RNA families and long non-coding RNAs"，暗示对已知 RNA 类型的泛化可能已饱和，新类型是重点验证对象。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"comparable to AlphaFold3"表述模糊</td>
+<td>可能仅在部分指标上相当，或差异在误差范围内；也可能在特定 RNA 类型上 AlphaFold3 更优</td>
+<td>影响对 Zfold 实际能力的判断</td>
+<td>查阅全文，对比各基准的 TM-score/RMSD 及统计检验</td>
+<td>摘要原文</td>
+</tr>
+<tr>
+<td>预训练数据为"sequence-structure pairs"</td>
+<td>二级结构标签来自预测器（MUSES），可能引入系统性偏差；若标签质量不高，预训练收益可能被高估</td>
+<td>影响对结构引导预训练有效性的归因</td>
+<td>检查 MUSES 与实验验证结构的对比，或消融实验</td>
+<td>摘要："multi-source ensemble of secondary structures designed to mitigate predictor bias"</td>
+</tr>
+<tr>
+<td>未提供具体指标和基线名称</td>
+<td>无法独立验证"ranks highly"和"new benchmarks"的幅度</td>
+<td>影响可复现性和公平比较</td>
+<td>查阅全文，核对具体数值和基线</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>功能预测任务未具体化</td>
+<td>不同功能预测任务的难度和指标差异大，可能选择性报告</td>
+<td>影响对泛化能力的判断</td>
+<td>查阅全文，检查任务列表和指标</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>动态掩码比例的具体机制未说明</td>
+<td>可能是启发式或自适应，但无细节无法评估其贡献</td>
+<td>影响对方法创新的理解</td>
+<td>查阅 Methods 节</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>结构引导预训练范式</strong>：将 base-pairing（或蛋白质中的 contact map / secondary structure）直接整合进掩码语言建模的预训练目标，而非仅作为下游任务。可迁移到蛋白质：在蛋白质语言模型预训练中加入 contact 或 secondary structure 约束，可能提升结构相关下游任务性能。
+2. <strong>多源结构集成去偏（MUSES）</strong>：使用多个结构预测器的集成作为训练标签，可减少单一预测器的系统性偏差。可迁移到蛋白质：在蛋白质结构预测或预训练中，集成 AlphaFold2/3、ESMFold 等预测结果作为标签，可能提升鲁棒性。
+3. <strong>动态掩码比例</strong>：在预训练中动态调整结构掩码与序列掩码的比例，可平衡不同层次表示的学习。可迁移到蛋白质：在蛋白质预训练中，可设计类似机制平衡序列上下文与结构约束的学习。
+4. <strong>三级结构预测中提取二级结构作为评估</strong>：Zfold 不仅评估三级结构，还评估从三级结构提取的二级结构，提示结构预测模型可同时优化多层级结构一致性。可迁移到蛋白质：在蛋白质三级结构预测中，可同时评估从结构提取的二级结构或 contact map 的准确性。
+5. <strong>零样本评估</strong>：structRFM 在零样本同源分类上表现良好，提示结构引导预训练可提升无需微调的表示质量。可迁移到蛋白质：蛋白质基础模型可设计零样本评估协议（如零样本突变效应预测、零样本折叠分类）来验证表示质量。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：RNA 语言模型（如 RNA-FM、RNABERT）与蛋白质语言模型（如 ESM、ProtTrans）的预训练范式；结构感知的 RNA 预测工具（如 SPOT-RNA、UFold）。</li>
+<li><strong>组合方向</strong>：本文的 pair-matching 操作与蛋白质结构预测中的 Evoformer（AlphaFold2）的 pair representation 有概念相似性，可对比两者在整合结构信息上的异同。</li>
+<li><strong>冲突/对比</strong>：本文主张结构引导预训练优于纯序列预训练，与部分蛋白质语言模型研究（如 ESM 仅用序列达到强表示）形成对比，提示不同生物分子可能对结构信息的依赖程度不同。</li>
+<li><strong>可迁移领域</strong>：蛋白质结构预测（AlphaFold 类）、蛋白质设计（结构约束生成）、RNA-蛋白质相互作用预测（联合序列-结构表示）。</li>
+<li><strong>候选方向（未验证）</strong>：将 MUSES 思路迁移到蛋白质 contact map 集成；将动态掩码比例迁移到蛋白质预训练；将"三级结构提取二级结构"评估思路用于蛋白质结构预测模型的多层级评估。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：Protein-Structure-Guided MLM with Multi-Model Contact Ensemble
+   - <strong>来源局限/观察</strong>：本文 MUSES 通过多源二级结构集成去偏，提升 RNA 预训练质量；蛋白质领域尚无类似系统性的 contact map 集成预训练。
+   - <strong>核心假设</strong>：在蛋白质语言模型预训练中，使用 AlphaFold2/3、ESMFold 等预测的 contact map 集成作为结构标签，可提升结构相关下游任务（如二级结构预测、contact 预测、功能注释）性能。
+   - <strong>相对本文的增量</strong>：将 RNA 的 base-pairing 思路迁移到蛋白质 contact map，并引入多模型集成去偏。
+   - <strong>初步方法</strong>：收集 1 亿蛋白质序列，用多个结构预测器生成 contact map，设计 pair-matching 操作整合进 MLM，对比单源 vs 多源标签。
+   - <strong>验证方式</strong>：在 CASP 基准、ProteinGym 突变效应预测、二级结构预测上评估。
+   - <strong>可能的失败模式</strong>：多源集成可能引入不一致标签，模型难以收敛；contact map 噪声可能比二级结构更大。
+   - <strong>创新状态</strong>：unverified（需文献检索确认是否已有类似工作）。</p>
+</li>
+<li>
+<p><strong>名称</strong>：Dynamic Masking Ratio for Structure-Sequence Balance in Protein Pre-training
+   - <strong>来源局限/观察</strong>：本文动态掩码比例平衡结构掩码与序列掩码；蛋白质预训练中掩码策略多为固定比例。
+   - <strong>核心假设</strong>：在蛋白质预训练中，动态调整结构相关掩码（如 contact 区域）与序列掩码的比例，可提升模型对结构敏感残基的表示。
+   - <strong>相对本文的增量</strong>：将动态掩码策略从 RNA 迁移到蛋白质，并针对蛋白质的 contact 分布设计掩码规则。
+   - <strong>初步方法</strong>：在 ESM 类模型上实现动态掩码比例，训练小规模模型对比固定比例。
+   - <strong>验证方式</strong>：在结构预测、突变效应预测、功能注释上评估。
+   - <strong>可能的失败模式</strong>：动态掩码可能增加训练不稳定；结构掩码可能过度关注高置信区域。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>名称</strong>：Tertiary-to-Secondary Consistency Evaluation for Protein Structure Prediction
+   - <strong>来源局限/观察</strong>：Zfold 同时评估三级结构和从三级结构提取的二级结构，提示多层级一致性评估的价值；蛋白质结构预测评估通常只关注三级结构指标。
+   - <strong>核心假设</strong>：蛋白质结构预测模型若在三级结构上表现好，其提取的二级结构也应准确；多层级一致性可作为额外评估维度。
+   - <strong>相对本文的增量</strong>：将"提取二级结构"评估思路迁移到蛋白质，提出新的评估协议。
+   - <strong>初步方法</strong>：在 AlphaFold2/3、ESMFold 预测结果上提取二级结构（如 DSSP），与实验二级结构对比，分析一致性。
+   - <strong>验证方式</strong>：在 CASP 数据集上计算三级结构指标与二级结构指标的相关性。
+   - <strong>可能的失败模式</strong>：三级结构准确但二级结构提取不准确（因局部构象差异）；或反之。
+   - <strong>创新状态</strong>：partially checked（蛋白质领域已有 DSSP 评估，但作为模型一致性指标的系统性研究较少）。</p>
+</li>
+<li>
+<p><strong>名称</strong>：Zero-Shot Homology Classification with Structure-Guided Representations
+   - <strong>来源局限/观察</strong>：structRFM 在零样本同源分类上表现良好；蛋白质同源检测通常依赖序列比对或专用模型。
+   - <strong>核心假设</strong>：结构引导预训练的蛋白质表示可在零样本同源检测上超越纯序列表示。
+   - <strong>相对本文的增量</strong>：将零样本同源分类评估从 RNA 迁移到蛋白质，验证结构引导预训练的泛化性。
+   - <strong>初步方法</strong>：用结构引导预训练的蛋白质模型在 SCOPe/CATH 同源分类基准上做零样本评估。
+   - <strong>验证方式</strong>：对比 ESM、ProtTrans 等纯序列模型的零样本同源分类性能。
+   - <strong>可能的失败模式</strong>：蛋白质同源检测可能更依赖序列保守性而非结构，结构引导收益有限。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present structRFM, a structure-guided RNA foundation model pre-trained on 21 million RNA sequence-structure pairs using a pair-matching operation integrated into masked language modelling. They also introduce MUSES, a multi-source ensemble of secondary structures, and a dynamic masking ratio. The model is claimed to achieve high performance in zero-shot homology classification, secondary-structure prediction, tertiary-structure adaptation via Zfold (comparable to AlphaFold3 on CASP15-natural, CASP16, and RNA-Puzzles), function-prediction tasks, and generalization to new RNA families and long non-coding RNAs. Data, weights, and code are stated to be openly available.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, benchmark tables, statistical analyses, or methodological details are provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, all figures and tables, supplementary information, dataset descriptions, benchmark protocols, and code availability verification</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract describes a potentially significant contribution to RNA foundation modelling by incorporating structural information into pre-training. The claimed breadth of improvements across structural and functional tasks is notable. However, the abstract alone provides no quantitative evidence, no benchmark comparisons with error bars or significance tests, and no methodological detail sufficient to evaluate novelty or technical soundness. The claim of performance comparable to AlphaFold3 is particularly consequential and cannot be assessed without detailed comparison protocols and metrics. The case is currently not established from the provided evidence.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists working on RNA structure prediction, machine learning researchers developing foundation models for biomolecular sequences, and experimental biologists who rely on accurate RNA structure and function annotations. The open release of data and weights would also interest method developers seeking to build on or benchmark against structRFM.</li>
+<li><strong>Major strengths</strong> The conceptual motivation is clear and well grounded, namely that RNA function depends on hierarchical structure and that existing pre-training approaches underuse structural information. The introduction of MUSES to mitigate predictor bias and a dynamic masking ratio addresses known limitations in structure-guided pre-training. The stated commitment to open data, weights, and code is commendable and aligns with reproducibility expectations. The breadth of downstream evaluations, from homology to tertiary structure, suggests a comprehensive benchmarking effort.</li>
+<li><strong>Major Concerns</strong>  </li>
+<li><strong>Concern ID</strong> R1-M1  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Evidence sufficiency  </li>
+<li><strong>Claim pointer</strong> "structRFM learns joint sequence and structure representations as sequence-level, nucleotide-level and pairwise features for broad downstream adaptation. It ranks highly in zero-shot homology classification and establishes new benchmarks for secondary-structure prediction."  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Concern</strong> The abstract asserts high ranking and new benchmarks without reporting any quantitative results, such as accuracy metrics, comparison baselines, or dataset specifications. No effect sizes, confidence intervals, or statistical tests are mentioned.  </li>
+<li><strong>Why it matters</strong> Without quantitative evidence, the reader cannot judge whether the improvements are meaningful or within noise. Benchmark claims in particular require explicit comparison against state-of-the-art methods on standardized datasets.  </li>
+<li><strong>Resolution test</strong> Provide performance tables with metrics, baselines, and statistical significance for each claimed task in the full manuscript.  </li>
+<li><strong>Concern ID</strong> R1-M2  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Claim substantiation  </li>
+<li><strong>Claim pointer</strong> "Its tertiary-structure adaptation, Zfold, consistently improves both three-dimensional predictions and their extracted secondary structures, with performance comparable to AlphaFold3(1) across CASP15-natural, CASP16 and RNA-Puzzles."  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Concern</strong> The comparison to AlphaFold3 is a strong and specific claim. The abstract provides no details on the evaluation metrics, the specific targets used, the version of AlphaFold3, or the statistical basis for "comparable." Consistency of improvement is asserted but not demonstrated.  </li>
+<li><strong>Why it matters</strong> AlphaFold3 is a widely used and highly cited benchmark. A claim of comparable performance carries substantial weight and requires rigorous, reproducible comparison protocols. Without these, the claim is unverifiable and potentially misleading.  </li>
+<li><strong>Resolution test</strong> Include detailed comparison tables with per-target metrics, aggregate statistics, and a clear description of the AlphaFold3 inference setup and version.  </li>
+<li><strong>Concern ID</strong> R1-M3  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Methodological transparency  </li>
+<li><strong>Claim pointer</strong> "integrating base-pairing interactions into masked language modelling through a pair-matching operation" and "a dynamic masking ratio that balances structure-guided and nucleotide-level masking"  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Concern</strong> The abstract describes the core methodological innovations at a high level but provides no formal definition of the pair-matching operation, the dynamic masking schedule, or how MUSES combines multiple structure predictors. No training details, hyperparameters, or ablation results are mentioned.  </li>
+<li><strong>Why it matters</strong> Reproducibility and assessment of novelty require a precise description of the architecture and training procedure. Without ablations, it is unclear which components contribute to the claimed performance.  </li>
+<li><strong>Resolution test</strong> Provide a full methods section with algorithmic descriptions, training configurations, and ablation studies isolating the contributions of pair-matching, MUSES, and dynamic masking.  </li>
+<li><strong>Concern ID</strong> R1-M4  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> No  </li>
+<li><strong>Axis</strong> Generalizability evidence  </li>
+<li><strong>Claim pointer</strong> "structRFM also improves performance on function-prediction tasks and generalizes to newly released RNA families and long non-coding RNAs."  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Concern</strong> The claim of generalization to new RNA families and lncRNAs is stated without specifying which tasks, datasets, or evaluation protocols were used. The term "generalizes" is ambiguous and could refer to zero-shot performance, fine-tuning, or transfer learning.  </li>
+<li><strong>Why it matters</strong> Generalization is a central selling point for foundation models. Without a clear definition and supporting data, the claim cannot be evaluated or compared with other models.  </li>
+<li><strong>Resolution test</strong> Specify the generalization protocol, datasets, and metrics, and show comparisons with sequence-only baselines in the full manuscript.</li>
+<li><strong>Minor Comments</strong>  </li>
+<li><strong>Concern ID</strong> R1-m1  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Clarity  </li>
+<li><strong>Affected element</strong> Abstract wording  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Issue</strong> The phrase "ranks highly" is vague and does not convey the magnitude or context of the performance.  </li>
+<li><strong>Required correction</strong> Replace with specific rank and score, or rephrase to state the exact metric and comparison set.  </li>
+<li><strong>Concern ID</strong> R1-m2  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Reproducibility  </li>
+<li><strong>Affected element</strong> Data and code availability statement  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Issue</strong> The abstract states that data, weights, and code are openly available, but no repository names, accession numbers, or licensing terms are provided.  </li>
+<li><strong>Required correction</strong> Include repository URLs or accession identifiers and a clear license statement in the full manuscript.  </li>
+<li><strong>Concern ID</strong> R1-m3  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Completeness  </li>
+<li><strong>Affected element</strong> Benchmark scope  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Issue</strong> The abstract mentions CASP15-natural, CASP16, and RNA-Puzzles but does not specify whether the evaluation covers all targets or a subset, nor whether the same protocol was used across benchmarks.  </li>
+<li><strong>Required correction</strong> Clarify the target selection and evaluation protocol for each benchmark in the methods.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3. The absence of quantitative results, the unsubstantiated AlphaFold3 comparison, and the lack of methodological detail collectively prevent the core claims from being verified.</li>
+<li><strong>Assessment against Nature-style criteria</strong>  </li>
+<li>Originality: The idea of integrating base-pairing interactions into masked language modelling is plausible and potentially novel, but the abstract does not provide enough detail to distinguish it from prior structure-aware pre-training approaches. Assessment is currently limited.  </li>
+<li>Scientific importance: If the claims hold, the work could be important for RNA structure and function prediction. However, importance cannot be confirmed without evidence of substantial improvement over existing methods.  </li>
+<li>Interdisciplinary readership: The topic bridges machine learning and RNA biology, which is of broad interest. The abstract is written accessibly, but the lack of quantitative context reduces its impact for nonspecialists.  </li>
+<li>Technical soundness: Cannot be assessed from the abstract. The methodological descriptions are too high level, and no validation results are shown.  </li>
+<li>Readability for nonspecialists: The abstract is generally clear and avoids excessive jargon, though terms such as "pair-matching operation" and "dynamic masking ratio" are introduced without explanation.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract presents a promising direction and a broad evaluation plan, but the absence of quantitative results, methodological detail, and a verifiable AlphaFold3 comparison means the core claims cannot be assessed. A full manuscript with rigorous benchmarking and ablations would be required to support the claims.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "new benchmarks for secondary-structure prediction" is unsupported without quantitative comparisons.</li>
+<li>The claim of performance "comparable to AlphaFold3" is unsupported without detailed comparison protocols and metrics.</li>
+<li>The claim of "consistent improvement" in tertiary-structure adaptation is unsupported without per-target results.</li>
+<li>The claim of generalization to new RNA families and lncRNAs is unsupported without task definitions and datasets.</li>
+<li>The effectiveness of MUSES and the dynamic masking ratio is asserted but not demonstrated through ablations.</li>
+<li>The open availability of data, weights, and code is stated but not verifiable from the abstract alone.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

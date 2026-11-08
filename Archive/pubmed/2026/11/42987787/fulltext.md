@@ -1,0 +1,1 @@
+In a recent issue, Jiang et al.(1) combine combinatorial mutagenesis, reference-independent epistasis analysis, binding measurements, NMR, and molecular dynamics to show how specific peptide conformations and PIN1 residues generate non-additive recognition, directly linking statistical epistasis to concrete molecular mechanisms across a complete sequence landscape.

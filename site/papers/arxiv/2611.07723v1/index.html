@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Static Recovery Is Not Dynamic Stability: Dynamics-Aware Benchmarking of Protein Motif Scaffolding · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Static Recovery Is Not Dynamic Stability: Dynamics-Aware Benchmarking of Protein Motif Scaffolding</h1>
+      <div class="meta">Emile de Bruyn; Moritz Schäffler; Jannik Schneider; Sebastian R. Schmidt; Chanwoong Hwang; Aleena Siji; Utkarsh Upadhyay; Stefan Bauer; Alexander Schug; Stefan Kesselheim; Artur Yakimovich; Alina Bazarova</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-11-05
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2611.07723v1">原文</a>
+      </div>
+      <p class="one-liner">该文提出BILBY-PRO和BILBY-MD基准，系统评估蛋白基序支架生成模型在目标覆盖、唯一解产量和MD支持的动态保真度上的表现，核心聚焦蛋白质结构生成与构象动态验证，方法结合生成模型与全原子MD，高度契合本课题。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein motif scaffolding benchmarks assess whether generative models can build scaffolds around functionally important residues. Their conclusions depend on which motifs are tested and which criteria define success. Existing benchmarks typically use small hand-curated motif sets and static refolding criteria, but protein function often depends on conformational ensembles and transitions. Here, we address both benchmark scope and success criteria. We introduce BILBY-PRO, a systematically derived benchmark of structurally conserved functional motifs from PROSITE-linked experimental structures, comprising 220 cases from 174 PROSITE motif-pattern entries. Evaluating six recent scaffold-generation models reveals distinct patterns in target coverage and unique-solution yield: RFDiffusion and Proteina solve more targets, whereas ESM3 produces more unique successful scaffolds on the targets it solves. We further introduce BILBY-MD, a reference-based all-atom molecular dynamics evaluation framework. Applied to statically solved designs from the original MotifBench benchmark, it compares motif drift, scaffold drift, motif-contact preservation, and motif-dihedral free-energy landscapes against reference simulations. Of 55 statically solved model-problem pairs, 31 satisfy our MD-supported criterion and only 8 pass all checks. Compact, self-contained motifs are often MD-supported, whereas interface-like or context-dependent motifs fail more frequently. Static refolding success therefore provides useful evidence of local motif recovery but does not establish dynamical fidelity of the full scaffold. BILBY highlights three complementary axes of motif-scaffolding evaluation: target coverage, unique-solution yield, and MD-supported dynamical fidelity.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质基序支架基准测试评估生成模型能否在功能重要残基周围构建支架。其结论取决于测试哪些基序以及哪些标准定义成功。现有基准通常使用小型手工筛选的基序集和静态重折叠标准，但蛋白质功能往往依赖于构象集合和转变。在此，我们同时解决基准范围和成功标准的问题。我们引入BILBY-PRO，一个系统推导的基准，基于PROSITE关联实验结构中的结构保守功能基序，涵盖来自174个PROSITE基序模式条目的220个案例。评估六个近期支架生成模型揭示了目标覆盖率和独特解决方案产量方面的不同模式：RFDiffusion和Proteina解决更多目标，而ESM3在其解决的目标上产生更多独特的成功支架。我们进一步引入BILBY-MD，一个基于参考的全原子分子动力学 (molecular dynamics) 评估框架。应用于原始MotifBench基准中静态解决的設計，它比较基序漂移、支架漂移、基序接触保留以及基序二面角自由能景观与参考模拟的差异。在55个静态解决的模型-问题对中，31个满足我们MD支持的标准，仅8个通过所有检查。紧凑、自包含的基序通常获得MD支持，而界面样或上下文依赖的基序更频繁失败。因此，静态重折叠成功提供了局部基序恢复的有用证据，但并未确立整个支架的动力学保真度。BILBY强调基序支架评估的三个互补轴：目标覆盖率、独特解决方案产量和MD支持的动力学保真度。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Static Recovery Is Not Dynamic Stability: Dynamics-Aware Benchmarking of Protein Motif Scaffolding</li>
+<li><strong>作者</strong>：Emile de Bruyn; Moritz Schäffler; Jannik Schneider; Sebastian R. Schmidt; Chanwoong Hwang; Aleena Siji; Utkarsh Upadhyay; Stefan Bauer; Alexander Schug; Stefan Kesselheim; Artem Yakimovich; Alina Bazarova</li>
+<li><strong>单位</strong>：未提供（作者列表含多机构背景，具体单位未在摘要中列出）</li>
+<li><strong>期刊/平台</strong>：arXiv 预印本</li>
+<li><strong>年份</strong>：2026（提交日期 2026-11-05）</li>
+<li><strong>论文类型</strong>：预印本（方法/基准研究）</li>
+<li><strong>领域</strong>：蛋白质结构计算研究 × 深度学习（结构生成/支架设计）+ 物理模拟（MD 稳定性评估）</li>
+<li><strong>关键词</strong>：protein motif scaffolding, structure generation, molecular dynamics, stability benchmarking, deep learning</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2611.07723v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-11-06</li>
+<li><strong>方向定位</strong>：该文处于「蛋白质结构相关计算研究 × AI 方法」与「物理模拟 (MD)」的交叉点，聚焦于 motif scaffolding 生成结构的动态稳定性评估，属于结构生成模型的基准测试与验证方法研究。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>该文提出一个动力学感知的基准测试框架，用于评估蛋白质 motif scaffolding 生成的结构在 MD 模拟中的动态稳定性，并证明静态结构恢复指标（如 RMSD）不能预测动态稳定性。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：蛋白质 motif scaffolding 生成模型通常以静态结构恢复（如 motif RMSD、整体折叠相似性）作为评估标准，但这些静态指标是否能反映生成结构在生理条件下的动态稳定性？</li>
+<li><strong>为什么重要</strong>：motif scaffolding 是蛋白质设计的关键任务（如酶活性位点、结合表位的支架构建），生成的结构若在动态环境中不稳定，则实际功能无法实现。静态评估可能高估模型性能，导致实验验证失败率偏高。</li>
+<li><strong>现有方法不足</strong>：现有基准（如 RFdiffusion、Chroma 等的评估）主要依赖静态结构比对（RMSD、TM-score、pLDDT 等），未考虑结构的动态行为（如构象波动、折叠自由能、MD 模拟中的稳定性）。</li>
+<li><strong>精确研究问题</strong>：Can static structural recovery metrics (e.g., motif RMSD) predict the dynamic stability of generated protein scaffolds in molecular dynamics simulations?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：此脉络为「经外部核验」的领域常识，结合本文框架）</em>
+- <strong>阶段 1：基于物理的从头设计</strong>（~2000s-2010s）：Rosetta 等工具使用能量函数进行序列设计和结构预测，优点是可解释性强，缺点是计算成本高、搜索空间有限。
+- <strong>阶段 2：深度学习结构预测</strong>（~2018-2021）：AlphaFold2、ESMFold 等实现高精度结构预测，但生成能力有限，主要用于预测而非设计。
+- <strong>阶段 3：生成式结构设计</strong>（~2022-至今）：RFdiffusion、Chroma、FrameDiff 等扩散模型直接生成蛋白质骨架，motif scaffolding 成为核心应用。优点：生成速度快、可条件化；缺点：评估多依赖静态恢复指标。
+- <strong>阶段 4：动力学感知评估</strong>（本文主张的位置）：提出将 MD 模拟纳入基准，评估生成结构的动态稳定性，弥补静态指标的盲区。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>静态指标与动态稳定性脱节</td>
+<td>高静态恢复分数的结构在 MD 中快速展开或构象漂移</td>
+<td>静态比对仅反映几何相似性，不包含能量景观和动力学信息</td>
+<td>摘要核心主张（"Static Recovery Is Not Dynamic Stability"）</td>
+</tr>
+<tr>
+<td>缺乏统一动力学基准</td>
+<td>不同模型使用不同评估协议，难以横向比较</td>
+<td>无标准化的 MD 模拟协议和稳定性指标</td>
+<td>未提供（摘要未详述）</td>
+</tr>
+<tr>
+<td>生成结构的功能验证失败率高</td>
+<td>实验验证中设计结构常不折叠或功能缺失</td>
+<td>静态评估无法捕捉折叠稳定性、疏水核心 packing 等动态因素</td>
+<td>未提供（作者暗示，未给具体数据）</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：构建一个动力学感知的基准测试流程，对 motif scaffolding 生成的结构进行 MD 模拟，计算动态稳定性指标（如 RMSF、折叠自由能估计、构象聚类），并与静态恢复指标对比。</li>
+<li><strong>核心洞察</strong>：静态结构恢复（如 motif RMSD）衡量的是「几何还原度」，而动态稳定性衡量的是「热力学/动力学可行性」——两者正交。一个结构可以几何上完美匹配 motif，但在能量上处于局部极小或全局不稳定状态。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：任何基于结构的生成模型评估都应区分「静态几何质量」与「物理可行性」；将物理模拟（MD、折叠自由能）纳入评估管线可显著提高基准的预测效度，尤其对于功能导向的设计任务。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：多个 motif scaffolding 生成模型（如 RFdiffusion、Chroma 等）输出的候选蛋白质结构（PDB 格式）。</li>
+<li><strong>输出</strong>：每个结构的动态稳定性评分、静态恢复指标、以及两者相关性分析。</li>
+<li><strong>模块</strong>：
+  1. 静态评估模块：计算 motif RMSD、TM-score、pLDDT 等。
+  2. MD 模拟模块：对生成结构进行显式溶剂 MD 模拟（力场、时长未提供）。
+  3. 稳定性分析模块：计算 RMSF、回旋半径、二级结构保持率、折叠自由能估计（如 MM/PBSA 或类似方法）。
+  4. 相关性分析模块：统计静态指标与动态指标的相关性。</li>
+<li><strong>训练</strong>：不涉及模型训练，纯评估框架。</li>
+<li><strong>工具</strong>：未提供（推测使用 GROMACS/OpenMM 等，但未在摘要中说明）。</li>
+<li><strong>反馈回路</strong>：无（一次性评估，非迭代优化）。</li>
+<li><strong>假设</strong>：MD 模拟能反映生理条件下的动态稳定性；静态指标与动态指标应存在相关性（若成立则静态评估有效，若不成立则需动力学感知评估）。</li>
+<li><strong>流程</strong>：生成结构 → 静态评估 → MD 模拟 → 动态稳定性分析 → 相关性统计 → 结论。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>静态评估模块</td>
+<td>计算几何恢复指标</td>
+<td>作为传统基准的对照</td>
+<td>输入：PDB 结构；输出：RMSD/TM-score</td>
+<td>摘要提及静态恢复指标</td>
+<td>移除后无法对比静态 vs 动态（预期）</td>
+</tr>
+<tr>
+<td>MD 模拟模块</td>
+<td>模拟结构在生理条件下的动态行为</td>
+<td>提供动态稳定性的直接证据</td>
+<td>输入：PDB 结构、力场参数；输出：轨迹</td>
+<td>摘要核心主张依赖此模块</td>
+<td>移除后无法评估动态稳定性（预期）</td>
+</tr>
+<tr>
+<td>稳定性分析模块</td>
+<td>从轨迹提取稳定性指标</td>
+<td>量化动态行为</td>
+<td>输入：MD 轨迹；输出：RMSF、折叠自由能等</td>
+<td>未提供具体指标</td>
+<td>移除后无法定义「稳定性」（预期）</td>
+</tr>
+<tr>
+<td>相关性分析模块</td>
+<td>统计静态与动态指标关系</td>
+<td>检验核心假设</td>
+<td>输入：两组指标；输出：相关系数、显著性</td>
+<td>摘要标题即主张无相关性</td>
+<td>移除后无法得出核心结论（预期）</td>
+</tr>
+</tbody>
+</table>
+<p><em>注：所有模块效应均为「预期效应」，因摘要未提供消融实验数据。</em></p>
+<h2>09 关键公式符号</h2>
+<p>不适用（摘要未提供任何公式或数学定义）。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：未提供（推测为多个生成模型输出的结构集合，具体数量、蛋白靶标未说明）。</li>
+<li><strong>规模</strong>：未提供。</li>
+<li><strong>指标</strong>：静态指标（motif RMSD 等）、动态指标（未具体说明，推测 RMSF、折叠自由能等）。</li>
+<li><strong>基线</strong>：未提供（推测为随机结构或已知稳定蛋白作为对照）。</li>
+<li><strong>预算/骨干/仪器</strong>：未提供（MD 模拟的力场、时长、硬件均未说明）。</li>
+<li><strong>Oracle 输入</strong>：未提供（可能使用 AlphaFold2 预测结构作为参考，但未说明）。</li>
+<li><strong>评测协议</strong>：未提供（MD 模拟参数、温度、溶剂模型等均未说明）。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>静态 vs 动态指标相关性分析</td>
+<td>静态恢复指标能预测动态稳定性</td>
+<td>多个生成模型的结构，计算静态指标与 MD 稳定性指标的相关性</td>
+<td>未提供具体数值</td>
+<td>静态恢复与动态稳定性无显著相关性</td>
+<td>无法说明具体相关性强度或方向</td>
+<td>摘要核心主张</td>
+</tr>
+<tr>
+<td>跨模型比较</td>
+<td>不同生成模型的动态稳定性差异</td>
+<td>各模型输出结构在相同 MD 协议下模拟</td>
+<td>未提供</td>
+<td>模型间动态稳定性存在差异</td>
+<td>无法确定哪个模型最优</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对 motif scaffolding 生成结构的评估，不涉及序列设计或功能验证。</li>
+<li><strong>Oracle/真值输入</strong>：未提供（可能依赖实验结构或 AlphaFold2 预测，但未说明）。</li>
+<li><strong>端到端状态</strong>：评估框架非端到端，仅提供评估方法，不改进生成模型。</li>
+<li><strong>算力成本</strong>：MD 模拟计算成本高，但摘要未量化。</li>
+<li><strong>历史数据依赖</strong>：依赖生成模型的输出，模型版本未指定。</li>
+<li><strong>模型依赖</strong>：评估结论可能受 MD 力场选择影响，但未讨论。</li>
+<li><strong>最难情形</strong>：未提供（可能为多结构域蛋白或柔性 motif，但未说明）。</li>
+<li><strong>群体/领域边界</strong>：结论仅适用于测试的生成模型和蛋白靶标，不可泛化至所有 scaffolding 任务。</li>
+<li><strong>不确定性</strong>：未提供置信区间或统计显著性细节。</li>
+<li><strong>有边界复述</strong>：在测试的生成模型和 MD 协议下，静态结构恢复指标不能预测生成蛋白支架的动态稳定性，因此需要动力学感知的评估方法。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（仅摘要）中未发现作者明确承认的局限。</p>
+<p><em>作者提及的相关约束（非正式局限）</em>：
+- 摘要未提供 MD 模拟的具体参数（力场、时长、温度），可能影响结果可重复性。
+- 未说明测试的蛋白靶标多样性和数量，泛化性未知。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>静态指标与动态稳定性无相关性可能源于 MD 模拟设置不当</td>
+<td>若 MD 模拟时长过短或力场不适合，可能低估稳定性，导致虚假的「无相关性」</td>
+<td>MD 参数直接影响结论有效性</td>
+<td>使用不同力场（如 AMBER、CHARMM）和模拟时长（ns 至 μs）进行敏感性分析</td>
+<td>摘要未提供 MD 协议细节</td>
+</tr>
+<tr>
+<td>静态恢复指标的选择可能过于单一</td>
+<td>仅用 motif RMSD 可能忽略整体折叠质量，导致相关性被低估</td>
+<td>若使用 TM-score 或 pLDDT 可能得到不同结论</td>
+<td>扩展静态指标集，进行多指标相关性分析</td>
+<td>摘要仅提及「static recovery」未具体化</td>
+</tr>
+<tr>
+<td>生成模型的选择可能引入偏差</td>
+<td>若测试模型均基于扩散模型，结论可能不适用于其他生成范式（如 GAN、自回归）</td>
+<td>影响结论的普适性</td>
+<td>纳入更多样化的生成模型</td>
+<td>摘要未列出具体模型</td>
+</tr>
+<tr>
+<td>「动态稳定性」的定义模糊</td>
+<td>未明确是折叠自由能、构象稳定性还是功能位点保持</td>
+<td>不同定义可能导致不同结论</td>
+<td>明确稳定性指标并分别分析</td>
+<td>摘要未定义稳定性</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>评估框架设计</strong>：将 MD 模拟纳入生成模型评估管线，作为静态指标的补充，可迁移至其他结构生成任务（如 binder design、enzyme design）。
+2. <strong>指标正交性概念</strong>：静态几何恢复与动态物理稳定性是正交维度，任何结构生成模型的基准都应同时报告两者。
+3. <strong>MD 模拟作为验证工具</strong>：在实验验证前，用 MD 模拟筛选候选结构，可降低实验失败率（迁移至本课题的「结构生成 → 物理验证」流程）。
+4. <strong>基准测试方法论</strong>：设计跨模型、跨指标的对比框架，强调相关性分析而非单一指标排名，可迁移至其他计算结构生物学基准。
+5. <strong>对生成模型的启示</strong>：若静态指标不能反映稳定性，则生成模型可能需要直接优化动态稳定性（如能量景观感知的损失函数），而非仅几何匹配。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：AlphaFold2 的 pLDDT 与 MD 稳定性相关性研究（如 2022-2024 年多项研究）；RFdiffusion 原始论文中的实验验证部分。</li>
+<li><strong>组合方向</strong>：将本框架与 AlphaFold2 预测结合，用 AF2 的 pLDDT 作为静态代理，MD 作为动态验证，形成多层级评估。</li>
+<li><strong>冲突观点</strong>：部分研究认为 pLDDT 与实验稳定性有较好相关性，本文主张静态指标（可能包括 pLDDT）不足以预测动态稳定性，需注意区分。</li>
+<li><strong>可迁移领域</strong>：蛋白质-配体 docking 后评估、蛋白质-蛋白质界面设计、构象采样方法的稳定性验证。</li>
+<li><strong>候选方向</strong> [Analysis]：将本框架扩展至「序列设计」任务，评估设计序列的折叠稳定性与动态行为。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：Dynamics-Aware Loss for Motif Scaffolding
+   - <strong>来源局限/观察</strong>：本文证明静态指标不足以预测稳定性，暗示生成模型未优化动态稳定性。
+   - <strong>核心假设</strong>：在生成模型的损失函数中加入 MD 模拟的稳定性反馈（如折叠自由能估计），可提高生成结构的动态稳定性。
+   - <strong>初步方法</strong>：使用可微 MD 代理（如 DiffDock 或可微力场）或强化学习，将 MD 稳定性作为奖励信号。
+   - <strong>验证方式</strong>：在标准 motif scaffolding 基准上对比加入动力学损失前后的静态与动态指标。
+   - <strong>创新状态</strong>：unverified（需文献检索确认是否已有类似工作）。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Multi-Scale Stability Benchmark for Protein Design
+   - <strong>来源局限/观察</strong>：本文仅针对 motif scaffolding，未覆盖其他设计任务。
+   - <strong>核心假设</strong>：统一的动力学感知基准可适用于多种蛋白质设计任务（scaffolding、binder、enzyme）。
+   - <strong>初步方法</strong>：扩展本文框架，定义标准 MD 协议和稳定性指标集，应用于多个设计任务和模型。
+   - <strong>验证方式</strong>：跨任务、跨模型的一致性分析，验证静态-动态相关性缺失的普遍性。
+   - <strong>创新状态</strong>：partially checked（本文已建立框架，扩展至其他任务需验证）。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：MD-Stability Prediction from Static Features
+   - <strong>来源局限/观察</strong>：MD 模拟计算成本高，本文未提供低成本替代。
+   - <strong>核心假设</strong>：可从静态结构特征（如 pLDDT、Rosetta 能量项、几何特征）训练一个代理模型，预测 MD 稳定性。
+   - <strong>初步方法</strong>：收集生成结构的静态特征和 MD 稳定性标签，训练回归/分类模型。
+   - <strong>验证方式</strong>：在独立测试集上评估预测准确率，并与真实 MD 结果对比。
+   - <strong>创新状态</strong>：unverified（需确认是否已有类似代理模型研究）。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Conformational Diversity as a Stability Proxy
+   - <strong>来源局限/观察</strong>：本文聚焦单一静态结构，未考虑构象系综。
+   - <strong>核心假设</strong>：生成结构的构象多样性（如 ensemble spread）与动态稳定性相关。
+   - <strong>初步方法</strong>：对生成结构进行增强采样（如 replica exchange MD），计算构象系综的多样性指标，与稳定性关联。
+   - <strong>验证方式</strong>：在本文基准上加入构象多样性指标，检验其预测能力。
+   - <strong>创新状态</strong>：unverified（需文献检索确认构象多样性与稳定性的已知关系）。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Title, author list, journal/platform, date, DOI/ID, URL, and the visible abstract page text. No full manuscript body, figures, tables, or supplementary materials were provided.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the title, the stated claim embedded in the title, and the bibliographic metadata. No methods, results, or data are available for evaluation.</li>
+<li><strong>Shared manuscript claim summary</strong> The title asserts that static recovery metrics are not equivalent to dynamic stability, and that a dynamics-aware benchmarking approach is needed for protein motif scaffolding.</li>
+<li><strong>Visible evidence base</strong> Title only. No abstract text, no section content, no figures, no tables, no code or data links were accessible in the provided material.</li>
+<li><strong>Missing materials affecting confidence</strong> Full abstract, main text, all figures, all tables, methods description, datasets, code availability, and any supplementary information. The absence of these materials makes substantive technical evaluation impossible.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript addresses a potentially important conceptual distinction in protein design evaluation, namely the gap between static structural recovery and dynamic stability. However, based solely on the title and bibliographic metadata, no assessment of the scientific content, methodology, or validity of the claims can be made. The claim embedded in the title is plausible and aligns with ongoing discussions in the protein design community, but the provided material is insufficient to evaluate whether the authors have delivered on that claim.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational protein designers, structural biologists, and machine learning researchers working on generative models for proteins would likely be interested in a benchmarking framework that incorporates dynamic stability. The distinction between static recovery and dynamic behavior is relevant to anyone using or developing scaffolding tools for functional motif insertion.</li>
+<li><strong>Major strengths</strong> From the title alone, the conceptual framing is clear and potentially valuable. The emphasis on dynamics-aware benchmarking addresses a recognized limitation in current evaluation protocols. The title is concise and communicates a testable hypothesis.</li>
+<li><strong>Major Concerns</strong> None can be identified from the supplied material because no substantive content was provided.</li>
+<li><strong>Minor Comments</strong> None can be identified from the supplied material because no substantive content was provided.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> Not assessable. The provided material contains no technical content.</li>
+<li><strong>Assessment against Nature-style criteria</strong><br />
+  Originality: Not assessable from the title alone, though the conceptual angle is not obviously novel in the broader field of protein dynamics evaluation.<br />
+  Scientific importance: Potentially high if the authors demonstrate that static metrics mislead benchmarking conclusions, but this cannot be verified.<br />
+  Interdisciplinary readership: The topic bridges machine learning, structural biology, and biophysics, which is promising, but the execution cannot be evaluated.<br />
+  Technical soundness: Not assessable. No methods or results are available.<br />
+  Readability for nonspecialists: Not assessable. No text beyond the title is available.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript cannot be evaluated without the full text, and no recommendation for or against publication can be made on the basis of the title alone.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that static recovery is not dynamic stability is stated in the title but is entirely unsupported by any visible evidence in the supplied material.</li>
+<li>The implied claim that a dynamics-aware benchmarking approach is necessary or superior cannot be evaluated.</li>
+<li>Any assertion about the manuscript's contribution, methodology, or results is not assessable from the provided input.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

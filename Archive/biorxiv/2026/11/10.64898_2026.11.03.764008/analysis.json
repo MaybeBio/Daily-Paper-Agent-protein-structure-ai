@@ -1,0 +1,24 @@
+{
+  "source": "biorxiv",
+  "id": "10.64898/2026.11.03.764008",
+  "title": "A protein language model for domain, functional site, and variant effect prediction",
+  "authors": "Peng Wang; Mian Umair Ahsan; Tingting Chen; Kai Wang",
+  "journal": "bioRxiv",
+  "published_date": "2026-11-05",
+  "window": {
+    "start": "2026-11-01",
+    "end": "2026-11-07"
+  },
+  "score": 6,
+  "one_liner_zh": "该文开发了基于ESM2和LoRA的蛋白语言模型PALM，用于预测结构域和功能位点，并利用嵌入扰动评估变异效应，虽非直接的结构预测或采样，但涉及蛋白结构域注释和功能位点预测，与蛋白质结构计算相关，方法上采用AI模型，可借鉴其表示学习策略。",
+  "abstract": "Protein sequence databases are growing far faster than experimentally curated annotations, limiting functional interpretation of newly identified proteins and coding variants. We developed PALM, a protein annotation language model that jointly predicts domain and functional-site occurrence, while preserving overlapping and nested annotations through a soft-target objective. PALM integrates ESM2 with low-rank adaptation (LoRA), learned layer aggregation, and a bidirectional long short-term memory (BiLSTM) encoder. PALM was trained on ~15 million InterPro-annotated UniRef50 sequences spanning 17,951 domain and 1,383 site classes. Across 2.3 million held-out proteins, PALM achieved domain- and site-occurrence F1 scores of 0.941 and 0.877, respectively, and retained substantial performance in proteins with <20% sequence identity to the training and validation data. PALM also substantially outperformed ESM3 annotation baseline. Without training on variant-pathogenicity labels, PALM embedding disruption distinguished 151,823 ClinVar missense variants more accurately than ESM2 embedding disruption (AUROC 0.835 versus 0.710), and combining PALM embedding disruption with the ESM2 likelihood-ratio signal reached an AUROC of 0.877. The same combined zero-shot score outperformed AlphaMissense on a benchmark dataset on 128,161 missense variants, that were derived from literature but not present in ClinVar database. At the protein level, PALM embeddings showed stronger CATH-Gene3D superfamily organization than frozen ESM2 and ESM3 embeddings, and improved prediction of experimental activation and repression effects when combined with ESM2. In a downstream case study, we demonstrated the ability to use PALM-derived embedding as proxy of deep mutational scanning (DMS), showcasing the broad application of PALM. Together, PALM converts curated residue-level knowledge into transferable and mechanistically interpretable representations that connect protein sequence, function, and variant consequence.",
+  "abstract_zh": "蛋白质序列数据库的增长速度远超实验性人工注释，这限制了对新鉴定蛋白质和编码变体的功能解读。我们开发了PALM，一种蛋白质注释语言模型，能够联合预测结构域和功能位点的出现，同时通过软目标目标函数保留重叠和嵌套注释。PALM整合了ESM2与低秩适应（LoRA）、学习层聚合以及双向长短期记忆（BiLSTM）编码器。PALM在约1500万个InterPro注释的UniRef50序列上训练，涵盖17,951个结构域类别和1,383个位点类别。在230万个保留蛋白质中，PALM分别实现了结构域和位点出现的F1分数0.941和0.877，并且在与训练和验证数据序列同一性低于20%的蛋白质中保持了显著性能。PALM还大幅超越了ESM3注释基线。在没有训练变体致病性标签的情况下，PALM嵌入扰动区分151,823个ClinVar错义变体的准确性高于ESM2嵌入扰动（AUROC 0.835对比0.710），而将PALM嵌入扰动与ESM2似然比信号结合达到了AUROC 0.877。相同的组合零样本评分在128,161个错义变体的基准数据集上优于AlphaMissense，这些变体来源于文献但未包含在ClinVar数据库中。在蛋白质水平上，PALM嵌入显示出比冻结的ESM2和ESM3嵌入更强的CATH-Gene3D超家族组织性，并且与ESM2结合时改善了对实验性激活和抑制效应的预测。在下游案例研究中，我们展示了使用PALM衍生嵌入作为深度突变扫描（DMS）代理的能力，展示了PALM的广泛应用。总之，PALM将人工注释的残基级知识转化为可转移且机制上可解释的表征，连接了蛋白质序列、功能和变体后果。",
+  "has_fulltext": true,
+  "fulltext_source": "europepmc",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.11.03.764008",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.03.764008",
+  "paper_page_path": "papers/biorxiv/10.64898_2026.11.03.764008/index.html"
+}

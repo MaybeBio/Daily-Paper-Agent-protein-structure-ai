@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Folding without glutamine: Proteome-scale removal of a canonical amino acid. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Folding without glutamine: Proteome-scale removal of a canonical amino acid.</h1>
+      <div class="meta">Garciarrubio, Alejandro; Ramos-Cerrillo, Blanca; Morett, Enrique; Segovia, Lorenzo</div>
+      <div class="meta muted">
+        
+        <span class="journal">PLoS computational biology</span>
+        · 2026-11-03
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42976221/">原文</a>
+      </div>
+      <p class="one-liner">该研究利用ProteinMPNN和AlphaFold2等AI结构预测工具，在蛋白质组尺度上系统评估并验证了去除谷氨酰胺后蛋白质折叠的保守性，属于蛋白质结构计算建模与序列设计的核心课题。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">All known life uses a canonical alphabet of 20 amino acids, yet which residues are structurally essential remains untested at proteome scale. Isoleucine was recently eliminated from ribosomal proteins in Escherichia coli, establishing that amino acid alphabet reduction is feasible. Here we ask whether an entire amino acid can be eliminated from a proteome, and develop a computational framework to identify the best target. Using two independent approaches - ProteinMPNN structure-based probabilities and multiple sequence alignment conservation - we define &#34;keep-score&#34; as the fraction of positions where the native residue is optimal. Both methods converge on an unexpected candidate: glutamine has the lowest keep-score, with proline and glycine the highest - counter to substitution-matrix intuition. Glutamine&#39;s low keep-score is not explained by a single obvious substitute; glutamate is preferred in only 14% of replacements. Removing this target proteome-wide, we replaced every glutamine across 4,148 proteins with ProteinMPNN-optimal alternatives and modeled the resulting sequences with AlphaFold2. The recoded proteome maintained native-like structures: 85.5% of models exceeded a TMscore of 0.8, indistinguishable from the 85.9% baseline for rebuilt native sequences. Orthogonal validation - ESMFold predictions, Rosetta energy calculations, and conformational ensemble comparisons - revealed no evidence of systematic misfolding attributable to glutamine removal. As a consistency check, a glutamine-free TEM-1 beta-lactamase designed with ProteinMPNN conferred ampicillin resistance in E. coli, indicating fold preservation can extend to biological function. Evolutionary evidence further supports these findings: 24% of E. coli proteins have glutamine-free orthologs in prokaryotic genomes, and glutamine ranks lowest in keep-score in Saccharomyces cerevisiae. These results show that an entire amino acid can be removed from a proteome with folds broadly preserved, establishing keep-score as a general framework and glutamine as the primary candidate for recoding. Crucially, this reflects a computational analysis of structural replaceability, not a demonstration of biological dispensability.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">所有已知生命形式使用由20种氨基酸组成的规范字母表，然而哪些残基在结构上必不可少尚未在蛋白质组规模上得到检验。异亮氨酸最近被从大肠杆菌（Escherichia coli）的核糖体蛋白中消除，确立了氨基酸字母表缩减是可行的。在此，我们探究是否可以从蛋白质组中消除整个氨基酸，并开发了一个计算框架来识别最佳靶标。使用两种独立方法——基于结构的ProteinMPNN概率和多重序列比对保守性——我们将“保留分数 (keep-score)”定义为天然残基为最优的位点比例。两种方法均收敛于一个意外候选：谷氨酰胺的保留分数最低，而脯氨酸和甘氨酸最高——这与替换矩阵的直觉相悖。谷氨酰胺的低保留分数并非由单一明显替代物解释；谷氨酸仅在14%的替换中被优先选择。在蛋白质组范围内移除该靶标，我们用ProteinMPNN最优替代物替换了4,148个蛋白质中的每个谷氨酰胺，并用AlphaFold2对所得序列进行建模。重编码蛋白质组保持了类似天然的结构：85.5%的模型超过TMscore 0.8，与重建天然序列的85.9%基线无显著差异。正交验证——ESMFold预测、Rosetta能量计算和构象集合比较——未揭示可归因于谷氨酰胺去除的系统性错误折叠证据。作为一致性检查，用ProteinMPNN设计的无谷氨酰胺TEM-1 β-内酰胺酶在大肠杆菌中赋予氨苄青霉素抗性，表明折叠保持可延伸至生物功能。进化证据进一步支持这些发现：24%的大肠杆菌蛋白质在原核基因组中具有无谷氨酰胺直系同源物，且谷氨酰胺在酿酒酵母（Saccharomyces cerevisiae）中的保留分数排名最低。这些结果表明，整个氨基酸可以从蛋白质组中移除且折叠广泛保持，确立了保留分数作为通用框架，并将谷氨酰胺作为重编码的主要候选。关键的是，这反映了对结构可替换性的计算分析，而非生物必需性的证明。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Folding without glutamine: Proteome-scale removal of a canonical amino acid</li>
+<li><strong>作者</strong>: Garciarrubio, Alejandro; Ramos-Cerrillo, Blanca; Morett, Enrique; Segovia, Lorenzo</li>
+<li><strong>单位</strong>: 未提供（根据作者姓名推测为墨西哥机构，但原文未明确）</li>
+<li><strong>期刊/平台</strong>: PLoS Computational Biology</li>
+<li><strong>年份</strong>: 2026</li>
+<li><strong>论文类型</strong>: 计算研究 + 单一实验验证</li>
+<li><strong>领域</strong>: 蛋白质结构预测、蛋白质设计、氨基酸字母表缩减、蛋白质组学</li>
+<li><strong>关键词</strong>: glutamine elimination, keep-score, ProteinMPNN, AlphaFold2, proteome-scale redesign, amino acid alphabet reduction</li>
+<li><strong>DOI/arXiv</strong>: 10.1371/journal.pcbi.1014931</li>
+<li><strong>代码</strong>: 未提供</li>
+<li><strong>数据</strong>: 未提供（但描述了数据来源：AlphaFoldDB、UniProt、RefSeq）</li>
+<li><strong>阅读日期</strong>: 2026-05-15（假设）</li>
+<li><strong>在课题方向中的位置</strong>: 本文属于「蛋白质结构相关计算研究 × AI 方法」方向，具体为利用 ProteinMPNN（逆折叠）与 AlphaFold2（结构预测）在蛋白质组尺度上评估氨基酸的可替换性，为氨基酸字母表缩减和蛋白质重设计提供计算框架。与 MD 模拟、分子对接无直接关联，但与结构预测和序列设计紧密相关。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文通过 ProteinMPNN 结构概率和 MSA 保守性两种独立方法定义"keep-score"，发现谷氨酰胺（Gln）在大肠杆菌蛋白质组中具有最低的保留分数，并在 4,148 个蛋白质中将其全部替换为最优替代氨基酸后，AlphaFold2 预测显示 85.5% 的蛋白质仍保持天然样结构（TMscore &gt; 0.8），与天然序列重建基线（85.9%）无显著差异。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 在蛋白质组尺度上，哪种标准氨基酸在结构上最不必要？能否将一种氨基酸从整个蛋白质组中完全移除而不破坏蛋白质折叠？</li>
+<li><strong>为什么重要</strong>: 
+  1. 理解氨基酸字母表的进化保守性是否反映结构必要性
+  2. 为设计具有缩减氨基酸字母表的合成生物体提供理论依据
+  3. 挑战"20种氨基酸都是结构必需"的隐含假设</li>
+<li><strong>现有方法不足</strong>: </li>
+<li>先前的氨基酸缩减研究局限于单蛋白或小蛋白集</li>
+<li>替换策略（如 Ile→Val）基于生化相似性，而非结构最优性</li>
+<li>缺乏蛋白质组尺度的系统性评估框架</li>
+<li><strong>精确研究问题</strong>: "Can an entire canonical amino acid be eliminated from a proteome while preserving native-like folds across essentially all proteins?"</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>注：此脉络基于本文引用和讨论，部分经外部核验，标记如下。</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法/工作</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>氨基酸缩减理论</td>
+<td>祖先序列重建、简化字母表设计（Murphy et al. 2000; Takabatake et al. 2023）</td>
+<td>识别可合并的氨基酸组</td>
+<td>基于序列统计而非结构约束</td>
+<td>本文用结构概率替代统计相似性</td>
+</tr>
+<tr>
+<td>单蛋白缩减实验</td>
+<td>Shibue et al. 2023（13种氨基酸的激酶）; Longo et al. 2020（预生物字母表）</td>
+<td>实验验证可行性</td>
+<td>仅限单个蛋白</td>
+<td>本文扩展到蛋白质组</td>
+</tr>
+<tr>
+<td>基因组尺度缩减</td>
+<td>Carsonella 等内共生菌的 AT 富集</td>
+<td>自然界的极端缩减</td>
+<td>受 GC 偏好驱动，非结构驱动</td>
+<td>本文关注结构必要性</td>
+</tr>
+<tr>
+<td>AI 辅助氨基酸消除</td>
+<td>Liu et al. 2024（大肠杆菌核糖体蛋白去 Ile）</td>
+<td>首次实验证明可行</td>
+<td>仅针对核糖体蛋白，未系统比较氨基酸</td>
+<td>本文提供系统框架并预测 Gln 优于 Ile</td>
+</tr>
+<tr>
+<td>逆折叠模型</td>
+<td>ProteinMPNN (Dauparas et al. 2022)</td>
+<td>结构到序列的精确映射</td>
+<td>训练数据偏差</td>
+<td>本文核心工具</td>
+</tr>
+<tr>
+<td>结构预测验证</td>
+<td>AlphaFold2/AlphaFoldDB</td>
+<td>高精度结构预测</td>
+<td>预测非实验</td>
+<td>本文主要评估手段</td>
+</tr>
+</tbody>
+</table>
+<p><em>[Analysis]</em> 本文的独特定位在于：将逆折叠概率作为"结构必要性"的度量，将蛋白质组尺度的计算重设计作为测试平台，并引入多种正交验证（Rosetta、ESMFold、BioEMU、实验）来增强结论可信度。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>氨基酸可替换性缺乏定量度量</td>
+<td>传统方法依赖生化相似性或进化保守性，无法区分"可替换"与"结构必需"</td>
+<td>替换矩阵（PAM/BLOSUM）反映进化偏好而非结构约束</td>
+<td>Introduction: "substitution matrices...reflect the composite pressures of evolution"</td>
+</tr>
+<tr>
+<td>蛋白质组尺度评估的计算成本</td>
+<td>逐一设计并验证每个蛋白质的每个氨基酸替换不可行</td>
+<td>需要自动化、可扩展的框架</td>
+<td>本文用 keep-score 聚合每个氨基酸在所有位置的表现</td>
+</tr>
+<tr>
+<td>设计-评估循环的循环性问题</td>
+<td>用同一模型设计又用同一模型评估会产生偏差</td>
+<td>ProteinMPNN 和 AlphaFold2 共享训练数据</td>
+<td>作者用 MSA 保守性作为独立方法交叉验证</td>
+</tr>
+<tr>
+<td>预测与实验的差距</td>
+<td>计算预测的折叠保持不等于实验功能保持</td>
+<td>结构预测无法捕捉动力学、相互作用、翻译后修饰</td>
+<td>作者明确声明"computational analysis of structural replaceability, not a demonstration of biological dispensability"</td>
+</tr>
+<tr>
+<td>氨基酸丰度与可替换性混淆</td>
+<td>稀有氨基酸可能因统计功效不足而被误判为可替换</td>
+<td>低丰度导致样本量小</td>
+<td>作者用两种独立方法（结构+进化）交叉验证，且 Gln 并非最稀有氨基酸</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<ul>
+<li>定义 keep-score：每个氨基酸 X 的 keep-score = 在所有出现 X 的位置中，X 是"最优选择"（ProteinMPNN 最高概率或 MSA 最频繁）的比例</li>
+<li>对大肠杆菌蛋白质组（4,148 个蛋白质）计算所有 20 种氨基酸的 keep-score</li>
+<li>对得分最低的 Gln，设计无 Gln 蛋白质组（每个 Gln 替换为 ProteinMPNN 最优非 Gln 替代）</li>
+<li>用 AlphaFold2 建模所有替换后的蛋白质，与天然序列重建基线比较</li>
+</ul>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>可替换性 ≠ 相似性</strong>：Gln 的替换并不集中于 Glu（生化相似），而是分散于多种氨基酸，说明其可替换性源于"结构不约束"而非"有相似替代"</li>
+<li><strong>结构约束 vs 进化保守性分离</strong>：Gln 在进化上保守（MSA 中频繁出现），但结构上不必要（ProteinMPNN 认为可替换）——进化保守可能反映功能或调控需求，而非折叠需求</li>
+<li><strong>蛋白质组尺度的一致性</strong>：Gln 的低 keep-score 在蛋白质组中一致，而非少数蛋白质驱动</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li>逆折叠模型的概率分布可作为"结构必要性"的通用度量，适用于任何氨基酸、任何蛋白质组</li>
+<li>进化保守性与结构必要性是两个正交维度，设计合成蛋白质组时应以结构约束为主、进化信息为辅</li>
+<li>蛋白质组尺度的计算重设计 + 结构预测验证是一个可推广的框架，可用于评估其他氨基酸、其他物种、甚至非天然氨基酸的引入</li>
+</ul>
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>: 
+- 大肠杆菌 K-12 蛋白质组（4,363 个蛋白质，来自 AlphaFoldDB v4）
+- 9,285 个真细菌蛋白质组（用于构建 MSA）
+- 6,369 个 RefSeq 原核蛋白质组（用于寻找无 Gln 直系同源物）</p>
+<p><strong>输出</strong>:
+- 20 种氨基酸的 keep-score 排名
+- 无 Gln 蛋白质组（4,148 个蛋白质的替换序列）
+- AlphaFold2 结构预测与质量评估</p>
+<p><strong>模块</strong>:
+1. <strong>MSA 构建</strong>: MMseqs2 搜索同源物 → MUSCLE 比对 → 保守性统计
+2. <strong>ProteinMPNN 概率</strong>: LigandMPNN v1.5.5，10 次运行平均，native 序列上下文条件
+3. <strong>Keep-score/keep-propensity 计算</strong>: 两种独立方法
+4. <strong>蛋白质组重设计</strong>: 每个 Gln → ProteinMPNN 最高概率非 Gln 替代
+5. <strong>结构验证</strong>: AlphaFold2 (LocalColabFold) 建模 → TMscore/RMSD 比较
+6. <strong>正交验证</strong>: ESMFold、Rosetta 能量、BioEMU 构象系综、实验（β-内酰胺酶）</p>
+<p><strong>流程</strong>:</p>
+<pre><code>蛋白质组 → ProteinMPNN 概率表 + MSA 保守性 → keep-score 排名 → 识别 Gln 为最佳目标
+→ 全蛋白质组 Gln 替换 → AlphaFold2 建模 → 与天然重建基线比较
+→ 多维度验证（ESMFold/Rosetta/BioEMU/实验）→ 结论
+</code></pre>
+<p><strong>关键假设</strong>:
+- AlphaFold2 预测的结构准确性足以区分"保持折叠"与"破坏折叠"
+- ProteinMPNN 的概率反映结构兼容性而非进化偏好
+- TMscore 0.8 阈值是合理的"结构保持"标准</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ProteinMPNN 概率表</td>
+<td>每个位置 20 种氨基酸的结构兼容性概率</td>
+<td>提供结构约束的定量度量</td>
+<td>输入：native 骨架结构；输出：20×L 概率矩阵</td>
+<td>Results 图 1: Gln keep-score 0.13</td>
+<td>失去结构约束度量，只能依赖进化保守性</td>
+</tr>
+<tr>
+<td>MSA 保守性分析</td>
+<td>每个位置氨基酸的进化频率</td>
+<td>独立于结构模型验证</td>
+<td>输入：同源序列比对；输出：频率矩阵</td>
+<td>Results 图 1: 两种方法收敛于 Gln</td>
+<td>失去进化视角，无法区分结构 vs 功能约束</td>
+</tr>
+<tr>
+<td>Keep-score/keep-propensity</td>
+<td>聚合每个氨基酸的可替换性</td>
+<td>提供可比较的排名</td>
+<td>输入：概率/频率矩阵；输出：20 维评分</td>
+<td>Results 图 1, S2 图</td>
+<td>无法系统比较氨基酸</td>
+</tr>
+<tr>
+<td>蛋白质组重设计</td>
+<td>生成无 Gln 蛋白质组</td>
+<td>测试 Gln 移除的全局影响</td>
+<td>输入：native 序列 + 概率表；输出：替换序列</td>
+<td>Results 图 4: 85.5% TMscore &gt; 0.8</td>
+<td>无法评估 Gln 移除的实际效果</td>
+</tr>
+<tr>
+<td>AlphaFold2 结构验证</td>
+<td>预测替换后蛋白质的结构</td>
+<td>评估折叠保持</td>
+<td>输入：替换序列；输出：3D 结构 + pLDDT</td>
+<td>Results 图 2, 4</td>
+<td>无法验证结构保持</td>
+</tr>
+<tr>
+<td>ESMFold 正交验证</td>
+<td>独立结构预测方法</td>
+<td>排除 AlphaFold2 特定偏差</td>
+<td>输入：替换序列；输出：3D 结构</td>
+<td>Results 图 5C: slope=0.971, R²=0.955</td>
+<td>无法排除单一预测器的系统偏差</td>
+</tr>
+<tr>
+<td>Rosetta 能量评估</td>
+<td>热力学稳定性比较</td>
+<td>能量层面的独立验证</td>
+<td>输入：结构 + 序列；输出：能量分数</td>
+<td>Results 图 5B: slope=0.995, R²=0.985</td>
+<td>无法评估热力学稳定性</td>
+</tr>
+<tr>
+<td>BioEMU 构象系综</td>
+<td>生成天然序列的构象多样性</td>
+<td>建立"天然变异范围"基线</td>
+<td>输入：native 序列；输出：50 个构象样本</td>
+<td>Results 图 6C: 仅 2/497 显著低于天然系综</td>
+<td>无法区分"折叠保持"与"天然变异"</td>
+</tr>
+<tr>
+<td>实验验证（TEM1-Q）</td>
+<td>无 Gln β-内酰胺酶功能测试</td>
+<td>证明计算预测可转化为生物功能</td>
+<td>输入：设计序列；输出：生长/抗性表型</td>
+<td>Results: 与 native 相同的抗性水平</td>
+<td>无法确认计算预测的生物学相关性</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>Keep-propensity</strong>（每个位置）:
+- ProteinMPNN: KP(i) = P(native_aa_i | structure) − P(best_alternative_i | structure)
+- MSA: KP(i) = f(native_aa_i) − f(best_alternative_i)
+  - 其中 f 为归一化频率</p>
+<p><strong>Keep-score</strong>（每个氨基酸 X）:
+- KS(X) = (1/N_X) × Σ_i I[KP(i) &gt; 0]
+  - N_X = 蛋白质组中 X 的出现次数
+  - I[·] 为指示函数</p>
+<p><strong>ΔRMSD</strong>（Gln 移除的结构影响）:
+- ΔRMSD = RMSD(No-Gln) − RMSD(Rebuilt)
+  - 正值表示 Gln 移除后偏离参考结构</p>
+<p><strong>TMscore</strong>（结构相似性）:
+- 标准 TM-score 公式（USalign 实现），范围 [0, 1]，&gt; 0.8 视为结构保持</p>
+<p><strong>部分相关（丰度控制）</strong>:
+- 对 keep-score 和移除 RMSD 分别对丰度做残差化，再计算 Spearman 相关
+- 结果: 控制丰度后 keep-score 与移除 RMSD 的部分相关 ρ = 0.74 (P = 0.0003)</p>
+<p><strong>BioEMU 离群检验</strong>:
+- t = (x_NoGln − m_native) / (s_native × √(1 + 1/n))
+  - 单侧 t 检验，Benjamini-Hochberg 校正</p>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集</strong>:
+- 大肠杆菌 K-12 蛋白质组: 4,363 个蛋白质（AlphaFoldDB v4）
+- 分析范围: 4,148 个蛋白质（50-890 氨基酸）
+- 真细菌蛋白质组: 9,285 个（MSA 构建）
+- 原核蛋白质组: 6,369 个（无 Gln 直系同源物搜索）
+- 酵母蛋白质组: 6,055 个蛋白质（跨物种验证）</p>
+<p><strong>指标</strong>:
+- 主要: TMscore（&gt; 0.8 为结构保持）、RMSD
+- 辅助: pLDDT（局部置信度）、PAE（预测对齐误差）、Rosetta 能量、BioEMU 系综分布</p>
+<p><strong>基线</strong>:
+- Rebuilt: 用 native 序列重新建模（控制 AlphaFold2 自身不确定性）
+- 天然系综: BioEMU 生成的 50 个构象样本</p>
+<p><strong>评测协议</strong>:
+- 每个蛋白质 5 个 AlphaFold2 模型，取 rank 001
+- 所有比较在相同 a3m 源内进行，不跨源比较</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Keep-score 排名</td>
+<td>Gln 是最可替换的氨基酸</td>
+<td>ProteinMPNN vs MSA 两种方法</td>
+<td>两种方法均将 Gln 排在最低</td>
+<td>Gln 的可替换性不是算法伪影</td>
+<td>不能证明 Gln 在生物学上可移除</td>
+<td>Results 图 1</td>
+</tr>
+<tr>
+<td>蛋白质组 Gln 移除</td>
+<td>无 Gln 蛋白质组保持折叠</td>
+<td>No-Gln vs Rebuilt，4,148 个蛋白质</td>
+<td>85.5% vs 85.9% TMscore &gt; 0.8</td>
+<td>Gln 移除不系统性破坏折叠</td>
+<td>不能排除 14.5% 中部分蛋白质功能受损</td>
+<td>Results 图 4</td>
+</tr>
+<tr>
+<td>Ile 对比</td>
+<td>Gln 比 Ile 更易移除</td>
+<td>Gln 移除 vs Ile 移除，571 个蛋白质</td>
+<td>Gln 显著比 Ile 破坏性小 (P = 1.7×10⁻¹¹)</td>
+<td>Keep-score 预测结构影响</td>
+<td>不能直接比较实验可行性</td>
+<td>Results 图 8A</td>
+</tr>
+<tr>
+<td>ESMFold 正交验证</td>
+<td>结果不依赖 AlphaFold2</td>
+<td>ESMFold vs AlphaFold2，全蛋白质组</td>
+<td>slope=0.971, R²=0.955</td>
+<td>结论对结构预测器选择稳健</td>
+<td>不能排除所有预测器共享偏差</td>
+<td>Results 图 5C</td>
+</tr>
+<tr>
+<td>Rosetta 能量</td>
+<td>Gln 移除不降低稳定性</td>
+<td>No-Gln vs Rebuilt 能量比较</td>
+<td>slope=0.995, R²=0.985</td>
+<td>能量层面无系统性不稳定</td>
+<td>能量函数近似，非实验测量</td>
+<td>Results 图 5B</td>
+</tr>
+<tr>
+<td>BioEMU 系综</td>
+<td>低 TMscore 反映天然柔性</td>
+<td>497 个低分蛋白质 vs 天然系综</td>
+<td>仅 2/497 显著低于天然系综</td>
+<td>低 TMscore 不意味着错误折叠</td>
+<td>系综生成依赖模型准确性</td>
+<td>Results 图 6C</td>
+</tr>
+<tr>
+<td>酵母跨物种</td>
+<td>结论推广到真核生物</td>
+<td>酵母蛋白质组 keep-score</td>
+<td>Gln 同样最低</td>
+<td>结论反映普遍结构原理</td>
+<td>仅一个真核物种</td>
+<td>Results 图 9</td>
+</tr>
+<tr>
+<td>TEM1-Q 实验</td>
+<td>无 Gln 蛋白质保持功能</td>
+<td>TEM1-Q vs native，大肠杆菌</td>
+<td>相同抗性水平（400 µg/mL）</td>
+<td>计算预测可转化为功能</td>
+<td>单一蛋白质，非蛋白质组验证</td>
+<td>Results, Methods</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<p><strong>任务范围</strong>: 本文评估的是<strong>结构层面的可替换性</strong>——即"蛋白质能否在无 Gln 的情况下折叠成天然样结构"，而非"无 Gln 的蛋白质组能否支持生命"。</p>
+<p><strong>oracle/真值输入</strong>: 
+- 结构真值来自 AlphaFoldDB（本身是预测结构，非实验结构）
+- 功能真值仅来自单一蛋白质（TEM1-Q）的实验</p>
+<p><strong>端到端状态</strong>: 计算流程（设计→预测→评估）完全端到端，但实验验证仅覆盖一个蛋白质，远未达到蛋白质组尺度。</p>
+<p><strong>算力成本</strong>: 未提供具体算力信息，但涉及 4,148 个蛋白质 × 5 个模型 × 2 种序列（native + 变体）的 AlphaFold2 推理，以及全蛋白质组的 ProteinMPNN 评分，计算量显著。</p>
+<p><strong>历史数据依赖</strong>: MSA 依赖 9,285 个真细菌蛋白质组的序列数据库，数据库偏差可能影响保守性估计。</p>
+<p><strong>模型依赖</strong>: 结论高度依赖 ProteinMPNN 和 AlphaFold2 的准确性。作者通过交叉验证（MSA、ESMFold、Rosetta、BioEMU）部分缓解，但所有方法共享训练数据中的潜在偏差。</p>
+<p><strong>最难情形</strong>: 14.5% 的蛋白质 TMscore &lt; 0.8，其中 60 个蛋白质在 Rebuilt 中 TMscore &gt; 0.8 但在 No-Gln 中下降——这些是 Gln 移除最可能造成问题的案例，但作者未深入分析这些蛋白质的特征。</p>
+<p><strong>群体/领域边界</strong>: 结论基于大肠杆菌蛋白质组，推广到其他物种（酵母验证了 keep-score 排名）但未验证全蛋白质组重设计。</p>
+<p><strong>有边界的复述</strong>: 在计算结构预测的分辨率下，大肠杆菌蛋白质组中约 85% 的蛋白质可以在所有 Gln 被替换后仍保持天然样折叠；Gln 是 20 种标准氨基酸中结构约束最弱的；但这一结论不涉及蛋白质功能、动力学、相互作用或细胞适应性，且未经受蛋白质组尺度的实验验证。</p>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>计算性质</td>
+<td>"computational analysis of structural replaceability, not a demonstration of biological dispensability"</td>
+<td>需要基因组尺度的实验验证</td>
+<td>Abstract, Discussion</td>
+</tr>
+<tr>
+<td>功能未验证</td>
+<td>折叠保持不等于功能保持；Gln 可能参与催化、结合、信号传导</td>
+<td>系统性实验测试必需蛋白质</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>预测模型偏差</td>
+<td>AlphaFold2 可能低估突变影响（训练数据以天然序列为主）</td>
+<td>实验结构验证</td>
+<td>Discussion（隐含）</td>
+</tr>
+<tr>
+<td>单物种验证</td>
+<td>主要基于大肠杆菌</td>
+<td>酵母验证了排名但未验证全蛋白质组重设计</td>
+<td>Results 图 9</td>
+</tr>
+<tr>
+<td>协同效应未建模</td>
+<td>替换是逐位置独立的，未考虑多位点协同效应</td>
+<td>联合优化方法</td>
+<td>Discussion（隐含）</td>
+</tr>
+<tr>
+<td>动力学未评估</td>
+<td>仅评估静态结构，未评估折叠速率、构象动力学</td>
+<td>分子动力学模拟</td>
+<td>Discussion 引用 Faísca 等</td>
+</tr>
+</tbody>
+</table>
+<p><strong>作者提及的相关约束</strong>（非正式局限）:
+- 排除了 &lt;50 和 &gt;890 氨基酸的蛋白质
+- 仅使用 AlphaFold2 的 rank-001 模型
+- 无 Gln 直系同源物搜索限于 6,369 个原核蛋白质组</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Keep-score 依赖模型训练数据</td>
+<td>ProteinMPNN 训练于天然蛋白质，可能系统性低估在天然序列中罕见的氨基酸（如 Gln）的结构必要性</td>
+<td>如果 Gln 在训练数据中代表性不足，keep-score 可能反映数据偏差而非结构约束</td>
+<td>用实验结构（非 AlphaFoldDB 预测）重新计算 keep-score；或检查 ProteinMPNN 对 Gln 的校准</td>
+<td>Methods: ProteinMPNN 概率</td>
+</tr>
+<tr>
+<td>AlphaFold2 评估的循环性</td>
+<td>用 AlphaFold2 评估 ProteinMPNN 设计的序列，两者可能共享训练数据中的结构偏好</td>
+<td>如果两个模型共享偏差，85.5% 的"结构保持"可能是伪影</td>
+<td>用实验验证（如圆二色谱、热稳定性）抽查部分蛋白质；或使用不共享训练数据的结构预测器</td>
+<td>Results 图 4</td>
+</tr>
+<tr>
+<td>TMscore 0.8 阈值的任意性</td>
+<td>0.8 是常用阈值，但 TMscore 0.7-0.8 可能仍有功能差异</td>
+<td>阈值选择影响"结构保持"的判定</td>
+<td>敏感性分析：不同阈值下的结论是否稳健</td>
+<td>Methods: "TMscore above 0.8 are classified as structurally correct"</td>
+</tr>
+<tr>
+<td>替换策略的偏差</td>
+<td>ProteinMPNN 最优替换可能偏向于与 Gln 相似的氨基酸（如 Glu、Asn），低估真实"无 Gln"场景的难度</td>
+<td>如果替换偏向保守，结果可能过于乐观</td>
+<td>使用随机替换或均匀分布替换作为对照</td>
+<td>Methods: 替换策略</td>
+</tr>
+<tr>
+<td>功能验证不足</td>
+<td>单一 β-内酰胺酶不足以支持"蛋白质组可无 Gln"的结论</td>
+<td>酶活性是相对宽松的选择压力；其他蛋白质（如结构蛋白、相互作用蛋白）可能更敏感</td>
+<td>扩展实验到多个必需蛋白质</td>
+<td>Results: TEM1-Q</td>
+</tr>
+<tr>
+<td>未讨论 Gln 在蛋白质组中的功能角色</td>
+<td>Gln 是多种酶活性位点、蛋白质相互作用热点、翻译后修饰位点的常见残基</td>
+<td>即使折叠保持，功能可能丧失</td>
+<td>注释被替换 Gln 的功能角色</td>
+<td>Discussion 提及但未深入</td>
+</tr>
+<tr>
+<td>进化保守性与结构必要性分离的解释</td>
+<td>作者认为 Gln 保守反映功能而非结构需求，但未测试这一假设</td>
+<td>如果 Gln 保守确实反映功能需求，则"可替换"仅适用于结构层面</td>
+<td>分析高保守 Gln 的功能注释</td>
+<td>Results 图 7, S15 图</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>:</p>
+<ol>
+<li>
+<p><strong>Keep-score 作为通用可替换性度量</strong>: 将逆折叠模型概率与 MSA 保守性结合，定义可扩展的氨基酸可替换性评分。可迁移到其他蛋白质组、其他氨基酸、甚至非天然氨基酸的评估。</p>
+</li>
+<li>
+<p><strong>"结构必要性"与"进化保守性"的解耦</strong>: 本文证明 Gln 在结构上可替换但在进化上保守，提示设计合成蛋白质组时应以结构约束为主，进化信息为辅。可迁移到蛋白质设计中的氨基酸选择策略。</p>
+</li>
+<li>
+<p><strong>蛋白质组尺度的重设计-验证流程</strong>: 全蛋白质组替换 → AlphaFold2 批量建模 → 与重建基线比较 → 多维度正交验证（ESMFold/Rosetta/BioEMU）→ 单点实验抽查。这是一个可复用的计算-实验混合验证框架。</p>
+</li>
+<li>
+<p><strong>"重建基线"控制设计</strong>: 用 native 序列重新建模作为基线（而非直接使用 AlphaFoldDB 参考），有效控制了预测器自身的不确定性。这是计算验证实验设计中的重要技巧。</p>
+</li>
+<li>
+<p><strong>低 TMscore 的柔性解释</strong>: 通过 BioEMU 构象系综证明低 TMscore 蛋白质在天然状态下也具有高构象多样性，避免将预测偏差误判为折叠破坏。可迁移到任何使用结构预测评估突变影响的研究。</p>
+</li>
+<li>
+<p><strong>替换偏好分析的价值</strong>: 分析"替换到哪里"（而非仅"是否替换"）可揭示氨基酸的功能角色——Gln 无主导替换目标说明其缺乏独特结构约束。可迁移到理解其他氨基酸的结构角色。</p>
+</li>
+<li>
+<p><strong>跨物种验证的简洁性</strong>: 仅用 keep-score 排名（而非全蛋白质组重设计）即可验证结论的普适性，大幅降低计算成本。可迁移到其他跨物种验证场景。</p>
+</li>
+<li>
+<p><strong>实验抽查的策略性选择</strong>: 选择 β-内酰胺酶（具有明确、易检测的活性）作为实验验证对象，而非随机选择蛋白质。可迁移到计算预测的实验验证设计。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, results, discussion, materials and methods) as provided.</li>
+<li><strong>Assessment boundary</strong> Scientific soundness, methodological rigor, validity of claims relative to evidence presented, and clarity of the central thesis. No assessment of formatting, grammar, or editorial fit.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose a computational framework, based on ProteinMPNN inverse-folding probabilities and MSA conservation, to identify the most dispensable canonical amino acid in a proteome. They report that glutamine has the lowest "keep-score" in <em>E. coli</em> and <em>S. cerevisiae</em>, that proteome-wide in silico replacement of all glutamines with ProteinMPNN-optimal alternatives yields AlphaFold2 models with native-like structures, and that a designed glutamine-free TEM-1 β-lactamase retains function in <em>E. coli</em>. They conclude that glutamine is the best candidate for amino acid alphabet reduction, while explicitly limiting claims to structural replaceability, not biological dispensability.</li>
+<li><strong>Visible evidence base</strong> Abstract, full introduction, full results section, full discussion, and detailed materials and methods. Figures are referenced but not provided. Supplementary figures are referenced but not provided.</li>
+<li><strong>Missing materials affecting confidence</strong> All figures and supplementary figures/tables are absent. This is a major limitation, as the central quantitative claims (keep-score distributions, TMscore comparisons, correlation plots, zymography results) are presented only as textual summaries. Statistical details (exact sample sizes for some analyses, effect sizes, confidence intervals) are partially reported in text but cannot be verified without figures. The TEM1-Q experimental section lacks raw data (growth curves, images, replicates).</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This manuscript presents a novel and thought-provoking computational framework for ranking amino acid dispensability at proteome scale, with the counterintuitive finding that glutamine, not isoleucine, is the most replaceable residue. The convergence of two independent methods (structure-based and evolution-based) on the same candidate is compelling. The proteome-wide recoding experiment, with multiple orthogonal validation approaches, is technically ambitious. However, the absence of all figures and supplementary data prevents full verification of the quantitative claims. The single experimental validation (TEM1-Q) is a useful consistency check but is underpowered and does not address the proteome-wide claim. The discussion of limitations is commendable, particularly the acknowledgment of kinetic versus thermodynamic considerations. The central thesis is clearly stated and appropriately scoped.</li>
+<li><strong>Who would be interested in the results, and why</strong> Synthetic biologists working on genetic code expansion and recoding, protein engineers interested in reduced-alphabet design, evolutionary biologists studying amino acid repertoire constraints, and computational biologists developing proteome-scale design pipelines. The keep-score framework could become a standard tool for alphabet reduction projects.</li>
+<li><strong>Major strengths</strong> 1) The central question is well-posed and of broad significance. 2) The convergence of two independent methods on glutamine is a strong argument against algorithmic artifact. 3) The proteome-scale recoding with multiple validation approaches (AF2, ESMFold, Rosetta, BioEMU) is methodologically thorough. 4) The cross-validation with <em>S. cerevisiae</em> and natural glutamine-free orthologs strengthens generality. 5) The explicit scoping of claims to structural replaceability is scientifically honest. 6) The comparison with isoleucine, including the demonstration that the framework discriminates, addresses circularity concerns directly.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence completeness</li>
+<li><strong>Claim pointer</strong> The manuscript claims that "85.5% of models exceeded a TMscore of 0.8, indistinguishable from the 85.9% baseline for rebuilt native sequences" and that "no evidence of systematic misfolding attributable to glutamine removal" was found.</li>
+<li><strong>Evidence pointer</strong> Figures 4, 5, 6, S6, S8, S9, S11 (referenced but not provided)</li>
+<li><strong>Concern</strong> All quantitative results are presented as text summaries without the corresponding figures. The reader cannot assess the distributions, scatter plots, or structural overlays that support the central claims. The TMscore comparison between No-Gln and rebuilt native models is the core result, and its presentation as a single percentage pair is insufficient. The claim of "no evidence of systematic misfolding" requires visual inspection of the model quality distributions, which is impossible without Figure 4 and its supplementary counterparts.</li>
+<li><strong>Why it matters</strong> The central conclusion rests entirely on these quantitative comparisons. Without the figures, the claims are unverifiable. The distinction between "indistinguishable" and "slightly worse but within noise" is critical and cannot be assessed from text alone.</li>
+<li><strong>Resolution test</strong> Provide all figures with full axis labels, sample sizes, and statistical annotations. For the TMscore distributions, show the full distributions, not just the percentage above threshold. For the BioEMU analysis, show representative examples of the two flagged proteins and the distribution of P-values.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Experimental validation</li>
+<li><strong>Claim pointer</strong> The manuscript claims that "a glutamine-free TEM-1 β-lactamase designed with ProteinMPNN conferred ampicillin resistance in <em>E. coli</em>, indicating fold preservation can extend to biological function."</li>
+<li><strong>Evidence pointer</strong> "Ampicillin-resistance assay" and "β-lactamase zymography with nitrocellulose" sections; Figure S12 (referenced but not provided)</li>
+<li><strong>Concern</strong> The experimental validation is a single construct with eight simultaneous substitutions. The assay is binary (growth vs. no growth at 400 and 800 µg/mL) and provides no quantitative comparison of activity between native and variant. The zymography is described as showing "comparable intensity" but no quantification, replicates, or statistical analysis are reported. The statement "neither grew at 800 µg/mL" suggests the variant may have reduced resistance, which is not discussed. The lack of any negative control (e.g., a known misfolding variant) weakens the interpretation.</li>
+<li><strong>Why it matters</strong> This is the only experimental evidence that the computational predictions translate to biological function. A single binary assay with no replicates or quantification is insufficient to support the claim that fold preservation "can extend to biological function." The result is presented as a "consistency check," which is appropriate, but the claim as stated is stronger than the evidence supports.</li>
+<li><strong>Resolution test</strong> Provide quantitative activity data (e.g., minimum inhibitory concentration, kinetic parameters from purified enzyme), replicate experiments, and statistical analysis. Include a negative control. If the variant shows reduced activity, discuss this explicitly.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Methodological circularity</li>
+<li><strong>Claim pointer</strong> The manuscript claims that "the framework discriminates among amino acids rather than tolerating any substitution uniformly" based on the comparison of glutamine, isoleucine, and glycine removal.</li>
+<li><strong>Evidence pointer</strong> Figure 8 (referenced but not provided); "Keep-score discriminates" subsection</li>
+<li><strong>Concern</strong> The discrimination test compares glutamine (low keep-score) with isoleucine (higher keep-score) and glycine (highest keep-score). While the ordering matches predictions, the magnitude of the differences is not reported. The claim that the framework "discriminates" requires showing that the differences in structural impact are not only statistically significant but also practically meaningful. The text reports P-values but no effect sizes. The comparison is also limited to three amino acids; a more convincing demonstration would include a range of keep-scores.</li>
+<li><strong>Why it matters</strong> The discrimination test is the primary defense against the circularity concern that the design and evaluation tools share biases. If the differences are statistically significant but trivially small, the argument is weakened.</li>
+<li><strong>Resolution test</strong> Report effect sizes (e.g., Cohen's d, median differences in TMscore) for the pairwise comparisons. Consider including additional amino acids spanning the keep-score range.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Generalizability</li>
+<li><strong>Claim pointer</strong> The manuscript claims that "the ranking reflects general features of protein architecture rather than a peculiarity of <em>E. coli</em>" based on the <em>S. cerevisiae</em> correlation.</li>
+<li><strong>Evidence pointer</strong> Figure 9 (referenced but not provided); "Keep-score discriminates" subsection</li>
+<li><strong>Concern</strong> The <em>S. cerevisiae</em> analysis is limited to keep-score correlation. It does not include the structural validation (AF2 modeling, TMscore comparison) that was performed for <em>E. coli</em>. The claim of generalizability would be stronger if the full pipeline were applied to at least one additional organism. The correlation coefficient is reported (Spearman ρ), but the text does not state whether this is significant or what the confidence interval is.</li>
+<li><strong>Why it matters</strong> The claim of generalizability is central to the framework's utility. A correlation of keep-scores alone, without structural validation, is suggestive but not conclusive.</li>
+<li><strong>Resolution test</strong> Apply the full pipeline (recoding, AF2 modeling, TMscore comparison) to at least one additional organism. Report confidence intervals for the correlation.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Definition of keep-score</li>
+<li><strong>Evidence pointer</strong> "Keep-propensity and keep-score" section</li>
+<li><strong>Issue</strong> The definition of keep-score as "the fraction of positions where the native residue scores higher than the best alternative" is clear, but the relationship between keep-score and keep-propensity could be stated more explicitly. Specifically, it would help to state that keep-score is the integral of the positive part of the keep-propensity distribution, as this is mentioned but not formalized.</li>
+<li><strong>Required correction</strong> Add a sentence explicitly stating the mathematical relationship, e.g., "Keep-score is the fraction of positions with positive keep-propensity, equivalently the area under the positive region of the keep-propensity distribution."</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> Correlation analyses</li>
+<li><strong>Evidence pointer</strong> "Keep-score discriminates" subsection; Figure 9</li>
+<li><strong>Issue</strong> The text reports Spearman ρ values for several correlations but does not consistently report P-values or confidence intervals. For the <em>E. coli</em>–<em>S. cerevisiae</em> comparison, the text states "correlate strongly" without a specific value.</li>
+<li><strong>Required correction</strong> Report ρ, P-value, and 95% confidence interval for all correlation analyses.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Methodological detail</li>
+<li><strong>Affected element</strong> MSA decimation procedure</li>
+<li><strong>Evidence pointer</strong> "Conservation multiple sequence alignments" section</li>
+<li><strong>Issue</strong> The decimation procedure (dropping every second entry of the quality-sorted .m8 file) is described as deterministic, but the rationale for this specific approach is not given. It is unclear why this particular decimation strategy was chosen over random subsampling or other approaches.</li>
+<li><strong>Required correction</strong> Provide a brief justification for the decimation strategy, or state that it was chosen for computational efficiency.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation</li>
+<li><strong>Affected element</strong> Discussion of glutamine's biological role</li>
+<li><strong>Evidence pointer</strong> Discussion section</li>
+<li><strong>Issue</strong> The discussion of why glutamine is dispensable focuses on structural replaceability but does not address the metabolic and regulatory roles of glutamine beyond protein structure. The authors acknowledge this in the abstract ("not a demonstration of biological dispensability") but the discussion could be strengthened by a more explicit treatment of what biological dispensability would require.</li>
+<li><strong>Required correction</strong> Add a paragraph explicitly outlining what additional evidence would be needed to establish biological dispensability (e.g., fitness measurements, metabolic flux analysis, conditional knockouts).</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Software versions and parameters</li>
+<li><strong>Evidence pointer</strong> "In-house scripts" section</li>
+<li><strong>Issue</strong> The manuscript lists software versions for Python packages but does not provide a complete environment specification (e.g., operating system, hardware, runtime). The AlphaFold2 and ESMFold runs are described as using "default parameters" but the specific ColabFold version is not stated.</li>
+<li><strong>Required correction</strong> Provide a complete software environment specification, including ColabFold version, in the methods or as a supplementary file.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (missing figures) and R1-M2 (insufficient experimental validation) are blocking. The central quantitative claims cannot be verified without the figures, and the single experimental data point is too weak to support the claim that fold preservation extends to function.</li>
+<li><strong>Assessment against Nature-style criteria</strong> <strong>Originality</strong>: High. The keep-score framework is a novel contribution, and the finding that glutamine is more dispensable than isoleucine is counterintuitive and significant. <strong>Scientific importance</strong>: High if validated. The framework could guide future alphabet reduction efforts and has implications for understanding protein architecture. <strong>Interdisciplinary readership</strong>: Moderate to high. The work bridges computational biology, protein engineering, and evolutionary biology. The writing is accessible to nonspecialists, though some familiarity with inverse-folding models is assumed. <strong>Technical soundness</strong>: The computational pipeline is well-designed with appropriate controls (e.g., cross-method validation, discrimination test). However, the absence of figures prevents full assessment, and the experimental validation is underpowered. <strong>Readability for nonspecialists</strong>: The abstract and introduction are clear and well-motivated. The results section is dense but logically organized. The discussion of limitations is exemplary.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The central thesis is novel and potentially important, and the computational framework is well-conceived. However, the manuscript cannot be accepted in its current form because the figures are missing and the experimental validation is insufficient. The authors should provide all figures, strengthen the experimental section with quantitative data and replicates, and consider applying the full pipeline to at least one additional organism to support the generalizability claim.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that "85.5% of models exceeded a TMscore of 0.8, indistinguishable from the 85.9% baseline" is unverifiable without Figure 4 and its underlying data.</li>
+<li>The claim that "no evidence of systematic misfolding attributable to glutamine removal" is unverifiable without Figures 5 and 6.</li>
+<li>The claim that "a glutamine-free TEM-1 β-lactamase... conferred ampicillin resistance" is supported only by a binary growth assay with no replicates or quantification; the claim that this indicates "fold preservation can extend to biological function" is stronger than the evidence supports.</li>
+<li>The claim that the keep-score ranking "reflects general features of protein architecture" is based on a single cross-species correlation without structural validation in <em>S. cerevisiae</em>.</li>
+<li>The claim that "at least 24% of <em>E. coli</em> proteins have natural orthologs that lack glutamine" is presented without confidence intervals or discussion of potential ortholog misidentification.</li>
+<li>The claim that "ProteinMPNN can remove every glutamine from a bacterial proteome matching the same structural accuracy of native sequences" is a computational prediction that has not been experimentally validated at the proteome scale.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,92 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, methods, results, discussion, data availability)
+- **Assessment boundary** Scientific and technical evaluation of the presented method, its validation, and claims; no editorial or formatting considerations
+- **Shared manuscript claim summary** The authors present AmyloDeep, an ensemble model combining five machine learning predictors built on protein language model embeddings (ESM2, UniRep) to predict amyloid propensity from amino acid sequences. They report superior performance compared to existing tools and provide a web server and Python package.
+- **Visible evidence base** Main text with 4 figures and 1 table referenced; supplementary material mentioned but not provided; no quantitative performance metrics (e.g., AUC, accuracy values) are reported in the main text
+- **Missing materials affecting confidence** Supplementary figures and tables (including all performance metrics, cross-validation results, SHAP analysis details); test set files ("Test set 305.csv", "Reduced test set 48.csv"); details of hyperparameter tuning; exact data processing pipeline; comparison methodology details
+
+## Reviewer
+- **Overall assessment** The manuscript addresses a relevant problem in protein science, namely the prediction of amyloidogenic regions from sequence. The use of protein language model embeddings is timely and the ensemble approach is reasonable. However, the main text lacks quantitative results, which severely limits the ability to evaluate the claimed performance. The comparison with existing tools is based on a very small test set (48 sequences), and the methodology for this comparison is not fully described. Several claims, including "state-of-the-art performance," are not supported by the evidence presented in the main text. The manuscript would benefit from a more rigorous and transparent presentation of results, including all performance metrics, statistical significance testing, and a more robust comparison strategy.
+- **Who would be interested in the results, and why** Researchers working on protein aggregation, amyloid biology, and neurodegenerative disease would find this tool potentially useful for identifying amyloidogenic regions in proteins of interest. Computational biologists developing prediction tools for protein properties would also be interested in the methodological approach of combining pLM embeddings with ensemble learning. The web server and Python package make the tool accessible to experimental biologists without computational expertise.
+- **Major strengths** The problem is relevant and timely. The use of multiple pLM embeddings (ESM2 variants, UniRep) and diverse model architectures (FNN, SVM, XGBoost) is a sound methodological choice. The ensemble approach with calibration is appropriate. The authors provide both a web server and a Python package, which enhances usability. The discussion of limitations, including data scarcity and computational cost, is honest and useful.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence quality
+  - **Claim pointer** The authors claim "highly robust and accurate results" and "state-of-the-art performance" for the ensemble model.
+  - **Evidence pointer** Section 3.2, Table 1, Figure 2; location not provided for specific metric values
+  - **Concern** The main text does not report any quantitative performance metrics. Table 1 is referenced but its contents are not described. No AUC, accuracy, sensitivity, specificity, F1 score, or Matthews correlation coefficient values are given in the text. The ROC curve and specificity-sensitivity curve are shown in Figure 2 but no numerical values are extracted or discussed. Without these numbers, the claimed performance cannot be evaluated.
+  - **Why it matters** The central claim of the paper is that AmyloDeep achieves high accuracy. Without reporting the actual metric values, this claim is unverifiable. Readers cannot compare AmyloDeep with existing tools or assess whether it would be useful for their applications.
+  - **Resolution test** Report all performance metrics (AUC, accuracy, sensitivity, specificity, F1, MCC) with confidence intervals in the main text or in a clearly referenced table. Provide the numerical values in the text when discussing Figure 2.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Experimental design
+  - **Claim pointer** The authors claim that "AmyloDeep shows superior performance compared to these models on all of these metrics" when comparing with Cross-Beta predictor and AMYPred-FRL.
+  - **Evidence pointer** Section 3.3, Figure 3; test set "Reduced test set 48.csv"
+  - **Concern** The comparison with other tools is performed on only 48 sequences. This is a very small test set, and the results may not be statistically reliable. Furthermore, the selection criteria for these 48 sequences (only those with length ≥ 15) may introduce bias. The methodology for running the other tools (parameter settings, version, etc.) is not described. No statistical significance testing is reported.
+  - **Why it matters** A claim of superiority over existing methods requires a robust and fair comparison. A 48-sequence test set is insufficient to establish generalizable performance differences. Without details on how the other tools were run and without statistical testing, the comparison is not convincing.
+  - **Resolution test** Use a larger, more diverse test set. Describe the exact protocol for running each comparison tool. Perform and report statistical significance tests (e.g., McNemar's test or bootstrap confidence intervals for metric differences).
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Data accessibility
+  - **Claim pointer** The authors state that the dataset was aggregated from six databases and that the test set is available as supplementary data.
+  - **Evidence pointer** Section 2.1, Data availability section
+  - **Concern** The full training dataset is not made available, and the data availability statement says "Full data can be made available upon reasonable request." For a machine learning paper, the training data should be publicly available to ensure reproducibility. The supplementary material, which contains the test sets and additional results, was not provided for this review.
+  - **Why it matters** Reproducibility is a core requirement for computational biology papers. Without access to the training data and full results, other researchers cannot reproduce the experiments or build upon this work.
+  - **Resolution test** Make the full dataset publicly available (e.g., on Zenodo or Figshare). Ensure all supplementary materials are accessible and complete.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors state that "we evaluated the feasibility of fine-tuning the open-access variant ESM3-sm-open-v1... However, we found that ESM3-sm-open-v1 underperformed compared to ESM2 150M for our specific use case."
+  - **Evidence pointer** Section 4, Discussion; location not provided for the specific results of this comparison
+  - **Concern** The claim that ESM3 underperforms ESM2 is made without presenting any data. No metrics, experimental details, or comparison results are shown. This is a significant claim given that ESM3 is a newer and larger model.
+  - **Why it matters** If ESM3 indeed underperforms, this is an interesting finding that could inform future model choices. However, without evidence, this claim is unsubstantiated and could mislead readers.
+  - **Resolution test** Provide the experimental details and results of the ESM3 comparison, either in the main text or in the supplementary material.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Section 2.1, data processing
+  - **Evidence pointer** Section 2.1
+  - **Issue** The description of data processing is brief. It is unclear how sequences from different databases were merged, how conflicts were resolved, and what exact criteria were used for labeling.
+  - **Required correction** Provide a more detailed description of the data processing pipeline, including a flowchart or pseudocode.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Section 2.2, model training
+  - **Evidence pointer** Section 2.2
+  - **Issue** The hyperparameter tuning process is described as "grid search within the cross-validation framework" but no details are given on the search space, the number of trials, or the selection criteria.
+  - **Required correction** Provide details on the hyperparameter search space and the final hyperparameter values for each model.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Section 3.3, comparison with other methods
+  - **Evidence pointer** Section 3.3, Figure 3
+  - **Issue** The comparison in Figure 3 is described in the text but the figure itself is not described in detail. It is unclear what exactly is plotted and how the metrics were computed.
+  - **Required correction** Describe Figure 3 in more detail in the text, including the exact metrics plotted and the number of sequences used.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Readability
+  - **Affected element** Section 4, Discussion
+  - **Evidence pointer** Section 4
+  - **Issue** The discussion of AlphaFold experiments is brief and lacks context. It is unclear what exactly was tested and what the results were.
+  - **Required correction** Provide more detail on the AlphaFold experiments, including the specific proteins tested and the evaluation criteria.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Section 2.3, calibration
+  - **Evidence pointer** Section 2.3
+  - **Issue** The calibration procedure is described but no results of the calibration are shown. It is unclear how much the calibration improved the models.
+  - **Required correction** Show calibration plots before and after calibration, and report the expected calibration error values.
+
+## Risk / unsupported claims
+- "Highly robust and accurate results" (Section 3.2) is unsupported because no quantitative metrics are reported in the main text.
+- "State-of-the-art performance" (Section 4) is unsupported because the comparison is limited to two tools on a 48-sequence test set, and no statistical testing is reported.
+- "AmyloDeep shows superior performance compared to these models on all of these metrics" (Section 3.3) is unsupported due to the small test set and lack of statistical analysis.
+- The claim that ESM3 underperforms ESM2 (Section 4) is unsupported as no data are presented.
+- The claim that AlphaFold 2 and 3 "performed poorly in predicting amyloid structures" (Section 4) is unsupported as no experimental details or results are provided.
+- The optimal window size of 10 (Section 3.3) is stated without supporting data or analysis.

@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A validation approach for RNA structures based on deep-learning 3D-structure predictions · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>A validation approach for RNA structures based on deep-learning 3D-structure predictions</h1>
+      <div class="meta">Voorspoels A; Simpkin AJ; Keegan RM; Chojnowski G; Rigden DJ</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-11-03
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.11.02.763582">原文</a>
+      </div>
+      <p class="one-liner">该文将基于深度学习的接触预测验证方法从蛋白质扩展到RNA结构验证，虽对象为RNA而非蛋白质，但其结构验证框架可迁移至蛋白质体系，且方法涉及AI结构预测，对蛋白质结构计算有借鉴意义。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Understanding the molecular mechanisms of life depends on accurate macromolecular structures. RNA, in particular, poses a particular challenge for structural biology due to its inherent flexibility and dynamic nature. The challenging nature of structure determination experiments and their interpretation have led to the development of validation approaches to prevent or fix errors in solved structures. Existing methods for RNA structure validation can, as with proteins, be broadly split into two types. Map-based validation tools seek to detect discrepancies between the experimental data and the determined structure. They are excellent for fixing all types of errors, but only when high-resolution experimental data are available. Model-only validation methods, which usually focus on molecular geometry, are excellent for fixing short-lengthscale issues even when experimental resolution is low. Conkit-validate is a mapless method for protein validation, which is not based on chemical plausibility, but rather on the similarity between experimental models and structure predictions for the same protein. By comparing contact patterns, this tool leverages evolutionary covariance information, learned by state-of-the-art structural prediction models, into a mapless validation method capable of detecting sequence assignment issues, with notable success in detecting register errors. Here, we extend the conkit-validate method to work on RNA. The results show performance similar to that previously achieved for proteins. In a scan of the PDB, its detection rate does not depend on the local resolution of the density, so it remains applicable where map-based approaches are not, and case studies show it can identify register errors where the density alone cannot decide between models. Together, this highlights the complementary value of a contact-prediction based validation approach using information orthogonal to map- and geometry-based approaches to ensure the quality of deposited RNA structures against varying criteria. The performance of the method can be expected to track ongoing improvements in RNA structure prediction methods.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">理解生命的分子机制依赖于精确的大分子结构。特别是RNA，由于其固有的柔性和动态特性，对结构生物学构成了特殊挑战。结构测定实验及其解释的困难性促使了验证方法的发展，以防止或修正已解析结构中的错误。现有的RNA结构验证方法，与蛋白质类似，大致可分为两类。基于图谱的验证工具旨在检测实验数据与确定结构之间的差异。它们擅长修正所有类型的错误，但仅在获得高分辨率实验数据时有效。仅基于模型的验证方法通常关注分子几何结构，即使在实验分辨率较低时也能有效修正短尺度问题。Conkit-validate是一种无图谱的蛋白质验证方法，其依据并非化学合理性，而是实验模型与同一蛋白质结构预测之间的相似性。通过比较接触模式，该工具利用最先进的结构预测模型学习到的进化协变信息，形成一种能够检测序列分配问题的无图谱验证方法，尤其在检测寄存器错误方面取得了显著成功。在此，我们将conkit-validate方法扩展应用于RNA。结果显示其性能与先前在蛋白质上取得的成果相似。在对PDB的扫描中，其检测率不依赖于密度的局部分辨率，因此在基于图谱的方法不适用的情况下仍可应用，案例研究表明，它能识别仅凭密度无法在模型间做出判断的寄存器错误。综合来看，这突显了基于接触预测的验证方法的互补价值，该方法利用与图谱和几何方法正交的信息，确保已提交RNA结构在不同标准下的质量。该方法的性能有望随着RNA结构预测方法的持续改进而提升。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：A validation approach for RNA structures based on deep-learning 3D-structure predictions</li>
+<li><strong>作者</strong>：Voorspoels A; Simpkin AJ; Keegan RM; Chojnowski G; Rigden DJ</li>
+<li><strong>单位</strong>：未提供（根据致谢推测与CCP4、BBSRC相关）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：方法学论文（验证工具开发）</li>
+<li><strong>领域</strong>：RNA结构验证 × 深度学习结构预测</li>
+<li><strong>关键词</strong>：RNA结构验证、共进化信息、结构预测、register shift、conkit-validate</li>
+<li><strong>DOI/ID</strong>：10.64898/2026.11.02.763582</li>
+<li><strong>代码</strong>：https://github.com/rigdenlab/conkit （conkit Python包，v0.14.0起支持RNA）</li>
+<li><strong>数据</strong>：PDB扫描数据集（4399个条目，7757条RNA链）；基准数据集（49个含已知错误的结构，14798个碱基）</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「结构验证 × AI预测」交叉方向，核心思路是将深度学习结构预测模型（如AlphaFold 3）编码的共进化信息，转化为无需实验图谱的RNA结构验证工具。与蛋白质领域的conkit-validate（原版）一脉相承，是该方法向RNA的扩展。该工作与「结构预测→下游应用」这一主线高度相关，展示了预测模型除直接提供坐标外的另一种价值——作为验证工具的信息源。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文将蛋白质验证工具conkit-validate扩展到RNA，通过比对实验结构与深度学习预测（AlphaFold 3、RNAPro等）的接触图（contact map），利用map_align检测register shift错误并训练随机森林分类器识别错误碱基，在PDB扫描中发现了多个可被独立证据确认的真实错误，且检测率不依赖局部图谱分辨率。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：RNA结构解析中常出现register shift（序列注册偏移）错误，尤其是在低分辨率冷冻电镜结构中。现有验证方法分为两类：基于图谱（map-based）的方法在低分辨率下失效；基于模型几何（model-only）的方法只能检测局部尺度问题（如键长键角偏差），对全局性的序列注册错误不敏感。能否利用深度学习结构预测模型编码的共进化信息，构建一种不依赖实验图谱的RNA结构验证方法？</li>
+<li><strong>为什么重要</strong>：RNA结构错误会传播到后续所有基于该结构的研究中。低分辨率cryo-EM结构尤其容易出错，而这类结构数量正在快速增长。一个不依赖图谱分辨率、能检测register shift错误的验证工具，可以显著提升RNA结构数据库的整体质量。</li>
+<li><strong>现有方法不足</strong>：map-based方法（如checkMySequence/DoubleHelix）需要高分辨率图谱，在低分辨率下不可靠；几何验证方法（如键长键角检查）对register shift这类全局错误不敏感。</li>
+<li><strong>精确研究问题</strong>：Can a contact-prediction-based validation approach, extended from proteins to RNA, detect register shift errors in RNA structures independent of experimental map resolution?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络综合本文Introduction及外部知识，属「经外部核验」）</em></p>
+<ol>
+<li><strong>结构验证的早期阶段</strong>：基于几何/立体化学检查（键长、键角、Ramachandran图等），代表工具如PROCHECK、MolProbity。优点：计算快、无需图谱；局限：只能检测局部问题，对全局性错误（如register shift）不敏感。</li>
+<li><strong>图谱-based验证方法</strong>：如checkMySequence（CMS）/DoubleHelix，通过比对实验图谱与模型，检测序列分配错误。优点：能检测多种错误类型；局限：需要高分辨率图谱，低分辨率下不可靠。</li>
+<li><strong>深度学习结构预测革命</strong>：AlphaFold 2（2020）带来蛋白质结构预测精度飞跃，后续扩展至RNA（AlphaFold 3、trRosettaRNA2、RNAPro等）。这些模型通过共进化信息（MSA）学习残基间接触模式。</li>
+<li><strong>conkit-validate（蛋白质版）</strong>：Rigden团队开发，利用预测接触图与实验结构接触图比对，检测蛋白质中的register shift错误。核心洞察：预测模型编码的共进化信息可作为「无图谱」的验证参考。</li>
+<li><strong>本文位置</strong>：将conkit-validate从蛋白质扩展到RNA，解决RNA特有的挑战（如接触定义、配对结构、预测模型精度较低等），并系统评估了多种预测模型（通用vs RNA专用）作为验证参考源的效果。</li>
+</ol>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>低分辨率下图谱验证失效</td>
+<td>分辨率差于5Å时，map-based方法（CMS）不可靠</td>
+<td>图谱信息量随分辨率下降急剧减少，无法区分相近碱基</td>
+<td>Methods节：基准数据集限定分辨率&lt;5Å；Results：CMS在低分辨率区域不可靠</td>
+</tr>
+<tr>
+<td>几何验证对全局错误不敏感</td>
+<td>键长键角检查无法发现register shift</td>
+<td>register shift不改变局部几何，只改变序列-结构对应关系</td>
+<td>Introduction：几何方法"blind to more global problems such as register shift"</td>
+</tr>
+<tr>
+<td>RNA结构预测精度低于蛋白质</td>
+<td>预测模型可能给出错误参考</td>
+<td>RNA折叠规则更复杂，训练数据更少</td>
+<td>Introduction：RNA预测"lagged behind proteins"；Results：不同预测模型性能差异</td>
+</tr>
+<tr>
+<td>接触图比对在RNA上的适配问题</td>
+<td>蛋白质的接触定义不能直接迁移到RNA</td>
+<td>RNA有配对/非配对结构，碱基间接触模式不同</td>
+<td>Methods节：重新定义接触（C1'-C1'距离，阈值12.5Å）</td>
+</tr>
+<tr>
+<td>预测-实验构象差异导致误报</td>
+<td>预测与实验构象不同时产生假阳性</td>
+<td>预测模型可能预测不同构象态（如holo vs apo）</td>
+<td>8I3Z案例：预测缺乏配体上下文导致构象不同；Results：全局构象过滤移除大量假阳性</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：
+将conkit-validate从蛋白质扩展到RNA：对每个RNA结构，用深度学习模型（AF3、RNAPro等）预测其接触图，然后用map_align将实验结构的接触图与预测接触图比对，通过接触图重叠（CMO）检测register shift错误；同时训练随机森林分类器，利用局部接触特征识别错误碱基。</p>
+<p><strong>2) 核心洞察</strong>：
+- 深度学习结构预测模型不仅是「结构生成器」，更是「共进化信息的编码器」。预测接触图（distogram）比预测坐标更直接地编码了序列-结构约束关系，因此更适合作为验证参考。
+- 验证不需要完美预测——即使预测结构有构象差异，接触图层面的比对仍能捕捉到register shift信号。这类似于蛋白质领域的经验：接触图比坐标更鲁棒。
+- RNA的配对结构提供了额外的验证信号：register shift会破坏配对模式，而配对模式在预测中通常被准确捕获。</p>
+<p><strong>3) 可能的普适教训</strong> [Analysis]：
+- 预测模型的「副产品」（如distogram、注意力权重）可能比主输出（坐标）有更广泛的应用价值。验证工具设计者应关注模型的中间表征而非仅最终输出。
+- 「无图谱验证」的核心不是替代图谱，而是提供正交信息源。在低分辨率场景下，共进化信息是唯一可用的全局约束。
+- 工具设计需要显式处理「预测-实验构象差异」这一系统性假阳性来源——这提示任何基于预测的验证方法都需要配套「适用性过滤」机制。</p>
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>：
+- 实验RNA结构（PDB格式，含序列信息）
+- 对应序列的深度学习预测（AF3结构、AF3 distogram、RNAPro结构等）</p>
+<p><strong>输出</strong>：
+- 每个碱基的错误概率/标签（正确 vs 错误）
+- register shift的检测结果（偏移量、偏移区域）
+- 置信度过滤后的最终报告</p>
+<p><strong>模块</strong>：
+1. <strong>接触图生成</strong>：将实验结构和预测结构（或distogram）转换为接触图。接触定义为C1'-C1'距离≤12.5Å（阈值经优化，见Fig. 3）。
+2. <strong>接触图比对（map_align）</strong>：通过动态规划在接触图间寻找最优比对，允许gap引入，输出CMO分数和最优注册偏移。
+3. <strong>特征计算</strong>：对每个碱基计算24个特征，包括wRMSD、接触重叠统计（TP/FP/FN/TN）、局部接触密度等。
+4. <strong>随机森林分类器</strong>：在已知错误数据集上训练，输出每个碱基的错误概率。
+5. <strong>过滤模块</strong>：基于Gesamt Q-score（全局结构相似性）和每残基接触数，判断预测-实验构象是否可比，过滤不可靠调用。</p>
+<p><strong>流程</strong>：</p>
+<pre><code>实验结构 + 预测(distogram/结构) 
+    → 接触图生成（阈值12.5Å） 
+    → map_align比对 → CMO分数 + 注册偏移建议 
+    → 特征计算（24维） 
+    → 随机森林分类 → 错误概率 
+    → 过滤（Q-score、接触数） → 最终报告
+</code></pre>
+<p><strong>训练</strong>：
+- 基准数据集：49个低分辨率结构（含1411个错误碱基，12089个正确碱基）
+- 训练/验证划分：按结构分块，防止相邻碱基泄漏
+- 类别平衡：随机移除正确碱基使两类均衡
+- 超参数调优：网格搜索+交叉验证</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>接触图生成</td>
+<td>将3D结构/distogram转为2D接触图</td>
+<td>接触图是比对的基础表示，比坐标更鲁棒</td>
+<td>输入：结构坐标或distogram；输出：二值接触图</td>
+<td>Methods节：接触定义基于C1'-C1'距离</td>
+<td>无法进行后续比对（核心模块，不可移除）</td>
+</tr>
+<tr>
+<td>map_align比对</td>
+<td>在接触图间寻找最优注册偏移</td>
+<td>检测register shift的核心机制</td>
+<td>输入：两个接触图；输出：CMO分数+偏移</td>
+<td>Fig. 5：基准测试中CMO方法F1=0.88-0.92</td>
+<td>失去register shift检测能力</td>
+</tr>
+<tr>
+<td>特征计算</td>
+<td>将比对结果转为碱基级特征</td>
+<td>为分类器提供判别信息</td>
+<td>输入：比对结果+接触图；输出：24维特征向量</td>
+<td>Methods节：特征列表</td>
+<td>分类器无输入，无法工作</td>
+</tr>
+<tr>
+<td>随机森林分类器</td>
+<td>碱基级错误检测</td>
+<td>检测非均匀register shift和复杂错误</td>
+<td>输入：24维特征；输出：错误概率</td>
+<td>Fig. 7：RF F1=0.85（AF3结构）</td>
+<td>失去碱基级错误检测能力</td>
+</tr>
+<tr>
+<td>过滤模块</td>
+<td>判断预测-实验可比性</td>
+<td>减少构象差异导致的假阳性</td>
+<td>输入：Q-score+接触数；输出：通过/不通过</td>
+<td>Fig. 8B：过滤后CMO保留255/565，RF保留31/299</td>
+<td>假阳性率显著上升（预期）</td>
+</tr>
+<tr>
+<td>适用性规则</td>
+<td>判断工具是否适用于给定结构</td>
+<td>避免在预测不可靠时给出误导性结果</td>
+<td>输入：Q-score阈值0.3，接触数阈值1.45</td>
+<td>Methods节：Sup. Note C</td>
+<td>低质量调用无法被识别（预期）</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>1) 加权均方根偏差（wRMSD）</strong>：</p>
+<p>$$wRMSD_i = \sqrt{\frac{\sum_{j} w_{ij} \cdot (d_{ij} - \hat{d}<em>{ij})^2}{\sum</em>{j} w_{ij}}}$$</p>
+<ul>
+<li>$d_{ij}$：实验结构中碱基i与碱基j的C1'-C1'距离</li>
+<li>$\hat{d}_{ij}$：预测的同一距离（来自distogram最高置信bin的中心，或预测结构坐标）</li>
+<li>$w_{ij}$：预测置信度权重（distogram为bin概率，结构为1）</li>
+<li>$d_{max}$：距离上限，设为distogram最后一个bin的下界（~20Å），超出部分不计入</li>
+</ul>
+<p><strong>2) 接触定义</strong>：</p>
+<p>$$C_{ij} = \begin{cases} 1 &amp; \text{if } d_{ij} \leq d_{th} \ 0 &amp; \text{otherwise} \end{cases}$$</p>
+<ul>
+<li>$d_{th} = 12.5$Å（经优化，见Fig. 3）</li>
+</ul>
+<p><strong>3) 接触重叠指标</strong>：</p>
+<ul>
+<li>TP（真阳性）：实验和预测中都存在的接触</li>
+<li>FP（假阳性）：实验中存在但预测中不存在的接触</li>
+<li>FN（假阴性）：预测中存在但实验中不存在的接触</li>
+<li>这些计数直接作为分类器特征</li>
+</ul>
+<p><strong>4) z-score标准化</strong>：</p>
+<p>$$z(f) = \frac{f - \mu_{local}}{\sigma_{local}}$$</p>
+<ul>
+<li>将每个特征与20Å范围内碱基的分布比较，捕捉局部异常</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集</strong>：
+- <strong>基准数据集</strong>：57个cryo-EM RNA结构（分辨率&lt;5Å，&lt;1000残基，2025年5月8日前发布），经CMS验证无错误后作为ground truth；对其中49个成功生成低分辨率版本（含错误），共14798个碱基（12089正确，1411错误）
+- <strong>PDB扫描集</strong>：4399个PDB条目（含RNA链，2025年10月10日前发布），7757条RNA链，7580条成功验证</p>
+<p><strong>预测模型</strong>：AF3（结构+distogram）、RNAPro（结构）、Boltz-2（结构）、Protrnix（结构）、trRosettaRNA2（结构+distogram）</p>
+<p><strong>评测协议</strong>：碱基级分类（错误vs正确），F1分数为主要指标；类别平衡后计算</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>接触阈值优化</td>
+<td>12.5Å是最优阈值</td>
+<td>7.5-25Å扫描</td>
+<td>F1在~12Å达峰后缓慢下降</td>
+<td>12.5Å是合理选择</td>
+<td>最优阈值可能依赖数据集</td>
+<td>Fig. 3, S1</td>
+</tr>
+<tr>
+<td>CMO方法基准测试</td>
+<td>CMO能检测register shift</td>
+<td>使用ground truth作为预测，排除预测误差</td>
+<td>F1=0.92，准确率=0.93</td>
+<td>理想条件下CMO方法有效</td>
+<td>实际预测条件下性能可能下降</td>
+<td>Fig. 5</td>
+</tr>
+<tr>
+<td>不同预测模型比较</td>
+<td>RNA专用模型优于通用模型</td>
+<td>AF3 vs RNAPro vs Boltz等</td>
+<td>RNAPro结构最优（F1=0.88），AF3结构次之（F1=0.78）</td>
+<td>预测质量直接影响验证性能</td>
+<td>模型排名可能随数据集变化</td>
+<td>Fig. 5, S2</td>
+</tr>
+<tr>
+<td>随机森林分类器</td>
+<td>能检测非均匀错误</td>
+<td>24特征，4种算法比较</td>
+<td>RF最优（F1=0.85，AF3结构）</td>
+<td>RF分类器有效</td>
+<td>在真实数据上的泛化性待验证</td>
+<td>Fig. 7</td>
+</tr>
+<tr>
+<td>PDB扫描</td>
+<td>工具能发现真实错误</td>
+<td>7580条链，CMS交叉验证</td>
+<td>565链CMO标记，255链过滤后保留；RF标记299链，31链保留</td>
+<td>工具在真实数据上有效</td>
+<td>过滤后仍可能有假阳性</td>
+<td>Fig. 8</td>
+</tr>
+<tr>
+<td>案例研究1（4WCE）</td>
+<td>发现已知错误</td>
+<td>文献交叉验证</td>
+<td>register shift被确认，但map fit无法区分</td>
+<td>工具可发现map-based方法无法确认的错误</td>
+<td>单一案例，推广需谨慎</td>
+<td>Fig. 10, Table 1</td>
+</tr>
+<tr>
+<td>案例研究2（8RXH）</td>
+<td>发现可独立验证的错误</td>
+<td>密度+跨结构比对</td>
+<td>修正后RSMC提升，18个同序列结构均支持修正</td>
+<td>强证据支持错误真实存在</td>
+<td>无</td>
+<td>Fig. 11</td>
+</tr>
+<tr>
+<td>案例研究3（7L48）</td>
+<td>展示工具局限性</td>
+<td>密度无法区分</td>
+<td>所有假设map fit相当</td>
+<td>某些情况下map无法验证</td>
+<td>工具可能产生无法验证的调用</td>
+<td>Fig. 12, Table 2</td>
+</tr>
+<tr>
+<td>案例研究4（8I3Z）</td>
+<td>展示假阳性来源</td>
+<td>预测缺乏上下文</td>
+<td>加入上下文后错误调用消失</td>
+<td>构象差异是假阳性主因</td>
+<td>无</td>
+<td>Fig. 13</td>
+</tr>
+<tr>
+<td>案例研究5（9BUQ）</td>
+<td>发现跨结构传播的错误</td>
+<td>功能+序列分析</td>
+<td>错误源于早期结构，传播至9个后续结构</td>
+<td>验证工具能阻断错误传播</td>
+<td>无</td>
+<td>Fig. 14</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<p><strong>任务范围</strong>：本文方法针对<strong>RNA单链</strong>的<strong>register shift错误</strong>检测，不覆盖其他错误类型（如碱基化学修饰错误、构象错误等）。方法需要深度学习预测作为输入，预测质量直接影响验证效果。</p>
+<p><strong>oracle/真值输入</strong>：基准测试中使用了ground truth结构作为「完美预测」参考，这给出了方法性能的上界。实际使用中预测误差会降低性能（从F1=0.92降至0.78-0.88）。</p>
+<p><strong>端到端状态</strong>：工具已集成到conkit Python包（v0.14.0+）和CCP4套件，可通过Moorhen网页界面使用。但「端到端」仅指软件可用性，不意味着验证结果自动正确——案例研究显示需要人工判断。</p>
+<p><strong>算力成本</strong>：主要成本在深度学习预测（AF3等），验证本身（接触图生成+比对+分类）计算量小。作者未提供具体时间数据。</p>
+<p><strong>历史数据依赖</strong>：PDB扫描中发现的错误多源于早期结构（如2014年的3J7A），说明错误会随时间传播。工具的价值部分在于阻断这种传播。</p>
+<p><strong>模型依赖</strong>：性能依赖预测模型质量。RNAPro（RNA专用）优于通用模型（AF3），提示随着RNA预测模型改进，验证性能会自然提升。</p>
+<p><strong>最难情形</strong>：低复杂度序列区域（如poly-A）、预测-实验构象差异大的情况（如配体结合态差异）、短序列（&lt;25碱基被排除）。</p>
+<p><strong>群体/领域边界</strong>：仅验证单链RNA，不覆盖RNA-蛋白质复合物、多链RNA复合物。作者明确提到未来可扩展到多链验证。</p>
+<p><strong>有边界的复述</strong>：本文证明，基于深度学习的接触图比对可以在不依赖实验图谱的情况下检测RNA结构中的register shift错误，在基准数据上F1达0.78-0.88（取决于预测模型），在PDB扫描中发现了多个可被独立证据确认的真实错误，但方法存在假阳性，需要适用性过滤和人工判断。</p>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单链限制</td>
+<td>方法仅适用于单链RNA，不覆盖多链复合物</td>
+<td>扩展到多链验证，利用共折叠预测方法</td>
+<td>Conclusions</td>
+</tr>
+<tr>
+<td>错误类型覆盖有限</td>
+<td>主要针对register shift，不覆盖其他错误类型</td>
+<td>未明确提及</td>
+<td>Conclusions（隐含）</td>
+</tr>
+<tr>
+<td>预测质量依赖</td>
+<td>验证性能受限于预测模型质量</td>
+<td>随RNA预测方法改进而自然提升</td>
+<td>Conclusions</td>
+</tr>
+<tr>
+<td>构象差异敏感性</td>
+<td>预测与实验构象不同时产生假阳性（如8I3Z案例）</td>
+<td>使用结构ensemble预测方法辅助</td>
+<td>Conclusions</td>
+</tr>
+<tr>
+<td>错误修复能力有限</td>
+<td>即使检测到错误，建议的修复方案（如4WCE案例）可能无法通过map fit验证</td>
+<td>多链同时修复</td>
+<td>案例研究1</td>
+</tr>
+<tr>
+<td>基准数据人工性</td>
+<td>基准错误是人工生成的，可能与真实错误分布不同</td>
+<td>未明确提及</td>
+<td>Methods（隐含）</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基准数据仅49个结构</td>
+<td>样本量小，错误类型可能不具代表性</td>
+<td>性能估计可能过拟合人工错误模式</td>
+<td>在更大规模、更多样化的数据集上验证</td>
+<td>Methods节：49个结构</td>
+</tr>
+<tr>
+<td>过滤后保留率低</td>
+<td>CMO保留255/565（45%），RF保留31/299（10%）</td>
+<td>大量调用被过滤，工具的实际可用性存疑</td>
+<td>分析被过滤调用的特征，看是否有可挽救的</td>
+<td>Fig. 8B</td>
+</tr>
+<tr>
+<td>RF分类器在真实数据上表现差</td>
+<td>基准F1=0.85但真实扫描仅31/299通过过滤</td>
+<td>训练数据与真实数据分布差异大</td>
+<td>用真实确认的错误重新训练和评估</td>
+<td>Fig. 7 vs Fig. 8</td>
+</tr>
+<tr>
+<td>案例选择偏差</td>
+<td>5个案例均为「成功」案例，未报告失败案例</td>
+<td>无法评估工具的失败模式</td>
+<td>系统性地报告所有调用的结果</td>
+<td>Results节</td>
+</tr>
+<tr>
+<td>与CMS的比较不系统</td>
+<td>仅提及CMS结果，未做定量对比</td>
+<td>无法判断新方法相对现有方法的增量价值</td>
+<td>在相同数据集上系统对比CMS和conkit-validate</td>
+<td>Results节</td>
+</tr>
+<tr>
+<td>预测模型版本依赖</td>
+<td>使用特定版本的AF3、RNAPro等</td>
+<td>预测模型更新后性能可能变化</td>
+<td>测试不同版本预测模型的鲁棒性</td>
+<td>Methods节</td>
+</tr>
+<tr>
+<td>接触阈值12.5Å的物理意义</td>
+<td>12.5Å远大于典型碱基接触距离（~5-6Å）</td>
+<td>可能包含大量非特异性邻近</td>
+<td>分析不同阈值下的接触类型组成</td>
+<td>Fig. 3</td>
+</tr>
+<tr>
+<td>未报告计算时间</td>
+<td>大规模PDB扫描的实际成本未知</td>
+<td>影响工具的实际可用性</td>
+<td>报告每结构的平均验证时间</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>「预测副产品」作为验证资源</strong>：深度学习模型的distogram（而非坐标）是更直接的共进化信息载体。在本课题中，可迁移到蛋白质结构验证：使用AlphaFold 2/3的distogram而非预测坐标进行register shift检测，可能比当前基于坐标比对的方法更鲁棒。</p>
+</li>
+<li>
+<p><strong>接触图比对的gap容忍策略</strong>：map_align通过允许gap引入来容忍预测-实验间的微小差异，这一策略可迁移到蛋白质结构比对和验证中，特别是柔性区域。</p>
+</li>
+<li>
+<p><strong>「适用性过滤」设计模式</strong>：本文通过Gesamt Q-score和接触数阈值判断预测-实验是否可比，大幅降低假阳性。这提示任何基于预测的验证/分析工具都应内置「预测可靠性」评估模块，而非盲目信任预测输出。</p>
+</li>
+<li>
+<p><strong>RNA接触定义的C1'选择</strong>：以C1'作为RNA的「Cα等价物」定义接触，这一简化在验证场景下效果良好。可迁移到RNA结构比对、聚类等任务中。</p>
+</li>
+<li>
+<p><strong>错误传播阻断</strong>：9BUQ案例显示，一个register shift错误可传播至9个后续结构。验证工具的价值不仅是发现错误，更是阻断错误在数据库中的传播。这提示本课题中，结构验证应作为数据库沉积前的常规步骤。</p>
+</li>
+<li>
+<p><strong>多模型集成策略</strong>：RNAPro（RNA专用）优于通用模型（AF3），但AF3的distogram输入在特定场景下仍有价值。这提示在验证任务中，可考虑多模型集成而非依赖单一最优模型。</p>
+</li>
+<li>
+<p><strong>「阶梯式验证」流程</strong>：先CMO检测register shift，再用RF分类器细化，最后用过滤模块排除不可靠调用。这种「粗筛-细筛-过滤」的流程设计可迁移到蛋白质结构验证中。</p>
+</li>
+<li>
+<p><strong>功能证据作为验证标准</strong>：9BUQ案例中，tRNA反密码子的功能重要性为错误判断提供了独立证据。这提示结构验证可结合功能/序列保守性信息，而不仅依赖几何或图谱。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text, including abstract, introduction, methods, results, case studies, conclusions, and data availability. Figures and tables are referenced but not provided.</li>
+<li><strong>Assessment boundary</strong> The scientific validity of the proposed RNA validation method, the soundness of the benchmarking approach, the interpretation of the PDB scan results, and the strength of the claims made in the abstract and conclusions.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors extend the protein-focused validation tool conkit-validate to RNA structures. The method uses contact-map overlap (CMO) and a machine-learning classifier to detect register errors and other modelling mistakes in RNA structures, leveraging coevolutionary information from structure prediction models. The authors claim performance comparable to the protein version, independence from local map resolution, and complementary value to map-based validation methods.</li>
+<li><strong>Visible evidence base</strong> The manuscript text describes the benchmarking dataset creation, the prediction methods used (AF3, Boltz, Protenix, trRosettaRNA2, RNAPro), the CMO and classifier results, and five case studies. Quantitative results are presented in figures and tables that were not available for review.</li>
+<li><strong>Missing materials affecting confidence</strong> All figures, tables, and supplementary materials are missing. This includes the F1 score plots, ROC curves, confusion matrices, feature importance plots, and the detailed case study figures. The methods section is incomplete, with equations and algorithm details not fully described. The supplementary notes referenced in the text are not provided.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript presents a timely and potentially useful extension of a protein validation method to RNA. The core idea, using predicted contact maps to detect register errors in RNA structures, is sound and addresses a real gap in the field. However, the current manuscript has several significant weaknesses. The benchmarking dataset is small and artificially generated, the comparison to existing methods is limited, and the PDB scan results are difficult to interpret without the missing figures. The case studies are interesting but the evidence for the claimed errors is not always conclusive. The manuscript would benefit from a more rigorous evaluation of the method's limitations and a clearer demonstration of its practical utility.</li>
+<li><strong>Who would be interested in the results, and why</strong> Structural biologists who determine RNA structures by cryo-EM or X-ray crystallography would be the primary audience. The method offers a mapless validation approach that could be useful when map quality is poor. Developers of structure prediction and validation tools would also be interested in the methodological details and the comparison of different prediction methods. The work is relevant to the broader community interested in RNA structure and function.</li>
+<li><strong>Major strengths</strong><ol>
+<li>The problem addressed is important. RNA structure validation is underdeveloped compared to protein validation, and register errors are a known and serious issue.</li>
+<li>The approach is conceptually novel in the RNA field, adapting a proven protein method (conkit-validate) rather than inventing a new one from scratch.</li>
+<li>The use of multiple prediction methods (general and RNA-specific) and both structure and distogram inputs is a thoughtful and thorough approach.</li>
+<li>The case studies, particularly the 8RXH and 9BUQ examples, provide concrete illustrations of the method's potential and its limitations.</li>
+<li>The authors are transparent about the method's limitations, including the issue of false positives and the dependence on prediction quality.</li>
+</ol>
+</li>
+<li><strong>Major Concerns</strong><ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The benchmarking dataset of 49 structures with artificially induced errors is used to claim the method "shows performance similar to that previously achieved for proteins."</li>
+<li><strong>Evidence pointer</strong> Methods, Benchmark dataset creation; Results, Contact map alignment identifies known errors in the benchmark data</li>
+<li><strong>Concern</strong> The benchmarking dataset is created by artificially degrading high-resolution cryo-EM maps and then re-tracing them with DeepCryoRNA. This is a reasonable approach, but the resulting errors may not be representative of the errors that occur in real experimental structure determination. The manuscript does not discuss the types of errors that are most common in real RNA structures and whether the artificial errors are similar. The claim of "performance similar to that previously achieved for proteins" is difficult to evaluate without the actual performance numbers and a direct comparison to the protein study.</li>
+<li><strong>Why it matters</strong> If the benchmarking set does not reflect real-world errors, the reported performance metrics may be misleading. The claim of similarity to the protein version is a key selling point and needs to be substantiated with comparable metrics.</li>
+<li><strong>Resolution test</strong> The authors should provide a more detailed analysis of the types of errors in the benchmarking set and compare them to known error types in the PDB. They should also present the performance metrics (F1, precision, recall) for the RNA method alongside the corresponding metrics from the protein study.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The PDB scan is used to claim that the method "can identify register errors where the density alone cannot decide between models."</li>
+<li><strong>Evidence pointer</strong> Results, Complementarity of contact and map based methods in a limited PDB scan; Case studies</li>
+<li><strong>Concern</strong> The PDB scan results are presented in a way that is difficult to assess. The numbers of flagged chains are given, but the key figure (Fig. 8) showing the overlap between methods is not available. The case studies are presented as evidence, but the selection criteria for these cases are not stated. It is unclear how many of the flagged errors were confirmed, how many were false positives, and how many remain unresolved. The claim that the method can identify errors "where the density alone cannot decide" is only supported by a single case study (8RXH) where the density was not used to decide.</li>
+<li><strong>Why it matters</strong> The practical utility of the method depends on its performance on real PDB structures. Without a clear and unbiased assessment of the scan results, it is impossible to judge whether the method is genuinely useful or whether it produces too many false positives to be practical.</li>
+<li><strong>Resolution test</strong> The authors should provide a more systematic analysis of the PDB scan results, including a breakdown of the flagged errors by type, a comparison of the different methods' performance, and a clear statement of how many errors were confirmed by visual inspection or other means. The case studies should be presented as part of a larger, unbiased survey.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Scientific importance</li>
+<li><strong>Claim pointer</strong> The abstract claims the method "remains applicable where map-based approaches are not" and that it provides "complementary value."</li>
+<li><strong>Evidence pointer</strong> Results, Complementarity of contact and map based methods in a limited PDB scan; Conclusions</li>
+<li><strong>Concern</strong> The claim of complementarity is based on the observation that the CMO method's detection rate does not depend on local resolution. However, the manuscript does not directly compare the performance of conkit-validate to map-based methods on the same set of structures. The case study of 4WCE shows a case where the map-based method could not confirm the error, but this is a single example. A more direct comparison, perhaps by running a map-based method on the same benchmarking set, would strengthen the claim.</li>
+<li><strong>Why it matters</strong> The value proposition of the method is that it provides information that map-based methods cannot. This needs to be demonstrated more rigorously than with a single case study.</li>
+<li><strong>Resolution test</strong> The authors should run a map-based validation method (e.g., CMS) on the same benchmarking set and compare the detection rates. They should also provide a more detailed analysis of the cases where conkit-validate and CMS disagree.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The machine learning classifier is trained and evaluated on the same artificially generated dataset, and the manuscript claims it can detect "errors other than register shifts."</li>
+<li><strong>Evidence pointer</strong> Methods, Machine learning classification; Results, Performance of machine learning classifiers</li>
+<li><strong>Concern</strong> The classifier is trained on the same type of artificial errors used for benchmarking the CMO method. This is a circular validation. The manuscript does not describe the types of errors the classifier is designed to detect, nor does it provide evidence that the classifier can generalize to real-world errors. The feature importance analysis is mentioned but not shown.</li>
+<li><strong>Why it matters</strong> A classifier trained on artificial errors may not perform well on real structures. The claim that it can detect errors beyond register shifts is not supported by the evidence presented.</li>
+<li><strong>Resolution test</strong> The authors should describe the error types in the training set and test the classifier on a set of real structures with known errors. They should also show the feature importance analysis to demonstrate that the classifier is using meaningful information.</li>
+</ul>
+</li>
+<li><strong>Minor Comments</strong><ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability for nonspecialists</li>
+<li><strong>Affected element</strong> Introduction</li>
+<li><strong>Evidence pointer</strong> Introduction, paragraph 1</li>
+<li><strong>Issue</strong> The introduction is well-written but assumes a high level of familiarity with the field of structure validation. The distinction between map-based and model-based validation could be explained more clearly for a general structural biology audience.</li>
+<li><strong>Required correction</strong> Consider adding a brief explanation of the two main classes of validation methods and why a mapless approach is needed.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Methods, Benchmark dataset creation</li>
+<li><strong>Evidence pointer</strong> Methods, Benchmark dataset creation</li>
+<li><strong>Issue</strong> The threshold for defining a contact is set to 12.5 Å based on F1 score optimization. This is a very long distance for a contact, and it is not clear if this is physically meaningful for RNA.</li>
+<li><strong>Required correction</strong> The authors should discuss the physical interpretation of this threshold and whether it is appropriate for RNA, given that the method was originally developed for proteins.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Results, Case study 8I3Z</li>
+<li><strong>Evidence pointer</strong> Results, Case study from the PDB 8I3Z chain B</li>
+<li><strong>Issue</strong> The false positive in the 8I3Z case is attributed to the lack of context in the prediction. This is an important limitation, but it is only discussed in a single case study.</li>
+<li><strong>Required correction</strong> The authors should discuss the broader implications of this limitation and how users can assess whether their prediction has sufficient context.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Originality</li>
+<li><strong>Affected element</strong> Discussion</li>
+<li><strong>Evidence pointer</strong> Conclusions</li>
+<li><strong>Issue</strong> The conclusions section is brief and does not discuss the method's limitations in the context of other validation approaches.</li>
+<li><strong>Required correction</strong> A more detailed discussion of the method's place in the validation landscape, its limitations, and potential future improvements would strengthen the manuscript.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Methods, Filtering</li>
+<li><strong>Evidence pointer</strong> Methods, Filtering</li>
+<li><strong>Issue</strong> The filtering step uses a machine learning classifier trained on the same data as the main classifier. This could lead to overfitting.</li>
+<li><strong>Required correction</strong> The authors should clarify how the filter was trained and whether it was evaluated on a separate dataset.</li>
+</ul>
+</li>
+<li><strong>Assessment against Nature-style criteria</strong><ul>
+<li><strong>Originality</strong> The adaptation of a protein contact-map validation method to RNA is a novel contribution. The use of predicted contact maps for validation, rather than just structure prediction, is a creative idea. However, the core methodology is not new, and the novelty lies in the application.</li>
+<li><strong>Scientific importance</strong> The problem of RNA structure validation is important and growing in relevance as more RNA structures are determined. A reliable mapless validation method would be a valuable tool. The potential impact is significant, but the current evidence is insufficient to fully establish the method's utility.</li>
+<li><strong>Interdisciplinary readership</strong> The work is primarily of interest to structural biologists and computational biologists. The methods are specific to the field, and the broader impact on other disciplines is not immediately apparent.</li>
+<li><strong>Technical soundness</strong> The technical approach is generally sound, but there are significant concerns. The benchmarking dataset is artificial and may not be representative. The evaluation of the PDB scan is incomplete without the figures. The machine learning classifier's validation is circular. These issues need to be addressed.</li>
+<li><strong>Readability for nonspecialists</strong> The manuscript is clearly written but is technical and assumes a specialist audience. The abstract is accessible, but the methods and results sections would be challenging for a nonspecialist.</li>
+</ul>
+</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The core idea is promising and the case studies are compelling. However, the current manuscript does not fully establish the method's validity and utility. The authors need to provide a more rigorous evaluation, particularly of the benchmarking dataset and the PDB scan results.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that the method's performance is "similar to that previously achieved for proteins" is not supported by direct comparison.</li>
+<li>The claim that the method "can identify register errors where the density alone cannot decide between models" is only supported by a single case study and is not a general conclusion.</li>
+<li>The claim that the method "remains applicable where map-based approaches are not" is based on a single analysis of detection rate vs. resolution and needs more direct evidence.</li>
+<li>The performance of the machine learning classifier on real-world errors is unknown, as it was only tested on artificial errors.</li>
+<li>The effectiveness of the filtering step is not fully evaluated, and its training procedure is unclear.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

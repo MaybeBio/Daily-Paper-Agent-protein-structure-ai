@@ -1,0 +1,92 @@
+## Review setup
+- **Input scope** Full manuscript text
+- **Assessment boundary** Scientific content, technical soundness, and claims as presented in the provided manuscript
+- **Shared manuscript claim summary** The authors propose HydroGuard, a Gel-MA hydrogel system loaded with bacteriophages, designed to release phages in response to GelE-mediated degradation to combat E. faecalis biofilms associated with catheter-associated urinary tract infections (CAUTIs). The work combines preliminary wet-lab experiments using an E. coli surrogate system with a multiscale computational framework covering biofilm formation, hydrogel degradation, phage-bacteria dynamics, and protein design.
+- **Visible evidence base** Abstract, Introduction, Materials and Methods, Results, Discussion, Conclusion, Data availability statement
+- **Missing materials affecting confidence** Figures 1-15 are referenced but not provided. Experimental protocols for cloning, transformation, and protein expression are described only in summary form. Quantitative data, statistical analyses, and raw numerical outputs from computational models are not included. No information on phage-bacteria specificity assays, cytotoxicity, or material characterization beyond qualitative observations.
+
+## Reviewer
+- **Overall assessment** This manuscript presents an early-stage proof-of-concept for a phage-loaded, enzyme-responsive hydrogel intended to prevent CAUTIs. The conceptual integration of a biofilm-associated protease trigger with phage delivery is interesting and potentially relevant to the growing field of non-antibiotic antimicrobial strategies. However, the experimental evidence is almost entirely qualitative, the computational models are described without sufficient detail for reproducibility, and the link between the surrogate E. coli system and the target pathogen E. faecalis is not experimentally established. The manuscript reads as a project report rather than a complete scientific study, and the core claims of the system's feasibility are not supported by the evidence provided.
+- **Who would be interested in the results, and why** Researchers working on bacteriophage therapy, antimicrobial hydrogels, biofilm prevention, and medical device-associated infections may find the conceptual framework of interest. The multiscale modelling approach could appeal to computational biologists studying host-pathogen-material interactions. However, the lack of quantitative experimental validation limits the utility for clinicians or biomaterials scientists seeking actionable data.
+- **Major strengths**
+  - The concept of enzyme-triggered phage release is a thoughtful response to the limitations of passive antimicrobial coatings.
+  - The multiscale computational framework is ambitious and attempts to connect molecular, material, and population-level dynamics.
+  - The authors are transparent about the preliminary nature of the work and the surrogate system limitations.
+  - The use of a BSL-1 system for initial feasibility testing is a pragmatic safety choice.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Experimental evidence
+  - **Claim pointer** The abstract and discussion state that the system shows "preliminary inhibition" against biofilms and that the hydrogel supports "enzyme-triggered release of bacteriophages."
+  - **Evidence pointer** Results section, "Testing of HydroGuard against biofilm"; Figure 4
+  - **Concern** The only experimental evidence for antimicrobial activity is described as "qualitative observations" of reduced visible bacterial growth. No quantitative data, such as colony-forming unit counts, biofilm biomass measurements, or statistical comparisons, are provided. The claim of enzyme-triggered release is inferred from "small pinprick holes" in the hydrogel, which is not a validated measure of degradation or phage release.
+  - **Why it matters** Without quantitative experimental validation, the central mechanism of the proposed system (GelE-triggered phage release leading to bacterial suppression) remains unsupported. The manuscript cannot establish feasibility on the basis of qualitative observations alone.
+  - **Resolution test** Provide quantitative data from at least three independent replicates, including bacterial counts, biofilm mass, and phage titers, with appropriate statistical tests. Demonstrate GelE-specific degradation of the hydrogel using controlled experiments with and without GelE or GelE-expressing cells.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Relevance to target pathogen
+  - **Claim pointer** The manuscript claims the system targets E. faecalis biofilms, but all experiments use E. coli DH5α/BL21 as a surrogate.
+  - **Evidence pointer** Materials and Methods, "Cloning" and "Biofilm growth"; Discussion
+  - **Concern** The use of E. coli as a host for GelE expression and as the biofilm organism does not replicate E. faecalis physiology, biofilm structure, or phage susceptibility. The phages used (T2, T4, T7, λ) are E. coli-specific and would not infect E. faecalis. The manuscript does not present any data on E. faecalis growth, GelE production, or phage activity against the target organism.
+  - **Why it matters** The clinical rationale for the system depends on activity against E. faecalis. The surrogate system can only demonstrate proof of concept for GelE-mediated degradation, not for the proposed therapeutic effect against the target pathogen.
+  - **Resolution test** Include experiments with E. faecalis, including GelE production assays, phage susceptibility testing, and biofilm inhibition studies. If E. faecalis-specific phages are not available, state this limitation explicitly and provide a clear pathway for how the system would be adapted.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Computational model validation
+  - **Claim pointer** The multiscale computational framework is described as providing "predictive insight" and "linking biofilm development and environmental conditions to enzyme-mediated hydrogel degradation, phage release, and bacterial suppression."
+  - **Evidence pointer** Materials and Methods, "Computational modelling"; Results, "Model of E. faecalis biofilm formation", "Hydrogel diffusion modelling", "Modelling the phage-bacteria interaction", "Protein design modelling"
+  - **Concern** The computational models are described at a high level, but no equations, parameter values, or validation against experimental data are provided. The models are not compared to the qualitative experimental observations, and no metrics of model fit or predictive accuracy are given. The protein design section reports outputs from AlphaFold3 and ProteinMMP but does not include any experimental validation of the designed peptides.
+  - **Why it matters** Computational models are only useful if they can be evaluated for accuracy and reproducibility. Without equations, parameters, or validation, the models cannot be assessed, and the claim of "predictive insight" is not substantiated.
+  - **Resolution test** Provide full model equations, parameter tables, and code availability. Validate model outputs against the experimental data presented, or clearly state which predictions remain untested. For the protein design, include experimental data on peptide synthesis, folding, and GelE cleavage.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Material characterization
+  - **Claim pointer** The manuscript describes Gel-MA hydrogel fabrication and phage encapsulation but does not characterize the material properties relevant to catheter application.
+  - **Evidence pointer** Materials and Methods, "Hydrogel fabrication and characterization"
+  - **Concern** No data are provided on hydrogel mechanical properties, swelling, degradation kinetics, phage loading efficiency, or release profiles under physiological conditions. The manuscript states that "comprehensive material characterization... was beyond the scope" but does not provide any alternative quantitative characterization.
+  - **Why it matters** For a catheter coating, mechanical integrity, stability, and controlled release are critical. Without these data, the practical feasibility of the system cannot be evaluated.
+  - **Resolution test** Include measurements of hydrogel stiffness, degradation rate in urine or PBS, phage encapsulation efficiency, and release kinetics over time, with at least three replicates per condition.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Results section, "Phage propagation and validation"
+  - **Evidence pointer** Figure 2
+  - **Issue** The text states that restriction digestion produced patterns matching in silico predictions for T2, T4, and T7, but λvir produced "weak but interpretable fragments." The criteria for "interpretable" are not defined.
+  - **Required correction** Define the criteria for successful restriction digestion and provide the in silico predictions alongside the experimental data.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Materials and Methods, "Testing of HydroGuard against biofilm"
+  - **Evidence pointer** Location not provided
+  - **Issue** The method for placing biofilms on hydrogels and collecting samples is described only briefly. The volume of phage injected, the number of replicates, and the incubation conditions are not specified.
+  - **Required correction** Provide a detailed protocol, including sample sizes, volumes, concentrations, and incubation times.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Abstract and Discussion
+  - **Evidence pointer** Location not provided
+  - **Issue** The term "cocktail" is used to describe the phage mixture, but the manuscript does not specify the composition, ratios, or rationale for the combination.
+  - **Required correction** Specify the phage cocktail composition and the rationale for selecting these phages.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Data presentation
+  - **Affected element** Results, "Protein design modelling"
+  - **Evidence pointer** Figure 15
+  - **Issue** The "Composite Score" is defined as (DOM + CLS - DP), but the definitions of DOM, CLS, and DP are not provided in the text.
+  - **Required correction** Define all acronyms and explain how the composite score relates to rigidity and degradability.
+- **Technical failings that need to be addressed before the case is established**
+  - R1-M1: Lack of quantitative experimental data for antimicrobial efficacy.
+  - R1-M2: No experiments with the target pathogen E. faecalis.
+  - R1-M3: Computational models not described in sufficient detail for evaluation or reproduction.
+  - R1-M4: No material characterization data for the hydrogel system.
+## Risk / unsupported claims
+- The claim that the system provides "enzyme-triggered release of bacteriophages" is unsupported by direct experimental evidence; the observation of "pinprick holes" is not a validated measure.
+- The claim that the multiscale framework provides "predictive insight" is unsupported because model equations, parameters, and validation are not provided.
+- The claim that the phage cocktail "produced the greatest apparent reduction in visible bacterial growth" is based on qualitative observation without statistical support.
+- The claim that the system "could potentially be adapted" to other pathogens is speculative and not supported by data.
+- The claim that the work has "clinical and societal relevance" is overstated given the absence of any in vivo or clinically relevant experimental model.

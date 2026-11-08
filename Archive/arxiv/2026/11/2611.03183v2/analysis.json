@@ -1,0 +1,24 @@
+{
+  "source": "arxiv",
+  "id": "2611.03183v2",
+  "title": "Auto-Research Agent on MSA Organization to Improve Protein-Protein Complex Structure Prediction",
+  "authors": "Zilu Zhang; Jing Bao; Lifeng Qiao; Sheng Xu; Qiantai Feng; Siqi Sun; Yang Yang",
+  "journal": "",
+  "published_date": "2026-11-02",
+  "window": {
+    "start": "2026-11-01",
+    "end": "2026-11-07"
+  },
+  "score": 8,
+  "one_liner_zh": "该文提出一个自主智能体，将AlphaFold 3视为黑盒，针对每个蛋白-蛋白复合物靶标动态优化MSA深度与跨链配对策略，显著提升复合物结构预测精度，核心聚焦蛋白质复合物结构预测问题，方法上结合AI预测器与自主实验推理，具有较强方法创新性。",
+  "abstract": "Protein-complex structure prediction with AlphaFold 3 depends on MSA content, depth, and cross-chain pairing. Current pipelines apply uniform recipes, typically maximizing depth and pairing by species, yet even whether cross-chain pairing helps AF3 remains contested. We show that the value of both depth and pairing is strongly target-dependent, so no single recipe is optimal across interfaces. We introduce an autonomous agent that treats a frozen AF3 as a black-box experimental instrument. For each target, the agent formulates biological hypotheses, analyzes and reorganizes the MSA, and iteratively refines sequence selection and pairing using predictor label-free signals alone. On 1{,}015 protein--protein interfaces from three benchmarks released after AF3's training cutoff, the agent improves overall interface DockQ over AF3's default pipeline and fixed MSA recipes on every benchmark, while using on average 60\\% fewer MSA sequences than the default. Gains are largest for inter-species heteromers, where species-based pairing is unreliable: mean DockQ increases from 0.465 to 0.612 on FoldBench and from 0.482 to 0.562 on HD439. The improvements arise from both sequence construction and pairing policy, including deliberate non-pairing. These results recast MSA design as a target-specific problem and show that an autonomous agent can adapt it at test time through biological reasoning and self-directed, confidence-guided experimentation.",
+  "abstract_zh": "使用AlphaFold 3进行蛋白质复合物结构预测依赖于MSA的内容、深度和跨链配对。当前的流程采用统一配方，通常通过物种来最大化深度和配对，然而即使跨链配对是否有助于AF3仍存在争议。我们表明，深度和配对的价值都强烈依赖于目标，因此没有单一配方在所有界面上都是最优的。我们引入了一个自主代理，将冻结的AF3视为黑箱实验仪器。对于每个目标，代理制定生物学假设，分析和重组MSA，并仅使用预测器无标签信号迭代优化序列选择和配对。在AF3训练截止后发布的三个基准测试中的1,015个蛋白质-蛋白质界面上，代理在每个基准上均优于AF3的默认流程和固定MSA配方，整体界面DockQ提升，同时平均使用比默认少60%的MSA序列。增益在跨物种异源二聚体中最大，其中基于物种的配对不可靠：在FoldBench上平均DockQ从0.465增加到0.612，在HD439上从0.482增加到0.562。改进源于序列构建和配对策略，包括有意的非配对。这些结果将MSA设计重新定义为目标特定问题，并表明自主代理可以通过生物学推理和自我导向、置信度引导的实验在测试时适应它。",
+  "has_fulltext": true,
+  "fulltext_source": "ar5iv",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://arxiv.org/abs/2611.03183v2",
+  "source_url": "https://arxiv.org/abs/2611.03183v2",
+  "paper_page_path": "papers/arxiv/2611.03183v2/index.html"
+}

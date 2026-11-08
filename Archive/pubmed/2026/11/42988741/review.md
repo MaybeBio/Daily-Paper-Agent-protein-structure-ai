@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report a major update to the ECOD protein domain classification resource, including a rebuilt web interface with three search modalities (sequence, structure, keyword), Foldseek as the primary search method against a representative domain database, a Mol* viewer, a new API, a rebuilt classification pipeline with regular cadence, synchronization with Pfam v38.2, reorganized bulk distributables, ligand and drug cross-reference annotations, and a registry for stable identifiers and predicted structures.
+- **Visible evidence base** Abstract text only; no quantitative performance metrics, no user testing, no comparative benchmarks, no detailed methods, no figures or tables
+- **Missing materials affecting confidence** Full manuscript, methods section, figures, tables, supplementary data, performance benchmarks, validation statistics, and any user or community feedback
+
+## Reviewer
+- **Overall assessment** The abstract describes a substantial and timely update to a widely used protein domain classification resource. The scope of changes is broad and likely of high value to the structural biology and bioinformatics communities. However, the abstract provides no quantitative evidence for the claimed improvements, such as search speed, accuracy, or coverage comparisons. The scientific case for the update is plausible but not established from the supplied material alone. The abstract is well written and accessible, but the lack of validation data limits the ability to assess technical soundness.
+- **Who would be interested in the results, and why** Structural biologists, protein evolution researchers, bioinformaticians, and developers of protein function prediction tools would be interested. The updated ECOD resource with improved search, new annotations, and stable identifiers directly supports large-scale domain classification, evolutionary analysis, and structure-based function inference. The integration with AlphaFold predicted models and DrugDomain cross-references broadens relevance to drug discovery and genome annotation communities.
+- **Major strengths** The update addresses clear user needs, including faster and more flexible search, programmatic access, and integration with predicted structures. The inclusion of ligand and drug annotations adds functional context. The registry for stable identifiers is a forward-looking feature that supports reproducibility. The rebuild of the classification pipeline and synchronization with Pfam are practical improvements likely to enhance consistency and usability.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims that Foldseek is now the primary search method and that results are presented through a Mol* viewer, implying improved search and visualization capabilities.
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** No quantitative or qualitative evidence is provided to support the effectiveness of the Foldseek-based search, such as benchmark comparisons against previous methods, search speed, memory usage, or accuracy on representative queries. Similarly, no evidence is given for the usability or performance of the Mol* viewer integration.
+  - **Why it matters** The central claim of the update is a rebuilt interface with new search modalities. Without performance or accuracy data, readers cannot assess whether the new search is actually better or even equivalent to prior approaches. This is a core functional claim that requires validation.
+  - **Resolution test** Provide benchmark results comparing Foldseek-based search against previous ECOD search methods, including metrics such as precision, recall, speed, and scalability on standard query sets. Include user or usability testing for the Mol* viewer if claimed as an improvement.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract states that the classification pipeline has been rebuilt and returned to a regular cadence, and that family groups have been synchronized with Pfam v38.2.
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** No details are given on the nature of the pipeline rebuild, the criteria for family synchronization, or the impact on classification consistency. The claim of "regular cadence" is vague and unquantified. There is no evidence that the synchronization with Pfam v38.2 improves or maintains classification quality.
+  - **Why it matters** Classification consistency and update frequency are critical for a resource like ECOD. Without specifics on the pipeline changes and validation of the synchronization, users cannot trust the stability or accuracy of new classifications.
+  - **Resolution test** Describe the pipeline rebuild in methods, including any algorithmic changes. Provide statistics on classification consistency before and after the update, and detail the synchronization process with Pfam, including any conflicts and their resolution.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scientific importance
+  - **Claim pointer** The abstract claims that ligands in contact with each domain are recorded for experimental structures and annotated with drug cross-references from DrugDomain.
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The functional value of this annotation is clear, but no examples, coverage statistics, or validation of the ligand contact definitions or DrugDomain cross-references are provided. It is unclear how complete or accurate these annotations are.
+  - **Why it matters** For users interested in drug binding or functional sites, the reliability and coverage of these annotations are essential. Without evidence, the claim is unsubstantiated.
+  - **Resolution test** Provide coverage statistics (e.g., fraction of experimental domains with ligand annotations), describe the method for defining contacts, and validate a sample of DrugDomain cross-references against known drug-target interactions.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The abstract uses terms like "gene-called proteins" without definition, which may confuse readers unfamiliar with ECOD's terminology.
+  - **Required correction** Define "gene-called proteins" or use a more standard term such as "gene-predicted proteins" with a brief explanation.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The abstract mentions a new API but does not specify its endpoints, data formats, or rate limits, which are important for potential users.
+  - **Required correction** Add a sentence describing the API's basic features, such as RESTful endpoints, output formats, and access policies, or refer to documentation in the full manuscript.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The abstract states that the representative domain database is distributed for local use but does not specify the download size, format, or update frequency.
+  - **Required correction** Provide these details in the abstract or point to a methods section where they are described.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking because the core claims of improved search and pipeline reliability are not supported by any evidence in the abstract. R1-M3 is non-blocking but requires validation for full confidence.
+- **Assessment against Nature-style criteria** 
+  - **Originality** The update is incremental rather than conceptually novel, but the integration of Foldseek, Mol*, and DrugDomain annotations into a major resource is a useful contribution. Originality is moderate.
+  - **Scientific importance** High for the structural biology and bioinformatics communities, given ECOD's wide use. The addition of predicted structures and drug annotations increases relevance.
+  - **Interdisciplinary readership** Moderate to high, as the resource serves structural biology, evolution, and drug discovery. The abstract is accessible but lacks depth for specialists.
+  - **Technical soundness** Not assessable from the abstract alone. The lack of benchmarks and validation is a significant gap.
+  - **Readability for nonspecialists** The abstract is generally clear but includes some jargon and lacks context for key terms.
+- **Recommendation posture** Supportive if technical concerns are resolved. The update is valuable and likely to be well received, but the abstract does not provide sufficient evidence to establish the technical claims. Full manuscript review is needed to assess the pipeline rebuild, search performance, and annotation quality.
+
+## Risk / unsupported claims
+- The claim that Foldseek-based search is effective or improved is unsupported without benchmarks.
+- The claim that the classification pipeline has been rebuilt and returned to a regular cadence is unquantified and unvalidated.
+- The claim that family groups are synchronized with Pfam v38.2 is unverified in terms of consistency or quality.
+- The claim that ligand and DrugDomain annotations are recorded and cross-referenced is unvalidated in terms of coverage or accuracy.
+- The claim that the registry assigns stable identifiers and records predicted structures is unverified in terms of implementation and reliability.

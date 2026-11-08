@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Evaluation Contracts and Evaluation Leverage: Sliced-Gap Readings in Structured Prediction Can Move Without Model Change · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-low">0</span>
+    <div>
+      <h1>Evaluation Contracts and Evaluation Leverage: Sliced-Gap Readings in Structured Prediction Can Move Without Model Change</h1>
+      <div class="meta">Hao Lu; Weixing Zhu; Ruiyang Li</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-11-03
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2611.04099v1">原文</a>
+      </div>
+      <p class="one-liner">该文研究NLP评估协议对性能差距读数的影响，与蛋白质结构计算建模完全无关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">NLP evaluation reports routinely cite sliced performance differences, most prominently the intra-inter gap in document-level relation extraction, as capability evidence. We show that such gap readings are joint properties of models and evaluation contracts: scoring function, gold version, threshold, output format, and prompt language. With predictions frozen, a method ordering reverses under a gold-standard exchange (+0.0363, CI excluding zero; tie-level after), movement localizing where gold re-partitions: renames are gauge transformations (Delta=0; re-annotation +0.862). We formalize this as an evaluation leverage account centered on the rank-flip condition. Constructively, the audited evaluation reading (AER) is a contract-marginalized, tie-declared, seed-prescribed, gate-filtered procedure whose tie declarations cover every contract-induced flip on the declared WMT19 grids (14/14; held-out 73% vs. union-of-ties 89%), matching the best single metric contract at epsilon=0.10 equivalence. Evidence spans DocRE, HacRED, a UD probe, and released gold revisions; an alternative-reference-set replication extends it beyond our testbeds. Failed predictions retained as boundaries; a 5% violation gate flags unverifiable settings and bounds survivor-selection bias. We release EvalLever, a preregistered workflow with an amendment trail; on LLM-as-judge grids, the audited ensemble stabilizes every unstable pair (13-15 to zero; generic ensemble shrinkage: the preregistered correlation criterion failed, the companion stabilization criterion passed).</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">NLP评估报告常以切片性能差异作为能力证据，最显著的是文档级关系抽取中的组内-组间差距（intra-inter gap）。我们表明，此类差距读数（gap readings）是模型与评估契约（evaluation contracts）的联合属性：评分函数、金标准版本、阈值、输出格式和提示语言。在预测冻结的情况下，方法排序在金标准交换下发生逆转（+0.0363，置信区间排除零；之后为平局水平），移动定位在金标准重新划分处：重命名是规范变换（Delta=0；重新标注 +0.862）。我们将此形式化为以秩翻转条件（rank-flip condition）为中心的评估杠杆解释（evaluation leverage account）。建设性地，审计评估读数（audited evaluation reading, AER）是一种契约边际化、平局声明、种子指定、门控过滤的程序，其平局声明覆盖了声明的WMT19网格上所有契约诱导的翻转（14/14；留出集73%对比平局并集89%），在epsilon=0.10等价性下匹配最佳单一指标契约。证据涵盖DocRE、HacRED、一个UD探针和发布的金标准修订；一个替代参考集复制将其扩展到我们的测试平台之外。失败预测保留为边界；5%违规门控标记不可验证设置并限制幸存者选择偏差。我们发布EvalLever，一个带有修订轨迹的预注册工作流；在LLM作为评判者的网格上，审计集成稳定了每个不稳定对（13-15降至零；通用集成收缩：预注册相关性标准失败，伴随稳定化标准通过）。</div>
+  </section>
+  
+  
+  
+</article>
+</main>
+</body>
+</html>

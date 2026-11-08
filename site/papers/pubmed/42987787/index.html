@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>One pocket, two poses: How sequence context shapes non-additive binding. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>One pocket, two poses: How sequence context shapes non-additive binding.</h1>
+      <div class="meta">Rao, Jingyou; Coyote-Maestas, Willow</div>
+      <div class="meta muted">
+        
+        <span class="journal">Molecular cell</span>
+        · 2026-11-05
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42987787/">原文</a>
+      </div>
+      <p class="one-liner">该文结合组合突变、表位分析、NMR和分子动力学，研究序列背景如何通过特定肽构象和PIN1残基产生非加性结合，将统计上位性与分子机制关联，涉及蛋白质-肽结合的结构计算模拟，但核心是结合机制而非结构预测或生成。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">In a recent issue, Jiang et al.(1) combine combinatorial mutagenesis, reference-independent epistasis analysis, binding measurements, NMR, and molecular dynamics to show how specific peptide conformations and PIN1 residues generate non-additive recognition, directly linking statistical epistasis to concrete molecular mechanisms across a complete sequence landscape.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">在最近一期中，Jiang等人(1)结合组合突变、参考无关的上位效应分析、结合测量、核磁共振（NMR）和分子动力学（molecular dynamics），展示了特定肽构象和PIN1残基如何产生非加性识别，直接将统计上位效应与跨越完整序列景观的具体分子机制联系起来。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：One pocket, two poses: How sequence context shapes non-additive binding.</li>
+<li><strong>作者</strong>：Rao, Jingyou; Coyote-Maestas, Willow</li>
+<li><strong>单位</strong>：未提供（根据作者领域推测为蛋白质设计/进化方向实验室，但原文未标注）</li>
+<li><strong>期刊/平台</strong>：Molecular Cell（Preview/Commentary 类文章）</li>
+<li><strong>年份</strong>：2026-11-05</li>
+<li><strong>论文类型</strong>：Preview / Commentary（对 Jiang et al. 工作的评述）</li>
+<li><strong>领域</strong>：蛋白质-肽结合、组合突变、上位性（epistasis）、构象动态</li>
+<li><strong>关键词</strong>：非加性结合（non-additive binding）、上位性、序列上下文、肽构象、PIN1、组合突变、NMR、分子动力学</li>
+<li><strong>DOI/arXiv</strong>：10.1016/j.molcel.2026.09.035</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供（评述文章，不包含原始数据）</li>
+<li><strong>阅读日期</strong>：2026-05-14（按当前日期）</li>
+<li><strong>在课题方向中的位置</strong>：本文是评述文章，核心价值在于将「统计上位性（statistical epistasis）」与「具体分子机制（构象、残基互作）」直接挂钩，为蛋白质结构-序列-功能关系研究提供了从序列组合数据到结构机制的桥接范式。对蛋白质结构预测、构象采样、分子对接、MD 模拟方向有直接的方法论启示。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文评述 Jiang et al. 的工作：通过组合突变、参考无关上位性分析、结合测量、NMR 和 MD，证明 PIN1 底物肽的特定构象与 PIN1 残基共同产生非加性识别，从而在完整序列景观上将统计上位性直接关联到具体分子机制。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：序列上下文如何通过影响肽构象和蛋白质残基互作，产生非加性（上位性）结合效应？</li>
+<li><strong>为什么重要</strong>：上位性（epistasis）是蛋白质进化、功能预测和设计中的核心障碍——如果残基效应是加性的，序列-功能映射将大大简化；但真实蛋白质中非加性效应普遍存在，理解其分子根源是预测和设计的关键。</li>
+<li><strong>现有方法为何不足</strong>：传统上位性分析停留在统计层面（如全局上位性模型），能检测到非加性但无法解释其分子机制；而结构生物学方法（NMR、MD）通常只研究少数变体，难以覆盖完整序列景观。两者之间缺乏系统连接。</li>
+<li><strong>精确研究问题</strong>：Can statistical epistasis in a complete sequence landscape be directly mapped to specific peptide conformations and protein residue interactions via integrated biophysical methods?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文评述内容构建，属于「仅本文框架」——评述文章通常只引用被评述工作及其直接相关文献，未做全面文献综述。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文主张的位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单点突变扫描</td>
+<td>丙氨酸扫描、饱和突变</td>
+<td>简单、可解释</td>
+<td>忽略残基间互作，无法捕捉上位性</td>
+<td>不足以理解非加性结合</td>
+</tr>
+<tr>
+<td>组合突变 + 统计模型</td>
+<td>深度突变扫描（DMS）、全局上位性模型</td>
+<td>覆盖序列空间，可量化非加性</td>
+<td>统计上位性缺乏分子机制解释</td>
+<td>需要将统计结果与结构/动态关联</td>
+</tr>
+<tr>
+<td>生物物理结构解析</td>
+<td>NMR、X-ray、MD</td>
+<td>提供原子级机制</td>
+<td>通量低，难以覆盖大量变体</td>
+<td>需要与高通量序列数据整合</td>
+</tr>
+<tr>
+<td>整合方法（Jiang et al.）</td>
+<td>组合突变 + 参考无关上位性 + NMR + MD</td>
+<td>在完整序列景观上连接统计与机制</td>
+<td>系统复杂，需多方法协同</td>
+<td>本文评述的范式：统计上位性 → 构象/残基机制</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上位性缺乏分子解释</td>
+<td>统计模型能检测非加性，但无法说明为什么</td>
+<td>序列效应通过构象和动态间接传递，统计层面不可见</td>
+<td>评述指出 Jiang et al. 用 NMR/MD 将上位性映射到具体构象（未提供具体图表编号）</td>
+</tr>
+<tr>
+<td>高通量与高分辨率不可兼得</td>
+<td>组合突变覆盖广但机制浅；NMR/MD 机制深但通量低</td>
+<td>两类方法的技术瓶颈不同，传统上分离使用</td>
+<td>评述强调 Jiang et al. 的整合策略是「直接连接」而非「平行使用」（未提供具体图表编号）</td>
+</tr>
+<tr>
+<td>参考依赖偏差</td>
+<td>传统上位性分析依赖参考序列，结果受参考选择影响</td>
+<td>上位性定义本身依赖参考状态</td>
+<td>评述提及「reference-independent epistasis analysis」作为关键方法（未提供具体图表编号）</td>
+</tr>
+<tr>
+<td>构象多态性被忽略</td>
+<td>单一静态结构无法解释非加性结合</td>
+<td>肽在结合口袋中可能采取多种构象（"two poses"）</td>
+<td>标题即点出「One pocket, two poses」（未提供具体图表编号）</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：Jiang et al. 对 PIN1 底物肽进行组合突变，用参考无关上位性分析识别非加性位点组合，再用 NMR 解析肽构象、用 MD 模拟动态过程，最后将统计上位性与结构/动态特征直接关联。</li>
+<li><strong>核心洞察</strong>：非加性结合效应并非来自单个残基的独立贡献，而是源于「序列上下文如何塑造肽在口袋中的构象选择」——同一口袋可容纳多种肽构象（"two poses"），不同序列上下文偏好不同构象，从而产生非加性。PIN1 的特定残基与特定肽构象之间的匹配关系是上位性的分子根源。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：统计上位性不是抽象数学对象，而是可还原为具体分子机制的物理现象。任何序列-功能映射研究，若能将统计非加性与构象/动态/互作网络关联，就能从「预测」走向「理解」。这对蛋白质设计（如何理性利用上位性）和结构预测（如何编码构象多态性）都有直接启示。</li>
+</ol>
+<h2>07 方法总览</h2>
+<blockquote>
+<p>注：本文是评述，以下基于对 Jiang et al. 工作的转述，具体细节以原文为准。</p>
+</blockquote>
+<ul>
+<li><strong>输入</strong>：PIN1 底物肽的完整组合突变文库（覆盖所有单点和组合突变）</li>
+<li><strong>输出</strong>：结合亲和力景观 + 上位性图谱 + 肽构象集合 + 分子机制模型</li>
+<li><strong>模块</strong>：
+  1. 组合突变文库构建
+  2. 结合测量（高通量）
+  3. 参考无关上位性分析（统计）
+  4. NMR 结构解析（关键变体的肽构象）
+  5. MD 模拟（动态过程与构象转换）
+  6. 整合分析（统计-结构关联）</li>
+<li><strong>训练</strong>：不适用（非机器学习方法）</li>
+<li><strong>工具</strong>：组合突变、结合实验、NMR、MD 模拟</li>
+<li><strong>反馈回路</strong>：统计上位性识别关键位点 → NMR/MD 解析机制 → 机制解释统计结果 → 验证/修正模型</li>
+<li><strong>假设</strong>：非加性结合效应可被还原为有限数量的构象状态和残基互作；参考无关上位性分析能无偏识别非加性位点</li>
+<li><strong>流程</strong>：构建组合文库 → 测量结合 → 计算上位性 → 选择代表性变体 → NMR 解析构象 → MD 模拟动态 → 将构象/残基互作与上位性模式关联 → 得出机制模型</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>组合突变文库</td>
+<td>覆盖完整序列景观</td>
+<td>单点突变无法捕捉非加性</td>
+<td>输入：PIN1 底物肽序列；输出：所有单点和组合突变体</td>
+<td>评述明确提及「combinatorial mutagenesis」（未提供图表编号）</td>
+<td>无法检测上位性（预期）</td>
+</tr>
+<tr>
+<td>参考无关上位性分析</td>
+<td>无偏识别非加性位点组合</td>
+<td>传统参考依赖方法可能引入偏差</td>
+<td>输入：结合测量数据；输出：上位性图谱</td>
+<td>评述明确提及「reference-independent epistasis analysis」（未提供图表编号）</td>
+<td>上位性检测可能有偏（预期）</td>
+</tr>
+<tr>
+<td>结合测量</td>
+<td>量化序列-功能映射</td>
+<td>功能表型是上位性分析的基础</td>
+<td>输入：突变体文库；输出：结合亲和力值</td>
+<td>评述提及「binding measurements」（未提供图表编号）</td>
+<td>无功能数据，无法分析（预期）</td>
+</tr>
+<tr>
+<td>NMR 结构解析</td>
+<td>解析肽构象</td>
+<td>构象是机制解释的关键</td>
+<td>输入：代表性变体；输出：肽在口袋中的构象</td>
+<td>评述提及「NMR」（未提供图表编号）</td>
+<td>机制解释缺失（预期）</td>
+</tr>
+<tr>
+<td>MD 模拟</td>
+<td>解析动态过程和构象转换</td>
+<td>静态结构不足以解释非加性</td>
+<td>输入：NMR 结构或同源模型；输出：构象系综和转换路径</td>
+<td>评述提及「molecular dynamics」（未提供图表编号）</td>
+<td>动态机制缺失（预期）</td>
+</tr>
+<tr>
+<td>整合分析</td>
+<td>连接统计与机制</td>
+<td>核心创新点</td>
+<td>输入：上位性图谱 + 构象数据；输出：机制模型</td>
+<td>评述核心主张（未提供图表编号）</td>
+<td>统计与机制脱节（预期）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：以上「移除后的影响」均为预期效应，评述未提供消融实验数据。</p>
+</blockquote>
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>。本文为评述文章，未包含公式。被评述的 Jiang et al. 工作中可能包含上位性计算模型，但评述中未给出具体公式。</p>
+<h2>10 实验设计与证据链</h2>
+<blockquote>
+<p>注：本文是评述，不包含原始实验。以下基于评述转述，具体实验设计以 Jiang et al. 原文为准。</p>
+</blockquote>
+<ul>
+<li><strong>数据集/群体</strong>：PIN1 底物肽的组合突变文库（规模未在评述中给出）</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：结合亲和力、上位性系数、构象状态</li>
+<li><strong>基线</strong>：未提供</li>
+<li><strong>预算</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：NMR 谱仪、MD 模拟平台</li>
+<li><strong>oracle 输入</strong>：不适用</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>组合突变 + 结合测量</td>
+<td>序列景观中存在非加性效应</td>
+<td>全组合 vs 单点加性预测</td>
+<td>检测到显著非加性（评述转述）</td>
+<td>上位性存在于 PIN1-肽结合</td>
+<td>未提供具体数值</td>
+<td>评述第 1 段</td>
+</tr>
+<tr>
+<td>参考无关上位性分析</td>
+<td>非加性位点可被无偏识别</td>
+<td>参考无关 vs 参考依赖</td>
+<td>识别出关键上位性位点（评述转述）</td>
+<td>统计上位性可定位到具体残基</td>
+<td>未提供方法细节</td>
+<td>评述第 1 段</td>
+</tr>
+<tr>
+<td>NMR 构象解析</td>
+<td>不同序列上下文产生不同肽构象</td>
+<td>不同突变体 vs 野生型</td>
+<td>观察到多种构象（"two poses"）（评述转述）</td>
+<td>构象多态性是上位性的结构基础</td>
+<td>未提供构象细节</td>
+<td>标题及第 1 段</td>
+</tr>
+<tr>
+<td>MD 模拟</td>
+<td>构象转换与残基互作驱动非加性</td>
+<td>模拟 vs 实验</td>
+<td>模拟支持构象机制（评述转述）</td>
+<td>动态过程参与非加性识别</td>
+<td>未提供模拟细节</td>
+<td>第 1 段</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文结论仅限于 PIN1 底物肽结合系统，不推广到其他蛋白质-配体系统。</li>
+<li><strong>oracle/真值输入</strong>：NMR 结构作为构象真值，结合测量作为功能真值。</li>
+<li><strong>端到端状态</strong>：Jiang et al. 的工作是端到端的（从序列到机制），但本文评述本身不包含新实验。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：依赖 PIN1 已知结构和底物信息。</li>
+<li><strong>模型依赖</strong>：依赖参考无关上位性分析的统计模型有效性。</li>
+<li><strong>最难情形</strong>：评述未讨论该方法在弱结合、高度动态或无序体系中的适用性。</li>
+<li><strong>群体/领域边界</strong>：结论限于 PIN1-肽相互作用，推广到其他系统需验证。</li>
+<li><strong>不确定性</strong>：评述未提供定量不确定性信息。</li>
+<li><strong>有边界的复述</strong>：在 PIN1 底物肽的完整组合序列景观中，统计上位性可被映射到特定的肽构象状态和 PIN1 残基互作，从而将非加性结合效应还原为具体的分子机制；该结论的适用范围限于此系统，且依赖所使用方法的有效性。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限（评述文章通常不包含自认局限部分）。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 评述强调该工作「directly linking statistical epistasis to concrete molecular mechanisms」，暗示此前缺乏此类连接，但未讨论该方法本身的局限。
+- 评述未讨论该方法是否适用于其他蛋白质家族或更复杂的多结构域体系。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>评述将统计上位性直接归因于构象多态性</td>
+<td>非加性也可能来自结合热力学中的熵-焓补偿、溶剂效应或动力学陷阱，而非仅构象选择</td>
+<td>若机制归因过窄，可能误导后续设计策略</td>
+<td>对同一系统进行变温实验、突变溶剂暴露残基、比较不同力场 MD 结果</td>
+<td>评述仅提及构象和残基互作，未讨论其他可能机制</td>
+</tr>
+<tr>
+<td>「reference-independent epistasis analysis」的优越性未被独立验证</td>
+<td>参考无关方法可能引入新的偏差（如对突变组合空间采样不均匀敏感）</td>
+<td>统计方法的有效性是结论的基础</td>
+<td>用模拟数据比较参考依赖与参考无关方法的偏差</td>
+<td>评述未提供方法验证细节</td>
+</tr>
+<tr>
+<td>单一系统（PIN1）的结论能否推广</td>
+<td>上位性的分子机制可能因蛋白家族而异</td>
+<td>若结论被过度推广，将影响蛋白质设计的一般策略</td>
+<td>在多个不同蛋白-肽系统上重复类似整合分析</td>
+<td>评述未讨论推广性</td>
+</tr>
+<tr>
+<td>「two poses」的构象模型可能过度简化</td>
+<td>实际构象系综可能包含更多状态，或呈连续分布而非离散态</td>
+<td>离散构象模型可能遗漏关键机制</td>
+<td>用增强采样 MD 或 NMR 弛豫分析检验构象系综的连续性</td>
+<td>标题强调「two poses」，但未提供构象系综分析</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>（面向蛋白质结构相关计算研究 × AI/物理模拟）：</p>
+<ol>
+<li><strong>统计-结构桥接范式</strong>：将高通量序列-功能数据（组合突变 + 上位性分析）与原子级结构/动态数据（NMR + MD）整合，是理解非加性效应的有效路径。可迁移到蛋白质设计：用 AI 预测上位性热点，再用 MD 验证机制。</li>
+<li><strong>参考无关上位性分析</strong>：传统上位性依赖参考序列，可能引入偏差。参考无关方法值得在蛋白质设计任务中尝试，尤其当参考序列选择不明确时。</li>
+<li><strong>构象多态性作为上位性来源</strong>：同一结合口袋可容纳多种配体构象，序列上下文通过选择构象产生非加性。这对结构预测（如何编码多构象状态）和分子对接（如何考虑构象系综而非单一 pose）有直接启示。</li>
+<li><strong>组合突变 + 物理模拟的互补性</strong>：组合突变提供覆盖度，MD 提供机制，两者结合可弥补各自局限。可迁移到 MD 模拟的增强采样策略设计——用上位性分析指导采样区域选择。</li>
+<li><strong>评述文章的「连接」价值</strong>：将统计遗传学与结构生物学连接，是跨学科研究的高价值切入点。对计算方向研究者，可考虑将 AI 预测的序列-功能关系与 MD/对接模拟的机制解释结合。</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>Jiang et al.（被评述工作）</strong>：原文发表于 Molecular Cell，具体卷期页码未在评述中给出。该工作整合组合突变、参考无关上位性、结合测量、NMR 和 MD。</li>
+<li><strong>上位性（epistasis）研究</strong>：与深度突变扫描（DMS）文献相关，如 Fowler &amp; Fields (2014) 的 DMS 方法综述；以及全局上位性模型（如 Otwinowski et al. 2018 的 global epistasis 模型）。</li>
+<li><strong>PIN1 研究</strong>：PIN1（肽基脯氨酰异构酶）是已知的脯氨酸构象开关调控因子，与癌症、神经退行性疾病相关。其底物识别机制已有大量结构生物学研究。</li>
+<li><strong>构象系综与功能</strong>：与 NMR 弛豫分析、MD 增强采样（如副本交换、元动力学）相关文献连接。</li>
+<li><strong>蛋白质设计中的非加性</strong>：与机器学习势函数（如 AlphaFold 的注意力机制能否捕捉上位性）相关讨论连接。</li>
+<li><strong>可迁移领域</strong>：蛋白质-小分子对接、蛋白-蛋白相互作用预测、抗体设计中的组合突变优化。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：AI 预测上位性热点 + MD 验证的整合工作流
+   - <strong>来源局限/观察</strong>：评述显示统计上位性可还原为构象机制，但 AI 预测上位性通常缺乏机制解释。
+   - <strong>核心假设</strong>：用图神经网络（GNN）在组合突变数据上训练上位性预测器，预测的热点残基对可通过 MD 模拟验证其构象机制。
+   - <strong>初步方法</strong>：构建 PIN1-肽组合突变数据集 → 训练 GNN 预测非加性结合效应 → 对预测热点进行 MD 模拟 → 比较预测与模拟的构象机制。
+   - <strong>验证方式</strong>：在已知上位性数据集上交叉验证；用 NMR 实验验证 MD 预测的构象状态。
+   - <strong>可能的失败模式</strong>：GNN 预测的上位性热点可能无法对应到单一构象机制；MD 采样不足导致机制误判。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：构象系综感知的分子对接评分函数
+   - <strong>来源局限/观察</strong>：「two poses」表明单一构象对接可能遗漏关键结合模式。
+   - <strong>核心假设</strong>：将构象系综（由 MD 或增强采样生成）纳入对接评分，可提高对非加性结合效应的预测精度。
+   - <strong>初步方法</strong>：对 PIN1-肽系统生成构象系综 → 对每个构象进行对接 → 用系综加权评分替代单一 pose 评分 → 与实验结合数据比较。
+   - <strong>验证方式</strong>：在 PIN1 及其他已知构象多态性系统上测试。
+   - <strong>可能的失败模式</strong>：系综生成成本高；加权方案缺乏物理依据。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：参考无关上位性的深度学习实现
+   - <strong>来源局限/观察</strong>：参考无关上位性分析在统计层面有效，但未与深度学习结合。
+   - <strong>核心假设</strong>：将参考无关上位性作为损失函数或正则化项，可提升深度学习序列-功能模型的泛化能力。
+   - <strong>初步方法</strong>：设计参考无关的损失函数 → 在组合突变数据集上训练序列-功能模型 → 与参考依赖模型比较预测精度和可解释性。
+   - <strong>验证方式</strong>：在 PIN1 及其他 DMS 数据集上测试。
+   - <strong>可能的失败模式</strong>：参考无关约束可能过度限制模型表达能力。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：AlphaFold 构象系综预测上位性
+   - <strong>来源局限/观察</strong>：AlphaFold 通常预测单一结构，但上位性可能来自构象多态性。
+   - <strong>核心假设</strong>：AlphaFold 的注意力图或多构象预测能力（如 AF-cluster）可编码与上位性相关的构象信息。
+   - <strong>初步方法</strong>：用 AlphaFold 预测 PIN1-肽复合物的多构象 → 将构象多样性特征与上位性数据关联 → 检验构象预测能否解释统计上位性。
+   - <strong>验证方式</strong>：在 PIN1 系统上比较 AlphaFold 构象预测与 NMR/MD 结果。
+   - <strong>可能的失败模式</strong>：AlphaFold 对肽构象多态性预测能力有限；注意力图与上位性的关联可能是虚假相关。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：MD 驱动的组合突变设计循环
+   - <strong>来源局限/观察</strong>：组合突变覆盖广但机制浅，MD 机制深但通量低。
+   - <strong>核心假设</strong>：用 MD 模拟指导组合突变文库设计，可提高文库的信息密度和功能命中率。
+   - <strong>初步方法</strong>：对野生型复合物进行 MD → 识别关键动态残基 → 优先突变这些残基 → 测量结合 → 用新数据更新 MD 模型 → 迭代。
+   - <strong>验证方式</strong>：在 PIN1 系统上比较 MD 指导文库与随机文库的功能命中率。
+   - <strong>可能的失败模式</strong>：MD 预测的动态热点可能与功能无关；迭代成本高。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：上位性感知的蛋白质语言模型微调
+   - <strong>来源局限/观察</strong>：蛋白质语言模型（PLM）通常训练于序列-结构任务，未显式建模上位性。
+   - <strong>核心假设</strong>：在组合突变数据上微调 PLM，可使其隐式学习上位性模式，提升突变效应预测精度。
+   - <strong>初步方法</strong>：用 PIN1 组合突变数据微调 ESM-2 → 比较微调前后对非加性效应的预测能力 → 分析注意力模式是否对应已知上位性位点。
+   - <strong>验证方式</strong>：在多个 DMS 数据集上测试迁移能力。
+   - <strong>可能的失败模式</strong>：微调数据量不足；PLM 可能无法捕捉高阶上位性。</p>
+</li>
+</ol>
+<blockquote>
+<p>创新状态说明：以上候选均为 unverified，基于评述文章的启发生成，未进行文献查新。</p>
+</blockquote></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full text (single paragraph provided)</li>
+<li><strong>Assessment boundary</strong> The provided text is a commentary or highlight piece, not a primary research article. Assessment is limited to the claims made within this single paragraph.</li>
+<li><strong>Shared manuscript claim summary</strong> The text claims that Jiang et al. used a combination of combinatorial mutagenesis, reference-independent epistasis analysis, binding measurements, NMR, and molecular dynamics to demonstrate how specific peptide conformations and PIN1 residues generate non-additive recognition, thereby linking statistical epistasis to concrete molecular mechanisms across a complete sequence landscape.</li>
+<li><strong>Visible evidence base</strong> The provided paragraph only. No figures, tables, methods, or supplementary materials are available.</li>
+<li><strong>Missing materials affecting confidence</strong> The original research article by Jiang et al. is not provided. No experimental details, data, figures, or statistical analyses are available for independent verification. The commentary does not include any primary data.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This is a brief commentary or highlight piece summarizing a study by Jiang et al. The text is well-written and provides a clear, concise summary of the key findings. However, as a commentary, it contains no primary data and its claims are entirely dependent on the referenced study. The assessment of the scientific content is therefore limited to the accuracy and clarity of the summary, which appears plausible but cannot be independently verified from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in the fields of protein biochemistry, molecular evolution, and computational biology would be interested. The study's focus on linking statistical epistasis to molecular mechanisms is relevant to those studying protein function, allostery, and the evolution of binding specificity. The use of PIN1, a peptidyl-prolyl isomerase involved in cell cycle regulation, may also attract cell biologists.</li>
+<li><strong>Major strengths</strong> The commentary is clear and concise. It accurately identifies the key methodological components of the original study (combinatorial mutagenesis, epistasis analysis, biophysical measurements, and computational methods). The claim of linking statistical epistasis to molecular mechanisms is a significant and interesting one, and the commentary frames it effectively.</li>
+<li><strong>Major Concerns</strong> None identified from the supplied material, as the text is a summary and does not make independent scientific claims that can be evaluated.</li>
+<li><strong>Minor Comments</strong> None identified from the supplied material.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> Not applicable. The text is a commentary and does not present a new scientific case. The technical validity of the underlying study by Jiang et al. cannot be assessed from this material.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The commentary does not present original work. The originality of the underlying study is plausible but not assessable.</li>
+<li>Scientific importance: The importance of linking statistical epistasis to molecular mechanisms is high, but the commentary itself does not establish this.</li>
+<li>Interdisciplinary readership: The topic is relevant to biochemistry, molecular biology, and computational biology, suggesting broad appeal.</li>
+<li>Technical soundness: Not assessable from the provided text.</li>
+<li>Readability for nonspecialists: The text is accessible and well-written, though terms like "reference-independent epistasis analysis" may require some background.</li>
+<li><strong>Recommendation posture</strong> Not applicable. This is a commentary, not a primary research submission. The text is suitable for its purpose as a highlight piece, but no scientific case is presented for evaluation.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that Jiang et al. "directly link statistical epistasis to concrete molecular mechanisms" is a strong assertion that cannot be verified from the provided commentary alone. The original study's data and analysis are not available for assessment.</li>
+<li>The claim that the study covers "a complete sequence landscape" is not substantiated in the provided text. The scope of the mutagenesis (e.g., number of positions, library size) is not specified.</li>
+<li>The specific roles of "peptide conformations" and "PIN1 residues" in generating non-additive recognition are stated but not detailed or supported with evidence in the provided material.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

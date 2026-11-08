@@ -1,0 +1,761 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning inhibitor interactions from protein deep mutational scanning data and deep learning models · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Learning inhibitor interactions from protein deep mutational scanning data and deep learning models</h1>
+      <div class="meta">Zou Z; Hazelwood I; Estevam G; Rao J; Chrispens K; Howard MK; Coyote-Maestas W; Fraser JS</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-11-03
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.11.01.763444">原文</a>
+      </div>
+      <p class="one-liner">该文系统评估了蛋白语言模型、几何深度学习及结构预测框架在MET激酶抑制剂深度突变扫描数据上的突变效应与药物-靶标亲和力预测能力，揭示了当前AI模型对配体不敏感及低估突变诱导亲和力变化的局限，并强调显式建模蛋白-配体相互作用和局部结构灵活性的重要性，与蛋白质结构计算及AI方法在药物发现中的应用直接相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Recent advances in protein language models, geometric deep learning, and structure prediction frameworks have the potential to accelerate computational drug discovery. However, it remains unclear how well these methods generalize beyond their training sets. Mutation-dependent drug responses present a challenge to these methods because there are often large effects from relatively small perturbations. Here, we systematically benchmark diverse mutational effect and drug-target affinity prediction models using deep mutational scanning datasets spanning 11 inhibitor conditions for the MET kinase domain. Across both mutational effect prediction and drug–target affinity tasks, current AI models produce largely ligand-invariant predictions despite experimentally distinct inhibitor-dependent fitness landscapes. Ligand-aware geometric models, including LigandMPNN and LASErMPNN, partially recover experimentally validated resistance-associated hotspots, highlighting the importance of explicitly modeling protein–ligand interactions and local structural flexibility. In contrast, deep learning affinity prediction models underestimate mutation-induced changes in binding affinity. This deficiency likely reflects mutation-invariant structural priors derived from co-folded structure prediction frameworks and the absence of mutation-conditioned supervision in current affinity datasets. Finally, we further extended our analysis to several kinase-inhibitor deep mutational scanning datasets and confirm the overall trends. Our findings suggest that a primary limitation in improving performance on this task lies in the scarcity of mutation-conditioned protein-ligand training data rather than model architecture alone.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质语言模型、几何深度学习和结构预测框架的最新进展有望加速计算药物发现。然而，这些方法在其训练集之外的泛化能力仍不明确。突变依赖性药物反应对这些方法构成挑战，因为相对较小的扰动往往会产生显著效应。在此，我们利用涵盖MET激酶结构域11种抑制剂条件的深度突变扫描数据集，系统性地基准测试了多种突变效应和药物-靶点亲和力预测模型。在突变效应预测和药物-靶点亲和力任务中，尽管实验显示抑制剂依赖性适应度景观存在差异，当前AI模型产生的预测在很大程度上与配体无关。配体感知的几何模型，包括LigandMPNN和LASErMPNN，部分恢复了实验验证的耐药相关热点，凸显了显式建模蛋白质-配体相互作用和局部结构灵活性的重要性。相比之下，深度学习亲和力预测模型低估了突变诱导的结合亲和力变化。这一缺陷可能反映了来自共折叠结构预测框架的突变不变结构先验，以及当前亲和力数据集中缺乏突变条件监督。最后，我们将分析扩展到多个激酶-抑制剂深度突变扫描数据集，并确认了总体趋势。我们的发现表明，提升此任务性能的主要限制在于突变条件蛋白质-配体训练数据的稀缺，而非仅模型架构本身。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Learning inhibitor interactions from protein deep mutational scanning data and deep learning models</li>
+<li><strong>作者</strong>：Zou Z; Hazelwood I; Estevam G; Rao J; Chrispens K; Howard MK; Coyote-Maestas W; Fraser JS</li>
+<li><strong>单位</strong>：未提供（根据通讯作者 Fraser JS 推测为 UCSF，但原文未明确）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：系统基准评测（Systematic Benchmarking）+ 方法评估</li>
+<li><strong>领域</strong>：蛋白质结构计算 × 深度学习 × 药物-靶标相互作用</li>
+<li><strong>关键词</strong>：deep mutational scanning (DMS)、protein language models、drug-target affinity prediction、MET kinase、inhibitor resistance、structure prediction</li>
+<li><strong>DOI/ID</strong>：10.64898/2026.11.01.763444</li>
+<li><strong>代码</strong>：https://github.com/fraser-lab/Kinase_Inhibitor_Datasets</li>
+<li><strong>数据</strong>：MET kinase DMS 数据集（11 种抑制剂条件，约 65,000 个错义突变）；额外 4 个激酶-抑制剂 DMS 数据集（SRC、CDKs、EGFR、FGFRs）</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在该方向中的位置</strong>：本文系统评估了当前主流深度学习模型（蛋白质语言模型、几何模型、亲和力预测模型）在预测"突变×抑制剂"联合扰动下的功能效应（即配体依赖的突变效应）时的表现，揭示了现有模型普遍缺乏配体敏感性这一关键瓶颈，并指出数据稀缺而非模型架构是主要限制因素。该工作位于"蛋白质结构预测/突变效应预测 × 药物发现"交叉点，对理解 AI 模型在突变条件化药物响应预测中的能力边界具有重要参考价值。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文利用 MET 激酶结构域在 11 种抑制剂条件下的深度突变扫描（DMS）数据，系统评测了多种深度学习模型（蛋白质语言模型、几何模型、亲和力预测模型）预测突变×配体联合效应的能力，发现所有模型均产生近乎配体不变的预测，无法捕捉实验观测到的配体依赖性适应度差异，并归因于突变条件化蛋白质-配体训练数据的稀缺。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：当前深度学习模型能否准确预测"单个氨基酸突变如何改变蛋白质对特定抑制剂药物的响应"（即突变×配体联合扰动下的功能效应）？</li>
+<li><strong>为什么重要</strong>：肿瘤靶向治疗中，激酶结构域的耐药突变是临床治疗失败的主要原因。若能准确预测哪些突变导致对特定抑制剂的耐药或增敏，将极大加速耐药监测和下一代抑制剂设计。这一问题同时涉及突变效应预测和药物-靶标亲和力预测两个核心任务，但二者的交叉——突变条件化的配体响应——尚未被系统研究。</li>
+<li><strong>现有方法为何不足</strong>：</li>
+<li>蛋白质语言模型（pLM）在无配体条件下预测突变效应表现良好，但输入中不含配体信息，原理上无法区分不同抑制剂条件；</li>
+<li>几何模型（如 ProteinMPNN、LigandMPNN）虽可输入配体，但训练目标（序列设计/稳定性）与配体依赖性功能效应不直接对齐；</li>
+<li>亲和力预测模型（如 TankBind、FLowDock）在标准基准上表现良好，但训练数据以野生型蛋白为主，缺乏突变条件化的亲和力标注；</li>
+<li>结构预测模型（AlphaFold3、Boltz-2）对单点突变的构象变化不敏感（已有文献报道），可能衰减突变信号。</li>
+<li><strong>精确研究问题</strong>："Can current deep learning models predict ligand-dependent mutational effects (i.e., how the functional consequence of a mutation changes across different inhibitor conditions) from sequence and structure alone?"</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文引言及参考文献，经外部核验标注。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>物理模拟时代</td>
+<td>MD、FEP/TI、metadynamics、umbrella sampling、MM-PBSA/GBSA、分子对接</td>
+<td>物理可解释、原子级精度</td>
+<td>计算昂贵、难以规模化、力场精度有限、对突变效应预测能力有限</td>
+<td>作为基线方法（AutoDock）被纳入比较</td>
+</tr>
+<tr>
+<td>机器学习时代</td>
+<td>随机森林、梯度提升树、SVM + 手工特征</td>
+<td>可处理中等规模数据</td>
+<td>依赖先验特征、泛化有限</td>
+<td>未直接评测</td>
+</tr>
+<tr>
+<td>深度学习-序列时代</td>
+<td>ESM、ESM-C、ProtTrans 等蛋白质语言模型</td>
+<td>零样本突变效应预测强、可扩展</td>
+<td>不含配体信息，无法区分配体条件</td>
+<td>作为主要评测对象（ESM2-650M/3B、ESM3、ESMC）</td>
+</tr>
+<tr>
+<td>深度学习-结构时代</td>
+<td>AlphaFold2/3、Boltz-2、Chai-1 等结构预测模型</td>
+<td>高精度结构预测</td>
+<td>对单点突变的构象变化不敏感（本文及引用文献证实）</td>
+<td>作为结构输入来源和亲和力预测模型被评测</td>
+</tr>
+<tr>
+<td>深度学习-设计时代</td>
+<td>ProteinMPNN、LigandMPNN、LASErMPNN、ThermoMPNN</td>
+<td>可显式建模蛋白-配体相互作用</td>
+<td>训练目标（序列设计/稳定性）与配体依赖性功能效应不对齐</td>
+<td>作为配体感知的突变效应预测器被评测</td>
+</tr>
+<tr>
+<td>深度学习-亲和力时代</td>
+<td>TankBind、FLowDock、FLOWR.root、GEMS、EM-PLA、DrugForm、PBCNet2.0</td>
+<td>直接预测结合亲和力</td>
+<td>训练数据以野生型为主，缺乏突变条件化标注</td>
+<td>作为亲和力预测模型被评测</td>
+</tr>
+<tr>
+<td>突变效应专用模型</td>
+<td>PremPLI、MutDTA</td>
+<td>显式训练于突变效应数据</td>
+<td>数据规模有限、泛化受限</td>
+<td>作为 ΔΔG 预测模型被评测</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：本文不提出新模型，而是建立了一个"突变×配体"联合扰动的系统评测框架，首次将突变效应预测和药物-靶标亲和力预测两个领域的方法放在同一基准下比较，并指出数据稀缺是核心瓶颈。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>模型预测配体不变</td>
+<td>所有模型在不同抑制剂条件下的预测高度相关（ρ &gt; 0.9），而实验数据中不同抑制剂条件下的适应度景观差异显著</td>
+<td>输入表示中缺乏有效的配体条件化信号；训练目标不包含配体依赖性突变效应</td>
+<td>Results 图 2C（上三角）；"most models produce highly similar predictions across conditions"</td>
+</tr>
+<tr>
+<td>亲和力预测与突变效应脱节</td>
+<td>亲和力模型预测的突变效应与实验 DMS 适应度变化相关性极低（ρ &lt; 0.2）</td>
+<td>训练数据以野生型蛋白为主，缺乏突变条件化的亲和力标注；结构预测对突变不敏感</td>
+<td>Results 图 5A；"affinity predictions showed little global correlation with experimentally measured fitness changes"</td>
+</tr>
+<tr>
+<td>结构预测衰减突变信号</td>
+<td>AlphaFold3/Boltz-2 预测的突变体结构与野生型几乎无差异</td>
+<td>结构预测模型依赖共进化信息，对单点突变的局部构象变化不敏感</td>
+<td>Results 图 4—figure supplement 1；"mutational effects do not significantly affect the predicted structure"</td>
+</tr>
+<tr>
+<td>耐药突变可预测性差</td>
+<td>模型对已知临床耐药热点（如 G1163、Y1230）的恢复率有限</td>
+<td>耐药机制涉及长程别构效应，超出局部相互作用建模能力</td>
+<td>Results 图 6B；"several documented sites... were rarely detected, if at all"</td>
+</tr>
+<tr>
+<td>训练数据稀缺</td>
+<td>突变条件化的蛋白-配体亲和力数据几乎不存在</td>
+<td>实验测量突变体-配体结合需要大量正交实验，成本高</td>
+<td>Discussion；"scarcity of mutation-conditioned protein-ligand training data"</td>
+</tr>
+<tr>
+<td>评估协议不一致</td>
+<td>不同模型使用不同的输入表示（序列/结构/配体）、不同的训练目标，难以公平比较</td>
+<td>领域缺乏统一的突变×配体联合评测基准</td>
+<td>本文建立统一评测框架即为解决此痛点</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>本文不提出新模型，而是构建了一个系统评测框架：
+- 使用 MET 激酶结构域的 DMS 数据（11 种抑制剂条件，约 65,000 个错义突变）作为基准；
+- 将模型分为三类：零样本突变效应预测器（ESM2、ESM3、ESMC、SaProt、ProteinMPNN、ProteinEBM 等）、配体感知的突变效应预测器（LigandMPNN、LASErMPNN、ProtLigand、ThermoMPNN 等）、亲和力预测模型（Boltz-2 affinity module、TankBind、FLowDock、FLOWR.root、GEMS、EM-PLA、DrugForm、PBCNet2.0 等）；
+- 使用统一的评测指标（Spearman ρ、Pearson ρ、Wasserstein 距离）比较模型预测与实验 DMS 适应度；
+- 将突变分为耐药相关和增敏相关，评估模型对临床已知耐药热点的恢复能力；
+- 扩展至 4 个额外激酶-抑制剂 DMS 数据集验证结论的普适性。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>配体不变性是系统性问题</strong>：所有模型（包括显式输入配体的模型）的预测在不同抑制剂条件下高度相关，而实验数据显示配体依赖性效应显著。这表明问题不在单一模型架构，而在于训练数据和目标函数中缺乏"突变×配体"联合扰动的监督信号。</li>
+<li><strong>亲和力 ≠ 适应度</strong>：模型预测的亲和力变化与实验测量的细胞适应度变化相关性极低，说明从分子结合到细胞表型之间存在大量未建模的中间环节（如蛋白稳定性、表达水平、信号通路冗余等）。</li>
+<li><strong>局部相互作用 vs 长程别构</strong>：模型能恢复配体邻近区域的耐药突变（如 G1163、Y1230），但对远离结合口袋的耐药位点（如 L1157、F1134）几乎无法预测，暗示这些位点通过长程别构机制发挥作用。</li>
+<li><strong>数据瓶颈而非架构瓶颈</strong>：配体感知的几何模型（LigandMPNN、LASErMPNN）在结合口袋附近的突变预测上优于纯序列模型，但整体提升有限，作者认为根本限制在于缺乏突变条件化的蛋白-配体训练数据。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>评测框架先于模型创新</strong>：在提出新模型之前，建立清晰的评测基准和失败模式分析往往能更有效地指导领域发展。本文的"配体不变性"诊断比任何单一模型改进都更具领域影响力。</li>
+<li><strong>训练数据分布决定能力边界</strong>：模型无法超越其训练数据中蕴含的联合扰动信息。对于"突变×配体"这类组合空间，实验数据的稀疏性可能是比模型容量更根本的限制。</li>
+<li><strong>多尺度效应的建模需求</strong>：从单点突变到细胞表型之间存在多尺度传递链（序列→结构→结合→稳定性→表达→信号→适应度），当前模型大多只覆盖其中一环，需要发展跨尺度建模方法。</li>
+</ul>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：</li>
+<li>蛋白质序列（MET 激酶结构域，287 aa；全长为 1,390 aa）</li>
+<li>配体 SMILES 字符串（11 种抑制剂）</li>
+<li>蛋白质结构（实验结构或 AI 预测结构，来自 AlphaFold3/Boltz-2/Chai-1）</li>
+<li>实验 DMS 适应度分数（作为评测标签）</li>
+<li><strong>输出</strong>：每个突变×抑制剂组合的预测适应度分数或结合亲和力变化</li>
+<li><strong>模块</strong>：
+  1. <strong>结构预测模块</strong>：AlphaFold3、Boltz-2、Chai-1 生成共折叠蛋白-配体复合物结构（有/无模板引导）
+  2. <strong>突变效应预测模块</strong>：ESM2（650M/3B）、ESM3、ESMC、SaProt、ProteinMPNN、ProteinEBM、ThermoMPNN、PottsMPNN、LigandMPNN、LASErMPNN、ProtLigand
+  3. <strong>亲和力预测模块</strong>：Boltz-2 affinity module、TankBind、FLowDock、FLOWR.root、GEMS、EM-PLA、DrugForm、PBCNet2.0、AutoDock-GPU（基线）
+  4. <strong>评测模块</strong>：Spearman/Pearson 相关、Wasserstein 距离、耐药/增敏突变分类</li>
+<li><strong>训练</strong>：所有模型使用预训练权重或官方提供权重，无额外微调（除 MutDTA 按原文重新训练）</li>
+<li><strong>流程</strong>：
+  1. 对每个抑制剂条件，生成/获取蛋白-配体复合物结构
+  2. 对每个错义突变，使用各模型预测突变效应或亲和力变化
+  3. 计算预测值与实验 DMS 适应度的相关性
+  4. 分析配体不变性（跨条件预测相关性）
+  5. 评估耐药/增敏突变恢复能力
+  6. 在额外激酶数据集上验证结论</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>共折叠结构预测（AlphaFold3/Boltz-2/Chai-1）</td>
+<td>生成蛋白-配体复合物结构，供几何模型使用</td>
+<td>几何模型需要三维结构输入；实验结构不完整</td>
+<td>输入：序列+SMILES；输出：复合物结构</td>
+<td>Results 图 1B；模板引导将 RMSD 从 3.7Å 降至 1.2Å（AF3）</td>
+<td>移除后几何模型无法运行；结构质量影响下游预测精度</td>
+</tr>
+<tr>
+<td>零样本突变效应预测（ESM2/ESM3/ESMC/SaProt）</td>
+<td>基于序列或结构预测突变对蛋白适应度的影响</td>
+<td>作为无配体基线，评估配体信息是否必要</td>
+<td>输入：序列/结构；输出：突变效应分数</td>
+<td>Results 图 2A；ESM2 在 DMSO 下 ρ≈0.50</td>
+<td>移除后失去无配体基线，无法量化配体信息的增量价值</td>
+</tr>
+<tr>
+<td>配体感知突变效应预测（LigandMPNN/LASErMPNN/ProtLigand）</td>
+<td>在突变效应预测中显式编码配体信息</td>
+<td>测试显式配体建模是否能捕捉配体依赖性效应</td>
+<td>输入：序列+配体/结构+配体；输出：突变效应分数</td>
+<td>Results 图 2B；配体感知模型在耐药热点恢复上优于无配体模型</td>
+<td>移除后无法评估配体显式建模的贡献</td>
+</tr>
+<tr>
+<td>亲和力预测（Boltz-2 affinity/TankBind/FLowDock/FLOWr.root 等）</td>
+<td>直接预测突变体-配体结合亲和力变化</td>
+<td>亲和力是适应度的直接分子基础</td>
+<td>输入：序列/结构+配体；输出：亲和力分数</td>
+<td>Results 图 4C；几何亲和力模型对结合口袋突变更敏感</td>
+<td>移除后失去与突变效应预测的对比维度</td>
+</tr>
+<tr>
+<td>耐药/增敏突变分类</td>
+<td>将突变分为耐药相关和增敏相关</td>
+<td>临床相关评估，检验模型的实际应用价值</td>
+<td>输入：实验 DMS 分数；输出：突变分类</td>
+<td>Results 图 5B-D；耐药突变集中在结合口袋</td>
+<td>移除后无法评估模型的临床转化潜力</td>
+</tr>
+<tr>
+<td>共识集成（Consensus Ensemble）</td>
+<td>聚合多模型预测识别一致的热点</td>
+<td>减少单一模型偏差，提高信噪比</td>
+<td>输入：多模型预测；输出：共识热点排名</td>
+<td>Results 图 6A-C；共识方法恢复多个已知耐药热点</td>
+<td>移除后热点识别稳定性下降</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>本文使用的公式较少，核心为评估指标：</p>
+<p><strong>1. Spearman 相关系数</strong>（Equation 1）：
+$$\rho = 1 - \frac{6\sum d_i^2}{n(n^2-1)}$$
+- $d_i$：第 $i$ 个样本的预测排名与实验排名之差
+- $n$：样本总数
+- 用途：评估模型预测与实验 DMS 适应度的单调相关性</p>
+<p><strong>2. Pearson 相关系数</strong>（Equation 2）：
+$$r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}}$$
+- $x_i, y_i$：第 $i$ 个样本的实验值和预测值
+- $\bar{x}, \bar{y}$：对应均值
+- 用途：评估线性相关性</p>
+<p><strong>3. Wasserstein 距离</strong>（Equation 3）：
+$$W(F, G) = \int_{-\infty}^{\infty} |F(x) - G(x)| dx$$
+- $F(x), G(x)$：两个累积分布函数
+- 用途：比较结合口袋突变与全结构域突变的预测分布差异</p>
+<p><strong>4. 共识得分</strong>（Equation 4）：
+$$\Sigma(p) = \sum_m \alpha \cdot n_m(p)$$
+- $p$：氨基酸位置
+- $m$：模型索引
+- $n_m(p)$：模型 $m$ 在位置 $p$ 标记的突变数
+- $\alpha = 0.5$：缩放参数，使同一模型的重复调用亚线性贡献
+- 用途：聚合多模型预测，识别共识耐药/增敏热点</p>
+<h2>10 实验设计与证据链</h2>
+<h3>数据集与规模</h3>
+<table>
+<thead>
+<tr>
+<th>数据集</th>
+<th>规模</th>
+<th>来源</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MET DMS（主要）</td>
+<td>约 65,000 个错义突变 × 11 种抑制剂条件</td>
+<td>Estevam et al. 2025</td>
+<td>主基准</td>
+</tr>
+<tr>
+<td>SRC DMS</td>
+<td>未提供具体规模</td>
+<td>Chakraborty et al. 2024</td>
+<td>验证</td>
+</tr>
+<tr>
+<td>CDKs DMS</td>
+<td>未提供具体规模</td>
+<td>Persky et al. 2020</td>
+<td>验证</td>
+</tr>
+<tr>
+<td>EGFR DMS</td>
+<td>未提供具体规模</td>
+<td>Kim et al. 2024</td>
+<td>验证</td>
+</tr>
+<tr>
+<td>FGFRs DMS</td>
+<td>未提供具体规模</td>
+<td>Tangermann et al. 2025</td>
+<td>验证</td>
+</tr>
+</tbody>
+</table>
+<h3>评测协议</h3>
+<ul>
+<li>每个模型对每个突变×抑制剂组合输出预测分数</li>
+<li>计算预测分数与实验 DMS 适应度（或 Δf_v = f_treatment - f_control）的 Spearman/Pearson 相关</li>
+<li>配体不变性分析：计算同一模型在不同抑制剂条件下预测的跨条件相关性</li>
+<li>耐药/增敏突变分类：基于实验 DMS 分数定义，评估模型恢复已知耐药热点的能力</li>
+</ul>
+<h3>实验列表</h3>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 Claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构预测精度评估</td>
+<td>AI 共折叠结构可作为实验结构替代品</td>
+<td>AF3/Boltz-2/Chai-1 有/无模板 vs 实验结构（3DKC）</td>
+<td>AF3 模板引导 RMSD 1.2Å；无模板 3.7Å</td>
+<td>模板引导显著提升结构精度</td>
+<td>结构精度提升不必然带来下游预测提升</td>
+<td>Results 图 1B</td>
+</tr>
+<tr>
+<td>零样本突变效应预测</td>
+<td>pLM 能预测 DMSO 下的突变效应</td>
+<td>ESM2-650M/3B、ESM3、ESMC、SaProt vs 实验 DMSO 适应度</td>
+<td>ESM2-650M ρ≈0.50；ESM3/ESMC 略优</td>
+<td>pLM 在无配体条件下有中等预测能力</td>
+<td>预测精度不足以支撑临床决策</td>
+<td>Results 图 2A</td>
+</tr>
+<tr>
+<td>配体依赖性检验</td>
+<td>模型能否区分不同抑制剂条件</td>
+<td>各模型在 11 种抑制剂条件下的预测跨条件相关</td>
+<td>几乎所有模型跨条件 ρ &gt; 0.9</td>
+<td>模型预测配体不变，无法捕捉配体依赖性效应</td>
+<td>配体不变性可能部分源于 DMS 数据本身的配体间相关性</td>
+<td>Results 图 2C</td>
+</tr>
+<tr>
+<td>配体感知模型评估</td>
+<td>显式配体建模能提升预测</td>
+<td>LigandMPNN、LASErMPNN、ProtLigand vs 无配体基线</td>
+<td>配体感知模型在耐药热点恢复上略优，但整体提升有限</td>
+<td>配体信息有增量价值，但不足以解决配体不变性</td>
+<td>提升幅度小，可能受限于结构输入质量</td>
+<td>Results 图 2B、3A</td>
+</tr>
+<tr>
+<td>亲和力预测评估</td>
+<td>亲和力模型能预测突变诱导的结合变化</td>
+<td>Boltz-2 affinity、TankBind、FLowDock、FLOWR.root 等</td>
+<td>结合口袋突变预测分布更宽，但整体相关 ρ &lt; 0.2</td>
+<td>亲和力模型对局部突变敏感，但无法预测全局适应度</td>
+<td>亲和力≠适应度，中间环节缺失</td>
+<td>Results 图 4C、5A</td>
+</tr>
+<tr>
+<td>耐药热点恢复</td>
+<td>模型能识别临床已知耐药突变</td>
+<td>共识集成 vs 已知耐药热点（G1163、Y1230、M1211 等）</td>
+<td>部分热点被恢复，但 L1157、F1134、G1242 等未被检测</td>
+<td>共识集成可恢复部分耐药热点</td>
+<td>恢复率有限，长程别构耐药机制超出当前模型能力</td>
+<td>Results 图 6A-C</td>
+</tr>
+<tr>
+<td>跨激酶验证</td>
+<td>结论具有普适性</td>
+<td>MET 结论在 SRC、CDKs、EGFR、FGFRs 上重复</td>
+<td>趋势一致：pLM 配体不变，亲和力模型相关低</td>
+<td>结论不限于 MET 激酶</td>
+<td>各数据集规模和质量不一，需谨慎比较</td>
+<td>Results 图 7A-B</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文评估的是"突变×配体"联合扰动下的功能效应预测，而非单独的突变效应预测或亲和力预测。模型在单一任务上的良好表现不能外推至联合任务。</li>
+<li><strong>真值/标签</strong>：实验 DMS 适应度分数是细胞水平的表型读数，反映的是突变体在抑制剂存在下的增殖/存活能力，而非直接测量结合亲和力。因此，与亲和力预测模型的相关性低并不完全否定这些模型的物理准确性。</li>
+<li><strong>端到端状态</strong>：所有模型均为预训练模型直接推理，无针对 DMS 任务的微调。在特定任务上微调可能提升表现，但本文未探索。</li>
+<li><strong>结构输入</strong>：几何模型使用 AI 预测结构（AF3/Boltz-2/Chai-1），而非实验解析的突变体结构。预测结构对突变不敏感可能人为压低几何模型的表现。</li>
+<li><strong>数据范围</strong>：MET 激酶结构域（287 aa）是相对较小的单结构域蛋白。对多结构域蛋白或蛋白-蛋白界面，结论可能不同。</li>
+<li><strong>计算成本</strong>：AF3/Boltz-2 对 65,000 个突变体逐一预测结构计算量巨大，实际应用中可能不可行。</li>
+<li><strong>有边界的结论</strong>：当前深度学习模型在预测配体依赖性突变效应方面表现不足，主要限制因素为突变条件化训练数据稀缺，而非模型架构。这一结论适用于所评测的模型家族和激酶-抑制剂体系，不排除未来模型或数据策略突破的可能性。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练数据稀缺</td>
+<td>突变条件化的蛋白-配体亲和力数据几乎不存在，限制了模型学习配体依赖性效应的能力</td>
+<td>生成更多突变×配体的正交实验数据（如结合亲和力、蛋白表达、稳定性测量）</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>适应度读数的间接性</td>
+<td>DMS 适应度反映细胞表型，受蛋白稳定性、表达、信号通路冗余等多因素影响，非直接结合亲和力</td>
+<td>配对 DMS 与直接结合测量，解耦不同分子机制</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>结构预测对突变不敏感</td>
+<td>AF3/Boltz-2 预测的突变体结构差异极小，可能衰减下游模型的突变信号</td>
+<td>开发对单点突变更敏感的结构预测方法</td>
+<td>Results 图 4—figure supplement 1</td>
+</tr>
+<tr>
+<td>评估集中于激酶家族</td>
+<td>主要基准为 MET 及少数激酶 DMS 数据集，结论对非激酶蛋白的普适性未知</td>
+<td>扩展到更多蛋白家族和抑制剂类型</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>模型未微调</td>
+<td>所有模型使用预训练权重直接推理，未针对 DMS 任务进行适配</td>
+<td>探索在突变×配体数据上微调或重新训练模型</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>计算成本</td>
+<td>对 65,000 突变体逐一进行结构预测和亲和力评估计算量巨大</td>
+<td>开发更高效的结构预测和亲和力评估方法</td>
+<td>Methods</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>配体不变性可能被高估</td>
+<td>作者将跨条件预测相关性高（ρ &gt; 0.9）解释为模型配体不变，但 DMS 数据本身可能存在配体间适应度景观的高度相关（即大多数突变对所有抑制剂影响相似），模型预测与数据一致未必是缺陷</td>
+<td>若数据本身配体间差异小，则"配体不变"的批评力度减弱</td>
+<td>计算实验 DMS 数据本身的跨条件相关性，与模型预测的跨条件相关性对比</td>
+<td>Results 图 2C 仅展示模型预测相关性，未充分展示数据本身的配体间差异</td>
+</tr>
+<tr>
+<td>结构预测的突变不敏感性可能人为压低几何模型表现</td>
+<td>作者使用 AF3/Boltz-2 预测结构作为几何模型输入，但已有文献表明这些模型对单点突变的结构响应微弱。若使用实验结构或更敏感的突变结构预测方法，几何模型表现可能更好</td>
+<td>结构输入质量是几何模型表现的关键混淆变量</td>
+<td>使用实验解析的突变体结构（如可用）或对结构预测模型进行突变敏感性评估后重做基准</td>
+<td>Results 图 4—figure supplement 1</td>
+</tr>
+<tr>
+<td>亲和力与适应度的映射缺失</td>
+<td>作者将 DMS 适应度作为评估亲和力预测模型的金标准，但适应度受多因素影响，亲和力预测模型在"亲和力"维度上可能更准确</td>
+<td>模型评估的公平性取决于任务定义是否与评估标签一致</td>
+<td>使用直接测量的突变体-配体结合亲和力数据（如 SPR、ITC）作为补充评估标签</td>
+<td>Discussion 中作者也承认此问题</td>
+</tr>
+<tr>
+<td>共识集成方法可能掩盖模型间差异</td>
+<td>作者使用共识集成识别热点，但未充分报告单一模型的表现差异。若单一模型表现差异大，共识结果可能由少数模型主导</td>
+<td>共识集成的可解释性和稳健性需要更透明的报告</td>
+<td>报告每个单一模型的热点恢复率及模型间一致性</td>
+<td>Results 图 6B 仅展示集成结果</td>
+</tr>
+<tr>
+<td>扩展数据集的评估深度不足</td>
+<td>对 SRC、CDKs、EGFR、FGFRs 的评估仅报告了总体趋势，未提供与 MET 同等深度的分析（如热点恢复、配体特异性）</td>
+<td>跨激酶验证的深度影响结论的普适性</td>
+<td>对每个扩展数据集重复 MET 的完整分析流程</td>
+<td>Results 图 7 仅展示总体相关性</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<h3>Agent 提炼的知识候选</h3>
+<ol>
+<li>
+<p><strong>"配体不变性"作为诊断指标</strong>：在评估任何"突变×配体"联合预测模型时，应首先计算模型预测的跨条件相关性。若模型在不同配体条件下预测高度相关（ρ &gt; 0.9），则模型未有效利用配体信息，无论其整体预测精度如何。这一诊断方法可迁移到任何涉及多条件扰动的预测任务。</p>
+</li>
+<li>
+<p><strong>突变条件化数据稀缺是核心瓶颈</strong>：当前蛋白质语言模型和亲和力预测模型的训练数据分别覆盖"突变空间"和"配体空间"，但二者的交叉（同一蛋白在不同配体下的突变效应）几乎空白。这提示本课题方向的研究者：模型架构创新可能不如数据生成策略（如主动学习、实验设计）更具杠杆效应。</p>
+</li>
+<li>
+<p><strong>局部 vs 长程突变效应的建模差异</strong>：模型对结合口袋附近的耐药突变恢复较好，但对远离口袋的位点几乎无法预测。这提示在设计突变效应预测模型时，应显式区分局部直接相互作用和长程别效应，可能需要引入多尺度表示或物理约束。</p>
+</li>
+<li>
+<p><strong>结构预测的突变敏感性是下游任务的瓶颈</strong>：AF3/Boltz-2 对单点突变的结构响应微弱，这不仅是结构预测本身的问题，更会级联影响所有依赖结构输入的几何模型。本课题方向的研究者可考虑开发"突变条件化"的结构预测微调策略，或使用系综/扰动感知的结构表示。</p>
+</li>
+<li>
+<p><strong>亲和力 ≠ 适应度的评估陷阱</strong>：用细胞表型数据（DMS 适应度）评估物理/化学驱动的亲和力预测模型时，需注意标签与任务的不匹配。本课题方向的研究者应明确区分"预测结合亲和力变化"和"预测细胞表型变化"两个任务，并选择匹配的评估标签。</p>
+</li>
+<li>
+<p><strong>共识集成提高热点识别稳健性</strong>：跨模型共识可有效降低单一模型偏差，尤其适用于"从噪声较大的 DMS 数据中识别真实热点"这一任务。该方法可迁移到其他需要从多模型预测中提取稳健信号的场景。</p>
+</li>
+<li>
+<p><strong>模板引导的结构预测策略</strong>：在可用实验结构模板时，模板引导显著提升共折叠结构精度（AF3 从 3.7Å 降至 1.2Å）。这提示在构建蛋白-配体复合物结构数据集时，优先使用模板引导预测或实验结构，而非纯无模板预测。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li>
+<p><strong>AlphaFold3 / Boltz-2 / Chai-1 共折叠预测</strong>：本文系统评估了这些结构预测模型生成的蛋白-配体复合物结构作为下游任务输入的可行性。与已有研究（如 Masters et al. 2025）一致，共折叠结构对结合口袋的预测相对可靠，但对柔性区域（如 A-loop）的构象预测存在较大不确定性。本课题方向的研究者在使用这些结构时应关注区域特异性精度。</p>
+</li>
+<li>
+<p><strong>蛋白质语言模型（ESM 系列）的突变效应预测</strong>：ESM2 在 DMSO 条件下 ρ≈0.50 的表现与 ProteinGym 基准上的报告一致。本文进一步揭示了 pLM 在配体条件化任务中的局限——其表示空间不包含配体信息。这与近期关于 pLM 表示中功能信息编码的研究（如 Cagiada et al. 2025）形成互补。</p>
+</li>
+<li>
+<p><strong>配体感知的蛋白质设计模型（LigandMPNN / LASErMPNN）</strong>：这些模型最初为配体结合位点设计而开发，本文将其重新用于突变效应预测，发现其对耐药热点的恢复优于无配体模型。这提示设计模型中的配体-残基相互作用表示可迁移到突变效应预测任务。</p>
+</li>
+<li>
+<p><strong>ΔΔG 预测方法（PremPLI、MutDTA）</strong>：这些方法在标准突变稳定性基准上表现良好，但在 DMS 适应度预测上表现有限。这与已有文献关于"稳定性预测 ≠ 功能预测"的结论一致，支持了本课题方向中"多维度评估"的必要性。</p>
+</li>
+<li>
+<p><strong>DMS 数据作为模型评估基准</strong>：本文延续了将 DMS 数据用于模型基准测试的趋势（如 ProteinGym、FLIP2），但创新性地引入了"多配体条件"维度，将 DMS 从单条件适应度测量扩展为"突变×配体"联合扰动矩阵。这一设计可推广到其他蛋白-配体体系。</p>
+</li>
+<li>
+<p><strong>结构预测模型的突变不敏感性</strong>：本文的观察与近期研究（如 Zhuoyi Liu et al. 2026）一致，即当前结构预测模型对单点突变的构象响应微弱。这提示本课题方向需要发展"突变感知"的结构表示方法，而非直接依赖标准结构预测输出。</p>
+</li>
+</ul>
+<h2>16 研究想法</h2>
+<h3>Agent 生成的研究候选</h3>
+<p><strong>候选 1：突变条件化的结构预测微调策略</strong>
+- <strong>名称</strong>：Mutation-Conditioned Structure Finetuning (MCSF)
+- <strong>来源局限/观察</strong>：本文发现 AF3/Boltz-2 对单点突变的构象响应微弱，导致下游几何模型无法捕捉突变效应
+- <strong>核心假设</strong>：通过在 DMS 数据上微调结构预测模型，使其对突变产生更敏感的构象响应，可提升下游突变效应预测精度
+- <strong>初步方法</strong>：使用 MET DMS 数据中具有实验结构信息的突变体（或高置信度预测）作为微调目标，在结构预测模型的潜在表示层加入突变感知的对比学习目标
+- <strong>验证方式</strong>：在本文的 MET 基准上比较微调前后结构预测模型的突变敏感性（RMSD 变化）及下游几何模型的预测精度
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 2：配体条件化的突变效应预测框架</strong>
+- <strong>名称</strong>：Ligand-Conditioned Mutational Effect Prediction (LCMEP)
+- <strong>来源局限/观察</strong>：现有 pLM 和几何模型均无法有效区分不同配体条件下的突变效应（跨条件 ρ &gt; 0.9）
+- <strong>核心假设</strong>：将配体表示（SMILES/3D）与蛋白质表示通过交叉注意力机制融合，并配以突变×配体的联合监督信号，可打破配体不变性
+- <strong>初步方法</strong>：在 ProtLigand 架构基础上，将训练目标从掩码重建扩展为"给定突变和配体，预测适应度变化"的回归任务；使用本文收集的多条件 DMS 数据作为训练集
+- <strong>验证方式</strong>：在 MET 及扩展激酶数据集上比较 LCMEP 与现有模型的跨条件预测相关性（应显著低于 0.9）和热点恢复率
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 3：基于共识集成的耐药突变优先级排序工具</strong>
+- <strong>名称</strong>：Consensus Resistance Prioritization (CRP)
+- <strong>来源局限/观察</strong>：单一模型对耐药热点的恢复率有限，但共识集成可提高稳健性
+- <strong>核心假设</strong>：通过加权共识集成（权重基于各模型在已知耐药突变上的历史表现），可构建临床可用的耐药突变优先级排序工具
+- <strong>初步方法</strong>：在本文的 MET 数据上训练各模型的权重，使用留一交叉验证评估 CRP 在已知耐药突变上的排序能力；扩展至 SRC、EGFR 等数据集验证泛化性
+- <strong>验证方式</strong>：比较 CRP 与最佳单一模型的 Top-K 耐药突变召回率
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 4：多尺度"突变×配体"效应解耦模型</strong>
+- <strong>名称</strong>：Multi-Scale Mutational-Ligand Effect Decomposition (MS-MLED)
+- <strong>来源局限/观察</strong>：DMS 适应度反映多因素（结合、稳定性、表达、信号）的复合效应，单一模型难以解耦
+- <strong>核心假设</strong>：将适应度变化分解为"结合亲和力变化"、"蛋白稳定性变化"和"其他功能变化"三个通道，分别建模后重组，可提升预测精度和可解释性
+- <strong>初步方法</strong>：使用本文的 MET 数据，结合已有的稳定性预测（如 ThermoMPNN）和亲和力预测（如 Boltz-2 affinity），训练一个分解模型；用正交实验数据（如蛋白表达测量）验证分解的准确性
+- <strong>验证方式</strong>：比较 MS-MLED 与端到端模型的预测精度，以及分解通道与正交实验测量的一致性
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 5：合成突变×配体数据生成策略</strong>
+- <strong>名称</strong>：Synthetic Mutational-Ligand Data Augmentation (SMLDA)
+- <strong>来源局限/观察</strong>：作者指出突变条件化数据稀缺是核心瓶颈，但未提出解决方案
+- <strong>核心假设</strong>：使用生成模型（如扩散模型）合成"突变×配体"联合扰动数据，可有效扩充训练集并提升模型泛化能力
+- <strong>初步方法</strong>：在 MET DMS 数据上训练条件扩散模型，生成未实验覆盖的突变×配体组合的适应度预测；使用主动学习策略选择信息量最大的组合进行实验验证
+- <strong>验证方式</strong>：比较 SMLDA 增强训练与仅使用实验数据的模型在留出集上的预测精度
+- <strong>创新状态</strong>：unverified</p></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, results, discussion, methods, appendix, figure supplements)</li>
+<li><strong>Assessment boundary</strong> Scientific claims, methodological soundness, evidence quality, and alignment with stated conclusions. No line-by-line editorial review.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors benchmark a panel of deep learning models for mutational effect prediction and drug-target affinity prediction against deep mutational scanning (DMS) data from the MET kinase domain across 11 inhibitor conditions. They report that current models produce largely ligand-invariant predictions, that ligand-aware geometric models partially recover resistance hotspots, and that affinity models underestimate mutation-induced binding changes. They conclude that the primary bottleneck is the scarcity of mutation-conditioned protein-ligand training data rather than model architecture.</li>
+<li><strong>Visible evidence base</strong> Main text figures (Figures 1–6), figure supplements (Figures 1–6 supplements), Table 1, Methods section, Appendix 1. No raw data or code were inspected.</li>
+<li><strong>Missing materials affecting confidence</strong> Raw DMS data files, model prediction outputs, code repository contents, exact hyperparameters for all models, statistical test details, and full figure panels (only referenced, not shown in text) were not available for inspection.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This manuscript addresses a timely and important question: whether current deep learning models can predict mutation-dependent drug responses. The experimental design, using a dense DMS dataset across multiple inhibitor conditions, is well suited to the question. The finding that most models are ligand-invariant is a useful negative result, and the partial success of ligand-aware geometric models at resistance hotspots is a constructive observation. However, the manuscript has several significant weaknesses. The quantitative evidence for the central claims is often presented as correlation coefficients without confidence intervals or significance testing. The comparison across models is confounded by differences in input representations, training data, and output scales. The claim that data scarcity, rather than architecture, is the primary limitation is not directly tested. The manuscript would benefit from a more rigorous statistical framework, a clearer articulation of what constitutes a meaningful prediction, and a more direct test of the data-scarcity hypothesis.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists developing or applying protein language models, structure prediction tools, and drug-target affinity predictors. Experimentalists using DMS to study drug resistance. Researchers interested in the generalization limits of deep learning in molecular biology. The negative results and the emphasis on data scarcity will be of particular interest to those building next-generation models for mutation-conditioned ligand prediction.</li>
+<li><strong>Major strengths</strong> 1) The use of a dense, multi-condition DMS dataset is a strong and appropriate benchmark. 2) The systematic evaluation of a wide range of model classes (sequence, structure, ligand-aware, affinity) is comprehensive. 3) The analysis of resistance and sensitizing mutations, and the consensus approach, provide a practical angle. 4) The discussion of data scarcity and the need for mutation-conditioned supervision is thoughtful and forward-looking.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Claim pointer</strong> The manuscript claims that models show "largely ligand-invariant predictions" and that performance "decreased by an average of 53% across inhibitor-treated conditions" (Results, Figure 2).</li>
+<li><strong>Evidence pointer</strong> Results section, Figure 2, Figure 2—figure supplement 3</li>
+<li><strong>Concern</strong> The central quantitative claims are based on Spearman and Pearson correlation coefficients, but no confidence intervals, standard errors, or significance tests are reported. The comparison between conditions and models is therefore not statistically grounded. For example, the claim that one model outperforms another by a certain margin in correlation is not accompanied by any measure of uncertainty. The inter-model and inter-condition correlation matrices (Figure 2C) are presented without any assessment of whether the observed differences are meaningful.</li>
+<li><strong>Why it matters</strong> Without statistical inference, the reader cannot assess whether the observed differences are robust or due to noise. The central conclusion that models are ligand-invariant depends on the magnitude of the performance drop being significant, which is not established.</li>
+<li><strong>Resolution test</strong> Provide bootstrap confidence intervals or permutation tests for all reported correlation coefficients. Report the distribution of performance across random seeds or model initializations. For the comparison between conditions, use a paired statistical test (e.g., Wilcoxon signed-rank) to assess whether the performance drop is significant.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Confounded model comparison</li>
+<li><strong>Claim pointer</strong> The manuscript benchmarks models across categories (sequence, structure, ligand-aware, affinity) and draws conclusions about their relative performance (e.g., "ligand-aware geometric models partially recover resistance hotspots").</li>
+<li><strong>Evidence pointer</strong> Results section, Figures 2–5, Methods section</li>
+<li><strong>Concern</strong> The models compared differ not only in architecture but also in input representations (sequence only, structure only, structure plus ligand), training data (e.g., PDBbind for ProtLigand, protein fitness datasets for others), and output scales (log-odds, stability, affinity). These differences are confounded with the model class. For example, the poor performance of affinity models may be due to their training on wild-type affinity data, not to their architecture. The manuscript does not control for these factors, making it difficult to attribute performance differences to any single cause.</li>
+<li><strong>Why it matters</strong> The conclusion that "data scarcity rather than architecture" is the primary limitation is not supported by the evidence, because the models are not matched on training data or input features. A model trained on mutation-conditioned data might perform better regardless of architecture.</li>
+<li><strong>Resolution test</strong> Perform a controlled comparison where models are trained on the same data (e.g., fine-tune all models on the same mutation-conditioned dataset) or at least report the training data and loss functions for each model and discuss how these might affect the comparison. Alternatively, use a single model class and vary the input features to isolate the effect of ligand information.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Data-scarcity hypothesis</li>
+<li><strong>Claim pointer</strong> The manuscript concludes that "a primary limitation in improving performance on this task lies in the scarcity of mutation-conditioned protein-ligand training data rather than model architecture alone."</li>
+<li><strong>Evidence pointer</strong> Discussion section</li>
+<li><strong>Concern</strong> This is a strong claim that is not directly tested. The manuscript shows that current models fail, but it does not demonstrate that more data would fix the problem. The authors do not, for example, train models on subsets of the DMS data to show that performance scales with data volume, nor do they compare models trained with and without mutation-conditioned data.</li>
+<li><strong>Why it matters</strong> The conclusion has direct implications for the field: if data scarcity is the bottleneck, then efforts should focus on generating more data. If architecture is the bottleneck, then model development should be prioritized. The manuscript does not provide evidence to distinguish these possibilities.</li>
+<li><strong>Resolution test</strong> Perform a learning curve analysis: train a representative model on increasing fractions of the DMS data and show whether performance plateaus or continues to improve. Alternatively, fine-tune a model on a small mutation-conditioned dataset and compare to a model trained only on wild-type data.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Definition of resistance and sensitizing mutations</li>
+<li><strong>Claim pointer</strong> The manuscript defines essential mutations as those with difference scores one standard deviation away from zero, and uses this to classify resistance and sensitizing mutations (Methods, "Mutation Labeling").</li>
+<li><strong>Evidence pointer</strong> Methods section, Figure 5</li>
+<li><strong>Concern</strong> The threshold of one standard deviation is arbitrary and is applied to the difference score distribution. The manuscript does not justify this choice or explore its sensitivity. The classification of mutations as resistance or sensitizing is central to the analysis in Figure 5 and 6, and the results may depend heavily on this threshold.</li>
+<li><strong>Why it matters</strong> If the threshold is too lenient, many neutral mutations will be misclassified, diluting the signal. If too strict, the analysis may miss true resistance mutations. The robustness of the conclusions to this choice is not established.</li>
+<li><strong>Resolution test</strong> Vary the threshold (e.g., 0.5, 1.5, 2 standard deviations) and show that the main conclusions (e.g., model performance on resistance mutations) are unchanged. Alternatively, use a more principled approach, such as a mixture model or a false discovery rate control.</li>
+<li><strong>Concern ID</strong> R1-M5</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Generalizability of the extended benchmark</li>
+<li><strong>Claim pointer</strong> The manuscript extends the analysis to additional kinase-inhibitor DMS datasets (FGFRs, EGFR, SRC, CDKs) and claims that "the overall trends" are confirmed.</li>
+<li><strong>Evidence pointer</strong> Results section, Figure 7, Table 1</li>
+<li><strong>Concern</strong> The details of these additional datasets are only summarized in Table 1. The manuscript does not report the number of variants, the number of conditions, the quality metrics, or the specific results for each dataset. The claim of generalizability is therefore not supported by the evidence presented.</li>
+<li><strong>Why it matters</strong> The extension to other kinases is a key part of the manuscript's claim that the findings are general. Without detailed results, the reader cannot assess whether the trends are consistent or whether there are important exceptions.</li>
+<li><strong>Resolution test</strong> Provide a supplementary figure showing the performance of each model on each additional dataset, with the same statistical rigor as the main MET analysis. Report the number of variants and conditions for each dataset.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity of model descriptions</li>
+<li><strong>Affected element</strong> Methods section, "Deep learning methods"</li>
+<li><strong>Evidence pointer</strong> Methods section</li>
+<li><strong>Issue</strong> The description of how each model is used is brief. For example, the exact version of ESM2, the specific checkpoint for ProtLigand, and the precise input format for each model are not fully specified.</li>
+<li><strong>Required correction</strong> Provide a table listing each model, its version, the exact checkpoint used, the input representation, and the output metric. This will improve reproducibility.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Handling of failed mutations</li>
+<li><strong>Affected element</strong> Docking section</li>
+<li><strong>Evidence pointer</strong> Methods section, "Docking"</li>
+<li><strong>Issue</strong> The manuscript states that 662 mutants failed due to clashes and were removed. It is not clear whether these failures are random or biased toward certain residue types or positions, which could affect the results.</li>
+<li><strong>Required correction</strong> Report the distribution of failed mutations (e.g., by residue type, by position) and discuss whether this could introduce bias.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation of correlation values</li>
+<li><strong>Affected element</strong> Results section, Figure 5</li>
+<li><strong>Evidence pointer</strong> Results section, Figure 5</li>
+<li><strong>Issue</strong> The manuscript reports Spearman correlations of less than 0.2 as "little or no correlation." While this is a common interpretation, the practical significance of these values depends on the context. A correlation of 0.2 might be meaningful for a noisy biological assay.</li>
+<li><strong>Required correction</strong> Discuss the practical significance of the observed correlation values in the context of DMS data, and consider reporting the variance explained (R²) as well.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Figure readability</li>
+<li><strong>Affected element</strong> Figures 2–6</li>
+<li><strong>Evidence pointer</strong> Figures 2–6</li>
+<li><strong>Issue</strong> The figures are referenced but not shown in the text provided. Based on the descriptions, some figures (e.g., Figure 2C) appear to be complex heatmaps that may be difficult to interpret without clear labels and legends.</li>
+<li><strong>Required correction</strong> Ensure all figures have clear axis labels, legends, and annotations. Consider simplifying complex panels or providing a schematic explanation in the figure legend.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Competing interests</li>
+<li><strong>Affected element</strong> Competing Interests section</li>
+<li><strong>Evidence pointer</strong> Competing Interests section</li>
+<li><strong>Issue</strong> The competing interests statement is detailed but does not specify whether any of the listed companies have a direct interest in the models or data used in this study.</li>
+<li><strong>Required correction</strong> Clarify whether any of the companies listed have a financial interest in the specific models (e.g., ProtLigand, Boltz-2) or the DMS data used.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> 1) Lack of statistical inference on all primary quantitative claims (R1-M1). 2) Confounded model comparison that prevents attribution of performance differences (R1-M2). 3) The data-scarcity hypothesis is not directly tested (R1-M3). 4) Arbitrary threshold for resistance/sensitizing classification without sensitivity analysis (R1-M4). 5) Insufficient detail on the extended benchmark datasets to support the generalizability claim (R1-M5).</li>
+<li><strong>Assessment against Nature-style criteria</strong> <strong>Originality:</strong> The question of whether deep learning models can predict mutation-dependent drug responses is timely and the use of a dense multi-condition DMS dataset is a novel benchmarking approach. However, the finding that models are ligand-invariant is not entirely unexpected given the known limitations of these models. <strong>Scientific importance:</strong> The results are important for the field of computational drug discovery, as they highlight a critical gap in current methods. The emphasis on data scarcity is a valuable contribution to the discussion of how to improve these models. <strong>Interdisciplinary readership:</strong> The manuscript is likely to appeal to a broad audience of computational biologists, structural biologists, and pharmacologists. The writing is generally accessible, but the heavy reliance on correlation coefficients without context may limit accessibility for non-specialists. <strong>Technical soundness:</strong> The experimental design is sound, but the lack of statistical rigor and the confounded model comparison are significant technical weaknesses. <strong>Readability for nonspecialists:</strong> The abstract and introduction are clear, but the results section is dense and would benefit from a more explicit statement of what each analysis shows and why it matters.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The manuscript addresses an important question with a well-designed benchmark, but the central claims are not currently supported by the evidence due to a lack of statistical rigor and confounded comparisons. The authors should address the major concerns, particularly the statistical analysis and the direct test of the data-scarcity hypothesis, before the case is established.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that "a primary limitation... lies in the scarcity of mutation-conditioned protein-ligand training data rather than model architecture alone" is not directly supported by the evidence presented. No learning curve analysis or data-ablation study is provided.</li>
+<li>The claim that "ligand-aware geometric models... partially recover experimentally validated resistance-associated hotspots" is based on qualitative observations (Figure 3) and a consensus analysis (Figure 6) without a formal statistical test of enrichment.</li>
+<li>The claim that the extended benchmark "confirms the overall trends" is unsupported, as no detailed results for the additional datasets are presented.</li>
+<li>The statement that "current AI models produce largely ligand-invariant predictions" is based on average performance drops, but the variability across models and conditions is not quantified, making the strength of this claim unclear.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

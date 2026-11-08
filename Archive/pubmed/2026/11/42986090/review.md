@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as stated in the abstract; no methods, figures, tables, or supporting information were provided
+- **Shared manuscript claim summary** The authors report a combined MD and QM/MM study of a PAS domain with oxidative N-demethylation activity toward dimethylamine. They claim that protonated DMA is the most plausible proton donor during compound I formation, that the calculated barrier for Cpd I generation is 14.4 kcal/mol and is rate-determining, that Cpd I oxidizes the substrate via electron-transfer-initiated hydrogen atom abstraction, and that chemoselectivity favoring methyl hydroxylation over amine oxidation is determined by the protein environment.
+- **Visible evidence base** Abstract text only; no computational details, energy profiles, structural analyses, or validation data are visible
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, computational setup parameters, QM/MM partitioning details, basis sets, functionals, MD force fields, simulation lengths, convergence criteria, and any experimental validation
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible mechanistic hypothesis for PAS domain-catalyzed N-demethylation, but the evidence base is too limited to evaluate the technical soundness or robustness of the claims. The central conclusions regarding proton donor identity, rate-determining step, and chemoselectivity determinants cannot be assessed without the underlying computational data. The work may be of interest to the enzymatic catalysis and heme enzyme communities, but the current abstract alone does not establish the case.
+- **Who would be interested in the results, and why** Researchers in enzymatic reaction mechanisms, heme-dependent oxidases and monooxygenases, QM/MM method development and application, and protein engineering of PAS domains would be interested. The mechanistic insights could inform rational design of heme-dependent oxidative N-demethylases and related enzymes.
+- **Major strengths** The study addresses a mechanistically unresolved question in an enzyme class with biotechnological relevance. The combination of MD and QM/MM is appropriate for this type of problem. The abstract clearly states the proposed mechanism and identifies a specific rate-determining step.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The calculated energy barrier for Cpd I generation is 14.4 kcal/mol, which is the rate-determining step of the reaction.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract reports a single energy barrier value without any indication of the level of theory, QM region size, ensemble sampling, or error estimates. No comparison with alternative pathways or barrier heights is provided.
+  - **Why it matters** A single barrier value without methodological context cannot be evaluated for accuracy or reliability. The claim that this is the rate-determining step requires comparison with all other elementary steps, which is not shown.
+  - **Resolution test** Provide the full energy profile for all proposed elementary steps, specify the QM/MM methodology, and include error estimates or benchmark calculations. Show that the 14.4 kcal/mol barrier is the highest along the preferred pathway.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The protonated substrate DMA is the most plausible proton donor during the formation of compound I.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states this as a conclusion but provides no comparative data. It is unclear whether alternative proton donors were tested, what criteria were used to rank plausibility, and whether the proton transfer step was characterized structurally and energetically.
+  - **Why it matters** The identity of the proton donor is a central mechanistic claim. Without comparative calculations or experimental support, the claim is unsupported.
+  - **Resolution test** Show calculations for all candidate proton donors, including free energy profiles and structural characterization of the transition states. Provide a clear ranking based on computed barriers or other quantitative criteria.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The chemoselectivity favoring methyl hydroxylation over amine oxidation is mainly determined by the protein environment.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract attributes chemoselectivity to the protein environment but provides no data on how this was established. No comparison of gas-phase versus enzyme-phase selectivity, no identification of specific protein residues or interactions, and no energetic decomposition are presented.
+  - **Why it matters** Chemoselectivity is a key functional outcome of the enzyme. The claim that the protein environment controls it requires direct evidence, such as mutation analysis, energy decomposition, or comparison with uncatalyzed or gas-phase reactions.
+  - **Resolution test** Provide calculations comparing the selectivity in the enzyme environment versus in vacuo or with a minimal model. Identify specific protein residues that modulate the selectivity and show their energetic contributions.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Mechanistic description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The phrase "electron-transfer-initiated hydrogen atom abstraction" is mechanistically ambiguous. It is unclear whether this refers to a proton-coupled electron transfer, a sequential electron transfer followed by proton transfer, or a concerted process.
+  - **Required correction** Clarify the mechanistic sequence with explicit definitions of the electron transfer and hydrogen atom transfer steps, including their order and any coupled proton movement.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Methodological reporting
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not specify the enzyme source, the PAS domain construct, or the substrate binding mode. This limits the reproducibility and generalizability of the findings.
+  - **Required correction** Include the enzyme name and source, the construct used, and a brief description of the substrate binding mode in the abstract or ensure these details are prominent in the full manuscript.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Validation
+  - **Affected element** Experimental context
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** No experimental data are referenced to support or contextualize the computational predictions. It is unclear whether any kinetic or structural data exist for this enzyme.
+  - **Required correction** State whether experimental data are available and how the computational results compare, or explicitly note the absence of experimental validation as a limitation.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The central mechanistic claims are not assessable from the abstract alone. The full computational details, energy profiles, and comparative analyses are required.
+- **Assessment against Nature-style criteria** 
+  - Originality: The mechanistic question is of interest, but the abstract does not demonstrate conceptual novelty beyond applying established QM/MM approaches to a new enzyme.
+  - Scientific importance: The findings could inform enzyme engineering, but the significance is not established without robust evidence and broader context.
+  - Interdisciplinary readership: The topic bridges enzymology and computational chemistry, but the abstract is too specialized and lacks context for a broad audience.
+  - Technical soundness: Not assessable from the abstract. The methodology and validation are not visible.
+  - Readability for nonspecialists: The abstract is concise but assumes familiarity with heme enzyme mechanisms and QM/MM terminology. It is not accessible to a general scientific audience.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a plausible mechanism, but the claims cannot be evaluated without the full manuscript and supporting data. A revised assessment would require the complete methods, energy profiles, and comparative analyses.
+
+## Risk / unsupported claims
+- The claim that protonated DMA is the most plausible proton donor is unsupported without comparative calculations.
+- The claim that the 14.4 kcal/mol barrier is rate-determining is unsupported without a full energy profile.
+- The claim that chemoselectivity is mainly determined by the protein environment is unsupported without direct comparative or decomposition data.
+- The mechanistic description of "electron-transfer-initiated hydrogen atom abstraction" is ambiguous and not defined with sufficient precision.
+- No experimental validation or comparison is provided, so the biological relevance of the computed mechanism is not established.

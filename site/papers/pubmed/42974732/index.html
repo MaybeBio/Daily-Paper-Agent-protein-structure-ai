@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EvoSeq-ML: Advancing Data-Centric Machine Learning with Evolutionary-Informed Protein Sequence Representation and Generation. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>EvoSeq-ML: Advancing Data-Centric Machine Learning with Evolutionary-Informed Protein Sequence Representation and Generation.</h1>
+      <div class="meta">Mardikoraem, Mehrsa; Pascual, Nathaniel; Eaves, Joelle N; Chatterjee, Shramana; Garland, Logan; VanAntwerp, James; Mahama, Anton; Finneran, Patrick; Hausinger, Robert P; Woldring, Daniel R</div>
+      <div class="meta muted">
+        
+        <span class="journal">Protein engineering, design &amp; selection : PEDS</span>
+        · 2026-11-03
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42974732/">原文</a>
+      </div>
+      <p class="one-liner">该文提出基于祖先序列重建的数据增强策略，用于训练蛋白质序列生成和表示学习模型，以提升热稳定性，属于蛋白质序列设计范畴，但方法创新有限且侧重数据而非结构建模。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">From protein structure prediction to novel protein generation, challenging protein engineering tasks have been made possible by advancements in machine learning (ML). While largely driven by ML architecture refinements, these advancements in ML-based protein engineering campaigns have left the impact of data curation underexplored. In light of the growing wealth of labeled sequence data, data-centric advances (e.g. prioritizing improvements in ML protein engineering tools through the curation of high-quality, domain-specific training data) are increasingly preferred over model-centric advancements. Implementing datasets that accurately reflect biological complexity and diversity has been shown to improve the efficiency of training protein engineering ML tools. Here, we evaluate an ancestral sequence reconstruction (ASR)-informed data augmentation strategy for training generative and representation-learning models in protein engineering. Using ethylene-forming enzyme (EFE) as a model system, we show that variational autoencoder models trained on ancestral and near-ancestral sequence datasets generate variants with improved predicted and experimentally measured thermostability relative to variants generated from modern-sequence training data. All experimentally tested ancestral and ML-generated EFEs produced detectable ethylene, although ML-generated variants showed reduced activity relative to wild-type EFE, indicating that the approach more strongly captured stability-associated features than catalytic optimization. We further evaluated ASR-enriched sequence sets for fine-tuning ESM2 representations in endolysin and lysozyme C stability-classification tasks, where ancestral representations were competitive with modern-sequence fine-tuning in selected settings. Overall, this work supports ASR-informed data augmentation as a promising strategy for stability-oriented protein sequence generation and motivates future work to couple ancestral sequence diversity with explicit functional selection.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">从蛋白质结构预测到新型蛋白质生成，机器学习（ML）的进步使具有挑战性的蛋白质工程任务成为可能。尽管这些进展主要由ML架构的改进驱动，但基于ML的蛋白质工程活动中，数据整理的影响仍未得到充分探索。鉴于标记序列数据的日益丰富，以数据为中心的进展（例如，通过整理高质量、领域特定的训练数据来优先改进ML蛋白质工程工具）越来越受到青睐，而非以模型为中心的进展。实施能准确反映生物复杂性和多样性的数据集已被证明可提高蛋白质工程ML工具的训练效率。在此，我们评估了一种基于祖先序列重建（ASR）的数据增强策略，用于训练蛋白质工程中的生成模型和表示学习模型。以乙烯形成酶（EFE）为模型系统，我们表明，在祖先和近祖先序列数据集上训练的变分自编码器模型生成的变体，其预测和实验测量的热稳定性均优于从现代序列训练数据生成的变体。所有实验测试的祖先和ML生成的EFE均产生可检测的乙烯，尽管ML生成的变体相对于野生型EFE表现出降低的活性，表明该方法更强烈地捕获了与稳定性相关的特征，而非催化优化。我们进一步评估了ASR富集序列集在溶菌内素和溶菌酶C稳定性分类任务中微调ESM2表示的效果，其中祖先表示在选定设置中与现代序列微调具有竞争力。总体而言，这项工作支持ASR知情的数据增强作为面向稳定性的蛋白质序列生成的有前景策略，并激励未来工作将祖先序列多样性与明确的功能选择相结合。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：EvoSeq-ML: Advancing Data-Centric Machine Learning with Evolutionary-Informed Protein Sequence Representation and Generation</li>
+<li><strong>作者</strong>：Mardikoraem, Mehrsa; Pascual, Nathaniel; Eaves, Joelle N; Chatterjee, Shramana; Garland, Logan; VanAntwerp, James; Mahama, Anton; Finneran, Patrick; Hausinger, Robert P; Woldring, Daniel R</li>
+<li><strong>单位</strong>：未提供（根据作者姓名及期刊背景推测为美国高校，具体单位未在摘要中列出）</li>
+<li><strong>期刊/平台</strong>：Protein Engineering, Design &amp; Selection (PEDS)</li>
+<li><strong>年份</strong>：2026（在线日期 2026-11-03）</li>
+<li><strong>论文类型</strong>：研究论文（Research Article）</li>
+<li><strong>领域</strong>：蛋白质工程 × 数据为中心的机器学习（data-centric ML）、祖先序列重建（ASR）、生成模型、表示学习</li>
+<li><strong>关键词</strong>：ancestral sequence reconstruction (ASR)、data-centric ML、variational autoencoder (VAE)、ESM2、protein stability、ethylene-forming enzyme (EFE)</li>
+<li><strong>DOI/arXiv</strong>：10.1093/protein/gzag033</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供（EFE 序列数据集、endolysin/lysozyme C 稳定性数据集，具体来源未在摘要中说明）</li>
+<li><strong>阅读日期</strong>：2026-05-13（按当前日期推算）</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的数据策展（data curation）子方向，聚焦于通过 ASR 增强训练数据来提升生成模型（VAE）和表示学习模型（ESM2 微调）在蛋白质稳定性相关任务上的表现。与主流模型中心（model-centric）的架构创新形成互补，强调数据质量与进化信息对模型性能的贡献。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文以乙烯形成酶（EFE）为模型系统，提出并验证了基于祖先序列重建（ASR）的数据增强策略：用祖先及近祖先序列训练 VAE 生成模型，所得变体在预测和实验测定的热稳定性上优于用现代序列训练的模型，且所有实验测试的祖先/ML 生成 EFE 均产生可检测的乙烯，但活性低于野生型，表明该方法更偏向捕获稳定性相关特征而非催化优化。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：在蛋白质工程机器学习中，训练数据的策展（尤其是引入进化信息如祖先序列）能否比单纯依赖现代序列数据更有效地提升生成模型和表示学习模型的性能？</li>
+<li><strong>为什么重要</strong>：蛋白质工程 ML 的进步多归因于架构改进，但数据质量的影响被低估。随着标记序列数据日益丰富，数据为中心的改进（如高质量、领域特异的训练数据）被认为比模型中心改进更具性价比。ASR 能提供现代序列中不存在的多样化、功能相关的序列空间，可能增强模型对序列-稳定性关系的泛化能力。</li>
+<li><strong>现有方法为何不足</strong>：大多数蛋白质工程 ML 工具使用现代序列（如来自 UniProt 的现存同源序列）作为训练数据，这些序列可能高度相似、冗余，且未充分覆盖进化上可行的序列空间，导致模型对远距离突变或非天然组合的泛化能力有限。</li>
+<li><strong>精确研究问题</strong>：Can ASR-informed data augmentation improve the thermostability of VAE-generated protein variants and the accuracy of ESM2-based stability classification, relative to training on modern sequences alone?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文摘要及该领域公开知识构建，标注为「经外部核验」的部分来自领域常识，其余为「仅本文框架」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期：基于物理/进化信息的蛋白质设计</td>
+<td>同源建模、定点突变、定向进化</td>
+<td>可解释、实验可验证</td>
+<td>通量低、搜索空间有限</td>
+<td>背景铺垫</td>
+</tr>
+<tr>
+<td>中期：ML 生成模型</td>
+<td>VAE、GAN、扩散模型用于序列生成</td>
+<td>可探索大序列空间、无需结构</td>
+<td>依赖训练数据质量、易生成不稳定序列</td>
+<td>本文使用 VAE 作为生成模型</td>
+</tr>
+<tr>
+<td>近期：大规模预训练表示模型</td>
+<td>ESM2、ProtTrans 等</td>
+<td>强大的序列表示能力、可微调</td>
+<td>微调数据质量影响下游性能</td>
+<td>本文用 ESM2 微调做稳定性分类</td>
+</tr>
+<tr>
+<td>数据为中心的新趋势</td>
+<td>数据增强、主动学习、ASR 增强</td>
+<td>提升数据多样性、反映进化约束</td>
+<td>需验证是否优于现代序列</td>
+<td>本文核心贡献：ASR 增强 vs 现代序列</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在「数据为中心」的蛋白质工程 ML 浪潮中，提出 ASR 作为一种进化信息注入的数据增强手段，与模型中心方法正交，可叠加使用。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>现代序列数据多样性不足</td>
+<td>模型生成的变体热稳定性提升有限</td>
+<td>现代序列高度相似、冗余，未覆盖进化上可行的序列空间</td>
+<td>摘要：VAE 用现代序列训练生成的变体热稳定性低于祖先序列训练</td>
+</tr>
+<tr>
+<td>数据策展影响被低估</td>
+<td>多数研究聚焦架构改进，忽视数据质量</td>
+<td>ML 蛋白质工程领域以模型中心为主流</td>
+<td>摘要：advancements ... have left the impact of data curation underexplored</td>
+</tr>
+<tr>
+<td>稳定性与活性难以兼顾</td>
+<td>ML 生成变体稳定性提升但活性下降</td>
+<td>生成模型偏向捕获稳定性相关特征，缺乏功能选择压力</td>
+<td>摘要：ML-generated variants showed reduced activity relative to wild-type EFE</td>
+</tr>
+<tr>
+<td>表示学习微调数据选择缺乏指导</td>
+<td>ESM2 微调效果依赖训练数据</td>
+<td>不同任务（如稳定性分类）对数据分布敏感</td>
+<td>摘要：ancestral representations were competitive with modern-sequence fine-tuning in selected settings</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<ul>
+<li>使用 ASR 重建 EFE 的祖先序列，构建祖先及近祖先序列数据集。</li>
+<li>用这些数据集训练 VAE 生成模型，生成 EFE 变体，并评估其预测和实验热稳定性。</li>
+<li>用 ASR 增强的序列集微调 ESM2，在 endolysin 和 lysozyme C 稳定性分类任务上评估。</li>
+</ul>
+<h3>2) 核心洞察</h3>
+<ul>
+<li>祖先序列代表进化上经过功能筛选的中间状态，比现代序列更「平滑」地连接序列-稳定性关系，因此作为训练数据能引导生成模型探索更稳定的序列区域。</li>
+<li>数据策展（而非仅架构）是提升蛋白质工程 ML 性能的关键杠杆；ASR 提供了一种系统性的、进化信息注入的数据增强方式。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li>对于蛋白质结构相关计算研究，训练数据的「进化深度」可能比「序列数量」更重要——引入中间祖先状态可缓解数据稀疏和分布偏移问题。</li>
+<li>生成模型（如 VAE、扩散模型）的性能上限受限于训练数据的分布覆盖；ASR 可作为通用数据增强策略，与任意生成架构结合。</li>
+<li>稳定性与功能（如催化活性）的权衡是生成模型的固有挑战，需显式引入功能选择压力（如多目标优化或条件生成）。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：EFE 现代同源序列集；endolysin 和 lysozyme C 的序列及稳定性标签</li>
+<li><strong>输出</strong>：VAE 生成的 EFE 变体序列（含预测/实验热稳定性）；ESM2 微调后的稳定性分类器</li>
+<li><strong>模块</strong>：
+  1. ASR 模块：重建祖先序列，构建祖先/近祖先序列数据集
+  2. VAE 生成模块：训练生成模型，采样新序列
+  3. 实验验证模块：表达、纯化、测定热稳定性和乙烯产量
+  4. ESM2 微调模块：在稳定性分类任务上微调表示模型</li>
+<li><strong>训练</strong>：VAE 分别在祖先序列集和现代序列集上训练；ESM2 分别在祖先增强和现代序列集上微调</li>
+<li><strong>工具</strong>：未提供具体软件/库</li>
+<li><strong>假设</strong>：祖先序列比现代序列更能代表进化上可行的、稳定的序列空间；ASR 增强的数据分布更有利于稳定性相关任务</li>
+<li><strong>流程</strong>：收集现代序列 → ASR 重建祖先序列 → 构建训练集（祖先 vs 现代）→ 训练 VAE/微调 ESM2 → 生成/分类 → 实验验证（仅 EFE）</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ASR 序列重建</td>
+<td>从现代同源序列推断祖先序列</td>
+<td>提供进化中间状态，增加训练数据多样性</td>
+<td>输入：现代 EFE 序列；输出：祖先/近祖先序列集</td>
+<td>摘要：ancestral and near-ancestral sequence datasets 用于训练</td>
+<td>移除后 VAE 训练数据退化为现代序列，生成变体热稳定性下降（实测）</td>
+</tr>
+<tr>
+<td>VAE 生成模型</td>
+<td>学习序列分布并采样新变体</td>
+<td>生成新序列以探索序列空间</td>
+<td>输入：训练序列集；输出：生成变体序列</td>
+<td>摘要：VAE trained on ancestral datasets generate variants with improved thermostability</td>
+<td>移除后无法生成新序列（预期）</td>
+</tr>
+<tr>
+<td>实验热稳定性测定</td>
+<td>验证生成变体的实际稳定性</td>
+<td>提供 ground truth 验证</td>
+<td>输入：生成变体；输出：实验 Tm 值</td>
+<td>摘要：experimentally measured thermostability</td>
+<td>移除后仅依赖预测，缺乏实验闭环（预期）</td>
+</tr>
+<tr>
+<td>乙烯产量测定</td>
+<td>评估变体催化功能</td>
+<td>检测生成变体是否保留功能</td>
+<td>输入：生成变体；输出：乙烯产量</td>
+<td>摘要：all tested variants produced detectable ethylene</td>
+<td>移除后无法评估功能保留（预期）</td>
+</tr>
+<tr>
+<td>ESM2 微调</td>
+<td>在稳定性分类任务上微调预训练表示模型</td>
+<td>评估 ASR 增强对表示学习的影响</td>
+<td>输入：序列+标签；输出：分类器</td>
+<td>摘要：ancestral representations competitive in selected settings</td>
+<td>移除后无法评估 ASR 对表示学习的影响（预期）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>不适用。摘要中未提供具体数学公式或符号定义。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：EFE 现代同源序列集（规模未提供）；endolysin 和 lysozyme C 稳定性分类数据集（规模未提供）</li>
+<li><strong>指标</strong>：热稳定性（预测和实验测定）、乙烯产量（活性）、分类准确率（稳定性分类任务）</li>
+<li><strong>基线</strong>：现代序列训练的 VAE 和 ESM2 微调</li>
+<li><strong>评测协议</strong>：实验验证 EFE 变体的热稳定性和乙烯产量；分类任务用标准评估（具体协议未提供）</li>
+<li><strong>oracle/真值</strong>：实验测定的热稳定性和乙烯产量作为 EFE 的 ground truth；稳定性标签作为分类任务的 ground truth</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VAE 生成 EFE 变体热稳定性</td>
+<td>ASR 增强数据提升生成变体稳定性</td>
+<td>祖先序列训练 vs 现代序列训练</td>
+<td>祖先训练的 VAE 生成变体热稳定性更高（预测+实验）</td>
+<td>ASR 增强对稳定性导向生成有效</td>
+<td>未证明对所有蛋白或所有生成模型有效</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>EFE 变体乙烯产量</td>
+<td>生成变体保留催化功能</td>
+<td>所有实验测试变体 vs 野生型</td>
+<td>所有变体产生可检测乙烯，但活性低于野生型</td>
+<td>生成变体保留基本功能</td>
+<td>未证明活性可优化</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>ESM2 微调稳定性分类</td>
+<td>ASR 增强提升表示学习性能</td>
+<td>祖先增强 vs 现代序列微调</td>
+<td>祖先表示在 selected settings 中与基线竞争</td>
+<td>ASR 增强在部分任务中有竞争力</td>
+<td>未证明全面优于现代序列</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对 EFE 的热稳定性生成和 endolysin/lysozyme C 的稳定性分类，未涉及其他蛋白或功能属性（如可溶性、表达量）。</li>
+<li><strong>oracle/真值输入</strong>：实验测定的热稳定性和乙烯产量作为 EFE 的验证；分类任务使用已有标签。</li>
+<li><strong>端到端状态</strong>：VAE 生成 + 实验验证是端到端的；ESM2 微调仅评估分类性能，未进行生成。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：ASR 依赖现代同源序列的比对质量，祖先序列重建的准确性影响后续所有结果。</li>
+<li><strong>模型依赖</strong>：结果基于 VAE 和 ESM2，不保证推广到其他架构（如扩散模型、GAN）。</li>
+<li><strong>最难情形</strong>：催化活性与稳定性的权衡未解决；生成变体活性普遍低于野生型。</li>
+<li><strong>群体/领域边界</strong>：EFE 是单一酶，endolysin/lysozyme C 是单一蛋白家族，结论外推需谨慎。</li>
+<li><strong>不确定性</strong>：未提供统计显著性检验、置信区间或重复实验细节。</li>
+</ul>
+<p><strong>有边界的复述</strong>：在 EFE 系统中，ASR 增强的 VAE 训练数据能提升生成变体的热稳定性（预测和实验验证），但活性下降；在 endolysin/lysozyme C 稳定性分类中，ASR 增强的 ESM2 微调在部分设置下与现代序列微调相当。该策略的有效性限于所测试的蛋白和任务类型。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 摘要末尾提到 "motivates future work to couple ancestral sequence diversity with explicit functional selection"，暗示当前方法未显式优化功能（如催化活性），这是一个隐含的局限。
+- "in selected settings" 表明 ASR 增强并非在所有分类任务设置中都优于现代序列。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅用 EFE 单一酶系统验证</td>
+<td>结果可能依赖 EFE 的特定进化历史（如近期基因复制、功能分化），不具普适性</td>
+<td>若策略仅对特定蛋白有效，则其作为通用数据策展原则的价值有限</td>
+<td>在多个不同家族（如不同 EC 类、不同折叠类型）上重复实验</td>
+<td>摘要：EFE 作为 model system</td>
+</tr>
+<tr>
+<td>活性下降未被深入讨论</td>
+<td>生成变体活性低于野生型，可能意味着 ASR 增强偏向稳定性而牺牲功能，但作者未分析活性-稳定性 trade-off 的机制</td>
+<td>若生成模型只能优化单一属性，则实际应用受限</td>
+<td>分析变体的序列-结构-功能关系，测试是否可通过多目标优化恢复活性</td>
+<td>摘要：reduced activity relative to wild-type</td>
+</tr>
+<tr>
+<td>ESM2 微调仅 "competitive in selected settings"</td>
+<td>未说明哪些设置下 ASR 增强优于或劣于现代序列，可能掩盖了方法的不稳定性</td>
+<td>若效果不稳定，则实际部署需谨慎</td>
+<td>详细报告不同数据规模、序列相似度、任务难度下的性能差异</td>
+<td>摘要：competitive ... in selected settings</td>
+</tr>
+<tr>
+<td>未提供 ASR 重建质量评估</td>
+<td>祖先序列重建本身有不确定性，若重建错误则训练数据含噪声，但作者未讨论</td>
+<td>重建质量直接影响结论可靠性</td>
+<td>使用多种 ASR 方法（如 PAML、FastML）交叉验证，或与已知祖先序列（如实验重建）对比</td>
+<td>摘要未提及 ASR 方法细节</td>
+</tr>
+<tr>
+<td>数据规模未报告</td>
+<td>训练集大小、序列多样性未知，可能影响结论的统计效力</td>
+<td>小规模数据可能夸大或低估 ASR 增强效果</td>
+<td>报告序列数量、多样性指标（如平均成对同一性）</td>
+<td>摘要未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong></p>
+<ol>
+<li>
+<p><strong>ASR 作为数据增强的通用策略</strong>：祖先序列重建可系统性地生成进化中间状态，作为训练数据增强手段，适用于任何生成模型（VAE、扩散模型、GAN）和表示学习模型（ESM2 微调）。迁移到本课题：在蛋白质结构预测或构象生成任务中，可用 ASR 生成进化上合理的序列变体，增强训练数据的多样性，尤其适用于序列-结构-稳定性关系建模。</p>
+</li>
+<li>
+<p><strong>数据策展优先于架构创新</strong>：本文表明，在模型架构不变的情况下，仅改变训练数据分布即可显著提升生成变体的稳定性。迁移到本课题：在 MD 模拟或对接任务中，训练数据的「进化深度」可能比增加数据量更有效；可考虑用 ASR 或系统发育信息筛选训练集。</p>
+</li>
+<li>
+<p><strong>稳定性-活性 trade-off 的显式处理</strong>：本文生成变体稳定性提升但活性下降，提示生成模型需引入多目标优化或条件生成（如以活性为条件变量）。迁移到本课题：在蛋白质设计任务中，可设计条件 VAE 或扩散模型，同时以稳定性和功能（如结合亲和力、催化活性）为条件，避免单目标优化导致的属性失衡。</p>
+</li>
+<li>
+<p><strong>ASR 与表示学习微调的结合</strong>：ASR 增强的序列集可用于微调预训练模型（如 ESM2），在稳定性分类任务中达到与现代表现相当的效果。迁移到本课题：在结构预测或对接打分函数中，可用 ASR 增强的序列-结构对微调模型，提升对进化上合理但非天然序列的泛化能力。</p>
+</li>
+<li>
+<p><strong>实验验证闭环的重要性</strong>：本文对生成变体进行了实验热稳定性和活性测定，提供了预测之外的 ground truth。迁移到本课题：在计算研究中，应尽量对关键预测进行实验验证，或至少使用已知实验数据作为基准，避免仅依赖计算指标。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>ASR 方法</strong>：祖先序列重建是进化生物学的经典方法（如 PAML、FastML、RAxML），本文将其引入 ML 数据策展，连接了进化计算与蛋白质工程 ML。相关文献：Hochberg &amp; Thornton (2017) 关于祖先序列重建在蛋白质功能研究中的应用；Gumulya &amp; Gillam (2017) 关于 ASR 在酶工程中的潜力。</li>
+<li><strong>数据为中心的 ML</strong>：本文与 Ng (2021) 提出的 data-centric AI 理念一致，强调数据质量而非仅模型架构。在蛋白质工程领域，与 Hie et al. (2022) 的「数据策展提升生成模型」方向相关。</li>
+<li><strong>VAE 在蛋白质设计中的应用</strong>：VAE 已被广泛用于蛋白质序列生成（如 Kingma &amp; Welling 2014 的原始 VAE；后续如 VAE-based protein design 的文献），本文的创新在于训练数据的进化信息注入。</li>
+<li><strong>ESM2 微调</strong>：ESM2 (Lin et al., 2023) 是蛋白质语言模型的代表，本文展示了其在稳定性分类任务上的微调潜力，与 Meier et al. (2021) 的 ESM-1v 变异效应预测相关。</li>
+<li><strong>稳定性-活性 trade-off</strong>：这是蛋白质工程的经典问题（如 Shoichet et al. 1995 的 stability-activity trade-off 研究），本文的观察与此一致，提示生成模型需显式处理多目标优化。</li>
+<li><strong>候选方向</strong>：将 ASR 与扩散模型（如 RFdiffusion, Watson et al. 2023）结合，用祖先序列作为条件或训练数据，可能提升生成结构的进化合理性。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong></p>
+<h3>候选 1：ASR 增强的扩散模型用于蛋白质结构生成</h3>
+<ul>
+<li><strong>名称</strong>：EvoDiff-ASR：祖先序列引导的扩散模型结构生成</li>
+<li><strong>来源局限/观察</strong>：本文仅用 VAE 验证 ASR 增强，未测试更先进的生成架构（如扩散模型）；扩散模型在结构生成中表现优异，但训练数据多样性同样受限。</li>
+<li><strong>核心假设</strong>：用 ASR 重建的祖先序列及其预测结构（如 AlphaFold2 预测）作为扩散模型的训练数据，可生成比现代序列训练更稳定的结构变体。</li>
+<li><strong>初步方法</strong>：对目标蛋白家族进行 ASR → 用 AlphaFold2 预测祖先结构 → 用祖先结构-序列对训练扩散模型 → 生成新结构 → 用 MD 模拟或实验验证稳定性。</li>
+<li><strong>验证方式</strong>：与 RFdiffusion 基线对比生成结构的稳定性（计算 ΔΔG 或实验 Tm）。</li>
+<li><strong>可能的失败模式</strong>：祖先结构预测不准确，导致扩散模型学到错误的结构-序列关系；扩散模型对训练数据分布敏感，ASR 增强可能引入偏差。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 2：ASR 增强的 ESM2 微调用于稳定性预测的泛化性测试</h3>
+<ul>
+<li><strong>名称</strong>：ASR-FineTune-Bench：跨蛋白家族的 ASR 增强微调基准</li>
+<li><strong>来源局限/观察</strong>：本文仅在 endolysin 和 lysozyme C 上测试，且结果 "competitive in selected settings"，未系统评估 ASR 增强的适用条件。</li>
+<li><strong>核心假设</strong>：ASR 增强的微调效果取决于蛋白家族的进化深度和序列多样性；在进化上保守的家族中效果更显著。</li>
+<li><strong>初步方法</strong>：选取多个蛋白家族（不同进化速率、不同序列多样性）→ 对每个家族进行 ASR → 用祖先+现代序列微调 ESM2 → 在稳定性预测任务上对比现代序列微调。</li>
+<li><strong>验证方式</strong>：系统报告不同家族的性能差异，分析序列多样性（如平均成对同一性）与 ASR 增益的相关性。</li>
+<li><strong>可能的失败模式</strong>：ASR 增强在某些家族中无增益甚至有害，需建立选择准则。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 3：稳定性-活性多目标条件生成</h3>
+<ul>
+<li><strong>名称</strong>：Dual-Objective EvoVAE：稳定性和活性联合优化的条件 VAE</li>
+<li><strong>来源局限/观察</strong>：本文生成变体稳定性提升但活性下降，表明单目标优化不足。</li>
+<li><strong>核心假设</strong>：在 VAE 中引入活性作为条件变量（或使用多目标优化），可生成同时满足稳定性和活性阈值的变体。</li>
+<li><strong>初步方法</strong>：在 EFE 系统中，用祖先序列训练条件 VAE（以活性标签为条件）→ 生成变体 → 实验测定稳定性和活性 → 与单目标 VAE 对比 Pareto 前沿。</li>
+<li><strong>验证方式</strong>：比较双目标与单目标生成变体的稳定性-活性 Pareto 曲线。</li>
+<li><strong>可能的失败模式</strong>：活性标签噪声大，条件变量难以学习；稳定性和活性在序列空间上冲突严重，无法同时优化。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 4：ASR 增强的 MD 模拟初始构象选择</h3>
+<ul>
+<li><strong>名称</strong>：Ancestral-MD：祖先序列构象作为 MD 模拟的增强采样起点</li>
+<li><strong>来源局限/观察</strong>：本文聚焦序列生成和表示学习，未涉及结构采样；但祖先序列可能代表更稳定的构象状态，可作为 MD 模拟的初始构象。</li>
+<li><strong>核心假设</strong>：用祖先序列的预测结构作为 MD 模拟起点，可更高效地采样到稳定构象，减少模拟时间。</li>
+<li><strong>初步方法</strong>：对目标蛋白进行 ASR → 用 AlphaFold2 预测祖先结构 → 以祖先结构和现代结构分别作为 MD 起点 → 比较构象采样效率和稳定性指标（如 RMSD、Rg）。</li>
+<li><strong>验证方式</strong>：比较祖先起点与现代起点的 MD 模拟收敛时间和采样到的稳定构象数量。</li>
+<li><strong>可能的失败模式</strong>：祖先结构可能不代表现代蛋白的功能构象，导致采样偏离功能相关状态。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 5：ASR 增强的分子对接训练数据</h3>
+<ul>
+<li><strong>名称</strong>：EvoDock：祖先序列增强的对接打分函数训练</li>
+<li><strong>来源局限/观察</strong>：本文未涉及对接，但 ASR 提供的序列多样性可用于训练对接打分函数，提升对进化上合理但非天然序列的泛化能力。</li>
+<li><strong>核心假设</strong>：用祖先序列-结构对增强对接训练数据，可提升打分函数对同源蛋白的泛化能力。</li>
+<li><strong>初步方法</strong>：对目标蛋白家族进行 ASR → 用祖先结构进行对接模拟（如 AutoDock Vina）→ 用祖先+现代对接数据训练打分函数 → 在测试集上评估。</li>
+<li><strong>验证方式</strong>：对比祖先增强与仅现代数据训练的打分函数在 docking pose 预测和亲和力排序上的性能。</li>
+<li><strong>可能的失败模式</strong>：祖先结构的对接构象可能不具实验相关性，引入噪声。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose that ancestral sequence reconstruction (ASR)-informed data augmentation improves the training of generative and representation-learning models for protein engineering. Using ethylene-forming enzyme (EFE) as a model system, they report that variational autoencoders trained on ancestral and near-ancestral sequences generate variants with improved predicted and experimentally measured thermostability relative to models trained on modern sequences. They also report that ASR-enriched sequence sets are competitive with modern-sequence fine-tuning for ESM2-based stability classification in endolysin and lysozyme C tasks. All tested ancestral and ML-generated EFEs produced detectable ethylene, though ML-generated variants showed reduced activity relative to wild-type.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no experimental details, numerical data, statistical analyses, or methodological descriptions provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, experimental protocols, sequence datasets, model architectures and hyperparameters, thermostability assay details, activity measurements, statistical methods, and any code or data availability statements</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a conceptually interesting and timely hypothesis, namely that data-centric strategies such as ASR-informed augmentation can rival or outperform model-centric advances in protein engineering. The choice of EFE as a model system and the dual evaluation of generative and representation-learning tasks are sensible. However, the abstract provides insufficient quantitative detail to assess the robustness, magnitude, or generalizability of the reported effects. Several claims are stated without supporting numbers, effect sizes, or statistical significance, and the relationship between the stability gains and activity losses is not contextualized. The work may be of interest to the protein engineering and ML communities, but the current evidence base is too thin to establish the central case.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in protein engineering, directed evolution, and machine learning applied to biological sequences would be interested. The work speaks to ongoing debates about data-centric versus model-centric improvements, and the use of ancestral sequences as a training strategy could inform practical choices for generative model development. Those working on thermostability prediction and design, particularly with ESM-based representations, may also find the fine-tuning comparisons relevant.</li>
+<li><strong>Major strengths</strong> The hypothesis is clearly framed and addresses an underexplored area. The use of a real enzyme system with experimental validation of generated variants is a strength, as is the inclusion of both generative and representation-learning tasks. The observation that ancestral training captures stability-associated features more than catalytic optimization is an honest and potentially informative finding.</li>
+<li><strong>Major Concerns</strong> The abstract lacks quantitative evidence for the central claims. No thermostability values, activity measurements, or statistical comparisons are provided. The claim that ancestral representations were "competitive" in classification tasks is vague without accuracy, AUC, or confidence intervals. The reduced activity of ML-generated variants is mentioned but not quantified, and the trade-off between stability and activity is not discussed in terms of practical utility. The generalizability of the approach beyond EFE and the two classification tasks is asserted but not supported.</li>
+<li><strong>Minor Comments</strong> The abstract would benefit from stating the number of variants tested, the magnitude of thermostability improvement, and the statistical significance of the differences. The phrase "near-ancestral sequence datasets" is not defined. The relevance of the endolysin and lysozyme C tasks to the EFE findings is not explained. The abstract does not mention limitations or potential confounding factors, such as sequence diversity or dataset size.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3, R1-M4</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality is moderate to high, as ASR-informed augmentation is not widely explored for generative protein models. Scientific importance is potentially significant for the protein engineering community, but the evidence presented is insufficient to establish impact. Interdisciplinary readership is plausible, given the intersection of evolutionary biology and ML, but the abstract assumes familiarity with both fields. Technical soundness cannot be assessed from the abstract alone, as no methodological or statistical details are provided. Readability for nonspecialists is acceptable but would be improved by defining key terms and providing concrete numbers.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The hypothesis is promising and the experimental design appears reasonable, but the abstract does not provide sufficient quantitative support for the central claims. A revised version with detailed results, statistical analyses, and a clearer discussion of the stability-activity trade-off would be needed to assess the case.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The authors claim that VAE models trained on ancestral and near-ancestral sequence datasets generate variants with improved predicted and experimentally measured thermostability relative to variants generated from modern-sequence training data.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> No quantitative data are provided to support the thermostability improvement. The abstract does not report the magnitude of the improvement, the number of variants tested, the assay conditions, or any statistical measures such as p-values or confidence intervals.</li>
+<li><strong>Why it matters</strong> Without quantitative evidence, the reader cannot evaluate whether the observed improvement is meaningful, reproducible, or within experimental noise. The central claim of the paper depends on this comparison.</li>
+<li>
+<p><strong>Resolution test</strong> Provide specific thermostability values (e.g., melting temperatures or half-inactivation times) for ancestral-trained versus modern-trained variants, with sample sizes and statistical tests.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The authors claim that all experimentally tested ancestral and ML-generated EFEs produced detectable ethylene, although ML-generated variants showed reduced activity relative to wild-type EFE.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The activity reduction is stated qualitatively without any quantitative measure. The abstract does not report the extent of the reduction, the number of variants with reduced activity, or whether this reduction is consistent across variants.</li>
+<li><strong>Why it matters</strong> The trade-off between stability and activity is a critical consideration for protein engineering. Without quantification, the practical utility of the generated variants is unclear, and the claim that the approach "more strongly captured stability-associated features" is not substantiated.</li>
+<li>
+<p><strong>Resolution test</strong> Report activity values (e.g., ethylene production rates or yields) for wild-type, ancestral-trained, and modern-trained variants, with error bars and statistical comparisons.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The authors claim that ASR-enriched sequence sets for fine-tuning ESM2 representations in endolysin and lysozyme C stability-classification tasks were competitive with modern-sequence fine-tuning in selected settings.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The term "competitive" is undefined. No performance metrics, such as accuracy, F1 score, or area under the ROC curve, are provided. The phrase "in selected settings" is vague and does not specify which settings or how many were tested.</li>
+<li><strong>Why it matters</strong> The claim of competitiveness is central to the generalizability of the approach. Without metrics and a clear definition of the comparison, the reader cannot assess whether ASR-informed fine-tuning offers any advantage or is merely equivalent by chance.</li>
+<li>
+<p><strong>Resolution test</strong> Provide classification performance metrics for both ASR-enriched and modern-sequence fine-tuning across all tested settings, with confidence intervals and statistical tests for differences.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> The abstract implies a generalizable strategy for stability-oriented protein sequence generation, but no methodological details are provided.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract does not describe the VAE architecture, the ancestral sequence reconstruction method, the dataset sizes, the training procedures, or the criteria for selecting ancestral and near-ancestral sequences. Without these details, the work cannot be reproduced or evaluated for technical soundness.</li>
+<li><strong>Why it matters</strong> Reproducibility is a core requirement for scientific claims. The lack of methodological information prevents independent verification and limits the usefulness of the findings to the community.</li>
+<li><strong>Resolution test</strong> Provide a full methods section with model architectures, training hyperparameters, sequence selection criteria, and data availability statements.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Terminology</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The term "near-ancestral sequence datasets" is not defined. It is unclear whether these are sequences reconstructed at intermediate nodes of the phylogenetic tree or sequences with high similarity to ancestral reconstructions.</li>
+<li>
+<p><strong>Required correction</strong> Define "near-ancestral" explicitly in the methods or abstract.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Context</li>
+<li><strong>Affected element</strong> Discussion of trade-off</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The reduced activity of ML-generated variants is mentioned but not discussed in the context of the intended application. It is unclear whether the stability gains outweigh the activity losses for practical use.</li>
+<li>
+<p><strong>Required correction</strong> Add a sentence contextualizing the stability-activity trade-off and its implications for real-world protein engineering.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Generalizability</li>
+<li><strong>Affected element</strong> Scope of claims</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The abstract claims the strategy is "promising" for stability-oriented generation but only demonstrates it on one enzyme and two classification tasks. The generalizability is asserted without supporting evidence.</li>
+<li><strong>Required correction</strong> Soften the generalizability claim or provide additional examples or a rationale for why the approach should transfer.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that ASR-informed data augmentation improves thermostability of generated variants is unsupported due to lack of quantitative data.</li>
+<li>The claim that ASR-enriched fine-tuning is "competitive" in classification tasks is unsupported due to lack of performance metrics.</li>
+<li>The claim that the approach "more strongly captured stability-associated features than catalytic optimization" is unsupported without quantitative activity and stability comparisons.</li>
+<li>The generalizability of the approach beyond the tested systems is asserted but not supported by evidence.</li>
+<li>The overall conclusion that ASR-informed augmentation is a "promising strategy" is not evaluable from the abstract alone.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

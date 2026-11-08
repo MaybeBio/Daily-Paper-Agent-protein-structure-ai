@@ -1,0 +1,24 @@
+{
+  "source": "biorxiv",
+  "id": "10.64898/2026.11.04.764373",
+  "title": "Protify: A Benchmarking Platform Revealing Task Dependence and Homology Leakage in Protein Language Model Evaluation",
+  "authors": "Nikolaos Rafailidis; Logan P Hallee; Tamar Peleg; Colin Horger; Luck Haviland; Jason P Gleghorn",
+  "journal": "bioRxiv",
+  "published_date": "2026-11-05",
+  "window": {
+    "start": "2026-11-01",
+    "end": "2026-11-07"
+  },
+  "score": 5,
+  "one_liner_zh": "该文介绍了一个蛋白质语言模型基准测试平台Protify，系统评估了35个模型在61个数据集上的表现，揭示了任务依赖性和同源泄漏问题，虽涉及蛋白质结构相关计算但核心是模型评估而非结构建模方法创新。",
+  "abstract": "Protein Language Models (pLMs) have become essential tools for computational protein analysis, and the rapid proliferation of architectures, training objectives, and pretraining corpora has produced a diverse and expanding model landscape. Evaluation practices, however, remain fragmented: studies use different datasets, preprocessing pipelines, and reporting conventions, so results rarely transfer between publications. Here we introduce Protify, an open-source platform that standardizes pLM benchmarking across zero-shot, supervised, and transferlearning settings through a unified, low-code interface. Protify currently supports 35 pretrained models and 61 curated datasets and it is easy to add custom versions of each. Leveraging Protify's high throughput pipelines, we benchmarked 23 models on ProteinGym, discovering that DPLM3B is currently the top-performing self-supervised encoder. Another large-scale supervised evaluation across 32 diverse tasks, spanning enzyme classification, gene ontology annotation, protein-protein interaction, subcellular localization, and other functional properties, found that no single pLM dominated: 14 different models took the top score on at least one dataset, and the margins between the best and second-best models fell within run-to-run variability. On enzyme optimal pH prediction, a general-purpose probe pipeline matched or exceeded EpHod, a specialized model selected from 11,550 training runs, after 50 hyperparameter trials (R2 = 0.482 versus 0.425). Under a homology-controlled split of the same data, every pooled-embedding probe collapsed to near-zero R2, and only a transformer probe over full residue embeddings recovered appreciable signal (R2 = 0.248). Model rankings therefore depend as much on evaluation design as on the models themselves. Protify makes those design choices explicit, controlled, and replayable, and is freely available at https://github.com/Gleghorn-Lab/Protify.",
+  "abstract_zh": "蛋白质语言模型（pLMs）已成为计算蛋白质分析的重要工具，而架构、训练目标和预训练语料库的快速激增催生了一个多样且不断扩展的模型格局。然而，评估实践仍然碎片化：不同研究使用不同的数据集、预处理流程和报告惯例，因此结果很少能在出版物之间转移。在此，我们介绍Protify，一个开源平台，通过统一、低代码接口，在零样本、监督和迁移学习设置中标准化pLM基准测试。Protify目前支持35个预训练模型和61个精选数据集，并且易于添加各自的自定义版本。利用Protify的高通量流程，我们在ProteinGym上对23个模型进行了基准测试，发现DPLM3B目前是表现最佳的自监督编码器。另一项涵盖32个多样任务的大规模监督评估，涉及酶分类、基因本体注释、蛋白质-蛋白质相互作用、亚细胞定位及其他功能属性，发现没有单一pLM占据主导地位：14个不同模型在至少一个数据集上取得最高分，且最佳与次佳模型之间的差距落在运行间变异性范围内。在酶最适pH预测上，一个通用探针流程在50次超参数试验后匹配或超过了EpHod——一个从11,550次训练运行中选出的专门模型（R² = 0.482对比0.425）。在相同数据的同源控制分割下，所有池化嵌入探针均降至接近零的R²，只有基于全残基嵌入的Transformer探针恢复了显著信号（R² = 0.248）。因此，模型排名既取决于评估设计，也取决于模型本身。Protify使这些设计选择变得明确、可控且可重放，并可在https://github.com/Gleghorn-Lab/Protify免费获取。",
+  "has_fulltext": true,
+  "fulltext_source": "europepmc",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.11.04.764373",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.04.764373",
+  "paper_page_path": "papers/biorxiv/10.64898_2026.11.04.764373/index.html"
+}

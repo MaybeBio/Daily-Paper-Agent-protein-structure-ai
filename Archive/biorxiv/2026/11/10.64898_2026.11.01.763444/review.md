@@ -1,0 +1,102 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, results, discussion, methods, appendix, figure supplements)
+- **Assessment boundary** Scientific claims, methodological soundness, evidence quality, and alignment with stated conclusions. No line-by-line editorial review.
+- **Shared manuscript claim summary** The authors benchmark a panel of deep learning models for mutational effect prediction and drug-target affinity prediction against deep mutational scanning (DMS) data from the MET kinase domain across 11 inhibitor conditions. They report that current models produce largely ligand-invariant predictions, that ligand-aware geometric models partially recover resistance hotspots, and that affinity models underestimate mutation-induced binding changes. They conclude that the primary bottleneck is the scarcity of mutation-conditioned protein-ligand training data rather than model architecture.
+- **Visible evidence base** Main text figures (Figures 1–6), figure supplements (Figures 1–6 supplements), Table 1, Methods section, Appendix 1. No raw data or code were inspected.
+- **Missing materials affecting confidence** Raw DMS data files, model prediction outputs, code repository contents, exact hyperparameters for all models, statistical test details, and full figure panels (only referenced, not shown in text) were not available for inspection.
+
+## Reviewer
+- **Overall assessment** This manuscript addresses a timely and important question: whether current deep learning models can predict mutation-dependent drug responses. The experimental design, using a dense DMS dataset across multiple inhibitor conditions, is well suited to the question. The finding that most models are ligand-invariant is a useful negative result, and the partial success of ligand-aware geometric models at resistance hotspots is a constructive observation. However, the manuscript has several significant weaknesses. The quantitative evidence for the central claims is often presented as correlation coefficients without confidence intervals or significance testing. The comparison across models is confounded by differences in input representations, training data, and output scales. The claim that data scarcity, rather than architecture, is the primary limitation is not directly tested. The manuscript would benefit from a more rigorous statistical framework, a clearer articulation of what constitutes a meaningful prediction, and a more direct test of the data-scarcity hypothesis.
+- **Who would be interested in the results, and why** Computational biologists developing or applying protein language models, structure prediction tools, and drug-target affinity predictors. Experimentalists using DMS to study drug resistance. Researchers interested in the generalization limits of deep learning in molecular biology. The negative results and the emphasis on data scarcity will be of particular interest to those building next-generation models for mutation-conditioned ligand prediction.
+- **Major strengths** 1) The use of a dense, multi-condition DMS dataset is a strong and appropriate benchmark. 2) The systematic evaluation of a wide range of model classes (sequence, structure, ligand-aware, affinity) is comprehensive. 3) The analysis of resistance and sensitizing mutations, and the consensus approach, provide a practical angle. 4) The discussion of data scarcity and the need for mutation-conditioned supervision is thoughtful and forward-looking.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Statistical rigor
+  - **Claim pointer** The manuscript claims that models show "largely ligand-invariant predictions" and that performance "decreased by an average of 53% across inhibitor-treated conditions" (Results, Figure 2).
+  - **Evidence pointer** Results section, Figure 2, Figure 2—figure supplement 3
+  - **Concern** The central quantitative claims are based on Spearman and Pearson correlation coefficients, but no confidence intervals, standard errors, or significance tests are reported. The comparison between conditions and models is therefore not statistically grounded. For example, the claim that one model outperforms another by a certain margin in correlation is not accompanied by any measure of uncertainty. The inter-model and inter-condition correlation matrices (Figure 2C) are presented without any assessment of whether the observed differences are meaningful.
+  - **Why it matters** Without statistical inference, the reader cannot assess whether the observed differences are robust or due to noise. The central conclusion that models are ligand-invariant depends on the magnitude of the performance drop being significant, which is not established.
+  - **Resolution test** Provide bootstrap confidence intervals or permutation tests for all reported correlation coefficients. Report the distribution of performance across random seeds or model initializations. For the comparison between conditions, use a paired statistical test (e.g., Wilcoxon signed-rank) to assess whether the performance drop is significant.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Confounded model comparison
+  - **Claim pointer** The manuscript benchmarks models across categories (sequence, structure, ligand-aware, affinity) and draws conclusions about their relative performance (e.g., "ligand-aware geometric models partially recover resistance hotspots").
+  - **Evidence pointer** Results section, Figures 2–5, Methods section
+  - **Concern** The models compared differ not only in architecture but also in input representations (sequence only, structure only, structure plus ligand), training data (e.g., PDBbind for ProtLigand, protein fitness datasets for others), and output scales (log-odds, stability, affinity). These differences are confounded with the model class. For example, the poor performance of affinity models may be due to their training on wild-type affinity data, not to their architecture. The manuscript does not control for these factors, making it difficult to attribute performance differences to any single cause.
+  - **Why it matters** The conclusion that "data scarcity rather than architecture" is the primary limitation is not supported by the evidence, because the models are not matched on training data or input features. A model trained on mutation-conditioned data might perform better regardless of architecture.
+  - **Resolution test** Perform a controlled comparison where models are trained on the same data (e.g., fine-tune all models on the same mutation-conditioned dataset) or at least report the training data and loss functions for each model and discuss how these might affect the comparison. Alternatively, use a single model class and vary the input features to isolate the effect of ligand information.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Data-scarcity hypothesis
+  - **Claim pointer** The manuscript concludes that "a primary limitation in improving performance on this task lies in the scarcity of mutation-conditioned protein-ligand training data rather than model architecture alone."
+  - **Evidence pointer** Discussion section
+  - **Concern** This is a strong claim that is not directly tested. The manuscript shows that current models fail, but it does not demonstrate that more data would fix the problem. The authors do not, for example, train models on subsets of the DMS data to show that performance scales with data volume, nor do they compare models trained with and without mutation-conditioned data.
+  - **Why it matters** The conclusion has direct implications for the field: if data scarcity is the bottleneck, then efforts should focus on generating more data. If architecture is the bottleneck, then model development should be prioritized. The manuscript does not provide evidence to distinguish these possibilities.
+  - **Resolution test** Perform a learning curve analysis: train a representative model on increasing fractions of the DMS data and show whether performance plateaus or continues to improve. Alternatively, fine-tune a model on a small mutation-conditioned dataset and compare to a model trained only on wild-type data.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Definition of resistance and sensitizing mutations
+  - **Claim pointer** The manuscript defines essential mutations as those with difference scores one standard deviation away from zero, and uses this to classify resistance and sensitizing mutations (Methods, "Mutation Labeling").
+  - **Evidence pointer** Methods section, Figure 5
+  - **Concern** The threshold of one standard deviation is arbitrary and is applied to the difference score distribution. The manuscript does not justify this choice or explore its sensitivity. The classification of mutations as resistance or sensitizing is central to the analysis in Figure 5 and 6, and the results may depend heavily on this threshold.
+  - **Why it matters** If the threshold is too lenient, many neutral mutations will be misclassified, diluting the signal. If too strict, the analysis may miss true resistance mutations. The robustness of the conclusions to this choice is not established.
+  - **Resolution test** Vary the threshold (e.g., 0.5, 1.5, 2 standard deviations) and show that the main conclusions (e.g., model performance on resistance mutations) are unchanged. Alternatively, use a more principled approach, such as a mixture model or a false discovery rate control.
+  - **Concern ID** R1-M5
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Generalizability of the extended benchmark
+  - **Claim pointer** The manuscript extends the analysis to additional kinase-inhibitor DMS datasets (FGFRs, EGFR, SRC, CDKs) and claims that "the overall trends" are confirmed.
+  - **Evidence pointer** Results section, Figure 7, Table 1
+  - **Concern** The details of these additional datasets are only summarized in Table 1. The manuscript does not report the number of variants, the number of conditions, the quality metrics, or the specific results for each dataset. The claim of generalizability is therefore not supported by the evidence presented.
+  - **Why it matters** The extension to other kinases is a key part of the manuscript's claim that the findings are general. Without detailed results, the reader cannot assess whether the trends are consistent or whether there are important exceptions.
+  - **Resolution test** Provide a supplementary figure showing the performance of each model on each additional dataset, with the same statistical rigor as the main MET analysis. Report the number of variants and conditions for each dataset.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity of model descriptions
+  - **Affected element** Methods section, "Deep learning methods"
+  - **Evidence pointer** Methods section
+  - **Issue** The description of how each model is used is brief. For example, the exact version of ESM2, the specific checkpoint for ProtLigand, and the precise input format for each model are not fully specified.
+  - **Required correction** Provide a table listing each model, its version, the exact checkpoint used, the input representation, and the output metric. This will improve reproducibility.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Handling of failed mutations
+  - **Affected element** Docking section
+  - **Evidence pointer** Methods section, "Docking"
+  - **Issue** The manuscript states that 662 mutants failed due to clashes and were removed. It is not clear whether these failures are random or biased toward certain residue types or positions, which could affect the results.
+  - **Required correction** Report the distribution of failed mutations (e.g., by residue type, by position) and discuss whether this could introduce bias.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interpretation of correlation values
+  - **Affected element** Results section, Figure 5
+  - **Evidence pointer** Results section, Figure 5
+  - **Issue** The manuscript reports Spearman correlations of less than 0.2 as "little or no correlation." While this is a common interpretation, the practical significance of these values depends on the context. A correlation of 0.2 might be meaningful for a noisy biological assay.
+  - **Required correction** Discuss the practical significance of the observed correlation values in the context of DMS data, and consider reporting the variance explained (R²) as well.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Figure readability
+  - **Affected element** Figures 2–6
+  - **Evidence pointer** Figures 2–6
+  - **Issue** The figures are referenced but not shown in the text provided. Based on the descriptions, some figures (e.g., Figure 2C) appear to be complex heatmaps that may be difficult to interpret without clear labels and legends.
+  - **Required correction** Ensure all figures have clear axis labels, legends, and annotations. Consider simplifying complex panels or providing a schematic explanation in the figure legend.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Competing interests
+  - **Affected element** Competing Interests section
+  - **Evidence pointer** Competing Interests section
+  - **Issue** The competing interests statement is detailed but does not specify whether any of the listed companies have a direct interest in the models or data used in this study.
+  - **Required correction** Clarify whether any of the companies listed have a financial interest in the specific models (e.g., ProtLigand, Boltz-2) or the DMS data used.
+- **Technical failings that need to be addressed before the case is established** 1) Lack of statistical inference on all primary quantitative claims (R1-M1). 2) Confounded model comparison that prevents attribution of performance differences (R1-M2). 3) The data-scarcity hypothesis is not directly tested (R1-M3). 4) Arbitrary threshold for resistance/sensitizing classification without sensitivity analysis (R1-M4). 5) Insufficient detail on the extended benchmark datasets to support the generalizability claim (R1-M5).
+- **Assessment against Nature-style criteria** **Originality:** The question of whether deep learning models can predict mutation-dependent drug responses is timely and the use of a dense multi-condition DMS dataset is a novel benchmarking approach. However, the finding that models are ligand-invariant is not entirely unexpected given the known limitations of these models. **Scientific importance:** The results are important for the field of computational drug discovery, as they highlight a critical gap in current methods. The emphasis on data scarcity is a valuable contribution to the discussion of how to improve these models. **Interdisciplinary readership:** The manuscript is likely to appeal to a broad audience of computational biologists, structural biologists, and pharmacologists. The writing is generally accessible, but the heavy reliance on correlation coefficients without context may limit accessibility for non-specialists. **Technical soundness:** The experimental design is sound, but the lack of statistical rigor and the confounded model comparison are significant technical weaknesses. **Readability for nonspecialists:** The abstract and introduction are clear, but the results section is dense and would benefit from a more explicit statement of what each analysis shows and why it matters.
+- **Recommendation posture** Supportive if technical concerns are resolved. The manuscript addresses an important question with a well-designed benchmark, but the central claims are not currently supported by the evidence due to a lack of statistical rigor and confounded comparisons. The authors should address the major concerns, particularly the statistical analysis and the direct test of the data-scarcity hypothesis, before the case is established.
+
+## Risk / unsupported claims
+- The claim that "a primary limitation... lies in the scarcity of mutation-conditioned protein-ligand training data rather than model architecture alone" is not directly supported by the evidence presented. No learning curve analysis or data-ablation study is provided.
+- The claim that "ligand-aware geometric models... partially recover experimentally validated resistance-associated hotspots" is based on qualitative observations (Figure 3) and a consensus analysis (Figure 6) without a formal statistical test of enrichment.
+- The claim that the extended benchmark "confirms the overall trends" is unsupported, as no detailed results for the additional datasets are presented.
+- The statement that "current AI models produce largely ligand-invariant predictions" is based on average performance drops, but the variability across models and conditions is not quantified, making the strength of this claim unclear.

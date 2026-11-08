@@ -1,0 +1,85 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors claim that protein language model (pLM) embeddings can be decoded via coevolutionary analysis without supervised training to identify protein N-glycosylation sites, and that this zero-shot framework (MaskNGly) achieves performance comparable to state-of-the-art supervised predictors. They further claim that application across proteomes reveals biological insights including increased glycosylation propensity with organismal complexity, preferential glycosylation at structured and solvent-exposed regions, disease association of mutations in high-scoring motifs, and signatures of glycosylation-mediated allostery.
+- **Visible evidence base** Abstract text only; no quantitative results, methodological details, or validation data are provided
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, supplementary material, benchmark datasets, and code availability details
+
+## Reviewer
+- **Overall assessment** The abstract presents an ambitious and potentially interesting claim: that pLM embeddings can be decoded in a zero-shot manner to predict N-glycosylation sites at omics scale. The biological findings described are intriguing and would be of interest to the glycobiology and computational biology communities. However, the abstract alone provides no quantitative evidence, no methodological detail, and no validation strategy. The core claims of performance comparability to supervised predictors and the biological insights cannot be assessed from the supplied material. The manuscript may have merit, but the case is not established from the evidence provided.
+- **Who would be interested in the results, and why** Glycobiologists interested in large-scale glycosylation prediction and its functional implications; computational biologists working on protein language model interpretability; researchers studying post-translational modification prediction; and those interested in the evolutionary and structural determinants of glycosylation.
+- **Major strengths** The conceptual framing is novel, proposing an interpretable and zero-shot use of pLM embeddings for glycosylation prediction. The claimed scalability to omics-scale analysis is practically valuable. The biological findings, if well-supported, would provide new insights into glycosylation determinants and disease associations.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "MaskNGly, a zero-shot framework that identifies protein N-glycosylation sites directly from PLM-embeddings while achieving performance comparable to state-of-the-art supervised predictors"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The claim of performance comparable to state-of-the-art supervised predictors is made without any quantitative metrics, benchmark datasets, or comparison details. No AUC, precision, recall, F1, or other standard evaluation measures are reported. The choice of supervised baselines and the evaluation protocol are not described.
+  - **Why it matters** This is the central technical claim of the manuscript. Without quantitative evidence, the reader cannot judge whether the zero-shot approach is genuinely competitive or whether the comparison is favorable due to dataset selection, threshold choices, or other factors. The claim as stated is unverifiable from the abstract.
+  - **Resolution test** Provide benchmark results on standard glycosylation prediction datasets with clear metrics, comparison to multiple established supervised predictors, and statistical significance testing.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "semantic features learned by pLMs can be decoded to reveal biologically meaningful signals using coevolutionary analysis without downstream supervised-training"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The methodological basis for decoding pLM embeddings via coevolutionary analysis is not described. It is unclear how coevolutionary analysis is applied to embeddings, what specific signals are extracted, and how these signals map to glycosylation propensity. The mechanism by which this decoding works is a black box within the abstract.
+  - **Why it matters** The interpretability claim is a key selling point of the manuscript. Without a clear description of the decoding methodology, the claim that the framework is interpretable cannot be evaluated. The novelty of the approach depends on this methodological contribution.
+  - **Resolution test** Provide a detailed methods section describing the coevolutionary decoding procedure, including mathematical formulation, parameter choices, and a demonstration of what biological signals are recovered.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence quality
+  - **Claim pointer** "it reveals that canonical N-X-S/T motifs gain higher glycosylation propensities with increasing organismal complexity and that glycosylation preferentially occurs at structured, solvent-exposed regions"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The biological findings are stated as established results, but no supporting data are shown. No statistics, effect sizes, or comparisons across species are provided. The claim about structured and solvent-exposed regions requires structural data or predictions that are not described.
+  - **Why it matters** These findings are presented as major biological insights. If they are robust, they would be of significant interest. However, without quantitative support, they remain assertions. The relationship between organismal complexity and glycosylation propensity is a strong claim that requires careful phylogenetic analysis and confounding control.
+  - **Resolution test** Provide figures with statistical analyses for the cross-species comparison, including species counts, statistical tests, and effect sizes. For the structural claim, provide structural data or predictions with appropriate validation.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence quality
+  - **Claim pointer** "Mutations altering high-scoring motifs are more frequently disease-associated" and "The framework also captures signatures of glycosylation-mediated protein allostery"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** These two claims are presented without any supporting evidence. The disease association claim requires a clear definition of the comparison group, statistical framework, and control for confounding factors. The allostery claim is particularly strong and would require dedicated experimental or computational validation.
+  - **Why it matters** These claims extend the framework beyond prediction into functional inference. If supported, they would substantially increase the impact of the work. As presented, they are unsupported assertions that cannot be evaluated.
+  - **Resolution test** Provide detailed statistical analyses for the disease association claim, including cohort definitions and controls. For the allostery claim, provide case studies with structural or experimental evidence.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract uses the term "coevolutionary analysis" without explaining how this applies to pLM embeddings. This is a non-standard usage that may confuse readers.
+  - **Required correction** Clarify the meaning of coevolutionary analysis in this context, or use a more precise term.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract mentions a website (https://maskngly.com) but does not state whether code and data are available for reproducibility.
+  - **Required correction** State explicitly whether code, models, and datasets are publicly available and under what license.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The phrase "Omics-scale characterization" is used but the scale of the analysis is not quantified. It is unclear how many proteomes or species were analyzed.
+  - **Required correction** Provide the number of proteomes analyzed and the taxonomic range covered.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4. The abstract does not provide sufficient quantitative or methodological evidence to support any of the four major claims. The manuscript must be reviewed in full to assess whether these concerns are addressed.
+- **Assessment against Nature-style criteria** 
+  - Originality: The concept of zero-shot glycosylation prediction from pLM embeddings is original and potentially novel. However, the abstract does not clearly differentiate this approach from existing pLM-based prediction methods that may also avoid task-specific fine-tuning.
+  - Scientific importance: Glycosylation is a major post-translational modification with broad biological relevance. Large-scale prediction tools are valuable. The biological findings, if validated, would be important. The importance is potentially high but not established from the abstract.
+  - Interdisciplinary readership: The work bridges computational biology, glycobiology, and evolutionary biology. The abstract is written in a way that is accessible to a broad audience, though some terms may require clarification.
+  - Technical soundness: Cannot be assessed from the abstract. No methodological detail or quantitative validation is provided.
+  - Readability for nonspecialists: The abstract is generally readable, but the methodological claims are vague and would benefit from more precise language.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents interesting claims but provides no quantitative or methodological support. A full manuscript review is required to determine whether the technical and biological claims are substantiated. The recommendation is conditional on the full manuscript addressing the major concerns listed above.
+
+## Risk / unsupported claims
+- The claim of performance comparable to state-of-the-art supervised predictors is unsupported by any quantitative data.
+- The claim that coevolutionary analysis of pLM embeddings reveals biological signals is methodologically undefined and unsupported.
+- The biological findings regarding organismal complexity, structural preferences, disease association, and allostery are unsupported by any data.
+- The claim of omics-scale applicability is unquantified.
+- The interpretability claim is not substantiated without a description of the decoding mechanism.

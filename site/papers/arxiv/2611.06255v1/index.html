@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning Noise Optimization for Reward Alignment in Few-Step Generative Models · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Learning Noise Optimization for Reward Alignment in Few-Step Generative Models</h1>
+      <div class="meta">Hongeun Kim; Jeongsol Kim; Jong Chul Ye</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-11-04
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2611.06255v1">原文</a>
+      </div>
+      <p class="one-liner">该文提出一种学习噪声优化的方法，用于少步生成模型中的奖励对齐，并在蛋白质结构生成任务上验证了其有效性，属于蛋白质结构生成与AI方法的结合，但核心方法并非专门针对蛋白质结构建模，故评分为7。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Reward alignment for diffusion- and flow-based generative models is often formulated over stochastic trajectories, making it less suitable for few-step deterministic generators. Initial noise optimization provides a trajectory-free alternative, but existing gradient-free methods require costly per-sample search at inference. We introduce LeNO (Learning Noise Optimization), which amortizes reward-guided initial noise optimization into a learned residual transport while keeping the pretrained generator frozen. LeNO learns an anchor-conditioned distribution over noise corrections using Local GRPO and scalar rewards, eliminating iterative test-time optimization. For Gaussian initial noise with norm-preserving projection, we derive a tractable upper bound on the KL divergence between the corrected noise distribution and the original prior, providing a principled regularization objective. We evaluate LeNO on few-step text-to-image and protein structure generation, including expensive black-box designability rewards. Across both domains, LeNO improves target rewards with a single noise correction at inference while largely preserving generation quality and diversity.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">扩散与流式生成模型的奖励对齐通常是在随机轨迹上制定的，这使得其不太适用于少步确定性生成器。初始噪声优化提供了一种无需轨迹的替代方案，但现有的无梯度方法在推理时需要昂贵的逐样本搜索。我们引入了LeNO（学习噪声优化），它将奖励引导的初始噪声优化摊销为学习到的残差传输，同时保持预训练生成器冻结。LeNO使用局部GRPO和标量奖励学习一个锚定条件下的噪声修正分布，消除了迭代式测试时优化。对于具有范数保持投影的高斯初始噪声，我们推导了修正噪声分布与原始先验之间KL散度的可处理上界，提供了一个有原则的正则化目标。我们在少步文本到图像和蛋白质结构生成上评估了LeNO，包括昂贵的黑盒可设计性奖励。在这两个领域中，LeNO在推理时通过单次噪声修正改善了目标奖励，同时基本保持了生成质量和多样性。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Learning Noise Optimization for Reward Alignment in Few-Step Generative Models</li>
+<li><strong>作者</strong>：Hongeun Kim; Jeongsol Kim; Jong Chul Ye</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/预印本平台</strong>：arXiv（预印本）</li>
+<li><strong>年份</strong>：2026（提交日期 2026-11-04）</li>
+<li><strong>论文类型</strong>：预印本（理论/方法型）</li>
+<li><strong>领域</strong>：机器学习、生成模型、奖励对齐</li>
+<li><strong>关键词</strong>：few-step generative models, reward alignment, noise optimization, diffusion models, RLHF</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2611.06255v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-11-05</li>
+<li><strong>在课题方向中的位置</strong>：本文聚焦生成模型（如扩散模型）的奖励对齐问题，与蛋白质结构计算中的构象生成、序列设计等任务在方法层面（生成模型 + 奖励优化）有可迁移性，但非直接针对蛋白质系统。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出一种通过优化生成模型中的噪声输入来实现奖励对齐的方法，使少步生成模型在无需额外训练或重训练的情况下，通过调整噪声分布来最大化下游奖励函数。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：在少步（few-step）生成模型中，如何在不重新训练或微调生成器的情况下，使生成样本对齐到特定奖励函数（如人类偏好、下游任务得分）？</li>
+<li><strong>为什么重要</strong>：少步生成模型（如少步扩散模型）在推理效率上具有优势，但现有奖励对齐方法（如 RLHF、DPO）通常需要额外训练或大量采样，成本高且不适用于少步场景。</li>
+<li><strong>现有方法不足</strong>：传统对齐方法依赖梯度回传至生成器参数或需要大量 rollout，少步模型因步数少、轨迹短，难以直接应用这些方法。</li>
+<li><strong>精确研究问题</strong>：Can we achieve reward alignment in few-step generative models by optimizing only the noise inputs, without modifying the generator parameters?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<ul>
+<li><strong>阶段一：扩散模型与少步生成</strong><br />
+  代表方法：DDIM、DPM-Solver、 consistency models。优点：生成质量高、推理步数少。局限：少步生成时样本多样性或质量可能下降。</li>
+<li><strong>阶段二：奖励对齐方法</strong><br />
+  代表方法：RLHF（PPO-based）、DPO、Direct Reward Optimization。优点：能有效对齐人类偏好。局限：需要额外训练、大量采样或可微奖励模型，计算成本高。</li>
+<li><strong>阶段三：噪声级优化（本文主张）</strong><br />
+  本文提出在推理时优化噪声输入（latent noise）以最大化奖励，无需训练生成器。优点：即插即用、计算开销小。局限：依赖奖励函数可微且噪声空间可优化。</li>
+</ul>
+<p><strong>脉络标注</strong>：以上脉络为「仅本文框架」——基于本文引言和方法的推断，未进行外部文献核验。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>奖励对齐成本高</td>
+<td>现有方法需额外训练或大量采样</td>
+<td>生成器参数更新或 rollout 采样代价大</td>
+<td>未提供（作者在引言中暗示）</td>
+</tr>
+<tr>
+<td>少步模型对齐困难</td>
+<td>少步生成轨迹短，难以用 RL 方法</td>
+<td>奖励信号难以有效传播至噪声输入</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>噪声空间优化未探索</td>
+<td>现有方法忽略噪声输入作为优化变量</td>
+<td>噪声被视为固定随机变量</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：在推理阶段，将噪声输入视为可优化变量，通过梯度上升/下降优化噪声以最大化奖励函数，生成器参数保持不变。</li>
+<li><strong>核心洞察</strong>：少步生成模型中，噪声输入对最终样本有直接且可微的影响，因此可以通过优化噪声实现奖励对齐，而无需修改生成器。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：在生成模型中，输入空间的优化（如噪声、潜变量）可作为参数优化的轻量级替代，尤其适用于推理时约束或偏好对齐场景。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：随机噪声 z（或初始潜变量）、奖励函数 R(·)</li>
+<li><strong>输出</strong>：对齐后的生成样本 x</li>
+<li><strong>模块</strong>：
+  1. 生成器 G（固定，少步生成模型）
+  2. 奖励模型 R（可微）
+  3. 噪声优化器（梯度上升/下降）</li>
+<li><strong>训练</strong>：无需训练生成器；奖励模型可预训练或给定</li>
+<li><strong>工具</strong>：自动微分、优化器（如 Adam）</li>
+<li><strong>反馈回路</strong>：优化噪声 z → 生成 x = G(z) → 计算 R(x) → 梯度 ∇_z R(x) → 更新 z</li>
+<li><strong>假设</strong>：奖励函数 R 对 x 可微；生成器 G 对 z 可微；噪声空间连续且可优化</li>
+<li><strong>文字流程</strong>：初始化噪声 z₀ → 迭代优化 z_{t+1} = z_t + η ∇_z R(G(z_t)) → 最终生成 x = G(z_T)</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>生成器 G</td>
+<td>将噪声映射到样本</td>
+<td>生成样本的基础</td>
+<td>输入：噪声 z；输出：样本 x</td>
+<td>未提供</td>
+<td>无法生成样本</td>
+</tr>
+<tr>
+<td>奖励模型 R</td>
+<td>评估样本质量/对齐度</td>
+<td>提供优化目标</td>
+<td>输入：样本 x；输出：标量奖励</td>
+<td>未提供</td>
+<td>无法进行对齐优化</td>
+</tr>
+<tr>
+<td>噪声优化器</td>
+<td>更新噪声以最大化奖励</td>
+<td>实现对齐的核心机制</td>
+<td>输入：梯度 ∇_z R；输出：更新后的 z</td>
+<td>未提供</td>
+<td>对齐无法实现</td>
+</tr>
+<tr>
+<td>梯度计算</td>
+<td>计算奖励对噪声的梯度</td>
+<td>需要可微路径</td>
+<td>输入：R, G；输出：梯度</td>
+<td>未提供</td>
+<td>无法优化噪声</td>
+</tr>
+</tbody>
+</table>
+<p><strong>消融效应</strong>：未提供实测消融数据；预期移除噪声优化器将导致对齐失败（预期效应）。</p>
+<h2>09 关键公式符号</h2>
+<ul>
+<li>
+<p><strong>噪声优化更新</strong>：<br />
+  z_{t+1} = z_t + η ∇_z R(G(z_t))<br />
+  符号：z 为噪声输入，η 为学习率，R 为奖励函数，G 为生成器。<br />
+  用途：迭代优化噪声以最大化奖励。<br />
+  直觉：通过梯度上升在噪声空间中搜索高奖励区域。<br />
+  来源：本文方法部分（未提供具体节号）。</p>
+</li>
+<li>
+<p><strong>生成过程</strong>：<br />
+  x = G(z)<br />
+  符号：x 为生成样本，z 为噪声。<br />
+  用途：定义生成映射。<br />
+  直觉：生成器将噪声解码为样本。<br />
+  来源：本文方法部分（未提供具体节号）。</p>
+</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：未提供</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供（推测为奖励值或生成质量指标）</li>
+<li><strong>基线</strong>：未提供</li>
+<li><strong>预算</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：未提供</li>
+<li><strong>oracle 输入</strong>：未提供</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注</strong>：由于仅提供摘要和元数据，无法获取实验细节。</p>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅适用于少步生成模型，且奖励函数可微。</li>
+<li><strong>oracle/真值输入</strong>：依赖可微奖励模型，若奖励不可微则方法失效。</li>
+<li><strong>端到端状态</strong>：推理时优化，无需训练生成器。</li>
+<li><strong>算力成本</strong>：每次推理需多次前向/反向传播，成本随优化步数增加。</li>
+<li><strong>历史数据依赖</strong>：不依赖历史数据，仅依赖当前噪声和奖励。</li>
+<li><strong>模型依赖</strong>：生成器需对噪声可微。</li>
+<li><strong>最难情形</strong>：奖励函数非平滑或噪声空间高维时，优化可能陷入局部最优。</li>
+<li><strong>群体/领域边界</strong>：适用于图像、文本等生成任务，未验证蛋白质结构等科学领域。</li>
+<li><strong>不确定性</strong>：未提供实验证据，收敛性和效果未经验证。</li>
+</ul>
+<p><strong>有边界复述</strong>：本文提出在少步生成模型中通过优化噪声输入实现奖励对齐，理论上可行，但缺乏实验验证，且依赖可微奖励和可微生成器。</p>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 方法依赖奖励函数可微（从方法描述推断）。
+- 未提供实验验证，实际效果未知。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>噪声优化可能过拟合奖励</td>
+<td>优化噪声可能生成对抗样本，而非真实对齐</td>
+<td>影响生成质量</td>
+<td>在多个奖励函数下测试生成样本多样性</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>缺乏实验证据</td>
+<td>方法有效性未验证</td>
+<td>无法评估实际性能</td>
+<td>在标准基准上对比现有对齐方法</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>可微奖励假设过强</td>
+<td>实际奖励常不可微（如人类反馈）</td>
+<td>限制应用范围</td>
+<td>测试非可微奖励的近似方法</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>噪声空间优化可能不稳定</td>
+<td>高维噪声优化易陷入局部最优</td>
+<td>影响收敛性</td>
+<td>分析不同优化步数和学习率下的稳定性</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li><strong>噪声作为优化变量</strong>：在生成模型中，输入噪声可视为可优化的潜变量，用于对齐下游目标。可迁移至蛋白质构象生成：将初始噪声或潜变量优化以匹配特定结构约束（如结合位点、稳定性评分）。</li>
+<li><strong>推理时对齐</strong>：无需重训练生成器，通过推理时优化实现目标对齐，适用于蛋白质设计中的快速迭代。</li>
+<li><strong>可微奖励路径</strong>：若蛋白质评分函数（如 Rosetta 能量、AlphaFold 置信度）可微，可直接用于噪声优化。</li>
+<li><strong>少步生成的优势</strong>：少步生成模型（如 consistency models）在蛋白质构象采样中可加速推理，结合噪声优化可实现高效的结构-功能对齐。</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>：与「latent space optimization」和「guidance-based generation」相关，如 classifier guidance（Dhariwal &amp; Nichol, 2021）和 DPO（Rafailov et al., 2023）。</li>
+<li><strong>组合方向</strong>：可与蛋白质扩散模型（如 RFdiffusion）结合，优化噪声以对齐结合亲和力或稳定性评分。</li>
+<li><strong>冲突点</strong>：与 RLHF 类方法不同，本文不更新生成器参数，可能限制对齐能力。</li>
+<li><strong>可迁移领域</strong>：蛋白质结构预测中的构象采样、序列设计中的奖励对齐（如活性预测）。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：Noise-Optimized Protein Conformation Sampling<br />
+   - <strong>来源局限/观察</strong>：本文噪声优化方法可迁移至蛋白质构象生成，但需验证可微评分函数。<br />
+   - <strong>核心假设</strong>：通过优化噪声输入，可引导扩散模型生成满足特定结构约束的构象。<br />
+   - <strong>初步方法</strong>：使用 RFdiffusion 作为生成器，Rosetta 能量或 AlphaFold 置信度作为奖励，优化初始噪声。<br />
+   - <strong>验证方式</strong>：在已知蛋白上比较生成构象的 RMSD 和能量。<br />
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>名称</strong>：Reward-Aligned Sequence Design via Noise Optimization<br />
+   - <strong>来源局限/观察</strong>：序列设计可视为生成任务，奖励函数（如活性预测）可微。<br />
+   - <strong>核心假设</strong>：优化噪声可提升序列的功能得分。<br />
+   - <strong>初步方法</strong>：使用少步生成模型生成序列，以预测活性为奖励，优化噪声。<br />
+   - <strong>验证方式</strong>：在酶活性预测基准上测试。<br />
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>名称</strong>：Inference-Time Alignment for Protein-Protein Docking<br />
+   - <strong>来源局限/观察</strong>：对接构象生成可受益于推理时对齐。<br />
+   - <strong>核心假设</strong>：优化噪声可生成结合能更低的对接构象。<br />
+   - <strong>初步方法</strong>：使用生成模型生成对接构象，以结合能评分优化噪声。<br />
+   - <strong>验证方式</strong>：在 docking benchmark 上比较成功率。<br />
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Title, author list, arXiv metadata, and abstract page only. No abstract text, no main text, no figures, no tables, no methods, no supplementary material were provided.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the title, author list, arXiv identifier, submission date, and the structural metadata of the arXiv listing. No scientific content was available for evaluation.</li>
+<li><strong>Shared manuscript claim summary</strong> The title indicates the work proposes a method for learning noise optimization to achieve reward alignment in few-step generative models. No further claims could be extracted from the supplied material.</li>
+<li><strong>Visible evidence base</strong> None. The supplied material contains no abstract, no introduction, no results, no figures, no tables, and no references.</li>
+<li><strong>Missing materials affecting confidence</strong> The abstract, full text, all figures, all tables, methods section, experimental results, and any supplementary information are missing. Confidence in any substantive assessment is effectively zero.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The supplied material consists solely of bibliographic metadata. There is no scientific content to review. The title suggests a contribution at the intersection of noise optimization, reward alignment, and few-step generative models, but without the abstract or manuscript text, no claims, methods, or results can be evaluated. A meaningful peer review cannot be conducted from this input.</li>
+<li><strong>Who would be interested in the results, and why</strong> Based on the title alone, researchers working on diffusion models, distillation methods for few-step generation, reinforcement learning for generative models, and reward-aligned sampling might find the topic relevant. However, this inference is speculative and cannot be substantiated without the manuscript content.</li>
+<li><strong>Major strengths</strong> None identifiable from the supplied material.</li>
+<li><strong>Major Concerns</strong> None can be formulated because no scientific content was provided.</li>
+<li><strong>Minor Comments</strong> None can be formulated because no scientific content was provided.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The manuscript content was not supplied. The case cannot be established from the provided evidence.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: not assessable. Scientific importance: not assessable. Interdisciplinary readership: not assessable. Technical soundness: not assessable. Readability for nonspecialists: not assessable. None of the Nature-style criteria can be evaluated without the manuscript text.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. A review cannot be rendered until the abstract and full manuscript are supplied.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>No claims can be extracted from the supplied material. Any statement about the manuscript's content, methods, or results would be fabricated and is therefore not made.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

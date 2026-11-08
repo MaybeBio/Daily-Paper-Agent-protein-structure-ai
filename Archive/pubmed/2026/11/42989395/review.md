@@ -1,0 +1,101 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, methods, results, discussion, conclusion) as provided.
+- **Assessment boundary** Scientific validity, methodological soundness, novelty, and clarity of the proposed PhyFold framework, based solely on the supplied text. No external data, code, or supplementary materials were accessed.
+- **Shared manuscript claim summary** The authors propose PhyFold, a physics-informed neural network (PINN) framework that integrates a reaction-diffusion equation (RDE) with ProtT5 protein sequence embeddings to model protein folding dynamics under varying environmental conditions (temperature, pH, pressure). The model is validated against finite difference method (FDM) solutions and experimental GFP fluorescence data, reporting a Pearson correlation of 0.822 on a held-out test set.
+- **Visible evidence base** Abstract, introduction, related work, model formulation (equations 1-6), PINN architecture description, FDM benchmark description, experimental setup (GFP dataset, train/test split), results (Figures 3-21, Tables 1-4), ablation study, parameter sensitivity analysis, and conclusion.
+- **Missing materials affecting confidence** Figures 1-21 are referenced but not visible in the provided text. Table 2 is partially visible (values for some conditions are cut off). No code, hyperparameters (beyond learning rate), training epochs, loss curves, or statistical significance tests are provided. The exact definition of the "effective folding fraction" and its relationship to fluorescence intensity is not fully formalized.
+
+## Reviewer
+- **Overall assessment** The manuscript presents a conceptually interesting hybrid approach that combines a mesoscopic reaction-diffusion model with deep sequence embeddings via a PINN. The idea of using PINNs for protein folding dynamics with environmental modulation is timely and could be of interest to the computational biology community. However, the current manuscript has significant methodological gaps and validation weaknesses that prevent the claims from being fully established. The mathematical well-posedness analysis is superficial, the biological validation is indirect and lacks rigor, and the comparison with existing methods is insufficient. The work is at an early stage and requires substantial revisions and additional experiments before it can be considered for publication.
+- **Who would be interested in the results, and why** Computational biologists and bioinformaticians working on protein folding prediction, particularly those interested in moving beyond static structure prediction toward dynamic modeling. Researchers in the PINN community interested in new applications of physics-informed machine learning to biological systems. Scientists studying protein folding under stress conditions (e.g., pH, temperature) may find the environmental modulation aspect relevant.
+- **Major strengths**
+  1. The conceptual integration of a reaction-diffusion PDE with sequence embeddings via a PINN is a novel combination not commonly seen in the literature.
+  2. The explicit inclusion of environmental parameters (T, pH, P) into the governing equation is a thoughtful step toward physiologically relevant modeling.
+  3. The dual validation approach (numerical vs. biological) is commendable in principle, even if execution is lacking.
+  4. The authors acknowledge limitations (e.g., 1D reaction coordinate, alkaline stress) and suggest future directions, showing scientific honesty.
+- **Major Concerns**
+  - **R1-M1** (Blocking: Yes)
+    - **Axis** Scientific importance / Technical soundness
+    - **Claim pointer** The authors claim that PhyFold "effectively captures environment dependent folding dynamics and shows strong agreement with both numerical reference solutions and experimental fluorescence measurements."
+    - **Evidence pointer** Results section, Figures 3-21, Tables 2-4
+    - **Concern** The biological validation is fundamentally flawed. The model predicts a "folding fraction" u(x,t) from a 1D reaction-diffusion equation, but this is compared to fluorescence intensity, which is a bulk, ensemble-averaged property. The mapping between the two is not rigorously defined. The authors state that "the spatially and temporally averaged folding fraction was computed as a scalar summary per protein sequence and compared against normalized experimental fluorescence labels," but the exact averaging procedure, the time point at which the average is taken, and the normalization of the fluorescence data are not specified. Moreover, the GFP dataset from Sarkisyan et al. measures fluorescence as a proxy for folding stability, but the relationship between the model's u and fluorescence is not a direct one. The reported Pearson correlation of 0.822 could be an artifact of the averaging procedure or the specific normalization chosen. Without a clear, mechanistic link between the model output and the experimental observable, the biological validation is not convincing.
+    - **Why it matters** The central claim of the paper is that PhyFold produces biologically meaningful predictions. If the validation metric is not properly aligned with the model output, the entire premise of the work is undermined. The reader cannot assess whether the model is genuinely capturing folding dynamics or merely fitting a curve to fluorescence data through an arbitrary post-processing step.
+    - **Resolution test** The authors must provide a clear, mathematical definition of how u(x,t) is converted to a predicted fluorescence value. This should include: (1) the exact spatial and temporal averaging scheme, (2) the time point(s) at which predictions are compared to experimental data, (3) the normalization procedure for both predicted and experimental values, and (4) a justification for why this mapping is physically meaningful. Additionally, the authors should show a scatter plot of predicted vs. experimental values with error bars and discuss the distribution of residuals, not just the correlation coefficient.
+  - **R1-M2** (Blocking: Yes)
+    - **Axis** Technical soundness
+    - **Claim pointer** The authors state that "the proposed reaction diffusion model is mathematically well posed and admits a unique, bounded, and physically meaningful solution."
+    - **Evidence pointer** "Existence and uniqueness of solution" subsection
+    - **Concern** The well-posedness analysis is superficial and incomplete. The authors show that the reaction term is Lipschitz continuous, but they do not address several critical aspects: (1) the regularity of the solution given the Gaussian initial condition and Neumann boundary conditions, (2) the long-time behavior of the solution (does it converge to a steady state?), (3) the dependence of the solution on the environmental parameters Θ, and (4) whether the solution remains in the physically meaningful range [0,1] for all times. The claim that the "parabolic maximum principle" ensures boundedness is not sufficient, as the reaction term f(u;Θ) can drive u outside [0,1] if α(Θ) > β(Θ) and u is near 1. The authors need to provide a more rigorous analysis or at least numerical evidence that the solution stays within the admissible range.
+    - **Why it matters** The mathematical foundation of the model is a key selling point of the paper. If the well-posedness is not properly established, the reliability of all subsequent numerical results is questionable. Moreover, if the solution can leave the physically meaningful range, the biological interpretation of the results is compromised.
+    - **Resolution test** The authors should provide a complete well-posedness proof, including: (1) existence and uniqueness in the appropriate Sobolev or Hölder spaces, (2) a proof or numerical demonstration that u(x,t) ∈ [0,1] for all t > 0 given the initial and boundary conditions, and (3) a sensitivity analysis of the solution with respect to the environmental parameters. Alternatively, they could add a projection or clipping step in the PINN architecture to enforce the physical bounds and discuss the implications of this choice.
+  - **R1-M3** (Blocking: Yes)
+    - **Axis** Scientific importance / Technical soundness
+    - **Claim pointer** The authors claim that "PhyFold introduces a hybrid Bio-Physics Informed Neural Network framework... an approach not previously demonstrated in the literature."
+    - **Evidence pointer** Introduction, Related works
+    - **Concern** The novelty claim is overstated. While the specific combination of a reaction-diffusion PDE with ProtT5 embeddings in a PINN may be new, the general idea of using PINNs for protein folding or biophysical processes is not. The authors do not adequately compare their approach with existing PINN-based methods for protein modeling or with other hybrid physics-ML approaches. For example, there are works on using PINNs for molecular dynamics, for solving Fokker-Planck equations related to folding, and for integrating sequence information into physical models. The authors should provide a more thorough literature review and clearly delineate what is genuinely novel about their approach.
+    - **Why it matters** The scientific contribution of the paper depends on its novelty. If the approach is largely an incremental combination of existing ideas, the impact is significantly reduced. The authors need to convince the reader that their framework offers a distinct advantage over existing methods.
+    - **Resolution test** The authors should add a dedicated section comparing their method with at least 3-5 existing approaches (e.g., other PINN-based protein models, traditional kinetic models, deep learning-based folding predictors). The comparison should include both methodological differences and, ideally, quantitative performance comparisons on the same dataset.
+  - **R1-M4** (Blocking: No)
+    - **Axis** Technical soundness
+    - **Claim pointer** The authors state that "the shared reaction diffusion parameters D, α₀, and β₀ represent universal physical mechanisms governing folding kinetics, while protein specific variability is captured through the high dimensional embedding conditioning."
+    - **Evidence pointer** "Formulation of PINN" subsection
+    - **Concern** The mechanism by which the ProtT5 embedding conditions the PINN is not described in sufficient detail. The authors mention that the input layer receives [x, t, e] where e ∈ R^1024, but it is unclear how the embedding interacts with the PDE parameters. Does the embedding modify the reaction term f(u;Θ) directly? Does it affect the diffusion coefficient D? Is the embedding used as a global conditioning vector that modulates the entire solution, or is it concatenated at every spatial point? The architecture description is too vague to be reproducible.
+    - **Why it matters** Reproducibility is a core requirement for scientific publication. Without a clear description of how the sequence embedding influences the PDE solution, other researchers cannot implement or build upon the method.
+    - **Resolution test** The authors should provide a detailed architectural diagram and a precise mathematical description of how the embedding is incorporated into the PINN. This should include the exact dimensions of all layers, the activation functions, and the forward pass equations.
+  - **R1-M5** (Blocking: No)
+    - **Axis** Interdisciplinary readership / Readability
+    - **Claim pointer** The authors claim that the model is "computationally efficient surrogate for environment aware protein folding dynamics."
+    - **Evidence pointer** Abstract, Conclusion
+    - **Concern** No computational cost analysis is provided. The authors do not report training time, inference time, or hardware requirements. The claim of computational efficiency is unsubstantiated. Moreover, the comparison with FDM is only for a 1D problem; the computational advantage of PINNs over traditional numerical methods is well-known for high-dimensional problems, but for a 1D problem, FDM is typically very fast. The authors need to demonstrate a concrete computational advantage.
+    - **Why it matters** The practical utility of the method depends on its computational efficiency. If the PINN is slower than a simple FDM solver, the advantage of the approach is unclear.
+    - **Resolution test** The authors should report wall-clock training and inference times, and compare them with the FDM solver for the same problem. They should also discuss the scaling of the method to larger systems (e.g., multi-domain proteins).
+- **Minor Comments**
+  - **R1-m1**
+    - **Axis** Readability for nonspecialists
+    - **Affected element** Introduction
+    - **Evidence pointer** Introduction, first paragraph
+    - **Issue** The introduction contains several grammatical errors and awkward phrasings (e.g., "Simulations A wealth of information on folding pathways and energy landscapes [9, 10] has been obtained"). The flow is disrupted, and the text reads as if it was not carefully proofread.
+    - **Required correction** The authors should thoroughly revise the introduction for language and clarity. Consider having a native English speaker review the manuscript.
+  - **R1-m2**
+    - **Axis** Technical soundness
+    - **Affected element** Table 2
+    - **Evidence pointer** Table 2
+    - **Issue** The table is incomplete in the provided text. The values for some conditions (e.g., "Sub-optimal (cool, acidic)") are partially cut off, and the column headers are not fully visible. This makes it impossible to fully assess the results.
+    - **Required correction** The authors should ensure that all tables are complete and properly formatted in the final submission.
+  - **R1-m3**
+    - **Axis** Technical soundness
+    - **Affected element** Ablation study
+    - **Evidence pointer** Table 3
+    - **Issue** The ablation study only varies the loss weights. It does not test the contribution of the ProtT5 embedding itself. A more informative ablation would include a version of the model without the embedding (i.e., a pure PINN) to demonstrate the added value of the sequence information.
+    - **Required correction** The authors should add an ablation experiment where the ProtT5 embedding is removed or replaced with a random vector, to isolate the contribution of the sequence information.
+  - **R1-m4**
+    - **Axis** Scientific importance
+    - **Affected element** Discussion
+    - **Evidence pointer** "Biological interpretation and implications" subsection
+    - **Issue** The biological interpretation is largely qualitative and does not provide specific, testable predictions. For example, the authors state that "atypical alkaline stress specifically disrupts electrostatic interactions and hydrogen bonding network" but do not connect this to specific residues or structural features of GFP.
+    - **Required correction** The authors should provide more specific biological insights, such as identifying which residues or structural regions are most affected by environmental stress, and how these predictions could be experimentally tested.
+  - **R1-m5**
+    - **Axis** Technical soundness
+    - **Affected element** Experimental setup
+    - **Evidence pointer** "Experimental setup" subsection
+    - **Issue** The authors do not describe how the environmental parameters (T, pH, P) are varied in the dataset. The GFP dataset from Sarkisyan et al. contains mutations, but it is unclear how temperature, pH, and pressure are assigned to each sequence. Are these parameters derived from experimental conditions, or are they simulated?
+    - **Required correction** The authors should clarify the source of the environmental parameter values and how they are incorporated into the model for each sequence.
+- **Technical failings that need to be addressed before the case is established**
+  - R1-M1: Lack of a rigorous mapping between model output (folding fraction) and experimental observable (fluorescence).
+  - R1-M2: Incomplete well-posedness analysis, particularly regarding solution bounds.
+  - R1-M3: Overstated novelty without adequate comparison to existing methods.
+  - R1-M4: Insufficient architectural detail for reproducibility.
+- **Assessment against Nature-style criteria**
+  - **Originality** Moderate. The combination of RDE + PINN + sequence embeddings is somewhat novel, but the individual components are well-established. The approach does not represent a fundamental conceptual breakthrough.
+  - **Scientific importance** Moderate. The problem of dynamic protein folding under environmental conditions is important, but the current validation is too weak to demonstrate significant practical impact. The method does not yet offer clear advantages over existing approaches.
+  - **Interdisciplinary readership** Limited. The work sits at the intersection of ML and biophysics, but the presentation is likely too technical for a general biology audience and not rigorous enough for a specialized ML or biophysics audience.
+  - **Technical soundness** Weak. The validation methodology has significant flaws (R1-M1), the mathematical analysis is incomplete (R1-M2), and the implementation details are insufficient (R1-M4).
+  - **Readability for nonspecialists** Poor. The manuscript contains numerous grammatical errors and the logical flow is often disrupted. The technical sections are dense and not well-explained for a broader audience.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript has a promising concept but requires major revisions to address the validation flaws, strengthen the mathematical analysis, and improve the presentation. I would be willing to reconsider after substantial revision.
+
+## Risk / unsupported claims
+- The claim that PhyFold "effectively captures environment dependent folding dynamics" is not supported by the current validation, as the link between the model output and the experimental data is not rigorously established.
+- The claim that the model "shows strong agreement with experimental fluorescence measurements" is based solely on a Pearson correlation coefficient, which is insufficient without a proper error analysis and a mechanistic justification for the comparison.
+- The claim of "computational efficiency" is unsubstantiated, as no performance benchmarks are provided.
+- The claim that the model is "biologically grounded" is weakened by the lack of a clear connection between the 1D reaction coordinate and actual protein structural features.
+- The statement that "the mathematical validity established under optimal conditions therefore directly extends to all stress condition simulations" is an assertion without proof, as the authors do not demonstrate that the solution properties (e.g., boundedness, uniqueness) hold for all parameter ranges.

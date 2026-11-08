@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Substrate coupling and inhibition in human Na(+)-dependent Cl(-)/HCO(3)(-) exchanger NCBE (SLC4A10). · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Substrate coupling and inhibition in human Na(+)-dependent Cl(-)/HCO(3)(-) exchanger NCBE (SLC4A10).</h1>
+      <div class="meta">Sun, Peixin; Wang, Xinmin; Huang, Yang; Zhang, Jinlun Kylian; Shen, Xurui; Dong, Anqi; Wang, Shiliang; Guo, Xiaojun; Shi, Guoming; Ding, Jing; Chi, Yudan; Yang, Hanting</div>
+      <div class="meta muted">
+        
+        <span class="journal">Nature communications</span>
+        · 2026-11-02
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42967927/">原文</a>
+      </div>
+      <p class="one-liner">该文通过冷冻电镜结构、分子动力学模拟和AlphaFold3预测，解析了人源NCBE转运蛋白的离子结合与抑制机制，虽对象为膜转运蛋白而非典型蛋白质结构计算问题，但其结构建模与模拟方法对蛋白质构象变化研究有借鉴价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Maintaining pH homoeostasis is essential for neuronal excitability and for regulating cerebrospinal fluid (CSF). The Na(+)-dependent Cl(-)/HCO(3)(-) exchanger, NCBE (SLC4A10), abundant in the choroid plexus, contributes to CSF pH control by mediating bicarbonate flux, yet its molecular mechanism has remained unclear. Here we report cryo-EM structures of human NCBE in multiple functional states, revealing conserved binding sites for Na(+), Cl(-), and HCO(3)(-), as well as an unexpected K(+) site indicating relaxed cation selectivity. The inhibitor DIDS binds above the substrate cavity, locking NCBE in an outward-facing conformation and defining a subfamily-selective inhibitory mechanism. Functional assays and molecular dynamics simulations support the coordination of ions and the inhibitory effects. Comparison with an AlphaFold3-predicted inward-facing model suggests an elevator-like transport mechanism and delineates the conformational transitions in Na(+)-dependent HCO(3)(-) transporters. Together, these findings establish a structural framework for NCBE and offer insights into ion coupling and pharmacological modulation within the SLC4 family.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">维持pH稳态对神经元兴奋性和脑脊液（CSF）的调节至关重要。Na(+)依赖性Cl(-)/HCO(3)(-)交换体NCBE（SLC4A10）在脉络丛中丰富表达，通过介导碳酸氢根通量参与脑脊液pH控制，但其分子机制此前尚不清楚。本文报道了人源NCBE在多种功能状态下的冷冻电镜结构，揭示了Na(+)、Cl(-)和HCO(3)(-)的保守结合位点，以及一个意外的K(+)位点，表明阳离子选择性较为宽松。抑制剂DIDS结合在底物腔上方，将NCBE锁定在外向构象，并定义了一种亚家族选择性抑制机制。功能实验和分子动力学模拟支持离子配位及抑制效应。与AlphaFold3预测的内向模型比较提示一种电梯式转运机制，并描绘了Na(+)依赖性HCO(3)(-)转运体中的构象转变。综合这些发现，为NCBE建立了结构框架，并为SLC4家族中的离子偶联和药理学调节提供了见解。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Substrate coupling and inhibition in human Na⁺-dependent Cl⁻/HCO₃⁻ exchanger NCBE (SLC4A10)</li>
+<li><strong>作者与单位</strong>：Sun, Peixin; Huang, Yang; Shen, Xurui; Dong, Anqi; Guo, Shiliang; Shi, Guoming; Ding, Jing; Chi, Yudan; Yang, Hanting 等（复旦大学等，具体单位未在摘要中完整提供）</li>
+<li><strong>期刊/预印本平台</strong>：Nature Communications</li>
+<li><strong>年份</strong>：2026（在线日期 2026-11-02）</li>
+<li><strong>论文类型</strong>：研究论文（Research Article）</li>
+<li><strong>领域</strong>：膜蛋白结构生物学、离子转运机制、冷冻电镜（cryo-EM）、分子动力学模拟</li>
+<li><strong>关键词</strong>：NCBE (SLC4A10)、碳酸氢盐转运、cryo-EM、底物耦合、DIDS抑制、电梯式转运机制、AlphaFold3</li>
+<li><strong>DOI/arXiv 号</strong>：10.1038/s41467-026-77504-1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：cryo-EM 密度图（推测已存入 EMDB，具体 ID 未在摘要中提供）；AlphaFold3 预测模型（未提供具体存取号）</li>
+<li><strong>阅读日期</strong>：2026-05-12（按当前日期推算）</li>
+<li><strong>该文在课题方向中的位置</strong>：本文属于「膜转运蛋白（SLC4家族）的结构-功能研究 × cryo-EM + MD 模拟 + AlphaFold3 预测」交叉方向。对蛋白质结构相关计算研究课题而言，本文提供了：(1) 多状态 cryo-EM 结构解析流程；(2) MD 模拟验证离子配位稳定性；(3) AlphaFold3 预测缺失构象并与实验结构对比以推断转运机制的方法学范例。该文展示了「实验结构 + 计算预测 + 模拟验证」三位一体的研究范式，对构象采样、结构预测与功能机制推断具有直接的方法学参考价值。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文通过解析人源 NCBE（SLC4A10）在 NaHCO₃、KHCO₃、NaCl 及抑制剂 DIDS 结合状态下的 cryo-EM 结构（2.45–2.6 Å），结合 MD 模拟和细胞 pH 恢复实验，揭示了 Na⁺/HCO₃⁻/Cl⁻/K⁺ 共享的保守底物结合口袋、DIDS 通过占据细胞外前庭稳定外向开口构象的抑制机制，并基于 AlphaFold3 预测的内向开口模型提出了电梯式（elevator-like）转运机制。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：人源 NCBE（SLC4A10）如何协调 Na⁺、Cl⁻、HCO₃⁻ 等多种底物的结合与转运？其底物选择性如何实现？抑制剂 DIDS 如何发挥作用？NCBE 的构象转变遵循何种机制？</li>
+<li><strong>为什么重要</strong>：NCBE 在脉络丛和神经元中高表达，参与脑脊液 pH 调控和神经元兴奋性维持。SLC4A10 突变与自闭症谱系障碍、癫痫、智力障碍等神经发育疾病相关。理解其分子机制对解释疾病突变和开发靶向药物至关重要。</li>
+<li><strong>现有方法为何不足</strong>：此前 SLC4 家族已有多个结构（如 AE1、NBCe1、NBCn1、NDCBE），但 NCBE 的结构未知；且 NCBE 的底物耦合机制（特别是 Cl⁻ 与 HCO₃⁻ 的竞争/共享关系）和 DIDS 抑制的分子细节缺乏直接结构证据。</li>
+<li><strong>精确的「Can ... ?」研究问题</strong>：Can cryo-EM 结构结合 MD 模拟和 AlphaFold3 预测揭示 NCBE 的底物配位、离子选择性及电梯式转运机制？</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文摘要和引言，标注为「仅本文框架」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法/工作</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>功能研究阶段</td>
+<td>电生理、pH 荧光成像（如 BCECF）</td>
+<td>可测量转运活性、离子依赖性</td>
+<td>缺乏原子级结构信息</td>
+<td>本文用 pH 恢复实验验证结构发现</td>
+</tr>
+<tr>
+<td>同源结构解析阶段</td>
+<td>AE1–3、NBCe1、NBCn1、NDCBE 的 cryo-EM/X-ray 结构</td>
+<td>揭示 SLC4 家族保守折叠和底物位点</td>
+<td>NCBE 本身结构缺失；不同成员底物特异性机制不明</td>
+<td>本文填补 NCBE 结构空白</td>
+</tr>
+<tr>
+<td>计算预测阶段</td>
+<td>AlphaFold2/3 预测膜蛋白结构</td>
+<td>可预测未解析构象</td>
+<td>预测准确性需实验验证；构象状态可能不完整</td>
+<td>本文用 AF3 预测 NCBE 内向开口状态并与实验 OF 结构对比</td>
+</tr>
+<tr>
+<td>分子模拟阶段</td>
+<td>MD 模拟验证离子配位、构象稳定性</td>
+<td>提供动态信息</td>
+<td>力场精度、采样时间限制</td>
+<td>本文用 500 ns MD 验证 Na⁺/HCO₃⁻/K⁺/Cl⁻ 配位稳定性及 DIDS 结合</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NCBE 结构缺失</td>
+<td>SLC4 家族多个成员已有结构，但 NCBE 无高分辨率结构</td>
+<td>NCBE 表达纯化困难或构象异质性高</td>
+<td>本文首次报道 NCBE cryo-EM 结构（Results 图 1f-i）</td>
+</tr>
+<tr>
+<td>底物耦合机制不清</td>
+<td>NCBE 的 Na⁺/HCO₃⁻ 耦合与 Cl⁻ 的角色存在争议</td>
+<td>缺乏底物结合态的直接结构证据</td>
+<td>本文解析 NaHCO₃、NaCl、KHCO₃ 三种底物态结构（Results 图 2）</td>
+</tr>
+<tr>
+<td>离子选择性不明</td>
+<td>NCBE 是否严格选择 Na⁺ 还是可容忍 K⁺ 未知</td>
+<td>此前无 NCBE 阳离子位点结构信息</td>
+<td>发现 K⁺ 可占据 Na⁺ 位点（Results 图 3a-d）</td>
+</tr>
+<tr>
+<td>DIDS 抑制机制不清</td>
+<td>DIDS 抑制 SLC4 家族但分子机制不明确</td>
+<td>缺乏抑制剂结合结构</td>
+<td>DIDS 结合于细胞外前庭，稳定 OF 构象（Results 图 5c-j）</td>
+</tr>
+<tr>
+<td>构象转变机制未知</td>
+<td>NCBE 如何实现交替开放（alternating access）不清楚</td>
+<td>缺乏内向开口构象</td>
+<td>用 AF3 预测 IF 态并与 OF 结构对比，提出电梯机制（Results 图 4）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：
+- 表达纯化人源全长 NCBE，在三种底物条件（NaHCO₃、NaCl、KHCO₃）及 DIDS 存在下制备 cryo-EM 样品，解析高分辨率结构（2.45–2.6 Å）。
+- 使用 BCECF 荧光 pH 指示剂进行细胞水平功能验证（pH 恢复实验）。
+- 使用 CHARMM-GUI 构建膜环境体系，GROMACS 进行 500 ns 全原子 MD 模拟（每个体系 3 个重复）。
+- 使用 AlphaFold3 预测 NCBE 的内向开口（inward-facing）构象。</p>
+<p><strong>2) 核心洞察</strong>：
+- <strong>单一保守口袋，多底物共享</strong>：Na⁺、K⁺、Cl⁻、HCO₃⁻ 共享同一底物结合口袋，而非各自独立位点。Na⁺ 与阴离子（Cl⁻ 或 HCO₃⁻）直接耦合配位，形成电中性底物复合物。
+- <strong>阳离子选择性松弛</strong>：K⁺ 可替代 Na⁺ 占据同一阳离子位点，但配位距离略长（~2.6–2.8 Å vs ~2.2–2.4 Å），解释了功能实验中 K⁺ 也能驱动转运的现象。
+- <strong>DIDS 作为「分子门闩」</strong>：DIDS 结合于细胞外前庭（extracellular vestibule），不直接占据底物口袋，而是通过空间位阻阻断底物进入通道，同时通过非共价相互作用（氢键 S568、疏水接触）稳定 OF 构象，阻止向 IF 转变。
+- <strong>电梯式转运机制</strong>：核心结构域（core domain）相对支架结构域（gate domain）沿膜法线方向位移 ~10 Å 并旋转 ~10°，实现底物从细胞外到细胞内的交替开放。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：
+- 对于多底物转运蛋白，单一保守口袋 + 耦合配位可能是实现化学计量耦合的通用策略——这比多个独立位点更利于严格耦合。
+- 「抑制剂不占据底物位点，而是锁定构象状态」是一种可推广的药物设计思路，尤其适用于构象变化幅度大的转运蛋白。
+- AlphaFold3 预测的单一构象虽不能替代实验结构，但可作为「缺失构象」的合理起点，与实验结构对比可推断构象转变方向——这种「实验 + 预测」互补策略对构象采样研究具有方法论价值。</p>
+<hr />
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>：
+- 人源全长 NCBE 蛋白（UniprotKB-Q6U841），在 GnTI 或 Expi293 细胞中过表达
+- 底物条件：NaHCO₃、NaCl、KHCO₃；抑制剂：DIDS
+- AF3 输入：NCBE 氨基酸序列</p>
+<p><strong>输出</strong>：
+- 4 个 cryo-EM 结构（NaHCO₃ 态 2.45 Å、KHCO₃ 态 2.5 Å、NaCl 态 2.6 Å、DIDS 态 2.61 Å）
+- MD 模拟轨迹（500 ns × 3 重复 × 5 体系）
+- 功能数据（pH 恢复曲线、ΔpHi 统计）</p>
+<p><strong>模块</strong>：
+1. <strong>表达纯化</strong>：PEI 转染、anti-Flag 亲和纯化、DDM/CHS 膜蛋白提取、SEC 纯化
+2. <strong>cryo-EM 数据采集与处理</strong>：Titan Krios G4 + Falcon 4i + Selectris X；CryoSPARC v4.5.3 处理（patch motion correction、CTF 估计、2D 分类、ab initio、非均匀细化）
+3. <strong>模型构建与精修</strong>：AF3 初始模型 + UCSF ChimeraX 拟合 + Coot 手动调整 + PHENIX 真实空间精修
+4. <strong>MD 模拟</strong>：CHARMM-GUI 建膜（POPC）、CHARMM36m 力场、GROMACS 2023.3、500 ns 生产模拟
+5. <strong>功能实验</strong>：BCECF-AM 负载、NH₄Cl 酸负载、Na⁺/K⁺ 依赖的 pH 恢复监测
+6. <strong>免疫组化/免疫印迹</strong>：组织定位验证（脉络丛、神经元）</p>
+<p><strong>文字流程</strong>：
+表达纯化 NCBE → 制备 4 种 cryo-EM 样品 → 数据采集与处理 → 结构解析与精修 → 基于结构设计突变 → 细胞功能验证（pH 恢复）→ MD 模拟验证离子配位和 DIDS 结合稳定性 → AF3 预测 IF 态 → 结构对比推断电梯机制 → 序列比对验证关键残基保守性</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cryo-EM 结构解析（NaHCO₃ 态）</td>
+<td>确定底物结合态原子结构</td>
+<td>揭示 Na⁺/HCO₃⁻ 配位网络</td>
+<td>输入：纯化蛋白；输出：2.45 Å 结构</td>
+<td>Results 图 1f-i, 2a-c</td>
+<td>无法确定底物配位细节</td>
+</tr>
+<tr>
+<td>cryo-EM 结构解析（NaCl 态）</td>
+<td>确定 Cl⁻ 结合态结构</td>
+<td>验证 Cl⁻ 与 HCO₃⁻ 共享口袋</td>
+<td>输入：NaCl 条件纯化蛋白；输出：2.6 Å 结构</td>
+<td>Results 图 2h-j</td>
+<td>无法直接证明 Cl⁻ 竞争结合</td>
+</tr>
+<tr>
+<td>cryo-EM 结构解析（KHCO₃ 态）</td>
+<td>确定 K⁺ 结合态结构</td>
+<td>验证 K⁺ 可替代 Na⁺</td>
+<td>输入：KHCO₃ 条件纯化蛋白；输出：2.5 Å 结构</td>
+<td>Results 图 3a-c</td>
+<td>无法证明阳离子选择性松弛</td>
+</tr>
+<tr>
+<td>cryo-EM 结构解析（DIDS 态）</td>
+<td>确定抑制剂结合态结构</td>
+<td>阐明 DIDS 抑制机制</td>
+<td>输入：DIDS 孵育样品；输出：2.61 Å 结构</td>
+<td>Results 图 5c-j</td>
+<td>无法解释 DIDS 的构象锁定效应</td>
+</tr>
+<tr>
+<td>MD 模拟</td>
+<td>验证配位稳定性、DIDS 结合持久性</td>
+<td>补充静态结构的动态信息</td>
+<td>输入：cryo-EM 结构；输出：500 ns 轨迹</td>
+<td>Results 图 2d, 2l, 3d；Supp. Tables 2-3</td>
+<td>无法确认配位在动态条件下的稳定性</td>
+</tr>
+<tr>
+<td>功能实验（pH 恢复）</td>
+<td>验证转运活性和突变效应</td>
+<td>将结构观察与功能关联</td>
+<td>输入：WT/突变体转染细胞；输出：ΔpHi 数据</td>
+<td>Results 图 1d-e, 2e-f, 2k, 3e-f</td>
+<td>无法确认关键残基的功能重要性</td>
+</tr>
+<tr>
+<td>AlphaFold3 预测</td>
+<td>生成 IF 态模型</td>
+<td>弥补实验未捕获的构象</td>
+<td>输入：氨基酸序列；输出：IF 预测结构</td>
+<td>Results 图 4a-c</td>
+<td>无法推断构象转变方向</td>
+</tr>
+<tr>
+<td>免疫组化/单细胞转录组分析</td>
+<td>验证 NCBE 组织分布</td>
+<td>建立生理相关性</td>
+<td>输入：人/鼠脑组织数据；输出：表达定位图</td>
+<td>Results 图 1a-c</td>
+<td>无法确认 NCBE 的生理功能位点</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>本文为结构生物学研究，核心定量分析为结构参数和 MD 轨迹分析，无传统意义上的数学公式。以下列出理解所需的关键定量概念：</p>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>符号/定义</th>
+<th>含义</th>
+<th>用途</th>
+<th>直觉</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>冷冻电镜分辨率</td>
+<td>2.45 Å（FSC 0.143 标准）</td>
+<td>结构可信度</td>
+<td>评估原子模型精度</td>
+<td>分辨率越高，原子位置越确定</td>
+<td>Results 图 1f；Supp. Table 1</td>
+</tr>
+<tr>
+<td>配位距离</td>
+<td>Na⁺-O ~2.2–2.4 Å；K⁺-O ~2.6–2.8 Å</td>
+<td>离子与配位残基的距离</td>
+<td>区分 Na⁺ vs K⁺ 配位模式</td>
+<td>K⁺ 离子半径更大，配位距离更长</td>
+<td>Results 图 3d；Supp. Fig. 4f, 8f, 11f-g</td>
+</tr>
+<tr>
+<td>离子配位数</td>
+<td>Na⁺ 为五配位</td>
+<td>中心离子周围配位原子数</td>
+<td>描述离子配位几何</td>
+<td>五配位为 Na⁺ 常见配位模式</td>
+<td>Results 图 2c</td>
+</tr>
+<tr>
+<td>结构位移量</td>
+<td>ΔZ ≈ 10 Å（core domain 沿膜法线位移）</td>
+<td>构象变化幅度</td>
+<td>量化 OF→IF 转变</td>
+<td>位移越大，构象变化越显著</td>
+<td>Results 图 4d-f；Supp. Fig. 12f</td>
+</tr>
+<tr>
+<td>旋转角</td>
+<td>ΔΨ ≈ 10°（core domain 相对 gate domain 旋转）</td>
+<td>结构域间相对旋转</td>
+<td>描述电梯机制的运动学</td>
+<td>旋转 + 平移 = 电梯式运动</td>
+<td>Results 图 4d-f；Supp. Fig. 12f</td>
+</tr>
+<tr>
+<td>MD 模拟时长</td>
+<td>500 ns × 3 重复</td>
+<td>采样时间</td>
+<td>评估配位稳定性</td>
+<td>时间越长，统计可靠性越高</td>
+<td>Methods 节；Supp. Tables 2-3</td>
+</tr>
+<tr>
+<td>氢键距离</td>
+<td>DIDS-S568 等极性接触</td>
+<td>抑制剂-蛋白相互作用</td>
+<td>解释 DIDS 结合特异性</td>
+<td>氢键是 DIDS 锚定的关键</td>
+<td>Results 图 5g, 5j</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/群体</strong>：
+- 人脑单细胞转录组数据（人类 38、小鼠 39）
+- 小鼠脑组织（C57BL/6J，5-6 周龄）
+- HEK293T 细胞（功能实验）</p>
+<p><strong>规模</strong>：
+- cryo-EM：4 个数据集（NaHCO₃、NaCl、KHCO₃、DIDS），每个数据集 4,747–12,649 部电影
+- MD：5 个体系 × 3 重复 × 500 ns
+- 功能实验：n = 5–6 生物学重复，每个含技术三重复</p>
+<p><strong>指标</strong>：
+- cryo-EM 分辨率（FSC 0.143）
+- ΔpHi（pH 恢复幅度）
+- MD 配位距离稳定性</p>
+<p><strong>基线/对照</strong>：
+- 载体转染（vector control）
+- WT NCBE 作为突变体比较基线</p>
+<p><strong>评测协议</strong>：
+- pH 恢复实验：NH₄Cl 预酸负载 → 无 Na⁺ 缓冲液 → 含 Na⁺/K⁺ 缓冲液 → 监测 pHi 恢复
+- MD 稳定性：RMSD、配位距离时间序列</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单细胞转录组分析</td>
+<td>NCBE 在脉络丛高表达</td>
+<td>人/鼠脑组织各细胞类型</td>
+<td>NCBE 在 CP 上皮细胞中富集</td>
+<td>NCBE 在脉络丛发挥功能</td>
+<td>不能确定蛋白水平表达</td>
+<td>Results 图 1a-b</td>
+</tr>
+<tr>
+<td>免疫荧光定位</td>
+<td>NCBE 位于基底外侧膜</td>
+<td>与 Ttr（CP 标志物）和 CD31（血管标志物）共染</td>
+<td>NCBE 与 Ttr 共定位，面向血管侧</td>
+<td>NCBE 位于 CP 上皮基底外侧膜</td>
+<td>不能确定极性转运方向</td>
+<td>Results 图 1c</td>
+</tr>
+<tr>
+<td>pH 恢复功能实验</td>
+<td>NCBE 介导 Na⁺ 依赖性 HCO₃⁻ 转运</td>
+<td>WT vs vector；有/无 Na⁺</td>
+<td>WT 在 Na⁺ 存在下显著恢复 pHi</td>
+<td>NCBE 是 Na⁺ 依赖性 HCO₃⁻ 转运体</td>
+<td>不能确定具体化学计量比</td>
+<td>Results 图 1d-e</td>
+</tr>
+<tr>
+<td>突变体功能实验</td>
+<td>D831/T835/T878 为关键配位残基</td>
+<td>WT vs 突变体</td>
+<td>突变体 pH 恢复显著降低</td>
+<td>这些残基对底物配位至关重要</td>
+<td>不能排除突变导致蛋白折叠异常</td>
+<td>Results 图 2e-f</td>
+</tr>
+<tr>
+<td>Cl⁻ 竞争实验</td>
+<td>Cl⁻ 与 HCO₃⁻ 竞争同一口袋</td>
+<td>有/无 Cl⁻ 条件</td>
+<td>Cl⁻ 抑制 HCO₃⁻ 依赖性 pH 恢复</td>
+<td>Cl⁻ 与 HCO₃⁻ 竞争结合</td>
+<td>不能确定是否为完全竞争</td>
+<td>Results 图 2k</td>
+</tr>
+<tr>
+<td>K⁺ 替代实验</td>
+<td>K⁺ 可替代 Na⁺ 驱动转运</td>
+<td>Na⁺ vs K⁺ vs NMDG⁺</td>
+<td>K⁺ 可驱动 pH 恢复，NMDG⁺ 不能</td>
+<td>NCBE 对 Na⁺/K⁺ 选择性松弛</td>
+<td>不能确定 K⁺ 的生理相关性</td>
+<td>Results 图 3e-f</td>
+</tr>
+<tr>
+<td>cryo-EM 结构解析</td>
+<td>确定底物结合位点</td>
+<td>3 种底物条件 + DIDS</td>
+<td>所有底物共享同一口袋</td>
+<td>单一保守口袋模型</td>
+<td>不能排除其他低亲和力位点</td>
+<td>Results 图 2, 3, 5</td>
+</tr>
+<tr>
+<td>MD 模拟</td>
+<td>验证配位稳定性</td>
+<td>500 ns × 3 重复</td>
+<td>Na⁺/K⁺/Cl⁻/HCO₃⁻ 配位稳定</td>
+<td>结构观察具有动态稳定性</td>
+<td>不能完全模拟完整转运循环</td>
+<td>Results 图 2d, 2l, 3d</td>
+</tr>
+<tr>
+<td>AF3 预测对比</td>
+<td>推断电梯机制</td>
+<td>AF3 IF 模型 vs cryo-EM OF 结构</td>
+<td>Core domain 位移 ~10 Å、旋转 ~10°</td>
+<td>支持电梯式转运机制</td>
+<td>AF3 预测未经实验验证，不能确定精确路径</td>
+<td>Results 图 4；Supp. Fig. 12</td>
+</tr>
+<tr>
+<td>DIDS 结合分析</td>
+<td>DIDS 通过非共价作用抑制</td>
+<td>DIDS 态 vs 底物态结构</td>
+<td>DIDS 占据细胞外前庭，不形成共价键</td>
+<td>DIDS 是竞争性空间阻断剂</td>
+<td>不能排除变构效应</td>
+<td>Results 图 5c-j</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文解析了 NCBE 在底物和抑制剂结合状态下的静态结构，并结合 MD 和功能实验验证。结论限于 NCBE 的底物结合模式、DIDS 抑制机制和 OF→IF 构象转变的基本框架。</li>
+<li><strong>oracle/真值输入</strong>：cryo-EM 结构基于实验数据，但离子/底物身份（Na⁺ vs K⁺、Cl⁻ vs HCO₃⁻）的判定依赖密度形状和配位几何推断，存在一定主观性。AF3 预测的 IF 态未经实验直接验证。</li>
+<li><strong>端到端状态</strong>：本研究非端到端计算流程，而是「实验结构 + 计算模拟 + 功能验证」的整合研究。MD 模拟用于验证而非预测结构。</li>
+<li><strong>算力成本</strong>：MD 模拟为 500 ns × 3 重复 × 5 体系，属于中等规模；AF3 预测为单序列推理，计算成本较低。</li>
+<li><strong>历史数据依赖</strong>：依赖已发表的 SLC4 家族结构（AE1、NBCe1 等）进行序列和结构比对。</li>
+<li><strong>模型依赖</strong>：MD 结果依赖 CHARMM36m 力场精度；AF3 预测依赖训练数据覆盖度。</li>
+<li><strong>最难情形</strong>：NCBE 的 IF 态未能通过实验解析，只能依赖 AF3 预测；DIDS 的完全抑制机制（是否完全阻断底物通道）仍需更高分辨率或更动态的证据。</li>
+<li><strong>群体/领域边界</strong>：结论基于人源 NCBE 的体外纯化蛋白和异源表达系统，不能直接外推至体内复杂环境或其他物种同源蛋白。</li>
+<li><strong>有边界的复述</strong>：本文证明人源 NCBE 存在一个可同时容纳 Na⁺（或 K⁺）和 Cl⁻（或 HCO₃⁻）的保守底物口袋；DIDS 通过非共价占据细胞外前庭、稳定 OF 构象来抑制转运；基于 AF3 预测的 IF 模型与实验 OF 结构对比，NCBE 可能采用 core domain 位移 ~10 Å、旋转 ~10° 的电梯式转运机制。这些结论受限于当前分辨率、力场精度和 AF3 预测的不确定性。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未解析内向开口（IF）实验结构</td>
+<td>cryo-EM 仅捕获 OF 构象，IF 态依赖 AF3 预测</td>
+<td>未来需通过突变或改造稳定 IF 态进行实验验证</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>底物身份判定存在不确定性</td>
+<td>Na⁺ vs K⁺、Cl⁻ vs HCO₃⁻ 的区分依赖密度形状和配位几何</td>
+<td>需结合反常散射或更精确的离子鉴定方法</td>
+<td>Results 图 2, 3 讨论</td>
+</tr>
+<tr>
+<td>转运化学计量比未确定</td>
+<td>结构显示 1 个阳离子 + 1 个阴离子，但功能实验未直接测定化学计量</td>
+<td>需电生理或通量实验确定</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>未解析完整转运循环</td>
+<td>仅捕获 OF 态，IF 态为预测，中间构象未知</td>
+<td>需捕获更多构象状态</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>DIDS 抑制的完全机制未阐明</td>
+<td>结构显示空间位阻，但是否完全阻断底物通道或存在变构效应未完全排除</td>
+<td>需更高分辨率结构或单分子实验</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>体外系统局限</td>
+<td>纯化蛋白和 HEK293T 过表达系统不能完全反映体内环境</td>
+<td>需体内功能研究</td>
+<td>Discussion 节</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AF3 预测的 IF 态未经实验验证</td>
+<td>AF3 对膜蛋白的预测精度有限，尤其对多构象蛋白可能偏向训练集中的常见构象</td>
+<td>电梯机制的结论依赖 IF 态模型的准确性</td>
+<td>尝试用突变稳定 IF 态进行 cryo-EM 验证；或用增强采样 MD 从 OF 态出发模拟 IF 转变</td>
+<td>Results 图 4；Methods 节</td>
+</tr>
+<tr>
+<td>底物身份判定依赖密度形状</td>
+<td>Na⁺ 和 K⁺ 的电子散射差异极小，仅凭密度形状难以可靠区分；Cl⁻ 和 HCO₃⁻ 的区分也存在类似问题</td>
+<td>若离子身份判定有误，底物配位模型和选择性机制结论将受影响</td>
+<td>使用反常散射（如 K⁺ 的异常信号）或不同离子条件下的结构比较</td>
+<td>Results 图 2, 3</td>
+</tr>
+<tr>
+<td>MD 模拟仅验证静态结构稳定性</td>
+<td>500 ns 模拟不足以采样完整的构象转变路径；模拟从 cryo-EM 结构出发，存在初始构象偏差</td>
+<td>MD 结论（配位稳定、DIDS 锁定 OF）可能受限于采样时间和初始条件</td>
+<td>延长模拟时间、使用增强采样方法（如 metadynamics、REMD）</td>
+<td>Methods 节；Supp. Tables 2-3</td>
+</tr>
+<tr>
+<td>功能实验仅测 pH 恢复</td>
+<td>pH 恢复反映净 HCO₃⁻ 转运，但无法区分不同转运模式（共转运 vs 交换）的贡献</td>
+<td>化学计量和转运模式的结论需要更直接的功能证据</td>
+<td>使用电生理（电压钳）或同位素通量实验</td>
+<td>Results 图 1d-e, 2e-f</td>
+</tr>
+<tr>
+<td>DIDS 浓度和结合位点的生理相关性</td>
+<td>300 μM DIDS 可能远高于体内浓度；DIDS 结合位点是否在体内被内源配体占据未知</td>
+<td>药理学意义需考虑生理浓度</td>
+<td>剂量-反应实验；内源配体竞争实验</td>
+<td>Results 图 5a-b</td>
+</tr>
+<tr>
+<td>单细胞数据仅显示 mRNA 水平</td>
+<td>mRNA 丰度不等于蛋白表达水平</td>
+<td>组织定位结论可能受转录-翻译调控影响</td>
+<td>蛋白水平免疫组化定量</td>
+<td>Results 图 1a-c</td>
+</tr>
+<tr>
+<td>未提供突变体的蛋白表达和折叠验证</td>
+<td>功能丧失可能源于蛋白折叠/表达缺陷而非底物配位破坏</td>
+<td>关键残基的功能归因需排除蛋白稳定性影响</td>
+<td>检测突变体表达水平和热稳定性（如 DSF、SEC）</td>
+<td>Results 图 2e-f</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<blockquote>
+<p>标题：Agent 提炼的知识候选</p>
+</blockquote>
+<ol>
+<li>
+<p><strong>多底物共享单一保守口袋的设计原则</strong>：NCBE 的 Na⁺/K⁺ 和 Cl⁻/HCO₃⁻ 共享同一底物结合口袋，通过直接离子配对实现电中性共转运。这一「单口袋多底物」策略可迁移至其他 SLC 家族转运蛋白的结构-功能研究，也可为设计人工离子共转运蛋白提供参考。</p>
+</li>
+<li>
+<p><strong>「抑制剂作为构象锁定器」的抑制机制</strong>：DIDS 不直接占据底物位点，而是结合于细胞外前庭、通过空间位阻和构象稳定双重机制抑制转运。这种「非底物竞争性、构象选择性」的抑制模式可推广至其他转运蛋白的药物设计——靶向构象中间态而非底物位点。</p>
+</li>
+<li>
+<p><strong>实验结构 + AlphaFold 预测互补策略</strong>：当实验无法捕获某一构象状态时，可用 AlphaFold 预测作为合理起点，通过与实验结构对比推断构象转变方向。但需注意：AF 预测的构象状态需经 MD 平衡验证稳定性，且不能替代实验验证。</p>
+</li>
+<li>
+<p><strong>MD 模拟验证离子配位的标准流程</strong>：从 cryo-EM 结构出发，在膜环境中进行多重复 500 ns 模拟，通过配位距离时间序列验证离子/底物结合稳定性。该流程可迁移至其他膜转运蛋白的离子配位验证。</p>
+</li>
+<li>
+<p><strong>结构-功能-疾病关联的整合策略</strong>：将结构信息与人类遗传学数据（自闭症、癫痫相关突变）结合，为解释致病突变提供结构基础。此策略可推广至其他疾病相关膜蛋白研究。</p>
+</li>
+<li>
+<p><strong>电梯式转运机制的结构判据</strong>：通过比较 OF 和 IF 状态中 core domain 相对 gate domain 的位移（ΔZ）和旋转（ΔΨ），可定量描述电梯式运动。这一分析框架可迁移至其他可能采用电梯机制的转运蛋白。</p>
+</li>
+<li>
+<p><strong>细胞外前庭作为药物靶向位点</strong>：DIDS 结合于细胞外前庭而非底物口袋，提示细胞外前庭可能是 SLC4 家族及其他转运蛋白的药物干预新位点。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ol>
+<li>
+<p><strong>SLC4 家族结构研究</strong>：本文与已发表的 AE1（SLC4A1）、NBCe1（SLC4A4）、NBCn1（SLC4A7）、NDCBE（SLC4A8）结构研究直接相关。本文首次报道 NCBE（SLC4A10）结构，填补了家族成员的结构空白。可对比各成员的底物结合口袋差异，理解家族内的功能分化。</p>
+</li>
+<li>
+<p><strong>电梯式转运机制</strong>：电梯机制已在多种转运蛋白中报道（如 GltPh 谷氨酸转运体、UraA 等）。本文为 SLC4 家族提供了新的电梯机制实例，可与已有电梯机制转运蛋白进行结构比对，验证该机制的保守性。</p>
+</li>
+<li>
+<p><strong>AlphaFold 在膜蛋白结构预测中的应用</strong>：本文使用 AlphaFold3 预测 IF 态，与实验 OF 结构对比。这与 AlphaFold2/3 在膜蛋白结构预测中的广泛应用一致，但本文展示了「预测 + 实验」对比推断构象变化的特殊用法。</p>
+</li>
+<li>
+<p><strong>DIDS 作为 SLC4 家族抑制剂</strong>：DIDS 是经典的 SLC4 家族抑制剂，此前在 AE1 中已知通过共价修饰发挥作用。本文发现 NCBE 中 DIDS 以非共价方式结合，且结合位点与 AE1 不同，提示 DIDS 的抑制机制在家族内存在多样性。</p>
+</li>
+<li>
+<p><strong>MD 模拟在膜转运蛋白研究中的应用</strong>：本文的 MD 模拟流程（CHARMM-GUI 建膜、CHARMM36m 力场、GROMACS）与膜蛋白 MD 模拟的标准实践一致，可与其他转运蛋白的 MD 研究进行方法学对比。</p>
+</li>
+<li>
+<p><strong>候选方向（未验证）</strong>：本文发现的 K⁺ 结合位点提示 NCBE 可能具有比预期更宽的阳离子选择性。这一发现与「Na⁺-偶联转运蛋白是否可容忍 K⁺」的争论相关，值得在其他 SLC4 成员中验证。</p>
+</li>
+</ol>
+<hr />
+<h2>16 研究想法</h2>
+<blockquote>
+<p>标题：Agent 生成的研究候选</p>
+</blockquote>
+<p><strong>候选 1：基于增强采样 MD 的 NCBE 完整转运循环模拟</strong>
+- <strong>来源局限/观察</strong>：作者仅获得 OF 实验结构，IF 态依赖 AF3 预测，中间构象未知
+- <strong>核心假设</strong>：NCBE 的电梯式转运遵循特定的中间态路径，可通过计算模拟重现
+- <strong>初步方法</strong>：以 cryo-EM OF 结构为起点，使用 metadynamics 或副本交换 MD 模拟 core domain 沿膜法线方向的位移，采样 OF→IF 转变路径；与 AF3 预测的 IF 态对比验证
+- <strong>验证方式</strong>：模拟得到的中间态构象与已知 SLC4 家族突变位点交叉验证；预测可稳定中间态的突变，并通过实验验证
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 2：基于序列-结构比对的 SLC4 家族底物选择性预测模型</strong>
+- <strong>来源局限/观察</strong>：NCBE 的底物口袋可容纳 Na⁺/K⁺ 和 Cl⁻/HCO₃⁻，但家族成员间选择性差异的分子决定因素不清
+- <strong>核心假设</strong>：SLC4 家族成员的底物选择性由口袋内关键残基的理化性质决定，可通过序列-结构比对预测
+- <strong>初步方法</strong>：收集 SLC4 家族所有成员的序列和已有结构，进行多序列比对和结构叠加；提取底物口袋残基特征，训练分类模型预测底物选择性（Na⁺ vs K⁺、Cl⁻ vs HCO₃⁻）
+- <strong>验证方式</strong>：对预测的选择性转换突变体进行功能实验验证
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 3：DIDS 类似物的虚拟筛选与选择性抑制剂设计</strong>
+- <strong>来源局限/观察</strong>：DIDS 以非共价方式结合 NCBE 细胞外前庭，结合位点与 AE1 不同，提示可设计家族选择性抑制剂
+- <strong>核心假设</strong>：基于 NCBE-DIDS 结构，可设计出对 NCBE 选择性高于 AE1 的抑制剂
+- <strong>初步方法</strong>：以 NCBE-DIDS 结构为靶点进行虚拟筛选；对候选化合物进行 MD 模拟验证结合稳定性；合成并测试对 NCBE 和 AE1 的抑制选择性
+- <strong>验证方式</strong>：细胞水平 pH 恢复实验和电生理实验
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 4：NCBE 致病突变的结构-功能影响系统分析</strong>
+- <strong>来源局限/观察</strong>：SLC4A10 突变与自闭症、癫痫等疾病相关，但缺乏系统性的结构-功能解释
+- <strong>核心假设</strong>：疾病相关突变可通过影响底物配位、构象转变或蛋白稳定性导致功能异常
+- <strong>初步方法</strong>：收集 SLC4A10 疾病突变，映射到 cryo-EM 结构；对每个突变进行 MD 模拟评估对底物结合和构象稳定性的影响；结合功能实验验证
+- <strong>验证方式</strong>：突变体 pH 恢复实验与模拟预测对比
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 5：基于 AF3 多构象预测的转运蛋白构象采样方法评估</strong>
+- <strong>来源局限/观察</strong>：本文用 AF3 预测 IF 态，但 AF3 对多构象蛋白的预测可靠性未知
+- <strong>核心假设</strong>：AF3 的多次独立预测可采样到不同的功能构象，其多样性可用于推断构象变化
+- <strong>初步方法</strong>：对 NCBE 及其他 SLC4 成员进行多次 AF3 预测（不同随机种子），聚类分析预测构象多样性；与实验结构（OF）和已知构象对比，评估 AF3 构象采样的可靠性
+- <strong>验证方式</strong>：与 MD 模拟采样的构象空间对比
+- <strong>创新状态</strong>：unverified</p></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text including abstract, introduction, results, discussion, methods, and supplementary figure/table references</li>
+<li><strong>Assessment boundary</strong> Scientific content, technical soundness, data interpretation, and claims as presented in the provided manuscript text</li>
+<li><strong>Shared manuscript claim summary</strong> The authors report cryo-EM structures of human NCBE (SLC4A10) in NaHCO₃-, NaCl-, KHCO₃-, and DIDS-bound states, identify conserved Na⁺, Cl⁻, and HCO₃⁻ binding sites plus an unexpected K⁺ site, demonstrate functional relevance via pHi recovery assays and MD simulations, and propose an elevator-like transport mechanism based on comparison with an AlphaFold3-predicted inward-facing model</li>
+<li><strong>Visible evidence base</strong> Results text, figure legends (Figs 1-5), methods descriptions, supplementary figure/table references</li>
+<li><strong>Missing materials affecting confidence</strong> Actual figures and supplementary figures/tables not provided; exact numerical data, statistical outputs, and MD simulation parameters only partially described; AlphaFold3 model validation details limited</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This manuscript presents a structurally and functionally informative study of human NCBE, a transporter of considerable physiological and clinical relevance. The cryo-EM structures at reported resolutions (2.45-2.62 Å) appear to be of high quality based on the methodological descriptions, and the identification of a K⁺ site is an interesting and potentially significant finding. However, several concerns limit the strength of the conclusions as currently presented. The functional assays are described in limited detail, the stoichiometry question is explicitly acknowledged as unresolved, and the reliance on an AlphaFold3-predicted model for the inward-facing state weakens the mechanistic claims. The DIDS inhibition mechanism is well supported by the structural data. Overall, the work is potentially suitable for publication in a high-impact journal, but the mechanistic conclusions require tempering and additional experimental support.</li>
+<li><strong>Who would be interested in the results, and why</strong> Structural biologists studying secondary active transporters, particularly the SLC4 family; neuroscientists interested in CSF physiology and pH regulation in the brain; pharmacologists interested in transporter inhibition mechanisms; and clinicians studying neurodevelopmental disorders linked to SLC4A10 mutations.</li>
+<li><strong>Major strengths</strong> 1) High-resolution cryo-EM structures of human NCBE in multiple states, filling a gap in SLC4A10 structural knowledge. 2) Identification of a conserved substrate-binding pocket accommodating Na⁺, Cl⁻, and HCO₃⁻ with direct structural evidence. 3) Discovery of a K⁺ binding site suggesting relaxed cation selectivity, which is novel and functionally intriguing. 4) Clear demonstration of a non-covalent DIDS inhibition mechanism distinct from covalent binding in AE1-3. 5) Integration of structural, functional, and computational approaches.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Functional validation</li>
+<li><strong>Claim pointer</strong> The authors claim that functional assays support the structural findings, including the coordination of ions and inhibitory effects of DIDS.</li>
+<li><strong>Evidence pointer</strong> Results section "NCBE in the choroid plexus mediates HCO₃⁻-dependent pH recovery", Fig 1d-e, Fig 2e-f, Fig 2k, Fig 3e-f, Fig 5a-b; Methods sections on pHi assays</li>
+<li><strong>Concern</strong> The functional assay descriptions are insufficiently detailed to assess their validity. The pHi recovery assay is described only briefly, and critical parameters such as transfection efficiency normalization, expression level comparison between WT and mutants, membrane localization verification, and the exact composition of assay buffers are not provided. For the mutant studies (D831, T835, T878), it is unclear whether reduced pHi recovery reflects impaired transport activity or reduced protein expression/trafficking. The K⁺-dependent assay (Fig 3e-f) lacks a clear description of how K⁺ was substituted and whether the observed alkalinization could be attributed to residual Na⁺ contamination.</li>
+<li><strong>Why it matters</strong> The functional data are central to the claim that the structurally observed ion coordination is functionally relevant. Without rigorous functional validation, the structural assignments remain correlative. The mutant experiments are particularly important because they are used to establish the functional importance of specific residues, but the lack of expression controls undermines this conclusion.</li>
+<li><strong>Resolution test</strong> Provide detailed methods for all functional assays, including expression level verification (e.g., western blot quantification), surface biotinylation or immunostaining to confirm membrane localization, and dose-response curves for DIDS inhibition. For mutant studies, show that expression levels are comparable to WT or normalize the data accordingly. For K⁺ experiments, demonstrate that Na⁺-free conditions are rigorously maintained and include appropriate controls.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Mechanistic claim</li>
+<li><strong>Claim pointer</strong> The authors claim that comparison with an AlphaFold3-predicted inward-facing model supports an elevator-like transport mechanism and delineates conformational transitions.</li>
+<li><strong>Evidence pointer</strong> Results section "Elevator-like conformational transition of NCBE", Fig 4; Methods section on MD simulations</li>
+<li><strong>Concern</strong> The inward-facing state is entirely based on an AlphaFold3 prediction, not an experimentally determined structure. While AF3 predictions can be useful, they are not a substitute for experimental validation, particularly for a dynamic membrane transporter that undergoes large conformational changes. The claim of an "elevator-like mechanism" rests on the comparison between experimentally determined OF states and a computationally predicted IF state. The manuscript does not provide sufficient validation of the AF3 model, such as comparison with known SLC4 structures in IF conformations, assessment of model confidence metrics, or experimental validation of the predicted IF state.</li>
+<li><strong>Why it matters</strong> The transport mechanism is a central claim of the manuscript. If the IF model is inaccurate, the proposed elevator mechanism and the quantitative descriptions of domain movements (10 Å displacement, 10° rotation) could be misleading. The distinction between elevator, rocker-switch, and other mechanisms has important implications for understanding SLC4 transporter function and for drug design.</li>
+<li><strong>Resolution test</strong> Provide additional validation of the AF3 model, such as comparison with experimentally determined IF structures of homologous SLC4 transporters (e.g., NBCe1 or AE1 in IF states), analysis of AF3 confidence metrics (pLDDT, PAE), and/or experimental evidence supporting the IF conformation (e.g., cysteine crosslinking, DEER spectroscopy, or single-molecule FRET). Alternatively, temper the mechanistic claims and present the elevator model as a hypothesis requiring further validation.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Stoichiometry and transport model</li>
+<li><strong>Claim pointer</strong> The authors state that the observed ion-binding pocket can accommodate one cation and one anion, but acknowledge that the overall transport stoichiometry of NCBE is not established by their structures.</li>
+<li><strong>Evidence pointer</strong> Discussion section, last paragraph; Results sections on ion binding</li>
+<li><strong>Concern</strong> The manuscript does not resolve the long-standing question of NCBE stoichiometry (e.g., 1 Na⁺:1 HCO₃⁻:1 Cl⁻ vs. 2 Na⁺:1 HCO₃⁻:1 Cl⁻). The authors acknowledge this limitation, which is appropriate, but the structural data could potentially be used more rigorously to discuss this issue. For example, the presence of only one cation site in the resolved structures, combined with the K⁺ site, raises questions about how the 2:1 or 1:2 stoichiometries proposed in the literature could be achieved. The discussion of this point is brief and does not fully engage with the existing physiological literature on NCBE stoichiometry.</li>
+<li><strong>Why it matters</strong> The stoichiometry is fundamental to understanding NCBE's physiological role in CSF secretion and pH regulation. If the transporter operates with a different stoichiometry than proposed, the bioenergetics and directionality of transport would differ, with implications for understanding how NCBE contributes to ion homeostasis in the choroid plexus.</li>
+<li><strong>Resolution test</strong> Provide a more detailed discussion of how the structural data inform or constrain possible stoichiometric models. If possible, perform additional experiments (e.g., electrophysiology, flux assays with varying ion concentrations) to address stoichiometry directly. Alternatively, clearly state the limitations of the structural approach for determining stoichiometry and outline specific experiments needed to resolve this question.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> K⁺ site functional relevance</li>
+<li><strong>Claim pointer</strong> The authors claim that the K⁺ site indicates relaxed ion selectivity and that K⁺ can support HCO₃⁻ transport.</li>
+<li><strong>Evidence pointer</strong> Results section "K⁺ binding at the canonical Na⁺ site reveals relaxed ion selectivity", Fig 3; Methods section on K⁺-dependent HCO₃⁻ transport assay</li>
+<li><strong>Concern</strong> While the structural identification of a K⁺ site is interesting, the functional data supporting K⁺-dependent transport are limited. The pHi recovery assay in K⁺-containing buffer shows alkalinization, but the magnitude relative to Na⁺-dependent transport is not clearly quantified. The physiological relevance of K⁺-driven transport is unclear, as extracellular K⁺ concentrations are typically low (3-5 mM) compared to Na⁺ (140 mM). The manuscript does not address whether K⁺-driven transport would be significant under physiological conditions.</li>
+<li><strong>Why it matters</strong> The K⁺ site is presented as a novel finding, but its physiological significance is uncertain. If K⁺-driven transport is negligible under physiological conditions, the finding may be of limited relevance. Conversely, if K⁺ can substitute for Na⁺ under certain conditions (e.g., during ischemia when extracellular K⁺ rises), this could have pathophysiological implications.</li>
+<li><strong>Resolution test</strong> Quantify the relative efficiency of K⁺ vs. Na⁺-dependent transport. Test whether K⁺-driven transport occurs at physiologically relevant K⁺ concentrations. Discuss the potential physiological or pathophysiological contexts in which K⁺-driven transport could be significant. Consider whether the K⁺ site represents a regulatory site rather than a transport site.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Data presentation</li>
+<li><strong>Affected element</strong> Fig 1a-b</li>
+<li><strong>Evidence pointer</strong> Results section "NCBE in the choroid plexus mediates HCO₃⁻-dependent pH recovery"</li>
+<li><strong>Issue</strong> The t-SNE plots in Fig 1a-b are described but the specific cell types and expression patterns are not clearly explained in the text. The reader cannot assess the quality of the single-cell data or the specificity of SLC4A10 expression in choroid plexus epithelial cells versus other cell types.</li>
+<li><strong>Required correction</strong> Provide a more detailed description of the single-cell RNA-seq analysis, including the number of cells analyzed, the clustering approach, and the statistical significance of SLC4A10 enrichment in choroid plexus epithelial cells.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> Fig 1e, Fig 2f, Fig 3f, Fig 5b</li>
+<li><strong>Evidence pointer</strong> Results sections on functional assays; Methods section on statistical information</li>
+<li><strong>Issue</strong> The statistical analysis is described as using two-sided unpaired t-tests, but the number of independent experiments, the exact p-values, and the effect sizes are not consistently reported in the text. The figure legends mention n values for some experiments but not all.</li>
+<li><strong>Required correction</strong> Ensure that all figure legends include the number of independent biological replicates, the exact p-values, and the statistical test used. Consider whether multiple comparison corrections are needed for the mutant studies.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Structural validation</li>
+<li><strong>Affected element</strong> Fig 2b, Fig 2h, Fig 3b</li>
+<li><strong>Evidence pointer</strong> Results sections on ion binding; Methods section on cryo-EM</li>
+<li><strong>Issue</strong> The assignment of ions (Na⁺, Cl⁻, HCO₃⁻, K⁺) in the cryo-EM maps relies on density shape and coordination geometry. However, at the reported resolutions (2.45-2.62 Å), distinguishing between ions of similar electron density (e.g., Na⁺ vs. K⁺, Cl⁻ vs. HCO₃⁻) can be challenging. The manuscript does not describe anomalous scattering experiments or other validation approaches to confirm ion identities.</li>
+<li><strong>Required correction</strong> Describe the criteria used for ion assignment, including any anomalous scattering data, ion coordination geometry analysis, or comparison with ion-binding sites in homologous structures. If such validation was not performed, acknowledge this limitation.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> DIDS binding mode</li>
+<li><strong>Affected element</strong> Fig 5c-j</li>
+<li><strong>Evidence pointer</strong> Results section "DIDS occludes the extracellular vestibule and stabilises the outward-facing state"</li>
+<li><strong>Issue</strong> The manuscript states that DIDS binds non-covalently in NCBE, in contrast to covalent binding in AE1-3. However, the functional assay for DIDS inhibition (Fig 5a-b) uses a single concentration (300 μM) and does not provide a dose-response curve or IC50 value. The structural and functional data are not quantitatively linked.</li>
+<li><strong>Required correction</strong> Provide a dose-response curve for DIDS inhibition and, if possible, correlate the IC50 with the structural binding mode. Discuss the implications of non-covalent versus covalent DIDS binding for inhibitor design.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Model validation</li>
+<li><strong>Affected element</strong> Fig 4, Supplementary Fig 12</li>
+<li><strong>Evidence pointer</strong> Results section "Elevator-like conformational transition of NCBE"; Methods section on MD simulations</li>
+<li><strong>Issue</strong> The MD simulations are described as supporting the stability of the AF3-predicted IF model, but the simulation details are limited. The manuscript does not report the root-mean-square deviation (RMSD) of the protein backbone, the convergence of the simulations, or the free energy landscape of the conformational transition.</li>
+<li><strong>Required correction</strong> Provide additional MD simulation analysis, including RMSD and root-mean-square fluctuation (RMSF) plots, assessment of simulation convergence, and if possible, free energy calculations or enhanced sampling simulations to support the proposed conformational transition pathway.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of an "elevator-like transport mechanism" is based on comparison with an AlphaFold3-predicted model rather than an experimentally determined IF structure, and is therefore not fully supported by the data presented</li>
+<li>The functional significance of the K⁺ site is not quantitatively established, and its physiological relevance is unclear</li>
+<li>The claim that DIDS inhibition is "subfamily-selective" is based on comparison with AE1-3 but does not include data on other SLC4 family members or closely related transporters</li>
+<li>The statement that "different substrates stabilise outward-facing conformations without altering the fundamental transport trajectory" is based on comparison of only three OF structures and may be premature</li>
+<li>The manuscript does not establish the transport stoichiometry of NCBE, and the structural data are insufficient to distinguish between competing models</li>
+<li>The claim that NCBE mutations cause neurodevelopmental disorders is based on prior literature, not on new data presented in this manuscript, and the connection between the structural findings and disease mechanisms is not directly tested</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

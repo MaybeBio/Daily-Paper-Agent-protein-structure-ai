@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors evaluate nine sequence-based predictors of disordered flexible linkers (DFLs) using CAID3 data, expanding the assessment to residue, region, and protein levels, including a low-sequence-similarity subset. They report that several predictors accurately identify DFL residues, that performance varies by scenario, that recent progress is driven by deep learning and protein language models, and that current tools fail to reproduce correct sizes and numbers of DFL regions. They propose development strategies to address this weakness.
+- **Visible evidence base** Abstract text only; no quantitative results, performance metrics, dataset details, or methodological descriptions are provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, detailed methods, dataset construction and filtering criteria, predictor descriptions, statistical analyses, and any supplementary information
+
+## Reviewer
+- **Overall assessment** The abstract presents a timely and potentially valuable benchmarking study of DFL predictors, addressing an important gap in the evaluation of intrinsically disordered region prediction. The scope is appropriate and the inclusion of a low-sequence-similarity subset is a commendable methodological choice. However, the abstract provides no quantitative evidence to support the stated conclusions, and several claims are too broad or underspecified to be assessed. The identified weakness regarding region size and number prediction is interesting but lacks supporting data. The study is likely of interest to the computational biology and protein science communities, but the case is not established from the abstract alone.
+- **Who would be interested in the results, and why** Computational biologists and bioinformaticians developing or using predictors for intrinsically disordered regions and linkers; experimental biologists studying protein architecture and function who rely on such predictions; researchers interested in benchmarking methodology and the application of deep learning and protein language models to structural biology problems.
+- **Major strengths** The study addresses a relevant and under-evaluated class of predictors. The use of CAID3 data provides a standardized and community-recognized benchmark. The expansion to multiple assessment levels and the inclusion of a low-sequence-similarity subset are methodologically sound and likely to yield more robust estimates. The identification of a specific weakness in region size and number prediction is a useful contribution.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The authors claim that "several DFL predictors accurately identify DFL residues among other types of disordered residues" and that "different methods perform better in different scenarios, with several methods producing very accurate predictions of DFL residues and a few performing well when predicting proteins with DFLs."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract provides no quantitative metrics, such as AUC, precision, recall, or Matthews correlation coefficient, to substantiate the claims of accurate or very accurate predictions. No comparisons between methods are shown, and the criteria for "accurate" or "performing well" are undefined.
+  - **Why it matters** Without quantitative evidence, the central claims of the study cannot be evaluated or reproduced. The reader cannot determine the magnitude of the reported performance differences or whether they are statistically significant.
+  - **Resolution test** Provide performance metrics for all nine predictors across the three assessment levels, including confidence intervals or statistical tests, and define thresholds for "accurate" or "performing well."
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim support
+  - **Claim pointer** The authors claim that "progress has been made in recent years, driven by the use of deep learning and protein language models."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract does not provide any comparative data showing that deep learning or protein language model-based predictors outperform other methods. The causal attribution to these techniques is asserted without supporting analysis.
+  - **Why it matters** This claim is a key takeaway and may influence future method development. Without evidence linking performance gains specifically to deep learning or protein language models, the claim is speculative.
+  - **Resolution test** Show a comparison of predictor performance grouped by underlying methodology, with statistical analysis demonstrating that deep learning or protein language model-based methods are significantly better.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The authors claim that "current tools are unable to reproduce the correct sizes and numbers of DFL regions."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** No data are presented to support this claim, such as region-level precision or recall, or comparisons of predicted versus actual region counts and lengths. The severity of the weakness is not quantified.
+  - **Why it matters** This is presented as a major finding and a motivation for future work. Without quantitative support, the claim is unsubstantiated and its significance cannot be gauged.
+  - **Resolution test** Provide region-level performance metrics, such as overlap-based measures or distributions of predicted versus true region sizes and counts, for all predictors.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Dataset description
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** The abstract states that the evaluation was expanded to "a larger dataset" but does not specify the number of proteins or residues, or how this dataset relates to the original CAID3 benchmark.
+  - **Required correction** Specify the dataset size and composition, and clarify whether the expanded dataset is a superset of CAID3 or a separate collection.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Predictor selection
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** The abstract mentions "seven methods that participated in CAID3 and two additional, recently published DFL predictors" but does not name the predictors or provide version or access information.
+  - **Required correction** List the names and versions of all nine predictors, and provide references or URLs for the two additional methods.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Specificity
+  - **Affected element** Proposed solutions
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** The abstract states that "several ways to develop new DFL predictors" are suggested but gives no indication of what these ways are.
+  - **Required correction** Briefly summarize the proposed development strategies in the abstract, or indicate that they are detailed in the full manuscript.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, and R1-M3 are blocking because the abstract lacks quantitative evidence for the central claims. The study's conclusions cannot be assessed without access to the full data and methods.
+- **Assessment against Nature-style criteria** Originality: The study addresses a specific and under-evaluated class of predictors, which is a useful contribution, though the general approach of benchmarking predictors is not novel. Scientific importance: The findings could inform method development and practical use of DFL predictors, but the importance is not yet demonstrated without quantitative results. Interdisciplinary readership: The topic is relevant to computational and experimental protein scientists, but the abstract is too technical and lacks context for a broad audience. Technical soundness: The methodological choices described are reasonable, but the absence of data prevents assessment of technical execution. Readability for nonspecialists: The abstract is concise but assumes familiarity with DFL prediction and CAID3; it is not accessible to a general scientific audience.
+- **Recommendation posture** Currently not established from the provided evidence. The study has potential merit, and the authors should be encouraged to resubmit with full quantitative results. I would be supportive if the technical concerns are resolved and the claims are substantiated with data.
+
+## Risk / unsupported claims
+- The claim that "several DFL predictors accurately identify DFL residues" is unsupported without quantitative metrics.
+- The claim that "different methods perform better in different scenarios" is unsupported without scenario-specific results.
+- The claim that "progress has been made in recent years, driven by the use of deep learning and protein language models" is unsupported and the causal attribution is speculative.
+- The claim that "current tools are unable to reproduce the correct sizes and numbers of DFL regions" is unsupported without region-level data.
+- The claim that the expanded dataset and low-sequence-similarity subset yield "more robust estimates" is plausible but not verifiable from the abstract.

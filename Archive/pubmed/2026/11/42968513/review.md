@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no access to full text, figures, tables, or supplementary material
+- **Shared manuscript claim summary** The abstract argues that crystallographic fragment screening (CFS) provides an experimentally grounded binding hypothesis early in drug discovery, reducing uncertainty before medicinal chemistry investment, and that it has advanced fragments into lead series, preclinical candidates, and clinical molecules across oncology and antiviral targets. It further claims that computational and machine-learning methods can extend CFS information but cannot replace experimental binding-mode determination or functional validation, and that future progress depends on reusable structure-affinity datasets and tighter structure-design-synthesis-test cycles.
+- **Visible evidence base** Abstract text only; no figures, tables, case-study details, or literature citations are provided beyond the general description of oncology and antiviral examples
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, case-study descriptions, search methodology details, criteria for hit validation and prioritization, and any quantitative outcomes or clinical progression data
+
+## Reviewer
+- **Overall assessment** The abstract presents a coherent and reasonable perspective on the role of CFS in drug discovery, with a sensible emphasis on experimental structural evidence as a foundation for chemical elaboration. The scope is broad, covering both oncology and antiviral applications, and the expert opinion section offers a balanced view on the complementary role of computational methods. However, the abstract is largely descriptive and programmatic, with no quantitative evidence, specific case-study outcomes, or comparative analysis provided. The strength of the claims regarding translational outcomes cannot be assessed from the supplied material. The writing is clear and accessible, but the scientific case for the central assertions is not established within the abstract alone.
+- **Who would be interested in the results, and why** Structural biologists, medicinal chemists, and drug-discovery scientists working on fragment-based lead discovery, particularly those engaged in crystallographic screening or in integrating structural data with computational methods. The review would also be of interest to researchers in oncology and antiviral drug development seeking an overview of CFS applications and its practical limitations.
+- **Major strengths** The abstract clearly articulates the value proposition of CFS, namely the provision of an experimentally grounded binding hypothesis before significant chemistry investment. The scope is well organized, with distinct oncology and antiviral sections, and the expert opinion appropriately acknowledges the complementary rather than substitutive role of computational methods. The emphasis on reusable datasets and tighter design-synthesis-test cycles is forward-looking and practical.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims that CFS "advances fragments into lead series, preclinical candidates and clinical molecules" across the listed oncology and antiviral targets.
+  - **Evidence pointer** Abstract, "Areas covered" section; specific case-study details not provided
+  - **Concern** The abstract asserts translational outcomes without presenting any specific data, such as the number of fragments advanced, the stage of progression, or the identity of any clinical molecules. No quantitative or qualitative evidence is visible to support the claim that CFS has directly enabled lead series or clinical candidates.
+  - **Why it matters** The central claim of translational impact is a key justification for the review's relevance. Without supporting evidence, the claim remains an assertion rather than an established finding, and readers cannot evaluate the magnitude or reliability of the reported progress.
+  - **Resolution test** Provide in the full manuscript specific case examples with named compounds, target details, progression stages, and, where available, clinical trial identifiers or published outcomes. The abstract should either summarize these data or temper the claim to reflect the level of evidence presented.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract states that computational and machine-learning methods "do not replace experimental determination of binding modes or functional validation."
+  - **Evidence pointer** Abstract, "Expert opinion" section; no comparative data or case examples provided
+  - **Concern** This is a strong negative claim about the limits of computational methods, yet no evidence is presented to support it, such as examples where computational predictions failed or where experimental determination was essential. The claim may be defensible as an opinion, but it is framed as a general conclusion.
+  - **Why it matters** The statement could be read as a definitive assessment of the field, which carries implications for how researchers allocate resources. Without supporting examples or a reasoned argument, the claim risks being perceived as unsupported opinion rather than evidence-based conclusion.
+  - **Resolution test** Include in the full manuscript specific instances where computational predictions were contradicted by experimental crystallography, or where functional validation changed the interpretation of a computational ranking. Alternatively, soften the claim to reflect it as a perspective rather than an established fact.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Reproducibility and methodology
+  - **Claim pointer** The abstract states that literature was identified through targeted PubMed searches from March to September 2026, supplemented by reference-list screening.
+  - **Evidence pointer** Abstract, "Areas covered" section; search terms and inclusion criteria not provided
+  - **Concern** The search strategy is described only in general terms. No search terms, databases beyond PubMed, inclusion or exclusion criteria, or quality assessment methods are mentioned. This limits the reproducibility of the review methodology.
+  - **Why it matters** For a review article, methodological transparency is important for readers to assess the comprehensiveness and potential bias of the literature selection. The current description is insufficient for replication or critical evaluation.
+  - **Resolution test** Provide in the full manuscript a detailed search strategy, including search terms, Boolean operators, date ranges, and any screening criteria. If the journal format does not permit this, state the limitation explicitly in the abstract or methods section.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract, "Introduction" section
+  - **Evidence pointer** Abstract, first paragraph
+  - **Issue** The phrase "routes for chemical elaboration" is somewhat vague and could be more specific about what these routes entail, such as vector analysis or structure-activity relationship development.
+  - **Required correction** Consider rephrasing to "routes for chemical elaboration, including vector analysis and structure-activity relationship development" or similar, to enhance precision.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Scope clarity
+  - **Affected element** Abstract, "Areas covered" section
+  - **Evidence pointer** Abstract, second paragraph
+  - **Issue** The list of oncology and antiviral examples is presented without any indication of the depth of coverage or the criteria for selecting these particular targets. It is unclear whether these are representative examples or an exhaustive list.
+  - **Required correction** Add a brief statement indicating whether these examples are illustrative or comprehensive, and if illustrative, what criteria guided their selection.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Abstract, "Expert opinion" section
+  - **Evidence pointer** Abstract, final paragraph
+  - **Issue** The term "reusable structure-affinity datasets" is introduced without definition. It is unclear whether this refers to public databases, internal company data, or a specific format of data sharing.
+  - **Required correction** Define the term briefly in the abstract or provide a clarifying phrase, such as "publicly accessible datasets linking crystallographic structures to binding affinity measurements."
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are the primary technical failings, as the central claims of translational impact and the limits of computational methods are not supported by visible evidence. R1-M3 is a methodological limitation that affects reproducibility but is less critical to the scientific case.
+- **Assessment against Nature-style criteria** 
+  - Originality: The abstract does not present a novel conceptual framework or new data. It is a review of existing applications, and the perspective on computational methods is consistent with current thinking in the field. Originality is limited.
+  - Scientific importance: The topic is of practical importance to drug discovery, but the abstract does not demonstrate a unique contribution or a synthesis that goes beyond existing reviews. The importance is moderate and largely derivative.
+  - Interdisciplinary readership: The abstract is likely to appeal to structural biologists, medicinal chemists, and computational scientists, but the lack of specific examples or data reduces its potential to engage a broader readership.
+  - Technical soundness: The technical claims are plausible but not verifiable from the abstract. The absence of evidence for translational outcomes and the unsupported negative claim about computational methods undermine technical soundness.
+  - Readability for nonspecialists: The abstract is clearly written and avoids excessive jargon, making it accessible to a general scientific audience. However, the lack of concrete examples limits its explanatory power.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a reasonable perspective, but the central claims of translational impact and the limits of computational methods require supporting evidence from the full manuscript. If the full text provides specific case studies, quantitative outcomes, and a reasoned argument for the computational limits, the review could be considered supportive. As it stands, the case is not made within the abstract alone.
+
+## Risk / unsupported claims
+- The claim that CFS "advances fragments into lead series, preclinical candidates and clinical molecules" is unsupported in the abstract, as no specific examples or data are provided.
+- The statement that computational and machine-learning methods "do not replace experimental determination of binding modes or functional validation" is presented as a general conclusion without supporting evidence.
+- The assertion that "future progress will depend on reusable structure-affinity datasets and tighter structure-design-synthesis-test cycles" is a reasonable opinion but is not substantiated with examples or analysis.
+- The completeness and representativeness of the literature search cannot be assessed from the abstract alone, given the lack of search terms and inclusion criteria.

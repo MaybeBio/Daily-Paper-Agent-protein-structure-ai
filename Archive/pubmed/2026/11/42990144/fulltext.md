@@ -1,0 +1,5 @@
+# Generative design of functional disordered regions in a developmental transcription factor
+
+
+## Abstract
+  Rapid advances in protein structure design have not translated to intrinsically disordered regions (IDRs). This is largely due to our incomplete understanding of how IDR sequence encodes function. Here, we use stem cell differentiation as a model to map functional sequence features in the C-terminal IDR of the transcription factor RUNX2, which is required to bind chromatin and regulate gene expression during osteogenesis. Surprisingly, linear IDR motifs are dispensable; instead, the conformational dynamics of the IDR predict function. We develop an algorithm for rational IDR design based on biophysical principles, and use it to generate functional IDRs de novo . These findings extend generative protein design beyond the folded proteome.

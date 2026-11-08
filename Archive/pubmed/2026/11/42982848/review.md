@@ -1,0 +1,97 @@
+## Review setup
+- **Input scope** Full manuscript text (Abstract, Introduction, Results, Discussion, Methods) for a Nature Communications submission.
+- **Assessment boundary** Scientific soundness, technical rigor, clarity of claims, and alignment with the stated conclusions. No assessment of editorial fit or publication decision.
+- **Shared manuscript claim summary** The authors design a library of artificial FG-nucleoporins (NupY variants) with systematically varied FG-motif spacing (dFG) and charge-to-hydrophobicity ratio (C/H). Using QCM-D experiments, phase separation assays, and coarse-grained MD simulations, they find that dFG controls Kap95 absorption into FG-Nup phases, while C/H modulates FG-motif accessibility and binding kinetics. They propose that a balance between steric hindrance and enthalpic gain from multivalent Kap-FG interactions governs spatial and temporal partitioning of karyopherins in the NPC, with optimal transport selectivity near native FG-Nup properties.
+- **Visible evidence base** Abstract, Introduction, Results (Sections: Design of artificial FG-Nucleoporins; FG-spacing and C/H impact Kap95 selectivity; FG-spacing and charge to hydrophobicity ratio determine Kap95 and cargo uptake; Simulations show FG-Nup cohesivity controls network morphology; FG-repeat density and FG-Nup cohesivity govern distribution; Native GLFG-Nups provide optimal transport selectivity), Discussion, Methods (Design, QCM-D, phase separation, MD simulations, analysis).
+- **Missing materials affecting confidence** Figures and supplementary figures/tables are referenced but not provided. Specific numerical data (e.g., QCM-D frequency shifts, KD values, csat values, statistical outputs) are not available for independent verification. Supplementary Tables 1-12 and Supplementary Figures 1-27 are cited but not accessible in this review.
+
+## Reviewer
+- **Overall assessment** This manuscript presents a systematic and well-motivated bottom-up approach to dissect sequence determinants of FG-Nup function. The combination of designer proteins, experimental assays, and coarse-grained simulations is powerful and timely. The central claim that dFG and C/H differentially control Kap binding avidity and transport selectivity is plausible and supported by the qualitative trends described. However, the absence of quantitative data, figure inspection, and detailed statistical reporting in the provided material limits the ability to fully verify the strength of the evidence. The manuscript is potentially significant for the NPC transport field, but several technical and presentational issues need to be addressed.
+- **Who would be interested in the results, and why** Researchers studying nucleocytoplasmic transport, FG-Nup phase behavior, intrinsically disordered proteins, and biomimetic nanopore systems. The designer protein library and the proposed avidity framework will be of interest to those seeking to reconcile conflicting models of NPC selectivity and to engineers designing synthetic transport barriers.
+- **Major strengths**
+  1. Systematic and orthogonal variation of two key sequence parameters (dFG and C/H) within a single designer scaffold is a clear methodological advance.
+  2. The combination of experimental (QCM-D, phase separation) and computational (MD) approaches provides complementary perspectives on the same sequence-function relationships.
+  3. The proposed concept of spatially varying Kap avidity, integrating steric and enthalpic contributions, offers a potentially unifying framework for understanding NPC selectivity.
+  4. The design spans the physiological range of native yeast FG-Nups, strengthening the biological relevance of the conclusions.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence strength
+  - **Claim pointer** The claim that "dFG governs Kap95 absorption into the FG-Nup phase" and that "increasing C/H results in higher avidity for Kap95 due to increased accessibility of FG-motifs" is central to the paper.
+  - **Evidence pointer** Results sections "FG-spacing and C/H impact Kap95 selectivity and adsorption kinetics in FG-Nup brushes" and "FG-spacing and charge to hydrophobicity ratio determine Kap95 and cargo uptake into condensates"; Figures 2 and 3 (not provided).
+  - **Concern** The quantitative basis for these claims is not verifiable from the provided text. Key parameters such as Δfmax, t1/2, csat, and Kap95 intensities are described qualitatively ("severely reduced", "similar", "modest but statistically significant") without reporting actual values, error bars, or effect sizes in the text. The statistical analysis is described, but the results are not presented in the manuscript body.
+  - **Why it matters** The core conclusions rest on the magnitude and significance of these measured differences. Without the actual data, the reader cannot assess whether the effects are biologically or physically meaningful, or whether they are within experimental noise.
+  - **Resolution test** Provide the actual numerical values for Δfmax, t1/2, csat, and Kap95 intensities for all variants, with error bars and statistical significance levels, either in the main text or in clearly referenced supplementary tables. Show the raw data or representative traces for QCM-D and phase separation experiments.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that "MD simulations of transport through NupY-coated pores show a reduced barrier function for noncohesive variants and the highest transport selectivity for designs close to native GLFG-Nups."
+  - **Evidence pointer** Results sections "Simulations show that FG-Nup cohesivity controls the dynamic network morphology of NPC mimics" and "FG-repeat density and FG-Nup cohesivity govern the distribution of proteins in NupY-coated pores"; Figures 5, 6, and 7 (not provided).
+  - **Concern** The simulation methodology is described, but the validation of the coarse-grained model for this specific application is not discussed. The manuscript does not state how the model parameters were calibrated for FG-Nup/Kap interactions, nor how the transport simulations were validated against experimental data. The definition of "transport selectivity" as a ratio of mass fluxes is clear, but the statistical uncertainty of the simulation results (e.g., error bars on KD values, mass fluxes) is not reported in the text.
+  - **Why it matters** The simulation results are used to make mechanistic claims about transport selectivity. If the model is not properly validated or the results are not statistically robust, the conclusions drawn from the simulations are weakened.
+  - **Resolution test** Provide a validation of the coarse-grained model against experimental data (e.g., comparing simulated KD values with experimental measurements, or reproducing known FG-Nup behaviors). Report the statistical uncertainty of the simulation results (e.g., standard errors, confidence intervals) and state the number of independent simulations performed.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Reproducibility
+  - **Claim pointer** The claim that "the spacing between FG-motifs governs Kap95 absorption into the FG-Nup phase" and the general reproducibility of the experimental results.
+  - **Evidence pointer** Methods sections "Expression, purification, and labeling of Kap95 and cargoes" and "QCM-D experiments, materials, sample preparation, and data analysis"; Figure 2 (not provided).
+  - **Concern** The number of replicates for QCM-D experiments is stated in the figure legends (not provided), but the text mentions that some variants had limited replicate numbers. The manuscript does not report the variability between replicates for the key measurements (e.g., Δfmax, t1/2) in the text. The reproducibility of the phase separation assays is also not quantified.
+  - **Why it matters** Reproducibility is a cornerstone of experimental science. Without a clear statement of variability and the number of independent experiments, the reliability of the reported trends cannot be assessed.
+  - **Resolution test** Clearly state the number of independent replicates for each experiment and report the variability (e.g., standard deviation, standard error) for all key measurements. For experiments with limited replicates, acknowledge this limitation and discuss its potential impact on the conclusions.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, first sentence.
+  - **Issue** The phrase "~40-60 nm wide pores" is slightly ambiguous. It should be clarified whether this refers to the diameter or the width of the pore.
+  - **Required correction** Change to "~40-60 nm diameter pores" or "~40-60 nm wide channels" for clarity.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Methods, QCM-D analysis
+  - **Evidence pointer** Methods section "QCM-D experiments, materials, sample preparation, and data analysis".
+  - **Issue** The manuscript states that the Sauerbrey relation was used to estimate film thickness, but also acknowledges the limitations of this approach for hydrated films. The text should more clearly state that this is an apparent thickness and not a quantitative measure of the dry protein mass.
+  - **Required correction** Add a sentence explicitly stating that the Sauerbrey-derived thickness is an apparent value for a hydrated film and should not be interpreted as a precise measure of the dry protein layer thickness.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Results, Section "FG-spacing and C/H impact Kap95 selectivity and adsorption kinetics in FG-Nup brushes"
+  - **Evidence pointer** Results, paragraph 2.
+  - **Issue** The term "absorption" is used to describe Kap95 uptake into the FG-Nup phase. This could be confused with "adsorption" (surface binding). The authors should clarify whether they are measuring bulk absorption into the brush or surface adsorption.
+  - **Required correction** Define the term "absorption" in this context, or use a more specific term such as "partitioning" or "uptake" to avoid ambiguity.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Methods, Phase separation experiments
+  - **Evidence pointer** Methods section "Phase separation experiments".
+  - **Issue** The method for determining csat is described, but the error associated with this measurement is not reported. The number of replicates for the csat measurements is also not stated in the text.
+  - **Required correction** Report the number of replicates and the standard deviation or standard error for the csat measurements.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Discussion
+  - **Evidence pointer** Discussion, paragraph 2.
+  - **Issue** The statement "This may be an important contributing factor in redundancy and securing transport selectivity under a certain degree of structural variation" is vague. It should be clarified what "redundancy" refers to and how the proposed mechanism secures selectivity.
+  - **Required correction** Rephrase to be more specific, e.g., "This may contribute to the robustness of transport selectivity by ensuring that local variations in scaffold structure do not abolish the avidity gradient."
+- **Technical failings that need to be addressed before the case is established**
+  - R1-M1: Lack of quantitative data for key experimental results.
+  - R1-M2: Insufficient validation and statistical reporting for simulation results.
+  - R1-M3: Incomplete reporting of experimental replicates and variability.
+- **Assessment against Nature-style criteria**
+  - **Originality** High. The systematic design of a full-length artificial FG-Nup library with independent variation of dFG and C/H is a novel and valuable approach. The concept of spatially varying Kap avidity is a fresh perspective.
+  - **Scientific importance** High. The work addresses a long-standing question in the NPC field: how FG-Nup sequence encodes selective transport. The findings have implications for understanding NPC evolution and for designing synthetic nanopores.
+  - **Interdisciplinary readership** Moderate to high. The topic is of interest to cell biologists, biophysicists, and bioengineers. The combination of experiment and simulation broadens the appeal.
+  - **Technical soundness** Currently not fully established. The experimental and simulation approaches are appropriate, but the lack of quantitative data and validation details prevents a full assessment of technical rigor.
+  - **Readability for nonspecialists** Good. The manuscript is generally well-written and the concepts are explained clearly. The abstract and introduction are accessible. The results sections are more technical but remain understandable.
+- **Recommendation posture** Supportive if technical concerns are resolved. The central hypothesis is interesting and the approach is promising. However, the current evidence base, as presented, is insufficient to fully support the strong claims made. The authors must provide the quantitative data and validation details to substantiate their conclusions.
+
+## Risk / unsupported claims
+- The claim that "dFG strongly affects the amount of absorbed Kap95 and Kap95-bound cargo" is not quantitatively supported in the text.
+- The claim that "increases in C/H firmly reduce the barrier function" is not quantitatively supported.
+- The claim that "the highest transport selectivity for designs close to native GLFG-Nups" is based on simulation results that are not fully validated or statistically characterized.
+- The claim that "different classes of natively occurring FG-Nups play functionally distinct roles within the NPC" is a speculative extrapolation from the designer protein data and is not directly tested.
+- The claim that "a balance between steric hindrance and enthalpic gain from multivalent Kap-FG-Nup interactions drives the spatial and temporal partitioning of Kaps" is a plausible hypothesis but is not directly proven by the presented data.

@@ -1,0 +1,24 @@
+{
+  "source": "arxiv",
+  "id": "2611.06255v1",
+  "title": "Learning Noise Optimization for Reward Alignment in Few-Step Generative Models",
+  "authors": "Hongeun Kim; Jeongsol Kim; Jong Chul Ye",
+  "journal": "",
+  "published_date": "2026-11-04",
+  "window": {
+    "start": "2026-11-01",
+    "end": "2026-11-07"
+  },
+  "score": 7,
+  "one_liner_zh": "该文提出一种学习噪声优化的方法，用于少步生成模型中的奖励对齐，并在蛋白质结构生成任务上验证了其有效性，属于蛋白质结构生成与AI方法的结合，但核心方法并非专门针对蛋白质结构建模，故评分为7。",
+  "abstract": "Reward alignment for diffusion- and flow-based generative models is often formulated over stochastic trajectories, making it less suitable for few-step deterministic generators. Initial noise optimization provides a trajectory-free alternative, but existing gradient-free methods require costly per-sample search at inference. We introduce LeNO (Learning Noise Optimization), which amortizes reward-guided initial noise optimization into a learned residual transport while keeping the pretrained generator frozen. LeNO learns an anchor-conditioned distribution over noise corrections using Local GRPO and scalar rewards, eliminating iterative test-time optimization. For Gaussian initial noise with norm-preserving projection, we derive a tractable upper bound on the KL divergence between the corrected noise distribution and the original prior, providing a principled regularization objective. We evaluate LeNO on few-step text-to-image and protein structure generation, including expensive black-box designability rewards. Across both domains, LeNO improves target rewards with a single noise correction at inference while largely preserving generation quality and diversity.",
+  "abstract_zh": "扩散与流式生成模型的奖励对齐通常是在随机轨迹上制定的，这使得其不太适用于少步确定性生成器。初始噪声优化提供了一种无需轨迹的替代方案，但现有的无梯度方法在推理时需要昂贵的逐样本搜索。我们引入了LeNO（学习噪声优化），它将奖励引导的初始噪声优化摊销为学习到的残差传输，同时保持预训练生成器冻结。LeNO使用局部GRPO和标量奖励学习一个锚定条件下的噪声修正分布，消除了迭代式测试时优化。对于具有范数保持投影的高斯初始噪声，我们推导了修正噪声分布与原始先验之间KL散度的可处理上界，提供了一个有原则的正则化目标。我们在少步文本到图像和蛋白质结构生成上评估了LeNO，包括昂贵的黑盒可设计性奖励。在这两个领域中，LeNO在推理时通过单次噪声修正改善了目标奖励，同时基本保持了生成质量和多样性。",
+  "has_fulltext": true,
+  "fulltext_source": "ar5iv",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://arxiv.org/abs/2611.06255v1",
+  "source_url": "https://arxiv.org/abs/2611.06255v1",
+  "paper_page_path": "papers/arxiv/2611.06255v1/index.html"
+}

@@ -1,0 +1,95 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, results, discussion, materials and methods) as provided.
+- **Assessment boundary** Scientific soundness, methodological rigor, validity of claims relative to evidence presented, and clarity of the central thesis. No assessment of formatting, grammar, or editorial fit.
+- **Shared manuscript claim summary** The authors propose a computational framework, based on ProteinMPNN inverse-folding probabilities and MSA conservation, to identify the most dispensable canonical amino acid in a proteome. They report that glutamine has the lowest "keep-score" in *E. coli* and *S. cerevisiae*, that proteome-wide in silico replacement of all glutamines with ProteinMPNN-optimal alternatives yields AlphaFold2 models with native-like structures, and that a designed glutamine-free TEM-1 β-lactamase retains function in *E. coli*. They conclude that glutamine is the best candidate for amino acid alphabet reduction, while explicitly limiting claims to structural replaceability, not biological dispensability.
+- **Visible evidence base** Abstract, full introduction, full results section, full discussion, and detailed materials and methods. Figures are referenced but not provided. Supplementary figures are referenced but not provided.
+- **Missing materials affecting confidence** All figures and supplementary figures/tables are absent. This is a major limitation, as the central quantitative claims (keep-score distributions, TMscore comparisons, correlation plots, zymography results) are presented only as textual summaries. Statistical details (exact sample sizes for some analyses, effect sizes, confidence intervals) are partially reported in text but cannot be verified without figures. The TEM1-Q experimental section lacks raw data (growth curves, images, replicates).
+
+## Reviewer
+- **Overall assessment** This manuscript presents a novel and thought-provoking computational framework for ranking amino acid dispensability at proteome scale, with the counterintuitive finding that glutamine, not isoleucine, is the most replaceable residue. The convergence of two independent methods (structure-based and evolution-based) on the same candidate is compelling. The proteome-wide recoding experiment, with multiple orthogonal validation approaches, is technically ambitious. However, the absence of all figures and supplementary data prevents full verification of the quantitative claims. The single experimental validation (TEM1-Q) is a useful consistency check but is underpowered and does not address the proteome-wide claim. The discussion of limitations is commendable, particularly the acknowledgment of kinetic versus thermodynamic considerations. The central thesis is clearly stated and appropriately scoped.
+- **Who would be interested in the results, and why** Synthetic biologists working on genetic code expansion and recoding, protein engineers interested in reduced-alphabet design, evolutionary biologists studying amino acid repertoire constraints, and computational biologists developing proteome-scale design pipelines. The keep-score framework could become a standard tool for alphabet reduction projects.
+- **Major strengths** 1) The central question is well-posed and of broad significance. 2) The convergence of two independent methods on glutamine is a strong argument against algorithmic artifact. 3) The proteome-scale recoding with multiple validation approaches (AF2, ESMFold, Rosetta, BioEMU) is methodologically thorough. 4) The cross-validation with *S. cerevisiae* and natural glutamine-free orthologs strengthens generality. 5) The explicit scoping of claims to structural replaceability is scientifically honest. 6) The comparison with isoleucine, including the demonstration that the framework discriminates, addresses circularity concerns directly.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence completeness
+  - **Claim pointer** The manuscript claims that "85.5% of models exceeded a TMscore of 0.8, indistinguishable from the 85.9% baseline for rebuilt native sequences" and that "no evidence of systematic misfolding attributable to glutamine removal" was found.
+  - **Evidence pointer** Figures 4, 5, 6, S6, S8, S9, S11 (referenced but not provided)
+  - **Concern** All quantitative results are presented as text summaries without the corresponding figures. The reader cannot assess the distributions, scatter plots, or structural overlays that support the central claims. The TMscore comparison between No-Gln and rebuilt native models is the core result, and its presentation as a single percentage pair is insufficient. The claim of "no evidence of systematic misfolding" requires visual inspection of the model quality distributions, which is impossible without Figure 4 and its supplementary counterparts.
+  - **Why it matters** The central conclusion rests entirely on these quantitative comparisons. Without the figures, the claims are unverifiable. The distinction between "indistinguishable" and "slightly worse but within noise" is critical and cannot be assessed from text alone.
+  - **Resolution test** Provide all figures with full axis labels, sample sizes, and statistical annotations. For the TMscore distributions, show the full distributions, not just the percentage above threshold. For the BioEMU analysis, show representative examples of the two flagged proteins and the distribution of P-values.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Experimental validation
+  - **Claim pointer** The manuscript claims that "a glutamine-free TEM-1 β-lactamase designed with ProteinMPNN conferred ampicillin resistance in *E. coli*, indicating fold preservation can extend to biological function."
+  - **Evidence pointer** "Ampicillin-resistance assay" and "β-lactamase zymography with nitrocellulose" sections; Figure S12 (referenced but not provided)
+  - **Concern** The experimental validation is a single construct with eight simultaneous substitutions. The assay is binary (growth vs. no growth at 400 and 800 µg/mL) and provides no quantitative comparison of activity between native and variant. The zymography is described as showing "comparable intensity" but no quantification, replicates, or statistical analysis are reported. The statement "neither grew at 800 µg/mL" suggests the variant may have reduced resistance, which is not discussed. The lack of any negative control (e.g., a known misfolding variant) weakens the interpretation.
+  - **Why it matters** This is the only experimental evidence that the computational predictions translate to biological function. A single binary assay with no replicates or quantification is insufficient to support the claim that fold preservation "can extend to biological function." The result is presented as a "consistency check," which is appropriate, but the claim as stated is stronger than the evidence supports.
+  - **Resolution test** Provide quantitative activity data (e.g., minimum inhibitory concentration, kinetic parameters from purified enzyme), replicate experiments, and statistical analysis. Include a negative control. If the variant shows reduced activity, discuss this explicitly.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Methodological circularity
+  - **Claim pointer** The manuscript claims that "the framework discriminates among amino acids rather than tolerating any substitution uniformly" based on the comparison of glutamine, isoleucine, and glycine removal.
+  - **Evidence pointer** Figure 8 (referenced but not provided); "Keep-score discriminates" subsection
+  - **Concern** The discrimination test compares glutamine (low keep-score) with isoleucine (higher keep-score) and glycine (highest keep-score). While the ordering matches predictions, the magnitude of the differences is not reported. The claim that the framework "discriminates" requires showing that the differences in structural impact are not only statistically significant but also practically meaningful. The text reports P-values but no effect sizes. The comparison is also limited to three amino acids; a more convincing demonstration would include a range of keep-scores.
+  - **Why it matters** The discrimination test is the primary defense against the circularity concern that the design and evaluation tools share biases. If the differences are statistically significant but trivially small, the argument is weakened.
+  - **Resolution test** Report effect sizes (e.g., Cohen's d, median differences in TMscore) for the pairwise comparisons. Consider including additional amino acids spanning the keep-score range.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Generalizability
+  - **Claim pointer** The manuscript claims that "the ranking reflects general features of protein architecture rather than a peculiarity of *E. coli*" based on the *S. cerevisiae* correlation.
+  - **Evidence pointer** Figure 9 (referenced but not provided); "Keep-score discriminates" subsection
+  - **Concern** The *S. cerevisiae* analysis is limited to keep-score correlation. It does not include the structural validation (AF2 modeling, TMscore comparison) that was performed for *E. coli*. The claim of generalizability would be stronger if the full pipeline were applied to at least one additional organism. The correlation coefficient is reported (Spearman ρ), but the text does not state whether this is significant or what the confidence interval is.
+  - **Why it matters** The claim of generalizability is central to the framework's utility. A correlation of keep-scores alone, without structural validation, is suggestive but not conclusive.
+  - **Resolution test** Apply the full pipeline (recoding, AF2 modeling, TMscore comparison) to at least one additional organism. Report confidence intervals for the correlation.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Definition of keep-score
+  - **Evidence pointer** "Keep-propensity and keep-score" section
+  - **Issue** The definition of keep-score as "the fraction of positions where the native residue scores higher than the best alternative" is clear, but the relationship between keep-score and keep-propensity could be stated more explicitly. Specifically, it would help to state that keep-score is the integral of the positive part of the keep-propensity distribution, as this is mentioned but not formalized.
+  - **Required correction** Add a sentence explicitly stating the mathematical relationship, e.g., "Keep-score is the fraction of positions with positive keep-propensity, equivalently the area under the positive region of the keep-propensity distribution."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Correlation analyses
+  - **Evidence pointer** "Keep-score discriminates" subsection; Figure 9
+  - **Issue** The text reports Spearman ρ values for several correlations but does not consistently report P-values or confidence intervals. For the *E. coli*–*S. cerevisiae* comparison, the text states "correlate strongly" without a specific value.
+  - **Required correction** Report ρ, P-value, and 95% confidence interval for all correlation analyses.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Methodological detail
+  - **Affected element** MSA decimation procedure
+  - **Evidence pointer** "Conservation multiple sequence alignments" section
+  - **Issue** The decimation procedure (dropping every second entry of the quality-sorted .m8 file) is described as deterministic, but the rationale for this specific approach is not given. It is unclear why this particular decimation strategy was chosen over random subsampling or other approaches.
+  - **Required correction** Provide a brief justification for the decimation strategy, or state that it was chosen for computational efficiency.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Discussion of glutamine's biological role
+  - **Evidence pointer** Discussion section
+  - **Issue** The discussion of why glutamine is dispensable focuses on structural replaceability but does not address the metabolic and regulatory roles of glutamine beyond protein structure. The authors acknowledge this in the abstract ("not a demonstration of biological dispensability") but the discussion could be strengthened by a more explicit treatment of what biological dispensability would require.
+  - **Required correction** Add a paragraph explicitly outlining what additional evidence would be needed to establish biological dispensability (e.g., fitness measurements, metabolic flux analysis, conditional knockouts).
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Software versions and parameters
+  - **Evidence pointer** "In-house scripts" section
+  - **Issue** The manuscript lists software versions for Python packages but does not provide a complete environment specification (e.g., operating system, hardware, runtime). The AlphaFold2 and ESMFold runs are described as using "default parameters" but the specific ColabFold version is not stated.
+  - **Required correction** Provide a complete software environment specification, including ColabFold version, in the methods or as a supplementary file.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (missing figures) and R1-M2 (insufficient experimental validation) are blocking. The central quantitative claims cannot be verified without the figures, and the single experimental data point is too weak to support the claim that fold preservation extends to function.
+- **Assessment against Nature-style criteria** **Originality**: High. The keep-score framework is a novel contribution, and the finding that glutamine is more dispensable than isoleucine is counterintuitive and significant. **Scientific importance**: High if validated. The framework could guide future alphabet reduction efforts and has implications for understanding protein architecture. **Interdisciplinary readership**: Moderate to high. The work bridges computational biology, protein engineering, and evolutionary biology. The writing is accessible to nonspecialists, though some familiarity with inverse-folding models is assumed. **Technical soundness**: The computational pipeline is well-designed with appropriate controls (e.g., cross-method validation, discrimination test). However, the absence of figures prevents full assessment, and the experimental validation is underpowered. **Readability for nonspecialists**: The abstract and introduction are clear and well-motivated. The results section is dense but logically organized. The discussion of limitations is exemplary.
+- **Recommendation posture** Supportive if technical concerns are resolved. The central thesis is novel and potentially important, and the computational framework is well-conceived. However, the manuscript cannot be accepted in its current form because the figures are missing and the experimental validation is insufficient. The authors should provide all figures, strengthen the experimental section with quantitative data and replicates, and consider applying the full pipeline to at least one additional organism to support the generalizability claim.
+
+## Risk / unsupported claims
+- The claim that "85.5% of models exceeded a TMscore of 0.8, indistinguishable from the 85.9% baseline" is unverifiable without Figure 4 and its underlying data.
+- The claim that "no evidence of systematic misfolding attributable to glutamine removal" is unverifiable without Figures 5 and 6.
+- The claim that "a glutamine-free TEM-1 β-lactamase... conferred ampicillin resistance" is supported only by a binary growth assay with no replicates or quantification; the claim that this indicates "fold preservation can extend to biological function" is stronger than the evidence supports.
+- The claim that the keep-score ranking "reflects general features of protein architecture" is based on a single cross-species correlation without structural validation in *S. cerevisiae*.
+- The claim that "at least 24% of *E. coli* proteins have natural orthologs that lack glutamine" is presented without confidence intervals or discussion of potential ortholog misidentification.
+- The claim that "ProteinMPNN can remove every glutamine from a bacterial proteome matching the same structural accuracy of native sequences" is a computational prediction that has not been experimentally validated at the proteome scale.

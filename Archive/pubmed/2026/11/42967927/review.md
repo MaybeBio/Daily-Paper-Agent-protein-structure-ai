@@ -1,0 +1,92 @@
+## Review setup
+- **Input scope** Full manuscript text including abstract, introduction, results, discussion, methods, and supplementary figure/table references
+- **Assessment boundary** Scientific content, technical soundness, data interpretation, and claims as presented in the provided manuscript text
+- **Shared manuscript claim summary** The authors report cryo-EM structures of human NCBE (SLC4A10) in NaHCO₃-, NaCl-, KHCO₃-, and DIDS-bound states, identify conserved Na⁺, Cl⁻, and HCO₃⁻ binding sites plus an unexpected K⁺ site, demonstrate functional relevance via pHi recovery assays and MD simulations, and propose an elevator-like transport mechanism based on comparison with an AlphaFold3-predicted inward-facing model
+- **Visible evidence base** Results text, figure legends (Figs 1-5), methods descriptions, supplementary figure/table references
+- **Missing materials affecting confidence** Actual figures and supplementary figures/tables not provided; exact numerical data, statistical outputs, and MD simulation parameters only partially described; AlphaFold3 model validation details limited
+
+## Reviewer
+- **Overall assessment** This manuscript presents a structurally and functionally informative study of human NCBE, a transporter of considerable physiological and clinical relevance. The cryo-EM structures at reported resolutions (2.45-2.62 Å) appear to be of high quality based on the methodological descriptions, and the identification of a K⁺ site is an interesting and potentially significant finding. However, several concerns limit the strength of the conclusions as currently presented. The functional assays are described in limited detail, the stoichiometry question is explicitly acknowledged as unresolved, and the reliance on an AlphaFold3-predicted model for the inward-facing state weakens the mechanistic claims. The DIDS inhibition mechanism is well supported by the structural data. Overall, the work is potentially suitable for publication in a high-impact journal, but the mechanistic conclusions require tempering and additional experimental support.
+- **Who would be interested in the results, and why** Structural biologists studying secondary active transporters, particularly the SLC4 family; neuroscientists interested in CSF physiology and pH regulation in the brain; pharmacologists interested in transporter inhibition mechanisms; and clinicians studying neurodevelopmental disorders linked to SLC4A10 mutations.
+- **Major strengths** 1) High-resolution cryo-EM structures of human NCBE in multiple states, filling a gap in SLC4A10 structural knowledge. 2) Identification of a conserved substrate-binding pocket accommodating Na⁺, Cl⁻, and HCO₃⁻ with direct structural evidence. 3) Discovery of a K⁺ binding site suggesting relaxed cation selectivity, which is novel and functionally intriguing. 4) Clear demonstration of a non-covalent DIDS inhibition mechanism distinct from covalent binding in AE1-3. 5) Integration of structural, functional, and computational approaches.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Functional validation
+  - **Claim pointer** The authors claim that functional assays support the structural findings, including the coordination of ions and inhibitory effects of DIDS.
+  - **Evidence pointer** Results section "NCBE in the choroid plexus mediates HCO₃⁻-dependent pH recovery", Fig 1d-e, Fig 2e-f, Fig 2k, Fig 3e-f, Fig 5a-b; Methods sections on pHi assays
+  - **Concern** The functional assay descriptions are insufficiently detailed to assess their validity. The pHi recovery assay is described only briefly, and critical parameters such as transfection efficiency normalization, expression level comparison between WT and mutants, membrane localization verification, and the exact composition of assay buffers are not provided. For the mutant studies (D831, T835, T878), it is unclear whether reduced pHi recovery reflects impaired transport activity or reduced protein expression/trafficking. The K⁺-dependent assay (Fig 3e-f) lacks a clear description of how K⁺ was substituted and whether the observed alkalinization could be attributed to residual Na⁺ contamination.
+  - **Why it matters** The functional data are central to the claim that the structurally observed ion coordination is functionally relevant. Without rigorous functional validation, the structural assignments remain correlative. The mutant experiments are particularly important because they are used to establish the functional importance of specific residues, but the lack of expression controls undermines this conclusion.
+  - **Resolution test** Provide detailed methods for all functional assays, including expression level verification (e.g., western blot quantification), surface biotinylation or immunostaining to confirm membrane localization, and dose-response curves for DIDS inhibition. For mutant studies, show that expression levels are comparable to WT or normalize the data accordingly. For K⁺ experiments, demonstrate that Na⁺-free conditions are rigorously maintained and include appropriate controls.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic claim
+  - **Claim pointer** The authors claim that comparison with an AlphaFold3-predicted inward-facing model supports an elevator-like transport mechanism and delineates conformational transitions.
+  - **Evidence pointer** Results section "Elevator-like conformational transition of NCBE", Fig 4; Methods section on MD simulations
+  - **Concern** The inward-facing state is entirely based on an AlphaFold3 prediction, not an experimentally determined structure. While AF3 predictions can be useful, they are not a substitute for experimental validation, particularly for a dynamic membrane transporter that undergoes large conformational changes. The claim of an "elevator-like mechanism" rests on the comparison between experimentally determined OF states and a computationally predicted IF state. The manuscript does not provide sufficient validation of the AF3 model, such as comparison with known SLC4 structures in IF conformations, assessment of model confidence metrics, or experimental validation of the predicted IF state.
+  - **Why it matters** The transport mechanism is a central claim of the manuscript. If the IF model is inaccurate, the proposed elevator mechanism and the quantitative descriptions of domain movements (10 Å displacement, 10° rotation) could be misleading. The distinction between elevator, rocker-switch, and other mechanisms has important implications for understanding SLC4 transporter function and for drug design.
+  - **Resolution test** Provide additional validation of the AF3 model, such as comparison with experimentally determined IF structures of homologous SLC4 transporters (e.g., NBCe1 or AE1 in IF states), analysis of AF3 confidence metrics (pLDDT, PAE), and/or experimental evidence supporting the IF conformation (e.g., cysteine crosslinking, DEER spectroscopy, or single-molecule FRET). Alternatively, temper the mechanistic claims and present the elevator model as a hypothesis requiring further validation.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Stoichiometry and transport model
+  - **Claim pointer** The authors state that the observed ion-binding pocket can accommodate one cation and one anion, but acknowledge that the overall transport stoichiometry of NCBE is not established by their structures.
+  - **Evidence pointer** Discussion section, last paragraph; Results sections on ion binding
+  - **Concern** The manuscript does not resolve the long-standing question of NCBE stoichiometry (e.g., 1 Na⁺:1 HCO₃⁻:1 Cl⁻ vs. 2 Na⁺:1 HCO₃⁻:1 Cl⁻). The authors acknowledge this limitation, which is appropriate, but the structural data could potentially be used more rigorously to discuss this issue. For example, the presence of only one cation site in the resolved structures, combined with the K⁺ site, raises questions about how the 2:1 or 1:2 stoichiometries proposed in the literature could be achieved. The discussion of this point is brief and does not fully engage with the existing physiological literature on NCBE stoichiometry.
+  - **Why it matters** The stoichiometry is fundamental to understanding NCBE's physiological role in CSF secretion and pH regulation. If the transporter operates with a different stoichiometry than proposed, the bioenergetics and directionality of transport would differ, with implications for understanding how NCBE contributes to ion homeostasis in the choroid plexus.
+  - **Resolution test** Provide a more detailed discussion of how the structural data inform or constrain possible stoichiometric models. If possible, perform additional experiments (e.g., electrophysiology, flux assays with varying ion concentrations) to address stoichiometry directly. Alternatively, clearly state the limitations of the structural approach for determining stoichiometry and outline specific experiments needed to resolve this question.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** K⁺ site functional relevance
+  - **Claim pointer** The authors claim that the K⁺ site indicates relaxed ion selectivity and that K⁺ can support HCO₃⁻ transport.
+  - **Evidence pointer** Results section "K⁺ binding at the canonical Na⁺ site reveals relaxed ion selectivity", Fig 3; Methods section on K⁺-dependent HCO₃⁻ transport assay
+  - **Concern** While the structural identification of a K⁺ site is interesting, the functional data supporting K⁺-dependent transport are limited. The pHi recovery assay in K⁺-containing buffer shows alkalinization, but the magnitude relative to Na⁺-dependent transport is not clearly quantified. The physiological relevance of K⁺-driven transport is unclear, as extracellular K⁺ concentrations are typically low (3-5 mM) compared to Na⁺ (140 mM). The manuscript does not address whether K⁺-driven transport would be significant under physiological conditions.
+  - **Why it matters** The K⁺ site is presented as a novel finding, but its physiological significance is uncertain. If K⁺-driven transport is negligible under physiological conditions, the finding may be of limited relevance. Conversely, if K⁺ can substitute for Na⁺ under certain conditions (e.g., during ischemia when extracellular K⁺ rises), this could have pathophysiological implications.
+  - **Resolution test** Quantify the relative efficiency of K⁺ vs. Na⁺-dependent transport. Test whether K⁺-driven transport occurs at physiologically relevant K⁺ concentrations. Discuss the potential physiological or pathophysiological contexts in which K⁺-driven transport could be significant. Consider whether the K⁺ site represents a regulatory site rather than a transport site.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Data presentation
+  - **Affected element** Fig 1a-b
+  - **Evidence pointer** Results section "NCBE in the choroid plexus mediates HCO₃⁻-dependent pH recovery"
+  - **Issue** The t-SNE plots in Fig 1a-b are described but the specific cell types and expression patterns are not clearly explained in the text. The reader cannot assess the quality of the single-cell data or the specificity of SLC4A10 expression in choroid plexus epithelial cells versus other cell types.
+  - **Required correction** Provide a more detailed description of the single-cell RNA-seq analysis, including the number of cells analyzed, the clustering approach, and the statistical significance of SLC4A10 enrichment in choroid plexus epithelial cells.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Fig 1e, Fig 2f, Fig 3f, Fig 5b
+  - **Evidence pointer** Results sections on functional assays; Methods section on statistical information
+  - **Issue** The statistical analysis is described as using two-sided unpaired t-tests, but the number of independent experiments, the exact p-values, and the effect sizes are not consistently reported in the text. The figure legends mention n values for some experiments but not all.
+  - **Required correction** Ensure that all figure legends include the number of independent biological replicates, the exact p-values, and the statistical test used. Consider whether multiple comparison corrections are needed for the mutant studies.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Structural validation
+  - **Affected element** Fig 2b, Fig 2h, Fig 3b
+  - **Evidence pointer** Results sections on ion binding; Methods section on cryo-EM
+  - **Issue** The assignment of ions (Na⁺, Cl⁻, HCO₃⁻, K⁺) in the cryo-EM maps relies on density shape and coordination geometry. However, at the reported resolutions (2.45-2.62 Å), distinguishing between ions of similar electron density (e.g., Na⁺ vs. K⁺, Cl⁻ vs. HCO₃⁻) can be challenging. The manuscript does not describe anomalous scattering experiments or other validation approaches to confirm ion identities.
+  - **Required correction** Describe the criteria used for ion assignment, including any anomalous scattering data, ion coordination geometry analysis, or comparison with ion-binding sites in homologous structures. If such validation was not performed, acknowledge this limitation.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** DIDS binding mode
+  - **Affected element** Fig 5c-j
+  - **Evidence pointer** Results section "DIDS occludes the extracellular vestibule and stabilises the outward-facing state"
+  - **Issue** The manuscript states that DIDS binds non-covalently in NCBE, in contrast to covalent binding in AE1-3. However, the functional assay for DIDS inhibition (Fig 5a-b) uses a single concentration (300 μM) and does not provide a dose-response curve or IC50 value. The structural and functional data are not quantitatively linked.
+  - **Required correction** Provide a dose-response curve for DIDS inhibition and, if possible, correlate the IC50 with the structural binding mode. Discuss the implications of non-covalent versus covalent DIDS binding for inhibitor design.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Model validation
+  - **Affected element** Fig 4, Supplementary Fig 12
+  - **Evidence pointer** Results section "Elevator-like conformational transition of NCBE"; Methods section on MD simulations
+  - **Issue** The MD simulations are described as supporting the stability of the AF3-predicted IF model, but the simulation details are limited. The manuscript does not report the root-mean-square deviation (RMSD) of the protein backbone, the convergence of the simulations, or the free energy landscape of the conformational transition.
+  - **Required correction** Provide additional MD simulation analysis, including RMSD and root-mean-square fluctuation (RMSF) plots, assessment of simulation convergence, and if possible, free energy calculations or enhanced sampling simulations to support the proposed conformational transition pathway.
+
+## Risk / unsupported claims
+- The claim of an "elevator-like transport mechanism" is based on comparison with an AlphaFold3-predicted model rather than an experimentally determined IF structure, and is therefore not fully supported by the data presented
+- The functional significance of the K⁺ site is not quantitatively established, and its physiological relevance is unclear
+- The claim that DIDS inhibition is "subfamily-selective" is based on comparison with AE1-3 but does not include data on other SLC4 family members or closely related transporters
+- The statement that "different substrates stabilise outward-facing conformations without altering the fundamental transport trajectory" is based on comparison of only three OF structures and may be premature
+- The manuscript does not establish the transport stoichiometry of NCBE, and the structural data are insufficient to distinguish between competing models
+- The claim that NCBE mutations cause neurodevelopmental disorders is based on prior literature, not on new data presented in this manuscript, and the connection between the structural findings and disease mechanisms is not directly tested

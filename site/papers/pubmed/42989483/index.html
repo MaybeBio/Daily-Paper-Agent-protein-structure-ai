@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comprehensive assessment of disordered linker predictions using data from the third critical assessment of protein intrinsic disorder. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Comprehensive assessment of disordered linker predictions using data from the third critical assessment of protein intrinsic disorder.</h1>
+      <div class="meta">Zhao, Bi; Yu, Jing; Kurgan, Lukasz</div>
+      <div class="meta muted">
+        
+        <span class="journal">Protein science : a publication of the Protein Society</span>
+        · 2026-11-06
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42989483/">原文</a>
+      </div>
+      <p class="one-liner">该文基于CAID3数据系统评估九种无序柔性连接子（DFL）预测器，聚焦蛋白质内在无序区域的结构预测问题，虽为方法评估而非新方法开发，但涉及深度学习与蛋白语言模型，对蛋白质结构计算研究有参考价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Disordered flexible linkers (DFLs) are an abundant type of intrinsically disordered regions that contribute to many cellular functions by facilitating movement between adjacent functional domains. Several new sequence-based predictors of DFL regions have been published in recent years, prompting the need to evaluate their predictive performance comparatively. We used the recently released data from the third Critical Assessment of protein Intrinsic Disorder prediction (CAID3) to comprehensively evaluate nine DFL predictors, including seven methods that participated in CAID3 and two additional, recently published DFL predictors. We expanded the CAID3 evaluation by examining predictions on a larger dataset and, arguably, more practical test scenarios that assess predictions at the residue, region, and protein levels. We also evaluated on a subset of CAID3 proteins that share less than 30% sequence similarity with the training sets of the included DFL predictors, yielding more robust estimates of predictive performance. We showed that several DFL predictors accurately identify DFL residues among other types of disordered residues. We also found that different methods perform better in different scenarios, with several methods producing very accurate predictions of DFL residues and a few performing well when predicting proteins with DFLs. While our results suggest that progress has been made in recent years, driven by the use of deep learning and protein language models, we also identified a major weakness in current tools, as they are unable to reproduce the correct sizes and numbers of DFL regions. We also suggested several ways to develop new DFL predictors that would address this issue.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">无序柔性连接子（DFLs）是一类丰富的内在无序区域，通过促进相邻功能域之间的运动，参与多种细胞功能。近年来，已发表了几种基于序列的DFL区域预测器，因此有必要对其预测性能进行比较评估。我们利用第三次蛋白质内在无序预测关键评估（CAID3）最近发布的数据，全面评估了九种DFL预测器，包括七种参与CAID3的方法以及两种额外、近期发表的DFL预测器。我们扩展了CAID3的评估，在更大的数据集上检查预测，并采用了更具实际意义的测试场景，在残基、区域和蛋白质水平上评估预测。我们还对CAID3蛋白质的一个子集进行了评估，这些蛋白质与所包含的DFL预测器的训练集共享的序列相似性低于30%，从而获得了更稳健的预测性能估计。我们表明，几种DFL预测器能准确识别其他类型无序残基中的DFL残基。我们还发现，不同方法在不同场景下表现更优，其中几种方法对DFL残基的预测非常准确，少数方法在预测含有DFL的蛋白质时表现良好。尽管我们的结果表明，近年来在深度学习和蛋白质语言模型的使用推动下取得了进展，但我们也识别出当前工具的一个主要弱点，即它们无法重现DFL区域的正确大小和数量。我们还提出了几种开发新DFL预测器的方法，以解决这一问题。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Comprehensive assessment of disordered linker predictions using data from the third critical assessment of protein intrinsic disorder</li>
+<li><strong>作者与单位</strong>: Zhao, Bi; Yu, Jing; Kurgan, Lukasz（单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>: Protein Science (a publication of the Protein Society)</li>
+<li><strong>年份</strong>: 2026（在线日期 2026-11-06）</li>
+<li><strong>论文类型</strong>: 基准评估/方法比较研究</li>
+<li><strong>领域</strong>: 蛋白质固有 disordered 区域预测，具体为 disordered flexible linkers (DFLs) 的序列级预测</li>
+<li><strong>关键词</strong>: disordered flexible linkers, intrinsically disordered regions, CAID3, predictor assessment, deep learning, protein language models</li>
+<li><strong>DOI/arXiv 号</strong>: 10.1002/pro.70840</li>
+<li><strong>代码</strong>: 未提供</li>
+<li><strong>数据</strong>: 基于 CAID3 数据（第三方评估数据），未提供自定义数据集</li>
+<li><strong>阅读日期</strong>: 2026-05-12（按当前日期推算）</li>
+<li><strong>该文在课题方向中的位置</strong>: 本文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>预测器基准评估</strong>类别，聚焦 intrinsically disordered regions (IDRs) 中的 DFL 亚型预测。与结构预测（如 AlphaFold）不同，本文评估的是序列-based disorder/linker 预测器，但其评估方法论（去冗余、多层级指标、场景化测试）可迁移至结构预测或构象采样方法的评估。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文利用 CAID3 数据系统评估 9 个 DFL 预测器（7 个 CAID3 参与者 + 2 个新方法），发现多个方法能准确区分 DFL 残基与其他 disordered 残基，但所有方法在预测 DFL 区域的正确大小和数量上存在显著缺陷。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 当前序列-based DFL 预测器在独立基准（CAID3）上的预测性能如何？不同方法在不同测试场景（残基、区域、蛋白质水平）下的优劣如何？</li>
+<li><strong>为什么重要</strong>: DFLs 是 IDRs 中丰富的亚型，通过连接功能域促进构象变化，与蛋白质功能密切相关。准确预测 DFL 对功能注释、结构域组装理解及蛋白质设计（如 linker 工程）有直接价值。</li>
+<li><strong>现有方法为何不足</strong>: 此前缺乏基于最新 CAID3 数据的系统比较；已有评估多局限于残基水平，未覆盖区域和蛋白质水平；且未控制训练集与测试集的序列相似性，导致性能估计偏乐观。</li>
+<li><strong>精确研究问题</strong>: Can current sequence-based DFL predictors accurately identify DFL residues, regions, and proteins on independent, redundancy-reduced benchmark data?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：此脉络为「经外部核验」——基于 CAID 系列评估历史及 IDR 预测领域公认发展，结合本文引言内容）</em>
+- <strong>阶段 1: 早期 disorder 预测（2000s）</strong> — 代表方法如 IUPred、DISOPRED 早期版本。优点：开创序列-based disorder 预测。局限：不区分 disorder 亚型，DFL 未被单独建模。
+- <strong>阶段 2: 亚型预测兴起（2010s）</strong> — 代表方法如 flDPnn、DFLpred。优点：开始区分 DFL 与其他 disorder 类型。局限：训练数据有限，特征工程依赖手工设计。
+- <strong>阶段 3: 深度学习和蛋白语言模型（2020s）</strong> — 代表方法如基于 ESM、ProtTrans 的预测器。优点：利用预训练表示提升泛化。局限：区域级（region-level）预测精度不足，尤其区域大小和数量估计。
+- <strong>本文位置</strong>: 首次基于 CAID3 数据对 DFL 预测器进行多层级、去冗余的系统评估，明确指出现有方法在区域几何属性（大小、数量）上的系统性缺陷，并提出改进方向。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练集与测试集序列相似性未控制</td>
+<td>性能估计偏乐观，实际泛化能力未知</td>
+<td>多数预测器训练集与 CAID3 测试集存在序列重叠</td>
+<td>作者在 Methods 中描述对 &lt;30% 序列相似性子集的重评估</td>
+</tr>
+<tr>
+<td>评估局限于残基水平</td>
+<td>无法反映区域级和蛋白质级实际应用需求</td>
+<td>传统评估以残基 AUC 为主，忽略区域完整性</td>
+<td>作者扩展了 region 和 protein 水平评估</td>
+</tr>
+<tr>
+<td>DFL 区域大小和数量预测不准</td>
+<td>预测的 DFL 区域过长或过短，数量偏差</td>
+<td>模型优化目标为残基级损失，未显式建模区域边界</td>
+<td>Results 中报告区域级指标（如 region overlap）显著低于残基级</td>
+</tr>
+<tr>
+<td>不同方法在不同场景下表现不一致</td>
+<td>无单一方法在所有场景最优</td>
+<td>方法设计侧重不同（如残基精度 vs 蛋白质分类）</td>
+<td>Results 中展示各方法在不同场景下的排名变化</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>: 收集 9 个 DFL 预测器，在 CAID3 数据上按残基、区域、蛋白质三个层级计算多种指标（如 AUC、F1、region overlap、protein-level classification accuracy），并在 &lt;30% 序列相似性子集上重复评估。</li>
+<li><strong>核心洞察</strong>: DFL 预测的瓶颈不在残基级判别（多个方法已能较好区分 DFL 与其他 disorder），而在区域级几何属性（大小、数量）的还原——这暗示现有模型缺乏对 DFL 区域边界和长度的显式建模能力。</li>
+<li><strong>可能的普适教训</strong> [Analysis]: 对任何序列-based 结构/功能预测器，残基级指标可能掩盖区域级系统性缺陷；评估应包含多层级指标，并控制训练-测试序列相似性，否则性能估计不可靠。此教训可迁移至 disorder-to-structure 预测、linker 设计等任务。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: 蛋白质序列（CAID3 测试集）</li>
+<li><strong>输出</strong>: 每个残基的 DFL/非 DFL 预测标签；区域级 DFL 片段；蛋白质级 DFL 存在性</li>
+<li><strong>模块</strong>:
+  1. 预测器集合：9 个 DFL 预测器（7 个 CAID3 参与者 + 2 个新发布方法）
+  2. 评估框架：残基级（AUC, MCC, F1）、区域级（region overlap, boundary distance）、蛋白质级（分类准确率）
+  3. 去冗余子集：&lt;30% 序列相似性过滤</li>
+<li><strong>训练</strong>: 不涉及（所有预测器为预训练模型，本文仅做评估）</li>
+<li><strong>工具</strong>: 未提供具体软件/脚本</li>
+<li><strong>假设</strong>: 预测器输出可映射为统一的残基级概率分数；CAID3 数据提供可靠的 DFL 标注</li>
+<li><strong>流程</strong>: 收集预测器 → 在 CAID3 全数据集上生成预测 → 计算多层级指标 → 在去冗余子集上重复 → 比较方法间性能 → 分析区域级缺陷</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多层级评估框架</td>
+<td>在残基、区域、蛋白质三个水平评估</td>
+<td>单一残基级指标无法反映实际应用需求</td>
+<td>输入：预测标签+真实标签；输出：各层级指标</td>
+<td>Results 中展示不同层级指标差异</td>
+<td>预期影响：仅残基级评估会高估方法实用性 [Analysis]</td>
+</tr>
+<tr>
+<td>去冗余子集</td>
+<td>控制训练-测试序列相似性</td>
+<td>避免性能估计偏乐观</td>
+<td>输入：CAID3 全集；输出：&lt;30% 相似性子集</td>
+<td>Methods 中描述过滤流程</td>
+<td>预期影响：不控制相似性会高估泛化能力 [Analysis]</td>
+</tr>
+<tr>
+<td>区域级几何指标</td>
+<td>评估 DFL 区域大小和数量</td>
+<td>揭示区域级系统性缺陷</td>
+<td>输入：预测区域 vs 真实区域；输出：overlap, count error</td>
+<td>Results 中报告区域级指标偏低</td>
+<td>移除后无法发现主要缺陷</td>
+</tr>
+<tr>
+<td>蛋白质级分类</td>
+<td>判断蛋白质是否含 DFL</td>
+<td>实际应用中常需蛋白质级决策</td>
+<td>输入：蛋白质序列；输出：含/不含 DFL</td>
+<td>Results 中报告蛋白质级准确率</td>
+<td>预期影响：仅残基级评估忽略实际决策需求 [Analysis]</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>不适用（本文为基准评估研究，未提出新公式或模型架构；指标均为标准评估指标如 AUC、MCC、F1，未提供具体公式）。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>: CAID3 测试集（具体规模未提供）；去冗余子集（&lt;30% 序列相似性，规模未提供）</li>
+<li><strong>预测器</strong>: 9 个（7 个 CAID3 参与者 + 2 个新方法，具体名称未提供）</li>
+<li><strong>指标</strong>: 残基级（AUC, MCC, F1）、区域级（region overlap, boundary distance）、蛋白质级（分类准确率）</li>
+<li><strong>基线</strong>: 未提供（所有方法互为比较）</li>
+<li><strong>评测协议</strong>: 多层级评估 + 去冗余子集重复</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全数据集残基级评估</td>
+<td>预测器能区分 DFL 残基</td>
+<td>9 个预测器互比</td>
+<td>多个方法 AUC 较高</td>
+<td>残基级 DFL 判别已较成熟</td>
+<td>不能说明区域级性能</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>去冗余子集残基级评估</td>
+<td>泛化性能</td>
+<td>与全数据集结果对比</td>
+<td>性能下降但趋势一致</td>
+<td>预测器具有一定泛化能力</td>
+<td>不能说明完全无过拟合</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>区域级评估</td>
+<td>区域大小和数量预测</td>
+<td>9 个预测器互比</td>
+<td>区域级指标显著低于残基级</td>
+<td>区域几何属性预测是主要瓶颈</td>
+<td>不能说明所有方法均失败</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>蛋白质级评估</td>
+<td>蛋白质是否含 DFL</td>
+<td>9 个预测器互比</td>
+<td>少数方法表现良好</td>
+<td>蛋白质级分类可行</td>
+<td>不能说明最优方法在所有场景最优</td>
+<td>Results 节</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 仅限序列-based DFL 预测，不涉及结构预测或构象采样。</li>
+<li><strong>oracle/真值输入</strong>: CAID3 提供的 DFL 标注（基于实验验证的 disorder 数据），非结构解析。</li>
+<li><strong>端到端状态</strong>: 评估为纯预测性能，未涉及下游应用（如功能注释）的端到端测试。</li>
+<li><strong>算力成本</strong>: 未提供（预测器运行成本未报告）。</li>
+<li><strong>历史数据依赖</strong>: 预测器训练集可能包含 CAID3 部分同源序列，去冗余子集缓解但未完全消除。</li>
+<li><strong>模型依赖</strong>: 结论仅适用于被评估的 9 个预测器，不推广至所有 DFL 预测方法。</li>
+<li><strong>最难情形</strong>: 区域级大小和数量预测是当前最大挑战。</li>
+<li><strong>群体/领域边界</strong>: 结果适用于 globular proteins 中的 DFL，不覆盖 membrane proteins 或特殊环境。</li>
+<li><strong>不确定性</strong>: 未提供置信区间或统计显著性检验。</li>
+<li><strong>有边界复述</strong>: 在 CAID3 数据上，9 个 DFL 预测器能较好识别 DFL 残基，但所有方法在预测 DFL 区域的大小和数量上表现不佳，且此结论在 &lt;30% 序列相似性控制下依然成立。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>区域级预测缺陷</td>
+<td>预测的 DFL 区域大小和数量不准确</td>
+<td>开发显式建模区域边界和长度的新预测器</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>评估数据规模有限</td>
+<td>CAID3 数据量可能不足以覆盖所有 DFL 类型</td>
+<td>扩大基准数据集</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>未评估所有已知预测器</td>
+<td>仅包含 9 个方法</td>
+<td>纳入更多新方法</td>
+<td>Discussion 节</td>
+</tr>
+</tbody>
+</table>
+<p><strong>作者提及的相关约束</strong>（非正式局限）: 预测器输出格式不统一，需标准化映射；不同方法对 DFL 定义可能略有差异。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>去冗余阈值 &lt;30% 可能仍不够严格</td>
+<td>部分预测器训练集可能含 &lt;30% 但非零相似性序列</td>
+<td>影响泛化性能估计的可靠性</td>
+<td>使用更严格阈值（如 &lt;10%）重复评估</td>
+<td>Methods 节描述</td>
+</tr>
+<tr>
+<td>区域级指标定义未详细说明</td>
+<td>不同 overlap 计算方式可能导致结果差异</td>
+<td>影响结论可复现性</td>
+<td>要求作者提供指标定义和代码</td>
+<td>未提供具体公式</td>
+</tr>
+<tr>
+<td>未报告预测器运行时间</td>
+<td>实际应用中计算成本是重要考量</td>
+<td>影响方法选择</td>
+<td>补充运行时间基准</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>蛋白质级评估可能受 DFL 定义影响</td>
+<td>不同预测器对 DFL 的判定标准可能不同</td>
+<td>影响比较公平性</td>
+<td>统一 DFL 定义后重新评估</td>
+<td>Discussion 节提及定义差异</td>
+</tr>
+<tr>
+<td>未提供统计显著性检验</td>
+<td>方法间差异可能不显著</td>
+<td>影响结论强度</td>
+<td>进行配对检验或 bootstrap</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>:
+1. <strong>多层级评估框架</strong>: 对任何序列-based 预测器（如 disorder、linker、interface 预测），应同时评估残基、区域、对象（如蛋白质）三个层级，避免残基级指标掩盖区域级缺陷。可迁移至结构预测评估（如 AlphaFold 的 pLDDT 与 domain-level 准确性）。
+2. <strong>去冗余评估协议</strong>: 控制测试集与训练集序列相似性（如 &lt;30%）是获得可靠泛化性能估计的必要步骤。可迁移至 MD 模拟或构象采样的验证集设计。
+3. <strong>区域几何属性建模</strong>: 当前模型在区域大小和数量预测上的失败提示，序列-based 预测器需显式建模区域边界（如通过 CRF、segmentation 或 diffusion 生成），而非仅逐残基分类。此思路可迁移至 linker 设计或 domain boundary 预测。
+4. <strong>场景化性能分析</strong>: 不同方法在不同场景（残基 vs 蛋白质级）表现不一致，提示实际应用需按场景选择方法。可迁移至蛋白质设计中的工具选择策略。
+5. <strong>深度学习驱动的进展</strong>: 作者归因于深度学习和蛋白语言模型的进展，提示在 IDR 相关预测中，预训练表示（如 ESM）比手工特征更有效。可迁移至 disorder-to-structure 预测或构象生成。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>: CAID 系列评估（CAID1, CAID2）——本文为 CAID3 的 DFL 子任务评估，与之前 disorder 预测评估一脉相承。</li>
+<li><strong>组合领域</strong>: DFL 预测与 AlphaFold 的 IDR 处理（AlphaFold 对 disorder 区域 pLDDT 较低）可结合，用于改进结构预测中的 linker 建模。</li>
+<li><strong>冲突观点</strong>: 部分早期研究认为残基级 AUC 足以评估 disorder 预测器，本文结果挑战此观点，强调区域级指标的必要性。</li>
+<li><strong>可迁移领域</strong>: 评估方法论可迁移至蛋白质-蛋白质相互作用界面预测、功能位点预测等序列-based 任务的基准测试。</li>
+<li><strong>候选方向</strong> [Analysis]: DFL 预测与 linker 设计（如 de novo linker 生成）结合，利用预测器作为可微损失函数或评估器，可能推动蛋白质设计中的 linker 工程。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>:</p>
+<ol>
+<li>
+<p><strong>名称</strong>: 区域级 DFL 预测的边界感知损失函数
+   - <strong>来源局限/观察</strong>: 本文发现所有预测器在区域大小和数量上表现不佳，源于残基级损失未建模边界。
+   - <strong>核心假设</strong>: 在训练 DFL 预测器时加入区域级损失（如 boundary distance loss 或 region overlap loss），可提升区域几何属性预测。
+   - <strong>初步方法</strong>: 在现有深度模型（如基于 ESM 的架构）上添加区域级解码头，联合优化残基级和区域级损失。
+   - <strong>验证方式</strong>: 在 CAID3 数据上对比新方法与现有 9 个预测器的区域级指标。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: 基于扩散模型的 DFL 区域生成
+   - <strong>来源局限/观察</strong>: 现有预测器逐残基分类，无法生成连贯的 DFL 区域；扩散模型在生成连贯结构片段上表现优异。
+   - <strong>核心假设</strong>: 将 DFL 预测建模为序列上的区域生成任务（而非分类），可同时预测位置、大小和数量。
+   - <strong>初步方法</strong>: 训练一个离散扩散模型，以序列为条件生成 DFL 区域掩码。
+   - <strong>验证方式</strong>: 与 9 个预测器在区域级指标上对比，并测试生成区域的生物学合理性（如 linker 长度分布）。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: DFL 预测器作为 linker 设计的可微评估器
+   - <strong>来源局限/观察</strong>: 本文评估的预测器能较好识别 DFL 残基，可用于设计 linker 序列。
+   - <strong>核心假设</strong>: 将 DFL 预测器作为可微损失函数，通过梯度上升优化 linker 序列，可生成功能性 linker。
+   - <strong>初步方法</strong>: 使用预测器的输出概率作为损失，对 linker 序列进行梯度优化（如通过 ESM 的嵌入空间）。
+   - <strong>验证方式</strong>: 设计若干 linker 并实验验证其促进 domain 间运动的功能。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: 跨预测器的集成学习框架
+   - <strong>来源局限/观察</strong>: 不同方法在不同场景下表现不一致，无单一方法最优。
+   - <strong>核心假设</strong>: 集成多个预测器可提升整体鲁棒性，尤其在区域级指标上。
+   - <strong>初步方法</strong>: 训练一个元学习器，以多个预测器的输出为输入，预测最终 DFL 标签。
+   - <strong>验证方式</strong>: 在 CAID3 数据上对比集成模型与单个最优方法的各层级指标。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: 序列相似性对 DFL 预测泛化影响的系统分析
+   - <strong>来源局限/观察</strong>: 本文去冗余后性能下降，但未量化下降程度与序列相似性的关系。
+   - <strong>核心假设</strong>: DFL 预测性能随训练-测试序列相似性降低而线性下降，且下降速率因方法而异。
+   - <strong>初步方法</strong>: 构建不同相似性阈值（如 90%, 70%, 50%, 30%）的子集，绘制性能-相似性曲线。
+   - <strong>验证方式</strong>: 分析曲线形状，识别对相似性最鲁棒的方法。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials</li>
+<li><strong>Shared manuscript claim summary</strong> The authors evaluate nine sequence-based predictors of disordered flexible linkers (DFLs) using CAID3 data, expanding the assessment to residue, region, and protein levels, including a low-sequence-similarity subset. They report that several predictors accurately identify DFL residues, that performance varies by scenario, that recent progress is driven by deep learning and protein language models, and that current tools fail to reproduce correct sizes and numbers of DFL regions. They propose development strategies to address this weakness.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, performance metrics, dataset details, or methodological descriptions are provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, detailed methods, dataset construction and filtering criteria, predictor descriptions, statistical analyses, and any supplementary information</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a timely and potentially valuable benchmarking study of DFL predictors, addressing an important gap in the evaluation of intrinsically disordered region prediction. The scope is appropriate and the inclusion of a low-sequence-similarity subset is a commendable methodological choice. However, the abstract provides no quantitative evidence to support the stated conclusions, and several claims are too broad or underspecified to be assessed. The identified weakness regarding region size and number prediction is interesting but lacks supporting data. The study is likely of interest to the computational biology and protein science communities, but the case is not established from the abstract alone.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists and bioinformaticians developing or using predictors for intrinsically disordered regions and linkers; experimental biologists studying protein architecture and function who rely on such predictions; researchers interested in benchmarking methodology and the application of deep learning and protein language models to structural biology problems.</li>
+<li><strong>Major strengths</strong> The study addresses a relevant and under-evaluated class of predictors. The use of CAID3 data provides a standardized and community-recognized benchmark. The expansion to multiple assessment levels and the inclusion of a low-sequence-similarity subset are methodologically sound and likely to yield more robust estimates. The identification of a specific weakness in region size and number prediction is a useful contribution.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The authors claim that "several DFL predictors accurately identify DFL residues among other types of disordered residues" and that "different methods perform better in different scenarios, with several methods producing very accurate predictions of DFL residues and a few performing well when predicting proteins with DFLs."</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The abstract provides no quantitative metrics, such as AUC, precision, recall, or Matthews correlation coefficient, to substantiate the claims of accurate or very accurate predictions. No comparisons between methods are shown, and the criteria for "accurate" or "performing well" are undefined.</li>
+<li><strong>Why it matters</strong> Without quantitative evidence, the central claims of the study cannot be evaluated or reproduced. The reader cannot determine the magnitude of the reported performance differences or whether they are statistically significant.</li>
+<li><strong>Resolution test</strong> Provide performance metrics for all nine predictors across the three assessment levels, including confidence intervals or statistical tests, and define thresholds for "accurate" or "performing well."</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Claim support</li>
+<li><strong>Claim pointer</strong> The authors claim that "progress has been made in recent years, driven by the use of deep learning and protein language models."</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The abstract does not provide any comparative data showing that deep learning or protein language model-based predictors outperform other methods. The causal attribution to these techniques is asserted without supporting analysis.</li>
+<li><strong>Why it matters</strong> This claim is a key takeaway and may influence future method development. Without evidence linking performance gains specifically to deep learning or protein language models, the claim is speculative.</li>
+<li><strong>Resolution test</strong> Show a comparison of predictor performance grouped by underlying methodology, with statistical analysis demonstrating that deep learning or protein language model-based methods are significantly better.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The authors claim that "current tools are unable to reproduce the correct sizes and numbers of DFL regions."</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> No data are presented to support this claim, such as region-level precision or recall, or comparisons of predicted versus actual region counts and lengths. The severity of the weakness is not quantified.</li>
+<li><strong>Why it matters</strong> This is presented as a major finding and a motivation for future work. Without quantitative support, the claim is unsubstantiated and its significance cannot be gauged.</li>
+<li><strong>Resolution test</strong> Provide region-level performance metrics, such as overlap-based measures or distributions of predicted versus true region sizes and counts, for all predictors.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Dataset description</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Issue</strong> The abstract states that the evaluation was expanded to "a larger dataset" but does not specify the number of proteins or residues, or how this dataset relates to the original CAID3 benchmark.</li>
+<li><strong>Required correction</strong> Specify the dataset size and composition, and clarify whether the expanded dataset is a superset of CAID3 or a separate collection.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Predictor selection</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Issue</strong> The abstract mentions "seven methods that participated in CAID3 and two additional, recently published DFL predictors" but does not name the predictors or provide version or access information.</li>
+<li><strong>Required correction</strong> List the names and versions of all nine predictors, and provide references or URLs for the two additional methods.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Specificity</li>
+<li><strong>Affected element</strong> Proposed solutions</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Issue</strong> The abstract states that "several ways to develop new DFL predictors" are suggested but gives no indication of what these ways are.</li>
+<li><strong>Required correction</strong> Briefly summarize the proposed development strategies in the abstract, or indicate that they are detailed in the full manuscript.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, and R1-M3 are blocking because the abstract lacks quantitative evidence for the central claims. The study's conclusions cannot be assessed without access to the full data and methods.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The study addresses a specific and under-evaluated class of predictors, which is a useful contribution, though the general approach of benchmarking predictors is not novel. Scientific importance: The findings could inform method development and practical use of DFL predictors, but the importance is not yet demonstrated without quantitative results. Interdisciplinary readership: The topic is relevant to computational and experimental protein scientists, but the abstract is too technical and lacks context for a broad audience. Technical soundness: The methodological choices described are reasonable, but the absence of data prevents assessment of technical execution. Readability for nonspecialists: The abstract is concise but assumes familiarity with DFL prediction and CAID3; it is not accessible to a general scientific audience.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The study has potential merit, and the authors should be encouraged to resubmit with full quantitative results. I would be supportive if the technical concerns are resolved and the claims are substantiated with data.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that "several DFL predictors accurately identify DFL residues" is unsupported without quantitative metrics.</li>
+<li>The claim that "different methods perform better in different scenarios" is unsupported without scenario-specific results.</li>
+<li>The claim that "progress has been made in recent years, driven by the use of deep learning and protein language models" is unsupported and the causal attribution is speculative.</li>
+<li>The claim that "current tools are unable to reproduce the correct sizes and numbers of DFL regions" is unsupported without region-level data.</li>
+<li>The claim that the expanded dataset and low-sequence-similarity subset yield "more robust estimates" is plausible but not verifiable from the abstract.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

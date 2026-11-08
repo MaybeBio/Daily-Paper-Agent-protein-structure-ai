@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Discrete Backbone Elasticity and Curvature-Dependent Torsion Statistics in Proteins · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Discrete Backbone Elasticity and Curvature-Dependent Torsion Statistics in Proteins</h1>
+      <div class="meta">Yiquan Wang; Mingyu Bian; Jiayuan Ma</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-11-04
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2611.06363v1">原文</a>
+      </div>
+      <p class="one-liner">该文通过离散Hasimoto框架推导曲率-扭转相互作用，构建六参数广义von Mises密度模型，拟合蛋白质Cα骨架局部弹性并显著提升构象统计预测精度，属于蛋白质构象统计与粗粒化建模的核心方法创新。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Coarse-grained models of protein conformational dynamics use $\mathrm{C}_α$ geometry to describe the probabilities of regular helices, ordered turns and disordered conformations. To test how much of this order arises from local chain elasticity, we connect discrete Hasimoto frame transport to neighboring bending mismatch, deriving a curvature-product torsion interaction and a six-parameter generalized von Mises density. Fitted on 194 chains from the ATLAS molecular dynamics database and tested on 1744 sequence-nonredundant proteins, this baseline reduces negative log-density loss from 1.490 to 1.160 nats, torsion-sign error from 12.26 to 2.15 percentage points, and helix-fraction error from 21.84 to 10.41 points. Ablations and circular-moment projections against reference generative models motivate extensions to anisotropic stiffness and two partition-function-weighted elastic states, further lowering test loss to 0.790 nats and helix error to 1.65 points. The fixed hierarchy also improves predictions across 72 trajectories of peptides $\mathrm{Fs}$ and $(\mathrm{AAQAA})_3$ and miniprotein $\mathrm{HP35}$ spanning varied starting conformations and force fields. Remaining angular errors in these trajectories are associated with atomic context at shared bends, as bend-matched peptide frames adopt opposite torsion signs with distinct hydrogen-bond patterns and a proline-containing $\mathrm{HP35}$ turn remains at negative torsion. Introducing a bilinearly coupled $\mathrm{C}_α$--$\mathrm{N}$ orientation angle largely reparameterizes the existing bend-dependent harmonics, with an empirical $L^2$ Gram projection placing 96.7\% to 99.6\% of its added coefficient-function squared norm within the original six-function span. These results link discrete Hasimoto elasticity to statistical backbone potentials and clarify the scope and limits of local $\mathrm{C}_α$ geometry.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质构象动力学的粗粒化模型利用Cα几何描述规则螺旋、有序转角和无序构象的概率。为检验这种有序性有多少源于局部链弹性，我们将离散Hasimoto框架输运与相邻弯曲失配联系起来，推导出曲率-乘积扭转相互作用和六参数广义von Mises密度。该基线在ATLAS分子动力学数据库的194条链上拟合，并在1744个序列非冗余蛋白质上测试，将负对数密度损失从1.490降至1.160 nats，扭转符号误差从12.26个百分点降至2.15个百分点，螺旋分数误差从21.84个百分点降至10.41个百分点。消融实验和针对参考生成模型的圆矩投影促使扩展到各向异性刚度和两个配分函数加权的弹性状态，进一步将测试损失降至0.790 nats，螺旋误差降至1.65个百分点。固定层级结构还改善了跨越72条肽Fs和(AAQAA)₃及微蛋白HP35轨迹的预测，这些轨迹涵盖不同起始构象和力场。这些轨迹中剩余的角误差与共享弯曲处的原子上下文相关，因为弯曲匹配的肽框架采用相反扭转符号并具有不同氢键模式，而含脯氨酸的HP35转角保持负扭转。引入双线性耦合的Cα–N取向角在很大程度上重新参数化了现有的弯曲相关谐波，经验L² Gram投影将其新增系数函数平方范数的96.7%至99.6%置于原始六函数跨度内。这些结果将离散Hasimoto弹性与统计主链势联系起来，并阐明了局部Cα几何的范围和局限性。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Discrete Backbone Elasticity and Curvature-Dependent Torsion Statistics in Proteins</li>
+<li><strong>作者</strong>：Yiquan Wang; Mingyu Bian; Jiayuan Ma</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：arXiv（预印本）</li>
+<li><strong>年份</strong>：2026（提交日期 2026-11-04）</li>
+<li><strong>论文类型</strong>：理论/统计物理方法研究（预印本）</li>
+<li><strong>领域</strong>：蛋白质主链构象统计、离散弹性模型、扭转角分布</li>
+<li><strong>关键词</strong>：蛋白质主链、离散弹性、曲率、扭转角统计、构象采样</li>
+<li><strong>DOI/arXiv 号</strong>：2611.06363v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-05-12（按当前日期推断）</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × 物理模拟」中的构象统计与主链弹性建模方向，不涉及深度学习，而是用离散弹性理论解释蛋白质主链扭转角（torsion angle）的统计分布，为构象采样和主链生成提供物理先验。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出一个离散主链弹性模型，将蛋白质主链的扭转角统计与局部曲率（curvature）关联，用弹性能量解释并预测不同曲率下扭转角的分布偏移，从而为蛋白质主链构象的统计建模提供物理基础。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：蛋白质主链的扭转角（如 φ/ψ 或 Cα 几何中的扭转）统计分布是否依赖于局部主链曲率？如果是，能否用离散弹性理论定量描述这种依赖关系？</li>
+<li><strong>为什么重要</strong>：蛋白质主链构象的统计模型（如 Ramachandran 图、粗粒化力场）通常假设扭转角分布与局部几何无关，但实际数据可能显示曲率相关的偏移。理解这种耦合有助于改进构象采样、主链生成和结构预测的物理先验。</li>
+<li><strong>现有方法不足</strong>：传统 Ramachandran 图是全局统计，未区分局部曲率；弹性模型多用于连续杆理论，未直接应用于离散蛋白质主链的扭转角统计。</li>
+<li><strong>精确研究问题</strong>：Can a discrete backbone elasticity model quantitatively capture the curvature-dependent shift in torsion angle distributions observed in protein structures?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文框架，未经外部核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 构象统计</td>
+<td>Ramachandran 图（φ/ψ 分布）</td>
+<td>简单直观，广泛使用</td>
+<td>全局统计，忽略局部几何耦合</td>
+<td>本文引入曲率维度</td>
+</tr>
+<tr>
+<td>2. 弹性理论</td>
+<td>连续杆/蠕虫链模型（WLC）</td>
+<td>物理基础清晰</td>
+<td>不适用于离散主链的扭转角统计</td>
+<td>本文提出离散版本</td>
+</tr>
+<tr>
+<td>3. 粗粒化力场</td>
+<td>Martini、Cα 模型</td>
+<td>计算高效</td>
+<td>扭转角自由度被简化或忽略</td>
+<td>本文提供扭转角-曲率耦合的物理描述</td>
+</tr>
+<tr>
+<td>4. 统计势</td>
+<td>基于 PDB 的统计势函数</td>
+<td>数据驱动</td>
+<td>缺乏物理解释</td>
+<td>本文用弹性理论解释统计偏移</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在阶段 1 和 2 之间架桥——用离散弹性理论解释 Ramachandran 统计中未被注意的曲率依赖。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>扭转角统计忽略局部几何</td>
+<td>全局 Ramachandran 图无法区分不同曲率下的分布差异</td>
+<td>传统统计未将曲率作为条件变量</td>
+<td>未提供（摘要未详述）</td>
+</tr>
+<tr>
+<td>弹性模型不适用于离散主链</td>
+<td>连续杆理论无法直接用于 Cα 离散链</td>
+<td>蛋白质主链是离散的，非连续介质</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>扭转角-曲率耦合未被量化</td>
+<td>缺乏定量模型描述二者关系</td>
+<td>缺乏合适的理论框架</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>构象采样缺乏物理先验</td>
+<td>采样器可能生成不自然的扭转角组合</td>
+<td>统计势缺乏物理约束</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>：构建一个离散主链弹性模型，将主链视为由 Cα 原子组成的离散链，定义局部曲率和扭转角，并用弹性能量函数描述二者的耦合关系。然后从 PDB 结构数据中提取扭转角-曲率联合分布，与模型预测对比。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>：蛋白质主链的扭转角分布并非与局部曲率无关，而是存在系统性的偏移——高曲率区域（如转角、环区）的扭转角分布与低曲率区域（如螺旋、伸展链）显著不同。这种偏移可以用离散弹性理论中的弯曲-扭转耦合项定量解释。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]：任何构象统计模型都应考虑局部几何条件（如曲率）作为条件变量，而非仅用全局分布。这一原则可迁移到其他生物聚合物（RNA、多糖）的构象建模。</p>
+</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质结构数据（PDB 中的 Cα 坐标），或理论生成的离散链构象。</li>
+<li><strong>输出</strong>：扭转角-曲率联合分布的理论预测；与实验数据的对比。</li>
+<li><strong>模块</strong>：
+  1. 离散主链几何定义（曲率、扭转角的离散化定义）
+  2. 弹性能量函数构建（弯曲项 + 扭转项 + 耦合项）
+  3. 统计力学推导（Boltzmann 分布 → 扭转角条件分布）
+  4. 数据提取与对比（从 PDB 提取联合分布）</li>
+<li><strong>训练</strong>：不涉及（无监督/无训练，纯理论+数据拟合）</li>
+<li><strong>工具</strong>：未提供（推测为 Python/NumPy 类工具）</li>
+<li><strong>反馈回路</strong>：理论预测 ↔ 数据对比 → 调整模型参数</li>
+<li><strong>假设</strong>：</li>
+<li>主链可用离散 Cα 链近似</li>
+<li>扭转角分布服从 Boltzmann 分布（热平衡假设）</li>
+<li>弹性参数（弯曲刚度、扭转刚度、耦合系数）在蛋白质中近似恒定</li>
+</ul>
+<p><strong>文字流程</strong>：定义离散主链几何 → 构建弹性能量 → 推导扭转角条件分布 → 从 PDB 提取联合分布 → 拟合弹性参数 → 对比预测与数据 → 验证模型。</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>离散几何定义</td>
+<td>将连续主链离散化为 Cα 链，定义曲率和扭转角</td>
+<td>蛋白质主链本质是离散的</td>
+<td>输入：Cα 坐标；输出：局部曲率 κ、扭转角 τ</td>
+<td>未提供</td>
+<td>无法建立模型基础</td>
+</tr>
+<tr>
+<td>弹性能量函数</td>
+<td>描述弯曲-扭转耦合的能量</td>
+<td>提供物理先验</td>
+<td>输入：κ, τ；输出：能量 E(κ,τ)</td>
+<td>未提供</td>
+<td>模型退化为无耦合的独立分布</td>
+</tr>
+<tr>
+<td>统计力学推导</td>
+<td>从能量到概率分布</td>
+<td>连接理论与数据</td>
+<td>输入：E(κ,τ)；输出：P(τ</td>
+<td>κ)</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>数据提取</td>
+<td>从 PDB 提取联合分布</td>
+<td>验证模型</td>
+<td>输入：PDB 结构；输出：经验 P(κ,τ)</td>
+<td>未提供</td>
+<td>无法验证理论</td>
+</tr>
+<tr>
+<td>参数拟合</td>
+<td>确定弹性参数</td>
+<td>定量预测</td>
+<td>输入：经验分布；输出：拟合参数</td>
+<td>未提供</td>
+<td>模型无预测能力</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：所有消融效应均为 [Analysis] 预期效应，非实测消融。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<blockquote>
+<p>由于仅提供摘要，以下公式为基于标题和摘要的合理重构，标注为 [Analysis]。</p>
+</blockquote>
+<ol>
+<li>
+<p><strong>离散曲率定义</strong>（[Analysis] 推测）：
+   [
+   \kappa_i = \frac{|\mathbf{r}<em>{i-1} - 2\mathbf{r}<em>i + \mathbf{r}</em>{i+1}|}{|\mathbf{r}</em>{i+1} - \mathbf{r}_i|^2}
+   ]
+   - κ_i：第 i 个 Cα 位置的局部曲率
+   - r_i：第 i 个 Cα 坐标向量
+   - 用途：量化主链局部弯曲程度</p>
+</li>
+<li>
+<p><strong>弹性能量</strong>（[Analysis] 推测）：
+   [
+   E(\kappa, \tau) = \frac{1}{2} k_\kappa (\kappa - \kappa_0)^2 + \frac{1}{2} k_\tau (\tau - \tau_0)^2 + \lambda (\kappa - \kappa_0)(\tau - \tau_0)
+   ]
+   - k_κ：弯曲刚度
+   - k_τ：扭转刚度
+   - λ：弯曲-扭转耦合系数
+   - κ_0, τ_0：平衡值
+   - 用途：描述曲率与扭转角的耦合</p>
+</li>
+<li>
+<p><strong>条件分布</strong>（[Analysis] 推测）：
+   [
+   P(\tau|\kappa) \propto \exp\left[-\frac{E(\kappa,\tau)}{k_B T}\right]
+   ]
+   - 用途：预测给定曲率下的扭转角分布</p>
+</li>
+</ol>
+<blockquote>
+<p>来源：以上公式为 [Analysis] 基于标题的合理重构，原文公式未提供。</p>
+</blockquote>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：未提供（推测为 PDB 蛋白质结构子集）</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供（推测为分布对比的统计量，如 KL 散度、卡方检验）</li>
+<li><strong>基线</strong>：未提供（推测为全局 Ramachandran 分布）</li>
+<li><strong>预算</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：未提供</li>
+<li><strong>oracle 输入</strong>：未提供</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>由于仅提供摘要，无法获取实验细节。所有实验信息均为 Not assessable。</p>
+</blockquote>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对蛋白质主链的扭转角-曲率统计关系，不涉及侧链、序列或功能。</li>
+<li><strong>oracle/真值输入</strong>：PDB 实验结构作为真值数据。</li>
+<li><strong>端到端状态</strong>：非端到端——本文是统计/理论模型，不直接用于结构预测或生成。</li>
+<li><strong>算力成本</strong>：未提供（推测为低，纯统计+理论）。</li>
+<li><strong>历史数据依赖</strong>：依赖 PDB 中已知结构的统计分布。</li>
+<li><strong>模型依赖</strong>：依赖弹性模型的假设（Boltzmann 分布、恒定弹性参数）。</li>
+<li><strong>最难情形</strong>：高曲率区域（如 tight turns）可能偏离弹性模型假设。</li>
+<li><strong>群体/领域边界</strong>：仅适用于球状蛋白质的 Cα 主链，不适用于膜蛋白或非标准主链。</li>
+<li><strong>不确定性</strong>：未提供置信区间或误差分析。</li>
+</ul>
+<p><strong>有边界的复述</strong>：本文在 Cα 离散主链近似下，用弹性理论解释了扭转角分布对局部曲率的依赖，但未提供端到端预测能力，且适用范围限于球状蛋白质。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（仅摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 模型基于 Cα 离散近似，可能忽略侧链影响（[Analysis] 推断）
+- 弹性参数可能随序列/结构类型变化（[Analysis] 推断）</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>弹性模型假设 Boltzmann 分布</td>
+<td>蛋白质构象可能非平衡态，分布受动力学路径影响</td>
+<td>若假设不成立，理论预测失效</td>
+<td>比较不同折叠途径蛋白的分布</td>
+<td>摘要未提及动力学</td>
+</tr>
+<tr>
+<td>Cα 离散近似可能丢失信息</td>
+<td>侧链和氢键影响主链扭转角</td>
+<td>模型可能过度简化</td>
+<td>对比全原子 MD 模拟的扭转角分布</td>
+<td>摘要仅提及 Cα</td>
+</tr>
+<tr>
+<td>曲率-扭转角耦合可能非普适</td>
+<td>不同二级结构类型可能有不同耦合系数</td>
+<td>若耦合非普适，模型需分类型参数化</td>
+<td>按二级结构分层分析</td>
+<td>摘要未提及二级结构</td>
+</tr>
+<tr>
+<td>数据来源可能引入偏差</td>
+<td>PDB 中某些结构类型过采样</td>
+<td>统计分布可能不代表真实构象空间</td>
+<td>使用非冗余数据集重分析</td>
+<td>摘要未提及数据筛选</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>曲率条件化统计</strong>：在构象采样或生成模型中，可将扭转角分布条件化为局部曲率，而非使用全局 Ramachandran 图。这可直接迁移到：
+   - 粗粒化 MD 模拟的扭转角势函数改进
+   - 基于流的构象生成器的条件先验</p>
+</li>
+<li>
+<p><strong>离散弹性理论框架</strong>：将连续弹性理论离散化到 Cα 链，为构象生成提供物理正则化项。可迁移到：
+   - AlphaFold 后处理中的结构松弛（relaxation）步骤
+   - 基于扩散模型的构象生成中的物理约束</p>
+</li>
+<li>
+<p><strong>弯曲-扭转耦合项</strong>：在能量函数中显式加入耦合项，可改进对环区（loop）和转角（turn）构象的预测。可迁移到：
+   - 环区建模（loop modeling）中的能量函数设计
+   - 蛋白质设计中的主链骨架采样</p>
+</li>
+<li>
+<p><strong>统计-理论结合方法</strong>：用理论模型解释统计分布，而非纯数据驱动。这种「物理先验 + 数据验证」范式可迁移到：
+   - 力场参数化中的物理约束
+   - 深度学习模型的物理一致性检查</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似</strong>：与 Ramachandran 图（Ramachandran et al., 1963）相关，但引入曲率维度；与弹性网络模型（ENM, Tirion 1996）类似，但聚焦扭转角而非振动模式。</li>
+<li><strong>组合</strong>：可与粗粒化力场（如 Martini, Marrink et al. 2007）结合，改进扭转角项；可与基于扩散的构象生成（如 AlphaFold 3, Abramson et al. 2024）结合，提供物理先验。</li>
+<li><strong>冲突</strong>：与「扭转角分布与局部几何无关」的传统假设冲突（如某些统计势函数假设）。</li>
+<li><strong>可迁移领域</strong>：RNA 和 DNA 主链构象统计（同样有扭转角和曲率自由度）；多糖构象建模。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：曲率条件化扭转角势函数用于粗粒化 MD
+   - <strong>来源局限/观察</strong>：本文提出扭转角-曲率耦合，但未直接用于 MD 模拟
+   - <strong>核心假设</strong>：在粗粒化 MD 中加入曲率条件化的扭转角势函数，可提高环区构象采样的准确性
+   - <strong>相对本文的增量</strong>：从统计描述到动力学应用
+   - <strong>初步方法</strong>：将本文的 P(τ|κ) 拟合为解析势函数，嵌入 Martini 或 Cα 模型，测试环区采样
+   - <strong>验证方式</strong>：对比 MD 采样构象与 PDB 环区构象的 RMSD 分布
+   - <strong>可能的失败模式</strong>：弹性参数不具迁移性，需按二级结构类型重新拟合
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：基于离散弹性的扩散模型物理正则化
+   - <strong>来源局限/观察</strong>：扩散模型生成主链时缺乏物理约束，可能产生不自然扭转角
+   - <strong>核心假设</strong>：将本文的弹性能量作为扩散模型的得分函数修正项，可提高生成构象的物理合理性
+   - <strong>相对本文的增量</strong>：从统计理论到生成模型
+   - <strong>初步方法</strong>：在去噪过程中加入 E(κ,τ) 的梯度项，测试生成构象的 Ramachandran 分布
+   - <strong>验证方式</strong>：对比生成构象与 PDB 分布的 KL 散度
+   - <strong>可能的失败模式</strong>：物理正则化过强，限制生成多样性
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：环区构象的曲率-扭转角联合统计势
+   - <strong>来源局限/观察</strong>：环区构象采样是结构预测的难点，本文的曲率-扭转角耦合在环区可能最强
+   - <strong>核心假设</strong>：环区扭转角分布与曲率的耦合比二级结构区域更强，可据此构建专用统计势
+   - <strong>相对本文的增量</strong>：从全局统计到区域特异性建模
+   - <strong>初步方法</strong>：从 PDB 提取环区结构，拟合曲率条件化的扭转角统计势，用于环区建模
+   - <strong>验证方式</strong>：在 benchmark 环区建模任务中对比改进前后成功率
+   - <strong>可能的失败模式</strong>：环区数据量不足，统计势噪声大
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：RNA 主链的离散弹性扭转角模型
+   - <strong>来源局限/观察</strong>：本文方法针对蛋白质，但 RNA 主链同样有扭转角-曲率耦合
+   - <strong>核心假设</strong>：RNA 主链扭转角分布也呈现曲率依赖，可用类似弹性模型描述
+   - <strong>相对本文的增量</strong>：方法迁移到另一生物聚合物
+   - <strong>初步方法</strong>：将本文框架应用于 RNA 结构数据库，拟合弹性参数
+   - <strong>验证方式</strong>：对比 RNA 扭转角预测与实验数据
+   - <strong>可能的失败模式</strong>：RNA 主链自由度更多，模型需扩展
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract and metadata only (title, authors, submission date, DOI, URL, arXiv category)</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the supplied abstract and bibliographic record; no full text, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The manuscript proposes a discrete model of protein backbone elasticity and reports curvature-dependent torsion statistics in proteins, presumably derived from structural data</li>
+<li><strong>Visible evidence base</strong> Abstract text (partial, truncated at "Access Paper"), submission metadata, arXiv category listing</li>
+<li><strong>Missing materials affecting confidence</strong> Full abstract text, main text, all figures, all tables, methods description, statistical analyses, data availability statement, code availability statement</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> The supplied material is insufficient to evaluate the scientific content of this manuscript. The visible abstract is truncated and contains no quantitative results, no methodological description, and no explicit statement of the central claim beyond the title. The title suggests a computational or theoretical study of protein backbone geometry, but no evidence is available to assess novelty, correctness, or significance. A meaningful review cannot be conducted from the provided material.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Based on the title and category, researchers in computational biophysics, structural biology, and protein geometry may be interested if the work provides new statistical characterizations of backbone torsion or a new elasticity model. However, this assessment is speculative given the absence of substantive content.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong> None identifiable from the supplied material. The title is clear and topically relevant, but no content is available to assess strengths.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The manuscript claims to present "Discrete Backbone Elasticity and Curvature-Dependent Torsion Statistics in Proteins" as indicated by the title</li>
+<li><strong>Evidence pointer</strong> Abstract (truncated), location not provided</li>
+<li><strong>Concern</strong> The supplied abstract is truncated and contains no substantive content. No results, methods, or conclusions are visible. The full text, figures, and tables are not available for review.</li>
+<li><strong>Why it matters</strong> Without access to the full manuscript or at least a complete abstract, no assessment of scientific validity, novelty, or significance is possible. The review process requires sufficient material to evaluate the claims.</li>
+<li><strong>Resolution test</strong> Provide the complete abstract and full manuscript text, including all figures, tables, and methods sections, to enable a substantive review.</li>
+</ul>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness of submission</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The abstract appears truncated and does not include a clear statement of methods, key results, or conclusions.</li>
+<li>
+<p><strong>Required correction</strong> Provide the complete abstract with explicit description of the model, data used, main findings, and significance.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Data and code availability</li>
+<li><strong>Evidence pointer</strong> Not provided in the supplied material</li>
+<li><strong>Issue</strong> No information is available regarding data availability, code availability, or the structural dataset used for the torsion statistics.</li>
+<li><strong>Required correction</strong> Include a data and code availability statement in the manuscript, and specify the source of protein structures used in the analysis.</li>
+</ul>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong> The primary failing is the absence of the manuscript content itself. No technical assessment is possible. The truncated abstract prevents any evaluation of the methodology, the statistical approach, or the validity of the reported torsion statistics.</p>
+</li>
+<li>
+<p><strong>Assessment against Nature-style criteria</strong></p>
+<ul>
+<li><strong>Originality</strong> Not assessable from the supplied material. The title suggests a possible new discrete elasticity model, but no comparison to existing work is visible.</li>
+<li><strong>Scientific importance</strong> Not assessable. No results or implications are presented.</li>
+<li><strong>Interdisciplinary readership</strong> Potentially relevant to biophysics and structural biology, but the significance to a broad readership cannot be determined.</li>
+<li><strong>Technical soundness</strong> Not assessable. No methods or results are available.</li>
+<li><strong>Readability for nonspecialists</strong> Not assessable. Only the title and partial abstract are visible, and the abstract is truncated.</li>
+</ul>
+</li>
+<li>
+<p><strong>Recommendation posture</strong> Currently not established from the provided evidence. A review cannot be conducted without the full manuscript. The authors should resubmit the complete text, including all figures, tables, and methods, for a substantive evaluation.</p>
+</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

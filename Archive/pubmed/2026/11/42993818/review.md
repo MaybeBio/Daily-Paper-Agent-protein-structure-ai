@@ -1,0 +1,70 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report a cryo-electron microscopy structure of the Chimalliviridae bacteriophage Goslar, combining manual modeling of 25 structural proteins with AlphaFold predictions of 3 additional proteins to generate a composite model of 2888 protein chains from 28 distinct structural proteins, exceeding 1.4 million amino acid residues. The structure reveals capsid, portal, tail, and baseplate architecture. Quantitative mass spectrometry identifies high-copy virion-associated proteins potentially injected into host cells. A Chimalliviridae-specific family of baseplate-anchored filamentous proteins with carbohydrate-binding domains is proposed to function in host recognition.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary data provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, methods section, validation statistics for the cryo-EM map and model, mass spectrometry data and analysis details, AlphaFold prediction confidence metrics, and any functional assays supporting host recognition claims
+
+## Reviewer
+- **Overall assessment** The abstract presents a substantial structural biology effort with potential significance for understanding large-genome phage architecture and host interactions. The scale of the composite model is impressive, and the identification of a new protein family with carbohydrate-binding domains is intriguing. However, the abstract alone provides insufficient evidence to evaluate the technical quality of the cryo-EM reconstruction, the validity of the composite modeling approach, or the strength of the functional inferences. Several claims, particularly regarding host recognition and protein injection, appear speculative without supporting experimental data visible in the abstract.
+- **Who would be interested in the results, and why** Structural biologists studying large macromolecular complexes, virologists focused on bacteriophage biology and evolution, microbiologists investigating phage-host interactions, and researchers developing phage-based therapeutic or biotechnological applications. The structural details of a Chimalliviridae phage and the proposed host recognition mechanism would be of broad interest to the phage community.
+- **Major strengths** The scale and completeness of the structural model, combining experimental cryo-EM data with AlphaFold predictions, represents a technically ambitious approach. The identification of a previously unrecognized protein family with carbohydrate-binding domains anchored at the baseplate offers a plausible and testable hypothesis for host recognition. The integration of quantitative mass spectrometry with structural data to identify candidate injection-associated proteins is a thoughtful multi-method strategy.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The composite model with 2888 protein chains from 28 structural proteins is presented as a reliable representation of the Goslar virion structure.
+  - **Evidence pointer** Abstract only; no figures or validation data provided
+  - **Concern** The abstract does not report any resolution metrics for the cryo-EM map, model validation statistics (such as MolProbity scores, EMRinger scores, or map-model correlation), or the criteria used to combine manual modeling with AlphaFold predictions. Without these data, the reliability of the composite model cannot be assessed.
+  - **Why it matters** The central contribution of this work is the structural model. If the resolution is insufficient to support the proposed architecture, or if the AlphaFold-predicted components are not validated against experimental density, the conclusions drawn from the model would be compromised.
+  - **Resolution test** Provide the overall and local resolution of the cryo-EM map, validation statistics for the final model, and a description of how AlphaFold predictions were fitted and verified against the experimental density.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Support for functional claims
+  - **Claim pointer** The Chimalliviridae-specific filamentous proteins with carbohydrate-binding domains are proposed to play a key role in host recognition.
+  - **Evidence pointer** Abstract only; no functional data provided
+  - **Concern** The abstract states that the presence of carbohydrate-binding domains "suggests" a role in host recognition, but no experimental evidence such as binding assays, mutagenesis, or infection studies is presented to support this functional assignment. The claim is purely inferential.
+  - **Why it matters** Host recognition is a central biological claim of the paper. Without functional validation, the proposed mechanism remains speculative, and the significance of the finding for understanding phage-host interactions is not established.
+  - **Resolution test** Provide experimental evidence such as carbohydrate-binding assays, localization studies, or infection assays with mutant phages lacking these filaments to demonstrate their role in host recognition.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Support for functional claims
+  - **Claim pointer** High-copy virion-associated proteins identified by mass spectrometry "likely play key roles when injected into host cells upon infection."
+  - **Evidence pointer** Abstract only; no mass spectrometry data or injection assays provided
+  - **Concern** The inference that high-copy proteins are injected into host cells and play key roles is not supported by any direct evidence in the abstract. No data on protein localization post-infection, mutant phenotypes, or functional assays are described.
+  - **Why it matters** This claim extends beyond the structural findings into functional territory. Without evidence of injection or phenotypic consequences, the statement is speculative and could overstate the biological significance of the identified proteins.
+  - **Resolution test** Provide experimental evidence for protein injection, such as labeled protein tracking during infection, or functional data from gene knockout or knockdown studies.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity and completeness
+  - **Affected element** Description of the composite model
+  - **Evidence pointer** Abstract, first paragraph
+  - **Issue** The abstract states that 25 proteins were manually modeled and 3 were predicted by AlphaFold, totaling 28 structural proteins. It is unclear whether the 3 AlphaFold-predicted proteins were also experimentally detected or if they are purely predicted components.
+  - **Required correction** Clarify whether the AlphaFold-predicted proteins were independently confirmed by mass spectrometry or other experimental methods, and describe how they were placed within the composite model.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity and completeness
+  - **Affected element** Description of structural comparisons
+  - **Evidence pointer** Abstract, first paragraph
+  - **Issue** The abstract mentions "structural similarities and differences with other tailed phages" but provides no specific examples or details on which phages were compared and what the key differences were.
+  - **Required correction** Provide specific comparative examples or refer to figures that illustrate the similarities and differences, so readers can assess the novelty of the structural findings.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Clarity and completeness
+  - **Affected element** Description of the filamentous proteins
+  - **Evidence pointer** Abstract, final sentence
+  - **Issue** The abstract describes "long, flexible filaments" but does not specify their length, number per baseplate, or how they were resolved in the cryo-EM map given their flexibility.
+  - **Required correction** Provide quantitative details on filament dimensions and copy number, and describe how the flexible regions were handled in the structural analysis.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (lack of resolution and validation data for the structural model) and R1-M2 (lack of functional evidence for host recognition) are the primary technical failings. R1-M3 (injection claim) requires additional experimental support but is less central to the structural contribution.
+- **Assessment against Nature-style criteria** Originality: The work appears original in its structural characterization of a Chimalliviridae phage, but the abstract does not clearly articulate what is novel compared to prior phage structures. Scientific importance: The potential importance is high given the distinctive infection strategy of Chimalliviridae, but the functional claims require experimental validation. Interdisciplinary readership: The findings would appeal to structural biologists, virologists, and microbiologists, but the abstract is written in a way that is accessible to a broad scientific audience. Technical soundness: Cannot be assessed from the abstract alone; the lack of resolution and validation data is a significant concern. Readability for nonspecialists: The abstract is generally clear and well-structured, though some terms such as "composite model" and "high-copy virion-associated proteins" may benefit from brief explanation.
+- **Recommendation posture** Currently not established from the provided evidence. The structural claims require validation data, and the functional claims require experimental support. The work has clear potential, but the abstract alone does not provide sufficient evidence to assess whether the conclusions are justified.
+
+## Risk / unsupported claims
+- The claim that the composite model accurately represents the Goslar virion structure is unsupported without resolution and validation data.
+- The proposal that the filamentous proteins with carbohydrate-binding domains play a key role in host recognition is unsupported by functional evidence.
+- The statement that high-copy virion-associated proteins are injected into host cells and play key roles is speculative and not supported by the abstract.
+- The assertion of "structural similarities and differences with other tailed phages" is unverifiable without specific comparative data.

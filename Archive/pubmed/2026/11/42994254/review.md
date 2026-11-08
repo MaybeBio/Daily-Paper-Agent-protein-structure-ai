@@ -1,0 +1,88 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no access to full methods, figures, tables, or supplementary data
+- **Shared manuscript claim summary** The authors report that ferulic acid (FA) interacts with myofibrillar proteins (MPs) via static fluorescence quenching, with the complex stabilized by hydrogen bonding and hydrophobic forces. They claim that FA at 0.4 mmol/L improves protein solubility, reduces surface hydrophobicity and particle size, suppresses aggregation, and promotes a homogeneous, compact gel network with enhanced water-holding capacity, viscoelasticity, and water distribution. Molecular docking and MD simulations are cited as supporting evidence for the interaction mechanism.
+- **Visible evidence base** Abstract text only; no figures, tables, methods details, or statistical outputs provided
+- **Missing materials affecting confidence** Full methods for fluorescence spectroscopy, docking parameters, MD simulation protocols and validation, physicochemical assay conditions, gel preparation and rheological measurements, correlation analysis details, and all numerical data with error estimates
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible and potentially interesting mechanistic study linking molecular-level interactions between FA and MPs to macroscopic gel properties. However, the evidence base available for review is limited to the abstract, which precludes verification of the central claims. The mechanistic conclusions, particularly the static quenching mechanism and the role of specific molecular forces, require detailed experimental and computational evidence that is not visible here. The correlation analysis is mentioned but not described, and no quantitative results are provided. The work may be of interest to food scientists focused on protein gelation and natural additives, but the case is not established from the supplied material.
+- **Who would be interested in the results, and why** Researchers in food protein chemistry, meat science, and food hydrocolloids would be interested in the potential use of ferulic acid as a natural cross-linking or structure-modifying agent to improve gel quality and water retention in processed meat products. Those working on polyphenol-protein interactions and their functional consequences would also find the molecular docking and simulation approach relevant.
+- **Major strengths** The study addresses a practical food science problem with a molecular-level mechanistic framing, which is a constructive approach. The combination of experimental spectroscopy with computational docking and MD simulations is a reasonable strategy to probe interaction mechanisms. The focus on water-holding capacity and network formation connects molecular interactions to functional outcomes of direct industrial relevance.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that fluorescence quenching of MPs by FA occurs via a static mechanism, as evidenced by integrated fluorescence spectroscopy, docking, MD simulations, and physicochemical assays.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states that static quenching was demonstrated, but no data are shown to distinguish static from dynamic quenching, such as Stern-Volmer plots at multiple temperatures, lifetime measurements, or binding constants. The assertion that docking and MD simulations support a static mechanism is not self-evident, as these computational methods typically provide structural and energetic information rather than direct evidence of quenching type.
+  - **Why it matters** The static quenching mechanism is a foundational claim of the study. If the quenching mechanism is misassigned, the subsequent interpretation of binding affinity, complex stability, and the role of specific forces would be compromised. This is a central mechanistic conclusion that must be rigorously supported.
+  - **Resolution test** Provide Stern-Volmer and modified Stern-Volmer analyses at multiple temperatures, fluorescence lifetime data, and binding stoichiometry. Show that the computational results are consistent with the experimentally derived binding parameters and that alternative quenching mechanisms are explicitly ruled out.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that the FA-MP complex is primarily stabilized by hydrogen bonding and hydrophobic forces, resulting in a tighter protein conformation.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The identification of specific interaction forces is stated as a conclusion, but the abstract does not describe how this was determined. Thermodynamic parameters from fluorescence quenching at different temperatures, molecular docking energy decomposition, or MD trajectory analyses would be needed to support this claim. The phrase "tighter protein conformation" is vague and requires structural evidence, such as circular dichroism, intrinsic fluorescence shifts, or MD-derived radius of gyration and root-mean-square deviation values.
+  - **Why it matters** The nature of the stabilizing forces and the conformational change are central to the proposed mechanism. Without explicit evidence, the mechanistic narrative is unsupported, and the link between molecular interaction and functional outcomes remains speculative.
+  - **Resolution test** Present thermodynamic analysis (e.g., van't Hoff plots) with enthalpy and entropy changes, docking energy contributions per residue, and MD-derived structural parameters showing conformational compaction. Provide statistical comparison of these parameters between FA-treated and untreated MPs.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence quality
+  - **Claim pointer** The authors claim that FA at 0.4 mmol/L facilitated the formation of a homogeneous and compact three-dimensional gel network, leading to enhanced water retention, improved viscoelasticity, and more uniform water distribution.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** No quantitative data are provided for gel microstructure, water-holding capacity, rheological parameters, or water distribution. The abstract does not specify the methods used (e.g., scanning electron microscopy, centrifugation-based WHC, dynamic oscillatory rheometry, low-field nuclear magnetic resonance) or the magnitude of the reported improvements. The concentration dependence of FA effects is also not described beyond a single optimal concentration.
+  - **Why it matters** The functional claims are the applied outcome of the study and are likely to be the primary interest for the readership. Without quantitative results and appropriate statistical analysis, the significance and reproducibility of these effects cannot be assessed.
+  - **Resolution test** Provide representative micrographs with quantitative pore size or fractal analysis, WHC values with standard deviations and statistical tests, storage modulus and loss tangent data across a frequency range, and T2 relaxation distributions with peak assignments. Show dose-response data for FA concentration.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility and transparency
+  - **Claim pointer** The authors state that correlation analysis corroborated the relationships between physicochemical properties of the protein and gel quality.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The correlation analysis is mentioned but not described. No information is given on which variables were correlated, the correlation coefficients, significance levels, or the type of analysis (e.g., Pearson, Spearman, partial least squares). The claim of corroboration is therefore unverifiable.
+  - **Why it matters** Correlation analysis is presented as supporting evidence for the mechanistic link between molecular interactions and gel properties. Without details, this claim cannot be evaluated, and the logical chain from mechanism to function remains incomplete.
+  - **Resolution test** Present a correlation matrix or table with coefficients, p-values, and sample sizes. Clarify whether correlations are adjusted for multiple comparisons and whether causal inference is intended or only associative.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Concentration statement
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The concentration "0.4 mmol/L" is stated without context. It is unclear whether this is the optimal concentration from a dose-response study, the only concentration tested, or a concentration selected based on prior literature.
+  - **Required correction** Specify the range of concentrations tested and the rationale for selecting 0.4 mmol/L as the focus of the reported results.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** "Native functional ingredient"
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "native" is ambiguous in this context. It could imply that FA is naturally present in the food matrix, that it is unmodified, or that it is used in its natural form. The intended meaning is not clear.
+  - **Required correction** Clarify the intended meaning of "native" or replace with a more precise term, such as "naturally derived" or "unmodified."
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** MD simulation validation
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract mentions MD simulations but provides no information on simulation length, force field, water model, equilibration protocol, or convergence criteria. Without these details, the reliability of the simulation results cannot be assessed.
+  - **Required correction** Include key simulation parameters in the methods or supplementary material and report convergence metrics in the results.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** All quantitative claims
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** No numerical values, error bars, or significance indicators are provided for any of the reported effects. The abstract relies on qualitative descriptors such as "significantly enhanced" and "improved" without supporting statistics.
+  - **Required correction** Include representative numerical values with measures of variability and statistical significance for key outcomes in the abstract or ensure these are prominently reported in the main text.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (quenching mechanism not established), R1-M2 (interaction forces and conformational change not evidenced), R1-M3 (functional outcomes not quantified), R1-M4 (correlation analysis not described)
+- **Assessment against Nature-style criteria** Originality: The combination of molecular docking and MD simulations with experimental gel characterization for FA-MP interactions is a reasonable approach, but the abstract does not demonstrate conceptual novelty beyond existing polyphenol-protein interaction studies. Scientific importance: The potential application to meat product quality is relevant, but the significance is not established without quantitative evidence of the magnitude of improvement. Interdisciplinary readership: The work bridges computational chemistry and food science, which could attract interest from both communities, but the abstract is written primarily for a food science audience. Technical soundness: Cannot be assessed from the abstract alone; the central mechanistic claims require experimental and computational validation that is not visible. Readability for nonspecialists: The abstract is generally clear, though some terms such as "static mechanism" and "viscoelasticity" assume domain knowledge.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a coherent narrative, but the absence of quantitative data, methodological details, and validation of the central mechanistic claims prevents a supportive recommendation. A full manuscript with complete methods, results, and statistical analysis would be required to assess whether the case can be made.
+
+## Risk / unsupported claims
+- The static quenching mechanism is asserted without supporting data.
+- The identification of hydrogen bonding and hydrophobic forces as primary stabilizers is not evidenced.
+- The claim of a "tighter protein conformation" is vague and unsupported by structural data.
+- The functional improvements in gel properties at 0.4 mmol/L FA are stated without quantitative results.
+- The correlation analysis is mentioned but not described, making the corroboration claim unverifiable.
+- The suitability of FA as a "native functional ingredient" for higher-quality meat products is an extrapolation not supported by the abstract data.

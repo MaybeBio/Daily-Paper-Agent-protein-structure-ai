@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors used multi-replicate molecular dynamics simulations and MM/GBSA calculations to characterize structural, dynamic, and thermodynamic consequences of four targeted mutations (R55V, W67V, Y85I, H86S) at the IL-17A-IL-17RA interface, reporting conformational destabilization, altered protein stability networks, and allosteric perturbations relative to wild-type.
+- **Visible evidence base** Abstract text only; no quantitative results, methodological details, or validation data are provided
+- **Missing materials affecting confidence** Full methods, simulation parameters, force field choices, convergence criteria, MM/GBSA energy components, PCA/FEL figures, protein stability network analysis details, statistical analyses, and any comparison with experimental or clinical data
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible computational study addressing a relevant therapeutic target, but the claims are largely qualitative and cannot be evaluated for rigor or reproducibility from the supplied material. The connection between the simulation results and the stated therapeutic implications is asserted rather than demonstrated. The manuscript may have merit, but the current evidence base is insufficient to assess technical soundness or scientific impact.
+- **Who would be interested in the results, and why** Researchers in computational biophysics, protein-protein interaction engineering, and inflammatory disease drug discovery would be interested in the methodological application of multi-replicate MD to a clinically relevant cytokine-receptor system. The study could also appeal to those studying allosteric communication in cytokine signaling.
+- **Major strengths** The use of multiple replicates for each system is a methodological strength that addresses reproducibility concerns common in short MD simulations. The focus on hotspot residues informed by a related cytokine (IL-17F) provides a rational basis for mutation selection. The integration of PCA, FEL, and protein stability network analyses represents a multidimensional approach to characterizing mutational effects.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims that "Results from principal component analysis (PCA) and free energy landscape (FEL) analyses indicate conformational destabilization of the mutant systems."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** No quantitative metrics are provided to support the claim of conformational destabilization. It is unclear what specific PCA-derived quantities (e.g., eigenvalues, cosine content, projection distributions) or FEL features (e.g., energy barriers, basin depths, population shifts) were used to reach this conclusion. Without numerical values or statistical comparisons across replicates, the claim is not verifiable.
+  - **Why it matters** Conformational destabilization is a central conclusion of the study. If the evidence for this claim is not robustly quantified and statistically supported, the core finding is undermined.
+  - **Resolution test** Provide specific PCA and FEL metrics with error estimates across replicates, and demonstrate statistically significant differences between mutant and wild-type systems.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract states that "Changes in these important PSN network parameters resulted in differences in hub connectivity and distribution of the links between the systems, which suggests allosteric perturbations and remodeling of the system."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The protein stability network (PSN) analysis is mentioned without any description of the network construction method, the parameters analyzed, or the criteria for identifying hubs. The inference of allosteric perturbations from network parameter changes is speculative without a demonstrated causal or correlational link to functional outcomes.
+  - **Why it matters** Allosteric remodeling is a strong mechanistic claim. Without a clear methodological framework and quantitative network metrics, the claim cannot be assessed for validity.
+  - **Resolution test** Describe the PSN methodology, report specific network parameters (e.g., hub counts, betweenness centrality, community structure) with statistical comparisons, and discuss how these changes relate to known allosteric pathways in IL-17A signaling.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scientific importance
+  - **Claim pointer** The abstract concludes that "this study provides a fundamental framework for designing therapeutic strategies to regulate IL-17A-mediated inflammatory diseases."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The therapeutic implication is stated without any demonstration of how the simulation results translate into actionable design principles. No binding free energy values, residue-specific energy contributions, or comparison with known experimental binding data are provided to support the translational relevance.
+  - **Why it matters** The stated therapeutic framework is the primary justification for the study's significance. Without quantitative binding data or a clear link to experimental validation, the claim overreaches the computational evidence.
+  - **Resolution test** Report MM/GBSA binding free energies with per-residue decomposition, compare with experimental binding affinities if available, and articulate specific, testable hypotheses for therapeutic intervention derived from the simulation data.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Simulation length description
+  - **Evidence pointer** Abstract text
+  - **Issue** The abstract states "A total of 3 mus simulations were performed: three 200 ns replicates for each of the wild-type and mutant systems." The phrase "3 mus" is ambiguous and appears to be a typographical error or an unclear abbreviation.
+  - **Required correction** Clarify the total simulation time, for example "A total of 3 microseconds of simulation was performed, comprising three 200 ns replicates for each of the five systems."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Mutation rationale
+  - **Evidence pointer** Abstract text
+  - **Issue** The abstract states that the targeted residues are "equivalent to hotspot residues of the related cytokine, IL-17F," but does not specify the basis for this equivalence (e.g., sequence alignment, structural superposition) or the source of the hotspot designation.
+  - **Required correction** Provide a brief explanation of how the equivalence was established and cite the source of the hotspot residue identification.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** MM/GBSA methodology
+  - **Evidence pointer** Abstract text
+  - **Issue** The abstract mentions MM/GBSA calculations but does not specify the entropy contributions or whether they were included in binding free energy estimates.
+  - **Required correction** State whether entropy was computed and, if not, acknowledge the limitation of the MM/GBSA approach in the abstract or methods.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of quantitative results, statistical validation, and methodological detail prevents assessment of the central claims.
+- **Assessment against Nature-style criteria** Originality: The application of multi-replicate MD to IL-17A hotspot mutations is not clearly novel, as similar approaches are common in computational studies of cytokine-receptor interfaces. Scientific importance: The therapeutic relevance is plausible but not demonstrated with quantitative evidence. Interdisciplinary readership: The abstract is accessible to computational biologists but may not engage experimental or clinical readers without clearer translational context. Technical soundness: Cannot be assessed from the abstract alone; the lack of methodological detail and quantitative results is a significant limitation. Readability for nonspecialists: The abstract is generally readable but uses specialized terms (e.g., PSN, FEL) without sufficient context for a broad audience.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract suggests a potentially useful computational study, but the claims require substantial quantitative and methodological support before the scientific case can be evaluated.
+
+## Risk / unsupported claims
+- The claim of "conformational destabilization" is unsupported without quantitative PCA/FEL metrics.
+- The inference of "allosteric perturbations" from PSN changes is speculative without methodological detail.
+- The statement that the study "provides a fundamental framework for designing therapeutic strategies" is unsupported without binding free energy data or experimental validation.
+- The equivalence of IL-17A residues to IL-17F hotspots is asserted without evidence.
+- The total simulation time is ambiguously reported and cannot be verified.

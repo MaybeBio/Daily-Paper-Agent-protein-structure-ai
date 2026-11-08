@@ -1,0 +1,36 @@
+{
+  "source": "arxiv",
+  "source_id": "2611.06255v1",
+  "title": "Learning Noise Optimization for Reward Alignment in Few-Step Generative Models",
+  "doi": "",
+  "abstract": "Reward alignment for diffusion- and flow-based generative models is often formulated over stochastic trajectories, making it less suitable for few-step deterministic generators. Initial noise optimization provides a trajectory-free alternative, but existing gradient-free methods require costly per-sample search at inference. We introduce LeNO (Learning Noise Optimization), which amortizes reward-guided initial noise optimization into a learned residual transport while keeping the pretrained generator frozen. LeNO learns an anchor-conditioned distribution over noise corrections using Local GRPO and scalar rewards, eliminating iterative test-time optimization. For Gaussian initial noise with norm-preserving projection, we derive a tractable upper bound on the KL divergence between the corrected noise distribution and the original prior, providing a principled regularization objective. We evaluate LeNO on few-step text-to-image and protein structure generation, including expensive black-box designability rewards. Across both domains, LeNO improves target rewards with a single noise correction at inference while largely preserving generation quality and diversity.",
+  "authors": [
+    "Hongeun Kim",
+    "Jeongsol Kim",
+    "Jong Chul Ye"
+  ],
+  "published_date": "2026-11-04T10:06:32Z",
+  "updated_date": "2026-11-04T10:06:32Z",
+  "journal": "",
+  "category": "cs.LG, cs.AI, cs.CV",
+  "landing_url": "https://arxiv.org/abs/2611.06255v1",
+  "pdf_url": "https://arxiv.org/pdf/2611.06255v1",
+  "pdf_path": "",
+  "pdf_downloaded": false,
+  "query": "(all:\"protein structure\" OR all:\"structure prediction\" OR all:\"protein design\" OR all:\"protein folding\" OR all:\"inverse folding\" OR all:\"protein domain\" OR all:\"backbone design\" OR all:\"sequence design\" OR all:\"structure design\" OR all:\"conformational ensemble\" OR all:\"protein conformation\") AND (all:\"deep learning\" OR all:\"machine learning\" OR all:\"neural network\" OR all:\"graph neural network\" OR all:\"language model\" OR all:transformer OR all:\"diffusion model\" OR all:generative OR all:\"foundation model\" OR all:\"flow matching\" OR all:\"molecular dynamics\" OR all:simulation OR all:docking OR all:alphafold OR all:esmfold OR all:rosetta)\n",
+  "version": "1",
+  "keywords": [
+    "cs.LG",
+    "cs.AI",
+    "cs.CV"
+  ],
+  "extra": {
+    "entry_id": "http://arxiv.org/abs/2611.06255v1",
+    "raw_categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "journal_ref": ""
+  }
+}

@@ -1,0 +1,101 @@
+## Review setup
+- **Input scope** Full manuscript text including abstract, introduction, results, methods, data availability, and acknowledgments.
+- **Assessment boundary** Scientific claims, methodological soundness, evidence quality, and presentation. Not a copyedit or formatting review.
+- **Shared manuscript claim summary** The authors present LIMBER, a hybrid RNA foundation model combining interleaved Transformer and Mamba layers, pre-trained on 40.5 million non-coding RNA sequences. They claim state-of-the-art performance on secondary structure prediction and ncRNA classification, strong transferability to translation-related tasks and RNA-small molecule interaction prediction, and provide a task-agnostic evaluation framework revealing hierarchical organization of biological information and distinct scaling behaviors across model capacity, training duration, and dataset size.
+- **Visible evidence base** Abstract, full text of Introduction, Results (Sections 2.1-2.9), Methods (Sections 4.1-4.8), Data & Code Availability, and Acknowledgments. Figures and tables are referenced but not provided in the submitted material.
+- **Missing materials affecting confidence** All figures, tables, and supplementary information are referenced but not included. This includes Fig. 1-6, Extended Figs. 1-3, and Figs. S1-S8. The absence of these visual data prevents independent verification of the quantitative results and comparisons described in the text.
+
+## Reviewer
+- **Overall assessment** The manuscript presents a substantial and timely contribution to the field of RNA language models. The hybrid architecture combining Transformer and Mamba layers is a reasonable and well-motivated design choice, and the scale of pre-training data is competitive with existing models. The development of a task-agnostic evaluation framework is a valuable methodological contribution that addresses a real gap in the field. However, the core scientific claims regarding performance superiority and the biological interpretability of the model cannot be fully assessed without the figures and tables. The scaling analyses are described qualitatively, and the specific numbers supporting the claims of "leading performance" are not visible. The manuscript is well-written and the logical flow is clear, but the evidence base is incomplete for a definitive assessment.
+- **Who would be interested in the results, and why** Computational biologists working on RNA structure prediction, machine learning researchers developing foundation models for biological sequences, and experimental biologists studying ncRNA function and RNA-targeted therapeutics. The task-agnostic evaluation framework will be of particular interest to the RNA language model community as a standardized benchmarking approach.
+- **Major strengths** 1) The hybrid architecture is a thoughtful integration of two complementary modeling paradigms, addressing the limitations of pure attention and pure state-space models for RNA sequences. 2) The task-agnostic evaluation framework is a significant methodological advance, providing a unified way to probe structural, functional, and evolutionary knowledge in pre-trained models without fine-tuning. 3) The systematic scaling analysis across model size, data size, and training compute is commendable and provides practical guidance for future model development. 4) The breadth of downstream applications tested, from structure prediction to RNA-small molecule interactions, demonstrates the versatility of the model.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence completeness
+  - **Claim pointer** The manuscript claims "leading performance on secondary-structure prediction and non-coding RNA classification benchmarks" and "strong transferability to translation-related tasks and RNA-small molecule interaction prediction."
+  - **Evidence pointer** Figures 2, 5, 6; location not provided in the submitted text
+  - **Concern** The central quantitative claims of the paper are presented without the accompanying figures and tables. The text describes performance comparisons, scaling trends, and layer-wise analyses, but the actual data supporting these statements are not visible. For example, Section 2.2 states that LIMBER-macro "consistently outperforms" several baselines, but the normalized AUPR values, error bars, and statistical significance tests are not available. Similarly, Section 2.3 describes scaling trends without showing the corresponding plots.
+  - **Why it matters** The scientific validity of the paper rests on these quantitative results. Without the figures, it is impossible to verify the magnitude of the reported improvements, assess the variability across RNA classes, or determine whether the claimed advantages are statistically meaningful. The reader cannot evaluate whether the differences are practically significant or within noise.
+  - **Resolution test** Provide all figures and tables with clear axis labels, error bars or confidence intervals, and statistical significance annotations. Include the number of replicates for each experiment. The scaling plots should show individual data points or at least confidence bands.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological rigor
+  - **Claim pointer** The manuscript claims that the task-agnostic evaluation framework "validates LIMBER's strong capabilities in recovering RNA structures and predicting mutational effects, while uncovering a hierarchical, task-dependent organization of different biological information across model layers."
+  - **Evidence pointer** Methods Sections 4.2-4.4; location not provided in the submitted text
+  - **Concern** The methodological details for the evaluation framework are described at a high level, but several critical parameters are missing. For the categorical Jacobian analysis, the text does not specify how the Frobenius norm collapse is normalized across sequences of different lengths, nor how the APC correction is applied to the symmetrized matrix. For the embedding perturbation method, the choice of the perturbation magnitude and the normalization procedure are not fully specified. The zero-shot classification uses a cosine similarity on FFT coefficients, but the number of FFT coefficients retained and the handling of variable-length sequences are not described.
+  - **Why it matters** The evaluation framework is presented as a general tool for the community. If the methodological details are not fully specified, other researchers cannot reproduce the results or apply the framework to their own models. The validity of the layer-wise conclusions depends on the robustness of these methods to parameter choices.
+  - **Resolution test** Provide complete mathematical formulations for the categorical Jacobian and embedding perturbation methods, including all normalization steps. Specify the hyperparameters used (e.g., number of FFT coefficients, perturbation magnitudes) and justify these choices. Include a sensitivity analysis showing that the conclusions are robust to reasonable variations in these parameters.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Comparative analysis
+  - **Claim pointer** The manuscript claims that "at comparable model scales, the LIMBER-nano also generally outperforms RiNALMo-mega" and that LIMBER models "consistently outperform" several baselines across tasks.
+  - **Evidence pointer** Sections 2.2, 2.6, 2.7; location not provided in the submitted text
+  - **Concern** The comparison with baseline models is described as "fair" with "identical settings," but the text does not specify what these settings are. For the secondary structure fine-tuning, the baselines are fine-tuned with the same gradual unfreezing strategy, but it is unclear whether the same hyperparameter search was performed for each model. For the zero-shot evaluations, the baselines may have been pre-trained on different data distributions, which could affect their performance. The manuscript does not discuss potential confounds such as differences in tokenization, vocabulary, or pre-training objectives.
+  - **Why it matters** The claim of superiority over existing models is a key selling point. If the comparison is not rigorously controlled, the conclusions may be overstated. The field has seen instances where performance differences are driven by evaluation protocols rather than model quality.
+  - **Resolution test** Provide a detailed table of hyperparameters used for each model in each task. Describe the hyperparameter search procedure, including the number of trials and the selection criterion. Discuss any known differences in pre-training data or objectives that could affect the comparison, and explain why the comparison is still considered fair.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interpretability claims
+  - **Claim pointer** The manuscript claims to uncover "a hierarchical, task-dependent organization of different biological information across model layers" and that "deeper representations are not universally more informative."
+  - **Evidence pointer** Section 2.5, Figure 4; location not provided in the submitted text
+  - **Concern** The layer-wise analysis is described qualitatively. The text states that ablation of Mamba layers near the beginning and end impairs performance, and that structural information accumulates in the final layers, but the actual ablation results and layer-wise performance curves are not shown. The claim that intermediate layers are "redundant" for structure prediction but useful for classification is interesting but not supported by visible data.
+  - **Why it matters** The interpretability analysis is a major contribution of the paper, distinguishing it from purely performance-oriented studies. If the layer-wise conclusions are not rigorously supported, the conceptual contribution is weakened. The claim of "redundant" parameters has implications for model compression and efficiency.
+  - **Resolution test** Provide the full layer-wise ablation results, including the performance drop for each layer removal. Show the layer-wise performance curves for structure recovery, classification, and fitness prediction. Include a statistical test for the significance of the observed differences between layers.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Section 2.1, model architecture description
+  - **Evidence pointer** Section 2.1, paragraph 1
+  - **Issue** The description of the TTM (Transformer-Transformer-Mamba) pattern is brief. The text states that the pattern is "periodically interleaved" but does not specify the exact period or the arrangement of layers. The number of layers for each model size is not given in the main text.
+  - **Required correction** Provide a table or figure showing the exact layer configuration for each model size (nano, meso, macro), including the number of Transformer and Mamba layers and their arrangement. Specify the period of the interleaving pattern.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Section 4.1, pre-training data
+  - **Evidence pointer** Section 4.1, paragraph 2
+  - **Issue** The pre-training data is described as "40,498,819 RNA sequences" from RNAcentral, but the specific version of RNAcentral, the date of download, and the filtering criteria (beyond length and deduplication) are not specified. The text mentions "non-coding RNA sequences" but does not define how non-coding was determined.
+  - **Required correction** Specify the RNAcentral release version and download date. Describe the criteria used to classify sequences as non-coding. State whether any additional filtering was applied (e.g., sequence complexity, taxonomic filtering).
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Sections 2.6-2.9, downstream task results
+  - **Evidence pointer** Sections 2.6-2.9; location not provided in the submitted text
+  - **Issue** The text reports performance metrics such as F1 scores and R² values but does not indicate the number of independent runs, the variance across runs, or whether the reported values are means or medians. For the RNA-small molecule interaction task, the text mentions "three independent runs" but does not report the standard deviation.
+  - **Required correction** Report the mean and standard deviation (or confidence interval) for all reported metrics. State the number of independent runs for each experiment. For classification tasks, report the confusion matrix or per-class metrics where relevant.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Section 2.9, RNA-small molecule interactions
+  - **Evidence pointer** Section 2.9, paragraph 1
+  - **Issue** The term "RNA-small molecule interactions" is used, but the text also refers to "RNA-ligand interactions" in the section title. The distinction between "small molecule" and "ligand" is not clarified, and the types of small molecules in the dataset are not described.
+  - **Required correction** Use consistent terminology throughout. Describe the types of small molecules in the dataset (e.g., metabolites, drugs, fragments) and the range of molecular weights or chemical properties.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Related work
+  - **Affected element** Section 1, Introduction
+  - **Evidence pointer** Section 1, paragraph 3
+  - **Issue** The introduction reviews existing RNA language models but does not discuss recent hybrid architectures or state-space models applied to RNA beyond the cited Mamba-based work. The positioning of LIMBER relative to the most recent models is not fully articulated.
+  - **Required correction** Add a brief discussion of the most recent RNA foundation models, particularly any that have explored hybrid architectures or state-space models, and explicitly state what LIMBER adds beyond these efforts.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (missing figures and tables) and R1-M2 (incomplete methodological details) are the primary technical failings. The quantitative claims cannot be verified without the visual data, and the evaluation framework cannot be reproduced without complete methodological specifications.
+- **Assessment against Nature-style criteria** 
+  - Originality: The hybrid architecture is a novel combination for RNA modeling, and the task-agnostic evaluation framework is a creative contribution. The layer-wise interpretability analysis adds a dimension not commonly explored in RNA language model papers. The work is original in its synthesis of existing ideas.
+  - Scientific importance: The questions addressed, namely what biological information RNA foundation models learn and how it is organized, are of fundamental importance to the field. The scaling analysis provides practical guidance for resource allocation in future model development. The potential applications to RNA-targeted drug discovery are significant.
+  - Interdisciplinary readership: The work bridges machine learning, RNA biology, and drug discovery. The writing is accessible to a broad audience, but the methods section assumes familiarity with language model architectures. The potential readership is broad, spanning computational and experimental biologists.
+  - Technical soundness: The architectural choices are well-motivated, and the evaluation framework is thoughtfully designed. However, the technical soundness cannot be fully assessed without the figures and tables. The missing methodological details for the evaluation framework are a concern.
+  - Readability for nonspecialists: The introduction and conclusion are well-written and accessible. The results section is dense but understandable. The methods section is technical but appropriate for the target audience. The use of acronyms is consistent and defined.
+- **Recommendation posture** Supportive if technical concerns are resolved. The manuscript addresses important questions, presents a well-designed model, and introduces a valuable evaluation framework. However, the current submission does not provide sufficient evidence to verify the central claims. The authors should provide all figures and tables, complete the methodological details for the evaluation framework, and strengthen the comparative analysis with explicit statistical reporting. Once these issues are addressed, the paper would be a strong candidate for publication.
+
+## Risk / unsupported claims
+- The claim of "leading performance" on secondary structure prediction and ncRNA classification is unsupported without the figures showing the actual performance comparisons.
+- The claim of "strong transferability" to translation-related tasks and RNA-small molecule interaction prediction is unsupported without the corresponding results.
+- The claim of "distinct scaling behaviors across structural, evolutionary and functional capabilities" is unsupported without the scaling plots.
+- The claim of "hierarchical, task-dependent organization of different biological information across model layers" is unsupported without the layer-wise analysis figures.
+- The claim that LIMBER "consistently outperforms" baselines at comparable model scales is unsupported without the controlled comparison data.
+- The claim that the evaluation framework "validates" LIMBER's capabilities is premature given the incomplete methodological details.
+- The statement that "competitive performance of conventional computational biophysics methods on certain tasks" is mentioned but not quantified or referenced to specific results.

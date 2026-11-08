@@ -1,0 +1,70 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no full manuscript, figures, tables, or supplementary materials provided
+- **Shared manuscript claim summary** The authors present DeepEST, a multimodal deep learning framework combining gene expression, gene location, predicted protein structure, and amino acid sequences to predict Gene Ontology terms for bacterial proteins. They report superior performance over existing methods on a 25-species benchmark and demonstrate utility in annotating hypothetical proteins across 25 human bacterial pathogens.
+- **Visible evidence base** Abstract text only; no quantitative details beyond headline metrics (F(max) 0.689, micro-AUPRC 0.756, relative improvements 4.4% and 11.6%)
+- **Missing materials affecting confidence** Full methods, benchmark construction details, baseline implementations, statistical significance testing, ablation studies, data splits, hyperparameter choices, and validation of predictions on hypothetical proteins
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially valuable contribution to bacterial protein function prediction by integrating organism-specific transcriptional and genomic context with structure-based deep learning. The reported performance gains are modest but consistent across two evaluation metrics. However, the abstract alone does not provide sufficient detail to assess methodological rigor, generalizability, or the validity of the claimed improvements. The novelty relative to existing multimodal approaches and the biological interpretability of the learned integration remain unclear.
+- **Who would be interested in the results, and why** Computational biologists developing protein function prediction tools, microbiologists studying uncharacterized bacterial proteins, and researchers working on pathogen genomics who require functional annotations for hypothetical proteins. The method's emphasis on operon structure and condition-dependent expression may also interest those studying bacterial gene regulation and evolution.
+- **Major strengths** The multimodal design is biologically motivated, leveraging operon colocalization and cotranscription as informative signals specific to bacteria. The inclusion of a masked loss function for species-specific fine-tuning suggests attention to domain adaptation challenges. The application to hypothetical proteins across 25 pathogens addresses a practical need in microbial genomics.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "DeepEST outperforms existing protein function prediction methods on a 25-species benchmark, relying solely on amino acid sequence or protein structure"
+  - **Evidence pointer** Abstract; benchmark details not provided
+  - **Concern** The abstract does not specify which baseline methods were compared beyond DeepFRI, nor how the benchmark was constructed. It is unclear whether the comparison is fair in terms of training data, hyperparameter tuning, and evaluation protocol. The reported relative improvements (4.4% and 11.6%) are small, and no statistical significance or variance estimates are provided.
+  - **Why it matters** Without a clear description of the benchmark and baselines, the claimed superiority cannot be independently assessed. Small performance gains may arise from evaluation artifacts or overfitting to the benchmark species.
+  - **Resolution test** Provide full benchmark details, including baseline versions, training/validation splits, cross-validation scheme, and statistical tests (e.g., paired bootstrap or Wilcoxon) across species. Report per-species performance distributions and confidence intervals.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "We introduce a novel masked loss function to fine-tune the structure-based predictor for bacterial species"
+  - **Evidence pointer** Abstract; method details not provided
+  - **Concern** The masked loss function is described as novel, but the abstract does not explain what is masked, why masking is beneficial, or how it differs from existing approaches such as focal loss or class-weighted loss. The mechanism by which this loss improves species-specific fine-tuning is not articulated.
+  - **Why it matters** The novelty claim hinges on this methodological contribution. If the masking strategy is not clearly defined and justified, its contribution to performance cannot be separated from other design choices.
+  - **Resolution test** Provide a formal description of the masked loss, including the masking criterion, the rationale, and an ablation study showing its contribution relative to alternative loss functions.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scientific importance
+  - **Claim pointer** "DeepEST predicts GO terms for unclassified hypothetical proteins across 25 human bacterial pathogens, supporting their experimental characterization"
+  - **Evidence pointer** Abstract; prediction results not provided
+  - **Concern** The abstract claims utility for hypothetical proteins but provides no evidence of accuracy, confidence, or experimental validation for these predictions. It is unclear how many proteins were annotated, what fraction received high-confidence GO terms, or whether any predictions were experimentally confirmed.
+  - **Why it matters** The practical value of the method depends on the reliability of predictions for uncharacterized proteins. Without validation or at least confidence-based filtering, the claim of "supporting experimental characterization" is speculative.
+  - **Resolution test** Report the number of hypothetical proteins annotated, the distribution of prediction confidence, and any experimental or literature-based validation for a subset of predictions.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract terminology
+  - **Evidence pointer** Abstract
+  - **Issue** Terms such as "protein-centric F(max)" and "term-centric micro-AUPRC" are used without definition, which may confuse readers unfamiliar with protein function prediction evaluation.
+  - **Required correction** Briefly define these metrics in the abstract or provide a parenthetical explanation.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Baseline comparison
+  - **Evidence pointer** Abstract
+  - **Issue** Only DeepFRI is named as a comparator. The abstract states "existing protein function prediction methods" but does not specify whether sequence-based methods (e.g., DeepGO, NetGO) or other structure-based methods were included.
+  - **Required correction** List all baseline methods compared in the abstract or state that DeepFRI was the only comparator.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Scientific importance
+  - **Affected element** Generalizability claim
+  - **Evidence pointer** Abstract
+  - **Issue** The method is benchmarked on 25 species, but the abstract does not indicate whether these species span diverse phylogenetic groups or are biased toward particular taxa (e.g., Enterobacteriaceae).
+  - **Required correction** Describe the species composition and discuss potential limitations in generalizing to under-represented bacterial lineages.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking because the core claims of outperformance and methodological novelty cannot be evaluated from the abstract alone. The lack of statistical rigor and methodological detail prevents assessment of whether the reported gains are robust and attributable to the proposed components.
+- **Assessment against Nature-style criteria** Originality: The integration of expression, location, and structure is a reasonable combination, but similar multimodal approaches exist in the literature; the masked loss may add novelty, but this is not yet established. Scientific importance: The problem is relevant, and the application to hypothetical proteins in pathogens is timely, but the demonstrated impact is limited without validation. Interdisciplinary readership: The work bridges machine learning and microbiology, which could attract a broad audience, but the abstract is too technical for nonspecialists. Technical soundness: Not assessable from the abstract; key methodological and evaluation details are missing. Readability for nonspecialists: The abstract is dense and uses field-specific jargon without sufficient context.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a plausible and potentially useful method, but the absence of methodological detail, statistical validation, and independent verification of the core claims precludes a supportive recommendation. A full manuscript with comprehensive methods, ablations, and validation would be required to assess the case.
+
+## Risk / unsupported claims
+- The claim of outperforming existing methods is unsupported without full benchmark details and statistical testing.
+- The novelty of the masked loss function is unverifiable from the abstract.
+- The utility for hypothetical protein annotation is speculative without confidence metrics or experimental validation.
+- The generalizability across bacterial diversity is not assessable without species composition details.

@@ -1,0 +1,70 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no figures, methods, or supplementary material were available for inspection
+- **Shared manuscript claim summary** The authors propose that the C-terminal tail of human phosphofructokinase-1 achieves allosterically relevant positioning through a small set of specific hydrogen bonding and hydrophobic interactions, and that this positioning is required for coupling the tail to the active site and bridging catalytic and regulatory domains in the T-state. They further claim that coarse-grained simulations lacking explicit hydrogen-bond directionality fail to maintain stable tail docking, while inclusion of selected native hydrogen-bond terms restores stability.
+- **Visible evidence base** Enhanced-sampling molecular dynamics simulations, conservation-guided spatial analysis, prior allosteric network analysis, and coarse-grained modeling, all as described in the abstract only
+- **Missing materials affecting confidence** Full methods, simulation parameters, force field details, convergence criteria, structural figures, quantitative error estimates, statistical analyses, and any comparison with experimental validation are not provided
+
+## Reviewer
+- **Overall assessment** The abstract presents a mechanistically plausible and potentially interesting hypothesis regarding sequence-specific surface docking of a disordered enzyme tail. However, the evidence base visible in the abstract is insufficient to establish the central claims. The causal link between specific interactions and allosteric function is asserted rather than demonstrated, and the coarse-grained modeling comparison, while suggestive, lacks the quantitative detail needed to assess its validity. The work may be of interest to the biophysical chemistry community, but the case is not currently established from the provided material.
+- **Who would be interested in the results, and why** Researchers studying allosteric regulation in metabolic enzymes, particularly those interested in the role of intrinsically disordered regions in enzyme function. Computational biophysicists working on enhanced-sampling methods and coarse-grained modeling of protein dynamics would also find the methodological comparison relevant. The potential generalizability of sequence-specific surface docking as a regulatory mechanism could attract a broader readership in protein science.
+- **Major strengths** The study addresses a genuinely under-explored question, namely how flexible terminal segments achieve spatial precision for allosteric function. The combination of multiple computational approaches is appropriate for the problem. The explicit comparison between atomistic and coarse-grained models, with attention to hydrogen-bond directionality, is a thoughtful design that could yield mechanistic insight.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The claim that allosteric positioning of the C-terminal tail is maintained by a few key hydrogen bonding and hydrophobic interactions
+  - **Evidence pointer** Abstract, methods description; location not provided
+  - **Concern** The abstract states that positioning is maintained by specific interactions, but no quantitative data are presented to support this. It is unclear how many interactions were identified, how stable they were across simulations, what the free energy contributions were, or how the authors distinguished essential from dispensable interactions.
+  - **Why it matters** The central mechanistic claim rests on the identification and characterization of these specific interactions. Without quantitative evidence, the claim is an assertion rather than a finding.
+  - **Resolution test** Provide per-interaction occupancy, free energy estimates, or mutational analysis in simulations showing that removal of these interactions disrupts tail positioning.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Causal inference
+  - **Claim pointer** The claim that tail positioning enables residues L766 and E767 to dynamically couple the tail to the active site and bridge catalytic and regulatory domains in the T-state
+  - **Evidence pointer** Abstract, results description; location not provided
+  - **Concern** The abstract asserts a functional consequence of tail positioning but does not show any correlation or causal evidence linking the observed contacts to active site dynamics or domain bridging. The phrase "dynamically couple" implies a functional relationship that is not demonstrated.
+  - **Why it matters** The allosteric relevance of the observed positioning depends on this coupling. Without evidence that the tail contacts influence active site conformation or dynamics, the allosteric interpretation is unsupported.
+  - **Resolution test** Show that perturbation of L766 or E767 contacts alters active site dynamics or that the coupling is statistically significant relative to control simulations.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Model validation
+  - **Claim pointer** The claim that coarse-grained simulations lacking explicit hydrogen-bond directionality fail to maintain stable tail docking, while inclusion of selected OLIVES-derived native hydrogen-bond terms improves stability
+  - **Evidence pointer** Abstract, methods description; location not provided
+  - **Concern** The comparison between coarse-grained models with and without hydrogen-bond terms is presented as a key result, but no quantitative metrics are given. It is unclear what "stable" means, over what timescale stability was assessed, how many replicates were performed, and whether the improvement was statistically significant.
+  - **Why it matters** This comparison is used to argue that sequence-specific interactions are necessary for tail docking. Without quantitative rigor, the conclusion is not verifiable.
+  - **Resolution test** Provide docking stability metrics, such as RMSD or contact persistence over time, with error bars and statistical tests comparing the two models.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract, methods description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract mentions "prior allosteric network analysis" without specifying whether this is the authors' own prior work or published literature, and without indicating how it was integrated into the current study.
+  - **Required correction** Clarify the provenance and role of the prior allosteric network analysis in the current study.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Abstract, results description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "T-state" is used without definition. While specialists may be familiar with it, the abstract should briefly define it for broader readership.
+  - **Required correction** Add a brief definition or context for the T-state, such as "the tense state associated with ATP inhibition."
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Abstract, results description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not state how many independent simulations were performed or whether the results were reproducible across replicates.
+  - **Required correction** Include information on replicate simulations and reproducibility in the abstract or indicate where this is addressed in the full manuscript.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The central mechanistic claims and the model comparison are not quantitatively supported in the visible material.
+- **Assessment against Nature-style criteria** Originality is moderate to high, as the question of how disordered segments achieve spatial precision for allostery is not well understood. Scientific importance is potentially significant for the field of allosteric regulation, but the current evidence does not yet establish the importance of the specific mechanism proposed. Interdisciplinary readership is plausible, as the work bridges enzymology, biophysics, and computational chemistry. Technical soundness cannot be fully assessed from the abstract alone, but the lack of quantitative detail raises concerns. Readability for nonspecialists is adequate, though some terms require definition.
+- **Recommendation posture** Currently not established from the provided evidence. The hypothesis is interesting and the approach is reasonable, but the abstract does not provide sufficient quantitative support for the central claims. I would be supportive if the technical concerns are resolved with appropriate data and analysis.
+
+## Risk / unsupported claims
+- The claim that specific interactions maintain tail positioning is unsupported without quantitative interaction data.
+- The claim that L766 and E767 dynamically couple the tail to the active site is unsupported without evidence of functional coupling.
+- The claim that coarse-grained models without hydrogen-bond terms fail to maintain stable docking is unsupported without quantitative stability metrics.
+- The generalizability of sequence-specific surface docking as a mechanism for allosteric regulation is asserted but not tested beyond the single system studied.

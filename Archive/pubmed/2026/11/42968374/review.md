@@ -1,0 +1,80 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors propose MIL-BC, a multiple instance learning framework for Enzyme Commission (EC) number prediction that models proteins as bags of automatically generated domain instances. They report F1 improvements of 0.03 to 0.17 over a sequence-based baseline across four test sets, with the largest gains for multi-functional proteins, and claim the method is accurate, interpretable, and scalable without requiring structural data or curated domain annotations.
+- **Visible evidence base** Abstract text only; no quantitative details, dataset descriptions, baseline specifications, or code verification possible
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, dataset and baseline definitions, hyperparameter settings, statistical significance tests, domain generation algorithm details, and code execution results
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually interesting application of multiple instance learning to enzyme classification, with a plausible biological rationale linking functional domains to enzymatic activity. However, the evidence provided is insufficient to evaluate the validity of the core claims. Key methodological details, baseline fairness, statistical rigor, and the actual performance of the proposed DCTdomain algorithm are not described. The reported F1 improvements are presented without confidence intervals or significance testing, and the interpretability claim is not substantiated with examples or quantitative evaluation. The work may be of interest to the computational biology community, but the case is not established from the supplied material.
+- **Who would be interested in the results, and why** Researchers in protein function annotation, enzyme engineering, and computational enzymology would be interested because improved EC prediction has direct applications in metabolic pathway reconstruction and genome annotation. The domain-centric interpretability angle may also appeal to those studying protein domain-function relationships. The method's claimed independence from structural data and curated annotations could attract users seeking scalable annotation tools for large sequence databases.
+- **Major strengths** The biological motivation is sound and clearly articulated, linking enzymatic function to constituent domains rather than full-length sequence. The proposed framework addresses a recognized limitation of whole-sequence embedding approaches. The combination of domain-level and global embeddings in MIL-BC+ is a reasonable design choice. The claim of interpretability through domain weights is potentially valuable for biological discovery.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "MIL-BC+ achieved F1 improvements of 0.03 - 0.17 over the sequence-based baseline on all four test sets"
+  - **Evidence pointer** Abstract, Results section; location not provided
+  - **Concern** The performance claim is presented without any statistical context. No confidence intervals, standard deviations, or significance tests are reported. The range of 0.03 to 0.17 is wide, and it is unclear whether the lower bound represents a meaningful improvement. The baseline is described only as "sequence-based" without specifying which model or embedding was used, making it impossible to assess whether the comparison is fair or whether the gains are specific to the proposed method or simply reflect a stronger baseline choice.
+  - **Why it matters** Without statistical rigor, the reported improvements could be within noise or dependent on favorable baseline selection. The central claim of the paper rests on this comparison, and the current evidence does not support a robust conclusion.
+  - **Resolution test** Provide per-test-set F1 scores with confidence intervals or standard deviations across multiple runs, report p-values or effect sizes for the improvements, and specify the exact baseline model and embedding used. Show that the improvements are consistent and statistically significant.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "Domain instances are generated automatically using our DCTdomain algorithm, avoiding dependence on curated domain annotations"
+  - **Evidence pointer** Abstract, Methods section; location not provided
+  - **Concern** The DCTdomain algorithm is mentioned but not described. No information is given about how domains are defined, segmented, or validated. The quality of domain generation directly affects the multiple instance learning framework, and errors in domain boundaries could propagate to prediction errors. Without any evaluation of DCTdomain's accuracy or comparison to existing domain annotation tools, the reliability of the input instances is unknown.
+  - **Why it matters** The entire framework depends on the quality of automatically generated domains. If the domain segmentation is noisy or biologically inaccurate, the claimed advantages of domain-level modeling may be undermined. The method's novelty partly rests on this algorithm, so its performance must be demonstrated.
+  - **Resolution test** Describe the DCTdomain algorithm in detail, including its inputs, parameters, and output format. Provide a quantitative evaluation of domain quality against curated databases such as Pfam or SCOP, and show that the domain instances are biologically meaningful.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility
+  - **Claim pointer** "MIL-BC aggregates domain-level evidence into protein-level EC predictions and assigns interpretable weights to domains that contribute most strongly to each prediction"
+  - **Evidence pointer** Abstract, Results section; location not provided
+  - **Concern** The interpretability claim is not supported by any example or quantitative evaluation. No case study is shown where domain weights correspond to known catalytic residues or functional domains. The abstract states that weights are assigned, but there is no evidence that these weights are biologically meaningful or useful for hypothesis generation.
+  - **Why it matters** Interpretability is presented as a key advantage over sequence-based methods. If the domain weights do not align with known biology, the claimed advantage is not realized. The paper's value for biological discovery depends on this feature being demonstrably correct.
+  - **Resolution test** Provide at least one detailed case study showing a protein where the top-weighted domains correspond to known functional or catalytic regions. Include a quantitative evaluation, such as enrichment of known functional domains among high-weight instances, across a benchmark set.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scientific importance
+  - **Claim pointer** "The largest gains were observed for proteins with multiple enzymatic functions, where domain-level modeling better separates mixed functional signals"
+  - **Evidence pointer** Abstract, Results section; location not provided
+  - **Concern** This claim is presented as a key finding, but no data are shown to support it. The abstract does not specify how multi-functional proteins were identified, how many were in the test sets, or what the performance difference was compared to single-function proteins. The claim may be based on a small subset, and the effect size is unclear.
+  - **Why it matters** If the method's advantage is concentrated in multi-functional proteins, this defines its niche and potential users. Without supporting data, the claim is speculative and cannot guide adoption decisions.
+  - **Resolution test** Report the number of multi-functional proteins in each test set, their F1 scores compared to single-function proteins, and a statistical test showing the difference is significant.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract, Results section
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "bag of domains" is used without a brief explanation of multiple instance learning for readers unfamiliar with the concept.
+  - **Required correction** Add one sentence defining multiple instance learning in the context of protein domains, such as "where each protein is represented as a set of domain instances and predictions are made at the protein level."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Availability section
+  - **Evidence pointer** Abstract, Availability section; location not provided
+  - **Issue** The GitHub repository is mentioned, but no version, license, or dependency information is provided.
+  - **Required correction** Specify the software version, license, and key dependencies in the abstract or note that full details are in the main text.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Abstract, Results section
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The F1 improvement range of 0.03 to 0.17 is reported without indicating whether this is macro or micro F1, or how it is averaged across EC classes.
+  - **Required correction** Specify the F1 variant used and the averaging method across EC classes.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (statistical rigor of performance claims), R1-M2 (DCTdomain algorithm validation), R1-M3 (interpretability evidence), R1-M4 (multi-functional protein claim support)
+- **Assessment against Nature-style criteria** Originality: The application of multiple instance learning to EC prediction with automatic domain generation is a novel combination, though the individual components are not new. Scientific importance: Improved EC prediction is valuable, but the incremental benefit over existing methods is not established from the abstract. Interdisciplinary readership: The work bridges machine learning and enzymology, which could attract a broad audience, but the abstract lacks sufficient detail for either community to assess the contribution. Technical soundness: Not assessable from the abstract; key methodological details and statistical validation are missing. Readability for nonspecialists: The abstract is generally clear but assumes familiarity with multiple instance learning and EC number prediction.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual framework is promising, but the abstract alone does not provide sufficient methodological detail, statistical validation, or evidence for the interpretability and domain-specific claims. A full manuscript with detailed methods, benchmark evaluations, and case studies would be required to assess whether the case can be made.
+
+## Risk / unsupported claims
+- The claim that MIL-BC+ achieves F1 improvements of 0.03 to 0.17 is unsupported without statistical context or baseline specification.
+- The claim that DCTdomain generates domains automatically and avoids curated annotations is unverifiable without algorithm details or quality evaluation.
+- The claim that domain weights are interpretable and identify contributing domains is unsupported without examples or quantitative validation.
+- The claim that the largest gains occur for multi-functional proteins is unsupported without data on subset sizes and performance.
+- The claim that the method is scalable for large-scale annotation is not supported by any runtime or scalability analysis.

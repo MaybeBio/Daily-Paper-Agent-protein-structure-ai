@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract, without access to full methods, figures, or statistical details
+- **Shared manuscript claim summary** The authors report that replacing a carboxylic acid with a tetrazole bioisostere in an LRH-1 agonist preserves high-affinity binding, improves cellular potency and target gene induction, and that a dual-modified agonist (6NTet) containing both tetrazole and sulfamide moieties shows further gains. Crystal structures, molecular dynamics simulations, and mutational analyses reportedly reveal that the tetrazole tail of 6NTet samples two distinct interaction sites, one previously characterized (site 1) and one novel (site 2), with both contributing to agonist-induced activation and site 2 also influencing basal activity.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary data provided
+- **Missing materials affecting confidence** Full manuscript, crystallographic data and refinement statistics, molecular dynamics simulation parameters and convergence criteria, mutational construct details, cellular assay protocols, statistical analyses, and compound synthesis and characterization data
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting medicinal chemistry and structural biology study on LRH-1 agonists, with the identification of a novel ligand interaction site being the most notable claim. However, the evidence base is limited to the abstract, and several key claims, particularly the structural identification of site 2 and its functional contribution, cannot be independently evaluated without the full data. The work may be of interest to the nuclear receptor and drug discovery communities, but the current evidence is insufficient to fully establish the case.
+- **Who would be interested in the results, and why** Researchers in nuclear receptor biology, particularly those studying NR5A2 and phospholipid sensing; medicinal chemists focused on bioisostere design and metabolic stability improvement; structural biologists interested in ligand binding site plasticity; and drug discovery groups targeting metabolic and steroidogenic pathways.
+- **Major strengths** The abstract clearly states a rational design strategy (bioisosteric replacement) with a defined biological rationale. The combination of structural, computational, and functional approaches is appropriate for the claims. The identification of a previously unrecognized interaction site is a potentially significant finding that could broaden understanding of LRH-1 activation.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "Crystal structures, molecular dynamics simulations, and mutational analyses revealed that the 6NTet tetrazole tail dynamically samples two distinct interaction sites within the LRH-1 ligand-binding pocket."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The claim that the tetrazole tail samples two distinct sites is presented as a definitive finding, but the abstract provides no quantitative or qualitative details on the structural data, such as resolution, electron density quality, or occupancy of the ligand in each site. The dynamic sampling is asserted but not supported by specific simulation or experimental evidence.
+  - **Why it matters** The novelty of the study hinges on the existence and functional relevance of site 2. Without clear structural evidence, the claim cannot be verified, and the significance of the finding is undermined.
+  - **Resolution test** Provide crystallographic data showing unambiguous electron density for the tetrazole in both sites, with appropriate refinement statistics, and molecular dynamics data demonstrating stable or recurrent occupancy of site 2 across multiple independent simulations.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Functional validation
+  - **Claim pointer** "Mutational analyses demonstrated that both sites contribute to agonist-induced receptor activation, while site 2 additionally influences basal LRH-1 activity."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract states that mutations in both sites affect activation, but no details are given on which residues were mutated, the magnitude of effects, or whether the mutations were designed to selectively disrupt each site. The claim that site 2 influences basal activity is particularly strong and requires careful control experiments to rule out nonspecific effects.
+  - **Why it matters** The functional contribution of site 2 is central to the claim that it is a biologically relevant interaction site. Without detailed mutational data, the possibility that the observed effects are due to allosteric or structural perturbations rather than direct ligand interactions cannot be excluded.
+  - **Resolution test** Provide a table of mutations with corresponding activity data, including basal and agonist-stimulated values, and demonstrate that mutations in site 2 do not globally destabilize the receptor (e.g., via expression or folding controls).
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Comparative claims
+  - **Claim pointer** "Substituting a tetrazole for the carboxylate in a lead agonist preserved high affinity LRH-1 binding, improved potency in cellular reporter assays, and promoted stronger target gene induction."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The comparative improvements in affinity, potency, and gene induction are stated without numerical values or statistical significance. It is unclear whether the improvements are modest or substantial, and whether they are consistent across multiple assays and replicates.
+  - **Why it matters** The practical value of the tetrazole substitution as a strategy depends on the magnitude and reproducibility of these improvements. Without quantitative data, the claim is not fully supported.
+  - **Resolution test** Provide binding affinities (e.g., Kd or IC50), EC50 values from reporter assays, and gene induction fold changes with error bars and statistical tests for the lead compound, tetrazole analog, and 6NTet.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract
+  - **Issue** The term "carboxylic acid bioisosteres" is used in the title, but the abstract only mentions tetrazole and sulfamide. Clarify whether other bioisosteres were tested and why these two were selected for emphasis.
+  - **Required correction** Specify the full set of bioisosteres evaluated and the selection criteria for the ones highlighted.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Compound characterization
+  - **Evidence pointer** Abstract
+  - **Issue** The abstract does not mention the metabolic stability data that motivated the bioisostere design. It is unclear whether the tetrazole and sulfamide modifications actually improved stability as intended.
+  - **Required correction** Include a statement on metabolic stability comparisons between the carboxylic acid lead and the modified analogs.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Site nomenclature
+  - **Evidence pointer** Abstract
+  - **Issue** The abstract refers to "site 1" and "site 2" but does not define their locations relative to the ligand-binding pocket architecture. This may confuse readers unfamiliar with LRH-1 structure.
+  - **Required correction** Briefly describe the spatial relationship of site 2 to site 1 and the pocket mouth or deep regions.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking because the central claims of a novel interaction site and its functional role cannot be evaluated from the abstract alone. R1-M3 is non-blocking but requires quantitative support to substantiate the claimed improvements.
+- **Assessment against Nature-style criteria** 
+  - Originality: The identification of a second ligand interaction site in LRH-1 is potentially original, but the abstract does not provide enough context to confirm novelty relative to prior structural studies of NR5A2.
+  - Scientific importance: The findings could be important for understanding LRH-1 activation and for designing better agonists, but the significance is contingent on the robustness of the structural and functional evidence.
+  - Interdisciplinary readership: The topic bridges structural biology, medicinal chemistry, and nuclear receptor biology, which could attract a broad audience, but the abstract is written in a specialized manner that may limit accessibility.
+  - Technical soundness: The combination of methods is appropriate, but the lack of data in the abstract prevents assessment of technical rigor.
+  - Readability for nonspecialists: The abstract is concise but assumes familiarity with nuclear receptor terminology and bioisostere concepts, which may hinder nonspecialist comprehension.
+- **Recommendation posture** Supportive if technical concerns are resolved. The study has clear potential, but the current evidence base, limited to the abstract, does not fully establish the case for a novel interaction site or the functional claims. Full data are required for a definitive assessment.
+
+## Risk / unsupported claims
+- The existence and functional relevance of site 2 are unsupported from the abstract alone.
+- The claim that tetrazole substitution improves metabolic stability is not stated or supported.
+- The comparative improvements in affinity, potency, and gene induction are not quantified.
+- The dynamic sampling behavior of the tetrazole tail is asserted without supporting simulation or experimental details.

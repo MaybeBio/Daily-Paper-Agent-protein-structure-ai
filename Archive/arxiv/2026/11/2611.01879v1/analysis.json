@@ -1,0 +1,24 @@
+{
+  "source": "arxiv",
+  "id": "2611.01879v1",
+  "title": "Graphs Have Structure: Declarative Manifolds, 3D Z-Order Monoid Roll-ups, and Zero-Simulation Visual Analytics in a Graph DBMS",
+  "authors": "Madhulatha Mandarapu; Sandeep Kunkunuru",
+  "journal": "",
+  "published_date": "2026-11-01",
+  "window": {
+    "start": "2026-11-01",
+    "end": "2026-11-07"
+  },
+  "score": 5,
+  "one_liner_zh": "该文提出在图形数据库中利用3D Z-order索引和流形结构加速图查询与可视化，虽以蛋白质折叠为示例，但核心是通用图数据库系统，非蛋白质结构计算建模，算法可迁移但非直接贡献。",
+  "abstract": "Every real-world graph is embedded in an ambient structural manifold: proteins fold in Euclidean space ($R^3$), telecom networks sit on a planetary surface ($S^2 \\times R$), and ontologies and calendars form discrete subsumption posets ($(V, \\sqsubseteq)$). Yet property graph databases treat node coordinates as opaque payload scalars, leave spatial proximity edges unindexed, and force visualizers into $O(V^2)$ client-side force-directed simulations that destroy true geometry and truncate hierarchy roll-ups. We elevate ambient manifold structure to a first-class primitive in Samyama Graph. First, we introduce a declarative and auto-detected structural convention contract (samyama.structure/1) persisted in .sgsnap headers that binds node labels to Euclidean 3D, Geo-Spherical, Causal Spacetime, or Poset Hierarchy manifolds. Second, we show that both discrete posets (via Order-Embedded Hierarchy $[tin, tout]$ DFS intervals) and continuous 3D manifolds (via a 63-bit 3D Morton Z-order Structural-Geometric Index, SGI) reduce regional aggregation to 1D rank-interval monoid folds answered directly from index-resident Fenwick trees (SUM, COUNT) and Segment Trees (MIN, MAX). At $100,000$ 3D nodes, SGI builds in $28.14$ ms and answers Morton-interval SUM and MAX roll-ups in $0.048\\,μ$s and $0.104\\,μ$s---$8,345.1\\times$ and $3,824.4\\times$ faster than property scans. Third, we introduce 3D voxel-hashed virtual contact edges weighted by Topological--Geometric Stress $σ(u,v) = d_{graph}(u,v) / d_{manifold}(u,v)$ to isolate long-range tertiary folds, plus manifold-guided $A^*$ shortest-path search that cuts explored states by up to $3.80\\times$ over Dijkstra. Fourth, we replace client layout simulation with server-computed 3D Cone-Tree/Ribbon coordinates and a non-WebGL 2.5D Isometric projection with painter's-order depth sorting and sub-millisecond Level-of-Detail (LoD) macro-cuts.",
+  "abstract_zh": "每个真实世界的图都嵌入在一个环境结构流形中：蛋白质在欧几里得空间（$R^3$）中折叠，电信网络位于行星表面（$S^2 \\times R$），本体和日历形成离散的子sumption偏序集（$(V, \\sqsubseteq)$）。然而，属性图数据库将节点坐标视为不透明的负载标量，不索引空间邻近边，并迫使可视化工具进行$O(V^2)$客户端力导向模拟，这破坏了真实几何并截断了层次汇总。我们将环境流形结构提升为Samyama Graph中的一等公民。首先，我们引入一个声明式且自动检测的结构约定契约（samyama.structure/1），持久化在.sgsnap头部，将节点标签绑定到欧几里得3D、地理球形、因果时空或偏序集层次流形。其次，我们展示离散偏序集（通过有序嵌入层次$[tin, tout]$ DFS区间）和连续3D流形（通过63位3D Morton Z序结构几何索引，SGI）都将区域聚合简化为1D秩区间幺半群折叠，直接从索引驻留的Fenwick树（SUM, COUNT）和线段树（MIN, MAX）中回答。在$100,000$个3D节点下，SGI构建耗时$28.14$ ms，Morton区间SUM和MAX汇总回答耗时$0.048\\,μ$s和$0.104\\,μ$s，分别比属性扫描快$8,345.1\\times$和$3,824.4\\times$。第三，我们引入3D体素哈希虚拟接触边，权重由拓扑-几何应力$σ(u,v) = d_{graph}(u,v) / d_{manifold}(u,v)$决定，以隔离长程三级折叠，并加入流形引导的$A^*$最短路径搜索，将探索状态数比Dijkstra减少最多$3.80\\times$。第四，我们用服务器计算的3D锥树/带状坐标和非WebGL 2.5D等距投影（带画家顺序深度排序和亚毫秒级细节层次（LoD）宏切割）替代客户端布局模拟。",
+  "has_fulltext": true,
+  "fulltext_source": "ar5iv",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://arxiv.org/abs/2611.01879v1",
+  "source_url": "https://arxiv.org/abs/2611.01879v1",
+  "paper_page_path": "papers/arxiv/2611.01879v1/index.html"
+}

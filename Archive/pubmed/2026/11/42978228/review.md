@@ -1,0 +1,92 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors report molecular dynamics simulation analyses of seven transmembrane proline mutations in the beta(2)-adrenergic receptor, in agonist- and inverse-agonist-bound states, compared with wild type. They identify structural and contact-based signatures that separate activating from inactivating mutations, report activation-like behavior for three experimentally activating mutants and inactivation-like behavior for four experimentally inactivating mutants, and introduce a "functional shift score" to connect contact changes with functional outcomes.
+- **Visible evidence base** Abstract text only; no methodological details, trajectory parameters, statistical analyses, or quantitative results are visible
+- **Missing materials affecting confidence** Full manuscript, methods section, simulation parameters, force field details, convergence criteria, replicate information, all figures and tables, statistical tests, and any comparison with experimental data beyond the categorical classification of mutants
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting computational study addressing a mechanistically important question in GPCR biology, namely how conserved transmembrane proline mutations affect receptor activation. The central claim, that activation-like and inactivation-like behaviors can be distinguished by specific interhelical contact signatures, is plausible and would be of interest to the GPCR and molecular simulation communities. However, the abstract alone provides insufficient detail to evaluate the technical soundness of the simulations, the robustness of the classification scheme, or the statistical significance of the reported differences. The "functional shift score" is introduced without definition or validation, and the relationship between the simulation-derived signatures and experimental functional outcomes is asserted rather than demonstrated quantitatively. The case is not established from the provided evidence.
+- **Who would be interested in the results, and why** Researchers in GPCR structural biology and pharmacology, particularly those studying receptor activation mechanisms and allosteric regulation; computational biophysicists interested in molecular dynamics simulations of membrane proteins; and experimentalists working on beta-adrenergic receptor signaling who may use these predictions to guide mutagenesis studies.
+- **Major strengths** The study addresses a well-defined and biologically important question with clear translational relevance to GPCR pharmacology. The use of two independent trajectory sets and both agonist- and inverse-agonist-bound states is a reasonable design choice. The attempt to link specific interhelical contacts (TM3-TM6 hydrophobic lock, DRY-TM6 interface, DRY-NPxxY coupling) to functional classification provides a mechanistically interpretable framework. The introduction of a quantitative score to bridge contact and functional changes is conceptually useful.
+- **Major Concerns**  
+  - **R1-M1**  
+    - **Severity** Major  
+    - **Blocking** Yes  
+    - **Axis** Technical soundness  
+    - **Claim pointer** The abstract claims that "a set of structural and contact-based signatures that consistently separate activating from inactivating mutations is identified" and that these signatures distinguish activation-like from inactivation-like responses.  
+    - **Evidence pointer** Abstract; location not provided  
+    - **Concern** No quantitative criteria are provided for what constitutes a "signature" that "consistently separates" the two classes. The abstract does not report effect sizes, confidence intervals, or statistical tests. It is unclear whether the separation is based on a single contact, a composite metric, or a machine-learning classifier, and whether the separation is robust to trajectory length, sampling, or force field choice.  
+    - **Why it matters** Without defined thresholds and statistical validation, the claim of consistent separation cannot be distinguished from chance or from overfitting to a small set of seven mutants. The central conclusion of the paper rests on this classification.  
+    - **Resolution test** Provide a clear operational definition of the signatures, report the distribution of values for each mutant and state, and include statistical tests (e.g., permutation tests or bootstrap confidence intervals) demonstrating that the separation is unlikely under a null model.  
+  - **R1-M2**  
+    - **Severity** Major  
+    - **Blocking** Yes  
+    - **Axis** Evidence sufficiency  
+    - **Claim pointer** The abstract states that "activation-like behavior in both trajectories for the 3 mutants experimentally found to be activating-like, and inactivation-like behavior in at least one trajectory for the 4 mutants found experimentally to be inactivating."  
+    - **Evidence pointer** Abstract; location not provided  
+    - **Concern** The criterion for success is asymmetric: perfect agreement is required for activating mutants (both trajectories) but only partial agreement (at least one trajectory) for inactivating mutants. This asymmetry weakens the claim of consistency with experimental data. Moreover, the abstract does not specify how "activation-like" or "inactivation-like" behavior is defined in terms of the Leu47-Leu215 distance or other metrics, nor what the magnitude of the changes is relative to wild type.  
+    - **Why it matters** The claim of agreement with experiment is a key validation of the simulation approach. An asymmetric success criterion and undefined thresholds make the agreement difficult to assess and potentially inflate the apparent concordance.  
+    - **Resolution test** Define explicit criteria for classifying a trajectory as activation-like or inactivation-like, apply the same criteria symmetrically to all mutants, and report the numerical values for each mutant and state, including the wild-type reference.  
+  - **R1-M3**  
+    - **Severity** Major  
+    - **Blocking** Yes  
+    - **Axis** Technical soundness  
+    - **Claim pointer** The abstract introduces "a functional shift score" that "helps clarify connections between contact and functional changes due to mutation."  
+    - **Evidence pointer** Abstract; location not provided  
+    - **Concern** The functional shift score is not defined, its mathematical form is not given, and no validation is shown that it correlates with experimental functional outcomes beyond the categorical classification already used. It is unclear whether the score is a derived quantity from the simulations or an independent metric, and how it relates to established measures of GPCR activation.  
+    - **Why it matters** A new metric without definition or validation cannot be evaluated for utility or reproducibility. If the score is intended as a predictive tool, its performance must be demonstrated against independent data.  
+    - **Resolution test** Provide the formal definition of the score, show its distribution for all mutants and states, and demonstrate its correlation with quantitative experimental measures of receptor activity (e.g., cAMP accumulation or beta-arrestin recruitment) if available.  
+  - **R1-M4**  
+    - **Severity** Major  
+    - **Blocking** No  
+    - **Axis** Technical soundness  
+    - **Claim pointer** The abstract states that "mutation does not substantially alter local protein structure" while simultaneously reporting "numerous structural changes in the protein that affect activity."  
+    - **Evidence pointer** Abstract; location not provided  
+    - **Concern** These two statements are in apparent tension. If local structure is not substantially altered, what is the structural basis for the reported interhelical rearrangements? The abstract does not clarify the spatial scale or the specific residues involved in the "local" versus "global" changes, nor how the distinction is operationalized.  
+    - **Why it matters** The mechanistic interpretation depends on understanding which structural changes are direct consequences of the proline mutations and which are downstream effects. Without a clear definition of "local" and a description of the structural changes, the narrative is ambiguous.  
+    - **Resolution test** Define the criteria for "substantial" local structural change (e.g., RMSD or side-chain dihedral thresholds) and provide a residue-level map of the changes that are considered non-local.  
+- **Minor Comments**  
+  - **R1-m1**  
+    - **Severity** Minor  
+    - **Axis** Clarity  
+    - **Affected element** Abstract wording  
+    - **Evidence pointer** Abstract; location not provided  
+    - **Issue** The phrase "2 independent sets of trajectories" is ambiguous. It is unclear whether these are independent replicates of the same simulation conditions, different force fields, different initial conditions, or different analysis pipelines.  
+    - **Required correction** Specify the nature of the independence (e.g., different random seeds, different starting structures, or different simulation protocols) in the abstract or methods.  
+  - **R1-m2**  
+    - **Severity** Minor  
+    - **Axis** Reproducibility  
+    - **Affected element** Simulation methodology  
+    - **Evidence pointer** Abstract; location not provided  
+    - **Issue** No information is given about simulation length, number of replicates, force field, water model, membrane representation, or temperature coupling. These details are essential for assessing convergence and sampling adequacy.  
+    - **Required correction** Include key simulation parameters in the abstract or ensure they are prominently reported in the methods section.  
+  - **R1-m3**  
+    - **Severity** Minor  
+    - **Axis** Interpretability  
+    - **Affected element** Residue numbering  
+    - **Evidence pointer** Abstract; location not provided  
+    - **Issue** The residue numbering "Leu47(2x46)" and "Leu215(6x37)" uses a mixed scheme. While the Ballesteros-Weinstein numbering is standard for GPCRs, the sequential numbering should be defined in the methods to avoid confusion for readers unfamiliar with the specific construct.  
+    - **Required correction** State the construct used (e.g., human beta2-AR with or without N-terminal truncations) and define the numbering scheme explicitly.  
+  - **R1-m4**  
+    - **Severity** Minor  
+    - **Axis** Completeness  
+    - **Affected element** Experimental comparison  
+    - **Evidence pointer** Abstract; location not provided  
+    - **Issue** The abstract refers to "earlier experiments" and "experimentally found" classifications but does not cite specific studies or describe the experimental assays used to classify the mutants as activating or inactivating.  
+    - **Required correction** Provide citations and a brief description of the experimental systems and assays in the abstract or introduction.  
+- **Technical failings that need to be addressed before the case is established** R1-M1 (undefined classification criteria and lack of statistical validation), R1-M2 (asymmetric success criteria and undefined thresholds for activation-like behavior), R1-M3 (undefined and unvalidated functional shift score). These are the primary technical issues that prevent the case from being established. R1-M4 is important for mechanistic interpretation but is not strictly blocking.
+- **Assessment against Nature-style criteria**  
+  - **Originality** The question of how conserved proline mutations affect GPCR activation is not new, but the specific focus on preserving helical kinks while rewiring activation networks, and the introduction of a functional shift score, offers a potentially fresh angle. However, the abstract does not clearly differentiate this work from prior computational studies of GPCR mutations.  
+  - **Scientific importance** GPCR activation mechanisms are of broad significance in biology and medicine. If the findings are robust, they could inform understanding of how mutations in conserved residues modulate receptor function, which has implications for disease-associated variants and drug design. The importance is moderate to high, contingent on technical validation.  
+  - **Interdisciplinary readership** The topic bridges structural biology, computational biophysics, and pharmacology. The abstract is written in a way that is largely accessible to these communities, though the undefined "functional shift score" and lack of quantitative detail may limit accessibility to non-specialists.  
+  - **Technical soundness** Cannot be assessed from the abstract alone. The absence of simulation parameters, statistical analyses, and validation of the new score precludes evaluation. This is the major weakness.  
+  - **Readability for nonspecialists** The abstract is reasonably clear in its narrative but relies on domain-specific terminology (e.g., "DRY-NPxxY coupling", "TM6 swing") without explanation. The lack of quantitative results makes the findings difficult to interpret for readers outside the immediate field.  
+- **Recommendation posture** Currently not established from the provided evidence. The study addresses a relevant question and the conceptual framework is promising, but the abstract does not provide sufficient technical detail to assess the validity of the central claims. I would be supportive if the technical concerns regarding classification criteria, statistical validation, and the functional shift score are resolved in the full manuscript.
+
+## Risk / unsupported claims
+- The claim that "a set of structural and contact-based signatures that consistently separate activating from inactivating mutations is identified" is unsupported without defined criteria and statistical tests.
+- The claim of agreement with experimental classifications is unsupported due to asymmetric success criteria and undefined thresholds.
+- The "functional shift score" is introduced without definition or validation, making its utility and interpretation unassessable.
+- The statement that "mutation does not substantially alter local protein structure" is unquantified and potentially in tension with the reported global changes.
+- Any quantitative magnitude of the Leu47-Leu215 distance changes is not reported, so the claim of "activation-like behavior" cannot be evaluated.

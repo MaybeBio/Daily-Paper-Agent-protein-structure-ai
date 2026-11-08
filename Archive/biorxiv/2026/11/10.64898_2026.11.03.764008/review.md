@@ -1,0 +1,84 @@
+## Review setup
+
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no full-text methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors present PALM, a protein language model that jointly predicts domain and functional-site occurrence using a soft-target objective, integrates ESM2 with LoRA, learned layer aggregation, and a BiLSTM encoder, and is trained on approximately 15 million InterPro-annotated UniRef50 sequences. The abstract reports high F1 scores on held-out proteins, robust performance on low-sequence-identity proteins, superiority over an ESM3 annotation baseline, improved zero-shot variant effect prediction relative to ESM2 and AlphaMissense, enhanced CATH-Gene3D superfamily organization, improved prediction of experimental activation and repression effects, and utility as a proxy for deep mutational scanning.
+- **Visible evidence base** Abstract text only; no figures, tables, methods details, or supplementary materials
+- **Missing materials affecting confidence** Full methods, training and evaluation details, benchmark definitions, statistical significance tests, baseline configurations, dataset splits, and all supporting figures and tables
+
+## Reviewer
+
+- **Overall assessment** The abstract describes a potentially valuable resource for protein function annotation and variant effect prediction. The reported performance metrics are impressive, and the combination of domain and site prediction with zero-shot variant effect scoring is conceptually appealing. However, the abstract alone provides insufficient detail to assess the validity of the methods, the fairness of the comparisons, or the robustness of the conclusions. Several claims, particularly those involving comparisons to AlphaMissense and the DMS proxy application, require substantially more evidence than is presented here.
+- **Who would be interested in the results, and why** Computational biologists developing protein function prediction tools, clinical geneticists interpreting missense variants, and experimental biologists seeking to prioritize functional residues or design mutagenesis experiments would all find the reported capabilities relevant. The promise of a model that links sequence, function, and variant consequence in a single framework addresses a widely felt need in both basic and translational research.
+- **Major strengths** The joint prediction of domains and functional sites with a soft-target objective that preserves overlapping and nested annotations is a thoughtful design choice. The reported performance on low-sequence-identity proteins suggests generalizability beyond trivial homology. The zero-shot variant effect prediction, if robust, would be a significant practical contribution given the scale of variants of uncertain significance. The breadth of downstream applications, from superfamily organization to DMS proxy, indicates a versatile representation.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "PALM achieved domain- and site-occurrence F1 scores of 0.941 and 0.877, respectively, and retained substantial performance in proteins with <20% sequence identity to the training and validation data."
+  - **Evidence pointer** Abstract, no section or figure specified
+  - **Concern** The abstract reports F1 scores but provides no precision-recall tradeoff, no class-wise breakdown, no comparison to a non-trivial baseline at the same task, and no definition of "substantial performance" for the low-sequence-identity subset. The ESM3 annotation baseline is mentioned but not quantified in the abstract.
+  - **Why it matters** Without precision and recall separately, or a confusion matrix, the F1 score can mask severe class imbalance problems. The 17,951 domain and 1,383 site classes are likely highly imbalanced, and a model that predicts only common classes could achieve high macro-F1 while failing on rare classes. The low-sequence-identity claim needs a quantitative threshold for "substantial" to be meaningful.
+  - **Resolution test** Provide precision, recall, and F1 per class or per class family, a histogram of per-class performance, and explicit performance numbers for the <20% sequence identity subset with a defined baseline comparison.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "PALM embedding disruption distinguished 151,823 ClinVar missense variants more accurately than ESM2 embedding disruption (AUROC 0.835 versus 0.710), and combining PALM embedding disruption with the ESM2 likelihood-ratio signal reached an AUROC of 0.877."
+  - **Evidence pointer** Abstract, no section or figure specified
+  - **Concern** The abstract does not specify how "embedding disruption" is computed, how the ClinVar dataset was filtered (e.g., by allele frequency, by pathogenicity label balance, by gene), whether the same variants were used for both models, or whether the AUROC difference is statistically significant. The combination method is not described.
+  - **Why it matters** Variant effect prediction benchmarks are highly sensitive to dataset composition and label balance. If the ClinVar set is enriched for well-characterized genes or for extreme pathogenicity labels, the AUROC may not generalize. The combination of PALM embedding disruption with ESM2 likelihood ratio needs a clear description to be reproducible and to assess whether the improvement is additive or redundant.
+  - **Resolution test** Describe the embedding disruption metric precisely, report the ClinVar filtering criteria, provide confidence intervals or significance tests for the AUROC differences, and describe the combination method with an ablation showing each component's contribution.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "The same combined zero-shot score outperformed AlphaMissense on a benchmark dataset on 128,161 missense variants, that were derived from literature but not present in ClinVar database."
+  - **Evidence pointer** Abstract, no section or figure specified
+  - **Concern** The abstract does not describe the benchmark dataset, its provenance, its label source, or the evaluation metric. AlphaMissense is a strong baseline, and outperforming it on a literature-derived set requires careful matching of variant sets, label definitions, and evaluation protocols.
+  - **Why it matters** Literature-derived variant sets can have noisy labels, and the choice of metric (AUROC, AUPRC, accuracy at a threshold) can change the ranking of methods. Without details on the benchmark construction and the exact comparison protocol, this claim cannot be evaluated.
+  - **Resolution test** Describe the benchmark dataset construction, label curation process, evaluation metric, and provide a detailed comparison table with confidence intervals. Clarify whether AlphaMissense was run in its published form or retrained.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "In a downstream case study, we demonstrated the ability to use PALM-derived embedding as proxy of deep mutational scanning (DMS), showcasing the broad application of PALM."
+  - **Evidence pointer** Abstract, no section or figure specified
+  - **Concern** The abstract provides no details on the DMS dataset, the correlation metric, the number of proteins or variants tested, or the comparison to existing DMS prediction methods.
+  - **Why it matters** The claim that embeddings can serve as a DMS proxy is strong and would require demonstrating high correlation with experimental measurements across multiple proteins and against established baselines. Without these details, the claim is unverifiable.
+  - **Resolution test** Provide the DMS datasets used, the correlation coefficients, the number of proteins, and a comparison to existing methods such as EVE or DeepSequence.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract, first sentence
+  - **Evidence pointer** Abstract, opening sentence
+  - **Issue** The opening sentence about database growth is generic and does not specifically motivate the design choices of PALM.
+  - **Required correction** Consider framing the motivation around the specific limitations of existing annotation tools, such as the inability to preserve nested annotations or to transfer residue-level knowledge to variant interpretation.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity of reporting
+  - **Affected element** Abstract, training data description
+  - **Evidence pointer** Abstract, training description
+  - **Issue** The abstract states "approximately 15 million InterPro-annotated UniRef50 sequences" but does not specify the version of InterPro or UniRef50, which affects reproducibility.
+  - **Required correction** Specify the database versions and the date of access.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Clarity of reporting
+  - **Affected element** Abstract, baseline comparison
+  - **Evidence pointer** Abstract, ESM3 baseline mention
+  - **Issue** The ESM3 annotation baseline is mentioned but no numbers are given, making the claim of "substantially outperformed" unquantified.
+  - **Required correction** Provide the performance numbers for the ESM3 baseline alongside PALM in the abstract or refer to a specific table.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4. The abstract does not provide sufficient methodological detail or quantitative evidence to establish the core claims of domain and site prediction accuracy, variant effect prediction superiority, or DMS proxy utility.
+- **Assessment against Nature-style criteria** Originality is moderate to high; the joint prediction of domains and sites with a soft-target objective and the application to zero-shot variant effect prediction are not entirely novel but the combination is distinctive. Scientific importance is potentially high given the scale of unannotated proteins and variants of uncertain significance. Interdisciplinary readership is plausible, spanning computational biology, clinical genetics, and molecular biology. Technical soundness cannot be assessed from the abstract alone; the reported metrics lack the supporting detail required for evaluation. Readability for nonspecialists is adequate but the abstract is dense with technical terms and would benefit from clearer framing of the practical implications.
+
+## Risk / unsupported claims
+
+- The claim of "substantial performance" on low-sequence-identity proteins is unsupported without quantitative thresholds or comparisons.
+- The claim of outperforming ESM3 annotation baseline is unquantified and therefore not assessable.
+- The variant effect prediction AUROC values are reported without confidence intervals, significance tests, or dataset description, making them unverifiable.
+- The claim of outperforming AlphaMissense on a literature-derived benchmark is unsupported without benchmark details and evaluation protocol.
+- The DMS proxy claim is entirely unsupported without dataset descriptions or correlation metrics.
+- The claim that PALM embeddings "showed stronger CATH-Gene3D superfamily organization" is unquantified and lacks a clear metric.
+- The claim of "improved prediction of experimental activation and repression effects" is unquantified and lacks dataset and baseline details.

@@ -1,0 +1,24 @@
+{
+  "source": "pubmed",
+  "id": "42968374",
+  "title": "Domain-Aware Enzyme Classification via Multiple Instance Learning.",
+  "authors": "Xiao, Qingyang; Ye, Yuzhen; Tang, Haixu",
+  "journal": "Bioinformatics (Oxford, England)",
+  "published_date": "2026-11-02",
+  "window": {
+    "start": "2026-11-01",
+    "end": "2026-11-07"
+  },
+  "score": 5,
+  "one_liner_zh": "该文提出基于多实例学习的酶功能（EC号）预测方法，以蛋白质结构域为实例建模，虽涉及蛋白质结构相关计算，但核心是功能注释而非结构预测/采样/生成等本课题核心问题，方法可借鉴但关联度中等。",
+  "abstract": "MOTIVATION: Accurate Enzyme Commission (EC) number prediction is fundamental to protein function annotation and metabolic pathway reconstruction. Recent methods based on protein language model embeddings or 3D structure have improved EC prediction, but important limitations remain. Whole-sequence embeddings can dilute local functional signals, such as catalytic residues and functional domains, whereas structure-based methods depend on accurate protein structures and are therefore difficult to apply broadly. RESULTS: We present MIL-BC, a multiple instance learning framework for EC prediction that models each protein as a bag of domains rather than a single sequence-level object. This design is motivated by the observation that enzymatic function is often determined by constituent functional domains instead of the full-length sequence alone. Domain instances are generated automatically using our DCTdomain algorithm, avoiding dependence on curated domain annotations. MIL-BC aggregates domain-level evidence into protein-level EC predictions and assigns interpretable weights to domains that contribute most strongly to each prediction. We further combine the domain embedding with global embedding in MIL-BC+. MIL-BC+ achieved F1 improvements of 0.03 - 0.17 over the sequence-based baseline on all four test sets. The largest gains were observed for proteins with multiple enzymatic functions, where domain-level modeling better separates mixed functional signals. These results show that domain-centric multiple instance learning is an accurate and interpretable strategy for enzyme classification. By improving EC prediction without requiring structural data or curated domain labels, MIL-BC provides a scalable framework for large-scale protein function annotation. AVAILABILITY: Code is available as a GitHub repository at https://github.com/omics-ai/enzyme-mil.git.",
+  "abstract_zh": "动机：准确的酶学委员会（EC）编号预测是蛋白质功能注释和代谢通路重建的基础。基于蛋白质语言模型嵌入或三维结构的近期方法已改进EC预测，但仍存在重要局限性。全序列嵌入可能稀释局部功能信号，如催化残基和功能域，而基于结构的方法依赖准确的蛋白质结构，因此难以广泛应用。结果：我们提出MIL-BC，一种用于EC预测的多实例学习框架，将每个蛋白质建模为域包，而非单一序列级对象。这一设计源于酶功能通常由组成性功能域而非全长序列单独决定的观察。域实例通过我们的DCTdomain算法自动生成，避免依赖人工注释的域标注。MIL-BC将域级证据聚合为蛋白质级EC预测，并为对每个预测贡献最强的域分配可解释权重。我们进一步在MIL-BC+中将域嵌入与全局嵌入结合。MIL-BC+在所有四个测试集上相对于基于序列的基线实现了0.03至0.17的F1改进。最大增益出现在具有多种酶功能的蛋白质上，其中域级建模能更好地区分混合功能信号。这些结果表明，以域为中心的多实例学习是酶分类的一种准确且可解释的策略。通过在不需结构数据或人工域标签的情况下改进EC预测，MIL-BC为大规模蛋白质功能注释提供了可扩展框架。可用性：代码以GitHub仓库形式提供，网址为https://github.com/omics-ai/enzyme-mil.git。",
+  "has_fulltext": false,
+  "fulltext_source": "abstract",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42968374/",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/42968374/",
+  "paper_page_path": "papers/pubmed/42968374/index.html"
+}
