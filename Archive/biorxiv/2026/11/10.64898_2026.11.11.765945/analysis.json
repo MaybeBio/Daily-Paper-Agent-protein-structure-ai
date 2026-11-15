@@ -1,0 +1,24 @@
+{
+  "source": "biorxiv",
+  "id": "10.64898/2026.11.11.765945",
+  "title": "DynamicsPLM: A Dynamics-Enriched Small Protein Language Model for Protein Variant Effect Prediction",
+  "authors": "Tuan Minh Dao; Amarda Shehu; Anowarul Kabir",
+  "journal": "bioRxiv",
+  "published_date": "2026-11-13",
+  "window": {
+    "start": "2026-11-08",
+    "end": "2026-11-14"
+  },
+  "score": 8,
+  "one_liner_zh": "该文提出一个35M参数的小型蛋白语言模型DynamicsPLM，通过融合序列进化信息和分子动力学结构特征，实现零样本突变效应预测，属于蛋白质结构相关计算建模，方法上结合了PLM和MD监督，具有方法创新性。",
+  "abstract": "Predicting how mutations impact protein function and stability remains a key challenge in computational biology. Current state-of-the-art protein language models (PLMs) primarily scale parameter size on sequence corpora to capture evolutionary constraints but remain blind to the explicit physical dynamics of folded proteins. Conversely, models trained strictly on physical dynamics neglect critical evolutionary sequence statistics. In this paper, we bridge this gap by introducing DynamicsPLM, a highly parameter-efficient 35-million-parameter model that unifies evolutionary and biophysical representation learning. Utilizing a second-stage, multi-task continual pretraining strategy on over 60,000 proteins, we enrich a foundational sequence encoder with explicit residue-level and pairwise molecular dynamics heads while preserving its original evolutionary knowledge. At inference, DynamicsPLM computes zero-shot mutation effects from sequence alone by balancing an evolutionary plausibility score against a structural dynamics disruption score. Across the massive ProteinGym benchmark and natural variants of the Tsuboyama folding stability dataset, DynamicsPLM achieves state-of-the-art accuracy among all models under 100M parameters, and matches or outperforms several billion-scale sequence-based models of its size. Our findings demonstrate that explicit structural-dynamics supervision provides a parameter-efficient alternative to raw scale. Availability: All codes including data preparation scripts, training and validation recipes, and experimental configurations for LoMuS are available at: https://github.com/kabir-ai2bio-lab/DynamicsPLM.",
+  "abstract_zh": "预测突变如何影响蛋白质功能和稳定性仍然是计算生物学中的一个关键挑战。当前最先进的蛋白质语言模型（PLMs）主要通过在序列语料库上扩展参数规模来捕捉进化约束，但对折叠蛋白质的显式物理动力学视而不见。相反，严格基于物理动力学训练的模型则忽视了关键的进化序列统计信息。在本文中，我们通过引入DynamicsPLM弥合了这一差距，这是一个高度参数高效的3500万参数模型，统一了进化和生物物理表示学习。利用对超过60,000种蛋白质的第二阶段多任务持续预训练策略，我们丰富了基础序列编码器，添加了显式的残基级和成对分子动力学头，同时保留了其原有的进化知识。在推理时，DynamicsPLM仅从序列中通过平衡进化合理性评分与结构动力学破坏评分来计算零样本突变效应。在庞大的ProteinGym基准和Tsuboyama折叠稳定性数据集的自然变体上，DynamicsPLM在所有低于1亿参数的模型中达到了最先进的准确性，并在其规模下匹配或超越了多个数十亿规模的基于序列的模型。我们的研究结果表明，显式结构动力学监督提供了一种参数高效的替代原始规模的方法。可用性：包括数据准备脚本、训练和验证配方以及LoMuS实验配置在内的所有代码可在以下网址获取：https://github.com/kabir-ai2bio-lab/DynamicsPLM。",
+  "has_fulltext": true,
+  "fulltext_source": "europepmc",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.11.11.765945",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.11.765945",
+  "paper_page_path": "papers/biorxiv/10.64898_2026.11.11.765945/index.html"
+}

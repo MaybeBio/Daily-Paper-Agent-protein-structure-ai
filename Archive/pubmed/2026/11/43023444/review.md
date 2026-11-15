@@ -1,0 +1,82 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors argue that artificial intelligence-driven drug discovery (AIDD) has not yet demonstrated clinical benefit despite improved computational performance, and they propose a qualitative framework structured around four dimensions (target structure and dynamics; subcellular localization and target accessibility; pharmacokinetics and binding kinetics; clinical factors) to identify evidence gaps and guide the transition from target identification to molecular design and clinical evaluation.
+- **Visible evidence base** Abstract text only; two named clinical examples (rentosertib, GTAEXS617) with limited detail; no quantitative data, figures, or tables provided
+- **Missing materials affecting confidence** Full manuscript text, all figures and tables, reference list, detailed methods for the narrative review, and any quantitative or comparative data supporting the framework or clinical examples
+
+## Reviewer
+- **Overall assessment** The abstract presents a reasonable and timely thesis: that computational performance improvements in AIDD do not automatically translate into clinical benefit, and that a structured qualitative framework may help identify evidence gaps. The four-dimension structure is sensible and the acknowledgment of limitations is commendable. However, the abstract provides insufficient detail to evaluate the framework's novelty, the depth of the clinical examples, or the strength of the conclusions. The claim that the framework "illustrates how experimental and clinical evidence can inform earlier stages of drug development" is plausible but not substantiated from the abstract alone. The conclusion that comparative evidence is required is appropriate but somewhat generic.
+- **Who would be interested in the results, and why** Researchers and practitioners in computational drug discovery, medicinal chemistry, and translational pharmacology would be interested, as the review addresses a recognized gap between computational advances and clinical outcomes. Those involved in AI model development for drug targets, as well as clinicians and regulatory scientists evaluating AI-informed drug candidates, may find the framework useful for structuring evidence assessment. The paper could also appeal to funders and policymakers concerned with R&D productivity.
+- **Major strengths** The abstract clearly identifies a significant problem (Eroom's Law) and positions AIDD within that context. The four-dimension framework is intuitive and potentially useful for organizing heterogeneous evidence. The authors explicitly acknowledge limitations including training-data bias, data leakage, interpretability, synthetic accessibility, and generalizability. The use of named clinical examples (rentosertib, GTAEXS617) grounds the discussion in real cases. The conclusion appropriately calls for comparative evidence rather than overclaiming.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims that the "target-molecule-clinical framework illustrates how experimental and clinical evidence can inform earlier stages of drug development."
+  - **Evidence pointer** Abstract, Results section; location not provided
+  - **Concern** The abstract asserts that the framework "illustrates" how evidence can inform earlier stages, but no specific mechanism, example application, or comparative analysis is provided. The two clinical examples are mentioned but not described in sufficient detail to demonstrate how they support the framework's utility. Without seeing how the framework is applied to these or other cases, the illustrative claim is unsupported.
+  - **Why it matters** The central value proposition of the review appears to be the framework's practical utility. If the framework is not demonstrably applied or its application not shown to yield insights, the manuscript risks being a descriptive taxonomy rather than a useful analytical tool. The claim of "illustration" requires concrete demonstration.
+  - **Resolution test** Provide in the full text a worked example or case study showing how the four dimensions are applied to a specific drug development program, and how this application identifies evidence gaps or informs decisions. The abstract should then summarize this application explicitly.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim-conclusion alignment
+  - **Claim pointer** The conclusion states that "Assessing whether AIDD can improve overall drug-development efficiency requires comparative evidence on development time, cost, safety, and clinical success."
+  - **Evidence pointer** Abstract, Conclusion section; location not provided
+  - **Concern** The conclusion is framed as a requirement for future assessment, but the abstract does not indicate whether the review itself provides any such comparative evidence, even partial or preliminary. If the review does not present comparative data, the conclusion is a call for future work rather than a finding. If it does present such data, the abstract omits it. The reader cannot determine which is the case.
+  - **Why it matters** The stated objective is to "examine how AIDD can facilitate transitioning from target identification to molecular design and clinical evaluation." A conclusion that merely calls for more evidence may be appropriate for a narrative review, but the abstract should clarify whether any comparative evidence was found or synthesized, even qualitatively.
+  - **Resolution test** Clarify in the abstract whether the review presents any comparative evidence (qualitative or quantitative) on development time, cost, safety, or clinical success. If none is presented, state explicitly that the review identifies this as a gap and does not attempt to fill it.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Novelty and positioning
+  - **Claim pointer** The abstract implies that the four-dimension framework is a contribution of this review, but does not state whether it is new or synthesized from existing literature.
+  - **Evidence pointer** Abstract, Methods section; location not provided
+  - **Concern** The abstract states that "Four dimensions structure the discussion" and that they "provide a qualitative framework," but it is unclear whether this framework is original to the authors or adapted from prior work. If the framework is novel, its novelty should be stated. If it is synthesized, prior sources should be acknowledged in the abstract or the full text.
+  - **Why it matters** For a narrative review, positioning relative to existing frameworks is important for assessing contribution. Without this positioning, the reader cannot judge whether the framework adds value or merely reorganizes known categories.
+  - **Resolution test** State in the abstract whether the framework is newly proposed or synthesized from existing literature, and if the latter, name the key sources or traditions it draws upon.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Objective statement
+  - **Evidence pointer** Abstract, Objective section; location not provided
+  - **Issue** The objective states the review "examines how AIDD can facilitate transitioning from target identification to molecular design and clinical evaluation," but the four dimensions listed in Methods do not map obviously onto this three-stage transition. The relationship between the dimensions and the transition stages is not explicit.
+  - **Required correction** Briefly explain in the abstract how the four dimensions relate to the three stages, or restructure the objective to align with the dimensions.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Specificity
+  - **Affected element** Clinical examples
+  - **Evidence pointer** Abstract, Results section; location not provided
+  - **Issue** Rentosertib and GTAEXS617 are named, and rentosertib's phase IIa trial is mentioned, but no detail is given on what these examples demonstrate or how they relate to the framework. The reader cannot assess their relevance.
+  - **Required correction** Add one sentence per example indicating what aspect of the framework or evidence-gap analysis the example illustrates.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** "Eroom's Law"
+  - **Evidence pointer** Abstract, Background section; location not provided
+  - **Issue** The term "Eroom's Law" is used without definition or citation in the abstract. While specialists may know it, nonspecialist readers may not.
+  - **Required correction** Provide a brief parenthetical definition, e.g., "the observation that drug approvals per unit of R&D spending decline over time," or cite the original source.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Limitations
+  - **Evidence pointer** Abstract, Results section; location not provided
+  - **Issue** The abstract lists several limitations (training-data bias, data leakage, interpretability, synthetic accessibility, generalizability) but does not indicate whether these are limitations of the reviewed literature, of AIDD methods generally, or of the review itself.
+  - **Required correction** Clarify the scope of these limitations, e.g., "limitations identified in the reviewed studies include..." or "inherent limitations of current AIDD methods include..."
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are the primary technical concerns. The framework's illustrative claim must be demonstrated, and the conclusion must be aligned with what the review actually presents. Without these, the case for the framework's utility and the review's contribution is not established from the abstract.
+- **Assessment against Nature-style criteria** 
+  - Originality: The four-dimension framework may offer a useful synthesis, but its novelty is not established from the abstract. The problem framing (Eroom's Law vs. AIDD) is not new.
+  - Scientific importance: The topic is important, and the call for comparative evidence is well placed. However, the abstract does not demonstrate that the review advances beyond existing critiques of AIDD.
+  - Interdisciplinary readership: The abstract is accessible to computational and clinical audiences, but the lack of detail on the framework and examples limits its immediate utility to either group.
+  - Technical soundness: The abstract is methodologically reasonable for a narrative review, but the absence of any applied demonstration of the framework weakens technical credibility.
+  - Readability for nonspecialists: The abstract is generally clear, but terms like "Eroom's Law" and "synthetic accessibility" may require definition for broader audiences.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a plausible thesis and framework, but the key claims of illustration and the relationship between the review's content and its conclusion are not substantiated. If the full text provides a worked application of the framework and clarifies the scope of comparative evidence, the manuscript could become supportive. As presented, the abstract alone does not make the case.
+
+## Risk / unsupported claims
+- The claim that the framework "illustrates how experimental and clinical evidence can inform earlier stages of drug development" is unsupported from the abstract; no application or example is shown.
+- The conclusion that comparative evidence is required is reasonable but is presented as a finding rather than a stated gap; the abstract does not indicate whether any comparative evidence was reviewed.
+- The clinical examples (rentosertib, GTAEXS617) are mentioned but their relevance to the framework is not described, making their contribution unevaluable.
+- The novelty of the four-dimension framework is not stated, so its contribution relative to existing literature cannot be assessed.

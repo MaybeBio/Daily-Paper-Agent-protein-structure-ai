@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HV-MultiScaleGNN: A Multi-Scale Graph Neural Network Framework for Host-Virus Protein-Protein Interactions Prediction · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>HV-MultiScaleGNN: A Multi-Scale Graph Neural Network Framework for Host-Virus Protein-Protein Interactions Prediction</h1>
+      <div class="meta">Sarangthem Dinamani Singh; Gori Sankar Borah; Selvaraman Nagamani</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-11-10
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.11.08.765214">原文</a>
+      </div>
+      <p class="one-liner">该文提出多尺度GNN框架预测宿主-病毒蛋白互作，虽以蛋白互作网络为对象并涉及对接，但核心是网络拓扑链接预测而非蛋白质结构计算建模，方法可迁移性有限。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Accurate identification of HV-PPIs is essential for understanding viral infection mechanisms and for developing antiviral therapeutic discovery. However, the experimental identification process is often time-consuming and expensive, while many computational approaches depend on incomplete protein sequences, structural and interaction information. Here, we present HV-MultiScaleGNN, a topology-driven multi-scale GNN framework for HV-PPIs prediction that operates exclusively on the topology of a heterogeneous interaction network. The framework formulates HV-PPIs prediction as a heterogeneous link prediction problem by integrating the human interactome with experimentally validated HV-PPIs. HV-MultiScaleGNN systematically investigates three complementary graph representation strategies, viz. Local view, Global view and an integrated Local+Global view. The Local view employs one-hop relation-aware graph attention to model fine-grained neighbourhood interactions. The Global view captures higher-order structural dependencies through propagation-based neighbourhood aggregation. The integrated representation combines both views to jointly encode local connectivity and global topological context within a unified embedding space, enabling relation-specific link prediction without relying on sequence- or structure-derived features. Experiments on large-scale HV-PPIs datasets evaluate all three strategies using discrimination, calibration, and ranking metrics. The Local view achieved the best discriminative performance (AUROC = 0.9444, AUPRC = 0.9422), whereas the Global view exhibited the lowest ECE (0.0379). The integrated Local+Global view provided consistently strong predictive performance (AUROC = 0.9378, AUPRC = 0.9356). Comparative evaluation against representative graph representation learning methods showed competitive predictive performance. Furthermore, interfacial interactions were identified using protein-protein docking and atomistic-level understanding was explored. Moreover, GO and KEGG enrichment provided additional functional insights into the selected host proteins. The proposed framework enables systematic evaluation of complementary graph representation strategies for heterogeneous biological link prediction and helps experimental researchers to delineate novel HV-PPIs.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">准确识别宿主-病毒蛋白-蛋白相互作用（HV-PPIs）对于理解病毒感染机制和开发抗病毒治疗发现至关重要。然而，实验鉴定过程通常耗时且昂贵，而许多计算方法依赖于不完整的蛋白质序列、结构和相互作用信息。在此，我们提出HV-MultiScaleGNN，一种拓扑驱动的多尺度图神经网络（GNN）框架，用于HV-PPIs预测，该框架仅基于异质相互作用网络的拓扑结构运行。该框架通过将人类相互作用组与实验验证的HV-PPIs整合，将HV-PPIs预测表述为异质链接预测问题。HV-MultiScaleGNN系统性地研究了三种互补的图表示策略，即局部视图（Local view）、全局视图（Global view）以及集成的局部+全局视图（Local+Global view）。局部视图采用一跳关系感知图注意力机制来建模细粒度的邻域相互作用。全局视图通过基于传播的邻域聚合捕获高阶结构依赖性。集成表示结合了两种视图，在统一嵌入空间内联合编码局部连接性和全局拓扑上下文，从而无需依赖序列或结构衍生特征即可实现关系特定的链接预测。在大规模HV-PPIs数据集上的实验使用判别力、校准和排序指标评估了所有三种策略。局部视图实现了最佳判别性能（AUROC = 0.9444，AUPRC = 0.9422），而全局视图表现出最低的ECE（0.0379）。集成的局部+全局视图提供了持续强劲的预测性能（AUROC = 0.9378，AUPRC = 0.9356）。与代表性图表示学习方法的比较评估显示了具有竞争力的预测性能。此外，通过蛋白质-蛋白质对接鉴定了界面相互作用，并探索了原子级理解。同时，GO和KEGG富集分析为选定的宿主蛋白提供了额外的功能见解。所提出的框架能够对异质生物链接预测的互补图表示策略进行系统性评估，并帮助实验研究人员描绘新的HV-PPIs。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：HV-MultiScaleGNN: A Multi-Scale Graph Neural Network Framework for Host-Virus Protein-Protein Interactions Prediction</li>
+<li><strong>作者</strong>：Sarangthem Dinamani Singh; Gori Sankar Borah; Selvaraman Nagamani</li>
+<li><strong>单位</strong>：未提供（bioRxiv 预印本未显示作者单位）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026（预印本日期 2026-11-10）</li>
+<li><strong>论文类型</strong>：方法学预印本（方法开发 + 实验评估）</li>
+<li><strong>领域</strong>：蛋白质-蛋白质相互作用（PPI）预测 × 图神经网络（GNN）</li>
+<li><strong>关键词</strong>：Host-Virus Protein-Protein Interactions (HV-PPIs)、Graph Neural Network、Multi-Scale、Heterogeneous Link Prediction、Human Interactome</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.11.08.765214</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供（提及大规模 HV-PPIs 数据集，但未给出具体来源或下载链接）</li>
+<li><strong>阅读日期</strong>：2026-11-10（预印本发布日）</li>
+<li><strong>该文在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI/深度学习」方向中的 <strong>PPI 预测</strong> 子领域，但<strong>不依赖序列或结构特征</strong>，仅使用网络拓扑。与 AlphaFold 等结构预测方法形成互补——它不预测结构，而是利用已知相互作用网络推断新的 HV-PPIs。对课题读者的可迁移价值在于：多尺度图表示策略（Local/Global/Integrated）可迁移到结构-序列联合建模、构象采样中的节点嵌入等任务。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出 HV-MultiScaleGNN，一个仅依赖异质相互作用网络拓扑的多尺度 GNN 框架，将 HV-PPIs 预测建模为异质链路预测问题，通过对比 Local（一跳关系感知注意力）、Global（传播式邻域聚合）和 Integrated（两者联合）三种图表示策略，在无需序列或结构特征的情况下实现竞争性的 HV-PPIs 预测性能（Local 视图 AUROC = 0.9444，AUPRC = 0.9422）。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何仅利用异质相互作用网络的拓扑结构，准确预测宿主-病毒蛋白-蛋白相互作用（HV-PPIs）？</li>
+<li><strong>为什么重要</strong>：HV-PPIs 是理解病毒感染机制和开发抗病毒药物的关键；实验鉴定耗时且昂贵，计算预测可加速候选靶点的筛选。</li>
+<li><strong>现有方法为何不足</strong>：许多计算方法依赖蛋白质序列、结构或已知相互作用信息，但这些信息往往不完整（尤其对新病毒或未表征蛋白）；且现有方法未系统比较不同图表示策略在异质生物网络链路预测中的效果。</li>
+<li><strong>精确研究问题</strong>：Can a topology-driven multi-scale GNN framework, operating exclusively on heterogeneous interaction network topology, achieve competitive HV-PPIs prediction performance without sequence- or structure-derived features?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文摘要和引言框架整理，标注为「仅本文框架」——因未提供全文，无法核验外部文献引用细节。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验方法</td>
+<td>酵母双杂交、亲和纯化-质谱等</td>
+<td>直接、可靠</td>
+<td>耗时、昂贵、通量低</td>
+<td>本文要替代/补充的对象</td>
+</tr>
+<tr>
+<td>序列/结构特征计算方法</td>
+<td>基于序列同源、结构域、对接打分</td>
+<td>可大规模计算</td>
+<td>依赖序列/结构信息完整性，对新病毒或未表征蛋白效果差</td>
+<td>本文明确不依赖此类特征</td>
+</tr>
+<tr>
+<td>传统图方法</td>
+<td>网络传播、随机游走、矩阵分解</td>
+<td>利用拓扑信息</td>
+<td>无法捕捉非线性高阶关系</td>
+<td>本文的基线之一</td>
+</tr>
+<tr>
+<td>图神经网络</td>
+<td>GCN、GAT、GraphSAGE 等</td>
+<td>端到端学习节点表示</td>
+<td>单尺度视图，未系统比较多尺度策略</td>
+<td>本文提出 Local/Global/Integrated 三视图系统比较</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在 GNN 用于生物链路预测的谱系中，本文强调「仅拓扑」+「多尺度系统比较」的独特组合，且将 HV-PPIs 明确建模为异质链路预测问题。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验鉴定 HV-PPIs 成本高</td>
+<td>耗时、昂贵</td>
+<td>实验方法固有局限</td>
+<td>Abstract 第 2-3 行</td>
+</tr>
+<tr>
+<td>计算方法依赖不完整信息</td>
+<td>序列、结构、相互作用数据缺失时性能下降</td>
+<td>许多计算方法依赖蛋白质序列、结构和相互作用信息，而这些信息常不完整</td>
+<td>Abstract 第 3-4 行</td>
+</tr>
+<tr>
+<td>缺乏多尺度图表示的系统比较</td>
+<td>已有 GNN 方法多采用单一视图，未系统评估不同尺度对异质链路预测的影响</td>
+<td>作者主张现有方法未系统研究 Local vs Global vs Integrated 三种策略</td>
+<td>Abstract 第 5-7 行（"systematically investigates three complementary graph representation strategies"）</td>
+</tr>
+<tr>
+<td>预测结果缺乏功能解释</td>
+<td>仅预测相互作用不足以指导实验</td>
+<td>需要对接、GO/KEGG 富集等提供额外功能洞察</td>
+<td>Abstract 第 12-14 行</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：
+- 构建异质相互作用网络（人类相互作用组 + 实验验证的 HV-PPIs）
+- 将 HV-PPIs 预测建模为异质链路预测问题
+- 三种图表示策略：Local（一跳关系感知图注意力）、Global（传播式邻域聚合）、Integrated（两者联合嵌入）
+- 评估指标：判别力（AUROC/AUPRC）、校准（ECE）、排序指标
+- 下游分析：蛋白-蛋白对接识别界面残基、GO/KEGG 富集</p>
+<p><strong>2) 核心洞察</strong>：
+- <strong>仅拓扑即可预测</strong>：作者主张不依赖序列或结构特征，仅网络拓扑即可实现竞争性预测——这意味着 HV-PPIs 的拓扑模式（如网络邻近性、共同邻居模式）携带了足够的判别信号。
+- <strong>多尺度互补</strong>：Local 视图擅长判别（AUROC 最高），Global 视图校准更好（ECE 最低），Integrated 视图综合表现稳定——不同尺度捕捉不同层面的信号，联合使用可互补。
+- <strong>异质链路预测框架</strong>：将 HV-PPIs 嵌入人类相互作用组中，利用宿主网络的全局上下文来推断新的病毒-宿主相互作用。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：
+- 对蛋白质结构相关计算研究：<strong>特征并非越多越好</strong>——在数据不完整时，纯拓扑方法可能比依赖序列/结构特征的方法更鲁棒。这提示在结构预测或构象采样中，可考虑「拓扑/图结构先验」作为特征缺失时的替代信号。
+- 多尺度表示的系统比较方法论值得借鉴：任何图学习方法都应明确评估不同感受野（receptive field）对任务的影响，而非默认单一尺度。</p>
+<hr />
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>：异质相互作用网络（节点 = 宿主蛋白 + 病毒蛋白；边 = 已知 PPI + 实验验证的 HV-PPIs）</p>
+<p><strong>输出</strong>：候选宿主-病毒蛋白对的相互作用概率（链路预测分数）</p>
+<p><strong>模块</strong>：
+1. 异质图构建模块
+2. 图表示学习模块（三种策略：Local / Global / Integrated）
+3. 链路预测头（relation-specific 预测）
+4. 评估模块（判别、校准、排序指标）
+5. 下游分析模块（对接、GO/KEGG 富集）</p>
+<p><strong>训练</strong>：未提供具体训练细节（损失函数、优化器、训练/验证/测试划分等）</p>
+<p><strong>工具</strong>：未提供具体框架（PyTorch/PyG/DGL 等未说明）</p>
+<p><strong>反馈回路</strong>：未提供（无主动学习或迭代优化机制）</p>
+<p><strong>假设</strong>：
+- 网络拓扑中包含足够的判别信号用于 HV-PPIs 预测
+- 异质链路预测框架能有效整合宿主和病毒蛋白的交互模式
+- 实验验证的 HV-PPIs 是可靠的监督信号</p>
+<p><strong>文字流程</strong>：
+1. 构建异质网络：将人类相互作用组与实验验证的 HV-PPIs 整合为单一异质图
+2. 对每个节点（蛋白）学习嵌入表示：分别用 Local（一跳注意力）、Global（传播聚合）、Integrated（联合）三种策略
+3. 对每个候选宿主-病毒蛋白对，基于其嵌入计算相互作用概率
+4. 用判别、校准、排序指标评估三种策略
+5. 对预测的 HV-PPIs 进行蛋白-蛋白对接，识别界面残基
+6. 对选中的宿主蛋白进行 GO/KEGG 富集分析</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>异质图构建</td>
+<td>整合人类相互作用组与 HV-PPIs 为单一异质图</td>
+<td>提供拓扑信息来源</td>
+<td>输入：PPI 数据 + HV-PPI 数据；输出：异质图</td>
+<td>Abstract 第 4-5 行</td>
+<td>无图则无法进行任何拓扑学习 [预期]</td>
+</tr>
+<tr>
+<td>Local 视图（一跳关系感知注意力）</td>
+<td>建模细粒度邻域交互</td>
+<td>捕捉局部连接模式</td>
+<td>输入：异质图节点特征（拓扑）；输出：局部嵌入</td>
+<td>Abstract 第 6-7 行；Local 视图 AUROC 最高（0.9444）</td>
+<td>移除后判别性能下降 [实测：Local 为最佳判别模型]</td>
+</tr>
+<tr>
+<td>Global 视图（传播式邻域聚合）</td>
+<td>捕捉高阶结构依赖</td>
+<td>建模远距离拓扑影响</td>
+<td>输入：异质图；输出：全局嵌入</td>
+<td>Abstract 第 7-8 行；Global 视图 ECE 最低（0.0379）</td>
+<td>移除后校准性能下降 [实测：Global 校准最佳]</td>
+</tr>
+<tr>
+<td>Integrated 视图</td>
+<td>联合编码局部+全局上下文</td>
+<td>综合多尺度信号</td>
+<td>输入：Local + Global 嵌入；输出：联合嵌入</td>
+<td>Abstract 第 8-9 行；Integrated 性能稳定（AUROC = 0.9378）</td>
+<td>移除后可能失去多尺度互补性 [预期]</td>
+</tr>
+<tr>
+<td>链路预测头</td>
+<td>基于嵌入预测相互作用概率</td>
+<td>输出最终预测</td>
+<td>输入：蛋白对嵌入；输出：概率分数</td>
+<td>Abstract 第 9-10 行</td>
+<td>无预测头则无法输出预测 [预期]</td>
+</tr>
+<tr>
+<td>蛋白-蛋白对接</td>
+<td>识别界面残基</td>
+<td>提供原子级理解</td>
+<td>输入：预测的 HV-PPI 蛋白对；输出：界面残基</td>
+<td>Abstract 第 12-13 行</td>
+<td>移除后缺乏原子级验证 [预期]</td>
+</tr>
+<tr>
+<td>GO/KEGG 富集</td>
+<td>功能注释</td>
+<td>提供功能洞察</td>
+<td>输入：选中的宿主蛋白；输出：富集通路/功能</td>
+<td>Abstract 第 13-14 行</td>
+<td>移除后缺乏功能解释 [预期]</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<blockquote>
+<p>注：由于仅提供摘要，未包含具体公式。以下基于摘要中描述的方法概念进行推断，标注为 [Analysis]。</p>
+</blockquote>
+<p><strong>不适用</strong>（摘要中未提供具体数学公式）。</p>
+<p>可推断的概念性公式（[Analysis]，非原文内容）：
+- 链路预测概率：P(edge | h_v, h_u) = σ(h_v^T W_r h_u)，其中 h_v, h_u 为蛋白嵌入，W_r 为关系特定权重
+- Local 注意力：h_v^(local) = Σ_{u ∈ N(v)} α_vu · h_u，其中 α_vu 为注意力权重
+- Global 传播：h_v^(global) = Σ_{k=0}^K β_k · A^k · h_v，其中 A 为邻接矩阵，β_k 为传播权重</p>
+<p><strong>以上公式均为 [Analysis] 推断，非原文内容，原文未提供公式。</strong></p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集</strong>：大规模 HV-PPIs 数据集（具体规模、来源未提供）</p>
+<p><strong>指标</strong>：
+- 判别力：AUROC、AUPRC
+- 校准：ECE（Expected Calibration Error）
+- 排序指标：未具体说明</p>
+<p><strong>基线</strong>：代表性图表示学习方法（具体方法名称未提供）</p>
+<p><strong>评测协议</strong>：未提供（训练/验证/测试划分、交叉验证方式等未说明）</p>
+<p><strong>oracle 输入</strong>：实验验证的 HV-PPIs 作为监督信号</p>
+<p><strong>骨干/仪器</strong>：未提供</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Local 视图评估</td>
+<td>一跳注意力可有效建模局部邻域</td>
+<td>与其他视图对比</td>
+<td>AUROC = 0.9444, AUPRC = 0.9422</td>
+<td>Local 视图判别性能最佳</td>
+<td>不能说明 Local 在所有场景下最优</td>
+<td>Abstract 第 10-11 行</td>
+</tr>
+<tr>
+<td>Global 视图评估</td>
+<td>传播式聚合可捕捉高阶结构</td>
+<td>与其他视图对比</td>
+<td>ECE = 0.0379（最低）</td>
+<td>Global 视图校准最佳</td>
+<td>不能说明 Global 判别力最优</td>
+<td>Abstract 第 10-11 行</td>
+</tr>
+<tr>
+<td>Integrated 视图评估</td>
+<td>联合表示可综合多尺度信号</td>
+<td>与 Local/Global 对比</td>
+<td>AUROC = 0.9378, AUPRC = 0.9422</td>
+<td>Integrated 性能稳定且强</td>
+<td>不能说明 Integrated 在所有指标上最优</td>
+<td>Abstract 第 10-11 行</td>
+</tr>
+<tr>
+<td>与基线方法对比</td>
+<td>本文方法优于代表性图学习方法</td>
+<td>与代表性图表示学习方法对比</td>
+<td>"competitive predictive performance"</td>
+<td>本文方法具有竞争力</td>
+<td>未声称显著超越所有基线</td>
+<td>Abstract 第 11-12 行</td>
+</tr>
+<tr>
+<td>对接分析</td>
+<td>预测的 HV-PPIs 具有结构可解释性</td>
+<td>蛋白-蛋白对接</td>
+<td>识别界面残基</td>
+<td>预测的相互作用具有原子级基础</td>
+<td>未提供对接评分或验证指标</td>
+<td>Abstract 第 12-13 行</td>
+</tr>
+<tr>
+<td>GO/KEGG 富集</td>
+<td>预测的宿主蛋白具有功能相关性</td>
+<td>功能富集分析</td>
+<td>提供功能洞察</td>
+<td>预测结果具有生物学意义</td>
+<td>未提供具体富集通路或显著性</td>
+<td>Abstract 第 13-14 行</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅限 HV-PPIs 预测（异质链路预测），不涉及其他类型 PPI 或分子间相互作用。</li>
+<li><strong>输入限制</strong>：仅使用网络拓扑，不使用序列或结构特征——这意味着结论仅适用于「有网络拓扑可用」的场景。</li>
+<li><strong>oracle/真值输入</strong>：实验验证的 HV-PPIs 作为监督信号，其质量直接影响模型性能。</li>
+<li><strong>端到端状态</strong>：从网络拓扑到预测分数的端到端流程已实现，但下游对接和富集分析是独立的后处理步骤，非端到端集成。</li>
+<li><strong>算力成本</strong>：未提供训练/推理成本信息。</li>
+<li><strong>历史数据依赖</strong>：依赖已知的 HV-PPIs 和人类相互作用组数据，对新病毒（无已知相互作用）的预测能力未验证。</li>
+<li><strong>模型依赖</strong>：结果依赖于特定的图构建方式和三种视图的实现细节。</li>
+<li><strong>最难情形</strong>：未讨论（如冷启动场景——新病毒无任何已知 HV-PPI 时的预测表现）。</li>
+<li><strong>不确定性</strong>：未提供置信区间或统计显著性检验信息。</li>
+<li><strong>群体/领域边界</strong>：仅针对宿主-病毒蛋白相互作用，不适用于其他生物网络任务。</li>
+</ul>
+<p><strong>有边界的复述</strong>：在仅使用网络拓扑的条件下，HV-MultiScaleGNN 的三种图表示策略在 HV-PPIs 预测任务上表现出竞争性性能，其中 Local 视图判别力最佳、Global 视图校准最佳、Integrated 视图综合稳定；但该结论仅限于摘要所报告的数据集和评估设置，未提供泛化性证据。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<blockquote>
+<p>注：由于仅提供摘要，未包含作者明确讨论的局限部分。</p>
+</blockquote>
+<p><strong>在提供的材料中未发现作者明确承认的局限。</strong></p>
+<p><strong>作者提及的相关约束</strong>（非正式局限，来自摘要措辞）：
+- 摘要中未明确讨论局限性，但可推断的约束包括：仅依赖拓扑（未利用序列/结构信息）、未提供大规模验证、未讨论冷启动场景。这些是 [Analysis] 推断，非作者明确承认。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅依赖拓扑的预测性能</td>
+<td>可能高估——如果测试集中的 HV-PPIs 与训练集共享大量网络邻近性，性能可能来自「网络自动完成」而非真正的泛化</td>
+<td>影响方法在真实发现场景中的可用性</td>
+<td>在时间分割（用早期数据训练、后期数据测试）或冷启动场景下评估</td>
+<td>Abstract 未提供数据分割细节</td>
+</tr>
+<tr>
+<td>未提供与序列/结构方法的直接对比</td>
+<td>无法判断「仅拓扑」是否真的优于或等价于「拓扑+特征」方法</td>
+<td>影响方法选择的依据</td>
+<td>在相同数据集上对比加入序列/结构特征后的性能变化</td>
+<td>Abstract 仅对比了图表示学习方法</td>
+</tr>
+<tr>
+<td>未提供数据集规模和来源</td>
+<td>无法评估结果的可重复性和泛化边界</td>
+<td>科学可重复性的基本要求</td>
+<td>补充数据集描述和访问方式</td>
+<td>Abstract 仅提及"large-scale HV-PPIs datasets"</td>
+</tr>
+<tr>
+<td>未提供统计显著性检验</td>
+<td>性能差异可能不显著</td>
+<td>影响结论的可靠性</td>
+<td>提供多次运行的标准差和显著性检验</td>
+<td>Abstract 未报告方差或显著性</td>
+</tr>
+<tr>
+<td>对接分析缺乏定量指标</td>
+<td>"interfacial interactions were identified" 未说明对接评分或验证标准</td>
+<td>影响结构解释的可信度</td>
+<td>提供对接评分、与已知复合物结构的对比</td>
+<td>Abstract 第 12-13 行</td>
+</tr>
+<tr>
+<td>未讨论失败案例</td>
+<td>无法了解方法的边界条件</td>
+<td>影响实际应用预期</td>
+<td>分析预测失败案例的模式</td>
+<td>Abstract 未讨论失败模式</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>多尺度图表示的系统比较框架</strong>：本文对 Local/Global/Integrated 三种视图的系统比较方法论，可直接迁移到蛋白质结构相关任务中——例如在残基级图表示中，比较「局部残基接触」vs「全局折叠拓扑」vs「联合」对结构预测或构象采样的影响。</p>
+</li>
+<li>
+<p><strong>仅拓扑预测的可行性</strong>：在特征不完整时，纯拓扑方法可作为基线或替代方案。对结构预测课题的启示：当序列或结构特征缺失时，相互作用网络拓扑可提供补充信号。</p>
+</li>
+<li>
+<p><strong>异质链路预测建模</strong>：将 HV-PPIs 嵌入人类相互作用组中建模，这种「上下文增强」思路可迁移到蛋白质-配体对接或蛋白-蛋白对接中——将待预测的相互作用对置于更大的生物网络上下文中。</p>
+</li>
+<li>
+<p><strong>判别力 vs 校准的分离评估</strong>：本文同时使用 AUROC/AUPRC（判别力）和 ECE（校准）评估，且发现不同视图在不同指标上各有优势。这提示在结构预测任务中，也应同时评估「预测精度」和「置信度校准」，而非仅关注单一指标。</p>
+</li>
+<li>
+<p><strong>对接 + 富集分析的下游验证流程</strong>：预测后使用蛋白-蛋白对接识别界面残基、GO/KEGG 富集提供功能解释——这种「预测 → 结构验证 → 功能注释」的流程可迁移到任何 PPI 或相互作用预测研究中。</p>
+</li>
+<li>
+<p><strong>关系感知注意力</strong>：Local 视图使用 relation-aware 注意力，提示在异质图中区分边类型（而非统一处理）可提升性能。可迁移到蛋白质图表示中区分不同类型的残基相互作用（氢键、疏水、盐桥等）。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>GNN 用于 PPI 预测</strong>：本文与 DeepPPI、DPI-CNN 等基于序列的 PPI 预测方法形成对比——本文不依赖序列特征，仅用拓扑。与 GraphPPI、PPI-GNN 等图方法相比，本文强调多尺度系统比较。</li>
+<li><strong>异质图神经网络</strong>：本文与 Heterogeneous GNN（如 HAN、HGT）相关，但聚焦于生物网络中的链路预测任务。</li>
+<li><strong>AlphaFold 等结构预测方法</strong>：本文不预测结构，但与结构预测互补——AlphaFold 预测单体结构，本文预测相互作用可能性。两者可结合：用 AlphaFold 预测结构后，用本文方法在网络层面筛选候选相互作用对。</li>
+<li><strong>分子对接</strong>：本文使用蛋白-蛋白对接作为下游验证工具，与分子对接领域直接相关——对接可用于验证预测的 HV-PPIs 的结构可行性。</li>
+<li><strong>网络医学（Network Medicine）</strong>：本文整合人类相互作用组的方法与网络医学中「疾病模块」概念相关，可连接到 Barabási 等人的网络医学框架。</li>
+<li><strong>[Analysis] 候选方向</strong>：本文的「仅拓扑」思路与蛋白质语言模型（如 ESM）的「仅序列」思路形成类比——两者都试图在单一数据模态中最大化信息提取。未来可探索「拓扑 + 序列 + 结构」多模态融合。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<p><strong>候选 1：多尺度残基图表示用于蛋白质构象采样</strong>
+- <strong>来源局限/观察</strong>：本文 Local/Global/Integrated 三视图比较在 PPI 预测中有效；类似的多尺度问题存在于构象采样中——局部残基接触 vs 全局折叠拓扑。
+- <strong>核心假设</strong>：在残基级图神经网络中，联合局部接触图和全局拓扑图可提升构象生成的质量和多样性。
+- <strong>初步方法</strong>：构建残基级异质图（节点=残基，边=接触/共进化/空间邻近），比较 Local（k-跳接触）、Global（全图传播）、Integrated 三种嵌入对构象采样的影响。
+- <strong>验证方式</strong>：在标准构象生成基准（如 CASP 目标）上比较生成结构的 RMSD 和多样性。
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 2：拓扑先验增强的 AlphaFold 多聚体预测</strong>
+- <strong>来源局限/观察</strong>：本文证明仅网络拓扑即可预测 HV-PPIs；AlphaFold-Multimer 在缺乏共进化信号时性能下降。
+- <strong>核心假设</strong>：将相互作用网络拓扑作为先验特征注入 AlphaFold-Multimer，可提升缺乏共进化信号的复合物预测精度。
+- <strong>初步方法</strong>：在 AlphaFold-Multimer 的 MSA 特征中融合网络拓扑嵌入（如 node2vec 或 GNN 嵌入），或在 recycles 中注入拓扑约束。
+- <strong>验证方式</strong>：在 Docking Benchmark 5.5 或最近 CASP15 多聚体目标上对比有无拓扑先验的性能。
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 3：冷启动 HV-PPIs 预测的拓扑-序列混合方法</strong>
+- <strong>来源局限/观察</strong>：本文仅用拓扑，但未讨论冷启动场景（新病毒无已知相互作用）；序列方法在冷启动中更适用。
+- <strong>核心假设</strong>：在冷启动场景下，拓扑+序列混合方法优于纯拓扑或纯序列方法。
+- <strong>初步方法</strong>：将本文的拓扑嵌入与蛋白质语言模型（如 ESM-2）的序列嵌入拼接，在冷启动分割下评估。
+- <strong>验证方式</strong>：按病毒种类分割训练/测试集，比较纯拓扑、纯序列、混合方法的 AUROC/AUPRC。
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 4：校准感知的 PPI 预测框架</strong>
+- <strong>来源局限/观察</strong>：本文发现 Local 判别力最佳但 Global 校准最佳，提示判别力和校准可分离优化。
+- <strong>核心假设</strong>：在 PPI 预测中，使用集成方法（判别力强的模型 + 校准好的模型）可同时优化 AUPRC 和 ECE。
+- <strong>初步方法</strong>：训练 Local 和 Global 两个模型，用温度缩放或 Platt scaling 校准 Global 模型，然后集成两者输出。
+- <strong>验证方式</strong>：在多个 PPI 数据集上比较集成前后的 AUPRC 和 ECE。
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 5：对接引导的 GNN 主动学习</strong>
+- <strong>来源局限/观察</strong>：本文将对接作为下游验证工具，但未将对接反馈用于模型迭代。
+- <strong>核心假设</strong>：将对接评分作为弱监督信号，通过主动学习迭代选择高对接评分但低模型置信度的样本进行标注，可提升 GNN 的 PPI 预测性能。
+- <strong>初步方法</strong>：在每轮训练后，对模型预测的 HV-PPIs 进行快速对接筛选，将高对接评分的样本加入训练集。
+- <strong>验证方式</strong>：对比主动学习前后的 AUPRC 提升，以及对接验证通过率。
+- <strong>创新状态</strong>：unverified</p></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no access to full text, figures, tables, or supplementary material</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present HV-MultiScaleGNN, a topology-driven multi-scale graph neural network framework for host-virus protein-protein interaction (HV-PPI) prediction. The framework operates exclusively on the topology of a heterogeneous interaction network, integrating the human interactome with experimentally validated HV-PPIs. Three graph representation strategies are evaluated: Local view (one-hop relation-aware graph attention), Global view (propagation-based neighbourhood aggregation), and an integrated Local+Global view. The Local view achieved the best discriminative performance (AUROC = 0.9444, AUPRC = 0.9422), the Global view exhibited the lowest expected calibration error (ECE = 0.0379), and the integrated view provided strong predictive performance (AUROC = 0.9378, AUPRC = 0.9356). Comparative evaluation against representative graph representation learning methods showed competitive performance. Additional analyses include protein-protein docking, atomistic-level understanding, and GO and KEGG enrichment of selected host proteins.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no methodological details, dataset descriptions, baseline specifications, or quantitative comparisons beyond the reported metrics are provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, dataset construction details, baseline method specifications, hyperparameter settings, statistical significance tests, docking and enrichment analysis details, and code availability</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract describes a potentially useful framework for HV-PPI prediction that addresses a relevant problem in virology and antiviral research. The central idea of comparing multiple graph representation strategies within a unified framework is sensible and could be of interest to the computational biology community. However, the abstract alone provides insufficient information to evaluate the technical soundness of the approach, the validity of the experimental design, or the robustness of the reported results. Several claims, particularly regarding comparative performance and the biological analyses, cannot be assessed without access to the full manuscript. The work appears promising in scope but the evidence base provided is too limited to establish the case.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists and bioinformaticians working on protein-protein interaction prediction, graph neural network applications in biology, and host-pathogen interaction modelling would be the primary audience. Researchers studying viral infection mechanisms and those involved in antiviral drug discovery may also find the framework useful as a prioritization tool for experimental validation. The systematic comparison of graph representation strategies could inform methodological choices in related prediction tasks.</li>
+<li><strong>Major strengths</strong> The problem addressed is biologically and clinically relevant. The framework's design to operate exclusively on network topology, without requiring sequence or structure features, is a distinctive and potentially practical advantage given the incompleteness of such data for many viral and host proteins. The systematic evaluation of three complementary graph representation strategies within a single framework is a methodologically thoughtful approach. The inclusion of calibration metrics alongside discrimination metrics indicates attention to model reliability, which is important for experimental prioritization.</li>
+<li><strong>Major Concerns</strong> </li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The framework achieves strong predictive performance (AUROC = 0.9444, AUPRC = 0.9422 for the Local view) on large-scale HV-PPI datasets.</li>
+<li><strong>Evidence pointer</strong> Abstract, Results section (location not provided)</li>
+<li><strong>Concern</strong> The abstract reports performance metrics but provides no information about the datasets used, including their size, composition, source, train-test split methodology, or the proportion of positive to negative examples. Without this information, the reported AUROC and AUPRC values cannot be interpreted meaningfully. AUPRC is particularly sensitive to class imbalance, and the reported values may reflect dataset characteristics rather than model quality.</li>
+<li><strong>Why it matters</strong> Predictive performance metrics are only meaningful in the context of the evaluation dataset and protocol. If the dataset is small, imbalanced, or contains leakage between training and test sets, the reported metrics could be misleading. The claim of strong predictive performance cannot be verified or compared to other methods without this essential context.</li>
+<li>
+<p><strong>Resolution test</strong> Provide full dataset descriptions including the number of positive and negative interactions, the source databases, the version of the human interactome used, the temporal or random split strategy, and the ratio of positive to negative examples. Report performance metrics stratified by interaction type or host protein category if applicable.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> Comparative evaluation against representative graph representation learning methods showed competitive predictive performance.</li>
+<li><strong>Evidence pointer</strong> Abstract, Results section (location not provided)</li>
+<li><strong>Concern</strong> The abstract states that the framework showed competitive performance against representative baselines but provides no information on which baselines were used, how they were configured, whether hyperparameter tuning was performed fairly across methods, or the magnitude of performance differences. Without this information, the comparative claim is unverifiable.</li>
+<li><strong>Why it matters</strong> A central claim of the work is that the proposed framework performs competitively relative to existing methods. If baselines were not carefully tuned or if the comparison is limited to a small set of methods, the claim of competitiveness may not hold in broader contexts. The reader cannot assess whether the comparison was fair or comprehensive.</li>
+<li>
+<p><strong>Resolution test</strong> List all baseline methods with their configurations and hyperparameter tuning procedures. Report performance of all methods on identical train-test splits. Provide statistical significance tests (e.g., DeLong test for AUROC differences) and confidence intervals for all reported metrics.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> The framework operates exclusively on the topology of a heterogeneous interaction network and enables relation-specific link prediction without relying on sequence- or structure-derived features.</li>
+<li><strong>Evidence pointer</strong> Abstract, Methods section (location not provided)</li>
+<li><strong>Concern</strong> The abstract provides no details on the model architecture, including the number of layers, hidden dimensions, attention heads, aggregation functions, or the optimization procedure. The graph construction process, including how the heterogeneous network is built and how node and edge types are encoded, is not described. The training procedure, including loss functions, regularization, and early stopping criteria, is absent.</li>
+<li><strong>Why it matters</strong> Reproducibility is a fundamental requirement for computational research. Without architectural and training details, other researchers cannot implement or build upon the proposed framework. The claim of a novel framework cannot be evaluated without understanding what exactly is novel relative to existing GNN-based link prediction methods.</li>
+<li>
+<p><strong>Resolution test</strong> Provide complete architectural specifications, hyperparameter values, optimization details, and the exact procedure for constructing the heterogeneous network. Release code and trained models in a public repository.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Evidence quality</li>
+<li><strong>Claim pointer</strong> Interfacial interactions were identified using protein-protein docking and atomistic-level understanding was explored. GO and KEGG enrichment provided additional functional insights into the selected host proteins.</li>
+<li><strong>Evidence pointer</strong> Abstract, Results section (location not provided)</li>
+<li><strong>Concern</strong> The abstract mentions docking, atomistic-level analysis, and GO/KEGG enrichment as additional analyses but provides no results from these analyses. It is unclear how many protein complexes were docked, whether docking predictions were validated experimentally or through known structures, what the enrichment results showed, or how these analyses relate to the core prediction framework.</li>
+<li><strong>Why it matters</strong> These analyses are presented as part of the contribution but their findings are not summarized. The reader cannot assess whether these analyses add meaningful biological insight or are peripheral to the main contribution. If the docking and enrichment results are used to support the utility of the framework, their absence weakens the overall case.</li>
+<li>
+<p><strong>Resolution test</strong> Summarize key findings from the docking and enrichment analyses, including the number of interactions analyzed, the confidence of docking predictions, and the most significant GO terms and KEGG pathways identified. Clarify how these analyses validate or extend the prediction results.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M5</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Scientific importance</li>
+<li><strong>Claim pointer</strong> The framework helps experimental researchers to delineate novel HV-PPIs.</li>
+<li><strong>Evidence pointer</strong> Abstract, Conclusion section (location not provided)</li>
+<li><strong>Concern</strong> The abstract claims practical utility for experimental researchers but provides no evidence of prospective validation, such as experimental confirmation of novel predictions, case studies demonstrating the framework's utility in a discovery setting, or comparison with experimentally confirmed interactions discovered after the training data cutoff.</li>
+<li><strong>Why it matters</strong> The claim of practical utility is a strong one that requires evidence beyond retrospective performance metrics. Many computational prediction methods perform well in retrospective evaluations but fail to provide actionable predictions in practice. Without prospective validation or case studies, this claim remains speculative.</li>
+<li><strong>Resolution test</strong> Provide case studies of novel predictions that were subsequently validated experimentally, or demonstrate the framework's utility through a retrospective analysis where predictions are compared to interactions confirmed after the training data cutoff date.</li>
+<li><strong>Minor Comments</strong> </li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract, Methods description</li>
+<li><strong>Evidence pointer</strong> Abstract, paragraph 1 (location not provided)</li>
+<li><strong>Issue</strong> The phrase "topology-driven" is used to describe the framework but its specific meaning in this context is not defined. It could refer to the exclusive use of network topology as input features, or to a topology-aware model architecture, or both.</li>
+<li>
+<p><strong>Required correction</strong> Clarify what "topology-driven" means in the context of the framework, either by defining the term explicitly or by rephrasing to avoid ambiguity.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract, Results description</li>
+<li><strong>Evidence pointer</strong> Abstract, paragraph 1 (location not provided)</li>
+<li><strong>Issue</strong> The abstract states that the Local view achieved the best discriminative performance while the integrated view provided "consistently strong" performance. The basis for the "consistently strong" characterization is not explained, and it is unclear whether the differences between the Local and integrated views are statistically significant.</li>
+<li>
+<p><strong>Required correction</strong> Clarify the criteria used to characterize the integrated view as "consistently strong" and report whether performance differences between strategies are statistically significant.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Abstract, Evaluation description</li>
+<li><strong>Evidence pointer</strong> Abstract, paragraph 1 (location not provided)</li>
+<li><strong>Issue</strong> The abstract mentions evaluation using "discrimination, calibration, and ranking metrics" but only reports AUROC, AUPRC, and ECE. The ranking metrics are not specified.</li>
+<li>
+<p><strong>Required correction</strong> Specify which ranking metrics were used and report their values, or remove the reference to ranking metrics if they are not central to the evaluation.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Abstract, Data description</li>
+<li><strong>Evidence pointer</strong> Abstract, paragraph 1 (location not provided)</li>
+<li><strong>Issue</strong> The abstract refers to "large-scale HV-PPIs datasets" but does not specify the number of interactions, the number of unique host and viral proteins, or the data sources.</li>
+<li>
+<p><strong>Required correction</strong> Provide basic dataset statistics in the abstract or indicate where these details can be found in the full manuscript.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Abstract, Availability statement</li>
+<li><strong>Evidence pointer</strong> Abstract, end (location not provided)</li>
+<li><strong>Issue</strong> No statement is provided regarding code or data availability.</li>
+<li><strong>Required correction</strong> Add a data and code availability statement to the abstract or indicate that this information is provided in the full manuscript.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (dataset description and evaluation protocol missing), R1-M2 (baseline comparison details missing), R1-M3 (architectural and training details missing). These three concerns collectively prevent assessment of whether the reported performance is meaningful, whether the comparative claims are valid, and whether the framework can be reproduced.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The idea of systematically comparing multiple graph representation strategies within a single framework for HV-PPI prediction has some novelty, but graph neural networks for link prediction in biological networks are well established. The specific contribution relative to existing work cannot be fully assessed from the abstract.</li>
+<li>Scientific importance: HV-PPI prediction is a relevant problem with potential implications for understanding viral infection and antiviral development. However, the abstract does not demonstrate that the framework provides a substantial advance over existing methods beyond competitive performance.</li>
+<li>Interdisciplinary readership: The work sits at the intersection of machine learning, network biology, and virology. The abstract is written in a way that is largely accessible to computational readers, but the biological significance of the results is not articulated in a way that would engage a broad readership.</li>
+<li>Technical soundness: Cannot be assessed from the abstract alone. The missing details on datasets, baselines, and architecture preclude evaluation of technical rigor.</li>
+<li>Readability for nonspecialists: The abstract is reasonably clear for readers familiar with graph neural networks and PPI prediction, but terms such as "relation-aware graph attention" and "propagation-based neighbourhood aggregation" are used without explanation. The biological motivation and potential impact could be articulated more clearly for a general audience.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract describes a plausible framework and reports strong performance metrics, but the absence of dataset details, baseline comparisons, and architectural information prevents verification of the central claims. The work may be technically sound and of interest to the community, but the evidence provided is insufficient to support the claims made. A full review of the complete manuscript would be required to determine whether the technical concerns can be resolved.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "competitive predictive performance" against representative baselines is unsupported because no baseline methods, configurations, or quantitative comparisons are provided in the abstract.</li>
+<li>The claim that the framework "helps experimental researchers to delineate novel HV-PPIs" is unsupported because no prospective validation or case studies are described.</li>
+<li>The reported AUROC and AUPRC values cannot be interpreted without knowledge of the dataset composition, class balance, and evaluation protocol.</li>
+<li>The claim that the framework operates "exclusively on the topology of a heterogeneous interaction network" is stated but the graph construction process and the types of information encoded in the network are not described.</li>
+<li>The biological analyses (docking, atomistic-level understanding, GO/KEGG enrichment) are mentioned but no results are reported, making their contribution unassessable.</li>
+<li>The novelty of the framework relative to existing GNN-based link prediction methods cannot be evaluated from the abstract.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

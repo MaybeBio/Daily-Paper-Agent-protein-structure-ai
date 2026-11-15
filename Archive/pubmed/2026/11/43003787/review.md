@@ -1,0 +1,109 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, results, discussion, methods, author contributions, funding, data availability)
+- **Assessment boundary** Scientific content, methodological soundness, statistical rigor, interpretational validity, and alignment with stated claims. Editorial and stylistic issues are noted only where they affect scientific clarity.
+- **Shared manuscript claim summary** The authors analyze approximately 14,000 SNARE transmembrane domain (TMD) sequences and perform MD simulations of 28 human SNARE TMDs to show that TMD amino acid composition, particularly Phe versus Ile content, reflects subcellular localization, with early secretory pathway SNAREs enriched in Phe and late secretory/endosomal SNAREs enriched in Ile. They further report that MD-derived TMD lengths show limited variation across compartments, contrasting with sequence-based predictions.
+- **Visible evidence base** Full text including abstract, introduction, results sections (Amino Acid Composition, TMD Length, Lipid-Accessible Surface Area, C-Terminal Ends of TMDs, Conserved Charges in TMDs), discussion, methods, and references to supplementary figures (S1-S23) and alignments (S1). No figures or tables are directly viewable in the provided material.
+- **Missing materials affecting confidence** All figures, tables, and supplementary materials are referenced but not provided. This includes the primary data visualizations (Figures 1-5), all supplementary figures (S1-S23), and the sequence alignment (Alignment S1). Statistical outputs, MD simulation parameters beyond those described, and the full TRACEY database contents are not directly accessible.
+
+## Reviewer
+- **Overall assessment** This manuscript addresses a timely and important question in membrane protein biology: whether TMD composition reflects subcellular localization in the SNARE family. The authors combine a large-scale bioinformatics analysis with MD simulations, which is a powerful and appropriate approach. The central finding of a Phe/Ile dichotomy between early and late secretory pathway SNAREs is potentially significant and extends prior work by Munro. However, the manuscript has several major concerns that must be addressed before the case is fully established. These include the lack of direct statistical comparisons between classes, the limited membrane model diversity in MD simulations, the absence of functional validation, and the unclear relationship between the observed compositional differences and the proposed mechanistic role in protein sorting. The discussion is thoughtful and appropriately cautious in several places, but some claims outpace the evidence presented.
+- **Who would be interested in the results, and why** Cell biologists studying membrane trafficking and organelle identity, biophysicists interested in protein-lipid interactions, computational biologists developing tools for membrane protein analysis, and evolutionary biologists studying adaptation of protein families. The findings have implications for understanding how proteins are sorted to specific membranes and how TMD sequence features relate to membrane biophysical properties.
+- **Major strengths** (1) Large and well-curated dataset of approximately 14,000 SNARE TMDs from the TRACEY database, providing statistical power. (2) Combination of bioinformatics and MD simulations to address the question from complementary angles. (3) The study extends prior work by Munro to a much larger dataset and specifically to the SNARE family. (4) The authors acknowledge limitations of their model systems and discuss alternative interpretations. (5) The observation that MD-derived TMD lengths differ from sequence-based predictions is an important methodological contribution.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Statistical rigor
+  - **Claim pointer** The manuscript claims a "clear compositional dichotomy" and "pronounced difference" between Classes I/II and III/IV in Phe and Ile content, and states that these differences are "robust."
+  - **Evidence pointer** Results section "Amino Acid Composition", Figures 2A-C, Supplementary Figures S1-S4
+  - **Concern** The manuscript describes differences in Phe and Ile content between classes but does not report any formal statistical tests (e.g., effect sizes, confidence intervals, permutation tests, or mixed-effects models accounting for phylogenetic non-independence). The statement that "considerable variation in individual amino acid frequency exists among TMDs within each class, resulting in substantial overlap between classes" suggests that the separation may not be as clean as implied. Without quantitative statistical support, the strength and significance of the claimed dichotomy cannot be evaluated.
+  - **Why it matters** The central claim of the paper rests on the statistical robustness of the compositional differences. If the overlap between classes is substantial, the biological significance of the dichotomy is weakened. Moreover, because TMD sequences within a species are not independent (shared evolutionary history), standard tests that assume independence may be inappropriate.
+  - **Resolution test** Provide formal statistical comparisons between class pairs for Phe and Ile content, including effect sizes and confidence intervals. Use methods that account for phylogenetic relatedness (e.g., phylogenetic generalized least squares or permutation tests that resample at the species level). Report the proportion of variance explained by class membership versus other factors.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological scope
+  - **Claim pointer** The manuscript states that "TMD lengths derived from MD simulations are surprisingly similar across classes" and that "differences in effective membrane-spanning length between SNARE classes are modest at best."
+  - **Evidence pointer** Results section "TMD Length", Figures 3B-F, Supplementary Figures S8-S10
+  - **Concern** MD simulations were performed in only two lipid environments (DMPC and DOPC), both of which are thinner than most biological membranes, including the plasma membrane. The authors acknowledge this limitation but then use these simulations to draw conclusions about the lack of length variation across compartments. This is problematic because the simulations may not capture the relevant biophysical environment of thicker, cholesterol-rich membranes. The authors did perform a subset of simulations in DOPC with 40% cholesterol, but this was limited and without replicates.
+  - **Why it matters** The conclusion that TMD length does not vary across compartments is a key negative finding that contrasts with sequence-based predictions. If the simulations are not representative of the actual membrane environments, this conclusion is not well supported. The limited membrane model diversity undermines the generalizability of the length and LASA findings.
+  - **Resolution test** Perform simulations in additional lipid compositions that better represent the range of biological membranes (e.g., POPC, ER-like mixtures, plasma membrane-like mixtures with cholesterol and sphingomyelin). Include replicate simulations for the cholesterol-containing system. Alternatively, temper the conclusions to clearly state that the findings apply only to the specific lipid environments tested.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Functional validation
+  - **Claim pointer** The manuscript proposes that "TMD composition contributes to functional optimization by modulating energetic compatibility with specific bilayer environments and to compartmental localization."
+  - **Evidence pointer** Discussion section, Results sections "Lipid-Accessible Surface Area" and "Conserved Charges in TMDs"
+  - **Concern** The manuscript provides no experimental or functional validation of the proposed role of TMD composition in localization. The LASA calculations are purely computational and are not linked to any measurable biological outcome. The discussion of sorting mechanisms is speculative and acknowledges that "TMD-dependent partitioning could support their forward trafficking" but no direct evidence is provided. The claim that compositional differences "potentially contributing to protein localization" is appropriately hedged, but the overall framing suggests a stronger causal link than the evidence supports.
+  - **Why it matters** The title and abstract imply that TMD composition "reflects" localization, which is a correlational claim. However, the discussion extends this to a functional role in localization. Without experimental manipulation (e.g., swapping TMDs between SNAREs of different classes and measuring localization), the functional significance remains speculative.
+  - **Resolution test** Add experimental data, even preliminary, showing that swapping TMDs between early and late SNAREs alters localization, or that mutations in TMD composition affect localization. Alternatively, clearly reframe the claims as correlational and hypothesis-generating rather than functional.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interpretational validity
+  - **Claim pointer** The manuscript states that "TMD lengths derived from MD simulations differ from those inferred by sequence-based approaches and show limited variation across compartments."
+  - **Evidence pointer** Results section "TMD Length", Figures 3D-F, Supplementary Figure S11
+  - **Concern** The discrepancy between GES-based and MD-based TMD lengths is presented as a methodological insight, but the manuscript does not fully explore the implications. If GES-based boundaries are inaccurate, then the compositional analysis (which uses GES-based boundaries) may be affected. The authors do reanalyze composition with MD-based boundaries (Figure S12), but this is only for human SNAREs and the results are described as "similar overall." The potential impact of boundary choice on the central compositional findings is not thoroughly discussed.
+  - **Why it matters** The compositional dichotomy is the main finding. If the choice of TMD boundaries significantly affects the results, the robustness of the finding is called into question. The manuscript should more explicitly address whether the dichotomy holds regardless of boundary definition.
+  - **Resolution test** Provide a more detailed comparison of compositional results using GES-based versus MD-based boundaries for all classes, not just human SNAREs. Discuss the sensitivity of the findings to boundary definition.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The phrase "necessitating adaptation to each membrane's unique environment" is vague. It is unclear what specific adaptations are being referred to.
+  - **Required correction** Specify the types of adaptations (e.g., length, amino acid composition, hydrophobic mismatch) in the abstract.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Results section "Amino Acid Composition"
+  - **Evidence pointer** Results section "Amino Acid Composition", Figure 2
+  - **Issue** The manuscript states that "Phe and Ile contents correlate most strongly with LASA" but does not report the correlation coefficients or their significance.
+  - **Required correction** Report correlation coefficients and p-values for the relationships between Phe/Ile content and LASA.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Methodological detail
+  - **Affected element** Methods section, MD simulations
+  - **Evidence pointer** Methods section, MD simulations
+  - **Issue** The methods state that "protein charges were kept at their default protonation states in CHARMM-GUI, corresponding to standard ionization at neutral pH." However, the pKa of the Glu residue in VtiB is discussed as potentially being shifted in the membrane environment. It is unclear whether the protonation state of this specific residue was modeled in the main simulations.
+  - **Required correction** Clarify whether the VtiB Glu was modeled in its charged or neutral form in the main simulations, and justify the choice.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Data presentation
+  - **Affected element** Results section "C-Terminal Ends of TMDs"
+  - **Evidence pointer** Results section "C-Terminal Ends of TMDs", Figure 5H
+  - **Issue** The description of the Vamp7 C-terminal region is brief. The claim that it is "highly conserved across all major eukaryotic lineages" is stated without supporting data shown in the main text.
+  - **Required correction** Provide the supporting alignment or conservation data, or reference the relevant supplementary figure.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Literature context
+  - **Affected element** Introduction and Discussion
+  - **Evidence pointer** Introduction, Discussion
+  - **Issue** The manuscript cites Munro (40) for the Phe/Ile observation but does not discuss in detail how the present findings extend or refine this earlier work beyond the larger dataset.
+  - **Required correction** Add a brief paragraph in the Discussion explicitly comparing the present findings to Munro's study and stating what new insights are provided.
+  - **Concern ID** R1-m6
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Data Availability Statement
+  - **Evidence pointer** Data Availability Statement
+  - **Issue** The MD simulation data are stated to be "available from the corresponding author upon reasonable request." This is less transparent than depositing in a public repository.
+  - **Required correction** Deposit MD simulation inputs, trajectories, and analysis scripts in a public repository (e.g., Zenodo, OSF) and provide accession numbers.
+
+## Risk / unsupported claims
+- The claim that TMD composition "potentially contributing to protein localization" is presented as a functional hypothesis but is not directly tested. This is appropriately hedged in places but the title and abstract imply a stronger causal relationship.
+- The claim that MD-derived TMD lengths "show limited variation across compartments" is based on simulations in only two lipid types, both thinner than most biological membranes. This conclusion may not generalize.
+- The statement that "TMD composition contributes to functional optimization" is speculative and not supported by direct experimental evidence.
+- The claim that the Phe/Ile dichotomy is "conserved across all groups" is based on PCA/PLS-DA visual inspection without formal statistical comparison across phylogenetic groups.
+- The functional significance of the conserved charged residues in Syx5 and VtiB is inferred from MD simulations and sequence conservation but is not experimentally validated.
+- The relationship between LASA and raft partitioning is discussed as a potential mechanism but is not directly measured or tested.
+
+## Assessment against Nature-style criteria
+- **Originality** The study is original in its scale and integration of bioinformatics with MD simulations applied specifically to SNARE TMDs. The finding of a Phe/Ile dichotomy extends prior work but the systematic analysis across approximately 14,000 sequences and the MD-based length analysis provide new insights. However, the core observation is not entirely novel, as it was previously reported by Munro.
+- **Scientific importance** The question of how TMDs adapt to different membrane environments is of broad importance in cell biology. The findings have implications for understanding protein sorting, membrane organization, and the evolution of membrane protein families. The potential link between TMD composition and raft partitioning is interesting but not fully developed.
+- **Interdisciplinary readership** The topic is relevant to cell biologists, biophysicists, computational biologists, and evolutionary biologists. The manuscript is written in a way that is largely accessible to these groups, though some sections (e.g., PLS-DA methodology) may be challenging for non-specialists.
+- **Technical soundness** The bioinformatics approach is sound, and the MD simulations are appropriate for the questions asked. However, the lack of formal statistical tests for the central compositional claims is a significant weakness. The limited diversity of membrane models in the MD simulations also limits the generalizability of the length and LASA findings.
+- **Readability for nonspecialists** The manuscript is generally well-written and the logic is clear. The abstract effectively summarizes the main findings. However, some methodological details (e.g., PLS-DA, LASA calculations) may be difficult for readers without a computational background. The figures are referenced but not visible in the provided material, so their clarity cannot be assessed.
+
+## Recommendation posture
+Supportive if technical concerns are resolved. The manuscript addresses an important question with a powerful approach, and the central findings are potentially significant. However, the lack of formal statistical support for the main compositional claims, the limited membrane model diversity in MD simulations, and the absence of functional validation prevent the case from being fully established as presented. The authors should be encouraged to revise and resubmit after addressing these concerns.

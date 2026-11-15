@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beyond the Black Box: Physics-Based and Conservation-Informed Evidence for ACVRL1 Variant Classification in Hereditary Hemorrhagic Telangiectasia and Pulmonary Arterial Hypertension. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>Beyond the Black Box: Physics-Based and Conservation-Informed Evidence for ACVRL1 Variant Classification in Hereditary Hemorrhagic Telangiectasia and Pulmonary Arterial Hypertension.</h1>
+      <div class="meta">Brusgaard, Klaus</div>
+      <div class="meta muted">
+        
+        <span class="journal">International journal of molecular sciences</span>
+        · 2026-11-14
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/43027989/">原文</a>
+      </div>
+      <p class="one-liner">该研究利用蛋白质稳定性预测和保守性评分等结构信息训练随机森林分类器，对ACVRL1错义变异进行致病性分类，虽以变异分类为核心而非直接的结构计算建模，但方法可迁移至蛋白质结构相关计算任务。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Missense variants in ACVRL1 (ALK1) cause hereditary hemorrhagic telangiectasia type 2 (HHT2), heritable pulmonary arterial hypertension (PAH), or both in the same patient, and many remain variants of uncertain significance. AlphaMissense classifies them accurately but does not show which evidence drives a call. I annotated 899 ACVRL1 missense variants with protein-stability estimates (FoldX, DynaMut2), a GREMLIN-style conservation score, and structural context. I then trained random-forest classifiers on 311 variants with labels traceable to ClinVar or a publication (296 pathogenic-like, 15 benign-like). A structural/conservation-only classifier (Model 1b) reached a cross-validated ROC-AUC of 0.954 (95% CI 0.916-0.984), and a model adding sequence-based predictors (Model 1) reached 0.979, versus 0.983 for AlphaMissense on the same variants. On variants first reported in 2025-2026, Model 1b scored 0.976, Model 1 0.992, and AlphaMissense 0.992; equivalence within +/-0.05 AUC was supported for Model 1 only. Benign variants were the main weakness: Model 1b correctly classified 10/15, against 14/15 for AlphaMissense. Conservation drove most calls, with predicted destabilization contributing to a minority. An interpretable, gene-specific classifier can approach AlphaMissense for ACVRL1 while showing the structural or evolutionary evidence behind each call. Its calls are hypotheses, not functional evidence, and can prioritize VUS for functional testing.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">ACVRL1 (ALK1) 中的错义变异导致遗传性出血性毛细血管扩张症2型（HHT2）、遗传性肺动脉高压（PAH），或同一患者同时患有这两种疾病，且许多变异仍为意义不明确的变异。AlphaMissense 能准确分类这些变异，但未显示驱动判定的证据。我使用蛋白质稳定性估计（FoldX、DynaMut2）、GREMLIN 式保守性评分及结构背景，对 899 个 ACVRL1 错义变异进行了注释。随后，我在 311 个标签可追溯至 ClinVar 或出版物的变异（296 个致病样，15 个良性样）上训练了随机森林分类器。仅基于结构和保守性的分类器（模型 1b）达到交叉验证的 ROC-AUC 为 0.954（95% CI 0.916-0.984），而加入基于序列预测因子的模型（模型 1）达到 0.979，相比之下，AlphaMissense 在同一批变异上为 0.983。在 2025-2026 年首次报告的变异上，模型 1b 得分为 0.976，模型 1 为 0.992，AlphaMissense 为 0.992；仅模型 1 支持在 ±0.05 AUC 范围内的等价性。良性变异是主要弱点：模型 1b 正确分类 10/15，而 AlphaMissense 为 14/15。保守性驱动了大多数判定，预测的去稳定化仅贡献于少数。一个可解释的、基因特异性的分类器在 ACVRL1 上可接近 AlphaMissense 的性能，同时展示每次判定背后的结构或进化证据。其判定是假设，而非功能证据，可用于优先对 VUS 进行功能测试。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Beyond the Black Box: Physics-Based and Conservation-Informed Evidence for ACVRL1 Variant Classification in Hereditary Hemorrhagic Telangiectasia and Pulmonary Arterial Hypertension</li>
+<li><strong>作者</strong>: Brusgaard, Klaus</li>
+<li><strong>单位</strong>: 未提供</li>
+<li><strong>期刊/预印本平台</strong>: International Journal of Molecular Sciences</li>
+<li><strong>年份</strong>: 2026（在线日期 2026-11-14）</li>
+<li><strong>论文类型</strong>: 方法学/应用研究（variant classification + 可解释机器学习）</li>
+<li><strong>领域</strong>: 蛋白质变异致病性分类 × 结构生物学 × 可解释 AI</li>
+<li><strong>关键词</strong>: ACVRL1/ALK1, missense variant classification, AlphaMissense, FoldX, DynaMut2, GREMLIN conservation, random forest, interpretability</li>
+<li><strong>DOI/arXiv 号</strong>: 10.3390/ijms27219742</li>
+<li><strong>代码</strong>: 未提供</li>
+<li><strong>数据</strong>: 899 个 ACVRL1 missense variants 的注释数据（未提供公开链接）</li>
+<li><strong>阅读日期</strong>: 2026-05-12（按系统日期）</li>
+<li><strong>在该方向中的位置</strong>: 本文处于「蛋白质结构相关计算研究 × AI 方法」交叉点，聚焦于<strong>可解释的变异致病性分类</strong>。与 AlphaFold/AlphaMissense 等黑箱方法形成对照，强调用物理模拟（FoldX/DynaMut2 稳定性）与进化保守性（GREMLIN）构建<strong>基因特异、可解释</strong>的分类器，直接面向 HHT2/PAH 的临床 VUS 解读。其方法框架（结构特征 + 保守性 + 可解释 ML）可迁移至其他蛋白的变异分类任务。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>针对 ACVRL1 基因的 missense 变异，作者用 FoldX/DynaMut2 蛋白稳定性预测与 GREMLIN 保守性分数构建随机森林分类器，在 311 个有标签变异上达到与 AlphaMissense 相当的 ROC-AUC（0.979 vs 0.983），且能显式展示每个调用背后的结构或进化证据，但良性变异分类仍是主要短板。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: ACVRL1（ALK1）基因的 missense 变异可导致 HHT2、遗传性 PAH 或两者兼有，但许多变异仍为 VUS（意义未明变异）。AlphaMissense 能准确分类但不揭示驱动判定的证据。<strong>能否构建一个可解释的、基因特异的分类器，在保持与 AlphaMissense 相当精度的同时，显式展示每个调用背后的结构/进化证据？</strong></li>
+<li><strong>为什么重要</strong>: 临床遗传咨询需要可解释的变异分类依据，黑箱预测难以直接用于临床决策；可解释模型可帮助优先筛选 VUS 进行功能验证。</li>
+<li><strong>现有方法为何不足</strong>: AlphaMissense 等深度学习方法精度高但不可解释；传统 ACMG 指南依赖人工规则，缺乏结构层面的定量证据整合。</li>
+<li><strong>精确研究问题</strong>: "Can an interpretable, gene-specific classifier using physics-based stability estimates and conservation scores achieve classification performance comparable to AlphaMissense for ACVRL1 missense variants, while providing per-variant evidence?"</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「经外部核验」的领域常识，结合本文框架）</em>
+1. <strong>阶段一：基于人群频率与注释的规则分类</strong>（如 ACMG/AMP 指南，2015 年至今）
+   - 优点：临床可操作、标准化
+   - 局限：对罕见 VUS 缺乏统计功效，不利用结构信息
+2. <strong>阶段二：序列保守性评分</strong>（如 GERP、PhyloP、GREMLIN 的进化耦合）
+   - 优点：捕捉纯化选择信号
+   - 局限：单点保守性忽略结构上下文
+3. <strong>阶段三：蛋白质结构预测与稳定性计算</strong>（AlphaFold2 2021；FoldX、DynaMut2 等）
+   - 优点：提供物理化学层面的定量证据（ΔΔG）
+   - 局限：单独使用精度有限，需与进化信息整合
+4. <strong>阶段四：端到端深度学习黑箱</strong>（AlphaMissense 2023）
+   - 优点：精度高、覆盖全蛋白质组
+   - 局限：不可解释、不提供证据链
+5. <strong>本文位置</strong>: 在阶段三与阶段四之间架桥——用可解释的随机森林整合结构稳定性 + 保守性，逼近 AlphaMissense 精度，同时保留证据可追溯性。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>黑箱不可解释</td>
+<td>AlphaMissense 给出致病性概率但不显示驱动证据</td>
+<td>深度模型隐层表征难以映射到生物学机制</td>
+<td>摘要："does not show which evidence drives a call"</td>
+</tr>
+<tr>
+<td>VUS 数量庞大</td>
+<td>899 个 ACVRL1 missense 变异中许多为 VUS</td>
+<td>罕见变异缺乏人群频率与功能数据</td>
+<td>摘要："many remain variants of uncertain significance"</td>
+</tr>
+<tr>
+<td>良性变异分类困难</td>
+<td>Model 1b 仅正确分类 10/15 良性变异，AlphaMissense 为 14/15</td>
+<td>良性变异缺乏明显的结构/保守性破坏信号，训练集中良性样本极少（15/311）</td>
+<td>摘要："Benign variants were the main weakness"</td>
+</tr>
+<tr>
+<td>基因特异模型缺乏</td>
+<td>通用工具（AlphaMissense）非针对单基因优化</td>
+<td>不同基因的结构-功能关系差异大</td>
+<td>作者构建基因特异分类器的动机（摘要）</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>: 用 FoldX 和 DynaMut2 计算每个 missense 变异的蛋白稳定性变化（ΔΔG），用 GREMLIN 风格分数计算进化保守性，结合结构上下文（如二级结构位置、溶剂可及性），训练随机森林分类器。</li>
+<li><strong>核心洞察</strong>: 对于 ACVRL1 这类有明确结构-功能关系的蛋白，<strong>物理稳定性 + 进化保守性</strong>的组合足以逼近 AlphaMissense 的精度，且每个特征对最终调用的贡献可被显式量化（如特征重要性、SHAP 值）。保守性主导大多数调用，稳定性预测仅贡献于少数变异——说明进化信号比物理化学信号更具判别力。</li>
+<li><strong>可能的普适教训</strong> [Analysis]: 对于任何有结构信息的蛋白，<strong>可解释的浅层模型 + 物理/进化特征</strong>可以作为黑箱深度模型的替代或补充，尤其在临床场景中需要证据链时。此策略可迁移至其他疾病基因的变异分类。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: ACVRL1 蛋白序列、结构（可能来自 AlphaFold2 或实验结构）、899 个 missense 变异的列表</li>
+<li><strong>输出</strong>: 每个变异的致病性分类（致病样/良性样）及特征贡献解释</li>
+<li><strong>模块</strong>:
+  1. 变异注释模块：FoldX（结构稳定性）、DynaMut2（动力学稳定性）、GREMLIN 保守性、结构上下文
+  2. 标签来源模块：ClinVar 或文献追溯（311 个有标签变异：296 致病样，15 良性样）
+  3. 分类器模块：随机森林（两种配置：Model 1b 仅结构/保守性特征；Model 1 加序列特征）
+  4. 评估模块：交叉验证 ROC-AUC，与 AlphaMissense 对比，时间外推验证（2025-2026 新变异）</li>
+<li><strong>训练</strong>: 311 个有标签变异，交叉验证</li>
+<li><strong>假设</strong>: 结构稳定性与保守性可捕获 ACVRL1 变异的致病性信号；可解释模型可达到与黑箱相当的精度</li>
+<li><strong>流程</strong>: 变异注释 → 特征构建 → 随机森林训练/交叉验证 → 与 AlphaMissense 对比 → 时间外推测试 → 特征归因分析</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FoldX 稳定性计算</td>
+<td>估计 missense 变异对蛋白折叠自由能的影响（ΔΔG）</td>
+<td>提供物理化学层面的致病性证据</td>
+<td>输入：结构+变异；输出：ΔΔG 值</td>
+<td>摘要提及作为特征之一</td>
+<td>[预期] 移除后精度下降，但保守性可能部分补偿（因保守性与稳定性相关）</td>
+</tr>
+<tr>
+<td>DynaMut2 稳定性计算</td>
+<td>估计变异对蛋白动力学稳定性的影响</td>
+<td>补充 FoldX 的静态结构视角</td>
+<td>输入：结构+变异；输出：ΔΔG 值</td>
+<td>摘要提及作为特征之一</td>
+<td>[预期] 与 FoldX 信息部分冗余，移除后影响较小</td>
+</tr>
+<tr>
+<td>GREMLIN 保守性评分</td>
+<td>计算位点的进化耦合/保守性</td>
+<td>捕捉纯化选择信号，是主要判别特征</td>
+<td>输入：多序列比对；输出：保守性分数</td>
+<td>摘要："Conservation drove most calls"</td>
+<td>[实测] 移除后精度显著下降（作者明确保守性主导）</td>
+</tr>
+<tr>
+<td>结构上下文特征</td>
+<td>二级结构、溶剂可及性、配体接触等</td>
+<td>提供变异所在环境的几何信息</td>
+<td>输入：结构；输出：分类特征</td>
+<td>摘要提及"structural context"</td>
+<td>[预期] 移除后精度中等下降</td>
+</tr>
+<tr>
+<td>随机森林分类器</td>
+<td>整合特征进行致病性分类</td>
+<td>可解释、小样本友好</td>
+<td>输入：特征向量；输出：致病性概率</td>
+<td>交叉验证 AUC 0.954-0.979</td>
+<td>[预期] 换用其他浅层模型（如逻辑回归）可能精度略降但可解释性相当</td>
+</tr>
+<tr>
+<td>AlphaMissense 对比</td>
+<td>作为黑箱基线</td>
+<td>评估可解释模型的性能上限</td>
+<td>输入：变异序列；输出：致病性分数</td>
+<td>对比 AUC 0.983</td>
+<td>不适用（外部基线）</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>（摘要中未提供具体公式；方法涉及 ΔΔG 计算与随机森林，但原文未给出数学表达式）。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>: 899 个 ACVRL1 missense 变异（注释集）；311 个有标签变异（训练/评估集：296 致病样，15 良性样）</li>
+<li><strong>标签来源</strong>: ClinVar 或可追溯的出版物</li>
+<li><strong>时间外推集</strong>: 2025-2026 年首次报道的变异</li>
+<li><strong>基线</strong>: AlphaMissense 在同一变异集上的预测</li>
+<li><strong>评估协议</strong>: 交叉验证 ROC-AUC；时间外推 AUC；等价性检验（±0.05 AUC）</li>
+<li><strong>骨干/仪器</strong>: 未提供（计算工具：FoldX, DynaMut2, GREMLIN 风格比对）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构/保守性模型（Model 1b）交叉验证</td>
+<td>仅用结构+保守性特征可达到高精度</td>
+<td>交叉验证</td>
+<td>AUC 0.954 (95% CI 0.916-0.984)</td>
+<td>结构+保守性足以强预测</td>
+<td>不能证明优于 AlphaMissense</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>全特征模型（Model 1）交叉验证</td>
+<td>加序列特征可提升精度</td>
+<td>与 Model 1b 对比</td>
+<td>AUC 0.979</td>
+<td>序列特征有增量贡献</td>
+<td>不能证明显著优于 AlphaMissense</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>与 AlphaMissense 对比</td>
+<td>可解释模型可接近黑箱精度</td>
+<td>同一变异集</td>
+<td>AlphaMissense AUC 0.983</td>
+<td>Model 1 与 AlphaMissense 相当</td>
+<td>不能证明超越</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>时间外推（2025-2026 新变异）</td>
+<td>模型可泛化到新报道变异</td>
+<td>Model 1b / Model 1 / AlphaMissense</td>
+<td>Model 1b 0.976, Model 1 0.992, AlphaMissense 0.992</td>
+<td>Model 1 与 AlphaMissense 等价（±0.05 支持）</td>
+<td>Model 1b 的等价性未被支持</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>良性变异分类</td>
+<td>模型可正确识别良性变异</td>
+<td>15 个良性变异</td>
+<td>Model 1b 10/15, AlphaMissense 14/15</td>
+<td>良性分类是弱点</td>
+<td>不能证明良性分类充分</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 仅针对 ACVRL1 基因的 missense 变异分类，非全基因组或全蛋白质组。</li>
+<li><strong>oracle/真值输入</strong>: 标签来自 ClinVar/文献，可能包含错误或偏倚（如 publication bias 偏向致病性）。</li>
+<li><strong>端到端状态</strong>: 非端到端——需要预先计算结构特征与保守性分数，且依赖外部工具（FoldX, DynaMut2, GREMLIN）。</li>
+<li><strong>算力成本</strong>: 未提供，但随机森林训练成本低；特征计算（FoldX/DynaMut2）需结构，成本中等。</li>
+<li><strong>历史数据依赖</strong>: 训练集标签依赖历史 ClinVar/文献，可能受时间偏倚影响。</li>
+<li><strong>模型依赖</strong>: 随机森林为浅层模型，特征工程是关键；不同特征组合可能改变结论。</li>
+<li><strong>最难情形</strong>: 良性变异分类（仅 10/15 正确）；无明确结构/保守性信号的变异。</li>
+<li><strong>群体/领域边界</strong>: 仅适用于 ACVRL1；其他基因需重新训练。</li>
+<li><strong>不确定性</strong>: 95% CI 较宽（0.916-0.984），样本量小（311），良性样本极少（15）。</li>
+<li><strong>有边界的复述</strong>: 在 ACVRL1 基因、311 个有标签变异、随机森林 + FoldX/DynaMut2/GREMLIN 特征的条件下，该可解释模型达到与 AlphaMissense 相当的交叉验证 AUC，且能提供特征归因；但良性变异分类能力有限，且结论不能外推至其他基因或更大变异集。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p><em>（基于摘要可获取信息）</em>
+| 局限 | 具体表现 | 作者提出的未来方向 | 来源 |
+|------|----------|---------------------|------|
+| 良性变异样本极少 | 15/311 为良性样，导致良性分类弱（10/15） | 未在摘要中明确提及 | 摘要 |
+| 调用是假设而非功能证据 | 分类结果需功能验证 | 可优先筛选 VUS 进行功能测试 | 摘要 |
+| 基因特异模型 | 仅适用于 ACVRL1 | 未在摘要中明确提及 | 摘要 |</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）: 模型输出为"hypotheses, not functional evidence"，暗示分类结果不能替代实验验证。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>良性样本仅 15 个</td>
+<td>模型对良性变异的低召回可能源于训练集不平衡而非特征不足</td>
+<td>临床场景中误分类良性变异会导致不必要的监测或干预</td>
+<td>增加良性样本量或使用平衡采样/成本敏感学习重训</td>
+<td>摘要："15 benign-like"</td>
+</tr>
+<tr>
+<td>标签来源依赖 ClinVar/文献</td>
+<td>ClinVar 标签可能包含错误或偏倚（如致病性过度报告）</td>
+<td>训练标签噪声会直接影响模型评估</td>
+<td>用功能实验数据（如 reporter assay）作为独立验证集</td>
+<td>摘要："labels traceable to ClinVar or a publication"</td>
+</tr>
+<tr>
+<td>与 AlphaMissense 等价性仅对 Model 1 支持</td>
+<td>Model 1b 在时间外推上未达等价标准，可能说明结构/保守性特征对新变异泛化不足</td>
+<td>新变异是临床最关心的场景</td>
+<td>扩大时间外推集，或检查 Model 1b 在新变异上的失败模式</td>
+<td>摘要："equivalence within ±0.05 AUC was supported for Model 1 only"</td>
+</tr>
+<tr>
+<td>特征贡献分析未在摘要中详述</td>
+<td>"Conservation drove most calls" 可能掩盖特征间的交互效应</td>
+<td>可解释性声明需具体特征归因数据支持</td>
+<td>要求作者提供 SHAP/特征重要性分布图</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>未报告阴性对照</td>
+<td>未提及模型在无关基因或随机变异上的表现</td>
+<td>无法排除模型学习到基因特异假象</td>
+<td>在无关蛋白上测试模型</td>
+<td>摘要未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>（面向蛋白质结构相关计算研究 × AI/物理模拟）:
+1. <strong>可解释分类器设计</strong>: 用随机森林（或逻辑回归）整合物理模拟（ΔΔG）与进化保守性，替代或补充黑箱深度模型——在临床场景中证据链比单纯精度更重要。可迁移至其他疾病基因的变异分类。
+2. <strong>特征组合策略</strong>: FoldX（静态稳定性）+ DynaMut2（动力学稳定性）+ GREMLIN（进化耦合）的组合覆盖了「结构-动力学-进化」三个正交维度，这种多视角特征工程思路可迁移至蛋白设计或构象采样中的打分函数设计。
+3. <strong>时间外推验证</strong>: 用最近报道的变异作为时间外推测试集，检验模型对新数据的泛化——这是评估变异分类器实用性的关键设计，可迁移至任何预测模型的评估协议。
+4. <strong>良性变异难点</strong>: 训练集中良性样本稀缺是普遍问题，提示在构建变异分类数据集时需主动平衡标签分布，或采用异常检测框架（仅用致病样训练）。
+5. <strong>黑箱对比框架</strong>: 将可解释模型与 AlphaMissense 在同一变异集上对比，并设定等价性阈值（±0.05 AUC）——这种「可解释模型 vs 黑箱基准」的评估框架可迁移至其他结构预测任务。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaMissense (Cheng et al., 2023, Science)</strong>: 本文直接以 AlphaMissense 为黑箱基准，验证可解释模型的等价性。AlphaMissense 基于 AlphaFold 的 ESM 嵌入，覆盖全蛋白质组，但不可解释。</li>
+<li><strong>FoldX (Schymkowitz et al., 2005)</strong>: 经典蛋白稳定性计算工具，广泛用于变异致病性研究；本文将其作为物理特征来源。</li>
+<li><strong>DynaMut2 (Rodrigues et al., 2021)</strong>: 基于图卷积的稳定性预测器，结合动力学信息，补充 FoldX 的静态视角。</li>
+<li><strong>GREMLIN (Kamisetty et al., 2013; Balakrishnan et al., 2011)</strong>: 直接耦合分析（DCA）方法，用于从序列比对推断进化耦合；本文用其保守性分数作为进化特征。</li>
+<li><strong>ACVRL1/ALK1 与 HHT2/PAH</strong>: ACVRL1 编码 TGF-β 家族受体 ALK1，其突变导致 HHT2 和/或 PAH；该基因的变异分类是临床遗传学的活跃领域。</li>
+<li><strong>可解释 ML 在变异分类中的应用</strong>: 与 ClinGen 的 ACMG/AMP 框架互补，后者依赖规则而非定量结构证据。</li>
+<li><strong>[Analysis] 候选连接</strong>: 本文框架可类比于蛋白设计中的「物理能量项 + 进化统计势」混合打分（如 Rosetta + EVcouplings），提示变异分类与蛋白设计在特征工程上存在方法论共性。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>:</p>
+<ol>
+<li>
+<p><strong>名称</strong>: 多基因可解释变异分类框架扩展（Multi-gene Interpretable Variant Classifier, MIVC）
+   - <strong>来源局限/观察</strong>: 本文仅针对 ACVRL1，基因特异模型无法直接迁移至其他基因。
+   - <strong>核心假设</strong>: 结构稳定性 + 保守性特征可跨基因泛化，但需基因特异校准。
+   - <strong>初步方法</strong>: 在多个 HHT/PAH 相关基因（ENG, SMAD4, BMPR2, CAV1, KCNK3）上重复本文流程，训练共享特征 + 基因特异头的分层模型。
+   - <strong>验证方式</strong>: 与 AlphaMissense 在各基因上对比 AUC，并检验跨基因迁移性能。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: 良性变异增强采样策略（Benign Variant Augmentation via Decoy Generation）
+   - <strong>来源局限/观察</strong>: 良性样本仅 15 个，导致良性分类弱。
+   - <strong>核心假设</strong>: 用同义变异或已知良性多态作为 decoy 可增强训练集。
+   - <strong>初步方法</strong>: 从 gnomAD 获取 ACVRL1 的常见多态（MAF &gt; 0.01）作为良性样，结合本文特征管道重训。
+   - <strong>验证方式</strong>: 在独立良性集上评估召回率提升。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: 结构系综感知的变异分类（Ensemble-aware Variant Classification）
+   - <strong>来源局限/观察</strong>: 本文用单一结构计算 ΔΔG，未考虑蛋白构象系综。
+   - <strong>核心假设</strong>: 在 MD 模拟或 AlphaFold 生成的构象系综中计算 ΔΔG 分布，可提高致病性判别力。
+   - <strong>初步方法</strong>: 对 ACVRL1 的 20 个代表性变异进行 MD 模拟（100 ns），提取 ΔΔG 时间序列特征（均值、方差、极值）加入随机森林。
+   - <strong>验证方式</strong>: 与单结构 ΔΔG 特征对比 AUC。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: 特征归因驱动的 VUS 功能验证优先级评分（Attribution-guided VUS Prioritization Score）
+   - <strong>来源局限/观察</strong>: 模型输出"hypotheses, not functional evidence"，但未提供具体优先级工具。
+   - <strong>核心假设</strong>: 特征归因（如 SHAP 值）可转化为可操作的功能验证优先级。
+   - <strong>初步方法</strong>: 对每个 VUS 输出 SHAP 分解，将「稳定性驱动」与「保守性驱动」的变异分组，分别推荐不同的功能实验（如热稳定性实验 vs 进化功能 assay）。
+   - <strong>验证方式</strong>: 与已有功能实验数据（如 HHT 突变数据库）对比优先级排序。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: 时间外推鲁棒性评估框架（Temporal Generalization Benchmark for Variant Classifiers）
+   - <strong>来源局限/观察</strong>: 本文用 2025-2026 新变异做时间外推，但未系统化此协议。
+   - <strong>核心假设</strong>: 时间外推 AUC 是变异分类器实用性的关键指标，应成为标准评估协议。
+   - <strong>初步方法</strong>: 在 ClinVar 全库上按报道年份切分训练/测试集，评估 AlphaMissense、本文模型及 ClinGen 规则的逐年性能变化。
+   - <strong>验证方式</strong>: 比较各方法的时间外推 AUC 曲线。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The author reports development of an interpretable, gene-specific random-forest classifier for ACVRL1 missense variants, using protein-stability estimates, a conservation score, and structural context, achieving performance comparable to AlphaMissense while providing transparent evidence for each call.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no data, code, or detailed methodology</li>
+<li><strong>Missing materials affecting confidence</strong> Full methods, training/validation data splits, variant lists, ClinVar accession details, publication traceability criteria, cross-validation procedure, confidence intervals, calibration metrics, and any code or reproducibility information</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a potentially useful contribution to variant classification in ACVRL1, addressing a real gap in interpretability of black-box predictors. However, the evidence provided is insufficient to evaluate the validity of the performance claims, the robustness of the methodology, or the generalizability of the findings. Several technical details are missing, and the reported equivalence to AlphaMissense is only partially supported. The work is of interest to the HHT and PAH genetics community, but the case is not established from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Clinical geneticists and molecular diagnosticians working on hereditary hemorrhagic telangiectasia and pulmonary arterial hypertension, as well as researchers developing interpretable machine-learning tools for variant classification. The gene-specific, evidence-transparent approach could aid VUS prioritization for functional testing.</li>
+<li><strong>Major strengths</strong> The problem is well-defined and clinically relevant. The focus on interpretability addresses a genuine limitation of AlphaMissense. The use of multiple evidence types (stability, conservation, structure) is reasonable. The inclusion of a temporal validation set (2025-2026 variants) is a positive feature.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "A structural/conservation-only classifier (Model 1b) reached a cross-validated ROC-AUC of 0.954 (95% CI 0.916-0.984), and a model adding sequence-based predictors (Model 1) reached 0.979, versus 0.983 for AlphaMissense on the same variants."</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract reports cross-validated AUC values but does not describe the cross-validation scheme, the number of folds, the stratification strategy, or whether the same folds were used for all models. The 95% confidence intervals are presented without specifying the method of calculation. The comparison to AlphaMissense is made "on the same variants," but it is unclear whether AlphaMissense scores were obtained from the public database or recomputed, and whether the same variant set was used for all comparisons.</li>
+<li><strong>Why it matters</strong> Without a clear description of the validation protocol, the reported performance metrics cannot be independently assessed. Overfitting or data leakage in the training procedure could inflate AUC values. The equivalence claim depends critically on the comparability of the evaluation conditions.</li>
+<li><strong>Resolution test</strong> Provide a detailed methods section describing the cross-validation procedure, the exact variant sets used for training and testing, the source and version of AlphaMissense scores, and the statistical test used to support the equivalence claim.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "Benign variants were the main weakness: Model 1b correctly classified 10/15, against 14/15 for AlphaMissense."</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The benign variant set is extremely small (n=15), and the abstract does not state how these were selected, whether they were balanced across the structural or functional categories, or whether the same 15 variants were used for all models. The difference between 10/15 and 14/15 is based on a very small sample and may not be statistically meaningful.</li>
+<li><strong>Why it matters</strong> The claim that benign variants are the main weakness is a key finding, but with only 15 examples, the estimate is highly uncertain. The abstract does not report sensitivity, specificity, or precision-recall metrics, which are more informative for imbalanced clinical datasets.</li>
+<li><strong>Resolution test</strong> Report the full confusion matrix for each model, provide the benign variant selection criteria, and include confidence intervals or a statistical test for the difference in benign classification performance.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> "I annotated 899 ACVRL1 missense variants with protein-stability estimates (FoldX, DynaMut2), a GREMLIN-style conservation score, and structural context."</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract does not specify the source of the 899 variants, the version of the protein structure used, the parameters for FoldX and DynaMut2, the exact definition of the GREMLIN-style conservation score, or the criteria for assigning structural context. No code, data, or supplementary material is mentioned.</li>
+<li><strong>Why it matters</strong> Reproducibility is a core requirement for computational studies. Without these details, other researchers cannot replicate the annotation pipeline or the classifier. The gene-specific nature of the model also means that the approach cannot be generalized without a clear description of the feature engineering.</li>
+<li><strong>Resolution test</strong> Provide a detailed methods section with all software versions, parameters, and data sources, and make the code and annotated variant list available in a public repository.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence quality</li>
+<li><strong>Claim pointer</strong> "I then trained random-forest classifiers on 311 variants with labels traceable to ClinVar or a publication (296 pathogenic-like, 15 benign-like)."</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The label source is described as "traceable to ClinVar or a publication," but the abstract does not specify the ClinVar review status (e.g., criteria provided, multiple submitters, expert panel), the publication criteria for labeling, or how conflicting labels were resolved. The class imbalance (296 vs 15) is extreme and may affect model training and evaluation.</li>
+<li><strong>Why it matters</strong> The quality of the training labels is the foundation of the classifier. If labels are derived from sources with varying evidence standards, the model may learn biases rather than true pathogenic signals. The extreme class imbalance also raises concerns about the reliability of the reported AUC, which can be optimistic in such settings.</li>
+<li><strong>Resolution test</strong> Provide a detailed label curation protocol, including ClinVar star ratings, publication inclusion criteria, and conflict resolution rules. Report performance metrics that are robust to class imbalance, such as precision-recall AUC or balanced accuracy.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract wording</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The phrase "equivalence within +/-0.05 AUC was supported for Model 1 only" is ambiguous. It is unclear what statistical test was used and whether the equivalence margin was pre-specified.</li>
+<li><strong>Required correction</strong> Specify the statistical test (e.g., two one-sided tests) and the pre-registered equivalence margin, or rephrase to describe the observed difference and its uncertainty.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract does not report any measure of calibration or uncertainty for individual variant calls, which is important for clinical use.</li>
+<li><strong>Required correction</strong> Add a statement on calibration or provide a reference to where this information can be found in the full manuscript.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretability</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The claim that the classifier "shows the structural or evolutionary evidence behind each call" is not substantiated with an example or a description of the interpretability mechanism (e.g., feature importance, SHAP values).</li>
+<li><strong>Required correction</strong> Provide a brief example of an interpretable output or describe the feature attribution method used.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Scope</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract does not discuss the potential impact of the extreme class imbalance on the practical utility of the classifier for VUS prioritization.</li>
+<li><strong>Required correction</strong> Add a sentence acknowledging the limitation and describing how the classifier should be used in practice given the imbalance.</li>
+</ul>
+<h2>Technical failings that need to be addressed before the case is established</h2>
+<ul>
+<li>R1-M1 (validation protocol and equivalence testing)</li>
+<li>R1-M2 (benign variant set size and statistical robustness)</li>
+<li>R1-M3 (reproducibility of annotation pipeline)</li>
+<li>R1-M4 (label curation and class imbalance)</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that the classifier "can approach AlphaMissense for ACVRL1" is only partially supported, as equivalence was demonstrated for Model 1 only, and the benign variant performance was notably worse.</li>
+<li>The claim that the classifier "shows the structural or evolutionary evidence behind each call" is not supported by any example or description of the interpretability mechanism in the abstract.</li>
+<li>The generalizability of the classifier to other genes or to variants outside the training distribution is not addressed and cannot be assessed from the abstract.</li>
+<li>The clinical utility of the classifier for VUS prioritization is stated as a potential use but is not supported by any prospective or functional validation data.</li>
+</ul>
+<h2>Assessment against Nature-style criteria</h2>
+<ul>
+<li><strong>Originality</strong> Moderate. The application of interpretable machine learning to a specific gene with multiple evidence types is not entirely novel, but the focus on ACVRL1 and the explicit comparison to AlphaMissense with interpretability as a goal is a reasonable contribution.</li>
+<li><strong>Scientific importance</strong> Moderate. Variant classification in ACVRL1 is clinically relevant, and improving interpretability of computational predictors could aid clinical decision-making. However, the impact is limited to a single gene and the abstract does not demonstrate a clear advance over existing tools beyond interpretability.</li>
+<li><strong>Interdisciplinary readership</strong> Limited. The work is primarily of interest to computational biologists and clinical geneticists in the HHT/PAH field. The abstract does not frame the findings in a way that would attract a broader readership.</li>
+<li><strong>Technical soundness</strong> Not established from the supplied material. The abstract lacks sufficient methodological detail to assess the validity of the performance claims, the robustness of the validation, or the reproducibility of the approach.</li>
+<li><strong>Readability for nonspecialists</strong> The abstract is reasonably clear but uses technical terms (e.g., ROC-AUC, GREMLIN-style) without sufficient explanation for a general scientific audience. The clinical context is introduced adequately.</li>
+</ul>
+<h2>Recommendation posture</h2>
+<p>Currently not established from the provided evidence. The abstract presents a potentially useful approach, but the lack of methodological detail, the small benign variant set, and the incomplete equivalence testing prevent a positive recommendation. The author should provide the full methods, data, and code, and address the specific concerns raised above before the case can be considered.</p></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

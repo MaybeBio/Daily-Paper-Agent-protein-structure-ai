@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Confessions of a Protein Language Model: Steering, Activations, and What Predicted Confidence Cannot Certify · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>The Confessions of a Protein Language Model: Steering, Activations, and What Predicted Confidence Cannot Certify</h1>
+      <div class="meta">Panini Shah; Raj Panchali; Pearl Mody; Mahek Sanghvi; Meera Narvekar; Ruhina Karani</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-11-11
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.11.10.765136">原文</a>
+      </div>
+      <p class="one-liner">该文审计蛋白质语言模型生成-筛选流程中的干预与读出（如置信度、激活）是否真正追踪目标，虽涉及蛋白结构预测置信度，但核心是方法学审计而非结构计算建模创新，对蛋白结构生成筛选的可信度评估有参考价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein generate-and-screen pipelines use interventions and readouts to select candidates, but rarely test whether these track their intended targets. We audit published repetition steering, ESMFold confidence, and an activation readout. Steering preserves confidence at its operating point, but a fitted cliff follows at alpha_50 = 1.240x (sweep&#39;s own control: 64.0%). Direction matters at moderate matched-norm push, but not at saturation. Unsteered generator activations predict the confidence gate (ROC-AUC 0.786 +/- 0.004), supporting cost-aware, model-specific triage. We also replicate established length sensitivity, through which shortening can manufacture false nulls. Yet on composition- and length-matched design--scramble pairs, no balanced-accuracy interval excludes chance for experimental stability. Predicting the gate does not establish foldability. We should test what a readout measures before using it to select. Code and data: https://github.com/paninishah/plm-steering-audit</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质生成-筛选（generate-and-screen）流程使用干预和读数来选择候选物，但很少测试这些是否追踪其预期目标。我们审计了已发表的重复性引导（repetition steering）、ESMFold置信度以及一种激活读数。引导在其操作点保持置信度，但在alpha_50 = 1.240x（扫描自身对照：64.0%）处出现拟合的悬崖。方向在中等匹配范数推动下重要，但在饱和时则不然。未引导的生成器激活预测置信度门控（ROC-AUC 0.786 +/- 0.004），支持成本感知、模型特定的分诊。我们还复现了已确立的长度敏感性，通过缩短可以制造虚假的零结果。然而，在组成和长度匹配的设计-打乱对中，没有平衡准确率区间排除实验稳定性的偶然性。预测门控并不能确立可折叠性。我们应在使用读数进行选择之前测试其测量内容。代码和数据：https://github.com/paninishah/plm-steering-audit</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：The Confessions of a Protein Language Model: Steering, Activations, and What Predicted Confidence Cannot Certify</li>
+<li><strong>作者</strong>：Panini Shah; Raj Panchali; Pearl Mody; Mahek Sanghvi; Meera Narvekar; Ruhina Karani</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：方法审计/实证研究（audit study）</li>
+<li><strong>领域</strong>：蛋白质语言模型（pLM）的可信度审计；蛋白质生成-筛选管线</li>
+<li><strong>关键词</strong>：protein language model, steering, ESMFold confidence, activation readout, generate-and-screen, triage</li>
+<li><strong>DOI/ID</strong>：10.64898/2026.11.10.765136</li>
+<li><strong>代码</strong>：https://github.com/paninishah/plm-steering-audit</li>
+<li><strong>数据</strong>：随代码仓库提供（未提供具体数据集描述）</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>审计与可信度评估</strong>子方向，聚焦于蛋白质语言模型生成-筛选管线中常用干预（steering）与读出的有效性验证，与结构预测（ESMFold confidence）直接相关，但核心贡献在于方法论层面的批判性检验，而非新方法开发。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文审计了蛋白质语言模型生成-筛选管线中三种常用工具（repetition steering、ESMFold confidence、activation readout），发现 steering 在操作点保持置信度但在更大推量下出现置信度悬崖（alpha_50 = 1.240x），activation readout 可预测置信度门控（ROC-AUC 0.786），但没有任何 readout 能证明实验稳定性或折叠能力，因此主张「先测试 readout 测量的是什么，再用于筛选」。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：蛋白质 generate-and-screen 管线中使用的干预（steering）和读出（confidence、activation）是否真正追踪其预期目标？即：steering 是否真的改变生成分布？ESMFold confidence 是否真的反映可折叠性？activation readout 是否真的预测实验成功？</li>
+<li><strong>为什么重要</strong>：这类管线被广泛用于蛋白质设计，若干预和读出与预期目标脱节，则筛选出的候选可能系统性偏差，浪费实验资源甚至产生误导性结论。</li>
+<li><strong>现有方法为何不足</strong>：现有工作通常直接使用这些工具而不验证其测量效度（construct validity），缺乏对「读出测量的是什么」的系统性检验。</li>
+<li><strong>精确研究问题</strong>：Can predicted confidence (ESMFold) or activation readouts certify foldability or experimental stability in protein language model generate-and-screen pipelines?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络为「仅本文框架」——基于本文引言与讨论中隐含的叙事重构，未经外部文献核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>生成式蛋白质设计</td>
+<td>基于 pLM 的 generate-and-screen</td>
+<td>可探索大序列空间</td>
+<td>筛选标准未经验证</td>
+<td>审计对象</td>
+</tr>
+<tr>
+<td>干预方法</td>
+<td>Repetition steering（重复序列引导）</td>
+<td>可控制生成方向</td>
+<td>是否真正改变分布未验证</td>
+<td>审计对象之一</td>
+</tr>
+<tr>
+<td>结构置信度读出</td>
+<td>ESMFold confidence</td>
+<td>无需实验即可估计折叠可能性</td>
+<td>预测置信度≠折叠能力</td>
+<td>审计对象之二</td>
+</tr>
+<tr>
+<td>激活读出</td>
+<td>Activation readout（如线性探针）</td>
+<td>可解释、计算廉价</td>
+<td>预测门控≠预测实验结果</td>
+<td>审计对象之三</td>
+</tr>
+<tr>
+<td>审计/验证</td>
+<td>本文方法</td>
+<td>系统检验测量效度</td>
+<td>仅覆盖特定模型与数据集</td>
+<td>本文贡献</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Steering 在操作点保持置信度但存在隐藏悬崖</td>
+<td>在 alpha_50 = 1.240x 处出现 fitted cliff，sweep 自身对照为 64.0%</td>
+<td>作者未提供明确根因解释，仅报告现象</td>
+<td>Abstract 中报告数值</td>
+</tr>
+<tr>
+<td>方向性仅在中等匹配范数推量下重要</td>
+<td>中等 push 时方向影响显著，饱和时不显著</td>
+<td>作者未提供机制解释</td>
+<td>Abstract 中描述</td>
+</tr>
+<tr>
+<td>预测置信度门控 ≠ 折叠能力</td>
+<td>Activation readout 可预测 gate（ROC-AUC 0.786）但无法证明 foldability</td>
+<td>预测目标与实验目标不一致</td>
+<td>Abstract 中明确区分</td>
+</tr>
+<tr>
+<td>长度敏感性可制造假阴性</td>
+<td>缩短序列可制造 false nulls</td>
+<td>已复现的已知现象</td>
+<td>Abstract 中提及「replicate established length sensitivity」</td>
+</tr>
+<tr>
+<td>实验稳定性无法被任何 readout 证明</td>
+<td>在 composition- 和 length-matched 设计-打乱对上，无 balanced-accuracy 区间排除偶然性</td>
+<td>读出与实验稳定性之间无因果保证</td>
+<td>Abstract 中报告</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>对 pLM 生成-筛选管线中的三种工具（repetition steering、ESMFold confidence、activation readout）进行系统性审计，通过控制实验检验每种工具是否测量其声称的目标。</p>
+<h3>2) 核心洞察</h3>
+<p><strong>读出（readout）的预测目标 ≠ 实验目标</strong>。一个 readout 可以很好地预测另一个 readout（如 activation 预测 confidence gate），但这并不赋予其预测实验结果的能力。类似地，steering 在某个操作点看似有效（保持置信度），但在更广参数范围内存在未被注意的失效模式（置信度悬崖）。<strong>测量效度（construct validity）必须被显式检验，而非假设</strong>。</p>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li>在 AI 辅助蛋白质设计中，「代理指标」（surrogate metrics）的验证应独立于其使用场景进行。</li>
+<li>任何干预方法（steering、prompting、guidance）都应在超出其调优范围的参数空间中测试鲁棒性。</li>
+<li>预测模型（如 ESMFold）的置信度输出应被视为「模型自身的信念」而非「物理现实」的估计。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质序列（具体数据集未提供）；pLM 生成器；ESMFold 结构预测器</li>
+<li><strong>输出</strong>：对三种工具测量效度的审计结论</li>
+<li><strong>模块</strong>：
+  1. <strong>Steering 审计</strong>：对 repetition steering 进行参数扫描（sweep），测量不同推量（push magnitude）下置信度变化，拟合悬崖位置
+  2. <strong>Activation readout 审计</strong>：从无干预（unsteered）生成器的激活中训练分类器，预测 ESMFold confidence gate 是否通过
+  3. <strong>实验稳定性对照</strong>：构造 composition- 和 length-matched 设计-打乱对（design-scramble pairs），测试 balanced-accuracy 是否排除偶然性
+  4. <strong>长度敏感性复现</strong>：验证缩短序列可制造假阴性结果</li>
+<li><strong>工具</strong>：未提供具体 pLM 架构、ESMFold 版本、训练细节</li>
+<li><strong>假设</strong>：readout 应能区分设计序列与打乱对照（在匹配组成和长度条件下）；steering 应在合理参数范围内保持其声称的效果</li>
+<li><strong>流程</strong>：生成序列 → 施加/不施加 steering → ESMFold 预测 → 提取激活 → 训练 readout 分类器 → 对照实验 → 统计检验</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Steering 参数扫描</td>
+<td>测试 steering 在不同推量下的行为</td>
+<td>确定操作点是否代表真实有效区域</td>
+<td>输入：steering 参数范围；输出：置信度曲线 + 悬崖位置</td>
+<td>Abstract 报告 alpha_50 = 1.240x，对照 64.0%</td>
+<td>预期：若移除，无法发现操作点之外的失效模式</td>
+</tr>
+<tr>
+<td>Activation readout 分类器</td>
+<td>从生成器激活预测 confidence gate</td>
+<td>测试激活是否携带门控相关信息</td>
+<td>输入：unsteered 生成器激活；输出：gate 预测（ROC-AUC 0.786 ± 0.004）</td>
+<td>Abstract 报告 AUC</td>
+<td>预期：若移除，无法区分「预测门控」与「预测折叠」</td>
+</tr>
+<tr>
+<td>设计-打乱配对对照</td>
+<td>测试 readout 是否能区分设计序列与打乱序列</td>
+<td>建立实验稳定性的基线</td>
+<td>输入：design-scramble 对；输出：balanced-accuracy 区间</td>
+<td>Abstract 报告无区间排除偶然性</td>
+<td>预期：若移除，可能高估 readout 的实验预测能力</td>
+</tr>
+<tr>
+<td>长度敏感性复现</td>
+<td>验证缩短序列对结果的影响</td>
+<td>控制长度作为混淆变量</td>
+<td>输入：不同长度序列；输出：假阴性率变化</td>
+<td>Abstract 提及「replicate established length sensitivity」</td>
+<td>预期：若移除，长度效应可能被误归因于其他因素</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>——本文为实证审计研究，Abstract 中未提供任何数学公式。所有结论以统计描述（ROC-AUC、balanced-accuracy、alpha_50 等）呈现，但未给出具体公式定义。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：未提供（代码仓库可能包含，但 Abstract 未描述）</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：ROC-AUC、balanced-accuracy、置信度保持率、悬崖位置（alpha_50）</li>
+<li><strong>基线</strong>：sweep 自身对照（64.0%）</li>
+<li><strong>预算</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：未提供具体 pLM 架构、ESMFold 版本</li>
+<li><strong>Oracle 输入</strong>：ESMFold confidence 作为 gate 的 oracle</li>
+<li><strong>评测协议</strong>：未提供详细协议</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 Claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Steering 参数扫描</td>
+<td>Steering 在操作点保持置信度</td>
+<td>不同推量下置信度变化</td>
+<td>操作点保持；alpha_50 = 1.240x 处出现悬崖；对照 64.0%</td>
+<td>Steering 在有限范围内有效</td>
+<td>不能证明 steering 在更广范围内安全</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>方向性测试</td>
+<td>方向在中等推量下重要</td>
+<td>匹配范数下不同方向 vs 饱和推量</td>
+<td>中等时方向重要，饱和时不重要</td>
+<td>方向效应有边界条件</td>
+<td>不能推广到所有推量范围</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>Activation readout 预测 gate</td>
+<td>激活可预测置信度门控</td>
+<td>Unsteered 激活 vs gate 标签</td>
+<td>ROC-AUC 0.786 ± 0.004</td>
+<td>激活携带门控相关信息</td>
+<td>不能证明激活预测折叠能力</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>设计-打乱配对</td>
+<td>Readout 可区分设计与打乱</td>
+<td>匹配组成和长度</td>
+<td>无 balanced-accuracy 区间排除偶然性</td>
+<td>Readout 不能证明实验稳定性</td>
+<td>不能证明 readout 完全无效</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>长度敏感性复现</td>
+<td>缩短序列制造假阴性</td>
+<td>不同长度序列</td>
+<td>复现已知长度敏感性</td>
+<td>长度是混淆变量</td>
+<td>不能量化长度效应的普遍性</td>
+<td>Abstract</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅覆盖 pLM 生成-筛选管线中的三种工具（repetition steering、ESMFold confidence、activation readout），不涉及其他干预或读出方法。</li>
+<li><strong>Oracle/真值输入</strong>：ESMFold confidence 作为 gate 的 oracle，但作者明确指出该 oracle 本身不能证明折叠能力。</li>
+<li><strong>端到端状态</strong>：本文是审计研究，不涉及端到端蛋白质设计流程的完整验证。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：未提供。</li>
+<li><strong>模型依赖</strong>：结论依赖于特定 pLM 和 ESMFold 版本，未提供具体架构信息，泛化性未知。</li>
+<li><strong>最难情形</strong>：设计-打乱配对实验是本文最严格的测试，结果显示 readout 无法排除偶然性。</li>
+<li><strong>不确定性</strong>：所有统计量均报告了置信区间或标准差（如 AUC 0.786 ± 0.004），但未提供效应量或功效分析。</li>
+<li><strong>有边界的复述</strong>：在本文测试的特定 pLM 生成-筛选管线中，repetition steering 在操作点保持 ESMFold 置信度但在更大推量下出现置信度悬崖；activation readout 可预测置信度门控（AUC ≈ 0.786）但无法证明折叠能力或实验稳定性；长度缩短可制造假阴性结果。这些结论仅适用于本文测试的模型、数据集和参数范围，不能外推至其他 pLM 或结构预测器。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（Abstract）中未发现作者明确承认的局限。作者仅通过结论暗示了方法的边界（如「预测门控不建立折叠能力」），但未以「局限」形式列出。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 结论仅基于特定模型和数据集（未提供细节）
+- 设计-打乱配对实验显示 readout 无法排除偶然性，暗示当前 readout 可能缺乏实验预测能力</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供模型架构和数据集细节</td>
+<td>结论可能仅适用于特定 pLM/ESMFold 版本</td>
+<td>无法评估泛化性</td>
+<td>要求作者提供模型版本、数据集描述、超参数</td>
+<td>Abstract 中缺失</td>
+</tr>
+<tr>
+<td>「预测 gate ≠ 折叠能力」的论证依赖设计-打乱配对</td>
+<td>配对构造方式可能影响结果</td>
+<td>若配对构造有偏，结论可能被夸大</td>
+<td>检查配对构造代码，独立复现</td>
+<td>Abstract 描述</td>
+</tr>
+<tr>
+<td>Steering 悬崖位置（alpha_50 = 1.240x）仅报告单点</td>
+<td>悬崖位置可能随序列、模型变化</td>
+<td>无法评估悬崖的普遍性</td>
+<td>在不同序列集和模型上重复扫描</td>
+<td>Abstract 数值</td>
+</tr>
+<tr>
+<td>ROC-AUC 0.786 的 readout 仅预测 gate，未测试其他目标</td>
+<td>可能还有其他激活模式预测实验成功</td>
+<td>结论可能过于悲观</td>
+<td>测试多种 readout 目标（实验稳定性、表达量等）</td>
+<td>Abstract 描述</td>
+</tr>
+<tr>
+<td>未报告统计功效或效应量</td>
+<td>无法判断「无排除偶然性」是证据不足还是真无效</td>
+<td>影响结论强度</td>
+<td>要求提供功效分析或贝叶斯因子</td>
+<td>Abstract 缺失</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>测量效度审计框架</strong>：在蛋白质设计管线中，任何 readout 或干预都应经过「它测量的是什么」的显式检验，而非假设其有效。可迁移至本课题：在使用 AlphaFold confidence、MD 模拟稳定性等作为筛选标准时，应设计对照实验验证其与实验结果的关联。</p>
+</li>
+<li>
+<p><strong>操作点之外的鲁棒性测试</strong>：Steering 在调优的操作点有效不代表在更广参数范围有效。可迁移至本课题：在构象采样或分子对接中，对关键超参数（如采样温度、对接格点密度）进行超出调优范围的扫描，寻找隐藏失效模式。</p>
+</li>
+<li>
+<p><strong>代理指标的分层验证</strong>：Activation readout 预测 confidence gate（AUC 0.786）说明代理指标之间存在相关性，但相关性不传递到实验目标。可迁移至本课题：当使用结构预测置信度作为 MD 模拟初始构象的筛选标准时，应独立验证置信度与模拟稳定性/实验结构的关联。</p>
+</li>
+<li>
+<p><strong>长度敏感性作为混淆变量</strong>：序列长度可制造假阴性结果。可迁移至本课题：在比较不同设计策略时，应匹配序列长度或将其作为协变量控制。</p>
+</li>
+<li>
+<p><strong>设计-打乱配对作为基线</strong>：构造组成和长度匹配的负对照是检验 readout 判别力的有效手段。可迁移至本课题：在评估结构预测或构象生成方法时，使用序列打乱（保持组成和长度）作为负对照，检验方法是否能区分真实设计与非设计序列。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>ESMFold confidence 的已知局限</strong>：已有文献（如 AlphaFold 相关讨论）指出预测置信度（pLDDT）与实验折叠成功率之间存在差距。本文的审计结果与此一致，但更系统地展示了在 pLM 生成-筛选管线中该差距的具体表现。</li>
+<li><strong>pLM steering 方法</strong>：与近期 pLM 可控生成工作（如基于引导的生成方法）相关，本文提供了对这些方法效度的批判性检验。</li>
+<li><strong>Activation readout / probing</strong>：与线性探针（linear probing）文献相关，本文展示了探针可以预测代理指标但不一定预测实验目标。</li>
+<li><strong>Generate-and-screen 管线</strong>：与蛋白质设计中的「生成-筛选」范式相关，本文为该范式提供了方法论警示。</li>
+<li><strong>[Analysis] 候选方向</strong>：本文与「AI 方法在蛋白质结构预测中的不确定性量化」方向相关，但本文的贡献更偏向「不确定性/置信度不能被当作实验成功率的代理」。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：跨模型置信度-实验成功率校准基准
+   - <strong>来源局限/观察</strong>：本文显示 ESMFold confidence 不能证明折叠能力，但未提供跨模型系统比较
+   - <strong>核心假设</strong>：不同结构预测器（AlphaFold2/3、ESMFold、RoseTTAFold）的置信度与实验成功率的校准关系不同
+   - <strong>相对本文的增量</strong>：将单模型审计扩展为多模型校准基准
+   - <strong>初步方法</strong>：在标准设计-打乱数据集上，对多个结构预测器计算置信度-实验成功率校准曲线
+   - <strong>验证方式</strong>：与已知实验数据（如 ProteinGym、TAPE 等）交叉验证
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Steering 参数空间的失效边界映射
+   - <strong>来源局限/观察</strong>：本文发现 steering 在 alpha_50 = 1.240x 处出现置信度悬崖，但未系统映射失效边界
+   - <strong>核心假设</strong>：steering 失效边界与序列长度、目标蛋白家族、模型架构存在系统性关联
+   - <strong>相对本文的增量</strong>：将单点悬崖发现扩展为失效边界图谱
+   - <strong>初步方法</strong>：在多个 pLM 和序列集上系统扫描 steering 参数，拟合失效边界
+   - <strong>验证方式</strong>：独立复现悬崖位置，检验边界预测的泛化性
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：激活 readout 的多目标判别力审计
+   - <strong>来源局限/观察</strong>：本文仅测试了 activation readout 预测 confidence gate 的能力
+   - <strong>核心假设</strong>：激活 readout 可能预测其他目标（如实验表达量、溶解性）即使不能预测折叠
+   - <strong>相对本文的增量</strong>：扩展 readout 审计到多个实验目标
+   - <strong>初步方法</strong>：在包含多标签实验数据的蛋白质数据集上，训练激活 readout 并评估多目标判别力
+   - <strong>验证方式</strong>：与已知实验数据交叉验证，控制多重比较
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：长度匹配设计-打乱对照的标准化协议
+   - <strong>来源局限/观察</strong>：本文使用 composition- 和 length-matched 设计-打乱对，但未提供标准化协议
+   - <strong>核心假设</strong>：标准化对照协议可提高不同研究间 readout 评估的可比性
+   - <strong>相对本文的增量</strong>：从审计工具到方法论标准化
+   - <strong>初步方法</strong>：设计并验证标准化的对照生成协议，发布为开源工具
+   - <strong>验证方式</strong>：多实验室复现，检验协议在不同 pLM 上的适用性
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：置信度-折叠能力差距的物理模拟桥接
+   - <strong>来源局限/观察</strong>：本文显示预测置信度不能证明折叠能力，但未探索物理模拟作为桥接手段
+   - <strong>核心假设</strong>：MD 模拟的构象稳定性可作为预测置信度与实验折叠之间的中间验证层
+   - <strong>相对本文的增量</strong>：将审计结论转化为建设性方法——用物理模拟补充代理指标
+   - <strong>初步方法</strong>：对高置信度但实验未验证的候选进行 MD 模拟，检验构象稳定性与置信度的关系
+   - <strong>验证方式</strong>：与实验折叠数据对比，评估 MD 稳定性作为中间指标的增量价值
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors audit three components of a protein generate-and-screen pipeline: repetition steering, ESMFold confidence, and an activation readout. They report that steering preserves confidence at its operating point but exhibits a cliff at a specific alpha value, that direction matters at moderate push but not at saturation, that unsteered generator activations predict the confidence gate with moderate accuracy, that length sensitivity can manufacture false nulls, and that no balanced-accuracy interval excludes chance for experimental stability on matched design-scramble pairs. They conclude that predicting the gate does not establish foldability and that readouts should be tested for what they measure before use in selection.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, methods, or supplementary materials</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, methods descriptions, statistical details, dataset descriptions, code repository contents, and any supplementary information</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a potentially useful cautionary audit of common practices in protein language model pipelines. The core message, that predicted confidence and activation readouts should not be conflated with experimental foldability, is sensible and worth stating. However, the abstract as provided is too compressed to evaluate the technical soundness of the claims. Key quantities are presented without context, the relationship between the different analyses is not fully clear, and the statistical and methodological details necessary to assess the validity of the conclusions are absent. The work may be of interest to practitioners in protein design and machine learning, but the evidence base provided is insufficient to establish the case.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers developing protein generate-and-screen pipelines, particularly those using protein language models for steering or design, would be the primary audience. The cautionary findings about confidence metrics and activation readouts are relevant to anyone using ESMFold or similar tools for candidate selection. The replication of length sensitivity effects and the demonstration of false nulls are also relevant to experimentalists interpreting stability assays. The work may also interest methodologists working on interpretability and evaluation of language models in scientific domains.</li>
+<li><strong>Major strengths</strong> The abstract addresses a practical and under-examined question, namely whether common readouts in protein design pipelines measure what they are assumed to measure. The inclusion of a negative result, that experimental stability cannot be predicted from the confidence gate, is valuable. The authors also appear to have conducted matched controls, such as composition- and length-matched design-scramble pairs, which is a strength if the underlying methods are sound. The provision of code and data is commendable.</li>
+<li><strong>Major Concerns</strong> The abstract is too brief to support the claims made. Several quantitative results are presented without sufficient context or statistical detail. The relationship between the different analyses is not fully clear. The central negative result, that no balanced-accuracy interval excludes chance, is stated without the necessary details to assess its strength. The claim that predicting the gate does not establish foldability is a reasonable inference but requires more evidence than the abstract provides.</li>
+<li><strong>Minor Comments</strong> The abstract would benefit from clearer definitions of key terms, such as the activation readout and the confidence gate. The use of the term "confessions" in the title is informal for a scientific manuscript. The abstract does not state the number of proteins, designs, or replicates used, which limits interpretability. The GitHub repository is mentioned but its contents are not described.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The abstract does not provide enough methodological detail to assess the validity of the statistical claims. The cliff at alpha_50 = 1.240x is presented without confidence intervals or a description of the fitting procedure. The ROC-AUC of 0.786 +/- 0.004 is reported but the underlying model and cross-validation scheme are not described. The balanced-accuracy intervals are mentioned but their construction is not explained. The length sensitivity replication is stated but not quantified.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: the question of whether readouts track their intended targets is not new, but the specific combination of steering, confidence, and activation readouts in a single audit may offer a useful synthesis. Scientific importance: the findings are potentially important for practitioners, but the abstract does not establish the robustness of the results. Interdisciplinary readership: the work sits at the intersection of machine learning and protein biophysics, and the abstract is written in a way that is largely accessible to both communities, though some terms are undefined. Technical soundness: cannot be assessed from the abstract alone; the statistical details are insufficient. Readability for nonspecialists: the abstract is concise but assumes familiarity with protein language models, steering, and ESMFold, which limits accessibility.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract alone does not provide sufficient methodological and statistical detail to assess the validity of the claims. A full manuscript with methods, figures, and statistical analyses would be required to evaluate the work properly.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Statistical validity</li>
+<li><strong>Claim pointer</strong> The authors report a fitted cliff at alpha_50 = 1.240x with the sweep's own control at 64.0%, and state that direction matters at moderate matched-norm push but not at saturation.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract reports specific quantitative results without any description of the underlying statistical methods. The cliff at alpha_50 = 1.240x is presented as a fitted value, but no confidence intervals, fitting procedure, or model selection criteria are described. The comparison to the sweep's own control at 64.0% is unclear in its meaning and significance. The claim that direction matters at moderate push but not at saturation is stated without any effect sizes, error bars, or statistical tests.</li>
+<li><strong>Why it matters</strong> These quantitative claims are central to the paper's message about steering behavior. Without statistical context, the reader cannot assess whether the observed effects are robust or could be artifacts of the fitting procedure or the specific operating point chosen. The distinction between moderate and saturated push is a qualitative claim that requires quantitative support.</li>
+<li>
+<p><strong>Resolution test</strong> Provide the full methods for the steering experiments, including the fitting procedure, confidence intervals for alpha_50, the definition of matched-norm push, and the statistical tests used to compare conditions. Show the data points and error bars for the relevant comparisons.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The authors state that no balanced-accuracy interval excludes chance for experimental stability on composition- and length-matched design-scramble pairs.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> This is the central negative result of the abstract, but it is stated in a single sentence without any supporting details. The reader does not know how many design-scramble pairs were tested, what experimental stability assay was used, how balanced accuracy was computed, what the confidence intervals were, or what the range of observed values was. The claim that no interval excludes chance is strong and requires substantial evidence.</li>
+<li><strong>Why it matters</strong> The conclusion that predicting the gate does not establish foldability rests entirely on this negative result. If the analysis is underpowered, the null result may be uninformative. If the assay is noisy, the result may not generalize. The abstract does not provide enough information to distinguish between a robust null result and an underpowered study.</li>
+<li>
+<p><strong>Resolution test</strong> Provide the number of design-scramble pairs, the assay details, the distribution of balanced accuracy values, the confidence interval construction method, and a power analysis or equivalent justification that the study was adequately powered to detect meaningful effects.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological clarity</li>
+<li><strong>Claim pointer</strong> The authors report that unsteered generator activations predict the confidence gate with ROC-AUC 0.786 +/- 0.004, supporting cost-aware, model-specific triage.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract does not describe what the activation readout is, how it was constructed, what model was used, how the ROC-AUC was computed, or what cross-validation scheme was employed. The claim that this supports cost-aware triage is an inference that requires the reader to understand the relationship between the activation readout and the confidence gate, which is not explained.</li>
+<li><strong>Why it matters</strong> The activation readout is one of the three components the authors claim to audit. Without a clear description of what it is and how it was measured, the reader cannot evaluate whether the reported predictive performance is meaningful or whether the triage recommendation is justified.</li>
+<li>
+<p><strong>Resolution test</strong> Describe the activation readout in detail, including the model architecture, the layer or representation used, the dimensionality, and the classification setup. Provide the ROC-AUC computation details, including cross-validation scheme and number of samples.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> The authors state that they replicate established length sensitivity, through which shortening can manufacture false nulls.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The replication of length sensitivity is mentioned but not quantified. The reader does not know what the original finding was, how the replication was conducted, or what the magnitude of the effect was. The claim that shortening can manufacture false nulls is important but requires evidence.</li>
+<li><strong>Why it matters</strong> This finding is presented as a cautionary note about experimental design. Without quantification, the reader cannot assess the practical importance of the effect or whether the replication is convincing.</li>
+<li><strong>Resolution test</strong> Provide the details of the length sensitivity analysis, including the range of lengths tested, the effect size, and a comparison to the original finding being replicated.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Title</li>
+<li><strong>Evidence pointer</strong> Title, location not provided</li>
+<li><strong>Issue</strong> The title uses the informal term "Confessions" which is unusual for a scientific manuscript and may not convey the technical nature of the work.</li>
+<li>
+<p><strong>Required correction</strong> Consider a more descriptive title that reflects the audit nature of the study, such as "An Audit of Steering, Activation Readouts, and Confidence Metrics in Protein Language Model Pipelines."</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Accessibility</li>
+<li><strong>Affected element</strong> Abstract text</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> Several terms are used without definition, including "repetition steering," "confidence gate," and "activation readout." Readers outside the immediate subfield may struggle to follow the abstract.</li>
+<li>
+<p><strong>Required correction</strong> Provide brief definitions or contextual descriptions for these terms in the abstract, or restructure the abstract to make the pipeline components clearer.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The abstract does not state the scale of the study, such as the number of proteins, designs, or replicates. This limits the reader's ability to gauge the robustness of the findings.</li>
+<li>
+<p><strong>Required correction</strong> Include key numbers, such as the number of design-scramble pairs, the number of proteins tested, and the number of replicates, where relevant.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Code and data statement</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The GitHub repository is mentioned but its contents, structure, and any dependencies are not described. The reader cannot assess whether the code is usable or the data are accessible.</li>
+<li><strong>Required correction</strong> Provide a brief description of the repository contents, including the main scripts, data files, and any required dependencies or environment specifications.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that steering preserves confidence at its operating point is unsupported without details on the operating point and the measurement of confidence.</li>
+<li>The claim that a fitted cliff follows at alpha_50 = 1.240x is unsupported without the fitting procedure and confidence intervals.</li>
+<li>The claim that direction matters at moderate matched-norm push but not at saturation is unsupported without effect sizes and statistical tests.</li>
+<li>The claim that unsteered generator activations predict the confidence gate with ROC-AUC 0.786 +/- 0.004 is unsupported without details on the activation readout and the classification setup.</li>
+<li>The claim that no balanced-accuracy interval excludes chance for experimental stability is unsupported without details on the assay, the number of pairs, and the interval construction.</li>
+<li>The claim that predicting the gate does not establish foldability is an inference that is not fully supported by the abstract alone.</li>
+<li>The replication of established length sensitivity is mentioned but not quantified, making the claim unassessable.</li>
+<li>The recommendation that cost-aware, model-specific triage is supported by the activation readout is an inference that requires more evidence.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

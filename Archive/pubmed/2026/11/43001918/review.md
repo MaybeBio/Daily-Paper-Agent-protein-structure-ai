@@ -1,0 +1,94 @@
+## Review setup
+- **Input scope** Full manuscript text including abstract, introduction, results, discussion, methods, and supplementary material references.
+- **Assessment boundary** Scientific claims, methodology, evidence quality, and internal consistency as presented in the provided text. No external data or code were accessed.
+- **Shared manuscript claim summary** The authors benchmark four AI-driven protein–ligand cofolding models (AlphaFold3, RoseTTAFold3, Boltz-2, Chai-1) on kinase and Class A GPCR systems and report that correct ligand placement is systematically decoupled from accurate prediction of the surrounding protein conformational state. They further report that state-aware MSA and template biasing improves local geometry in some cases but does not reliably enforce global conformational states, and that confidence metrics correlate with ligand placement but not with state fidelity.
+- **Visible evidence base** Results sections describing ligand RMSD, protein backbone RMSD, DFG/DYG geometry, ICL3 conformation, interaction fingerprints (Figures S5–S11), confidence metric correlations (Figure S4), and supplementary tables S1 and S2. Methods sections describing MSA generation, template selection, inference settings, and analysis protocols.
+- **Missing materials affecting confidence** Figures and tables referenced in the text (Figures 1–4, Tables 1–2, Figures S1–S11, Tables S1–S2) were not provided. Numerical values for RMSD distributions, statistical tests, and per-condition results are not visible. The full supplementary material is absent.
+
+## Reviewer
+- **Overall assessment** This manuscript addresses a timely and important question: whether current cofolding models recover biologically meaningful protein conformational states or merely place ligands plausibly. The authors have selected appropriate test systems with well-defined conformational states and have made a commendable effort to use prospective structures released after training cutoffs. The central claim, that ligand placement accuracy is decoupled from protein conformational accuracy, is plausible and consistent with emerging literature. However, the evidence as presented in the text alone is insufficient to fully evaluate the strength of this claim. Key quantitative data, statistical analyses, and visual evidence are referenced but not visible. The manuscript would benefit from clearer reporting of per-condition results and a more systematic treatment of variability across diffusion samples.
+- **Who would be interested in the results, and why** Computational structural biologists, medicinal chemists, and drug discovery researchers using AI-based structure prediction tools. The findings have direct implications for structure-based drug design workflows, particularly for state-selective targeting of kinases and GPCRs. The paper would also interest developers of cofolding models, as it identifies specific failure modes and suggests where architectural improvements are needed.
+- **Major strengths** The benchmark design is thoughtful, using prospective structures to avoid training-set contamination. The choice of systems with unambiguous conformational state definitions is appropriate. The inclusion of a control structure within the training window is a good methodological addition. The systematic exploration of MSA and template biasing strategies is valuable and goes beyond simple default-setting benchmarks. The finding that confidence metrics do not report state fidelity is practically important.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence completeness
+  - **Claim pointer** The manuscript claims that "correct ligand placement is systematically decoupled from accurate prediction of the surrounding protein conformation" across the tested systems.
+  - **Evidence pointer** Results sections "Ligand Placement is Robust across Cofolding Models but Decoupled from State Accuracy and Pocket Geometry" and "GPCR Ligand Placement Is Decoupled from Intracellular State Recovery"; figures referenced but not provided
+  - **Concern** The central claim of decoupling is presented as a systematic finding, but the quantitative evidence is not visible in the provided text. No numerical RMSD values, distributions across diffusion samples, or statistical comparisons between conditions are reported in the text. The reader cannot assess the magnitude of the decoupling effect, its consistency across systems, or whether it is statistically robust. The claim that "low ligand RMSD did not consistently coincide with correct recovery of binding-site geometry" requires quantitative support showing the range of ligand RMSD values and the corresponding range of conformational accuracy metrics.
+  - **Why it matters** The central conclusion of the paper rests on demonstrating a dissociation between two accuracy measures. Without visible quantitative data, the strength and generality of this dissociation cannot be evaluated. This is the primary contribution of the work and must be supported by clear numerical evidence.
+  - **Resolution test** Provide a table or figure showing per-system, per-condition ligand RMSD and protein conformational accuracy metrics (e.g., DFG geometry deviation, ICL3 RMSD) with means and standard deviations across diffusion samples. Include a statistical test for the correlation between ligand RMSD and conformational accuracy, or a clear demonstration of cases where low ligand RMSD coincides with poor conformational accuracy.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim support
+  - **Claim pointer** The manuscript claims that "state-aware biasing enabled near-native predictions where the local pocket conformation was absent from the training data, whereas comparable accuracy was reached without explicit biasing wherever that conformation was already represented."
+  - **Evidence pointer** Discussion section; Results section "Template and MSA Biasing Affect Prediction Quality but Do Not Reliably Enforce Correct Conformations"; figures referenced but not provided
+  - **Concern** This is a nuanced and important claim, but the evidence as presented is insufficient. The text states that biasing helped for LRRK2 and DOR but not for other systems, yet no systematic comparison of biased versus unbiased conditions across all systems is visible. The claim that biasing "enabled near-native predictions" for LRRK2 requires showing that the biased condition produced qualitatively better DFG/DYG geometry than the default condition, with quantitative metrics. Similarly, the claim that biasing "made little difference" where conformations are well represented requires showing comparable accuracy metrics between conditions.
+  - **Why it matters** The practical recommendation of the paper, that state-aware biasing can be useful in specific circumstances, depends on this claim. If the evidence is only anecdotal or based on visual inspection, the recommendation is weakened. A systematic comparison across all systems and conditions is needed.
+  - **Resolution test** Provide a comprehensive table showing, for each system and each condition (default, biased MSA, biased template, no MSA, etc.), the protein conformational accuracy metric and ligand RMSD. Highlight cases where biasing improved conformational accuracy and show that these cases correspond to conformations absent from training data.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Methodology clarity
+  - **Claim pointer** The manuscript describes the use of "state-annotated templates" and "filtered MSAs" as biasing strategies.
+  - **Evidence pointer** Methods section "State-Specific MSA and Template Generation"; Table S2 referenced but not provided
+  - **Concern** The methodology for generating state-specific MSAs and templates is described, but several details are unclear. The text states that "custom templates were chosen by using the mmCIF structure files of the top four hits in each individual state-specific MSAs," but it is not specified how the top four hits were ranked, whether redundancy was removed, or how sequence identity thresholds were applied. For the GPCRs, it is stated that "active and inactive state structures were retrieved from the PDB... based on their state annotations in the GPCRdb," but the criteria for classifying states and the number of structures per state are not given. The depth of the state-specific alignments is referenced to Table S2, which is not visible.
+  - **Why it matters** The reproducibility of the biasing strategy depends on these details. If the template selection or MSA filtering criteria are not precisely specified, other researchers cannot replicate the conditions. The paper's practical recommendations depend on the specific implementation of the biasing strategy.
+  - **Resolution test** Provide explicit criteria for template selection (e.g., sequence identity thresholds, ranking method), the number of structures per state for each system, and the alignment depths used. Clarify whether the same criteria were applied across all systems and models.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interpretation
+  - **Claim pointer** The manuscript states that "model confidence metrics partially report RMSD but not state fidelity" and that "protein pLDDT showed no clear association with pose accuracy (Pearson r = −0.04)."
+  - **Evidence pointer** Results section "Model Confidence Metrics Partially Report RMSD but Not State Fidelity"; Figure 4 referenced but not provided
+  - **Concern** The correlation analysis between confidence metrics and accuracy is reported with Pearson r values, but the number of data points, the systems included, and the conditions aggregated are not specified. The text states that "varying numbers of structures are used in the figures as not every model reports every metric," which complicates interpretation. It is unclear whether the correlations are computed across all systems pooled or per system, and whether the analysis accounts for the nested structure of the data (multiple diffusion samples per condition).
+  - **Why it matters** The practical utility of confidence metrics for selecting reliable predictions depends on this analysis. If the correlations are weak or inconsistent across systems, the recommendation to use ligand pLDDT as a selection criterion is weakened. The analysis must be clearly described to be interpretable.
+  - **Resolution test** Specify the number of data points, the systems and conditions included, and whether the analysis is pooled or per system. Consider reporting confidence intervals for the correlation coefficients and testing whether the correlations differ across systems.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The phrase "merely place the ligand plausibly within an otherwise mispredicted fold" is somewhat informal and could be interpreted as pejorative. The scientific point is valid, but the phrasing could be more neutral.
+  - **Required correction** Rephrase to something like "place the ligand plausibly without recovering the correct protein conformational state."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Results section "Cofolding Recovers the Correct Protein Fold of Pi3kα but Never Places Zovegalisib in the Allosteric Binding Pocket"
+  - **Evidence pointer** Results section, paragraph on PI3Kα
+  - **Issue** The text states that "efforts to guide sampling, including blocking the ATP site sterically, introducing known protein interaction partners associated with the allosteric conformation, and using Boltz-2 binding contact flags to bias the ligand toward the cryptic pocket, did not lead to recovery of the allosteric site." These are potentially informative negative results, but no details are given about how these interventions were implemented or how the outcomes were evaluated.
+  - **Required correction** Provide a brief description of the intervention protocols and the evaluation criteria, or refer to supplementary material where these details are given.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Consistency
+  - **Affected element** Discussion section
+  - **Evidence pointer** Discussion, paragraph on GPCRs
+  - **Issue** The text states that "the absence of comparable templates for such extended loops could complicate full-length predictions even when the orthosteric ligand is correctly placed." This is a reasonable speculation, but it is presented without direct evidence from the benchmark. The 5-HT2A receptor is mentioned as having an unusually long ICL3, but no comparison with other GPCRs with shorter ICL3 is provided.
+  - **Required correction** Either provide comparative evidence from the benchmark or clearly label this as a hypothesis to be tested in future work.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Reporting
+  - **Affected element** Methods section "Inference"
+  - **Evidence pointer** Methods, AlphaFold3 subsection
+  - **Issue** The text states that "AlphaFold3 predictions were repeated with five seeds to evaluate the stochastic effects during sampling (Figure S3)." It is unclear whether the five seeds correspond to the five diffusion samples or are additional repetitions. The relationship between seeds and diffusion samples should be clarified.
+  - **Required correction** Clarify the relationship between seeds and diffusion samples, and specify how many total predictions were generated per condition.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Results section "Model Confidence Metrics Partially Report RMSD but Not State Fidelity"
+  - **Evidence pointer** Results, confidence metrics paragraph
+  - **Issue** The term "state fidelity" is used without a precise definition. It is clear from context that it refers to the accuracy of the predicted protein conformational state, but a formal definition would improve clarity.
+  - **Required correction** Define "state fidelity" explicitly, for example as the accuracy of DFG/DYG geometry for kinases and ICL3 conformation for GPCRs relative to the reference structure.
+- **Technical failings that need to be addressed before the case is established** The primary technical failing is the absence of visible quantitative data supporting the central claims. The manuscript relies heavily on referenced figures and tables that are not provided in the text. Without these, the claims of decoupling, the effectiveness of biasing, and the behavior of confidence metrics cannot be independently assessed. Additionally, the statistical treatment of variability across diffusion samples is not described in the text, and the relationship between seeds and samples is unclear.
+- **Assessment against Nature-style criteria** Originality: The question of whether cofolding models recover conformational states is timely, and the systematic comparison of biasing strategies adds value. However, parallel studies have reported similar findings, so the novelty is incremental rather than transformative. Scientific importance: The findings are practically important for drug discovery and for understanding the limitations of current models. The work does not introduce a new method or conceptual framework, but it provides useful empirical evidence. Interdisciplinary readership: The topic is relevant to computational biology, medicinal chemistry, and structural biology. The writing is accessible to these audiences, though some domain-specific terminology is used without definition. Technical soundness: The experimental design is reasonable, but the lack of visible quantitative data prevents full assessment. The use of prospective structures is a strength. Readability for nonspecialists: The abstract and introduction are clear, but the results section assumes familiarity with cofolding models and conformational state definitions. Overall, the manuscript is a solid empirical study but does not meet the bar for a Nature-level contribution in terms of conceptual advance or breadth of impact.
+- **Recommendation posture** Supportive if technical concerns are resolved. The central claim is plausible and the experimental design is appropriate, but the evidence as presented is incomplete. The authors should provide the quantitative data supporting the decoupling claim, clarify the biasing methodology, and strengthen the statistical analysis. Once these are addressed, the manuscript would be a valuable contribution to the field.
+
+## Risk / unsupported claims
+- The claim that "correct ligand placement is systematically decoupled from accurate prediction of the surrounding protein conformation" is not fully supported by the visible text, as quantitative data are referenced but not provided.
+- The claim that "state-aware biasing enabled near-native predictions where the local pocket conformation was absent from the training data" is not supported by visible quantitative comparisons across conditions.
+- The claim that "model confidence metrics partially report RMSD but not state fidelity" is based on correlation analyses that are not fully described in the text.
+- The statement that "the absence of comparable templates for such extended loops could complicate full-length predictions" is presented as an explanation but is not directly tested in the benchmark.
+- The claim that the allosteric ligand is "misplaced by all models, even under explicit guidance" is stated but the specific guidance protocols and evaluation criteria are not described in the visible text.

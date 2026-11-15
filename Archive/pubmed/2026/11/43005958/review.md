@@ -1,0 +1,78 @@
+## Review setup
+- **Input scope** Full manuscript text including abstract, introduction, results, discussion, methods, and supplementary material description.
+- **Assessment boundary** Technical and scientific evaluation of the REST2-AMP/MM method, its implementation, validation, and reported results. No assessment of editorial fit or journal policy.
+- **Shared manuscript claim summary** The authors present a REST2-like enhanced sampling scheme for multiscale ML/MM simulations using the AMPv3-EE-BMS25 neural network potential. They claim that the approximate separability of the AMP Hamiltonian into solute-solute, solute-solvent, and solvent-solvent terms enables effective solute tempering, and demonstrate enhanced conformational sampling, partial refolding of misfolded peptides, and reaction-coordinate-free folding of chignolin and CLN025 mini-proteins with near-DFT accuracy.
+- **Visible evidence base** Full text with equations, figure references, table references, and supplementary material descriptions. Figures and tables themselves are not directly viewable; only their captions and in-text descriptions are available.
+- **Missing materials affecting confidence** Actual figures, tables, and supplementary information files are not provided. Raw simulation data, convergence analyses, and detailed validation results referenced in the text and SI are not accessible. This limits quantitative verification of several claims.
+
+## Reviewer
+- **Overall assessment** The manuscript presents a conceptually interesting and technically relevant extension of REST2 enhanced sampling to ML/MM frameworks. The core idea of exploiting the approximate separability of the AMP Hamiltonian is well motivated and clearly explained. The validation across multiple peptide systems of increasing complexity is commendable. However, several technical aspects require clarification and additional evidence to fully establish the method's robustness and the strength of the folding claims. The lack of direct access to figures and SI data limits the depth of verification possible.
+- **Who would be interested in the results, and why** Researchers in computational chemistry and biophysics working on enhanced sampling methods, machine learning potentials, and protein folding simulations. The work is also relevant to those developing multiscale simulation methods and seeking to apply ML-based potentials to biologically relevant timescales.
+- **Major strengths** The manuscript addresses a clear gap in the field by extending REST2 to ML/MM frameworks. The theoretical justification for the Hamiltonian decomposition is well articulated. The validation strategy is systematic, progressing from simple dipeptides to mini-protein folding. The use of a global, transferable model without fine-tuning strengthens the practical relevance. The discussion of limitations, particularly regarding equilibrium folding populations, is honest and appropriate.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that the approximate separability of the AMP Hamiltonian into EML, EML-MM, and EMM terms is "in practice, an accurate approximation" for REST2 scaling.
+  - **Evidence pointer** Introduction, paragraph 4; Results and discussion, "Implementation of REST2 in the AMP/MM framework" section.
+  - **Concern** The manuscript acknowledges that polarization energy is absorbed into the EML term through environment-dependent node embeddings, yet the magnitude of this effect is only referenced to a previous publication (ref. 35) and a single parameter value (λpol = 0.35). The accuracy of the separability approximation is central to the validity of the entire REST2-AMP/MM approach. Without direct evidence in this manuscript quantifying the error introduced by this approximation across the tested systems, the core methodological premise is not fully established.
+  - **Why it matters** If the polarization contribution is not negligible for certain solute-solvent configurations, the scaling of EML and EML-MM would not correctly reproduce the intended effective temperature of the solute, potentially biasing the sampled ensemble and compromising the accuracy of the results.
+  - **Resolution test** Provide a quantitative analysis of the magnitude of the polarization energy relative to EML and EML-MM for representative configurations of each tested system. Show that the error in the scaled Hamiltonian due to the approximate separability is small compared to thermal energy (kBT) across the replica ladder.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that REST2-AMP/MM achieves "folding of the mini-proteins chignolin and CLN025 from extended conformations" and that the simulations "demonstrate recovery of the experimentally characterized folded conformations."
+  - **Evidence pointer** Results and discussion, "Reaction-coordinate-free folding simulations" section; Figures 6 and 7.
+  - **Concern** The manuscript states that the simulations reach a plateau at approximately 0.2 nm Cα-RMSD, but the figures and detailed trajectory analyses are not available for inspection. The distinction between reaching a folded-like state and demonstrating true folding is subtle. The authors correctly note that equilibrium folding populations are not established, but the claim of "folding" from extended conformations requires more robust evidence, such as analysis of multiple independent trajectories, assessment of the fraction of trajectories that fold, and comparison of the folded ensemble with the experimental structure beyond a single RMSD metric.
+  - **Why it matters** The central demonstration of the method's capability rests on these folding simulations. If the evidence is limited to a single trajectory or a few trajectories that happen to reach a folded-like state, the claim of robust folding capability is overstated. The field has established standards for demonstrating folding, including multiple independent runs and statistical analysis of folding probabilities.
+  - **Resolution test** Provide data from multiple independent folding simulations for both chignolin and CLN025. Report the fraction of trajectories that reach the folded basin, the distribution of folding times, and a comparison of the folded ensemble with the experimental structure using multiple structural metrics (e.g., contact maps, secondary structure content).
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that the REST2-AMP/MM approach "enables access to biologically relevant timescales while maintaining near-DFT accuracy."
+  - **Evidence pointer** Abstract; Results and discussion, "Enhanced conformational sampling of small peptides" section; Table S2.
+  - **Concern** The computational cost of the simulations is only briefly mentioned, with wall-clock performance reported in Table S2 (not accessible). The claim of accessing biologically relevant timescales is not quantified in the main text. The total simulation lengths (20-60 ns) are relatively short for folding studies, and the effective speedup compared to conventional MD or other enhanced sampling methods is not clearly stated.
+  - **Why it matters** The practical utility of the method depends on its computational efficiency. Without a clear quantification of the speedup and the computational resources required, it is difficult to assess whether the method offers a significant advantage over existing approaches.
+  - **Resolution test** Provide a detailed analysis of computational cost, including total GPU hours, speedup relative to conventional AMP/MM simulations, and a comparison with other enhanced sampling methods applied to similar systems. Quantify the effective sampling acceleration achieved by the REST2 scheme.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity and reproducibility
+  - **Affected element** Methods, "REST2-AMP/MM simulations" section
+  - **Evidence pointer** Table 1
+  - **Issue** The manuscript states that REST2 parameters are "system dependent and therefore must be established empirically" but does not provide guidance on how to choose these parameters for new systems. The scaling factor ranges and distributions are given in Table 1, but the rationale for these choices is not fully explained.
+  - **Required correction** Add a brief discussion of the criteria used to select the scaling factor ranges and distributions, and provide practical guidance for parameter selection in future applications.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Results and discussion, "Enhanced conformational sampling of small peptides" section
+  - **Evidence pointer** Figure 2D
+  - **Issue** The comparison between REST2-AMP/MM and conventional AMP/MM for alanine dipeptide uses different total simulation times (20 ns for REST2 vs. 160 ns for conventional). While this is appropriate for demonstrating efficiency, the manuscript does not clearly state whether the conventional simulations were long enough to converge the free-energy landscape.
+  - **Required correction** Clarify whether the conventional simulations were converged and, if so, provide evidence of convergence (e.g., block analysis or comparison of independent runs).
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Clarity and reproducibility
+  - **Affected element** Methods, "Analysis" section
+  - **Evidence pointer** Equation 5
+  - **Issue** The definition of RMSDdist is clear, but the choice of atoms used for the calculation is only described as "selected atoms (default: non-hydrogen atoms)". It is unclear whether the same atom selection was used for all systems and whether the results are sensitive to this choice.
+  - **Required correction** Specify the exact atom selection used for each system and discuss the sensitivity of the results to this choice.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Results and discussion, "Partial folding of peptide systems" section
+  - **Evidence pointer** Figure 5
+  - **Issue** The Trp- cage refolding experiment uses a modified structure where the α-helix is replaced by a coil. The manuscript does not describe how this modified structure was generated or whether it represents a realistic misfolded state.
+  - **Required correction** Provide details on the construction of the misfolded Trp-cage structure and justify its relevance as a test case.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking concerns. The separability approximation must be quantitatively validated, and the folding claims must be supported by more robust statistical evidence from multiple trajectories.
+- **Assessment against Nature-style criteria** Originality: High. The extension of REST2 to ML/MM frameworks is a novel contribution that addresses a real need in the field. Scientific importance: Moderate to high. The method has potential to enable enhanced sampling with quantum accuracy, which is relevant to many biophysical applications. Interdisciplinary readership: Moderate. The work will primarily interest computational chemists and biophysicists, with potential appeal to a broader structural biology audience. Technical soundness: Currently not fully established. The core methodological premise requires additional validation, and the folding claims need stronger statistical support. Readability for nonspecialists: Good. The manuscript is clearly written and the concepts are explained accessibly, though some familiarity with enhanced sampling and ML potentials is assumed.
+- **Recommendation posture** Supportive if technical concerns are resolved. The core idea is promising and the validation strategy is thoughtful, but the blocking concerns regarding the separability approximation and the robustness of the folding claims must be addressed before the case is fully established.
+
+## Risk / unsupported claims
+- The claim that the separability of the AMP Hamiltonian is "in practice, an accurate approximation" is not directly supported by data in this manuscript; it relies on a reference to a previous publication.
+- The claim of "folding" of chignolin and CLN025 from extended conformations is not fully supported without evidence of multiple independent folding events and statistical analysis.
+- The claim of "near-DFT accuracy" is not directly demonstrated in this manuscript; it is inferred from the underlying model's training and previous validation.
+- The claim of accessing "biologically relevant timescales" is not quantified and cannot be assessed from the provided information.
+- The generalizability of the method to non-peptidic systems and enzymatic reactions is speculative and not demonstrated.

@@ -1,0 +1,100 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, results, discussion, conclusions, materials and methods) as provided
+- **Assessment boundary** Scientific validity, methodological soundness, evidence quality, and clarity of claims as presented in the supplied text; no assessment of supplementary figures or tables beyond what is referenced
+- **Shared manuscript claim summary** The authors claim that standard AlphaFold2 (AF2) predictions with deep multiple sequence alignments (MSAs) and no recycling encode multi-state conformational information in their distograms. They propose a protocol to extract alternative-conformation distance signals from AF2 distograms, convert them into Rosetta energy restraints, and successfully model alternative conformations for two-state proteins, achieving performance comparable to existing approaches on benchmark datasets.
+- **Visible evidence base** Main text tables (Tables 1–3), main text figures (Figures 1–8 as referenced), equations (1)–(15), and descriptions of methods and results
+- **Missing materials affecting confidence** Supplementary figures and tables (S1–S12) referenced but not provided; benchmark dataset details for OC23 and TP16 not fully described; code repository not inspected; no structural alignments or PDB identifiers for predicted models in main text
+
+## Reviewer
+- **Overall assessment** The manuscript addresses a timely and relevant question: whether AF2 distograms contain usable multi-state information beyond the single preferred conformation. The observation that lower-ranked AF2 models (rank005) contain alternative conformational signals is interesting and potentially useful. However, the manuscript has several significant weaknesses. The methodological description is dense and at times unclear, particularly regarding the signal classification criteria and the energy restraint construction. The evaluation metrics and success criteria are not fully justified, and the comparison to existing methods is limited. The claim of "comparable performance" to AFsample2 is not quantitatively substantiated in the visible text. The generalization to single-state proteins is presented as a preliminary extension but lacks rigorous validation. Overall, the core idea has merit, but the evidence as presented does not fully establish the case.
+- **Who would be interested in the results, and why** Computational structural biologists, protein biophysicists, and researchers developing methods for conformational sampling and ensemble prediction. The work is relevant to those interested in extracting more information from deep learning structure prediction models and combining them with physics-based refinement. The potential application to studying conformational dynamics and alternative functional states would interest a broad structural biology audience.
+- **Major strengths** The manuscript identifies a previously underutilized feature of AF2 predictions (distogram multi-peak signals in low-ranked models) and proposes a practical protocol to exploit it. The approach is orthogonal to MSA-subsampling strategies, which is a useful conceptual contribution. The testing across 20 two-state proteins with diverse conformational change types adds breadth. The inclusion of control experiments (CTRL1 and CTRL2) is commendable. The authors also test on out-of-training-set targets, which strengthens the generalization claim.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence quality
+  - **Claim pointer** The authors claim that their method "effectively samples alternative conformations" and achieves "performance comparable to existing approaches" on OC23 and TP16 datasets.
+  - **Evidence pointer** Table 3, Figures 7 and 8, "Distogram-guided modeling of alternative conformation further refines the AF2 predictions" section
+  - **Concern** The quantitative comparison to existing methods is not presented in the visible text. The claim of "comparable performance" to AFsample2 is stated but no numerical comparison (e.g., TM-score distributions, success rates, or statistical tests) is shown. The AUC analysis in Figure 7C is mentioned but the actual values and comparison baselines are not described. Without these data, the performance claim cannot be evaluated.
+  - **Why it matters** The central claim of the manuscript is that the proposed method is useful for predicting alternative conformations. If the performance relative to existing state-of-the-art methods is not quantitatively demonstrated, the practical value of the approach is unclear.
+  - **Resolution test** Provide a table or figure with quantitative comparison of TM-scores, success rates, or other relevant metrics between the proposed method and AFsample2 (and ideally AFsample) on the same datasets, including statistical significance testing where appropriate.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological clarity
+  - **Claim pointer** The signal classification criteria (Classes I–VI) and the energy restraint construction (Equations 4–10) are described as central to the method.
+  - **Evidence pointer** "Extracting information on alternative conformations from distogram analysis" and "Converting distogram into energy restraints for Rosetta modeling" sections, Figure 3
+  - **Concern** The classification criteria are described in a highly condensed manner. The distinction between Classes I–VI is not clearly explained in terms of how each class is treated differently in the restraint construction. The parameters for the bivariate Gaussian fitting (initial values, convergence criteria) are not specified. The energy function construction, particularly the role of the hyperbolic tangent preprocessing and the piecewise form of the scaling parameter mag, is difficult to follow from the equations alone. The choice of the threshold values (e.g., pmax2>0.1pmax1, pmax1−pmax2<0.05pmax1) is not justified.
+  - **Why it matters** Reproducibility is a core requirement for a methods paper. If the classification and restraint construction are not described with sufficient detail, other researchers cannot implement or build upon the method.
+  - **Resolution test** Provide a step-by-step algorithmic description of the classification and restraint construction, including all parameters, thresholds, and their rationales. Consider a pseudocode or flowchart. Clarify how each class of signal is treated differently in the energy function.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Evidence quality
+  - **Claim pointer** The authors state that "AF2 predictions with deep MSA yielded hundreds of multi-peak signals" for 12 of 20 proteins, and that the average precision of alternative conformation signals was 0.73.
+  - **Evidence pointer** Table 2, "Extracting structural information of the alternative conformation based on a known structure and AF2 distogram" section
+  - **Concern** The precision calculation (Equation 3) defines true positives and false positives, but the ground truth for determining true versus false positives is not clearly described. How is it determined whether a predicted alternative signal corresponds to the actual alternative conformation? Is this based on comparison to the experimentally known alternative state? The definition of "precision" in this context needs clarification. Additionally, the relationship between the number of signals and the modeling success is not analyzed.
+  - **Why it matters** The precision metric is used to support the claim that the extracted signals are meaningful. If the ground truth definition is ambiguous, the precision values are difficult to interpret.
+  - **Resolution test** Clearly define the ground truth for true and false positive signals. Describe how the known alternative conformation is used to validate the extracted signals. Provide a more detailed breakdown of precision by protein and by signal class.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scope of claims
+  - **Claim pointer** The authors extend their analysis to 20 single-state proteins and claim that "most modeled protein systems exhibit some degree of conformational flexibility" and that "in several cases, our approach uncovered putative alternative conformations."
+  - **Evidence pointer** "Discussion" section, Supporting Information S4, S8, S9
+  - **Concern** This extension is presented as a potential application, but the validation is limited. For single-state proteins, there is no experimentally known alternative conformation to validate against. The claim of "putative alternative conformations" is speculative. The criteria for judging whether a sampled conformation is a meaningful alternative state versus a distorted or degenerate model are not defined.
+  - **Why it matters** Overclaiming on preliminary results can mislead readers about the method's capabilities. The single-state extension is interesting but needs to be framed as exploratory with appropriate caveats.
+  - **Resolution test** Either remove or substantially soften the claims about single-state proteins, or provide additional validation (e.g., comparison to known functional states from literature, consistency with experimental data such as hydrogen-deuterium exchange or cross-linking).
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract
+  - **Issue** The abstract states that the method "effectively samples alternative conformations" but does not mention the success rate (85% for best-scored, 90% for best-sampled in one direction). Including a quantitative result would strengthen the abstract.
+  - **Required correction** Consider adding a brief quantitative summary of performance in the abstract.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Methods, "Source of distogram" section
+  - **Evidence pointer** "Source of distogram" section
+  - **Issue** The version of ColabFold (v1.5.2) and the specific parameters are stated, but the exact command or script used for prediction is not provided. The "save_all" option is mentioned but the specific output files used are not fully described.
+  - **Required correction** Provide a link to the code repository and a minimal example command or script for generating the distograms.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Statistical rigor
+  - **Affected element** Results, "Assessment of predicted structures" section
+  - **Evidence pointer** Table 3
+  - **Issue** The success criteria are defined as TM-score improvement over the initial state, but no statistical significance testing is reported. Given that 150 models are sampled, it would be useful to know if the improvements are consistent across independent runs.
+  - **Required correction** Report the variance or confidence intervals for the TM-score improvements across the 150 models, or perform a statistical test comparing the best-scored models to the initial state.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Presentation
+  - **Affected element** Figures 5 and 6
+  - **Evidence pointer** Figures 5 and 6
+  - **Issue** The figure captions are not provided in the text. It is difficult to interpret the structural alignments and radar plots without captions.
+  - **Required correction** Ensure figure captions are included and describe the color schemes, alignment methods, and metrics displayed.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Discussion
+  - **Evidence pointer** Discussion section
+  - **Issue** The discussion mentions that the method is "orthogonal to MSA-subsampling strategies" but does not discuss potential limitations of this orthogonality or scenarios where the method might fail (e.g., proteins with very subtle conformational changes or intrinsically disordered regions).
+  - **Required correction** Add a paragraph discussing limitations and potential failure modes of the method.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (quantitative comparison to existing methods missing), R1-M2 (methodological details insufficient for reproducibility), R1-M3 (ground truth for precision calculation unclear)
+- **Assessment against Nature-style criteria**
+  - **Originality** The idea of mining AF2 distograms for multi-state information without MSA manipulation is relatively novel. Most prior work has focused on MSA subsampling or dropout-based sampling. The specific approach of classifying multi-peak signals and converting them into Rosetta restraints appears to be a new contribution. However, the conceptual foundation builds directly on prior work by the same group (reference 30), and the incremental advance needs to be more clearly articulated.
+  - **Scientific importance** The problem of predicting alternative conformations is important for understanding protein function and dynamics. If the method is robust and generalizable, it could be a useful tool. However, the importance is somewhat limited by the focus on two-state proteins and the reliance on known starting structures. The broader applicability to de novo prediction of conformational ensembles is not demonstrated.
+  - **Interdisciplinary readership** The work sits at the interface of computational structural biology, machine learning, and biophysics. The methods are specific to these fields, and the manuscript is likely to appeal primarily to specialists. The broader significance for cell biology or biochemistry is not strongly argued.
+  - **Technical soundness** The technical approach is plausible, but the manuscript has significant gaps in methodological detail and quantitative validation. The control experiments are a positive feature, but the lack of comparison to state-of-the-art methods weakens the technical case. The statistical treatment of results is minimal.
+  - **Readability for nonspecialists** The manuscript is written in a technical style that assumes familiarity with AF2, distograms, Rosetta, and TM-scores. The introduction provides some context, but the methods section is dense and would be challenging for nonspecialists. The figures are referenced but not described in the text, making it difficult to follow the results.
+- **Recommendation posture** Supportive if technical concerns are resolved. The core idea is interesting and potentially useful, but the manuscript in its current form does not provide sufficient evidence to fully establish the claims. The missing quantitative comparison, methodological ambiguities, and unclear validation criteria need to be addressed. If the authors can provide a clear, reproducible protocol and a rigorous quantitative evaluation against existing methods, the work could be a valuable contribution to the field.
+
+## Risk / unsupported claims
+- The claim of "performance comparable to existing approaches" (AFsample2) is not supported by quantitative data in the visible text.
+- The claim that the method "effectively samples alternative conformations" for 19 of 20 proteins is based on TM-score improvements, but the statistical significance and consistency of these improvements are not reported.
+- The extension to single-state proteins and the claim of "putative alternative conformations" is exploratory and lacks validation against experimental data.
+- The precision values reported in Table 2 depend on a ground truth definition that is not clearly described.
+- The statement that "AF2 predictions inherently contain latent information about the alternative structural states" is supported by the results but is presented as a general conclusion from a limited set of 20 proteins; the generalizability to all two-state proteins is not established.
+- The claim that the method is "orthogonal to MSA-subsampling strategies" is conceptually valid but not empirically demonstrated through direct comparison.

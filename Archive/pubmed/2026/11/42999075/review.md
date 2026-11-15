@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors present three edge-aware graph attention network (GAT) variants (Edge-Conditioned, Edge-Injected, Edge-Gated) that incorporate edge information during message passing. Relative to a standard GAT, these models improve coordinate prediction and recover complementary aspects of residue communication. Applied to Chignolin and HIV-1 protease, the models characterize communication networks underlying protein folding, allostery, and mutation-induced functional remodeling. The three models are claimed to preferentially emphasize distinct network features: communication hubs (Edge-Conditioned), high-intensity communication in functionally important regions (Edge-Injected), and long-range communication relay (Edge-Gated).
+- **Visible evidence base** Abstract text only; no quantitative results, methodological details, or validation data are available
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, model architecture details, training and validation protocols, benchmark comparisons, statistical analyses, and code or data availability statements
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually interesting approach to interpretable AI for molecular dynamics, with a clear differentiation among three edge-aware GAT variants. However, the claims of improved prediction and mechanistic interpretation are not supported by any quantitative evidence in the provided material. The abstract reads as a high-level summary without the necessary methodological detail or validation data to assess technical soundness or the validity of the biological interpretations. The work may be of interest to the computational biophysics and AI-for-science communities, but the current evidence base is insufficient to establish the core claims.
+- **Who would be interested in the results, and why** Computational biophysicists and chemists studying protein dynamics, allostery, and folding would be interested in the potential for interpretable AI to extract communication networks from molecular dynamics simulations. Researchers in graph neural network applications to biomolecular systems would also find the edge-aware architectural variants relevant. The broader AI-for-science community may be interested in the interpretability framework, though the biological specificity limits cross-disciplinary reach.
+- **Major strengths** The conceptual framing of using attention-derived communication networks for mechanistic interpretation is timely and potentially valuable. The explicit comparison of three edge-aware GAT variants with distinct design choices is a systematic approach. The application to two well-studied systems (Chignolin and HIV-1 protease) with relevance to folding and allostery is appropriate for demonstrating the approach.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims that edge-aware models "improve coordinate prediction" relative to a standard GAT.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** No quantitative metrics are provided to support the claim of improved coordinate prediction. There is no mention of error measures (e.g., root-mean-square deviation, mean absolute error), comparison baselines, statistical significance, or the magnitude of improvement.
+  - **Why it matters** The central technical claim of the paper is that edge-aware architectures outperform a standard GAT. Without quantitative evidence, the reader cannot assess whether the improvement is meaningful, marginal, or system-specific. This claim is foundational to the paper's contribution.
+  - **Resolution test** Provide prediction error metrics for all models (standard GAT and three edge-aware variants) on both test systems, with uncertainty estimates and statistical tests comparing model performance.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims that the three edge-aware models "recover complementary aspects of residue communication" and that each model "preferentially emphasizes" distinct network features (hubs, high-intensity communication, long-range relay).
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The claim of complementary recovery and preferential emphasis is presented without any supporting analysis. There is no description of how communication networks were derived from attention, how the graph-based descriptors (throughput, intensity, relay) were computed, or how the "preferential emphasis" was determined. No comparison to known biological communication pathways or experimental data is mentioned.
+  - **Why it matters** The mechanistic interpretation is the primary novelty of the work. Without a clear methodology for deriving and validating communication networks, and without evidence that the model-specific emphases are reproducible and biologically meaningful, the central interpretability claim is unsupported.
+  - **Resolution test** Describe the full pipeline from attention weights to communication networks, define all graph-based descriptors, and provide validation against known residue contacts, mutational data, or experimental allostery studies. Show quantitative comparisons of network features across models and systems.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility
+  - **Claim pointer** The abstract implies a complete methodological framework for training, evaluating, and interpreting the models.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** No details are provided on model architecture (number of layers, hidden dimensions, attention heads), training data (simulation lengths, force fields, system preparation), training procedure (loss functions, optimizers, hyperparameters), or evaluation protocol (train/test splits, cross-validation). The abstract also does not mention code or data availability.
+  - **Why it matters** Reproducibility is a core requirement for computational studies. Without these details, the work cannot be independently verified or extended by other researchers, which limits its scientific impact.
+  - **Resolution test** Provide a complete methods section with all architectural and training details, and state code and data availability in the manuscript.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability
+  - **Affected element** Abstract, first sentence
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The phrase "aritficial intellegence" contains typographical errors.
+  - **Required correction** Correct to "artificial intelligence."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract, model naming
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The three model names (Edge-Conditioned, Edge-Injected, Edge-Gated) are introduced without a brief explanation of the architectural difference beyond "how edge information is incorporated during message passing." This is vague for a nonspecialist reader.
+  - **Required correction** Add one sentence in the abstract or methods describing the key architectural distinction for each model.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Scope
+  - **Affected element** Abstract, final claim
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The final sentence claims the approach supports "AI-guided modulation of biomolecular function and rational protein engineering," but no evidence or discussion of such applications is presented in the abstract.
+  - **Required correction** Either remove this claim or explicitly state that these are potential future directions rather than demonstrated outcomes.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (no quantitative prediction metrics), R1-M2 (no methodology or validation for communication network interpretation), R1-M3 (no reproducibility details)
+- **Assessment against Nature-style criteria** 
+  - Originality: The concept of using edge-aware GAT variants to extract communication networks from MD simulations is moderately original, building on existing GAT applications to biomolecular systems. The three-way architectural comparison adds a systematic element, but the core idea is not entirely novel.
+  - Scientific importance: If the claims are substantiated, the work could contribute to interpretable AI for biophysics and aid in understanding allostery and folding. However, the importance is not yet established from the abstract alone.
+  - Interdisciplinary readership: The work sits at the intersection of machine learning, biophysics, and structural biology. It may appeal to computational specialists but is unlikely to attract a broad interdisciplinary audience without clearer biological insights.
+  - Technical soundness: Cannot be assessed from the abstract. No quantitative results, methodological details, or validation are provided.
+  - Readability for nonspecialists: The abstract is generally accessible but uses domain-specific terms (e.g., "attention-derived communication networks," "graph-based descriptors") without sufficient explanation for a general scientific audience.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual framework is promising, but the abstract lacks the quantitative and methodological support needed to evaluate the core claims. A full review of the complete manuscript would be required to determine whether the technical concerns can be resolved.
+
+## Risk / unsupported claims
+- The claim that edge-aware models "improve coordinate prediction" is unsupported by any quantitative data.
+- The claim that the three models "recover complementary aspects of residue communication" and "preferentially emphasize" distinct network features is unsupported by any analytical or validation evidence.
+- The claim that the approach characterizes "mutation-induced functional remodeling" in HIV-1 protease is not supported by any specific results.
+- The claim that the approach supports "AI-guided modulation of biomolecular function and rational protein engineering" is speculative and not evidenced.
+- All biological interpretations (folding, allostery, long-range signal propagation) are presented without reference to specific findings or comparisons to experimental data.

@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Integrating Ion Mobility Mass Spectrometry Data with AlphaFold and Rosetta Improves Protein Complex Structure Prediction. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Integrating Ion Mobility Mass Spectrometry Data with AlphaFold and Rosetta Improves Protein Complex Structure Prediction.</h1>
+      <div class="meta">Narayanasamy, Akshaya; Drake, Zachary C; Turzo, S M Bargeen A; Rolland, Amber D; Prell, James S; Wysocki, Vicki H; Lindert, Steffen</div>
+      <div class="meta muted">
+        
+        <span class="journal">Analytical chemistry</span>
+        · 2026-11-11
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/43010416/">原文</a>
+      </div>
+      <p class="one-liner">该文将离子迁移质谱CCS数据与AlphaFold和Rosetta对接整合，用于改进蛋白质复合物结构预测，属于蛋白质结构计算建模的方法创新。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Ion mobility mass spectrometry (IM-MS) provides valuable structural information about protein shape and size through collision cross section (CCS). However, it lacks atomic level structural detail. While AlphaFold has been successful in predicting monomeric protein structure, it can struggle with modeling protein complexes. To address these limitations, we developed a method that integrates IM-MS data with AlphaFold and Rosetta to improve complex structure prediction. Our approach docks AlphaFold predicted subunits with Rosetta and selects the resulting models with a newly developed score that incorporates experimental or simulated CCS data. Using this strategy, we were able to improve normalized root mean square deviation (RMSD100) values for 26 of 38 (68%) complexes compared to AlphaFold-Multimer. Furthermore, 14 of these systems improved significantly from greater than 4 A RMSD100 to less than 4 A. This method demonstrates a robust approach to overcome limitations in complex assembly modeling.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">离子迁移质谱（IM-MS）通过碰撞截面（CCS）提供关于蛋白质形状和大小的宝贵结构信息。然而，它缺乏原子级别的结构细节。尽管AlphaFold在预测单体蛋白质结构方面取得了成功，但在建模蛋白质复合物时可能遇到困难。为解决这些局限性，我们开发了一种方法，将IM-MS数据与AlphaFold和Rosetta整合，以改善复合物结构预测。我们的方法使用Rosetta对接AlphaFold预测的亚基，并通过一个结合实验或模拟CCS数据的新开发评分来选择最终模型。采用这一策略，我们能够将38个复合物中的26个（68%）的归一化均方根偏差（RMSD100）值相较于AlphaFold-Multimer有所改善。此外，其中14个系统的RMSD100从大于4埃显著改善至小于4埃。该方法展示了一种稳健的途径，以克服复合物组装建模中的局限性。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Integrating Ion Mobility Mass Spectrometry Data with AlphaFold and Rosetta Improves Protein Complex Structure Prediction</li>
+<li><strong>作者与单位</strong>：Narayanasamy, Akshaya; Drake, Zachary C; Turzo, S M Bargeen A; Rolland, Amber D; Prell, James S; Wysocki, Vicki H; Lindert, Steffen（单位未提供，推测为俄亥俄州立大学等，以原文为准）</li>
+<li><strong>期刊/预印本平台</strong>：Analytical Chemistry</li>
+<li><strong>年份</strong>：2026（在线日期 2026-11-11）</li>
+<li><strong>论文类型</strong>：方法学（Method）</li>
+<li><strong>领域</strong>：蛋白质复合物结构预测 × 离子迁移质谱（IM-MS）× AlphaFold/Rosetta 集成</li>
+<li><strong>关键词</strong>：Ion mobility mass spectrometry (IM-MS), collision cross section (CCS), AlphaFold, Rosetta, protein complex structure prediction</li>
+<li><strong>DOI/arXiv 号</strong>：10.1021/acs.analchem.6c01893</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：38 个蛋白质复合物体系（具体数据集未在摘要中列出）</li>
+<li><strong>阅读日期</strong>：2026-05-07（按当前日期）</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI/物理模拟」中的复合物组装预测方向，核心贡献是将实验 IM-MS 的 CCS 数据作为约束/打分项，与 AlphaFold 亚基预测和 Rosetta 对接结合，解决 AlphaFold-Multimer 在复合物组装上的不足。可迁移思路：将实验结构约束（如 CCS、交联、SAXS）与深度学习预测器结合，形成「预测-对接-实验筛选」闭环。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>针对 AlphaFold-Multimer 在蛋白质复合物组装预测中精度不足的问题，本文用 Rosetta 对接 AlphaFold 预测的亚基，并用一个融合实验或模拟 CCS 数据的新打分函数挑选模型，使 38 个复合物中 26 个（68%）的 RMSD100 优于 AlphaFold-Multimer，其中 14 个从 &gt;4 Å 改善到 &lt;4 Å。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何利用 IM-MS 提供的 CCS（碰撞截面积）数据，提升蛋白质复合物结构预测的准确性，尤其是当 AlphaFold-Multimer 无法正确组装亚基时？</li>
+<li><strong>为什么重要</strong>：蛋白质复合物是多数生物过程的功能单元，但实验测定其原子级结构困难；AlphaFold 对单体预测成功，但对复合物组装常失败（如亚基相对取向错误）。IM-MS 能提供形状/尺寸信息（CCS），但缺乏原子细节，二者互补。</li>
+<li><strong>现有方法不足</strong>：AlphaFold-Multimer 在复合物上精度有限（尤其对构象变化大或弱相互作用复合物）；纯 Rosetta 对接缺乏实验约束，采样和打分不准确；IM-MS 单独无法给出原子坐标。</li>
+<li><strong>精确研究问题</strong>：Can integrating experimental or simulated CCS data into a Rosetta docking pipeline (with AlphaFold-predicted subunits) improve complex structure prediction over AlphaFold-Multimer alone?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p>（标注：以下脉络为「经外部核验」的领域常识，结合本文框架）
+- <strong>阶段 1：AlphaFold 系列</strong>（2020-2022）— 代表：AlphaFold2, AlphaFold-Multimer。优点：单体预测精度高，复合物预测在部分体系有效。局限：复合物组装常失败，尤其对构象变化、多构象或弱亲和体系。
+- <strong>阶段 2：Rosetta 对接与打分</strong>（2000s-至今）— 代表：RosettaDock, SnugDock。优点：可处理柔性、可集成约束。局限：采样空间大，打分函数不完美，需实验约束引导。
+- <strong>阶段 3：实验数据集成</strong>（2010s-至今）— 代表：SAXS、交联质谱、IM-MS 与计算对接结合。优点：实验数据提供全局形状/距离约束。局限：CCS 是低分辨率（一维），如何有效转化为打分项是挑战。
+- <strong>本文位置</strong>：将 IM-MS 的 CCS 作为 Rosetta 对接后的模型筛选打分项，与 AlphaFold 亚基预测结合，形成「AlphaFold 预测亚基 → Rosetta 对接 → CCS 打分筛选」流水线，填补了「实验 CCS 数据 + 深度学习预测器 + 物理对接」的集成空白。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AlphaFold-Multimer 复合物组装失败</td>
+<td>38 个体系中部分 RMSD100 &gt; 4 Å</td>
+<td>亚基相对取向/构象变化大，多聚体组装超出训练分布</td>
+<td>Abstract: "it can struggle with modeling protein complexes"</td>
+</tr>
+<tr>
+<td>IM-MS 缺乏原子级细节</td>
+<td>CCS 只提供形状/尺寸，无法直接给出坐标</td>
+<td>离子迁移测量是低分辨率全局量</td>
+<td>Abstract: "it lacks atomic level structural detail"</td>
+</tr>
+<tr>
+<td>纯 Rosetta 对接无实验引导</td>
+<td>采样和打分不准确，模型选择困难</td>
+<td>打分函数不完美，能量面粗糙</td>
+<td>作者开发新打分函数（含 CCS）来筛选模型，暗示原打分不足</td>
+</tr>
+<tr>
+<td>实验 CCS 与计算模型脱节</td>
+<td>实验数据未有效用于计算流程</td>
+<td>缺乏将 CCS 转化为可计算打分项的框架</td>
+<td>本文提出新 score 整合 CCS 数据</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：用 AlphaFold 预测各亚基单体结构 → 用 Rosetta 进行蛋白-蛋白对接（docking）→ 用包含实验或模拟 CCS 数据的新打分函数（score）对对接模型排序，选出最优复合物模型。</li>
+<li><strong>核心洞察</strong>：AlphaFold 擅长预测亚基内部结构，但亚基间相对排布（组装）是弱项；Rosetta 能采样组装构象，但打分不完美。IM-MS 的 CCS 提供了独立的、实验来源的全局形状约束，可作为「外部证据」来打破 Rosetta 打分函数的歧义，从而在模型筛选中显著提升精度。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：任何低分辨率实验数据（如 CCS、SAXS 包络、交联距离）都可以作为「后验筛选器」叠加在深度学习预测器之上，而不是试图将实验数据硬编码进网络训练。这种「预测-采样-实验筛选」三段式架构，比端到端训练更灵活、更易迁移到新体系。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质序列（复合物各亚基）；可选：实验 CCS 值或模拟 CCS 值（用于打分）。</li>
+<li><strong>输出</strong>：预测的蛋白质复合物原子模型（PDB 格式），附带打分值。</li>
+<li><strong>模块</strong>：
+  1. AlphaFold（或 AlphaFold-Multimer）预测各亚基单体结构；
+  2. Rosetta 对接（docking）模块，将亚基组装为复合物构象；
+  3. CCS 打分模块：计算每个对接模型的 CCS（实验或模拟），并与目标 CCS 比较，形成打分项；
+  4. 综合打分函数：融合 Rosetta 能量项与 CCS 匹配度，用于模型排序。</li>
+<li><strong>训练</strong>：未提及训练过程（可能为无监督/零样本，直接使用预训练 AlphaFold 和 Rosetta 打分函数）。</li>
+<li><strong>工具</strong>：AlphaFold, Rosetta, IM-MS（实验测量或碰撞截面计算软件如 MOBCAL/IMMS 模拟）。</li>
+<li><strong>假设</strong>：CCS 对复合物整体形状敏感，能区分正确与错误的亚基排布；Rosetta 对接能采样到接近天然态的构象。</li>
+<li><strong>流程</strong>：序列 → AlphaFold 亚基预测 → Rosetta 对接采样 → 对每个模型计算 CCS → 用含 CCS 的 score 排序 → 输出最优模型。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AlphaFold 亚基预测</td>
+<td>生成各亚基单体结构</td>
+<td>提供高质量亚基内部结构，减少对接搜索维度</td>
+<td>输入：序列；输出：亚基 PDB</td>
+<td>领域共识：AlphaFold 单体预测精度高</td>
+<td>预期影响：亚基结构错误将导致对接失败（[Analysis] 预期效应）</td>
+</tr>
+<tr>
+<td>Rosetta 对接</td>
+<td>采样亚基间相对排布</td>
+<td>生成候选复合物构象</td>
+<td>输入：亚基 PDB；输出：对接模型集合</td>
+<td>作者用 Rosetta 进行 docking（Abstract）</td>
+<td>移除后无采样构象，无法进行后续筛选</td>
+</tr>
+<tr>
+<td>CCS 计算/测量</td>
+<td>为每个模型计算碰撞截面积</td>
+<td>提供形状描述符，与实验 CCS 比较</td>
+<td>输入：模型 PDB；输出：CCS 值</td>
+<td>作者使用实验或模拟 CCS（Abstract）</td>
+<td>移除后失去实验约束，打分退化为纯 Rosetta 能量</td>
+</tr>
+<tr>
+<td>综合打分函数</td>
+<td>融合 Rosetta 能量与 CCS 匹配度</td>
+<td>选择最优模型</td>
+<td>输入：对接模型 + CCS 数据；输出：排序列表</td>
+<td>作者开发新 score（Abstract）</td>
+<td>移除后模型选择精度下降，可能回到 AlphaFold-Multimer 水平</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ul>
+<li><strong>RMSD100</strong>：归一化 RMSD，用于评估模型与天然结构的偏差。公式：RMSD100 = RMSD × 100 / (残基数^(2/3))。用途：跨体系比较预测精度。直觉：消除体系大小对 RMSD 的影响。来源：领域标准指标（本文用于评估）。</li>
+<li><strong>CCS 匹配项</strong>（推测，原文未给出具体公式）：score_CCS = |CCS_model - CCS_experiment| / CCS_experiment 或类似归一化偏差。用途：衡量模型形状与实验的匹配度。直觉：CCS 偏差越小，模型越可能正确。来源：未提供，[Analysis] 推测。</li>
+<li><strong>综合打分</strong>（推测）：score_total = w1 × Rosetta_energy + w2 × CCS_match。用途：平衡能量与实验约束。直觉：能量低且 CCS 匹配的模型优先。来源：未提供，[Analysis] 推测。</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：38 个蛋白质复合物体系（具体组成未在摘要中列出，需查原文）。</li>
+<li><strong>规模</strong>：38 个复合物。</li>
+<li><strong>指标</strong>：RMSD100（归一化 RMSD），阈值 4 Å 作为「显著改善」分界。</li>
+<li><strong>基线</strong>：AlphaFold-Multimer 预测结果。</li>
+<li><strong>评测协议</strong>：比较本文方法（AlphaFold + Rosetta + CCS 打分）与 AlphaFold-Multimer 的 RMSD100。</li>
+<li><strong>oracle 输入</strong>：实验 CCS 值或模拟 CCS 值（用于打分）。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全数据集预测</td>
+<td>集成方法优于 AlphaFold-Multimer</td>
+<td>38 个复合物，比较 RMSD100</td>
+<td>26/38（68%）改善</td>
+<td>集成方法整体提升预测精度</td>
+<td>未证明对所有体系有效，32% 未改善</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>显著改善子集</td>
+<td>方法能修复 AlphaFold-Multimer 的大误差</td>
+<td>14 个体系从 &gt;4 Å 降至 &lt;4 Å</td>
+<td>14 个体系显著改善</td>
+<td>方法对困难体系有效</td>
+<td>未说明这 14 个体系的具体特征</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>实验 vs 模拟 CCS</td>
+<td>两种 CCS 来源均有效</td>
+<td>未在摘要中区分</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对蛋白质复合物组装预测，不涉及单体预测、配体结合或膜蛋白。</li>
+<li><strong>oracle/真值输入</strong>：使用了实验或模拟 CCS 数据作为打分输入，这意味着方法依赖 CCS 数据的可获得性（实验测量或可靠模拟）。</li>
+<li><strong>端到端状态</strong>：非端到端，而是三段式流水线（AlphaFold → Rosetta → CCS 打分），每步独立。</li>
+<li><strong>算力成本</strong>：未提供，但 Rosetta 对接通常计算量较大。</li>
+<li><strong>历史数据依赖</strong>：AlphaFold 依赖训练数据，Rosetta 打分函数依赖物理能量项，CCS 依赖实验或模拟。</li>
+<li><strong>最难情形</strong>：32% 的体系未改善，说明方法对某些复合物（可能构象变化极大或 CCS 不敏感）仍失败。</li>
+<li><strong>群体/领域边界</strong>：38 个体系可能偏向可溶性、球状复合物，对 intrinsically disordered 或高度柔性体系可能不适用。</li>
+<li><strong>不确定性</strong>：未提供置信区间或统计显著性检验。</li>
+<li><strong>有边界的复述</strong>：在 38 个测试复合物中，该方法使 68% 的体系 RMSD100 优于 AlphaFold-Multimer，其中 14 个从 &gt;4 Å 改善到 &lt;4 Å；但方法依赖 CCS 数据，且对 32% 体系无改善。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（仅摘要）中未发现作者明确承认的局限。
+- <strong>作者提及的相关约束</strong>（非正式局限，[Analysis] 推断）：方法依赖 CCS 数据的可获得性；38 个体系规模有限；未说明对多构象或柔性体系的表现。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>68% 改善率可能受基线影响</td>
+<td>AlphaFold-Multimer 在部分体系上可能已很好，改善空间小；或 Rosetta 对接本身在某些体系上优于 AF-M</td>
+<td>影响方法普适性判断</td>
+<td>按 AF-M 初始精度分层分析改善率</td>
+<td>Abstract 未提供分层数据</td>
+</tr>
+<tr>
+<td>CCS 打分可能对形状相似但取向不同的模型不敏感</td>
+<td>CCS 是旋转平均量，可能无法区分亚基相对旋转</td>
+<td>影响方法对取向错误的纠正能力</td>
+<td>构造形状相同但取向错误的模型，测试 CCS 打分区分度</td>
+<td>[Analysis] 基于 CCS 物理性质</td>
+</tr>
+<tr>
+<td>模拟 CCS 的可靠性未验证</td>
+<td>模拟 CCS 依赖力场和计算方法，误差可能传播</td>
+<td>影响无实验数据时的适用性</td>
+<td>对比实验 CCS 与模拟 CCS 打分的预测精度差异</td>
+<td>Abstract 未区分两种来源</td>
+</tr>
+<tr>
+<td>14 个显著改善体系的特征未描述</td>
+<td>可能偏向特定复合物类型（如对称二聚体）</td>
+<td>影响方法适用范围判断</td>
+<td>分析这 14 个体系的序列/结构特征</td>
+<td>Abstract 未提供细节</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>
+1. <strong>「预测-采样-实验筛选」三段式架构</strong>：将 AlphaFold 的亚基预测、Rosetta 的构象采样、实验 CCS 的筛选打分串联，可迁移到其他实验约束（如 SAXS、FRET、交联）与深度学习预测器的结合。
+2. <strong>CCS 作为全局形状描述符</strong>：IM-MS 的 CCS 虽低分辨率，但计算成本低、易获得，可作为打分项快速筛选对接模型，适用于大规模复合物筛选。
+3. <strong>打分函数融合策略</strong>：将物理能量项（Rosetta）与实验约束项（CCS）加权融合，比单一打分更鲁棒，可迁移到分子对接、构象采样等任务。
+4. <strong>RMSD100 作为跨体系评估指标</strong>：归一化 RMSD 便于比较不同大小复合物的预测精度，可用于本课题其他方法的评估。
+5. <strong>实验数据后验筛选优于硬编码</strong>：不将 CCS 嵌入 AlphaFold 训练，而是作为后验筛选器，避免重新训练成本，且对新体系更灵活。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold-Multimer</strong>（Evans et al., 2022）：本文直接以其为基线，指出其在复合物组装上的不足，与领域共识一致。</li>
+<li><strong>RosettaDock</strong>（Gray et al., 2003）：本文使用 Rosetta 对接，属于经典物理采样方法，与深度学习预测器互补。</li>
+<li><strong>IM-MS 与 CCS 计算</strong>（MOBcal, IMoS 等）：CCS 模拟方法已有成熟工具，本文将其作为打分项，连接实验与计算。</li>
+<li><strong>SAXS 与结构预测集成</strong>（如 SAXS 引导的 docking）：本文思路与 SAXS 集成方法类似，但使用 CCS 作为更易获得的约束。</li>
+<li><strong>候选方向</strong>：将本文的 CCS 打分策略迁移到 AlphaFold3 或扩散模型（如 Chroma）的复合物生成中，作为后验筛选器。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>
+1. <strong>名称</strong>：CCS 引导的 AlphaFold-Multimer 重打分（CCS-Refine）
+   - <strong>来源局限/观察</strong>：本文方法依赖 Rosetta 对接，计算成本高；AlphaFold-Multimer 直接输出模型但精度不足。
+   - <strong>核心假设</strong>：对 AlphaFold-Multimer 的 top 模型直接计算 CCS 并与实验比较，可重排序选出更优模型，无需 Rosetta 对接。
+   - <strong>初步方法</strong>：用 AlphaFold-Multimer 生成 top N 模型 → 用 MOBCAL/IMoS 计算各模型 CCS → 与实验 CCS 比较，重排序。
+   - <strong>验证方式</strong>：在本文 38 个体系上对比重排序前后 RMSD100。
+   - <strong>失败模式</strong>：AF-M 的 top 模型可能 CCS 差异小，重排序无效。</p>
+<ol start="2">
+<li>
+<p><strong>名称</strong>：多实验约束联合打分（Multi-Constraint Docking Score）
+   - <strong>来源局限/观察</strong>：本文仅用 CCS 一种约束，可能对形状相似但取向不同的模型不敏感。
+   - <strong>核心假设</strong>：联合 CCS、交联距离、SAXS 包络可提高打分区分度。
+   - <strong>初步方法</strong>：在 Rosetta 对接后，对每个模型计算多种实验约束的匹配度，加权融合打分。
+   - <strong>验证方式</strong>：在已知交联/SAXS 数据的复合物上测试。
+   - <strong>失败模式</strong>：约束间冲突或权重难调。</p>
+</li>
+<li>
+<p><strong>名称</strong>：CCS 感知的扩散模型微调（CCS-Conditioned Diffusion）
+   - <strong>来源局限/观察</strong>：本文方法为后验筛选，未利用 CCS 引导生成过程。
+   - <strong>核心假设</strong>：将 CCS 作为条件输入到扩散模型（如 Chroma），可生成更符合实验形状的复合物。
+   - <strong>初步方法</strong>：在扩散模型的去噪过程中加入 CCS 匹配损失。
+   - <strong>验证方式</strong>：生成模型与后验筛选对比 RMSD100。
+   - <strong>失败模式</strong>：CCS 是全局量，难以提供局部引导，可能无效。</p>
+</li>
+<li>
+<p><strong>名称</strong>：CCS 预测器的端到端学习（CCS-Net）
+   - <strong>来源局限/观察</strong>：CCS 计算工具（MOBCAL）较慢，限制大规模筛选。
+   - <strong>核心假设</strong>：训练一个图神经网络从 PDB 直接预测 CCS，加速打分。
+   - <strong>初步方法</strong>：用现有 CCS 计算工具生成训练数据，训练 GNN 预测器。
+   - <strong>验证方式</strong>：预测精度与 MOBCAL 对比，并集成到本文打分流程。
+   - <strong>失败模式</strong>：CCS 对构象细节敏感，GNN 可能欠拟合。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present a method that integrates ion mobility mass spectrometry (IM-MS) collision cross section (CCS) data with AlphaFold and Rosetta to improve protein complex structure prediction. The approach docks AlphaFold-predicted subunits with Rosetta and selects models using a newly developed score incorporating experimental or simulated CCS data. The authors report improved RMSD100 values for 26 of 38 (68%) complexes compared to AlphaFold-Multimer, with 14 systems improving from greater than 4 Å to less than 4 Å RMSD100.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no methodological details, benchmark composition, statistical analyses, or comparative performance metrics beyond the stated counts and percentages</li>
+<li><strong>Missing materials affecting confidence</strong> Full methods, benchmark complex list and selection criteria, definition and validation of the new scoring function, CCS measurement or simulation protocols, statistical significance testing, comparison details against AlphaFold-Multimer, and any structural examples or case studies</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract describes a potentially valuable integration of experimental IM-MS data with computational structure prediction, addressing a recognized limitation in protein complex modeling. The reported success rate of 68% improvement and the rescue of 14 systems from poor to acceptable accuracy are encouraging. However, the abstract provides insufficient methodological detail to evaluate the novelty, robustness, and generalizability of the approach. Key questions regarding the scoring function, benchmark composition, and statistical rigor remain unanswered. The work appears promising but is not fully assessable from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Structural biologists and computational biologists working on protein complex prediction, particularly those using AlphaFold or related deep learning approaches, would find this method relevant. Researchers in integrative structural biology who combine experimental data with computational modeling, as well as developers of scoring functions for model selection, would also be interested. The approach could appeal to laboratories using IM-MS as a structural characterization tool who seek to leverage their data for modeling applications.</li>
+<li><strong>Major strengths</strong> The abstract addresses a clear and important limitation in current protein complex prediction, namely the difficulty AlphaFold faces with multimeric assemblies. The integration of experimental or simulated CCS data as a model selection criterion is a logical and potentially powerful strategy. The reported improvement across a benchmark of 38 complexes, with 14 systems crossing the 4 Å RMSD100 threshold, suggests practical utility. The method appears broadly applicable, as it can use either experimental or simulated CCS data.</li>
+<li><strong>Major Concerns</strong>  </li>
+<li><strong>Concern ID</strong> R1-M1  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Technical soundness  </li>
+<li><strong>Claim pointer</strong> The method improves RMSD100 values for 26 of 38 (68%) complexes compared to AlphaFold-Multimer.  </li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided  </li>
+<li><strong>Concern</strong> The abstract reports a success rate but provides no information on the benchmark composition, including the diversity of complex sizes, stoichiometries, or difficulty levels. Without knowing whether the 38 complexes represent a balanced and unbiased test set, the 68% improvement rate cannot be interpreted as a general measure of method performance.  </li>
+<li><strong>Why it matters</strong> If the benchmark is skewed toward easy cases or complexes where CCS data are particularly informative, the reported improvement may not generalize to the broader population of protein complexes. The claim of a "robust approach" requires evidence that the test set is representative.  </li>
+<li><strong>Resolution test</strong> Provide a description of the benchmark selection criteria, including complex size range, stoichiometry distribution, and any filtering based on expected difficulty. Demonstrate that the test set is not biased toward cases favorable to the method.  </li>
+<li><strong>Concern ID</strong> R1-M2  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Technical soundness  </li>
+<li><strong>Claim pointer</strong> A newly developed score that incorporates experimental or simulated CCS data is used to select models.  </li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided  </li>
+<li><strong>Concern</strong> The abstract does not describe the scoring function, its mathematical form, how CCS data are weighted relative to Rosetta energy terms, or how the score was calibrated and validated. Without this information, the novelty and reliability of the score cannot be assessed.  </li>
+<li><strong>Why it matters</strong> The core contribution of the work is the integration of CCS data into model selection. If the scoring function is ad hoc or poorly calibrated, the reported improvements may not be reproducible or transferable to other systems.  </li>
+<li><strong>Resolution test</strong> Provide a full description of the scoring function, including its components, weighting scheme, and any training or calibration procedure. Show that the score is robust to variations in CCS measurement error and that it outperforms simpler alternatives.  </li>
+<li><strong>Concern ID</strong> R1-M3  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Statistical rigor  </li>
+<li><strong>Claim pointer</strong> 14 of these systems improved significantly from greater than 4 Å RMSD100 to less than 4 Å.  </li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided  </li>
+<li><strong>Concern</strong> The term "significantly" is used without any statistical testing. The abstract does not report confidence intervals, p-values, or any measure of variability across independent runs or model sampling. The improvement from greater than 4 Å to less than 4 Å is presented as a binary outcome, but the robustness of this transition is unclear.  </li>
+<li><strong>Why it matters</strong> Without statistical analysis, the reader cannot determine whether the observed improvements are consistent or could arise from stochastic variation in the docking or scoring procedures. The claim of significance is unsupported.  </li>
+<li><strong>Resolution test</strong> Report statistical analyses, such as paired comparisons of RMSD100 distributions, confidence intervals for the improvement rates, or bootstrapping results. Clarify whether the 4 Å threshold is a standard metric in the field and justify its use.  </li>
+<li><strong>Concern ID</strong> R1-M4  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> No  </li>
+<li><strong>Axis</strong> Reproducibility  </li>
+<li><strong>Claim pointer</strong> The method integrates IM-MS data with AlphaFold and Rosetta.  </li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided  </li>
+<li><strong>Concern</strong> The abstract does not specify whether experimental or simulated CCS data were used for each of the 38 complexes, nor does it describe the simulation protocol for CCS values. The sensitivity of the method to CCS measurement error or simulation accuracy is not addressed.  </li>
+<li><strong>Why it matters</strong> For the method to be useful to the community, users need to know whether they can rely on simulated CCS values when experimental data are unavailable, and how much error in CCS input can be tolerated.  </li>
+<li><strong>Resolution test</strong> Specify the proportion of complexes using experimental versus simulated CCS data. Provide an analysis of method performance as a function of CCS error or uncertainty. Describe the CCS simulation method and its validation.</li>
+<li><strong>Minor Comments</strong>  </li>
+<li><strong>Concern ID</strong> R1-m1  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Clarity  </li>
+<li><strong>Affected element</strong> Abstract wording  </li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided  </li>
+<li><strong>Issue</strong> The phrase "docks AlphaFold predicted subunits with Rosetta" is ambiguous regarding whether the docking is fully flexible or uses rigid-body approximations, and whether the AlphaFold models are used as-is or refined.  </li>
+<li><strong>Required correction</strong> Clarify the docking protocol, including any flexibility treatment and whether AlphaFold models are used directly or subjected to refinement before docking.  </li>
+<li><strong>Concern ID</strong> R1-m2  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Completeness  </li>
+<li><strong>Affected element</strong> Benchmark description  </li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided  </li>
+<li><strong>Issue</strong> The abstract does not state whether the 38 complexes are all previously unseen by AlphaFold training or whether any were used in the development of the scoring function.  </li>
+<li><strong>Required correction</strong> State whether the benchmark complexes were held out from any training or calibration of the method, and whether any overlap exists with AlphaFold training data.  </li>
+<li><strong>Concern ID</strong> R1-m3  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Comparability  </li>
+<li><strong>Affected element</strong> Baseline comparison  </li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided  </li>
+<li><strong>Issue</strong> The comparison is made only against AlphaFold-Multimer. It is unclear whether the Rosetta docking step alone, without CCS data, would yield similar improvements.  </li>
+<li><strong>Required correction</strong> Report performance of the Rosetta docking pipeline without CCS-based scoring to isolate the contribution of the IM-MS data integration.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "significant" improvement for 14 systems is unsupported without statistical testing.</li>
+<li>The generalizability of the 68% improvement rate is not assessable without benchmark composition details.</li>
+<li>The novelty and reliability of the "newly developed score" cannot be evaluated from the abstract alone.</li>
+<li>The relative contribution of CCS data versus the Rosetta docking step to the reported improvements is not established.</li>
+<li>The robustness of the method to CCS measurement or simulation error is not addressed.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

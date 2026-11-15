@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI for Biologists: The Knowledge Boundaries of Foundation Models in the Age of Agentic Systems · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>AI for Biologists: The Knowledge Boundaries of Foundation Models in the Age of Agentic Systems</h1>
+      <div class="meta">Tian Cai; Andrew Kleist; Jaimin Patel; Duccio Malinverni; Alexander K. Taylor; Malvika Sharan; Renato Umeton; M. Madan Babu</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-11-12
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2611.17015v1">原文</a>
+      </div>
+      <p class="one-liner">该综述面向生物学家介绍生物基础模型（含蛋白质结构预测）及其知识边界，虽涉及蛋白质结构计算但以模型可靠性讨论为主，方法创新性较弱，与课题相关但贡献有限。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Artificial intelligence (AI) is changing how biological research is done. Biological foundation models trained on millions of nucleotides, protein, and single-cell measurements predict protein structures, mutation effects, and cellular responses to genetic perturbations. Agentic systems, AI assistants built on large language models, can run multistep analyses from plain-language requests and increasingly call foundation models as tools. Yet it is often unclear when these models&#39; outputs can be trusted. We frame this as a model&#39;s knowledge boundary: the range of inputs, tasks, and conditions over which its outputs are reliable. This review explains how foundation models are built and proposes that five design elements (data, architecture, training scheme, evaluation scheme, and post-analysis) define this boundary. We examine evidence on where current models succeed or fail and present standardized descriptions of model limits so that researchers, and the agents acting for them, can use these tools reliably.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">人工智能（AI）正在改变生物学研究的方式。基于数百万核苷酸、蛋白质和单细胞测量数据训练的生物学基础模型，能够预测蛋白质结构、突变效应以及细胞对遗传扰动的响应。代理系统（agentic systems）——基于大型语言模型构建的AI助手——能够根据自然语言请求执行多步骤分析，并日益将基础模型作为工具调用。然而，这些模型的输出在何时可被信任往往并不明确。我们将此界定为模型的知识边界：即其输出可靠的输入、任务和条件范围。本综述阐释了基础模型的构建方式，并提出五个设计要素（数据、架构、训练方案、评估方案和后续分析）决定了这一边界。我们审视了当前模型成功或失败之处的证据，并呈现模型局限性的标准化描述，以便研究人员及其代理能够可靠地使用这些工具。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：AI for Biologists: The Knowledge Boundaries of Foundation Models in the Age of Agentic Systems</li>
+<li><strong>作者</strong>：Tian Cai; Andrew Kleist; Jaimin Patel; Duccio Malinverni; Alexander K. Taylor; Malvika Sharan; Renato Umeton; M. Madan Babu</li>
+<li><strong>单位</strong>：未提供（作者信息未在摘要中列出）</li>
+<li><strong>期刊/预印本平台</strong>：arXiv（Quantitative Biology &gt; Biomolecules 板块）</li>
+<li><strong>年份</strong>：2026-11-12（提交日期）</li>
+<li><strong>论文类型</strong>：观点/综述型论文（Perspective/Review）</li>
+<li><strong>领域</strong>：AI for Biology，Foundation Models，Agentic Systems</li>
+<li><strong>关键词</strong>：未提供（摘要中未列出）</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2611.17015v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-11-12</li>
+<li><strong>该文在课题方向中的位置</strong>：本文不直接提出新的蛋白质结构预测或模拟方法，而是从宏观视角审视 foundation models 与 agentic systems 在生物学（含蛋白质结构相关计算）应用中的知识边界。对本课题的价值在于：为蛋白质结构预测/设计/模拟中 AI 方法的适用边界、不确定性评估、agent 化工作流的可靠性提供框架性思考。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文系统梳理了 foundation models 在生物学应用中面临的知识边界问题，指出模型在训练数据覆盖范围内表现良好，但在分布外场景、因果推理、多尺度整合等方面存在系统性局限，并讨论了 agentic systems 如何部分缓解但无法根本消除这些边界。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：生物学研究者在使用 foundation models（如蛋白质语言模型、结构预测模型）时，如何识别和理解模型的知识边界？Agentic systems（自主决策的 AI 系统）能否扩展这些边界？</li>
+<li><strong>为什么重要</strong>：随着 AI 在生物学中的广泛应用，研究者容易过度信任模型输出，尤其在蛋白质结构预测、功能注释、设计等关键任务中，错误判断可能导致实验资源浪费或错误结论。</li>
+<li><strong>现有方法为何不足</strong>：现有文献多聚焦于模型性能提升，缺乏对知识边界的系统性讨论；生物学研究者缺乏判断模型何时可靠、何时不可靠的框架。</li>
+<li><strong>精确研究问题</strong>：Can biologists reliably identify the knowledge boundaries of foundation models in biological applications, and do agentic systems meaningfully extend these boundaries beyond what static models achieve?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<p><em>注：此脉络基于本文框架整理，未经外部核验。</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文主张的位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统生物信息学</td>
+<td>BLAST、HMMER、分子动力学模拟</td>
+<td>可解释、机制明确</td>
+<td>依赖手工特征、覆盖有限</td>
+<td>作为 foundation models 的补充而非替代</td>
+</tr>
+<tr>
+<td>第一代深度学习</td>
+<td>CNN/RNN 用于序列-结构预测</td>
+<td>自动特征提取、性能提升</td>
+<td>数据依赖强、泛化有限</td>
+<td>奠定了 foundation models 的基础</td>
+</tr>
+<tr>
+<td>Foundation models 时代</td>
+<td>ESM、AlphaFold、ProtGPT</td>
+<td>大规模预训练、少样本迁移</td>
+<td>知识边界不透明、分布外失败</td>
+<td>本文核心讨论对象</td>
+</tr>
+<tr>
+<td>Agentic systems 时代</td>
+<td>自主实验设计、多智能体协作</td>
+<td>可迭代、可自主决策</td>
+<td>错误累积、验证缺失</td>
+<td>本文认为 agent 可扩展但无法消除边界</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分布外泛化失败</td>
+<td>模型在训练分布外的序列/结构上预测错误</td>
+<td>模型学习的是训练数据的统计规律，而非底层生物学机制</td>
+<td>未提供具体实验数据，属作者论述</td>
+</tr>
+<tr>
+<td>因果与相关混淆</td>
+<td>模型输出相关性而非因果性</td>
+<td>预训练目标为预测任务，不包含干预或因果建模</td>
+<td>未提供具体实验数据，属作者论述</td>
+</tr>
+<tr>
+<td>多尺度整合缺失</td>
+<td>模型难以同时处理分子、细胞、组织层面的信息</td>
+<td>不同尺度的数据异质性强，单一模型难以统一表征</td>
+<td>未提供具体实验数据，属作者论述</td>
+</tr>
+<tr>
+<td>不确定性估计不足</td>
+<td>模型置信度与真实准确性不匹配</td>
+<td>校准不足，softmax 概率非真实不确定性</td>
+<td>未提供具体实验数据，属作者论述</td>
+</tr>
+<tr>
+<td>Agent 错误累积</td>
+<td>多步 agent 流程中早期错误被放大</td>
+<td>缺乏中间验证机制，错误沿决策链传播</td>
+<td>未提供具体实验数据，属作者论述</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：本文是一篇观点性综述，不提出新算法或新模型，而是构建一个分析框架，用于理解 foundation models 在生物学中的知识边界，并讨论 agentic systems 的潜在作用与局限。</p>
+<p><strong>2) 核心洞察</strong>：Foundation models 的知识边界由训练数据分布决定，而非模型容量或架构。Agentic systems 通过迭代查询、外部工具调用、实验反馈等方式可以<strong>扩展</strong>这些边界，但无法<strong>消除</strong>——因为 agent 的底层推理仍依赖 foundation models 的表征能力。作者强调，生物学研究者需要建立「边界意识」，将模型输出视为假设而非结论。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：对于蛋白质结构计算研究，这一框架意味着：AlphaFold 等结构预测模型的可靠性高度依赖训练集覆盖的序列-结构空间；在全新折叠、工程改造蛋白、非标准残基等场景中，预测结果应被视为候选而非确定答案。Agentic 工作流（如自主设计-验证循环）可以提升效率，但必须内置不确定性量化和人工验证节点。</p>
+<hr />
+<h2>07 方法总览</h2>
+<p>本文为观点性综述，无传统方法学流程。其论述结构如下：</p>
+<ul>
+<li><strong>输入</strong>：现有 foundation models 在生物学中的应用案例、agentic systems 的架构模式、生物学研究者的使用实践</li>
+<li><strong>分析框架</strong>：知识边界的来源（数据分布、任务定义、评估协议）、边界类型（分布外、因果、多尺度、时间动态）、边界识别方法（校准、不确定性、压力测试）</li>
+<li><strong>讨论对象</strong>：静态模型 vs. agentic systems 在边界扩展上的能力差异</li>
+<li><strong>输出</strong>：面向生物学研究者的使用建议、边界识别清单、agent 设计原则</li>
+</ul>
+<p><strong>文字流程</strong>：作者首先定义知识边界概念 → 分类边界来源 → 分析 foundation models 在生物学各任务中的边界表现 → 讨论 agentic systems 的扩展能力与新增风险 → 提出实践建议。</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<p><em>注：本文为综述，无实验模块。以下按论述模块拆解。</em></p>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>知识边界分类框架</td>
+<td>系统化边界类型</td>
+<td>为研究者提供诊断工具</td>
+<td>输入：模型+任务；输出：边界类型判断</td>
+<td>作者论述，无实验验证</td>
+<td>预期影响：失去系统性分析工具</td>
+</tr>
+<tr>
+<td>Agentic systems 分析</td>
+<td>评估 agent 对边界的扩展能力</td>
+<td>区分「扩展」与「消除」边界</td>
+<td>输入：agent 架构；输出：能力评估</td>
+<td>作者论述，无实验验证</td>
+<td>预期影响：无法判断 agent 的实际增益</td>
+</tr>
+<tr>
+<td>实践建议清单</td>
+<td>提供可操作指导</td>
+<td>弥合理论与实践的鸿沟</td>
+<td>输入：使用场景；输出：建议</td>
+<td>作者论述，无实验验证</td>
+<td>预期影响：研究者失去操作指南</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>。本文为观点性综述，未提出数学模型或公式。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/群体</strong>：无实验数据。本文基于文献调研和作者分析。</p>
+<p><strong>规模</strong>：未提供。</p>
+<p><strong>指标</strong>：未提供。</p>
+<p><strong>基线</strong>：未提供。</p>
+<p><strong>评测协议</strong>：未提供。</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无（综述）</td>
+<td>知识边界存在且可分类</td>
+<td>不适用</td>
+<td>不适用</td>
+<td>作者论述</td>
+<td>无法验证边界分类的完备性</td>
+<td>全文</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文讨论的是 foundation models 在生物学中的通用知识边界，非特定任务。</li>
+<li><strong>oracle/真值输入</strong>：不适用，无实验。</li>
+<li><strong>端到端状态</strong>：不适用。</li>
+<li><strong>算力成本</strong>：未讨论。</li>
+<li><strong>历史数据依赖</strong>：作者强调模型边界由训练数据决定，但未提供具体数据分布分析。</li>
+<li><strong>模型依赖</strong>：讨论覆盖多种模型类型，但未针对特定模型（如 AlphaFold、ESM）做深入案例分析。</li>
+<li><strong>最难情形</strong>：作者指出分布外场景和因果推理是最难情形，但未给出具体案例。</li>
+<li><strong>不确定性</strong>：作者承认框架为定性分析，缺乏定量验证。</li>
+<li><strong>群体/领域边界</strong>：主要面向生物学研究者，对计算科学家和 AI 开发者的指导相对有限。</li>
+</ul>
+<p><strong>有边界的复述</strong>：本文提供了一个定性框架，帮助生物学研究者识别 foundation models 的知识边界，并论证 agentic systems 可扩展但无法消除这些边界。该框架未经实验验证，其分类完备性和实用性有待后续研究检验。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 作者在摘要中暗示 agentic systems 的边界扩展能力有限，但未展开讨论具体约束条件。
+- 摘要未提及对特定生物学任务（如蛋白质结构预测）的深入分析。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>框架缺乏定量支撑</td>
+<td>知识边界分类可能过于主观，不同研究者可能有不同分类</td>
+<td>若框架不可操作，则对实践指导有限</td>
+<td>设计调查问卷或专家评估，检验分类的一致性和实用性</td>
+<td>摘要中无实验数据</td>
+</tr>
+<tr>
+<td>Agentic systems 的讨论可能过于乐观</td>
+<td>Agent 的自主性可能引入新的错误模式（如错误累积、验证缺失），作者可能低估了这些风险</td>
+<td>若 agent 风险被低估，研究者可能过度依赖自主系统</td>
+<td>对比静态模型与 agent 系统在相同任务上的错误率与错误类型</td>
+<td>摘要中未讨论 agent 失败模式</td>
+</tr>
+<tr>
+<td>未区分不同 foundation models 的边界差异</td>
+<td>蛋白质语言模型与结构预测模型的知识边界可能有本质差异</td>
+<td>不同模型类型的边界特征不同，统一框架可能掩盖关键差异</td>
+<td>对多种模型类型进行案例研究，比较边界表现</td>
+<td>摘要中未提及具体模型</td>
+</tr>
+<tr>
+<td>对「知识边界」的定义可能过于宽泛</td>
+<td>边界可能包含多个维度（数据、任务、评估），作者未明确区分</td>
+<td>定义不清晰可能导致误用</td>
+<td>明确边界维度和操作化定义</td>
+<td>摘要中未给出精确定义</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>边界意识框架</strong>：在蛋白质结构预测/设计任务中，应明确区分「训练分布内」与「分布外」场景。例如，AlphaFold 对天然蛋白结构预测可靠，但对 de novo 设计蛋白或非天然氨基酸修饰的预测应视为假设。可迁移：在结构预测项目中建立「边界检查清单」，标注每个预测的可靠性等级。</p>
+</li>
+<li>
+<p><strong>不确定性量化优先</strong>：模型置信度不等于准确性。在蛋白质结构预测中，pLDDT 分数应结合多序列比对深度、模板覆盖度等外部信号综合判断。可迁移：开发结合多源不确定性信号的评估工具。</p>
+</li>
+<li>
+<p><strong>Agent 工作流需内置验证节点</strong>：自主设计-预测-验证循环中，应在关键决策点插入人工或实验验证，防止错误累积。可迁移：在蛋白质设计 agent 中设计「验证门控」机制。</p>
+</li>
+<li>
+<p><strong>多尺度整合是开放问题</strong>：单一模型难以同时处理序列-结构-功能-表型多个层次。可迁移：在蛋白质计算研究中采用「模型组合」策略，不同层次使用不同模型，并明确各模型的边界。</p>
+</li>
+<li>
+<p><strong>因果推理缺失</strong>：结构预测模型输出相关性而非因果机制。在蛋白质工程中，不能仅依赖模型预测的突变效应，需结合分子动力学模拟等物理方法验证机制。可迁移：建立「预测-模拟-实验」三级验证流程。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold (Jumper et al., 2021)</strong>：本文讨论的 foundation models 在结构预测中的代表。AlphaFold 的 pLDDT 分数即是一种不确定性估计，但本文框架提示其边界在分布外场景中显著收窄。</li>
+<li><strong>ESM (Lin et al., 2023)</strong>：蛋白质语言模型的代表，本文关于「训练数据分布决定边界」的观点直接适用于 ESM 的进化尺度预测。</li>
+<li><strong>Agentic 工作流 (Wang et al., 2024)</strong>：自主实验设计系统，本文对 agent 边界扩展能力的讨论与此类系统直接相关。</li>
+<li><strong>分子动力学模拟</strong>：作为物理验证手段，可补充 foundation models 的因果推理缺失，与本文「多尺度整合」观点互补。</li>
+<li><strong>候选方向 [Analysis]</strong>：本文框架可延伸至「蛋白质结构预测模型的校准评估」——即系统评估 AlphaFold 等模型在不同序列空间中的置信度-准确性关系，建立校准曲线。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<p><strong>候选 1：蛋白质结构预测模型的边界校准评估框架</strong>
+- <strong>名称</strong>：Structure Prediction Boundary Calibration (SPBC)
+- <strong>来源局限/观察</strong>：本文指出 foundation models 存在知识边界，但未提供定量评估方法；AlphaFold 等模型的 pLDDT 在分布外场景中校准不良。
+- <strong>核心假设</strong>：通过系统评估模型在序列相似性、结构新颖性、共进化信号强度等维度上的置信度-准确性关系，可以建立可操作的边界预测器。
+- <strong>相对本文的增量</strong>：将本文的定性框架转化为可计算的评估工具。
+- <strong>初步方法</strong>：收集多样化的蛋白结构数据集，按序列相似性、结构拓扑新颖性分层；计算 AlphaFold/ESMFold 的置信度指标与预测准确性（TM-score）的校准曲线；训练边界预测器（如 logistic regression 或小模型）整合多源特征。
+- <strong>验证方式</strong>：在独立测试集（如新解析的蛋白结构、设计蛋白）上评估边界预测器的 AUC 和校准误差。
+- <strong>可能的失败模式</strong>：边界特征可能高度任务特异，难以泛化到所有蛋白类型；置信度指标可能已包含足够信息，额外特征增益有限。
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 2：蛋白质设计 agent 的验证门控机制</strong>
+- <strong>名称</strong>：DesignAgent with Verification Gates (DAVG)
+- <strong>来源局限/观察</strong>：本文指出 agentic systems 存在错误累积风险，但未给出缓解方案；蛋白质设计 agent 中预测错误可能沿设计-验证循环传播。
+- <strong>核心假设</strong>：在 agent 决策链中插入基于多源验证的「门控」节点（如结构预测一致性检查、MD 模拟稳定性验证、实验可行性过滤），可显著降低最终设计失败率。
+- <strong>相对本文的增量</strong>：将本文的 agent 风险讨论转化为具体工程方案。
+- <strong>初步方法</strong>：构建蛋白质设计 agent（如基于 LLM 的序列生成 + AlphaFold 结构验证 + MD 模拟）；在关键决策点设计门控函数，综合 pLDDT、MD 稳定性指标、合成可行性评分；对比有/无门控的 agent 在 benchmark 设计任务上的成功率。
+- <strong>验证方式</strong>：在标准蛋白设计 benchmark（如从头设计结合蛋白）上比较成功率、计算成本、错误传播路径。
+- <strong>可能的失败模式</strong>：门控可能过度保守，降低设计多样性；多源验证的计算成本可能抵消 agent 的效率优势。
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 3：蛋白质语言模型的知识边界图谱</strong>
+- <strong>名称</strong>：Protein Language Model Boundary Atlas (PLM-BA)
+- <strong>来源局限/观察</strong>：本文强调训练数据分布决定模型边界，但未提供具体数据分布分析方法；蛋白质语言模型的进化尺度预测在特定序列空间（如设计蛋白、病毒蛋白）中可靠性未知。
+- <strong>核心假设</strong>：通过对比模型训练数据分布与目标序列空间的差异，可以预测模型在特定任务上的可靠性。
+- <strong>相对本文的增量</strong>：将「数据分布决定边界」的抽象观点转化为可操作的数据分析工具。
+- <strong>初步方法</strong>：收集 ESM/ProtTrans 等模型的训练数据分布信息（如序列聚类、物种覆盖）；对目标序列空间（如设计蛋白、未培养微生物蛋白）进行嵌入空间分析；建立「分布距离-预测可靠性」的映射关系。
+- <strong>验证方式</strong>：在多个下游任务（功能注释、稳定性预测、结构预测）上评估映射关系的预测能力。
+- <strong>可能的失败模式</strong>：训练数据分布信息可能不完整或不可得；嵌入空间距离与任务可靠性之间的相关性可能较弱。
+- <strong>创新状态</strong>：unverified</p></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Title, author list, arXiv metadata, and the arXiv abstract page shell. No abstract text, no main text, no figures, no tables, no methods, no supplementary materials were provided.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the title, the stated author list, the arXiv subject classification (Quantitative Biology, Biomolecules), and the absence of any substantive content. No scientific claims, methods, results, or conclusions can be evaluated.</li>
+<li><strong>Shared manuscript claim summary</strong> The title asserts that the manuscript addresses the knowledge boundaries of foundation models in the context of agentic systems, with a stated audience of biologists. No further claims are available from the supplied material.</li>
+<li><strong>Visible evidence base</strong> None. The supplied material contains only the arXiv landing page structure, navigation elements, and bibliographic metadata.</li>
+<li><strong>Missing materials affecting confidence</strong> The abstract, full text, all figures, all tables, all methods descriptions, all references, and any supplementary information are absent. Confidence in any substantive assessment is therefore zero.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The supplied material does not permit any scientific evaluation. The manuscript content is entirely absent. The title suggests a perspective or review article at the intersection of foundation models, agentic systems, and biology, but no claims, evidence, or arguments are available for scrutiny. A review of this manuscript cannot be conducted in any meaningful sense from the provided input.</li>
+<li><strong>Who would be interested in the results, and why</strong> Based solely on the title, computational biologists, bioinformaticians, and AI researchers working on biological applications might find a discussion of foundation model limitations relevant. However, without content, this remains speculative and cannot be substantiated.</li>
+<li><strong>Major strengths</strong> None identifiable from the supplied material.</li>
+<li><strong>Major Concerns</strong> The absence of all manuscript content constitutes a single overriding concern that precludes any assessment.</li>
+<li><strong>Minor Comments</strong> None identifiable from the supplied material.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The manuscript text, abstract, figures, and all supporting materials must be provided before any technical assessment can begin.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality cannot be assessed. Scientific importance cannot be assessed. Interdisciplinary readership cannot be assessed. Technical soundness cannot be assessed. Readability for nonspecialists cannot be assessed. Every criterion is unevaluable due to the complete absence of content.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. No recommendation can be made until the full manuscript is supplied.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Content availability</li>
+<li><strong>Claim pointer</strong> The title implies a discussion of knowledge boundaries of foundation models for biologists in the age of agentic systems.</li>
+<li><strong>Evidence pointer</strong> Location not provided. No abstract, no main text, no figures, no tables.</li>
+<li><strong>Concern</strong> The entire manuscript content is missing from the supplied material. Only the arXiv landing page and bibliographic metadata were provided. No scientific claims, methods, results, or conclusions are available for evaluation.</li>
+<li><strong>Why it matters</strong> A peer review requires the manuscript under consideration. Without the abstract or full text, no assessment of validity, novelty, significance, or rigor is possible. Any opinion rendered would be unfounded and potentially misleading.</li>
+<li><strong>Resolution test</strong> Provide the complete manuscript, including abstract, main text, figures, tables, methods, and references. Upon receipt, a substantive review can be conducted.</li>
+</ul>
+<h3>Minor Comments</h3>
+<p>None identified from the supplied material.</p>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The title's implication that the manuscript addresses knowledge boundaries of foundation models in agentic systems for biologists is unsupported by any visible content.</li>
+<li>Any inference about the manuscript's scientific contribution, quality, or relevance is unsupported and cannot be evaluated.</li>
+<li>The subject classification (Quantitative Biology, Biomolecules) is metadata only and does not constitute evidence of scientific content or validity.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

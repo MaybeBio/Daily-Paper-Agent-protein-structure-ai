@@ -1,0 +1,24 @@
+{
+  "source": "arxiv",
+  "id": "2611.14287v1",
+  "title": "ANTIOCH-VS: From Sequence to Hits with Modular, Open-Source Ensemble Virtual Screening",
+  "authors": "Hale S. Hasdemir; Venkata Sai Sreyas Adury; Pratyush Tiwary",
+  "journal": "",
+  "published_date": "2026-11-10",
+  "window": {
+    "start": "2026-11-08",
+    "end": "2026-11-14"
+  },
+  "score": 9,
+  "one_liner_zh": "该文提出ANTIOCH-VS开源框架，从蛋白序列出发，结合ColabFold构象采样、AF2RAVE分子动力学与虚拟筛选，实现端到端的基于结构的配体筛选，核心聚焦蛋白质构象系综与对接计算，方法创新且可迁移。",
+  "abstract": "Structure-based virtual screening needs a receptor conformation that fits the ligand class, but for most targets no ligand-bound crystal is available -- and a single predicted model or an apo structure often misses the binding-competent state. We present ANTIOCH-VS, an open-source framework that runs an entire in silico screening campaign, from a protein sequence to a ranked shortlist of candidate binders, as one plug-and-play workflow. It first builds a conformational ensemble by reduced-MSA subsampling with ColabFold, then uses AlphaFold2-RAVE (AF2RAVE) -- short molecular-dynamics simulations with State Predictive Information Bottleneck analysis -- to pick out docking-ready, Boltzmann-weighted metastable states. It then detects the binding pocket, prepares receptors and ligands, docks the library across the ensemble with DOCK6 or AutoDock Vina, builds a consensus ranking, and triages the top hits by physics-based metadynamics (CTMD). We benchmark it on two very different targets, JAK2 kinase and ADRB2 GPCR, using their DUD-E benchmark sets of known binders and property-matched decoys. Starting from sequence alone -- no ligand-bound crystal, no manual intervention -- the AF2RAVE ensembles gave top-20 shortlists strongly enriched for true binders: a 20% hit rate for JAK2 and 60% for ADRB2 (random ~1-2%), on par with ligand-bound crystals and, for the kinase, above single AF2 models and an apo crystal. The full pipeline runs end to end on a workstation or HPC from a single command, or each module can be run on its own with user-supplied inputs. ANTIOCH-VS is freely available at https://github.com/tiwarylab/antioch-vs",
+  "abstract_zh": "基于结构的虚拟筛选需要一种与配体类别相匹配的受体构象，但对于大多数靶标而言，没有配体结合的晶体结构可用——而单一的预测模型或脱辅基结构往往无法捕捉到具备结合能力的状态。我们提出了ANTIOCH-VS，一个开源框架，它将整个计算机模拟筛选流程——从蛋白质序列到候选结合物的排名短名单——作为一个即插即用的工作流运行。它首先通过ColabFold进行减少的MSA子采样来构建构象系综，然后使用AlphaFold2-RAVE (AF2RAVE)——结合状态预测信息瓶颈分析的短分子动力学模拟——来挑选出适合对接的、玻尔兹曼加权的亚稳态。随后，它检测结合口袋，准备受体和配体，使用DOCK6或AutoDock Vina将文库对接至整个系综，构建共识排名，并通过基于物理的元动力学 (CTMD) 对顶级命中进行分诊。我们在两个截然不同的靶标——JAK2激酶和ADRB2 GPCR——上，使用其DUD-E基准集（包含已知结合物和性质匹配的诱饵）对其进行基准测试。仅从序列出发——无配体结合晶体，无人工干预——AF2RAVE系综给出的前20名短名单强烈富集了真实结合物：JAK2的命中率为20%，ADRB2为60%（随机约1-2%），与配体结合晶体相当，对于激酶而言，优于单一AF2模型和脱辅基晶体。完整流程可在工作站或HPC上通过单条命令端到端运行，或每个模块也可使用用户提供的输入独立运行。ANTIOCH-VS可在https://github.com/tiwarylab/antioch-vs免费获取。",
+  "has_fulltext": true,
+  "fulltext_source": "ar5iv",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://arxiv.org/abs/2611.14287v1",
+  "source_url": "https://arxiv.org/abs/2611.14287v1",
+  "paper_page_path": "papers/arxiv/2611.14287v1/index.html"
+}

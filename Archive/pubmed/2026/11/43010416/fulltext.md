@@ -1,0 +1,5 @@
+# Integrating Ion Mobility Mass Spectrometry Data with AlphaFold and Rosetta Improves Protein Complex Structure Prediction
+
+
+## Abstract
+  Ion mobility mass spectrometry (IM-MS) provides valuable structural information about protein shape and size through collision cross section (CCS). However, it lacks atomic level structural detail. While AlphaFold has been successful in predicting monomeric protein structure, it can struggle with modeling protein complexes. To address these limitations, we developed a method that integrates IM-MS data with AlphaFold and Rosetta to improve complex structure prediction. Our approach docks AlphaFold predicted subunits with Rosetta and selects the resulting models with a newly developed score that incorporates experimental or simulated CCS data. Using this strategy, we were able to improve normalized root mean square deviation (RMSD100) values for 26 of 38 (68%) complexes compared to AlphaFold-Multimer. Furthermore, 14 of these systems improved significantly from greater than 4 Å RMSD100 to less than 4 Å. This method demonstrates a robust approach to overcome limitations in complex assembly modeling.

@@ -1,0 +1,72 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report a thermostable GH29A alpha-L-fucosidase (Thermo-Fuc) from a Thermotogaceae bacterium with alkaline pH optimum, broad substrate specificity, bifunctional hydrolytic and transfucosylation activities, and efficient synthesis of 2'-fucosyllactose at 72.1% yield. They propose a flexibility-based model of catalytic selectivity supported by molecular dynamics simulations.
+- **Visible evidence base** Abstract text only; no experimental details, kinetic data beyond selected values, structural coordinates, simulation parameters, or NMR/LC-MS spectra are visible
+- **Missing materials affecting confidence** Full methods, kinetic characterization details, structural model validation, MD simulation protocols and convergence criteria, NMR and LC-MS spectra, yield determination procedures, and comparison datasets for reported yields
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting biocatalyst with a notable transfucosylation yield and a novel mechanistic hypothesis linking active-site loop flexibility to catalytic selectivity. However, the evidence base visible in the abstract is insufficient to evaluate the rigor of the kinetic, structural, and simulation analyses. The mechanistic model, while testable, is supported only by a single variance metric from MD simulations, and the relationship between PC1 variance and catalytic productivity is not established from the provided material. The claim of "among the highest yields reported" requires systematic comparison that is not visible. The work may interest the glycoscience and biocatalysis communities, but the case is not fully established from the abstract alone.
+- **Who would be interested in the results, and why** Researchers in enzymatic synthesis of human milk oligosaccharides, glycoside hydrolase engineering, and biocatalysis for industrial applications would be interested. The thermostability, alkaline pH optimum, and high transfucosylation yield are practically relevant for process development. Computational enzymologists studying structure-function relationships in GH families may also find the flexibility-based selectivity model of interest.
+- **Major strengths** The reported transfucosylation yield of 72.1% for a wild-type enzyme is notable and practically significant. The combination of biochemical characterization, structural analysis, and MD simulations represents a multi-pronged approach. The identification of a conserved catalytic dyad and the proposal of a testable mechanistic model add conceptual value beyond a purely descriptive enzyme report.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that the most catalytically productive complex had the lowest PC1 variance (17.4%) and that this suggests activity depends on a broad, distributed range of active-site motions
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The abstract reports a single PC1 variance value for one complex and states it is the lowest "of all those tested," but no information is provided on how many complexes were tested, what the variance values were for the others, how PC1 variance was calculated, or how it was linked to catalytic productivity. The interpretation that low PC1 variance indicates dependence on distributed motions rather than a dominant conformational switch is not self-evident and requires statistical and mechanistic justification.
+  - **Why it matters** This is the central mechanistic claim of the paper. If the relationship between PC1 variance and catalytic activity is not rigorously established, the proposed flexibility-based model of catalytic selectivity is unsupported, and the paper reduces to a descriptive enzyme characterization.
+  - **Resolution test** Provide the full set of PC1 variance values for all simulated complexes, the statistical comparison, and a clear explanation of why lower PC1 variance mechanistically implies distributed motion dependence. Ideally, include additional analyses such as per-residue fluctuation decomposition, principal component analysis of other modes, or experimental validation via mutagenesis of loop residues.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that Thermo-Fuc converts substrate to 2'-fucosyllactose at a 72.1% (mol/mol) transfucosylation ratio with high regioselectivity, confirmed by LC-MS and 1H-NMR, among the highest yields reported for a wild-type GH29A enzyme
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The abstract provides a single yield value without experimental context. No information is given on reaction conditions, substrate concentrations, enzyme loading, time course, or how the yield was calculated. The comparison to "the highest yields reported" is not substantiated with specific literature values or a systematic survey. LC-MS and NMR confirmation are mentioned but no spectra or assignment details are visible.
+  - **Why it matters** The transfucosylation yield is a headline result with practical implications. If the yield is not reproducible or the comparison is not rigorous, the biocatalytic significance of the enzyme is overstated.
+  - **Resolution test** Provide full reaction optimization data, yield calculation methodology, and a table comparing yields from previously reported wild-type GH29A enzymes under defined conditions. Include representative LC-MS and NMR spectra with peak assignments.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scientific importance
+  - **Claim pointer** The claim that the findings offer a testable, flexibility-based model of catalytic selectivity in GH29 fucosidases
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The model is based on a single enzyme and a single MD-derived metric. The abstract does not describe how the model would generalize to other GH29 enzymes, what specific predictions it makes, or how it could be experimentally falsified beyond the current system.
+  - **Why it matters** The broader significance of the paper depends on the generality of the proposed model. Without clear testable predictions or comparative analysis across multiple GH29 enzymes, the model remains a hypothesis specific to Thermo-Fuc.
+  - **Resolution test** Articulate specific predictions of the model that could be tested in other GH29 enzymes, or include comparative MD simulations or mutagenesis data that support the generality of the flexibility-selectivity relationship.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The abstract uses specialized terminology (e.g., "PC1 variance," "GH29A," "transfucosylation ratio") without brief contextual explanation, which may limit accessibility for readers outside the glycoscience field.
+  - **Required correction** Add brief parenthetical explanations for key technical terms or provide a sentence contextualizing the significance of the mechanistic findings for a broader readership.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Kinetic parameters
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The kinetic parameters (K(m) = 1.015 mM, kcat = 0.00232 s(-1)) are reported for pNP-alpha-L-fucopyranoside, but the abstract does not state the units of enzyme concentration or the assay conditions, and the kcat value appears very low, which may raise questions about the enzyme's catalytic efficiency.
+  - **Required correction** Provide the full kinetic characterization with units, assay conditions, and a comparison of catalytic efficiency (kcat/Km) across substrates.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Scientific importance
+  - **Affected element** Claim of "unusually alkaline pH optimum"
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The abstract states an "unusually alkaline pH optimum (9.0)" but does not provide context on the pH range tested or the pH-activity profile shape, making it difficult to assess how unusual this is.
+  - **Required correction** Provide the pH-activity profile and compare with pH optima of previously characterized GH29 enzymes.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The mechanistic claim based on PC1 variance and the transfucosylation yield claim both require additional evidence not visible in the abstract. The kinetic parameters and pH optimum claims also need fuller experimental context.
+- **Assessment against Nature-style criteria** Originality: The flexibility-based model of catalytic selectivity is a novel conceptual contribution, though its originality cannot be fully assessed without comparison to prior computational studies on GH29 enzymes. Scientific importance: The high transfucosylation yield and thermostability are practically significant, but the broader mechanistic importance depends on the generality of the model, which is not established. Interdisciplinary readership: The work bridges enzymology, computational biology, and biocatalysis, but the abstract is not fully accessible to nonspecialists. Technical soundness: Not assessable from the abstract alone; the blocking concerns above must be resolved. Readability for nonspecialists: The abstract is dense and uses specialized terms without sufficient context.
+- **Recommendation posture** Currently not established from the provided evidence. The work has potential, but the blocking concerns regarding the mechanistic model and the yield claim must be resolved with additional data. A revised manuscript with full experimental and computational details could be supportive.
+
+## Risk / unsupported claims
+- The claim that the most catalytically productive complex had the lowest PC1 variance and that this supports a distributed-motion model is unsupported without full simulation data and statistical analysis.
+- The claim that the 72.1% transfucosylation yield is "among the highest reported" is unsupported without a systematic literature comparison.
+- The claim of "high regioselectivity" is not substantiated without quantitative regioselectivity data.
+- The claim of an "unusually alkaline pH optimum" is not contextualized against the range of known GH29 pH optima.
+- The kinetic parameters reported are not interpretable without assay conditions and units.
+- The half-life "beyond 6 h" is reported without specifying the temperature and conditions under which it was measured.

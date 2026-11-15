@@ -1,0 +1,33 @@
+{
+  "source": "arxiv",
+  "source_id": "2611.16867v1",
+  "title": "ControlHarbor: A Benchmark for Control Design by Coding Agents",
+  "doi": "",
+  "abstract": "LLM agents, i.e., language models run by a harness, can now write, run and debug software autonomously. This raises the question of whether they can also carry out control system design. In this paper, we consider control system design as a task for LLM agents and grade the designed controller as control engineers do: the controller is given in a single Python file mapping measurements to actions, evaluated on held-out seeds against an ordered set of requirements, under specified physical perturbations and structural certificates, without using neural networks. We formulate the task as a chance-constrained feasibility problem and instantiate it in ControlHarbor, a benchmark of 44 tasks over 13 plants, which includes network consensus, vehicle platooning, the MuJoCo hopper, walker and humanoid. The tasks are packaged in the Harbor format, so that any agent harness can be run against them, and the same environments also serve learning algorithms other than LLMs, such as reinforcement learning (RL), under the same evaluation. With ControlHarbor, we observe that the controllers designed by three frontier coding agents, Claude Opus 5.5, Fable 5.1 and Sonnet 5.5, reach the RL return on every parity task, but only in a minority of sessions. We also observe that the controllers certified for return alone usually fail under perturbations. When robustness is part of the specification, a structured design meets it at the RL return on the humanoid task, where domain-randomised RL does not; under large pushes, domain-randomised RL succeeds and no designed controller does. The benchmark, the controllers, and their grades are released.",
+  "authors": [
+    "Jieqiang Wei",
+    "Fahad Ali",
+    "Jonny Reichwald",
+    "Silun Zhang"
+  ],
+  "published_date": "2026-11-12T14:37:35Z",
+  "updated_date": "2026-11-12T14:37:35Z",
+  "journal": "",
+  "category": "math.DS",
+  "landing_url": "https://arxiv.org/abs/2611.16867v1",
+  "pdf_url": "https://arxiv.org/pdf/2611.16867v1",
+  "pdf_path": "",
+  "pdf_downloaded": false,
+  "query": "(all:\"protein structure\" OR all:\"structure prediction\" OR all:\"protein design\" OR all:\"protein folding\" OR all:\"inverse folding\" OR all:\"protein domain\" OR all:\"backbone design\" OR all:\"sequence design\" OR all:\"structure design\" OR all:\"conformational ensemble\" OR all:\"protein conformation\") AND (all:\"deep learning\" OR all:\"machine learning\" OR all:\"neural network\" OR all:\"graph neural network\" OR all:\"language model\" OR all:transformer OR all:\"diffusion model\" OR all:generative OR all:\"foundation model\" OR all:\"flow matching\" OR all:\"molecular dynamics\" OR all:simulation OR all:docking OR all:alphafold OR all:esmfold OR all:rosetta)\n",
+  "version": "1",
+  "keywords": [
+    "math.DS"
+  ],
+  "extra": {
+    "entry_id": "http://arxiv.org/abs/2611.16867v1",
+    "raw_categories": [
+      "math.DS"
+    ],
+    "journal_ref": ""
+  }
+}

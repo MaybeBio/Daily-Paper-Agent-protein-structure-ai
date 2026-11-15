@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>REVEAL: RNA Ensemble Validation and Exploration with AI-guided Landscapes · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>REVEAL: RNA Ensemble Validation and Exploration with AI-guided Landscapes</h1>
+      <div class="meta">Bhakat S; Vats S</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-11-11
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.11.10.765771">原文</a>
+      </div>
+      <p class="one-liner">该文提出REVEAL工作流，结合RNA二级结构采样、trRosettaRNA2三级结构预测、无偏MD和马尔可夫状态模型，探索RNA构象系综并识别主导态，虽对象为RNA而非蛋白质，但其AI引导的构象采样与系综验证框架可迁移至蛋白质结构计算，具有借鉴价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Capturing the sparsely populated but functionally important, excited states of RNA remains a central challenge for molecular simulation, because the underlying transitions are rare events that unbiased molecular dynamics cannot reach from a single starting structure. Here we introduce REVEAL (RNA Ensemble Validation and Exploration with AI-guided Landscapes), a workflow that couples generative secondary structure sampling, secondary structure conditioned tertiary structure prediction with trRosettaRNA2, unbiased molecular dynamics and Markov state modeling. Using only the sequence of the engineered HIV-1 TAR mutant, in which the excited state ES2 is the dominant conformation, we show that REVEAL captures the reversible ES2 to GS register shift from 6.8 µs of aggregate unbiased sampling across 34 seeds, recovering both basins, the intermediate states, and correctly identifies ES2 as the dominant state, consistent with the design of the construct. In contrast, molecular dynamics seeded from the ES2-dominant HIV-1 TAR mutant NMR ensemble remains trapped in ES2 despite substantially longer aggregate simulation time, and sequence-only ensemble predictors (AlphaFold3, Boltz-2, ESMFold2, OpenFold3 and Protenix-v2) place every structure near the ground state and invert the experimentally observed population ordering. The information content of the seed ensemble, rather than the total simulation time, determines whether the transition is sampled. We further introduce “ population-weighted consensus score ” (PWCS) that ranks conformers by how representative they are of the equilibrium ensemble directly from the simulation data, without experimental restraints and independent of the choice of collective variables. PWCS identifies the dominant state even when low-dimensional representations fail to separate the states. Built entirely from open-source tools, REVEAL provides a transparent and extensible route to RNA conformational ensembles beyond the single-structure paradigm.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">捕获RNA中稀疏分布但功能重要的激发态仍然是分子模拟的核心挑战，因为其底层转变是罕见事件，无偏分子动力学无法从单一起始结构到达这些状态。在此，我们引入REVEAL（RNA Ensemble Validation and Exploration with AI-guided Landscapes），一种将生成式二级结构采样、基于二级结构条件的三级结构预测（使用trRosettaRNA2）、无偏分子动力学和马尔可夫状态建模相结合的工作流程。仅利用工程化HIV-1 TAR突变体的序列（其中激发态ES2是主导构象），我们展示了REVEAL从34个种子中总计6.8微秒的无偏采样中捕获了可逆的ES2到GS的移位转变，恢复了两个盆地、中间态，并正确识别ES2为主导状态，与该构建体的设计一致。相比之下，从ES2主导的HIV-1 TAR突变体NMR系综出发的分子动力学，尽管总模拟时间显著更长，仍被困在ES2中，而仅基于序列的系综预测器（AlphaFold3、Boltz-2、ESMFold2、OpenFold3和Protenix-v2）将每个结构置于基态附近，并颠倒了实验观察到的群体排序。种子系综的信息内容，而非总模拟时间，决定了转变是否被采样。我们进一步引入了“群体加权共识分数”（population-weighted consensus score, PWCS），该分数直接从模拟数据中对构象体进行排序，依据它们对平衡系综的代表性，无需实验约束且独立于集体变量的选择。即使低维表示无法分离状态，PWCS也能识别主导状态。REVEAL完全基于开源工具构建，为超越单结构范式的RNA构象系综提供了一条透明且可扩展的路径。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：REVEAL: RNA Ensemble Validation and Exploration with AI-guided Landscapes</li>
+<li><strong>作者与单位</strong>：Bhakat S; Vats S（单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>：bioRxiv</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：方法学/工作流预印本</li>
+<li><strong>领域</strong>：RNA 构象系综生成与验证 × AI 引导的分子模拟</li>
+<li><strong>关键词</strong>：RNA 构象系综、二级结构采样、trRosettaRNA2、无偏分子动力学、马尔可夫状态模型、群体加权共识评分</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.11.10.765771</li>
+<li><strong>代码</strong>：https://github.com/sbhakat/REVEAL</li>
+<li><strong>数据</strong>：未提供（使用 HIV-1 TAR 突变体 TAR Mut 作为基准系统）</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质/RNA 结构相关计算研究 × AI 方法 × 物理模拟」交叉方向，具体位于「AI 生成结构系综作为 MD 种子 → 无偏采样 → MSM 集成」这一新兴范式在 RNA 上的延伸。与 AlphaFold2-RAVE、AlphaFold-MSM、BioEmu-MSM 等蛋白体系方法形成直接类比，但以 RNA 二级结构系综作为结构多样性的来源，而非 MSA 子采样或扩散模型。同时引入不依赖集体变量的评分函数（PWCS），用于从模拟数据中直接识别平衡态主导构象。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>针对 RNA 稀有激发态（如 HIV-1 TAR 突变体的 ES2↔GS 寄存器移位）无法被传统无偏 MD 采样的难题，REVEAL 通过「二级结构系综 → trRosettaRNA2 条件化三级结构预测 → 多种子无偏 MD → MSM 集成」的流程，在 6.8 µs 聚合采样内恢复了可逆的 ES2↔GS 转变，并引入群体加权共识评分（PWCS）直接从模拟数据中识别主导态，无需实验约束或增强采样偏置。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：RNA 的功能相关激发态（excited states）通常稀疏布居且寿命短，传统无偏 MD 从单一实验结构出发无法在可达时间尺度内跨越 ES2↔GS 这类寄存器移位（register shift）的能垒。能否仅用序列信息，通过 AI 生成的结构系综作为种子，让无偏 MD 自发采样到这些稀有转变？</li>
+<li><strong>为什么重要</strong>：RNA 的分子识别、配体结合和调控功能往往依赖这些瞬态构象。若能不依赖 NMR 等实验约束（如 RDC）即可获得平衡系综，将极大扩展 RNA 构象研究的适用范围，尤其是对缺乏实验数据的治疗相关 RNA。</li>
+<li><strong>现有方法为何不足</strong>：</li>
+<li>传统无偏 MD 从单一结构出发，受限于起始构象的吸引域，无法跨越寄存器移位能垒；</li>
+<li>增强采样（如 metadynamics、REMD）需要预选集体变量或偏置势，而 RNA 寄存器移位的相关自由度往往未知；</li>
+<li>序列到结构预测模型（AlphaFold3、Boltz-2 等）输出的是单一或少数近天然态构象，无法反映平衡系综的布居分布；</li>
+<li>已有的 RNA 系综方法（如 FARFAR2 + RDC 重加权）依赖实验数据，不适用于无数据体系。</li>
+<li><strong>精确的 Can 问题</strong>：Can a workflow that seeds unbiased MD from a secondary-structure-conditioned AI-generated tertiary structure ensemble capture a rare ES2↔GS register shift in RNA, without any external bias potential or experimental restraints?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络主要基于本文 Introduction 的叙述框架，标注「仅本文框架」；部分节点经外部核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单结构范式</td>
+<td>实验结构（NMR/X-ray）作为 MD 起点</td>
+<td>高精度起始结构</td>
+<td>无法反映系综；稀有态不可达</td>
+<td>本文明确反对的基线</td>
+</tr>
+<tr>
+<td>二级结构系综 → 三级结构</td>
+<td>ViennaRNA/LinearSampling/Sfold 采样二级结构 → FARFAR2 或 trRosettaRNA2 预测三级结构</td>
+<td>将序列多样性转化为结构多样性</td>
+<td>FARFAR2 计算昂贵；trRosettaRNA2 单结构预测不保证系综正确</td>
+<td>本文核心组件</td>
+</tr>
+<tr>
+<td>蛋白系综种子 MD</td>
+<td>AlphaFold2-RAVE、AlphaFold-MSM、BioEmu-MSM、AlphaFold-SFA（MSA 子采样/扩散/流匹配生成种子）</td>
+<td>显著加速构象采样</td>
+<td>依赖 MSA 或扩散模型；尚未推广到 RNA</td>
+<td>本文的蛋白类比对象</td>
+</tr>
+<tr>
+<td>RNA 系综实验重加权</td>
+<td>FARFAR2 库 + RDC 重加权</td>
+<td>与实验一致</td>
+<td>依赖 NMR 数据；无法预测新体系</td>
+<td>本文用 PWCS 替代实验约束</td>
+</tr>
+<tr>
+<td>数据驱动 CV</td>
+<td>时间滞后自编码器、DeepTICA、SRV</td>
+<td>自动发现慢变量</td>
+<td>对 RNA 寄存器移位不可靠（本文发现）</td>
+<td>本文的对照方法</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：将「二级结构系综 → 条件化三级结构预测 → 多种子无偏 MD → MSM」这一流程首次系统应用于 RNA 寄存器移位，并引入不依赖 CV 的 PWCS 评分作为系综验证工具。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无偏 MD 无法跨越寄存器移位能垒</td>
+<td>从 NMR ES2 结构出发的 MD 在 10 µs 内仍困于 ES2 吸引域</td>
+<td>寄存器移位涉及多个碱基对的协同重排，能垒高且相关自由度未知；单一起始结构无法提供跨越能垒的初始动量</td>
+<td>Results 图 2B：NMR-seeded MD 始终停留在 ES2 盆地</td>
+</tr>
+<tr>
+<td>序列到结构预测模型无法反映系综布居</td>
+<td>AlphaFold3、Boltz-2、ESMFold2、OpenFold3、Protenix-v2 输出的所有结构均落在 GS 侧或离路径区域，无一接近 ES2</td>
+<td>这些模型训练数据以单一近天然态为主，RNA 在训练集中稀疏且缺乏激发态标注；模型默认输出最可几折叠</td>
+<td>Results 图 2C：所有 Seq2Ens 预测结构位于负 CV2 区域</td>
+</tr>
+<tr>
+<td>种子结构多样性不足导致 MD 采样偏差</td>
+<td>Seq2Ens-MD（60 种子 × 200 ns = 12 µs）将 GS 错误预测为主导态，且形成离路径盆地</td>
+<td>种子结构虽多但集中在单一构象区域，携带预测模型的系统偏差进入动力学</td>
+<td>Results 图 2D：Seq2Ens-MD 的 FES 显示 GS 主导、ES2 缺失</td>
+</tr>
+<tr>
+<td>数据驱动 CV 无法解析 RNA 寄存器移位</td>
+<td>SFA、TAE、DeepTICA 在低维潜空间中无法分离 GS、ES2 和中间态</td>
+<td>时间滞后方法对离散的碱基配对重排不敏感；RNA 寄存器移位是离散事件而非连续慢扩散</td>
+<td>Results 图 9B-D：SFA/TAE/DeepTICA 潜空间对比度低</td>
+</tr>
+<tr>
+<td>缺乏不依赖实验数据的系综验证指标</td>
+<td>传统方法需 RDC 等 NMR 数据来重加权或验证系综</td>
+<td>多数治疗相关 RNA 缺乏此类数据</td>
+<td>Conclusions：PWCS 提供无实验约束的替代路径</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>REVEAL 是一个四步流水线：
+1. <strong>二级结构系综生成</strong>：用 ViennaRNA、LinearSampling 和 Sfold 从序列预测多个热力学可行的二级结构；
+2. <strong>条件化三级结构预测</strong>：将每个二级结构作为约束输入 trRosettaRNA2，生成对应的三级结构（34 个种子）；
+3. <strong>多种子无偏 MD</strong>：每个种子独立运行 200 ns 无偏 MD（共 6.8 µs）；
+4. <strong>MSM 集成与 PWCS 评分</strong>：用 MSM 估计平衡布居和转变时间尺度，用 PWCS 对每个构象打分排序。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>二级结构空间是 RNA 寄存器移位的自然离散化</strong>：寄存器移位本质上是碱基配对模式的重新排列，而二级结构系综恰好枚举了这些离散的配对模式。将三级结构预测条件化在二级结构上，等价于在正确的离散自由度上播种，而非在连续的三维坐标空间中盲目采样。</li>
+<li><strong>AI 生成器的角色是「种子提供者」而非「系综预测器」</strong>：trRosettaRNA2 不需要预测正确的平衡布居，只需要在正确的盆地中放置起始结构；布居和动力学由 MD + MSM 提供。这避免了生成模型在布居预测上的系统性偏差。</li>
+<li><strong>PWCS 将「系综验证」从实验依赖中解放出来</strong>：通过 MSM 平衡权重重加权多个特征空间的混合高斯密度，PWCS 直接量化每个构象在平衡系综中的代表性，无需 RDC 等实验数据。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>「生成器 + 物理模拟」的分工原则</strong>：生成模型负责覆盖构象空间（recall），物理模拟负责分配权重（precision）。这一分工在蛋白体系（AlphaFold2-RAVE 等）已被验证，本文将其推广到 RNA，并明确指出「生成器的偏差会通过种子进入动力学」这一风险。</li>
+<li><strong>离散自由度优先于连续 CV</strong>：对于涉及碱基配对重排的构象转变，在离散的二级结构空间播种比在连续的三维坐标空间采样更高效。这一原则可能适用于其他具有明确离散中间态的核酸体系（如核糖开关、假结）。</li>
+<li><strong>评分函数应独立于 CV 选择</strong>：PWCS 的多特征、多分量共识设计使其对 CV 选择不敏感，这为系综验证提供了更稳健的工具。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：RNA 序列（HIV-1 TAR 突变体 TAR Mut，31 nt：5′-GGCAGAUCUGAGCCUUCGGGAGCUCUCUGCC-3′）</li>
+<li><strong>输出</strong>：</li>
+<li>MSM 估计的平衡态布居（π）和态间平均首次通过时间（MFPT）</li>
+<li>每个构象的 PWCS 分数</li>
+<li>状态解析的、按平衡权重排序的代表性结构</li>
+<li><strong>模块</strong>：
+  1. 二级结构系综生成（ViennaRNA 非冗余 Boltzmann 采样 → 20 个代表结构；LinearSampling → 10 个；Sfold → 4 个）
+  2. 三级结构预测（trRosettaRNA2，条件化于每个二级结构；另加 1 个序列直接预测，共 35 个候选，筛除 1 个配对不匹配者，得 34 个种子）
+  3. MD 模拟（AMBER OL3 力场，TIP3P 水模型，Na⁺ 中和，300 K，1 bar，200 ns/种子，坐标每 10 ps 保存）
+  4. MSM 构建（PyEMMA，k-means 聚类 k=200，滞后时间 τ=10 帧=100 ps，PCCA+ 粗粒化为 6 个亚稳态）
+  5. PWCS 评分（对 CV1/CV2 及 FPCA/SFA/TAE 潜空间表示拟合 2–8 分量高斯混合模型，按 MSM 平衡权重重加权，取归一化对数似然的均值）</li>
+<li><strong>工具</strong>：GROMACS（MD）、PyEMMA（MSM）、MDTraj（特征化）、AmberTools（tleap 准备）</li>
+<li><strong>文字流程</strong>：序列 → 二级结构系综 → trRosettaRNA2 三级结构 → 34 个 MD 种子 → 6.8 µs 聚合无偏采样 → CV1/CV2 特征化 → k-means 离散化 → MSM 估计 → PCCA+ 亚稳态识别 → PWCS 评分排序 → 状态解析的代表性结构输出</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>二级结构系综生成</td>
+<td>枚举热力学可行的碱基配对模式</td>
+<td>寄存器移位是配对模式的离散重排；单一二级结构无法覆盖两个寄存器</td>
+<td>输入：序列；输出：34 个代表二级结构</td>
+<td>Results 图 3A：种子分布在 GS、ES2 及中间区域</td>
+<td>预期影响：若只用单一二级结构（如 MFE），种子将集中在单一盆地，无法采样到另一寄存器（与 NMR-seeded MD 失败机制类似）</td>
+</tr>
+<tr>
+<td>trRosettaRNA2 条件化三级结构预测</td>
+<td>将每个二级结构转化为三维坐标</td>
+<td>提供 MD 起始结构；条件化确保三级结构与目标配对模式一致</td>
+<td>输入：序列 + 二级结构约束；输出：34 个三级结构</td>
+<td>Results 图 3A：种子在 CV 空间覆盖两个盆地</td>
+<td>预期影响：若用序列直接预测（无条件化），所有结构将落在 GS 侧（与 Seq2Ens 预测一致），失去种子多样性</td>
+</tr>
+<tr>
+<td>多种子无偏 MD</td>
+<td>从多样种子出发进行物理采样</td>
+<td>无偏 MD 提供正确的热力学权重；多样种子克服起始构象偏差</td>
+<td>输入：34 个三级结构；输出：6.8 µs 轨迹</td>
+<td>Results 图 2A：FES 显示 ES2 主导、GS 次之，与实验一致</td>
+<td>实测对照：NMR-seeded MD（10 µs）和 Seq2Ens-MD（12 µs）均无法恢复正确布居，证明种子多样性是关键</td>
+</tr>
+<tr>
+<td>MSM 集成</td>
+<td>从短轨迹估计平衡布居和动力学</td>
+<td>单条 200 ns 轨迹不足以收敛；MSM 集成多条轨迹并外推长时间尺度</td>
+<td>输入：34 条轨迹的 CV1/CV2 特征；输出：平衡布居 π、MFPT、亚稳态划分</td>
+<td>Results 图 5A、图 7：6 态划分和 MFPT 估计</td>
+<td>预期影响：若用简单拼接而非 MSM，会丢失跨轨迹的转移信息，无法估计长时间尺度动力学</td>
+</tr>
+<tr>
+<td>PWCS 评分</td>
+<td>对每个构象按平衡代表性打分</td>
+<td>低维 CV 可能无法分离所有态；PWCS 融合多特征、多密度模型，不依赖单一 CV</td>
+<td>输入：轨迹帧 + MSM 平衡权重；输出：每帧 PWCS 分数</td>
+<td>Results 图 8：PWCS 在 ES2 区域尖峰，独立识别主导态</td>
+<td>实测对照：在 FPCA/SFA/TAE/DeepTICA 潜空间中 PWCS 均能恢复 ES2 主导（图 S3-S4），证明其 CV 无关性</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>1. CV1（枢轴碱基坐标）</strong></p>
+<p>CV1 = d(C13 N3 – G22 N1) − d(C13 N3 – G20 N1)</p>
+<ul>
+<li>d(A–B)：原子 A 与 B 之间的欧氏距离（Å）</li>
+<li>C13：枢轴碱基，在 GS 寄存器中与 G22 配对，在 ES2 寄存器中与 G20 配对</li>
+<li>负值 → GS 样寄存器；正值 → ES2 样寄存器</li>
+</ul>
+<p><strong>2. CV2（寄存器粗粒坐标）</strong></p>
+<p>CV2 = mean[d(N1/N3) 对 GS 定义配对 (10–25, 11–24, 12–23, 13–22)] − mean[d(N1/N3) 对 ES2 定义配对 (9–24, 10–23, 11–22, 12–21, 13–20, 14–19)]</p>
+<ul>
+<li>配对以 Watson-Crick 重原子 N1（嘌呤）/N3（嘧啶）距离度量</li>
+<li>负值 → GS 样寄存器；正值 → ES2 样寄存器</li>
+</ul>
+<p><strong>3. G-向量表示</strong>（Bottaro, Di Palma &amp; Bussi 2017）</p>
+<p>对每对核苷酸 (i, j)，R-向量为环中心位移：<strong>r</strong>_ji = <strong>r</strong>_j − <strong>r</strong>_i</p>
+<p>G-向量为四分量光滑映射：
+- G₁ = sin(θ) · (1 + cos θ) · (r_ji)_x / r_ji
+- G₂ = sin(θ) · (1 + cos θ) · (r_ji)_y / r_ji
+- G₃ = sin(θ) · (1 + cos θ) · (r_ji)_z / r_ji
+- G₄ = cos θ · (1 + cos θ)</p>
+<p>其中 θ = (π · r_ji) / r_c，r_c = 15 Å（截断距离），r_ji = |<strong>r</strong>_ji|。当 r_ji ≥ r_c 时 G = 0。仅保留 i &lt; j 上三角对（因前三分量在交换 i, j 时变号，第四分量不变）。</p>
+<p><strong>4. PWCS（群体加权共识评分）</strong></p>
+<p>PWCS_i = (1 / N_models) · Σ_{m=1}^{N_models} [ (L_i^{(m)} − min L^{(m)}) / σ_L^{(m)} ]</p>
+<ul>
+<li>L_i^{(m)}：第 m 个高斯混合模型（GMM，分量数 2–8）对第 i 帧的对数似然</li>
+<li>min L^{(m)}：该模型在所有帧上的最小对数似然</li>
+<li>σ_L^{(m)}：该模型对数似然的标准差</li>
+<li>每个 GMM 拟合时以 MSM 平衡权重重加权采样，使密度反映平衡分布而非原始采样分布</li>
+</ul>
+<p><strong>5. MSM 平衡布居</strong></p>
+<p>π = 平稳分布，满足 πᵀ T(τ) = πᵀ，其中 T(τ) 为滞后时间 τ 的转移概率矩阵</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<h3>数据集/群体</h3>
+<ul>
+<li><strong>基准系统</strong>：HIV-1 TAR 突变体 TAR Mut（31 nt），工程化设计使 ES2 成为主导态</li>
+<li><strong>实验参照</strong>：apo ES2 NMR 模型（n = 10，PDB 8U3M）；apo GS NMR 模型（n = 40，PDB 1ANR、8THV）</li>
+<li><strong>种子数量</strong>：REVEAL 34 个种子；NMR-seeded MD 10 模型 × 5 副本 = 50 条轨迹；Seq2Ens-MD 60 个种子</li>
+<li><strong>模拟规模</strong>：每条轨迹 200 ns；REVEAL 聚合 6.8 µs；NMR-seeded MD 聚合 10 µs；Seq2Ens-MD 聚合 12 µs</li>
+<li><strong>力场/水模型</strong>：AMBER OL3，TIP3P，Na⁺ 中和，300 K，1 bar</li>
+</ul>
+<h3>评测协议</h3>
+<ul>
+<li>将模拟轨迹投影到 CV1/CV2 平面，构建 MSM 加权 FES</li>
+<li>将实验 NMR 结构（GS 和 ES2）投影到同一 CV 平面，验证模拟盆地与实验结构的位置对应</li>
+<li>比较 REVEAL、NMR-seeded MD、Seq2Ens-MD 三种方案的 FES 形态和主导态归属</li>
+<li>对 MSM 参数（k=50/100/200，τ=10/100/200/300 帧）进行敏感性分析</li>
+<li>在四种潜空间（CV1/CV2、FPCA、SFA、TAE、DeepTICA）中重算 PWCS，检验其 CV 无关性</li>
+</ul>
+<h3>实验表格</h3>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>REVEAL vs NMR-seeded MD</td>
+<td>种子多样性决定能否采样寄存器移位</td>
+<td>REVEAL（34 种子，6.8 µs）vs NMR-seeded（10 模型 × 5 副本，10 µs）</td>
+<td>REVEAL 恢复 ES2↔GS 可逆转变；NMR-seeded 困于 ES2</td>
+<td>种子多样性比总模拟时间更关键</td>
+<td>不能排除更长模拟时间下 NMR-seeded 也能跨越能垒</td>
+<td>Results 图 2A-B</td>
+</tr>
+<tr>
+<td>REVEAL vs Seq2Ens-MD</td>
+<td>序列到结构预测器的种子不适合 RNA 动力学</td>
+<td>REVEAL vs 5 种 Seq2Ens 预测器（60 种子，12 µs）</td>
+<td>Seq2Ens 种子全部位于 GS 侧或离路径区域，MD 后 GS 被错误预测为主导态</td>
+<td>序列到结构预测器携带 GS 偏差，不适合作为 RNA 动力学种子</td>
+<td>不能推广到所有 RNA 体系或未来改进的预测器</td>
+<td>Results 图 2C-D</td>
+</tr>
+<tr>
+<td>实验结构投影验证</td>
+<td>模拟盆地与实验 NMR 结构对应</td>
+<td>将 8U3M（ES2）和 1ANR/8THV（GS）投影到 CV1/CV2</td>
+<td>ES2 模型落在 ES2 盆地，GS 模型落在 GS 盆地</td>
+<td>CV1/CV2 有效区分两个寄存器</td>
+<td>未提供定量重叠度指标</td>
+<td>Results 图 2A</td>
+</tr>
+<tr>
+<td>MSM 参数敏感性</td>
+<td>FES 对离散化和滞后时间不敏感</td>
+<td>k=50/100/200；τ=10/100/200/300 帧</td>
+<td>盆地位置和相对自由能保持</td>
+<td>MSM 结果稳健</td>
+<td>未提供定量误差范围</td>
+<td>Results 图 4A-B</td>
+</tr>
+<tr>
+<td>PWCS 跨潜空间一致性</td>
+<td>PWCS 不依赖 CV 选择</td>
+<td>在 CV1/CV2、FPCA、SFA、TAE、DeepTICA 潜空间中重算</td>
+<td>所有表示下 PWCS 均识别 ES2 为主导态</td>
+<td>PWCS 对特征选择稳健</td>
+<td>未在更多 RNA 体系上验证</td>
+<td>Results 图 8、图 S3-S4</td>
+</tr>
+<tr>
+<td>态间动力学估计</td>
+<td>MSM 提供相对时间尺度</td>
+<td>MFPT 计算</td>
+<td>ES2→GS 快于 GS→ES2（如 S3→S6: 408 ns；S6→S3: 723 ns）</td>
+<td>动力学与布居一致（主导态逃逸更慢）</td>
+<td>绝对时间尺度受力场和水模型影响</td>
+<td>Results 图 7</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文解决的是「从序列出发，无实验约束地恢复 RNA 稀有激发态系综」这一特定问题，基准为 HIV-1 TAR 突变体。结论不能直接推广到所有 RNA 或所有构象转变类型。</li>
+<li><strong>oracle/真值输入</strong>：CV1/CV2 的定义编码了 GS 和 ES2 寄存器的先验知识（哪些碱基对在哪个寄存器中配对）。这是「半 oracle」设定——若对目标 RNA 的寄存器未知，CV 需从头学习，本文的对比实验（SFA/TAE/DeepTICA）表明这并不 trivial。</li>
+<li><strong>端到端状态</strong>：REVEAL 是「生成器 + 物理模拟 + 统计集成」的流水线，不是端到端可微模型。各模块独立，误差可追溯但不可联合优化。</li>
+<li><strong>算力成本</strong>：34 × 200 ns 无偏 MD 的聚合采样量（6.8 µs）在 RNA 体系上属于中等规模，但 trRosettaRNA2 的二级结构条件化预测和 MSM 构建均需额外计算。作者未提供具体 GPU/CPU 时耗。</li>
+<li><strong>历史数据依赖</strong>：不依赖实验数据或预训练 MD 轨迹；仅依赖序列和力场。trRosettaRNA2 的训练数据隐含了二级结构-三级结构映射的先验。</li>
+<li><strong>模型依赖</strong>：结果对 AMBER OL3 力场、TIP3P 水模型和 Na⁺ 中和条件敏感。作者明确承认布居和绝对时间尺度是力场依赖的。</li>
+<li><strong>最难情形</strong>：对二级结构系综无法覆盖的远程相互作用（如假结、Mg²⁺ 依赖折叠）或非配对驱动的构象转变，REVEAL 的种子生成策略可能失效。</li>
+<li><strong>群体/领域边界</strong>：结论仅针对 RNA 寄存器移位类转变。对蛋白体系，已有类似方法（AlphaFold2-RAVE 等），但 RNA 的二级结构系综作为多样性来源是本文特有贡献。</li>
+<li><strong>有边界的复述</strong>：在 HIV-1 TAR 突变体上，REVEAL 以 6.8 µs 无偏 MD 恢复了 ES2↔GS 可逆转变，正确识别 ES2 为主导态（π ≈ 0.589），而 NMR-seeded MD（10 µs）和 Seq2Ens-MD（12 µs）均失败；PWCS 在多种低维表示下均能识别主导态，且不依赖实验约束。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>力场/水模型依赖</td>
+<td>布居和绝对时间尺度是 AMBER OL3 + TIP3P + Na⁺ 条件的属性，而非 TAR Mut 本身的属性</td>
+<td>系统评估不同力场、水模型和离子条件对 REVEAL 输出的影响</td>
+<td>Conclusions 倒数第二段</td>
+</tr>
+<tr>
+<td>离子条件敏感性</td>
+<td>反离子屏蔽磷酸骨架，Mg²⁺ 可位点特异结合 bulge/loop，改变寄存器布居和能垒</td>
+<td>在含 Mg²⁺ 条件下测试 REVEAL</td>
+<td>Conclusions 倒数第二段</td>
+</tr>
+<tr>
+<td>CV 先验依赖</td>
+<td>CV1/CV2 编码了 GS/ES2 寄存器的先验知识；对未知寄存器的 RNA 需学习特征化</td>
+<td>探索无监督特征学习方法</td>
+<td>Conclusions 倒数第三段</td>
+</tr>
+<tr>
+<td>二级结构系综覆盖范围</td>
+<td>对涉及假结、远程三级接触或 Mg²⁺ 依赖折叠的 RNA，二级结构系综可能无法充分覆盖相关自由度</td>
+<td>在核糖开关、假结等体系上测试</td>
+<td>Conclusions 最后一段</td>
+</tr>
+<tr>
+<td>动力学定量验证缺失</td>
+<td>ES2↔GS 交换速率未在 TAR Mut 上直接测量，MSM 时间尺度无法与实验对照</td>
+<td>获取 TAR Mut 的 NMR 交换速率数据</td>
+<td>Conclusions 倒数第二段</td>
+</tr>
+<tr>
+<td>单体系验证</td>
+<td>仅在 HIV-1 TAR 突变体上验证，未在多个 RNA 上系统测试</td>
+<td>多体系基准测试</td>
+<td>Conclusions 最后一段</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CV1/CV2 是半 oracle 特征</td>
+<td>作者预先知道 ES1/ES2 的寄存器定义（哪些碱基对切换），这在实际应用中不可得。SFA/TAE/DeepTICA 的对比虽显示 PWCS 在潜空间中仍有效，但这些潜空间本身是从已知 CV 的轨迹学习的</td>
+<td>若 CV 未知，整个 MSM 构建和 PWCS 流程的起点就不存在</td>
+<td>在无寄存器先验的 RNA 上测试 REVEAL，使用纯无监督特征化</td>
+<td>Results 图 9、Methods Featurization 节</td>
+</tr>
+<tr>
+<td>种子筛选标准不明确</td>
+<td>34 个种子中筛除了 1 个「配对不匹配」的结构，但未说明筛选的定量标准（如 RMSD 阈值、配对保真度阈值）</td>
+<td>种子选择直接影响 MD 起始分布，筛选标准不透明则难以复现</td>
+<td>明确筛选阈值并测试其对结果的敏感性</td>
+<td>Methods Ensemble Generation 节</td>
+</tr>
+<tr>
+<td>与 Seq2Ens-MD 的比较不公平</td>
+<td>Seq2Ens 预测器（AlphaFold3 等）并非为系综生成设计，其输出是单一最可几结构；将它们作为 MD 种子相当于要求模型完成非目标任务</td>
+<td>结论「Seq2Ens 不适合作为种子」可能只是反映了模型能力边界，而非方法缺陷</td>
+<td>使用专门为系综设计的生成模型（如 flow matching 系综模型）作为对照</td>
+<td>Results 图 2C-D</td>
+</tr>
+<tr>
+<td>无定量实验对照</td>
+<td>作者将模拟布居与「实验观察 ES2 为主导态」做定性比较，但未提供定量指标（如重叠系数、KL 散度）</td>
+<td>定性一致不足以支撑「REVEAL 正确恢复系综」的强 claim</td>
+<td>计算模拟布居与 NMR 弛豫谱预测布居的定量差异</td>
+<td>Results 图 2A、图 6</td>
+</tr>
+<tr>
+<td>PWCS 的「主导态」判定依赖 MSM 权重</td>
+<td>PWCS 使用 MSM 平衡权重重加权 GMM 拟合，若 MSM 本身有偏差（如力场误差），PWCS 会继承该偏差</td>
+<td>PWCS 的 CV 无关性不等于力场无关性</td>
+<td>在不同力场下重算 PWCS，检验主导态判定是否稳定</td>
+<td>Methods Population-weighted consensus scoring 节</td>
+</tr>
+<tr>
+<td>未报告 MD 收敛性分析</td>
+<td>未提供每条轨迹的 RMSD 收敛曲线、CV 自相关时间或 MSM 的 Chapman-Kolmogorov 检验</td>
+<td>6.8 µs 聚合采样是否足以收敛 MSM 估计是关键问题</td>
+<td>补充 CK 检验和自相关时间分析</td>
+<td>Results 图 4 仅报告参数敏感性</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong></p>
+<ol>
+<li>
+<p><strong>「离散状态空间播种」优于「连续坐标采样」</strong>：对于涉及碱基配对重排的构象转变，在二级结构空间枚举离散配对模式，再条件化生成三级结构作为 MD 种子，比从单一实验结构出发或盲目增强采样更高效。可迁移到蛋白体系：对涉及二硫键异构、脯氨酸顺反异构等离散构象变化的体系，可类似地在离散构象空间播种。</p>
+</li>
+<li>
+<p><strong>生成器与物理模拟的分工原则</strong>：AI 生成器负责「覆盖」（recall），物理模拟负责「加权」（precision）。生成器的输出不应被直接视为系综，而应作为 MD 种子；布居和动力学必须来自物理模拟 + 统计集成。这一原则对蛋白结构预测 + MD 的流程同样适用。</p>
+</li>
+<li>
+<p><strong>种子多样性是采样成功的第一决定因素</strong>：REVEAL 用 6.8 µs 完成了 NMR-seeded MD 用 10 µs 未完成的转变，差异仅在种子分布。这提示：在 MD 采样中，起始构象的多样性可能比总模拟时间更重要。</p>
+</li>
+<li>
+<p><strong>评分函数应独立于 CV 选择</strong>：PWCS 通过多特征、多分量 GMM 的共识打分，避免了对单一 CV 的依赖。在蛋白体系中，可类似地设计不依赖特定反应坐标的构象代表性评分。</p>
+</li>
+<li>
+<p><strong>「无 oracle 验证」的系综评估路径</strong>：PWCS 提供了一种不依赖实验数据的系综验证方法，通过 MSM 平衡权重重加权密度估计，直接识别主导态。这对缺乏实验数据的蛋白/RNA 体系具有直接借鉴价值。</p>
+</li>
+<li>
+<p><strong>生成模型的偏差会通过种子进入动力学</strong>：Seq2Ens-MD 的失败表明，生成模型的系统性偏差（偏向 GS）不会被 MD 纠正，反而会被放大。这提示：在使用 AI 生成结构作为 MD 种子时，必须验证种子的构象空间覆盖度，而非仅看结构质量。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold2-RAVE</strong>（蛋白体系）：本文明确将其作为蛋白类比的先驱方法。AlphaFold2-RAVE 用 MSA 子采样生成多样结构作为 MD 种子，REVEAL 用二级结构系综替代 MSA 子采样，扩展到 RNA。两者共享「生成器 + MD + MSM」的框架。</li>
+<li><strong>AlphaFold-MSM / BioEmu-MSM</strong>：同样属于「生成系综种子 + MSM 集成」范式，REVEAL 将其推广到 RNA 并引入二级结构条件化。</li>
+<li><strong>Bottaro, Di Palma &amp; Bussi (2017) G-向量</strong>：本文的 G-向量特征直接引用此工作，该表示最初用于 RNA 构象聚类和 Go-model 粗粒化。REVEAL 将其用于 MSM 特征化和 PWCS 输入。</li>
+<li><strong>trRosettaRNA2</strong>：RNA 三级结构预测器，本文将其从「单结构预测」重新定位为「条件化系综生成器」，输入二级结构约束以控制输出构象。</li>
+<li><strong>ViennaRNA / LinearSampling / Sfold</strong>：经典 RNA 二级结构预测/采样工具，本文将其作为系综多样性的来源，而非仅预测单一 MFE 结构。</li>
+<li><strong>PyEMMA / MSM 理论</strong>：马尔可夫状态模型的成熟工具链，本文使用其标准流程（k-means 离散化、滞后时间选择、PCCA+ 粗粒化、MFPT 估计）。</li>
+<li><strong>HIV-1 TAR 的 NMR 研究</strong>：ES1/ES2 激发态的弛豫色散 NMR 表征（本文引用的实验基础），REVEAL 的模拟结果与这些实验观测定性一致。</li>
+<li><strong>候选连接方向</strong>：与蛋白无序区域（IDP）的系综生成方法（如 AlphaFold 多聚体采样 + MD）可形成类比；与 RNA 配体结合诱导 fit 的系综观点直接相关。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong></p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：REVEAL-蛋白：二级结构/拓扑条件化的蛋白系综种子生成
+   - <strong>来源局限/观察</strong>：REVEAL 的成功依赖 RNA 二级结构系综作为离散状态空间；蛋白缺乏等效的「二级结构系综」概念，但可类比使用二级结构预测的替代构象（如 PSIPRED 的置信度分布）或拓扑约束（如二硫键模式、结构域排列）。
+   - <strong>核心假设</strong>：对涉及 domain reorientation 或 fold-switching 的蛋白，用二级结构/拓扑条件化的生成器播种 MD，可加速稀有态采样。
+   - <strong>初步方法</strong>：对 fold-switching 蛋白（如 KaiB、RfaH），用 trRosetta 或 AlphaFold 在替代二级结构约束下生成种子，进行多种子无偏 MD + MSM。
+   - <strong>验证方式</strong>：与实验（NMR 弛豫、H/D 交换）布居对比。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：PWCS 在蛋白构象系综评估中的推广
+   - <strong>来源局限/观察</strong>：PWCS 的 CV 无关性使其可推广到蛋白体系，但蛋白的构象变化维度更高（loop 重排、domain 运动、侧链翻转），GMM 拟合可能失效。
+   - <strong>核心假设</strong>：将 PWCS 与基于能量的重加权（如 MBAR）结合，可在无实验数据时评估蛋白 MD 系综的代表性。
+   - <strong>初步方法</strong>：在蛋白 MD 轨迹上计算 PWCS，与实验可观测（化学位移、SAXS）交叉验证。
+   - <strong>验证方式</strong>：在已知多构象蛋白（如 kinases）上测试 PWCS 是否能识别实验已知的活性/非活性态。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：二级结构系综 → 三级结构种子的覆盖率量化
+   - <strong>来源局限/观察</strong>：REVEAL 未量化「34 个种子对构象空间的覆盖率」。种子数量与采样成功率的关系未知。
+   - <strong>核心假设</strong>：存在一个最小种子多样性阈值，低于该阈值时 MSM 无法连接两个寄存器。
+   - <strong>初步方法</strong>：对 TAR Mut 进行种子数量消融（如 5/10/20/34 种子），测量 MSM 连通性和布居收敛。
+   - <strong>验证方式</strong>：绘制种子数量 vs 布居误差曲线。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：无 oracle 的 RNA 系综验证基准
+   - <strong>来源局限/观察</strong>：REVEAL 的验证依赖 TAR Mut 的工程化设计（已知 ES2 主导）。对未知体系，PWCS 的「主导态」判定缺乏 ground truth。
+   - <strong>核心假设</strong>：PWCS 与力场能量排序的一致性可作为无 oracle 时的验证代理。
+   - <strong>初步方法</strong>：在多个 RNA 体系上比较 PWCS 排序与 MM/PBSA 或 QM/MM 能量排序。
+   - <strong>验证方式</strong>：在已知体系上检验一致性，在未知体系上提供预测。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：REVEAL + 增强采样混合策略
+   - <strong>来源局限/观察</strong>：REVEAL 依赖无偏 MD，但 6.8 µs 仅覆盖一个体系。对更大 RNA 或更慢转变，无偏采样仍不足。
+   - <strong>核心假设</strong>：将 REVEAL 的种子多样性策略与自适应增强采样（如 REVO、RESPAP）结合，可进一步加速。
+   - <strong>初步方法</strong>：从 REVEAL 种子出发，使用自适应偏置势或重加权方法，比较与纯无偏 REVEAL 的采样效率。
+   - <strong>验证方式</strong>：在 TAR Mut 及第二个 RNA 体系上比较 FES 收敛速度。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, results, conclusions, computational methods) for a single preprint.</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological soundness, clarity of claims, and alignment with stated evidence. No assessment of editorial fit or publication venue.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present REVEAL, a workflow combining secondary structure ensemble generation, trRosettaRNA2-based tertiary structure prediction, unbiased MD, and Markov state modeling, to capture the ES2↔GS register shift in an engineered HIV-1 TAR mutant. They claim that seeding MD from a diverse tertiary structure ensemble enables sampling of this rare transition within 6.8 µs of aggregate simulation, that sequence-only predictors and NMR-seeded MD fail to do so, and that a novel scoring metric (PWCS) identifies the dominant state without experimental restraints or low-dimensional separation.</li>
+<li><strong>Visible evidence base</strong> Abstract, Introduction, Results (narrative), Conclusions, Computational Methods. Figures are referenced but not provided. No raw data, trajectories, or analysis scripts are included.</li>
+<li><strong>Missing materials affecting confidence</strong> All figures and supplementary materials are absent. No convergence diagnostics, error bars on free energy surfaces, or validation against experimental observables beyond qualitative state assignment. No details on MSM validation (e.g., Chapman-Kolmogorov tests, implied timescale plots). No force field or water model sensitivity analysis. No comparison of PWCS against existing scoring methods.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript presents a conceptually appealing and timely workflow that addresses a real bottleneck in RNA computational biology. The central idea, that seeding MD from a diverse, secondary-structure-conditioned tertiary ensemble can overcome rare-event sampling limitations, is plausible and worth exploring. However, the evidence as presented is insufficient to establish the core claims. The absence of figures, convergence data, and quantitative validation makes it impossible to assess whether the observed transitions are statistically robust, whether the MSM is well-constructed, or whether PWCS genuinely outperforms existing approaches. The comparison against sequence-only predictors is also weakened by the lack of detail on how those predictions were generated and evaluated. The manuscript reads more like a methods proposal than a validated study, and the conclusions outpace the visible evidence.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biophysicists and chemists working on RNA conformational dynamics, particularly those interested in rare-event sampling, ensemble generation, and the integration of machine learning with molecular simulation. Method developers in the MSM and enhanced sampling communities may also find the workflow relevant. The PWCS metric, if validated, could be of interest to researchers studying conformational ensembles of RNA and intrinsically disordered proteins.</li>
+<li><strong>Major Strengths</strong> The workflow is logically designed and combines established tools in a transparent manner. The choice of HIV-1 TAR Mut as a test system is appropriate, given its known excited states and engineered population inversion. The emphasis on seed diversity as a key determinant of sampling success is a useful conceptual contribution. The introduction of PWCS as a population-aware scoring metric is a novel idea that could have broad applicability. The authors are candid about the limitations of their approach and the need for force field and ion condition sensitivity testing.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "REVEAL captures the reversible ES2 to GS register shift from 6.8 µs of aggregate unbiased sampling across 34 seeds, recovering both basins, the intermediate states, and correctly identifies ES2 as the dominant state."</li>
+<li><strong>Evidence pointer</strong> Results section, Figure 2A; location not provided</li>
+<li><strong>Concern</strong> The central claim of capturing the ES2↔GS transition rests entirely on figures that are not provided. No free energy surface, no representative structures, no time series, and no quantitative measure of sampling convergence are shown. The statement that "the MSM-weighted free energy surface captures reversible transition" cannot be evaluated without seeing the surface, the statistical uncertainties, or the implied timescale convergence. The claim that 6.8 µs is sufficient to sample a transition with a millisecond lifetime in the wild-type is counterintuitive and requires strong evidence of barrier crossing events, which is not presented.</li>
+<li><strong>Why it matters</strong> The entire premise of the paper is that REVEAL enables sampling of a rare event that conventional MD cannot reach. Without visible evidence of the transition, the claim is unsubstantiated. The aggregate simulation time is short relative to the expected timescale of the transition, and the authors do not explain how the seed diversity compensates for this.</li>
+<li><strong>Resolution test</strong> Provide the free energy surface with error bars, show representative structures of each basin, demonstrate multiple transition events between ES2 and GS, and include convergence diagnostics such as implied timescale plots and Chapman-Kolmogorov tests. Quantify the number of observed transitions and the statistical uncertainty in the population estimates.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological validation</li>
+<li><strong>Claim pointer</strong> "PWCS identifies the dominant state even when low-dimensional representations fail to separate the states."</li>
+<li><strong>Evidence pointer</strong> Results section, Figure 8; location not provided</li>
+<li><strong>Concern</strong> PWCS is a central methodological contribution, but its validation is incomplete. The claim that it identifies the dominant state is based on a single system, and the comparison against "low-dimensional representations" is not quantified. It is unclear how PWCS scores compare to simpler metrics, such as MSM stationary probabilities or cluster populations. The sensitivity of PWCS to the number of GMM components, the choice of features, and the resampling procedure is not discussed. The claim that PWCS is "independent of the choice of collective variables" is not demonstrated, as the method is applied to projections of R/G-vectors and to CV1/CV2 directly.</li>
+<li><strong>Why it matters</strong> PWCS is presented as a generalizable tool, but its robustness and added value over existing methods are not established. Without a benchmark against alternative scoring approaches or a demonstration of its utility on a system where low-dimensional separation fails, the claim is speculative.</li>
+<li><strong>Resolution test</strong> Provide a systematic comparison of PWCS against MSM populations, cluster populations, and other scoring metrics. Show that PWCS rankings are stable across different GMM component counts and feature choices. Demonstrate its utility on a second system or on a case where the low-dimensional projection does not separate states.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Comparative analysis</li>
+<li><strong>Claim pointer</strong> "Sequence-only ensemble predictors (AlphaFold3, Boltz-2, ESMFold2, OpenFold3 and Protenix-v2) place every structure near the ground state and invert the experimentally observed population ordering."</li>
+<li><strong>Evidence pointer</strong> Results section, Figure 2C; location not provided</li>
+<li><strong>Concern</strong> The benchmark against sequence-only predictors is a key part of the argument, but the details are missing. It is unclear how many structures were generated per predictor, whether any filtering or clustering was applied, and how the "population ordering" was inferred from a set of discrete predictions. The statement that all five predictors "place every structure near the ground state" is a strong claim that requires quantitative support, such as a distribution of CV1/CV2 values for each predictor. The choice of predictors and their versions is also not justified.</li>
+<li><strong>Why it matters</strong> The comparison is used to argue that sequence-only models are inadequate for ensemble prediction, which is an important claim for the field. Without a rigorous and reproducible benchmark, the conclusion is not supported.</li>
+<li><strong>Resolution test</strong> Provide the full distribution of predicted structures for each predictor in the CV1/CV2 plane. State the number of structures generated, any clustering or selection steps, and the criteria used to assign states. Include a quantitative measure of how far each predictor's ensemble is from the experimental ES2 and GS states.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Physical model sensitivity</li>
+<li><strong>Claim pointer</strong> "The populations and transition times reported here are properties of the chosen force field, water model and ionic conditions as much as of TAR Mut itself."</li>
+<li><strong>Evidence pointer</strong> Conclusions section; location not provided</li>
+<li><strong>Concern</strong> The authors acknowledge that their results depend on the physical model, but they do not test this dependence. The free energy difference of ~0.5 kT between ES2 and GS is presented as consistent with the design, but it is not clear how sensitive this value is to the force field, water model, or ion parameters. The manuscript would be strengthened by at least one additional simulation set with a different force field or ion condition to show that the qualitative conclusions hold.</li>
+<li><strong>Why it matters</strong> The claim that REVEAL recovers the correct dominant state is only meaningful if it is robust to reasonable variations in the physical model. Without such a test, the result could be a fortuitous artifact of the specific simulation setup.</li>
+<li><strong>Resolution test</strong> Repeat the REVEAL workflow with at least one alternative force field (e.g., DES-Amber) or with different Mg2+ concentrations, and show that the ES2-dominant population ordering and the transition pathway are preserved.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Methods, Featurization</li>
+<li><strong>Evidence pointer</strong> Computational Methods; location not provided</li>
+<li><strong>Issue</strong> The definition of the G-vector is incomplete. The text states "The corresponding G-vector maps this displacement into a smooth four-component representation" but the actual formula is not given. The cutoff description is also ambiguous.</li>
+<li><strong>Required correction</strong> Provide the explicit formula for the G-vector components and clarify the cutoff behavior.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Methods, MSM</li>
+<li><strong>Evidence pointer</strong> Computational Methods; location not provided</li>
+<li><strong>Issue</strong> The MSM construction is described briefly. The number of clusters (k=200) and lag time (10 frames) are stated, but the selection of these parameters is not justified. The statement that the results are robust to these choices is not supported by data.</li>
+<li><strong>Required correction</strong> Show the implied timescale plot and the sensitivity analysis for k and lag time, or provide a reference for the chosen values.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Affected element</strong> Results, MFPTs</li>
+<li><strong>Evidence pointer</strong> Results section, Figure 7; location not provided</li>
+<li><strong>Issue</strong> The mean first passage times are reported with 95% confidence intervals, but the number of transition events used to estimate these values is not stated. For a rare event, the statistics may be poor.</li>
+<li><strong>Required correction</strong> Report the number of observed transitions for each MFPT estimate and discuss the statistical reliability.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Results, Committor analysis</li>
+<li><strong>Evidence pointer</strong> Results section, Figure 5C, D; location not provided</li>
+<li><strong>Issue</strong> The committor analysis is described qualitatively. It is unclear how the committor was estimated and whether the results are converged.</li>
+<li><strong>Required correction</strong> Provide details on the committor estimation method and convergence criteria.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Introduction</li>
+<li><strong>Evidence pointer</strong> Introduction; location not provided</li>
+<li><strong>Issue</strong> The sentence "In essence, this approach is be inspired by recent methods" contains a grammatical error.</li>
+<li><strong>Required correction</strong> Correct to "In essence, this approach is inspired by recent methods."</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (missing evidence for the central transition claim), R1-M2 (incomplete validation of PWCS), R1-M3 (inadequate benchmark details for sequence-only predictors). These are blocking because the core conclusions depend on them.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The workflow is a sensible combination of existing tools, and PWCS is a novel concept, but the overall approach is not fundamentally new. Scientific importance: The problem of capturing RNA excited states is important, and a validated workflow would be valuable, but the current evidence does not establish that REVEAL solves it. Interdisciplinary readership: The work is primarily of interest to computational biophysicists and method developers; the broader biological or chemical readership would need clearer demonstrations of biological insight. Technical soundness: The methods are described in sufficient detail to be reproducible, but the lack of validation data undermines confidence. Readability for nonspecialists: The manuscript is clearly written and the logic is easy to follow, but the absence of figures makes it difficult for any reader to assess the results.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The workflow is promising and the questions are relevant, but the manuscript as presented does not provide sufficient evidence to support the central claims. The authors should be encouraged to resubmit with full figures, convergence analyses, and a more rigorous benchmark of PWCS and the sequence-only predictors.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that REVEAL captures the reversible ES2↔GS transition is unsupported without the free energy surface and transition statistics.</li>
+<li>The claim that PWCS identifies the dominant state even when low-dimensional representations fail is unsupported without a quantitative comparison.</li>
+<li>The claim that sequence-only predictors invert the population ordering is unsupported without details on the prediction protocol and the resulting distributions.</li>
+<li>The claim that the MSM is converged and robust to parameter choices is unsupported without convergence diagnostics.</li>
+<li>The claim that the ~0.5 kT free energy difference is consistent with the design is qualitative and not backed by error estimates.</li>
+<li>The claim that REVEAL is "the first Markov state model of TAR Mut" is a strong statement that would require a literature search to verify.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

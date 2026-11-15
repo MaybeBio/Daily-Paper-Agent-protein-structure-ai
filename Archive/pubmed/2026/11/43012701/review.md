@@ -1,0 +1,69 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report the first identification of hyaluronate lyases in glycoside hydrolase family 56 (GH56), specifically SpskHL from *Sporothrix schenckii* 1099-18 and four homologues. These enzymes are described as endolytic, producing unsaturated HA oligosaccharides with DeltaHA2 as the end product, and are proposed to form a new GH56 subfamily. Through alanine-scanning mutagenesis of 15 residues in the catalytic cleft of SpskHL, a triple-site mutant (Y120A/N125A/H189A) showed a 126% activity increase. Grafting this mutation onto four other hyaluronate lyases increased activities by 74%-155%. Molecular dynamics simulations are used to propose a mechanistic basis involving an expanded catalytic cleft, a larger cavity near the catalytic residue E, and a shorter catalytic OE2-O4 distance.
+- **Visible evidence base** Abstract text only; no experimental details, sequence alignments, phylogenetic trees, kinetic data, or simulation parameters are provided
+- **Missing materials affecting confidence** Full manuscript, methods, figures, tables, supplementary data, sequence accession numbers, and statistical analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially novel finding in enzyme discovery, namely the first GH56 hyaluronate lyases, with a clear application-oriented goal of enhancing catalytic activity. However, the evidence base is limited to the abstract, and several claims require verification from the full manuscript. The novelty claim is plausible but not fully established without phylogenetic and sequence-level evidence. The activity enhancement data are promising but lack statistical context. The molecular dynamics interpretation is speculative without simulation details. Overall, the work is of interest to the glycoside hydrolase and carbohydrate-active enzyme community, but the case is not fully established from the provided material.
+- **Who would be interested in the results, and why** Researchers in glycoside hydrolase enzymology, particularly those studying GH families and lyase mechanisms, would be interested in the expansion of GH56 substrate specificity. Applied microbiologists and biotechnologists working on HA oligosaccharide production for pharmaceutical, cosmetic, or nutraceutical applications would also find the activity enhancement results relevant. The study may also attract computational enzymologists interested in structure-function relationships in catalytic cleft engineering.
+- **Major strengths** The identification of a new GH56 subfamily with endolytic hyaluronate lyase activity represents a potentially significant expansion of known GH56 function. The combination of alanine-scanning mutagenesis with grafting of beneficial mutations across homologues is a systematic and practical approach. The use of molecular dynamics simulations to propose a mechanistic rationale for enhanced activity adds a structural dimension to the work.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Novelty and classification
+  - **Claim pointer** The abstract claims that SpskHL is "first identified as a GH56 endolytic hyaluronate lyase" and that the five enzymes "form a new GH56 subfamily of endolytic hyaluronate lyase."
+  - **Evidence pointer** Abstract; no phylogenetic tree, sequence alignment, or subfamily classification data are visible
+  - **Concern** The claim of a new GH56 subfamily requires robust phylogenetic and sequence-based evidence, such as a phylogenetic tree with bootstrap support, pairwise sequence identity comparisons, and conserved motif analysis. The abstract does not provide any of this. Additionally, the assertion that no hyaluronate lyase has been reported in GH56 must be verified against current CAZy database annotations, which are not cited or discussed.
+  - **Why it matters** The novelty of the work hinges on the correct classification of these enzymes. If the subfamily assignment is not rigorously supported, the central claim of the paper is weakened. Misclassification could also mislead future research in GH56 functional annotation.
+  - **Resolution test** Provide a phylogenetic tree including known GH56 members and related lyases, with statistical support values, and a clear definition of the subfamily criteria. Confirm the absence of prior GH56 hyaluronate lyase reports with a literature and database search.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Activity enhancement and statistical validity
+  - **Claim pointer** The abstract states that triple-site mutant SpskHLM3 (Y120A/N125A/H189A) "increased activity by 126%" and that grafting onto four other hyaluronate lyases "increased their activities by 74%-155%."
+  - **Evidence pointer** Abstract; no kinetic data, assay conditions, replicates, or error estimates are provided
+  - **Concern** The percentage increases in activity are presented without any indication of experimental variability, number of replicates, or statistical significance. It is unclear whether these increases are relative to wild-type under identical conditions, and whether the assay measures initial rates, specific activity, or another parameter. The range of 74%-155% across four enzymes suggests variability that is not explained.
+  - **Why it matters** Without statistical context, the reported enhancements cannot be evaluated for robustness. Overinterpretation of activity changes based on single measurements or unstated assay conditions is a common source of irreproducibility in enzyme engineering studies.
+  - **Resolution test** Provide full kinetic parameters (kcat, Km, kcat/Km) for wild-type and mutants, with at least three independent replicates and appropriate error bars. State assay conditions and statistical tests used to compare activities.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Mechanistic interpretation from simulations
+  - **Claim pointer** The abstract states that molecular dynamics simulations suggested "an expanded catalytic cleft, a larger cavity near the catalytic residue E, and a shorter catalytic OE2-O4 distance, which might contribute to their enhanced activities."
+  - **Evidence pointer** Abstract; no simulation methods, force fields, simulation times, or structural models are described
+  - **Concern** The molecular dynamics findings are presented as a single, coherent explanation for enhanced activity, but the abstract does not specify which structures were simulated, how the mutants were modeled, or whether the simulations were replicated. The term "catalytic OE2-O4 distance" is not defined, and it is unclear whether this refers to a substrate atom or a protein atom. The causal link between these structural features and activity is speculative.
+  - **Why it matters** The mechanistic claim is a key part of the paper's contribution, but without methodological detail and validation, it remains a hypothesis. Readers cannot assess whether the simulations are reliable or whether the proposed mechanism is supported by the data.
+  - **Resolution test** Describe simulation setup in full, including starting structures, force field, water model, simulation length, and analysis methods. Define all distances and cavities clearly. Show correlation between simulation-derived metrics and experimental activity data, and discuss alternative explanations.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity of product characterization
+  - **Affected element** Claim that enzymes yield "unsaturated HA oligosaccharides with DeltaHA2 as the end product"
+  - **Evidence pointer** Abstract; no product analysis data are shown
+  - **Issue** The abstract does not specify the methods used to identify DeltaHA2 or the degree of polymerization of the oligosaccharides. It is unclear whether the end product is exclusive or predominant.
+  - **Required correction** Specify the analytical methods (e.g., mass spectrometry, NMR, HPLC) and provide product profiles in the full manuscript.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness of enzyme discovery
+  - **Affected element** Claim of "four homologues" discovered
+  - **Evidence pointer** Abstract; no source organisms or sequence identifiers are given
+  - **Issue** The abstract does not name the organisms from which the homologues were derived or provide accession numbers. This limits the ability of readers to verify or use the sequences.
+  - **Required correction** List the source organisms and provide sequence accession numbers in the full manuscript.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology precision
+  - **Affected element** Use of "endolytic" to describe the enzymes
+  - **Evidence pointer** Abstract; no mechanistic assay for endo versus exo activity is described
+  - **Issue** The term "endolytic" implies a specific mode of action, but the abstract does not describe how this was determined. It is possible that the product profile alone is insufficient to distinguish endolytic from processive exolytic activity.
+  - **Required correction** Describe the experimental approach used to establish endolytic activity, such as time-course product analysis or use of labeled substrates.
+
+## Risk / unsupported claims
+- The claim that SpskHL is the first GH56 hyaluronate lyase is not verifiable from the abstract alone and requires a literature and database search.
+- The designation of a new GH56 subfamily is unsupported without phylogenetic and sequence-level evidence.
+- The activity enhancement percentages (126% and 74%-155%) are not statistically contextualized and cannot be evaluated for robustness.
+- The molecular dynamics-based mechanistic explanation is speculative without simulation details and validation.
+- The product profile (DeltaHA2 as end product) is stated without analytical evidence.
+- The endolytic mode of action is asserted without a described assay.

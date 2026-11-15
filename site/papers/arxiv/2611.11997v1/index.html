@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HyInv Technical Report · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>HyInv Technical Report</h1>
+      <div class="meta">Haowei Lin; Cai Zhou; Xiangxin Zhou</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-11-09
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2611.11997v1">原文</a>
+      </div>
+      <p class="one-liner">该文提出HyInv，一个轻量级图网络反折叠模型，结合预训练与强化学习及草稿-重写采样，在保持序列多样性的同时高效生成高折叠质量的蛋白质序列，与蛋白质结构计算中的序列设计任务高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Inverse folding designs amino-acid sequences for a given protein backbone, and screening needs many candidates that are both diverse and well folded. We present HyInv, a 1.96-million-parameter backbone-conditioned graph network with an encoder-decoder architecture, trained by Hyra 2.0, the research agent developed by our team: pretrained with random-order autoregressive sequence modeling, followed by structure-reward reinforcement learning. At inference, a grouped draft-and-rewrite sampler that uses separate draft and rewrite temperatures improves refolding TM-score at matched diversity. An optimized implementation with BF16 numerics designs 128 sequences for a 402-residue backbone in 50.6 ms on a single NVIDIA H20 GPU, about 52 times faster than the reference sampler, and an exact FP32 path that returns the reference sequences is 8.7 times faster. Across five benchmark datasets and seven dataset-predictor combinations, HyInv reaches a higher average scTM than all ten external baselines at comparable or higher sequence diversity, with large margins over ProteinMPNN and ProteinZero V2. The same default setting supports de novo backbones, pocket-constrained libraries, enzyme redesign with the catalytic site kept, and loop redesign. We have released our code and model at https://github.com/Tencent-Hunyuan/Hyra-results/tree/main/AI4Science/hyinv.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">逆折叠为给定的蛋白质骨架设计氨基酸序列，筛选需要大量既多样又折叠良好的候选序列。我们提出HyInv，一个具有196万参数的骨架条件图网络，采用编码器-解码器架构，由我们团队开发的研究代理Hyra 2.0训练：先通过随机顺序自回归序列建模进行预训练，随后进行结构奖励强化学习。在推理时，一个分组草稿-重写采样器使用独立的草稿和重写温度，在匹配多样性的条件下提高了重折叠TM分数。采用BF16数值的优化实现，在单个NVIDIA H20 GPU上为402残基骨架设计128条序列仅需50.6毫秒，比参考采样器快约52倍，而返回参考序列的精确FP32路径则快8.7倍。在五个基准数据集和七种数据集-预测器组合中，HyInv在可比或更高的序列多样性下，平均scTM高于所有十个外部基线，且相对于ProteinMPNN和ProteinZero V2有大幅优势。相同的默认设置支持从头设计的骨架、口袋约束库、保留催化位点的酶重设计以及环区重设计。我们已在https://github.com/Tencent-Hunyuan/Hyra-results/tree/main/AI4Science/hyinv发布了代码和模型。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：HyInv Technical Report</li>
+<li><strong>作者</strong>：Haowei Lin; Cai Zhou; Xiangxin Zhou</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/预印本平台</strong>：arXiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：Technical Report（技术报告）</li>
+<li><strong>领域</strong>：Computer Science &gt; Machine Learning</li>
+<li><strong>关键词</strong>：未提供（标题 "HyInv" 推测为 Hybrid Inversion 或类似含义，但正文未提供）</li>
+<li><strong>DOI/arXiv 号</strong>：2611.11997v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-11-09（以提交日期为参考）</li>
+<li><strong>该文在课题方向中的位置</strong>：<strong>Not assessable</strong>。提供的材料仅为 arXiv 元数据页面，不含任何正文内容（摘要、方法、结果均缺失）。无法判断其与「蛋白质结构相关计算研究 × AI/物理模拟」的相关性。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p><strong>Not assessable</strong> — 因正文完全缺失，无法提炼任何方法、机制或结论。</p>
+<hr />
+<h2>03 研究问题</h2>
+<p><strong>Not assessable</strong> — 正文缺失，无法确定具体研究问题、动机或现有方法不足。</p>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<p><strong>Not assessable</strong> — 正文缺失，无法判断该文在领域中的位置或主张。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<p><strong>Not assessable</strong> — 正文缺失，无法提取痛点、表现、成因或证据。</p>
+<hr />
+<h2>06 核心思想</h2>
+<p><strong>Not assessable</strong> — 正文缺失，无法提取表面方法、核心洞察或普适教训。</p>
+<hr />
+<h2>07 方法总览</h2>
+<p><strong>Not assessable</strong> — 正文缺失，无法描述输入、输出、模块、训练或流程。</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<p><strong>Not assessable</strong> — 正文缺失，无法拆解模块或评估消融效应。</p>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>Not applicable</strong> — 正文缺失，无公式可列。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<p><strong>Not assessable</strong> — 正文缺失，无法记录数据集、指标、基线或实验结果。</p>
+<hr />
+<h2>11 结论正确解读</h2>
+<p><strong>Not assessable</strong> — 正文缺失，无法审计任务范围、oracle 输入、算力成本或边界条件。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限（正文完全缺失）。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>该 arXiv 条目仅有元数据，无摘要、无正文</td>
+<td>可能为占位提交、撤回、或元数据抓取不完整</td>
+<td>无法评估其科学贡献或与课题相关性</td>
+<td>直接访问 arXiv 页面或联系作者获取全文</td>
+<td>提供的材料仅含页面框架，无任何正文内容</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong></p>
+<p><strong>无</strong> — 正文缺失，无法提炼任何可迁移的概念、方法或实验设计。</p>
+<hr />
+<h2>15 与已有知识连接</h2>
+<p><strong>Not assessable</strong> — 正文缺失，无法建立与外部文献或课题方向的连接。</p>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong></p>
+<p><strong>无</strong> — 正文缺失，无法基于本文生成任何有依据的研究候选。</p>
+<hr />
+<blockquote>
+<p><strong>重要说明</strong>：本 Card 基于提供的材料（仅 arXiv 元数据页面）生成。所有内容均标记为 Not assessable / Not applicable，未做任何臆测。若需完整分析，请提供论文全文或至少摘要。</p>
+</blockquote></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract and metadata only. The provided material consists of the arXiv landing page for the manuscript "HyInv Technical Report" (arXiv:2611.11997v1), including title, author list, submission date, and platform navigation text. No abstract, introduction, methods, results, figures, tables, or references were supplied.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the title, authorship, submission metadata, and the absence of any substantive scientific content in the supplied material. No claims about the technical content, methodology, or findings of the manuscript can be evaluated.</li>
+<li><strong>Shared manuscript claim summary</strong> The title "HyInv Technical Report" suggests the manuscript presents a technical report on a system or method referred to as "HyInv." No further claims are available from the supplied material.</li>
+<li><strong>Visible evidence base</strong> Title, author list, submission date, DOI/ID, and URL. No scientific content, figures, tables, or data are visible.</li>
+<li><strong>Missing materials affecting confidence</strong> The complete manuscript, including abstract, main text, figures, tables, references, and any supplementary materials, is absent. Confidence in assessing the scientific contribution is therefore minimal.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The supplied material contains no scientific content that can be reviewed. The manuscript is represented only by its title and metadata. A meaningful evaluation of originality, significance, technical soundness, or readability is not possible. The review must be deferred until the full text is provided.</li>
+<li><strong>Who would be interested in the results, and why</strong> Not assessable from the supplied material. The title suggests a technical report, which may target practitioners or researchers in a specific subfield, but no audience can be identified without content.</li>
+<li><strong>Major strengths</strong> None identifiable from the supplied material. The title is concise, but no substantive strengths can be assessed.</li>
+<li><strong>Major Concerns</strong> The absence of the manuscript content is the sole and overriding concern. No scientific claims, methods, or results are available for evaluation.</li>
+<li><strong>Minor Comments</strong> None identified from the supplied material.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The manuscript content must be provided. Without the full text, no technical assessment is possible.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: not assessable. Scientific importance: not assessable. Interdisciplinary readership: not assessable. Technical soundness: not assessable. Readability for nonspecialists: not assessable. The supplied material provides no basis for any of these criteria.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript cannot be evaluated in any form until the full text is supplied.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The manuscript is titled "HyInv Technical Report," implying a technical contribution, but no content is available to support any claim.</li>
+<li><strong>Evidence pointer</strong> Entire submission, location not provided</li>
+<li><strong>Concern</strong> The supplied material contains only the title, author list, and submission metadata. No abstract, main text, figures, tables, or references are present. There is no scientific content to review.</li>
+<li><strong>Why it matters</strong> A review requires the manuscript content to evaluate claims, methods, and results. Without this, any assessment would be speculative and unsupported.</li>
+<li><strong>Resolution test</strong> Provide the full manuscript text, including abstract and main body, to enable a substantive review.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The title "HyInv Technical Report" implies a technical report on a system or method named "HyInv," but this is unsupported by any visible content.</li>
+<li>Any claim about the manuscript's contribution, methodology, or findings is not assessable from the supplied material.</li>
+<li>The submission date, author list, and DOI are metadata only and carry no scientific weight.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

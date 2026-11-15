@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HEIWA: Hybrid Explicit-Implicit Water Attention Affects Force Field Accuracy in Structure-Based Protein Language Model ESM3. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>HEIWA: Hybrid Explicit-Implicit Water Attention Affects Force Field Accuracy in Structure-Based Protein Language Model ESM3.</h1>
+      <div class="meta">Ernest Ho, Ngai Hei; Yang, Chao Tung; Ng, I-Son; Chang, Jo-Shu</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of chemical information and modeling</span>
+        · 2026-11-09
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/43001923/">原文</a>
+      </div>
+      <p class="one-liner">该文提出HEIWA模块，将显式/隐式水溶剂信息注入ESM3蛋白语言模型，以增强其对力场物理相互作用的感知，并通过热稳定性分类和MD模拟验证改进，属于蛋白质结构计算与AI结合的方法创新。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein language models have achieved remarkable success in structure prediction and de novo design. However, their understanding of physical interactions remains limited. For structure-based models, we hypothesize that this limitation stems from the absence of explicit solvent modeling: water mediates hydrogen bonding, hydrophobic burial, and electrostatic interactions that govern protein thermodynamics and kinetics, yet current structure-based models treat proteins as if they exist in a vacuum. Using thermophilic protein classification as a proxy task for force-field awareness, per-residue logit mis-correlated with H-bonds as a destabilizing attribute and exhibits significant solvent-accessible surface area (SASA)-dependent error, despite high overall classification accuracy. These artifacts point to the water-protein interface as a source of systematic bias. To address this, we propose HEIWA (HybridExplicit-Implicit Water Attention), a novel attention module that injects solvent-mediated force-field information into static ESM3 residue embeddings via an all-query-to-all-key water-residue attention. Biophysics-guided model selection identifies configurations whose residue-level outputs are more consistent with the RMSF benchmark and selected biophysical attributes, while classification performance remains broadly comparable to the baseline. By forcing the model to predict the protein thermophilicity from the contributions of individual residues, HEIWA learns biophysical patterns that can be extended to SUPFAM absent from the training data set. HEIWA also largely preserves the embedding structure of ESM3. Molecular dynamics simulations show improved kinetic stability under thermophilic conditions, suggesting the potential to generate structures with greater kinetic stability. To our knowledge, this is the first study to incorporate explicit solvent encoding into a residue-resolution protein language model.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质语言模型在结构预测和从头设计方面取得了显著成功。然而，它们对物理相互作用的理解仍然有限。对于基于结构的模型，我们假设这一局限性源于缺乏显式溶剂建模：水介导氢键、疏水埋藏和静电相互作用，这些作用支配着蛋白质的热力学和动力学，但当前基于结构的模型将蛋白质视为存在于真空中。使用嗜热蛋白分类作为力场感知的代理任务，每个残基的logit与氢键作为去稳定属性存在错误相关，并表现出显著的溶剂可及表面积（SASA）依赖性误差，尽管整体分类准确率较高。这些伪影表明水-蛋白质界面是系统性偏差的来源。为解决这一问题，我们提出HEIWA（混合显式-隐式水注意力，HybridExplicit-Implicit Water Attention），一种新颖的注意力模块，通过全查询到全键的水-残基注意力，将溶剂介导的力场信息注入静态ESM3残基嵌入中。生物物理引导的模型选择识别出残基级输出与RMSF基准及选定生物物理属性更一致的配置，而分类性能与基线大致相当。通过强制模型从单个残基的贡献预测蛋白质的嗜热性，HEIWA学习到的生物物理模式可扩展到训练数据集中未包含的SUPFAM。HEIWA还基本保留了ESM3的嵌入结构。分子动力学模拟显示在嗜热条件下动力学稳定性提高，表明其具有生成更高动力学稳定性结构的潜力。据我们所知，这是首次将显式溶剂编码纳入残基分辨率蛋白质语言模型的研究。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: HEIWA: Hybrid Explicit-Implicit Water Attention Affects Force Field Accuracy in Structure-Based Protein Language Model ESM3</li>
+<li><strong>作者与单位</strong>: Ernest Ho, Ngai Hei; Yang, Chao Tung; Ng, I-Son; Jo-Shu Chang（单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>: Journal of Chemical Information and Modeling</li>
+<li><strong>年份</strong>: 2026（在线日期 2026-11-09）</li>
+<li><strong>论文类型</strong>: 研究论文（方法学 + 实证评估）</li>
+<li><strong>领域</strong>: 蛋白质语言模型 × 物理力场感知 × 溶剂建模</li>
+<li><strong>关键词</strong>: 蛋白质语言模型、ESM3、溶剂建模、水分子、力场感知、热稳定性、分子动力学</li>
+<li><strong>DOI/arXiv 号</strong>: 10.1021/acs.jcim.6c01844</li>
+<li><strong>代码</strong>: 未提供</li>
+<li><strong>数据</strong>: 未提供（数据筛选标准见 Table S1）</li>
+<li><strong>阅读日期</strong>: 2026-11-09</li>
+<li><strong>在课题方向中的位置</strong>: 本文属于「蛋白质结构相关计算研究 × AI 方法」中的结构感知蛋白质语言模型方向，聚焦于向 ESM3 这类结构基础模型注入溶剂（水）相互作用信息以增强其物理力场感知能力。与 AlphaFold3、Boltz-2 等显式建模溶剂的方法不同，本文提出一种混合显式-隐式水注意力模块，在不引入全原子溶剂表示的前提下改善模型对氢键、盐桥、疏水埋藏等物理相互作用的编码，并通过热稳定性分类作为代理任务和 MD 模拟作为验证基准来评估力场感知能力。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文针对结构基础蛋白质语言模型 ESM3 缺乏显式溶剂建模导致氢键误判和 SASA 依赖性误差的问题，提出 HEIWA（混合显式-隐式水注意力）模块，通过可学习的水键向量与残基查询的全对全注意力注入溶剂介导的力场信息，在保持分类性能的同时改善残基级输出与 RMSF 基准及生物物理属性的相关性。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 结构基础蛋白质语言模型（如 ESM3）在缺乏显式溶剂建模时，是否真正理解蛋白质的物理相互作用？能否通过注入溶剂介导的力场信息改善模型的物理一致性？</li>
+<li><strong>为什么重要</strong>: 蛋白质的热力学和动力学行为由水介导的氢键、疏水埋藏和静电相互作用主导。若模型缺乏溶剂感知，其生成的结构可能在物理上不合理，影响下游应用（如热稳定蛋白设计、突变效应预测）。现有结构预测模型（AlphaFold3、Boltz-2）虽可纳入溶剂作为结构提示，但未显式建模溶剂-蛋白质的因果共动力学。</li>
+<li><strong>现有方法为何不足</strong>: </li>
+<li>ESM3 等结构基础模型将蛋白质视为真空中的孤立系统，未编码溶剂相互作用；</li>
+<li>全原子显式溶剂建模计算成本高，难以直接集成到残基分辨率的语言模型中；</li>
+<li>现有模型的高分类准确率可能掩盖了残基级别的物理误判（如氢键被误判为去稳定化因素）。</li>
+<li><strong>精确研究问题</strong>: Can a hybrid explicit-implicit water attention module inject solvent-mediated force-field information into a structure-based protein language model (ESM3) to correct systematic biophysical misidentifications (e.g., H-bonds as destabilizing) and improve residue-level consistency with molecular dynamics-derived benchmarks?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「经外部核验」+「仅本文框架」混合，具体标注见各阶段）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列蛋白质语言模型</td>
+<td>ESM2, ProtBERT</td>
+<td>从序列学习进化模式</td>
+<td>缺乏结构信息，物理感知有限</td>
+<td>基础</td>
+</tr>
+<tr>
+<td>结构感知蛋白质语言模型</td>
+<td>ESM3, ESMFold</td>
+<td>坐标信息增强几何推理</td>
+<td>无显式溶剂建模，力场感知有限</td>
+<td>本文目标模型</td>
+</tr>
+<tr>
+<td>全原子结构预测/生成</td>
+<td>AlphaFold3, Boltz-2, RFdiffusion3</td>
+<td>可纳入溶剂/离子/配体作为结构提示</td>
+<td>静态结构，未建模溶剂-蛋白质共动力学；作者自述这些模型也未完全解决溶剂问题</td>
+<td>对比参照</td>
+</tr>
+<tr>
+<td>物理模拟引导的生成</td>
+<td>BioEmu（扩散 + MD 引导）</td>
+<td>采样接近真实构象分布</td>
+<td>需要大量 MD 数据，未显式编码溶剂相互作用</td>
+<td>相关但不同路径</td>
+</tr>
+<tr>
+<td>溶剂感知的注意力机制</td>
+<td><strong>HEIWA（本文）</strong></td>
+<td>以可学习水键向量编码溶剂场，不增加全原子表示；通过代理任务 + MD 基准验证物理一致性</td>
+<td>未建模时间演化；依赖代理任务间接评估力场感知</td>
+<td><strong>本文贡献</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>（注：ESM2/ESM3/AlphaFold3/Boltz-2/RFdiffusion3/BioEmu 的定位为「经外部核验」；本文对它们的评价为「仅本文框架」）</em></p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>氢键系统性误判</td>
+<td>模型将氢键识别为去稳定化属性（负相关），与 RMSF 基准矛盾</td>
+<td>缺乏溶剂建模，模型无法区分埋藏氢键与暴露于溶剂竞争的氢键</td>
+<td>Results 图 2a；"H-bonds are systematically misidentified as destabilizing attributes"</td>
+</tr>
+<tr>
+<td>SASA 依赖性误差</td>
+<td>预测误差随残基溶剂可及表面积变化</td>
+<td>表面残基与溶剂相互作用强，模型在真空假设下无法捕捉</td>
+<td>Results 图 2c；"prediction error strongly depends on SASA"</td>
+</tr>
+<tr>
+<td>甘氨酸误判</td>
+<td>低维模型将甘氨酸识别为稳定化属性，与 RMSF 基准矛盾</td>
+<td>甘氨酸是柔性残基，模型可能混淆序列保守性与物理柔性</td>
+<td>Results 图 2a；"glycine – a helix-destabilizing and flexibility-promoting residue – is misidentified as a stabilizing attribute"</td>
+</tr>
+<tr>
+<td>表面残基稳定性低估</td>
+<td>表面亲水残基的稳定性被系统性低估</td>
+<td>溶剂-蛋白质共运动（水分子轰击、氢键介导的协同运动）未被编码</td>
+<td>Results 图 2c；"the mobility of surface residues... is systematically underestimated"</td>
+</tr>
+<tr>
+<td>力场感知与分类性能脱节</td>
+<td>高分类准确率伴随残基级物理误判</td>
+<td>代理任务（热稳定性分类）的标签是整体属性，不要求残基级物理正确性</td>
+<td>Results 图 2a-c；Table 1</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>HEIWA 是一个可训练的注意力模块，插入 ESM3 的残基嵌入之后。它定义多组可学习的水键向量（water key vectors），包括氢键供体/受体（k_wh, k_wl）、氧（k_wo）、钠/氯离子（k_wna, k_wcl）等，通过全查询到全键（all-query-to-all-key）的注意力机制，让每个残基查询与所有类型的水键向量交互，生成溶剂介导的力场信息并注入残基嵌入。同时引入旋转注意力（rotational attention）编码相互作用的几何角度依赖性，以及 Swish 门控低秩瓶颈（SoRA）压缩输出维度。最后通过预训练的 SASA 分类器和膜相分类器作为门控，屏蔽埋藏残基和膜内残基的溶剂相互作用。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>溶剂可用隐式键向量表示</strong>：不需要为每个水分子定义坐标，而是用可学习的键向量（氢键供体/受体、氧、离子）表示溶剂场的统计特征，通过注意力机制实现残基-溶剂的相互作用编码。</li>
+<li><strong>代理任务 + 物理基准的双层验证</strong>：热稳定性分类作为代理任务提供梯度信号，但仅靠分类准确率不足以保证物理正确性；必须用 MD 模拟得到的 RMSF 和生物物理属性相关性作为物理基准来筛选模型。</li>
+<li><strong>残基级输出的物理一致性是可优化的目标</strong>：通过设计残基级 logit 输出（每个残基对热稳定性的贡献），使模型被迫学习残基尺度的物理规律，而非仅学习整体模式。</li>
+<li><strong>门控机制编码物理先验</strong>：SASA 和膜相门控将「溶剂只能接触表面残基」这一物理事实直接编码进网络结构，而非依赖模型自行学习。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li>对于结构基础模型，物理感知可以通过轻量级模块注入而非重新训练整个模型，这为在现有模型上增强物理一致性提供了经济路径。</li>
+<li>代理任务的选择至关重要：分类准确率可能掩盖残基级物理误判，需要设计残基级输出 + 物理基准（如 MD 模拟）的联合验证框架。</li>
+<li>将物理先验（如溶剂可及性、膜相）编码为网络结构中的门控，比让模型从数据中隐式学习更有效且更可解释。</li>
+</ul>
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>: ESM3 的残基嵌入（含序列、结构、坐标信息），每个残基的查询向量 q_p 和旋转查询 q_pr</p>
+<p><strong>输出</strong>: 修改后的残基嵌入（注入溶剂介导的力场信息），用于下游任务（热稳定性分类、结构生成）</p>
+<p><strong>模块</strong>:
+1. <strong>水键向量定义</strong>：多组可学习键向量（k_wh, k_wl, k_wo, k_wna, k_wcl），代表不同类型的溶剂-蛋白质相互作用
+2. <strong>全对全注意力</strong>：每个残基查询与所有水键向量计算注意力分数，实现残基-溶剂相互作用编码
+3. <strong>旋转注意力</strong>：计算几何角度依赖的注意力分数，编码相互作用的取向性
+4. <strong>SoRA 瓶颈</strong>：Swish 门控低秩投影，压缩注意力输出维度，控制注入信息的容量
+5. <strong>SASA 门控</strong>：预训练分类器，识别表面残基（暴露于溶剂）vs 埋藏残基
+6. <strong>膜相门控</strong>：预训练分类器，识别膜内残基（屏蔽溶剂相互作用）
+7. <strong>下游头</strong>：残基级 logit 输出（每个残基对热稳定性的贡献），经平均池化和 sigmoid 产生最终分类</p>
+<p><strong>训练流程</strong>:
+1. 预训练 SASA 分类器和膜相分类器（冻结）
+2. 训练基础热稳定性分类器（无 HEIWA），确定基线
+3. 插入 HEIWA 模块，使用更严格的学习率（1×10⁻⁵）和早停标准（基于物理基准而非分类指标）
+4. 使用 RMSF 基准进行物理引导的模型选择</p>
+<p><strong>关键假设</strong>:
+- 溶剂-蛋白质相互作用可以用有限类型的键向量近似
+- 残基级 logit 可以反映残基对热稳定性的真实贡献
+- MD 模拟得到的 RMSF 是残基稳定性的有效物理基准</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>水键向量（多组）</td>
+<td>表示不同类型的溶剂-蛋白质相互作用（氢键供体/受体、氧、离子）</td>
+<td>溶剂相互作用类型多样，单一向量无法区分</td>
+<td>输入：可学习参数；输出：键向量集合</td>
+<td>Results 图 2a：4-5 头配置解决氢键误判</td>
+<td>[预期] 减少键类型将无法区分不同相互作用，可能重新引入氢键误判</td>
+</tr>
+<tr>
+<td>全对全注意力</td>
+<td>让每个残基查询与所有水键向量交互</td>
+<td>残基可能同时参与多种溶剂相互作用</td>
+<td>输入：残基查询 q_p，水键向量 k_w；输出：注意力分数</td>
+<td>Results 图 2a：4 头配置优于 2/3 头</td>
+<td>[预期] 移除后模型退化为基线，氢键误判和 SASA 依赖性误差重现</td>
+</tr>
+<tr>
+<td>旋转注意力</td>
+<td>编码相互作用的几何角度依赖性</td>
+<td>溶剂-蛋白质相互作用强度依赖取向</td>
+<td>输入：旋转查询 q_pr，水键向量 k_wa；输出：旋转注意力分数 a_r</td>
+<td>Methods 节：公式定义</td>
+<td>[预期] 移除后模型无法区分有利/不利取向，物理一致性下降</td>
+</tr>
+<tr>
+<td>SoRA 瓶颈</td>
+<td>压缩注意力输出维度，控制注入信息容量</td>
+<td>全对全注意力输出维度高，直接注入可能导致过拟合</td>
+<td>输入：注意力输出 o；输出：压缩后的消息</td>
+<td>Methods 节：LoRA + Swish 组合</td>
+<td>[预期] 移除后模型参数增加但物理一致性不改善（类似高斯随机向量对照）</td>
+</tr>
+<tr>
+<td>SASA 门控</td>
+<td>屏蔽埋藏残基的溶剂相互作用</td>
+<td>埋藏残基不与溶剂接触，不应接收水消息</td>
+<td>输入：残基嵌入；输出：sigmoid 门控值</td>
+<td>Results 图 3：门控消融降低 RMSF/SASA 相关性</td>
+<td>[实测] 消融后 5/120 配置通过物理测试但相关性更弱</td>
+</tr>
+<tr>
+<td>膜相门控</td>
+<td>屏蔽膜内残基的溶剂相互作用</td>
+<td>膜内残基处于疏水环境，无溶剂接触</td>
+<td>输入：残基嵌入；输出：sigmoid 门控值</td>
+<td>Results 图 3：门控消融降低相关性</td>
+<td>[实测] 消融后物理一致性下降</td>
+</tr>
+<tr>
+<td>残基级 logit 输出</td>
+<td>每个残基产生独立的热稳定性贡献分数</td>
+<td>迫使模型学习残基尺度物理规律</td>
+<td>输入：修改后嵌入；输出：残基级 logit</td>
+<td>Results 图 2a-c：残基级分析揭示系统性误判</td>
+<td>[预期] 移除后模型只能学习整体模式，无法进行残基级物理评估</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<h3>1. 旋转注意力分数</h3>
+<p>$$a_r = 1 - \sigma\left(\frac{q_{pa} \cdot k_{wa}}{3} + b_p + b_w\right)$$</p>
+<ul>
+<li>$a_r$：旋转注意力分数，范围 [0,1]，表示几何兼容性</li>
+<li>$q_{pa}$：蛋白质残基的旋转查询向量（3D 角度表示）</li>
+<li>$k_{wa}$：水键向量的旋转键向量</li>
+<li>$b_p, b_w$：蛋白质和水的角度容忍度偏置</li>
+<li>$\sigma$：sigmoid 函数</li>
+<li><strong>直觉</strong>：当残基-溶剂相互作用角度接近最优时，点积大，sigmoid 输出接近 1，$a_r$ 接近 0（不衰减）；角度偏离时，$a_r$ 接近 1（衰减注意力）</li>
+<li><strong>来源</strong>: Methods 节 "Rotational Attention"</li>
+</ul>
+<h3>2. 最终注意力分数</h3>
+<p>$$a' = a \cdot a_r$$</p>
+<ul>
+<li>$a$：ReLU 激活的 vanilla 注意力分数（标准缩放点积注意力）</li>
+<li>$a'$：最终注意力分数，结合强度与几何兼容性</li>
+<li><strong>直觉</strong>：只有同时满足强度高和几何兼容两个条件，溶剂消息才能有效传递</li>
+<li><strong>来源</strong>: Methods 节 "Rotational Attention"</li>
+</ul>
+<h3>3. SoRA（Swish 门控低秩适配）</h3>
+<p>$$\text{Swish}(x) = Mx \cdot \sigma(Nx)$$
+$$\Delta W = ABx \quad (B \in \mathbb{R}^{d \times r}, A \in \mathbb{R}^{r \times d}, r &lt; d)$$
+$$o = \text{SoRA}(\text{ReLU}(a') \cdot V)$$
+$$\text{message passing} = \text{SwiGLU}(o)$$</p>
+<ul>
+<li>$M, N$：Swish 门控的线性投影矩阵</li>
+<li>$A, B$：低秩分解矩阵，$r$ 为秩</li>
+<li>$o$：压缩后的注意力输出</li>
+<li>$V$：值向量</li>
+<li><strong>直觉</strong>：Swish 引入软门控选择性，LoRA 结构压缩维度，两者结合在控制参数量的同时保留关键信息</li>
+<li><strong>来源</strong>: Methods 节 "All-to-All Attention and Swish-Activated LoRA (SoRA)"</li>
+</ul>
+<h3>4. 稀疏性损失（隐式）</h3>
+<p>$$\mathcal{L}<em>{sparse} = \sum</em>{h \in {h, l}} a_h \cdot a_l$$
+（作者描述为 "product of their attention scores"，用于强制氢键供体/受体头的拮抗关系）</p>
+<ul>
+<li>$a_h, a_l$：氢键供体头（h）和受体头（l）的注意力分数</li>
+<li><strong>直觉</strong>：同一残基不应同时作为氢键供体和受体与同一水分子相互作用</li>
+<li><strong>来源</strong>: Results 节 "Ablation of SASA and Membrane Gates" 附近描述</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<h3>数据集与规模</h3>
+<ul>
+<li><strong>训练数据</strong>: 5125 条同源序列（SUPFAM 分层划分），5216 条（SUPFAM 分组划分），来自 UniProtKB</li>
+<li><strong>筛选标准</strong>: 排除嗜酸、嗜碱、嗜压、嗜盐蛋白（Table S1）</li>
+<li><strong>验证基准</strong>: 70 个中温蛋白的 MD 模拟 RMSF（54 个不在训练集中），每个来自唯一 SUPFAM</li>
+<li><strong>MD 设置</strong>: Gromacs 2026.0，TIP4P/2005 水模型，amber99sbws 力场，310 K，0.15 M NaCl</li>
+<li><strong>生成测试</strong>: 19 个中温单体非膜蛋白（&lt;256 aa），每个来自唯一 SUPFAM，2 个随机种子（H4, M2）</li>
+</ul>
+<h3>评估协议</h3>
+<ul>
+<li><strong>分类任务</strong>: 热稳定性二分类（热嗜 vs 中温），指标：accuracy, F1, sensitivity, specificity, precision</li>
+<li><strong>物理一致性</strong>: 残基级 logit 与 RMSF 的 Spearman 相关；残基级 logit 与氢键、盐桥、甘氨酸、二级结构、SASA 的相关性</li>
+<li><strong>生成评估</strong>: MD 模拟温度斜坡（310→368 K, 100 ns），比较 RMSF；metadynamics 自由能剖面（q 为集合变量）</li>
+</ul>
+<h3>实验列表</h3>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基线分类 + 残基级分析</td>
+<td>ESM3 嵌入存在系统性物理误判</td>
+<td>96 维基线模型，无 HEIWA</td>
+<td>高分类准确率但氢键被误判为去稳定化；误差 SASA 依赖</td>
+<td>分类准确率不保证物理正确性</td>
+<td>不能推广到所有结构基础模型</td>
+<td>Results 图 2a-c</td>
+</tr>
+<tr>
+<td>HEIWA 超参搜索</td>
+<td>HEIWA 可恢复物理一致性</td>
+<td>2/3/4/5 头 × 多种 vc 值，共 120 配置</td>
+<td>4 头 + vc=0.8 通过物理测试；2/3 头不足</td>
+<td>需要足够多的溶剂键类型</td>
+<td>不能确定最优头数的一般规律</td>
+<td>Results 图 2a；Table 1</td>
+</tr>
+<tr>
+<td>门控消融</td>
+<td>SASA/膜门控贡献物理一致性</td>
+<td>移除门控 vs 完整 HEIWA</td>
+<td>5/120 配置通过测试但相关性更弱</td>
+<td>门控编码物理先验有效</td>
+<td>不能确定门控的必要性</td>
+<td>Results 图 3</td>
+</tr>
+<tr>
+<td>高斯随机向量对照</td>
+<td>HEIWA 效果非参数增加所致</td>
+<td>替换 HEIWA 消息为高斯随机向量</td>
+<td>无物理一致性改善</td>
+<td>HEIWA 消息携带真实物理信息</td>
+<td>不能排除其他随机初始化效果</td>
+<td>Results 图 S4a</td>
+</tr>
+<tr>
+<td>SUPFAM 分组泛化</td>
+<td>HEIWA 可推广到未见 SUPFAM</td>
+<td>SUPFAM 分组划分训练</td>
+<td>4/120 配置通过物理测试</td>
+<td>模型学到可泛化的残基物理规律</td>
+<td>不能推广到所有蛋白家族</td>
+<td>Results 图 4</td>
+</tr>
+<tr>
+<td>生成 + MD 温度斜坡</td>
+<td>HEIWA 改善生成蛋白动力学稳定性</td>
+<td>19 蛋白 × 2 种子 × 3 条件（基线/HEIWA/反转门控）</td>
+<td>23/38 蛋白 RMSF 降低（p=0.011）</td>
+<td>HEIWA 改善动力学稳定性</td>
+<td>不能确定热力学稳定性改善</td>
+<td>Results 图 5；Table 2</td>
+</tr>
+<tr>
+<td>Metadynamics 自由能剖面</td>
+<td>与温度斜坡结果一致</td>
+<td>部分蛋白，q 为集合变量</td>
+<td>部分一致，部分不一致</td>
+<td>两种方法互补</td>
+<td>不能作为定量热力学排序</td>
+<td>Results 表 3</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 本文的结论限于热稳定性分类作为代理任务、RMSF 作为稳定性基准的框架内。HEIWA 改善的是残基级输出与 MD 模拟的一致性，而非直接改善结构预测精度。</li>
+<li><strong>oracle/真值输入</strong>: 分类标签来自 UniProtKB 的注释（热嗜 vs 中温），MD 模拟 RMSF 作为物理真值。HEIWA 的 SASA 和膜相门控使用预训练分类器，这些分类器本身可能有误差。</li>
+<li><strong>端到端状态</strong>: HEIWA 是插入 ESM3 嵌入后的模块，不改变 ESM3 本身。生成测试中 HEIWA 仅用于修改嵌入，未微调 ESM3 生成过程。</li>
+<li><strong>算力成本</strong>: 训练在 4 台桌面级 GPU（5090×2, 5080, 3090ti）上完成，说明方法计算开销可控，但 MD 模拟验证成本未报告。</li>
+<li><strong>历史数据依赖</strong>: 训练数据来自 UniProtKB，依赖注释质量；SUPFAM 分层/分组划分影响泛化结论。</li>
+<li><strong>模型依赖</strong>: 结论基于 ESM3 特定架构，不能直接推广到其他结构基础模型。</li>
+<li><strong>最难情形</strong>: 无序区域（低 pLDDT）的 RMSF 影响不一致，HEIWA 对无序区域的效应不稳定。</li>
+<li><strong>群体/领域边界</strong>: 仅测试中温 vs 热嗜蛋白，未覆盖嗜冷、嗜压等极端环境；仅测试单体非膜蛋白。</li>
+<li><strong>不确定性</strong>: 温度斜坡与 metadynamics 结果部分不一致，作者明确表示 metadynamics 仅作为定性参考，不用于定量热力学排序。</li>
+</ul>
+<p><strong>有边界的复述</strong>: 在热稳定性分类代理任务和 MD 模拟 RMSF 基准的框架下，HEIWA 通过注入溶剂介导的力场信息，能够纠正 ESM3 嵌入中氢键被误判为去稳定化、误差随 SASA 变化等系统性物理偏差，并改善生成蛋白在高温下的动力学稳定性（23/38 蛋白，p=0.011）。该效果在 SUPFAM 分组划分下仍可复现，且非参数增加或随机消息所致。</p>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无序区域效应不一致</td>
+<td>HEIWA 对低 pLDDT 区域的 RMSF 影响在不同蛋白间不一致</td>
+<td>需要更大统计功效研究无序区域</td>
+<td>Results 图 S8e, S14d 等；"examining the impact of solvent encoding on disordered regions... will require a greater statistical power"</td>
+</tr>
+<tr>
+<td>Metadynamics 与温度斜坡结果部分不一致</td>
+<td>部分蛋白两种方法结论不同</td>
+<td>将 metadynamics 视为定性参考，不用于定量排序</td>
+<td>Results 表 3；"we interpret the metadynamics profiles as complementary qualitative context"</td>
+</tr>
+<tr>
+<td>π-π 堆积效应可能被掩盖</td>
+<td>弱相互作用（π-π）可能被强相互作用（氢键、盐桥）掩盖</td>
+<td>需要更大数据集或专门设计来检测 π-π 效应</td>
+<td>Results 图 2a；"it remains unclear if this is caused by an inherent lack of force-field information about π-π stacking or the small data set"</td>
+</tr>
+<tr>
+<td>数据未考虑 pH、非水共溶剂、蛋白-蛋白/配体结合</td>
+<td>训练数据排除了嗜酸/碱/压/盐蛋白，未建模多体相互作用</td>
+<td>扩展数据覆盖范围，纳入更复杂环境</td>
+<td>Methods 节 "Data Set Preparation"；"would require extending the present work, which used a precleaned data set that did not account for pH variation, nonaqueous cosolvents, protein–protein binding, or protein–ligand binding"</td>
+</tr>
+<tr>
+<td>分子伴侣相互作用未建模</td>
+<td>伴侣蛋白对折叠的关键作用未纳入</td>
+<td>未来工作考虑伴侣-蛋白相互作用</td>
+<td>Results 节 "Significance and Perspectives"</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>代理任务（热稳定性分类）与力场感知的关联性</td>
+<td>热稳定性分类可能主要依赖序列组成（如带电残基比例），而非真正的力场感知；残基级 logit 与 RMSF 的相关性可能反映的是序列保守性而非物理理解</td>
+<td>如果代理任务可被简单特征解决，HEIWA 的改进可能不具物理意义</td>
+<td>在控制序列组成后检验 logit-RMSF 相关性；使用突变实验数据验证残基级预测</td>
+<td>Results 图 2a-c；作者未报告序列组成控制分析</td>
+</tr>
+<tr>
+<td>水键向量的可解释性</td>
+<td>水键向量是隐式学习的，作者未展示学到的向量是否对应真实的溶剂相互作用类型</td>
+<td>如果向量不可解释，方法的物理基础不明确</td>
+<td>可视化学到的水键向量，与已知的氢键几何、水合自由能特征对比</td>
+<td>Methods 节；作者未提供向量可视化</td>
+</tr>
+<tr>
+<td>门控消融实验的统计功效</td>
+<td>门控消融仅报告了通过测试的配置数量（5/120），未报告效应量或置信区间</td>
+<td>小样本或弱效应可能导致结论不稳定</td>
+<td>增加重复实验次数，报告效应量和置信区间</td>
+<td>Results 图 3；未提供统计功效分析</td>
+</tr>
+<tr>
+<td>生成测试的选择偏差</td>
+<td>19 个测试蛋白的选择标准未明确，可能偏向 HEIWA 有利的蛋白</td>
+<td>如果选择有偏，生成改善的结论不具代表性</td>
+<td>使用更大规模、随机选择的测试集</td>
+<td>Results 节 "Molecular Simulations"；选择标准未提供</td>
+</tr>
+<tr>
+<td>MD 模拟的力场依赖</td>
+<td>RMSF 基准基于 amber99sbws 力场，该力场本身对溶剂相互作用的描述可能不准确</td>
+<td>如果 MD 力场有偏差，HEIWA 的改进可能是在拟合错误的物理</td>
+<td>使用不同力场（如 CHARMM36、AMBER ff19SB）交叉验证 RMSF 基准</td>
+<td>Methods 节；作者未进行力场交叉验证</td>
+</tr>
+<tr>
+<td>与全原子溶剂模型的比较缺失</td>
+<td>作者未将 HEIWA 与显式水分子模型（如 3D-RISM、WaterMap）在相同任务上比较</td>
+<td>无法判断 HEIWA 的近似是否优于已有溶剂模型</td>
+<td>在相同分类任务和生成测试中比较 HEIWA 与显式溶剂模型</td>
+<td>Results 节；未提供此类比较</td>
+</tr>
+<tr>
+<td>训练数据规模有限</td>
+<td>5125-5216 条序列对深度学习模型而言较小，可能限制泛化</td>
+<td>小数据训练的模型可能过拟合特定蛋白家族</td>
+<td>在更大数据集（如 UniRef50 全量）上验证</td>
+<td>Methods 节；作者未讨论数据规模的影响</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>（面向蛋白质结构相关计算研究 × AI/物理模拟方向）：</p>
+<ol>
+<li>
+<p><strong>隐式溶剂编码的可迁移设计</strong>：用可学习键向量（氢键供体/受体、氧、离子）表示溶剂场，通过注意力机制注入残基嵌入，避免了全原子溶剂表示的计算开销。这一思路可迁移到其他结构基础模型（如 ESMFold、AlphaFold 系列）或分子对接模型中，作为轻量级溶剂感知增强模块。</p>
+</li>
+<li>
+<p><strong>代理任务 + 物理基准的双层验证框架</strong>：仅用分类准确率评估模型物理理解是不够的；必须设计残基级输出 + 物理基准（如 MD 模拟 RMSF、已知生物物理属性相关性）的联合验证。这一框架可迁移到任何声称具有物理感知能力的 AI 模型评估中。</p>
+</li>
+<li>
+<p><strong>残基级 logit 设计</strong>：通过让模型为每个残基产生独立贡献分数（而非仅整体预测），迫使模型学习残基尺度的物理规律。这一设计可迁移到突变效应预测、热点残基识别等需要残基级解释的任务。</p>
+</li>
+<li>
+<p><strong>物理先验编码为门控结构</strong>：将「溶剂只能接触表面残基」这一物理事实编码为 SASA 门控，而非依赖模型隐式学习。这一思路可推广到其他物理约束（如膜内疏水环境、配体结合位点）的编码。</p>
+</li>
+<li>
+<p><strong>旋转注意力编码几何依赖性</strong>：通过 3D 角度表示和 sigmoid 门控编码相互作用的取向依赖性，可迁移到任何需要几何敏感注意力机制的蛋白质任务（如结合位点预测、蛋白-蛋白相互作用界面识别）。</p>
+</li>
+<li>
+<p><strong>严格早停标准</strong>：使用物理一致性（而非分类指标）作为早停标准，确保模型在保持任务性能的同时不牺牲物理正确性。这一策略可迁移到物理引导的模型训练中。</p>
+</li>
+<li>
+<p><strong>MD 模拟作为生成模型的验证工具</strong>：用温度斜坡 MD 模拟评估生成蛋白的动力学稳定性，比静态结构指标（如 pLDDT）提供更丰富的动力学信息。这一验证策略可迁移到蛋白质设计模型的评估中。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>ESM3 架构</strong>（Hayes et al., 2024）：本文直接基于 ESM3 的坐标信息嵌入，属于对结构基础模型的增强。ESM3 的多模态生成能力（序列、结构、功能）为本文的嵌入修改提供了基础。</li>
+<li><strong>AlphaFold3 / Boltz-2 的溶剂处理</strong>（Abramson et al., 2024；Wohlwend et al., 2024）：作者指出这些模型虽可纳入溶剂作为结构提示，但未显式建模溶剂-蛋白质共动力学。本文的隐式溶剂编码是对这一局限的补充。</li>
+<li><strong>RFdiffusion3</strong>（Watson et al., 2025）：作者在讨论中提及 RFdiffusion3 的坐标无关催化结构设计，认为结合全局结构感知和坐标无关设计是未来方向。</li>
+<li><strong>BioEmu</strong>（Lewis et al., 2025）：作者将其作为「MD 引导生成」的代表，与本文的「注意力注入」路径形成对比。</li>
+<li><strong>LoRA</strong>（Hu et al., 2022）：SoRA 模块直接借鉴低秩适配思想，用于压缩注意力输出维度。</li>
+<li><strong>Swish 激活</strong>（Ramachandran et al., 2017）：SoRA 中的门控机制基于 Swish 激活函数。</li>
+<li><strong>ReLU 注意力</strong>（Wortsman et al., 2023）：作者明确引用 Wortsman 等人的工作，采用 ReLU 激活替代 softmax 以实现稀疏注意力。</li>
+<li><strong>van't Hoff 等温线</strong>：Le Chatelier 偏置项的设计灵感来自化学平衡原理，将浓度信息编码为注意力偏置。</li>
+<li><strong>MD 模拟力场</strong>（amber99sbws, TIP4P/2005）：本文使用这些力场生成 RMSF 基准，属于经典 MD 模拟与 AI 模型结合的交叉验证路径。</li>
+<li><strong>SUPFAM 数据库</strong>（Gough et al., 2001）：用于数据分层/分组划分，确保训练和测试集的进化关系控制。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<h3>候选 1：HEIWA 在突变效应预测中的迁移</h3>
+<ul>
+<li><strong>名称</strong>: HEIWA-ΔΔG：溶剂感知嵌入用于热稳定性突变预测</li>
+<li><strong>来源局限/观察</strong>: HEIWA 改善了残基级稳定性预测，但未直接测试突变效应预测；现有突变预测工具（如 Rosetta、DDGun）缺乏溶剂感知</li>
+<li><strong>核心假设</strong>: HEIWA 修改后的 ESM3 嵌入可以改善单点突变的 ΔΔG 预测，特别是表面残基突变</li>
+<li><strong>初步方法</strong>: 在 ProTherm 或 S669 数据集上微调 HEIWA 增强的 ESM3 嵌入，比较与基线 ESM3 嵌入的 ΔΔG 预测精度</li>
+<li><strong>验证方式</strong>: 与 Rosetta、DDGun 等基线比较；按突变位点 SASA 分层分析</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul>
+<h3>候选 2：时间感知的溶剂注意力</h3>
+<ul>
+<li><strong>名称</strong>: TemporalHEIWA：将溶剂注意力扩展到 MD 轨迹分析</li>
+<li><strong>来源局限/观察</strong>: HEIWA 是静态的，无法捕捉溶剂-蛋白质共运动的动态信息；MD 模拟显示水分子在蛋白表面的停留时间与功能相关</li>
+<li><strong>核心假设</strong>: 在 MD 轨迹上训练时间感知的溶剂注意力可以捕捉水分子介导的构象变化</li>
+<li><strong>初步方法</strong>: 将 HEIWA 的键向量扩展为时间序列，用 LSTM 或 Transformer 编码水分子停留时间、氢键寿命等动态特征</li>
+<li><strong>验证方式</strong>: 在构象采样任务中比较 TemporalHEIWA 与静态 HEIWA 的采样效率</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul>
+<h3>候选 3：溶剂感知的构象生成</h3>
+<ul>
+<li><strong>名称</strong>: SolventFlow：将 HEIWA 集成到流匹配构象生成器中</li>
+<li><strong>来源局限/观察</strong>: 现有构象生成模型（如 FlowMatch、ConfGF）未显式建模溶剂效应，生成的构象在表面残基处可能物理不合理</li>
+<li><strong>核心假设</strong>: 在构象生成过程中注入溶剂注意力可以改善表面残基的构象分布</li>
+<li><strong>初步方法</strong>: 将 HEIWA 模块插入 FlowMatch 的编码器-解码器之间，在生成过程中动态调整表面残基的坐标更新</li>
+<li><strong>验证方式</strong>: 比较生成构象的 RMSD、Rg、表面残基的二面角分布与 MD 模拟的一致性</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul>
+<h3>候选 4：多尺度溶剂模型对比</h3>
+<ul>
+<li><strong>名称</strong>: SolventArena：显式 vs 隐式溶剂编码的系统比较</li>
+<li><strong>来源局限/观察</strong>: 本文仅比较了 HEIWA 与无溶剂基线，未与显式水分子模型（如 3D-RISM、WaterMap）比较</li>
+<li><strong>核心假设</strong>: 隐式溶剂注意力在计算效率上优于显式模型，但在某些任务（如结合自由能预测）中精度可能不足</li>
+<li><strong>初步方法</strong>: 在相同任务（热稳定性分类、突变预测、构象生成）上系统比较 HEIWA、3D-RISM、WaterMap 和显式水分子 MD</li>
+<li><strong>验证方式</strong>: 精度-效率帕累托分析；任务类型 × 溶剂模型的交互效应</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul>
+<h3>候选 5：弱相互作用的显式编码</h3>
+<ul>
+<li><strong>名称</strong>: WeakForceHEIWA：扩展 HEIWA 以编码 π-π 堆积和疏水相互作用</li>
+<li><strong>来源局限/观察</strong>: 作者承认 π-π 堆积效应可能被强相互作用掩盖，且未建模疏水相互作用</li>
+<li><strong>核心假设</strong>: 增加专门的弱相互作用键向量可以改善对芳香族残基和疏水核心的预测</li>
+<li><strong>初步方法</strong>: 在 HEIWA 中增加 π-π 堆积和疏水相互作用键向量，用更大的数据集训练</li>
+<li><strong>验证方式</strong>: 检查芳香族残基的 logit-RMSD 相关性是否改善；在含较多芳香族残基的蛋白上测试</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul>
+<h3>候选 6：跨模型迁移性验证</h3>
+<ul>
+<li><strong>名称</strong>: SolventTransfer：HEIWA 在不同结构基础模型间的迁移</li>
+<li><strong>来源局限/观察</strong>: HEIWA 仅在 ESM3 上验证，未测试在其他结构基础模型（如 ESMFold、AlphaFold-Latent）上的效果</li>
+<li><strong>核心假设</strong>: 溶剂注意力模块可以跨模型迁移，但需要针对不同嵌入空间调整</li>
+<li><strong>初步方法</strong>: 将 HEIWA 模块适配到 ESMFold 和 AlphaFold-Latent 的嵌入空间，在相同任务上比较</li>
+<li><strong>验证方式</strong>: 迁移后的物理一致性改善程度；适配所需的数据量和调参成本</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text, including abstract, introduction, results, discussion, methods, and supplementary figure/table references</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological soundness, claim support, and presentation quality of the submitted work</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose HEIWA, a hybrid explicit-implicit water attention module, to inject solvent-mediated force field information into ESM3 residue embeddings. They use thermophilic protein classification as a proxy task to demonstrate that ESM3 exhibits biophysical artifacts (e.g., misidentifying H-bonds as destabilizing) due to the absence of explicit solvent modeling, and that HEIWA corrects these artifacts while preserving classification performance and improving kinetic stability of generated proteins in molecular dynamics simulations.</li>
+<li><strong>Visible evidence base</strong> Main text figures (referenced as Figure 1, Figure 2, Figure 3, Figure 4, Figure 5, Figure 6), supplementary figures (S1–S26), supplementary tables (S1, S2), and methods section</li>
+<li><strong>Missing materials affecting confidence</strong> Actual figure images, supplementary data files, model architecture diagrams, hyperparameter search details, and full statistical outputs were not provided. The manuscript text alone limits quantitative verification of reported results.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> The manuscript addresses a relevant and timely question in protein language modeling: whether structure-based models like ESM3 possess adequate force field awareness, and whether explicit solvent encoding can improve physical consistency. The authors identify a plausible limitation (vacuum bias) and propose a novel attention mechanism to address it. The proxy task of thermophilic classification is well chosen, and the biophysics-guided model selection is a thoughtful approach. However, several methodological details are unclear, the statistical rigor of some comparisons is questionable, and the claimed generalizability to unfamiliar SUPFAMs requires stronger evidence. The work is potentially interesting to the protein modeling and computational biology communities, but the current evidence does not fully establish the central claims.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Researchers in protein language models, structure prediction, and de novo protein design would be interested in the demonstration that solvent encoding can improve physical consistency of structure-based models. Computational biophysicists and molecular dynamics practitioners may find the proxy task and biophysics-guided selection strategy useful. The work also speaks to the broader question of what structure-based language models actually learn about protein physics, which is of interest to the machine learning for science community.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong> The manuscript identifies a specific, testable limitation of ESM3 (vacuum bias) and proposes a mechanistically motivated solution. The use of thermophilic classification as a proxy for force field awareness is creative and well justified. The biophysics-guided model selection using RMSF benchmarks is a rigorous approach to ensure physical meaningfulness of latent outputs. The ablation studies and control experiments (Gaussian random vectors, reversed gates) are appropriate. The molecular dynamics validation of generated proteins is a strong addition that connects the model improvement to practical outcomes.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Statistical rigor and evidence quality</li>
+<li><strong>Claim pointer</strong> The authors claim that HEIWA "restores biophysical soundness" and that "4 out of 120 hyperparameter combinations" passed the biophysical correlation test, with improved correlations with RMSF and SASA.</li>
+<li><strong>Evidence pointer</strong> Results sections "HEIWA Restores Biophysical Soundness after Hyperparameter Optimization" and "Ablation of SASA and Membrane Gates", Figures 3 and 4, location not provided</li>
+<li><strong>Concern</strong> The manuscript reports correlations and pass/fail criteria but does not provide effect sizes, confidence intervals, or statistical significance tests for the key comparisons. For example, the claim that HEIWA improves logit-RMSF correlation is supported only by qualitative statements ("better correlate") without reporting correlation coefficients or p-values. The selection of "4 out of 120" hyperparameters passing the test is presented without a null model or multiple testing correction. The manuscript should report quantitative correlation values, their uncertainties, and appropriate statistical tests for all key comparisons.</li>
+<li><strong>Why it matters</strong> Without quantitative statistical evidence, the reader cannot assess whether the observed improvements are meaningful or could arise by chance, especially given the large number of hyperparameter combinations tested.</li>
+<li>
+<p><strong>Resolution test</strong> Provide correlation coefficients (Spearman rho) with confidence intervals for logit-RMSF and logit-SASA comparisons between baseline and HEIWA models. Report p-values for the binomial tests and justify the absence of multiple testing correction. Show the distribution of correlation values across all 120 hyperparameter combinations to demonstrate that the selected models are not outliers.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological clarity and reproducibility</li>
+<li><strong>Claim pointer</strong> The HEIWA module is described as using "all-query-to-all-key water–residue attention" with "distinct water key vectors" and a "rotational attention score" to capture angular dependence of interatomic forces.</li>
+<li><strong>Evidence pointer</strong> Methods section "HEIWA" and subsections "Rotational Attention" and "All-to-All Attention and Swish-Activated LoRA (SoRA) for Output Compression", location not provided</li>
+<li><strong>Concern</strong> The mathematical formulation of HEIWA is incomplete. The manuscript states that water keys k_wh, k_wl, and k_wo represent different interaction types, but does not specify how these are initialized, whether they are learned, or how the number of heads is determined beyond a single DSSP-based experiment. The rotational attention formula (a_r = 1 - sigma(q_pa · k_wa / 3 + b_p + b_w)) is presented without derivation or justification for the scaling factor of 3. The SoRA mechanism is described with equations but the dimensions and rank selection criteria are not specified. The integration of HEIWA into the ESM3 architecture (where exactly the attention is applied, how the output is combined with the frozen embedding) is not described in sufficient detail for reproduction.</li>
+<li><strong>Why it matters</strong> Reproducibility is a core requirement for computational work. Without complete architectural and training details, other researchers cannot implement or build upon HEIWA.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a complete mathematical specification of HEIWA, including tensor dimensions, initialization schemes, and the exact insertion point in the ESM3 architecture. Justify the scaling factor in the rotational attention formula. Specify the rank selection procedure for SoRA and provide the DSSP-based head count determination details.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Claim support and generalizability</li>
+<li><strong>Claim pointer</strong> The authors claim that "HEIWA learns biophysical patterns that can be extended to SUPFAM absent from the training data set" and that molecular dynamics simulations show "improved kinetic stability under thermophilic conditions."</li>
+<li><strong>Evidence pointer</strong> Results sections "Learning of Individual-Residue Stability Can Be Extended to Unfamiliar SUPFAMs" and "Molecular Simulations Show Greater Kinetic Stability of de novo Structures Generated Using HEIWA", Figures 5 and 6, Tables 2 and 3, location not provided</li>
+<li><strong>Concern</strong> The generalizability claim is based on a single experiment with 19 proteins for de novo generation and 80 SUPFAMs in the grouped test set. The manuscript does not report how many of the 19 generated proteins showed improved stability, the magnitude of improvement, or the variability across proteins. The comparison between full HEIWA and reversed SASA gate is reported as not statistically significant for the binomial test, which undermines the specificity of the HEIWA effect. The metadynamics results are described as "complementary qualitative context" but are then used to support claims about kinetic stability. The manuscript should clarify whether the primary evidence for improved stability comes from the temperature ramping or metadynamics simulations and should report per-protein results.</li>
+<li><strong>Why it matters</strong> The central practical claim of the paper is that HEIWA improves the quality of generated proteins. If the evidence is weak or inconsistent, the practical value of the method is not established.</li>
+<li>
+<p><strong>Resolution test</strong> Report per-protein RMSF comparisons between baseline and HEIWA-generated structures, including the number of proteins improved, unchanged, and worsened. Provide the distribution of improvements and clarify which simulation protocol (temperature ramping or metadynamics) is the primary evidence. Discuss the lack of statistical significance in the reversed SASA gate comparison and its implications for the specificity of HEIWA.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Baseline comparison and alternative explanations</li>
+<li><strong>Claim pointer</strong> The authors state that "models with 2 and 3 solvent heads are insufficient to resolve the H-bond destabilization and glycine stabilization problems" and that 4 or 5 heads are required.</li>
+<li><strong>Evidence pointer</strong> Results section "HEIWA Restores Biophysical Soundness after Hyperparameter Optimization", Figure 3, location not provided</li>
+<li><strong>Concern</strong> The manuscript does not compare HEIWA against alternative approaches to incorporating solvent information, such as adding SASA as an input feature, using a different attention mechanism, or simply increasing model capacity. The claim that the improvement is due to the specific HEIWA design rather than the additional parameters or the attention mechanism in general is not tested. The observation that 4-5 heads are needed could indicate that the model simply needs more capacity, not that the water attention mechanism is specifically beneficial.</li>
+<li><strong>Why it matters</strong> Without appropriate controls, the specific contribution of the HEIWA mechanism over simpler alternatives is unclear, which limits the scientific insight and practical guidance for future model design.</li>
+<li>
+<p><strong>Resolution test</strong> Include ablation experiments with (a) a baseline model with increased capacity matched to HEIWA parameter count, (b) a model with SASA as an additional input feature, and (c) a standard multi-head attention mechanism without the water-specific design. Compare biophysical consistency and classification performance across these conditions.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Presentation and clarity</li>
+<li><strong>Affected element</strong> Abstract and Introduction</li>
+<li><strong>Evidence pointer</strong> Abstract, Introduction, location not provided</li>
+<li><strong>Issue</strong> The abstract states that "per-residue logit mis-correlated with H-bonds as a destabilizing attribute" which is grammatically awkward and unclear. The Introduction contains a sentence fragment ("as in natural language models") and several run-on sentences that impede readability.</li>
+<li>
+<p><strong>Required correction</strong> Revise the abstract for clarity and grammatical correctness. Edit the Introduction for sentence structure and flow.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical detail</li>
+<li><strong>Affected element</strong> Methods section</li>
+<li><strong>Evidence pointer</strong> Methods section "Hardware", location not provided</li>
+<li><strong>Issue</strong> The hardware description is unusually specific about consumer-grade components (e.g., "Intel Ultra 9 285 K CPU") but does not report GPU memory, total training time, or computational cost of the hyperparameter search. This information is important for assessing the practical feasibility of the approach.</li>
+<li>
+<p><strong>Required correction</strong> Provide GPU specifications, total training time, and an estimate of the computational cost of the full hyperparameter search.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> Results section on molecular dynamics</li>
+<li><strong>Evidence pointer</strong> Results section "Molecular Simulations Show Greater Kinetic Stability", Table 2, location not provided</li>
+<li><strong>Issue</strong> The manuscript reports p-values for binomial tests but does not report the test statistic or the number of ties excluded. The statement "after ties were excluded" is vague.</li>
+<li>
+<p><strong>Required correction</strong> Report the exact binomial test statistic, the number of ties, and the total number of comparisons for each test.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Literature context</li>
+<li><strong>Affected element</strong> Introduction and Discussion</li>
+<li><strong>Evidence pointer</strong> Introduction, Discussion, location not provided</li>
+<li><strong>Issue</strong> The manuscript claims this is "the first study to incorporate explicit solvent encoding into a residue-resolution protein language model," but does not discuss recent work on solvent-aware protein representations or implicit solvent models in machine learning, which may be relevant prior art.</li>
+<li><strong>Required correction</strong> Add a brief discussion of related work on solvent modeling in protein machine learning to contextualize the novelty claim.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that HEIWA is "the first study to incorporate explicit solvent encoding into a residue-resolution protein language model" is not verifiable from the provided text and may be overstated without a comprehensive literature review.</li>
+<li>The claim that "HEIWA learns biophysical patterns that can be extended to SUPFAM absent from the training data set" is not fully supported by the reported evidence, as the generalization experiment uses a single data split and the results are not quantitatively detailed.</li>
+<li>The claim of "improved kinetic stability under thermophilic conditions" is based on simulations with a small number of proteins (19) and inconsistent agreement between temperature ramping and metadynamics results.</li>
+<li>The assertion that the improvement is specifically due to solvent encoding rather than increased model capacity is not tested with appropriate control experiments.</li>
+<li>The manuscript states that "HEIWA also largely preserves the embedding structure of ESM3" but does not provide quantitative evidence for this claim beyond a qualitative UMAP visualization reference.</li>
+<li>The claim that "prediction error strongly depends on SASA" is based on a single figure without reported effect sizes or statistical tests.</li>
+<li>The statement that "the model did not meaningfully learn SUPFAM-specific summation because of the pooling operation" is a conclusion drawn from indirect evidence and requires more direct testing.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

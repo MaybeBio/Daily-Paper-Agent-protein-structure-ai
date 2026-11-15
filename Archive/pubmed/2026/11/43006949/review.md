@@ -1,0 +1,95 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, methods overview, results, conclusions) without figures, tables, or supplementary information
+- **Assessment boundary** Scientific claims, methodological soundness, benchmark design, and evidence quality as presented in the provided text
+- **Shared manuscript claim summary** The authors present MARS, an open-source Python package for automated conformational sampling, vibrational spectroscopy, and microsolvation using machine-learned force fields. They claim that modern MLFFs can outperform semiempirical methods (CREST/GFN2-xTB) in accuracy, speed, and scaling, and that MARS provides a practical, model-agnostic framework for nonexpert users.
+- **Visible evidence base** Text descriptions of benchmarks on conformational energetics (36 molecules, 454 conformers), noncovalent interactions (NCI-ATLAS subset, 20 dimers, 406 conformers), IR spectroscopy (NIST35 subset, 4155 molecules), microsolvation (alanine dipeptide, 2-methoxycyclohexanone), and host–guest systems (proline/β-cyclodextrin)
+- **Missing materials affecting confidence** All figures, tables, and supplementary information referenced throughout the text are unavailable. Quantitative results are described qualitatively without numerical values. Benchmark methodology details are deferred to SI sections that were not provided.
+
+## Reviewer
+- **Overall assessment** The manuscript presents a timely and potentially valuable software framework that addresses a real need in computational chemistry. The integration of conformational sampling, spectroscopy, and microsolvation into a single MLFF-based workflow is conceptually appealing, and the model-agnostic design is a sensible architectural choice. However, the evidence presented in the text alone is insufficient to evaluate the central claims. Key quantitative results are described only qualitatively, benchmark details are deferred to SI, and the comparison against the stated semiempirical baseline is not substantiated with numbers. The framework's practical utility for nonexperts is asserted but not demonstrated through usability metrics or case-study depth. The scientific case is plausible but not established from the provided material.
+- **Who would be interested in the results, and why** Computational chemists developing or applying conformational sampling workflows, researchers in machine-learned force field development and benchmarking, spectroscopists who use predicted IR spectra for structural assignment, and method developers in the broader molecular simulation community. The open-source, JAX-based implementation and the focus on GPU acceleration will also appeal to researchers seeking practical tools for ensemble-based modeling.
+- **Major strengths** The manuscript addresses a clear gap in the field by providing an integrated, automated workflow that leverages recent advances in MLFFs. The model-agnostic interface is a thoughtful design choice that future-proofs the framework. The breadth of benchmark systems, from small alkanes to host–guest complexes and microsolvated biomolecules, demonstrates ambition and potential generalizability. The inclusion of usability features such as preset profiles, a GUI, and automated mode assignment suggests genuine attention to the nonexpert user. The open-source availability and the use of modern software practices (JAX, GPU acceleration) are commendable.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence quality
+  - **Claim pointer** "Our benchmarks show that modern MLFFs can improve upon this paradigm by combining greater accuracy for high-level relative conformer energies with lower computational cost and more favorable scaling with molecular size."
+  - **Evidence pointer** Section "Conformational Exploration", Figure 1 (not provided), SI Tables S19, SI Figures S4 and S5
+  - **Concern** The central quantitative claim of the paper, that MLFFs outperform semiempirical methods for conformational energetics, is presented without any numerical values in the text. No MAE, RMSE, or scaling data are given. The reader cannot assess the magnitude of the claimed improvement, the statistical significance, or the systems for which the improvement holds or fails.
+  - **Why it matters** This is the core scientific contribution of the work. Without quantitative evidence, the claim is unverifiable and the paper's contribution cannot be assessed against existing literature.
+  - **Resolution test** Provide the numerical results in the main text, including per-system and aggregate MAE/RMSE values for all methods, with uncertainty estimates. Include the scaling data and specify the hardware and software configurations used for timing comparisons.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Benchmark validity
+  - **Claim pointer** "IR benchmarks against experimental gas-phase spectra additionally show performance comparable to quantum-chemical methods, with chemically interpretable mode assignments."
+  - **Evidence pointer** Section "Infrared Spectrum in Biomolecules", Figure 2 (not provided), SI Section S12
+  - **Concern** The IR benchmark is described only in terms of a "shift-tolerant correlation" against experimental spectra. The metric is not defined, the comparison against quantum-chemical methods is not quantified, and the claim of "comparable" performance is not substantiated. The benchmark set of 4155 molecules is stated, but the results are not presented.
+  - **Why it matters** IR spectroscopy is a major advertised feature of MARS. Without quantitative comparison to established methods and experimental data, the utility of this module cannot be evaluated.
+  - **Resolution test** Define the correlation metric precisely, report the numerical values for all methods, and include representative spectra showing agreement and disagreement with experiment. Provide a statistical analysis of the performance across the full benchmark set.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim support
+  - **Claim pointer** "MARS captures conformational reorganization, noncovalent binding motifs, solvent-induced stability shifts, and spectroscopic signatures" in the applications to alanine peptides, proline/β-cyclodextrin, alanine dipeptide, and 2-methoxycyclohexanone.
+  - **Evidence pointer** Sections "Noncovalent Sampling", "Solvation Effects in Biomolecules", "Host–Guest Chemistry", Figures 3–5 (not provided), SI Sections S11, S13–S16
+  - **Concern** The application studies are described qualitatively. For the alanine dipeptide microsolvation, the text states that the largest solvent effect is reproduced but also that deviations of 1.6–2.8 kcal/mol exist in water, with metastable states not stabilized. For the host–guest system, the IR spectrum is stated to reproduce "principal features" but the predicted band is 20–40 cm⁻¹ above experiment. These discrepancies are acknowledged but their implications for the claimed utility are not discussed.
+  - **Why it matters** The applications are intended to demonstrate the practical value of MARS. The mixed results, with some quantitative agreement and some systematic deviations, need to be interpreted critically to establish the limits of the method.
+  - **Resolution test** Provide a critical discussion of the discrepancies, including an analysis of their origins (e.g., force field limitations, finite solvation shell, harmonic approximation) and their implications for the reliability of MARS predictions in different chemical contexts.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Reproducibility
+  - **Claim pointer** "MARS is freely available at github.com/tcpunilu/mars" and the framework is described as accessible to nonexperts.
+  - **Evidence pointer** Section "Overview of the MARS Framework", SI Sections S1–S8
+  - **Concern** The manuscript does not provide information on software dependencies, installation requirements, input/output formats, or the computational resources needed to run the workflows. The claim of accessibility for nonexperts is not supported by usability documentation or benchmarks on standard hardware.
+  - **Why it matters** For a software contribution, reproducibility and usability are central. The reader cannot assess whether the tool can be deployed in their environment or whether the claimed accessibility is realistic.
+  - **Resolution test** Provide a detailed software availability statement, including dependencies, installation instructions, and a minimal working example. Report the hardware requirements for the benchmarks presented and provide a comparison of performance on CPU versus GPU.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, "four-phase conformational sampling workflow"
+  - **Issue** The four phases are listed but not described. The reader cannot understand the workflow from the abstract alone.
+  - **Required correction** Briefly describe the four phases in the abstract or refer to a figure that summarizes the workflow.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Benchmark description
+  - **Evidence pointer** Section "Conformational Exploration", Table 1 (not provided)
+  - **Issue** The benchmark systems are described as spanning 14–116 atoms, but the composition of the benchmark set is not described in the text. The reader cannot assess the diversity or representativeness of the systems.
+  - **Required correction** Provide a summary of the benchmark composition in the main text, including the number of systems per chemical class and the range of flexibility and size.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Methodology
+  - **Affected element** IR intensity calculation
+  - **Evidence pointer** Section "Infrared Spectrum in Biomolecules"
+  - **Issue** The text states that IR intensities are restricted to potentials that predict partial charges or dipole moments, but the method for computing intensities is not described.
+  - **Required correction** Briefly describe the intensity calculation method and its limitations.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Microsolvation results
+  - **Evidence pointer** Section "Solvation Effects in Biomolecules"
+  - **Issue** The text states that the "extended β2 backbone" is lowered in water but does not explain the structural origin of this effect or why the explicit solvation model captures it.
+  - **Required correction** Provide a brief structural interpretation of the solvent-induced stabilization and its relation to the hydrogen-bonding network.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Consistency
+  - **Affected element** Force field selection
+  - **Evidence pointer** Sections "Conformational Exploration" and "Noncovalent Sampling"
+  - **Issue** The text mentions that SO3LR-2 is an unpublished model under active development, yet it is used for benchmarking. The implications of using an unpublished model for the reproducibility of the results are not discussed.
+  - **Required correction** Clarify the availability and versioning of SO3LR-2 and discuss the implications for reproducibility.
+- **Technical failings that need to be addressed before the case is established** The absence of quantitative results in the main text is the primary technical failing. The central claims of improved accuracy, speed, and scaling are not supported by any numbers. The benchmark methodology, including the choice of reference methods, the handling of multiple DFT references, and the statistical treatment of results, is not described. The IR benchmark metric is undefined. The microsolvation results show deviations from reference that are acknowledged but not analyzed. The host–guest study lacks quantitative comparison to experiment beyond a single band position.
+- **Assessment against Nature-style criteria** Originality: The integration of MLFFs into an automated, model-agnostic workflow for conformational sampling, spectroscopy, and microsolvation is a novel contribution, though each component individually builds on existing methods. Scientific importance: The work addresses a practical bottleneck in computational chemistry and could have broad impact if the claims are substantiated. Interdisciplinary readership: The manuscript is written for a computational chemistry audience and would not be accessible to a broader scientific readership without significant revision. Technical soundness: Cannot be fully assessed from the provided text; the qualitative descriptions suggest a reasonable methodology, but the lack of quantitative evidence prevents verification. Readability for nonspecialists: The text assumes familiarity with MLFFs, conformational sampling, and spectroscopy; the abstract and introduction are accessible, but the results sections are not.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript presents a promising framework and a plausible scientific case, but the central quantitative claims are not supported by the text. The authors must provide numerical results, define their metrics, and critically analyze the discrepancies in the applications before the case can be evaluated.
+
+## Risk / unsupported claims
+- The claim that MLFFs "improve upon" the semiempirical paradigm for conformational sampling is unsupported without quantitative accuracy and timing data.
+- The claim of "performance comparable to quantum-chemical methods" for IR spectroscopy is unsupported without defined metrics and numerical values.
+- The claim that MARS "captures" the described physical phenomena in the application studies is only qualitatively supported and requires quantitative evidence.
+- The claim of accessibility for nonexperts is unsupported without usability documentation or hardware requirement information.
+- The statement that SO3LR-2 "largely resolves" the deficiencies of SO3LR-1 for phosphamides is unsupported without numerical retention and energy error data.
+- The claim that the microsolvation protocol captures effects "inaccessible to a uniform reaction field" is plausible but not quantitatively demonstrated.

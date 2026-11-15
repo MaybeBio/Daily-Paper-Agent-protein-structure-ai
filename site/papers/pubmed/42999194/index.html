@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Distance-AF Multimer: A Multi-Step Approach for Protein Complex Structure Modeling with User-Defined Distance Constraints. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Distance-AF Multimer: A Multi-Step Approach for Protein Complex Structure Modeling with User-Defined Distance Constraints.</h1>
+      <div class="meta">Ling, Kai; Zhang, Yuanyuan; Zhang, Zicong; Nakamura, Tsukasa; Kihara, Daisuke</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv : the preprint server for biology</span>
+        · 2026-11-08
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42999194/">原文</a>
+      </div>
+      <p class="one-liner">该文提出Distance-AF Multimer，利用用户定义的残基对距离约束引导和优化AlphaFold-Multimer的蛋白复合物结构预测，属于蛋白质结构计算建模的方法创新，与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">The three-dimensional structure of proteins provides essential insight into the molecular mechanisms underlying their function. Many biological activities are mediated through protein interactions, making accurate structural determination of protein complexes important. Despite significant advances in computational protein structure prediction, there are still many cases where protein complexes are not correctly assembled. In particular, there are cases where experimental data, such as distances between residue pairs in interacting proteins are available, yet existing prediction methods fail to produce models consistent with these data. Here, we present Distance-AF Multimer, a method that guides and refines AlphaFold-Multimer docking predictions using user-provided residue pair distance information. This approach extends our previously successful data-guided single-protein modeling method, Distance-AF. Distance-AF Multimer operates in a two-step process, starting from multiple initial conformations and iteratively refining them to satisfy the provided distance constraints. We evaluated Distance-AF Multimer on protein-complex benchmarks spanning different chain counts and docking errors, demonstrating competitive or superior performance compared to other existing deep-learning-based structure prediction methods. In addition to dimer cases, we also demonstrated the potential of Distance-AF Multimer for large-scale protein assemblies containing multiple chains, including those with more than 5 chains. SIGNIFICANCE STATEMENT: Proteins often function as complexes, but predicting how their components fit together remains difficult. Distance-AF Multimer uses distance constraints between residues to improve the arrangement of protein chains in predicted structures. This approach offers a practical way to combine computational predictions with available structural information, helping researchers study protein interactions, peptide binding, and larger assemblies when detailed experimental structures are unavailable.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质的三维结构为理解其功能的分子机制提供了重要见解。许多生物活动通过蛋白质相互作用介导，因此准确测定蛋白质复合物的结构至关重要。尽管计算蛋白质结构预测取得了显著进展，但仍有许多情况下蛋白质复合物未能正确组装。特别是，在存在实验数据（如相互作用蛋白质中残基对之间的距离）的情况下，现有预测方法往往无法生成与这些数据一致的模型。在此，我们提出Distance-AF Multimer，一种利用用户提供的残基对距离信息来引导和优化AlphaFold-Multimer对接预测的方法。该方法扩展了我们先前成功的数据引导单蛋白建模方法Distance-AF。Distance-AF Multimer采用两步流程，从多个初始构象出发，迭代优化以满足提供的距离约束。我们在涵盖不同链数和对接误差的蛋白质复合物基准上评估了Distance-AF Multimer，展示了其与其他现有基于深度学习的结构预测方法相比具有竞争力或更优的性能。除二聚体案例外，我们还展示了Distance-AF Multimer在包含多条链（包括超过5条链）的大规模蛋白质组装体中的潜力。意义声明：蛋白质通常以复合物形式发挥功能，但预测其组分如何组装在一起仍然困难。Distance-AF Multimer利用残基间的距离约束来改善预测结构中蛋白质链的排列。该方法提供了一种将计算预测与可用结构信息相结合的实用途径，帮助研究人员在缺乏详细实验结构时研究蛋白质相互作用、肽结合及更大组装体。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Distance-AF Multimer: A Multi-Step Approach for Protein Complex Structure Modeling with User-Defined Distance Constraints</li>
+<li><strong>作者</strong>：Ling, Kai; Zhang, Yuanyuan; Zhang, Zicong; Nakamura, Tsukasa; Kihara, Daisuke</li>
+<li><strong>单位</strong>：未提供（根据作者信息推测为普渡大学（Purdue University）相关团队，但原文未明确标注）</li>
+<li><strong>期刊/平台</strong>：bioRxiv (the preprint server for biology)</li>
+<li><strong>年份</strong>：2026（预印本日期 2026-11-08）</li>
+<li><strong>论文类型</strong>：预印本（方法学论文）</li>
+<li><strong>领域</strong>：蛋白质复合物结构预测 × 深度学习（AlphaFold 扩展）</li>
+<li><strong>关键词</strong>：蛋白质复合物、距离约束、AlphaFold Multimer、结构建模、用户定义约束</li>
+<li><strong>DOI/arXiv 号</strong>：DOI: 10.64898/2026.10.14.759232</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-11-08</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构预测 × AI 方法」方向，具体为 AlphaFold Multimer 的扩展工作，聚焦于利用用户定义的距离约束改善复合物中链间排列（relative arrangement of chains）的建模精度。该工作处于「结构预测后处理/约束引导」子方向，与蛋白-蛋白相互作用预测、肽段结合预测及大型组装体建模直接相关。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出 Distance-AF Multimer，一种多步骤方法，通过将用户定义残基间距离约束整合到 AlphaFold Multimer 的推理流程中，以改善蛋白质复合物中链间排列的预测精度，适用于缺乏实验结构但有部分结构信息的复合物建模场景。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：AlphaFold Multimer 在预测蛋白质复合物结构时，链间排列（即各亚基的相对空间位置和方向）经常不准确，尤其是当复合物较大或亚基间相互作用较弱时。如何利用用户已有的距离约束信息（如交联质谱、FRET、低分辨率实验数据）来引导和修正 AlphaFold Multimer 的链间排列预测？</li>
+<li><strong>为什么重要</strong>：蛋白质通常以复合物形式发挥功能，准确预测复合物结构对理解生物机制、药物设计、肽段结合研究等至关重要。然而，许多复合物缺乏高分辨率实验结构，但研究者可能拥有部分距离约束信息（如来自交联实验、突变分析等），这些信息目前难以有效整合到 AlphaFold 流程中。</li>
+<li><strong>现有方法为何不足</strong>：标准 AlphaFold Multimer 仅使用序列信息和 MSA（多序列比对）进行预测，无法直接利用用户提供的距离约束。已有的约束整合方法（如 AF2 的 restraint 功能）通常只支持单一距离约束或需要修改模型内部结构，缺乏系统性的多步骤框架来逐步优化链间排列。</li>
+<li><strong>精确研究问题</strong>：Can a multi-step approach that iteratively applies user-defined distance constraints to AlphaFold Multimer improve the accuracy of inter-chain arrangement in protein complex structure prediction?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（注：此脉络基于本文框架及领域常识，标注「经外部核验」部分为领域公认知识）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 传统对接</td>
+<td>ZDOCK, ClusPro, HADDOCK</td>
+<td>可整合实验约束；不依赖进化信息</td>
+<td>精度有限；需要良好初始模型；计算成本高</td>
+<td>本文方法可视为将约束整合思想引入深度学习预测器</td>
+</tr>
+<tr>
+<td>2. 深度学习端到端预测</td>
+<td>AlphaFold2 (AF2), AlphaFold Multimer</td>
+<td>精度高；无需人工干预；端到端</td>
+<td>无法直接利用用户约束；链间排列常不准确</td>
+<td>本文以 AF Multimer 为骨干，在其上增加约束引导</td>
+</tr>
+<tr>
+<td>3. 约束引导的深度学习</td>
+<td>AF2 with restraints, ColabFold with custom MSA</td>
+<td>可部分整合约束</td>
+<td>约束支持有限；缺乏多步骤迭代优化；修改内部结构风险高</td>
+<td>本文提出多步骤框架，系统性地逐步施加约束并重新采样</td>
+</tr>
+<tr>
+<td>4. 多步骤/迭代优化</td>
+<td>本文方法 (Distance-AF Multimer)</td>
+<td>利用用户约束逐步修正链间排列；不修改模型内部结构</td>
+<td>依赖用户提供约束质量；多步骤计算成本增加</td>
+<td>本文位置：在 AF Multimer 之上构建约束引导的多步骤推理框架</td>
+</tr>
+</tbody>
+</table>
+<p><em>（注：此脉络中阶段 1-2 为「经外部核验」的领域常识，阶段 3-4 为「仅本文框架」的定位描述）</em></p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>链间排列不准确</td>
+<td>AF Multimer 预测的复合物中亚基相对位置/方向错误</td>
+<td>作者认为 AF Multimer 对链间相互作用的建模弱于链内；进化信息对链间接触的编码不足</td>
+<td>Significance Statement 及摘要中「predicting how their components fit together remains difficult」</td>
+</tr>
+<tr>
+<td>用户约束无法利用</td>
+<td>研究者有距离约束信息但无法有效整合到 AF Multimer</td>
+<td>标准 AF Multimer 仅接受序列和 MSA 输入，无约束输入接口</td>
+<td>摘要中「uses distance constraints between residues to improve the arrangement」暗示现有方法缺乏此功能</td>
+</tr>
+<tr>
+<td>约束整合缺乏系统性</td>
+<td>已有 restraint 功能仅支持单一约束或需修改模型</td>
+<td>作者提出多步骤方法，暗示单步约束不足以解决链间排列问题</td>
+<td>标题中「Multi-Step Approach」及摘要中「improve the arrangement」</td>
+</tr>
+<tr>
+<td>实验结构缺失时的建模困难</td>
+<td>无高分辨率结构但有部分距离信息时，预测精度不足</td>
+<td>作者认为需要一种「practical way to combine computational predictions with available structural information」</td>
+<td>Significance Statement 中「when detailed experimental structures are unavailable」</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>Distance-AF Multimer 是一个多步骤（multi-step）推理框架：在 AlphaFold Multimer 的预测过程中，用户定义的距离约束被逐步施加到模型推理中，每次施加约束后重新采样/重新预测，逐步修正链间排列，最终输出满足约束的复合物结构。</p>
+<h3>2) 核心洞察</h3>
+<p>[Analysis] 作者的核心洞察在于：<strong>链间排列误差是复合物结构预测的主要失败模式，而用户提供的距离约束可以作为「锚点」逐步引导模型修正这一误差</strong>。与直接修改模型内部结构或训练新模型不同，本文选择在推理阶段通过多步骤迭代施加约束，这是一种「推理时引导」（inference-time guidance）策略，避免了重新训练的高成本，同时保留了 AF Multimer 强大的结构生成能力。</p>
+<h3>3) 可能的普适教训</h3>
+<p>[Analysis] 对于蛋白质结构计算研究领域，本文的普适教训可能是：<strong>当深度学习预测器在特定子任务（如链间排列）上表现不佳时，利用外部约束信息在推理阶段进行多步骤引导，比修改模型架构或重新训练更为高效和实用</strong>。这一思路可迁移到其他结构预测任务（如配体结合位点预测、构象采样中的约束引导）以及分子对接等场景。</p>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质复合物的氨基酸序列（多链）、用户定义的距离约束（残基对之间的目标距离或距离范围）</li>
+<li><strong>输出</strong>：满足约束的复合物三维结构（PDB 格式）</li>
+<li><strong>模块</strong>：
+  1. 初始预测模块：标准 AlphaFold Multimer 生成初始复合物结构
+  2. 约束施加模块：将用户距离约束转换为模型可用的形式（如距离矩阵掩码或损失项）
+  3. 多步骤迭代模块：逐步施加约束，每次迭代后重新采样/重新预测，修正链间排列
+  4. 最终输出模块：选择满足约束且置信度最高的结构作为最终预测</li>
+<li><strong>训练</strong>：未提供（推测为无需训练的推理时方法，但原文未明确说明）</li>
+<li><strong>工具</strong>：AlphaFold Multimer 作为骨干模型</li>
+<li><strong>反馈回路</strong>：每次迭代中，检查当前预测是否满足约束，若不满足则调整约束强度或重新采样</li>
+<li><strong>假设</strong>：用户提供的距离约束是可靠的；多步骤迭代能逐步收敛到正确的链间排列</li>
+<li><strong>文字流程</strong>：输入序列和约束 → 初始 AF Multimer 预测 → 检查约束满足度 → 施加约束并重新采样 → 重复迭代 → 输出最终结构</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>初始预测模块</td>
+<td>生成无约束的初始复合物结构</td>
+<td>提供起点，评估无约束时的基线表现</td>
+<td>输入：序列；输出：初始结构</td>
+<td>摘要中「improve the arrangement」暗示基线存在误差</td>
+<td>[预期] 移除后无法评估约束带来的改进</td>
+</tr>
+<tr>
+<td>约束施加模块</td>
+<td>将用户距离约束整合到推理中</td>
+<td>核心创新点，使模型能利用外部信息</td>
+<td>输入：距离约束；输出：约束化的采样条件</td>
+<td>标题中「User-Defined Distance Constraints」</td>
+<td>[预期] 移除后方法退化为标准 AF Multimer</td>
+</tr>
+<tr>
+<td>多步骤迭代模块</td>
+<td>逐步施加约束并重新采样</td>
+<td>单步约束可能不足，迭代可逐步修正</td>
+<td>输入：当前结构+约束；输出：更新结构</td>
+<td>标题中「Multi-Step Approach」</td>
+<td>[预期] 移除后可能无法收敛到正确排列</td>
+</tr>
+<tr>
+<td>最终输出模块</td>
+<td>选择最优结构</td>
+<td>多步采样产生多个候选，需选择</td>
+<td>输入：候选结构集；输出：最终结构</td>
+<td>未提供具体选择标准</td>
+<td>[预期] 移除后无法确定最终预测</td>
+</tr>
+</tbody>
+</table>
+<p><em>（注：由于仅提供摘要，所有消融效应均为 [预期] 而非实测）</em></p>
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>（提供的材料为摘要，未包含具体公式或符号定义）</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：未提供（摘要中未说明测试集）</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供（推测为 TM-score、DockQ 等复合物结构评估指标，但原文未明确）</li>
+<li><strong>基线</strong>：未提供（推测为标准 AlphaFold Multimer，但原文未明确）</li>
+<li><strong>评测协议</strong>：未提供</li>
+<li><strong>oracle 输入</strong>：用户定义的距离约束（来源可为交联质谱、FRET 等实验数据）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供具体实验</td>
+<td>多步骤距离约束可改善链间排列</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>摘要中声称「improve the arrangement of protein chains」</td>
+<td>无法评估改进幅度、适用边界</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<p><em>（注：由于仅提供摘要，无法获取具体实验设计、数值结果或图表）</em></p>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文方法针对蛋白质复合物结构预测中的链间排列问题，而非整体结构从头预测。</li>
+<li><strong>oracle/真值输入</strong>：用户定义的距离约束是方法的关键输入，其质量直接影响预测结果。约束来源（实验 vs 预测）未在摘要中说明。</li>
+<li><strong>端到端状态</strong>：方法基于 AlphaFold Multimer，属于推理时引导，非端到端重新训练。</li>
+<li><strong>算力成本</strong>：多步骤迭代可能增加推理时间，但摘要未提供具体成本。</li>
+<li><strong>历史数据依赖</strong>：依赖 AF Multimer 的训练数据（PDB 等），但本文未新增训练。</li>
+<li><strong>模型依赖</strong>：方法强依赖 AlphaFold Multimer 的骨干性能；若骨干模型更新，方法可能需要适配。</li>
+<li><strong>最难情形</strong>：摘要未说明方法在哪些复合物类型（如大型组装体、弱相互作用复合物）上表现最差。</li>
+<li><strong>不确定性</strong>：摘要未提供置信度评估或失败案例分析。</li>
+<li><strong>有边界的复述</strong>：Distance-AF Multimer 在用户提供可靠距离约束的前提下，通过多步骤迭代引导 AlphaFold Multimer，可改善复合物链间排列的预测精度；其效果受约束质量、复合物复杂度及骨干模型性能的制约。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（仅摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 方法需要用户提供距离约束，即依赖外部信息可用性（摘要中「when detailed experimental structures are unavailable」暗示方法适用于有部分信息但无完整结构的场景，但未明确说明约束缺失时的表现）。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多步骤迭代可能过拟合约束</td>
+<td>若约束本身有噪声或错误，迭代可能放大误差</td>
+<td>约束质量是方法的关键假设</td>
+<td>在含噪声约束的数据集上测试方法鲁棒性</td>
+<td>摘要中未讨论约束噪声处理</td>
+</tr>
+<tr>
+<td>未说明与现有约束整合方法的定量对比</td>
+<td>可能已有类似方法（如 AF2 restraints）表现相当</td>
+<td>需明确增量贡献</td>
+<td>与 AF2 restraint 基线进行系统对比</td>
+<td>摘要中未提及对比基线</td>
+</tr>
+<tr>
+<td>多步骤迭代的收敛性未讨论</td>
+<td>迭代可能不收敛或振荡</td>
+<td>影响方法实用性</td>
+<td>分析不同复合物上的迭代轨迹</td>
+<td>摘要中未提供收敛分析</td>
+</tr>
+<tr>
+<td>方法对约束数量的敏感性未知</td>
+<td>约束过少可能无效，过多可能限制采样空间</td>
+<td>影响实际使用指导</td>
+<td>扫描约束数量对精度的影响</td>
+<td>摘要中未提供参数敏感性分析</td>
+</tr>
+<tr>
+<td>仅依赖 AF Multimer 骨干</td>
+<td>若骨干模型更新，方法可能需要重新适配</td>
+<td>影响方法长期可用性</td>
+<td>在不同版本 AF Multimer 上测试</td>
+<td>摘要中未讨论模型版本依赖</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>推理时约束引导策略</strong>：本文的核心可迁移思路是在不修改模型参数的情况下，通过多步骤迭代在推理阶段施加外部约束。这一策略可迁移到：
+   - 分子对接：利用实验约束（如交联数据）引导对接采样
+   - 构象采样：在 MD 模拟或生成模型中施加距离约束以引导构象空间探索
+   - 结构设计：在设计过程中逐步施加功能相关约束</p>
+</li>
+<li>
+<p><strong>链间排列作为独立优化目标</strong>：本文将链间排列视为复合物预测中的关键失败模式并单独优化。这一思路可迁移到：
+   - 蛋白-蛋白相互作用预测中，将链间接触预测作为独立模块
+   - 多聚体组装预测中，将亚基间相对位置作为可调参数</p>
+</li>
+<li>
+<p><strong>多步骤迭代框架</strong>：将复杂优化问题分解为多步迭代，每步施加部分约束并重新采样。这一框架可迁移到：
+   - 大分子组装体的逐步组装预测
+   - 柔性肽段结合模式的逐步约束引导</p>
+</li>
+<li>
+<p><strong>用户定义约束的接口设计</strong>：方法设计了用户可自定义距离约束的接口，这提示在结构预测工具中预留「外部知识注入」的接口是实用且重要的设计方向。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold2 / AlphaFold Multimer</strong>（Jumper et al., Nature 2021; Evans et al., 2022）：本文直接基于 AF Multimer 构建，属于其扩展工作。AF 系列是蛋白质结构预测的 SOTA 基线，本文针对其链间排列弱点进行改进。</li>
+<li><strong>AF2 with restraints</strong>（Huang et al., 2022 等）：已有工作尝试在 AF2 中整合距离约束，本文的多步骤迭代框架可能与之形成对比或补充。</li>
+<li><strong>HADDOCK</strong>（Dominguez et al., 2003）：传统对接工具支持实验约束整合，本文可视为将这一思想引入深度学习预测器。</li>
+<li><strong>交联质谱（Cross-linking MS）与 FRET</strong>：这些实验技术可产生距离约束，是本文方法的潜在数据来源，与结构生物学实验方法形成互补。</li>
+<li><strong>ColabFold</strong>（Mirdita et al., 2022）：提供 AF2 的便捷实现，本文方法若开源可能基于此类工具构建。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：约束引导的构象采样增强（Constraint-Guided Conformational Sampling Enhancement）
+   - <strong>来源局限/观察</strong>：本文方法针对复合物链间排列，但未涉及构象多样性；MD 模拟中约束引导可改善采样效率
+   - <strong>核心假设</strong>：将用户距离约束整合到生成模型（如扩散模型）的采样过程中，可同时改善构象多样性和准确性
+   - <strong>初步方法</strong>：在蛋白质构象生成模型中，将距离约束作为条件输入，通过分类器引导（classifier guidance）或条件扩散实现
+   - <strong>验证方式</strong>：在构象集合预测基准（如 CASP15 构象集合赛道）上评估
+   - <strong>可能的失败模式</strong>：约束可能限制构象多样性，导致采样偏向单一状态
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：多步骤约束引导的分子对接（Multi-Step Constraint-Guided Molecular Docking）
+   - <strong>来源局限/观察</strong>：本文的多步骤迭代思想可迁移到小分子-蛋白对接，其中配体结合模式常需实验约束引导
+   - <strong>核心假设</strong>：逐步施加药效团距离约束可改善对接姿态预测精度
+   - <strong>初步方法</strong>：在 DiffDock 等生成式对接工具中，将药效团约束作为逐步引导信号
+   - <strong>验证方式</strong>：在 PDBbind 等对接基准上比较有无约束引导的性能
+   - <strong>可能的失败模式</strong>：约束质量差时可能误导采样方向
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：链间排列误差的通用诊断与校正框架（General Framework for Inter-Chain Arrangement Error Diagnosis and Correction）
+   - <strong>来源局限/观察</strong>：本文针对 AF Multimer 的链间排列问题，但该问题可能存在于所有多链结构预测器中
+   - <strong>核心假设</strong>：链间排列误差具有可识别的模式（如对称性破缺、接触面误判），可通过通用框架诊断并校正
+   - <strong>初步方法</strong>：分析多种预测器（AF-Multimer, ESMFold 多链版等）的链间排列误差模式，开发通用校正模块
+   - <strong>验证方式</strong>：在多链复合物基准集上跨预测器评估
+   - <strong>可能的失败模式</strong>：不同预测器的误差模式差异大，难以统一校正
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：实验约束与 AlphaFold 的主动学习整合（Active Learning Integration of Experimental Constraints with AlphaFold）
+   - <strong>来源局限/观察</strong>：本文假设用户已有距离约束，但未讨论如何高效获取约束
+   - <strong>核心假设</strong>：通过主动学习策略选择信息量最大的残基对进行实验测量（如交联实验），可最小化实验成本同时最大化结构预测改进
+   - <strong>初步方法</strong>：基于预测不确定性或链间接触熵选择候选残基对，迭代进行实验测量和结构预测
+   - <strong>验证方式</strong>：模拟实验约束获取过程，比较不同选择策略的效率
+   - <strong>可能的失败模式</strong>：实验测量成本高，模拟与实际实验条件差异大
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：约束引导的蛋白质复合物设计（Constraint-Guided Protein Complex Design）
+   - <strong>来源局限/观察</strong>：本文方法用于预测，但距离约束引导的思路可反向用于设计——设计满足特定距离约束的复合物
+   - <strong>核心假设</strong>：在设计蛋白质-蛋白质相互作用时，将目标接触距离作为约束条件，可提高设计成功率
+   - <strong>初步方法</strong>：在 ProteinMPNN 或 RFdiffusion 等设计工具中，将距离约束作为设计条件
+   - <strong>验证方式</strong>：设计已知复合物的变体，实验验证结合亲和力
+   - <strong>可能的失败模式</strong>：设计空间过大，约束可能过度限制序列多样性
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the supplied abstract</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose Distance-AF Multimer, a multi-step method for protein complex structure modeling that incorporates user-defined inter-residue distance constraints to improve the relative arrangement of chains in predicted complexes. The approach is positioned as a practical integration of computational prediction with available structural information for studying protein interactions, peptide binding, and larger assemblies when experimental structures are unavailable.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, methods details, or quantitative results provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods description, benchmark datasets, performance metrics, comparison with existing tools, and any validation figures or tables</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a conceptually reasonable extension of AlphaFold-based multimer modeling by incorporating user-defined distance constraints. However, the supplied material is insufficient to evaluate the technical implementation, the novelty relative to existing constraint-based approaches, or the claimed practical utility. No quantitative evidence is provided to support the effectiveness of the method.</li>
+<li><strong>Who would be interested in the results, and why</strong> Structural biologists and computational biologists studying protein-protein interactions, peptide binding, and large assemblies, particularly those who have partial experimental information (e.g., crosslinking, FRET, or low-resolution maps) and seek to integrate such data into structure prediction. Developers of protein structure prediction tools may also be interested in the methodological approach.</li>
+<li><strong>Major strengths</strong> The problem addressed is relevant and timely, as integrating experimental restraints into deep learning-based prediction is an active area. The proposed multi-step strategy is a plausible design choice. The significance statement clearly articulates the intended application niche.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The method "uses distance constraints between residues to improve the arrangement of protein chains in predicted structures."</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> No technical details are provided on how the distance constraints are defined, encoded, or integrated into the prediction pipeline. The abstract does not describe the multi-step procedure, the underlying architecture, or how constraints are propagated through the model.</li>
+<li><strong>Why it matters</strong> Without a clear description of the constraint integration mechanism, the technical soundness of the approach cannot be assessed. The core claim of the method hinges on this implementation detail.</li>
+<li><strong>Resolution test</strong> Provide a detailed methods section describing the constraint representation, the integration points in the pipeline, and the multi-step procedure. Include pseudocode or architectural diagrams.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Scientific importance</li>
+<li><strong>Claim pointer</strong> The approach "offers a practical way to combine computational predictions with available structural information."</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> No benchmark results, case studies, or comparisons with existing methods (e.g., AlphaFold-Multimer with custom restraints, or other constraint-based docking tools) are presented. The practical utility is asserted but not demonstrated.</li>
+<li><strong>Why it matters</strong> The claimed practical value requires evidence that the method improves accuracy or efficiency over existing alternatives in realistic scenarios. Without such evidence, the scientific importance cannot be established.</li>
+<li><strong>Resolution test</strong> Include benchmark results on standard protein complex datasets with and without constraints, comparison with baseline methods, and at least one case study demonstrating a practical application.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Originality</li>
+<li><strong>Claim pointer</strong> The method is presented as a novel "multi-step approach" for constraint-based complex modeling.</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract does not discuss prior work on incorporating distance restraints into protein structure prediction or complex modeling. It is unclear what is novel relative to existing constraint-based approaches, such as those using distance geometry or restraint-guided refinement.</li>
+<li><strong>Why it matters</strong> Originality is a core criterion for significance. Without a clear statement of novelty and differentiation from prior methods, the contribution cannot be positioned appropriately.</li>
+<li><strong>Resolution test</strong> Add a related work section that explicitly compares the proposed method with existing constraint-based approaches and highlights the specific novel contributions.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability for nonspecialists</li>
+<li><strong>Affected element</strong> Significance statement</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The significance statement is clear but could benefit from a brief example of the type of "available structural information" that would be used as constraints.</li>
+<li><strong>Required correction</strong> Add one concrete example (e.g., crosslinking mass spectrometry or cryo-EM density) in the significance statement.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interdisciplinary readership</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract does not mention the computational cost or runtime of the method, which is relevant for experimentalists considering its use.</li>
+<li><strong>Required correction</strong> Include a brief statement on computational requirements or runtime in the abstract or methods summary.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3. The absence of technical details, benchmark evidence, and novelty positioning means the core claims are currently unsupported.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: not assessable from the abstract due to lack of comparison with prior work. Scientific importance: not established due to absence of quantitative results. Interdisciplinary readership: the topic has potential appeal, but the abstract does not provide enough detail to engage non-specialists. Technical soundness: not assessable without methods details. Readability for nonspecialists: the significance statement is accessible, but the abstract lacks context for broader audiences.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The concept is plausible, but the abstract alone does not provide sufficient technical or empirical support. A full manuscript with methods, benchmarks, and comparisons would be required to assess the claims.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that the method "improves the arrangement of protein chains" is unsupported without quantitative results.</li>
+<li>The claim of "practical way to combine computational predictions with available structural information" is unsupported without case studies or benchmarks.</li>
+<li>The novelty of the "multi-step approach" is unverifiable without a description of prior art and the specific steps involved.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

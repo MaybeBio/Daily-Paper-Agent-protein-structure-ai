@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Structure-based discovery of inhibitors of Mac1 domain of nonstructural protein-3 of SARS-CoV-2 by machine learning-augmented screening of chemical space. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>Structure-based discovery of inhibitors of Mac1 domain of nonstructural protein-3 of SARS-CoV-2 by machine learning-augmented screening of chemical space.</h1>
+      <div class="meta">Ban, Fuqiang; Ravichandran, Rahul; Correy, Galen J; Herasymenko, Oleksandra; Silva, Madhushika; Ackloo, Suzanne; Bolotokova, Albina; Chau, Irene; Gibson, Elisa; Harding, Rachel; Hutchinson, Ashley; Loppnau, Peter; Fraser, James S; Schapira, Matthieu; Cherkasov, Artem; Gentile, Francesco</div>
+      <div class="meta muted">
+        
+        <span class="journal">Scientific reports</span>
+        · 2026-11-12
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/43019202/">原文</a>
+      </div>
+      <p class="one-liner">该文用机器学习加速虚拟筛选发现SARS-CoV-2 Mac1蛋白结构域的小分子抑制剂，虽以蛋白为靶标并涉及结构预测和对接，但核心是药物发现而非蛋白质结构计算建模本身，方法可借鉴但对象和问题偏向应用。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Significant efforts have been recently dedicated to the discovery of small molecule inhibitors against the Macrodomain 1 (Mac1) of nonstructural protein 3 (NSP3) as potential antivirals for SARS-CoV-2. Thus, Mac1 has also been selected as the target for the Critical Assessment of Hit-finding Experiments (CACHE) challenge #3. As contestants in that challenge, we developed a computational strategy that ranked on the top among all 23 participants in the competition and resulted in the discovery of a novel chemical series of non-charged Mac1 inhibitors. Those have been identified through the combination of machine learning-accelerated virtual screening of Enamine REAL Diversity Subset of approximately 25 million compounds and consequent hit expansion into the entire Enamine REAL Space library. In particular, the initially identified hit compound CACHE3-HI_1706_56 (K(D) = 20 microM) was explored by probing 17 close analogues from a library of 44 billion molecules from the Enamine REAL. Most of those analogues effectively displaced the Mac1-binding ADP-ribose peptide, and 12 were confirmed to engage with Mac1 by Surface Plasmon Resonance experiments, revealing a new chemical series of compounds for hit-to-lead optimization. The structure of the CACHE3-HI_1706_56-Mac1 complex was further determined at high resolution with crystallography, confirming initial computational predictions. Our results illustrate the effectiveness of ML-accelerated docking to rapidly identify novel chemical series and provide a strong foundation for the development of SARS-CoV-2 NSP3 Mac1 inhibitors. SUPPLEMENTARY INFORMATION: The online version contains supplementary material available at https://doi.org/10.1038/s41598-026-65034-1.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">近年来，人们投入了大量努力，致力于发现针对SARS-CoV-2非结构蛋白3（NSP3）的Macrodomain 1（Mac1）的小分子抑制剂，作为潜在的抗病毒药物。因此，Mac1也被选为命中发现实验关键评估（CACHE）挑战赛#3的目标靶点。作为该挑战赛的参赛者，我们开发了一种计算策略，在全部23个参赛团队中排名第一，并由此发现了一系列新型非电荷型Mac1抑制剂。这些抑制剂是通过机器学习加速虚拟筛选Enamine REAL多样性子集（约2500万种化合物）以及随后对整个Enamine REAL空间库进行命中扩展而识别出的。具体而言，最初识别的命中化合物CACHE3-HI_1706_56（K(D) = 20微摩尔）通过从Enamine REAL的440亿分子库中探测17个紧密类似物进行了探索。这些类似物中的大多数有效置换出与Mac1结合的ADP-核糖肽，其中12个通过表面等离子体共振实验确认与Mac1结合，揭示了一个用于命中到先导优化的新化合物系列。CACHE3-HI_1706_56-Mac1复合物的结构进一步通过晶体学以高分辨率确定，证实了最初的计算预测。我们的结果展示了机器学习加速对接在快速识别新化合物系列方面的有效性，并为开发SARS-CoV-2 NSP3 Mac1抑制剂提供了坚实基础。补充信息：在线版本包含补充材料，可在https://doi.org/10.1038/s41598-026-65034-1获取。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Structure-based discovery of inhibitors of Mac1 domain of nonstructural protein-3 of SARS-CoV-2 by machine learning-augmented screening of chemical space</li>
+<li><strong>作者与单位</strong>: Ban, Fuqiang; Ravichandran, Rahul; Correy, Galen J; Herasymenko, Oleksandra; Silva, Madhushika; Ackloo, Suzanne; Bolotokova, Olga; Chau, Irene; Gibson, Elisa; Harding, Rachel; Hutchinson, Ashley; Loppnau, Peter; Fraser, James S; Schapira, Matthieu; Cherkasov, Artem; Gentile, Francesco（单位未提供，部分作者隶属加拿大渥太华大学及美国加州大学旧金山分校，据基金信息推断）</li>
+<li><strong>期刊/预印本平台</strong>: Scientific Reports</li>
+<li><strong>年份</strong>: 2026（在线日期 2026-11-12）</li>
+<li><strong>论文类型</strong>: 研究论文（CACHE3 挑战赛参赛工作）</li>
+<li><strong>领域</strong>: 计算药物发现 / 虚拟筛选 / 机器学习加速筛选 / 蛋白质-配体相互作用</li>
+<li><strong>关键词</strong>: SARS-CoV-2, NSP3, Mac1, 虚拟筛选, 深度学习, Deep Docking, 结构生物学</li>
+<li><strong>DOI/arXiv 号</strong>: 10.1038/s41598-026-65034-1</li>
+<li><strong>代码</strong>: 未提供</li>
+<li><strong>数据</strong>: 晶体结构 PDB 7HPW（CACHE3-HI_1706_56-Mac1 复合物）；Enamine REAL Diversity Subset 及 REAL Space 数据（商业数据库）</li>
+<li><strong>阅读日期</strong>: 2026-05-13</li>
+<li><strong>在该方向中的位置</strong>: 本文属于「AI 加速虚拟筛选 × 结构生物学验证」交叉方向，展示了将机器学习加速筛选（Deep Docking）与 X 射线晶体学验证相结合，在超大规模化学空间中高效发现新骨架抑制剂的工作流程。对蛋白质结构相关计算研究而言，其可迁移点在于：以蛋白晶体结构为靶标、以 docking score 为代理标签的主动学习筛选策略，以及结构验证闭环的设计。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文针对 SARS-CoV-2 NSP3 Mac1 结构域，采用 Deep Docking 主动学习策略对 Enamine REAL Diversity Subset（约 2300 万分子）进行加速虚拟筛选，结合共识打分与人工视觉检查，发现并验证了一个新型中性抑制剂骨架 CACHE3-HI_1706_56（SPR KD = 20 µM），并通过 REAL Space 中 440 亿分子的类似物搜索获得 KD 达 12 µM 的衍生物，X 射线晶体学确认了其结合模式。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 如何在超大规模化学空间（数千万至数百亿分子）中高效发现 SARS-CoV-2 NSP3 Mac1 的新型中性（非带电）抑制剂骨架？</li>
+<li><strong>为什么重要</strong>: Mac1 是 SARS-CoV-2 免疫逃逸的关键毒力因子，其活性位点失活可使病毒在小鼠模型中减毒。中性抑制剂有望克服此前阴离子抑制剂细胞通透性差的瓶颈，为抗病毒药物开发提供新起点。</li>
+<li><strong>现有方法为何不足</strong>: 传统 docking 对超大规模库的计算成本过高；基于片段的筛选需要大量晶体学工作；生成式方法在 Mac1 这类极性、浅口袋上的成功率有限。CACHE3 挑战赛各参与者的总体命中率仅 1.8%，说明该靶点的计算可处理性（computational tractability）较低。</li>
+<li><strong>精确研究问题</strong>: Can a machine learning-augmented virtual screening workflow (Deep Docking) applied to a diverse subset of an ultra-large chemical library identify novel, neutral, crystallographically-validated inhibitors of SARS-CoV-2 NSP3 Mac1?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「经外部核验」——基于 CACHE 挑战赛系列及文中引用的 Mac1 抑制剂研究史）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期 Mac1 抑制剂发现</td>
+<td>基于已知 ADP-ribose 底物的类似物设计</td>
+<td>有明确起点</td>
+<td>带电基团导致通透性差</td>
+</tr>
+<tr>
+<td>片段筛选 + 结构引导设计（Gahbauer et al.）</td>
+<td>片段生长/连接，晶体学辅助</td>
+<td>获得 Z8539_0072（IC50 0.4 µM）和 LRH-0003（IC50 1.7 µM）</td>
+<td>需要大量晶体结构；中性化改造后活性下降</td>
+</tr>
+<tr>
+<td>CACHE3 挑战赛（本文）</td>
+<td>Deep Docking 主动学习 + 共识打分 + 视觉检查</td>
+<td>仅 docking 1.5% 分子即保留 90% 高分分子；发现新骨架</td>
+<td>命中率仍低（1.2%）；需要人工干预</td>
+</tr>
+<tr>
+<td>超大规模类似物搜索</td>
+<td>REAL Space 440 亿分子 + Glide SP</td>
+<td>快速获得活性类似物（KD 12 µM）</td>
+<td>依赖初始 hit 质量；未探索中性氢键受体修饰</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>超大规模库 docking 计算成本过高</td>
+<td>无法对全部 2300 万分子逐一 docking</td>
+<td>计算资源有限；Mac1 位点极性、柔性大</td>
+<td>Methods "Deep Docking" 节；Results 图 2b</td>
+</tr>
+<tr>
+<td>Mac1 位点计算可处理性低</td>
+<td>全体 CACHE3 参与者命中率仅 1.8%</td>
+<td>位点极性、浅、柔性（Phe132 构象变化）</td>
+<td>Results "Discovery and characterization" 节；引用文献 10</td>
+</tr>
+<tr>
+<td>带电抑制剂通透性差</td>
+<td>Z8539 系列细胞通透性仅 11 nm/s</td>
+<td>羧酸/磷酸基团</td>
+<td>Introduction 节；引用文献 7</td>
+</tr>
+<tr>
+<td>中性化改造导致活性下降</td>
+<td>SRH-0015 仅 IC50 132 µM</td>
+<td>中性基团与 oxyanion hole 作用弱</td>
+<td>Results "Chemical series expansion" 节；引用文献 7</td>
+</tr>
+<tr>
+<td>虚拟筛选命中率低</td>
+<td>83 个测试化合物仅 1 个确认 hit（1.2%）</td>
+<td>打分函数误差、蛋白柔性、共识策略保守</td>
+<td>Results "Discovery and characterization" 节</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>: 采用 Deep Docking 主动学习协议，以 Glide SP 为 docking 引擎，对 Enamine REAL Diversity Subset（2300 万分子）进行迭代筛选。每轮 docking 少量分子（5 万），训练一个二分类器（基于 Morgan 指纹）预测剩余库中分子的 docking score 是否优于阈值，逐步修剪低分分子。最终保留约 650 万分子，再以 Glide SP 全量 docking，经 ICM 重打分、RMSD 共识过滤、视觉检查，选出 83 个化合物进行实验测试。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>: 
+   - <strong>多样性子集 + 主动学习</strong>：与其直接处理全库，不如先在一个代表性、结构多样的子集上训练，利用主动学习迭代修剪，以极小计算量保留绝大多数高分分子。
+   - <strong>共识策略优于单一打分</strong>：Glide 与 ICM 两种 docking 程序 + RMSD 一致性过滤 + 人工视觉检查，可有效降低假阳性。
+   - <strong>结构验证闭环</strong>：X 射线晶体学不仅确认结合，还揭示了 Phe132 的构象变化（closed → everted），为后续优化提供结构基础。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]: 
+   - 对「难」靶点（极性、浅、柔性口袋），单一计算方法的命中率天然有限，<strong>多方法共识 + 人工专家干预</strong>仍是必要的质量控制环节。
+   - 主动学习在<strong>分子多样性高</strong>的库上修剪效率会下降（本文中 reduction power 仅 3.5 倍，远低于全库场景），说明该方法更适合结构冗余的全库而非多样性子集。
+   - 结构生物学反馈（晶体结构）不仅用于验证，更能揭示 docking 模型未预测到的构象变化，是改进打分模型的重要数据来源。</p>
+</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: </li>
+<li>靶标结构：PDB 5SRY（LRH-0003-Mac1 复合物，1.05 Å）</li>
+<li>配体库：Enamine REAL Diversity Subset（约 8000 万分子，过滤后 2310 万）</li>
+<li>过滤条件：CACHE3 hit-like 标准（≤6 可旋转键、MW ≤400、fsp3 &gt;0.25、logP 1–3.5、≤4 立体异构体）</li>
+<li><strong>输出</strong>: </li>
+<li>83 个候选化合物（实验测试）</li>
+<li>1 个确认 hit：CACHE3-HI_1706_56（SPR KD = 20 µM）</li>
+<li>17 个类似物（第二轮），其中 12 个经 SPR 确认，最佳 KD = 12 µM</li>
+<li>1 个晶体结构（PDB 7HPW）</li>
+<li><strong>模块</strong>:
+  1. 蛋白结构准备（Schrödinger Protein Prep Wizard）
+  2. 配体库准备（RDKit 过滤、OpenEye 立体化学/优势电离态）
+  3. Deep Docking 主动学习（4 轮迭代，每轮 5 万分子训练/验证/测试）
+  4. Glide SP 全量 docking（保留 26,057 个 score ≤ −8.15 kcal/mol 分子）
+  5. ICM 重 docking + RMSD 共识过滤（≤2 Å）
+  6. 共识打分 + 视觉检查（29 + 77 = 93 个候选，去重后 83 个）
+  7. 实验验证：HTRF 竞争性结合实验 → SPR 确认 → X 射线晶体学
+  8. 类似物搜索：REAL Space（440 亿分子）相似性搜索 → Glide SP docking → 视觉检查 → 75 个候选 → 19 个合成 → 17 个成功 → 12 个 SPR 确认</li>
+<li><strong>工具</strong>: Schrödinger Maestro (Glide SP)、ICM-Pro、RDKit、OpenEye（flipper, omega, tautomers）、BiosolveIT InfiniSee、PanDDA、CCP4、Refmac5、Phenix</li>
+<li><strong>假设</strong>: </li>
+<li>晶体结构（5SRY）的 apo 构象（Phe132 closed）适合 docking</li>
+<li>Glide SP score 可作为结合亲和力的代理指标</li>
+<li>中性分子可在不牺牲活性的前提下获得更好通透性</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deep Docking 主动学习</td>
+<td>迭代修剪低分分子，减少 docking 计算量</td>
+<td>2300 万分子无法全量 docking</td>
+<td>输入：Morgan 指纹 + 每轮 5 万 docking 结果；输出：保留 650 万分子</td>
+<td>Results 图 2b；Supplementary Fig. 1（库大小逐轮下降）</td>
+<td>需全量 docking，计算成本增加约 30 倍</td>
+</tr>
+<tr>
+<td>Glide SP docking</td>
+<td>对保留分子进行全量打分</td>
+<td>主动学习仅提供分类，需精确打分排序</td>
+<td>输入：650 万分子 + 5SRY 结构；输出：score ≤ −8.15 的 26,057 分子</td>
+<td>Methods "Docking" 节</td>
+<td>无替代打分，无法排序</td>
+</tr>
+<tr>
+<td>ICM 重 docking + RMSD 共识</td>
+<td>交叉验证 docking 姿势</td>
+<td>单一 docking 程序可能系统偏差</td>
+<td>输入：26,057 分子；输出：1,553 个 RMSD ≤2 Å 分子</td>
+<td>Methods "Hit selection" 节；引用文献 24</td>
+<td>假阳性率预计上升</td>
+</tr>
+<tr>
+<td>共识打分 + 视觉检查</td>
+<td>最终人工筛选</td>
+<td>自动打分无法捕捉化学合理性</td>
+<td>输入：1,553 分子；输出：93 个候选（83 个测试）</td>
+<td>Results "Discovery" 节</td>
+<td>命中率可能进一步下降</td>
+</tr>
+<tr>
+<td>HTRF 竞争性实验</td>
+<td>初筛配体是否竞争 ADP-ribose 结合</td>
+<td>快速、低成本评估</td>
+<td>输入：83 化合物；输出：11 个抑制率 &gt;50% @100 µM</td>
+<td>Results 图 3a</td>
+<td>无法区分竞争/别构</td>
+</tr>
+<tr>
+<td>SPR 结合实验</td>
+<td>确认直接结合及亲和力</td>
+<td>正交验证 HTRF 结果</td>
+<td>输入：11 个初筛阳性；输出：1 个 KD = 20 µM</td>
+<td>Results 图 3b</td>
+<td>无法确认功能活性</td>
+</tr>
+<tr>
+<td>X 射线晶体学</td>
+<td>确定原子级结合模式</td>
+<td>验证 docking 预测、揭示构象变化</td>
+<td>输入：hit 化合物 + Mac1 晶体；输出：PDB 7HPW（1.02 Å）</td>
+<td>Results 图 3d；引用文献 10</td>
+<td>无法获得结合模式</td>
+</tr>
+<tr>
+<td>REAL Space 类似物搜索</td>
+<td>扩展 hit 为系列</td>
+<td>确认化学系列、优化亲和力</td>
+<td>输入：hit 结构 + 440 亿分子库；输出：75 候选 → 17 合成 → 12 确认</td>
+<td>Results 表 1；图 4</td>
+<td>系列无法确认</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong> — 本文为实验性虚拟筛选工作，未提出新的数学公式或统计模型。核心方法（Deep Docking）的数学细节在引用文献 11 中，本文仅使用其实现。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>: </li>
+<li>虚拟库：Enamine REAL Diversity Subset（初始约 8000 万，过滤后 23,139,109 分子）</li>
+<li>测试集：83 个化合物（第一轮）+ 17 个类似物（第二轮）</li>
+<li>靶标蛋白：SARS-CoV-2 NSP3 Mac1（残基 205–380 用于 HTRF；206–374 用于 SPR/晶体学）</li>
+<li><strong>规模</strong>: 83 个化合物 HTRF 初筛 → 11 个阳性 → 8 个剂量响应 → 1 个 SPR 确认 → 1 个晶体结构</li>
+<li><strong>指标</strong>: </li>
+<li>虚拟筛选：docking score（Glide SP）、RMSD 一致性</li>
+<li>实验：HTRF 抑制率（% displacement @100 µM）、SPR KD（µM）、IC50（µM）</li>
+<li><strong>基线/对照</strong>: </li>
+<li>HTRF 阳性对照：ADP-ribose 肽（竞争剂）</li>
+<li>阴性对照：DMSO（4%）</li>
+<li>反筛靶标：人 PARP14 Macro2 结构域（选择性对照）</li>
+<li><strong>评测协议</strong>: CACHE3 挑战赛独立委员会评估（结合活性、药物相似性、系列确认）</li>
+<li><strong>骨干/仪器</strong>: Biacore 8K（SPR）、Synergy H1（HTRF）、ALS beamline 8.3.1（X 射线）</li>
+<li><strong>oracle 输入</strong>: 晶体结构 5SRY（docking 靶标）；ADP-ribose 肽（HTRF 竞争剂）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deep Docking 筛选</td>
+<td>主动学习可高效保留高分分子</td>
+<td>4 轮迭代，每轮 5 万训练</td>
+<td>库从 2310 万减至 650 万，保留 90% 的 top 0.1% 分子</td>
+<td>主动学习有效降低计算量</td>
+<td>未与全量 docking 直接对比</td>
+<td>Results 图 2b；Supplementary Fig. 1</td>
+</tr>
+<tr>
+<td>HTRF 初筛（83 化合物）</td>
+<td>虚拟筛选可富集 Mac1 结合剂</td>
+<td>100 µM 单浓度</td>
+<td>11/83 抑制 &gt;50%</td>
+<td>筛选流程有富集能力</td>
+<td>未报告 Z' 因子或阳性对照的 IC50</td>
+<td>Results "Discovery" 节</td>
+</tr>
+<tr>
+<td>HTRF 剂量响应（8 化合物）</td>
+<td>命中具有剂量依赖性</td>
+<td>3 浓度（10/30/100 µM）</td>
+<td>8/11 显示剂量响应</td>
+<td>初步确认活性</td>
+<td>未报告完整 IC50 曲线</td>
+<td>Results "Discovery" 节</td>
+</tr>
+<tr>
+<td>SPR 验证（hit）</td>
+<td>直接结合 Mac1</td>
+<td>多循环动力学，1:1 模型</td>
+<td>KD = 20 µM</td>
+<td>确认直接结合</td>
+<td>未报告 k_on/k_off</td>
+<td>Results 图 3b</td>
+</tr>
+<tr>
+<td>SPR 反筛（PARP14）</td>
+<td>选择性</td>
+<td>同条件</td>
+<td>无结合</td>
+<td>对 Mac1 有选择性</td>
+<td>仅测试 1 个旁靶</td>
+<td>Results "Discovery" 节</td>
+</tr>
+<tr>
+<td>X 射线晶体学</td>
+<td>结合模式与 docking 预测一致</td>
+<td>1.02 Å 分辨率</td>
+<td>预测姿势与晶体结构一致；Phe132 构象变化</td>
+<td>验证计算预测；揭示诱导契合</td>
+<td>配体占据率低（26%）</td>
+<td>Results 图 3d；引用文献 10</td>
+</tr>
+<tr>
+<td>类似物筛选（17 化合物）</td>
+<td>化学系列可扩展</td>
+<td>REAL Space 相似性搜索 + docking</td>
+<td>12/17 SPR 确认；最佳 KD = 12 µM</td>
+<td>系列确认；活性可优化</td>
+<td>未报告细胞活性或体内数据</td>
+<td>Results 表 1；图 4</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 本文仅针对 SARS-CoV-2 NSP3 Mac1 一个靶点、一个特定化学库（Enamine REAL）子集。结论不适用于其他靶点或库。</li>
+<li><strong>oracle/真值输入</strong>: 虚拟筛选以 5SRY 晶体结构为靶标，该结构代表 Phe132 closed 构象；实验验证使用 HTRF 竞争实验和 SPR，均以 ADP-ribose 结合为读出。</li>
+<li><strong>端到端状态</strong>: 从虚拟筛选到晶体结构确认的完整闭环已完成，但<strong>未进行</strong>细胞水平抗病毒实验、动物实验、ADME/T 性质评估。作者明确声明这些是下一步工作。</li>
+<li><strong>算力成本</strong>: 未报告具体 GPU 时数或计算资源。Deep Docking 仅 docking 了 1.5% 的库（35 万分子），但后续全量 docking 650 万分子的成本未量化。</li>
+<li><strong>历史数据依赖</strong>: 依赖 Enamine REAL 库的分子多样性；依赖 5SRY 结构（LRH-0003 结合态）作为 docking 靶标。</li>
+<li><strong>模型依赖</strong>: 依赖 Glide SP 和 ICM 打分函数；依赖 Morgan 指纹作为分子表示。</li>
+<li><strong>最难情形</strong>: Mac1 位点本身计算可处理性低（CACHE3 全体命中率 1.8%），本文命中率 1.2% 略低于平均，但确认了新型骨架。</li>
+<li><strong>群体/领域边界</strong>: 结论仅适用于 Mac1 抑制剂发现；「中性抑制剂」策略的普适性未验证。</li>
+<li><strong>不确定性</strong>: 配体占据率仅 26%，晶体结构中的结合姿势可能不代表溶液中的主要结合模式；SPR KD 值未与功能实验关联。</li>
+<li><strong>有边界的复述</strong>: 在 CACHE3 挑战赛框架下，本文的 Deep Docking + 共识筛选流程从 2300 万分子中识别出 1 个经晶体学确认的新型中性 Mac1 抑制剂骨架（KD = 20 µM），并通过 440 亿分子类似物搜索获得 KD = 12 µM 的衍生物。该流程的有效性限于该靶点、该库、该打分函数组合，且未评估细胞活性。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未进行细胞实验</td>
+<td>未评估化合物的细胞通透性、细胞毒性、抗病毒活性</td>
+<td>"evaluation of cellular activity for the newly identified series will be the primary next step for advancing toward lead optimization"</td>
+<td>Conclusions 节</td>
+</tr>
+<tr>
+<td>命中率低</td>
+<td>83 个测试化合物仅 1 个确认 hit（1.2%）</td>
+<td>未明确说明改进方向</td>
+<td>Results "Discovery" 节</td>
+</tr>
+<tr>
+<td>未探索中性氢键受体修饰</td>
+<td>类似物筛选未包含在 oxyanion hole 中放置中性氢键受体的修饰</td>
+<td>"a modification that could be further explored to enhance target engagement"</td>
+<td>Results "Chemical series expansion" 节</td>
+</tr>
+<tr>
+<td>Deep Docking 缩减效率有限</td>
+<td>库仅缩减 3.5 倍（vs 全库场景通常更高）</td>
+<td>归因于多样性子集的结构冗余低</td>
+<td>Results "ML-accelerated virtual screening" 节</td>
+</tr>
+</tbody>
+</table>
+<p><em>（注：作者未明确讨论配体占据率低、打分函数误差、Phe132 构象选择等潜在局限，这些属于 [Analysis] 范畴。）</em></p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>命中率 1.2% 低于 CACHE3 全体平均（1.8%）</td>
+<td>共识策略可能过度保守，或 5SRY 结构（Phe132 closed）不适合 docking</td>
+<td>若共识策略系统性排除有效分子，则流程需调整</td>
+<td>对 11 个 HTRF 阳性但未通过共识过滤的分子进行 SPR 测试</td>
+<td>Results "Discovery" 节；引用文献 10</td>
+</tr>
+<tr>
+<td>配体占据率仅 26%</td>
+<td>晶体结构中的结合姿势可能不代表溶液中的主要结合模式；docking 预测的「验证」可能过度乐观</td>
+<td>若结合姿势不确定，基于该结构的优化可能无效</td>
+<td>进行 MD 模拟或 2D NMR 验证溶液中的结合模式</td>
+<td>Results 图 3d；引用文献 10</td>
+</tr>
+<tr>
+<td>未报告 HTRF 阳性对照的 IC50</td>
+<td>无法评估 HTRF 实验窗口和灵敏度</td>
+<td>若实验窗口小，11 个「阳性」可能包含假阳性</td>
+<td>报告 ADP-ribose 肽的 IC50 和 Z' 因子</td>
+<td>Methods "HTRF" 节（未提供细节）</td>
+</tr>
+<tr>
+<td>类似物筛选仅依赖 docking 评分 + 视觉检查</td>
+<td>未使用 consensus scoring 或 MD 验证；视觉检查主观性强</td>
+<td>12/17 的确认率可能高估了该流程的预测能力</td>
+<td>对未确认的 5 个类似物进行晶体学或竞争实验分析失败原因</td>
+<td>Results 表 1</td>
+</tr>
+<tr>
+<td>未报告计算资源消耗</td>
+<td>无法评估 Deep Docking 的实际加速比</td>
+<td>若加速比有限，方法可扩展性存疑</td>
+<td>报告总 GPU 时数、每轮 docking 时间、与全量 docking 的对比</td>
+<td>Methods "ML-accelerated virtual screening" 节（未提供）</td>
+</tr>
+<tr>
+<td>仅使用一个蛋白构象（5SRY）</td>
+<td>Mac1 的 Phe132 存在 open/closed 构象平衡；单一构象可能遗漏别构位点或诱导契合</td>
+<td>若 hit 实际结合的是 open 构象，基于 closed 构象的优化可能失败</td>
+<td>使用多构象 ensemble docking 或 MD 采样生成构象集合</td>
+<td>Methods "Protein structure preparation" 节</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>（面向蛋白质结构相关计算研究 × AI/物理模拟方向）：
+1. <strong>主动学习 + 多样性子集策略</strong>：当目标库过大无法全量 docking 时，可先在一个多样性子集上训练分类器，迭代修剪低分分子。但注意：<strong>多样性子集的修剪效率低于结构冗余的全库</strong>（本文仅 3.5 倍缩减），因为分类器难以泛化到多样化学空间。若你的课题涉及构象采样或序列设计，可借鉴此思路：先在小而多样的子集上训练代理模型，再逐步扩展。
+2. <strong>多 docking 程序共识 + RMSD 过滤</strong>：单一 docking 程序可能有系统偏差，使用两个独立程序（Glide + ICM）并要求姿势一致性（RMSD ≤ 2 Å），可显著降低假阳性。这提示在结构预测或对接任务中，<strong>多方法一致性</strong>是简单有效的质量控制手段。
+3. <strong>结构验证闭环的价值</strong>：晶体结构不仅确认了 hit 的结合，还揭示了 docking 模型未预测到的 Phe132 构象变化（closed → everted）。这说明<strong>计算模型对蛋白柔性的处理不足</strong>是虚拟筛选的重要误差来源。可迁移到 MD 模拟或 ensemble docking 中：在筛选前用 MD 或构象采样生成多个受体构象，而非依赖单一晶体结构。
+4. <strong>中性抑制剂策略</strong>：Mac1 的带电抑制剂活性好但通透性差（11 nm/s），中性化改造是药物化学的重要方向。在结构设计中，<strong>在保持关键氢键相互作用的同时去除电荷</strong>，是提高类药性的通用策略。
+5. <strong>CACHE 挑战赛的评估框架</strong>：前瞻性盲测（prospective benchmarking）是检验计算方法真实预测能力的金标准。本文的命中率（1.2%）远低于回顾性研究常见报告值，提示<strong>回顾性 docking 验证可能严重高估方法性能</strong>。在设计自己的计算流程时，应考虑前瞻性验证。
+6. <strong>hit 扩展的化学空间搜索</strong>：从确认的 hit 出发，在 REAL Space（440 亿分子）中进行相似性搜索 + docking，可快速获得活性系列。这提示在蛋白质-配体相互作用研究中，<strong>从单一 hit 到化学系列的扩展</strong>可通过超大规模库的相似性搜索高效实现。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>Deep Docking 方法</strong>：本文使用的方法源自 Gentile et al. 2020 (Nature Communications) 的 Deep Docking 协议（引用文献 11, 22）。该方法已在多个靶点上验证，本文将其应用于多样性子集而非全库，是方法的新应用场景。</li>
+<li><strong>Mac1 抑制剂研究史</strong>：Gahbauer et al. 2023 (引用文献 7) 通过片段筛选获得 Z8539_0072（IC50 0.4 µM）和 LRH-0003（IC50 1.7 µM），本文以 LRH-0003 复合物结构（5SRY）为 docking 靶标，发现的 CACHE3-HI_1706_56 含 pyrrolopyrimidine 骨架，与已知抑制剂系列相关但引入了溴代环己烯基团。</li>
+<li><strong>CACHE 挑战赛</strong>：CACHE (Critical Assessment of Computational Hit-finding Experiments) 系列是计算药物发现的前瞻性基准测试（引用文献 9, 10）。本文为 CACHE3 的参赛工作，其结果已由独立委员会评估。</li>
+<li><strong>ADP-核糖基化与免疫逃逸</strong>：Mac1 通过水解 ADP-核糖基化修饰逆转宿主 PARP 介导的抗病毒信号（引用文献 1-5），这一机制与更广泛的病毒免疫逃逸研究相关。</li>
+<li><strong>可迁移领域</strong>：本文的「多样性子集 + 主动学习 + 多方法共识 + 结构验证」流程，可迁移至蛋白质结构预测中的构象筛选、分子对接中的化合物库筛选、以及蛋白质设计中的序列空间探索。特别是<strong>结构验证闭环</strong>的设计，与 AlphaFold 等预测方法需要实验验证的思路一致。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>: 多构象 ensemble docking 对 Mac1 虚拟筛选命中率的影响
+   - <strong>来源局限/观察</strong>: 本文使用单一晶体结构（5SRY，Phe132 closed）进行 docking，但晶体结构显示 hit 诱导 Phe132 转变为 everted 构象。单一构象可能遗漏了结合所需的构象状态。
+   - <strong>核心假设</strong>: 使用 MD 模拟或构象采样生成 Mac1 的 ensemble 结构进行 docking，可提高虚拟筛选命中率。
+   - <strong>初步方法</strong>: 对 Mac1 进行 1 µs MD 模拟，提取代表性构象（如聚类分析），以 ensemble docking 重新筛选本文的 83 个化合物，比较命中率。
+   - <strong>验证方式</strong>: 对 ensemble docking 新发现的候选进行 SPR 或晶体学验证。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 中性 Mac1 抑制剂的细胞活性评估与优化
+   - <strong>来源局限/观察</strong>: 作者明确声明未进行细胞实验，且中性化改造（溴代环己烯替代带电基团）的细胞通透性优势未经验证。
+   - <strong>核心假设</strong>: CACHE3-HI_1706_56 系列因中性电荷而具有优于 Z8539 系列的细胞通透性，且能在细胞水平抑制 Mac1 介导的免疫逃逸。
+   - <strong>初步方法</strong>: 合成 CACHE3-HI_1706_56 及其类似物，进行 Caco-2 通透性实验、Vero-E6 细胞抗病毒实验、IFN-β 报告基因实验。
+   - <strong>验证方式</strong>: 比较中性系列与已知阴离子抑制剂的 EC50 和通透性数据。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: Deep Docking 在多样性子集上的最优采样策略
+   - <strong>来源局限/观察</strong>: 本文中 Deep Docking 的缩减效率仅 3.5 倍，远低于全库场景。作者归因于多样性子集的结构冗余低，但未系统探索改进策略。
+   - <strong>核心假设</strong>: 通过调整主动学习的采样策略（如基于分子聚类的分层采样、或使用图神经网络替代指纹），可提高多样性子集上的修剪效率。
+   - <strong>初步方法</strong>: 在本文的 2300 万分子库上，对比不同采样策略（随机、聚类、贪心多样性）和不同分子表示（Morgan 指纹、GraphMVP、MolBERT）的 Deep Docking 性能。
+   - <strong>验证方式</strong>: 以保留 top 0.1% 分子的召回率为指标，在多个靶点上交叉验证。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: Mac1 的别构位点探索与变构抑制剂设计
+   - <strong>来源局限/观察</strong>: 本文聚焦于 ADP-ribose 竞争性抑制剂，但 Mac1 的 Phe132 构象变化提示可能存在别构调控机制。
+   - <strong>核心假设</strong>: Mac1 存在可药用的别构口袋，变构抑制剂可稳定非活性构象，且不涉及带电基团。
+   - <strong>初步方法</strong>: 使用 MD 模拟和口袋检测（如 fpocket、SiteMap）识别 Mac1 的隐式口袋，对候选别构位点进行虚拟筛选。
+   - <strong>验证方式</strong>: 对 hit 进行 NMR 或 HDX-MS 验证构象变化，SPR 确认结合。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 基于结构的 Mac1 抑制剂与 PARP14 选择性的计算预测
+   - <strong>来源局限/观察</strong>: 本文仅测试了 Mac1 结合，未评估对 PARP14 Macro2 等旁靶的选择性。
+   - <strong>核心假设</strong>: Mac1 与 PARP14 Macro2 的结构差异可用于计算预测选择性，指导设计高选择性抑制剂。
+   - <strong>初步方法</strong>: 比较 Mac1 与 PARP14 Macro2 的晶体结构，识别选择性决定残基，使用 FEP 或 MM-GBSA 计算系列化合物的选择性。
+   - <strong>验证方式</strong>: 对预测高选择性的化合物进行 SPR 交叉测试。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (main text, methods, results, figure legends, references cited in text)</li>
+<li><strong>Assessment boundary</strong> Scientific validity, technical soundness, and clarity of claims as presented in the provided manuscript text; no assessment of supplementary materials beyond what is referenced</li>
+<li><strong>Shared manuscript claim summary</strong> The authors describe a machine learning-accelerated virtual screening workflow (Deep Docking) applied to the Enamine REAL Diversity Subset to identify novel neutral inhibitors of the SARS-CoV-2 NSP3 Mac1 domain. They report one confirmed hit (CACHE3-HI_1706_56) with a KD of 20 µM by SPR, a crystal structure confirming the binding mode, and a subsequent analogue expansion in the REAL Space (44 billion compounds) yielding a series with improved affinities (best KD 12 µM). The work was part of the CACHE3 challenge, which the authors state they won.</li>
+<li><strong>Visible evidence base</strong> Main text figures (Fig. 1-4), methods sections (protein preparation, docking, HTRF, SPR, crystallography), results narrative, Table 1 (referenced, not shown in text), Supplementary Figures 1-4 and Supplementary Tables 1 (referenced, not shown in text)</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary figures and tables (including dose-response curves, SPR sensorgrams, crystallographic statistics, full analogue table), crystallographic data deposition identifiers, PDB accession codes for the new structure, raw HTRF data, compound synthesis details, and the full CACHE3 challenge results for comparison</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript describes a technically competent application of an established machine learning-accelerated virtual screening approach to a relevant antiviral target. The work is clearly presented and the experimental validation is appropriate in scope. However, the scientific advance over existing literature is modest, as the target has been extensively studied and multiple inhibitor series already exist. The single confirmed hit with micromolar affinity, while validated crystallographically, represents a limited demonstration of the workflow's utility. The analogue expansion is a strength, but the lack of cellular data limits the translational significance. The manuscript would benefit from clearer contextualization of the novelty relative to prior Mac1 inhibitor discovery efforts and a more critical discussion of the limitations of the screening approach.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in computational drug discovery, particularly those working on machine learning-accelerated virtual screening methods, will find the workflow description and its prospective validation of interest. The structural biology community studying SARS-CoV-2 proteins may also find the new Mac1-ligand crystal structure useful. Medicinal chemists working on antiviral development may be interested in the new chemical series as a starting point, though the micromolar potency and lack of cellular data limit immediate therapeutic relevance.</li>
+<li><strong>Major strengths</strong> 1) Prospective validation of a machine learning-accelerated screening workflow in a blinded challenge setting (CACHE3), which provides an unbiased assessment of method performance. 2) High-quality crystallographic confirmation of the binding mode, including the observation of a Phe132 conformational change, which provides structural insight into Mac1 plasticity. 3) The analogue expansion strategy using the REAL Space database is a practical demonstration of how to efficiently explore ultra-large chemical spaces. 4) Clear and concise writing with appropriate methodological detail for reproducibility.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Scientific significance / novelty</li>
+<li><strong>Claim pointer</strong> The authors claim that their workflow "enabled to discover novel Mac1 inhibitor chemotypes" and that the identified series represents "a structurally distinct example within the pyrrolidinone-based Mac1 inhibitor series."</li>
+<li><strong>Evidence pointer</strong> Results section "Discovery and characterization of a novel Mac1 inhibitor scaffold"; Conclusions</li>
+<li><strong>Concern</strong> The novelty of the identified scaffold is not sufficiently established. The authors acknowledge that the pyrrolopyrimidine group has been "frequently observed among previously reported Mac1 inhibitors" and that prior neutral inhibitors exist (e.g., LRH-0003). The distinction claimed is based on the bromine substitution and carboxamide group, but the manuscript does not provide a comprehensive comparison with previously reported Mac1 inhibitors to demonstrate that this specific combination is genuinely novel. Furthermore, the micromolar affinity (KD 20 µM) is modest compared to existing inhibitors, and the authors do not discuss whether this scaffold offers any advantage over previously reported series in terms of potency, selectivity, or drug-likeness.</li>
+<li><strong>Why it matters</strong> The central claim of the manuscript is the discovery of a novel inhibitor chemotype. If the scaffold is not sufficiently distinct from known inhibitors, or if it does not offer a clear advantage, the scientific significance of the work is substantially diminished. The CACHE3 challenge context implies that the workflow should identify novel, useful starting points, and this needs to be demonstrated more rigorously.</li>
+<li><strong>Resolution test</strong> The authors should provide a systematic comparison of CACHE3-HI_1706_56 and its analogues with all previously reported Mac1 inhibitors, including structural overlays, potency comparisons, and physicochemical property assessments. If the scaffold is genuinely novel, this analysis should clearly demonstrate distinct structural features and a favorable profile. If not, the claims of novelty should be tempered.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness / data completeness</li>
+<li><strong>Claim pointer</strong> The authors state that "12 were confirmed as NSP3 Mac1 binders via SPR" and report KD values for several analogues in Table 1 and Figure 4.</li>
+<li><strong>Evidence pointer</strong> Results section "Chemical series expansion in the REAL space"; Table 1 (referenced); Supplementary Figures 3 and 4 (referenced)</li>
+<li><strong>Concern</strong> The SPR data supporting the KD values are not shown in the main text. The authors reference Supplementary Figures 3 and 4, but these are not available for review. Given that SPR is the primary quantitative binding assay, the quality of the sensorgrams, the fitting models used, and the reproducibility of the measurements are critical for assessing the reliability of the reported affinities. Additionally, the manuscript does not specify how many independent replicates were performed, what the error bars represent, or whether the binding was reversible. The steady-state affinity model mentioned in the methods may not be appropriate for all binding kinetics, particularly if association or dissociation rates are slow.</li>
+<li><strong>Why it matters</strong> The reported KD values are the key quantitative output of the study and form the basis for the structure-activity relationships discussed. If the SPR data are not robust, the conclusions about which analogues are most potent and the rationale for the chemical series expansion are undermined.</li>
+<li><strong>Resolution test</strong> The authors should provide representative SPR sensorgrams and fitting curves for all reported compounds, including the negative control (PARP14), in the main text or a clearly accessible supplementary file. They should also specify the number of replicates, the error calculation method, and the criteria for data inclusion/exclusion. If steady-state fitting was used, justification for this choice over kinetic fitting should be provided.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical soundness / methodological rigor</li>
+<li><strong>Claim pointer</strong> The authors state that "the crystal structure of CACHE3_HI_1706_56 bound to Mac1 was solved to a resolution of 1.02 Å" and that the ligand occupancy was 26%.</li>
+<li><strong>Evidence pointer</strong> Results section "Discovery and characterization of a novel Mac1 inhibitor scaffold"; Figure 3d; Supplementary Figure 2 (referenced)</li>
+<li><strong>Concern</strong> The low ligand occupancy (26%) raises concerns about the reliability of the structural interpretation. While the authors acknowledge this and provide a plausible explanation (conformational change of the Phe132 loop), the manuscript does not provide details on how the occupancy was refined, what the estimated standard uncertainty is, or whether alternative interpretations (e.g., partial occupancy at multiple sites, ligand disorder) were considered. The electron density maps are only shown in the supplementary material, which is not available for review. The claim that the binding mode is "confirmed" by crystallography may be overstated given the low occupancy.</li>
+<li><strong>Why it matters</strong> The crystal structure is a key piece of evidence supporting the docking predictions and the proposed binding mode. If the structural interpretation is not robust, the basis for the analogue design and the understanding of the structure-activity relationships is weakened.</li>
+<li><strong>Resolution test</strong> The authors should provide the electron density maps (2Fo-Fc and Fo-Fc) for the ligand and surrounding residues in the main text or a clearly accessible supplementary file, along with details of the occupancy refinement and validation metrics (e.g., real-space correlation coefficient). They should also discuss the limitations of interpreting a structure with 26% occupancy and consider whether the docking predictions are still valid given the observed conformational change.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Scientific significance / contextualization</li>
+<li><strong>Claim pointer</strong> The authors state that their workflow "demonstrated competitive performance in the prospective CACHE3 challenge against a range of alternative screening methods, including fragment-based, generative, and deep learning workflows."</li>
+<li><strong>Evidence pointer</strong> Conclusions; Introduction (CACHE3 description)</li>
+<li><strong>Concern</strong> The manuscript does not provide any quantitative comparison with other CACHE3 participants' results. The authors mention that they won the challenge, but no details are given about the evaluation criteria, the performance metrics, or how their results compared to other methods. Without this context, the claim of "competitive performance" is not substantiated. Additionally, the authors do not discuss what aspects of their workflow contributed to its success or what limitations were revealed by the challenge.</li>
+<li><strong>Why it matters</strong> The CACHE3 challenge is a key part of the manuscript's significance, as it provides a prospective, blinded evaluation of the workflow. A detailed comparison with other methods would help readers understand the strengths and weaknesses of the approach and its generalizability to other targets.</li>
+<li><strong>Resolution test</strong> The authors should provide a summary of the CACHE3 challenge results, including the evaluation criteria, the performance of their workflow relative to other participants, and a discussion of the factors that contributed to their success. If this information is confidential, they should state this explicitly and temper their claims accordingly.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity / reproducibility</li>
+<li><strong>Affected element</strong> Methods section "Small molecule library preparation"</li>
+<li><strong>Evidence pointer</strong> Materials and methods</li>
+<li><strong>Issue</strong> The description of the library preparation is incomplete. The authors state that the SMILES of 43,759,934 compounds were downloaded, but then refer to a "resulting dataset of 80 million molecules" after applying filters. The relationship between these two numbers is unclear. Additionally, the CACHE3 'hit-like' filter is referenced but not described in detail.</li>
+<li><strong>Required correction</strong> Clarify the relationship between the initial download and the filtered dataset. Provide a detailed description of the CACHE3 'hit-like' filter criteria, either in the main text or by referencing a public source.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity / data presentation</li>
+<li><strong>Affected element</strong> Figure 3 and Figure 4</li>
+<li><strong>Evidence pointer</strong> Figure legends</li>
+<li><strong>Issue</strong> The figure legends are incomplete. Figure 3 does not describe the SPR data shown in panel (b), and Figure 4 does not describe the SPR data shown in panels (b) and (c). The legends also do not specify the error bars or the number of replicates.</li>
+<li><strong>Required correction</strong> Expand the figure legends to fully describe all panels, including the assay conditions, the data representation (e.g., mean ± SD), and the number of independent experiments.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness / assay details</li>
+<li><strong>Affected element</strong> Methods section "Homogeneous time-resolved fluorescence (HTRF)"</li>
+<li><strong>Evidence pointer</strong> Materials and methods</li>
+<li><strong>Issue</strong> The HTRF assay description is brief. The authors do not specify the concentration of the ADP-ribose peptide used, the peptide sequence beyond the abbreviated notation, or the positive/negative controls used. The statement that "Compounds were dispensed into ProxiPlate-384 Plus assay plates using an Echo 650 acoustic liquid handler" does not specify the compound concentration range tested.</li>
+<li><strong>Required correction</strong> Provide full details of the HTRF assay, including the peptide sequence, concentrations of all reagents, the compound concentration range, and the controls used. This is essential for reproducibility.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity / terminology</li>
+<li><strong>Affected element</strong> Results section "Discovery and characterization of a novel Mac1 inhibitor scaffold"</li>
+<li><strong>Evidence pointer</strong> Figure 3d and accompanying text</li>
+<li><strong>Issue</strong> The text refers to "Phe132 (P132_d)" and "P132_c" without defining these terms. The distinction between the "closed" and "everted" conformations is described, but the notation is confusing.</li>
+<li><strong>Required correction</strong> Define the notation (e.g., "d" for "down" and "c" for "closed" or similar) and use consistent terminology throughout the text and figures.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity / data presentation</li>
+<li><strong>Affected element</strong> Table 1</li>
+<li><strong>Evidence pointer</strong> Table 1 (referenced, not shown in text)</li>
+<li><strong>Issue</strong> Table 1 is referenced but not included in the manuscript text. The reader cannot assess the structure-activity relationships without seeing the full table.</li>
+<li><strong>Required correction</strong> Include Table 1 in the main text or provide a summary of the key data points in the text. If the table is too large, consider moving it to the main text as a condensed version.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (novelty claim not substantiated), R1-M2 (SPR data not shown), R1-M3 (crystallographic occupancy concerns)</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li><strong>Originality</strong> The application of Deep Learning-accelerated virtual screening to Mac1 is not entirely novel, as similar approaches have been applied to other targets. The specific combination of Deep Docking with consensus scoring and analogue expansion in the REAL Space is a reasonable workflow, but the individual components are established. The crystallographic observation of the Phe132 conformational change is a useful contribution, though its significance is limited by the low ligand occupancy.</li>
+<li><strong>Scientific importance</strong> The target (SARS-CoV-2 Mac1) is of high relevance, and the need for novel antiviral agents remains. However, the identified inhibitors have only micromolar affinity and no cellular activity data, limiting their immediate therapeutic significance. The work is more relevant as a methodological demonstration than as a direct contribution to antiviral drug development.</li>
+<li><strong>Interdisciplinary readership</strong> The manuscript will appeal to computational chemists, structural biologists, and virologists. The methods are described in sufficient detail for computational specialists, and the biological context is clearly explained. However, the lack of cellular data may limit interest from a broader biomedical audience.</li>
+<li><strong>Technical soundness</strong> The computational workflow is technically sound, and the experimental validation is appropriate. However, the incomplete presentation of SPR data and the low crystallographic occupancy are concerns that need to be addressed. The manuscript would benefit from more rigorous statistical analysis of the screening results and a clearer discussion of the limitations of the approach.</li>
+<li><strong>Readability for nonspecialists</strong> The manuscript is generally well-written and accessible. The introduction provides adequate context, and the figures are clear. However, some methodological details (e.g., Deep Docking parameters, consensus scoring) may be challenging for nonspecialists. The authors should consider adding a brief explanation of the machine learning approach for a general audience.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The manuscript describes a competent application of a useful computational workflow with experimental validation. However, the novelty claim needs to be substantiated with a more thorough comparison to existing Mac1 inhibitors, and the SPR and crystallographic data need to be presented more completely. If these issues are addressed, the manuscript would be suitable for publication in a specialized journal.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

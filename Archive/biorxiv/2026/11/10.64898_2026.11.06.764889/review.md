@@ -1,0 +1,88 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, results, discussion, methods, appendices) as provided.
+- **Assessment boundary** Scientific validity, technical soundness, clarity, and support for claims based solely on the supplied text. No external data, code, or supplementary files were accessed.
+- **Shared manuscript claim summary** The authors introduce Cadense, a generative equivariant diffusion model that produces diverse antibody Fv conformational ensembles from sequence alone, trained on large-scale all-atom molecular dynamics (MD) trajectories. They claim Cadense recovers apo and holo states, reproduces MD-derived flexibility and biophysical property distributions, and improves physics-based docking over static structure predictors.
+- **Visible evidence base** Main text figures referenced (Figures 1, 2, 3, 4, 5, 6), supplementary figures (A1, A2, A3), supplementary tables (A1), and methodological descriptions in Sections 4 and Appendices A–H.
+- **Missing materials affecting confidence** Actual figure images, numerical data, statistical analyses, model training details (hyperparameters, compute), full benchmark definitions, and code availability. Supplementary appendices referenced but not provided in full.
+
+## Reviewer
+- **Overall assessment** The manuscript presents a timely and potentially impactful contribution to antibody structure prediction by addressing conformational ensembles, a recognized limitation of static predictors. The methodological design is thoughtful, particularly the curriculum learning strategy based on Markov state models and the use of MD-derived training data. However, the evidence as presented is insufficient to fully establish the core claims. Key quantitative results (e.g., docking scores, property flagging rates, RMSF correlations) are described qualitatively without numerical support in the visible text. The held-out evaluation sets are described, but the selection criteria and statistical rigor are not fully detailed. The docking protocol, while adapted from prior work, introduces several modifications that could affect comparability, and the oracle analysis highlights a gap between selection and optimal performance that is not fully addressed. Overall, the work is promising but requires substantial additional evidence and clarification before the claims can be considered established.
+- **Who would be interested in the results, and why** Computational biologists and bioinformaticians developing or applying structure prediction tools; antibody engineers and therapeutic discovery scientists seeking dynamics-aware design methods; and researchers in generative modeling for proteins. The potential to replace costly MD simulations with fast ensemble generation would be of broad interest to both academic and industrial groups.
+- **Major strengths** 1. Addresses a clear and important gap: static structure prediction ignores conformational dynamics, which are critical for antibody function. 2. The training data scale (13,192 MD trajectories) is substantial and represents a significant resource. 3. The curriculum learning approach using MSM-derived equilibrium weights is methodologically novel and well-motivated. 4. The evaluation includes multiple complementary dimensions: state recovery, flexibility profiles, property distributions, and docking. 5. The inclusion of two internally crystallized structures (Apo 1, Apo 2) as out-of-distribution test cases is a strong validation strategy.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "Cadense ensembles reduced false red flags 3.5-fold compared to static snapshots" and "Cadense ensembles with HADDOCK-based selection outperformed single-structure baselines"
+  - **Evidence pointer** Section 2.2, Figure 5; Section 2.3, Figure 6
+  - **Concern** The central quantitative claims are presented without numerical values, error bars, or statistical significance tests in the visible text. The 3.5-fold reduction and docking improvements are stated but not substantiated with data (e.g., exact counts, confidence intervals, p-values). Without these, the reader cannot assess the robustness or magnitude of the reported effects.
+  - **Why it matters** These claims are the primary evidence for Cadense's practical utility. If the effect sizes are small or highly variable, the conclusions may not hold. The lack of statistical detail prevents independent verification and comparison with existing methods.
+  - **Resolution test** Provide exact numbers for false red flag counts (e.g., 4 vs. 14), docking scores (mean and standard deviation for each method), and statistical tests (e.g., paired t-test or Wilcoxon) with reported p-values. Include these in the main text or a clearly referenced supplementary table.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "Cadense learns the conformational distribution present in its training data and cannot extrapolate to motions or states absent from that data"
+  - **Evidence pointer** Section 3 (Discussion), Section 4.4 (Training data)
+  - **Concern** The limitation that Cadense cannot extrapolate beyond training data is acknowledged, but the extent of this limitation is not quantified. The training data consists of 200 ns MD simulations, which may not sample slow conformational transitions relevant to antibody function. The manuscript does not discuss how this timescale limitation affects the utility of the generated ensembles for real-world applications, nor does it compare the diversity of generated ensembles to experimentally observed conformational heterogeneity beyond the few test cases.
+  - **Why it matters** If the model only reproduces conformations accessible within 200 ns, it may miss functionally important states that occur on longer timescales. This would limit its applicability to antibodies with slow conformational dynamics, which are often the most interesting targets.
+  - **Resolution test** Provide an analysis of the timescales of conformational changes in the training data and compare the diversity of generated ensembles to experimental ensembles (e.g., from NMR or multiple crystal structures) for a broader set of antibodies. Discuss the implications of the 200 ns limit for practical use.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Reproducibility
+  - **Claim pointer** "Cadense follows a two-component design... The score model is built on the Equiformer architecture"
+  - **Evidence pointer** Section 4.1, Section 4.2, Section 4.3, Appendices F, G, H
+  - **Concern** The model description, while detailed, lacks specific hyperparameters (e.g., number of layers, hidden dimensions, learning rate, batch size), training compute requirements, and the exact noise schedule parameters. The supplementary appendices are referenced but not provided, making it impossible to reproduce the model or assess its computational feasibility.
+  - **Why it matters** Reproducibility is a core requirement for scientific claims. Without full training details, other groups cannot build upon or verify the method. The computational cost is also a key practical consideration for potential users.
+  - **Resolution test** Provide a complete table of hyperparameters, training time, and hardware used. Ensure the supplementary appendices are publicly available and contain all necessary implementation details, including code or a link to a public repository.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Benchmark validity
+  - **Claim pointer** "We test this hypothesis at scale on 44 internal antibody–antigen complexes"
+  - **Evidence pointer** Section 2.3, Figure 6
+  - **Concern** The docking benchmark uses "internal" complexes, which are not described in terms of their diversity, difficulty, or how they were selected. The protocol modifies the original ensemble docking approach (Ref. [21]) with several changes (e.g., disabling random orientations, center-of-mass restraints), which may bias results. The comparison to Boltz-2 cofolding is described as a "reference point," but the conditions are not matched (e.g., Boltz-2 uses sequence input, while Cadense uses pre-aligned structures).
+  - **Why it matters** The docking results are a key demonstration of practical utility. If the benchmark is not representative or the protocol is biased, the conclusions may not generalize. The comparison to Boltz-2 is not apples-to-apples, which could mislead readers about relative performance.
+  - **Resolution test** Describe the 44 complexes in detail (e.g., antigen class, binding affinity range, conformational change magnitude). Justify each protocol modification and its impact on results. For the Boltz-2 comparison, either match input conditions or clearly state the differences and their implications.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Figure 2 description
+  - **Evidence pointer** Section 2.1, Figure 2
+  - **Issue** The description of the apo/holo recovery analysis is brief. It is unclear how "distance to apo" and "distance to holo" are aggregated across the ensemble (e.g., minimum, mean, or distribution). The "centrality" and "support" scores are mentioned but not defined in the main text.
+  - **Required correction** Clarify the aggregation method and provide a brief definition of centrality and support in the main text or a clear pointer to Appendix B.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Comparison to existing methods
+  - **Evidence pointer** Section 1 (Introduction), Section 2.1
+  - **Issue** The introduction mentions ABodyBuilder4-STEROIDS as the most related prior work, but the comparison in Section 2.1 is limited to ABodyBuilder3, Boltz-2, and Ibex. The supplementary figure A3 includes ABB4-STEROIDS, but the main text does not discuss how Cadense compares to this directly relevant method.
+  - **Required correction** Add a brief discussion of how Cadense compares to ABodyBuilder4-STEROIDS in the main text, referencing the supplementary figure.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Readability
+  - **Affected element** Section 4.3 (Sampling)
+  - **Evidence pointer** Section 4.3
+  - **Issue** The description of the hybrid Langevin dynamics and the temperature-like parameter λ0 is dense and may be difficult for non-specialist readers to follow. The practical implications of these parameters (e.g., how they affect sample diversity vs. quality) are not clearly stated.
+  - **Required correction** Provide a brief intuitive explanation of λ0 and ψ and their effect on the generated ensembles, perhaps with a simple analogy or a reference to a figure.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Data availability
+  - **Affected element** Training data
+  - **Evidence pointer** Section 4.4, Appendix D
+  - **Issue** The training data is described as drawn from public databases, but the exact composition and any filtering criteria are not fully detailed. The statement that pOAS sequences were selected to "maximize diversity" is vague.
+  - **Required correction** Provide a more detailed description of the data selection process, including the number of sequences from each source and the specific diversity metrics used.
+- **Technical failings that need to be addressed before the case is established** 1. Lack of numerical results and statistical analyses for key claims (R1-M1). 2. Insufficient detail on model hyperparameters and training compute for reproducibility (R1-M3). 3. Incomplete description of the docking benchmark and protocol modifications, limiting comparability (R1-M4). 4. Unquantified limitations regarding training data timescales and extrapolation (R1-M2).
+- **Assessment against Nature-style criteria** **Originality:** High. The application of diffusion models to antibody conformational ensembles trained on MD data is a novel combination, and the curriculum learning strategy is a creative contribution. **Scientific importance:** High. Addressing conformational dynamics in antibody structure prediction has direct implications for therapeutic antibody design and understanding of antibody function. **Interdisciplinary readership:** Moderate to high. The topic bridges machine learning, structural biology, and drug discovery, but the methods section may be too technical for a general audience. **Technical soundness:** Currently insufficient. The methodological framework is sound, but the lack of quantitative evidence and incomplete benchmark descriptions prevent full assessment. **Readability for nonspecialists:** The introduction and results are generally accessible, but the methods and appendices are highly technical. The main text could benefit from clearer explanations of key concepts (e.g., diffusion, MSMs) for a broader readership.
+- **Recommendation posture** Supportive if technical concerns are resolved. The core idea is promising and the methodological design is thoughtful, but the current evidence base is insufficient to fully establish the claims. The authors must provide quantitative results with statistical rigor, complete model details, and a more transparent benchmark description.
+
+## Risk / unsupported claims
+- The claim of "orders of magnitude faster than simulation" is not quantified with specific timing comparisons.
+- The 3.5-fold reduction in false red flags is stated without numerical support or confidence intervals.
+- The claim that Cadense "recovers both apo and holo conformations" is based on a small number of cases (three highlighted, seven aggregated) and may not be generalizable.
+- The docking improvement over static structures is not quantified, and the oracle analysis suggests significant room for improvement in selection.
+- The statement that Cadense "contains no antibody-specific architectural inductive biases" is a design claim that is not empirically tested (e.g., by comparing to a version with such biases).
+- The generalizability of the model to antibodies with conformational changes on timescales longer than 200 ns is not assessed and is acknowledged as a limitation, but the practical impact is not discussed.

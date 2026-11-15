@@ -1,0 +1,832 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design Trade-Offs between Target Binding and Self-Association Revealed by De Novo SARS-CoV-2 Binders. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Design Trade-Offs between Target Binding and Self-Association Revealed by De Novo SARS-CoV-2 Binders.</h1>
+      <div class="meta">Carcelen, Lourdes; Penas-Utrilla, Daniel; Ferrero, Diego S; Ferrer-Orta, Cristina; Nadal, Marta; Colizzi, Francesco; Munoz, Juana C; Taules, Marta; Verdaguer, Nuria; Marcos, Enrique</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of chemical information and modeling</span>
+        · 2026-11-09
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/43001931/">原文</a>
+      </div>
+      <p class="one-liner">该研究通过整合AlphaFold预测、MD模拟、对接和SAP计算，系统解析了从头设计SARS-CoV-2结合蛋白中靶标结合与自聚集之间的权衡机制，并据此理性重设计出稳定单体且具微摩尔亲和力的变体，直接贡献于蛋白质结构计算设计方法。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">De novo protein binders have emerged as a powerful platform for molecular recognition, yet achieving high affinity while maintaining favorable biophysical properties remains a major challenge. Here, using the SARS-CoV-2 receptor-binding domain (RBD) as a model target, we generated two de novo protein binder design campaigns that deliberately imposed different trade-offs between binding and monomeric behavior, and benchmarked them against a set of experimentally validated binders. Through integrated experimental and computational analyses, we show that binder design is constrained by two distinct failure modes that require different optimization strategies. None of the 22 original designs showed measurable binding to the RBD, with one class remaining monomeric but failing to achieve sufficient target binding, while the other had more competent binding interfaces but exhibited excessive surface hydrophobicity that promoted self-association. By integrating AlphaFold-based predictions, molecular dynamics simulations, docking analyses, and surface aggregation propensity (SAP) calculations, we establish complementary computational signatures that distinguish these failure modes and reveal their underlying structural determinants. Guided by these insights, we prospectively redesigned a representative failed binder by reducing noninterface hydrophobicity while preserving folding and binding interface quality. Experimental characterization by SEC-MALS, surface plasmon resonance, and circular dichroism confirmed that the redesigned variants were stable monomers and acquired low muM binding affinities. Together, our results define the mechanistic trade-offs between binding and self-association in de novo protein binder design and provide a framework for diagnosing and rationally overcoming common design failure modes.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">从头设计蛋白结合物已成为分子识别的一个强大平台，然而在保持良好生物物理性质的同时实现高亲和力仍是一项重大挑战。在此，以SARS-CoV-2受体结合域（RBD）为模型靶标，我们开展了两个从头设计蛋白结合物的设计活动，这些活动有意施加了结合与单体行为之间的不同权衡，并针对一组经实验验证的结合物进行了基准测试。通过整合实验和计算分析，我们表明结合物设计受到两种不同失败模式的制约，这些模式需要不同的优化策略。22个原始设计中无一显示出对RBD的可测量结合，其中一类保持单体状态但未能达到足够的靶标结合，而另一类具有更有效的结合界面，但表现出过度的表面疏水性，促进了自缔合。通过整合基于AlphaFold的预测、分子动力学模拟、对接分析和表面聚集倾向性（SAP）计算，我们建立了区分这些失败模式的互补计算特征，并揭示了其潜在的结构决定因素。在这些见解的指导下，我们前瞻性地重新设计了一个代表性的失败结合物，通过减少非界面疏水性同时保留折叠和结合界面质量。通过SEC-MALS、表面等离子体共振和圆二色性的实验表征确认，重新设计的变体是稳定的单体，并获得了低微摩尔级的结合亲和力。总体而言，我们的结果定义了对从头设计蛋白结合物中结合与自缔合之间的机制权衡，并为诊断和理性克服常见设计失败模式提供了一个框架。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Design Trade-Offs between Target Binding and Self-Association Revealed by De Novo SARS-CoV-2 Binders</li>
+<li><strong>作者</strong>: Carcelen, Lourdes; Penas-Utrilla, Daniel; Ferrero, Diego S; Ferrer-Orta, Cristina; Nadal, Marta; Colizzi, Francesco; Munoz, Juana C; Taules, Marta; Verdaguer, Nuria; Marcos, Enrique</li>
+<li><strong>单位</strong>: 未提供（推测为西班牙 CSIC/IBMB 相关机构，依据致谢中的资助信息）</li>
+<li><strong>期刊/平台</strong>: Journal of Chemical Information and Modeling (JCIM)</li>
+<li><strong>年份</strong>: 2026（在线日期 2026-11-09）</li>
+<li><strong>论文类型</strong>: 研究论文（Research Article）</li>
+<li><strong>领域</strong>: 计算蛋白质设计；de novo binder 设计；蛋白质-蛋白质相互作用</li>
+<li><strong>关键词</strong>: de novo protein binder design; SARS-CoV-2 RBD; self-association; surface hydrophobicity; AlphaFold; molecular dynamics; SAP</li>
+<li><strong>DOI/arXiv</strong>: 10.1021/acs.jcim.6c02394</li>
+<li><strong>代码</strong>: 未提供</li>
+<li><strong>数据</strong>: 未提供（补充材料中有序列和结构信息，但未公开代码库）</li>
+<li><strong>阅读日期</strong>: 2026-11-10</li>
+<li><strong>在课题方向中的位置</strong>: 本文属于「蛋白质结构相关计算研究 × AI/物理模拟」中的 <strong>de novo binder 设计失败模式诊断</strong> 方向。核心贡献在于系统性地将 AlphaFold 系列（AF2/AFM/AF3）、MD 模拟、Rosetta 能量计算和 LightDock 对接整合为多维度诊断框架，用于区分两类设计失败模式（界面不稳定 vs 自聚集），并验证了表面疏水性（SAP）作为关键可优化指标的价值。对课题读者的启示：提供了一套可迁移的「失败模式归因」方法论，以及「疏水性作为有限设计资源」的设计哲学。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文通过两轮 de novo binder 设计（三螺旋 vs 四螺旋支架）产生 22 个候选，结合 AlphaFold 预测、MD 模拟、LightDock 对接和 SAP 计算，诊断出两类失败模式——界面稳定性不足（Round 1）和表面疏水过度导致自聚集（Round 2），并通过针对性表面亲水化改造成功将无活性二聚体 R2-6 挽救为低 μM 亲和力的稳定单体 binder。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 在 de novo 蛋白质 binder 设计中，折叠稳定性、目标结合亲和力和单体行为（抗自聚集）三者之间存在何种权衡关系？当设计失败时，如何从计算层面归因失败的根本原因（界面不足 vs 自聚集）？</li>
+<li><strong>为什么重要</strong>: De novo binder 设计虽有进展，但实验成功率仍低（&lt;1%），且失败机制缺乏系统性理解。若能建立「失败模式 → 计算诊断指标 → 针对性改造策略」的闭环，将显著提升设计-实验迭代效率。</li>
+<li><strong>现有方法不足</strong>: 现有工作多聚焦于提高结合亲和力（如 AF2/AFM 评分、Rosetta ddG），但较少系统关注 binder 自身的溶液行为（单体性、溶解度）。AlphaFold 类方法对中等亲和力（μM 级）复合物的预测可靠性有限，且无法直接评估自聚集倾向。缺乏将静态结构预测、动态模拟和表面性质分析整合的失败归因框架。</li>
+<li><strong>精确研究问题 (Can...?)</strong>: Can we identify distinct computational signatures that distinguish binder design failures caused by insufficient interface stability from those caused by excessive surface hydrophobicity-driven self-association, and use these signatures to rationally rescue a failed binder?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「经外部核验」的领域通用框架，结合本文 Introduction 内容）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期 Rosetta 物理能量法</td>
+<td>RosettaDesign, FlexPepDock</td>
+<td>物理可解释；可优化序列</td>
+<td>能量函数精度有限；构象采样不足；成功率 &lt;1%</td>
+<td>本文使用 Rosetta FastDesign + ref2015 作为设计引擎</td>
+</tr>
+<tr>
+<td>结构数据库/片段组装</td>
+<td>片段库 + 蒙特卡洛组装</td>
+<td>利用天然结构偏好</td>
+<td>依赖已知结构；对新折叠支持有限</td>
+<td>本文使用 Rosetta 片段组装生成三/四螺旋束</td>
+</tr>
+<tr>
+<td>深度学习结构预测</td>
+<td>AlphaFold2 (AF2)</td>
+<td>高精度单体预测；可评估折叠质量</td>
+<td>对复合物（尤其设计界面）预测可靠性有限；无动态信息</td>
+<td>本文用 AF2 验证单体折叠，AFM/AF3 评估复合物（发现区分力不足）</td>
+</tr>
+<tr>
+<td>深度学习生成式设计</td>
+<td>RFdiffusion + ProteinMPNN</td>
+<td>高成功率；可设计新折叠</td>
+<td>对溶液行为（聚集）无显式控制；黑箱</td>
+<td>本文讨论其局限，并建议 SAP 作为补充筛选指标</td>
+</tr>
+<tr>
+<td>物理模拟验证</td>
+<td>MD 模拟</td>
+<td>提供动态稳定性信息</td>
+<td>计算成本高；力场误差</td>
+<td>本文用 3×100 ns MD 区分界面刚性（成功 vs Round 1 失败）</td>
+</tr>
+<tr>
+<td>对接/评分</td>
+<td>LightDock + DFIRE + DockQ</td>
+<td>独立于 AF 的物理评估</td>
+<td>对柔性界面精度有限</td>
+<td>本文用其验证界面结合能力，与 MD 互补</td>
+</tr>
+<tr>
+<td>表面性质分析</td>
+<td>SAP (Spatial Aggregation Propensity)</td>
+<td>直接量化聚集倾向；可分解到残基</td>
+<td>经验性；需结合实验验证</td>
+<td><strong>本文核心创新</strong>：将 SAP 分解为界面/非界面贡献，作为失败模式诊断和改造指导</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>设计 binder 无结合活性</td>
+<td>Round 1 全部 11 个设计无 ELISA 可检测结合</td>
+<td>界面结合强度不足，MD 显示界面刚性差（L-RMSD 高、maxRMSF 高）</td>
+<td>Results 图 2c；MD 分析：Round 1 中位 L-RMSD 2.90 Å vs 活性对照 2.03 Å</td>
+</tr>
+<tr>
+<td>设计 binder 自聚集/寡聚</td>
+<td>Round 2 中 5/11 可溶但形成二聚/寡聚体</td>
+<td>表面疏水性过高，SAP 中位数 78（对照 37），非界面 SAP 贡献过大</td>
+<td>Results 图 3a；SEC-MALS 显示非单体峰</td>
+</tr>
+<tr>
+<td>计算预测与实验不一致</td>
+<td>AFM 对活性对照和失败设计的区分力不足</td>
+<td>AFM 缺乏共进化信号，对设计界面预测不可靠；无法捕捉动态/溶液行为</td>
+<td>Results 图 2b：AFM 评分在活性/非活性间重叠</td>
+</tr>
+<tr>
+<td>优化单一指标导致失衡</td>
+<td>Round 2 界面更强但溶液行为更差</td>
+<td>设计流程只优化结合界面，未约束表面疏水性</td>
+<td>Discussion：binder 设计是多目标优化问题</td>
+</tr>
+<tr>
+<td>疏水性难以定量归因</td>
+<td>无法判断聚集是界面还是非界面驱动</td>
+<td>SAP 未分解到空间区域</td>
+<td>本文创新：将 SAP 分解为界面/非界面贡献，发现 Round 2 两者均高</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<ul>
+<li>两轮 de novo 设计：Round 1（三螺旋束，70-80 aa，小界面）vs Round 2（四螺旋束，106 aa，大界面）</li>
+<li>22 个候选经实验表征（表达、SEC-MALS、ELISA/SPR）</li>
+<li>回顾性计算诊断：AF2（单体折叠）、AFM/AF3（复合物）、MD（动态稳定性）、LightDock（独立对接）、SAP（表面疏水）</li>
+<li>前瞻性改造：对 Round 2 代表失败者 R2-6 进行表面亲水化改造，产生 R2-6.1 和 R2-6.2</li>
+</ul>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>失败模式可归因</strong>：通过多维度计算指标的组合，可以将「无活性」区分为「界面不足」（Round 1）和「自聚集阻碍」（Round 2），而非笼统归为设计失败。</li>
+<li><strong>SAP 是关键的「有限资源」</strong>：表面疏水性不是要最小化，而是要「战略性分配」——集中在结合界面贡献亲和力，在非界面区域最小化以避免聚集。活性对照 binder 的 SAP 中位数 37，且 71% 集中在界面。</li>
+<li><strong>动态指标补充静态预测</strong>：MD 的 L-RMSD 和 maxRMSF 能区分活性对照与 Round 1 失败设计，而 AFM/AF3 不能——说明界面刚性（而非静态几何）是结合的必要条件。</li>
+<li><strong>局部改造可挽救全局</strong>：仅 17 个突变（其中 5 个直接替换高 SAP 残基）即可将二聚体转化为稳定单体并获得 μM 亲和力，证明失败并非不可逆。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>多目标优化需要显式约束</strong>：任何生成式设计流程（RFdiffusion/ProteinMDNN）若只优化结合界面，必然在溶液行为上失衡。SAP 或类似表面性质指标应作为显式约束或后置筛选条件。</li>
+<li><strong>「诊断先行」优于「盲目迭代」</strong>：在投入实验前，用互补的计算工具（静态+动态+表面）对候选进行失败模式预分类，可大幅减少实验试错成本。</li>
+<li><strong>界面质量 ≠ 静态评分</strong>：MD 动态指标（L-RMSD、maxRMSF）捕捉的是界面在热运动下的稳定性，这是静态结构预测无法提供的正交信息。</li>
+<li><strong>「有限资源」思维</strong>：疏水性、电荷、形状互补等都是有限的设计资源，成功的设计是资源的「最优分配」而非「最大化单一指标」。</li>
+</ul>
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>: SARS-CoV-2 RBD 结构（PDB: 6M0J）；ACE2 α1 螺旋（S19-N51）作为结合基序</p>
+<p><strong>输出</strong>: 22 个初始设计 + 2 个改造 variant（R2-6.1, R2-6.2），含序列、预测结构、实验表征数据</p>
+<p><strong>模块</strong>:
+1. <strong>骨架生成</strong>: Rosetta BlueprintBuilder + 片段组装（MC），三/四螺旋束拓扑
+2. <strong>序列设计</strong>: Rosetta FastDesign + ref2015 能量函数，层状氨基酸限制
+3. <strong>计算筛选</strong>: 能量评分、界面 ddG、形状互补性、片段质量分析
+4. <strong>实验表征</strong>: E. coli 表达、SEC-MALS（寡聚状态）、ELISA/SPR（结合）、CD（二级结构/热稳定性）
+5. <strong>回顾性诊断</strong>: AF2（单体折叠）、AFM/AF3（复合物预测）、MD（3×100 ns，L-RMSD/maxRMSF）、LightDock（独立对接）、SAP（表面疏水分解）
+6. <strong>前瞻性改造</strong>: 表面亲水化（界面外高 SAP 残基 → 极性/带电残基），保留界面关键残基</p>
+<p><strong>工具</strong>: Rosetta（设计）、ColabFold v1.5.3（AF2/AFM）、AF3 v3.0.0、GROMACS 2021.4 + Amber ff99SB-ILDN（MD）、LightDock v0.9.3 + DFIRE、PyMOL（可视化）</p>
+<p><strong>假设</strong>:
+- 设计 binder 应折叠为预期单体结构
+- 结合界面应具有足够的形状和化学互补性
+- 表面疏水性应控制在阈值以下以避免自聚集
+- MD 模拟的界面动态行为可反映实验结合能力</p>
+<p><strong>文字流程</strong>:
+1. 从 6M0J 提取 ACE2 α1 螺旋作为固定基序
+2. 用 Rosetta 片段组装生成三/四螺旋骨架，筛选折叠稳定且界面互补的构象
+3. FastDesign 优化序列（先无靶标优化折叠，后有靶标优化结合）
+4. 计算筛选出 22 个候选（每轮 11 个）
+5. 实验表达纯化，SEC-MALS 测寡聚状态，ELISA/SPR 测结合
+6. 对全部候选进行回顾性计算诊断（AF2/AFM/AF3/MD/LightDock/SAP）
+7. 基于诊断结果，对 R2-6 进行表面亲水化改造
+8. 实验验证改造 variant 的单体性和结合亲和力</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rosetta 骨架生成 + 序列设计</td>
+<td>生成候选 binder 结构序列</td>
+<td>产生多样化的设计空间，覆盖不同界面大小和疏水分布</td>
+<td>输入: 6M0J + ACE2 α1 基序；输出: 22 个设计序列+结构</td>
+<td>Methods 节；两轮设计产生不同特征的候选</td>
+<td>无此模块则无候选可评估（不可移除）</td>
+</tr>
+<tr>
+<td>AF2 单体预测</td>
+<td>验证设计是否折叠为目标结构</td>
+<td>排除折叠失败的候选，确保后续分析基于正确结构</td>
+<td>输入: 设计序列；输出: pLDDT/pTM/RMSD</td>
+<td>Results 图 2a：所有设计高置信度折叠（pLDDT 90-93）</td>
+<td>移除后无法区分「折叠失败」与「结合失败」</td>
+</tr>
+<tr>
+<td>AFM/AF3 复合物预测</td>
+<td>评估设计 binder 与 RBD 的结合模式</td>
+<td>尝试用 AI 方法预测结合亲和力</td>
+<td>输入: binder+RBD 序列；输出: ipTM/L-RMSD</td>
+<td>Results 图 2b：AFM 无法区分活性/非活性（中位 ipTM 0.31-0.38 vs 0.68）</td>
+<td>移除后不影响结论（本文已证明其区分力不足）</td>
+</tr>
+<tr>
+<td>MD 模拟（3×100 ns）</td>
+<td>评估复合物动态稳定性</td>
+<td>捕捉静态结构预测无法反映的界面刚性</td>
+<td>输入: AF2/AFM 预测复合物结构；输出: L-RMSD, maxRMSF</td>
+<td>Results 图 2c：Round 1 L-RMSD 2.90 Å vs 活性对照 2.03 Å；maxRMSF 2.53 vs 1.73 Å</td>
+<td><strong>关键模块</strong>：移除后无法区分「界面不足」失败模式</td>
+</tr>
+<tr>
+<td>LightDock + DFIRE + DockQ</td>
+<td>独立物理对接验证结合能力</td>
+<td>提供不依赖 AI 的结合评估</td>
+<td>输入: binder+RBD 结构；输出: DockQ 分数</td>
+<td>Results 图 2d：活性对照 DockQ 0.48 vs Round 1 0.19</td>
+<td>与 MD 互补；移除后失去独立验证</td>
+</tr>
+<tr>
+<td>SAP 计算</td>
+<td>量化表面疏水斑块</td>
+<td>诊断自聚集倾向，指导表面改造</td>
+<td>输入: binder 结构；输出: 总 SAP、界面/非界面 SAP</td>
+<td>Results 图 3a：Round 2 SAP 中位 78 vs 对照 37；非界面贡献大</td>
+<td><strong>关键模块</strong>：移除后无法诊断「自聚集」失败模式</td>
+</tr>
+<tr>
+<td>表面亲水化改造</td>
+<td>降低非界面疏水性</td>
+<td>验证「疏水是有限资源」假说</td>
+<td>输入: R2-6 序列；输出: R2-6.1 (17 mutations), R2-6.2 (+loop remodel)</td>
+<td>Results 图 3c-f：改造后单体、KD 1.4-1.7 μM</td>
+<td>移除后无法验证因果性（仅相关性）</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>本文为实验+计算诊断型论文，无核心数学公式。以下为理解关键指标所需的定义：</p>
+<p><strong>SAP (Spatial Aggregation Propensity)</strong>
+- 定义: 对每个残基，基于其溶剂可及表面积和残基疏水性计算的聚集倾向分数
+- 符号: SAP_total = Σ SAP_residue (对所有残基)；SAP_interface vs SAP_non-interface 为按空间位置分解
+- 直觉: 疏水残基暴露在溶剂中越多，SAP 越高，越易驱动非特异性聚集
+- 来源: Methods "Spatial Aggregation Propensity (SAP) Analysis" 节</p>
+<p><strong>DockQ</strong>
+- 定义: 对接模型质量评分，综合界面 RMSD、配体 RMSD 和正确接触分数
+- 范围: 0（错误）到 1（完美）；阈值: ≥0.23 可接受，≥0.49 中等，≥0.80 高精度
+- 直觉: 衡量预测复合物结构与「真实」结合模式的接近程度
+- 来源: Methods "LightDock Docking Calculations" 节</p>
+<p><strong>L-RMSD (Ligand RMSD)</strong>
+- 定义: 对接后 binder 相对于 RBD 的均方根偏差，用于衡量结合姿态准确性
+- 来源: Methods "LightDock Docking Calculations" 节</p>
+<p><strong>KD (平衡解离常数)</strong>
+- 定义: 由 SPR 动力学拟合得到，KD = kd/ka
+- 本文数值: R2-6.1 KD = 1.4 μM (ka = 1071 M⁻¹s⁻¹, kd = 0.001 s⁻¹)；R2-6.2 KD = 1.7 μM (ka = 856 M⁻¹s⁻¹, kd = 0.001 s⁻¹)
+- 来源: Results "Computational Design of Protein Binders" 节</p>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/群体</strong>:
+- 22 个 de novo 设计 binder（Round 1: 11 个三螺旋；Round 2: 11 个四螺旋）
+- 阳性对照: 10 个已发表的高亲和力 binder（LCB1-8, AHB1-2，来自 Cao et al.）
+- 靶标: SARS-CoV-2 RBD</p>
+<p><strong>指标</strong>:
+- 表达量/可溶性（SDS-PAGE）
+- 寡聚状态（SEC-MALS）
+- 结合活性（ELISA 初筛，SPR 定量）
+- 二级结构/热稳定性（CD）
+- 计算指标: pLDDT, pTM, ipTM, L-RMSD, maxRMSF, DockQ, SAP</p>
+<p><strong>基线/对照</strong>:
+- 阳性对照: Cao et al. 的 10 个实验验证 binder
+- 阴性对照: 无靶标设计（仅优化折叠）的 binder</p>
+<p><strong>评测协议</strong>:
+- 表达: E. coli BL21(DE3)，16°C 诱导过夜
+- SEC-MALS: Superdex 75 Increase 10/300 GL
+- SPR: Biacore T200，RBD 固定在链霉亲和素芯片，binder 为流动相
+- CD: 25-95°C 热变性</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>两轮设计实验表征</td>
+<td>不同设计策略产生不同失败模式</td>
+<td>Round 1 vs Round 2 vs 阳性对照</td>
+<td>Round 1 全部无结合但单体；Round 2 部分有结合但寡聚</td>
+<td>失败模式与设计策略相关</td>
+<td>不能证明策略与失败模式的因果关系（样本量小）</td>
+<td>Results 图 S3-S6</td>
+</tr>
+<tr>
+<td>AF2 单体预测</td>
+<td>所有设计正确折叠</td>
+<td>22 设计 vs 10 对照</td>
+<td>所有 pLDDT 90-93, RMSD 1.1-1.3 Å</td>
+<td>折叠失败不是失败原因</td>
+<td>AF2 可能对设计序列过度自信</td>
+<td>Results 图 2a</td>
+</tr>
+<tr>
+<td>AFM/AF3 复合物预测</td>
+<td>AI 可区分活性/非活性</td>
+<td>活性对照 vs Round 1/2</td>
+<td>AFM 区分力不足；AF3 对对照好但对设计差</td>
+<td>AFM/AF3 不适合作为唯一筛选标准</td>
+<td>不能排除其他 AF 变体或训练策略可改进</td>
+<td>Results 图 2b, S7</td>
+</tr>
+<tr>
+<td>MD 模拟</td>
+<td>界面动态稳定性区分活性</td>
+<td>3×100 ns, 300K</td>
+<td>Round 1 L-RMSD 2.90 Å vs 对照 2.03 Å；maxRMSF 2.53 vs 1.73 Å</td>
+<td>界面刚性不足是 Round 1 失败主因</td>
+<td>MD 力场误差可能影响绝对值</td>
+<td>Results 图 2c</td>
+</tr>
+<tr>
+<td>LightDock 对接</td>
+<td>物理对接可评估结合能力</td>
+<td>全部设计 vs 对照</td>
+<td>对照 DockQ 0.48；Round 1 0.19；Round 2 0.33</td>
+<td>对接评分与实验活性相关</td>
+<td>DockQ 阈值对弱结合不敏感</td>
+<td>Results 图 2d</td>
+</tr>
+<tr>
+<td>SAP 分析</td>
+<td>表面疏水驱动自聚集</td>
+<td>全部设计 vs 对照</td>
+<td>Round 2 SAP 中位 78 vs 对照 37；非界面贡献大</td>
+<td>表面疏水是 Round 2 失败主因</td>
+<td>SAP 是经验指标，非物理严格</td>
+<td>Results 图 3a-b</td>
+</tr>
+<tr>
+<td>R2-6 表面改造</td>
+<td>降低非界面 SAP 可挽救 binder</td>
+<td>R2-6 (二聚体) vs R2-6.1 (17 mut) vs R2-6.2 (+loop)</td>
+<td>改造后单体；KD 1.4-1.7 μM</td>
+<td>疏水是有限资源，可战略性分配</td>
+<td>未测试改造对体内稳定性的影响</td>
+<td>Results 图 3c-f</td>
+</tr>
+<tr>
+<td>CD 热稳定性</td>
+<td>改造保持折叠稳定性</td>
+<td>R2-6 vs R2-6.1 vs R2-6.2</td>
+<td>25-95°C 可逆折叠</td>
+<td>表面改造未破坏折叠</td>
+<td>未测长期储存稳定性</td>
+<td>Results 图 3e-f</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<p><strong>任务范围</strong>: 本文仅针对 SARS-CoV-2 RBD 这一单一靶标，使用 Rosetta 经典设计流程（非 RFdiffusion/ProteinMPNN 生成式方法）。结论的适用范围是「以螺旋束为支架、以 ACE2 基因为模板的 de novo binder 设计」。</p>
+<p><strong>真值/输入</strong>: 阳性对照 binder 来自 Cao et al. 的酵母展示筛选+亲和力成熟产物，其序列经过了多轮实验优化，不代表「纯计算设计」的典型输出。因此，对照组的计算指标分布可能偏向「可实验优化」的序列空间。</p>
+<p><strong>端到端状态</strong>: 本文并非端到端设计成功——22 个初始设计全部失败，改造后才获得 μM 级 binder。这恰恰是本文的价值：<strong>失败归因</strong>而非<strong>设计成功</strong>。改造后的 binder 亲和力（μM）远低于阳性对照（nM-pM），说明「挽救」只是部分成功。</p>
+<p><strong>算力成本</strong>: 未提供具体算力数据。MD 模拟为 3×100 ns/复合物，共约 32 个复合物体系，总模拟时间约 9.6 μs，在中等规模集群上可行。</p>
+<p><strong>历史数据依赖</strong>: 设计模板依赖 6M0J 晶体结构；阳性对照依赖 Cao et al. 公开的模型结构。无额外实验结构测定。</p>
+<p><strong>模型依赖</strong>: AF2/AFM/AF3 预测均基于公开权重，未针对设计序列微调。MD 使用 Amber ff99SB-ILDN 力场，对螺旋束蛋白适用性良好。</p>
+<p><strong>最难情形</strong>: 本文未覆盖的失败模式包括：(1) 折叠失败（被 AF2 筛选排除）；(2) 体内稳定性差；(3) 对 RBD 突变株的广谱性。这些是 binder 设计的其他关键维度。</p>
+<p><strong>有边界的复述</strong>: 在 Rosetta 经典设计流程下，针对 SARS-CoV-2 RBD 的 de novo 螺旋束 binder，其失败可归因于两类可区分的机制——界面动态不稳定（Round 1）和表面疏水驱动自聚集（Round 2）；通过计算诊断（MD + SAP）指导的表面亲水化改造，可将一个二聚体设计转化为 μM 级亲和力的稳定单体 binder。该结论不适用于其他设计方法（如 RFdiffusion）、其他靶标、或其他支架类型。</p>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>对照组的特殊性</td>
+<td>阳性对照 binder 经过酵母展示筛选和亲和力成熟，不代表纯计算设计输出</td>
+<td>未明确提及</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>单一靶标</td>
+<td>仅 SARS-CoV-2 RBD，结论普适性未知</td>
+<td>未明确提及</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>改造 binder 亲和力有限</td>
+<td>R2-6.1/R2-6.2 为 μM 级，远低于对照的 nM-pM 级</td>
+<td>可作为亲和力成熟的起点</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>计算方法的区分力有限</td>
+<td>AFM/AF3 无法可靠区分活性/非活性设计</td>
+<td>建议结合物理模拟作为补充</td>
+<td>Results 图 2b, S7</td>
+</tr>
+<tr>
+<td>设计方法为「上一代」</td>
+<td>使用 Rosetta 经典流程，未使用 RFdiffusion 等生成式方法</td>
+<td>讨论中提及生成式方法仍面临相同权衡</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>SAP 的经验性</td>
+<td>SAP 是经验指标，非严格物理量</td>
+<td>未明确提及</td>
+<td>Methods 节</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>样本量小（22 设计 + 10 对照）</td>
+<td>失败模式分类可能受偶然因素影响；Round 1 vs Round 2 的差异可能来自支架拓扑而非设计策略</td>
+<td>结论的统计效力有限</td>
+<td>在更多靶标/支架上重复两轮设计</td>
+<td>Results 图 S3-S6</td>
+</tr>
+<tr>
+<td>阳性对照经过多轮实验优化</td>
+<td>对照组的计算指标分布不代表「纯计算设计成功」的典型值</td>
+<td>对照组作为「成功基准」可能过于严格</td>
+<td>使用未经实验优化的计算设计成功案例作为对照</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>MD 模拟仅 3×100 ns</td>
+<td>可能未充分采样构象空间，特别是结合/解离事件</td>
+<td>界面动态结论可能受采样不足影响</td>
+<td>延长模拟时间或使用增强采样方法</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>SAP 改造仅测试 2 个 variant</td>
+<td>无法排除其他突变组合也能成功；「疏水有限资源」假说验证不充分</td>
+<td>因果性证据较弱</td>
+<td>系统扫描表面疏水残基，测试更多 variant</td>
+<td>Results 图 3c-f</td>
+</tr>
+<tr>
+<td>AF3 预测失败（R2-6.1/R2-6.2 ipTM 0.2）</td>
+<td>可能反映 AF3 对弱亲和力复合物的固有限制，而非设计质量</td>
+<td>对「AI 预测不可靠」的结论需谨慎</td>
+<td>测试其他 AF3 版本或输入策略</td>
+<td>Results 图 S7b</td>
+</tr>
+<tr>
+<td>未报告阴性改造对照</td>
+<td>未展示「不降低 SAP 的随机突变」是否也有效</td>
+<td>无法排除突变本身（而非 SAP 降低）的效应</td>
+<td>设计随机突变对照</td>
+<td>Results 图 3c-f</td>
+</tr>
+<tr>
+<td>未讨论 binder 的体内稳定性/表达量差异</td>
+<td>改造可能影响蛋白水解稳定性或表达水平</td>
+<td>溶液行为改善可能部分来自非特异性效应</td>
+<td>测量改造前后蛋白半衰期和表达量</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>:</p>
+<ol>
+<li>
+<p><strong>失败模式归因框架</strong>（可迁移性: ★★★★★）
+   - 核心方法: 用「正交计算工具组合」（AF2 折叠 + MD 动态 + LightDock 结合 + SAP 表面）对失败设计进行多维度诊断，而非单一评分。
+   - 迁移到本课题: 在 binder 设计管线中，建立「失败模式分类树」——先排除折叠失败（AF2），再区分界面不足（MD L-RMSD/maxRMSF）vs 自聚集（SEC-MALS + SAP），最后针对性优化。</p>
+</li>
+<li>
+<p><strong>SAP 作为「有限资源」的设计哲学</strong>（可迁移性: ★★★★☆）
+   - 核心洞察: 疏水性不是要最小化，而是要「战略性分配」——界面区需要疏水贡献结合自由能，非界面区必须亲水以避免聚集。活性对照的 SAP 分布（71% 在界面）提供了量化基准。
+   - 迁移到本课题: 在 ProteinMPNN/RFdiffusion 设计流程中，将 SAP 分解作为显式约束或后置筛选条件；对设计输出进行「疏水预算」检查。</p>
+</li>
+<li>
+<p><strong>MD 动态指标补充静态预测</strong>（可迁移性: ★★★★☆）
+   - 核心方法: 用 L-RMSD（含刚体运动）和 maxRMSF（界面残基波动）区分「静态可结合但动态不稳定」的设计。
+   - 迁移到本课题: 对 AF2/AFM 预测的复合物，增加 MD 验证步骤；将「界面动态刚性」作为设计筛选的补充指标。</p>
+</li>
+<li>
+<p><strong>「挽救」而非「重设计」的策略</strong>（可迁移性: ★★★☆☆）
+   - 核心方法: 对失败设计进行局部表面改造（17 个突变），而非完全重新设计，保留折叠骨架和界面架构。
+   - 迁移到本课题: 在 binder 优化迭代中，优先考虑「最小干预」策略——针对诊断出的具体缺陷（如非界面疏水）进行定点突变。</p>
+</li>
+<li>
+<p><strong>对照组的「实验优化偏差」意识</strong>（可迁移性: ★★★☆☆）
+   - 核心洞察: 实验筛选+亲和力成熟的 binder 与纯计算设计输出在序列空间上存在系统性差异，直接比较需谨慎。
+   - 迁移到本课题: 在评估计算设计方法时，明确区分「纯计算输出」与「计算+实验优化」的基准线。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ol>
+<li>
+<p><strong>Cao et al. (2020) SARS-CoV-2 蛋白 binder 设计</strong>（Science, DOI: 10.1126/science.abd9909）: 本文的阳性对照组来源。该工作使用 Rosetta 设计 + 酵母展示筛选，产生了 LCB1-8 和 AHB1-2 等 binder。本文将其作为「成功基准」进行回顾性计算分析。<strong>连接点</strong>: 本文的对照组数据可直接用于验证其他计算指标对「已知成功 binder」的区分能力。</p>
+</li>
+<li>
+<p><strong>Rosetta 能量函数与设计流程</strong>（Alford et al., JCTC 2017, ref2015）: 本文设计流程的基础。ref2015 的局限（如对表面疏水惩罚不足）可能是 Round 2 失败的原因之一。<strong>连接点</strong>: 可探索在 Rosetta 评分函数中增加显式表面疏水惩罚项。</p>
+</li>
+<li>
+<p><strong>AlphaFold2-Multimer (Evans et al., 2022)</strong> 与 <strong>AlphaFold3 (Abramson et al., Nature 2024)</strong>: 本文使用 AFM/AF3 评估复合物预测，发现其对设计 binder 的区分力不足。<strong>连接点</strong>: 与文献中「AF 对设计复合物预测不可靠」的观察一致；可探索 AF3 的置信度指标（ipTM）与实验结合亲和力的相关性。</p>
+</li>
+<li>
+<p><strong>RFdiffusion (Watson et al., Nature 2023)</strong> 与 <strong>ProteinMPNN (Dauparas et al., Science 2022)</strong>: 本文讨论中提及的现代生成式设计方法。这些方法同样面临「结合 vs 自聚集」权衡，但缺乏显式溶液行为约束。<strong>连接点</strong>: 本文的 SAP 分析框架可直接应用于 RFdiffusion 输出的后置筛选。</p>
+</li>
+<li>
+<p><strong>SAP 方法起源</strong>（Chennamsetty et al., PNAS 2009; 用于抗体聚集预测）: 本文将其从抗体工程迁移到 de novo binder 设计。<strong>连接点</strong>: SAP 在抗体领域的应用已验证其与实验聚集倾向的相关性，本文扩展了其适用范围。</p>
+</li>
+<li>
+<p><strong>MD 模拟评估蛋白-蛋白复合物</strong>（GROMACS/AMBER 力场）: 本文使用 MD 的 L-RMSD/maxRMSF 评估界面刚性。<strong>连接点</strong>: 与「分子动力学模拟 × 蛋白质结构计算」课题方向直接相关，可迁移到其他复合物体系。</p>
+</li>
+<li>
+<p><strong>蛋白质设计中的多目标优化</strong>（如 Baker 实验室的「设计-实验-学习」循环）: 本文强调「平衡」而非「最大化」，与多目标优化文献一致。<strong>连接点</strong>: 可探索 Pareto 前沿分析在 binder 设计中的应用。</p>
+</li>
+<li>
+<p><strong>候选方向（未验证）</strong>: 本文的「失败模式分类」框架可迁移到其他设计任务（酶设计、蛋白-蛋白相互作用抑制剂设计），但需针对不同靶标和支架重新校准指标阈值。</p>
+</li>
+</ol>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>:</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>: SAP 引导的 de novo binder 设计后置筛选管线
+   - <strong>来源局限/观察</strong>: 本文发现 Round 2 设计虽界面更优但非界面 SAP 过高导致自聚集；现有生成式设计（RFdiffusion/ProteinMPNN）不显式约束表面疏水。
+   - <strong>核心假设</strong>: 在生成式设计输出中，以「非界面 SAP ≤ 活性对照中位数」为筛选阈值，可显著提高实验单体阳性率。
+   - <strong>增量</strong>: 将本文的「回顾性诊断」转化为「前瞻性筛选」；提供量化阈值而非定性建议。
+   - <strong>初步方法</strong>: 对 RFdiffusion 输出的 1000+ 候选，计算 SAP 并分解界面/非界面；以非界面 SAP 为筛选条件，保留 top 5% 进行实验验证；对比随机筛选的阳性率。
+   - <strong>验证方式</strong>: 在 SARS-CoV-2 RBD 及其他 2-3 个靶标上测试；以 SEC-MALS 单体比例和 SPR KD 为指标。
+   - <strong>失败模式</strong>: 非界面 SAP 与自聚集的相关性可能因支架/靶标而异；阈值需重新校准。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: MD 界面刚性评分作为 AF 预测的补充筛选指标
+   - <strong>来源局限/观察</strong>: 本文 AFM/AF3 无法区分活性/非活性设计，但 MD 的 L-RMSD/maxRMSF 能区分。
+   - <strong>核心假设</strong>: 对 AF 预测的复合物进行短 MD 模拟（如 50 ns），提取界面刚性特征（L-RMSD 时间序列、残基波动），可构建比静态置信度（ipTM）更可靠的 binder 活性预测器。
+   - <strong>增量</strong>: 提供「动态评分」作为 AF 静态评分的正交补充；可集成到现有设计管线。
+   - <strong>初步方法</strong>: 对 22 设计 + 10 对照进行 3×100 ns MD，提取 L-RMSD 中位数、maxRMSF、界面接触寿命等特征；训练简单分类器（如 logistic regression）区分活性/非活性；与 ipTM 单独分类性能对比。
+   - <strong>验证方式</strong>: 交叉验证 AUC；在独立设计集上测试。
+   - <strong>失败模式</strong>: MD 采样不足导致特征噪声大；计算成本高（32 体系 × 300 ns）。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 疏水「预算」约束的序列设计目标函数
+   - <strong>来源局限/观察</strong>: 本文表明成功 binder 将疏水性「集中」在界面（71% 界面 SAP 占比），而失败设计在非界面区过度暴露疏水残基。
+   - <strong>核心假设</strong>: 在序列设计目标函数中引入「疏水预算」约束（总 SAP 上限 + 界面/非界面 SAP 比例目标），可同时优化结合亲和力和溶液行为。
+   - <strong>增量</strong>: 将「有限资源」哲学形式化为可计算的目标函数项；可直接嵌入 ProteinMPNN 或 Rosetta 设计流程。
+   - <strong>初步方法</strong>: 在 Rosetta FastDesign 中增加 SAP 惩罚项（权重可调）；对 R2-6 骨架重新设计，比较有无 SAP 约束的 variant 的实验表现。
+   - <strong>验证方式</strong>: 设计 20 个 variant，测量单体比例、KD、表达量；对比有/无 SAP 约束组。
+   - <strong>失败模式</strong>: SAP 惩罚可能过度限制疏水核心形成，导致折叠不稳定；需平衡折叠自由能和表面疏水。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 跨靶标的 binder 失败模式数据库构建
+   - <strong>来源局限/观察</strong>: 本文仅针对 SARS-CoV-2 RBD 单一靶标，样本量小（22 设计）。
+   - <strong>核心假设</strong>: 在多个靶标上系统收集「设计-实验」数据，可建立通用的失败模式预测模型。
+   - <strong>增量</strong>: 提供领域共享的 benchmark 数据集；支持元分析。
+   - <strong>初步方法</strong>: 整合已发表的 de novo binder 设计数据（含成功与失败），统一计算 AF2/AFM/MD/SAP 指标；训练多靶标失败模式分类器。
+   - <strong>验证方式</strong>: 留一靶标交叉验证；与单靶标模型对比。
+   - <strong>失败模式</strong>: 数据异质性大（不同实验室、不同设计流程）；指标标准化困难。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 弱亲和力 binder 的「可挽救性」预测
+   - <strong>来源局限/观察</strong>: 本文 R2-6 从无活性二聚体经表面改造获得 μM 亲和力，但并非所有失败设计都可挽救。
+   - <strong>核心假设</strong>: 基于计算指标（界面质量、折叠稳定性、SAP 分布），可预测一个失败 binder 是否值得投入实验挽救。
+   - <strong>增量</strong>: 提供「挽救优先级」排序工具，减少实验资源浪费。
+   - <strong>初步方法</strong>: 收集已尝试挽救的 binder 数据（成功/失败），提取计算特征，训练可挽救性分类器。
+   - <strong>验证方式</strong>: 对新失败 binder 进行挽救实验，对比预测准确性。
+   - <strong>失败模式</strong>: 「可挽救性」定义模糊；挽救策略多样（表面突变、亲和力成熟、支架优化），难以统一。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 表面疏水性与 binder 体内半衰期的关联研究
+   - <strong>来源局限/观察</strong>: 本文仅关注体外溶液行为（SEC-MALS），未测试体内稳定性。
+   - <strong>核心假设</strong>: 非界面 SAP 不仅影响体外自聚集，还影响体内蛋白水解稳定性和免疫原性。
+   - <strong>增量</strong>: 将 SAP 从「溶液行为指标」扩展为「体内成药性指标」。
+   - <strong>初步方法</strong>: 对 R2-6.1/R2-6.2 及对照进行小鼠体内药代动力学实验，测量半衰期；关联 SAP 分布。
+   - <strong>验证方式</strong>: 相关性分析；多 variant 验证。
+   - <strong>失败模式</strong>: 体内稳定性受多种因素影响（蛋白水解位点、免疫原性），SAP 可能不是主导因素。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text including abstract, introduction, results, discussion, methods, and supplementary figure legends</li>
+<li><strong>Assessment boundary</strong> Scientific content, methodological rigor, validity of claims relative to presented evidence, and alignment with Nature-style criteria</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present two de novo protein binder design campaigns targeting the SARS-CoV-2 RBD, identify two distinct failure modes (insufficient interface stability vs. excessive surface hydrophobicity leading to self-association), develop a computational framework integrating AlphaFold, MD simulations, docking, and SAP analysis to diagnose these failure modes, and demonstrate prospective rescue of a failed binder through targeted surface redesign</li>
+<li><strong>Visible evidence base</strong> Computational design outputs, AlphaFold2/2-Multimer/3 predictions, MD simulation trajectories, SAP calculations, LightDock docking results, SEC-MALS, SPR, CD spectroscopy, ELISA data</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary figures S1–S12 and Tables S1–S2 referenced but not provided; raw MD trajectory data not available; detailed sequence information for all 22 designs not shown; negative control binding data for ELISA not fully described; statistical analysis details for comparing computational metrics across groups not provided</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> This manuscript addresses a timely and important problem in de novo protein binder design: understanding why computational designs fail and how to diagnose and correct specific failure modes. The authors present a well-structured study combining computational prediction with experimental validation, and the central finding that surface hydrophobicity represents a critical trade-off axis is mechanistically plausible and practically useful. However, the evidence base is incomplete in several respects. The most significant concern is that the central claim of "rescue" rests on only two redesigned variants, both showing modest low-micromolar affinity, without demonstration that these affinities are sufficient for practical applications or that the redesign strategy generalizes beyond this single case. The computational framework is thoughtfully assembled, but the discriminative power of individual metrics is not rigorously quantified, and the authors do not establish clear thresholds or decision rules that would allow others to apply their diagnostic approach prospectively. The manuscript would be strengthened by additional experimental replicates, a broader set of rescued variants, and more systematic benchmarking of the computational metrics against each other.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Computational protein designers and engineers will find the failure mode analysis and the SAP-based diagnostic framework directly applicable to their own design pipelines. Researchers working on SARS-CoV-2 therapeutics may be interested in the specific binders generated, though the modest affinities limit immediate translational relevance. The broader protein engineering community will value the demonstration that multi-objective optimization, rather than single-metric maximization, is required for successful binder design. Methodologists developing AI-based protein design tools may use the identified failure modes to inform training objectives and filtering strategies.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong>
+  1. The study addresses a genuinely important and understudied problem: systematic analysis of why de novo designed binders fail, rather than only reporting successes.
+  2. The two design campaigns provide a natural experimental contrast that cleanly separates the two failure modes, strengthening the causal interpretation.
+  3. The integration of multiple complementary computational methods (AF2, AFM, AF3, MD, docking, SAP) is thoughtful and reflects best practices in the field.
+  4. The prospective rescue experiment provides direct experimental validation of the diagnostic framework, which is a significant strength.
+  5. The writing is clear and accessible, with appropriate caveats about limitations.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency for central claim</li>
+<li><strong>Claim pointer</strong> "Guided by these insights, we prospectively redesigned a representative failed binder... Experimental characterization confirmed that the redesigned variants were stable monomers and acquired low μM binding affinities."</li>
+<li><strong>Evidence pointer</strong> Results section "Computational Design Rescue of Protein Binders"; Figure 3; Table S2</li>
+<li><strong>Concern</strong> The rescue claim rests on only two variants (R2-6.1 and R2-6.2) derived from a single parent design (R2-6). Both show KD values of 1.4 and 1.7 μM, respectively. While these represent clear improvements over the non-binding parent, the authors do not demonstrate that this approach generalizes. The manuscript would be substantially strengthened by rescuing additional Round 2 designs or by showing that the same principles apply to Round 1 designs. Furthermore, the authors do not report the affinity of the original R2-6 design in the same assay, making it difficult to quantify the magnitude of improvement. The claim that this constitutes a "rescue" implies functional utility, but low-micromolar affinity may be insufficient for most practical applications.</li>
+<li><strong>Why it matters</strong> The central practical claim of the manuscript is that the diagnostic framework can guide successful redesign. With only two variants from one parent, the evidence for generalizability is weak. If the approach only works for this specific case, its utility as a general framework is limited.</li>
+<li>
+<p><strong>Resolution test</strong> Provide rescue data for at least 3-5 additional failed designs from both Round 1 and Round 2, or provide a clear statistical demonstration that the success rate is significantly better than chance. Report the affinity of the parent R2-6 design under identical assay conditions to enable direct comparison.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Quantitative rigor of metric discrimination</li>
+<li><strong>Claim pointer</strong> "we establish complementary computational signatures that distinguish these failure modes and reveal their underlying structural determinants"</li>
+<li><strong>Evidence pointer</strong> Results section "Retrospective Analysis of the Designed Binders"; Figures 1-2</li>
+<li><strong>Concern</strong> The authors present multiple computational metrics (AF2 confidence, AFM scores, MD stability, docking quality, SAP) but do not provide a systematic quantitative comparison of how well each metric, or combinations of metrics, discriminates between successful and failed designs. The narrative describes qualitative differences (e.g., "Round 1 designs displayed substantially larger L-RMSD values") but does not report effect sizes, confidence intervals, or statistical tests. It is unclear whether any single metric would be sufficient for diagnosis or whether the full multi-metric framework is necessary.</li>
+<li><strong>Why it matters</strong> For the framework to be practically useful, users need to know which metrics are most informative and how to weight them. Without quantitative benchmarking, the relative importance of each computational tool remains unclear.</li>
+<li>
+<p><strong>Resolution test</strong> Perform a systematic comparison of all metrics across the three groups (active controls, Round 1, Round 2), reporting appropriate statistics (e.g., Mann-Whitney U tests with multiple testing correction). Consider a simple classifier (e.g., logistic regression or decision tree) to identify which metrics are most predictive of experimental success.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Control group appropriateness</li>
+<li><strong>Claim pointer</strong> "benchmarked them against a set of experimentally validated binders"</li>
+<li><strong>Evidence pointer</strong> Results section "Computational Design of Protein Binders"; Figure 1</li>
+<li><strong>Concern</strong> The control set consists of binders that underwent yeast display selection and affinity maturation, as acknowledged in the Discussion. This means the controls are not directly comparable to the de novo designs, which were not subjected to any experimental selection. The authors note this limitation but do not fully address its implications. Specifically, the affinity-matured controls may have evolved to reduce surface hydrophobicity through selection pressures that are absent in the computational designs, potentially biasing the comparison.</li>
+<li><strong>Why it matters</strong> If the controls are systematically different from the designs in ways beyond binding affinity, the conclusions about what distinguishes successful from failed designs may not be generalizable to purely computational design pipelines.</li>
+<li>
+<p><strong>Resolution test</strong> Include additional controls that are computationally designed and experimentally validated without affinity maturation, if available. Alternatively, explicitly discuss how the selection history of the controls might affect each metric and whether the conclusions remain valid.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Reproducibility and methodological detail</li>
+<li><strong>Claim pointer</strong> "The redesign combined two complementary strategies... Among the redesigned variants, R2-6.1 was selected for experimental characterization."</li>
+<li><strong>Evidence pointer</strong> Results section "Computational Design Rescue of Protein Binders"; Methods section</li>
+<li><strong>Concern</strong> The selection criteria for choosing R2-6.1 among the redesigned variants are not clearly specified. The authors state that R2-6.1 was "selected" but do not describe how many variants were generated, what the range of predicted properties was, or why R2-6.1 was chosen over others. Similarly, the criteria for selecting R2-6.2 after loop remodeling are not stated. This lack of transparency makes it difficult to assess potential selection bias.</li>
+<li><strong>Why it matters</strong> If the authors cherry-picked the best-performing variant from a large pool, the success rate of the redesign strategy would be much lower than implied. Transparent reporting of the full design space and selection criteria is essential for evaluating the approach.</li>
+<li>
+<p><strong>Resolution test</strong> Report the total number of redesign variants generated, the distribution of their predicted properties (SAP, binding energy, etc.), and the specific criteria used to select R2-6.1 and R2-6.2 for experimental testing.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity of presentation</li>
+<li><strong>Affected element</strong> Figure 1</li>
+<li><strong>Evidence pointer</strong> Results section "Computational Design of Protein Binders"</li>
+<li><strong>Issue</strong> The description of Figure 1 is minimal and does not clearly explain what is shown in each panel. Given that this figure introduces the design strategies and the control set, a more detailed legend would help readers understand the experimental design.</li>
+<li>
+<p><strong>Required correction</strong> Expand the Figure 1 legend to describe each panel explicitly, including the design strategy, the number of designs, and the key features being illustrated.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> MD simulation analysis</li>
+<li><strong>Evidence pointer</strong> Results section "Retrospective Analysis of the Designed Binders"; Figure 2c</li>
+<li><strong>Issue</strong> The manuscript reports median values for L-RMSD and RMSF across groups but does not provide measures of variability (e.g., interquartile ranges) or the number of independent simulations contributing to each median. This makes it difficult to assess the robustness of the reported differences.</li>
+<li>
+<p><strong>Required correction</strong> Add measures of variability (e.g., error bars or shaded regions) to the relevant figures and report the number of replicates in the figure legends or text.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness of methods</li>
+<li><strong>Affected element</strong> SPR experimental details</li>
+<li><strong>Evidence pointer</strong> Methods section "Surface Plasmon Resonance"</li>
+<li><strong>Issue</strong> The SPR methods do not specify the number of independent experiments performed, how the kinetic parameters were averaged across replicates, or whether the reported KD values include confidence intervals. This limits the ability to assess the reliability of the binding measurements.</li>
+<li>
+<p><strong>Required correction</strong> Report the number of independent SPR experiments, the variability across replicates, and provide confidence intervals for the reported KD values.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation of AF3 results</li>
+<li><strong>Evidence pointer</strong> Results section "Retrospective Analysis of the Designed Binders"; Figure S7b</li>
+<li><strong>Issue</strong> The authors note that AF3 failed to accurately predict the redesigned variants R2-6.1 and R2-6.2 but do not discuss possible reasons for this failure or its implications for using AF3 as a screening tool.</li>
+<li>
+<p><strong>Required correction</strong> Add a brief discussion of why AF3 might fail for these designs and whether this limitation affects the general applicability of the framework.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Generalizability of SAP threshold</li>
+<li><strong>Affected element</strong> Discussion section</li>
+<li><strong>Evidence pointer</strong> Discussion section, paragraph on SAP</li>
+<li><strong>Issue</strong> The authors suggest that total SAP values between approximately 30 and 45 were associated with well-behaved binders, but this range is derived from a small dataset and may not generalize to other targets or scaffold types.</li>
+<li>
+<p><strong>Required correction</strong> Explicitly state that this range is empirical and target-specific, and recommend that users calibrate SAP thresholds for their own systems.</p>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong>
+  R1-M1 (insufficient evidence for generalizable rescue), R1-M2 (lack of quantitative metric comparison), R1-M3 (control group comparability), R1-M4 (selection criteria transparency)</p>
+</li>
+<li>
+<p><strong>Assessment against Nature-style criteria</strong></p>
+</li>
+<li><strong>Originality</strong>: The manuscript addresses a relatively underexplored question in protein design, and the systematic analysis of failure modes is a valuable contribution. However, the individual computational methods used are all established, and the novelty lies primarily in their integration and application to this specific problem.</li>
+<li><strong>Scientific importance</strong>: Understanding why de novo designs fail is of high importance to the protein design community, and the proposed framework could improve design success rates. The specific application to SARS-CoV-2 RBD is of moderate interest given the availability of many existing binders.</li>
+<li><strong>Interdisciplinary readership</strong>: The work bridges computational protein design, biophysics, and experimental biochemistry. The writing is accessible, but the depth of computational detail may limit appeal to purely experimental audiences.</li>
+<li><strong>Technical soundness</strong>: The computational methods are appropriate and well-executed, but the lack of quantitative benchmarking and limited experimental validation of the rescue strategy weaken the technical case.</li>
+<li>
+<p><strong>Readability for nonspecialists</strong>: The manuscript is generally well-written with clear explanations of key concepts. However, some sections assume familiarity with protein design terminology and would benefit from brief definitions.</p>
+</li>
+<li>
+<p><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The core idea is sound and the framework is potentially valuable, but the evidence for the central rescue claim needs strengthening, and the quantitative rigor of the metric comparison needs improvement. If the authors can address these concerns, the manuscript would make a useful contribution to the protein design literature.</p>
+</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that the two failure modes are "distinct" and mutually exclusive is not fully supported; some designs may exhibit both insufficient interface stability and excessive hydrophobicity.</li>
+<li>The assertion that "successful binders appear to occupy a relatively narrow window of total interface hydrophobicity" is based on a small number of examples and lacks statistical support.</li>
+<li>The statement that "SolubleMLPNN can mitigate, but not fully eliminate, the problem of exposed hydrophobicity" is based on computational predictions only, without experimental validation of the redesigned sequences.</li>
+<li>The claim that the framework provides "practical criteria for prioritizing candidates before experimental characterization" is not demonstrated with a prospective test on an independent set of designs.</li>
+<li>The relationship between the "false membrane" constraint used in LightDock and the actual experimental conditions is not fully justified.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

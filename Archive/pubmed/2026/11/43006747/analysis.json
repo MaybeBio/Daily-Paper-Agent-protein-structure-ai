@@ -1,0 +1,24 @@
+{
+  "source": "pubmed",
+  "id": "43006747",
+  "title": "EZpred: Improving Deep Learning-Based Enzyme Function Prediction Using Unlabeled Sequence Homologs.",
+  "authors": "Zhang, Chengxin; Liu, Quancheng; Freddolino, Lydia",
+  "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+  "published_date": "2026-11-10",
+  "window": {
+    "start": "2026-11-08",
+    "end": "2026-11-14"
+  },
+  "score": 4,
+  "one_liner_zh": "该文用ESM-C蛋白语言模型提取同源序列特征预测酶功能（EC编号），虽涉及蛋白序列和深度学习，但核心是功能预测而非蛋白质结构计算问题，与课题关联较弱。",
+  "abstract": "Features extracted from sequence homologs significantly enhance the accuracy of deep learning-based protein structure prediction. Indeed, homolog-aware models such as AlphaFold generally produce more accurate protein structures compared to single sequence-based methods like ESMfold. In contrast, features from sequence homologs are seldom employed for deep learning-based prediction of the biological functions of a protein, such as Gene Ontology terms or Enzyme Commission (EC) numbers. Although a small number of models also incorporate function labels from sequence homologs, they cannot utilize features extracted from homologs that lack function labels. To address this gap, we developed EZpred, which is the first deep learning model to use sequence homologs by extracting their sequence features while ignoring any function labels. Starting with the target sequence and homologs identified by MMseqs2, EZpred extracts sequence features using the ESM-C protein language model. These features are then fed into a deep learning model to predict the EC numbers of the target protein. For test enzymes with < 30% sequence identity to any training proteins, the F1-score of EZpred EC number prediction is at least 34% higher than state-of-the-art EC number prediction models. These results demonstrate the strong positive impact of sequence homologs in deep learning-based enzyme function prediction.",
+  "abstract_zh": "从序列同源物中提取的特征显著提升了基于深度学习的蛋白质结构预测的准确性。事实上，像AlphaFold这样的同源物感知模型通常比基于单序列的方法（如ESMfold）产生更准确的蛋白质结构。相比之下，序列同源物的特征很少被用于基于深度学习的蛋白质生物学功能预测，例如基因本体（Gene Ontology）术语或酶委员会（Enzyme Commission, EC）编号。尽管少数模型也整合了来自序列同源物的功能标签，但它们无法利用缺乏功能标签的同源物中提取的特征。为解决这一空白，我们开发了EZpred，这是首个通过提取序列特征而忽略任何功能标签来使用序列同源物的深度学习模型。从目标序列和由MMseqs2识别的同源物出发，EZpred使用ESM-C蛋白质语言模型提取序列特征。这些特征随后被输入到深度学习模型中，以预测目标蛋白的EC编号。对于与任何训练蛋白质序列同一性低于30%的测试酶，EZpred的EC编号预测F1分数至少比最先进的EC编号预测模型高出34%。这些结果证明了序列同源物在基于深度学习的酶功能预测中的强烈积极影响。",
+  "has_fulltext": true,
+  "fulltext_source": "pmc",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "",
+  "review_path": "",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/43006747/",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/43006747/",
+  "paper_page_path": "papers/pubmed/43006747/index.html"
+}

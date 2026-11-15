@@ -1,0 +1,62 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the supplied abstract
+- **Shared manuscript claim summary** The authors propose Distance-AF Multimer, a multi-step method for protein complex structure modeling that incorporates user-defined inter-residue distance constraints to improve the relative arrangement of chains in predicted complexes. The approach is positioned as a practical integration of computational prediction with available structural information for studying protein interactions, peptide binding, and larger assemblies when experimental structures are unavailable.
+- **Visible evidence base** Abstract text only; no figures, tables, methods details, or quantitative results provided
+- **Missing materials affecting confidence** Full manuscript, methods description, benchmark datasets, performance metrics, comparison with existing tools, and any validation figures or tables
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually reasonable extension of AlphaFold-based multimer modeling by incorporating user-defined distance constraints. However, the supplied material is insufficient to evaluate the technical implementation, the novelty relative to existing constraint-based approaches, or the claimed practical utility. No quantitative evidence is provided to support the effectiveness of the method.
+- **Who would be interested in the results, and why** Structural biologists and computational biologists studying protein-protein interactions, peptide binding, and large assemblies, particularly those who have partial experimental information (e.g., crosslinking, FRET, or low-resolution maps) and seek to integrate such data into structure prediction. Developers of protein structure prediction tools may also be interested in the methodological approach.
+- **Major strengths** The problem addressed is relevant and timely, as integrating experimental restraints into deep learning-based prediction is an active area. The proposed multi-step strategy is a plausible design choice. The significance statement clearly articulates the intended application niche.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The method "uses distance constraints between residues to improve the arrangement of protein chains in predicted structures."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** No technical details are provided on how the distance constraints are defined, encoded, or integrated into the prediction pipeline. The abstract does not describe the multi-step procedure, the underlying architecture, or how constraints are propagated through the model.
+  - **Why it matters** Without a clear description of the constraint integration mechanism, the technical soundness of the approach cannot be assessed. The core claim of the method hinges on this implementation detail.
+  - **Resolution test** Provide a detailed methods section describing the constraint representation, the integration points in the pipeline, and the multi-step procedure. Include pseudocode or architectural diagrams.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scientific importance
+  - **Claim pointer** The approach "offers a practical way to combine computational predictions with available structural information."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** No benchmark results, case studies, or comparisons with existing methods (e.g., AlphaFold-Multimer with custom restraints, or other constraint-based docking tools) are presented. The practical utility is asserted but not demonstrated.
+  - **Why it matters** The claimed practical value requires evidence that the method improves accuracy or efficiency over existing alternatives in realistic scenarios. Without such evidence, the scientific importance cannot be established.
+  - **Resolution test** Include benchmark results on standard protein complex datasets with and without constraints, comparison with baseline methods, and at least one case study demonstrating a practical application.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Originality
+  - **Claim pointer** The method is presented as a novel "multi-step approach" for constraint-based complex modeling.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not discuss prior work on incorporating distance restraints into protein structure prediction or complex modeling. It is unclear what is novel relative to existing constraint-based approaches, such as those using distance geometry or restraint-guided refinement.
+  - **Why it matters** Originality is a core criterion for significance. Without a clear statement of novelty and differentiation from prior methods, the contribution cannot be positioned appropriately.
+  - **Resolution test** Add a related work section that explicitly compares the proposed method with existing constraint-based approaches and highlights the specific novel contributions.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Significance statement
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The significance statement is clear but could benefit from a brief example of the type of "available structural information" that would be used as constraints.
+  - **Required correction** Add one concrete example (e.g., crosslinking mass spectrometry or cryo-EM density) in the significance statement.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Interdisciplinary readership
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not mention the computational cost or runtime of the method, which is relevant for experimentalists considering its use.
+  - **Required correction** Include a brief statement on computational requirements or runtime in the abstract or methods summary.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of technical details, benchmark evidence, and novelty positioning means the core claims are currently unsupported.
+- **Assessment against Nature-style criteria** Originality: not assessable from the abstract due to lack of comparison with prior work. Scientific importance: not established due to absence of quantitative results. Interdisciplinary readership: the topic has potential appeal, but the abstract does not provide enough detail to engage non-specialists. Technical soundness: not assessable without methods details. Readability for nonspecialists: the significance statement is accessible, but the abstract lacks context for broader audiences.
+- **Recommendation posture** Currently not established from the provided evidence. The concept is plausible, but the abstract alone does not provide sufficient technical or empirical support. A full manuscript with methods, benchmarks, and comparisons would be required to assess the claims.
+
+## Risk / unsupported claims
+- The claim that the method "improves the arrangement of protein chains" is unsupported without quantitative results.
+- The claim of "practical way to combine computational predictions with available structural information" is unsupported without case studies or benchmarks.
+- The novelty of the "multi-step approach" is unverifiable without a description of prior art and the specific steps involved.

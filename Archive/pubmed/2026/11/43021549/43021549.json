@@ -1,0 +1,213 @@
+{
+  "identity": {
+    "pmid": "43021549",
+    "doi": "10.1016/j.bpj.2026.11.011",
+    "title": "Transforming macromolecular structures into simulations of self-assembly with ioNERDSS."
+  },
+  "content": {
+    "abstract": "Macromolecular self-assembly is a fundamental process in living and engineered systems, producing molecular machines like the ribosome or highly symmetric viral capsids. Thanks to sources like the Protein Data Bank (PDB) and AlphaFold3, the final target complexes are often known, but these static structures do not provide information on the self-assembly process directly. Computational models provide critical tools to study these essential pathways of self-assembly, but substantial coarse graining of assembly subunits is necessary to achieve computational tractability of these relatively slow processes while retaining multi-valency. While local interactions overcome the often-prohibitive enumeration of all possible assembly intermediates, they must ensure global structural constraints are met. We here demonstrate ioNERDSS, a user-friendly Python package that transforms 3D atomic protein structures into coarse-grained (CG) models for immediate simulation with the stochastic reaction-diffusion NERDSS software, converting static structures into time-resolved assembly trajectories. With ioNERDSS, each protein chain is defined by a rigid subunit with discrete interfaces and explicit orientational constraints that enforce a structured assembly. Repeated subunits (such as in viral capsids) are regularized to preserve the target topology across distinct stochastic assembly pathways, supporting assembly of structures with thousands of subunits. We initialize pairwise binding affinities using ML prediction tools, and our default CG models are all constrained by thermodynamic reversibility to reach an equilibrium steady-state. The binding rates and subunit abundances necessary to perform simulations are initialized at default values but represent key variables that users should tune to test hypotheses on assembly pathways or to optimize models to experimental datasets. Benchmarking on over 50,000 PDB structures shows the majority of CG models will stochastically assemble into target structures. The ioNERDSS Python library links with open-source tools to facilitate fast and user-friendly structure validation and analysis of thermodynamic, kinetic, and nonequilibrium drivers of macromolecular self-assembly.",
+    "keywords": [],
+    "mesh_terms": [],
+    "pub_types": [
+      "Journal Article"
+    ]
+  },
+  "contributors": {
+    "medline": {
+      "full_names": [
+        "Ying, Yue Moon",
+        "Sang, Mankun",
+        "Au, Gabriel",
+        "Chhibber, Smriti",
+        "Du, Yufeng",
+        "Fischer, Jonathan A",
+        "Foley, Samuel L",
+        "Guo, Sikao",
+        "Herzog-Pohl, Ian",
+        "Liu, Zixiu",
+        "Roscom, Hannah",
+        "Sohail, Hassan",
+        "Takeshita, Sho S",
+        "Johnson, Margaret E"
+      ],
+      "short_names": [
+        "Ying YM",
+        "Sang M",
+        "Au G",
+        "Chhibber S",
+        "Du Y",
+        "Fischer JA",
+        "Foley SL",
+        "Guo S",
+        "Herzog-Pohl I",
+        "Liu Z",
+        "Roscom H",
+        "Sohail H",
+        "Takeshita SS",
+        "Johnson ME"
+      ],
+      "auids": [],
+      "affiliations": [
+        "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA.",
+        "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA.",
+        "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA.",
+        "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA.",
+        "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA.",
+        "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA.",
+        "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA.",
+        "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA.",
+        "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA.",
+        "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA.",
+        "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA.",
+        "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA.",
+        "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA.",
+        "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA. Electronic address: margaret.johnson@jhu.edu."
+      ]
+    },
+    "xml": [
+      {
+        "full_name": "Ying, Yue Moon",
+        "short_name": "Ying YM",
+        "identifiers": [],
+        "affiliations": [
+          "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA."
+        ]
+      },
+      {
+        "full_name": "Sang, Mankun",
+        "short_name": "Sang M",
+        "identifiers": [],
+        "affiliations": [
+          "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA."
+        ]
+      },
+      {
+        "full_name": "Au, Gabriel",
+        "short_name": "Au G",
+        "identifiers": [],
+        "affiliations": [
+          "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA."
+        ]
+      },
+      {
+        "full_name": "Chhibber, Smriti",
+        "short_name": "Chhibber S",
+        "identifiers": [],
+        "affiliations": [
+          "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA."
+        ]
+      },
+      {
+        "full_name": "Du, Yufeng",
+        "short_name": "Du Y",
+        "identifiers": [],
+        "affiliations": [
+          "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA."
+        ]
+      },
+      {
+        "full_name": "Fischer, Jonathan A",
+        "short_name": "Fischer JA",
+        "identifiers": [],
+        "affiliations": [
+          "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA."
+        ]
+      },
+      {
+        "full_name": "Foley, Samuel L",
+        "short_name": "Foley SL",
+        "identifiers": [],
+        "affiliations": [
+          "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA."
+        ]
+      },
+      {
+        "full_name": "Guo, Sikao",
+        "short_name": "Guo S",
+        "identifiers": [],
+        "affiliations": [
+          "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA."
+        ]
+      },
+      {
+        "full_name": "Herzog-Pohl, Ian",
+        "short_name": "Herzog-Pohl I",
+        "identifiers": [],
+        "affiliations": [
+          "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA."
+        ]
+      },
+      {
+        "full_name": "Liu, Zixiu",
+        "short_name": "Liu Z",
+        "identifiers": [],
+        "affiliations": [
+          "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA."
+        ]
+      },
+      {
+        "full_name": "Roscom, Hannah",
+        "short_name": "Roscom H",
+        "identifiers": [],
+        "affiliations": [
+          "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA."
+        ]
+      },
+      {
+        "full_name": "Sohail, Hassan",
+        "short_name": "Sohail H",
+        "identifiers": [],
+        "affiliations": [
+          "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA."
+        ]
+      },
+      {
+        "full_name": "Takeshita, Sho S",
+        "short_name": "Takeshita SS",
+        "identifiers": [],
+        "affiliations": [
+          "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA."
+        ]
+      },
+      {
+        "full_name": "Johnson, Margaret E",
+        "short_name": "Johnson ME",
+        "identifiers": [],
+        "affiliations": [
+          "TC Jenkins Department of Biophysics, Johns Hopkins University, Baltimore, MD, 21218, USA. Electronic address: margaret.johnson@jhu.edu."
+        ]
+      }
+    ]
+  },
+  "source": {
+    "journal_title": [
+      "Biophysical journal"
+    ],
+    "journal_abbrev": [
+      "Biophys J"
+    ],
+    "pub_date": "2026 Nov 12",
+    "pub_year": "2026",
+    "pub_types": [
+      "Journal Article"
+    ]
+  },
+  "metadata": {
+    "entrez_date": "2026/11/13 05:35",
+    "fetched_at": "2026-11-15 11:51:31"
+  },
+  "links": {
+    "cites": [],
+    "refs": [],
+    "similar": [
+      "43021549"
+    ],
+    "review": [
+      "43021549"
+    ],
+    "pmc": [],
+    "entrez": {},
+    "external": [],
+    "text_mined": []
+  }
+}

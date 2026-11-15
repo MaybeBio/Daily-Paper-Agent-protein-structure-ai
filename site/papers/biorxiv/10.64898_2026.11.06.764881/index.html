@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generative design of de novo AAV vectors with unique serological profiles · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Generative design of de novo AAV vectors with unique serological profiles</h1>
+      <div class="meta">Chiesa G; Lyu S; Nguyen MD; Benjamin J; Garton M</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-11-09
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.11.06.764881">原文</a>
+      </div>
+      <p class="one-liner">该文利用变分自编码器生成全新AAV衣壳蛋白序列，通过结构相关设计规避中和抗体，属于蛋白质序列设计结合生成模型的计算研究，与蛋白质结构计算课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">More than 5000 monogenic diseases are potentially curable by replacing a single defective gene with one that functions normally. Currently, the only clinically approved vector able to effectively deliver a therapeutic gene to a target tissue is Adeno-Associated Viruses (AAVs). However, despite decades of work, only a handful of gene replacement therapies have been approved, and many patients remain ineligible for even those. A major barrier to broad adoption of AAV therapies is pre-existing immunity to AAVs, mediated by neutralizing antibodies (nAbs). It is potentially possible to change exposed capsid surfaces in AAV capsids to avoid nAb recognition. However, traditional techniques such as rational design and directed evolution only allow modest changes. AAV function becomes compromised long before full nAb avoidance is achieved. Recent advances in protein design by generative modelling provide a new way to overcome this problem by learning AAV design constraints from natural sequences. We built a variational autoencoder that could learn these sequence constraints and generate functional AAV capsid proteins de novo . More than 255 designs were synthesized and tested in vitro in two design sets, with one set dedicated to exploring uncertain regions of the sequence space. Between the two campaigns, seven designs transduced human cells with &gt;50% efficiency, of which four avoided nAb neutralization (NT50 &lt; 1:50) in all human sera that were reactive to AAV. In one of these designs, sequence identity to the nearest natural AAV sequence was 18% divergent. Given the radical sequence diversity and its unique serological profile, this new capsid design would represent the first ever AAV serotype designed de novo .</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">超过5000种单基因疾病可通过将单个缺陷基因替换为功能正常的基因而得到潜在治愈。目前，唯一在临床上获批能有效将治疗基因递送至靶组织的载体是腺相关病毒（AAVs）。然而，尽管经过数十年的努力，仅有少数基因替代疗法获批，且许多患者甚至不符合这些疗法的条件。AAV疗法广泛采用的一个主要障碍是预先存在的对AAV的免疫，由中和抗体（nAbs）介导。理论上，可以通过改变AAV衣壳暴露的表面来避免nAb识别。然而，传统技术如理性设计和定向进化仅允许适度改变。在完全实现nAb规避之前，AAV功能早已受损。生成建模在蛋白质设计方面的最新进展提供了一种新途径，通过从天然序列中学习AAV设计约束来克服这一问题。我们构建了一个变分自编码器，能够学习这些序列约束并从头生成功能性AAV衣壳蛋白。在两个设计组中，共合成并体外测试了超过255种设计，其中一组专门用于探索序列空间中的不确定区域。在这两轮实验中，有七种设计以&gt;50%的效率转导人类细胞，其中四种在所有对AAV有反应的人类血清中避免了nAb中和（NT50 &lt; 1:50）。在其中一个设计中，与最近天然AAV序列的序列一致性差异达18%。鉴于其极端的序列多样性和独特的血清学特征，这种新衣壳设计将代表首个从头设计的AAV血清型。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Generative design of de novo AAV vectors with unique serological profiles</li>
+<li><strong>作者</strong>：Chiesa G; Lyu S; Nguyen MD; Benjamin J; Garton M</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：预印本（实验验证型研究）</li>
+<li><strong>领域</strong>：蛋白质设计 × 生成式AI × 病毒载体工程</li>
+<li><strong>关键词</strong>：AAV、变分自编码器、de novo设计、中和抗体逃逸、血清学特征</li>
+<li><strong>DOI/arXiv</strong>：10.64898/2026.11.06.764881</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：355条天然AAV及相关依赖细小病毒VP1蛋白序列（UniProt）；实验数据（转导效率、滴度、中和抗体数据）未提供公开数据链接</li>
+<li><strong>阅读日期</strong>：2026-11-10</li>
+<li><strong>方向定位</strong>：本文属于「蛋白质结构相关计算研究 × AI方法」中的<strong>生成式序列设计</strong>分支，具体为利用变分自编码器（VAE）对AAV衣壳蛋白VP3进行de novo序列生成，目标为改变血清学特征（中和抗体逃逸）。与结构预测（AlphaFold类）和物理模拟（MD/对接）不同，本文聚焦于<strong>序列空间生成 + 实验验证</strong>的闭环，其对比学习损失、不确定性引导采样、实验筛选级联等设计对同类蛋白质设计任务具有直接可迁移性。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文构建了一个带对比学习损失的变分自编码器（ProteinVAEc），在仅355条天然AAV VP3序列上训练，生成255个de novo衣壳变体，经实验筛选获得7个转导效率&gt;50%且4个完全逃逸三种人血清中和的变体，其中最远变体与天然序列有18%差异（97个突变），首次实验验证了生成式模型可产出具有独特血清学特征的de novo AAV血清型。</p>
+<hr />
+<h2>03 研究问题</h2>
+<p><strong>具体问题</strong>：能否用生成式模型设计出与天然AAV序列距离足够远、但仍保持衣壳组装和转导功能、且能逃逸人群预存中和抗体的AAV衣壳蛋白？</p>
+<p><strong>为什么重要</strong>：AAV是基因治疗的主要临床载体，但人群中预存的中和抗体（nAbs）使大量患者被排除在治疗资格之外。现有方法（理性设计、定向进化）只能在天然序列附近做小步修改，无法实现全表面、大范围的抗原逃逸改造。</p>
+<p><strong>现有方法不足</strong>：
+- 理性设计（8-11）：仅针对已知表位做点突变，无法覆盖不同患者中多样化的nAb表位。
+- 定向进化（12）：受限于筛选通量和天然序列起始点，突变数量有限。
+- 此前生成式方法（13-15）：仅针对28个氨基酸的单一区域，而大多数nAb表位在该区域之外。
+- ProteinMPNN重设计（16）：仅改造核心/界面残基，明确避免表面残基，因此不适用于表面抗原逃逸。</p>
+<p><strong>精确研究问题</strong>：Can a VAE trained on limited natural AAV sequences generate de novo VP3 capsid proteins with &gt;50% transduction efficiency and NT50 &lt; 1:50 against pre-existing human neutralizing antibodies, at sequence distances exceeding 15% from the nearest natural sequence?</p>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文引言及参考文献，标注为「经外部核验」的部分仅指该技术路线在文献中已有公开报道，具体评价为本文框架。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>理性设计（8-11）</td>
+<td>基于已知表位结构做定点突变</td>
+<td>精准、可解释</td>
+<td>仅覆盖已知表位，无法应对患者间nAb多样性</td>
+<td>本文超越：全表面生成</td>
+</tr>
+<tr>
+<td>定向进化（12）</td>
+<td>在免疫压力下反复突变筛选</td>
+<td>无需结构知识</td>
+<td>突变数量有限，难以达到全表面逃逸</td>
+<td>本文超越：生成式探索更远序列空间</td>
+</tr>
+<tr>
+<td>区域级生成式设计（13-15）</td>
+<td>VAE/GAN针对28aa区域生成</td>
+<td>可探索区域内部多样性</td>
+<td>区域外表位未覆盖</td>
+<td>本文超越：全VP3序列生成</td>
+</tr>
+<tr>
+<td>结构感知重设计（16）</td>
+<td>ProteinMPNN重设计核心/界面</td>
+<td>保持折叠</td>
+<td>明确避免表面残基，不适用于抗原逃逸</td>
+<td>本文互补：表面残基是主要改造目标</td>
+</tr>
+<tr>
+<td><strong>本文（ProteinVAEc）</strong></td>
+<td>VAE + 对比学习 + 不确定性引导采样</td>
+<td>全序列生成、可探索远距离序列空间、实验验证闭环</td>
+<td>训练数据有限（355条）、功能命中率低</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：首个实验验证的、全VP3序列范围的、de novo AAV衣壳生成方法，产出具有独特血清学特征的候选血清型。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>天然AAV序列数据极度有限且偏倚</td>
+<td>355条序列中51%与AAV2有≥75%同一性</td>
+<td>AAV自然多样性有限，且数据库收录偏倚</td>
+<td>Results 节：数据集描述</td>
+</tr>
+<tr>
+<td>预存中和抗体多样性高</td>
+<td>不同患者对同一AAV血清型反应差异大</td>
+<td>nAb表位覆盖整个衣壳表面，因人而异</td>
+<td>Introduction 节：引用4-7</td>
+</tr>
+<tr>
+<td>传统方法突变范围受限</td>
+<td>理性设计和定向进化无法实现全表面改造</td>
+<td>突变数量少、筛选通量有限</td>
+<td>Introduction 节：引用8-12</td>
+</tr>
+<tr>
+<td>此前生成式方法仅覆盖单一区域</td>
+<td>28aa区域外的表位未被触及</td>
+<td>该区域有丰富功能注释，但覆盖面不足</td>
+<td>Introduction 节：引用13-15</td>
+</tr>
+<tr>
+<td>表面残基改造与衣壳功能冲突</td>
+<td>大量表面突变导致组装或包装失败</td>
+<td>表面残基同时参与受体结合、组装、包装</td>
+<td>Results 节：转导筛选命中率低</td>
+</tr>
+<tr>
+<td>序列距离与功能保持的权衡</td>
+<td>高突变数变体转导效率急剧下降</td>
+<td>突变对折叠/组装/包装的破坏性累积</td>
+<td>Results 图2c、3b-f</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：
+- 构建VAE（ProteinVAEc）在355条天然VP3序列上训练，加入对比学习损失项以增强血清型间区分度
+- 从潜空间采样生成新序列，经似然排序、活性预测器（微调ESM2）筛选
+- 两组实验设计：Set 1（低风险开发，2-10个突变，AAV2近邻采样）和Set 2（高风险探索，5-99个突变，不确定性引导采样）
+- 实验验证级联：转导筛选 → 滴度/包装检测 → 多细胞系转导 → 人血清中和实验</p>
+<p><strong>2) 核心洞察</strong>：
+- <strong>对比学习解决小样本偏倚问题</strong>：天然AAV序列高度偏倚（51%接近AAV2），普通VAE会过度拟合AAV2区域。对比损失强制模型区分不同血清型，使潜空间更平滑、更均匀，从而支持向远距离序列空间的插值和采样。
+- <strong>不确定性引导探索</strong>：用Monte Carlo Dropout估计潜空间各区域的不确定性，优先采样高不确定性区域，以最大化信息增益——这是主动学习思想在序列生成中的应用。
+- <strong>功能保持与抗原逃逸可解耦</strong>：通过将突变分布在整个衣壳表面（而非集中于某一表位），可以在保持组装/转导功能的同时，破坏多个nAb表位。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：
+- 在训练数据有限且偏倚的蛋白质家族中，<strong>对比学习是缓解表示偏倚的有效手段</strong>，可推广到其他病毒衣壳蛋白或抗原设计任务。
+- <strong>不确定性引导采样</strong>比纯似然采样更高效地探索功能序列空间，这一策略可迁移到任何生成式蛋白质设计流程。
+- 实验筛选的级联设计（先高通量粗筛、再低通量精筛）是生成式设计闭环中不可省略的环节，计算指标（似然、预测活性）与实验功能之间的差距需要实验来弥合。</p>
+<hr />
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>：355条天然AAV及相关依赖细小病毒VP3蛋白序列（UniProt）</p>
+<p><strong>输出</strong>：255个de novo VP3变体（Set 1: 100个；Set 2: 155个），其中7个经实验验证转导&gt;50%，4个完全逃逸三种人血清中和</p>
+<p><strong>模块</strong>：
+1. <strong>ProteinVAEc编码器-解码器</strong>：标准VAE架构 + 对比学习损失项
+2. <strong>潜空间采样器</strong>：高斯采样（Set 1: σ=2，以AAV2为中心；Set 2: σ=3，不确定性引导）
+3. <strong>序列筛选器</strong>：模型似然排序 + 微调ESM2活性预测器（LoRA微调，precision=0.73）
+4. <strong>实验验证平台</strong>：HEK293T转导筛选 → qPCR/ddPCR滴度检测 → 多细胞系转导 → 人血清中和实验</p>
+<p><strong>训练</strong>：
+- 数据：355条VP3序列
+- 模型：ProteinVAE架构（引用18），新增对比损失项
+- 对比学习：以血清型为标签，拉近同血清型表示、推远不同血清型表示
+- ESM2微调：650M参数，LoRA（rank=4, α=1），20 epochs，early stopping，AdamW（lr=3×10⁻⁴，batch=25，max_len=1024）</p>
+<p><strong>文字流程</strong>：
+1. 收集355条天然VP3序列 → 2. 训练ProteinVAEc（VAE + 对比损失）→ 3. 从潜空间采样（Set 1: AAV2近邻；Set 2: 不确定性引导）→ 4. 解码获得候选序列 → 5. 似然排序 + ESM2活性预测筛选 → 6. 合成克隆（Golden Gate）→ 7. HEK293T转导初筛 → 8. qPCR/ddPCR滴度检测 → 9. 多细胞系转导验证 → 10. 人血清中和实验 → 11. 系统发育分析定位</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>对比学习损失项</td>
+<td>增强血清型间表示分离</td>
+<td>天然数据偏倚导致VAE表示坍缩</td>
+<td>输入：潜变量z；输出：对比损失值</td>
+<td>Results 图1a：ProteinVAEc的JSD最低</td>
+<td>[预期] 移除后模型偏向AAV2区域，远距离采样序列功能率下降</td>
+</tr>
+<tr>
+<td>潜空间插值/采样</td>
+<td>在AAV1-AAV2兼容路径上生成新序列</td>
+<td>提供可控的序列多样性</td>
+<td>输入：AAV1/AAV2潜向量；输出：插值序列</td>
+<td>Results 图1c,d：ProteinVAEc插值路径平滑单调</td>
+<td>[预期] 移除后采样序列缺乏结构兼容性，功能率下降</td>
+</tr>
+<tr>
+<td>似然排序</td>
+<td>筛选高概率序列</td>
+<td>模型概率与功能正相关</td>
+<td>输入：解码序列；输出：似然分数</td>
+<td>Methods 节：top 1000/1500保留</td>
+<td>[预期] 移除后大量无意义序列进入实验，浪费筛选资源</td>
+</tr>
+<tr>
+<td>ESM2活性预测器</td>
+<td>预测变体可行性</td>
+<td>实验筛选成本高，需计算预筛</td>
+<td>输入：VP3序列；输出：可行/不可行二分类</td>
+<td>Methods 节：precision=0.73</td>
+<td>[预期] 移除后Set 2命中率进一步下降（当前仅4/155转导&gt;50%）</td>
+</tr>
+<tr>
+<td>Monte Carlo Dropout不确定性估计</td>
+<td>识别潜空间信息量大的区域</td>
+<td>指导探索性采样</td>
+<td>输入：潜变量；输出：不确定性分数</td>
+<td>Methods 节：Set 2采样策略</td>
+<td>[预期] 移除后Set 2序列多样性下降，可能错过远距离功能序列</td>
+</tr>
+<tr>
+<td>实验筛选级联</td>
+<td>转导→滴度→多细胞系→中和</td>
+<td>逐步淘汰，聚焦最优候选</td>
+<td>输入：255个变体；输出：4个完全逃逸中和的变体</td>
+<td>Results 图3、6</td>
+<td>[预期] 移除任一步骤将导致关键功能指标（中和逃逸）无法评估</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>1) VAE损失函数（含对比学习项）</strong>：</p>
+<p>$$L = L_{recon} + \beta L_{KL} + \lambda L_{contrastive}$$</p>
+<ul>
+<li>$L_{recon}$：重建损失（序列交叉熵）</li>
+<li>$L_{KL}$：KL散度，衡量潜变量分布与先验N(0,I)的偏离</li>
+<li>$\beta$：KL权重（未提供具体值）</li>
+<li>$L_{contrastive}$：对比损失，拉近同血清型表示、推远不同血清型表示</li>
+<li>$\lambda$：对比损失权重（未提供具体值）</li>
+</ul>
+<p><strong>2) 中和率计算</strong>：</p>
+<p>$$NT\% = \frac{GFP\%<em>v - GFP\%</em>{s:v}}{GFP\%_v} \times 100\%$$</p>
+<ul>
+<li>$GFP\%_v$：纯病毒转导百分比</li>
+<li>$GFP\%_{s:v}$：血清-病毒混合物的转导百分比</li>
+<li>$NT\% = 100\%$ 表示完全中和，$NT\% = 0\%$ 表示无中和</li>
+</ul>
+<p><strong>3) NT50</strong>：中和率达到50%时的血清稀释倍数，通过非线性回归（log(inhibitor) vs response，variable slope）计算。</p>
+<p><strong>4) 序列同一性</strong>：Hamming距离 = 差异位点数 / 总长度（用于衡量与最近天然序列的差异）</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/群体</strong>：
+- 训练集：355条天然VP3序列（UniProt），51%与AAV2有≥75%同一性
+- 实验集：255个de novo变体（Set 1: 100个；Set 2: 155个）
+- 人血清：20个供体，筛选对AAV2、AAV5、AAV8、AAV9、AAVrh10的反应性</p>
+<p><strong>指标</strong>：
+- 转导效率：GFP+% (流式细胞术)
+- 滴度：qPCR/ddPCR (vg/µL)
+- 中和：NT50（血清稀释倍数）
+- 序列质量：列-wise JSD、二级结构含量（SPOT-1D-Single预测）</p>
+<p><strong>基线</strong>：
+- ProteinVAE（无对比学习）
+- 微调ProGen2（150M）
+- 野生型AAV2</p>
+<p><strong>评测协议</strong>：
+- 转导筛选：固定体积病毒上清 → 流式检测GFP+%
+- 滴度检测：DNA酶处理 → qPCR/ddPCR定量包装基因组
+- 中和实验：血清梯度稀释 + 病毒（MOI=500）→ 流式检测
+- 统计：one-sided Welch's t-test on log-transformed GFP+%，Benjamini-Hochberg校正，q&lt;0.05</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列JSD比较</td>
+<td>对比学习提升序列质量</td>
+<td>ProteinVAEc vs ProteinVAE vs ProGen2</td>
+<td>ProteinVAEc JSD最低</td>
+<td>对比学习改进了天然模式恢复</td>
+<td>JSD低不等于功能好</td>
+<td>Results 图1a</td>
+</tr>
+<tr>
+<td>二级结构比较</td>
+<td>生成序列结构合理</td>
+<td>螺旋/折叠含量 vs 天然</td>
+<td>ProteinVAEc匹配天然</td>
+<td>结构约束被部分学习</td>
+<td>二级结构预测≠实验结构</td>
+<td>Results 图1b</td>
+</tr>
+<tr>
+<td>潜空间插值</td>
+<td>潜空间平滑</td>
+<td>AAV1-AAV2插值路径</td>
+<td>ProteinVAEc单调平滑</td>
+<td>对比学习改善潜空间几何</td>
+<td>平滑≠功能连续</td>
+<td>Results 图1c,d</td>
+</tr>
+<tr>
+<td>Set 1转导筛选</td>
+<td>近邻采样可保留功能</td>
+<td>100个变体，2-10突变</td>
+<td>19个转导&gt;50%，7个&gt;80%</td>
+<td>小突变数变体功能保持率高</td>
+<td>近邻变体抗原逃逸有限</td>
+<td>Results 图3b</td>
+</tr>
+<tr>
+<td>Set 2转导筛选</td>
+<td>远距离采样可发现功能变体</td>
+<td>155个变体，5-99突变</td>
+<td>4个转导&gt;50%，24个&gt;1%</td>
+<td>生成式模型可探索远距离功能空间</td>
+<td>命中率低（~2.6%）</td>
+<td>Results 图3c</td>
+</tr>
+<tr>
+<td>滴度检测</td>
+<td>变体可正确包装</td>
+<td>qPCR/ddPCR</td>
+<td>部分变体滴度≥4×10⁵ vg/µL</td>
+<td>组装/包装功能保留</td>
+<td>滴度低于野生型</td>
+<td>Results 图3d,e</td>
+</tr>
+<tr>
+<td>多细胞系转导</td>
+<td>变体具有广谱转导能力</td>
+<td>HEK293, HepG2, SH-SY5Y, A549</td>
+<td>变体间细胞偏好差异显著</td>
+<td>序列变化可改变细胞嗜性</td>
+<td>体内转导未验证</td>
+<td>Results 图4a-c</td>
+</tr>
+<tr>
+<td>中和抗体逃逸</td>
+<td>de novo变体逃逸预存免疫</td>
+<td>20供体血清，3个AAV2阳性</td>
+<td>4个变体NT50&lt;1:50，s2_129完全逃逸</td>
+<td>全表面突变可实现广谱逃逸</td>
+<td>仅3个供体，样本量小</td>
+<td>Results 图6d,e</td>
+</tr>
+<tr>
+<td>系统发育分析</td>
+<td>变体远离天然序列</td>
+<td>ML树（PhyML）</td>
+<td>s2_129与s2_0形成长枝独立簇</td>
+<td>生成序列超出天然多样性</td>
+<td>长枝≠新血清型</td>
+<td>Results 图4d</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<p><strong>任务范围</strong>：本文仅针对AAV VP3蛋白（衣壳主要抗原区域），不涉及VP1/VP2独特区域、基因组包装信号、ITR等。实验验证限于体外细胞转导和人血清中和，未进行动物实验。</p>
+<p><strong>oracle/真值输入</strong>：训练数据为天然序列（无实验功能标签）；筛选依赖微调ESM2预测器（precision=0.73，非完美oracle）；实验验证为最终真值。</p>
+<p><strong>端到端状态</strong>：计算设计 → 实验验证的闭环已建立，但<strong>非端到端</strong>——计算阶段无法预测转导效率或中和逃逸，需依赖实验筛选。</p>
+<p><strong>算力成本</strong>：未提供训练/推理的具体算力需求。模型规模较小（355条序列训练），推断成本低。</p>
+<p><strong>历史数据依赖</strong>：强依赖UniProt中天然AAV序列的质量和多样性。数据偏倚（51%接近AAV2）是模型设计的主要挑战。</p>
+<p><strong>模型依赖</strong>：结果高度依赖ESM2活性预测器的质量（precision=0.73意味着约27%的预测可行序列实际不可行）；对比学习损失的具体权重未提供，可复现性受限。</p>
+<p><strong>最难情形</strong>：Set 2中远距离变体（&gt;90突变）功能命中率极低（4/155转导&gt;50%），说明序列空间远距离处功能保持是核心瓶颈。</p>
+<p><strong>群体/领域边界</strong>：中和实验仅用20个供体血清，且仅3个对AAV2阳性；结论不能推广到更大人群。细胞系限于HEK293、HepG2、SH-SY5Y、A549，未覆盖肌肉、眼、中枢神经系统等基因治疗靶组织。</p>
+<p><strong>有边界的复述</strong>：在355条天然序列训练的VAE+对比学习模型支持下，255个de novo AAV VP3变体中有7个在体外转导效率&gt;50%，其中4个在3个AAV2阳性人血清中NT50&lt;1:50，最远变体与天然序列差异18%。该结果证明了生成式模型在AAV衣壳抗原逃逸设计中的可行性，但功能命中率低、验证规模有限，尚不能支持临床转化结论。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>转导效率普遍低于野生型</td>
+<td>大多数变体转导效率较AAV2野生型下降</td>
+<td>需进一步优化以接近野生型水平</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>低滴度问题</td>
+<td>部分变体滴度不足以支持体内应用</td>
+<td>改进包装工艺或序列设计</td>
+<td>Limitation 节</td>
+</tr>
+<tr>
+<td>部分包装现象</td>
+<td>qPCR显示部分变体存在不完全包装</td>
+<td>需优化包装信号或衣壳-基因组互作</td>
+<td>Limitation 节</td>
+</tr>
+<tr>
+<td>训练数据有限且偏倚</td>
+<td>355条序列，51%接近AAV2</td>
+<td>收集更多天然AAV序列或合成训练数据</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>活性预测器精度有限</td>
+<td>ESM2分类器precision=0.73</td>
+<td>引入更多实验数据迭代微调</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>中和实验供体数量少</td>
+<td>仅20个供体，3个AAV2阳性</td>
+<td>扩大供体队列验证</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>未进行体内实验</td>
+<td>仅体外细胞转导和血清中和</td>
+<td>动物模型验证</td>
+<td>Limitation 节</td>
+</tr>
+<tr>
+<td>序列-功能关系不明确</td>
+<td>无法解释哪些突变导致功能丧失</td>
+<td>结合结构分析（如AlphaFold）解析机制</td>
+<td>Discussion 节</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>对比学习收益未与消融实验严格对照</td>
+<td>图1a-c仅对比ProteinVAEc与ProteinVAE，但未报告消融对比损失后的完整实验筛选结果</td>
+<td>无法判断对比学习对最终功能命中率的实际贡献</td>
+<td>训练无对比损失的VAE，进行同等规模的实验筛选对比</td>
+<td>Results 图1</td>
+</tr>
+<tr>
+<td>Set 2命中率极低（4/155转导&gt;50%）</td>
+<td>可能反映生成模型在远距离序列空间的功能探索效率本质有限，而非对比学习解决了该问题</td>
+<td>影响对方法可扩展性的判断</td>
+<td>增加Set 2采样规模，统计命中率随采样量的变化曲线</td>
+<td>Results 图3c</td>
+</tr>
+<tr>
+<td>中和实验仅3个AAV2阳性供体</td>
+<td>样本量过小，无法排除偶然性；且未测试对其他血清型（AAV5、AAV8等）的交叉反应</td>
+<td>核心claim（独特血清学特征）的证据强度不足</td>
+<td>扩大供体队列，增加多种AAV血清型对照</td>
+<td>Results 图6</td>
+</tr>
+<tr>
+<td>未报告序列设计的具体结构验证</td>
+<td>18%序列差异的变体如何保持衣壳结构？无冷冻电镜或交联质谱数据</td>
+<td>结构完整性是功能的基础假设</td>
+<td>对s2_129等高功能变体进行结构解析</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>ESM2预测器训练数据含Set 1实验数据</td>
+<td>存在数据泄漏风险——Set 2筛选可能偏向Set 1已验证的序列空间</td>
+<td>影响Set 2独立性的判断</td>
+<td>明确ESM2训练集与Set 2的序列重叠度</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>未报告阴性结果</td>
+<td>255个变体中大量失败变体的序列特征未被分析</td>
+<td>失败模式信息对改进模型至关重要</td>
+<td>分析失败变体的序列模式、突变位置分布</td>
+<td>Results 图3</td>
+</tr>
+<tr>
+<td>与现有AAV工程方法缺乏定量对比</td>
+<td>未与理性设计或定向进化在同一实验条件下的转导/逃逸效果对比</td>
+<td>无法判断生成式方法的相对优势</td>
+<td>设计对照实验，同一筛选流程测试不同方法产物</td>
+<td>Introduction 节</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>对比学习缓解小样本偏倚</strong>：在序列数据高度偏倚的蛋白质家族（如AAV，51%序列接近同一血清型）中，标准VAE会过度拟合主导序列区域。加入以血清型/亚型为标签的对比损失，可显著改善潜空间的均匀性和可插值性。<strong>可迁移到</strong>：任何数据偏倚的蛋白质设计任务（如抗体、酶家族），在VAE/AE/扩散模型中加入类别对比损失。</p>
+</li>
+<li>
+<p><strong>不确定性引导的主动采样策略</strong>：用Monte Carlo Dropout估计潜空间各区域的不确定性，优先采样高不确定性区域，以最大化信息增益。<strong>可迁移到</strong>：蛋白质设计中计算资源有限时，用不确定性估计替代纯似然采样，提高实验验证的信息效率。</p>
+</li>
+<li>
+<p><strong>实验筛选级联设计</strong>：转导筛选（高通量粗筛）→ 滴度检测（中通量）→ 多细胞系验证（低通量）→ 中和实验（精筛），每步淘汰率不同，逐步聚焦。<strong>可迁移到</strong>：任何蛋白质设计验证流程，先粗筛功能、再精筛目标性质。</p>
+</li>
+<li>
+<p><strong>序列距离与功能保持的权衡曲线</strong>：Set 1（2-10突变）功能保持率高但抗原逃逸有限；Set 2（5-99突变）功能命中率骤降但逃逸能力强。<strong>可迁移到</strong>：蛋白质设计任务中，明确「序列多样性-功能保持」的权衡曲线，据此设定采样策略。</p>
+</li>
+<li>
+<p><strong>全表面突变策略优于区域聚焦</strong>：此前方法仅针对28aa区域，本文证明将突变分布在整个衣壳表面可同时破坏多个nAb表位。<strong>可迁移到</strong>：抗原设计、受体结合界面改造等任务，考虑全表面而非单一表位。</p>
+</li>
+<li>
+<p><strong>ESM2微调作为可行性预测器</strong>：用LoRA微调ESM2（650M）做二分类（可行/不可行），precision=0.73。<strong>可迁移到</strong>：其他蛋白质设计任务中，用预训练语言模型微调作为低成本功能筛选器。</p>
+</li>
+<li>
+<p><strong>潜空间插值作为设计工具</strong>：在AAV1-AAV2兼容路径上插值生成新序列，利用已知兼容性约束搜索空间。<strong>可迁移到</strong>：任何已知多个功能变体的蛋白质设计，利用潜空间插值探索中间态。</p>
+</li>
+<li>
+<p><strong>系统发育定位作为多样性度量</strong>：用ML树（PhyML）将生成序列与天然序列共同建树，评估生成序列是否超出天然多样性范围。<strong>可迁移到</strong>：生成序列的多样性评估，不局限于序列同一性，而用系统发育距离。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text, including abstract, introduction, results, discussion, limitations, methods, and supplementary figure legends. No figures, tables, or supplementary data files were provided.</li>
+<li><strong>Assessment boundary</strong> Scientific claims, methodological soundness, and evidentiary support as presented in the text. No independent verification of experimental data was possible.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present a variational autoencoder (ProteinVAEc) trained on natural AAV VP3 sequences, and use it to generate de novo AAV capsid variants. They report that 255 variants were synthesized and tested, with seven transducing human cells at &gt;50% efficiency, and four of those avoiding neutralization by human sera reactive to AAV. One variant (s2_129) with 97 mutations relative to the closest natural sequence is highlighted as a potential first de novo AAV serotype.</li>
+<li><strong>Visible evidence base</strong> Text descriptions of computational evaluations (JSD, secondary structure, latent interpolation), in vitro transduction screening, qPCR/ddPCR titering, cell line tropism experiments, neutralization assays, and phylogenetic analysis. All quantitative results are described narratively without accompanying figures or tables.</li>
+<li><strong>Missing materials affecting confidence</strong> All figures, tables, supplementary data, and statistical analysis outputs. No raw data, no sequence alignments, no neutralization curves, no gating strategies, no titer values beyond those mentioned in text. The absence of these materials substantially limits the ability to verify the claims.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript addresses a clinically important problem, namely pre-existing immunity to AAV vectors, and proposes a generative modeling approach to design capsids that evade neutralizing antibodies. The conceptual framing is sound and the results, as described, are potentially significant. However, the evidentiary basis as presented is insufficient to support the strong claims made, particularly the assertion of a "first ever de novo AAV serotype." The lack of figures, tables, and detailed statistical reporting prevents verification of the central findings. The work is at a preliminary stage and requires substantial additional evidence and clarification before the claims can be considered established.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in gene therapy, AAV biology, and protein design would be interested. The potential to generate capsids with altered serological profiles has direct implications for patient eligibility and redosing strategies. The methodological contribution, namely the use of contrastive learning in a VAE for viral capsid design, would also interest the computational protein design community.</li>
+<li><strong>Major strengths</strong> The problem addressed is of high clinical relevance. The use of a generative model to explore sequence space beyond natural variation is a reasonable and timely approach. The authors have made an effort to validate their designs experimentally, including in vitro transduction, packaging, and neutralization assays. The observation that designed variants can alter cell type preference is interesting and suggests the model has captured functional determinants beyond simple sequence conservation.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "Seven designs transduced human cells with &gt;50% efficiency, of which four avoided nAb neutralization (NT50 &lt; 1:50) in all human sera that were reactive to AAV."</li>
+<li><strong>Evidence pointer</strong> Results section, Figures 3 and 6 (not provided)</li>
+<li><strong>Concern</strong> The central claim of the manuscript rests on transduction and neutralization data that are described only in text. No figures showing transduction efficiencies, neutralization curves, or statistical comparisons are available. The criteria for "&gt;50% efficiency" are not defined in the text, and it is unclear whether this refers to the percentage of cells transduced, relative expression levels, or another metric. The neutralization data are described for three sera, but the selection criteria for these sera, the reproducibility of the assays, and the full dose-response curves are not shown.</li>
+<li><strong>Why it matters</strong> Without the primary data, the reader cannot assess whether the reported efficiencies and neutralization resistance are robust, reproducible, or statistically significant. The claim of a "unique serological profile" depends entirely on these data.</li>
+<li><strong>Resolution test</strong> Provide the figures and tables with raw data, including gating strategies, dose-response curves for all sera tested, statistical tests used, and clear definitions of all metrics. Show that the reported efficiencies are reproducible across independent experiments and that the neutralization resistance is consistent across a panel of sera.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Claim support</li>
+<li><strong>Claim pointer</strong> "In one of these designs, sequence identity to the nearest natural AAV sequence was 18% divergent. Given the radical sequence diversity and its unique serological profile, this new capsid design would represent the first ever AAV serotype designed de novo."</li>
+<li><strong>Evidence pointer</strong> Results section, Figure 4d (not provided)</li>
+<li><strong>Concern</strong> The claim of a "first ever AAV serotype designed de novo" is a strong and definitive statement. The evidence presented, namely sequence divergence and resistance to a limited panel of human sera, is not sufficient to establish that this variant constitutes a new serotype. A serotype is defined by a lack of cross-reactivity with existing serotypes, which requires testing against a comprehensive panel of antisera to all known AAV serotypes. The manuscript only reports testing against sera from three donors reactive to a few serotypes. Furthermore, the phylogenetic analysis is described but not shown, and the criteria for defining a "new serotype" are not discussed.</li>
+<li><strong>Why it matters</strong> The claim of a new serotype is the headline finding of the manuscript. If it is not supported by appropriate serological data, the conclusion is overstated and could mislead the field.</li>
+<li><strong>Resolution test</strong> Test the lead variants against a comprehensive panel of antisera raised against all known AAV serotypes. Demonstrate that the variants are not neutralized by any of these antisera. Provide the phylogenetic tree and discuss the criteria used to define a new serotype in the context of existing literature.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Methodological clarity</li>
+<li><strong>Claim pointer</strong> "We built a variational autoencoder that could learn these sequence constraints and generate functional AAV capsid proteins de novo."</li>
+<li><strong>Evidence pointer</strong> Methods section, Computational Evaluation</li>
+<li><strong>Concern</strong> The description of the model architecture and training is incomplete. The text states that ProteinVAEc is an adaptation of ProteinVAE with a "tailored contrastive loss term," but the details of this loss, the architecture, the training data, and the hyperparameters are not provided. The evaluation metrics (JSD, secondary structure) are described, but the specific values and comparisons to baselines are not given. The fine-tuning of ProGen2 and ESM2 is mentioned, but the training details are sparse.</li>
+<li><strong>Why it matters</strong> The methodological contribution is a key part of the paper. Without sufficient detail, other researchers cannot reproduce the model or assess whether the improvements are due to the contrastive loss or other factors.</li>
+<li><strong>Resolution test</strong> Provide a full description of the model architecture, the contrastive loss function, training details, and hyperparameters. Include a table comparing ProteinVAEc to ProteinVAE and other baselines on the reported metrics, with error bars and statistical tests.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Interpretation</li>
+<li><strong>Claim pointer</strong> "Mutations are broadly distributed across the capsid exterior, likely altering most if not all antibody-accessible regions. This provides a plausible structural rationale for reduced recognition by nAbs with diverse epitopes broadly across different individuals."</li>
+<li><strong>Evidence pointer</strong> Results section, Figure 5 (not provided)</li>
+<li><strong>Concern</strong> The structural analysis is presented as a "plausible rationale" but is not directly tested. The mapping of mutations onto the capsid structure is described, but no quantitative analysis of surface exposure, epitope overlap, or comparison to known antibody epitopes is provided. The link between mutation distribution and neutralization resistance is inferred, not demonstrated.</li>
+<li><strong>Why it matters</strong> The structural argument is used to support the serological findings. Without a more rigorous analysis, the connection between sequence divergence and immune evasion remains speculative.</li>
+<li><strong>Resolution test</strong> Provide a quantitative analysis of the mutation distribution, such as solvent-accessible surface area calculations, and compare the mutated positions to known antibody epitopes. If possible, perform epitope mapping experiments or structural studies to directly demonstrate that the mutations disrupt antibody binding.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract</li>
+<li><strong>Issue</strong> The abstract states "More than 5000 monogenic diseases are potentially curable by replacing a single defective gene with one that functions normally." This is an overstatement, as gene replacement is not applicable to all monogenic diseases, and many are not "curable" by this approach.</li>
+<li><strong>Required correction</strong> Rephrase to "More than 5000 monogenic diseases are potentially addressable by gene replacement therapy."</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Consistency</li>
+<li><strong>Affected element</strong> Results and Discussion</li>
+<li><strong>Evidence pointer</strong> Results, Discussion</li>
+<li><strong>Issue</strong> The text reports "seven designs transduced human cells with &gt;50% efficiency" in the abstract, but later states "four variants transduced cells with &gt;50% efficiency and also resist neutralization." The numbers are not clearly reconciled. It is stated that "Nine designs avoided nAb mediated neutralization" in the results, but the abstract says "four avoided nAb neutralization." The relationship between these numbers is confusing.</li>
+<li><strong>Required correction</strong> Clearly state the number of variants at each stage of the screening pipeline, and define the criteria for each stage. Use a flow diagram if necessary.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Methods, Cell Culture</li>
+<li><strong>Evidence pointer</strong> Methods, Cell Culture</li>
+<li><strong>Issue</strong> The cell culture section mentions "HEK293T Lenti-X cells" and later "HEK293 cells" in the transduction validation. It is unclear if these are the same cell line.</li>
+<li><strong>Required correction</strong> Clarify the cell lines used in each experiment and ensure consistent naming.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> Results, Transduction experiments</li>
+<li><strong>Evidence pointer</strong> Results, Figure 3</li>
+<li><strong>Issue</strong> The text mentions "one-sided Welch's t-test on log EGFP+%, BH q &lt; 0.05" but does not report the number of biological replicates for the initial screening, nor the effect sizes or confidence intervals.</li>
+<li><strong>Required correction</strong> Report the number of replicates, effect sizes, and confidence intervals for all statistical comparisons.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation</li>
+<li><strong>Affected element</strong> Discussion</li>
+<li><strong>Evidence pointer</strong> Discussion</li>
+<li><strong>Issue</strong> The discussion states "in vitro experiments might underestimate the variants' transduction for the more important in vivo setting" due to the absence of R585/R588 arginines. This is speculative and not supported by data presented.</li>
+<li><strong>Required correction</strong> Soften the claim or provide supporting evidence, such as in vivo data or literature references.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The absence of all primary data figures and tables is the most significant technical failing. The manuscript cannot be evaluated without them. Additionally, the lack of detail on the model architecture and training, the incomplete statistical reporting, and the overstatement of the serotype claim are technical issues that must be addressed.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li><strong>Originality</strong> The application of a VAE with contrastive learning to AAV capsid design is a novel contribution. The focus on generating variants with altered serological profiles, rather than simply improving titer or tropism, is a fresh angle. However, the conceptual approach of using generative models for protein design is not new, and the novelty lies in the specific application.</li>
+<li><strong>Scientific importance</strong> The problem of pre-existing immunity is a major barrier to AAV gene therapy. If the claims are substantiated, this work could have significant clinical implications. The potential for redosing is also an important consideration. The importance is high, but contingent on the validity of the results.</li>
+<li><strong>Interdisciplinary readership</strong> The work bridges computational protein design, virology, and gene therapy. It would appeal to researchers in all three fields. The writing is generally accessible, though some parts of the methods are dense.</li>
+<li><strong>Technical soundness</strong> The technical soundness cannot be fully assessed due to missing data. The described methods are plausible, but the lack of figures and detailed statistical analysis prevents verification. The neutralization assay methodology, in particular, needs more detail.</li>
+<li><strong>Readability for nonspecialists</strong> The abstract and introduction are clear and accessible. The results and methods sections are more technical and may be challenging for nonspecialists, but this is typical for a multidisciplinary journal.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript addresses an important problem and presents a plausible approach, but the claims are not verifiable without the primary data. The authors should be encouraged to resubmit with the full set of figures, tables, and detailed methods. The claim of a "first ever de novo AAV serotype" should be tempered until more comprehensive serological testing is performed.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of a "first ever AAV serotype designed de novo" is unsupported by the evidence presented. A serotype designation requires comprehensive cross-reactivity testing against all known serotypes, which was not performed.</li>
+<li>The claim that "seven designs transduced human cells with &gt;50% efficiency" is unverifiable without the underlying data and a clear definition of the metric.</li>
+<li>The claim that mutations are "broadly distributed across the capsid exterior, likely altering most if not all antibody-accessible regions" is speculative and not supported by quantitative analysis.</li>
+<li>The statement that "in vitro experiments might underestimate the variants' transduction for the more important in vivo setting" is speculative and not supported by data.</li>
+<li>The claim that ProteinVAEc "showed better recovery of general VP3 sequence and secondary structure patterns" is unverifiable without the comparison data.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

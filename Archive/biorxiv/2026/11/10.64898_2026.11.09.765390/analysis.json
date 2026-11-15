@@ -1,0 +1,24 @@
+{
+  "source": "biorxiv",
+  "id": "10.64898/2026.11.09.765390",
+  "title": "Integrating evolutionary and protein language model representations for thermodynamically consistent stability prediction",
+  "authors": "Guido Barducci; Tiziana Sanavia; Piero Fariselli",
+  "journal": "bioRxiv",
+  "published_date": "2026-11-10",
+  "window": {
+    "start": "2026-11-08",
+    "end": "2026-11-14"
+  },
+  "score": 9,
+  "one_liner_zh": "该文提出一种无需训练的集成策略，将进化信息和蛋白语言模型表示结合，并通过热力学约束（反对称性和路径独立性）构建势能化预测器EvoPhi-DDG，用于蛋白质稳定性变化预测，显著提升准确性和物理一致性，属于蛋白质结构相关计算建模的核心工作。",
+  "abstract": "At fixed thermodynamic conditions, protein stability changes obey reversal antisymmetry and path independence, but learned predictors need not satisfy these properties. Explicit alignment-derived evolutionary information may also complement single-sequence protein language model representations, motivating their integration under clearly defined physical constraints. Here, we develop a training-free strategy that combines thermodynamic constraints with complementary sequence representations. We first introduce EvoPhi-DDG, a potential-based adaptation of the alignment-conditioned evolutionary predictor MSAesm_ddG. By antisymmetrizing its predictions and setting the hidden biases to zero, we express stability changes as differences of a learned, evolution-informed effective potential conditioned on the mutation site and alignment context. This guarantees exact reversal consistency and exact same-site transitivity under fixed alignment contexts while preserving predictive accuracy. We further extend the adapted predictor to multiple substitutions through a background-aware construction that preserves whole-variant antisymmetry. We then combine EvoPhi-DDG with the previously published JanusDDG using fixed, equal-weight averaging to test predictive complementarity without additional training. The ensemble preserves exact antisymmetry and reduces multisite pathway-closure RMSE relative to JanusDDG across all evaluated path lengths. Furthermore, the ensemble outperforms both components on S669 and S96, achieving Pearson correlations of 0.59 and 0.55, respectively, compared with 0.55 and 0.52 for JanusDDG and 0.53 and 0.48 for EvoPhi-DDG. On the multiple-substitution benchmark PTmul-NR, the ensemble achieves a Pearson correlation of 0.66, improving on JanusDDG’s 0.61 and matching the EvoPhi-DDG extension at the reported precision. Together, these findings distinguish two benefits: averaging complementary predictions improves accuracy, whereas the potential-based reformulation strengthens physical consistency. They support the integration of alignment-conditioned and single-sequence representations without additional training, while separating predictive improvements from mathematical guarantees.",
+  "abstract_zh": "在固定的热力学条件下，蛋白质稳定性变化遵循反转反对称性和路径无关性，但学习型预测器未必满足这些性质。显式的比对衍生进化信息也可能补充单序列蛋白质语言模型表示，这促使在明确物理约束下对其进行整合。在此，我们开发了一种无训练策略，将热力学约束与互补序列表示相结合。我们首先引入EvoPhi-DDG，一种基于势能的比对条件进化预测器MSAesm_ddG的适配版本。通过对其预测进行反对称化处理并将隐藏偏置设为零，我们将稳定性变化表示为学习得到的、受进化信息影响的、以突变位点和比对上下文为条件的有效势能之差。这保证了在固定比对上下文下精确的反转一致性和精确的同位点传递性，同时保持预测准确性。我们进一步通过一种保持整体变体反对称性的背景感知构造，将适配预测器扩展到多个替换。然后，我们将EvoPhi-DDG与先前发表的JanusDDG通过固定等权平均进行组合，以在无需额外训练的情况下测试预测互补性。该集成方法保留了精确的反对称性，并在所有评估的路径长度上相对于JanusDDG降低了多位点路径闭合RMSE。此外，该集成方法在S669和S96上优于两个组成模型，分别达到0.59和0.55的Pearson相关系数，而JanusDDG为0.55和0.52，EvoPhi-DDG为0.53和0.48。在多位点替换基准PTmul-NR上，该集成方法达到0.66的Pearson相关系数，优于JanusDDG的0.61，并在报告精度下与EvoPhi-DDG扩展版本持平。综合来看，这些发现区分了两种益处：平均互补预测提高了准确性，而基于势能的重新表述增强了物理一致性。它们支持在无需额外训练的情况下整合比对条件和单序列表示，同时将预测改进与数学保证分离开来。",
+  "has_fulltext": true,
+  "fulltext_source": "europepmc",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.11.09.765390",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.09.765390",
+  "paper_page_path": "papers/biorxiv/10.64898_2026.11.09.765390/index.html"
+}

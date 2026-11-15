@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>peleke-1: A Suite of Protein Language Models Fine-Tuned for Targeted Antibody Sequence Generation. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>peleke-1: A Suite of Protein Language Models Fine-Tuned for Targeted Antibody Sequence Generation.</h1>
+      <div class="meta">Santolla, Nicholas; Pridgen, Trey; Nigam, Prbhuv; Ford, Colby T</div>
+      <div class="meta muted">
+        
+        <span class="journal">Viral immunology</span>
+        · 2026-11-11
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/43009741/">原文</a>
+      </div>
+      <p class="one-liner">该文提出基于蛋白语言模型微调的peleke-1套件，针对抗原序列生成靶向抗体Fv序列，属于蛋白质序列设计计算研究，与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">The discovery of therapeutic antibodies is a traditionally arduous process. Today, the lab-based process of antibody discovery consists of several time-consuming steps that involve live animal immunization, B-cell harvesting, hybridoma creation, and then downstream engineering and evaluation. However, the use of artificial intelligence in drug design has previously been shown effective in the rapid generation of protein-specific binders, small molecules, and even antibody therapeutics, thereby replacing some of the primary steps of the drug discovery process. Here, we present peleke-1, a suite of protein language models fine-tuned from state-of-the-art large language models using curated antibody-antigen complex data. These models generate targeted antibody Fv sequences for a given antigen sequence input at-scale. This suite of models provides a reliable, artificial intelligence-driven approach for in silico therapeutic antibody discovery along with an open-source framework for future antibody language model tuning.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">治疗性抗体的发现传统上是一个艰巨的过程。如今，基于实验室的抗体发现过程包含多个耗时的步骤，涉及活体动物免疫、B细胞采集、杂交瘤生成，以及后续的工程改造和评估。然而，人工智能在药物设计中的应用此前已被证明能有效快速生成蛋白质特异性结合剂、小分子，甚至抗体治疗药物，从而取代了药物发现过程中的一些主要步骤。在此，我们介绍peleke-1，这是一套蛋白质语言模型套件，基于精选的抗体-抗原复合物数据，从最先进的大型语言模型微调而来。这些模型能够针对给定的抗原序列输入，大规模生成靶向抗体Fv序列。该模型套件为计算机模拟治疗性抗体发现提供了一种可靠的人工智能驱动方法，并为未来抗体语言模型的调优提供了开源框架。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：peleke-1: A Suite of Protein Language Models Fine-Tuned for Targeted Antibody Sequence Generation</li>
+<li><strong>作者</strong>：Santolla, Nicholas; Pridgen, Trey; Nigam, Prbhuv; Ford, Colby T</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/预印本平台</strong>：Viral Immunology</li>
+<li><strong>年份</strong>：2026（在线日期 2026-11-11）</li>
+<li><strong>论文类型</strong>：方法学/工具类论文（模型套件发布）</li>
+<li><strong>领域</strong>：抗体序列生成 × 蛋白质语言模型（protein language model, PLM）</li>
+<li><strong>关键词</strong>：antibody discovery, protein language model, sequence generation, in silico therapeutics, Fv</li>
+<li><strong>DOI/arXiv 号</strong>：10.1177/08828245261499794</li>
+<li><strong>代码</strong>：未提供（文中称提供 open-source framework，但未给出具体仓库地址）</li>
+<li><strong>数据</strong>：curated antibody-antigen complex data（未提供具体数据集名称与规模）</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在该方向中的位置</strong>：属于「蛋白质结构相关计算研究 × AI 方法」中的抗体序列生成子方向，与结构预测（如 AlphaFold）和物理模拟（MD/对接）不同，本文走的是序列端到端生成路线，即给定抗原序列直接输出抗体 Fv 序列，不显式依赖结构信息。其定位介于「序列设计」与「AI 生成模型」之间，可作为抗体发现流程中实验步骤的替代或前置筛选工具。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出 peleke-1，一组从大型蛋白质语言模型微调得到的抗体序列生成模型，输入抗原序列即可批量输出靶向该抗原的抗体 Fv 序列，旨在用 AI 替代抗体发现流程中动物免疫、B 细胞采集、杂交瘤等实验步骤。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：能否用蛋白质语言模型直接从抗原序列生成靶向该抗原的抗体 Fv 序列，从而跳过传统实验流程？</li>
+<li><strong>为什么重要</strong>：传统抗体发现依赖活体动物免疫、B 细胞分选、杂交瘤构建等耗时步骤，周期长、成本高、通量低。若能以计算方式直接生成候选抗体序列，可大幅加速治疗性抗体发现。</li>
+<li><strong>现有方法为何不足</strong>：此前 AI 在药物设计中的应用多集中于小分子或蛋白特异性 binders，针对抗体序列的端到端生成仍缺乏系统性的、基于 curated 抗体-抗原复合物数据的微调模型套件。</li>
+<li><strong>精确研究问题</strong>：Can a suite of protein language models, fine-tuned on curated antibody-antigen complex data, generate targeted antibody Fv sequences for a given antigen sequence input at scale?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文摘要的叙述框架，未做外部文献核验，标记为「仅本文框架」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统实验抗体发现</td>
+<td>动物免疫、B 细胞采集、杂交瘤</td>
+<td>成熟可靠、体内亲和力成熟</td>
+<td>耗时、成本高、通量低</td>
+<td>本文试图替代的流程</td>
+</tr>
+<tr>
+<td>AI 辅助药物设计（早期）</td>
+<td>小分子生成、蛋白 binder 设计</td>
+<td>快速、可规模化</td>
+<td>多针对小分子或非抗体蛋白</td>
+<td>本文扩展至抗体序列</td>
+</tr>
+<tr>
+<td>蛋白质语言模型</td>
+<td>ESM 等大规模 PLM</td>
+<td>学习序列-功能关系</td>
+<td>非专门针对抗体-抗原配对</td>
+<td>本文的基座模型</td>
+</tr>
+<tr>
+<td>抗体专用微调（本文）</td>
+<td>peleke-1 套件</td>
+<td>直接生成靶向抗体 Fv 序列</td>
+<td>依赖 curated 数据质量；未见实验验证</td>
+<td>本文贡献</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统抗体发现流程冗长</td>
+<td>涉及活体动物免疫、B 细胞采集、杂交瘤创建、下游工程与评估</td>
+<td>多步骤、依赖生物系统、周期长</td>
+<td>摘要第 1-2 句</td>
+</tr>
+<tr>
+<td>实验流程成本高</td>
+<td>需要动物设施、细胞培养、筛选平台</td>
+<td>未明确解释，隐含于流程描述</td>
+<td>摘要第 1-2 句</td>
+</tr>
+<tr>
+<td>现有 AI 方法覆盖不足</td>
+<td>此前 AI 多用于小分子或蛋白 binders，抗体序列生成缺乏系统方案</td>
+<td>抗体-抗原配对数据复杂，需专门微调</td>
+<td>摘要第 3 句</td>
+</tr>
+<tr>
+<td>缺乏开源抗体语言模型框架</td>
+<td>研究者难以复现或扩展抗体序列生成模型</td>
+<td>未明确解释</td>
+<td>摘要末句（open-source framework 的提出暗示此痛点）</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>：从 state-of-the-art 大型蛋白质语言模型出发，使用 curated antibody-antigen complex data 进行微调，得到一组（suite）模型，输入抗原序列，输出靶向该抗原的抗体 Fv 序列，支持 at-scale 批量生成。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>：抗体-抗原结合的特异性信息可以编码在序列层面——即给定抗原序列，模型能够学习到与之配对的抗体 Fv 序列的分布，从而无需显式结构信息即可生成候选抗体。这暗示抗体-抗原共进化或共现模式在序列语料中已有足够信号。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]：对于蛋白质相互作用对（如抗体-抗原、受体-配体），如果存在足够的 paired sequence 数据，PLM 微调可以隐式学习互作界面约束，而无需显式结构或物理模拟。这一思路可迁移到其他互作对生成任务。</p>
+</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：抗原氨基酸序列</li>
+<li><strong>输出</strong>：靶向该抗原的抗体 Fv 序列（批量生成，at-scale）</li>
+<li><strong>模块</strong>：
+  1. 基座模型：state-of-the-art 大型蛋白质语言模型（未指明具体模型名）
+  2. 微调数据：curated antibody-antigen complex data（未指明来源与规模）
+  3. 微调流程：针对抗体 Fv 序列生成任务进行 fine-tuning</li>
+<li><strong>训练</strong>：未提供训练细节（损失函数、优化器、超参数等均未提供）</li>
+<li><strong>工具</strong>：未提供具体实现框架</li>
+<li><strong>反馈回路</strong>：未提及（未见实验验证或湿实验反馈）</li>
+<li><strong>假设</strong>：抗体-抗原配对信息可从序列数据中学习；curated complex data 足以提供配对信号</li>
+<li><strong>文字流程</strong>：抗原序列 → 输入微调后的 PLM → 模型生成抗体 Fv 序列 → 输出候选抗体序列集合（at-scale）</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基座 PLM</td>
+<td>提供蛋白质序列的通用表示</td>
+<td>大规模预训练已编码序列-功能关系</td>
+<td>输入：通用蛋白序列；输出：序列表示/生成</td>
+<td>摘要称 "state-of-the-art large language models"</td>
+<td>预期：生成质量显著下降（[Analysis] 推测，未实测）</td>
+</tr>
+<tr>
+<td>Curated 微调数据</td>
+<td>提供抗体-抗原配对信号</td>
+<td>使模型学习靶向生成</td>
+<td>输入：抗体-抗原 complex 序列对；输出：微调信号</td>
+<td>摘要称 "curated antibody-antigen complex data"</td>
+<td>预期：模型退化为通用序列生成，失去靶向性（[Analysis] 推测，未实测）</td>
+</tr>
+<tr>
+<td>微调流程</td>
+<td>将通用 PLM 适配至抗体 Fv 生成任务</td>
+<td>任务特异性适配</td>
+<td>输入：预训练权重 + 配对数据；输出：微调后模型</td>
+<td>摘要整体描述</td>
+<td>预期：无微调则无法生成靶向抗体（[Analysis] 推测，未实测）</td>
+</tr>
+<tr>
+<td>生成/采样模块</td>
+<td>批量输出抗体 Fv 序列</td>
+<td>实现 at-scale 生成</td>
+<td>输入：抗原序列；输出：多个候选 Fv 序列</td>
+<td>摘要称 "generate ... at-scale"</td>
+<td>预期：无此模块则只能单次输出（[Analysis] 推测，未实测）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：本文为摘要级信息，所有消融效应均为 [Analysis] 推测，无实测消融实验证据。</p>
+</blockquote>
+<h2>09 关键公式符号</h2>
+<p>不适用。本文为摘要级信息，未提供任何公式、损失函数或数学定义。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：curated antibody-antigen complex data（未提供具体名称、规模、物种来源）</li>
+<li><strong>群体</strong>：未提供</li>
+<li><strong>指标</strong>：未提供（未说明如何评估生成序列的质量、靶向性、多样性等）</li>
+<li><strong>基线</strong>：未提供（未与现有抗体生成方法对比）</li>
+<li><strong>预算/算力</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：未提供</li>
+<li><strong>Oracle 输入</strong>：未提供（未见结构预测或实验验证作为 oracle）</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：本文仅有摘要，未包含任何实验设计、定量结果或评测细节。所有关于模型性能的声明均无法从摘要中验证。</p>
+</blockquote>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅覆盖抗体 Fv 序列的生成，不涉及全长抗体、恒定区、糖基化等。</li>
+<li><strong>Oracle/真值输入</strong>：未使用结构信息（如 AlphaFold 预测或晶体结构）作为输入或验证；未提及湿实验验证。</li>
+<li><strong>端到端状态</strong>：模型输出为序列，未经过表达、结合实验或功能验证，因此是「计算候选生成」而非「端到端抗体发现」。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：依赖 curated antibody-antigen complex data 的质量与覆盖度；数据偏差将直接影响生成序列的靶向性。</li>
+<li><strong>模型依赖</strong>：依赖所选基座 PLM 的能力；不同基座模型可能产生显著差异。</li>
+<li><strong>最难情形</strong>：未讨论（如低同源性抗原、构象表位、稀有抗原等）。</li>
+<li><strong>群体/领域边界</strong>：仅针对抗体 Fv 序列生成，不适用于其他蛋白互作对或非抗体支架。</li>
+<li><strong>不确定性</strong>：未提供生成序列的成功率、多样性、亲和力分布等定量不确定性信息。</li>
+</ul>
+<p><strong>有边界的复述</strong>：peleke-1 是一组从大型 PLM 微调得到的抗体 Fv 序列生成模型，输入抗原序列可批量输出候选抗体 Fv 序列。其有效性仅限于计算序列生成层面，未经实验验证，且依赖 curated 配对数据的质量。</p>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 模型依赖 curated antibody-antigen complex data（暗示数据质量与覆盖度是关键约束）
+- 生成的是 Fv 序列而非全长抗体（暗示下游仍需工程化步骤）</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>摘要未提供任何定量结果</td>
+<td>模型性能可能有限，或评测尚在进行中</td>
+<td>无法判断模型是否真正有效</td>
+<td>要求作者提供生成序列的体外结合实验或结构验证数据</td>
+<td>摘要全文无数据</td>
+</tr>
+<tr>
+<td>未指明基座模型与微调数据来源</td>
+<td>可复现性存疑；数据偏差无法评估</td>
+<td>影响结果可信度与可推广性</td>
+<td>要求提供模型名、数据来源与规模</td>
+<td>摘要未提供</td>
+</tr>
+<tr>
+<td>未与现有方法对比</td>
+<td>无法判断相对优势</td>
+<td>新方法需证明优于已有方案</td>
+<td>与现有抗体生成模型（如 IgLM、AntiBERTa 等）对比</td>
+<td>摘要未提供</td>
+</tr>
+<tr>
+<td>未提及结构验证或功能实验</td>
+<td>生成序列可能无结合活性</td>
+<td>序列生成 ≠ 功能抗体</td>
+<td>对生成序列进行表达、ELISA/SPR 结合实验</td>
+<td>摘要未提供</td>
+</tr>
+<tr>
+<td>"at-scale" 未定义</td>
+<td>生成数量与计算成本不明</td>
+<td>影响实用性评估</td>
+<td>明确生成通量与耗时</td>
+<td>摘要未提供</td>
+</tr>
+<tr>
+<td>未讨论失败模式</td>
+<td>对低同源性或构象表位抗原可能失效</td>
+<td>影响适用范围判断</td>
+<td>在多样抗原集上测试</td>
+<td>摘要未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>序列级互作对生成范式</strong>：给定一个蛋白（抗原）序列，直接生成其互作对（抗体）序列，无需显式结构信息。这一范式可迁移到其他互作对任务，如酶-底物、受体-配体、TCR-肽段等。</p>
+</li>
+<li>
+<p><strong>Curated paired data 的价值</strong>：微调 PLM 需要高质量的 paired sequence 数据（抗体-抗原 complex）。这提示在蛋白质结构相关计算研究中，构建高质量的 paired dataset 是模型性能的关键前置条件。</p>
+</li>
+<li>
+<p><strong>Suite 而非单模型</strong>：作者提出「一组模型」而非单一模型，暗示不同模型可能针对不同抗原类型或不同抗体特性（如亲和力、发育阶段）进行分工。这一思路可迁移到多任务蛋白质设计。</p>
+</li>
+<li>
+<p><strong>开源框架的定位</strong>：作者强调 open-source framework，说明抗体语言模型微调的可复现性被视作核心贡献。对于本课题，可借鉴其「发布模型 + 框架」的模式，促进社区迭代。</p>
+</li>
+<li>
+<p><strong>对结构信息的替代性</strong> [Analysis]：本文未使用结构信息，暗示序列层面的互作信号可能足够。这为「结构预测成本高时先用序列模型筛选」提供了思路，但需注意其上限（可能无法处理构象表位）。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：与 IgLM（抗体序列生成）、AntiBERTa（抗体表示学习）、ESM 系列（通用蛋白质语言模型）同属 PLM 在抗体领域的应用。本文的差异化在于「靶向生成」——输入抗原序列而非仅生成随机抗体序列。</li>
+<li><strong>组合方向</strong>：与 AlphaFold 结合——用 peleke-1 生成候选抗体序列，再用 AlphaFold 预测抗体-抗原复合物结构进行虚拟筛选，可形成「序列生成 → 结构验证」的计算管线。</li>
+<li><strong>冲突/张力</strong>：与物理模拟（MD、对接）方法形成互补而非冲突——序列生成速度快但缺乏物理约束，MD/对接精度高但计算昂贵，二者可级联使用。</li>
+<li><strong>可迁移领域</strong>：本文的「paired sequence 微调」思路可迁移到 TCR-肽段、nanobody-抗原、设计蛋白-靶标等互作对生成任务。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：peleke-1 + AlphaFold 级联筛选管线
+   - <strong>来源局限/观察</strong>：peleke-1 仅输出序列，无结构验证；AlphaFold 可预测复合物结构
+   - <strong>核心假设</strong>：序列生成 + 结构筛选可显著提高候选抗体的命中率
+   - <strong>相对本文的增量</strong>：增加结构验证层，弥补序列模型无物理约束的缺陷
+   - <strong>初步方法</strong>：peleke-1 生成候选 Fv → AlphaFold-Multimer 预测抗体-抗原复合物 → 以 pLDDT/ipTM 或结合界面残基打分筛选
+   - <strong>验证方式</strong>：对已知抗体-抗原对做回测，比较生成序列的结构预测成功率
+   - <strong>可能的失败模式</strong>：AlphaFold 对未知抗体-抗原复合物预测精度有限；生成序列多样性不足
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：抗体-抗原 paired data 质量对靶向生成的影响分析
+   - <strong>来源局限/观察</strong>：摘要未提供数据规模与来源，数据质量是隐式关键变量
+   - <strong>核心假设</strong>：paired data 的覆盖度（不同抗原类别、不同物种）显著影响生成序列的靶向性
+   - <strong>相对本文的增量</strong>：系统评估数据维度对生成质量的影响，为数据构建提供指导
+   - <strong>初步方法</strong>：在不同规模/来源的 curated data 上微调同一基座模型，比较生成序列的多样性、靶向性
+   - <strong>验证方式</strong>：用体外结合实验或结构预测对生成序列做功能评估
+   - <strong>可能的失败模式</strong>：数据规模效应不显著；评估指标难以标准化
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：多任务抗体 PLM——同时生成 Fv 与预测结合亲和力
+   - <strong>来源局限/观察</strong>：peleke-1 仅做生成，未利用亲和力标签；若训练数据含实验亲和力，可扩展为多任务
+   - <strong>核心假设</strong>：生成 + 亲和力预测联合训练可提升生成序列的功能性
+   - <strong>相对本文的增量</strong>：从「生成候选」升级为「生成有亲和力偏好的候选」
+   - <strong>初步方法</strong>：在微调目标中增加亲和力回归头，或使用条件生成（以目标亲和力为条件）
+   - <strong>验证方式</strong>：对生成序列做 SPR/ELISA 实验，比较有无亲和力条件的生成质量
+   - <strong>可能的失败模式</strong>：亲和力数据稀疏且噪声大；多任务训练可能损害生成质量
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：跨物种抗体生成——从非人源 paired data 泛化到人源抗体
+   - <strong>来源局限/观察</strong>：curated data 可能偏向某些物种；人源化是治疗性抗体的关键步骤
+   - <strong>核心假设</strong>：模型可从非人源数据学习通用互作模式，迁移到人源抗体生成
+   - <strong>相对本文的增量</strong>：扩展生成模型的适用性至治疗性抗体发现
+   - <strong>初步方法</strong>：在非人源 paired data 上微调，在人工源抗体序列上评估生成质量
+   - <strong>验证方式</strong>：与已知人源抗体序列比对，评估序列相似性与多样性
+   - <strong>可能的失败模式</strong>：跨物种互作模式差异大，迁移失败
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the supplied abstract; no full manuscript, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present peleke-1, a suite of protein language models fine-tuned from large language models on curated antibody-antigen complex data, which generate targeted antibody Fv sequences for a given antigen sequence input at scale, and claim this provides a reliable, AI-driven approach for in silico therapeutic antibody discovery with an open-source framework</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, model architecture details, training data description, evaluation metrics, or code repository information are provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, model architecture specifications, training and validation datasets, benchmark results, comparison to existing methods, code availability, and any experimental validation of generated antibody sequences</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract describes a potentially useful resource for the antibody discovery community, namely a suite of fine-tuned protein language models for targeted antibody sequence generation. However, the abstract provides no quantitative evidence of model performance, no details on the training data composition or curation, no comparison to existing antibody generation methods, and no validation of the biological relevance of generated sequences. As presented, the claims of reliability and utility are not supported by the visible evidence. The work may be of interest to computational biologists and antibody engineers, but the current abstract does not establish the technical soundness or scientific impact required for a strong recommendation.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists and bioinformaticians working on protein language models and generative models for biomolecular design would be interested in the methodological approach. Antibody engineers and therapeutic discovery researchers in academia and industry would be interested in a potentially faster in silico alternative to traditional antibody discovery. The open-source framework aspect may also appeal to developers seeking to fine-tune language models for other protein engineering tasks.</li>
+<li><strong>Major strengths</strong> The problem addressed is relevant and timely, as AI-driven antibody discovery is an active area of research. The choice to fine-tune state-of-the-art large language models on antibody-antigen complex data is a reasonable methodological direction. The stated intention to provide an open-source framework is commendable and could facilitate reproducibility and community adoption.</li>
+<li><strong>Major Concerns</strong> </li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The abstract claims that peleke-1 models "generate targeted antibody Fv sequences for a given antigen sequence input at-scale" and that the suite "provides a reliable, artificial intelligence-driven approach for in silico therapeutic antibody discovery"</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Concern</strong> No quantitative results are presented. There are no metrics for sequence generation accuracy, binding affinity prediction, diversity, or success rate relative to known antibodies. The term "reliable" is asserted without any supporting data.</li>
+<li><strong>Why it matters</strong> Without performance metrics, readers cannot assess whether the models actually produce functional or useful antibody sequences. The core claim of the work, that this is a reliable approach for therapeutic antibody discovery, is unsubstantiated.</li>
+<li><strong>Resolution test</strong> Provide quantitative benchmarks, such as sequence recovery rates on held-out antibody-antigen complexes, comparison to existing methods (e.g., IgLM, AntiBERTa-based generators), and ideally experimental validation of a subset of generated sequences for binding.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Data and methodology transparency</li>
+<li><strong>Claim pointer</strong> The abstract states the models were "fine-tuned from state-of-the-art large language models using curated antibody-antigen complex data"</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Concern</strong> No details are given on which base models were used, how the antibody-antigen complex data were curated, the size and diversity of the training set, or the fine-tuning procedure. Without this information, the methodology cannot be evaluated or reproduced.</li>
+<li><strong>Why it matters</strong> Reproducibility is a core requirement for computational work. The lack of methodological detail prevents assessment of potential biases, data leakage, or overfitting, and undermines confidence in the results.</li>
+<li><strong>Resolution test</strong> Specify the base models, data sources (e.g., SAbDab, OAS), curation criteria, train-validation-test splits, and fine-tuning hyperparameters in the full manuscript.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Validation and comparison</li>
+<li><strong>Claim pointer</strong> The abstract implies the models are useful for "in silico therapeutic antibody discovery" without comparison to existing approaches</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Concern</strong> No comparison is made to existing antibody sequence generation models or traditional discovery methods. The claim of utility is not contextualized against the state of the art.</li>
+<li><strong>Why it matters</strong> Without comparative evaluation, it is impossible to determine whether peleke-1 offers any advantage over existing tools, which is essential for establishing scientific importance.</li>
+<li><strong>Resolution test</strong> Include benchmarks against at least one or two established antibody generation methods, using common evaluation metrics and datasets.</li>
+<li><strong>Minor Comments</strong> </li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract wording</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Issue</strong> The phrase "at-scale" is vague and could be interpreted in multiple ways, such as high throughput, large sequence diversity, or scalability to many antigens.</li>
+<li><strong>Required correction</strong> Define what "at-scale" means in quantitative terms, such as number of sequences generated per antigen or computational throughput.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Open-source claim</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Issue</strong> The abstract states an "open-source framework" is provided, but no repository URL, license, or availability details are given.</li>
+<li><strong>Required correction</strong> Provide the repository link and license information in the abstract or full manuscript.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Model naming</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Issue</strong> The name "peleke-1" is introduced without explanation of its origin or significance, which may be confusing to readers.</li>
+<li><strong>Required correction</strong> Briefly explain the naming convention or omit it if not meaningful.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3. The absence of quantitative results, methodological transparency, and comparative validation means the core claims of reliability and utility are not currently established.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The approach of fine-tuning large language models for antibody sequence generation is not entirely novel, as similar strategies have been explored in recent literature. The specific contribution of peleke-1 is unclear from the abstract.</li>
+<li>Scientific importance: The potential to accelerate antibody discovery is important, but the abstract does not demonstrate a significant advance over existing methods.</li>
+<li>Interdisciplinary readership: The topic bridges machine learning and immunology, which could appeal to a broad audience, but the abstract lacks the technical detail needed to engage either community deeply.</li>
+<li>Technical soundness: Not assessable from the abstract due to missing methodology and results.</li>
+<li>Readability for nonspecialists: The abstract is generally readable, but terms like "Fv sequences" and "protein language models" may require prior knowledge. The lack of context for the significance of the results limits accessibility.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract describes a plausible project, but without quantitative results, methodological details, and comparative validation, the claims cannot be evaluated. A revised submission with full evidence could change this assessment.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that peleke-1 provides a "reliable" approach for in silico therapeutic antibody discovery is unsupported by any data in the abstract.</li>
+<li>The claim that the models "generate targeted antibody Fv sequences" is unverified, as no examples or success rates are provided.</li>
+<li>The claim of an "open-source framework" is unverifiable without a repository link or availability statement.</li>
+<li>The overall utility and performance of the models are not assessable from the supplied material.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

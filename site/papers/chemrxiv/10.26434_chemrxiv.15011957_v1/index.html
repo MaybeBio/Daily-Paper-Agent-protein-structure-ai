@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fine-Tuning a Graph-Transformer ADMET Model Improves Half-Life and Plasma Protein Binding Concordance · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-low">3</span>
+    <div>
+      <h1>Fine-Tuning a Graph-Transformer ADMET Model Improves Half-Life and Plasma Protein Binding Concordance</h1>
+      <div class="meta">Basel Mansour; Chetan Anand P; Binil Benny; Sifat Ahmed; Shayoni Dutta; Daniel Kei Takahashi</div>
+      <div class="meta muted">
+        
+        <span class="journal">ChemRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-11-10
+         · 仅摘要
+         · <a href="https://doi.org/10.26434/chemrxiv.15011957/v1">原文</a>
+      </div>
+      <p class="one-liner">该文微调图变换ADMET模型以改进药物半衰期和血浆蛋白结合预测，虽涉及蛋白结合但核心是药物代谢性质预测，非蛋白质结构计算，方法为图变换微调而非结构建模，与本课题关系较弱。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Absorption, distribution, metabolism, excretion, and toxicity (ADMET) models are usually judged on predefined benchmark splits. Those splits are useful, but they do not show whether a model reproduces the pharmacokinetic (PK) numbers that are actually reported for individual drugs. Here we compared ADMET-AI with a fine-tuned NV-KERMT-70M-v2 model (“KERMT”) on the same Therapeutics Data Commons (TDC)-aligned endpoint definitions. KERMT was fine-tuned in two stages: a protocol check on the ChEMBL multitask (ChEMBL-MT) data set, then TDC-aligned regression and classification fine-tuning on merged ChEMBL, Biogen, ExpansionRx/OpenADMET and TDC data. Two retrospective literature comparisons were run. The first used a curated 25-drug oncology panel: for half-life (n = 17) KERMT cut mean absolute error (MAE) from 46.81 to 16.83 h (paired Wilcoxon p = 0.0046, Holm-adjusted p = 0.0139, closer for 13 of 17 drugs); volume of distribution at steady state (VDss, n = 12) and hepatocyte clearance (n = 17) showed no statistically supported difference. The second, reported here for the first time, is an expanded three-way comparison of 53 oncology drugs × 3 endpoints (159 drug-endpoint rows) against curated literature and label values. On the 48 drugs with a usable half-life reference, KERMT more than halved the error (MAE 19.43 vs 43.38 h; median absolute error 12.01 vs 35.30 h; geometric mean fold error, GMFE, 2.72 vs 3.69; within 2-fold 41.0% vs 25.0%), was closer for 34 of 48 drugs (70.8%; 95% confidence interval, CI, 55.9-83.0%), and the paired Wilcoxon test was significant (p = 0.0002; Holm-adjusted p = 0.0004). The advantage persisted after each model&#39;s systematic bias was removed (p = 0.0004), so it is not a simple scale offset: ADMET-AI over-predicted half-life for 35 of 48 drugs (mean bias +29.20 h) whereas KERMT was mildly conservative (-13.79 h). For plasma protein binding ratio (PPBR, n = 21) KERMT had lower MAE (7.05 vs 9.44 percentage points) and the only statistically significant rank agreement with literature seen anywhere in this study (Spearman ρ = 0.540, p = 0.012, vs 0.400, p = 0.073), but the paired error difference was not significant (p = 0.157). One endpoint failed outright and we state it plainly: KERMT VDss predictions collapsed to near-baseline behaviour. They occupied a narrow band (46 of 53 drugs between 0 and 10 L/kg; standard deviation 3.64 vs 6.71 L/kg for ADMET-AI), no drug in the panel had an assay-matched VDss reference, and on the six drugs with an approximate reference the per-drug KERMT predictions (MAE 2.18 L/kg) were no better than replacing the entire model with one constant (MAE 2.14 L/kg) and worse than a no-information baseline (1.71 L/kg). KERMT VDss output should therefore not be used. A deliberately strict control bounds the positive findings as well: against a structure-blind constant predictor built by leave-one-out from the reference values, KERMT was statistically indistinguishable on both endpoints (half-life MAE 19.43 vs 16.07 h, p = 0.051; PPBR 7.05 vs 7.24 percentage points, p = 0.812), while ADMET-AI was significantly worse than that constant for half-life (p &lt; 0.0001). We therefore make no claim of accurate numerical point prediction; the supported claims are that fine-tuning removes ADMET-AI&#39;s large systematic half-life error and that the PPBR rank correlation is compound-specific signal a constant cannot possess. Physically impossible values occurred in 16 of 159 KERMT rows and 21 of 159 ADMET-AI rows. Across 30 classification endpoints, mean inter-model Pearson correlation was 0.711 and mean binary agreement at 0.5 was 89%, which measures similarity, not accuracy. This version does not yet include official Therapeutics Data Commons benchmark-group evaluation of the fine-tuned models, replicate training seeds, or a training-set overlap audit; those gaps are declared explicitly rather than left implicit. The overall conclusion is endpoint-specific: fine-tuned KERMT is a materially better-calibrated half-life and plasma-protein-binding predictor than ADMET-AI on this panel, it is not yet a demonstrated ranking model for half-life, and its VDss head is unusable.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">吸收、分布、代谢、排泄和毒性（ADMET）模型通常根据预定义的基准划分进行评估。这些划分虽有用，但无法展示模型是否重现了针对个别药物实际报告的药代动力学（PK）数值。在此，我们在相同的治疗数据共享（TDC）对齐终点定义下，将ADMET-AI与微调后的NV-KERMT-70M-v2模型（“KERMT”）进行了比较。KERMT分两个阶段进行微调：先在ChEMBL多任务（ChEMBL-MT）数据集上进行协议检查，然后在合并的ChEMBL、Biogen、ExpansionRx/OpenADMET和TDC数据上进行TDC对齐的回归和分类微调。我们进行了两项回顾性文献比较。第一项使用了一个精选的25种肿瘤药物面板：对于半衰期（n = 17），KERMT将平均绝对误差（MAE）从46.81小时降至16.83小时（配对Wilcoxon检验p = 0.0046，Holm校正p = 0.0139，17种药物中13种更接近）；稳态分布容积（VDss，n = 12）和肝细胞清除率（n = 17）未显示统计学显著差异。第二项比较（首次在此报告）是对53种肿瘤药物×3个终点（159个药物-终点行）与精选文献和标签值进行的三方扩展比较。在48种具有可用半衰期参考值的药物中，KERMT将误差减半以上（MAE 19.43小时对43.38小时；中位绝对误差12.01小时对35.30小时；几何平均倍数误差（GMFE）2.72对3.69；2倍以内41.0%对25.0%），48种药物中34种更接近（70.8%；95%置信区间（CI）55.9-83.0%），配对Wilcoxon检验显著（p = 0.0002；Holm校正p = 0.0004）。在去除每个模型的系统偏差后，优势依然存在（p = 0.0004），因此这并非简单的尺度偏移：ADMET-AI对48种药物中35种过度预测了半衰期（平均偏差+29.20小时），而KERMT则略显保守（-13.79小时）。对于血浆蛋白结合率（PPBR，n = 21），KERMT具有较低的MAE（7.05个百分点对9.44个百分点），并且是本研究唯一具有统计学显著秩相关性的文献一致性（Spearman ρ = 0.540，p = 0.012，对比0.400，p = 0.073），但配对误差差异不显著（p = 0.157）。一个终点完全失败，我们明确说明：KERMT的VDss预测坍缩至接近基线行为。它们集中在一个狭窄范围内（53种药物中46种在0至10 L/kg之间；标准差3.64对ADMET-AI的6.71 L/kg），面板中无药物具有测定匹配的VDss参考值，在六种具有近似参考值的药物中，KERMT的逐药预测（MAE 2.18 L/kg）并不优于用单一常数替换整个模型（MAE 2.14 L/kg），且差于无信息基线（1.71 L/kg）。因此，不应使用KERMT的VDss输出。一个严格的控制也限制了正面发现：与通过留一法从参考值构建的结构盲常数预测器相比，KERMT在两个终点上均无统计学差异（半衰期MAE 19.43小时对16.07小时，p = 0.051；PPBR 7.05个百分点对7.24个百分点，p = 0.812），而ADMET-AI在半衰期上显著差于该常数（p &lt; 0.0001）。因此，我们不声称准确的数值点预测；支持的主张是，微调消除了ADMET-AI的大系统半衰期误差，且PPBR秩相关性是常数无法具备的化合物特异性信号。物理上不可能的值出现在KERMT的159行中的16行和ADMET-AI的159行中的21行。在30个分类终点中，模型间平均Pearson相关性为0.711，0.5阈值下的平均二元一致性为89%，这衡量的是相似性而非准确性。此版本尚未包括微调模型的官方治疗数据共享基准组评估、重复训练种子或训练集重叠审计；这些缺口被明确声明而非隐式保留。总体结论是终点特定的：在此面板上，微调后的KERMT是比ADMET-AI校准更好的半衰期和血浆蛋白结合预测器，但尚未证明是半衰期的排序模型，且其VDss部分不可用。</div>
+  </section>
+  
+  
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uncovering Features of ProteinMPNN with Sparse Autoencoders · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Uncovering Features of ProteinMPNN with Sparse Autoencoders</h1>
+      <div class="meta">Mukkavilli N; Ivanov K; Anastasiu DC; Beck DAC; Akbari H; McCully M</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-11-11
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.11.09.765161">原文</a>
+      </div>
+      <p class="one-liner">该文将稀疏自编码器引入ProteinMPNN，揭示其隐空间与蛋白质结构特征（二级结构、残基体积、二硫键等）的关联，并通过激活操控生成更热稳定的蛋白变体，属于蛋白质序列设计结合AI可解释性方法，与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Customization and modification of machine learning derived sequences can be achieved by understanding the mechanics behind state-of-the-art protein design models such as ProteinMPNN. Uninterpretability is hypothesized to be due largely to polysemanticity where neural networks store more features than they have dimensions. Here, we introduce sparse autoencoders (SAEs) into ProteinMPNN which expand its latent space and uncovers correlations between the activations in sparse dimensions and the presence of protein features such as secondary structure, residue volume, residue shape, disulfide bridges, and coordination to ligands. Additionally, we show that sparse activations can be manipulated to produce a variant of the short chain variable fragment Brolucizumab that is more thermostable than variants produced by traditional machine learning methods based on high temperature molecular dynamics simulations. Thus, SAEs provide both mechanistic understanding of protein design models and allow customizable manipulation of sequence prediction.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">通过理解最先进的蛋白质设计模型（如ProteinMPNN）背后的机制，可以实现对机器学习衍生序列的定制和修改。不可解释性被假设主要归因于多义性（polysemanticity），即神经网络存储的特征数量超过其维度数。在此，我们将稀疏自编码器（sparse autoencoders, SAEs）引入ProteinMPNN，扩展其潜在空间，并揭示稀疏维度中的激活与蛋白质特征（如二级结构、残基体积、残基形状、二硫键桥及配体配位）之间的相关性。此外，我们展示了稀疏激活可被操控，以产生短链可变片段Brolucizumab的变体，该变体在基于高温分子动力学模拟的传统机器学习方法产生的变体相比，具有更高的热稳定性。因此，SAEs既提供了对蛋白质设计模型的机制理解，又允许对序列预测进行可定制化操控。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Uncovering Features of ProteinMPNN with Sparse Autoencoders</li>
+<li><strong>作者</strong>：Mukkavilli N; Ivanov K; Anastasiu DC; Beck DAC; Akbari H; McCully M</li>
+<li><strong>单位</strong>：未提供（作者单位未在摘要中列出）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026（预印本日期 2026-11-11）</li>
+<li><strong>论文类型</strong>：预印本（方法学 + 应用研究）</li>
+<li><strong>领域</strong>：蛋白质设计 × 可解释性（mechanistic interpretability）× 稀疏自编码器</li>
+<li><strong>关键词</strong>：ProteinMPNN、Sparse Autoencoders、可解释性、蛋白质设计、热稳定性、多语义性（polysemanticity）</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.11.09.765161</li>
+<li><strong>代码</strong>：https://github.com/neelmukkavilli/SAEProteinMPNN</li>
+<li><strong>数据</strong>：未提供（未在摘要中说明具体数据集）</li>
+<li><strong>阅读日期</strong>：2026-11-11（预印本发布日）</li>
+<li><strong>该文在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>可解释性</strong>子方向，聚焦于将稀疏自编码器（SAE）应用于蛋白质序列设计模型 ProteinMPNN，以揭示其内部表征与蛋白质结构特征（二级结构、残基体积、形状、二硫键、配体配位）之间的对应关系，并进一步利用稀疏激活进行序列操控以提升热稳定性。该文连接了 mechanistic interpretability 与蛋白质设计两个领域，为蛋白质设计模型的可控修改提供了新路径。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文引入稀疏自编码器（SAE）扩展 ProteinMPNN 的潜空间，揭示稀疏维度激活与蛋白质结构特征（二级结构、残基体积/形状、二硫键、配体配位）的相关性，并通过操控稀疏激活生成 Brolucizumab 短链可变区片段（scFv）的变体，基于高温 MD 模拟显示其热稳定性优于传统机器学习方法生成的变体。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：ProteinMPNN 作为 state-of-the-art 蛋白质序列设计模型，其内部机制不可解释，导致难以对生成的序列进行有目的的定制化修改。作者假设不可解释性主要源于<strong>多语义性（polysemanticity）</strong>——神经网络存储的特征数量超过其维度数，导致单个神经元编码多个不相关特征。</li>
+<li><strong>为什么重要</strong>：蛋白质设计模型的可解释性直接关系到能否理性地、有针对性地修改生成序列（如提升热稳定性、改变功能），而非依赖黑箱式的随机突变或穷举搜索。理解模型内部特征有助于加速蛋白质工程。</li>
+<li><strong>现有方法为何不足</strong>：传统方法（如直接分析模型权重或激活）难以应对多语义性带来的特征纠缠；而基于进化或定向进化的方法缺乏对模型内部机制的洞察，修改效率低且不可控。</li>
+<li><strong>精确研究问题（Can ... ?）</strong>：Can sparse autoencoders applied to ProteinMPNN's latent space uncover interpretable, monosemantic features that correlate with protein structural properties, and can manipulation of these sparse activations produce protein variants with improved thermostability compared to traditional ML-based methods?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文摘要及领域常识构建，标注为「经外部核验」的部分来自公开领域知识，其余为「仅本文框架」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>蛋白质序列设计早期</td>
+<td>基于物理势函数（Rosetta）</td>
+<td>可解释、基于物理</td>
+<td>计算昂贵、搜索空间有限</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>深度学习序列设计</td>
+<td>ProteinMPNN（GVP-GNN + 自回归解码）</td>
+<td>高成功率、快速、结构感知</td>
+<td>黑箱、不可解释、难以定向修改</td>
+<td>本文目标模型</td>
+</tr>
+<tr>
+<td>可解释性初步尝试</td>
+<td>激活分析、注意力可视化、探针</td>
+<td>提供部分洞察</td>
+<td>受多语义性限制，特征纠缠</td>
+<td>不足</td>
+</tr>
+<tr>
+<td>机械可解释性</td>
+<td>Sparse Autoencoders（SAE）</td>
+<td>将多语义激活分解为稀疏单语义特征</td>
+<td>在语言模型上验证多，蛋白质模型上未充分探索</td>
+<td><strong>本文创新点</strong></td>
+</tr>
+<tr>
+<td>序列操控</td>
+<td>定向进化、理性设计、ML-guided 突变</td>
+<td>有效但依赖大量实验或黑箱优化</td>
+<td>缺乏机制理解</td>
+<td>本文应用（SAE 激活操控）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>核验状态</strong>：ProteinMPNN 为公开已知模型（Dauparas et al., 2022）；SAE 在语言模型可解释性中的应用（如 Anthropic 的 SAE 工作）为公开领域知识；其余为「仅本文框架」。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多语义性导致不可解释</td>
+<td>单个神经元/维度编码多个不相关特征，难以定位特定结构特征对应的激活</td>
+<td>神经网络存储的特征数超过维度数，特征在激活空间中纠缠</td>
+<td>摘要： "Uninterpretability is hypothesized to be due largely to polysemanticity where neural networks store more features than they have dimensions."</td>
+</tr>
+<tr>
+<td>无法定向修改生成序列</td>
+<td>用户难以有目的地改变模型输出（如提升热稳定性）</td>
+<td>缺乏对模型内部特征-结构映射关系的理解</td>
+<td>摘要： "Customization and modification of machine learning derived sequences can be achieved by understanding the mechanics behind..."</td>
+</tr>
+<tr>
+<td>传统 ML 方法生成变体热稳定性不足</td>
+<td>传统方法生成的 Brolucizumab 变体在高温 MD 模拟中稳定性低于 SAE 操控变体</td>
+<td>传统方法缺乏对模型内部表征的操控能力，修改不够精准</td>
+<td>摘要： "sparse activations can be manipulated to produce a variant... more thermostable than variants produced by traditional machine learning methods"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<ul>
+<li>在 ProteinMPNN 的潜空间（或某层激活）上训练稀疏自编码器（SAE），将稠密、多语义的激活向量分解为高维稀疏激活向量。</li>
+<li>分析稀疏维度与蛋白质结构特征（二级结构、残基体积、残基形状、二硫键、配体配位）之间的相关性。</li>
+<li>通过操控特定稀疏维度的激活值，引导 ProteinMPNN 生成具有目标特征的序列变体（以 Brolucizumab scFv 为例），并用高温 MD 模拟评估热稳定性。</li>
+</ul>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>多语义性是可解释性的主要障碍</strong>：通过 SAE 将多语义激活分解为稀疏单语义特征，可以揭示模型内部与结构特征对应的「特征维度」。</li>
+<li><strong>稀疏激活可操控</strong>：SAE 分解出的稀疏维度不仅可用于理解，还可作为「控制旋钮」——调节特定维度的激活值即可定向改变生成序列的属性。</li>
+<li><strong>可解释性直接转化为实用价值</strong>：SAE 操控生成的变体在热稳定性上优于传统 ML 方法，说明机制理解能带来实际性能提升。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li>SAE 作为一种通用的可解释性工具，可迁移到其他蛋白质设计模型（如 ESM、AlphaFold 的某些模块），用于揭示结构-序列映射的隐藏特征。</li>
+<li>「先分解、再操控」的范式（decompose-then-manipulate）可能适用于任何需要定向修改生成结果的生成模型，不仅限于蛋白质。</li>
+<li>热稳定性提升通过 MD 模拟验证，提示计算模拟与可解释性方法结合可作为蛋白质工程的闭环流程。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：ProteinMPNN 的中间层激活（具体层未在摘要中说明）；蛋白质结构（如 PDB 结构）作为 ProteinMPNN 的输入。</li>
+<li><strong>输出</strong>：稀疏激活向量；稀疏维度与结构特征的相关性映射；操控后生成的蛋白质序列变体。</li>
+<li><strong>模块</strong>：
+  1. ProteinMPNN（预训练模型，冻结权重）
+  2. Sparse Autoencoder（在激活上训练，编码器 + 解码器 + 稀疏正则化）
+  3. 特征相关性分析模块（将稀疏维度与结构注释关联）
+  4. 激活操控模块（修改特定稀疏维度值，通过解码器/生成器生成新序列）
+  5. 评估模块（高温 MD 模拟计算热稳定性）</li>
+<li><strong>训练</strong>：SAE 在 ProteinMPNN 的激活上训练，使用稀疏正则化（如 L1 惩罚）促使稀疏性；ProteinMPNN 权重冻结。</li>
+<li><strong>工具</strong>：PyTorch（推测）、MD 模拟软件（如 GROMACS/OpenMM，未明确）、GitHub 代码仓库。</li>
+<li><strong>反馈回路</strong>：MD 模拟结果反馈到操控策略，迭代优化变体。</li>
+<li><strong>假设</strong>：
+  1. ProteinMPNN 的激活中存在与结构特征对应的稀疏可分解特征。
+  2. 操控这些稀疏特征可以定向改变生成序列的属性。
+  3. 高温 MD 模拟能有效区分变体热稳定性差异。</li>
+</ul>
+<p><strong>文字流程</strong>：
+1. 将蛋白质结构输入 ProteinMPNN，收集中间层激活。
+2. 在激活上训练 SAE，获得稀疏分解。
+3. 将稀疏维度与结构注释（二级结构、残基体积等）做相关性分析，识别「特征维度」。
+4. 选择与热稳定性相关的特征维度，调整其激活值。
+5. 将修改后的稀疏激活通过 SAE 解码器/ProteinMPNN 生成新序列。
+6. 对生成变体进行高温 MD 模拟，比较热稳定性。</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ProteinMPNN（冻结）</td>
+<td>生成序列、提供激活</td>
+<td>作为目标模型，提供待解释的潜空间</td>
+<td>输入：蛋白质结构；输出：序列 + 中间激活</td>
+<td>摘要明确其为研究对象</td>
+<td>无此模块则整个研究无对象</td>
+</tr>
+<tr>
+<td>Sparse Autoencoder</td>
+<td>将稠密激活分解为稀疏单语义特征</td>
+<td>解决多语义性，实现特征分离</td>
+<td>输入：ProteinMPNN 激活；输出：稀疏激活向量</td>
+<td>摘要： "expand its latent space and uncovers correlations"</td>
+<td>移除则无法获得可解释的稀疏特征，回归黑箱</td>
+</tr>
+<tr>
+<td>特征相关性分析</td>
+<td>将稀疏维度与结构特征关联</td>
+<td>识别哪些维度编码哪些结构属性</td>
+<td>输入：稀疏激活 + 结构注释；输出：相关性映射</td>
+<td>摘要列出二级结构、残基体积等特征</td>
+<td>移除则无法定位可操控的维度</td>
+</tr>
+<tr>
+<td>激活操控模块</td>
+<td>修改特定稀疏维度值以改变生成结果</td>
+<td>实现定向序列修改</td>
+<td>输入：稀疏激活 + 目标特征；输出：修改后的激活</td>
+<td>摘要： "sparse activations can be manipulated"</td>
+<td>移除则只能理解、无法操控</td>
+</tr>
+<tr>
+<td>高温 MD 模拟</td>
+<td>评估变体热稳定性</td>
+<td>验证操控效果的实际价值</td>
+<td>输入：生成变体结构；输出：稳定性指标</td>
+<td>摘要： "more thermostable than variants produced by traditional ML methods"</td>
+<td>移除则无法验证操控的实际效果</td>
+</tr>
+</tbody>
+</table>
+<p><strong>消融效应区分</strong>：摘要未提供消融实验数据，以上「移除后影响」均为 [Analysis] 预期效应，非实测消融结果。</p>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>不适用。摘要中未提供任何数学公式或符号定义。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：未提供（摘要未说明训练/评估数据集，推测使用 PDB 结构子集）</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：热稳定性（通过高温 MD 模拟评估，具体指标如 RMSD、折叠自由能等未说明）</li>
+<li><strong>基线</strong>：传统机器学习方法生成的变体（具体方法未说明）</li>
+<li><strong>预算</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：ProteinMPNN（骨干模型）、SAE（新增模块）、MD 模拟软件（未指定）</li>
+<li><strong>Oracle 输入</strong>：蛋白质结构（作为 ProteinMPNN 输入）</li>
+<li><strong>评测协议</strong>：未提供（高温 MD 模拟的具体温度、时长、力场等未说明）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SAE 特征-结构相关性分析</td>
+<td>稀疏维度与结构特征存在相关性</td>
+<td>分析稀疏激活与二级结构、残基体积、形状、二硫键、配体配位的关联</td>
+<td>发现相关性（具体数值未提供）</td>
+<td>SAE 能揭示 ProteinMPNN 内部的结构特征编码</td>
+<td>不能证明因果关系，仅相关性</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>激活操控生成 Brolucizumab 变体</td>
+<td>操控稀疏激活可定向改变序列属性</td>
+<td>操控特定维度 vs 不操控（或传统 ML 方法）</td>
+<td>生成变体在高温 MD 中更稳定</td>
+<td>SAE 操控可提升热稳定性</td>
+<td>未提供 MD 具体数据、变体数量、统计显著性</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>与传统 ML 方法对比</td>
+<td>SAE 方法优于传统方法</td>
+<td>SAE 操控 vs 传统 ML 生成变体</td>
+<td>SAE 变体更热稳定</td>
+<td>SAE 方法在热稳定性上更优</td>
+<td>未说明传统方法具体类型、对比条件是否公平</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对 ProteinMPNN 模型，不涉及其他蛋白质设计模型；仅验证了 Brolucizumab scFv 一个案例。</li>
+<li><strong>Oracle/真值输入</strong>：蛋白质结构作为输入，但未说明结构来源（实验解析 vs 预测）。</li>
+<li><strong>端到端状态</strong>：从结构到序列的生成是端到端的，但热稳定性评估依赖 MD 模拟（计算预测），未经实验验证（如表达、活性测定）。</li>
+<li><strong>算力成本</strong>：未提供 SAE 训练和 MD 模拟的计算成本。</li>
+<li><strong>历史数据依赖</strong>：SAE 训练依赖 ProteinMPNN 的激活数据，其分布受训练结构集影响。</li>
+<li><strong>模型依赖</strong>：结论依赖 ProteinMPNN 的架构和权重；SAE 的分解质量受稀疏正则化超参数影响。</li>
+<li><strong>最难情形</strong>：未测试在复杂多结构域蛋白、天然无序蛋白或非球状蛋白上的表现。</li>
+<li><strong>群体/领域边界</strong>：结论仅适用于 ProteinMPNN 可处理的蛋白质结构空间；热稳定性结论仅基于计算模拟，未达实验验证水平。</li>
+<li><strong>不确定性</strong>：相关性分析未证明因果；MD 模拟的稳定性指标与实验热稳定性之间的关联未验证。</li>
+</ul>
+<p><strong>有边界的复述</strong>：本文表明，在 ProteinMPNN 的激活上训练 SAE 可以识别与特定结构特征相关的稀疏维度，且操控这些维度可以生成在高温 MD 模拟中比传统 ML 方法更稳定的 Brolucizumab scFv 变体。该结论限于 ProteinMPNN 模型、计算模拟评估、单一蛋白案例，未经实验验证。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 摘要中未讨论局限性；但可推测（[Analysis]）：
+  - 仅验证了单一蛋白（Brolucizumab scFv），泛化性未知。
+  - 热稳定性仅通过 MD 模拟评估，缺乏实验验证。
+  - 相关性分析不等于因果机制。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>相关性分析仅证明稀疏维度与结构特征相关，未证明因果</td>
+<td>稀疏维度可能只是统计共现，而非模型实际依赖的特征</td>
+<td>若仅相关性，操控可能产生非预期副作用</td>
+<td>进行因果干预实验：消融特定稀疏维度，观察生成序列的结构变化</td>
+<td>摘要： "uncovers correlations"</td>
+</tr>
+<tr>
+<td>热稳定性仅通过 MD 模拟评估</td>
+<td>MD 模拟的稳定性指标（如 RMSD、接触数）与实验热稳定性（Tm）相关性有限</td>
+<td>计算模拟可能高估或低估实际稳定性</td>
+<td>进行实验验证（差示扫描量热法、表达量测定）</td>
+<td>摘要： "based on high temperature molecular dynamics simulations"</td>
+</tr>
+<tr>
+<td>仅测试 Brolucizumab scFv 一个案例</td>
+<td>单一蛋白的成功可能不具泛化性</td>
+<td>若方法仅对特定蛋白有效，则应用价值有限</td>
+<td>在多种蛋白（不同大小、折叠类型）上重复实验</td>
+<td>摘要： "produce a variant of the short chain variable fragment Brolucizumab"</td>
+</tr>
+<tr>
+<td>未说明 SAE 超参数选择和稀疏度控制</td>
+<td>不同稀疏度设置可能显著影响特征质量和操控效果</td>
+<td>超参数敏感性影响方法可复现性</td>
+<td>提供超参数扫描和敏感性分析</td>
+<td>摘要未提供方法细节</td>
+</tr>
+<tr>
+<td>未与传统可解释性方法（如探针、注意力分析）对比</td>
+<td>SAE 的优势可能不显著</td>
+<td>若传统方法同样有效，SAE 的增量价值有限</td>
+<td>与探针方法、消融实验对比特征质量</td>
+<td>摘要未提供对比实验</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>SAE 作为蛋白质设计模型的可解释性工具</strong>：将 SAE 应用于 ProteinMPNN 的激活空间，可分解多语义特征为单语义稀疏维度，这一方法可直接迁移到其他蛋白质语言模型（如 ESM-2、ProtTrans）或结构预测模型（如 AlphaFold 的 Evoformer 模块），用于揭示模型内部的结构-序列映射。</p>
+</li>
+<li>
+<p><strong>「分解-操控」范式</strong>：先通过 SAE 分解特征，再通过调整稀疏维度值来定向修改生成结果。这一范式可迁移到：
+   - 蛋白质稳定性工程：识别与热稳定性相关的稀疏维度，定向增强。
+   - 功能位点设计：识别与配体结合相关的维度，调整以增强亲和力。
+   - 构象采样：在 MD 模拟中，用 SAE 特征作为 collective variables 引导采样。</p>
+</li>
+<li>
+<p><strong>MD 模拟作为可解释性方法的验证工具</strong>：本文用高温 MD 模拟验证操控效果，提示计算模拟可作为可解释性方法输出的快速验证手段，无需立即进行湿实验。</p>
+</li>
+<li>
+<p><strong>多语义性假设的验证路径</strong>：本文为「多语义性是模型不可解释的主因」提供了实证支持，这一假设和验证方法可推广到其他生成模型。</p>
+</li>
+<li>
+<p><strong>特征-结构相关性分析流程</strong>：将稀疏维度与结构注释（二级结构、残基体积等）关联的分析流程，可作为蛋白质模型可解释性分析的标准流程。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>ProteinMPNN</strong>（Dauparas et al., 2022, Science）：本文的研究对象，已知的 state-of-the-art 蛋白质序列设计模型，基于 GVP-GNN 编码结构、自回归解码序列。本文在其激活上应用 SAE。</li>
+<li><strong>Sparse Autoencoders</strong>（如 Anthropic 的 SAE 工作，Elhage et al., 2022；Bricken et al., 2023）：SAE 在语言模型可解释性中已被用于分解多语义神经元，本文将其迁移到蛋白质设计模型，属于跨领域方法迁移。</li>
+<li><strong>机械可解释性（Mechanistic Interpretability）</strong>：本文属于该领域在蛋白质模型上的应用，与 NLP 中的可解释性研究（如特征可视化、探针）形成类比。</li>
+<li><strong>蛋白质热稳定性工程</strong>：传统方法包括定向进化（directed evolution）、理性设计（rational design）、共识序列设计（consensus sequence design）。本文提供了一种基于模型内部特征操控的新路径。</li>
+<li><strong>MD 模拟评估稳定性</strong>：高温 MD 模拟（如 thermal unfolding simulations）是计算评估蛋白质稳定性的常用手段，与实验方法（DSC、CD）互补。</li>
+<li><strong>[Analysis] 候选方向</strong>：SAE 特征作为 MD 模拟的 collective variables（CVs）用于增强采样，或作为强化学习策略的特征表示用于蛋白质设计。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：SAE-guided 蛋白质构象采样
+   - <strong>来源局限/观察</strong>：本文仅用 SAE 特征做序列生成操控，未涉构象采样；MD 模拟仅作为评估工具。
+   - <strong>核心假设</strong>：SAE 稀疏维度中与结构特征相关的维度可作为 MD 模拟的 collective variables，引导采样更高效地探索构象空间。
+   - <strong>初步方法</strong>：在 ProteinMPNN 激活上训练 SAE，识别与二级结构/域运动相关的维度，将其映射为 MD 的 CVs，用 metadynamics 或 umbrella sampling 增强采样。
+   - <strong>验证方式</strong>：比较 SAE-CV 引导采样与常规 CV（如 RMSD、回旋半径）的采样效率和构象覆盖度。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：跨模型 SAE 特征迁移
+   - <strong>来源局限/观察</strong>：本文仅对 ProteinMPNN 应用 SAE，未测试其他模型。
+   - <strong>核心假设</strong>：不同蛋白质模型（ProteinMPNN、ESM-2、AlphaFold）的 SAE 特征存在共享的结构特征编码，可跨模型迁移。
+   - <strong>初步方法</strong>：在多个模型上分别训练 SAE，比较稀疏维度的特征-结构相关性，测试特征是否可跨模型转移（如用 ProteinMPNN 的 SAE 特征预测 ESM-2 的激活）。
+   - <strong>验证方式</strong>：特征迁移后的操控效果是否保持。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：SAE 特征用于蛋白质-配体相互作用设计
+   - <strong>来源局限/观察</strong>：本文仅验证了与配体配位的相关性，未深入设计配体结合位点。
+   - <strong>核心假设</strong>：与配体配位相关的稀疏维度可被操控以增强配体结合亲和力。
+   - <strong>初步方法</strong>：识别与配体配位相关的 SAE 维度，在生成序列时增强这些维度的激活，用分子对接或 MD 评估结合亲和力变化。
+   - <strong>验证方式</strong>：对接打分或 MM-PBSA 计算。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：SAE 特征作为蛋白质设计强化学习的奖励信号
+   - <strong>来源局限/观察</strong>：本文的操控是手工调整维度值，未自动化。
+   - <strong>核心假设</strong>：SAE 特征可作为强化学习（RL）的状态表示或奖励信号，引导策略网络生成具有目标特征的序列。
+   - <strong>初步方法</strong>：将 SAE 稀疏激活作为 RL 的状态特征，奖励函数基于目标结构特征的激活强度。
+   - <strong>验证方式</strong>：比较 RL + SAE 特征与 RL + 原始激活的生成质量。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：SAE 特征与实验热稳定性数据的关联验证
+   - <strong>来源局限/观察</strong>：本文仅用 MD 模拟评估，缺乏实验验证。
+   - <strong>核心假设</strong>：SAE 中与热稳定性相关的稀疏维度与实验测定的 Tm 值存在相关性。
+   - <strong>初步方法</strong>：在已知 Tm 值的蛋白数据集上训练 SAE，回归分析稀疏维度激活与 Tm 的关系。
+   - <strong>验证方式</strong>：交叉验证预测 Tm 的准确性。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract, with reference to the linked repository as a supporting resource</li>
+<li><strong>Shared manuscript claim summary</strong> The authors introduce sparse autoencoders (SAEs) into ProteinMPNN to expand its latent space, uncover correlations between sparse activations and protein features (secondary structure, residue volume, residue shape, disulfide bridges, ligand coordination), and demonstrate that manipulating sparse activations yields a Brolucizumab variant with improved thermostability relative to variants from traditional machine learning methods, as assessed by high temperature molecular dynamics simulations.</li>
+<li><strong>Visible evidence base</strong> Abstract text; repository URL (https://github.com/neelmukkavilli/SAEProteinMPNN) mentioned but not inspected</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript text, all figures and tables, methods descriptions, quantitative results, statistical analyses, and simulation details are not provided. The repository is referenced but its contents were not available for review.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents an ambitious and potentially valuable application of sparse autoencoders to a widely used protein design model. The core idea, that SAEs can render polysemantic activations in ProteinMPNN more interpretable and manipulable, is timely and of broad interest. However, the abstract alone provides insufficient evidence to evaluate the validity of the central claims. Key quantitative outcomes, methodological details, and validation procedures are absent. The claim of improved thermostability over traditional methods is particularly consequential and cannot be assessed without detailed simulation protocols and comparative baselines. The work is promising in concept but the case is not established from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in protein design, machine learning interpretability, and computational biology would be interested. The work addresses a recognized limitation of black-box protein sequence models and proposes a concrete interpretability tool. Those developing or using ProteinMPNN and related models would value mechanistic insights and a pathway to targeted sequence modification. The thermostability application is relevant to therapeutic protein engineering, particularly for antibody fragments.</li>
+<li><strong>Major strengths</strong> The choice of ProteinMPNN as a target is well motivated given its widespread adoption. The use of SAEs is a current and technically appropriate approach for addressing polysemanticity. The abstract identifies a specific set of protein features for correlation analysis, which provides a concrete framework for interpretability. The demonstration of a practical application, thermostability improvement, elevates the work beyond descriptive analysis.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The authors claim that sparse activations can be manipulated to produce a Brolucizumab variant that is more thermostable than variants produced by traditional machine learning methods.</li>
+<li><strong>Evidence pointer</strong> Abstract, thermostability statement; location not provided</li>
+<li><strong>Concern</strong> The abstract states that the SAE-derived variant is more thermostable than variants from traditional machine learning methods, but no quantitative data, simulation parameters, or comparative statistics are provided. The basis for this comparison is unclear, including which traditional methods were used, how thermostability was measured, and whether the comparison was controlled for sequence context or computational cost.</li>
+<li><strong>Why it matters</strong> This is the most consequential claim in the abstract. If the thermostability improvement is not rigorously demonstrated with appropriate controls and error estimates, the practical utility of the SAE approach is not established. Overstated claims of improvement over existing methods could mislead downstream users.</li>
+<li><strong>Resolution test</strong> Provide quantitative thermostability metrics (for example, melting temperature estimates or free energy differences) for the SAE-derived variant, for variants from the traditional methods, and for the wild type, with uncertainty estimates. Specify the molecular dynamics protocol, force field, simulation length, and analysis methods. Demonstrate that the comparison is fair, for example by using identical simulation conditions and comparable sequence diversity.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The authors claim that SAEs uncover correlations between sparse activations and protein features such as secondary structure, residue volume, residue shape, disulfide bridges, and coordination to ligands.</li>
+<li><strong>Evidence pointer</strong> Abstract, feature correlation statement; location not provided</li>
+<li><strong>Concern</strong> The abstract lists several protein features but provides no information on the strength, significance, or specificity of the reported correlations. It is unclear whether these correlations are robust across protein families, whether they are causal or merely associative, and whether the SAE dimensions are consistently interpretable or only in a subset of cases.</li>
+<li><strong>Why it matters</strong> The interpretability claim is the foundation of the paper. Without quantitative measures of correlation quality, such as correlation coefficients, significance thresholds, or validation on held-out proteins, the reader cannot judge whether the SAE features are genuinely meaningful or an artifact of the expansion procedure.</li>
+<li><strong>Resolution test</strong> Report correlation coefficients and significance values for each protein feature against the relevant sparse dimensions. Show that the correlations generalize across a diverse test set of proteins not used in training the SAE. Provide examples of dimensions that are interpretable and quantify the fraction of dimensions that are not.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The authors state that SAEs expand the latent space of ProteinMPNN and that this expansion uncovers correlations between activations and protein features.</li>
+<li><strong>Evidence pointer</strong> Abstract, SAE introduction statement; location not provided</li>
+<li><strong>Concern</strong> The abstract does not describe the SAE architecture, training procedure, or how the SAE was integrated with ProteinMPNN. Key details such as the size of the expanded latent space, the sparsity penalty, the training data, and the reconstruction fidelity of the SAE are absent. Without these, the technical validity of the approach cannot be assessed.</li>
+<li><strong>Why it matters</strong> Sparse autoencoders are sensitive to hyperparameter choices and training protocols. If the SAE is poorly trained or the expansion is not faithful to the original activations, the subsequent interpretability and manipulation claims are compromised. The technical setup determines whether the results are reproducible and meaningful.</li>
+<li><strong>Resolution test</strong> Provide a full description of the SAE architecture, including layer sizes, activation functions, sparsity regularization, and training data. Report reconstruction error or fidelity metrics for the SAE on held-out activations. Describe how the SAE was inserted into the ProteinMPNN pipeline and whether the original model outputs are preserved.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract, feature list</li>
+<li><strong>Evidence pointer</strong> Abstract, feature correlation statement; location not provided</li>
+<li><strong>Issue</strong> The list of protein features is presented without any indication of how each feature was defined or computed. For example, residue volume and residue shape are related but distinct concepts, and their operational definitions matter for interpretation.</li>
+<li><strong>Required correction</strong> Define each feature and specify the computational method used to assign it to residues or positions in the protein structure.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Abstract, repository reference</li>
+<li><strong>Evidence pointer</strong> Abstract, repository URL; location not provided</li>
+<li><strong>Issue</strong> The repository is mentioned but no version, license, or usage instructions are given. The abstract does not state whether the code and data are sufficient to reproduce the reported results.</li>
+<li><strong>Required correction</strong> Provide a clear statement on code availability, including versioning, dependencies, and instructions for reproducing the key figures and results.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Scope</li>
+<li><strong>Affected element</strong> Abstract, thermostability claim</li>
+<li><strong>Evidence pointer</strong> Abstract, thermostability statement; location not provided</li>
+<li><strong>Issue</strong> The abstract claims improvement over traditional machine learning methods but does not specify which methods were compared. This makes the claim difficult to contextualize.</li>
+<li><strong>Required correction</strong> Name the traditional methods used for comparison and briefly describe why they were chosen as baselines.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3. The absence of quantitative results, methodological detail, and validation protocols means that none of the three central claims (interpretability, manipulability, thermostability improvement) can be verified from the supplied material.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality is high. Applying SAEs to a protein sequence model for interpretability and targeted manipulation is a novel contribution that extends prior interpretability work in language models to a new domain. Scientific importance is potentially high, given the broad use of ProteinMPNN and the general need for interpretable protein design tools. Interdisciplinary readership is plausible, as the work bridges machine learning, structural biology, and protein engineering. Technical soundness cannot be assessed from the abstract alone. Readability for nonspecialists is adequate in the abstract, though the feature list and the thermostability claim would benefit from more explicit explanation. Overall, the work has strong potential but the current evidence base is insufficient to support the claims.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The concept is promising and the direction is worthwhile, but the abstract does not provide the quantitative and methodological support needed to validate the central claims. A full manuscript with detailed methods, results, and validation would be required to assess whether the case can be made.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that SAE-derived Brolucizumab variants are more thermostable than variants from traditional machine learning methods is unsupported. No quantitative data, simulation details, or comparative baselines are provided.</li>
+<li>The claim that SAEs uncover correlations between sparse activations and protein features is unsupported. No correlation coefficients, significance values, or validation on held-out data are provided.</li>
+<li>The claim that sparse activations can be manipulated to produce a desired variant is unsupported. The mechanism of manipulation and the success rate or specificity of the manipulation are not described.</li>
+<li>The general claim that SAEs provide mechanistic understanding of protein design models is not established. The abstract demonstrates correlation, not causation, and the depth of mechanistic insight is unclear.</li>
+<li>The reproducibility of the work cannot be assessed. The repository is referenced but its contents, version, and completeness were not available for review.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

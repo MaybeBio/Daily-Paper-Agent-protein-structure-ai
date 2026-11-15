@@ -1,0 +1,79 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report a shape-based virtual screening campaign against HDAC8 using 307,814 natural products from ZINC15, followed by docking and MM-GBSA calculations. Seven hits were tested enzymatically, yielding compound 2 (ZINC000054202375) as a promising HDAC8 inhibitor. Compound 2 showed antiproliferative effects across solid tumor cell lines, induced apoptosis-associated phenotypes, and formed a persistent interaction network in 1 microsecond molecular dynamics simulations. The authors conclude that compound 2 is a promising non-hydroxamate scaffold for HDAC-targeted anticancer drug development.
+- **Visible evidence base** Abstract text only; no experimental details, numerical data, statistical analyses, or methodological parameters are provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, experimental protocols, compound purity and source information, assay conditions, statistical methods, MD simulation parameters, and any supplementary data
+
+## Reviewer
+- **Overall assessment** The abstract presents a logically structured hit-discovery workflow with a plausible rationale for targeting HDAC8. However, the evidence base is insufficient to evaluate the validity of the central claims. Key quantitative results, assay validation details, and comparative data against known HDAC8 inhibitors are absent. The conclusion that compound 2 is a "promising" scaffold is not supported by the abstract alone, as no potency values, selectivity data, or reproducibility metrics are provided.
+- **Who would be interested in the results, and why** Researchers in medicinal chemistry, cancer biology, and epigenetic drug discovery would be interested in a novel non-hydroxamate HDAC8 inhibitor scaffold. The use of natural products and shape-based screening may appeal to those focused on fragment-based or natural-product-derived therapeutics. However, interest will depend on the actual potency and selectivity data, which are not visible here.
+- **Major strengths** The workflow is methodologically coherent, combining shape-based screening, docking, MM-GBSA, enzymatic validation, cellular assays, and MD simulations. The choice of HDAC8 as a target is well justified by its tumor-specific overexpression and independence from corepressor complexes. The identification of a non-hydroxamate scaffold is potentially valuable, as most HDAC inhibitors rely on hydroxamate zinc-binding groups.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "Seven commercially available hits were selected for enzymatic validation, leading to the identification of compound 2 as a promising HDAC8 inhibitor"
+  - **Evidence pointer** Abstract, enzymatic validation section; location not provided
+  - **Concern** No quantitative enzymatic data are reported. The abstract does not state IC50 values, percent inhibition, assay conditions, or the activity of the other six hits. Without these data, the claim that compound 2 is a "promising" inhibitor cannot be assessed.
+  - **Why it matters** The central premise of the manuscript is that compound 2 inhibits HDAC8. Without potency and validation data, the entire downstream cellular and computational work lacks a confirmed molecular basis.
+  - **Resolution test** Provide IC50 values with confidence intervals, a dose-response curve, and comparison to a known HDAC8 inhibitor under identical assay conditions.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Selectivity and specificity
+  - **Claim pointer** "Compound 2 represents a promising non-hydroxamate hit scaffold with promising HDAC8 inhibitory activity"
+  - **Evidence pointer** Abstract, overall conclusion; location not provided
+  - **Concern** No selectivity data against other HDAC isoforms are presented. HDAC inhibitors often show pan-class activity, and the claim of HDAC8 specificity is unsupported.
+  - **Why it matters** Selectivity is critical for therapeutic relevance and for distinguishing this compound from existing broad-spectrum HDAC inhibitors. Without isoform profiling, the scaffold's value is unclear.
+  - **Resolution test** Include a selectivity panel against HDAC1, HDAC2, HDAC3, HDAC6, and other relevant isoforms, with quantitative IC50 values.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic evidence
+  - **Claim pointer** "Mechanistic studies... revealed membrane blebbing, mitotic failure, increased reactive oxygen species, and nuclear fragmentation, consistent with apoptosis induction"
+  - **Evidence pointer** Abstract, mechanistic studies section; location not provided
+  - **Concern** The abstract lists multiple assays but provides no quantitative results, statistical comparisons, or dose-response relationships. The phrase "consistent with apoptosis" is a correlative interpretation, not a demonstrated mechanism.
+  - **Why it matters** Apoptosis induction is a strong claim that requires rigorous evidence, including appropriate controls and quantification. Without these, the mechanism remains speculative.
+  - **Resolution test** Provide quantitative data for each assay, including statistical significance, dose dependence, and positive/negative controls. Consider additional apoptosis markers such as caspase activation or PARP cleavage.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Computational validation
+  - **Claim pointer** "1 mus molecular dynamics simulations supported the formation of a persistent ligand-receptor interaction network within the HDAC8 catalytic pocket"
+  - **Evidence pointer** Abstract, MD simulation section; location not provided
+  - **Concern** The abstract does not specify simulation parameters, force field, system setup, or the criteria for "persistent" interactions. No binding free energy values from MD are reported.
+  - **Why it matters** MD simulations are only meaningful if the methodology is reproducible and the interaction analysis is quantified. Without these details, the computational support is weak.
+  - **Resolution test** Provide simulation protocols, convergence metrics, and quantitative interaction occupancy or binding free energy estimates.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Compound naming
+  - **Evidence pointer** Abstract, compound identification; location not provided
+  - **Issue** The compound is referred to as "compound 2" and "ZINC000054202375" but the chemical name is given only once. Consistency in naming would improve readability.
+  - **Required correction** Use a single identifier consistently throughout, with the chemical name defined at first mention.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Cell line details
+  - **Evidence pointer** Abstract, antiproliferative assays; location not provided
+  - **Issue** The abstract mentions "multiple human solid tumor cell lines" but does not name them or specify the number.
+  - **Required correction** List the cell lines and their tissue origins in the abstract or indicate that this information is in the main text.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** "1 mus"
+  - **Evidence pointer** Abstract, MD simulation section; location not provided
+  - **Issue** The abbreviation "mus" is nonstandard and likely a typo for "microsecond" or "µs".
+  - **Required correction** Use the standard abbreviation "µs" or write "microsecond" in full.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. Without quantitative enzymatic potency and isoform selectivity data, the claim that compound 2 is a promising HDAC8 inhibitor is not established. R1-M3 is also blocking because the apoptosis mechanism is not quantitatively supported. R1-M4 is non-blocking but requires methodological detail for reproducibility.
+- **Assessment against Nature-style criteria** Originality: The use of shape-based screening with multiple templates and a natural product library is not novel in itself, but the specific scaffold may offer originality if the potency and selectivity are confirmed. Scientific importance: HDAC8-selective inhibitors are of interest, but the importance is contingent on demonstrated selectivity and cellular efficacy. Interdisciplinary readership: The work spans computational chemistry, medicinal chemistry, and cancer biology, which could attract a broad audience. Technical soundness: The workflow is plausible, but the abstract provides insufficient detail to judge the technical execution. Readability for nonspecialists: The abstract is generally clear, though the abbreviation "1 mus" and the dense compound naming reduce accessibility.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract alone does not provide sufficient quantitative data to support the central claims of HDAC8 inhibition, selectivity, or apoptosis induction. A revised manuscript with full experimental details and quantitative results would be required for a supportive assessment.
+
+## Risk / unsupported claims
+- The claim that compound 2 is a "promising HDAC8 inhibitor" is unsupported without IC50 or comparable potency data.
+- The claim that the observed cellular phenotypes are "consistent with apoptosis" is unsupported without quantitative assay results and controls.
+- The claim that MD simulations "supported" a persistent interaction network is unsupported without simulation parameters and quantitative interaction metrics.
+- The claim that compound 2 is a "non-hydroxamate hit scaffold" is plausible but not validated without evidence of the binding mode or zinc-binding group.

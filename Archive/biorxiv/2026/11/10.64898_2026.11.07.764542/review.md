@@ -1,0 +1,94 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, results, methods, discussion, figure legends not provided, supplementary materials referenced but not provided)
+- **Assessment boundary** Scientific claims, methodological soundness, evidence quality, and internal consistency of the presented data and conclusions
+- **Shared manuscript claim summary** The authors propose that F-box proteins, particularly FBXL2 and FBXL17, exhibit significant inter-domain flexibility within SCF and CSN-SCF complexes, and that this flexibility is a tunable, functionally relevant architectural feature rather than a uniform property of the family
+- **Visible evidence base** Cryo-EM structures (newly determined and previously published), XL-MS datasets across four complex compositions, PatchDock integrative modeling, BioEmu deep learning-based conformational sampling, and comparative structural analyses
+- **Missing materials affecting confidence** Figure panels and legends, Supplementary Figures 1-5, Supplementary Tables 1-3, detailed statistical analysis of XL-MS data, PatchDock scoring details, BioEmu validation metrics, and full methodological parameters for cryo-EM processing
+
+## Reviewer
+- **Overall assessment** This manuscript presents a multi-modal investigation of inter-domain flexibility in F-box proteins, combining experimental and computational approaches. The central claim that FBXL2 and FBXL17 exhibit pronounced inter-domain flexibility while other F-box proteins are more restricted is supported by several lines of evidence, but the strength of the conclusion is limited by the absence of key quantitative details, the reliance on a single computational predictor for the family-wide survey, and the lack of direct functional validation linking flexibility to substrate recognition or ubiquitination outcomes. The work is potentially of interest to the ubiquitin and structural biology communities, but the case would be substantially strengthened by addressing the concerns below.
+- **Who would be interested in the results, and why** Structural biologists studying multi-protein complexes and conformational dynamics; ubiquitin-proteasome system researchers interested in SCF complex assembly, regulation, and substrate recognition; computational biologists developing integrative modeling approaches; and investigators studying CSN-mediated deactivation of cullin-RING ligases
+- **Major strengths** The combination of orthogonal experimental and computational approaches is appropriate and powerful. The use of XL-MS reproducibility as a proxy for conformational flexibility is a creative and potentially valuable analytical strategy. The inclusion of a negative control (FBXO22) strengthens the claim that flexibility is not a universal property. The revised model for CSN substrate sensing, proposing that CSN may sense conformational reshaping rather than simple steric exclusion, is conceptually interesting and testable.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The claim that FBXL2 and FBXL17 exhibit "significant inter-domain flexibility" that enables sampling of a broad conformational range within assembled SCF and CSN-SCF complexes
+  - **Evidence pointer** Figure 1, Figure 2, Supplementary Figures 1-2, Supplementary Table 1
+  - **Concern** The cryo-EM evidence for flexibility relies on comparison of a limited number of structures (two for FBXL17, two for FBXL2) and on local resolution degradation. While the RMSD values (17-43 Å) are large, the number of distinct conformational states sampled is small, and the authors do not provide quantitative measures of local resolution or map-model correlation in the flexible regions. The claim of "sampling a broad range of conformations" implies a continuum, but the evidence supports only a few discrete states. Additionally, the newly determined CSN DM -SCF FBXL17 structure is described as 4 Å resolution, but the local resolution in the FBXL17 region is stated to be ~8 Å, which may limit the reliability of the model in precisely the region central to the claim.
+  - **Why it matters** The central conclusion of the paper rests on the demonstration that inter-domain flexibility is a real, measurable property of these proteins in complex. If the evidence only supports a small number of discrete states, or if the resolution in the relevant region is insufficient to draw firm conclusions about domain positioning, the strength of the claim is diminished.
+  - **Resolution test** Provide local resolution maps for the cryo-EM reconstructions, quantitative map-model FSC curves for the flexible regions, and a more complete enumeration of all available FBXL2 and FBXL17 structures with their conformational states. If possible, perform 3D variability analysis or multi-body refinement to demonstrate continuous conformational sampling.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The claim that the four-state ensemble generated by PatchDock integrative modeling "increased the satisfaction rate of FBXL2-CSN cross-links to 86%" and that this demonstrates the need for a multi-state interpretation
+  - **Evidence pointer** Figure 2C-F, Methods "Integrative Structural Modeling with PatchDock"
+  - **Concern** The integrative modeling approach has several potential issues. First, the filtering criteria include a RMSD threshold of <20 Å from the baseline cryo-EM structure, which may bias the ensemble toward states similar to the starting model and exclude legitimate but more divergent conformations. Second, the selection of the four-state ensemble is described as maximizing cross-link satisfaction, but the criteria for selecting four states versus three or five is not justified. Third, the authors do not report how many of the 8,248 initial models satisfied the cross-link constraints, nor do they provide a statistical comparison of the four-state ensemble against a null model or against the single-state model. Fourth, the docking treats the substrate-binding domain as a rigid body, which may not be appropriate if the domain itself undergoes conformational changes. Finally, the authors do not validate the resulting ensemble against any independent data (e.g., SAXS, smFRET, or additional cross-links not used in the modeling).
+  - **Why it matters** The multi-state ensemble is presented as key evidence for the dynamic behavior of FBXL2. If the modeling procedure is biased, under-constrained, or not validated, the conclusion that a multi-state interpretation is required is not firmly established.
+  - **Resolution test** Provide a more detailed description of the ensemble selection procedure, including the distribution of cross-link satisfaction scores across all 8,248 models. Perform a statistical test comparing the fit of the single-state model versus the four-state ensemble. Validate the ensemble against withheld cross-links or an independent experimental dataset. Justify the rigid-body assumption for the substrate-binding domain.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interpretive validity
+  - **Claim pointer** The claim that the BioEmu predictions "refine the conclusions from our experimental data" and that the family-wide survey supports the idea that "pronounced inter-domain hinge flexibility appears to be a relatively rare feature within the F-box family"
+  - **Evidence pointer** Figure 4, Supplementary Table 3, Methods "Conformational Ensemble Prediction"
+  - **Concern** The BioEmu analysis is used to extend the experimental findings to the broader F-box family, but the validation of BioEmu for this specific application is limited. The authors show that BioEmu correctly identifies FBXL1 as the least flexible of the three proteins with experimental data, but this is a small validation set. The interpretation of the mRMSD metric is also potentially problematic: the authors note that in 9 of 10 highly flexible FBXO proteins, the intra-domain RMSD exceeds 4, suggesting that the mRMSD is inflated by intra-domain rather than inter-domain motion. This raises the question of whether the mRMSD metric is a reliable readout of inter-domain flexibility for the family-wide comparison. The authors do not provide a clear method for distinguishing inter-domain from intra-domain contributions in the BioEmu predictions.
+  - **Why it matters** The family-wide survey is a significant part of the paper's contribution, as it claims to establish that flexibility is a tunable feature across the F-box family. If the metric used for this survey is confounded by intra-domain motion, the conclusions about which proteins are flexible and which are not may be incorrect.
+  - **Resolution test** Provide a more detailed validation of BioEmu for this application, including comparison to experimental data for additional proteins. Develop and apply a metric that explicitly separates inter-domain from intra-domain motion. Alternatively, present the BioEmu results as preliminary predictions that require experimental validation, and temper the conclusions accordingly.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Functional relevance
+  - **Claim pointer** The claim that inter-domain flexibility "may shape their functional versatility within SCF complexes" and the revised model that CSN may sense how substrate binding reshapes the conformational ensemble of the F-box protein
+  - **Evidence pointer** Discussion section
+  - **Concern** The functional implications of the observed flexibility are discussed but not directly tested. The authors do not provide any data linking the conformational flexibility of FBXL2 or FBXL17 to substrate recognition, ubiquitination efficiency, or CSN-mediated deneddylation. The claim that flexibility may allow accommodation of diverse substrates is plausible but speculative. The revised model for CSN substrate sensing is interesting but is presented without direct experimental support.
+  - **Why it matters** The broader significance of the work depends on the functional relevance of the observed flexibility. Without direct evidence linking flexibility to function, the paper remains primarily a structural characterization, and the significance of the findings for understanding SCF biology is not fully established.
+  - **Resolution test** Provide experimental data testing the functional consequences of modulating inter-domain flexibility (e.g., by introducing mutations that restrict or enhance flexibility) on substrate ubiquitination, CSN binding, or deneddylation. Alternatively, clearly frame the functional implications as hypotheses that require future testing.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract
+  - **Issue** The abstract states that the work "highlights inter-domain plasticity as a tunable architectural feature of F-box proteins," but the evidence for "tunable" is indirect, relying primarily on the comparison between FBXL2/FBXL17 and other family members. The term "tunable" implies a regulatory mechanism that is not directly demonstrated.
+  - **Required correction** Consider rephrasing to "variable" or "differential" rather than "tunable," or provide explicit evidence for regulation of flexibility.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Statistical rigor
+  - **Affected element** XL-MS analysis
+  - **Evidence pointer** Methods "Cross-linking of CSN complexes and SEC fractionation", Figure 3
+  - **Issue** The statistical analysis of cross-link reproducibility across replicates is described qualitatively. The authors define a "relative index of flexibility" but do not provide confidence intervals or statistical tests comparing the ratios between subunits. The threshold for "high-confidence" cross-links (observed in ≥4 replicates) is stated but not justified.
+  - **Required correction** Provide statistical analysis of the cross-link reproducibility data, including confidence intervals for the flexibility index and a justification for the high-confidence threshold.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Methodological detail
+  - **Affected element** BioEmu predictions
+  - **Evidence pointer** Methods "Conformational Ensemble Prediction"
+  - **Issue** The description of the BioEmu sampling procedure is brief. The authors state that 75-97 conformers were obtained per protein, but do not describe how convergence was assessed, whether the sampling was sufficient, or how the mRMSD metric depends on the number of samples.
+  - **Required correction** Provide additional details on the BioEmu sampling procedure, including convergence assessment and the dependence of mRMSD on sample number.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Presentation
+  - **Affected element** Figure 1
+  - **Evidence pointer** Figure 1 (legend not provided)
+  - **Issue** The description of Figure 1 in the text mentions panels A-E, but the figure legend is not provided in the manuscript. It is difficult to fully assess the figure without the legend.
+  - **Required correction** Ensure that figure legends are complete and self-explanatory.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Discussion
+  - **Evidence pointer** Discussion
+  - **Issue** The term "fuzzy" is used to describe cryo-EM density, which is informal. While the meaning is clear, a more precise term such as "poorly resolved" or "low local resolution" would be more appropriate for a formal manuscript.
+  - **Required correction** Replace "fuzzy" with a more formal term.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (cryo-EM evidence for flexibility), R1-M2 (integrative modeling validation)
+- **Assessment against Nature-style criteria** Originality: The application of integrative modeling combining cryo-EM, XL-MS, and deep learning-based conformational prediction to F-box proteins is novel, and the finding that flexibility varies substantially across the family is a new contribution. Scientific importance: The work addresses a fundamental question about the architecture of SCF complexes and has implications for understanding substrate recognition and CSN regulation. However, the functional significance is not directly demonstrated, which limits the immediate impact. Interdisciplinary readership: The work bridges structural biology, proteomics, and computational biology, and the findings are likely to interest researchers across these fields. Technical soundness: The experimental approaches are generally sound, but the quantitative support for the central claims needs strengthening, particularly regarding the cryo-EM evidence and the validation of the integrative models. Readability for nonspecialists: The manuscript is generally well-written and accessible, but some sections, particularly the methods, assume significant background knowledge. The abstract and introduction are clear and effectively frame the problem.
+- **Recommendation posture** Supportive if technical concerns are resolved. The manuscript presents a potentially important contribution to understanding F-box protein dynamics, but the central claims require stronger quantitative support and validation. The authors should address the concerns regarding the cryo-EM evidence, the integrative modeling validation, and the interpretation of the BioEmu predictions. The functional implications should be either tested or clearly framed as hypotheses.
+
+## Risk / unsupported claims
+- The claim that FBXL2 and FBXL17 "sample a broad range of conformations" is not fully supported by the evidence, which shows a limited number of discrete states.
+- The claim that the four-state ensemble is a representative realization of the true conformational landscape is not validated against independent data.
+- The claim that inter-domain flexibility "may shape functional versatility" is speculative and not directly tested.
+- The family-wide survey using BioEmu is presented as predictive, but the metric used may be confounded by intra-domain motion, and the validation set is small.
+- The claim that CSN may sense conformational reshaping rather than steric exclusion is an interesting hypothesis but is not supported by direct experimental evidence.

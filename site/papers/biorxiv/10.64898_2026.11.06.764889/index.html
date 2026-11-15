@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rapid generation of antibody conformational ensembles using machine learning · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Rapid generation of antibody conformational ensembles using machine learning</h1>
+      <div class="meta">Rao PV; Sommer D; Davidson D; Alberstein RG; Ludwiczak J; Kleinhenz J; Vani B; Park E; Lee JH; Izadi S; Kiefer JR; Bonneau R; Mahajan SP; Watkins AM; Dreyer FA</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-11-09
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.11.06.764889">原文</a>
+      </div>
+      <p class="one-liner">该文提出基于机器学习的Cadense框架，从序列快速生成抗体Fv构象系综，匹配MD构象与生物物理性质分布，并支持对接，直接命中蛋白质构象生成与抗体结构计算课题。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">We introduce Cadense, a generative framework for antibody ensemble prediction that produces diverse Fv structures from sequence, informed by conformational dynamics. While a valuable resource, static structure prediction provides only a single snapshot of dynamic proteins, whose motions influence their binding and other properties. This is particularly relevant for antibodies, an important class of molecules for drug discovery, where flexible complementarity determining region (CDR) loops are difficult to model with static approaches. Cadense addresses this gap by generating ensembles that match conformational and biophysical property distributions from molecular dynamics (MD), while reducing the computational burden from days of simulation to seconds of generation. We show Cadense ensembles can recover both apo and holo conformations of the same antibody and serve as effective input to physics-based docking, capturing the conformational flexibility important to properly model antibody–antigen interactions. Together, these results establish Cadense as a useful tool for antibody conformational ensemble generation with the promise to enable faster, dynamics-aware antibody design.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">我们介绍Cadense，一个用于抗体整体预测的生成框架，能够从序列出发，依据构象动力学生成多样化的Fv结构。尽管静态结构预测是一种有价值的资源，但它仅提供动态蛋白质的单一快照，而这些蛋白质的运动影响其结合及其他性质。这一点对抗体尤为重要，抗体是药物发现中的重要分子类别，其柔性互补决定区（CDR）环难以用静态方法建模。Cadense通过生成与分子动力学（MD）的构象和生物物理性质分布相匹配的整体来解决这一差距，同时将计算负担从数天的模拟减少到数秒的生成。我们展示Cadense整体能够恢复同一抗体的apo和holo构象，并作为基于物理的对接的有效输入，捕捉对抗体-抗原相互作用正确建模至关重要的构象灵活性。这些结果共同确立了Cadense作为抗体构象整体生成的有用工具，有望实现更快、动态感知的抗体设计。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Rapid generation of antibody conformational ensembles using machine learning</li>
+<li><strong>作者</strong>：Rao PV; Sommer D; Davidson D; Alberstein RG; Ludwiczak J; Kleinhenz J; Vani B; Park E; Lee JH; Izadi S; Kiefer JR; Bonneau R; Mahajan SP; Watkins AM; Dreyer FA</li>
+<li><strong>单位</strong>：未提供（bioRxiv 预印本未列出单位信息）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：预印本（方法学 + 应用验证）</li>
+<li><strong>领域</strong>：蛋白质结构预测 × 生成式 AI × 分子动力学（抗体构象集合预测）</li>
+<li><strong>关键词</strong>：抗体、构象集合、扩散模型、分子动力学、CDR 环、Fv 结构、等变图神经网络</li>
+<li><strong>DOI/ID</strong>：10.64898/2026.11.06.764889</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：13,192 条抗体 Fv 序列的 MD 轨迹（训练数据）；2 个新解析的抗体晶体结构（Apo 1: PDB 38LM, Apo 2: PDB 38LO）</li>
+<li><strong>阅读日期</strong>：2026-11-10</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>构象集合生成</strong>子方向，与 AlphaFlow、BioEmu 等生成式构象预测方法同属一类，但专门针对抗体 Fv 区域，以 MD 模拟数据为训练目标，实现从序列到多样化构象集合的快速生成。与静态结构预测（AlphaFold2/3、Boltz）形成互补，强调构象多样性而非单一结构。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>Cadense 是一个基于等变扩散模型的抗体 Fv 构象集合生成框架，以 MD 模拟轨迹为训练数据，从序列直接生成多样化的 CDR 环构象，能在秒级时间内恢复 apo/holo 两种状态、复现 MD 的残基灵活性分布，并作为输入提升物理对接的性能。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何从抗体序列快速生成多样化的 Fv 构象集合，使其在构象空间覆盖、残基灵活性、生物物理性质分布等方面与 MD 模拟相当，同时将计算成本从数天降低到秒级？</li>
+<li><strong>为什么重要</strong>：抗体的 CDR 环（尤其是 CDR-H3）在溶液中呈现显著构象异质性，静态结构预测（如 AlphaFold2、IgFold）只能给出单一构象，且偏向 holo（抗原结合）状态。构象多样性直接影响抗原结合、表位可及性、疏水斑块等成药性相关性质，而 MD 模拟虽能捕捉这些动态特征但计算成本过高，无法用于大规模抗体筛选和设计。</li>
+<li><strong>现有方法不足</strong>：</li>
+<li>静态预测器（AlphaFold2、ImmuneBuilder、IgFold、Ibex）输出单一构象，无法反映构象集合；</li>
+<li>生成式模型（AlphaFlow、BioEmu）虽能生成集合，但依赖 MSA 输入（对抗体不适用），且未针对抗体 Fv 的配对链和 CDR 环动态进行专门训练；</li>
+<li>ABodyBuilder4-STEROIDS 虽生成抗体构象集合，但主要基于粗粒化模拟训练，可能丢失侧链和环的精细动态。</li>
+<li><strong>精确研究问题</strong>：Can a diffusion model trained on all-atom MD trajectories of antibody Fv regions generate conformational ensembles that match MD-derived distributions (apo/holo states, RMSF, biophysical properties) and improve downstream docking performance, without requiring MSA input?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「经外部核验」——基于本文引用及该领域公开进展整理）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>静态结构预测</td>
+<td>AlphaFold2 (2021)、ImmuneBuilder (2022)、IgFold (2023)、Ibex (2024)</td>
+<td>高精度单结构预测；抗体专用版本精度高</td>
+<td>输出单一构象；偏向 holo 状态；无法反映构象集合</td>
+</tr>
+<tr>
+<td>共折叠/复合物预测</td>
+<td>AlphaFold3 (2024)、Boltz (2024)、Chai (2024)、Protenix (2024)</td>
+<td>可预测抗体-抗原复合物</td>
+<td>仍为静态快照；构象多样性有限</td>
+</tr>
+<tr>
+<td>生成式构象集合</td>
+<td>AlphaFlow (2024)、BioEmu (2024)</td>
+<td>从序列生成构象集合；捕捉多状态</td>
+<td>依赖 MSA；主要针对单链蛋白；未专门优化抗体 CDR 环</td>
+</tr>
+<tr>
+<td>抗体专用构象集合</td>
+<td>ABodyBuilder4-STEROIDS (2024)</td>
+<td>抗体专用；生成 CDR 构象集合</td>
+<td>基于粗粒化模拟训练，侧链精度有限</td>
+</tr>
+<tr>
+<td><strong>本文</strong></td>
+<td><strong>Cadense (2026)</strong></td>
+<td><strong>全原子 MD 训练；无需 MSA；抗体 Fv 专用；秒级生成</strong></td>
+<td><strong>仅覆盖 Fv 区域；不提供动力学/速率信息；训练数据限于 200 ns 模拟</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：Cadense 填补了「抗体专用 × 全原子 MD 训练 × 无 MSA 依赖 × 快速生成」的空白，是首个将全原子 MD 轨迹直接用于训练抗体 Fv 构象集合生成模型的工作。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>静态预测无法反映构象多样性</td>
+<td>AlphaFold2/Boltz 输出单一构象，CDR-H3 环的多种可能状态被压缩为一个平均结构</td>
+<td>训练数据以晶体结构为主，晶体堆积和结合态偏好导致 holo 态过采样</td>
+<td>Section 2.1：Boltz-2 集合在 RMSF 上显著低估灵活性（中位相关 0.57 vs Cadense 0.84）</td>
+</tr>
+<tr>
+<td>MD 模拟计算成本过高</td>
+<td>单个抗体 Fv 的 200 ns 全原子模拟需约 12 小时/GPU，无法用于大规模筛选</td>
+<td>全原子显式溶剂模拟的固有计算复杂度</td>
+<td>Section 4.4：13,192 条轨迹需大量 GPU 资源；Supplementary Table A1：Cadense 生成在秒级完成</td>
+</tr>
+<tr>
+<td>现有生成模型依赖 MSA</td>
+<td>AlphaFlow/BioEmu 需要 MSA 作为条件输入，抗体序列缺乏深度进化信息</td>
+<td>抗体多样性来自 V(D)J 重组和体细胞超突变，而非进化保守性</td>
+<td>Section 1：作者指出 MSA 对抗体是不必要的输入</td>
+</tr>
+<tr>
+<td>粗粒化训练丢失侧链精度</td>
+<td>ABB4-STEROIDS 基于粗粒化模拟，侧链构象和环动态精度有限</td>
+<td>粗粒化力场牺牲原子细节换取模拟速度</td>
+<td>Section 1：作者指出粗粒化表示可能掩盖侧链和环的动态</td>
+</tr>
+<tr>
+<td>构象集合缺乏标注</td>
+<td>生成的大量构象中，哪些接近 apo、哪些接近 holo 不明确</td>
+<td>无监督生成缺乏状态标签</td>
+<td>Section 2.1：作者引入 centrality 和 support 分数辅助标注，但承认不直接对应 apo/holo 标签</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>Cadense 是一个两组件架构的等变扩散模型：
+- <strong>输入条件器（Input Conditioner）</strong>：从序列（含 ESM-2 语言模型嵌入）初始化单体和配对表示，通过 Pairformer 风格的注意力块（含半局部三角注意力，复杂度 O(kn²)）精化，输出条件嵌入；
+- <strong>评分模型（Score Model）</strong>：基于 Equiformer 架构的 SE(3)-等变图注意力网络，在 SE(3) × SO(2)⁵ 乘积流形上执行联合黎曼扩散去噪，预测 backbone 平移、旋转和侧链扭转角的去噪分数。</p>
+<p>训练数据为 13,192 条抗体 Fv 序列的 200 ns 全原子 MD 轨迹，采用两种训练变体：
+- <strong>Cadense</strong>（主模型）：使用 tICA + PCCA+ 聚类识别的亚稳态构象，按平衡态群体加权采样训练帧（课程学习）；
+- <strong>Cadense-dist</strong>：在晶体结构预训练后，用均匀时间采样的 MD 帧微调，侧重复现连续分布性质。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>MD 轨迹作为训练目标而非验证工具</strong>：现有方法用 MD 验证预测结果，Cadense 直接将 MD 采样的构象分布作为扩散模型的训练目标，使模型学会的是「构象分布」而非「单一结构」。</li>
+<li><strong>课程学习对齐亚稳态群体</strong>：通过 MSM 识别亚稳态并按其平衡态权重采样训练帧，使模型优先学习热力学上更重要的构象状态，而非均匀时间采样（后者会被快速振荡的局部运动主导）。</li>
+<li><strong>无 MSA 设计</strong>：抗体多样性源于重组和突变而非进化，因此用 ESM-2 嵌入替代 MSA，既简化输入又避免不适用信息。</li>
+<li><strong>构象集合作为下游任务的「增强器」</strong>：不是替代对接或性质预测，而是为这些任务提供多样化的输入构象，让物理方法在更真实的构象空间中进行搜索。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>「分布匹配」优于「单点预测」</strong>：对于 intrinsically flexible 的蛋白区域（如 CDR 环、linker、domain 边界），训练目标应设为构象分布而非单一结构，这比在静态结构上添加噪声扰动更物理。</li>
+<li><strong>模拟数据可作为生成模型的「教师」</strong>：MD/粗粒化模拟虽然对单个体系成本高，但一旦完成即可作为训练数据反复使用，将计算成本从「每次推理」转移到「一次性训练」。</li>
+<li><strong>亚稳态加权采样是关键的训练细节</strong>：均匀时间采样会被高频振动主导，而按亚稳态平衡群体加权能更好地捕捉热力学相关的构象状态——这一策略可迁移到其他构象生成任务。</li>
+</ul>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：抗体 Fv 序列（重链 + 轻链），含 ESM-2 语言模型嵌入、残基类型 one-hot、相对位置编码</li>
+<li><strong>输出</strong>：多样化的 Fv 全原子结构集合（backbone 框架 + 侧链扭转角），每个样本为完整的三维构象</li>
+<li><strong>模块</strong>：
+  1. <strong>Input Feature Embedder</strong>：初始化单/配对表示
+  2. <strong>Input Conditioner</strong>：Pairformer 风格注意力块（半局部三角注意力 + 三角乘法），输出条件嵌入
+  3. <strong>Diffusion Conditioner</strong>：每步将条件嵌入与当前噪声结构特征融合，加入自条件化（self-conditioning）
+  4. <strong>Score Model</strong>：Equiformer 等变图注意力网络，三级节点（backbone、side-chain、全局辅助节点），预测所有几何自由度的去噪分数</li>
+<li><strong>训练</strong>：</li>
+<li>预训练：晶体结构（PDB）</li>
+<li>微调：MD 轨迹帧（Cadense 用 MSM 亚稳态加权采样；Cadense-dist 用均匀时间采样）</li>
+<li>损失：各几何自由度的去噪分数匹配损失</li>
+<li><strong>推理</strong>：Euler-Maruyama 离散化反向 SDE + 可选混合 Langevin 动力学（λ₀ 温度参数、ψ 平衡因子）+ 可选引导势（如 AlphaFold2 结构违规损失）</li>
+<li><strong>后处理</strong>：几何质量过滤（clash、Ramachandran 异常等），过滤掉的样本计入生成预算</li>
+<li><strong>文字流程</strong>：序列 → ESM-2 嵌入 + 位置编码 → Input Conditioner 精化条件表示 → 在每个扩散时间步，Diffusion Conditioner 融合条件与当前噪声结构 → Score Model 预测去噪分数 → 反向 SDE 采样（含 Langevin 校正）→ 后处理 QC 过滤 → 输出构象集合</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input Conditioner（Pairformer 块）</td>
+<td>从序列精化单/配对表示，提供结构条件</td>
+<td>将序列信息转化为可指导扩散的丰富条件特征</td>
+<td>输入：ESM-2 嵌入、位置编码；输出：精化单/配对嵌入</td>
+<td>Section 4.1：架构描述</td>
+<td>[预期] 移除后条件信息不足，生成结构序列一致性下降</td>
+</tr>
+<tr>
+<td>半局部三角注意力</td>
+<td>将三角注意力复杂度从 O(n³) 降至 O(kn²)</td>
+<td>抗体 Fv 约 220 残基，全对注意力计算量大</td>
+<td>输入：配对表示；输出：稀疏化后的注意力更新</td>
+<td>Section 4.1：引用 Proteus [43]</td>
+<td>[预期] 移除后计算成本显著上升，但可能小幅提升精度</td>
+</tr>
+<tr>
+<td>Diffusion Conditioner</td>
+<td>每步融合条件嵌入与当前噪声结构，加入自条件化</td>
+<td>使去噪过程每步都感知序列条件和上一步输出</td>
+<td>输入：条件嵌入、当前噪声结构特征、时间步嵌入；输出：更新后的条件特征</td>
+<td>Section 4.1：引用 RFdiffusion [71] 和 Proteus [43]</td>
+<td>[预期] 移除自条件化后生成多样性可能增加但质量下降</td>
+</tr>
+<tr>
+<td>Score Model（Equiformer）</td>
+<td>预测所有几何自由度的去噪分数</td>
+<td>核心生成模块，实现 SE(3)-等变构象去噪</td>
+<td>输入：噪声结构 + 条件特征；输出：各自由度分数</td>
+<td>Section 4.1、Appendix F.5</td>
+<td>核心模块，不可移除</td>
+</tr>
+<tr>
+<td>三级节点层次（backbone/side-chain/全局）</td>
+<td>分层处理不同粒度的结构信息</td>
+<td>避免 backbone 与 side-chain 全连接的 O(n_BB × n_SC) 成本</td>
+<td>输入：结构图；输出：分层消息传递后的节点特征</td>
+<td>Section 4.1、Appendix F.5</td>
+<td>[预期] 移除全局节点后长程协同运动信息丢失</td>
+</tr>
+<tr>
+<td>MSM 亚稳态加权采样（Cadense）</td>
+<td>按亚稳态平衡群体权重采样训练帧</td>
+<td>使模型优先学习热力学重要的构象状态</td>
+<td>输入：MD 轨迹；输出：加权训练帧</td>
+<td>Section 4.4、Appendix E</td>
+<td>[预期] 改为均匀采样可能降低 apo 态恢复能力</td>
+</tr>
+<tr>
+<td>几何质量过滤（QC）</td>
+<td>过滤 clash、Ramachandran 异常等</td>
+<td>保证生成结构的物理合理性</td>
+<td>输入：生成结构；输出：通过 QC 的结构</td>
+<td>Appendix A.1</td>
+<td>[预期] 移除后生成结构中包含更多非物理构象</td>
+</tr>
+<tr>
+<td>AlphaFold2 违规引导</td>
+<td>在采样时用 AF2 结构违规损失引导去噪</td>
+<td>减少 steric clash，提高物理质量</td>
+<td>输入：当前噪声结构；输出：引导梯度</td>
+<td>Section 4.3、Appendix H.3</td>
+<td>[预期] 移除后结构质量下降，但生成速度可能提升</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><em>（基于文中描述的方法，推导关键公式；文中未给出完整公式推导，以下为基于扩散模型框架的标准形式）</em></p>
+<p><strong>1. 联合流形扩散目标</strong></p>
+<p>模型在乘积流形 SE(3) × SO(2)⁵ 上定义扩散过程。对于每个几何自由度 z ∈ {t, r, χ}，训练目标为去噪分数匹配：</p>
+<p>$$L = \mathbb{E}<em>{t \sim \mathcal{U}(0,1)} \mathbb{E}</em>{z(0) \sim p_{\text{data}}} \mathbb{E}<em>{z(t) \sim p(z(t)|z(0))} \left[ \lambda(t) | s</em>\theta(z(t), c, t) - \nabla_{z(t)} \log p(z(t)|z(0)) |^2 \right]$$</p>
+<ul>
+<li>$z(t)$：时间 $t$ 的噪声化结构</li>
+<li>$c$：条件嵌入（来自 Input Conditioner）</li>
+<li>$s_\theta$：评分模型（Equiformer）</li>
+<li>$\lambda(t)$：时间依赖的损失权重</li>
+</ul>
+<p><strong>2. 翻译的 VP 扩散（零质心约束）</strong></p>
+<p>$$z_t = \sqrt{1 - \beta_t} z_0 + \sqrt{\beta_t} \epsilon, \quad \epsilon \sim \mathcal{N}(0, I - \frac{1}{n}\mathbf{1}\mathbf{1}^T)$$</p>
+<ul>
+<li>投影到零质心子空间，协方差为 $I - \frac{1}{n}\mathbf{1}\mathbf{1}^T$</li>
+</ul>
+<p><strong>3. 旋转的 VE 扩散（SO(3) 布朗运动）</strong></p>
+<p>$$dR = -dW^{\text{so}(3)}_t$$</p>
+<ul>
+<li>$W^{\text{so}(3)}_t$：SO(3) 上的布朗运动</li>
+<li>平稳分布为 Haar 测度</li>
+</ul>
+<p><strong>4. 扭转角的 VE 扩散（SO(2) 布朗运动）</strong></p>
+<p>$$d\chi = -dW^{\text{so}(2)}_t$$</p>
+<ul>
+<li>平稳分布为均匀分布 $\mathcal{U}(0, 2\pi)$</li>
+</ul>
+<p><strong>5. 混合 Langevin 动力学采样</strong></p>
+<p>$$z_{t-\Delta t} = z_t + \lambda_t s_\theta(z_t, c, t) \Delta t + \sqrt{2\lambda_t \Delta t} \epsilon_t + \psi \nabla U_{\text{guide}}(z_t) \Delta t$$</p>
+<ul>
+<li>$\lambda_t = F(\lambda_0, \sigma_t)$：温度缩放因子</li>
+<li>$\psi$：平衡因子，控制引导势强度</li>
+<li>$U_{\text{guide}}$：引导势（如 AF2 违规损失）</li>
+</ul>
+<p><strong>6. 二面角距离度量</strong></p>
+<p>$$d = 2(1 - \cos(\Delta\theta))$$</p>
+<ul>
+<li>用于比较预测环与实验参考的构象差异，范围 [0, 4]</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<h3>数据集与规模</h3>
+<table>
+<thead>
+<tr>
+<th>数据集</th>
+<th>规模</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练集</td>
+<td>13,192 条抗体 Fv 序列的 MD 轨迹（200 ns/条）</td>
+<td>模型训练</td>
+</tr>
+<tr>
+<td>Apo/holo 配对集</td>
+<td>33 对抗体</td>
+<td>评估 apo/holo 双态恢复能力</td>
+</tr>
+<tr>
+<td>性质/RMSF 评估集</td>
+<td>72 个抗体（其中 22 个来自 pOAS）</td>
+<td>评估构象分布与 MD 的一致性</td>
+</tr>
+<tr>
+<td>内部晶体结构</td>
+<td>2 个新解析的 Fab 结构（Apo 1: PDB 38LM, Apo 2: PDB 38LO）</td>
+<td>真正 out-of-distribution 测试</td>
+</tr>
+<tr>
+<td>对接基准</td>
+<td>44 个内部抗体-抗原复合物</td>
+<td>评估对接性能</td>
+</tr>
+</tbody>
+</table>
+<h3>评测协议</h3>
+<ul>
+<li><strong>构象质量</strong>：几何 QC 过滤（clash、Ramachandran）</li>
+<li><strong>状态恢复</strong>：二面角距离 d = 2(1−cos(Δθ)) 和 RMSD 对比 apo/holo 参考</li>
+<li><strong>分布匹配</strong>：RMSF 与 MD 的 Pearson 相关</li>
+<li><strong>性质分布</strong>：CDR HPATCH_WW 和 CDR APBS_sum 的分布重叠</li>
+<li><strong>对接</strong>：HADDOCK3，比较 ensemble 输入 vs 单结构输入</li>
+</ul>
+<h3>关键实验与证据</h3>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 Claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apo/holo 双态恢复</td>
+<td>Cadense 集合覆盖两个构象状态</td>
+<td>3 个显著构象变化的配对，500 样本/抗体，对比 ABodyBuilder3、Boltz-2、Ibex</td>
+<td>Cadense 集合同时接近 apo 和 holo 参考；基线方法聚集在 holo 附近</td>
+<td>Cadense 能恢复 apo 和 holo 双态</td>
+<td>仅 3 个案例，样本量小</td>
+<td>Figure 2</td>
+</tr>
+<tr>
+<td>7 抗体聚合分析</td>
+<td>Cadense 是唯一一致覆盖双态的方法</td>
+<td>7 个 H3 RMSD 显著变化的抗体</td>
+<td>Cadense 是唯一同时在二面角距离和 RMSD 上接近双态的方法</td>
+<td>双态恢复是系统性能力而非个例</td>
+<td>7 个案例仍有限</td>
+<td>Supplementary Figure A1</td>
+</tr>
+<tr>
+<td>内部晶体结构恢复</td>
+<td>对完全未见过的构象的泛化</td>
+<td>Apo 1 和 Apo 2（所有方法均未见）</td>
+<td>Cadense 最佳样本达到亚埃级 RMSD；基线方法距离更远</td>
+<td>Cadense 能生成训练分布外的有效构象</td>
+<td>仅 2 个案例</td>
+<td>Figure 1d, Section 2.1</td>
+</tr>
+<tr>
+<td>RMSF 分布匹配</td>
+<td>构象集合复现 MD 灵活性</td>
+<td>22 个 pOAS 抗体，Cadence-dist vs Boltz-2</td>
+<td>中位 Pearson 相关 0.84 vs 0.57，方差更低</td>
+<td>Cadence-dist 更准确复现残基灵活性</td>
+<td>相关非因果，可能受训练数据偏差影响</td>
+<td>Figure 4</td>
+</tr>
+<tr>
+<td>性质分布匹配</td>
+<td>构象集合复现 MD 性质分布</td>
+<td>72 个抗体，CDR HPATCH_WW 和 APBS_sum</td>
+<td>分布重叠良好</td>
+<td>集合层面的性质预测可靠</td>
+<td>未与实验测量直接对比</td>
+<td>Figure 5c</td>
+</tr>
+<tr>
+<td>假阳性降低</td>
+<td>集合平均性质减少误报</td>
+<td>静态 vs 集合，风险 flag 对比</td>
+<td>假阳性 flag 降低 3.5 倍（14 → 4 green→red 误分类）</td>
+<td>集合输入改善性质筛选</td>
+<td>仅评估了 flag 分类，未评估下游实验验证率</td>
+<td>Figure 5a, b</td>
+</tr>
+<tr>
+<td>对接性能</td>
+<td>集合输入提升对接</td>
+<td>44 个复合物，HADDOCK3，对比单结构</td>
+<td>Cadence 集合显著优于单结构基线</td>
+<td>构象多样性提升物理对接</td>
+<td>对接协议经过修改，可能不完全反映真实场景</td>
+<td>Figure 6, Section 2.3</td>
+</tr>
+<tr>
+<td>新 CDR-H3 序列泛化</td>
+<td>对进化上新颖序列的泛化</td>
+<td>按 CDR-H3 编辑距离分层</td>
+<td>编辑距离 7+ 时基线性能下降，Cadence 保持</td>
+<td>构象采样对序列新颖性更鲁棒</td>
+<td>编辑距离非功能新颖性的完美代理</td>
+<td>Figure 6</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文解决的是<strong>抗体 Fv 区域（重链 + 轻链可变区）的构象集合生成</strong>，不涉及全长抗体、恒定区、或其他蛋白类型。模型输出为静态构象集合，不提供时间演化信息。</li>
+<li><strong>真值/训练目标</strong>：模型学习的是 MD 模拟（AMBER FF14SB + TIP3P 水，200 ns）的构象分布，而非实验观测的构象集合。因此模型质量上限受限于 MD 力场精度和采样充分性。</li>
+<li><strong>端到端状态</strong>：从序列到构象集合是端到端的，但下游任务（对接、性质预测）需要额外工具（HADDOCK3、APBS 等），不是完全集成的 pipeline。</li>
+<li><strong>算力成本</strong>：训练需要 13,192 条 MD 轨迹（每条约 12 GPU 小时），训练成本极高；但推理阶段生成 500 个构象在秒级完成，适合大规模筛选。</li>
+<li><strong>历史/数据依赖</strong>：训练数据来自 SAbDab、TheraSAbDab 和 pOAS，覆盖已知抗体序列空间。对全新支架、非免疫球蛋白结合蛋白的泛化能力未验证。</li>
+<li><strong>最难情形</strong>：真正 out-of-distribution 的构象（如 Apo 1、Apo 2）虽然能恢复，但仅 2 个案例；对长 CDR-H3 环（&gt;15 残基）或二硫键约束异常的环的泛化能力未充分验证。</li>
+<li><strong>群体边界</strong>：模型针对常规 IgG 样 Fv 设计，对纳米抗体（VHH）、鲨鱼 IgNAR 等单域抗体、或含非标准修饰的抗体未验证。</li>
+<li><strong>有边界的复述</strong>：Cadense 能在秒级从序列生成与 MD 构象分布一致的抗体 Fv 构象集合，在双态恢复、灵活性复现、性质分布匹配和对接增强方面优于静态预测器，但其训练数据限于 200 ns 常规 MD 模拟，不包含长时程构象转变或动力学信息。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练数据时间尺度有限</td>
+<td>模型学习的是 200 ns 常规 MD 模拟的构象分布，无法捕捉更长时程的构象转变</td>
+<td>未明确提及</td>
+<td>Section 3</td>
+</tr>
+<tr>
+<td>无动力学/速率信息</td>
+<td>模型生成静态构象集合，不提供状态间转换速率或路径</td>
+<td>未明确提及</td>
+<td>Section 3</td>
+</tr>
+<tr>
+<td>仅覆盖 Fv 区域</td>
+<td>模型不处理全长抗体、恒定区或 Fc 介导的功能</td>
+<td>扩展至全长抗体或其他模态</td>
+<td>Section 3</td>
+</tr>
+<tr>
+<td>构象集合缺乏明确状态标注</td>
+<td>centrality 和 support 分数不直接对应 apo/holo 标签</td>
+<td>学习显式的状态标注分数</td>
+<td>Section 2.1, Appendix B</td>
+</tr>
+<tr>
+<td>对接实验使用修改的 HADDOCK3 协议</td>
+<td>为隔离构象采样贡献，修改了标准对接流程，可能不完全反映真实场景</td>
+<td>未明确提及</td>
+<td>Section 2.3</td>
+</tr>
+<tr>
+<td>训练数据偏差</td>
+<td>训练集来自公共数据库，可能偏向于已表征的、可开发性较好的抗体</td>
+<td>未明确提及</td>
+<td>Section 4.4</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练数据全部来自 MD 模拟，而非实验构象集合</td>
+<td>模型学到的「真实」是 MD 力场的真实，而非实验真实；如果 MD 力场对某些 CDR 构象采样不足，模型会继承该偏差</td>
+<td>构象集合的生物学有效性取决于训练数据质量</td>
+<td>与 NMR 或氢氘交换实验测量的构象集合直接对比</td>
+<td>Section 4.4：训练数据为 MD 轨迹</td>
+</tr>
+<tr>
+<td>200 ns 模拟可能不足以采样 CDR-H3 的完整构象空间</td>
+<td>长 CDR-H3 环的构象转变可能发生在微秒-毫秒时间尺度，200 ns 可能只采样了局部能量盆地</td>
+<td>模型可能低估了真实构象多样性</td>
+<td>与更长模拟（&gt;1 μs）或增强采样方法的结果对比</td>
+<td>Section 3：作者承认时间尺度限制</td>
+</tr>
+<tr>
+<td>双态恢复仅 3 个案例，7 个聚合分析</td>
+<td>样本量小，可能无法代表抗体多样性的全谱</td>
+<td>结论的泛化性存疑</td>
+<td>在更大规模（&gt;50）的 apo/holo 配对集上验证</td>
+<td>Figure 2, Supplementary Figure A1</td>
+</tr>
+<tr>
+<td>性质评估使用 MD 作为参考而非实验</td>
+<td>MD 计算的性质分布可能本身就有偏差，模型匹配 MD 不等于匹配实验</td>
+<td>实际应用中的性质预测可靠性未验证</td>
+<td>与实验测量的性质（如疏水相互作用色谱、表面等离子共振）对比</td>
+<td>Section 2.2</td>
+</tr>
+<tr>
+<td>对接实验使用修改的 HADDOCK3 协议</td>
+<td>修改可能使结果偏向 ensemble 方法；标准协议下的性能未知</td>
+<td>实际应用中的对接性能可能不同</td>
+<td>在标准 HADDOCK3 协议下重复实验</td>
+<td>Section 2.3</td>
+</tr>
+<tr>
+<td>与 ABB4-STEROIDS 的对比有限</td>
+<td>仅在 CDR-H3 多样性上对比（Supplementary Figure A3），未在性质预测和对接上对比</td>
+<td>无法判断 Cadence 是否全面优于已有抗体构象集合方法</td>
+<td>在相同基准上系统对比</td>
+<td>Supplementary Figure A3</td>
+</tr>
+<tr>
+<td>未报告生成结构的绝对质量（如 MolProbity、Ramachandran 分布）</td>
+<td>仅报告了 QC 过滤，未报告通过率或生成结构的整体质量分布</td>
+<td>生成结构的物理质量影响下游任务可靠性</td>
+<td>报告 QC 通过率、MolProbity 分数等</td>
+<td>Appendix A.1</td>
+</tr>
+<tr>
+<td>模型对序列新颖性的鲁棒性仅用编辑距离衡量</td>
+<td>编辑距离不捕捉功能或结构上的新颖性</td>
+<td>对真正 novel 的 CDR 序列的泛化能力未充分验证</td>
+<td>在功能验证的新抗体序列上测试</td>
+<td>Figure 6</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><em>（Agent 提炼的知识候选，面向「蛋白质结构相关计算研究 × AI/物理模拟」课题）</em></p>
+<ol>
+<li>
+<p><strong>MD 轨迹作为扩散模型的训练目标</strong>：将 MD 采样的构象分布直接作为生成模型的训练数据，而非仅作为验证工具。这一策略将 MD 的计算成本从「每次推理」转化为「一次性训练」，使生成模型成为 MD 的快速代理。可迁移到其他 intrinsically flexible 蛋白区域（如 kinase 激活环、GPCR 胞内环）的构象集合生成。</p>
+</li>
+<li>
+<p><strong>MSM 亚稳态加权采样优于均匀时间采样</strong>：训练帧按亚稳态平衡群体加权，而非均匀时间采样，能更好地捕捉热力学相关的构象状态。这一训练策略可迁移到任何基于模拟数据训练的生成模型，避免高频振动主导训练。</p>
+</li>
+<li>
+<p><strong>无 MSA 设计</strong>：用 ESM-2 语言模型嵌入替代 MSA，对抗体这类非进化保守序列更合适。这一设计思路可推广到其他缺乏深度进化信息的蛋白家族（如从头设计的蛋白、合成抗体库）。</p>
+</li>
+<li>
+<p><strong>构象集合作为下游任务的「增强器」</strong>：将生成集合作为物理对接的输入，比单结构显著提升性能。这一「生成-然后-物理」的级联策略可迁移到其他需要构象多样性的下游任务（如虚拟筛选、性质预测、可开发性评估）。</p>
+</li>
+<li>
+<p><strong>两组件架构：重条件器 + 轻评分模型</strong>：将计算密集的条件精化与轻量级去噪分离，条件器只运行一次，评分模型在每步复用。这一架构设计可迁移到其他生成任务，显著降低推理成本。</p>
+</li>
+<li>
+<p><strong>三级节点层次（backbone/side-chain/全局）</strong>：避免全连接的 O(n_BB × n_SC) 成本，同时通过全局节点保持长程协同运动信息。这一图构建策略可迁移到其他蛋白质构象生成模型。</p>
+</li>
+<li>
+<p><strong>半局部三角注意力</strong>：将三角注意力从 O(n³) 降至 O(kn²)，在保持精度的同时大幅降低计算成本。这一技术可迁移到任何需要三角注意力的蛋白质模型。</p>
+</li>
+<li>
+<p><strong>引导势组合</strong>：在采样时组合可微的引导势（如 AF2 违规损失），在保持多样性的同时提高物理质量。这一「扩散 + 引导」框架可迁移到其他需要特定性质约束的生成任务。</p>
+</li>
+<li>
+<p><strong>评估框架</strong>：用二面角距离 d = 2(1−cos(Δθ)) 作为构象比较的 alignment-free 指标，避免结构叠加带来的偏差。这一评估方法可迁移到其他环区构象比较任务。</p>
+</li>
+<li>
+<p><strong>Centrality 和 support 分数</strong>：为无监督生成的构象集合提供标注工具，帮助用户选择代表性构象。这一概念可迁移到其他构象集合分析任务。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold2 [4]</strong>：Cadense 的 backbone frame 定义（Cα, N, C → t, r）和 Pairformer 注意力块直接继承自 AF2 的架构设计。AF2 的框架定义已成为蛋白质结构模型的「标准接口」。</li>
+<li><strong>AlphaFold3 [10]</strong>：AF3 的 Pairformer 架构和扩散模块设计是 Cadense 条件器和评分模型的重要参考。Cadense 可视为 AF3 架构在构象集合生成任务上的专门化。</li>
+<li><strong>RFdiffusion [71]</strong>：Cadense 的自条件化（self-conditioning）策略直接引用 RFdiffusion，这是扩散模型用于蛋白质设计的核心技巧之一。</li>
+<li><strong>Chroma [45]</strong>：Cadense 的图构建策略（k-NN + 随机长边 + 逆立方径向采样）和混合 Langevin 动力学采样直接引用 Chroma，后者是蛋白质扩散模型的代表性工作。</li>
+<li><strong>Equiformer [44]</strong>：Cadense 的评分模型基于 Equiformer 架构，这是 SE(3)-等变图神经网络的代表性工作，已被广泛用于蛋白质结构建模。</li>
+<li><strong>FrameDiff [49]</strong>：Cadense 的 SE(3) 流形扩散框架（零质心约束、SO(3) 布朗运动）直接继承自 FrameDiff，后者是蛋白质 backbone 扩散模型的奠基工作。</li>
+<li><strong>AlphaFlow [25]</strong>：同为「生成构象集合」的扩散模型，但 AlphaFlow 依赖 MSA 且针对单链蛋白；Cadense 的差异化在于无 MSA、抗体专用、MD 训练数据。</li>
+<li><strong>BioEmu [26]</strong>：同为 MD 替代模型，但 BioEmu 针对单链蛋白且依赖 MSA；Cadense 针对配对重轻链且无 MSA 依赖。</li>
+<li><strong>ABodyBuilder4-STEROIDS [28]</strong>：最直接的相关工作，同为抗体构象集合生成，但基于粗粒化模拟训练；Cadense 使用全原子 MD，精度更高。</li>
+<li><strong>ITsFlexible [19]</strong>：提供了 CDR 环构象异质性的系统分析，为 Cadense 的评估提供了参考基准。</li>
+<li><strong>HADDOCK3 [36]</strong>：物理对接工具，Cadense 的 ensemble 对接实验基于此，展示了生成集合与物理模拟的互补性。</li>
+<li><strong>ESM-2 [31]</strong>：Cadense 使用 ESM-2 嵌入替代 MSA，这是无 MSA 蛋白质模型的标准做法。</li>
+<li><strong>候选方向</strong>：Cadense 的「MD 训练 + 扩散生成」框架可推广到其他蛋白类型（如 TCR、CAR、纳米抗体）和更长的模拟时间尺度（如增强采样 MD 或粗粒化 MD 训练数据）。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><em>（Agent 生成的研究候选）</em></p>
+<h3>候选 1：Cadense-EPI——将表位信息注入构象集合生成</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：Cadense 仅从序列生成构象，未利用抗原信息。但 CDR 构象集合中哪些成员是结合 competent 的，取决于特定抗原的表位。</li>
+<li><strong>核心假设</strong>：将抗原表位信息（序列或结构）作为条件输入，可引导生成偏向结合相关构象，提高对接效率。</li>
+<li><strong>初步方法</strong>：在 Diffusion Conditioner 中增加抗原嵌入通道，或在引导势中加入表位互补性评分。</li>
+<li><strong>验证方式</strong>：在已知抗体-抗原复合物上比较有/无表位条件的对接成功率。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 2：多时间尺度 MD 训练数据融合</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：Cadense 仅使用 200 ns 常规 MD 数据，可能遗漏微秒级构象转变。</li>
+<li><strong>核心假设</strong>：融合不同时间尺度的模拟数据（如增强采样 MD、粗粒化 MD 的长时间轨迹），可扩展模型覆盖的构象空间。</li>
+<li><strong>初步方法</strong>：用增强采样方法（如 GaMD、REMD）补充训练数据，或设计多分辨率训练策略。</li>
+<li><strong>验证方式</strong>：比较模型生成的构象集合与实验测量的构象 ensemble（如 NMR、SAXS）的重叠度。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 3：构象集合的「可开发性指纹」预测</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：Cadense 展示了集合层面的性质分布更准确，但未系统评估哪些性质最适合集合级预测。</li>
+<li><strong>核心假设</strong>：某些 developability 相关性质（如疏水斑块、聚集倾向、免疫原性表位暴露）对构象集合高度敏感，集合级预测显著优于单结构。</li>
+<li><strong>初步方法</strong>：在 Cadense 集合上计算多种性质，与 MD 集合和实验数据对比，识别「集合敏感」性质。</li>
+<li><strong>验证方式</strong>：在 72 抗体性质评估集上系统对比单结构 vs 集合的性质预测准确率。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 4：CDR 环构象状态的显式标注学习</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：Cadense 的 centrality/support 分数不直接对应 apo/holo 状态，用户难以选择特定状态的构象。</li>
+<li><strong>核心假设</strong>：在训练时引入状态标签（如通过 MSM 亚稳态或实验结构标注），可学习显式的状态条件生成。</li>
+<li><strong>初步方法</strong>：在训练目标中加入状态分类损失，或在采样时用状态条件引导。</li>
+<li><strong>验证方式</strong>：在已知 apo/holo 配对的抗体上，评估条件生成能否精确恢复指定状态。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 5：Cadense 集合作为 MD 的「初始构象生成器」</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：MD 模拟的初始构象选择影响采样效率，Cadense 生成的多样化集合可作为更好的 MD 起点。</li>
+<li><strong>核心假设</strong>：从 Cadense 集合启动的 MD 模拟比从单一晶体结构启动的模拟更快达到构象平衡。</li>
+<li><strong>初步方法</strong>：对同一抗体，分别从 Cadense 集合和晶体结构启动 MD，比较构象空间探索效率。</li>
+<li><strong>验证方式</strong>：计算两种启动方式的构象空间覆盖率和亚稳态转换时间。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 6：跨物种/支架泛化——纳米抗体构象集合</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：Cadense 仅针对常规 IgG 样 Fv，未验证单域抗体（VHH）等支架。</li>
+<li><strong>核心假设</strong>：Cadense 的架构可迁移到 VHH 等单域抗体，但需要调整训练数据分布。</li>
+<li><strong>初步方法</strong>：用 VHH 的 MD 轨迹微调 Cadense，评估 CDR3 构象集合质量。</li>
+<li><strong>验证方式</strong>：在 VHH 的 apo/holo 配对和性质预测上对比 Cadense 与基线方法。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, results, discussion, methods, appendices) as provided.</li>
+<li><strong>Assessment boundary</strong> Scientific validity, technical soundness, clarity, and support for claims based solely on the supplied text. No external data, code, or supplementary files were accessed.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors introduce Cadense, a generative equivariant diffusion model that produces diverse antibody Fv conformational ensembles from sequence alone, trained on large-scale all-atom molecular dynamics (MD) trajectories. They claim Cadense recovers apo and holo states, reproduces MD-derived flexibility and biophysical property distributions, and improves physics-based docking over static structure predictors.</li>
+<li><strong>Visible evidence base</strong> Main text figures referenced (Figures 1, 2, 3, 4, 5, 6), supplementary figures (A1, A2, A3), supplementary tables (A1), and methodological descriptions in Sections 4 and Appendices A–H.</li>
+<li><strong>Missing materials affecting confidence</strong> Actual figure images, numerical data, statistical analyses, model training details (hyperparameters, compute), full benchmark definitions, and code availability. Supplementary appendices referenced but not provided in full.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript presents a timely and potentially impactful contribution to antibody structure prediction by addressing conformational ensembles, a recognized limitation of static predictors. The methodological design is thoughtful, particularly the curriculum learning strategy based on Markov state models and the use of MD-derived training data. However, the evidence as presented is insufficient to fully establish the core claims. Key quantitative results (e.g., docking scores, property flagging rates, RMSF correlations) are described qualitatively without numerical support in the visible text. The held-out evaluation sets are described, but the selection criteria and statistical rigor are not fully detailed. The docking protocol, while adapted from prior work, introduces several modifications that could affect comparability, and the oracle analysis highlights a gap between selection and optimal performance that is not fully addressed. Overall, the work is promising but requires substantial additional evidence and clarification before the claims can be considered established.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists and bioinformaticians developing or applying structure prediction tools; antibody engineers and therapeutic discovery scientists seeking dynamics-aware design methods; and researchers in generative modeling for proteins. The potential to replace costly MD simulations with fast ensemble generation would be of broad interest to both academic and industrial groups.</li>
+<li><strong>Major strengths</strong> 1. Addresses a clear and important gap: static structure prediction ignores conformational dynamics, which are critical for antibody function. 2. The training data scale (13,192 MD trajectories) is substantial and represents a significant resource. 3. The curriculum learning approach using MSM-derived equilibrium weights is methodologically novel and well-motivated. 4. The evaluation includes multiple complementary dimensions: state recovery, flexibility profiles, property distributions, and docking. 5. The inclusion of two internally crystallized structures (Apo 1, Apo 2) as out-of-distribution test cases is a strong validation strategy.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "Cadense ensembles reduced false red flags 3.5-fold compared to static snapshots" and "Cadense ensembles with HADDOCK-based selection outperformed single-structure baselines"</li>
+<li><strong>Evidence pointer</strong> Section 2.2, Figure 5; Section 2.3, Figure 6</li>
+<li><strong>Concern</strong> The central quantitative claims are presented without numerical values, error bars, or statistical significance tests in the visible text. The 3.5-fold reduction and docking improvements are stated but not substantiated with data (e.g., exact counts, confidence intervals, p-values). Without these, the reader cannot assess the robustness or magnitude of the reported effects.</li>
+<li><strong>Why it matters</strong> These claims are the primary evidence for Cadense's practical utility. If the effect sizes are small or highly variable, the conclusions may not hold. The lack of statistical detail prevents independent verification and comparison with existing methods.</li>
+<li><strong>Resolution test</strong> Provide exact numbers for false red flag counts (e.g., 4 vs. 14), docking scores (mean and standard deviation for each method), and statistical tests (e.g., paired t-test or Wilcoxon) with reported p-values. Include these in the main text or a clearly referenced supplementary table.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "Cadense learns the conformational distribution present in its training data and cannot extrapolate to motions or states absent from that data"</li>
+<li><strong>Evidence pointer</strong> Section 3 (Discussion), Section 4.4 (Training data)</li>
+<li><strong>Concern</strong> The limitation that Cadense cannot extrapolate beyond training data is acknowledged, but the extent of this limitation is not quantified. The training data consists of 200 ns MD simulations, which may not sample slow conformational transitions relevant to antibody function. The manuscript does not discuss how this timescale limitation affects the utility of the generated ensembles for real-world applications, nor does it compare the diversity of generated ensembles to experimentally observed conformational heterogeneity beyond the few test cases.</li>
+<li><strong>Why it matters</strong> If the model only reproduces conformations accessible within 200 ns, it may miss functionally important states that occur on longer timescales. This would limit its applicability to antibodies with slow conformational dynamics, which are often the most interesting targets.</li>
+<li><strong>Resolution test</strong> Provide an analysis of the timescales of conformational changes in the training data and compare the diversity of generated ensembles to experimental ensembles (e.g., from NMR or multiple crystal structures) for a broader set of antibodies. Discuss the implications of the 200 ns limit for practical use.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> "Cadense follows a two-component design... The score model is built on the Equiformer architecture"</li>
+<li><strong>Evidence pointer</strong> Section 4.1, Section 4.2, Section 4.3, Appendices F, G, H</li>
+<li><strong>Concern</strong> The model description, while detailed, lacks specific hyperparameters (e.g., number of layers, hidden dimensions, learning rate, batch size), training compute requirements, and the exact noise schedule parameters. The supplementary appendices are referenced but not provided, making it impossible to reproduce the model or assess its computational feasibility.</li>
+<li><strong>Why it matters</strong> Reproducibility is a core requirement for scientific claims. Without full training details, other groups cannot build upon or verify the method. The computational cost is also a key practical consideration for potential users.</li>
+<li><strong>Resolution test</strong> Provide a complete table of hyperparameters, training time, and hardware used. Ensure the supplementary appendices are publicly available and contain all necessary implementation details, including code or a link to a public repository.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Benchmark validity</li>
+<li><strong>Claim pointer</strong> "We test this hypothesis at scale on 44 internal antibody–antigen complexes"</li>
+<li><strong>Evidence pointer</strong> Section 2.3, Figure 6</li>
+<li><strong>Concern</strong> The docking benchmark uses "internal" complexes, which are not described in terms of their diversity, difficulty, or how they were selected. The protocol modifies the original ensemble docking approach (Ref. [21]) with several changes (e.g., disabling random orientations, center-of-mass restraints), which may bias results. The comparison to Boltz-2 cofolding is described as a "reference point," but the conditions are not matched (e.g., Boltz-2 uses sequence input, while Cadense uses pre-aligned structures).</li>
+<li><strong>Why it matters</strong> The docking results are a key demonstration of practical utility. If the benchmark is not representative or the protocol is biased, the conclusions may not generalize. The comparison to Boltz-2 is not apples-to-apples, which could mislead readers about relative performance.</li>
+<li><strong>Resolution test</strong> Describe the 44 complexes in detail (e.g., antigen class, binding affinity range, conformational change magnitude). Justify each protocol modification and its impact on results. For the Boltz-2 comparison, either match input conditions or clearly state the differences and their implications.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Figure 2 description</li>
+<li><strong>Evidence pointer</strong> Section 2.1, Figure 2</li>
+<li><strong>Issue</strong> The description of the apo/holo recovery analysis is brief. It is unclear how "distance to apo" and "distance to holo" are aggregated across the ensemble (e.g., minimum, mean, or distribution). The "centrality" and "support" scores are mentioned but not defined in the main text.</li>
+<li><strong>Required correction</strong> Clarify the aggregation method and provide a brief definition of centrality and support in the main text or a clear pointer to Appendix B.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Comparison to existing methods</li>
+<li><strong>Evidence pointer</strong> Section 1 (Introduction), Section 2.1</li>
+<li><strong>Issue</strong> The introduction mentions ABodyBuilder4-STEROIDS as the most related prior work, but the comparison in Section 2.1 is limited to ABodyBuilder3, Boltz-2, and Ibex. The supplementary figure A3 includes ABB4-STEROIDS, but the main text does not discuss how Cadense compares to this directly relevant method.</li>
+<li><strong>Required correction</strong> Add a brief discussion of how Cadense compares to ABodyBuilder4-STEROIDS in the main text, referencing the supplementary figure.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability</li>
+<li><strong>Affected element</strong> Section 4.3 (Sampling)</li>
+<li><strong>Evidence pointer</strong> Section 4.3</li>
+<li><strong>Issue</strong> The description of the hybrid Langevin dynamics and the temperature-like parameter λ0 is dense and may be difficult for non-specialist readers to follow. The practical implications of these parameters (e.g., how they affect sample diversity vs. quality) are not clearly stated.</li>
+<li><strong>Required correction</strong> Provide a brief intuitive explanation of λ0 and ψ and their effect on the generated ensembles, perhaps with a simple analogy or a reference to a figure.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Data availability</li>
+<li><strong>Affected element</strong> Training data</li>
+<li><strong>Evidence pointer</strong> Section 4.4, Appendix D</li>
+<li><strong>Issue</strong> The training data is described as drawn from public databases, but the exact composition and any filtering criteria are not fully detailed. The statement that pOAS sequences were selected to "maximize diversity" is vague.</li>
+<li><strong>Required correction</strong> Provide a more detailed description of the data selection process, including the number of sequences from each source and the specific diversity metrics used.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> 1. Lack of numerical results and statistical analyses for key claims (R1-M1). 2. Insufficient detail on model hyperparameters and training compute for reproducibility (R1-M3). 3. Incomplete description of the docking benchmark and protocol modifications, limiting comparability (R1-M4). 4. Unquantified limitations regarding training data timescales and extrapolation (R1-M2).</li>
+<li><strong>Assessment against Nature-style criteria</strong> <strong>Originality:</strong> High. The application of diffusion models to antibody conformational ensembles trained on MD data is a novel combination, and the curriculum learning strategy is a creative contribution. <strong>Scientific importance:</strong> High. Addressing conformational dynamics in antibody structure prediction has direct implications for therapeutic antibody design and understanding of antibody function. <strong>Interdisciplinary readership:</strong> Moderate to high. The topic bridges machine learning, structural biology, and drug discovery, but the methods section may be too technical for a general audience. <strong>Technical soundness:</strong> Currently insufficient. The methodological framework is sound, but the lack of quantitative evidence and incomplete benchmark descriptions prevent full assessment. <strong>Readability for nonspecialists:</strong> The introduction and results are generally accessible, but the methods and appendices are highly technical. The main text could benefit from clearer explanations of key concepts (e.g., diffusion, MSMs) for a broader readership.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The core idea is promising and the methodological design is thoughtful, but the current evidence base is insufficient to fully establish the claims. The authors must provide quantitative results with statistical rigor, complete model details, and a more transparent benchmark description.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "orders of magnitude faster than simulation" is not quantified with specific timing comparisons.</li>
+<li>The 3.5-fold reduction in false red flags is stated without numerical support or confidence intervals.</li>
+<li>The claim that Cadense "recovers both apo and holo conformations" is based on a small number of cases (three highlighted, seven aggregated) and may not be generalizable.</li>
+<li>The docking improvement over static structures is not quantified, and the oracle analysis suggests significant room for improvement in selection.</li>
+<li>The statement that Cadense "contains no antibody-specific architectural inductive biases" is a design claim that is not empirically tested (e.g., by comparing to a version with such biases).</li>
+<li>The generalizability of the model to antibodies with conformational changes on timescales longer than 200 ns is not assessed and is acknowledged as a limitation, but the practical impact is not discussed.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

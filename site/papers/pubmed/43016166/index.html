@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CRAFT: an antigen-specific TCR generative model for conditional de novo design with physicochemical constraints. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>CRAFT: an antigen-specific TCR generative model for conditional de novo design with physicochemical constraints.</h1>
+      <div class="meta">Yang, Xiaochuan; Li, Zaiduo; Li, Zhijuan; Zhang, Wei; Zhang, Xianyu; Yang, Tiansong; Liu, Mingliang; Li, Xiaokun</div>
+      <div class="meta muted">
+        
+        <span class="journal">Briefings in bioinformatics</span>
+        · 2026-11-12
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/43016166/">原文</a>
+      </div>
+      <p class="one-liner">该文提出CRAFT，一种基于抗原条件生成模型，用于在物理化学约束下从头设计抗原特异性TCR CDR3β序列，虽聚焦TCR序列设计而非直接蛋白质结构预测，但结合了结构合理性评估和可迁移的生成建模方法，与蛋白质结构计算课题相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">T-cell receptors (TCRs) are essential to adaptive immunity and mediate the recognition and elimination of malignant or infected cells through antigen-specific interactions. Despite the clinical progress of TCR-based immunotherapies, computational de novo design of antigen-specific TCRs remains difficult. The main difficulties include the complexity of peptide-major histocompatibility complex (pMHC)-dependent recognition, strict physicochemical requirements at the binding interface, and the small amount of paired training data available for model development. Current generative approaches depend largely on 1D sequence statistics and do not capture pMHC presentation context, interfacial physicochemical properties, and native receptor priors within a unified framework. We present conditional reconstruction of antigen fragments for TCRs (CRAFT), a decoupled generative model for pMHC-conditioned de novo design of antigen-specific TCR CDR3$\beta $ sequences under physicochemical constraints. With large-scale pretraining, CRAFT learns base representations that help reduce the limitations imposed by data scarcity. We further incorporate antigen-derived contextual information to guide antigen-specific TCR CDR3$\beta $ sequence design. The architecture comprises an antigen encoder (PrimeBERT) that captures the pMHC context and an autoregressive decoder (PrimeTCR) that preserves native receptor priors. The encoder and decoder are coupled through cross-attention and augmented with Atchley factor embeddings, allowing CRAFT to incorporate physicochemical constraints relevant to antigen-conditioned receptor design during sequence decoding. Across multiple evaluations, CRAFT demonstrates competitive sequence naturalness, together with favorable performance in specific binding, and predicted structural plausibility. Overall, CRAFT provides a computational framework for developing personalized tumor immunotherapies. It also holds potential to support clinical translation by enabling the efficient, targeted discovery of candidate TCRs.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">T细胞受体（TCR）对于适应性免疫至关重要，通过抗原特异性相互作用介导对恶性或感染细胞的识别与清除。尽管基于TCR的免疫疗法在临床上取得了进展，但抗原特异性TCR的计算从头设计仍然困难重重。主要难点包括肽-主要组织相容性复合体（pMHC）依赖性识别的复杂性、结合界面处严格的物理化学要求，以及可用于模型开发的配对训练数据量稀少。当前的生成方法主要依赖一维序列统计，未能在统一框架内捕捉pMHC呈递背景、界面物理化学性质及天然受体先验。我们提出了TCR抗原片段条件重建（CRAFT），这是一种解耦的生成模型，用于在物理化学约束下进行pMHC条件化的抗原特异性TCR CDR3$\beta$序列从头设计。通过大规模预训练，CRAFT学习了基础表示，有助于缓解数据稀缺带来的限制。我们进一步整合了抗原衍生的上下文信息，以指导抗原特异性TCR CDR3$\beta$序列设计。该架构包括一个抗原编码器（PrimeBERT），用于捕捉pMHC背景，以及一个自回归解码器（PrimeTCR），用于保留天然受体先验。编码器与解码器通过交叉注意力耦合，并辅以Atchley因子嵌入，使CRAFT能够在序列解码过程中纳入与抗原条件化受体设计相关的物理化学约束。在多项评估中，CRAFT展示了具有竞争力的序列自然度，以及在特异性结合和预测结构合理性方面的良好表现。总体而言，CRAFT为开发个性化肿瘤免疫疗法提供了一个计算框架，并有望通过实现候选TCR的高效靶向发现，支持临床转化。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: CRAFT: an antigen-specific TCR generative model for conditional de novo design with physicochemical constraints</li>
+<li><strong>作者</strong>: Yang, Xiaochuan; Li, Zaiduo; Li, Zhijuan; Zhang, Wei; Zhang, Xianyu; Yang, Tiansong; Liu, Mingliang; Li, Xiaokun</li>
+<li><strong>单位</strong>: 未提供（根据基金信息推测为中国黑龙江省的机构）</li>
+<li><strong>期刊/平台</strong>: Briefings in Bioinformatics</li>
+<li><strong>年份</strong>: 2026（在线发表日期 2026-11-12）</li>
+<li><strong>论文类型</strong>: 方法学（AI 生成模型 + 计算验证）</li>
+<li><strong>领域</strong>: 计算免疫学 / TCR 序列设计 / 蛋白质语言模型</li>
+<li><strong>关键词</strong>: TCR, CDR3β, de novo design, pMHC, generative model, physicochemical constraints</li>
+<li><strong>DOI/arXiv</strong>: DOI: 10.1093/bib/bbag616</li>
+<li><strong>代码</strong>: https://github.com/fly9090/CRAFT</li>
+<li><strong>数据</strong>: IEDB, TCRdb 2.0, McPAS-TCR, VDJdb, TRAIT, MIRA, STCRDab（均公开）</li>
+<li><strong>阅读日期</strong>: 2026-12-01（假设）</li>
+<li><strong>在课题方向中的位置</strong>: 本文属于「蛋白质/多肽序列设计 × 条件生成模型」方向，聚焦 TCR CDR3β 序列的抗原条件从头设计。与 AlphaFold 等结构预测方法互补，属于序列层面的条件生成，但通过结构预测工具（ESM3、AlphaFold3）进行下游验证，连接了序列生成与结构合理性评估。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>CRAFT 通过解耦的编码器-解码器架构（PrimeBERT 编码 pMHC 抗原上下文 + PrimeTCR 自回归生成 CDR3β），结合 Atchley 因子物理化学约束和交叉注意力条件注入，在保持序列自然度的同时实现抗原特异性 TCR CDR3β 的从头设计，并在常见、稀有、新型表位三种数据条件下均优于现有基线。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 如何在数据稀缺、pMHC 识别机制复杂的条件下，生成抗原特异性 TCR CDR3β 序列，同时满足序列自然度、结合特异性和结构合理性？</li>
+<li><strong>为什么重要</strong>: TCR 是适应性免疫的核心识别分子，工程化 TCR 疗法（如 TCR-T）在实体瘤治疗中具有潜力，但 CDR3β 序列空间巨大且实验筛选成本极高，计算设计可大幅缩小候选范围。</li>
+<li><strong>现有方法不足</strong>: </li>
+<li>现有生成模型（GRATCR、TCR-epiDiff、TcrDesign）多依赖 1D 序列统计，未显式建模 pMHC 上下文；</li>
+<li>大型预训练模型（如 TCR-T5）虽捕获序列分布，但缺乏条件控制机制；</li>
+<li>直接训练条件生成器易过拟合于有限的配对数据，破坏自然先验。</li>
+<li><strong>精确研究问题</strong>: Can a decoupled generative architecture with explicit physicochemical constraints produce antigen-specific TCR CDR3β sequences that are simultaneously natural, condition-specific, and structurally plausible?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p>（标注：以下脉络基于本文 Introduction 和 Related Work 的框架，未经外部系统核验，但所引方法均为该领域公开工作。）</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列统计检索</td>
+<td>OLGA、K-mer 分析</td>
+<td>可解释、计算快</td>
+<td>无法生成新序列</td>
+<td>作为评估工具</td>
+</tr>
+<tr>
+<td>1D 语言模型生成</td>
+<td>GRATCR (Seq2Seq)、TcrDesign</td>
+<td>学习序列分布</td>
+<td>缺乏抗原条件控制</td>
+<td>作为基线对比</td>
+</tr>
+<tr>
+<td>条件生成</td>
+<td>TCR-epiDiff (扩散模型)</td>
+<td>条件生成能力</td>
+<td>分布覆盖差、结构合理性弱</td>
+<td>作为基线对比</td>
+</tr>
+<tr>
+<td>大规模预训练</td>
+<td>TCR-T5</td>
+<td>序列自然度高</td>
+<td>条件控制弱</td>
+<td>作为基线对比</td>
+</tr>
+<tr>
+<td>结构感知设计</td>
+<td>AlphaFold3、ESM3</td>
+<td>结构验证</td>
+<td>计算成本高</td>
+<td>作为下游验证工具</td>
+</tr>
+<tr>
+<td><strong>本文</strong></td>
+<td><strong>CRAFT</strong></td>
+<td><strong>解耦条件生成 + 物理化学约束</strong></td>
+<td><strong>依赖预测工具验证</strong></td>
+<td><strong>核心贡献</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>配对数据稀缺</td>
+<td>抗原-TCR 配对数据远少于单序列数据</td>
+<td>实验测定 TCR 特异性成本高、通量低</td>
+<td>Methods 节 "TCR–pMHC pairing dataset"：仅 13 万训练对 vs 数百万单序列</td>
+</tr>
+<tr>
+<td>条件生成过拟合</td>
+<td>直接训练条件模型导致序列多样性下降</td>
+<td>有限配对数据使模型记忆训练样本而非学习泛化规律</td>
+<td>Results 节 "Ablation analysis"：无预训练变体在稀有/新型表位上性能显著下降</td>
+</tr>
+<tr>
+<td>物理化学约束缺失</td>
+<td>生成序列虽统计合理但结合界面不合理</td>
+<td>纯序列模型不感知残基理化性质</td>
+<td>Results 节 "Structural characterization"：Atchley 约束提升结构指标</td>
+</tr>
+<tr>
+<td>1D 统计无法捕获 pMHC 上下文</td>
+<td>序列相似 ≠ 结合特异性</td>
+<td>pMHC 识别涉及构象匹配和界面互补</td>
+<td>Introduction 节：现有方法"do not capture pMHC presentation context"</td>
+</tr>
+<tr>
+<td>评估维度单一</td>
+<td>仅序列相似性不足以评估设计质量</td>
+<td>缺乏结构层面的验证手段</td>
+<td>Results 节：引入 pLDDT、pTM、RMSD 等多维度评估</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>: 一个两阶段训练的条件生成模型——先在百万级单序列上预训练编码器（PrimeBERT）和解码器（PrimeTCR），再在 13 万配对数据上微调，通过交叉注意力将 pMHC 上下文注入解码过程，并用 Atchley 因子作为物理化学正则项。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>: 
+   - <strong>解耦优于联合训练</strong>：将抗原编码和受体生成分离，各自在大规模单模态数据上预训练，避免有限配对数据对两个模态的联合过拟合；
+   - <strong>物理化学约束可微注入</strong>：Atchley 因子作为固定查找表，将氨基酸的理化性质（疏水性、体积、电荷等）以可微方式引入训练损失，无需额外结构计算；
+   - <strong>条件注入时机关键</strong>：在解码每一步通过交叉注意力注入 pMHC 上下文，而非仅在序列开头，使条件信息能动态影响每个残基的选择。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]: 
+   - 在数据稀缺的条件生成任务中，「先预训练单模态、再微调跨模态」比「直接联合训练」更鲁棒；
+   - 物理化学约束可以以「软正则」而非「硬过滤」的形式融入生成过程，保持生成多样性的同时提升合理性；
+   - 结构预测工具（ESM3、AlphaFold3）可作为生成模型的「虚拟实验台」，弥补实验验证的不足。</p>
+</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: pMHC 上下文（MHC 伪序列 + 表位肽段序列）+ 目标 CDR3β 前缀（生成时）</li>
+<li><strong>输出</strong>: 抗原特异性 TCR CDR3β 序列（从头生成）</li>
+<li><strong>模块</strong>:
+  1. <strong>PrimeBERT（编码器）</strong>: 双向 Transformer，处理 MHC 伪序列 + 表位肽段，输出 pMHC 上下文表示
+  2. <strong>PrimeTCR（解码器）</strong>: 自回归 GPT-2 架构，生成 CDR3β 序列
+  3. <strong>交叉注意力层</strong>: 连接编码器输出与解码器状态，实现条件注入
+  4. <strong>Atchley 因子嵌入</strong>: 将每个残基映射到 5D 理化性质向量，与 token 嵌入相加
+  5. <strong>物理化学正则项</strong>: 在训练损失中加入 Atchley 空间中的三元组损失</li>
+<li><strong>训练流程</strong>:
+  1. 预训练阶段：PrimeBERT 在 &gt;300 万表位序列上 MLM 预训练；PrimeTCR 在 &gt;450 万 CDR3β 序列上 CLM 预训练
+  2. 微调阶段：在 13 万配对数据上联合微调，损失 = L_gen + λ·L_phy（λ=0.5）</li>
+<li><strong>推理</strong>: 束搜索（beam width=50），后处理过滤（无效字符、重复、端点模式）</li>
+<li><strong>工具</strong>: PyTorch, 2× NVIDIA RTX 6000 (24GB)</li>
+<li><strong>假设</strong>: 表位和 CDR3β 序列长度 ≤30；CDR3β 保守端点 C 和 F/W</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PrimeBERT 编码器</td>
+<td>编码 pMHC 上下文</td>
+<td>提供抗原特异性条件信息</td>
+<td>输入: MHC 伪序列+表位; 输出: 上下文向量</td>
+<td>Results 图 1c; 消融实验显示无编码器时性能下降</td>
+<td>预期：生成序列失去抗原特异性（消融实验支持）</td>
+</tr>
+<tr>
+<td>PrimeTCR 解码器</td>
+<td>自回归生成 CDR3β</td>
+<td>学习自然 TCR 序列分布</td>
+<td>输入: 前缀 token; 输出: 下一个 token 分布</td>
+<td>Results 图 1d; 预训练必要性消融</td>
+<td>预期：序列自然度显著下降（消融实验支持）</td>
+</tr>
+<tr>
+<td>交叉注意力</td>
+<td>条件信息注入</td>
+<td>使 pMHC 上下文影响每一步生成</td>
+<td>输入: 解码器状态+编码器输出; 输出: 条件化状态</td>
+<td>Results 节 "Ablation analysis" 中替换为前缀/池化条件</td>
+<td>实测：替换为简单条件注入后性能下降</td>
+</tr>
+<tr>
+<td>Atchley 因子嵌入</td>
+<td>引入理化性质</td>
+<td>使模型感知残基物理化学属性</td>
+<td>输入: 氨基酸; 输出: 5D 向量</td>
+<td>Results 节 "Ablation analysis" 中移除 Atchley 输入</td>
+<td>实测：移除后结构指标下降</td>
+</tr>
+<tr>
+<td>物理化学正则项</td>
+<td>约束生成序列的理化性质</td>
+<td>使生成序列与表位理化性质匹配</td>
+<td>输入: 生成序列+表位的 Atchley 均值; 输出: 三元组损失</td>
+<td>λ 敏感性分析（λ=0.5 最优）</td>
+<td>预期：λ=0 时特异性下降，λ过大时多样性下降</td>
+</tr>
+<tr>
+<td>后处理过滤</td>
+<td>筛选有效序列</td>
+<td>去除无效字符、重复、端点异常</td>
+<td>输入: 原始生成序列; 输出: 有效序列集</td>
+<td>Methods 节 "Inference and filtering"</td>
+<td>预期：减少无效候选，但可能降低多样性</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>（本文公式较少，以下为理解所需的核心公式）</p>
+<ol>
+<li>
+<p><strong>输入表示</strong>（PrimeBERT）:
+   e_i = token_embedding(x_i) + positional_embedding(i) + W·a_i
+   - e_i: 位置 i 的输入表示
+   - x_i: 位置 i 的氨基酸 token
+   - a_i ∈ R^5: 位置 i 的 Atchley 因子向量
+   - W: 可学习的投影矩阵（将 5D Atchley 映射到隐藏维度）</p>
+</li>
+<li>
+<p><strong>自回归生成</strong>（PrimeTCR）:
+   P(y) = ∏<em>{t=1}^{T} P(y_t | y</em>{&lt;t}, c)
+   - y_t: 位置 t 的氨基酸
+   - c: pMHC 条件上下文（编码器输出）
+   - 交叉注意力: H_inject = CrossAttn(Q=H_dec, K=V=H_enc)</p>
+</li>
+<li>
+<p><strong>训练损失</strong>:
+   L = L_gen + λ·L_phy
+   - L_gen: 标准交叉熵（自回归 token 预测）
+   - L_phy: 物理化学正则项（三元组损失）
+   - λ = 0.5（敏感性分析确定）</p>
+</li>
+<li>
+<p><strong>物理化学正则项</strong>（三元组损失）:
+   L_phy = Σ_i [d(ā_TCR^(i), ā_epi^(i)) - d(ā_TCR^(i), ā_epi^(π(i))) + γ]<em>+
+   - ā_TCR^(i): 第 i 个生成序列的 Atchley 均值向量
+   - ā_epi^(i): 第 i 个样本表位的 Atchley 均值向量
+   - π(i): 批内随机置换索引（负样本）
+   - γ = 0.1: 边界值
+   - [x]</em>+ = max(0, x)</p>
+</li>
+<li>
+<p><strong>新颖性指标</strong>:
+   Novelty(τ) = 生成序列中与训练集最大同一性 &lt; τ 的比例
+   - τ ∈ {0.40, 0.50, 0.60, 0.70}
+   - 结果：0.622, 0.713, 0.805, 0.884</p>
+</li>
+</ol>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集</strong>:
+- 预训练：IEDB（&gt;300 万表位序列）、TCRdb 2.0（&gt;450 万 CDR3β 序列）
+- 微调：整合公共数据库（McPAS-TCR, VDJdb, TRAIT, MIRA, IEDB, STCRDab），&gt;13 万训练对 + 2.4 万验证对
+- 测试：按表位已知配对数量分为 common（&gt;20 对）、rare（10-20 对）、novel（&lt;10 对）三个子集</p>
+<p><strong>基线</strong>: TCR-epiDiff、GRATCR、TcrDesign、TCR-T5、随机突变基线</p>
+<p><strong>评估指标</strong>:
+- 序列自然度：长度分布、K-mer JS 散度、OLGA p_gen
+- 条件特异性：TCRBinder 预测结合概率
+- 序列保真度：Char-BLEU、NSR
+- 结构合理性：ESM3/AlphaFold3 预测结构，pLDDT、pTM、RMSD</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>长度分布分析</td>
+<td>CRAFT 生成序列长度接近自然分布</td>
+<td>与 4 个基线 + 自然库对比</td>
+<td>CRAFT 分布集中，均值 14.756 vs 自然 14.346</td>
+<td>CRAFT 保持自然长度特征</td>
+<td>长度接近 ≠ 功能有效</td>
+<td>Results 图 2a</td>
+</tr>
+<tr>
+<td>K-mer JS 散度</td>
+<td>CRAFT 局部序列组成自然</td>
+<td>k=2,3,4 与自然库对比</td>
+<td>CRAFT JS ≈ 0.40/0.58/0.64，优于 GRATCR/TcrDesign</td>
+<td>CRAFT 捕获局部序列语法</td>
+<td>JS 散度低 ≠ 结合特异性高</td>
+<td>Results 图 2c</td>
+</tr>
+<tr>
+<td>p_gen 分析</td>
+<td>CRAFT 生成序列在重组概率上合理</td>
+<td>OLGA 估计</td>
+<td>CRAFT 平均 p_gen 高于多数基线</td>
+<td>CRAFT 序列在 V(D)J 重组中可行</td>
+<td>高 p_gen ≠ 高结合力</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>Char-BLEU / NSR</td>
+<td>CRAFT 保持参考序列保真度</td>
+<td>与 TCR-T5、TcrDesign 对比</td>
+<td>CRAFT 与 TCR-T5/TcrDesign 同属最优组</td>
+<td>CRAFT 序列保真度与 SOTA 相当</td>
+<td>保真度高可能限制新颖性</td>
+<td>Results 图 2d-e</td>
+</tr>
+<tr>
+<td>TCRBinder 结合预测</td>
+<td>CRAFT 生成序列对目标表位有更高预测结合概率</td>
+<td>common/rare/novel 三子集，5 基线对比</td>
+<td>CRAFT 在三子集均最高（p&lt;0.01）</td>
+<td>CRAFT 条件生成有效</td>
+<td>预测结合 ≠ 实验结合</td>
+<td>Results 图 3a-c</td>
+</tr>
+<tr>
+<td>结构预测验证</td>
+<td>CRAFT 生成序列结构合理</td>
+<td>ESM3/AlphaFold3 预测</td>
+<td>pLDDT 0.9169（最高），RMSD 1.366Å（最低），pTM 0.719</td>
+<td>CRAFT 序列可折叠为合理结构</td>
+<td>预测结构 ≠ 实验结构</td>
+<td>Results 表 S4</td>
+</tr>
+<tr>
+<td>消融：无 pMHC 条件</td>
+<td>条件信息对性能的贡献</td>
+<td>移除编码器/交叉注意力</td>
+<td>结合预测显著下降</td>
+<td>pMHC 条件驱动特异性</td>
+<td>条件机制的具体贡献需进一步分解</td>
+<td>Results 图 4a-c</td>
+</tr>
+<tr>
+<td>消融：无 Atchley</td>
+<td>理化约束的贡献</td>
+<td>移除 Atchley 输入或设 λ=0</td>
+<td>结构指标下降，结合预测略降</td>
+<td>Atchley 约束提升结构合理性</td>
+<td>对结合预测贡献有限</td>
+<td>Results 图 S7-S11</td>
+</tr>
+<tr>
+<td>消融：无预训练</td>
+<td>预训练的必要性</td>
+<td>跳过预训练直接微调</td>
+<td>rare/novel 子集性能显著下降</td>
+<td>预训练缓解数据稀缺</td>
+<td>预训练不能完全替代配对数据</td>
+<td>Results 图 S12-S14</td>
+</tr>
+<tr>
+<td>消融：条件注入方式</td>
+<td>交叉注意力的优势</td>
+<td>替换为前缀/池化条件</td>
+<td>交叉注意力最优</td>
+<td>细粒度条件注入更有效</td>
+<td>最优注入方式可能依赖任务</td>
+<td>Results 图 S15-S17</td>
+</tr>
+<tr>
+<td>新颖性分析</td>
+<td>CRAFT 生成序列非训练集复制</td>
+<td>多阈值同一性分析</td>
+<td>Novelty(0.4-0.7) = 0.622-0.884</td>
+<td>CRAFT 生成新颖序列</td>
+<td>新颖 ≠ 功能有效</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>案例研究：TP53/KRAS</td>
+<td>临床相关表位的设计能力</td>
+<td>与 PDB 结构对比</td>
+<td>TM-score &gt; 0.93，RMSD &lt; 1.30Å</td>
+<td>CRAFT 在癌症新抗原上有效</td>
+<td>案例数量有限</td>
+<td>Results 图 5b-c</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 本文仅针对 TCR CDR3β 序列生成，不涉及 TCRα 链、全 TCR 或 TCR-pMHC 复合物共设计。</li>
+<li><strong>验证深度</strong>: 所有评估均为计算层面（序列统计、预测结合、预测结构），无实验结合数据（如表面等离子共振、T 细胞激活实验）。</li>
+<li><strong>「结合」的含义</strong>: TCRBinder 预测结合概率是代理指标，非真实亲和力测量。</li>
+<li><strong>结构验证的局限</strong>: ESM3/AlphaFold3 预测结构仅表明序列可折叠为合理构象，不保证与真实 pMHC 结合构象一致。</li>
+<li><strong>数据偏差</strong>: 训练数据来自公共数据库，可能存在表位和 TCR 类型偏差；novel 表位子集虽未在训练中出现，但相关表位可能通过序列相似性间接影响。</li>
+<li><strong>比较的公平性</strong>: 所有基线在相同数据划分和评估协议下比较，但基线超参数可能未充分调优。</li>
+<li><strong>有边界的结论</strong>: CRAFT 在计算指标上优于现有基线，可作为 TCR 候选序列的生成和优先排序工具，但需实验验证其功能。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>缺乏实验验证</td>
+<td>所有评估基于计算预测，无 wet-lab 结合/功能实验</td>
+<td>计划与实验团队合作进行体外验证</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>仅覆盖 CDR3β</td>
+<td>未设计 TCRα 链或全长 TCR</td>
+<td>扩展至 α/β 双链共设计</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>依赖预测工具</td>
+<td>结构合理性依赖 ESM3/AlphaFold3 预测</td>
+<td>引入更精确的结构验证流程</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>数据偏差</td>
+<td>训练数据来自公共数据库，可能不全面</td>
+<td>整合更多实验验证的 TCR 数据</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>计算资源需求</td>
+<td>预训练 + 微调需要大量 GPU 时间</td>
+<td>探索更高效的训练策略</td>
+<td>Methods 节（计算配置）</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TCRBinder 作为主要特异性指标</td>
+<td>TCRBinder 本身可能有偏差，且预测概率 ≠ 真实结合</td>
+<td>核心 claim 依赖此代理指标</td>
+<td>用实验结合数据（如酵母展示、SPR）验证</td>
+<td>Results 图 3</td>
+</tr>
+<tr>
+<td>与 TCR-T5 的差异较小</td>
+<td>在部分指标上 CRAFT 与 TCR-T5 接近，优势可能来自评估协议而非架构</td>
+<td>需明确 CRAFT 的独特贡献</td>
+<td>在更多样化的表位集上比较，或进行统计显著性检验</td>
+<td>Results 图 2d-e</td>
+</tr>
+<tr>
+<td>Atchley 因子的选择</td>
+<td>Atchley 因子是 5 维固定表示，可能不如学习到的理化表示</td>
+<td>物理化学约束的表示方式可能影响效果</td>
+<td>对比其他理化特征（如 AAindex）或学习表示</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>束搜索 + 过滤可能限制多样性</td>
+<td>束搜索倾向于高概率序列，过滤进一步缩小候选集</td>
+<td>可能降低探索新颖序列的能力</td>
+<td>对比采样策略（如 nucleus sampling）</td>
+<td>Methods 节 "Inference"</td>
+</tr>
+<tr>
+<td>消融实验的粒度</td>
+<td>消融是组件级别的，未深入分析交叉注意力头的行为</td>
+<td>理解条件注入机制有助于改进</td>
+<td>注意力头可视化、探针实验</td>
+<td>Results 图 S15-S17</td>
+</tr>
+<tr>
+<td>案例研究选择偏差</td>
+<td>选择的 TP53/KRAS 表位可能特别适合该模型</td>
+<td>需在更多样化的表位上验证</td>
+<td>扩展到随机选择的表位集</td>
+<td>Results 图 5</td>
+</tr>
+<tr>
+<td>未报告不确定性</td>
+<td>生成序列的置信度/不确定性未量化</td>
+<td>实际应用中需知道何时信任模型输出</td>
+<td>贝叶斯方法或集成不确定性估计</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>:</p>
+<ol>
+<li>
+<p><strong>解耦预训练策略</strong>（可迁移至抗体设计、抗原-抗体共设计）: 在配对数据稀缺时，先在单模态大数据上预训练编码器和解码器，再在有限配对数据上微调，比直接联合训练更鲁棒。可迁移至抗体 CDR-H3 设计、纳米抗体设计等类似场景。</p>
+</li>
+<li>
+<p><strong>物理化学约束的软正则化</strong>（可迁移至任意序列设计任务）: 将 Atchley 因子等理化性质以可微正则项形式融入训练损失，而非硬过滤，在保持多样性的同时提升合理性。可迁移至酶设计、结合肽设计等需要理化约束的任务。</p>
+</li>
+<li>
+<p><strong>交叉注意力条件注入</strong>（可迁移至多模态条件生成）: 在解码每一步通过交叉注意力注入条件信息，比仅在序列开头拼接条件更有效。可迁移至结构条件序列生成（如以 AlphaFold 预测结构为条件生成序列）。</p>
+</li>
+<li>
+<p><strong>多维度计算验证框架</strong>（可迁移至计算设计评估）: 序列统计（K-mer、p_gen）+ 预测结合（TCRBinder）+ 结构预测（ESM3/AlphaFold3）三层次验证，为无实验条件下的模型评估提供范式。可迁移至其他计算设计任务的评估协议。</p>
+</li>
+<li>
+<p><strong>零样本泛化评估协议</strong>（可迁移至条件生成模型评估）: 按条件信息的丰富度划分 common/rare/novel 子集，评估模型在不同数据稀缺程度下的泛化能力。可迁移至任何条件生成模型的评估设计。</p>
+</li>
+<li>
+<p><strong>新颖性量化方法</strong>（可迁移至序列设计评估）: 以训练集最大同一性阈值定义新颖率，量化生成序列是否真正探索新空间而非记忆训练样本。可迁移至蛋白质设计、抗体设计等序列生成任务。</p>
+</li>
+<li>
+<p><strong>结构预测作为生成模型验证工具</strong>（可迁移至序列设计 × 结构预测交叉方向）: 将 ESM3/AlphaFold3 预测结构作为生成序列的「虚拟实验」，在无湿实验条件下提供结构合理性证据。可迁移至任何序列生成 + 结构验证的工作流。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text, including abstract, introduction, results, discussion, materials and methods, and supplementary figure/table references. No supplementary files were provided for review.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the claims and evidence presented in the provided manuscript text. Supplementary materials, figures, and tables are referenced but were not available for direct inspection.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present CRAFT, a decoupled encoder-decoder generative model for antigen-specific TCR CDR3β sequence design. The model combines a BERT-based antigen encoder (PrimeBERT) with a GPT-2-based autoregressive receptor decoder (PrimeTCR), coupled via cross-attention and augmented with Atchley factor physicochemical embeddings. The authors claim competitive performance in sequence naturalness, conditional specificity, diversity, and predicted structural plausibility across common, rare, and novel epitope settings.</li>
+<li><strong>Visible evidence base</strong> Results sections describing statistical naturalness (length distributions, p_gen, K-mer analysis), fidelity metrics (Char-BLEU, NSR), conditional separation (Jaccard similarity), structural prediction (pLDDT, pTM, RMSD), ablation studies, and attention analysis. Materials and methods sections describing datasets, model architecture, training strategy, and inference procedures.</li>
+<li><strong>Missing materials affecting confidence</strong> All figures, supplementary tables, and supplementary notes were referenced but not provided. This includes Fig. 1-6, Supplementary Figs S1-S20, and Supplementary Tables S1-S14. Without these, quantitative results, statistical comparisons, and architectural details cannot be independently verified.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript presents a technically sound and well-motivated approach to a challenging problem in computational immunology. The decoupled architecture with explicit physicochemical constraints is a reasonable design choice, and the evaluation framework is comprehensive in scope. However, the absence of all figures and supplementary materials severely limits the ability to assess the validity of the reported results. The claims of competitive performance are plausible but not verifiable from the provided text alone. The manuscript would benefit from clearer reporting of baseline comparisons, statistical significance, and experimental validation pathways.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in computational immunology, TCR engineering, and protein design would find this work relevant. The model addresses a practical need for generating antigen-specific TCR candidates, which is of interest to those developing TCR-based immunotherapies. The methodological contributions around conditional generation with physicochemical constraints may also appeal to the broader generative protein model community.</li>
+<li><strong>Major strengths</strong> The problem is well-defined and clinically relevant. The decoupled architecture is a thoughtful response to the data scarcity challenge in TCR design. The evaluation framework spans multiple levels (sequence, structure, representation), which is more comprehensive than many comparable studies. The authors are appropriately cautious in their claims, explicitly acknowledging the computational nature of their structural and functional assessments.</li>
+<li><strong>Major Concerns</strong> The most significant concern is the complete absence of all figures and supplementary materials, making the reported quantitative results unverifiable. Additionally, the manuscript lacks experimental validation, which the authors acknowledge but which limits the practical significance of the claims. The comparison with baseline methods is described but the specific implementation details and hyperparameters for baselines are not fully specified. The clinical relevance claims, while reasonable, are speculative without functional data.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The manuscript cannot be fully evaluated without the figures and supplementary materials. The statistical methods for comparing distributions across models are not described in sufficient detail. The choice of λ = 0.5 is stated to be based on a sensitivity sweep, but the criteria for "most balanced performance" are not quantified. The attention analysis, while interesting, is presented as supportive rather than causal, which is appropriate but limits its interpretive value.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The decoupled architecture with explicit physicochemical constraints is a novel contribution, though it builds on established transformer and protein language model approaches. Scientific importance: The problem is important, and the approach has potential utility, but the lack of experimental validation limits the immediate impact. Interdisciplinary readership: The work bridges machine learning, immunology, and structural biology, which could attract a broad audience. Technical soundness: The architecture and training strategy are reasonable, but the missing supplementary materials prevent full assessment. Readability for nonspecialists: The manuscript is generally well-written and accessible, though some sections assume familiarity with TCR biology and transformer architectures.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The approach is promising and the evaluation framework is thoughtful, but the manuscript cannot be accepted in its current form without the full figures and supplementary materials, and without clearer reporting of statistical methods and baseline implementations.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence completeness</li>
+<li><strong>Claim pointer</strong> The manuscript reports quantitative results for sequence naturalness, fidelity, specificity, diversity, and structural plausibility across multiple evaluation settings.</li>
+<li><strong>Evidence pointer</strong> Figures 1-6, Supplementary Figures S1-S20, Supplementary Tables S1-S14 (location not provided)</li>
+<li><strong>Concern</strong> All figures and supplementary materials are referenced but were not provided for review. This includes the main architectural diagram (Fig. 1), all quantitative comparisons (Figs. 2-6), and all supplementary data tables. Without these, the reported numerical results (e.g., p_gen values, JS divergences, pLDDT scores, RMSD values) cannot be verified, and the architectural details cannot be confirmed.</li>
+<li><strong>Why it matters</strong> The core claims of the manuscript rest on quantitative comparisons and architectural descriptions that are entirely contained in the missing materials. A reviewer cannot assess whether the reported performance is accurate, whether the comparisons are fair, or whether the architecture is implemented as described.</li>
+<li>
+<p><strong>Resolution test</strong> Provide all figures and supplementary materials for review. Ensure that all quantitative claims in the main text are traceable to specific figures or tables.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Claim</strong> The manuscript reports statistically significant differences between CRAFT and baseline methods (e.g., p-values from Welch's t-tests with Holm-Bonferroni correction).</li>
+<li><strong>Evidence pointer</strong> Results section "Benchmark evaluation of antigen-conditioned sequence specificity and plausibility" (location not provided)</li>
+<li><strong>Concern</strong> The statistical methods are mentioned but not described in sufficient detail. The specific tests, sample sizes, effect sizes, and confidence intervals are not reported in the text. The choice of two-sided Welch's t-tests is appropriate for unequal variances, but the assumptions and limitations are not discussed. The Holm-Bonferroni correction is mentioned but the number of comparisons and the family-wise error rate are not specified.</li>
+<li><strong>Why it matters</strong> Without detailed statistical reporting, the reader cannot assess the robustness of the claimed differences between CRAFT and baselines. This is particularly important given the high variability often observed in generative model outputs.</li>
+<li>
+<p><strong>Resolution test</strong> Provide complete statistical reporting for all comparisons, including test statistics, degrees of freedom, effect sizes, confidence intervals, and the full correction procedure. Justify the choice of statistical tests and discuss their assumptions.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Baseline fairness</li>
+<li><strong>Claim</strong> CRAFT demonstrates competitive or superior performance compared to TCR-epiDiff, GRATCR, TcrDesign, and TCR-T5.</li>
+<li><strong>Evidence pointer</strong> Results section "CRAFT generates statistically natural and combinatorially consistent receptor libraries" and "Benchmark evaluation of antigen-conditioned sequence specificity and plausibility" (location not provided)</li>
+<li><strong>Concern</strong> The implementation details for the baseline methods are not provided. It is unclear whether the baselines were run using their original code and hyperparameters, or whether they were reimplemented. The training data, preprocessing steps, and evaluation protocols for baselines are not specified. This makes it difficult to determine whether the comparisons are fair.</li>
+<li><strong>Why it matters</strong> Unfair or inconsistent baseline implementations can lead to misleading conclusions about relative performance. The reader needs to know that all methods were evaluated under identical conditions.</li>
+<li>
+<p><strong>Resolution test</strong> Provide detailed descriptions of baseline implementations, including source code availability, hyperparameter settings, training data, and any modifications made. Ideally, provide a table summarizing the experimental setup for each method.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> External validation</li>
+<li><strong>Claim</strong> CRAFT generates antigen-specific TCR CDR3β sequences with predicted structural plausibility and potential clinical relevance.</li>
+<li><strong>Evidence pointer</strong> Results section "Structural characterization and interface distribution analysis of CRAFT-generated TCR candidates for clinically relevant cancer epitopes" (location not provided)</li>
+<li><strong>Concern</strong> All structural and functional assessments are based on computational predictions. No experimental validation is presented, such as binding assays, T-cell activation assays, or structural characterization. The authors acknowledge this limitation, but the lack of any wet-lab validation significantly limits the strength of the claims regarding clinical relevance.</li>
+<li><strong>Why it matters</strong> Computational predictions of binding and structure are known to have high false-positive rates. Without experimental validation, it is unclear whether the generated sequences would function as intended in biological systems.</li>
+<li><strong>Resolution test</strong> Provide at least preliminary experimental validation for a small number of generated sequences, or clearly frame the work as purely computational with explicit statements about the need for experimental follow-up.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Model architecture description</li>
+<li><strong>Evidence pointer</strong> Materials and methods, "Model architecture of CRAFT" (location not provided)</li>
+<li><strong>Issue</strong> The description of the cross-attention mechanism and residual fusion is somewhat brief. The equations for the attention computation and fusion step are referenced but not fully explained in the text.</li>
+<li>
+<p><strong>Required correction</strong> Provide a more detailed description of the cross-attention mechanism, including the exact computation steps and how the residual fusion is implemented. Consider including a pseudocode or algorithm box.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Hyperparameter settings</li>
+<li><strong>Evidence pointer</strong> Materials and methods, "Training strategy" (location not provided)</li>
+<li><strong>Issue</strong> The manuscript does not report key hyperparameters such as learning rate, batch size, number of layers, hidden dimensions, and optimizer settings for the pretraining and fine-tuning stages.</li>
+<li>
+<p><strong>Required correction</strong> Provide a table or list of all hyperparameters used in the experiments, including those for pretraining, fine-tuning, and inference.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation</li>
+<li><strong>Affected element</strong> Attention analysis</li>
+<li><strong>Evidence pointer</strong> Results section "Attention in CRAFT aligns with putative TCR contact regions" (location not provided)</li>
+<li><strong>Issue</strong> The attention analysis is presented as supportive evidence, but the interpretation is somewhat speculative. The manuscript states that attention is "not an exclusive proxy for direct physical contacts" but does not discuss alternative explanations in detail.</li>
+<li>
+<p><strong>Required correction</strong> Expand the discussion of the attention analysis to consider alternative interpretations, such as attention reflecting sequence context or longer-range dependencies, and discuss the limitations of using attention as evidence for functional relevance.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Dataset description</li>
+<li><strong>Evidence pointer</strong> Materials and methods, "Datasets and preprocessing" (location not provided)</li>
+<li><strong>Issue</strong> The manuscript states that the training and validation sets were segregated at the epitope level, but does not provide details on the number of unique epitopes, the distribution of epitope frequencies, or the potential for epitope overlap between training and validation sets.</li>
+<li><strong>Required correction</strong> Provide a more detailed description of the dataset composition, including the number of unique epitopes, the distribution of epitope frequencies, and any filtering criteria applied.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that CRAFT "demonstrates competitive sequence naturalness" is not verifiable without the figures and supplementary tables showing the actual distributions and comparisons.</li>
+<li>The claim that CRAFT achieves "favorable performance in specific binding" relies entirely on the TCRBinder prediction tool, which is itself a computational model with known limitations. The manuscript does not discuss the accuracy or limitations of TCRBinder.</li>
+<li>The claim that CRAFT "holds potential to support clinical translation" is speculative and not supported by any experimental evidence.</li>
+<li>The claim that the attention analysis provides evidence that CRAFT "captures structurally relevant patterns" is presented as supportive but is not rigorously quantified or compared to random attention patterns.</li>
+<li>The novelty rates reported in the evaluation overview (0.622, 0.713, 0.805, 0.884) are presented without confidence intervals or comparison to baseline methods, making it difficult to assess their significance.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

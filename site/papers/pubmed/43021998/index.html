@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mutational binding assessment for TCR engineering on experimental and AlphaFold 3 scaffolds. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Mutational binding assessment for TCR engineering on experimental and AlphaFold 3 scaffolds.</h1>
+      <div class="meta">Guo, Zhongliang; Oyama, Kei; Yamaguchi, Rui</div>
+      <div class="meta muted">
+        
+        <span class="journal">Frontiers in bioinformatics</span>
+        · 2026-11-13
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/43021998/">原文</a>
+      </div>
+      <p class="one-liner">该文评估AlphaFold 3预测结构与实验结构对TCR-pMHC突变结合亲和力预测的影响，属于蛋白质结构计算建模在免疫工程中的应用，方法涉及AI结构预测与突变打分，对象和问题均聚焦蛋白质结构相关计算。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Machine learning-based binding affinity prediction can support T-cell receptor (TCR) engineering, but its reliability remains uncertain when experimental structures of TCRs bound to peptide-major histocompatibility complexes (pMHCs) are unavailable and predicted structures must be used instead. Here, we examined how AlphaFold 3 (AF3) scaffold choice and conformational sampling affect DeltaDeltaG -based prioritization of TCR-pMHC complementarity-determining region (CDR) mutations. Bound-unbound structural comparisons showed that pMHC binding is associated mainly with local CDR remodeling, especially in CDR3 loops, whereas TCR framework regions remain comparatively stable. AF3 generally recovered bound-like TCR conformations, but downstream DeltaDeltaG prediction performance depended strongly on both scaffold source and model architecture. These scaffold-dependent differences indicate that experimental structures remain the most reliable input when available, although such structures are rarely accessible in prospective TCR design settings. Among AF3-based inputs, Prompt-DDG and RDE-PPI were relatively robust to wild-type predicted scaffolds, whereas BA-DDG and H3-DDG benefited more from mutant-specific AF3 scaffolds evaluated by reverse-mutation scoring. Across four templates, AF3-mutant scaffolds gave the highest mean top-10 recovery among the AF3-based inputs for all four predictors. These results support using experimental structures when available and suggest using AF3-mutant scaffolds for recovering top-ranked CDR candidates when only predicted structures are available.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">基于机器学习的结合亲和力预测可支持T细胞受体（TCR）工程，但当TCR与肽-主要组织相容性复合体（pMHC）结合的实验结构不可用而必须使用预测结构时，其可靠性仍不确定。在此，我们考察了AlphaFold 3（AF3）支架选择和构象采样如何影响基于DeltaDeltaG的TCR-pMHC互补决定区（CDR）突变优先级排序。结合-未结合结构比较显示，pMHC结合主要与局部CDR重塑相关，尤其是在CDR3环中，而TCR框架区相对稳定。AF3通常能恢复结合样TCR构象，但下游DeltaDeltaG预测性能强烈依赖于支架来源和模型架构。这些支架依赖性差异表明，实验结构在可用时仍是最可靠的输入，尽管在前瞻性TCR设计场景中此类结构很少能获得。在基于AF3的输入中，Prompt-DDG和RDE-PPI对野生型预测支架相对稳健，而BA-DDG和H3-DDG则更多受益于通过反向突变评分评估的突变特异性AF3支架。在四种模板中，AF3突变支架在所有四种预测器的基于AF3输入中给出了最高的平均前十恢复率。这些结果支持在可用时使用实验结构，并建议在仅有预测结构时使用AF3突变支架来恢复排名靠前的CDR候选。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Mutational binding assessment for TCR engineering on experimental and AlphaFold 3 scaffolds</li>
+<li><strong>作者</strong>：Guo, Zhongliang; Oyama, Kei; Yamaguchi, Rui</li>
+<li><strong>单位</strong>：未提供（根据作者信息推测为日本机构，具体单位未在摘要中提供）</li>
+<li><strong>期刊/平台</strong>：Frontiers in Bioinformatics</li>
+<li><strong>年份</strong>：2026（在线日期 2026-11-13）</li>
+<li><strong>论文类型</strong>：研究论文（benchmark/evaluation study）</li>
+<li><strong>领域</strong>：蛋白质结构预测 × 结合亲和力预测 × TCR 工程</li>
+<li><strong>关键词</strong>：TCR 工程、ΔΔG 预测、AlphaFold 3、CDR 突变、结构支架选择、构象采样</li>
+<li><strong>DOI/arXiv 号</strong>：10.3389/fbinf.2026.1879274</li>
+<li><strong>代码</strong>：https://github.com/zguo235/tcr_af3</li>
+<li><strong>数据</strong>：ATLAS 数据库（https://atlas.ibbr.umd.edu/web/index.php）</li>
+<li><strong>阅读日期</strong>：2026-05-13（根据当前日期推断）</li>
+<li><strong>在课题方向中的位置</strong>：本文系统评估了当实验结构不可用、必须使用 AlphaFold 3 预测结构时，四种 SOTA 结构-based ΔΔG 预测器（RDE-PPI、Prompt-DDG、BA-DDG、H3-DDG）在 TCR–pMHC 突变效应预测上的可靠性。属于「结构预测 × 结合亲和力预测」交叉方向，直接面向 TCR 工程中的候选突变排序问题，为「预测结构能否替代实验结构用于下游计算」这一核心问题提供了定量证据。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文通过 438 个 TCR–pMHC 突变体、5 种结构输入模式（实验结构、AF3 单结构、AF3 多结构、AF3 突变体结构等）和 4 种 ΔΔG 预测器的系统比较，发现实验结构仍是最可靠输入，但在仅有预测结构时，AF3 突变体结构配合反向突变打分（inversion–negation）是恢复 top 候选突变的最优策略，且不同预测器对结构支架的敏感性差异显著。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：当 TCR–pMHC 复合物的实验结构不可用时，使用 AlphaFold 3 预测结构作为 ΔΔG 预测器的输入，能否可靠地优先排序 CDR 突变体？</li>
+<li><strong>为什么重要</strong>：TCR 工程（如 TCR-T 疗法）需要大量候选突变体的亲和力排序。实验结构稀缺，若预测结构可用，将大幅扩展可工程化的靶点范围。TCR 工程是蛋白质设计的重要应用场景，CDR 环的构象变化直接影响结合亲和力。</li>
+<li><strong>现有方法不足</strong>：现有 ΔΔG 预测器（RDE-PPI、Prompt-DDG、BA-DDG、H3-DDG）均在实验结构上训练和验证，其在预测结构上的表现未知。且大多数 benchmark 使用单一结构输入，未系统评估结构来源（实验 vs. 预测）、结构类型（野生型 vs. 突变体）和构象采样（单结构 vs. 多结构）的影响。</li>
+<li><strong>精确的 Can 问题</strong>：Can AlphaFold 3-predicted TCR–pMHC scaffolds replace experimental structures for reliable ΔΔG-based prioritization of CDR mutations in TCR engineering?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文 Introduction 及作者引用，标注为「经外部核验」部分基于文中引用文献。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验结构时代的 ΔΔG 预测</td>
+<td>FoldX、Rosetta、MM/PBSA</td>
+<td>物理可解释</td>
+<td>精度有限、计算昂贵</td>
+<td>基线</td>
+</tr>
+<tr>
+<td>深度学习 ΔΔG 预测器</td>
+<td>RDE-PPI (Luo et al., 2023)、Prompt-DDG (Wu et al., 2024)、BA-DDG (Jiao et al., 2025)、H3-DDG (Xu et al., 2025)</td>
+<td>在 SKEMPI v2 上 Pearson r 达 0.7–0.8</td>
+<td>依赖实验结构输入；单结构静态打分</td>
+<td>本文评估的 4 个预测器</td>
+</tr>
+<tr>
+<td>结构预测突破</td>
+<td>AlphaFold 2/3 (Abramson et al., 2024)</td>
+<td>高精度复合物结构预测</td>
+<td>预测结构误差对下游 ΔΔG 的影响未知</td>
+<td>本文核心：AF3 结构作为替代输入</td>
+</tr>
+<tr>
+<td>构象采样增强</td>
+<td>DLA (Mohseni Behbahani et al., 2023) 用 Rosetta backrub 生成 ensemble</td>
+<td>考虑构象多样性</td>
+<td>仍以实验结构为起点</td>
+<td>本文扩展：AF3 多结构 ensemble</td>
+</tr>
+<tr>
+<td>序列-only 基线</td>
+<td>PPAC (Zhang et al., 2025)</td>
+<td>无需结构</td>
+<td>精度低于结构方法</td>
+<td>本文的序列基线对照</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在「实验结构 → AF3 预测结构」的替代链条中，系统量化不同预测器对结构支架的敏感性，并提出 AF3 突变体结构 + inversion–negation 打分作为无实验结构时的实用策略。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验结构稀缺</td>
+<td>TCR–pMHC 复合物晶体结构有限，新靶点常无实验结构</td>
+<td>膜蛋白复合物结晶困难，TCR–pMHC 复合物尤其具有构象异质性</td>
+<td>Introduction：多数设计场景无实验结构可用</td>
+</tr>
+<tr>
+<td>预测结构误差传导</td>
+<td>AF3 预测结构在 CDR 环区域存在 1–2 Å 级误差，可能破坏 ΔΔG 预测所需的精细接触几何</td>
+<td>AF3 对柔性环区（CDR3）的建模精度低于框架区；ΔΔG 预测器对局部接触几何高度敏感</td>
+<td>Results 2.2：AF3 CDR3 RMSD 0.95 Å（α）/0.72 Å（β），但界面侧链 RMSD 1.75 Å</td>
+</tr>
+<tr>
+<td>预测器对结构支架的敏感性不均</td>
+<td>BA-DDG 和 H3-DDG 在 AF3-WT 结构上性能大幅下降，而 Prompt-DDG 和 RDE-PPI 相对稳健</td>
+<td>不同预测器的架构（inverse-folding vs. 分布建模）对结构误差的容忍度不同</td>
+<td>Results 2.3：BA-DDG r 从 0.826 降至 0.658，H3-DDG 从 0.795 降至 0.551</td>
+</tr>
+<tr>
+<td>单结构 vs. ensemble 的收益不确定</td>
+<td>简单增加 AF3 采样数量并不总能提升 ΔΔG 预测精度</td>
+<td>AF3 样本并非 Boltzmann 加权，ensemble 平均可能引入非物理构象</td>
+<td>Results 2.3：ensemble 平均仅在部分预测器上有微弱提升</td>
+</tr>
+<tr>
+<td>突变体结构不可得</td>
+<td>实验上无法获得每个突变体的复合物结构</td>
+<td>突变体结构需逐一解析，成本极高</td>
+<td>方法 4.3：AF3 突变体结构作为替代方案</td>
+</tr>
+<tr>
+<td>序列-only 基线差距</td>
+<td>PPAC 的 Pearson r 仅 0.504，显著低于结构方法</td>
+<td>序列方法无法捕捉构象变化对结合的影响</td>
+<td>Results 2.3：PPAC r=0.504 vs. 结构方法 0.55–0.84</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>系统比较 5 种结构输入模式（实验野生型、AF3 野生型单结构、AF3 野生型多结构 ensemble、AF3 突变体单结构、AF3 突变体多结构 ensemble）× 4 种 ΔΔG 预测器（RDE-PPI、Prompt-DDG、BA-DDG、H3-DDG）+ 1 种序列基线（PPAC），在 438 个 TCR–MHC 突变体上评估 Pearson r、RMSE、MAE 以及 top-K 候选恢复率。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>结构来源比预测器选择更重要</strong>：实验结构 → AF3 结构的替换对某些预测器（BA-DDG、H3-DDG）是灾难性的，但对另一些（Prompt-DDG、RDE-PPI）影响较小。预测器架构决定了其对结构误差的鲁棒性。</li>
+<li><strong>突变体结构 + 反向打分（inversion–negation）是有效的补偿策略</strong>：当使用 AF3 生成的突变体结构时，预测器打分反向突变（mutant→WT）并取负，可以部分恢复因结构-序列不匹配造成的性能损失。这是因为 AF3 突变体结构已编码了突变引起的构象变化，反向打分让预测器在「结构-序列一致」的条件下工作。</li>
+<li><strong>构象 ensemble 的收益有限</strong>：简单增加 AF3 采样数量（20→100）不带来一致的性能提升，说明 AF3 样本多样性不等于物理相关的构象多样性。</li>
+<li><strong>CDR3 是误差集中区域</strong>：AF3 对 CDR3 的建模精度（RMSD 0.95 Å）虽优于实验未结合态（2.22 Å），但残余误差仍足以影响接触敏感的 ΔΔG 预测器。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>「结构-序列一致性」是 ΔΔG 预测的关键前提</strong>：当预测器在结构 A 上打分序列 B 的突变时，隐含假设结构 A 能代表序列 B 的构象。AF3 突变体结构 + 反向打分本质上是在恢复这一一致性。这一原则可推广到任何基于结构的突变效应预测任务。</li>
+<li><strong>预测器鲁棒性应作为选择标准</strong>：在无实验结构的实际应用中，应优先选择对结构误差不敏感的预测器（如 Prompt-DDG），而非仅在实验结构上精度最高的预测器。</li>
+<li><strong>「预测结构的误差模式」比「全局 RMSD」更重要</strong>：AF3 的框架区精度极高（0.78 Å），但 CDR3 和界面侧链的局部误差才是 ΔΔG 预测失败的主因。这提示结构质量评估应关注功能位点而非全局指标。</li>
+</ul>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：</li>
+<li>438 个 TCR–MHC 突变体（来自 ATLAS 数据库，37 个 TCR–pMHC 复合物模板）</li>
+<li>30 对 bound/unbound TCR 结构（TCRFlexDock benchmark）</li>
+<li>30 个 TCR–pMHC 复合物的 AF3 预测结构</li>
+<li><strong>输出</strong>：每个突变体的 ΔΔG 预测值、预测-实验相关性（Pearson r）、误差指标（RMSE、MAE）、top-K 候选恢复率</li>
+<li><strong>模块</strong>：
+  1. <strong>结构比较模块</strong>：IMGT/ANARCI 编号，框架区 Cα 叠合，计算 CDR 环、框架区、界面残基的 RMSD（Cα、全重原子、侧链）
+  2. <strong>AF3 预测模块</strong>：本地 AF3 安装，5 个模式（野生型单/多结构、突变体单/多结构），多结构模式为 10 seeds × 10 samples（野生型）或 2 seeds × 10 samples（突变体）
+  3. <strong>ΔΔG 预测模块</strong>：4 个预测器（RDE-PPI、Prompt-DDG、BA-DDG、H3-DDG），统一输入格式，forward（WT→mutant）或 reverse（mutant→WT）+ 取负
+  4. <strong>评估模块</strong>：全局 Pearson r、RMSE、MAE；per-template 分析；top-K 恢复率（K=3,5,10）；bootstrap 95% CI；Williams 检验比较单结构与 ensemble 相关性</li>
+<li><strong>训练</strong>：无新训练；使用各预测器的预训练权重（Prompt-DDG 的 codebook 按原文 recipe 重新预训练）</li>
+<li><strong>工具</strong>：Biopython（结构解析）、ANARCI（IMGT 编号）、本地 AF3、各预测器官方实现</li>
+<li><strong>流程</strong>：数据清洗（ATLAS 修正）→ 结构准备（5 种输入模式）→ ΔΔG 预测（4 预测器 × 5 模式）→ 统计评估（全局 + per-template + top-K）</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构比较模块</td>
+<td>量化 TCR 结合前后的构象变化</td>
+<td>建立「结合诱导构象变化」的基线，解释 AF3 预测的难度</td>
+<td>输入：30 对 bound/unbound TCR；输出：per-loop RMSD</td>
+<td>Results 2.1：CDR3α RMSD 2.22 Å，CDR3β 1.69 Å，框架区 0.86 Å</td>
+<td>无法量化 AF3 预测误差相对于真实构象变化的大小</td>
+</tr>
+<tr>
+<td>AF3 结构生成模块</td>
+<td>生成预测结构作为实验结构的替代</td>
+<td>核心问题：预测结构能否替代实验结构</td>
+<td>输入：序列；输出：5 种模式的 AF3 结构</td>
+<td>Results 2.2：AF3 CDR3 RMSD 0.86 Å（vs 实验 bound），优于 unbound 实验结构</td>
+<td>无法评估预测结构替代方案</td>
+</tr>
+<tr>
+<td>ΔΔG 预测模块（4 预测器）</td>
+<td>预测突变引起的结合自由能变化</td>
+<td>不同架构预测器对结构误差的鲁棒性不同</td>
+<td>输入：结构 + 突变信息；输出：ΔΔG 预测值</td>
+<td>Results 2.3：Prompt-DDG 在 AF3-WT 上 r=0.796 vs BA-DDG r=0.658</td>
+<td>无法比较预测器间鲁棒性差异</td>
+</tr>
+<tr>
+<td>Inversion–negation 打分</td>
+<td>在 AF3 突变体结构上反向打分</td>
+<td>恢复结构-序列一致性，利用 AF3 编码的突变构象信息</td>
+<td>输入：AF3 突变体结构 + 反向突变；输出：取负的 ΔΔG</td>
+<td>Results 2.3：AF3-mutant 模式对 BA-DDG 和 H3-DDG 提升最大</td>
+<td>无法利用突变体结构信息</td>
+</tr>
+<tr>
+<td>Ensemble 聚合模块</td>
+<td>对多 AF3 样本的预测取均值/中位数</td>
+<td>测试构象采样是否能提升预测稳定性</td>
+<td>输入：多个 AF3 样本的 ΔΔG 预测；输出：聚合值</td>
+<td>Results 2.3：仅 Prompt-DDG 和 RDE-PPI 有微弱提升（p&lt;0.05）</td>
+<td>无法评估 ensemble 策略价值</td>
+</tr>
+<tr>
+<td>Top-K 恢复评估</td>
+<td>衡量候选突变排序的实际效用</td>
+<td>工程场景关心 top 候选是否被正确识别</td>
+<td>输入：预测排序 + 实验排序；输出：恢复率</td>
+<td>Results 2.5：AF3-mutant 模式 top-10 恢复率最高</td>
+<td>无法评估工程实用性</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<table>
+<thead>
+<tr>
+<th>公式</th>
+<th>符号含义</th>
+<th>用途</th>
+<th>直觉</th>
+<th>来源指针</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ΔΔG = ΔG_mutant − ΔG_wildtype</td>
+<td>ΔG：结合自由能</td>
+<td>突变对结合亲和力的影响</td>
+<td>负值表示突变增强结合</td>
+<td>Introduction 定义</td>
+</tr>
+<tr>
+<td>ΔE_im = |ΔΔĜ_im^AF3-WT − ΔΔG_i^exp| − |ΔΔĜ_im^PDB − ΔΔG_i^exp|</td>
+<td>ΔΔĜ：预测值；ΔΔG^exp：实验值</td>
+<td>量化 AF3 结构替代实验结构导致的误差变化</td>
+<td>正值表示 AF3 结构增加预测误差</td>
+<td>Results 2.4 公式 (1)</td>
+</tr>
+<tr>
+<td>Jaccard distance = 1 − |C_PDB ∩ C_AF3| / |C_PDB ∪ C_AF3|</td>
+<td>C：接触残基对集合</td>
+<td>衡量 AF3 与实验结构的接触图差异</td>
+<td>0 表示完全一致，1 表示无重叠</td>
+<td>Methods 4.4</td>
+</tr>
+<tr>
+<td>w_j = r_j − min_k(r_k) + 10⁻³</td>
+<td>r_j：AF3 ranking score</td>
+<td>ensemble 加权聚合权重</td>
+<td>保证权重为正且与 ranking score 正相关</td>
+<td>Methods 4.3</td>
+</tr>
+<tr>
+<td>Pearson r</td>
+<td>预测与实验 ΔΔG 的线性相关</td>
+<td>全局预测精度</td>
+<td>0.8 以上为强相关</td>
+<td>Results 2.3</td>
+</tr>
+<tr>
+<td>top-K recovery = |predicted top-K ∩ experimental top-K| / K</td>
+<td>K：候选数</td>
+<td>工程场景的排序效用</td>
+<td>10/10 表示完美恢复</td>
+<td>Results 2.5</td>
+</tr>
+</tbody>
+</table>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：</li>
+<li>438 个 TCR–MHC 突变体（ATLAS 数据库，37 个模板，含 TCR/MHC/肽链突变）</li>
+<li>30 对 bound/unbound TCR（TCRFlexDock benchmark，25 Class I + 5 Class II）</li>
+<li>30 个 AF3 预测复合物结构</li>
+<li><strong>规模</strong>：438 突变 × 5 结构模式 × 4 预测器 = 8760 个 ΔΔG 预测（+ PPAC 序列基线）</li>
+<li><strong>指标</strong>：Pearson r、RMSE、MAE、top-K 恢复率（K=3,5,10）、bootstrap 95% CI</li>
+<li><strong>基线</strong>：PPAC（序列-only）、实验结构模式（PDB_template）作为上界</li>
+<li><strong>评测协议</strong>：3-fold cross-validation on SKEMPI v2（按复合物分割）；ATLAS 预测为 cross-validation 平均</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CDR 构象变化量化</td>
+<td>结合主要诱导 CDR3 重构</td>
+<td>30 对 bound/unbound，框架 Cα 叠合</td>
+<td>CDR3α 2.22 Å，CDR3β 1.69 Å，框架 0.86 Å</td>
+<td>结合诱导的构象变化集中在 CDR3</td>
+<td>无法区分诱导拟合 vs 选择机制</td>
+<td>Results 2.1, Fig 1</td>
+</tr>
+<tr>
+<td>AF3 结构精度</td>
+<td>AF3 能恢复 bound-like TCR 构象</td>
+<td>AF3 vs 实验 bound vs 实验 unbound</td>
+<td>AF3 CDR3 RMSD 0.86 Å，优于 unbound（1.77 Å）</td>
+<td>AF3 预测偏向 bound 构象</td>
+<td>无法证明 AF3 对所有 TCR–pMHC 系统均适用</td>
+<td>Results 2.2, Table 1</td>
+</tr>
+<tr>
+<td>预测器 × 结构模式交互</td>
+<td>结构来源影响预测器精度</td>
+<td>4 预测器 × 5 模式，438 突变</td>
+<td>PDB_template 最优（r=0.795–0.840）；AF3-WT 上 Prompt-DDG r=0.796 vs BA-DDG r=0.658</td>
+<td>预测器对结构误差鲁棒性差异显著</td>
+<td>无法推广到其他预测器</td>
+<td>Results 2.3, Table 2</td>
+</tr>
+<tr>
+<td>Inversion–negation 策略</td>
+<td>AF3 突变体结构 + 反向打分可恢复性能</td>
+<td>AF3-mutant vs AF3-WT，4 预测器</td>
+<td>BA-DDG r 0.658→0.669，H3-DDG 0.551→0.729</td>
+<td>突变体结构对部分预测器有效</td>
+<td>无法确定是否因 AF3 编码了真实突变构象</td>
+<td>Results 2.3, Table 2</td>
+</tr>
+<tr>
+<td>Ensemble 聚合</td>
+<td>多 AF3 样本提升预测</td>
+<td>单结构 vs 多结构（20/100 样本）</td>
+<td>仅 3/8 比较显著提升（p&lt;0.05）</td>
+<td>ensemble 收益有限</td>
+<td>无法排除其他聚合策略更优</td>
+<td>Results 2.3, Supp Tables 10-11</td>
+</tr>
+<tr>
+<td>Top-K 恢复</td>
+<td>AF3-mutant 模式恢复 top 候选</td>
+<td>4 模板 × 4 预测器 × 5 模式</td>
+<td>AF3-mutant 平均恢复 7.3/10，优于 AF3-WT</td>
+<td>突变体结构适合工程排序</td>
+<td>无法推广到更大候选集</td>
+<td>Results 2.5, Table 3</td>
+</tr>
+<tr>
+<td>误差特征分析</td>
+<td>结构特征预测 AF3 误差</td>
+<td>24 个预设特征 vs ΔE</td>
+<td>所有 q ≥ 0.676，无显著关联</td>
+<td>全局结构特征无法预测 AF3 误差</td>
+<td>无法排除局部特征有效</td>
+<td>Results 2.4, Fig 3</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅评估 TCR–MHC 复合物的 ΔΔG 预测，不涉及其他蛋白-蛋白相互作用系统；仅评估 4 种特定预测器，不涵盖所有 SOTA 方法。</li>
+<li><strong>oracle/真值输入</strong>：实验 ΔΔG 值来自 ATLAS 数据库，其测量条件（表面等离子共振等）和误差未在本文中独立验证；AF3 结构为本地安装生成，非公共服务器输出。</li>
+<li><strong>端到端状态</strong>：本文评估的是「结构生成 → ΔΔG 预测」的级联流程，但未评估完整 TCR 工程设计流程（如表达、稳定性、免疫原性等）。</li>
+<li><strong>算力成本</strong>：AF3 结构生成和 ΔΔG 预测的计算成本未报告；实际部署需考虑。</li>
+<li><strong>历史数据依赖</strong>：ATLAS 数据集的突变类型分布不均（可能偏向特定残基类型）；SKEMPI v2 训练集与 ATLAS 测试集存在 15/37 模板重叠，可能高估实验结构模式的表现。</li>
+<li><strong>模型依赖</strong>：结论基于 4 个预测器的具体实现；未来预测器可能改变结论。</li>
+<li><strong>最难情形</strong>：AF3 对 CDR3 柔性环的建模误差（0.95 Å）仍可能破坏接触敏感的预测；肽链突变和 MHC 突变的预测误差可能大于 TCR 突变。</li>
+<li><strong>群体/领域边界</strong>：仅覆盖 TCR–pMHC I/II 类系统；不涵盖抗体-抗原、蛋白-核酸等系统。</li>
+<li><strong>不确定性</strong>：per-template 分析中 20/37 模板少于 4 个突变体，无法估计模板内置信区间；全局 CI 通过 bootstrap 估计，但未考虑 ATLAS 测量误差。</li>
+</ul>
+<p><strong>有边界的复述</strong>：在 438 个 TCR–MHC 突变体、37 个模板的范围内，实验结构仍是 ΔΔG 预测的最可靠输入（r=0.795–0.840）；当仅有 AF3 预测结构时，使用 AF3 突变体结构 + 反向突变打分（inversion–negation）是恢复 top-10 候选突变的最优策略（平均恢复 7.3/10），但该策略的有效性依赖预测器架构，且无法通过全局结构特征（pTM、ipTM、RMSD）预测其失败情形。</p>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>缺乏配对实验突变体结构</td>
+<td>无法直接验证 AF3 突变体结构是否真实反映突变构象</td>
+<td>需要配对实验突变体结构进行验证</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>数据集分布不均</td>
+<td>29/37 模板少于 10 个突变体，20/37 少于 4 个</td>
+<td>需要更大、更平衡的 TCR–MHC 突变数据集</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>AF3 为唯一预测来源</td>
+<td>未评估其他结构预测方法（如 RoseTTAFold、MD 采样）</td>
+<td>扩展到其他预测器和采样方法</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>4 个预测器覆盖有限</td>
+<td>未包含所有 SOTA ΔΔG 方法</td>
+<td>纳入更多预测器</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>静态结构局限</td>
+<td>未考虑构象动态和 ensemble 效应</td>
+<td>结合 MD 模拟生成 ensemble</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>序列基线单一</td>
+<td>仅使用 PPAC 作为无结构基线</td>
+<td>纳入更多序列方法</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>未评估完整工程流程</td>
+<td>仅评估 ΔΔG 预测，未涉及表达、稳定性等</td>
+<td>端到端 TCR 工程设计验证</td>
+<td>Discussion</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AF3 突变体结构 + inversion–negation 的有效性可能被高估</td>
+<td>AF3 突变体结构可能只是「记忆」了训练集中的突变偏好，而非真实构象变化；反向打分可能只是抵消了系统偏差</td>
+<td>若为记忆效应，则该策略无法推广到新突变类型</td>
+<td>使用 AF3 未见过的突变类型（如非天然氨基酸）进行验证</td>
+<td>Results 2.3 中 AF3-mutant 提升幅度因预测器而异</td>
+</tr>
+<tr>
+<td>全局结构特征（pTM、ipTM）无法预测误差，但局部特征可能有效</td>
+<td>作者仅测试了 24 个预设特征，未做系统性特征搜索</td>
+<td>若存在局部特征（如 CDR3 二面角、接触图差异），可用于筛选可靠预测</td>
+<td>对 CDR3 区域做残基级特征分析</td>
+<td>Results 2.4 中所有 q ≥ 0.676</td>
+</tr>
+<tr>
+<td>SKEMPI v2 与 ATLAS 模板重叠可能污染评估</td>
+<td>15/37 模板重叠，预测器可能在训练中见过相似结构</td>
+<td>实验结构模式的高性能可能部分来自记忆效应</td>
+<td>仅在无重叠模板上重新评估</td>
+<td>Methods 4.3 中 fold 按复合物分割</td>
+</tr>
+<tr>
+<td>Ensemble 采样数量（20-100）可能不足以覆盖构象空间</td>
+<td>AF3 的多样性可能有限，且未与 MD 采样对比</td>
+<td>若 ensemble 策略无效，可能因采样不足而非方法本身无效</td>
+<td>与 MD 生成的 ensemble 对比</td>
+<td>Results 2.3 中 ensemble 提升微弱</td>
+</tr>
+<tr>
+<td>438 突变体来自 37 个模板，模板间突变数差异大</td>
+<td>少数模板（如 1AO7 的 126 个突变）可能主导全局指标</td>
+<td>全局 r 可能不代表典型模板表现</td>
+<td>按模板加权或报告模板间方差</td>
+<td>Results 2.5 中 1AO7 单独分析</td>
+</tr>
+<tr>
+<td>未报告 AF3 结构生成和 ΔΔG 预测的计算成本</td>
+<td>实际工程中计算资源是重要约束</td>
+<td>若 AF3 突变体结构生成成本过高，策略不可行</td>
+<td>报告每突变体的平均计算时间</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>「结构-序列一致性」原则</strong>：ΔΔG 预测器在结构 A 上打分序列 B 的突变时，隐含假设 A 能代表 B 的构象。当使用预测结构时，应优先选择与目标序列一致的预测结构（如突变体结构），而非野生型结构。可迁移到任何基于结构的突变效应预测任务。</p>
+</li>
+<li>
+<p><strong>Inversion–negation 打分策略</strong>：当预测器对「结构-序列不匹配」敏感时，使用突变体结构 + 反向突变打分 + 取负，可以部分恢复性能。这一策略不依赖特定预测器架构，可推广到其他 ΔΔG 预测器。</p>
+</li>
+<li>
+<p><strong>预测器鲁棒性评估框架</strong>：本文的「5 种结构输入模式 × 4 预测器」比较框架，可作为评估新预测器在预测结构上表现的标准化协议。核心指标包括全局 r、per-template 稳定性、top-K 恢复率。</p>
+</li>
+<li>
+<p><strong>CDR3 是误差集中区域</strong>：TCR–MHC 结合诱导的构象变化主要发生在 CDR3 环（RMSD 2.22 Å），而 AF3 对 CDR3 的预测误差（0.95 Å）虽小于实验未结合态，但仍足以影响接触敏感的预测器。这提示在 TCR 工程中应优先关注 CDR3 区域的预测可靠性。</p>
+</li>
+<li>
+<p><strong>全局置信度指标（pTM、ipTM）不足以预测下游误差</strong>：高全局置信度的 AF3 结构仍可能在 CDR3 区域产生显著预测误差。需要开发局部、功能位点特异的结构质量评估指标。</p>
+</li>
+<li>
+<p><strong>Ensemble 聚合的收益有限</strong>：简单增加 AF3 采样数量（20→100）不带来一致的 ΔΔG 预测提升。这提示 AF3 样本多样性不等于物理相关的构象多样性，可能需要 MD 模拟等物理采样方法补充。</p>
+</li>
+<li>
+<p><strong>实验结构仍是黄金标准</strong>：即使是最鲁棒的预测器（Prompt-DDG），在 AF3 结构上的性能也低于实验结构。在可行时应优先获取实验结构，预测结构仅作为 fallback。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：与 Mohseni Behbahani et al. (2023) 的 DLA 方法相似，均关注构象 ensemble 对 ΔΔG 预测的影响；但 DLA 使用 Rosetta backrub 生成 ensemble，本文使用 AF3 采样。本文的结论（ensemble 收益有限）与 DLA 的积极结果形成对比，提示采样方法的选择至关重要。</li>
+<li><strong>组合方向</strong>：本文的 AF3 突变体结构 + inversion–negation 策略可与 MD 模拟结合——先用 AF3 生成初始结构，再用 MD 平衡和采样，可能进一步提升 ΔΔG 预测可靠性。</li>
+<li><strong>冲突证据</strong>：本文发现 BA-DDG 和 H3-DDG 对 AF3 结构高度敏感，而 Prompt-DDG 和 RDE-PPI 相对鲁棒。这与这些模型在 SKEMPI v2 上的排名不完全一致，提示 benchmark 性能不能直接外推到预测结构场景。</li>
+<li><strong>可迁移方法</strong>：本文的「反向突变打分」思想可迁移到其他结构-based 预测任务（如稳定性预测、结合位点预测），当预测器对结构-序列不匹配敏感时，使用目标序列的结构 + 反向打分。</li>
+<li><strong>理论框架</strong>：本文的「结构来源 &gt; 预测器选择」结论，与蛋白质工程中「garbage in, garbage out」原则一致，但提供了定量证据：结构误差的影响因预测器架构而异，最高可达 r 下降 0.24（H3-DDG）。</li>
+<li><strong>候选方向</strong>：本文未评估 MD 生成的 ensemble 作为 ΔΔG 预测输入，这是一个自然的后续方向。此外，AF3 的 ranking score 或 pLDDT 是否可用于加权 ensemble 聚合，也值得探索。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：MD 增强的 AF3 突变体结构 ensemble 用于 TCR–MHC ΔΔG 预测
+   - <strong>来源局限/观察</strong>：本文发现 AF3 多结构 ensemble 收益有限，但未与 MD 采样对比；AF3 样本可能缺乏物理相关的构象多样性
+   - <strong>核心假设</strong>：AF3 突变体结构经 MD 平衡和采样后，能提供比纯 AF3 采样更物理相关的构象 ensemble，从而提升 ΔΔG 预测的 top-K 恢复率
+   - <strong>初步方法</strong>：对 1AO7 等 4 个模板的突变体，用 AF3 生成初始结构 → 显式溶剂 MD 模拟（如 100 ns）→ 聚类提取代表性构象 → 用 RDE-PPI/Prompt-DDG 对每个构象打分并聚合 → 比较与纯 AF3 采样的 top-K 恢复率
+   - <strong>验证方式</strong>：与本文 Table 3 的 AF3-mutant 结果对比，检验 MD 增强是否提升 top-10 恢复率；同时比较 MD ensemble 与 AF3 ensemble 的构象多样性（如 RMSD 分布、接触图差异）
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：局部结构质量感知的 ΔΔG 预测不确定性校准
+   - <strong>来源局限/观察</strong>：本文发现全局 pTM/ipTM 无法预测 AF3 结构上的 ΔΔG 误差，但 CDR3 区域是误差集中区
+   - <strong>核心假设</strong>：基于 CDR3 环局部结构质量（如 pLDDT、二面角合理性、接触图一致性）的不确定性校准，可以识别可靠的 ΔΔG 预测子集
+   - <strong>初步方法</strong>：对 438 个突变体，提取 CDR3 区域的局部结构特征（pLDDT、与实验结构的局部 RMSD、接触图 Jaccard 距离），训练一个轻量级校准器（如 logistic regression）预测 ΔΔG 预测误差是否超过阈值；评估在 top-K 选择中过滤低置信度预测的效果
+   - <strong>验证方式</strong>：5-fold cross-validation，比较校准前后的 top-K 恢复率；与全局 pTM/ipTM 阈值方法对比
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：跨预测器的集成学习用于 TCR–MHC 突变排序
+   - <strong>来源局限/观察</strong>：本文发现不同预测器对 AF3 结构的敏感性差异显著，但没有预测器在所有模式下最优
+   - <strong>核心假设</strong>：多个预测器的集成（如加权平均或 stacking）可以抵消单一预测器的结构敏感性，提升排序稳定性
+   - <strong>初步方法</strong>：对 438 个突变体，收集 4 个预测器在 5 种结构模式下的预测，训练一个元学习器（如 gradient boosting）组合这些预测；评估集成后的全局 r 和 top-K 恢复率
+   - <strong>验证方式</strong>：与单一预测器最优模式对比；分析集成权重是否自动偏向对 AF3 鲁棒的预测器
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：AF3 结构置信度引导的 TCR CDR 环构象采样
+   - <strong>来源局限/观察</strong>：本文发现 AF3 对 CDR3 的预测误差（0.95 Å）虽小但足以影响 ΔΔG 预测；CDR3 是结合诱导构象变化最大的区域
+   - <strong>核心假设</strong>：在 AF3 预测的 CDR3 环区域进行定向构象采样（如 Rosetta loop modeling 或扩散模型），可以生成比 AF3 原始输出更接近真实结合态的构象
+   - <strong>初步方法</strong>：对 30 个 TCR–MHC 复合物，用 AF3 预测结构 → 对 CDR3 环进行 Rosetta 循环建模（或使用扩散模型）生成多个构象 → 选择与实验结合态最接近的构象（用接触图或能量打分）→ 评估改进后的 ΔΔG 预测精度
+   - <strong>验证方式</strong>：与 AF3 原始结构上的 ΔΔG 预测对比；检验采样后的 CDR3 RMSD 是否降低
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：TCR–MHC 结合诱导构象变化的序列可预测性
+   - <strong>来源局限/观察</strong>：本文量化了结合诱导的 CDR3 构象变化（RMSD 2.22 Å），但未探索其序列决定因素
+   - <strong>核心假设</strong>：CDR3 环的构象变化幅度与 CDR3 序列特征（长度、疏水性、芳香族残基含量）相关，可用于预测哪些 TCR 需要 ensemble 采样
+   - <strong>初步方法</strong>：对 30 对 bound/unbound TCR，计算 CDR3 序列特征与构象变化幅度（RMSD）的相关性；训练一个回归模型预测构象变化幅度；验证在 ΔΔP 预测中，对高变化 TCR 使用 ensemble 是否更有效
+   - <strong>验证方式</strong>：交叉验证回归模型的预测精度；比较高/低构象变化 TCR 的 ΔΔG 预测误差
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, results, discussion, materials and methods, data availability, author contributions, conflict of interest, generative AI statement, publisher's note, supplementary material link, acknowledgments)</li>
+<li><strong>Assessment boundary</strong> Scientific content, methodological soundness, validity of claims, and presentation quality of the manuscript as provided. No external data or code were accessed.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors evaluate how the choice of structural scaffold (experimental vs. AlphaFold 3 predicted) and conformational sampling affect the performance of four structure-based ΔΔG prediction tools (RDE-PPI, Prompt-DDG, BA-DDG, H3-DDG) for prioritizing TCR–pMHC CDR mutations. They report that experimental structures yield the best performance, that Prompt-DDG and RDE-PPI are relatively robust to AF3 wild-type scaffolds, that AF3-mutant scaffolds with inversion–negation scoring improve BA-DDG and H3-DDG, and that AF3-mutant scaffolds give the highest mean top-10 recovery among AF3-based inputs across four templates.</li>
+<li><strong>Visible evidence base</strong> Main text figures (Figures 1, 2, 3), main text tables (Tables 1, 3, 4), and references to supplementary tables and figures (Supplementary Tables S1–S22, Supplementary Figures S1, S2). Supplementary material content was not provided.</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary material (Tables S1–S22, Figures S1, S2) is referenced extensively but not provided. This includes detailed per-template results, bootstrap confidence intervals, saturation analysis details, and sensitivity analyses. The GitHub repository link is provided but was not accessed. The exact version of AlphaFold 3 and its configuration parameters are not fully specified.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This manuscript addresses a practically important question in computational TCR engineering: how reliable are ΔΔG-based mutation prioritization tools when experimental structures are unavailable and AlphaFold 3 predictions must be used instead. The study design is thoughtful, combining a curated experimental dataset (ATLAS) with multiple structural scaffolds and four diverse prediction tools. The finding that experimental structures remain superior, and that model-specific responses to scaffold choice vary, is useful and actionable. However, the manuscript has several significant weaknesses. The statistical analysis is underpowered for the main claims, particularly the candidate-prioritization analysis which relies on only four templates. The structural error-feature analysis is largely negative, and the authors appropriately refrain from over-interpreting it, but this limits its contribution. The discussion of why AF3-mutant scaffolds help some models but not others is speculative. The manuscript would benefit from a clearer articulation of the practical decision framework it aims to provide, and from a more rigorous treatment of uncertainty in the headline results. The writing is generally clear, though some sections are dense and the use of "Equation 2.5" as a section reference is confusing.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in computational protein design, specifically those working on TCR and antibody engineering, will find this study directly relevant. Practitioners who use AlphaFold 3 for structure prediction and ΔΔG tools for variant prioritization will benefit from the practical guidance on scaffold selection. The study also contributes to the broader literature on the reliability of machine learning-based affinity prediction when input structures are predicted rather than experimental. The negative results on structural correlates of error are of interest to method developers seeking to build confidence metrics for predicted structures.</li>
+<li><strong>Major strengths</strong></li>
+<li>The study addresses a timely and practically important question with a well-designed evaluation framework.</li>
+<li>The use of a curated experimental dataset (ATLAS) with measured ΔΔG values provides a solid benchmark.</li>
+<li>The inclusion of multiple prediction tools with different architectures (flow-based, inverse-folding, prompt-based) allows for a comparative analysis of model-specific behaviors.</li>
+<li>The distinction between global correlation metrics and top-K recovery metrics is appropriate and highlights the different practical goals of ΔΔG prediction.</li>
+<li>The authors are appropriately cautious in interpreting negative results and in acknowledging the limitations of their analysis.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Statistical rigor and generalizability of candidate-prioritization claims</li>
+<li><strong>Claim pointer</strong> The claim that "Across four templates, AF3-mutant scaffolds gave the highest mean top-10 recovery among the AF3-based inputs for all four predictors" (Abstract) and the related conclusion that AF3-mutant scaffolds should be used for top-ranked CDR candidate recovery when experimental structures are unavailable.</li>
+<li><strong>Evidence pointer</strong> Section "Candidate-prioritization performance depends on structure input, model, and template" (Results), Table 3, Supplementary Table S18</li>
+<li><strong>Concern</strong> The candidate-prioritization analysis is based on only four templates. This is a very small sample size for making a generalizable recommendation. The authors acknowledge this in the Discussion, but the strength of the claim in the Abstract and the practical recommendation in the Discussion ("suggest using AF3-mutant scaffolds for recovering top-ranked CDR candidates when only predicted structures are available") is not commensurate with the evidence. The variability across templates is likely to be high, and the mean top-10 recovery could be driven by one or two templates. The authors should either temper the claim, provide a more detailed per-template breakdown in the main text, or perform a more robust analysis (e.g., leave-one-template-out cross-validation) to assess the stability of the finding.</li>
+<li><strong>Why it matters</strong> The primary practical takeaway of the manuscript is the recommendation to use AF3-mutant scaffolds for candidate prioritization. If this recommendation is based on a small and potentially unrepresentative sample, it could mislead practitioners. The claim needs to be supported by a more robust analysis or presented with more caveats.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should provide a per-template breakdown of top-K recovery for all four templates in the main text or a clearly referenced supplementary table. They should also perform a sensitivity analysis, such as jackknifing the templates, to show that the conclusion is not driven by a single template. If the conclusion is not robust, the claim should be revised to reflect the uncertainty.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Methodological clarity and reproducibility of the AF3-mutant scaffold generation</li>
+<li><strong>Claim pointer</strong> The description of the "mutant_af3_single" and "mutant_af3_multi" regimes, where AF3 generates a structure from each mutant sequence and the ΔΔG predictor scores the reverse mutation with sign inversion.</li>
+<li><strong>Evidence pointer</strong> Section "ΔΔG prediction across models and structure-input regimes" (Materials and Methods)</li>
+<li><strong>Concern</strong> The Materials and Methods section does not provide sufficient detail on how the AF3-mutant scaffolds were generated. Specifically, it is unclear whether the full mutant sequence was used as input to AF3, or whether the mutation was introduced into the wild-type structure and then relaxed. The description of "shared-WT-MSA/mutant-query patching" is mentioned but not explained. This is a critical methodological detail because the performance of the ΔΔG predictor in the inversion–negation regime depends on the quality and nature of the mutant scaffold. Without this detail, the results are difficult to reproduce and interpret.</li>
+<li><strong>Why it matters</strong> Reproducibility is a core requirement for a methods-focused study. If the mutant scaffold generation protocol is not clearly described, other researchers cannot replicate the workflow or assess whether the results are specific to the authors' implementation.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should provide a detailed step-by-step description of the AF3-mutant scaffold generation, including the exact input sequences, any template or MSA handling, and the number of AF3 samples generated per mutant. A pseudocode or flowchart would be helpful.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Interpretation of the structural error-feature analysis</li>
+<li><strong>Claim pointer</strong> The statement that "None of these global features provided a reliable failure indicator" and the related discussion that local contact disagreement is a "candidate warning signal" for BA-DDG and H3-DDG.</li>
+<li><strong>Evidence pointer</strong> Section "Structural correlates of AF3-WT prediction error" (Results), Figure 3, Supplementary Tables S15-17</li>
+<li><strong>Concern</strong> The structural error-feature analysis is largely negative, with no features surviving multiple-testing correction. The authors appropriately describe the results as descriptive, but the interpretation of the local contact disagreement as a "candidate warning signal" is based on unadjusted correlations and is not supported by a validated threshold. The authors should be more explicit that this is a hypothesis-generating observation, not a validated finding. Additionally, the analysis is performed at the level of individual mutations, but the practical unit of decision-making is the template or the candidate list. The authors should clarify whether the mutation-level analysis is appropriate for the conclusions they draw.</li>
+<li><strong>Why it matters</strong> The manuscript's contribution to the practical question of when to trust AF3-based predictions is weakened if the proposed warning signal is not validated. Overstating the strength of this finding could lead to inappropriate use of the proposed signal.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should clearly state that the local contact disagreement finding is exploratory and requires validation in independent datasets. They should also consider whether a template-level analysis of the relationship between contact disagreement and prediction error would be more appropriate for the practical question.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Completeness of the evaluation of the sequence-only baseline</li>
+<li><strong>Claim pointer</strong> The use of PPAC as a sequence-only reference and the statement that "All four structure-based predictors had higher point correlations with experimental PDB scaffolds" than PPAC.</li>
+<li><strong>Evidence pointer</strong> Section "Structure-input choice and model choice both determine ΔΔG prediction accuracy" (Results), Table 2</li>
+<li><strong>Concern</strong> The comparison to PPAC is presented as a single point of reference, but the authors do not discuss the variability of PPAC's performance or whether the advantage of structure-based models is statistically significant. The comparison is also made only on the full 438-mutation cohort, not on the four-template candidate-prioritization cohort. The authors should provide confidence intervals for the PPAC performance and test whether the difference between PPAC and the best structure-based model is significant.</li>
+<li><strong>Why it matters</strong> The claim that structure-based models retain an advantage over sequence-only models is an important part of the motivation for using structural scaffolds. If this advantage is not statistically robust, the practical value of the structural approach is less clear.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should provide bootstrap confidence intervals for PPAC's performance and perform a statistical test (e.g., a paired test on the per-template correlations) to assess whether the difference between PPAC and the best structure-based model is significant.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Presentation</li>
+<li><strong>Affected element</strong> Section numbering and cross-references</li>
+<li><strong>Evidence pointer</strong> Section "Candidate-prioritization performance depends on structure input, model, and template" (Results) is referred to as "Section Equation 2.5" in the text</li>
+<li><strong>Issue</strong> The cross-reference "Section Equation 2.5" is confusing and appears to be a formatting error.</li>
+<li>
+<p><strong>Required correction</strong> Correct the cross-reference to the proper section number or name.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity of terminology</li>
+<li><strong>Affected element</strong> The term "inversion–negation"</li>
+<li><strong>Evidence pointer</strong> Section "ΔΔG prediction across models and structure-input regimes" (Materials and Methods)</li>
+<li><strong>Issue</strong> The term "inversion–negation" is used to describe the process of scoring the reverse mutation and negating the result. This term is not standard and may be unclear to readers.</li>
+<li>
+<p><strong>Required correction</strong> Define the term clearly on first use and consider using a more descriptive phrase, such as "reverse-mutation scoring with sign inversion."</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness of reporting</li>
+<li><strong>Affected element</strong> The description of the AlphaFold 3 local installation</li>
+<li><strong>Evidence pointer</strong> Section "AlphaFold server structure prediction of TCR–pMHC complexes" (Materials and Methods)</li>
+<li><strong>Issue</strong> The manuscript states that a "local AlphaFold three installation" was used but does not specify the version or the specific configuration parameters (e.g., number of recycles, MSA depth).</li>
+<li>
+<p><strong>Required correction</strong> Provide the exact version and configuration parameters used for the local AlphaFold 3 installation.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> The reporting of the Williams test results</li>
+<li><strong>Evidence pointer</strong> Section "ΔΔG prediction across models and structure-input regimes" (Materials and Methods)</li>
+<li><strong>Issue</strong> The manuscript reports p-values for the Williams test but does not report the test statistic or the direction of the difference for each comparison.</li>
+<li>
+<p><strong>Required correction</strong> Report the test statistic and the direction of the difference (e.g., ensemble &gt; single) for each significant comparison.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Data availability</li>
+<li><strong>Affected element</strong> The GitHub repository link</li>
+<li><strong>Evidence pointer</strong> Data availability statement</li>
+<li><strong>Issue</strong> The repository link is provided, but it is not clear whether the code is versioned and whether the exact scripts used for the analysis are included.</li>
+<li>
+<p><strong>Required correction</strong> Provide a versioned release of the code and a clear description of the contents of the repository.</p>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong></p>
+</li>
+<li>R1-M1: The generalizability of the candidate-prioritization claim based on only four templates is not established.</li>
+<li>R1-M2: The AF3-mutant scaffold generation protocol is not described in sufficient detail for reproducibility.</li>
+<li>R1-M3: The proposed "candidate warning signal" from the structural error-feature analysis is not validated and is over-interpreted.</li>
+<li>
+<p>R1-M4: The statistical significance of the advantage of structure-based models over the sequence-only baseline is not established.</p>
+</li>
+<li>
+<p><strong>Assessment against Nature-style criteria</strong></p>
+</li>
+<li><strong>Originality</strong> The study is not conceptually novel, as the question of predicted structure reliability for ΔΔG prediction has been raised before. However, the specific focus on TCR–pMHC complexes and the systematic comparison of multiple scaffolds and models is a useful and somewhat original contribution to this specific application area.</li>
+<li><strong>Scientific importance</strong> The question addressed is of practical importance for TCR engineering, a field with growing therapeutic relevance. The finding that model-specific responses to scaffold choice vary is important and highlights the need for careful validation in practical applications. However, the small sample size for the key practical recommendation limits the immediate impact.</li>
+<li><strong>Interdisciplinary readership</strong> The study is primarily of interest to computational biologists and protein engineers. The methods and findings are unlikely to attract a broad interdisciplinary audience beyond these fields.</li>
+<li><strong>Technical soundness</strong> The overall study design is sound, but the statistical rigor is insufficient for some of the headline claims. The lack of detail on the AF3-mutant scaffold generation is a technical weakness that needs to be addressed.</li>
+<li>
+<p><strong>Readability for nonspecialists</strong> The manuscript is generally well-written and accessible to readers with a background in computational biology. The use of jargon is appropriate, and the key concepts are explained clearly. However, the dense presentation of statistical results in the text could be improved with more visual aids.</p>
+</li>
+<li>
+<p><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The manuscript addresses a relevant question and provides useful data, but the strength of the main practical claim (AF3-mutant scaffolds for candidate prioritization) is not commensurate with the evidence. The authors need to either provide a more robust analysis or temper the claim. The methodological details for the AF3-mutant scaffold generation also need to be clarified.</p>
+</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that "AF3-mutant scaffolds gave the highest mean top-10 recovery among the AF3-based inputs for all four predictors" is based on only four templates and is not robustly supported.</li>
+<li>The claim that "local contact disagreement is a candidate warning signal" is based on unadjusted correlations and is not validated.</li>
+<li>The claim that "All four structure-based predictors had higher point correlations with experimental PDB scaffolds" than PPAC is not supported by a statistical test.</li>
+<li>The statement that "AF3 generally recovered bound-like TCR conformations" is based on a comparison with experimental bound structures, but the manuscript does not discuss the potential for AF3 to predict conformations that are not representative of the true bound state.</li>
+<li>The manuscript does not discuss the potential for overfitting of the ΔΔG predictors to the training data (SKEMPI v2) and how this might affect their performance on the ATLAS test set.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

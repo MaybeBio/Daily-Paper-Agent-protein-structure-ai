@@ -1,0 +1,24 @@
+{
+  "source": "biorxiv",
+  "id": "10.64898/2026.11.10.765771",
+  "title": "REVEAL: RNA Ensemble Validation and Exploration with AI-guided Landscapes",
+  "authors": "Bhakat S; Vats S",
+  "journal": "bioRxiv",
+  "published_date": "2026-11-11",
+  "window": {
+    "start": "2026-11-08",
+    "end": "2026-11-14"
+  },
+  "score": 7,
+  "one_liner_zh": "该文提出REVEAL工作流，结合RNA二级结构采样、trRosettaRNA2三级结构预测、无偏MD和马尔可夫状态模型，探索RNA构象系综并识别主导态，虽对象为RNA而非蛋白质，但其AI引导的构象采样与系综验证框架可迁移至蛋白质结构计算，具有借鉴价值。",
+  "abstract": "Capturing the sparsely populated but functionally important, excited states of RNA remains a central challenge for molecular simulation, because the underlying transitions are rare events that unbiased molecular dynamics cannot reach from a single starting structure. Here we introduce REVEAL (RNA Ensemble Validation and Exploration with AI-guided Landscapes), a workflow that couples generative secondary structure sampling, secondary structure conditioned tertiary structure prediction with trRosettaRNA2, unbiased molecular dynamics and Markov state modeling. Using only the sequence of the engineered HIV-1 TAR mutant, in which the excited state ES2 is the dominant conformation, we show that REVEAL captures the reversible ES2 to GS register shift from 6.8 µs of aggregate unbiased sampling across 34 seeds, recovering both basins, the intermediate states, and correctly identifies ES2 as the dominant state, consistent with the design of the construct. In contrast, molecular dynamics seeded from the ES2-dominant HIV-1 TAR mutant NMR ensemble remains trapped in ES2 despite substantially longer aggregate simulation time, and sequence-only ensemble predictors (AlphaFold3, Boltz-2, ESMFold2, OpenFold3 and Protenix-v2) place every structure near the ground state and invert the experimentally observed population ordering. The information content of the seed ensemble, rather than the total simulation time, determines whether the transition is sampled. We further introduce “ population-weighted consensus score ” (PWCS) that ranks conformers by how representative they are of the equilibrium ensemble directly from the simulation data, without experimental restraints and independent of the choice of collective variables. PWCS identifies the dominant state even when low-dimensional representations fail to separate the states. Built entirely from open-source tools, REVEAL provides a transparent and extensible route to RNA conformational ensembles beyond the single-structure paradigm.",
+  "abstract_zh": "捕获RNA中稀疏分布但功能重要的激发态仍然是分子模拟的核心挑战，因为其底层转变是罕见事件，无偏分子动力学无法从单一起始结构到达这些状态。在此，我们引入REVEAL（RNA Ensemble Validation and Exploration with AI-guided Landscapes），一种将生成式二级结构采样、基于二级结构条件的三级结构预测（使用trRosettaRNA2）、无偏分子动力学和马尔可夫状态建模相结合的工作流程。仅利用工程化HIV-1 TAR突变体的序列（其中激发态ES2是主导构象），我们展示了REVEAL从34个种子中总计6.8微秒的无偏采样中捕获了可逆的ES2到GS的移位转变，恢复了两个盆地、中间态，并正确识别ES2为主导状态，与该构建体的设计一致。相比之下，从ES2主导的HIV-1 TAR突变体NMR系综出发的分子动力学，尽管总模拟时间显著更长，仍被困在ES2中，而仅基于序列的系综预测器（AlphaFold3、Boltz-2、ESMFold2、OpenFold3和Protenix-v2）将每个结构置于基态附近，并颠倒了实验观察到的群体排序。种子系综的信息内容，而非总模拟时间，决定了转变是否被采样。我们进一步引入了“群体加权共识分数”（population-weighted consensus score, PWCS），该分数直接从模拟数据中对构象体进行排序，依据它们对平衡系综的代表性，无需实验约束且独立于集体变量的选择。即使低维表示无法分离状态，PWCS也能识别主导状态。REVEAL完全基于开源工具构建，为超越单结构范式的RNA构象系综提供了一条透明且可扩展的路径。",
+  "has_fulltext": true,
+  "fulltext_source": "europepmc",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.11.10.765771",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.10.765771",
+  "paper_page_path": "papers/biorxiv/10.64898_2026.11.10.765771/index.html"
+}

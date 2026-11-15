@@ -1,0 +1,96 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors introduce IFACE, a method that computes a symmetric geometric-chemical distance between complete protein surfaces by optimizing a probabilistic coupling over intrinsic geometry, mean curvature, electrostatics, hydrophobicity, and hydrogen-bond propensity. The same coupling yields an explicit surface map. The authors report that IFACE outperforms TM-distance and a Laplace-Beltrami spectral distance in distinguishing same-protein conformers from distinct proteins, that a Jensen-Shannon distribution distance performs best in a binary identity test, that IFACE yields the strongest family classification and clustering across six protein families compared to distributional, spectral, MaSIF, and SurfaceID approaches, and that inferred maps preserve geodesic neighborhoods and transfer heme-centered pocket regions across cytochrome P450 proteins.
+- **Visible evidence base** Abstract text only; no quantitative results, benchmark details, dataset descriptions, or methodological specifications are visible
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, methods section, benchmark definitions, dataset compositions, hyperparameter choices, and code availability
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually interesting approach to a well-recognized problem in protein surface comparison. The idea of deriving both a distance and an explicit correspondence from a single optimization is appealing and potentially useful. However, the abstract alone provides insufficient detail to evaluate the technical soundness of the method, the statistical validity of the benchmark comparisons, or the generalizability of the reported results. Several claims are stated without supporting quantitative evidence, and the relationship between the different distance measures tested is not clarified. The work may be of interest to computational structural biologists, but the case is not established from the supplied material.
+- **Who would be interested in the results, and why** Computational biologists and bioinformaticians working on protein structure comparison, surface analysis, protein function prediction, and protein family classification would be interested. Researchers developing geometric and spectral methods for molecular surfaces, as well as those using surface-based descriptors for protein-protein interaction or ligand binding site analysis, may find the coupled distance-map construction valuable. The cytochrome P450 application could attract researchers in drug metabolism and enzymology.
+- **Major strengths** The conceptual unification of a distance metric and an explicit surface correspondence within a single optimization framework is elegant and potentially novel. The inclusion of multiple physicochemical features (electrostatics, hydrophobicity, hydrogen-bond propensity) alongside geometric quantities is chemically sensible. The reported transfer of heme-centered pocket regions across cytochrome P450 proteins suggests a practically useful application. The comparison against multiple existing methods (MaSIF, SurfaceID, spectral, distributional) indicates an awareness of the competitive landscape.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "IFACE distinguishes the same protein from distinct proteins more accurately than TM-distance and a Laplace-Beltrami spectral distance"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** No quantitative results are provided. The abstract does not report accuracy values, effect sizes, confidence intervals, or statistical significance for the claimed superiority over TM-distance and Laplace-Beltrami spectral distance. Without these, the claim cannot be assessed.
+  - **Why it matters** The central claim of the paper is that IFACE outperforms existing methods. Without quantitative evidence, the reader cannot judge whether the improvement is meaningful or within noise.
+  - **Resolution test** Provide a table or figure with accuracy metrics (e.g., AUC, F1, or classification accuracy) for IFACE and each comparator, with error bars or confidence intervals, and a statistical test (e.g., paired bootstrap or permutation test) demonstrating significance.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "A Jensen-Shannon distribution distance performs best in this binary identity test because aggregate surface-feature distributions already identify each protein"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** This statement appears to undermine the necessity of the IFACE construction. If a simple distributional distance already performs best, the added complexity of the coupled embedding is not justified for this task. The abstract does not explain why IFACE is still preferred despite this result, nor does it clarify whether the Jensen-Shannon distance is a baseline or a component of IFACE.
+  - **Why it matters** The paper must justify why the more complex IFACE method is needed if a simpler distributional distance outperforms it on a key benchmark. Without this clarification, the contribution is ambiguous.
+  - **Resolution test** Clarify the role of the Jensen-Shannon distance in the method and in the benchmark. Provide a clear rationale for why IFACE is the recommended approach despite the distributional distance performing best on the binary identity test, or reframe the claims to reflect the actual strengths of IFACE.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility
+  - **Claim pointer** "IFACE derives a symmetric geometric-chemical distance by optimizing a probabilistic coupling over intrinsic geometry, mean curvature, electrostatics, hydrophobicity, and hydrogen-bond propensity"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract provides no details on the optimization procedure, the representation of the surface features, the discretization scheme, the handling of surface alignment or orientation, or the computational cost. Without these details, the method cannot be reproduced or evaluated for scalability.
+  - **Why it matters** Reproducibility is a core requirement for computational methods. The absence of methodological detail prevents independent verification and limits the practical utility of the approach.
+  - **Resolution test** Provide a complete methods section describing the surface representation, feature computation, optimization algorithm, convergence criteria, and computational complexity. Make code available or provide a detailed pseudocode.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Validity of conclusions
+  - **Claim pointer** "It produces the strongest family classification and clustering among the distributional, spectral, MaSIF, and SurfaceID comparisons"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not specify the number of proteins per family, the classification or clustering metrics used, the statistical significance of the improvements, or the sensitivity of the results to parameters. The claim of "strongest" is unverifiable without these details.
+  - **Why it matters** The generalizability of IFACE across protein families is a key claimed advantage. Without rigorous benchmarking details, the claim may be overstated or dependent on favorable parameter choices.
+  - **Resolution test** Provide a detailed benchmark description including dataset composition, evaluation metrics (e.g., adjusted Rand index, silhouette score, classification accuracy), and statistical comparisons across multiple random splits or bootstraps.
+  - **Concern ID** R1-M5
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interpretability
+  - **Claim pointer** "The inferred maps preserve geodesic neighborhoods and transfer heme-centered pocket regions across cytochrome P450 proteins"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not define how "preserve geodesic neighborhoods" is measured or what "transfer" means in this context. It is unclear whether this is a qualitative observation or a quantitative evaluation.
+  - **Why it matters** The utility of the explicit surface map is a distinguishing feature of IFACE. Without a clear evaluation protocol, the significance of this result is unclear.
+  - **Resolution test** Provide quantitative measures of geodesic distortion (e.g., stress or correlation between original and mapped geodesic distances) and a clear description of the pocket transfer evaluation, including alignment accuracy and functional relevance.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "Intrinsic Field-Aligned Coupled Embedding" is not explained. The meaning of "field-aligned" in this context is unclear.
+  - **Required correction** Provide a brief explanation of the name, particularly the "field-aligned" component, in the introduction or methods.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Benchmark description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract mentions "molecular-dynamics conformers" but does not specify the proteins used, the number of conformers, or the simulation details.
+  - **Required correction** Include a brief description of the molecular dynamics dataset in the abstract or refer to a table in the main text.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Comparative statement
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The sentence "A Jensen-Shannon distribution distance performs best in this binary identity test" is confusing because it is not clear whether this is a separate method or a variant of IFACE.
+  - **Required correction** Clarify the relationship between the Jensen-Shannon distance and IFACE, and specify whether it is a baseline or an ablation.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Dataset description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states "six protein families" but does not name them or describe their diversity.
+  - **Required correction** List the six families in the abstract or refer to a table in the main text.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (no quantitative benchmark results), R1-M2 (unclear justification for IFACE given the Jensen-Shannon result), R1-M3 (insufficient methodological detail for reproducibility), R1-M4 (no statistical validation of family classification claims)
+- **Assessment against Nature-style criteria** Originality: The coupled distance-map construction appears conceptually novel, though the abstract does not allow a full assessment of novelty relative to existing surface comparison methods. Scientific importance: The problem of protein surface comparison is important, and a method that provides both a distance and an explicit correspondence could be valuable, but the significance is not yet demonstrated. Interdisciplinary readership: The work is likely to appeal primarily to computational structural biologists and bioinformaticians; broader appeal is not evident from the abstract. Technical soundness: Cannot be assessed from the abstract alone; the absence of quantitative results and methodological detail is a major limitation. Readability for nonspecialists: The abstract is reasonably clear for a specialist audience but uses jargon (e.g., "field-aligned," "probabilistic coupling") without sufficient explanation for a broader readership.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual idea is promising, but the abstract lacks the quantitative and methodological detail needed to support the central claims. A full manuscript with rigorous benchmarks, statistical validation, and complete methodological descriptions would be required to assess the contribution properly.
+
+## Risk / unsupported claims
+- The claim that IFACE outperforms TM-distance and Laplace-Beltrami spectral distance is unsupported by any quantitative data in the abstract.
+- The claim that IFACE produces the strongest family classification and clustering among the listed comparators is unsupported without metrics or statistical tests.
+- The claim that the Jensen-Shannon distribution distance performs best in the binary identity test is stated without data and appears to conflict with the promotion of IFACE.
+- The claim that inferred maps preserve geodesic neighborhoods and transfer heme-centered pocket regions is unquantified and cannot be evaluated.
+- The overall utility and necessity of IFACE relative to simpler distributional approaches is not established.

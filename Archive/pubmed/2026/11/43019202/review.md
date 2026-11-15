@@ -1,0 +1,92 @@
+## Review setup
+- **Input scope** Full manuscript text (main text, methods, results, figure legends, references cited in text)
+- **Assessment boundary** Scientific validity, technical soundness, and clarity of claims as presented in the provided manuscript text; no assessment of supplementary materials beyond what is referenced
+- **Shared manuscript claim summary** The authors describe a machine learning-accelerated virtual screening workflow (Deep Docking) applied to the Enamine REAL Diversity Subset to identify novel neutral inhibitors of the SARS-CoV-2 NSP3 Mac1 domain. They report one confirmed hit (CACHE3-HI_1706_56) with a KD of 20 µM by SPR, a crystal structure confirming the binding mode, and a subsequent analogue expansion in the REAL Space (44 billion compounds) yielding a series with improved affinities (best KD 12 µM). The work was part of the CACHE3 challenge, which the authors state they won.
+- **Visible evidence base** Main text figures (Fig. 1-4), methods sections (protein preparation, docking, HTRF, SPR, crystallography), results narrative, Table 1 (referenced, not shown in text), Supplementary Figures 1-4 and Supplementary Tables 1 (referenced, not shown in text)
+- **Missing materials affecting confidence** Supplementary figures and tables (including dose-response curves, SPR sensorgrams, crystallographic statistics, full analogue table), crystallographic data deposition identifiers, PDB accession codes for the new structure, raw HTRF data, compound synthesis details, and the full CACHE3 challenge results for comparison
+
+## Reviewer
+- **Overall assessment** The manuscript describes a technically competent application of an established machine learning-accelerated virtual screening approach to a relevant antiviral target. The work is clearly presented and the experimental validation is appropriate in scope. However, the scientific advance over existing literature is modest, as the target has been extensively studied and multiple inhibitor series already exist. The single confirmed hit with micromolar affinity, while validated crystallographically, represents a limited demonstration of the workflow's utility. The analogue expansion is a strength, but the lack of cellular data limits the translational significance. The manuscript would benefit from clearer contextualization of the novelty relative to prior Mac1 inhibitor discovery efforts and a more critical discussion of the limitations of the screening approach.
+- **Who would be interested in the results, and why** Researchers in computational drug discovery, particularly those working on machine learning-accelerated virtual screening methods, will find the workflow description and its prospective validation of interest. The structural biology community studying SARS-CoV-2 proteins may also find the new Mac1-ligand crystal structure useful. Medicinal chemists working on antiviral development may be interested in the new chemical series as a starting point, though the micromolar potency and lack of cellular data limit immediate therapeutic relevance.
+- **Major strengths** 1) Prospective validation of a machine learning-accelerated screening workflow in a blinded challenge setting (CACHE3), which provides an unbiased assessment of method performance. 2) High-quality crystallographic confirmation of the binding mode, including the observation of a Phe132 conformational change, which provides structural insight into Mac1 plasticity. 3) The analogue expansion strategy using the REAL Space database is a practical demonstration of how to efficiently explore ultra-large chemical spaces. 4) Clear and concise writing with appropriate methodological detail for reproducibility.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scientific significance / novelty
+  - **Claim pointer** The authors claim that their workflow "enabled to discover novel Mac1 inhibitor chemotypes" and that the identified series represents "a structurally distinct example within the pyrrolidinone-based Mac1 inhibitor series."
+  - **Evidence pointer** Results section "Discovery and characterization of a novel Mac1 inhibitor scaffold"; Conclusions
+  - **Concern** The novelty of the identified scaffold is not sufficiently established. The authors acknowledge that the pyrrolopyrimidine group has been "frequently observed among previously reported Mac1 inhibitors" and that prior neutral inhibitors exist (e.g., LRH-0003). The distinction claimed is based on the bromine substitution and carboxamide group, but the manuscript does not provide a comprehensive comparison with previously reported Mac1 inhibitors to demonstrate that this specific combination is genuinely novel. Furthermore, the micromolar affinity (KD 20 µM) is modest compared to existing inhibitors, and the authors do not discuss whether this scaffold offers any advantage over previously reported series in terms of potency, selectivity, or drug-likeness.
+  - **Why it matters** The central claim of the manuscript is the discovery of a novel inhibitor chemotype. If the scaffold is not sufficiently distinct from known inhibitors, or if it does not offer a clear advantage, the scientific significance of the work is substantially diminished. The CACHE3 challenge context implies that the workflow should identify novel, useful starting points, and this needs to be demonstrated more rigorously.
+  - **Resolution test** The authors should provide a systematic comparison of CACHE3-HI_1706_56 and its analogues with all previously reported Mac1 inhibitors, including structural overlays, potency comparisons, and physicochemical property assessments. If the scaffold is genuinely novel, this analysis should clearly demonstrate distinct structural features and a favorable profile. If not, the claims of novelty should be tempered.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness / data completeness
+  - **Claim pointer** The authors state that "12 were confirmed as NSP3 Mac1 binders via SPR" and report KD values for several analogues in Table 1 and Figure 4.
+  - **Evidence pointer** Results section "Chemical series expansion in the REAL space"; Table 1 (referenced); Supplementary Figures 3 and 4 (referenced)
+  - **Concern** The SPR data supporting the KD values are not shown in the main text. The authors reference Supplementary Figures 3 and 4, but these are not available for review. Given that SPR is the primary quantitative binding assay, the quality of the sensorgrams, the fitting models used, and the reproducibility of the measurements are critical for assessing the reliability of the reported affinities. Additionally, the manuscript does not specify how many independent replicates were performed, what the error bars represent, or whether the binding was reversible. The steady-state affinity model mentioned in the methods may not be appropriate for all binding kinetics, particularly if association or dissociation rates are slow.
+  - **Why it matters** The reported KD values are the key quantitative output of the study and form the basis for the structure-activity relationships discussed. If the SPR data are not robust, the conclusions about which analogues are most potent and the rationale for the chemical series expansion are undermined.
+  - **Resolution test** The authors should provide representative SPR sensorgrams and fitting curves for all reported compounds, including the negative control (PARP14), in the main text or a clearly accessible supplementary file. They should also specify the number of replicates, the error calculation method, and the criteria for data inclusion/exclusion. If steady-state fitting was used, justification for this choice over kinetic fitting should be provided.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Technical soundness / methodological rigor
+  - **Claim pointer** The authors state that "the crystal structure of CACHE3_HI_1706_56 bound to Mac1 was solved to a resolution of 1.02 Å" and that the ligand occupancy was 26%.
+  - **Evidence pointer** Results section "Discovery and characterization of a novel Mac1 inhibitor scaffold"; Figure 3d; Supplementary Figure 2 (referenced)
+  - **Concern** The low ligand occupancy (26%) raises concerns about the reliability of the structural interpretation. While the authors acknowledge this and provide a plausible explanation (conformational change of the Phe132 loop), the manuscript does not provide details on how the occupancy was refined, what the estimated standard uncertainty is, or whether alternative interpretations (e.g., partial occupancy at multiple sites, ligand disorder) were considered. The electron density maps are only shown in the supplementary material, which is not available for review. The claim that the binding mode is "confirmed" by crystallography may be overstated given the low occupancy.
+  - **Why it matters** The crystal structure is a key piece of evidence supporting the docking predictions and the proposed binding mode. If the structural interpretation is not robust, the basis for the analogue design and the understanding of the structure-activity relationships is weakened.
+  - **Resolution test** The authors should provide the electron density maps (2Fo-Fc and Fo-Fc) for the ligand and surrounding residues in the main text or a clearly accessible supplementary file, along with details of the occupancy refinement and validation metrics (e.g., real-space correlation coefficient). They should also discuss the limitations of interpreting a structure with 26% occupancy and consider whether the docking predictions are still valid given the observed conformational change.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scientific significance / contextualization
+  - **Claim pointer** The authors state that their workflow "demonstrated competitive performance in the prospective CACHE3 challenge against a range of alternative screening methods, including fragment-based, generative, and deep learning workflows."
+  - **Evidence pointer** Conclusions; Introduction (CACHE3 description)
+  - **Concern** The manuscript does not provide any quantitative comparison with other CACHE3 participants' results. The authors mention that they won the challenge, but no details are given about the evaluation criteria, the performance metrics, or how their results compared to other methods. Without this context, the claim of "competitive performance" is not substantiated. Additionally, the authors do not discuss what aspects of their workflow contributed to its success or what limitations were revealed by the challenge.
+  - **Why it matters** The CACHE3 challenge is a key part of the manuscript's significance, as it provides a prospective, blinded evaluation of the workflow. A detailed comparison with other methods would help readers understand the strengths and weaknesses of the approach and its generalizability to other targets.
+  - **Resolution test** The authors should provide a summary of the CACHE3 challenge results, including the evaluation criteria, the performance of their workflow relative to other participants, and a discussion of the factors that contributed to their success. If this information is confidential, they should state this explicitly and temper their claims accordingly.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity / reproducibility
+  - **Affected element** Methods section "Small molecule library preparation"
+  - **Evidence pointer** Materials and methods
+  - **Issue** The description of the library preparation is incomplete. The authors state that the SMILES of 43,759,934 compounds were downloaded, but then refer to a "resulting dataset of 80 million molecules" after applying filters. The relationship between these two numbers is unclear. Additionally, the CACHE3 'hit-like' filter is referenced but not described in detail.
+  - **Required correction** Clarify the relationship between the initial download and the filtered dataset. Provide a detailed description of the CACHE3 'hit-like' filter criteria, either in the main text or by referencing a public source.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity / data presentation
+  - **Affected element** Figure 3 and Figure 4
+  - **Evidence pointer** Figure legends
+  - **Issue** The figure legends are incomplete. Figure 3 does not describe the SPR data shown in panel (b), and Figure 4 does not describe the SPR data shown in panels (b) and (c). The legends also do not specify the error bars or the number of replicates.
+  - **Required correction** Expand the figure legends to fully describe all panels, including the assay conditions, the data representation (e.g., mean ± SD), and the number of independent experiments.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical soundness / assay details
+  - **Affected element** Methods section "Homogeneous time-resolved fluorescence (HTRF)"
+  - **Evidence pointer** Materials and methods
+  - **Issue** The HTRF assay description is brief. The authors do not specify the concentration of the ADP-ribose peptide used, the peptide sequence beyond the abbreviated notation, or the positive/negative controls used. The statement that "Compounds were dispensed into ProxiPlate-384 Plus assay plates using an Echo 650 acoustic liquid handler" does not specify the compound concentration range tested.
+  - **Required correction** Provide full details of the HTRF assay, including the peptide sequence, concentrations of all reagents, the compound concentration range, and the controls used. This is essential for reproducibility.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Clarity / terminology
+  - **Affected element** Results section "Discovery and characterization of a novel Mac1 inhibitor scaffold"
+  - **Evidence pointer** Figure 3d and accompanying text
+  - **Issue** The text refers to "Phe132 (P132_d)" and "P132_c" without defining these terms. The distinction between the "closed" and "everted" conformations is described, but the notation is confusing.
+  - **Required correction** Define the notation (e.g., "d" for "down" and "c" for "closed" or similar) and use consistent terminology throughout the text and figures.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Clarity / data presentation
+  - **Affected element** Table 1
+  - **Evidence pointer** Table 1 (referenced, not shown in text)
+  - **Issue** Table 1 is referenced but not included in the manuscript text. The reader cannot assess the structure-activity relationships without seeing the full table.
+  - **Required correction** Include Table 1 in the main text or provide a summary of the key data points in the text. If the table is too large, consider moving it to the main text as a condensed version.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (novelty claim not substantiated), R1-M2 (SPR data not shown), R1-M3 (crystallographic occupancy concerns)
+- **Assessment against Nature-style criteria** 
+  - **Originality** The application of Deep Learning-accelerated virtual screening to Mac1 is not entirely novel, as similar approaches have been applied to other targets. The specific combination of Deep Docking with consensus scoring and analogue expansion in the REAL Space is a reasonable workflow, but the individual components are established. The crystallographic observation of the Phe132 conformational change is a useful contribution, though its significance is limited by the low ligand occupancy.
+  - **Scientific importance** The target (SARS-CoV-2 Mac1) is of high relevance, and the need for novel antiviral agents remains. However, the identified inhibitors have only micromolar affinity and no cellular activity data, limiting their immediate therapeutic significance. The work is more relevant as a methodological demonstration than as a direct contribution to antiviral drug development.
+  - **Interdisciplinary readership** The manuscript will appeal to computational chemists, structural biologists, and virologists. The methods are described in sufficient detail for computational specialists, and the biological context is clearly explained. However, the lack of cellular data may limit interest from a broader biomedical audience.
+  - **Technical soundness** The computational workflow is technically sound, and the experimental validation is appropriate. However, the incomplete presentation of SPR data and the low crystallographic occupancy are concerns that need to be addressed. The manuscript would benefit from more rigorous statistical analysis of the screening results and a clearer discussion of the limitations of the approach.
+  - **Readability for nonspecialists** The manuscript is generally well-written and accessible. The introduction provides adequate context, and the figures are clear. However, some methodological details (e.g., Deep Docking parameters, consensus scoring) may be challenging for nonspecialists. The authors should consider adding a brief explanation of the machine learning approach for a general audience.
+- **Recommendation posture** Supportive if technical concerns are resolved. The manuscript describes a competent application of a useful computational workflow with experimental validation. However, the novelty claim needs to be substantiated with a more thorough comparison to existing Mac1 inhibitors, and the SPR and crystallographic data need to be presented more completely. If these issues are addressed, the manuscript would be suitable for publication in a specialized journal.

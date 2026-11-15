@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Membrane Geometry Reveals Strengths and Limitations of AlphaFold-Predicted Transmembrane Protein Complexes · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Membrane Geometry Reveals Strengths and Limitations of AlphaFold-Predicted Transmembrane Protein Complexes</h1>
+      <div class="meta">Sziklai D; Wiener Z; Padanyi R; Hegedűs T</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-11-10
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.11.09.765245">原文</a>
+      </div>
+      <p class="one-liner">该文系统评估AlphaFold预测跨膜蛋白复合物在膜几何兼容性上的可靠性，虽以评估为主、方法创新有限，但聚焦蛋白结构预测的物理合理性验证，对结构计算建模有重要参考价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">High-confidence protein complex predictions do not necessarily represent physically or biologically plausible assemblies. This limitation is particularly relevant for transmembrane (TM) proteins, whose interactions are constrained by the lipid bilayer. Here, we systematically evaluated membrane compatibility in the recently expanded AlphaFold Protein Structure Database, analysing 189,469 high-confidence AlphaFold-Multimer TM-TM complexes and additional TM-soluble assemblies. Most predictions exhibited plausible membrane geometry: among 125,657 evaluable complexes with TM proteins possessing more than two TM helices, 95.4% had joint hydrophobic thicknesses within the expected range of 15-35 angstroms. Nevertheless, some complexes displayed substantial inconsistencies in membrane positioning or protomer orientation despite favourable prediction confidence. Interactions between TM proteins, particularly those containing only one or two TM helices, were frequently dominated by extramembrane contacts. Among TM-soluble complexes, 77.4% showed no penetration of the soluble partner into the hydrophobic membrane core. We further investigated whether AlphaFold3 (AF3) could overcome limitations of AlphaFold-Multimer. Although AF3 recovered an experimentally supported SERCA-phospholamban interaction, it failed to reproduce the cholesterol-mediated norepinephrine transporter homodimer. A benchmark of 173 cholesterol-containing membrane protein targets further revealed limited accuracy in predicting cholesterol-binding poses, particularly for structures released after the AF3 training cutoff. Together, these findings demonstrate that membrane-specific geometric constraints provide a valuable complement to conventional confidence metrics and highlight the persistent challenges of predicting assemblies involving lipids.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">高置信度的蛋白质复合物预测并不一定代表物理或生物学上合理的组装。这一局限性对于跨膜（TM）蛋白尤为相关，因为其相互作用受脂质双层的约束。在此，我们系统评估了近期扩展的AlphaFold蛋白质结构数据库中膜兼容性，分析了189,469个高置信度AlphaFold-Multimer TM-TM复合物及额外的TM-可溶性组装体。大多数预测表现出合理的膜几何结构：在125,657个可评估的、含有多于两个TM螺旋的TM蛋白复合物中，95.4%的联合疏水厚度在预期的15-35埃范围内。然而，尽管预测置信度良好，一些复合物在膜定位或原聚体取向方面仍显示出显著不一致性。TM蛋白之间的相互作用，特别是那些仅含有一个或两个TM螺旋的蛋白，常由膜外接触主导。在TM-可溶性复合物中，77.4%显示可溶性伙伴未穿透疏水膜核心。我们进一步研究了AlphaFold3（AF3）是否能克服AlphaFold-Multimer的局限性。尽管AF3恢复了实验支持的SERCA-受磷蛋白相互作用，但它未能重现胆固醇介导的去甲肾上腺素转运蛋白同源二聚体。对173个含胆固醇膜蛋白靶标的基准测试进一步显示，在预测胆固醇结合姿态方面准确性有限，尤其是对于AF3训练截止日期后发布的结构。综合来看，这些发现表明，膜特异性几何约束为传统置信度指标提供了有价值的补充，并突显了涉及脂质组装预测的持续挑战。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Membrane Geometry Reveals Strengths and Limitations of AlphaFold-Predicted Transmembrane Protein Complexes</li>
+<li><strong>作者与单位</strong>：Sziklai D; Wiener Z; Padanyi R; Hegedűs T（匈牙利，具体单位未在摘要中提供）</li>
+<li><strong>期刊/预印本平台</strong>：bioRxiv</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：预印本（系统评估 + 方法学 + 案例研究）</li>
+<li><strong>领域</strong>：蛋白质结构预测评估、跨膜蛋白复合物、膜几何约束、AlphaFold-Multimer / AlphaFold3 基准测试</li>
+<li><strong>关键词</strong>：AlphaFold-Multimer、AlphaFold3、跨膜蛋白复合物、膜几何、胆固醇、蛋白质-脂质相互作用、结构数据库评估</li>
+<li><strong>DOI/arXiv 号</strong>：10.1101/2026.11.09.765245（正文中写为 10.64898/2026.11.09.765245，以正文为准）</li>
+<li><strong>代码</strong>：https://github.com/hegelab/AF-TM-Dimers-QC</li>
+<li><strong>数据</strong>：Zenodo DOI: 10.5281/zenodo.23940760</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>结构预测结果评估与质量审计</strong>子方向。核心贡献是提出以膜几何约束（疏水厚度、膜中位面错配、跨膜轴角度）作为 AlphaFold-Multimer 预测复合物的<strong>正交验证指标</strong>，并系统评估 AFDB 中 18.9 万个高置信 TM-TM 复合物的膜兼容性；同时以 SERCA-PLN 和胆固醇介导的 NET 同源二聚体为案例，检验 AlphaFold3 在膜蛋白复合物和脂质介导组装上的能力边界。对课题的可迁移价值在于：<strong>膜几何约束可作为独立于 pLDDT/ipAE 的复合物可信度筛选工具</strong>，且 AF3 对脂质介导组装的能力不足为「结构预测 + 脂质」方向提供了明确的基准缺口。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文通过分析 AFDB 中 189,469 个高置信 TM-TM 复合物预测的膜几何特征（疏水厚度、膜中位面错配、跨膜轴角度），发现 95.4% 的可评估复合物具有合理的联合疏水厚度，但存在少数高置信度却膜几何严重异常的预测（如 RNFT1 同源二聚体）；进一步案例测试表明 AlphaFold3 能恢复 SERCA-PLN 相互作用但无法重现胆固醇介导的 NET 同源二聚体界面，且对 173 个含胆固醇膜蛋白靶标的胆固醇结合姿态预测精度有限。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：高置信度的 AlphaFold-Multimer 预测复合物是否具有物理上合理的膜几何结构？膜几何约束能否作为评估预测复合物可信度的补充指标？AlphaFold3 能否克服 AlphaFold-Multimer 在膜蛋白复合物和脂质介导组装上的局限？</li>
+<li><strong>为什么重要</strong>：AFDB 已扩展至约 3100 万个复合物预测，但高置信度（高 ipAE/ipTM）并不等于生物学上合理的组装。膜蛋白复合物的功能依赖于其在脂双层中的正确取向和相对位置，而标准置信度指标不包含膜环境信息。若膜几何异常在高置信预测中普遍存在，将影响基于 AFDB 的生物学推断。</li>
+<li><strong>现有方法为何不足</strong>：现有评估主要依赖 pLDDT、ipTM、ipAE 等置信度分数，这些分数反映结构确定性而非物理合理性；且预测过程不显式建模脂双层，导致跨膜蛋白的膜内定位和取向可能系统性偏差。</li>
+<li><strong>精确研究问题</strong>：Can membrane-geometry constraints (hydrophobic thickness, midplane mismatch, TM-axis angle) serve as an orthogonal quality filter to identify physically implausible AlphaFold-Multimer predictions that pass conventional confidence thresholds, and can AlphaFold3 overcome these limitations for TM complexes and lipid-mediated assemblies?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文引言与讨论的框架，标注为「仅本文框架」，未经外部系统核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法/事件</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验结构生物学时代</td>
+<td>X-ray、cryo-EM、NMR</td>
+<td>高精度、物理真实</td>
+<td>通量低、膜蛋白难结晶</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>早期计算对接/模板建模</td>
+<td>HADDOCK、ClusPro、同源建模</td>
+<td>可规模化</td>
+<td>精度有限、依赖模板</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>深度学习结构预测</td>
+<td>AlphaFold2、RoseTTAFold、AlphaFold-Multimer</td>
+<td>单链精度高、复合物预测突破</td>
+<td>不显式建模膜环境、置信度≠物理合理性</td>
+<td>本文评估对象</td>
+</tr>
+<tr>
+<td>大规模结构数据库</td>
+<td>AFDB 扩展至 3100 万复合物</td>
+<td>覆盖广、可挖掘</td>
+<td>缺乏实验验证、质量参差</td>
+<td>本文数据来源</td>
+</tr>
+<tr>
+<td>多组分/脂质预测</td>
+<td>AlphaFold3</td>
+<td>支持核酸、小分子、脂质</td>
+<td>脂质介导组装精度未知</td>
+<td>本文案例测试对象</td>
+</tr>
+<tr>
+<td><strong>膜几何约束评估（本文）</strong></td>
+<td>疏水厚度、膜中位面错配、跨膜轴角度</td>
+<td>独立于置信度的物理合理性检查</td>
+<td>依赖 TM 注释准确性、近似平面膜假设</td>
+<td><strong>本文贡献</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>高置信度 ≠ 物理合理性</td>
+<td>部分复合物预测具有良好置信度分数但膜几何严重异常</td>
+<td>预测过程不显式建模脂双层；置信度反映结构确定性而非生物学可行性</td>
+<td>RNFT1 同源二聚体：两 protomer 膜平面近似垂直，但置信度分数良好（Results 图 2B、Supplementary Fig. S2）</td>
+</tr>
+<tr>
+<td>低跨膜螺旋数蛋白的膜定位不可靠</td>
+<td>1TM/2TM 蛋白无法独立定义膜平面</td>
+<td>单个或两个跨膜螺旋不足以确定膜取向和边界</td>
+<td>需借助 highTM 伴侣作为参考（Results 图 3）</td>
+</tr>
+<tr>
+<td>脂质介导的组装难以预测</td>
+<td>AF3 无法重现胆固醇介导的 NET 同源二聚体界面</td>
+<td>脂质结合姿态预测精度有限，特别是训练截止后发布的靶标</td>
+<td>100 次额外采样均未成功重现 cryo-EM 界面（Results 图 7B,C）</td>
+</tr>
+<tr>
+<td>胆固醇结合姿态预测精度低</td>
+<td>训练截止后靶标的 LDDT-PLI 分数低</td>
+<td>训练数据分布外推能力不足；胆固醇构象空间大</td>
+<td>173 个靶标中三个 post-cutoff 组平均 LDDT-PLI 分别为 0.043、0.230、0.125（Results 图 7D）</td>
+</tr>
+<tr>
+<td>跨膜注释不确定性</td>
+<td>TM 边界预测误差可导致几何误判</td>
+<td>不同 TM 预测器对边界定义不一致</td>
+<td>TAP1-TAP2 案例：表观错配对 TM 区域分配敏感（Discussion、Supplementary Fig. S3）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：
+- 从 AFDB 中筛选高置信 AlphaFold-Multimer TM-TM 复合物（189,469 个），用 TMbed/TMVisDB 注释跨膜螺旋；
+- 对每个 protomer 独立计算膜几何参数（疏水厚度、膜中位面、跨膜轴方向）；
+- 通过比较两 protomer 的几何参数评估复合物的膜兼容性（联合疏水厚度、膜中位面错配、跨膜轴角度）；
+- 对 lowTM-highTM 和 lowTM-lowTM 复合物分别建立参考框架（highTM 作为参考 / 经验校准）；
+- 案例测试：SERCA-PLN（AF2-Multimer vs AF3）和 NET 胆固醇介导二聚体（AF3 + 100 次额外采样）；
+- 构建 173 个含胆固醇膜蛋白靶标的基准集，用 LDDT-PLI 评估 AF3 胆固醇结合姿态预测精度。</p>
+<p><strong>2) 核心洞察</strong>：
+- 膜几何约束提供了<strong>独立于置信度分数</strong>的正交质量维度：一个复合物可以具有高 pLDDT/ipTM，但两 protomer 的膜平面不兼容（如 RNFT1），说明置信度分数无法捕捉膜环境约束。
+- 跨膜螺旋数量决定了几何约束的强度：≥3 个 TM 螺旋可独立定义膜平面，而 1-2 个 TM 螺旋的蛋白需要伴侣蛋白作为几何参考，且其相互作用常由膜外结构域主导。
+- AF3 的进步是<strong>非均匀的</strong>：对直接 TM-TM 相互作用（SERCA-PLN）有改善，但对脂质介导的组装（NET-胆固醇）仍力不能及，且对训练截止后靶标的脂质姿态预测精度显著下降。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：
+- 对结构预测模型的评估不应仅依赖置信度分数，而应引入<strong>任务相关的物理约束</strong>作为正交验证维度。对膜蛋白而言，膜几何是天然的物理约束；对可溶性蛋白，可考虑寡聚状态、对称性、结合界面疏水性等。
+- 预测模型的能力边界往往体现在<strong>训练分布之外的组分类型</strong>上：AF3 对脂质介导组装的无能为力提示，仅靠扩展组分类型（加入脂质分子）而不改进对脂质-蛋白相互作用的学习，难以解决这类问题。
+- 大规模数据库的质量审计需要<strong>分层策略</strong>：先粗筛（几何兼容性），再细查（TM 注释敏感性分析），最后用实验结构做案例验证——这种「数据库级筛查 + 案例级深挖」的组合可迁移到其他结构数据库的质量评估。</p>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：</li>
+<li>AFDB 中高置信 AlphaFold-Multimer 预测复合物（含至少一个 TM 蛋白）；</li>
+<li>实验结构：SERCA1a-PLN（PDB: 4y3u）、NET 同源二聚体（PDB: 9ke3）；</li>
+<li>173 个含胆固醇膜蛋白靶标（来自 PDB，按 AF3 训练截止日期分组）。</li>
+<li><strong>输出</strong>：</li>
+<li>膜几何兼容性分类（兼容/边缘/可疑）；</li>
+<li>AF3 胆固醇结合姿态的 LDDT-PLI 分数分布；</li>
+<li>案例复合物的结构比对与几何分析。</li>
+<li><strong>模块</strong>：
+  1. <strong>TM 注释模块</strong>：TMVisDB/TMbed 分配跨膜螺旋，映射至 AFDB protomer；
+  2. <strong>几何计算模块</strong>：每 protomer 独立计算膜轴（主特征向量）、疏水厚度（TM 末端 Cα 质心距）、膜中位面；
+  3. <strong>兼容性评估模块</strong>：联合疏水厚度（15-35 Å 为合理区间）、膜中位面错配、跨膜轴角度（≤30° 为兼容）；
+  4. <strong>lowTM 参考模块</strong>：highTM 作为参考膜平面；lowTM-lowTM 用经验校准（从 1,587 个几何兼容的 highTM-highTM 复合物构建伪 lowTM 分布，P95/P99 阈值）；
+  5. <strong>接触组成模块</strong>：5.0 Å 原子接触，按 TM/TM、TM/SOL、SOL/SOL 分类；
+  6. <strong>AF3 预测模块</strong>：本地运行 AF3，SERCA-PLN 用默认参数；NET 用 2 蛋白 + 14 胆固醇 + 2 POPG，100 次额外采样（20 随机种子 × 5 样本）；
+  7. <strong>胆固醇姿态评估模块</strong>：LDDT-PLI（6 Å 相互作用邻域），按训练截止分组比较。</li>
+<li><strong>工具</strong>：Python、Snakemake、Matplotlib、PyMOL、OpenStructure（LDDT-PLI）、OpenAI Codex/ChatGPT（辅助脚本开发与评估）。</li>
+<li><strong>流程</strong>：AFDB 元数据筛选 → TM 注释 → 几何计算 → 兼容性分类 → 统计分布 → 案例深挖（SERCA-PLN、NET）→ 胆固醇基准评估。</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TM 注释（TMVisDB/TMbed）</td>
+<td>分配跨膜螺旋及边界</td>
+<td>膜几何计算的前提</td>
+<td>输入：蛋白序列/AFDB 结构；输出：TM 螺旋区间</td>
+<td>Methods 节；TMbed 为已发表工具</td>
+<td>移除后无法定义膜区域，整个几何分析不可行</td>
+</tr>
+<tr>
+<td>膜轴/疏水厚度计算</td>
+<td>每 protomer 独立定义膜平面与厚度</td>
+<td>比较两 protomer 的膜兼容性</td>
+<td>输入：TM 螺旋 Cα 坐标；输出：膜轴向量、厚度、中位面</td>
+<td>Methods 节；图 2A 分布结果</td>
+<td>移除后无法检测膜取向不一致（如 RNFT1 案例）</td>
+</tr>
+<tr>
+<td>联合疏水厚度评估</td>
+<td>判断复合物整体膜厚度是否合理</td>
+<td>膜厚度不匹配提示错误组装</td>
+<td>输入：两 protomer 厚度；输出：15-35 Å 区间判定</td>
+<td>95.4% 在区间内（Results 图 2A）</td>
+<td>移除后无法识别厚度异常复合物</td>
+</tr>
+<tr>
+<td>膜中位面错配/轴角评估</td>
+<td>检测两 protomer 膜位置与取向不一致</td>
+<td>高置信度但膜不兼容的预测需要此检查</td>
+<td>输入：两 protomer 膜几何参数；输出：错配距离、轴角</td>
+<td>图 2C、2D；98 百分位错配 3.6 Å</td>
+<td>移除后 RNFT1 类异常无法被识别</td>
+</tr>
+<tr>
+<td>lowTM 经验校准</td>
+<td>为 1-2 TM 螺旋蛋白建立几何参考</td>
+<td>低 TM 数蛋白无法独立定义膜平面</td>
+<td>输入：1,587 个兼容 highTM-highTM 复合物；输出：P95/P99 阈值</td>
+<td>Methods 节；图 4 分类结果</td>
+<td>移除后 lowTM-lowTM 复合物无法评估</td>
+</tr>
+<tr>
+<td>接触组成分析</td>
+<td>量化 TM/TM、TM/SOL、SOL/SOL 界面贡献</td>
+<td>识别界面是否由膜外区域主导</td>
+<td>输入：复合物结构 + TM 注释；输出：接触分类比例</td>
+<td>Results 图 1A、1B</td>
+<td>移除后无法判断界面性质与膜几何的关系</td>
+</tr>
+<tr>
+<td>AF3 本地预测</td>
+<td>案例测试 AF3 对 TM 复合物和脂质介导组装的能力</td>
+<td>检验 AF3 是否克服 AF2-Multimer 局限</td>
+<td>输入：序列 + 组分（含胆固醇）；输出：预测复合物结构</td>
+<td>Results 图 6、7</td>
+<td>移除后无法得出 AF3 能力边界的结论</td>
+</tr>
+<tr>
+<td>LDDT-PLI 评估</td>
+<td>量化胆固醇结合姿态预测精度</td>
+<td>区分蛋白-蛋白组装与蛋白-脂质互作能力</td>
+<td>输入：预测 vs 实验胆固醇坐标；输出：LDDT-PLI 分数</td>
+<td>Results 图 7D；三组 post-cutoff 均值 0.043/0.230/0.125</td>
+<td>移除后无法量化 AF3 脂质预测缺陷</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>本文为系统评估类论文，未提出新的数学模型或损失函数。核心几何量定义如下（基于 Methods 节描述）：</p>
+<ul>
+<li>
+<p><strong>疏水厚度（hydrophobic thickness）</strong>：对每个 protomer，将其 TM 螺旋的胞内/胞外末端 Cα 坐标分别 pooling，计算两侧质心沿膜轴方向的距离。公式可表示为：
+  [
+  T = |\mathbf{C}<em>{\text{in}} - \mathbf{C}</em>{\text{out}}| \cdot \hat{\mathbf{n}}
+  ]
+  其中 (\mathbf{C}<em>{\text{in}})、(\mathbf{C}</em>{\text{out}}) 分别为胞内/胞外末端 Cα 质心，(\hat{\mathbf{n}}) 为膜轴单位向量。合理区间为 15-35 Å。</p>
+</li>
+<li>
+<p><strong>膜中位面错配（midplane mismatch）</strong>：两 protomer 各自定义的膜中位面沿公共膜轴方向的距离差，取绝对值。</p>
+</li>
+<li>
+<p><strong>跨膜轴角度（TM-axis angle）</strong>：两 protomer 膜轴向量之间的夹角，取 sign-independent 形式（0°-90°），≤30° 视为兼容。</p>
+</li>
+<li>
+<p><strong>LDDT-PLI（Local Distance Difference Test for Protein–Ligand Interactions）</strong>：基于 6 Å 相互作用邻域内原子间距离差异的局部距离差异测试，用于评估预测配体（胆固醇）姿态与实验结构的吻合度。具体公式见 OpenStructure 实现（Biasini et al. 2013）。</p>
+</li>
+<li>
+<p><strong>接触定义</strong>：两残基间任意非氢原子对距离 ≤ 5.0 Å 视为接触；每对残基仅计一次。</p>
+</li>
+</ul>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/群体</strong>：
+- AFDB 高置信 TM-TM 复合物：189,469 个（6,027 异源二聚体 + 183,442 同源二聚体）；
+- 可评估膜几何的 highTM-highTM 复合物：125,657 个（122,553 同源 + 3,104 异源）；
+- lowTM-highTM 复合物：1,356 个（710 1TM-highTM + 646 2TM-highTM）；
+- lowTM-lowTM 复合物：610 个（459 1TM-1TM + 62 1TM-2TM + 89 2TM-2TM）；
+- highTM-soluble 异源二聚体：4,643 个（4,618 个可评估）；
+- 胆固醇基准：173 个可评估靶标（43 before-cutoff、46 homolog、40 homolog+cholesterol、44 no-homolog）。</p>
+<p><strong>指标</strong>：联合疏水厚度（15-35 Å 合理区间）、膜中位面错配、跨膜轴角度、LDDT-PLI、接触组成分数（f_TM-TM）。</p>
+<p><strong>基线/对照</strong>：AF2-Multimer 默认参数预测（SERCA-PLN 案例）；AF3 默认参数 + 100 次额外采样（NET 案例）；胆固醇基准按训练截止分组对照。</p>
+<p><strong>评测协议</strong>：几何兼容性分类（兼容/边缘/可疑）；LDDT-PLI 按靶标平均；案例结构比对通过叠加一个 protomer 后检查第二个 protomer 的相对位置。</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>highTM-highTM 联合疏水厚度分布</td>
+<td>大多数高置信 TM-TM 预测具有合理膜厚度</td>
+<td>125,657 个复合物；15-35 Å 为合理区间</td>
+<td>95.4% 在合理区间，中位数 24.0 Å</td>
+<td>多数高置信预测膜厚度合理</td>
+<td>合理厚度 ≠ 正确组装；未排除其他几何异常</td>
+<td>Results 图 2A</td>
+</tr>
+<tr>
+<td>RNFT1 同源二聚体案例分析</td>
+<td>高置信度预测可能存在严重膜几何异常</td>
+<td>两 protomer 膜轴近似垂直</td>
+<td>膜平面近似垂直，但置信度分数良好</td>
+<td>置信度分数无法捕捉膜取向不一致</td>
+<td>单个案例不能推广为普遍现象</td>
+<td>Results 图 2B、Supplementary Fig. S2</td>
+</tr>
+<tr>
+<td>膜中位面错配分布</td>
+<td>同源二聚体膜位置一致性高于异源二聚体</td>
+<td>80,089 个复合物（轴角 ≤30°）</td>
+<td>98 百分位错配 3.6 Å；同源二聚体分布更窄</td>
+<td>同源二聚体膜位置一致性更高</td>
+<td>异源二聚体错配大可能反映真实生物学差异</td>
+<td>Results 图 2C、Supplementary Fig. S4</td>
+</tr>
+<tr>
+<td>跨膜轴角分布</td>
+<td>界面类型影响膜取向约束强度</td>
+<td>按界面类型（TM/SOL 主导）分层</td>
+<td>SOL 主导界面轴角分布更宽</td>
+<td>膜外接触允许更大取向自由度</td>
+<td>轴角分布差异可能受 TM 注释误差影响</td>
+<td>Results 图 2D</td>
+</tr>
+<tr>
+<td>lowTM-highTM 几何兼容性</td>
+<td>1TM 蛋白比 2TM 蛋白更易出现膜几何异常</td>
+<td>1,356 个复合物；highTM 为参考</td>
+<td>1TM-highTM 兼容率 56.3%，2TM-highTM 兼容率 78.2%</td>
+<td>2TM 蛋白受更强几何约束</td>
+<td>兼容率差异可能受样本选择影响</td>
+<td>Results 图 3A、3C</td>
+</tr>
+<tr>
+<td>lowTM 界面组成</td>
+<td>lowTM 复合物界面由膜外接触主导</td>
+<td>610 个 lowTM-lowTM 复合物</td>
+<td>97.2% 为 SOL-SOL 主导界面</td>
+<td>低 TM 数蛋白相互作用主要依赖膜外区域</td>
+<td>膜外主导界面可能反映真实生物学</td>
+<td>Results 图 4B</td>
+</tr>
+<tr>
+<td>2TM-2TM 高度可疑案例</td>
+<td>TM-TM 主导界面与膜几何异常相关</td>
+<td>20 个高度可疑 2TM-2TM 复合物</td>
+<td>14/20 为 TM-TM 主导界面</td>
+<td>TM-TM 密集接触但膜不兼容提示错误组装</td>
+<td>样本量小，需更多验证</td>
+<td>Results 图 4C</td>
+</tr>
+<tr>
+<td>highTM-soluble 膜穿透分析</td>
+<td>可溶性伙伴通常不进入疏水核心</td>
+<td>4,618 个复合物</td>
+<td>77.4% 无可溶性残基进入疏水核心；95 百分位穿透深度 12.44 Å</td>
+<td>多数预测将可溶性伙伴置于膜外</td>
+<td>穿透案例可能反映真实膜锚定或注释误差</td>
+<td>Results 图 5A-C</td>
+</tr>
+<tr>
+<td>SERCA-PLN 案例</td>
+<td>AF3 优于 AF2-Multimer 恢复 TM 调节蛋白互作</td>
+<td>AF2-Multimer 默认 vs AF3 默认</td>
+<td>AF2-Multimer 未产生直接接触；AF3 产生与实验一致的紧凑复合物</td>
+<td>AF3 在特定 TM 复合物上优于 AF2-Multimer</td>
+<td>单案例不能推广；未系统比较</td>
+<td>Results 图 6A-C</td>
+</tr>
+<tr>
+<td>NET 胆固醇介导二聚体案例</td>
+<td>AF3 能否重现脂质介导的组装</td>
+<td>2 NET + 14 胆固醇 + 2 POPG；100 次额外采样</td>
+<td>100 次采样均未重现实验二聚体界面</td>
+<td>AF3 对胆固醇介导的 TM 组装能力不足</td>
+<td>失败可能源于输入组分或采样策略</td>
+<td>Results 图 7B,C</td>
+</tr>
+<tr>
+<td>胆固醇基准（173 靶标）</td>
+<td>AF3 胆固醇姿态预测精度</td>
+<td>按训练截止分组（before/post-cutoff）</td>
+<td>post-cutoff 三组 LDDT-PLI 均值 0.043、0.230、0.125</td>
+<td>AF3 对训练截止后靶标的胆固醇姿态预测精度有限</td>
+<td>低 LDDT-PLI 可能部分源于实验条件差异</td>
+<td>Results 图 7D</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文评估的是 AFDB 中<strong>高置信</strong> TM-TM 复合物预测的膜几何合理性，以及 AF3 对特定 TM 复合物和胆固醇介导组装的重现能力。结论不适用于低置信预测、可溶性蛋白复合物、或其他脂质类型。</li>
+<li><strong>oracle/真值输入</strong>：膜几何评估以 TMbed/TMVisDB 注释为基准，注释误差会传播至几何判断；胆固醇基准以 PDB 实验结构为真值，但实验条件（去垢剂、脂质环境）与预测条件不一致。</li>
+<li><strong>端到端状态</strong>：本文是<strong>评估研究</strong>而非端到端预测方法开发。膜几何检查是筛选工具，不能验证相互作用的生物学真实性；AF3 测试为有限案例 + 基准集，非系统性基准。</li>
+<li><strong>算力成本</strong>：AF3 本地预测使用默认参数，100 次额外采样用于 NET 案例；未报告具体算力消耗。</li>
+<li><strong>历史数据依赖</strong>：AFDB 预测基于训练截止前的数据；胆固醇基准按 2021-09-30 训练截止分组，post-cutoff 靶标代表外推场景。</li>
+<li><strong>模型依赖</strong>：结论依赖 TMbed 注释质量、AFDB 版本、AF3 版本及随机种子。</li>
+<li><strong>最难情形</strong>：低 TM 螺旋数蛋白（1-2 TM）的膜几何评估最不可靠；胆固醇介导的组装是 AF3 当前最难处理的场景。</li>
+<li><strong>群体/领域边界</strong>：结果基于 AFDB 中高置信预测子集，不代表所有预测；同源二聚体占主导，异源二聚体结论需谨慎外推。</li>
+<li><strong>不确定性</strong>：作者未报告置信区间或统计检验；LDDT-PLI 的阈值意义未明确讨论。</li>
+</ul>
+<p><strong>有边界的复述</strong>：在 AFDB 高置信 TM-TM 复合物预测中，膜几何检查可识别出约 4.6% 的联合疏水厚度异常案例，且存在高置信度但膜取向严重不一致的个别案例（如 RNFT1）；AF3 在 SERCA-PLN 案例上优于 AF2-Multimer，但对胆固醇介导的 NET 同源二聚体及训练截止后靶标的胆固醇姿态预测精度有限。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>膜几何评估依赖 TM 注释准确性</td>
+<td>TM 边界预测误差可导致几何误判（如 TAP1-TAP2 案例对 TM 区域分配敏感）</td>
+<td>需结合更精确的 TM 注释或实验验证</td>
+<td>Discussion、Supplementary Fig. S3</td>
+</tr>
+<tr>
+<td>几何兼容性 ≠ 生物学真实性</td>
+<td>膜几何合理不能证明相互作用在细胞中真实发生</td>
+<td>需结合实验验证和功能数据</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>AF3 测试为有限案例</td>
+<td>SERCA-PLN 和 NET 为选择性案例，非系统性基准</td>
+<td>需更大规模、更系统的 AF3 评估</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>胆固醇基准的观察性</td>
+<td>分组比较为观察性，未控制混杂因素</td>
+<td>需更严格的实验设计</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>膜近似为平面双层</td>
+<td>几何评估假设局部平面膜，不适用于高度弯曲或非双层膜环境</td>
+<td>需扩展至非平面膜几何模型</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>数据来源限制</td>
+<td>AFDB 预测基于训练截止前数据，post-cutoff 靶标代表外推场景</td>
+<td>需持续更新评估</td>
+<td>Discussion</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>95.4% 的联合疏水厚度在 15-35 Å 区间内</td>
+<td>该区间较宽（20 Å），可能过于宽松；且 highTM-highTM 复合物中同源二聚体占绝对主导（122,553/125,657），同源二聚体天然具有一致的膜几何</td>
+<td>若区间过宽或样本同质化，则「95.4% 合理」的结论可能高估 AF 的膜几何准确性</td>
+<td>用更严格的厚度区间（如 20-30 Å）重分析；分别报告同源/异源二聚体的通过率</td>
+<td>Results 图 2A；样本构成在 Results 中</td>
+</tr>
+<tr>
+<td>RNFT1 案例被用作「高置信但几何异常」的证据</td>
+<td>作者承认 TM 注释存在不确定性，RNFT1 的异常可能源于注释错误而非 AF 预测失败</td>
+<td>若异常源于注释误差，则膜几何检查的有效性被削弱</td>
+<td>用多种 TM 预测器交叉验证 RNFT1 的 TM 注释；检查 cryo-EM/实验结构是否存在</td>
+<td>Results 图 2B、Supplementary Fig. S2</td>
+</tr>
+<tr>
+<td>AF3 胆固醇基准的 LDDT-PLI 均值极低（0.043-0.230）</td>
+<td>低 LDDT-PLI 可能部分源于实验条件（去垢剂、脂质环境）与预测条件不一致，而非 AF3 算法缺陷</td>
+<td>若实验条件差异是主因，则对 AF3 脂质预测能力的结论需弱化</td>
+<td>在相同条件下比较 AF3 对训练截止前/后靶标的预测；用不同脂质环境做敏感性分析</td>
+<td>Results 图 7D</td>
+</tr>
+<tr>
+<td>100 次额外采样未重现 NET 二聚体界面</td>
+<td>采样策略（随机种子、胆固醇数量）可能未覆盖构象空间；AF3 对胆固醇的化学表示可能不准确</td>
+<td>若采样不足或表示不当，则「AF3 无法预测脂质介导组装」的结论可能过早</td>
+<td>系统扫描胆固醇数量、采样温度、种子数；比较不同脂质类型的表现</td>
+<td>Results 图 7B,C</td>
+</tr>
+<tr>
+<td>接触组成分析显示 SOL-SOL 主导界面普遍</td>
+<td>这可能是 AF 训练数据中可溶性蛋白复合物占主导的偏差，而非膜蛋白的真实生物学</td>
+<td>若训练偏差导致膜外接触偏好，则膜蛋白复合物预测可能系统性偏向可溶性界面</td>
+<td>与实验膜蛋白复合物结构中的接触组成比较；检查预测置信度与接触组成的关系</td>
+<td>Results 图 1A、1B</td>
+</tr>
+<tr>
+<td>膜几何评估假设局部平面膜</td>
+<td>真实膜环境存在曲率、脂质不均一性，平面近似可能遗漏重要约束</td>
+<td>若平面近似过度简化，则几何检查的判别力有限</td>
+<td>对已知弯曲膜结构（如小囊泡、管状膜）做敏感性分析</td>
+<td>Discussion</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>膜几何作为正交质量过滤器</strong>：对膜蛋白复合物预测，可计算每 protomer 的疏水厚度、膜中位面、跨膜轴方向，通过联合厚度（15-35 Å）、中位面错配、轴角（≤30°）三个指标筛选物理上不合理的预测。此方法不依赖置信度分数，可作为 ipTM/ipAE 的补充筛选层。<strong>可迁移到</strong>：任何基于 AF 的膜蛋白复合物筛选流程。</p>
+</li>
+<li>
+<p><strong>低 TM 螺旋数蛋白需要参考框架</strong>：1-2 个 TM 螺旋的蛋白无法独立定义膜平面，需借助 ≥3 TM 螺旋的伴侣蛋白作为几何参考；若伴侣也是低 TM 蛋白，需用经验校准（从已知兼容复合物构建伪分布，取 P95/P99 阈值）。<strong>可迁移到</strong>：单次跨膜蛋白（如受体、通道辅助亚基）复合物预测的评估。</p>
+</li>
+<li>
+<p><strong>接触组成分析揭示界面性质</strong>：将复合物界面按 TM-TM、TM-SOL、SOL-SOL 分类，可判断相互作用是否由膜外区域主导。低 TM 蛋白复合物中 SOL-SOL 主导界面占 97.2%，提示膜外结构域在低 TM 蛋白互作中的主导作用。<strong>可迁移到</strong>：膜蛋白复合物界面预测的生物学解读。</p>
+</li>
+<li>
+<p><strong>AF3 对脂质介导组装的能力边界</strong>：即使显式加入胆固醇分子，AF3 仍无法重现胆固醇介导的 NET 同源二聚体界面，且对训练截止后靶标的胆固醇姿态预测精度显著下降（LDDT-PLI 均值 0.043-0.230）。<strong>可迁移到</strong>：对「结构预测 + 脂质」方向的研究，需开发脂质感知的评估指标或专用模型。</p>
+</li>
+<li>
+<p><strong>数据库级筛查 + 案例级深挖的组合策略</strong>：先在大规模数据库上做几何筛查（识别异常分布），再对具体案例做深入分析（如 RNFT1、SERCA-PLN、NET），最后用基准集量化模型能力边界。<strong>可迁移到</strong>：其他结构数据库（如 RNA、配体-蛋白复合物）的质量评估。</p>
+</li>
+<li>
+<p><strong>训练截止分组作为外推能力指标</strong>：将基准靶标按模型训练截止日期分组，可量化模型的外推能力。post-cutoff 组表现下降提示模型对训练分布外数据的泛化不足。<strong>可迁移到</strong>：任何深度学习结构预测模型的时效性评估。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold-Multimer 与 AFDB 扩展</strong>：本文直接基于 Han et al. 2026 发布的 AFDB 复合物预测数据集（约 3100 万候选复合物，其中 181 万满足严格界面置信度标准）。本文的 189,469 个 TM-TM 复合物是该数据集的子集，聚焦于膜蛋白类别。</li>
+<li><strong>AlphaFold2/3 膜蛋白预测能力</strong>：与 Hegedűs et al. 2022 的工作一脉相承，该文曾评估 AlphaFold2 对膜蛋白结构的预测能力；本文将其扩展至复合物层面，并引入膜几何约束作为新评估维度。</li>
+<li><strong>AlphaFold3 多组分预测</strong>：与 Abramson et al. 2024 的 AF3 原始论文衔接，本文测试了 AF3 对含脂质复合物的预测能力，补充了 AF3 在脂质介导组装上的表现数据。</li>
+<li><strong>TM 注释工具</strong>：使用 TMbed（Bernhofer &amp; Rost 2022）和 TMVisDB（Olenyi et al. 2025）进行跨膜螺旋注释，这些工具是膜蛋白计算研究的标准组件。</li>
+<li><strong>LDDT-PLI 指标</strong>：基于 OpenStructure 的 LDDT 框架（Biasini et al. 2013），是配体-蛋白相互作用评估的常用指标，与 AlphaFold3 论文中使用的指标一致。</li>
+<li><strong>膜蛋白复合物实验结构</strong>：SERCA-PLB 复合物（PDB: 4y3u，Akin et al. 2013）和 NET 同源二聚体（PDB: 9ke3，Zhang et al. 2025）为案例验证提供实验真值。</li>
+<li><strong>与「结构预测 + 脂质」方向的关联</strong>：本文的胆固醇基准结果与 Yang et al. 2026 的 LiPP 基准（独立报道 AF 对脂质预测的困难）相互印证，共同指向脂质-蛋白互作预测是当前 AI 结构预测的主要短板之一。</li>
+<li><strong>[Analysis] 候选方向</strong>：本文的膜几何评估框架可推广至其他膜蛋白复合物数据库（如 ESMFold 复合物预测、RoseTTAFold 输出），也可与 MD 模拟结合——对几何可疑的预测进行短时 MD 弛豫验证，看是否收敛到合理膜构象。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：膜几何感知的复合物可信度评分（Membrane-Geometry-Aware Confidence Score, MGACS）
+   - <strong>来源局限/观察</strong>：本文显示置信度分数与膜几何合理性正交，但未将几何指标整合为统一评分。
+   - <strong>核心假设</strong>：将疏水厚度、中位面错配、轴角偏差与 ipTM/ipAE 加权组合，可提高膜蛋白复合物预测的筛选精度。
+   - <strong>初步方法</strong>：在本文 189,469 个复合物数据集上，用逻辑回归或简单决策规则融合几何与置信度特征，以实验结构为标签训练/验证。
+   - <strong>验证方式</strong>：在独立膜蛋白复合物测试集上比较 MGACS 与 ipTM/ipAE 的区分能力（AUC、召回率）。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：低 TM 螺旋蛋白复合物的膜锚定参考框架扩展
+   - <strong>来源局限/观察</strong>：本文对 1-2 TM 螺旋蛋白的评估依赖 highTM 伴侣或经验校准，但未系统评估不同参考框架的稳健性。
+   - <strong>核心假设</strong>：对低 TM 蛋白，使用同源寡聚体对称性约束可替代伴侣蛋白参考，提高几何评估覆盖率。
+   - <strong>初步方法</strong>：对 1TM-1TM 和 2TM-2TM 复合物，利用对称性推断膜平面，与经验校准结果比较。
+   - <strong>验证方式</strong>：在已知实验结构的低 TM 复合物上比较不同参考框架的几何评估准确率。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：AF3 脂质介导组装能力的系统基准（LipidBench-AF3）
+   - <strong>来源局限/观察</strong>：本文的胆固醇基准为 173 个靶标，但仅覆盖胆固醇，未涉及其他脂质类型（如磷脂、糖脂）。
+   - <strong>核心假设</strong>：AF3 对脂质介导组装的预测能力随脂质类型和膜环境复杂度系统变化。
+   - <strong>初步方法</strong>：扩展基准至多种脂质类型（胆固醇、POPC、POPG、心磷脂），按训练截止分组，用 LDDT-PLI 和界面接触评估。
+   - <strong>验证方式</strong>：与实验结构比对，报告各脂质类型的成功率与失败模式。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：膜几何筛查 + MD 弛豫验证的复合物筛选流程
+   - <strong>来源局限/观察</strong>：本文的几何筛查是静态的，未利用 MD 模拟验证可疑预测是否可弛豫到合理膜构象。
+   - <strong>核心假设</strong>：对几何可疑的预测进行短时粗粒化 MD 弛豫，可区分「真实但罕见构象」与「错误组装」。
+   - <strong>初步方法</strong>：选取几何可疑的复合物子集，用 Martini 粗粒化 MD 在双层膜中弛豫，检查是否收敛到合理膜位置。
+   - <strong>验证方式</strong>：与实验结构比对，计算弛豫后 RMSD 和膜几何指标改善率。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：跨膜螺旋数对 AF 复合物预测可靠性的影响图谱
+   - <strong>来源局限/观察</strong>：本文显示 TM 螺旋数影响几何约束强度，但未系统绘制「TM 螺旋数 × 复合物类型 × 预测可靠性」的图谱。
+   - <strong>核心假设</strong>：AF 对膜蛋白复合物的预测可靠性随总 TM 螺旋数增加而提高，且存在阈值效应。
+   - <strong>初步方法</strong>：按总 TM 螺旋数分层（2-4、5-8、9-12、&gt;12），分别计算几何兼容率、置信度分布、与实验结构的一致性。
+   - <strong>验证方式</strong>：在本文数据集上复现分层分析，并在独立数据集上验证。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：胆固醇介导寡聚化的序列与结构特征挖掘
+   - <strong>来源局限/观察</strong>：本文显示 AF3 无法重现胆固醇介导的 NET 二聚体，提示此类组装需要专门的预测策略。
+   - <strong>核心假设</strong>：胆固醇介导的 TM 蛋白寡聚化具有可识别的序列基序和结构特征（如胆固醇结合口袋、π-π 堆积）。
+   - <strong>初步方法</strong>：从 PDB 收集胆固醇介导的 TM 寡聚体，提取界面特征，训练分类器预测胆固醇介导的寡聚化倾向。
+   - <strong>验证方式</strong>：在留出集上评估分类器性能，并用 MD 模拟验证预测的胆固醇结合位点。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text including abstract, introduction, results, discussion, methods, data availability, and acknowledgments</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological soundness, interpretation of results, and alignment with claims; no assessment of editorial fit or publication venue</li>
+<li><strong>Shared manuscript claim summary</strong> The authors systematically evaluate membrane compatibility of high-confidence AlphaFold-Multimer predicted transmembrane protein complexes from the AlphaFold Protein Structure Database, finding that most predictions are geometrically plausible but a subset show inconsistencies. They further test AlphaFold3's ability to recover specific transmembrane interactions and cholesterol-mediated assemblies, finding improved performance for some protein-protein interactions but limited accuracy for lipid-mediated complexes.</li>
+<li><strong>Visible evidence base</strong> Abstract, full introduction, full results narrative, full discussion, full methods, data availability statement, figure references (figures themselves not provided)</li>
+<li><strong>Missing materials affecting confidence</strong> Figures and supplementary materials not provided; no access to underlying data or code; no supplementary tables referenced in text</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This manuscript addresses an important and timely question: whether high-confidence AlphaFold-Multimer predictions of transmembrane protein complexes are physically plausible with respect to membrane geometry. The authors develop a systematic framework for assessing membrane compatibility and apply it to a large dataset of predicted complexes. The finding that most predictions are geometrically plausible, while a subset show inconsistencies, is useful and actionable for the structural biology community. The case studies with SERCA-phospholamban and the norepinephrine transporter provide concrete illustrations of both successes and remaining limitations. However, several methodological aspects require clarification, and the interpretation of some results may be overstated given the observational nature of the analyses. The manuscript would benefit from additional validation of the geometric criteria and a more cautious framing of the conclusions regarding AlphaFold3's capabilities.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational structural biologists using AlphaFold for complex prediction will find the membrane-geometry assessment framework directly applicable to their workflows. Experimentalists studying membrane protein complexes, particularly those involving small regulatory subunits or lipid-mediated interactions, will be interested in the identified limitations of current prediction methods. Researchers developing or benchmarking structure prediction tools will find the systematic evaluation of prediction quality informative. The work is also relevant to those interpreting large-scale predicted interactome datasets, as it provides complementary criteria for assessing biological plausibility beyond confidence scores.</li>
+<li><strong>Major strengths</strong> The manuscript addresses a genuine gap in the field by providing membrane-specific geometric criteria for evaluating predicted transmembrane complexes, complementing existing confidence metrics. The scale of the analysis (189,469 complexes) is substantial and provides a statistically robust foundation for the reported distributions. The authors appropriately acknowledge the complementary nature of their geometric checks relative to confidence scores. The case studies are well chosen to illustrate both the capabilities and limitations of current methods. The benchmark of cholesterol-containing targets is a valuable contribution that quantifies AlphaFold3's limitations in a specific and important area.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological validation</li>
+<li><strong>Claim pointer</strong> The manuscript claims that membrane-geometry assessment provides a valid complementary test of prediction quality, with specific thresholds (15-35 Å hydrophobic thickness, ≤30° axis angle, ≤5 Å midplane mismatch) used to classify complexes as compatible or suspicious.</li>
+<li><strong>Evidence pointer</strong> Methods section "Membrane-geometry assessment of highTM–highTM complexes"; Results section "Membrane geometry and compatibility of highTM–highTM complexes"</li>
+<li><strong>Concern</strong> The geometric thresholds used to classify complexes as compatible or suspicious are presented as operational criteria, but no validation is provided to demonstrate that these thresholds meaningfully distinguish correct from incorrect predictions. The authors do not benchmark their geometric criteria against experimentally determined transmembrane complex structures to establish sensitivity and specificity. Without such validation, it is unclear whether the 95.4% "plausible" figure reflects genuine prediction accuracy or simply the permissiveness of the chosen thresholds.</li>
+<li><strong>Why it matters</strong> The central claim of the manuscript is that membrane-geometry assessment provides a valuable complement to confidence metrics. This claim rests on the assumption that the geometric criteria are meaningful discriminators of prediction quality. If the thresholds are too permissive, the analysis may overstate the reliability of predictions; if too strict, it may generate false alarms. The lack of validation against experimental structures undermines confidence in the quantitative conclusions drawn from the large-scale analysis.</li>
+<li><strong>Resolution test</strong> The authors should validate their geometric criteria against a set of experimentally determined transmembrane complex structures with known stoichiometry and membrane orientation. This could involve computing the same geometric descriptors for experimental structures and demonstrating that they fall within the "compatible" range, and ideally showing that the criteria can discriminate between correct and incorrect predictions in a benchmark setting.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Interpretation of results</li>
+<li><strong>Claim pointer</strong> The manuscript states that "Interactions between TM proteins, particularly those containing only one or two TM helices, were frequently dominated by extramembrane contacts" and implies this is a limitation or unexpected finding.</li>
+<li><strong>Evidence pointer</strong> Results section "Interface composition of transmembrane protein complexes"; Results section "Extending Membrane-Geometry Assessment to Single- and Double-Pass TM Protein Complexes"</li>
+<li><strong>Concern</strong> The observation that lowTM proteins frequently interact via extramembrane contacts is presented as a notable finding, but the interpretation is ambiguous. For single-pass or double-pass membrane proteins, it is structurally expected that most of their mass is extramembrane, so dominance of extramembrane contacts may simply reflect the available surface area rather than a prediction artifact. The authors do not compare their observed contact distributions against what would be expected from the protein geometry alone, nor do they assess whether the extramembrane contacts are biologically plausible. The claim that this represents a limitation of predictions requires a more rigorous baseline for comparison.</li>
+<li><strong>Why it matters</strong> The manuscript's framing suggests that extramembrane-dominated interfaces are a potential problem with predictions, but without an appropriate null model or comparison to experimental structures, this interpretation is not supported. If extramembrane contacts are simply a geometric consequence of protein architecture, then the finding is less remarkable and the implications for prediction quality are unclear. This affects the overall narrative about the strengths and limitations of AlphaFold predictions.</li>
+<li><strong>Resolution test</strong> The authors should provide a comparison of their contact composition distributions against a null model that accounts for the relative surface areas of TM and extramembrane regions. Alternatively, they could compare against experimentally determined structures of lowTM-containing complexes to show whether the observed extramembrane dominance is consistent with known biology or represents a prediction-specific bias.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Generalizability of conclusions</li>
+<li><strong>Claim pointer</strong> The manuscript concludes that "AlphaFold3... failed to reproduce the cholesterol-mediated norepinephrine transporter homodimer" and that a benchmark of 173 cholesterol-containing targets "revealed limited accuracy in predicting cholesterol-binding poses."</li>
+<li><strong>Evidence pointer</strong> Results section "AF3 improves the prediction of transmembrane protein interactions but remains limited in modeling lipid-mediated complexes"; Methods section "Prediction and evaluation of protein–cholesterol complexes using AlphaFold3"</li>
+<li><strong>Concern</strong> The conclusion that AlphaFold3 has "limited accuracy" in predicting cholesterol-binding poses is based on a benchmark with specific methodological choices that may not be optimal for assessing AlphaFold3's capabilities. The authors used default parameters, a specific number of cholesterol molecules (14 for NET), and POPG instead of the experimentally observed lipid. The manuscript does not report whether alternative parameter settings, different cholesterol copy numbers, or the use of the experimentally observed lipid species were explored. Given that AlphaFold3's handling of small molecules is known to be sensitive to input composition, the negative result may reflect suboptimal input configuration rather than an inherent limitation of the method.</li>
+<li><strong>Why it matters</strong> The claim that AlphaFold3 cannot accurately model cholesterol-mediated interactions is a strong conclusion with implications for users of the method. If the failure is due to specific input choices rather than fundamental limitations, the conclusion would be misleading. The manuscript's framing could discourage researchers from attempting lipid-containing predictions when alternative configurations might succeed. The generalizability of the negative result depends critically on the thoroughness of the parameter exploration.</li>
+<li><strong>Resolution test</strong> The authors should systematically vary the number of cholesterol molecules, the lipid species included, and other relevant parameters for the NET case and a subset of benchmark targets to determine whether any configuration recovers the experimentally observed interactions. If no configuration succeeds, the conclusion would be strengthened. If some configurations succeed, the conclusion should be revised to reflect parameter sensitivity rather than fundamental limitation.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Claim pointer</strong> The manuscript reports that "95.4% of the 125,657 complexes falling within this interval" for joint hydrophobic thickness, and describes distributions of midplane mismatch and axis angles across the dataset.</li>
+<li><strong>Evidence pointer</strong> Results section "Membrane geometry and compatibility of highTM–highTM complexes"; Figure 2</li>
+<li><strong>Concern</strong> The large-scale analyses report percentages and percentiles but do not provide confidence intervals or measures of uncertainty. Given the dataset is derived from predictions with varying confidence levels, it would be important to know whether the reported distributions are robust to filtering criteria, such as the confidence thresholds used to select complexes from the database. The manuscript does not report sensitivity analyses examining how the results change with different inclusion criteria.</li>
+<li><strong>Why it matters</strong> The quantitative claims about the proportion of geometrically plausible predictions are central to the manuscript's conclusions. Without uncertainty estimates or sensitivity analyses, readers cannot assess the robustness of these findings. The choice of inclusion criteria could substantially affect the reported percentages, and the lack of analysis leaves this uncertainty unaddressed.</li>
+<li><strong>Resolution test</strong> The authors should provide confidence intervals for the reported proportions and percentiles, and conduct sensitivity analyses varying the inclusion criteria (e.g., confidence thresholds, minimum TM helix count) to demonstrate that the conclusions are robust to reasonable alternative choices.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity of methods</li>
+<li><strong>Affected element</strong> Methods section "Empirical calibration of lowTM–lowTM membrane geometry"</li>
+<li><strong>Evidence pointer</strong> Methods section "Empirical calibration of lowTM–lowTM membrane geometry"</li>
+<li><strong>Issue</strong> The description of the empirical calibration procedure for lowTM–lowTM complexes is complex and difficult to follow. The distinction between the repeated sampling used to "characterize geometric variability" and the "separate fixed-seed selection" used to establish thresholds is not immediately clear, and the rationale for this two-stage approach is not fully explained.</li>
+<li><strong>Required correction</strong> The authors should clarify the purpose of each sampling stage and provide a more intuitive explanation of why the fixed-seed selection is necessary to avoid pseudoreplication. A schematic or step-by-step description would improve readability.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness of reporting</li>
+<li><strong>Affected element</strong> Results section "AF3 improves the prediction of transmembrane protein interactions but remains limited in modeling lipid-mediated complexes"</li>
+<li><strong>Evidence pointer</strong> Results section "AF3 improves the prediction of transmembrane protein interactions but remains limited in modeling lipid-mediated complexes"</li>
+<li><strong>Issue</strong> The manuscript states that "Initial predictions performed with AlphaFold-Multimer (AF2-Multimer) using default parameters failed to reproduce the expected interaction" for SERCA-PLN, but does not report whether alternative parameters or multiple sequence alignments were explored before concluding failure.</li>
+<li><strong>Required correction</strong> The authors should report whether any parameter variations were attempted for the AF2-Multimer SERCA-PLN prediction, or explicitly state that only default parameters were tested and acknowledge this as a limitation of the comparison.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation of benchmark results</li>
+<li><strong>Affected element</strong> Results section "AF3 improves the prediction of transmembrane protein interactions but remains limited in modeling lipid-mediated complexes"; Figure 7D</li>
+<li><strong>Evidence pointer</strong> Results section "AF3 improves the prediction of transmembrane protein interactions but remains limited in modeling lipid-mediated complexes"</li>
+<li><strong>Issue</strong> The benchmark of 173 cholesterol-containing targets reports mean LDDT-PLI scores of 0.043, 0.230, and 0.125 for the three post-cutoff groups. The manuscript does not discuss what range of LDDT-PLI values would be considered acceptable or how these scores compare to typical values for other ligand types or for cholesterol in pre-cutoff targets.</li>
+<li><strong>Required correction</strong> The authors should provide context for interpreting LDDT-PLI scores, including what values might indicate meaningful binding pose prediction, and discuss how the observed scores compare to expectations or to performance on other ligand classes.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Presentation of data</li>
+<li><strong>Affected element</strong> Results section "Membrane geometry and compatibility of highTM–highTM complexes"; Figure 2</li>
+<li><strong>Evidence pointer</strong> Results section "Membrane geometry and compatibility of highTM–highTM complexes"</li>
+<li><strong>Issue</strong> The text reports the 98th percentile of midplane mismatch at 3.6 Å and the 95th percentile for heterodimers at approximately 10.5 Å, but does not report the full distribution shape or provide measures of central tendency beyond the median for hydrophobic thickness.</li>
+<li><strong>Required correction</strong> The authors should report means and standard deviations or interquartile ranges for the key geometric descriptors to provide a more complete picture of the distributions.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Methods section "Prediction and evaluation of protein–cholesterol complexes using AlphaFold3"</li>
+<li><strong>Evidence pointer</strong> Methods section "Prediction and evaluation of protein–cholesterol complexes using AlphaFold3"</li>
+<li><strong>Issue</strong> The methods state that "Multiple predictions were generated for each target using different random seeds and cholesterol copy numbers" but do not specify the range of cholesterol copy numbers tested or how these were determined for each target.</li>
+<li><strong>Required correction</strong> The authors should specify the range of cholesterol copy numbers tested, how these were selected, and whether the number was based on experimental stoichiometry or other information.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (validation of geometric criteria against experimental structures), R1-M2 (null model for extramembrane contact dominance), R1-M3 (systematic parameter exploration for AF3 cholesterol predictions)</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The concept of using membrane geometry as a quality filter for predicted transmembrane complexes is novel and addresses a gap in existing validation approaches. The application to a large dataset of predicted complexes is a distinctive contribution. Scientific importance: The work has clear practical value for the structural biology community, providing tools to assess prediction quality beyond confidence scores. The identified limitations of AlphaFold3 for lipid-mediated complexes are informative, though the strength of this conclusion is currently limited by methodological concerns. Interdisciplinary readership: The work bridges computational structural biology, membrane biology, and bioinformatics, and should be accessible to researchers across these fields. Technical soundness: The computational framework is generally well described, but the lack of validation of geometric thresholds against experimental data and the limited parameter exploration for AF3 benchmarks are significant gaps that need to be addressed. Readability for nonspecialists: The manuscript is generally clearly written, with appropriate context provided for the biological questions. Some methodological sections are dense and would benefit from additional clarification.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The manuscript addresses an important problem and presents a useful framework, but the central claims require additional validation. Specifically, the geometric criteria need benchmarking against experimental structures to establish their discriminative power, the interpretation of extramembrane contact dominance needs a more rigorous baseline, and the AF3 cholesterol benchmark conclusions should be tested against alternative parameter configurations. If these concerns are addressed, the work would make a valuable contribution to the field.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that 95.4% of highTM–highTM complexes have plausible joint hydrophobic thickness is presented as evidence of general prediction quality, but without validation of the 15-35 Å threshold against experimental structures, this figure cannot be interpreted as a measure of accuracy.</li>
+<li>The statement that interactions involving lowTM proteins are "frequently dominated by extramembrane contacts" is presented as a notable finding, but no baseline or comparison is provided to establish whether this differs from expectations based on protein geometry alone.</li>
+<li>The conclusion that AlphaFold3 "failed to reproduce" the NET dimer and shows "limited accuracy" for cholesterol poses is based on a specific parameter configuration that may not be optimal; the generalizability of this negative result is not established.</li>
+<li>The claim that AlphaFold3 "recovered an experimentally supported SERCA-phospholamban interaction" is based on a single example and cannot support general conclusions about AF3's improved capability for transmembrane interactions.</li>
+<li>The statement that "membrane-specific geometric constraints provide a valuable complement to conventional confidence metrics" is reasonable but is presented as a conclusion when the supporting evidence is primarily observational and lacks validation against known ground truth.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

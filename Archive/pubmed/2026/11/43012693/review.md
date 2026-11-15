@@ -1,0 +1,97 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, materials and methods, results, discussion) without supplementary figures/tables
+- **Assessment boundary** Scientific claims, experimental design, data interpretation, and structural/functional characterization as presented in the main text
+- **Shared manuscript claim summary** The authors report the structural and functional characterization of DsKabA, an N-prenyltransferase from the red alga Digenea simplex, which catalyzes the first committed step in kainic acid biosynthesis. They present a 2.85 Å apo crystal structure with two conformations, kinetic parameters, ITC binding data, MD simulations, and mutagenesis results to support a catalytic mechanism involving Mg2+-dependent DMAPP binding and ordered l-Glu association.
+- **Visible evidence base** Main text figures (referenced as Figure A-D in multiple sections), Tables (referenced as Table 1 and Table S2), supplementary figures (S1, S3, S5, S6, S7, S8, S9, S10), and supplementary tables (S1, S3)
+- **Missing materials affecting confidence** Supplementary figures and tables referenced in the text were not provided for review. Crystallographic data (PDB deposition, structure factors) not accessible. Raw kinetic data, ITC thermograms, and MD trajectory analyses not available for independent verification.
+
+## Reviewer
+- **Overall assessment** This manuscript presents a solid structural and biochemical characterization of DsKabA, an enzyme of interest in the kainic acid biosynthetic pathway. The work is technically competent, combining multiple biophysical and biochemical approaches. However, the study is largely confirmatory of prior work on the homologous enzyme DabA, and the mechanistic insights offered are incremental rather than transformative. The conformational gating hypothesis, while plausible, is not strongly supported by the presented data. The manuscript would benefit from clearer presentation of key figures and more rigorous statistical treatment of kinetic and binding data.
+- **Who would be interested in the results, and why** Researchers in natural product biosynthesis, particularly those studying prenyltransferases and algal neurotoxin pathways. The structural data may also interest enzymologists working on terpene synthase-like enzymes and those investigating substrate specificity determinants in prenyltransferases. The agricultural and pharmacological relevance of kainic acid derivatives may attract applied researchers.
+- **Major strengths** 1) Comprehensive multi-technique approach combining X-ray crystallography, SAXS, ITC, MD simulations, and mutagenesis. 2) The apo-state structure provides new information not available in prior ligand-bound structures of the homologous enzyme. 3) Identification of two conformational states within one asymmetric unit is potentially interesting. 4) Direct LC-MS-based product quantification for kinetic analysis is methodologically sound. 5) The mutational analysis of M114/M118 provides new data on donor specificity determinants.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that the two crystallographic protomers represent "open" and "closed" conformations and that this may represent a gating mechanism for substrate access.
+  - **Evidence pointer** Results section "Two Distinct Conformations of DsKabA"; Figure A-C
+  - **Concern** The interpretation of the two protomers as distinct functional conformations is not well supported. The difference involves a 17-residue deletion in molecule B, which is described as a "helix-to-loop transition." This could be a crystallization artifact, proteolysis during crystallization, or a consequence of crystal packing, despite the authors' claim that symmetry analysis ruled out packing effects. The SAXS data are acknowledged by the authors to be insufficient to confirm distinct conformations in solution. The MD simulations show subtle differences that are not quantified. The functional significance of this conformational variability is therefore speculative.
+  - **Why it matters** The conformational gating hypothesis is a central claim of the manuscript and is highlighted in the abstract. If this claim is not robustly supported, the novelty of the study is substantially diminished, as the catalytic mechanism itself is largely inferred from the homologous DabA enzyme.
+  - **Resolution test** The authors should provide quantitative evidence that the two conformations are physiologically relevant. This could include: (1) demonstration that the 17-residue deletion is not a proteolysis artifact (e.g., by mass spectrometry of the crystallized protein), (2) enhanced sampling MD simulations (e.g., metadynamics) showing that the open and closed states are accessible at equilibrium, (3) cross-linking or FRET experiments in solution that report on the conformational equilibrium, or (4) clear evidence that the open conformation can bind substrate while the closed conformation cannot.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors propose a catalytic mechanism in which E407 plays a critical role in acceptor activation and/or active-site organization, and H406 plays a supportive role.
+  - **Evidence pointer** Results section "DsKabA Active Site Analysis and Mutagenesis" and "Proposed Catalytic Mechanism of DsKabA"; Figure B
+  - **Concern** The mutagenesis data are presented as relative activities, but the specific values and statistical significance are not clearly reported in the main text. The claim that E407 is "critical" is based on the observation that E407A and E407D abolished detectable activity, but the possibility that these mutations cause local structural perturbations beyond the loss of the carboxylate side chain is not addressed. The authors do not provide evidence that the E407D variant is properly folded beyond far-UV CD, which is a low-resolution probe. Furthermore, the proposed role of E407 in "acceptor activation" is mechanistically vague. Does E407 act as a general base to deprotonate the amino group? If so, the pKa of the amino group (approximately 9-10) would make this thermodynamically challenging at pH 8.0. The authors should discuss this issue.
+  - **Why it matters** The catalytic mechanism is a central claim of the paper. Without a clear mechanistic rationale for the essential role of E407, and without evidence ruling out structural destabilization as the cause of the loss of activity, the mechanistic conclusions are not firmly established.
+  - **Resolution test** The authors should: (1) report the actual relative activity values with error bars and statistical comparisons, (2) provide additional biophysical characterization of the E407 variants (e.g., thermal stability by DSF or CD melting), (3) perform pH-rate profiling to test for general base catalysis, and (4) discuss the thermodynamic feasibility of deprotonating the amino group at pH 8.0. Alternatively, the authors could use a more conservative substitution such as E407Q to test the role of the carboxylate specifically.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scientific importance
+  - **Claim pointer** The authors state that the study "extends the current mechanistic framework for DabA/DsKabA-type N-prenyltransferases" and provides "structural and mechanistic insight into the first committed step of KA biosynthesis."
+  - **Evidence pointer** Abstract; Discussion
+  - **Concern** The novelty of this work relative to the prior study on DabA is limited. The authors acknowledge that DabA has been structurally characterized with ligand-bound states, and the catalytic mechanism is largely inferred from this homologous enzyme. The apo structure of DsKabA provides a new view, but the functional significance of the observed conformational differences is not established (see R1-M1). The kinetic parameters, while measured by a more direct method (LC-MS vs. PPi release), are consistent with prior work. The M114/M118 mutagenesis is new, but the interpretation is limited by the lack of structural data for these variants.
+  - **Why it matters** For a journal with broad readership, the incremental nature of the advance may limit the impact of the work. The authors should more clearly articulate what is fundamentally new about this study beyond confirming the DabA mechanism in a homologous enzyme.
+  - **Resolution test** The authors should either: (1) provide stronger evidence for a unique mechanistic feature of DsKabA not shared with DabA, (2) demonstrate a functional difference between DsKabA and DabA that is explained by the structural differences, or (3) reframe the manuscript to emphasize the apo-state conformational dynamics as the primary novel contribution, with stronger supporting evidence.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract
+  - **Issue** The abstract is dense and assumes familiarity with prenyltransferase enzymology. Terms such as "N-prenyltransferase," "prekainic acid," and "committed step" are used without brief contextual explanation. The significance of the work for broader readership (e.g., agricultural chemistry) is not stated.
+  - **Required correction** Add one or two sentences in the abstract that briefly explain why N-prenylation of glutamate is significant and what the broader implications of this work are for natural product biosynthesis or agricultural applications.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Kinetic analysis
+  - **Evidence pointer** Results section "LC-MS-Based Enzyme Activity and Kinetic Analysis"; Table S2
+  - **Issue** The kinetic parameters are reported as apparent Km values, but no kcat or Vmax values are provided. The authors do not report the number of replicates beyond stating "three independent kinetic experiments," and the error bars are not shown in the main text. The concentration range for each substrate is not specified.
+  - **Required correction** Report kcat values (or at least Vmax) and specify the substrate concentration ranges used. Include error bars and statistical analysis in the main text or clearly reference the supplementary table with this information.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** MD simulation methodology
+  - **Evidence pointer** Materials and Methods section "Molecular Dynamics Simulation"
+  - **Issue** The MD simulation methods are described briefly. The authors do not specify the number of independent simulations, the total simulation time per system, or the criteria used to determine convergence. The statement that "ligand binding promotes ordering of the loop" is based on RMSF analysis, but the specific residues and the magnitude of the differences are not quantified.
+  - **Required correction** Provide more details on the MD simulation setup, including the number of replicates, simulation length, and convergence criteria. Quantify the RMSF differences in the relevant loop region and provide a statistical comparison between the apo and bound states.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** SAXS analysis
+  - **Evidence pointer** Results section "Two Distinct Conformations of DsKabA"; Figure S7
+  - **Issue** The authors state that SAXS data "alone is hard to confirm whether these conformations represent distinct functional states in solution." This is an honest assessment, but the SAXS data are presented in the main text as supporting the conformational gating hypothesis. The ab initio models show "overall shape variations" that are described as "subtle." The authors should more clearly separate the SAXS results from the conformational interpretation.
+  - **Required correction** Move the SAXS data to the supplementary material or clearly present it as preliminary evidence that requires further validation. Alternatively, provide quantitative comparison of the SAXS profiles (e.g., chi-squared values for fits of the open and closed conformations to the experimental data).
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Figure presentation
+  - **Evidence pointer** Results section "Overall Structure of DsKabA"; Figure A-D
+  - **Issue** The figures are referenced as "Figure A," "Figure B," etc., without descriptive titles in the text. This makes it difficult for readers to follow the narrative without constantly referring to the figure legends. The main text should briefly describe what is shown in each panel.
+  - **Required correction** Add brief descriptions of the figure contents in the text when referencing each figure (e.g., "Figure 2A shows the overall fold of DsKabA as a ribbon diagram").
+  - **Concern ID** R1-m6
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** ITC data
+  - **Evidence pointer** Results section "Substrate Binding and Catalysis Investigated by ITC"; Table S4
+  - **Issue** The ITC data are described qualitatively in the main text. The authors state that DMAPP binding was "markedly enhanced" in the presence of Mg2+, but the actual Kd values for DMAPP binding in the absence and presence of Mg2+ are not reported in the main text. The Kd for l-Glu binding to the DsKabA-DMAPP-Mg2+ complex is reported as 0.64 μM, but the stoichiometry (n value) is not mentioned.
+  - **Required correction** Report the Kd values for all ITC experiments in the main text, including the stoichiometry. If the stoichiometry deviates from 1:1, this should be discussed.
+  - **Concern ID** R1-m7
+  - **Severity** Minor
+  - **Axis** Scientific importance
+  - **Affected element** Discussion of agricultural relevance
+  - **Evidence pointer** Introduction; Discussion
+  - **Issue** The introduction mentions that kainic acid and related compounds have "potent anthelmintic and insecticidal activities, rendering them promising candidates for agricultural applications." However, the discussion does not return to this point or explain how the structural insights from this study could inform agricultural applications.
+  - **Required correction** Add a brief paragraph in the discussion connecting the structural findings to potential applications, such as engineering DsKabA variants with altered substrate specificity for producing novel kainic acid derivatives.
+
+## Risk / unsupported claims
+- The claim that the two crystallographic protomers represent functionally distinct "open" and "closed" conformations relevant to substrate gating is not adequately supported by the presented data. The SAXS data are acknowledged by the authors to be insufficient, and the MD simulations are not quantitatively analyzed in the main text.
+- The proposed catalytic role of E407 in "acceptor activation" is mechanistically vague and not supported by direct evidence. The possibility that E407 mutations cause structural destabilization rather than loss of a specific catalytic function is not excluded.
+- The claim that M114 and M118 "cooperatively contribute to the geometry and donor preference of the prenyl-binding pocket" is based on relative activity measurements, but the specific data and statistical analysis are not presented in the main text.
+- The statement that "ligand binding promotes ordering of the loop between α7 and α8 helices" is based on RMSF analysis from MD simulations, but the quantitative data and statistical significance are not provided.
+- The kinetic parameters (Km values) are reported as apparent values, but the authors do not discuss the limitations of the assay conditions (e.g., fixed concentrations of the co-substrate) in interpreting these values as physiologically relevant.
+- The manuscript claims to provide "structural and mechanistic insight into the first committed step of KA biosynthesis," but the mechanistic conclusions are largely inferred from homology to DabA rather than from direct experimental evidence on DsKabA catalysis.

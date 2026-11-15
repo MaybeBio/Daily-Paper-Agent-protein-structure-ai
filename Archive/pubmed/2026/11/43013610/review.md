@@ -1,0 +1,84 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report characterization of a haloacid dehalogenase 4A from *Delftia acidovorans* strain D4B, including a 1.59 Å apo crystal structure (PDB 9C9E), demonstration of fluoroacetate defluorination via fluoride release and glycolate detection, a docking model supporting Asp22 as the catalytic nucleophile, and a comparative analysis suggesting a more open active-site entrance relative to related HAD-like dehalogenases. The authors also report exploratory PFOA experiments that yielded weak apparent fluoride release, which they explicitly state do not demonstrate PFOA defluorination.
+- **Visible evidence base** Abstract text only; no experimental details, structural validation metrics, kinetic data, or statistical analyses are provided
+- **Missing materials affecting confidence** Full manuscript, crystallographic refinement statistics, enzyme activity assay protocols, LC-MS chromatograms, docking methodology and scoring, comparative structural alignments, PFOA experimental controls, and any replicate or error analysis
+
+## Reviewer
+- **Overall assessment** The abstract presents a straightforward characterization of a new HAD enzyme with fluoroacetate defluorination activity and a high-resolution crystal structure. The core claim of fluoroacetate defluorination is plausible and supported by two independent detection methods, though quantitative details are absent. The structural and computational components are described at a level that prevents independent assessment of quality. The PFOA experiments are appropriately framed as exploratory and non-conclusive, which is commendable. However, the abstract lacks sufficient methodological and quantitative detail to fully evaluate the strength of the evidence, and the claim of a "scaffold for exploring organofluorine C-F bond cleavage" is broader than what the data directly support.
+- **Who would be interested in the results, and why** Researchers in enzymatic dehalogenation, organofluorine chemistry, biocatalysis, and environmental bioremediation would find this work relevant. The structural characterization of a fluoroacetate-active HAD provides a starting point for protein engineering efforts aimed at degrading persistent fluorinated pollutants such as PFOA. The work also contributes to the fundamental understanding of C-F bond cleavage in biological systems.
+- **Major strengths** The study addresses a timely and important topic in biocatalysis, namely enzymatic defluorination of organofluorine compounds. The combination of crystallography, activity assays, and computational docking provides a multi-pronged approach. The authors are appropriately cautious in their interpretation of the PFOA data, explicitly stating that the results do not demonstrate PFOA defluorination. The high-resolution structure (1.59 Å) is a valuable resource for the community.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "purified 4A catalyzed hydrolytic defluorination of fluoroacetate, as supported by enzyme-dependent fluoride release and liquid chromatography-mass spectrometry detection of glycolate"
+  - **Evidence pointer** Abstract, "under the reported assay condition"; location not provided
+  - **Concern** The abstract states that defluorination is "supported by enzyme-dependent fluoride release and LC-MS detection of glycolate," but provides no quantitative data. No fluoride release rates, turnover numbers, kinetic parameters, or detection limits are given. Without these values, it is impossible to assess whether the observed activity is catalytically meaningful or merely stoichiometric or background-level.
+  - **Why it matters** The central claim of the paper is that 4A is a bona fide fluoroacetate defluorinating enzyme. If the activity is very low or requires non-physiological conditions, the biological and practical relevance of the enzyme is substantially diminished. Quantitative benchmarks are essential for comparison with known dehalogenases and for evaluating the engineering potential.
+  - **Resolution test** Provide specific activity values (e.g., kcat, KM, or rate per mg protein) for fluoroacetate defluorination, along with appropriate controls (e.g., heat-inactivated enzyme, no-enzyme background) and replicate numbers with error estimates.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Structural validation
+  - **Claim pointer** "yielding a 1.59 A apo structure (PDB 9C9E) with an accessible aspartate (Asp22)-centered active site"
+  - **Evidence pointer** Abstract, "yielding a 1.59 A apo structure"; location not provided
+  - **Concern** The abstract reports a 1.59 Å structure but provides no crystallographic quality metrics. No R-factor, R-free, Ramachandran statistics, or B-factor information is given. The claim that the active site is "accessible" is qualitative and not supported by any quantitative measure such as solvent-accessible surface area calculations or comparison with other structures.
+  - **Why it matters** The structural claim is a key deliverable of the paper. Without standard validation metrics, the reliability of the structure and the derived conclusions about active-site architecture cannot be independently assessed. The "accessible" active-site claim is central to the proposed scaffold utility.
+  - **Resolution test** Provide standard crystallographic refinement statistics in the full manuscript, including R-work/R-free, RMSD for bonds and angles, Ramachandran outliers, and a clear definition of "accessible" with quantitative support.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Computational support
+  - **Claim pointer** "The docking model placed the fluoroacetate alpha-carbon near Asp22, providing computational structural context consistent with Asp22 acting as the putative catalytic nucleophile"
+  - **Evidence pointer** Abstract, "docking model"; location not provided
+  - **Concern** The docking model is described in a single sentence with no methodological details. No docking software, scoring function, or validation of the docking pose is mentioned. The distance between the fluoroacetate alpha-carbon and Asp22 is not quantified, and no comparison with alternative poses or binding modes is provided.
+  - **Why it matters** Docking results are highly dependent on methodology and can be misleading without proper validation. The claim that the model is "consistent with Asp22 acting as the putative catalytic nucleophile" is weak without experimental evidence such as site-directed mutagenesis or a substrate-bound structure. The computational context adds limited value if not rigorously supported.
+  - **Resolution test** Provide docking methodology, scoring details, and a quantitative measure of the Asp22-alpha-carbon distance. Ideally, include mutagenesis data for Asp22 to confirm its catalytic role, or clearly state that this remains a hypothesis.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Comparative claim
+  - **Claim pointer** "Compared with related HAD-like dehalogenases, 4A showed a more open active-site entrance, suggesting a possible scaffold for organofluorine accommodation and structure-guided engineering"
+  - **Evidence pointer** Abstract, "Compared with related HAD-like dehalogenases"; location not provided
+  - **Concern** The comparison with related HAD-like dehalogenases is mentioned without specifying which enzymes were compared, what structural alignment method was used, or how "open" was quantified. The claim of a "more open active-site entrance" is qualitative and may not be robust across different comparison sets.
+  - **Why it matters** The scaffold claim is a forward-looking statement that could guide future engineering efforts. If the comparison is not rigorous or the "openness" is not quantitatively defined, the claim may overstate the structural distinction and mislead subsequent research directions.
+  - **Resolution test** Specify the comparison set, alignment method, and quantitative metric (e.g., tunnel radius, solvent-accessible surface area of the active-site cavity) with statistical support.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** PFOA experiment description
+  - **Evidence pointer** Abstract, "Exploratory reactions with PFOA (0.5 mM) and high 4A loading (500 microM, 120 h) produced only weak apparent fluoride release (~6 microM)"
+  - **Issue** The conditions for the PFOA experiment are given, but the rationale for these specific conditions and the interpretation of "weak apparent" are not explained. The term "apparent" is used but not defined.
+  - **Required correction** Clarify whether the fluoride release was above background and what controls were used. Define "apparent" in this context.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Title and abstract wording
+  - **Evidence pointer** Title, "Structurally Characterized Haloacid Dehalogenase 4A Catalyzes Fluoroacetate Defluorination and Provides a Scaffold for Exploring Organofluorine C-F Bond Cleavage"
+  - **Issue** The title states that 4A "provides a scaffold for exploring organofluorine C-F bond cleavage," which is a forward-looking claim. The abstract appropriately tempers this, but the title may overstate the current utility.
+  - **Required correction** Consider softening the title to reflect that the scaffold is "potentially useful" or "may provide" a basis for future exploration.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Enzyme source and naming
+  - **Evidence pointer** Abstract, "HAD 4A from *Delftia acidovorans* strain D4B"
+  - **Issue** The abstract does not explain why this specific enzyme was chosen or how it was identified. The naming convention "4A" is used without context.
+  - **Required correction** Provide a brief rationale for enzyme selection and clarify the naming convention in the full manuscript.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (quantitative activity data) and R1-M2 (crystallographic validation) are the most critical. Without these, the core claims of fluoroacetate defluorination activity and a reliable structure cannot be fully evaluated. R1-M3 and R1-M4 are important but less critical, as they pertain to supporting rather than central claims.
+- **Assessment against Nature-style criteria** 
+  - **Originality** The work is incremental but valuable. While fluoroacetate dehalogenases are known, the structural characterization of a new HAD 4A at high resolution and its potential as an engineering scaffold adds a new data point. The PFOA experiments, though negative, are honest and useful.
+  - **Scientific importance** Moderate. The work contributes to the understanding of enzymatic C-F bond cleavage, which is relevant to bioremediation and biocatalysis. However, the demonstrated activity is limited to fluoroacetate, a simple substrate, and the broader implications for recalcitrant organofluorines are speculative.
+  - **Interdisciplinary readership** The work bridges structural biology, enzymology, and environmental chemistry. It would appeal to a niche but engaged audience. The abstract is accessible to nonspecialists in these fields.
+  - **Technical soundness** Cannot be fully assessed from the abstract. The reported methods are standard, but the lack of quantitative data and validation metrics prevents a definitive judgment.
+  - **Readability for nonspecialists** The abstract is clearly written and avoids excessive jargon. The key findings and limitations are stated transparently.
+- **Recommendation posture** Supportive if technical concerns are resolved. The core finding of fluoroacetate defluorination by a structurally characterized HAD is plausible and potentially useful. However, the abstract as presented does not provide sufficient quantitative and validation data to fully establish the case. The authors should be encouraged to provide the missing details in the full manuscript.
+
+## Risk / unsupported claims
+- The claim that 4A "provides a scaffold for exploring organofluorine C-F bond cleavage" is a forward-looking statement that is not directly supported by the data presented, though it is a reasonable hypothesis.
+- The claim of a "more open active-site entrance" relative to related HAD-like dehalogenases is unsupported without specifying the comparison set and quantitative metric.
+- The docking model's consistency with Asp22 as the catalytic nucleophile is a weak claim without experimental validation or detailed methodology.
+- The PFOA experiments are appropriately described as non-conclusive, and the authors do not overclaim in this regard.

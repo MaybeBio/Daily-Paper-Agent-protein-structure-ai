@@ -1,0 +1,24 @@
+{
+  "source": "biorxiv",
+  "id": "10.64898/2026.11.10.765136",
+  "title": "The Confessions of a Protein Language Model: Steering, Activations, and What Predicted Confidence Cannot Certify",
+  "authors": "Panini Shah; Raj Panchali; Pearl Mody; Mahek Sanghvi; Meera Narvekar; Ruhina Karani",
+  "journal": "bioRxiv",
+  "published_date": "2026-11-11",
+  "window": {
+    "start": "2026-11-08",
+    "end": "2026-11-14"
+  },
+  "score": 6,
+  "one_liner_zh": "该文审计蛋白质语言模型生成-筛选流程中的干预与读出（如置信度、激活）是否真正追踪目标，虽涉及蛋白结构预测置信度，但核心是方法学审计而非结构计算建模创新，对蛋白结构生成筛选的可信度评估有参考价值。",
+  "abstract": "Protein generate-and-screen pipelines use interventions and readouts to select candidates, but rarely test whether these track their intended targets. We audit published repetition steering, ESMFold confidence, and an activation readout. Steering preserves confidence at its operating point, but a fitted cliff follows at alpha_50 = 1.240x (sweep's own control: 64.0%). Direction matters at moderate matched-norm push, but not at saturation. Unsteered generator activations predict the confidence gate (ROC-AUC 0.786 +/- 0.004), supporting cost-aware, model-specific triage. We also replicate established length sensitivity, through which shortening can manufacture false nulls. Yet on composition- and length-matched design--scramble pairs, no balanced-accuracy interval excludes chance for experimental stability. Predicting the gate does not establish foldability. We should test what a readout measures before using it to select. Code and data: https://github.com/paninishah/plm-steering-audit",
+  "abstract_zh": "蛋白质生成-筛选（generate-and-screen）流程使用干预和读数来选择候选物，但很少测试这些是否追踪其预期目标。我们审计了已发表的重复性引导（repetition steering）、ESMFold置信度以及一种激活读数。引导在其操作点保持置信度，但在alpha_50 = 1.240x（扫描自身对照：64.0%）处出现拟合的悬崖。方向在中等匹配范数推动下重要，但在饱和时则不然。未引导的生成器激活预测置信度门控（ROC-AUC 0.786 +/- 0.004），支持成本感知、模型特定的分诊。我们还复现了已确立的长度敏感性，通过缩短可以制造虚假的零结果。然而，在组成和长度匹配的设计-打乱对中，没有平衡准确率区间排除实验稳定性的偶然性。预测门控并不能确立可折叠性。我们应在使用读数进行选择之前测试其测量内容。代码和数据：https://github.com/paninishah/plm-steering-audit",
+  "has_fulltext": true,
+  "fulltext_source": "europepmc",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.11.10.765136",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.10.765136",
+  "paper_page_path": "papers/biorxiv/10.64898_2026.11.10.765136/index.html"
+}

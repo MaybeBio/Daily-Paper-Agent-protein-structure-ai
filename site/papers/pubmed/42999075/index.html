@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edge-Aware Graph Attention Networks for Interpreting Biophysical Mechanisms from Molecular Dynamics Simulations. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Edge-Aware Graph Attention Networks for Interpreting Biophysical Mechanisms from Molecular Dynamics Simulations.</h1>
+      <div class="meta">Ahsan, Mohd; Pindi, Chinmai; Rodriguez, Larry; Shah, Paaras; Palermo, Giulia</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv : the preprint server for biology</span>
+        · 2026-11-08
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42999075/">原文</a>
+      </div>
+      <p class="one-liner">该文开发了三种边感知图注意力网络模型，从分子动力学模拟中预测蛋白质坐标并解析残基通信网络，揭示折叠、变构和突变重塑机制，属于蛋白质结构计算与AI方法创新，高度契合课题。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Graph attention networks (GATs) are emerging as powerful aritficial intelligence (AI) tools for learning biomolecular dynamics, yet extracting mechanistic insight from learned attention remains challenging. Here, we present an interpretable AI approach that combines molecular dynamics prediction with mechanistic interpretation through attention-derived communication networks. We develop three edge-aware GAT models - Edge-Conditioned, Edge-Injected, and Edge-Gated - that differ in how edge information is incorporated during message passing. Relative to a standard GAT, our edge-aware models improve coordinate prediction while recovering complementary aspects of residue communication. Application to Chignolin and HIV-1 protease demonstrates their ability to characterize communication networks underlying protein folding, allostery, and mutation-induced functional remodeling. Analysis of the communication networks using graph-based descriptors of communication throughput, intensity, and relay revealed that the Edge-Conditioned model preferentially emphasizes communication hubs characterized by high communication throughput and intensity, the Edge-Injected model preferentially highlights high-intensity communication within functionally important regions, and the Edge-Gated model most clearly resolves long-range communication relay. Overall, this approach provides an interpretable AI strategy for uncovering the communication mechanisms that underlie folding, allostery, and long-range signal propagation in molecular machines, while also supporting AI-guided modulation of biomolecular function and rational protein engineering.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">图注意力网络（GATs）正成为学习生物分子动力学的强大人工智能（AI）工具，然而从学习到的注意力中提取机制性见解仍具挑战性。在此，我们提出一种可解释的AI方法，通过注意力衍生的通信网络将分子动力学预测与机制性解释相结合。我们开发了三种边感知GAT模型——边条件（Edge-Conditioned）、边注入（Edge-Injected）和边门控（Edge-Gated）——它们在消息传递过程中整合边信息的方式各不相同。相对于标准GAT，我们的边感知模型在改进坐标预测的同时，恢复了残基通信的互补方面。应用于Chignolin和HIV-1蛋白酶，展示了它们表征蛋白质折叠、变构及突变诱导功能重塑背后通信网络的能力。使用基于图的通信吞吐量、强度和中继描述符对通信网络进行分析，揭示出边条件模型优先强调以高通信吞吐量和强度为特征的通信枢纽，边注入模型优先突出功能重要区域内的高强度通信，而边门控模型最清晰地解析了长程通信中继。总体而言，该方法提供了一种可解释的AI策略，用于揭示分子机器中折叠、变构和长程信号传播背后的通信机制，同时支持AI引导的生物分子功能调控和理性蛋白质工程。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Edge-Aware Graph Attention Networks for Interpreting Biophysical Mechanisms from Molecular Dynamics Simulations</li>
+<li><strong>作者</strong>：Ahsan, Mohd; Pindi, Chinmai; Rodriguez, Larry; Shah, Paaras; Palermo, Giulia</li>
+<li><strong>单位</strong>：未提供（根据作者领域推断与 Palermo 实验室相关，但原文未提供）</li>
+<li><strong>期刊/平台</strong>：bioRxiv (the preprint server for biology)</li>
+<li><strong>年份</strong>：2026（预印本日期 2026-11-08）</li>
+<li><strong>论文类型</strong>：预印本（方法学 + 应用研究）</li>
+<li><strong>领域</strong>：蛋白质结构相关计算研究 × AI/深度学习（图神经网络 × MD 模拟）</li>
+<li><strong>关键词</strong>：Graph Attention Networks, Molecular Dynamics, Interpretable AI, Protein Communication Networks, Allostery, Protein Folding</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.09.03.749137</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供（使用 Chignolin 和 HIV-1 protease 的 MD 模拟数据，但未提供数据来源细节）</li>
+<li><strong>阅读日期</strong>：2026-05-14（按当前日期）</li>
+<li><strong>在该方向中的位置</strong>：本文位于「MD 模拟 × 图神经网络 × 可解释 AI」交叉点，聚焦于从 MD 轨迹学习残基间通信网络，属于结构预测/构象采样之外的「构象动态解释」子方向，与蛋白质工程和别构调控设计直接相关。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出三种 edge-aware GAT 变体（Edge-Conditioned、Edge-Injected、Edge-Gated），通过将边信息（残基间距离/相互作用）注入消息传递过程，在提升坐标预测精度的同时，从注意力权重中提取残基通信网络，用于解释 Chignolin 折叠和 HIV-1 蛋白酶别构/突变重塑的机制。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：标准 GAT 在 MD 轨迹预测中虽能学习动态，但其注意力权重难以直接解释为有物理意义的残基间通信；如何设计一种既能提升预测性能又能产生可解释通信网络的 GAT 架构？</li>
+<li><strong>为什么重要</strong>：蛋白质功能（折叠、别构、信号传导）本质上是残基间动态通信的结果；若能从 AI 模型中提取可解释的通信网络，将直接服务于别构位点发现、突变效应预测和理性蛋白工程。</li>
+<li><strong>现有方法不足</strong>：标准 GAT 的注意力机制是节点导向的（node-centric），忽略了边特征（如距离、相互作用类型）的显式建模，导致注意力权重与物理通信脱节；已有可解释性方法多为事后分析（post-hoc），而非设计内嵌（by-design）。</li>
+<li><strong>精确研究问题</strong>：Can edge-aware GAT architectures produce attention-derived communication networks that are both predictive of MD coordinates and mechanistically interpretable in terms of residue communication?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「经外部核验」的领域常识，结合本文框架定位）</em>
+1. <strong>阶段一：MD 模拟 + 传统分析</strong>（1980s–2010s）
+   - 代表方法：相关性矩阵、动态网络分析（Dynamical Network Analysis）、社区检测
+   - 优点：物理可解释；局限：依赖人工特征选择，难以端到端学习
+2. <strong>阶段二：深度学习预测 MD 动态</strong>（2018–2023）
+   - 代表方法：GAT、Graph Transformer、NeuralMD 类模型
+   - 优点：自动学习高维动态特征；局限：注意力权重缺乏物理对应，黑箱性质严重
+3. <strong>阶段三：可解释 GNN for 生物分子</strong>（2023–2026）
+   - 代表方法：注意力剪枝、edge-importance 学习、GNNExplainer 类事后解释
+   - 优点：开始关注可解释性；局限：多为事后归因，与预测任务脱节
+4. <strong>本文位置</strong>：将「边信息注入」与「注意力即通信」结合，实现预测与解释的联合优化，属于「by-design interpretability」路线。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>注意力权重缺乏物理意义</td>
+<td>标准 GAT 的注意力分数无法直接对应残基间真实通信强度</td>
+<td>节点导向的消息传递忽略了边特征（距离、相互作用类型）的显式建模</td>
+<td>Abstract: "extracting mechanistic insight from learned attention remains challenging"</td>
+</tr>
+<tr>
+<td>预测与解释脱节</td>
+<td>事后解释方法（如 attention pruning）与预测任务分离，解释结果不可靠</td>
+<td>解释是 post-hoc 的，不参与训练目标</td>
+<td>Abstract: "combines molecular dynamics prediction with mechanistic interpretation through attention-derived communication networks"</td>
+</tr>
+<tr>
+<td>不同通信特征难以同时捕捉</td>
+<td>单一模型难以同时刻画通信枢纽（hub）、高强度通信和长程中继</td>
+<td>不同边注入方式对通信拓扑的偏置不同</td>
+<td>Abstract: "Edge-Conditioned...preferentially emphasizes communication hubs...Edge-Injected...high-intensity communication...Edge-Gated...long-range communication relay"</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：设计三种 edge-aware GAT 变体，在消息传递过程中以不同方式注入边特征（edge-conditioning、edge-injection、edge-gating），训练模型预测 MD 坐标，并从注意力权重构建残基通信网络。</li>
+<li><strong>核心洞察</strong>：边信息的注入方式决定了注意力权重的物理偏置——conditioning 强调节点作为通信枢纽的聚合能力，injection 强调局部高强度通信，gating 强调长程信号中继。因此，<strong>注意力权重的可解释性不是事后附加的，而是由架构设计内嵌决定的</strong>。</li>
+<li><strong>[Analysis] 可能的普适教训</strong>：在 AI for 生物分子中，「可解释性」不应被视为模型的附加属性，而应通过架构设计（如边信息注入方式）将物理先验（通信拓扑类型）编码进学习过程。不同物理问题可能需要不同的「解释偏置」。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：MD 轨迹中的残基坐标序列（每个时间帧的 Cα 坐标或全原子坐标，具体未提供）</li>
+<li><strong>输出</strong>：下一帧坐标预测 + 注意力权重导出的残基通信网络</li>
+<li><strong>模块</strong>：
+  1. 图构建：残基为节点，边基于距离截断或 k-NN（具体未提供）
+  2. 三种 edge-aware 消息传递层（Edge-Conditioned / Edge-Injected / Edge-Gated）
+  3. 坐标预测头（输出层）
+  4. 通信网络提取：从注意力权重聚合为残基间通信强度矩阵</li>
+<li><strong>训练</strong>：监督学习，损失函数为坐标预测误差（具体损失形式未提供）</li>
+<li><strong>工具</strong>：未提供（推测为 PyTorch + PyTorch Geometric，但原文未提供）</li>
+<li><strong>假设</strong>：注意力权重可以映射为残基间通信强度；边特征（距离）是通信的物理基础</li>
+<li><strong>流程</strong>：MD 轨迹 → 图序列构建 → edge-aware GAT 编码 → 坐标预测 → 注意力权重聚合 → 通信网络 → 图论指标分析（throughput, intensity, relay）</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Edge-Conditioned 消息传递</td>
+<td>边特征调制节点特征聚合</td>
+<td>使注意力权重反映节点作为通信枢纽的聚合能力</td>
+<td>输入：节点特征+边特征；输出：更新节点特征</td>
+<td>Abstract: "preferentially emphasizes communication hubs characterized by high communication throughput and intensity"</td>
+<td>[预期] 移除后通信枢纽识别能力下降</td>
+</tr>
+<tr>
+<td>Edge-Injected 消息传递</td>
+<td>将边特征直接注入注意力计算</td>
+<td>使注意力权重反映局部高强度通信</td>
+<td>输入：节点特征+边特征；输出：更新节点特征</td>
+<td>Abstract: "preferentially highlights high-intensity communication within functionally important regions"</td>
+<td>[预期] 移除后局部功能区域通信识别下降</td>
+</tr>
+<tr>
+<td>Edge-Gated 消息传递</td>
+<td>用边特征门控消息传递</td>
+<td>使注意力权重反映长程通信中继</td>
+<td>输入：节点特征+边特征；输出：更新节点特征</td>
+<td>Abstract: "most clearly resolves long-range communication relay"</td>
+<td>[预期] 移除后长程信号传导路径识别下降</td>
+</tr>
+<tr>
+<td>通信网络提取</td>
+<td>从注意力权重构建残基间通信图</td>
+<td>将模型内部表示转化为可解释的物理网络</td>
+<td>输入：注意力权重；输出：通信强度矩阵</td>
+<td>Abstract: "attention-derived communication networks"</td>
+<td>[预期] 移除后模型完全黑箱</td>
+</tr>
+<tr>
+<td>图论指标分析</td>
+<td>计算 throughput, intensity, relay 等指标</td>
+<td>量化通信网络的拓扑特征</td>
+<td>输入：通信网络；输出：指标值</td>
+<td>Abstract: "graph-based descriptors of communication throughput, intensity, and relay"</td>
+<td>[预期] 移除后无法比较不同模型的解释质量</td>
+</tr>
+</tbody>
+</table>
+<p><em>注：原文未提供消融实验，所有影响均为 [预期] 而非实测。</em></p>
+<h2>09 关键公式符号</h2>
+<p><em>（原文未提供具体公式，以下基于 GAT 标准框架和本文描述推断，标注为 [Analysis]）</em>
+- <strong>标准 GAT 注意力系数</strong>：α_ij = softmax(LeakyReLU(a^T[Wh_i ‖ Wh_j]))，其中 h_i 为节点 i 特征，W 为可学习权重，a 为注意力向量
+- <strong>Edge-Conditioned 变体</strong>：α_ij = softmax(LeakyReLU(a^T[Wh_i ‖ Wh_j ‖ e_ij]))，其中 e_ij 为边特征
+- <strong>Edge-Injected 变体</strong>：α_ij = softmax(LeakyReLU(a^T[Wh_i ‖ Wh_j]) + f(e_ij))，其中 f 为边特征变换
+- <strong>Edge-Gated 变体</strong>：m_ij = g(e_ij) ⊙ (W h_j)，其中 g 为门控函数，⊙ 为逐元素乘
+- <strong>坐标预测</strong>：Δx_pred = MLP(Σ_j α_ij W h_j)
+- <strong>通信强度</strong>：C_ij = Σ_l α_ij^(l)（跨层聚合）</p>
+<p><em>注：以上公式为 [Analysis] 推断，原文未提供具体数学形式。</em></p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：Chignolin（10 残基迷你蛋白）和 HIV-1 蛋白酶（99 残基二聚体）的 MD 模拟轨迹</li>
+<li><strong>规模</strong>：未提供具体帧数/轨迹长度</li>
+<li><strong>指标</strong>：坐标预测误差（具体指标未提供）+ 通信网络图论指标（throughput, intensity, relay）</li>
+<li><strong>基线</strong>：标准 GAT</li>
+<li><strong>评测协议</strong>：比较三种 edge-aware 变体与标准 GAT 的预测精度和通信网络特征</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chignolin 折叠预测</td>
+<td>edge-aware 模型提升坐标预测</td>
+<td>三种变体 vs 标准 GAT</td>
+<td>未提供具体数值</td>
+<td>edge-aware 模型改善预测</td>
+<td>无法判断改善幅度和统计显著性</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>HIV-1 蛋白酶别构通信</td>
+<td>通信网络能反映别构机制</td>
+<td>三种变体 vs 标准 GAT</td>
+<td>未提供具体数值</td>
+<td>不同变体捕捉不同通信特征</td>
+<td>无法判断与实验验证的别构通路一致性</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>突变诱导功能重塑</td>
+<td>通信网络能反映突变效应</td>
+<td>未提供具体突变</td>
+<td>未提供具体数值</td>
+<td>通信网络可表征突变效应</td>
+<td>无法判断是否与实验表型定量相关</td>
+<td>Abstract</td>
+</tr>
+</tbody>
+</table>
+<p><em>注：原文为预印本摘要，未提供具体实验数值、图表和统计检验。</em></p>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅限 Chignolin 和 HIV-1 蛋白酶两个体系，不能外推至所有蛋白质</li>
+<li><strong>oracle/真值输入</strong>：MD 模拟轨迹作为训练数据，其本身是近似物理模型，非实验真值</li>
+<li><strong>端到端状态</strong>：预测与解释联合优化，但解释（通信网络）未与实验验证的通信数据（如突变扫描、NMR 化学位移扰动）直接对比</li>
+<li><strong>算力成本</strong>：未提供训练时间和资源需求</li>
+<li><strong>最难情形</strong>：未测试大蛋白、多域蛋白或构象高度无序体系</li>
+<li><strong>群体/领域边界</strong>：结论限于「edge-aware 注入方式影响注意力权重的物理偏置」这一架构层面发现</li>
+<li><strong>不确定性</strong>：未提供统计显著性检验、误差棒或重复实验</li>
+<li><strong>有边界的复述</strong>：在 Chignolin 和 HIV-1 蛋白酶两个体系中，三种 edge-aware GAT 变体相比标准 GAT 在坐标预测上有所改善，且不同边注入方式产生的注意力网络在通信枢纽、高强度通信和长程中继三个维度上呈现不同偏置；但具体数值、统计显著性和与实验数据的对应关系未在摘要中提供。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p><em>（在提供的材料中未发现作者明确承认的局限）</em></p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 摘要中未讨论方法对超参数（如图构建方式、注意力头数）的敏感性
+- 未提及对 MD 力场误差的鲁棒性
+- 未讨论计算成本与可扩展性</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>注意力权重=通信强度的假设未验证</td>
+<td>注意力权重可能反映的是预测任务所需的特征，而非真实物理通信</td>
+<td>若假设不成立，整个解释框架失效</td>
+<td>将注意力网络与独立实验数据（如突变耦合分析、NMR 弛豫）对比</td>
+<td>Abstract 中未提供验证</td>
+</tr>
+<tr>
+<td>三种变体的差异可能来自参数数量而非边注入方式</td>
+<td>未控制模型容量，Edge-Gated 可能因更多参数而表现更好</td>
+<td>无法区分架构设计效应与容量效应</td>
+<td>控制参数量的消融实验</td>
+<td>未提供消融</td>
+</tr>
+<tr>
+<td>仅两个小体系不足以支撑普适结论</td>
+<td>Chignolin 极小，HIV-1 蛋白酶是经典体系，可能对方法有利</td>
+<td>无法判断在复杂体系（如膜蛋白、无序蛋白）中的表现</td>
+<td>在更多样化的蛋白体系上测试</td>
+<td>摘要仅提及两个体系</td>
+</tr>
+<tr>
+<td>坐标预测误差与通信网络质量的关系未建立</td>
+<td>预测更准不一定意味着通信网络更真实</td>
+<td>需要验证预测性能提升与解释质量的相关性</td>
+<td>计算预测误差与通信网络实验一致性的相关性</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>未与现有动态网络分析（Dynamical Network Analysis）基线对比</td>
+<td>传统方法可能已能提取类似通信网络</td>
+<td>无法判断 AI 方法的增量价值</td>
+<td>与基于相关性矩阵的网络分析对比</td>
+<td>摘要未提及基线</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>边信息注入方式决定解释偏置</strong>：在 GNN 设计中，边特征的注入方式（conditioning vs injection vs gating）不仅影响预测性能，更决定了注意力权重的物理语义。这提示我们在蛋白质结构相关任务中，应根据目标物理问题选择边注入策略。
+2. <strong>By-design 可解释性优于 post-hoc</strong>：将可解释性内嵌到架构中（而非事后归因）可能产生更可靠的生物物理洞察。可迁移到 AlphaFold 类模型的注意力分析中。
+3. <strong>通信网络三指标框架</strong>：throughput（通信吞吐）、intensity（强度）、relay（中继）为分析残基通信提供了可操作的图论描述符，可迁移到别构位点预测、突变效应评估中。
+4. <strong>多模型互补策略</strong>：不同模型变体捕捉不同通信特征，提示在蛋白质工程中可组合多种解释视角以获得全面图景。
+5. <strong>MD 轨迹作为图序列学习任务</strong>：将 MD 轨迹视为时序图序列，用 GAT 编码残基间动态关系，这一框架可迁移到构象采样、增强采样目标函数的构建中。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：与 Dynamical Network Analysis (Sethi et al., 2009) 目标一致，但用学习到的注意力替代相关性矩阵；与 GNN-based MD 预测工作（如 NequIP、MACE 等）共享图神经网络框架，但聚焦于可解释性而非纯精度。</li>
+<li><strong>组合方向</strong>：与 AlphaFold 的 Evoformer 注意力分析结合，可比较「进化耦合」与「MD 动态通信」的异同；与增强采样方法（如 OPES、MetaDynamics）结合，可用通信网络指导 collective variable 选择。</li>
+<li><strong>冲突观点</strong>：部分文献认为注意力权重不能直接解释为因果重要性（Jain &amp; Wallace, 2019），本文隐含假设注意力=通信，需警惕。</li>
+<li><strong>可迁移领域</strong>：edge-aware 消息传递设计可迁移到蛋白-配体对接中的相互作用指纹学习、蛋白设计中的残基耦合建模。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：Edge-Aware GAT 用于别构位点预测的基准测试
+   - <strong>来源局限/观察</strong>：本文仅展示两个体系，未与实验别构数据系统对比
+   - <strong>核心假设</strong>：edge-gated 注意力网络识别的长程中继残基与实验已知的别构通路显著重叠
+   - <strong>初步方法</strong>：在 10+ 个具有实验别构数据的蛋白上训练 edge-gated GAT，计算注意力网络与突变耦合实验数据的重叠率
+   - <strong>验证方式</strong>：与随机网络、标准 GAT、Dynamical Network Analysis 对比 AUC
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：注意力通信网络指导的增强采样 collective variable 设计
+   - <strong>来源局限/观察</strong>：本文通信网络反映动态相关性，但未用于指导采样
+   - <strong>核心假设</strong>：通信网络中的高 relay 残基对构成有效的 CV 空间
+   - <strong>初步方法</strong>：从 edge-gated 注意力提取关键残基对，构建 CV 进行 MetaDynamics 模拟，比较折叠自由能面收敛速度
+   - <strong>验证方式</strong>：与 RMSD-based CV、PCA CV 对比收敛时间和自由能面精度
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：突变效应预测的通信网络扰动分析
+   - <strong>来源局限/观察</strong>：本文展示突变诱导功能重塑，但未定量预测突变效应
+   - <strong>核心假设</strong>：突变导致的注意力网络拓扑变化（如 relay 路径断裂）与实验 ΔΔG 或功能变化相关
+   - <strong>初步方法</strong>：对 HIV-1 蛋白酶已知耐药突变进行 in silico 突变，比较突变前后通信网络指标变化与实验耐药数据
+   - <strong>验证方式</strong>：Spearman 相关性和分类 AUC
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Edge-Gated GAT 与 AlphaFold 注意力融合的共进化-动态一致性分析
+   - <strong>来源局限/观察</strong>：本文仅用 MD 数据，未利用共进化信息
+   - <strong>核心假设</strong>：AlphaFold 的 Evoformer 注意力与 MD 导出的通信网络在功能重要残基上一致
+   - <strong>初步方法</strong>：对同一蛋白分别计算 AlphaFold 注意力与 edge-gated GAT 通信网络，比较拓扑重叠，识别「动态-进化」一致残基
+   - <strong>验证方式</strong>：与已知功能位点（活性位点、别构位点）的富集分析
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Edge-Aware GAT 用于蛋白设计中的残基耦合约束
+   - <strong>来源局限/观察</strong>：本文通信网络反映动态耦合，可用于设计约束
+   - <strong>核心假设</strong>：在蛋白设计中约束高通信残基对的共变异可提高设计成功率
+   - <strong>初步方法</strong>：将通信网络作为约束加入基于深度学习的蛋白设计流程（如 ProteinMPNN 的约束条件）
+   - <strong>验证方式</strong>：设计蛋白的表达、折叠和功能实验验证
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present three edge-aware graph attention network (GAT) variants (Edge-Conditioned, Edge-Injected, Edge-Gated) that incorporate edge information during message passing. Relative to a standard GAT, these models improve coordinate prediction and recover complementary aspects of residue communication. Applied to Chignolin and HIV-1 protease, the models characterize communication networks underlying protein folding, allostery, and mutation-induced functional remodeling. The three models are claimed to preferentially emphasize distinct network features: communication hubs (Edge-Conditioned), high-intensity communication in functionally important regions (Edge-Injected), and long-range communication relay (Edge-Gated).</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, methodological details, or validation data are available</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, all figures and tables, model architecture details, training and validation protocols, benchmark comparisons, statistical analyses, and code or data availability statements</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a conceptually interesting approach to interpretable AI for molecular dynamics, with a clear differentiation among three edge-aware GAT variants. However, the claims of improved prediction and mechanistic interpretation are not supported by any quantitative evidence in the provided material. The abstract reads as a high-level summary without the necessary methodological detail or validation data to assess technical soundness or the validity of the biological interpretations. The work may be of interest to the computational biophysics and AI-for-science communities, but the current evidence base is insufficient to establish the core claims.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biophysicists and chemists studying protein dynamics, allostery, and folding would be interested in the potential for interpretable AI to extract communication networks from molecular dynamics simulations. Researchers in graph neural network applications to biomolecular systems would also find the edge-aware architectural variants relevant. The broader AI-for-science community may be interested in the interpretability framework, though the biological specificity limits cross-disciplinary reach.</li>
+<li><strong>Major strengths</strong> The conceptual framing of using attention-derived communication networks for mechanistic interpretation is timely and potentially valuable. The explicit comparison of three edge-aware GAT variants with distinct design choices is a systematic approach. The application to two well-studied systems (Chignolin and HIV-1 protease) with relevance to folding and allostery is appropriate for demonstrating the approach.</li>
+<li><strong>Major Concerns</strong> </li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The abstract claims that edge-aware models "improve coordinate prediction" relative to a standard GAT.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> No quantitative metrics are provided to support the claim of improved coordinate prediction. There is no mention of error measures (e.g., root-mean-square deviation, mean absolute error), comparison baselines, statistical significance, or the magnitude of improvement.</li>
+<li><strong>Why it matters</strong> The central technical claim of the paper is that edge-aware architectures outperform a standard GAT. Without quantitative evidence, the reader cannot assess whether the improvement is meaningful, marginal, or system-specific. This claim is foundational to the paper's contribution.</li>
+<li><strong>Resolution test</strong> Provide prediction error metrics for all models (standard GAT and three edge-aware variants) on both test systems, with uncertainty estimates and statistical tests comparing model performance.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The abstract claims that the three edge-aware models "recover complementary aspects of residue communication" and that each model "preferentially emphasizes" distinct network features (hubs, high-intensity communication, long-range relay).</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The claim of complementary recovery and preferential emphasis is presented without any supporting analysis. There is no description of how communication networks were derived from attention, how the graph-based descriptors (throughput, intensity, relay) were computed, or how the "preferential emphasis" was determined. No comparison to known biological communication pathways or experimental data is mentioned.</li>
+<li><strong>Why it matters</strong> The mechanistic interpretation is the primary novelty of the work. Without a clear methodology for deriving and validating communication networks, and without evidence that the model-specific emphases are reproducible and biologically meaningful, the central interpretability claim is unsupported.</li>
+<li><strong>Resolution test</strong> Describe the full pipeline from attention weights to communication networks, define all graph-based descriptors, and provide validation against known residue contacts, mutational data, or experimental allostery studies. Show quantitative comparisons of network features across models and systems.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> The abstract implies a complete methodological framework for training, evaluating, and interpreting the models.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> No details are provided on model architecture (number of layers, hidden dimensions, attention heads), training data (simulation lengths, force fields, system preparation), training procedure (loss functions, optimizers, hyperparameters), or evaluation protocol (train/test splits, cross-validation). The abstract also does not mention code or data availability.</li>
+<li><strong>Why it matters</strong> Reproducibility is a core requirement for computational studies. Without these details, the work cannot be independently verified or extended by other researchers, which limits its scientific impact.</li>
+<li><strong>Resolution test</strong> Provide a complete methods section with all architectural and training details, and state code and data availability in the manuscript.</li>
+<li><strong>Minor Comments</strong> </li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability</li>
+<li><strong>Affected element</strong> Abstract, first sentence</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The phrase "aritficial intellegence" contains typographical errors.</li>
+<li><strong>Required correction</strong> Correct to "artificial intelligence."</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract, model naming</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The three model names (Edge-Conditioned, Edge-Injected, Edge-Gated) are introduced without a brief explanation of the architectural difference beyond "how edge information is incorporated during message passing." This is vague for a nonspecialist reader.</li>
+<li><strong>Required correction</strong> Add one sentence in the abstract or methods describing the key architectural distinction for each model.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Scope</li>
+<li><strong>Affected element</strong> Abstract, final claim</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The final sentence claims the approach supports "AI-guided modulation of biomolecular function and rational protein engineering," but no evidence or discussion of such applications is presented in the abstract.</li>
+<li><strong>Required correction</strong> Either remove this claim or explicitly state that these are potential future directions rather than demonstrated outcomes.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (no quantitative prediction metrics), R1-M2 (no methodology or validation for communication network interpretation), R1-M3 (no reproducibility details)</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The concept of using edge-aware GAT variants to extract communication networks from MD simulations is moderately original, building on existing GAT applications to biomolecular systems. The three-way architectural comparison adds a systematic element, but the core idea is not entirely novel.</li>
+<li>Scientific importance: If the claims are substantiated, the work could contribute to interpretable AI for biophysics and aid in understanding allostery and folding. However, the importance is not yet established from the abstract alone.</li>
+<li>Interdisciplinary readership: The work sits at the intersection of machine learning, biophysics, and structural biology. It may appeal to computational specialists but is unlikely to attract a broad interdisciplinary audience without clearer biological insights.</li>
+<li>Technical soundness: Cannot be assessed from the abstract. No quantitative results, methodological details, or validation are provided.</li>
+<li>Readability for nonspecialists: The abstract is generally accessible but uses domain-specific terms (e.g., "attention-derived communication networks," "graph-based descriptors") without sufficient explanation for a general scientific audience.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The conceptual framework is promising, but the abstract lacks the quantitative and methodological support needed to evaluate the core claims. A full review of the complete manuscript would be required to determine whether the technical concerns can be resolved.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that edge-aware models "improve coordinate prediction" is unsupported by any quantitative data.</li>
+<li>The claim that the three models "recover complementary aspects of residue communication" and "preferentially emphasize" distinct network features is unsupported by any analytical or validation evidence.</li>
+<li>The claim that the approach characterizes "mutation-induced functional remodeling" in HIV-1 protease is not supported by any specific results.</li>
+<li>The claim that the approach supports "AI-guided modulation of biomolecular function and rational protein engineering" is speculative and not evidenced.</li>
+<li>All biological interpretations (folding, allostery, long-range signal propagation) are presented without reference to specific findings or comparisons to experimental data.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

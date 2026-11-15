@@ -1,0 +1,92 @@
+## Review setup
+- **Input scope** Full manuscript text, including Introduction, Results, Discussion, Materials and Methods, and figure legends. Supplementary Information referenced but not provided.
+- **Assessment boundary** Scientific claims, methodological adequacy, structural interpretation, and consistency of the evidence presented in the manuscript text. No assessment of editorial fit or journal policy.
+- **Shared manuscript claim summary** The authors report that a highly darunavir-resistant HIV protease variant (PRp51) carrying fourteen amino-acid substitutions, of which eleven are distal to the active site, exhibits resistance to darunavir through concerted structural changes that expand the active site cavity. They further report that the same variant is substantially less resistant to the experimental inhibitor GRL142, and that molecular dynamics simulations and crystallographic analyses support a mechanism in which distal substitutions contribute to resistance as directly as proximal ones.
+- **Visible evidence base** Enzyme inhibition data (Ki values), antiviral activity data (EC50 values), X-ray crystal structures (PDB IDs 9CTX, 6MKL, 4HLA, 5TYS), molecular dynamics simulations (1500 ns), active site volume calculations, and structural interaction analyses.
+- **Missing materials affecting confidence** Supplementary Information (including Supplementary Table 1 with crystallographic statistics and Supplementary Figures 1-5) was not provided. Raw MD trajectory data, convergence metrics, and force field validation details are not described in sufficient detail. No statistical analysis of MD population differences is presented.
+
+## Reviewer
+- **Overall assessment** The manuscript addresses an important question in HIV drug resistance, namely whether distal amino-acid substitutions contribute mechanistically to protease inhibitor resistance. The authors combine experimental and computational approaches to argue that distal substitutions act concertedly with proximal ones to expand the active site cavity, thereby reducing inhibitor binding. The crystallographic and enzymatic data are valuable, and the comparison between darunavir and GRL142 is informative. However, the central mechanistic claim rests heavily on MD simulation analyses that are presented without adequate statistical treatment, convergence assessment, or validation. The manuscript would be strengthened by a more rigorous quantitative framework and by direct experimental testing of the proposed mechanism.
+- **Who would be interested in the results, and why** Researchers in HIV drug resistance, antiviral drug development, and structural virology would be interested. The work also speaks to the broader field of protein engineering and drug design, where understanding how distal mutations affect ligand binding is of general relevance. Clinicians and public health researchers focused on antiretroviral therapy optimization may also find the implications for predicting resistance to darunavir-containing regimens relevant.
+- **Major strengths** 1. The study addresses a clinically relevant and mechanistically underexplored question. 2. The combination of enzymatic, antiviral, crystallographic, and computational methods is appropriate and potentially powerful. 3. The comparison between two inhibitors with different resistance profiles provides a useful internal control. 4. The crystallographic structures of PRp51 in complex with both inhibitors are valuable resources. 5. The observation that distal substitutions form clusters of van der Waals interactions is interesting and potentially novel.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Statistical rigor of MD analysis
+  - **Claim pointer** The authors claim that MD simulations "unequivocally demonstrate" that the active site of DRV-PRp51 undergoes a larger expansion compared to GRL142-PRp51, and that population differences in inter-residue distances support the proposed mechanism.
+  - **Evidence pointer** Results section, subsection on MD simulation; Figures 4 and 5; Table 3
+  - **Concern** The population differences reported in Figures 4 and 5 are presented as percentages without any statistical treatment. No error bars, confidence intervals, or significance tests are provided. The claim of "unequivocal" demonstration is not supported by the evidence as presented. MD simulations of this length (1500 ns) for a system of this size typically require multiple independent replicates to assess convergence and sampling adequacy. The manuscript does not report whether replicate simulations were performed, nor does it provide any convergence metrics (e.g., RMSD stabilization, block averaging, or autocorrelation analysis).
+  - **Why it matters** The central mechanistic claim of the paper rests on the MD-derived population differences. Without statistical validation, the reader cannot assess whether the observed differences are robust or could arise from insufficient sampling or stochastic variation. This is particularly important given that the differences between DRV-PRp51 and GRL142-PRp51, while directionally consistent, may be within the noise of the simulation method.
+  - **Resolution test** Provide replicate MD simulations (at least three independent runs per system), report convergence metrics, and perform statistical comparison of population distributions (e.g., bootstrap or permutation tests) with appropriate multiple-testing correction. Alternatively, provide a clear justification for why a single long trajectory is sufficient and demonstrate convergence through block analysis.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Causal attribution of resistance to distal substitutions
+  - **Claim pointer** The title and Discussion claim that distal amino-acid substitutions contribute to HIV protease inhibitor resistance "as directly as" proximal substitutions.
+  - **Evidence pointer** Title; Discussion section; Results section, molecular surface analysis
+  - **Concern** The manuscript demonstrates correlation between the presence of distal substitutions and structural changes, but does not establish causation. The PRp51 variant carries fourteen substitutions simultaneously, and the authors do not dissect the individual or combinatorial contributions of distal versus proximal substitutions. The claim of "as directly as" implies a comparable mechanistic role, but no experiment isolates the effect of distal substitutions alone. The molecular surface analysis shows that distal substitutions form clusters, but this is descriptive rather than causal.
+  - **Why it matters** The title makes a strong claim that goes beyond the evidence presented. Without mutagenesis experiments that separate distal from proximal substitutions, or at minimum a computational alanine-scanning or decomposition analysis, the claim of direct equivalence is not established. This overstatement could mislead readers about the mechanistic understanding of resistance.
+  - **Resolution test** Perform site-directed mutagenesis to generate variants with only distal substitutions, only proximal substitutions, and combinations thereof, then measure inhibitor binding and enzymatic activity. Alternatively, perform computational free energy decomposition or perturbation analysis to quantify the individual contributions of each substitution to the resistance phenotype.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Quantitative link between structural changes and resistance
+  - **Claim pointer** The authors state that the larger active site expansion in DRV-PRp51 "must be contributing to the loss of binding affinity" and that this explains the resistance phenotype.
+  - **Evidence pointer** Discussion section; Results section, active site volume calculations
+  - **Concern** The manuscript does not provide a quantitative relationship between the measured active site volume changes and the observed Ki or EC50 changes. The volume increase of 36.7 Å3 (8.2%) for DRV-PRp51 is presented as mechanistically significant, but no calculation or simulation links this volume change to a predicted binding free energy change. The claim that this "must be contributing" is an inference without quantitative support.
+  - **Why it matters** Without a quantitative link, the mechanistic narrative remains qualitative. The field would benefit from a testable prediction, such as a calculated binding free energy change that can be compared to the experimentally measured Ki values. This would strengthen the causal argument and provide a framework for predicting resistance to other inhibitors.
+  - **Resolution test** Perform binding free energy calculations (e.g., MM-PBSA, FEP, or TI) for DRV and GRL142 against PRwt and PRp51, and compare the calculated differences to the experimentally measured Ki fold-changes. Alternatively, correlate the active site volume changes with binding affinity changes across a panel of inhibitors.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Generalizability of the conclusion
+  - **Claim pointer** The Discussion suggests that the findings warrant reexamination of distal substitutions in other HIV drug targets and other therapeutic areas.
+  - **Evidence pointer** Discussion section, final paragraph
+  - **Concern** The study examines a single protease variant (PRp51) and two inhibitors. The claim that distal substitutions generally contribute "as directly as" proximal substitutions across other targets and therapeutic areas is an extrapolation beyond the data. While the authors appropriately frame this as a suggestion for future work, the title and abstract may be read as making a broader claim than the evidence supports.
+  - **Why it matters** Overgeneralization could lead to inappropriate assumptions in drug development programs. The field needs more examples across different targets and inhibitor classes before such a general principle can be established.
+  - **Resolution test** Soften the title and abstract claims to reflect the specific system studied, or provide additional data from other protease variants or inhibitor classes to support the general claim.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity of crystallographic analysis
+  - **Affected element** Results section, structural analysis
+  - **Evidence pointer** Figure 2; Supplementary Figure 1
+  - **Issue** The description of structural differences between PRwt and PRp51 complexes focuses on side-chain conformations but does not provide quantitative measures such as RMSD values for the full structures or for the substituted residues specifically. The statement that "secondary structures aligned well" is qualitative.
+  - **Required correction** Provide RMSD values for backbone and side-chain atoms, and consider reporting per-residue RMSD or displacement values for the fourteen substituted positions.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness of methods for MD simulations
+  - **Affected element** Materials and Methods, MD simulation section
+  - **Evidence pointer** Materials and Methods section
+  - **Issue** The description of the MD simulation protocol is brief. Key parameters such as temperature coupling method, pressure coupling, barostat, long-range electrostatics treatment, and the specific version of the OPLS3 force field are not fully specified. The equilibration protocol is described only as "minimized and equilibrated" without details.
+  - **Required correction** Provide a complete description of the simulation protocol including thermostat/barostat parameters, equilibration steps, and any restraints applied during equilibration. This is essential for reproducibility.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Presentation of active site volume calculations
+  - **Affected element** Results section, active site volumes
+  - **Evidence pointer** Figure 5
+  - **Issue** The active site volume calculations are presented as single values from the crystal structures and as distributions from MD. The method for defining the active site boundary for volume calculation is not described, and the sensitivity of the results to this definition is not assessed.
+  - **Required correction** Describe the active site definition used by the Schrödinger script, and ideally report volumes with different probe radii or active site definitions to demonstrate robustness.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Consistency of terminology
+  - **Affected element** Throughout
+  - **Evidence pointer** Title; Introduction; Discussion
+  - **Issue** The terms "major" and "minor" substitutions are used in the Introduction to describe the traditional classification, but the manuscript does not clearly define which of the fourteen substitutions in PRp51 are considered major versus minor beyond the statement that three are proximal and eleven are distal. The relationship between the proximal/distal classification and the major/minor classification is not explicitly stated.
+  - **Required correction** Clarify the classification of each of the fourteen substitutions as major or minor, and explicitly state whether the proximal/distal distinction used in the title corresponds to the major/minor classification.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Figure quality and accessibility
+  - **Affected element** Figures 1-5
+  - **Evidence pointer** Figure legends
+  - **Issue** The figure legends are descriptive but do not always state the number of replicates or the statistical treatment (where applicable). Figure 4 panels g-h are referenced in the text but the description of what is shown is brief.
+  - **Required correction** Ensure all figure legends state sample sizes, replicate numbers, and any statistical tests performed. Expand the legend for Figure 4 to clearly describe all panels.
+- **Technical failings that need to be addressed before the case is established** 1. Lack of statistical treatment of MD population differences (R1-M1). 2. Absence of experimental or computational dissection of distal versus proximal substitution contributions (R1-M2). 3. No quantitative link between structural changes and binding affinity changes (R1-M3). 4. Incomplete reporting of MD simulation parameters for reproducibility (R1-m2). 5. Unclear definition of active site boundary for volume calculations (R1-m3).
+
+## Risk / unsupported claims
+- The claim that distal substitutions contribute "as directly as" proximal substitutions is not supported by the experimental design, which does not isolate the effects of each class of substitution.
+- The statement that MD simulations "unequivocally demonstrate" active site expansion is unsupported without statistical analysis and convergence assessment.
+- The inference that active site expansion "must be contributing" to loss of binding affinity is presented without quantitative support.
+- The suggestion that findings warrant reexamination of distal substitutions in other targets and therapeutic areas is an extrapolation beyond the data presented.
+- The claim that the study "presents a simple and intuitive explanation" for the role of distal substitutions is not fully justified given the complexity of the system and the lack of causal experiments.

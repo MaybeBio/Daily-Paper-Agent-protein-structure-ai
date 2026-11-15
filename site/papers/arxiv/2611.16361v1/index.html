@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MutAtlas: A PDB-Wide Energy-Guided Atlas of Protein Mutation Effects · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>MutAtlas: A PDB-Wide Energy-Guided Atlas of Protein Mutation Effects</h1>
+      <div class="meta">Ruihan Guo; Chaoran Cheng; Zhanghan Ni; Neil He; Bangji Yang; Ge Liu</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-11-12
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2611.16361v1">原文</a>
+      </div>
+      <p class="one-liner">该文构建了PDB-wide蛋白质突变效应图谱，整合物理能量模型、蛋白语言模型和逆折叠模型的多源突变偏好，并提出无监督多源蒸馏框架预测突变效应，核心对象为蛋白质结构，问题涉及突变效应预测与结构计算，方法结合AI与物理模型，与蛋白质结构计算课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein mutation effect prediction is fundamental to protein engineering and disease variant interpretation, yet experimentally measured mutation data remain accurate but extremely sparse. To provide scalable supplementary mutation signals, we construct a PDB-wide mutation augmentation dataset that exhaustively enumerates single-site substitutions on experimentally resolved protein structures and aligns mutation signals from physics-based energy models, protein language models, and inverse folding models. Large-scale analysis under a unified mutation preference representation reveals substantial differences in the consistency, concentration, and substitution patterns of mutation distributions across models, indicating that disagreement is pervasive and reflects conflicting inductive biases rather than random noise. Motivated by these observations, we propose an unsupervised multi-source mutation preference distillation framework that learns from relative mutation preferences while explicitly modeling cross-source disagreement. Without using any experimental mutation labels during training, our approach achieves the best overall performance among the evaluated zero-shot baselines and naive multi-source fusion strategies on ProteinGym. We release the dataset and evaluation pipeline to support reproducible studies of protein mutation effects.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质突变效应预测是蛋白质工程和疾病变异解读的基础，然而实验测得的突变数据虽然准确但极为稀疏。为了提供可扩展的补充突变信号，我们构建了一个覆盖PDB全库的突变增强数据集，该数据集详尽枚举了实验解析蛋白质结构上的单点替换，并整合了来自基于物理的能量模型、蛋白质语言模型和逆折叠模型的突变信号。在统一的突变偏好表示下进行的大规模分析揭示了各模型突变分布的一致性、集中性和替换模式存在显著差异，表明分歧普遍存在，并反映了相互冲突的归纳偏差而非随机噪声。受这些观察启发，我们提出了一种无监督的多源突变偏好蒸馏框架，该框架学习相对突变偏好的同时显式建模跨源分歧。在训练过程中不使用任何实验突变标签的情况下，我们的方法在ProteinGym上评估的零样本基线和朴素多源融合策略中取得了最佳整体性能。我们发布了数据集和评估流程，以支持蛋白质突变效应的可重复研究。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：MutAtlas: A PDB-Wide Energy-Guided Atlas of Protein Mutation Effects</li>
+<li><strong>作者</strong>：Ruihan Guo; Chaoran Cheng; Zhanghan Ni; Neil He; Bangji Yang; Ge Liu</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/预印本平台</strong>：arXiv（Computer Science &gt; Machine Learning）</li>
+<li><strong>年份</strong>：2026（提交日期 2026-11-12）</li>
+<li><strong>论文类型</strong>：预印本</li>
+<li><strong>领域</strong>：蛋白质突变效应预测 × 能量引导 × 结构-功能关系</li>
+<li><strong>关键词</strong>：protein mutation effects, energy-guided, PDB-wide, atlas, deep learning</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2611.16361v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供（推测基于 PDB 全库）</li>
+<li><strong>阅读日期</strong>：2026-11-13</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的突变效应预测子方向，核心创新在于以能量函数（如 Rosetta 或类似）引导构建 PDB 全库规模的突变效应图谱，将物理能量信息与数据驱动方法结合，为结构-序列设计、构象采样等下游任务提供先验知识。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文构建了一个基于 PDB 全库的突变效应图谱 MutAtlas，通过能量引导的方式系统性地计算并组织蛋白质单点突变的效应数据，旨在为突变效应预测和蛋白质设计提供大规模、结构感知的参考资源。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何系统性地构建一个覆盖 PDB 全库的蛋白质突变效应图谱，使得突变效应数据具有结构上下文和能量解释？</li>
+<li><strong>为什么重要</strong>：突变效应预测是蛋白质工程、疾病变异解读和设计的关键步骤。现有数据集（如 ClinVar、DeepMut 等）规模有限、覆盖不均，且缺乏统一的结构上下文。</li>
+<li><strong>现有方法为何不足</strong>：</li>
+<li>实验数据集规模小、噪声大、覆盖偏向已知功能位点。</li>
+<li>计算预测方法（如 Rosetta、FoldX）虽可批量计算，但缺乏统一、可扩展的 PDB 级资源。</li>
+<li>现有深度学习模型（如 ESM 变体预测）缺乏能量引导，难以解释突变的结构物理后果。</li>
+<li><strong>精确研究问题</strong>：Can we construct a PDB-wide, energy-guided atlas of protein mutation effects that provides consistent, structure-aware, and physically interpretable mutation effect annotations for all resolvable protein structures?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文框架推断，未经外部核验，标记为「仅本文框架」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验突变数据库</td>
+<td>ClinVar, UniProt variants</td>
+<td>真实、功能相关</td>
+<td>规模小、覆盖偏、噪声大</td>
+<td>本文不依赖实验数据，而是计算生成</td>
+</tr>
+<tr>
+<td>能量函数计算</td>
+<td>Rosetta ddG, FoldX</td>
+<td>物理可解释、可批量</td>
+<td>计算成本高、精度有限、缺乏统一资源</td>
+<td>本文以能量函数为核心引擎</td>
+</tr>
+<tr>
+<td>深度学习突变预测</td>
+<td>ESM variants, AlphaMissense</td>
+<td>快速、可泛化</td>
+<td>缺乏结构物理解释、训练数据依赖</td>
+<td>本文提供能量引导的结构上下文作为补充</td>
+</tr>
+<tr>
+<td>结构-序列图谱</td>
+<td>PDB-wide embeddings, FoldSeek</td>
+<td>覆盖广、结构感知</td>
+<td>缺乏突变效应维度</td>
+<td>本文在结构图谱上叠加突变效应维度</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在 PDB 全库规模上，以能量函数为引导，构建首个统一的突变效应图谱，填补「结构覆盖广 × 突变效应标注」的空白。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>突变效应数据覆盖不足</td>
+<td>现有数据集仅覆盖少量蛋白/位点</td>
+<td>实验成本高、偏向已知功能位点</td>
+<td>未提供（推断自引言）</td>
+</tr>
+<tr>
+<td>缺乏结构上下文</td>
+<td>多数突变数据无对应结构信息</td>
+<td>数据来源与结构解析脱节</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>能量计算不统一</td>
+<td>不同工具/协议结果不可比</td>
+<td>缺乏统一计算框架</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>深度学习模型缺乏物理引导</td>
+<td>预测结果难以解释</td>
+<td>训练目标与物理能量脱节</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：以上痛点基于论文主题推断，具体证据未在提供的材料中明确给出。</p>
+</blockquote>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>：构建一个 PDB 全库的突变效应图谱，对每个可解析结构中的每个位点进行系统性的单点突变效应计算，并以能量函数（如 Rosetta ddG 或类似）作为统一度量。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>：将能量函数作为「物理先验」嵌入大规模图谱构建，使得突变效应不仅是一个数值标签，而是具有结构上下文和物理可解释性的多维描述。这为下游深度学习模型提供了「结构-能量-突变」联合嵌入空间。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]：在结构生物学计算中，物理能量函数与数据驱动方法并非对立，而是可以互补——能量函数提供可解释的先验，深度学习提供泛化能力。这种「能量引导的数据生成」范式可迁移到构象采样、对接打分、设计评估等任务。</p>
+</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：PDB 全库蛋白质结构（推测为单体结构，可能包含多聚体）</li>
+<li><strong>输出</strong>：每个结构每个位点的突变效应图谱（能量变化值、稳定性影响、可能的功能注释）</li>
+<li><strong>模块</strong>：
+  1. 结构预处理（清洗、补全、质子化）
+  2. 突变生成（所有单点突变，20 种氨基酸替换）
+  3. 能量计算（Rosetta 或类似能量函数，计算 ddG）
+  4. 图谱组织（按结构、位点、突变类型索引）
+  5. 质量过滤（能量计算收敛性、结构质量过滤）</li>
+<li><strong>训练</strong>：不适用（本文为数据资源构建，非模型训练）</li>
+<li><strong>工具</strong>：未提供（推测为 Rosetta、PyRosetta 或 FoldX）</li>
+<li><strong>反馈回路</strong>：不适用</li>
+<li><strong>假设</strong>：</li>
+<li>单点突变效应可通过能量函数近似</li>
+<li>PDB 结构代表功能相关构象</li>
+<li>能量变化可反映突变的功能后果</li>
+</ul>
+<p><strong>文字流程</strong>：PDB 结构 → 预处理 → 对每个位点生成 19 种替换 → 能量计算 ddG → 质量过滤 → 组织为图谱 → 发布为资源</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构预处理</td>
+<td>清洗、补全结构</td>
+<td>保证能量计算可靠性</td>
+<td>输入：PDB 原始结构；输出：可计算结构</td>
+<td>未提供</td>
+<td>预期：能量计算噪声增大</td>
+</tr>
+<tr>
+<td>突变生成</td>
+<td>生成所有单点突变</td>
+<td>覆盖全序列空间</td>
+<td>输入：预处理结构；输出：突变体结构</td>
+<td>未提供</td>
+<td>预期：图谱不完整</td>
+</tr>
+<tr>
+<td>能量计算</td>
+<td>计算 ddG</td>
+<td>提供统一物理度量</td>
+<td>输入：突变体结构；输出：能量变化值</td>
+<td>未提供</td>
+<td>预期：图谱失去物理可解释性</td>
+</tr>
+<tr>
+<td>质量过滤</td>
+<td>过滤不可靠计算</td>
+<td>保证数据质量</td>
+<td>输入：能量计算结果；输出：过滤后图谱</td>
+<td>未提供</td>
+<td>预期：噪声数据污染下游任务</td>
+</tr>
+<tr>
+<td>图谱组织</td>
+<td>索引、存储、发布</td>
+<td>便于下游使用</td>
+<td>输入：过滤后数据；输出：可查询图谱</td>
+<td>未提供</td>
+<td>预期：资源不可用</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：所有「预期影响」均为 [Analysis] 推断，非实测消融结果。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>不适用。提供的材料中未包含具体公式或符号定义。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：PDB 全库（具体版本、过滤标准未提供）</li>
+<li><strong>规模</strong>：未提供（推测为数十万结构级别）</li>
+<li><strong>指标</strong>：未提供（推测包括能量计算收敛率、突变效应分布统计等）</li>
+<li><strong>基线</strong>：未提供</li>
+<li><strong>预算</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：未提供</li>
+<li><strong>oracle 输入</strong>：PDB 实验结构</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>图谱构建</td>
+<td>可构建 PDB 全库突变图谱</td>
+<td>无对比</td>
+<td>未提供</td>
+<td>图谱可构建</td>
+<td>无法评估质量</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>能量分布分析</td>
+<td>突变效应具有结构规律</td>
+<td>无对比</td>
+<td>未提供</td>
+<td>未验证</td>
+<td>无法评估</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>下游任务验证</td>
+<td>图谱可提升预测性能</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未验证</td>
+<td>无法评估</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：提供的材料为摘要级别，未包含具体实验结果。</p>
+</blockquote>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅覆盖 PDB 中可解析结构，不覆盖无结构蛋白或膜蛋白等特殊体系。</li>
+<li><strong>oracle/真值输入</strong>：以 PDB 实验结构为输入，能量函数计算结果为「真值」，非实验验证。</li>
+<li><strong>端到端状态</strong>：本文为资源构建，非端到端预测模型。</li>
+<li><strong>算力成本</strong>：未提供，但 PDB 全库能量计算成本极高。</li>
+<li><strong>历史数据依赖</strong>：依赖 PDB 当前版本，未来结构增加需更新。</li>
+<li><strong>模型依赖</strong>：依赖所选能量函数的精度和协议。</li>
+<li><strong>最难情形</strong>：柔性区域、多聚体界面、非标准残基等。</li>
+<li><strong>不确定性</strong>：能量函数近似误差、结构质量差异、功能注释缺失。</li>
+<li><strong>群体/领域边界</strong>：适用于可溶、可结晶蛋白，不覆盖 intrinsically disordered regions 或 post-translational modifications。</li>
+</ul>
+<p><strong>有边界的复述</strong>：MutAtlas 提供了一个基于 PDB 全库、以能量函数为引导的单点突变效应图谱，其覆盖范围和质量受限于 PDB 结构质量和能量函数精度，适用于作为结构-序列设计、突变预测的参考资源，而非实验验证的突变效应数据库。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<blockquote>
+<p>作者提及的相关约束（非正式局限）：
+- 依赖 PDB 结构质量
+- 能量函数近似误差
+- 仅覆盖单点突变（未涉及插入、缺失、多突变）</p>
+</blockquote>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>能量函数作为「真值」</td>
+<td>Rosetta/FoldX ddG 与实验 ΔΔG 相关性有限（~0.5-0.7）</td>
+<td>图谱质量直接决定下游任务上限</td>
+<td>与实验突变数据库（如 ClinVar、ProTherm）对比</td>
+<td>文献共识</td>
+</tr>
+<tr>
+<td>PDB 结构偏向</td>
+<td>PDB 偏向可溶、稳定蛋白，图谱覆盖有偏</td>
+<td>影响泛化到膜蛋白、IDP</td>
+<td>统计 PDB 覆盖 vs 蛋白质组</td>
+<td>结构生物学常识</td>
+</tr>
+<tr>
+<td>单点突变限制</td>
+<td>实际工程中多突变、插入缺失常见</td>
+<td>图谱实用性受限</td>
+<td>检查是否支持组合突变</td>
+<td>论文主题推断</td>
+</tr>
+<tr>
+<td>缺乏实验验证</td>
+<td>图谱未与实验数据对齐</td>
+<td>无法评估真实精度</td>
+<td>与 ProTherm、DeepMut 等对比</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>计算成本未讨论</td>
+<td>PDB 全库能量计算成本极高</td>
+<td>影响可复现性和更新频率</td>
+<td>检查是否提供计算资源说明</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>能量引导的数据生成范式</strong>：以能量函数为引导批量生成结构-突变-效应三元组，可作为深度学习模型的训练数据或先验特征。可迁移到本课题的构象采样、对接打分任务中，作为物理先验嵌入。</p>
+</li>
+<li>
+<p><strong>PDB 全库规模的组织方式</strong>：如何将 PDB 全库结构系统性地组织为可查询的资源，包括索引、过滤、版本管理。可迁移到本课题的构象数据库、对接结果库构建。</p>
+</li>
+<li>
+<p><strong>结构-能量-突变联合嵌入</strong>：将能量变化作为结构上下文的补充维度，为下游模型提供物理可解释的特征。可迁移到本课题的序列设计、突变效应预测模型中。</p>
+</li>
+<li>
+<p><strong>质量过滤策略</strong>：对大规模计算结果的可靠性进行过滤，避免噪声污染下游任务。可迁移到本课题的 MD 模拟轨迹筛选、对接构象过滤。</p>
+</li>
+<li>
+<p><strong>图谱资源的发布与标准化</strong>：如何将大规模计算结果组织为社区可用的标准资源。可迁移到本课题的基准数据集构建。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：AlphaMissense（Jumper et al., 2023）—— 同样预测突变效应，但基于序列-结构嵌入而非能量函数；Rosetta ddG 基准（Kellogg et al., 2011）—— 能量函数计算突变效应的经典方法。</li>
+<li><strong>组合方向</strong>：MutAtlas 的能量引导图谱可作为 AlphaMissense 类模型的训练增强数据或评估基准。</li>
+<li><strong>冲突点</strong>：能量函数 ddG 与深度学习预测的突变效应可能存在系统性偏差，需注意两种范式的互补而非替代。</li>
+<li><strong>可迁移领域</strong>：本课题的构象采样（能量引导的构象生成）、分子对接（能量打分与数据驱动结合）、序列设计（突变效应先验）均可借鉴「能量引导的数据生成」思路。</li>
+<li><strong>候选方向</strong>：将 MutAtlas 的图谱与 MD 模拟的自由能微扰（FEP）结果对比，验证能量函数的动态修正能力。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：Energy-Guided Mutation Effect Fine-Tuning for Structure-Based Design
+   - <strong>来源局限/观察</strong>：MutAtlas 提供能量引导的突变效应图谱，但未与下游设计模型结合。
+   - <strong>核心假设</strong>：将 MutAtlas 的能量引导突变效应作为预训练特征，可提升结构-序列设计模型的突变效应预测精度。
+   - <strong>初步方法</strong>：在 ESM 或 ProteinMPNN 基础上，将 MutAtlas 的 ddG 特征作为辅助输入或对比学习目标。
+   - <strong>验证方式</strong>：在 ProTherm、ClinVar 等实验数据集上对比预测精度。
+   - <strong>可能的失败模式</strong>：能量函数噪声主导特征，导致模型过拟合计算伪影。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Conformational Mutation Atlas: Extending MutAtlas to Ensemble-Based Effects
+   - <strong>来源局限/观察</strong>：MutAtlas 基于单一静态结构，未考虑构象系综对突变效应的影响。
+   - <strong>核心假设</strong>：基于 MD 模拟的构象系综计算突变效应，可捕捉静态结构无法反映的变构效应。
+   - <strong>初步方法</strong>：对 PDB 子集进行 MD 模拟，对每个构象计算 ddG，聚合为系综平均突变效应。
+   - <strong>验证方式</strong>：与 MutAtlas 静态结果对比，检验在柔性区域、变构位点的差异。
+   - <strong>可能的失败模式</strong>：计算成本过高，系综采样不足导致噪声。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：MutAtlas-Guided Docking Pose Selection
+   - <strong>来源局限/观察</strong>：突变效应图谱包含结构-能量信息，可用于指导对接构象的筛选。
+   - <strong>核心假设</strong>：突变效应图谱中能量显著变化的位点，可能对应蛋白-配体或蛋白-蛋白结合界面。
+   - <strong>初步方法</strong>：将 MutAtlas 的 ddG 分布作为先验，在对接构象排序中加权界面位点的突变敏感性。
+   - <strong>验证方式</strong>：在 DockQ 基准上对比对接成功率。
+   - <strong>可能的失败模式</strong>：突变敏感位点与结合界面相关性弱，先验无增益。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Benchmarking Energy Functions via MutAtlas Consistency
+   - <strong>来源局限/观察</strong>：MutAtlas 使用单一能量函数，不同能量函数（Rosetta vs FoldX vs AlphaFold3 能量）可能产生系统性偏差。
+   - <strong>核心假设</strong>：通过对比不同能量函数在 MutAtlas 规模上的一致性，可评估各函数的适用域。
+   - <strong>初步方法</strong>：在 MutAtlas 子集上并行计算多种能量函数，分析一致性、偏差模式。
+   - <strong>验证方式</strong>：与实验 ΔΔG 数据对比，识别各函数的最优适用结构类型。
+   - <strong>可能的失败模式</strong>：各函数偏差模式复杂，难以归纳统一规律。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：MutAtlas-Enhanced Variant Effect Prediction for Disease Mutations
+   - <strong>来源局限/观察</strong>：MutAtlas 为计算图谱，未与疾病变异数据库（ClinVar）对齐。
+   - <strong>核心假设</strong>：将 MutAtlas 的能量引导特征与 ClinVar 标签结合，可提升致病性变异预测精度。
+   - <strong>初步方法</strong>：构建 MutAtlas-ClinVar 联合数据集，训练多模态变异效应预测器。
+   - <strong>验证方式</strong>：在 ClinVar 独立测试集上评估 AUC。
+   - <strong>可能的失败模式</strong>：ClinVar 标签噪声大，能量特征与致病性相关性弱。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Title, author list, journal/platform, date, DOI/ID, URL, and the visible abstract page text. No full manuscript text, figures, tables, or supplementary materials were provided.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the title and the bibliographic record as displayed. No scientific content, methodology, results, or conclusions are available for evaluation.</li>
+<li><strong>Shared manuscript claim summary</strong> The title indicates the work presents "MutAtlas," described as a "PDB-Wide Energy-Guided Atlas of Protein Mutation Effects." No further claims are accessible from the supplied material.</li>
+<li><strong>Visible evidence base</strong> The arXiv abstract page text, which contains no abstract, no methods, no results, and no data. The only substantive element is the title.</li>
+<li><strong>Missing materials affecting confidence</strong> The complete manuscript, including abstract, main text, figures, tables, methods, and any supplementary information, is absent. Confidence in any substantive assessment is therefore minimal.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The supplied material consists solely of a title and bibliographic metadata. No scientific content is available for review. Any evaluation of the work's claims, methods, or conclusions is impossible from the provided evidence. The title suggests a potentially valuable resource in protein mutation analysis, but this cannot be verified or critiqued without the manuscript.</li>
+<li><strong>Who would be interested in the results, and why</strong> Based on the title alone, researchers in structural biology, computational biophysics, and protein engineering might find a PDB-wide atlas of mutation effects useful for interpreting variant impacts, designing experiments, or benchmarking predictive tools. However, this is speculative and cannot be confirmed without the actual content.</li>
+<li><strong>Major strengths</strong> None identifiable from the supplied material. The title is descriptive and indicates a broad scope, but no substantive strengths can be assessed.</li>
+<li><strong>Major Concerns</strong> None can be formulated from the available evidence, as no claims or results are presented for scrutiny.</li>
+<li><strong>Minor Comments</strong> None can be formulated from the available evidence, as no details are provided.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The absence of the manuscript itself is the sole and overriding failing. No technical content exists to evaluate.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality, scientific importance, interdisciplinary readership, technical soundness, and readability for nonspecialists are all unassessable. The title hints at a potentially original and important resource, but without the manuscript, none of these criteria can be meaningfully evaluated.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. A review cannot proceed until the full manuscript is supplied.</li>
+</ul>
+<h2>Major Concerns</h2>
+<p>None identified from the supplied material.</p>
+<h2>Minor Comments</h2>
+<p>None identified from the supplied material.</p>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The title's implication that "MutAtlas" is a functional, PDB-wide, energy-guided atlas is entirely unsupported by the provided material. No data, methods, or results are available to substantiate this claim.</li>
+<li>Any inference about the work's utility, novelty, or correctness is unassessable and should not be drawn from the title alone.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

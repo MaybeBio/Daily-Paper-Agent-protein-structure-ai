@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors present ThermoMutDB 2.0, a redesigned database and curation framework that integrates a large language model with rule-based entity recognition to semiautomate literature triage for protein thermostability mutation data, retains expert validation as the final step, and systematically enriches curated entries with mutant structural models for interactive three-dimensional visualization. Applied to literature from January 1976 to the most recent 2026 update, the pipeline screened 5,934 candidate publications, prioritized 254 for expert review, and incorporated 102 articles and 1,763 new entries. The authors frame this as an extensible human-in-the-loop architecture rather than a simple content expansion.
+- **Visible evidence base** Abstract text only; no figures, tables, methods details, or supplementary data provided
+- **Missing materials affecting confidence** Full manuscript, database schema and implementation details, LLM architecture and training specifics, rule-based entity recognition configuration, expert curation protocols, validation metrics for the triage pipeline, structural modeling methods and quality assessment, comparison with existing databases, and any quantitative evaluation of curation accuracy or recall
+
+## Reviewer
+- **Overall assessment** The abstract describes a potentially valuable community resource that addresses a real bottleneck in biocuration. The integration of LLM-based triage with expert validation and structural enrichment is conceptually sound and timely. However, the abstract provides insufficient quantitative evidence to assess the performance of the semiautomated pipeline, the quality of the structural models, or the completeness of the curation relative to existing resources. The claims of scalability and sustainability are plausible but not yet established from the supplied material.
+- **Who would be interested in the results, and why** Protein engineers and directed evolution researchers seeking thermostability data for variant design; computational biologists developing stability prediction tools who require curated benchmark datasets; structural biologists interested in the structural context of stabilizing and destabilizing mutations; and database and biocuration communities interested in LLM-assisted literature curation workflows.
+- **Major strengths** The problem addressed is well recognized and important. The human-in-the-loop design that retains expert validation is a responsible approach to LLM integration in biocuration. The addition of structural enrichment adds value beyond simple data aggregation. The reported scale of screening and incorporation suggests a substantial curation effort.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The pipeline "screened 5,934 candidate publications and prioritized 254 for expert review, resulting in the incorporation of 102 articles and 1763 new entries."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract reports screening and incorporation numbers but provides no performance metrics for the triage pipeline. There is no precision, recall, or comparison against a gold standard to indicate how many relevant publications were missed or how many prioritized publications were rejected by experts. The ratio of 254 prioritized to 102 incorporated suggests a substantial rejection rate, but the reasons and the pipeline's contribution to this outcome are unclear.
+  - **Why it matters** The central claim of a "semiautomated literature curation" framework depends on demonstrating that the automated component improves efficiency without compromising accuracy. Without quantitative evaluation, the reader cannot judge whether the LLM-based triage adds value over manual screening or whether it introduces systematic bias in publication selection.
+  - **Resolution test** Provide precision and recall of the triage pipeline against a manually curated gold standard set, or report the fraction of relevant publications identified by the automated system that were missed by manual approaches, and quantify the time saved relative to fully manual curation.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "ThermoMutDB 2.0 systematically enriches curated mutations with mutant structural models, enabling interactive three-dimensional contextualization of experimentally derived thermodynamic data."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract states that structural models are generated but provides no information on the modeling method, the fraction of entries successfully modeled, the quality assessment of these models, or how structural uncertainty is communicated to users. Without this information, the reliability of the structural enrichment cannot be evaluated.
+  - **Why it matters** Structural models of mutants are predictions and can contain significant errors, particularly for destabilizing mutations that may cause large conformational changes. If users interpret these models as reliable representations of mutant structures, downstream analyses could be misled. The database's value depends on the trustworthiness of this structural layer.
+  - **Resolution test** Describe the modeling pipeline, report the success rate of model generation across all entries, provide quality metrics such as MolProbity scores or pLDDT values, and state how model confidence is displayed or filtered in the user interface.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scientific importance
+  - **Claim pointer** "Rather than representing a simple expansion of database content, ThermoMutDB 2.0 establishes an extensible human-in-the-loop architecture..."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract does not compare ThermoMutDB 2.0 with existing resources such as ProTherm, FireProtDB, or other thermostability databases. The claim of novelty and added value cannot be assessed without knowing what data overlap exists, what new data are contributed, and what unique features distinguish this resource from predecessors.
+  - **Why it matters** The scientific contribution of a database is judged by its incremental value over existing resources. If most of the 1,763 new entries duplicate data already available elsewhere, or if the structural enrichment is available through other tools, the significance of this work is substantially reduced.
+  - **Resolution test** Provide a comparative analysis with existing thermostability databases, including overlap statistics, unique entry counts, and a feature comparison table that highlights what is genuinely new in ThermoMutDB 2.0.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The phrase "semiautomated literature curation" is used without explaining what specific steps are automated versus manual beyond the general statement about LLM and rule-based recognition.
+  - **Required correction** Briefly specify which curation steps are automated, which require expert input, and how the human-in-the-loop interaction is operationalized.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Search date range
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The search window is described as "January 1976 to the most recent search update in 2026," but the exact date of the most recent update is not given.
+  - **Required correction** Provide the precise date of the final literature search to allow users to assess data currency and plan updates.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Database URL
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The URL is provided but there is no statement about database availability, licensing, or download options for bulk data access.
+  - **Required correction** State whether the database is freely accessible, whether bulk downloads are permitted, and under what license the data are released.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of pipeline performance metrics, structural model quality assessment, and comparison with existing databases means the core claims of efficiency, reliability, and novelty are not yet supported by the supplied evidence.
+- **Assessment against Nature-style criteria** Originality: The combination of LLM-based triage with structural enrichment in a thermostability database is a novel integration, though individual components exist elsewhere. Scientific importance: The resource addresses a genuine need in protein engineering and computational biology, but its importance relative to existing databases is not yet demonstrated. Interdisciplinary readership: The work bridges computational biology, structural biology, and biocuration, and should appeal to a broad audience if the technical claims are substantiated. Technical soundness: Not established from the abstract; the lack of quantitative evaluation for the pipeline and structural models is a significant gap. Readability for nonspecialists: The abstract is generally clear but uses technical terms without sufficient context for readers outside the immediate field.
+- **Recommendation posture** Currently not established from the provided evidence. The concept is promising and the direction is appropriate, but the abstract alone does not provide sufficient quantitative support for the central claims of pipeline efficiency, structural model reliability, and incremental value over existing resources. A revised version with the requested performance metrics, model quality assessment, and comparative analysis could change this assessment.
+
+## Risk / unsupported claims
+- The claim that the pipeline "prioritized 254 for expert review" implies effective triage, but no precision or recall data are provided to support this implication.
+- The claim of "systematic" structural enrichment is unsupported without reporting the fraction of entries successfully modeled and the quality of those models.
+- The claim of an "extensible" and "sustainable" architecture is plausible but not evidenced by any data on update frequency, maintenance burden, or scalability beyond the reported single application.
+- The statement that the work is "rather than a simple expansion of database content" is an assertion that requires comparative data against prior versions and other resources to verify.
+- The abstract does not report any assessment of curation accuracy, inter-annotator agreement, or error rates in the extracted data, leaving data quality claims unverifiable.

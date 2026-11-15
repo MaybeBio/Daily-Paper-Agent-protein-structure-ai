@@ -1,0 +1,95 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report that intense 0.4 THz pulses induce nonthermal conformational remodeling of F-actin, selectively weakening intermolecular beta-sheet structures and enhancing alpha-helical content, driving a shift toward G-actin-like vibrational energy relaxation with up to 95% spectral similarity. They further claim reduced F-actin aggregation in A549 cells, a mechanism distinct from thermal denaturation, and identification of optimal irradiation parameters via a machine learning pipeline.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or numerical data beyond those stated in the abstract
+- **Missing materials affecting confidence** Full methods, spectral data, control experiments, statistical analyses, imaging data, machine learning architecture and validation details, thermal denaturation comparison data, and any supplementary information
+
+## Reviewer
+- **Overall assessment** The abstract presents an intriguing and potentially significant claim regarding nonthermal terahertz control of protein conformation. However, the evidence base provided is insufficient to evaluate the technical soundness of the central claims. The abstract reports multiple advanced techniques and a striking quantitative result (95% spectral similarity) without presenting the underlying data or analysis details. The mechanistic interpretation, while plausible, is not substantiated by the visible evidence. The work could be of broad interest if the claims hold, but the current abstract alone does not establish the case.
+- **Who would be interested in the results, and why** Researchers in terahertz biophotonics, protein biophysics, and nonthermal electromagnetic field effects on biomolecules would find these results relevant. The potential for noninvasive manipulation of cytoskeletal proteins could interest cell biologists and those developing photonic tools for biomedical applications. The machine learning approach to parameter optimization may appeal to researchers applying data-driven methods in biophysics.
+- **Major strengths** The combination of multiple orthogonal techniques (time-resolved mid-IR spectroscopy, FTIR, super-resolution imaging, machine learning) is a comprehensive approach. The explicit comparison to thermal denaturation is a thoughtful control design. The claim of nonthermal mechanism, if supported, would represent a meaningful advance in understanding THz-biopolymer interactions.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that 0.4 THz pulses selectively weaken intermolecular beta-sheet structures (1615 cm-1) while enhancing alpha-helical content (1650 cm-1) in F-actin
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The abstract reports specific spectral band assignments and directional changes but provides no quantitative data, spectral figures, or statistical measures. The assignment of 1615 cm-1 to intermolecular beta-sheet and 1650 cm-1 to alpha-helix is stated without justification or reference to established spectral interpretation. The magnitude of the reported changes is not given.
+  - **Why it matters** The central mechanistic claim rests on these spectral assignments and observed changes. Without quantitative evidence, the reader cannot assess whether the reported effects are real, reproducible, or within noise. Spectral interpretation in protein FTIR is notoriously sensitive to baseline correction and band overlap, and the abstract does not address these issues.
+  - **Resolution test** Provide representative FTIR spectra before and after THz irradiation with error bars, quantitative band area or intensity changes with statistical significance, and control spectra for G-actin and thermally denatured F-actin under identical conditions.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that THz irradiation drives a dynamical shift toward G-actin-like vibrational energy relaxation with up to 95% spectral similarity
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The 95% spectral similarity metric is presented without definition of the similarity measure, the spectral range compared, the reference spectra used, or the uncertainty in this value. The time-resolved mid-infrared spectroscopy data supporting the vibrational energy relaxation comparison are not shown.
+  - **Why it matters** This quantitative claim is a headline result and appears to be a key piece of evidence for the nonthermal mechanism. Without a clear definition of the similarity metric and its statistical basis, the claim is not verifiable. The comparison between F-actin after THz and G-actin must account for intrinsic spectral differences unrelated to conformational state.
+  - **Resolution test** Define the similarity metric explicitly, show the time-resolved VER traces for F-actin, G-actin, and THz-treated F-actin, and provide confidence intervals or error analysis for the 95% value.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that the observed effects are dominantly nonthermal, supported by the statement that no characteristic peak shift is observed under heating
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The abstract states that spectral changes under THz differ from thermal denaturation, but provides no details on the thermal control experiments. The temperature reached during THz irradiation is not reported, and the thermal denaturation conditions (temperature range, duration, buffer) are not specified. The absence of a peak shift under heating is presented as evidence, but the expected thermal signature is not defined.
+  - **Why it matters** The nonthermal mechanism is the central conceptual claim of the work. If thermal effects are not rigorously excluded, the entire interpretation collapses. The abstract does not demonstrate that the thermal control was matched in terms of total energy deposition or that the temperature rise during THz exposure was measured or modeled.
+  - **Resolution test** Report measured or calculated temperature rise during THz irradiation, provide thermal control spectra at matched temperatures, and show that the spectral changes under THz cannot be reproduced by heating alone across a relevant temperature range.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that the machine learning pipeline (CNN-UMAP-K-means) enables unbiased clustering and quantitative similarity analysis to identify optimal irradiation parameters (70 muJ, 10 min)
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The machine learning approach is described in a single sentence with no architectural details, training data description, validation strategy, or metrics for clustering quality. The claim of "unbiased" clustering is not substantiated, and the selection of 70 muJ and 10 min as optimal parameters is presented without the optimization landscape or criteria.
+  - **Why it matters** The machine learning pipeline is presented as a key methodological innovation, and the optimal parameter identification is a practical outcome. Without details on the model architecture, training procedure, and validation, the reliability of the parameter selection cannot be assessed. The term "unbiased" is a strong claim that requires explicit justification.
+  - **Resolution test** Provide the CNN architecture, training and test set descriptions, clustering validation metrics (e.g., silhouette score), and a plot or table showing the parameter space explored and the optimization criterion used to select 70 muJ and 10 min.
+  - **Concern ID** R1-M5
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that THz irradiation systematically reduces F-actin aggregation in A549 cells, as evidenced by fluorescence imaging
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The cellular data are described in one sentence with no quantitative metrics, imaging conditions, sample sizes, or statistical analysis. The term "systematically reduces" implies a dose-response or consistent effect, but no data are shown.
+  - **Why it matters** The cellular validation is important for the translational relevance of the work. Without quantitative image analysis, the claim of reduced aggregation is anecdotal. The abstract does not indicate whether the effect was observed at the same parameters identified as optimal in vitro, or whether cell viability was affected.
+  - **Resolution test** Provide representative fluorescence images with quantification of aggregation metrics (e.g., fiber length, branching, intensity distribution), sample sizes, statistical tests, and cell viability data under the reported irradiation conditions.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability
+  - **Affected element** Abstract structure
+  - **Evidence pointer** Abstract text
+  - **Issue** The abstract is dense and combines multiple techniques and claims in a single paragraph, making it difficult to follow the logical progression from observation to conclusion.
+  - **Required correction** Consider restructuring the abstract to clearly separate the spectral observations, the dynamical measurements, the cellular validation, and the machine learning optimization.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Parameter reporting
+  - **Evidence pointer** Abstract text
+  - **Issue** The pulse energy (70 muJ) and duration (10 min) are reported without context on the THz source characteristics, repetition rate, focal spot size, or peak electric field strength.
+  - **Required correction** Provide the THz source parameters and the calculated or measured peak electric field to allow comparison with other THz biophysics studies.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract text
+  - **Issue** The term "noninvasive" is used, but the abstract does not clarify whether this refers to the cellular context, the molecular level, or both. The term is ambiguous in this context.
+  - **Required correction** Define what is meant by noninvasive in the context of this study, particularly whether cell viability or F-actin function was assessed post-irradiation.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Readability
+  - **Affected element** Abstract language
+  - **Evidence pointer** Abstract text
+  - **Issue** The phrase "dominantly nonthermal mechanism" is used twice, which is redundant and could be replaced with a single clear statement.
+  - **Required correction** Remove the redundancy and state the mechanistic claim once, clearly and precisely.
+
+## Risk / unsupported claims
+- The 95% spectral similarity between THz-treated F-actin and G-actin is unsupported without definition of the similarity metric and underlying data.
+- The claim of selective weakening of intermolecular beta-sheet and enhancement of alpha-helical content is unsupported without quantitative spectral data.
+- The nonthermal mechanism is not established from the abstract alone, as thermal control details are absent.
+- The machine learning pipeline's "unbiased" nature and the optimal parameter selection (70 muJ, 10 min) are not assessable without methodological details.
+- The cellular observation of reduced F-actin aggregation is unsupported without quantitative imaging data.
+- The claim of "precise, noninvasive control" is not fully supported, as precision and noninvasiveness are not quantitatively demonstrated.
+- The mechanistic interpretation involving "collective low-frequency intermonomer vibrational modes" is plausible but speculative, with no direct evidence presented in the abstract.

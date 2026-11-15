@@ -1,0 +1,7 @@
+# AlphaFold3 Pseudo-Ensembles
+Capture β‑Sheet
+Organization and Structural Diversity of Short Amyloidogenic Peptides
+
+
+## Abstract
+  Beyond predicting unique native globular protein structures, AlphaFold has been used to sample conformational diversity in globular proteins. Here, we asked whether this capacity can be transferred to amyloid fibrils formed by short peptides, despite the fundamental difficulties posed by their polymorphism, sensitivity to environmental variables such as pH and cofactors, limited evolutionary constraints, and underrepresentation of amyloids in structural databases. Using a comprehensive set of short amyloidogenic peptides, we show that sets of AlphaFold3 (AF3) models (pseudo-ensembles) are accurate predictors of parallel versus antiparallel β-sheet organization, correctly assigning 112 of the 117 peptides for which a clear preference is predicted. Moreover, the simultaneous sampling of both organizations provides a signature of structural diversity, as shown for the polymorphic peptides MVGGVVIA and LYIQWL. Modeling of the precise steric-zipper architecture is less reliable and biased toward compact arrangements, while prediction in the presence of cosolvents and metal ions does not reproduce solvent-mediated interfaces or noncanonical coordination geometries. Thus, although AF3 does not fully capture the physicochemical complexity of amyloid assemblies, its pseudo-ensembles provide a rapid and useful approach for predicting β-sheet organization and identifying amyloidogenic sequences with potential structural diversity.

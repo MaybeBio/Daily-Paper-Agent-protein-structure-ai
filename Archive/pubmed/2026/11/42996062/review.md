@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors introduce a statistical model, KASM, that integrates multiple functional annotations to characterize how rare protein-coding variant effects covary within genes. Applying KASM to exome data from 26 traits and 786,871 individuals (UK Biobank and All of Us), they report heritability estimates for rare missense variants exceeding those for protein-truncating variants and previous burden-based estimates, identify AlphaMissense as the most enriched single predictor with a composite score doubling its enrichment, describe structural feature enrichments, characterize pairwise variant effect correlations with a 3D-structure-specific exception, and report gene-specific enrichments such as a 95-fold enrichment among PIEZO1 hydrogen bond residues.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary information were provided
+- **Missing materials affecting confidence** Full methods, all figures and tables, supplementary analyses, model specification details, trait definitions, quality control procedures, and validation results
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially important framework for integrating functional annotations into gene-level analyses of rare variant effects. The scale of the data and the breadth of annotations are impressive. However, the abstract alone does not provide sufficient detail to evaluate the statistical validity of the model, the robustness of the heritability estimates, or the biological interpretation of the reported enrichments. Several claims, particularly those involving quantitative comparisons and effect sizes, cannot be assessed without the underlying methods and results.
+- **Who would be interested in the results, and why** Statistical geneticists developing methods for rare variant analysis; human geneticists studying the genetic architecture of complex traits; computational biologists working on functional annotation of protein-coding variation; and researchers interested in the contribution of missense variation to heritability. The work could inform gene discovery strategies and functional follow-up studies.
+- **Major strengths** The study addresses a timely and important question about the functional architecture of rare coding variation. The integration of 35 annotations into a single modeling framework is a substantial technical effort. The use of two large biobank datasets (UK Biobank and All of Us) with nearly 800,000 exomes provides considerable statistical power. The finding that missense heritability may exceed pLoF heritability challenges current assumptions and could have broad implications.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Statistical validity
+  - **Claim pointer** The abstract claims that "rare missense heritability is at least 1.27±0.09% on average, 1.83±0.11% under our most flexible model, exceeding pLoF heritability (0.87±0.05%) and far exceeding missense burden heritability as previously estimated (0.54±0.04%)."
+  - **Evidence pointer** Abstract, Results section (location not provided)
+  - **Concern** The heritability estimates are presented with standard errors, but no information is provided about the model specification, the definition of "rare" variants, the adjustment for covariates, the handling of relatedness, or the potential for confounding by population structure. The difference between the "average" and "most flexible" model estimates is substantial (1.27% vs 1.83%), and it is unclear which estimate is preferred and why. The comparison to "missense burden heritability as previously estimated" relies on an external estimate whose methodology may not be directly comparable.
+  - **Why it matters** The central quantitative claim of the abstract depends on the validity and comparability of these heritability estimates. Without details on model assumptions, estimation procedures, and sensitivity analyses, the claim that missense heritability exceeds pLoF heritability cannot be evaluated. If the estimates are sensitive to model choices or annotation inclusion, the conclusion may not be robust.
+  - **Resolution test** Provide full model specification, including the kernel construction, prior distributions, and estimation algorithm. Report sensitivity analyses varying the set of annotations, the definition of rare variants, and the inclusion of covariates. Demonstrate that the heritability estimates are stable across these choices and that the comparison to burden-based estimates uses harmonized variant sets and trait definitions.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Interpretability of model outputs
+  - **Claim pointer** The abstract claims that "AlphaMissense is the single most enriched missense predictor, but a composite score doubles its enrichment" and that "a series of structural features is enriched for heritability, from amino acid chemical features and structural motifs to residue contacts and protein-protein interaction interfaces."
+  - **Evidence pointer** Abstract, Results section (location not provided)
+  - **Concern** The term "enrichment" is not defined in the abstract. It is unclear whether this refers to the proportion of heritability explained per annotation, the improvement in model fit, or some other metric. The claim that a composite score "doubles" enrichment is striking but cannot be interpreted without knowing the baseline and the metric. Similarly, the list of structural features "enriched for heritability" lacks quantitative detail, such as effect sizes, confidence intervals, or significance thresholds.
+  - **Why it matters** The biological interpretation of the results depends on a clear and consistent definition of enrichment. Without this, readers cannot assess the magnitude or significance of the reported effects. The claim about the composite score is particularly important because it suggests that integrating annotations provides substantial gains over any single predictor, but the abstract does not provide enough information to evaluate this.
+  - **Resolution test** Define the enrichment metric precisely and report the values for each annotation and for the composite score, with confidence intervals. Provide a comparison of the composite score to each individual annotation to demonstrate the doubling claim. Report significance thresholds and multiple testing corrections.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Biological interpretation
+  - **Claim pointer** The abstract claims that "most missense effects are modestly correlated, but an exception is when residues are close in 3D structure but distant in 1D sequence; such pairs also covary across species" and that "gene-specific enrichments, like a 95-fold enrichment among PIEZO1 hydrogen bond residues, nominate functional hypotheses."
+  - **Evidence pointer** Abstract, Results section (location not provided)
+  - **Concern** The pairwise correlation analysis is described only qualitatively. The claim that 3D-close but 1D-distant residue pairs show exceptional correlation and cross-species covariance is intriguing, but no quantitative measures are provided, such as correlation coefficients, comparison to null expectations, or the number of such pairs. The PIEZO1 example is presented as a single observation with a 95-fold enrichment, but the statistical significance, the number of variants involved, and the biological plausibility of the hypothesis are not discussed.
+  - **Why it matters** These claims are central to the biological novelty of the work. Without quantitative support, they remain anecdotal. The PIEZO1 finding, in particular, is presented as a "functional hypothesis," but the abstract does not indicate whether this is a discovery from a genome-wide scan (with appropriate multiple testing correction) or a targeted analysis.
+  - **Resolution test** Provide quantitative results for the pairwise correlation analysis, including the distribution of correlations, the definition of "close in 3D" and "distant in 1D," and a statistical test for the exception. For the PIEZO1 finding, report the number of variants, the enrichment calculation, the significance after multiple testing correction, and any supporting evidence for the functional hypothesis.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract, Methods
+  - **Evidence pointer** Abstract, first sentence (location not provided)
+  - **Issue** The phrase "span the gamut of structural and functional effects" is vague and could be replaced with a more precise description of the variant classes considered.
+  - **Required correction** Specify the variant classes (e.g., missense, synonymous, protein-truncating) and the range of predicted effects considered.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Abstract, Results
+  - **Evidence pointer** Abstract, Results section (location not provided)
+  - **Issue** The abstract states that 26 traits were analyzed but does not list them or indicate whether they represent diverse trait categories.
+  - **Required correction** Provide a list of traits or a summary of trait categories in the main text or supplementary material.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Comparability
+  - **Affected element** Abstract, Results
+  - **Evidence pointer** Abstract, Results section (location not provided)
+  - **Issue** The comparison to "previously estimated" burden heritability is made without specifying the source or the methodology of that estimate.
+  - **Required correction** Cite the specific study and describe the methodology used for the comparison estimate, including any differences in variant definitions or trait sets.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The abstract does not provide sufficient methodological detail to evaluate the statistical validity of the heritability estimates, the definition and interpretation of enrichment, or the biological significance of the pairwise and gene-specific findings.
+- **Assessment against Nature-style criteria** 
+  - Originality: The KASM framework appears to be a novel integration of multiple functional annotations into a kernel-based model for rare variant effects. This is a potentially original contribution, but the abstract does not clearly distinguish it from existing approaches such as SKAT or other variance component methods.
+  - Scientific importance: The claim that missense heritability exceeds pLoF heritability is potentially important and could shift research priorities. However, the importance depends on the robustness of the estimates, which cannot be assessed from the abstract.
+  - Interdisciplinary readership: The work bridges statistical genetics, protein structural biology, and complex trait genetics. The abstract is written in a way that is largely accessible, but the lack of methodological detail limits its usefulness to readers outside the immediate field.
+  - Technical soundness: Cannot be evaluated from the abstract alone. The model specification, estimation procedures, and validation strategies are not described.
+  - Readability for nonspecialists: The abstract is generally readable, but terms such as "kernel," "allelic series," and "enrichment" are used without definition, which may hinder comprehension for nonspecialists.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents interesting claims, but the lack of methodological detail and quantitative support prevents evaluation of the central conclusions. A full review of the manuscript with methods and results would be required to determine whether the claims are supported.
+
+## Risk / unsupported claims
+- The claim that rare missense heritability exceeds pLoF heritability is unsupported without details on model specification and comparability of estimates.
+- The claim that a composite score doubles the enrichment of AlphaMissense is unsupported without a definition of enrichment and quantitative results.
+- The claim that 3D-close but 1D-distant residue pairs show exceptional correlation and cross-species covariance is unsupported without quantitative measures.
+- The PIEZO1 95-fold enrichment claim is unsupported without details on the analysis, significance, and multiple testing correction.
+- The overall applicability of KASM to "26 traits" is not evaluable without trait definitions and results per trait.

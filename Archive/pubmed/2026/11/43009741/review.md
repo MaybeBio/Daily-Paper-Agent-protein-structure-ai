@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the supplied abstract; no full manuscript, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors present peleke-1, a suite of protein language models fine-tuned from large language models on curated antibody-antigen complex data, which generate targeted antibody Fv sequences for a given antigen sequence input at scale, and claim this provides a reliable, AI-driven approach for in silico therapeutic antibody discovery with an open-source framework
+- **Visible evidence base** Abstract text only; no quantitative results, model architecture details, training data description, evaluation metrics, or code repository information are provided
+- **Missing materials affecting confidence** Full manuscript, model architecture specifications, training and validation datasets, benchmark results, comparison to existing methods, code availability, and any experimental validation of generated antibody sequences
+
+## Reviewer
+- **Overall assessment** The abstract describes a potentially useful resource for the antibody discovery community, namely a suite of fine-tuned protein language models for targeted antibody sequence generation. However, the abstract provides no quantitative evidence of model performance, no details on the training data composition or curation, no comparison to existing antibody generation methods, and no validation of the biological relevance of generated sequences. As presented, the claims of reliability and utility are not supported by the visible evidence. The work may be of interest to computational biologists and antibody engineers, but the current abstract does not establish the technical soundness or scientific impact required for a strong recommendation.
+- **Who would be interested in the results, and why** Computational biologists and bioinformaticians working on protein language models and generative models for biomolecular design would be interested in the methodological approach. Antibody engineers and therapeutic discovery researchers in academia and industry would be interested in a potentially faster in silico alternative to traditional antibody discovery. The open-source framework aspect may also appeal to developers seeking to fine-tune language models for other protein engineering tasks.
+- **Major strengths** The problem addressed is relevant and timely, as AI-driven antibody discovery is an active area of research. The choice to fine-tune state-of-the-art large language models on antibody-antigen complex data is a reasonable methodological direction. The stated intention to provide an open-source framework is commendable and could facilitate reproducibility and community adoption.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims that peleke-1 models "generate targeted antibody Fv sequences for a given antigen sequence input at-scale" and that the suite "provides a reliable, artificial intelligence-driven approach for in silico therapeutic antibody discovery"
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** No quantitative results are presented. There are no metrics for sequence generation accuracy, binding affinity prediction, diversity, or success rate relative to known antibodies. The term "reliable" is asserted without any supporting data.
+  - **Why it matters** Without performance metrics, readers cannot assess whether the models actually produce functional or useful antibody sequences. The core claim of the work, that this is a reliable approach for therapeutic antibody discovery, is unsubstantiated.
+  - **Resolution test** Provide quantitative benchmarks, such as sequence recovery rates on held-out antibody-antigen complexes, comparison to existing methods (e.g., IgLM, AntiBERTa-based generators), and ideally experimental validation of a subset of generated sequences for binding.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Data and methodology transparency
+  - **Claim pointer** The abstract states the models were "fine-tuned from state-of-the-art large language models using curated antibody-antigen complex data"
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** No details are given on which base models were used, how the antibody-antigen complex data were curated, the size and diversity of the training set, or the fine-tuning procedure. Without this information, the methodology cannot be evaluated or reproduced.
+  - **Why it matters** Reproducibility is a core requirement for computational work. The lack of methodological detail prevents assessment of potential biases, data leakage, or overfitting, and undermines confidence in the results.
+  - **Resolution test** Specify the base models, data sources (e.g., SAbDab, OAS), curation criteria, train-validation-test splits, and fine-tuning hyperparameters in the full manuscript.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Validation and comparison
+  - **Claim pointer** The abstract implies the models are useful for "in silico therapeutic antibody discovery" without comparison to existing approaches
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** No comparison is made to existing antibody sequence generation models or traditional discovery methods. The claim of utility is not contextualized against the state of the art.
+  - **Why it matters** Without comparative evaluation, it is impossible to determine whether peleke-1 offers any advantage over existing tools, which is essential for establishing scientific importance.
+  - **Resolution test** Include benchmarks against at least one or two established antibody generation methods, using common evaluation metrics and datasets.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The phrase "at-scale" is vague and could be interpreted in multiple ways, such as high throughput, large sequence diversity, or scalability to many antigens.
+  - **Required correction** Define what "at-scale" means in quantitative terms, such as number of sequences generated per antigen or computational throughput.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Open-source claim
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The abstract states an "open-source framework" is provided, but no repository URL, license, or availability details are given.
+  - **Required correction** Provide the repository link and license information in the abstract or full manuscript.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Model naming
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The name "peleke-1" is introduced without explanation of its origin or significance, which may be confusing to readers.
+  - **Required correction** Briefly explain the naming convention or omit it if not meaningful.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of quantitative results, methodological transparency, and comparative validation means the core claims of reliability and utility are not currently established.
+- **Assessment against Nature-style criteria** 
+  - Originality: The approach of fine-tuning large language models for antibody sequence generation is not entirely novel, as similar strategies have been explored in recent literature. The specific contribution of peleke-1 is unclear from the abstract.
+  - Scientific importance: The potential to accelerate antibody discovery is important, but the abstract does not demonstrate a significant advance over existing methods.
+  - Interdisciplinary readership: The topic bridges machine learning and immunology, which could appeal to a broad audience, but the abstract lacks the technical detail needed to engage either community deeply.
+  - Technical soundness: Not assessable from the abstract due to missing methodology and results.
+  - Readability for nonspecialists: The abstract is generally readable, but terms like "Fv sequences" and "protein language models" may require prior knowledge. The lack of context for the significance of the results limits accessibility.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a plausible project, but without quantitative results, methodological details, and comparative validation, the claims cannot be evaluated. A revised submission with full evidence could change this assessment.
+
+## Risk / unsupported claims
+- The claim that peleke-1 provides a "reliable" approach for in silico therapeutic antibody discovery is unsupported by any data in the abstract.
+- The claim that the models "generate targeted antibody Fv sequences" is unverified, as no examples or success rates are provided.
+- The claim of an "open-source framework" is unverifiable without a repository link or availability statement.
+- The overall utility and performance of the models are not assessable from the supplied material.

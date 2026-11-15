@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multi-model prediction and comparative study of protein folding rates based on LASSO feature selection. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>Multi-model prediction and comparative study of protein folding rates based on LASSO feature selection.</h1>
+      <div class="meta">Chen, Guanhong; Xiao, Liping; Yu, Mingzhou; Bai, Gongxun; Jiang, Zhouting</div>
+      <div class="meta muted">
+        
+        <span class="journal">Mathematical biosciences</span>
+        · 2026-11-09
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/43003252/">原文</a>
+      </div>
+      <p class="one-liner">该文用LASSO特征选择结合多种机器学习模型预测蛋白质折叠速率，虽以蛋白质结构参数为输入，但核心是速率预测而非结构计算建模，方法上无AI/物理模拟创新，属于工程化应用，故评6分。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Accurate prediction of protein folding rates is essential for understanding protein dynamics. However, existing structural parameters show limited generalizability across two-state and multi-state proteins and are affected by multicollinearity. Here, LASSO regression was applied to a training set of 145 proteins to identify six structural features (L(eff), LRO, ACO, Sheet, H(nc), and P(beta)) from 12 structural parameters. These features were used to construct four machine learning models (RR, RF, SVM, and SSA-BP). Model performance was evaluated on an independent test set of 29 proteins, with bootstrap resampling used to assess performance uncertainty. On the full test set, RF achieved the lowest RMSE and MAE, whereas SSA-BP showed the highest correlation coefficient (R =0.9282). Folding-type-specific analysis revealed distinct model performance patterns between two-state and multi-state proteins. SHAP analysis further showed that the relative contributions of structural features varied across models and folding types, with L(eff), LRO, and ACO making substantial contributions. Overall, the proposed framework integrates feature selection, predictive modeling, and model interpretation, providing an interpretable approach for protein folding rate prediction.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">准确预测蛋白质折叠速率对于理解蛋白质动力学至关重要。然而，现有结构参数在二态和多态蛋白质中的泛化能力有限，并受多重共线性影响。本研究将LASSO回归应用于包含145个蛋白质的训练集，从12个结构参数中筛选出六个结构特征（L(eff)、LRO、ACO、Sheet、H(nc)和P(beta)）。利用这些特征构建了四种机器学习模型（RR、RF、SVM和SSA-BP）。模型性能在包含29个蛋白质的独立测试集上进行了评估，并使用bootstrap重采样来评估性能不确定性。在完整测试集上，RF取得了最低的RMSE和MAE，而SSA-BP显示出最高的相关系数（R =0.9282）。折叠类型特异性分析揭示了二态和多态蛋白质之间不同的模型性能模式。SHAP分析进一步表明，结构特征的相对贡献在不同模型和折叠类型间存在差异，其中L(eff)、LRO和ACO贡献显著。总体而言，所提出的框架整合了特征选择、预测建模和模型解释，为蛋白质折叠速率预测提供了一种可解释的方法。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Multi-model prediction and comparative study of protein folding rates based on LASSO feature selection</li>
+<li><strong>作者</strong>：Chen, Guanhong; Xiao, Liping; Yu, Mingzhou; Bai, Gongxun; Jiang, Zhouting</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/预印本平台</strong>：Mathematical Biosciences</li>
+<li><strong>年份</strong>：2026（在线日期 2026-11-09）</li>
+<li><strong>论文类型</strong>：研究论文（方法比较与预测建模）</li>
+<li><strong>领域</strong>：蛋白质折叠速率预测 × 机器学习特征选择与可解释性</li>
+<li><strong>关键词</strong>：protein folding rate; LASSO; feature selection; machine learning; SHAP; two-state/multi-state proteins</li>
+<li><strong>DOI/arXiv 号</strong>：10.1016/j.mbs.2026.109848</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：训练集 145 个蛋白质，独立测试集 29 个蛋白质（具体数据集来源未在摘要中说明）</li>
+<li><strong>阅读日期</strong>：2026-05-13（按当前日期）</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × 机器学习」交叉方向，聚焦于从结构参数预测蛋白质折叠速率（folding rate），核心贡献在于用 LASSO 解决结构参数间的多重共线性问题，并结合多模型比较与 SHAP 可解释性分析，为折叠速率预测提供可解释框架。与 AlphaFold 等端到端结构预测不同，本文关注的是结构→动力学性质的回归预测任务。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文用 LASSO 回归从 12 个结构参数中筛选出 6 个关键特征（L(eff)、LRO、ACO、Sheet、H(nc)、P(beta)），构建四种机器学习模型（RR、RF、SVM、SSA-BP）预测蛋白质折叠速率，在 29 个独立测试蛋白上 RF 取得最低 RMSE/MAE、SSA-BP 取得最高相关系数（R=0.9282），并通过 SHAP 揭示特征贡献随折叠类型（two-state vs. multi-state）和模型而变化。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何准确且可解释地预测蛋白质折叠速率（log(kf)），并解决现有结构参数在 two-state 与 multi-state 蛋白间泛化性差及多重共线性问题？</li>
+<li><strong>为什么重要</strong>：折叠速率是理解蛋白质动力学和折叠机制的核心量，准确预测有助于蛋白质设计（如设计快速折叠的序列）和功能注释。</li>
+<li><strong>现有方法为何不足</strong>：已有结构参数（如接触序、长程序参数等）在不同折叠类型蛋白上表现不一致，且参数间存在多重共线性，导致回归模型不稳定、可解释性差。</li>
+<li><strong>精确研究问题</strong>：Can LASSO-based feature selection combined with multiple ML regressors provide accurate and interpretable folding rate predictions across two-state and multi-state proteins?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文摘要及领域常识构建，标注为「经外部核验」部分仅指领域公认事实，具体文献引用未在摘要中提供。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期经验参数</td>
+<td>接触序（CO）、长程序（LRO）、有效链长（L(eff)）</td>
+<td>简单、物理可解释</td>
+<td>单一参数预测精度有限，跨折叠类型泛化差</td>
+<td>本文将这些作为候选特征</td>
+</tr>
+<tr>
+<td>多参数回归</td>
+<td>多元线性回归、逐步回归</td>
+<td>利用多个结构参数</td>
+<td>多重共线性导致系数不稳定</td>
+<td>本文用 LASSO 解决此问题</td>
+</tr>
+<tr>
+<td>机器学习预测</td>
+<td>SVM、RF、神经网络等</td>
+<td>非线性拟合能力强</td>
+<td>特征冗余、黑箱、过拟合风险</td>
+<td>本文系统比较四种 ML 模型</td>
+</tr>
+<tr>
+<td>可解释性</td>
+<td>SHAP、特征重要性</td>
+<td>解释模型决策</td>
+<td>依赖模型类型，可能不稳定</td>
+<td>本文用 SHAP 分析特征贡献</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在「特征选择（LASSO）→ 多模型比较 → SHAP 解释」的完整框架下，为折叠速率预测提供既准确又可解释的解决方案，特别关注 two-state 与 multi-state 蛋白的差异。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构参数泛化性差</td>
+<td>同一参数在 two-state 与 multi-state 蛋白上预测表现不一致</td>
+<td>不同折叠类型蛋白的折叠机制不同，单一参数难以统一刻画</td>
+<td>摘要：「existing structural parameters show limited generalizability across two-state and multi-state proteins」</td>
+</tr>
+<tr>
+<td>多重共线性</td>
+<td>12 个结构参数间高度相关，导致回归系数不稳定</td>
+<td>结构参数源自同一物理量（如接触数、链长）的不同衍生形式</td>
+<td>摘要：「affected by multicollinearity」</td>
+</tr>
+<tr>
+<td>模型选择不确定</td>
+<td>不同模型在不同折叠类型上表现各异，无统一最优</td>
+<td>模型对特征交互和非线性模式的捕捉能力不同</td>
+<td>摘要：「distinct model performance patterns between two-state and multi-state proteins」</td>
+</tr>
+<tr>
+<td>可解释性缺失</td>
+<td>黑箱模型难以解释特征如何影响折叠速率</td>
+<td>复杂模型（如 SSA-BP）内部机制不透明</td>
+<td>摘要：「SHAP analysis further showed that the relative contributions of structural features varied across models」</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>用 LASSO 回归从 12 个结构参数中筛选出 6 个非零系数特征，构建 RR、RF、SVM、SSA-BP 四种回归模型，在独立测试集上比较性能，并用 SHAP 解释特征贡献。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>LASSO 同时解决特征选择和共线性</strong>：通过 L1 正则化，LASSO 将不相关或冗余特征的系数压缩至零，从而在保留预测能力的同时消除多重共线性影响。</li>
+<li><strong>折叠类型特异性</strong>：two-state 与 multi-state 蛋白的折叠机制不同，导致最优特征组合和模型选择不同——这提示折叠速率预测不应使用「一刀切」模型。</li>
+<li><strong>可解释性与准确性可兼得</strong>：通过 SHAP 分析，可以在不牺牲预测精度的前提下揭示每个特征对折叠速率的贡献方向和大小。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li>在蛋白质性质预测中，<strong>特征工程（选择）往往比模型选择更重要</strong>——LASSO 筛选出的 6 个特征在四种不同模型上均表现良好，说明特征质量是瓶颈而非模型复杂度。</li>
+<li><strong>折叠类型（two-state vs. multi-state）应作为分层或条件变量</strong>，而非简单合并训练——这对蛋白质设计中的动力学性质预测有直接启示。</li>
+<li><strong>SHAP 等可解释性工具应成为 ML 预测蛋白质性质的标配</strong>，尤其在需要物理洞察（如哪些结构特征驱动折叠速率）的场景。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：12 个结构参数（包括 L(eff)、LRO、ACO、Sheet、H(nc)、P(beta) 等），每个蛋白质对应一组特征向量。</li>
+<li><strong>输出</strong>：蛋白质折叠速率（log(kf)），连续值回归。</li>
+<li><strong>模块</strong>：
+  1. 特征选择：LASSO 回归（L1 正则化），从 12 个参数中筛选 6 个。
+  2. 模型构建：四种回归器——RR（Ridge Regression）、RF（Random Forest）、SVM（Support Vector Machine）、SSA-BP（麻雀搜索算法优化的 BP 神经网络）。
+  3. 性能评估：独立测试集（29 蛋白）+ Bootstrap 重采样估计不确定性。
+  4. 可解释性：SHAP（SHapley Additive exPlanations）分析特征贡献。</li>
+<li><strong>训练</strong>：训练集 145 个蛋白质，用于 LASSO 特征选择和模型拟合。</li>
+<li><strong>工具</strong>：未提供具体软件/库信息。</li>
+<li><strong>假设</strong>：结构参数（序列/结构衍生）足以预测折叠速率；two-state 与 multi-state 蛋白可分别建模或需分层分析。</li>
+<li><strong>流程</strong>：12 个结构参数 → LASSO 筛选 6 个 → 四种模型分别训练 → 独立测试集评估 → Bootstrap 不确定性 → SHAP 解释。</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LASSO 特征选择</td>
+<td>从 12 个参数中筛选 6 个非零系数特征</td>
+<td>消除多重共线性，降低维度，提高泛化</td>
+<td>输入：12 个结构参数；输出：6 个特征子集</td>
+<td>摘要：「LASSO regression was applied... to identify six structural features」</td>
+<td>预期：模型性能下降、过拟合风险增加（[Analysis] 未提供消融实验）</td>
+</tr>
+<tr>
+<td>RR（Ridge）</td>
+<td>线性回归 + L2 正则化</td>
+<td>作为线性基线，处理剩余共线性</td>
+<td>输入：6 特征；输出：log(kf)</td>
+<td>摘要提及作为四种模型之一</td>
+<td>预期：非线性关系捕捉不足</td>
+</tr>
+<tr>
+<td>RF（Random Forest）</td>
+<td>集成树模型</td>
+<td>捕捉非线性关系，鲁棒性强</td>
+<td>输入：6 特征；输出：log(kf)</td>
+<td>摘要：「RF achieved the lowest RMSE and MAE」</td>
+<td>实测：在 full test set 上误差最低</td>
+</tr>
+<tr>
+<td>SVM</td>
+<td>支持向量回归</td>
+<td>高维小样本下表现好</td>
+<td>输入：6 特征；输出：log(kf)</td>
+<td>摘要提及作为四种模型之一</td>
+<td>预期：对核函数选择敏感</td>
+</tr>
+<tr>
+<td>SSA-BP</td>
+<td>麻雀搜索算法优化的 BP 神经网络</td>
+<td>非线性拟合 + 全局优化</td>
+<td>输入：6 特征；输出：log(kf)</td>
+<td>摘要：「SSA-BP showed the highest correlation coefficient (R=0.9282)」</td>
+<td>实测：相关性最高，但 RMSE/MAE 非最优</td>
+</tr>
+<tr>
+<td>Bootstrap 重采样</td>
+<td>评估性能不确定性</td>
+<td>小测试集（29 蛋白）下估计置信区间</td>
+<td>输入：测试集预测误差；输出：误差分布</td>
+<td>摘要：「bootstrap resampling used to assess performance uncertainty」</td>
+<td>预期：无则无法判断性能差异显著性</td>
+</tr>
+<tr>
+<td>SHAP 分析</td>
+<td>解释特征贡献</td>
+<td>揭示哪些结构特征驱动折叠速率预测</td>
+<td>输入：模型 + 特征；输出：每个特征的 Shapley 值</td>
+<td>摘要：「SHAP analysis further showed that the relative contributions... varied」</td>
+<td>预期：无则模型不可解释</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<blockquote>
+<p>摘要中未提供具体公式，以下基于 LASSO 和 SHAP 的标准形式，标注为 [Analysis] 推断。</p>
+</blockquote>
+<p><strong>1. LASSO 目标函数</strong>（[Analysis] 标准形式）
+[
+\min_{\beta} \left{ \frac{1}{2n} \sum_{i=1}^{n} (y_i - \beta_0 - \sum_{j=1}^{p} x_{ij} \beta_j)^2 + \lambda \sum_{j=1}^{p} |\beta_j| \right}
+]
+- ( y_i )：第 i 个蛋白质的折叠速率（log(kf)）
+- ( x_{ij} )：第 i 个蛋白质的第 j 个结构参数
+- ( \beta_j )：回归系数，L1 惩罚将不相关特征的系数压缩至零
+- ( \lambda )：正则化强度，控制特征选择数量
+- <strong>用途</strong>：从 12 个参数中筛选 6 个非零系数特征
+- <strong>直觉</strong>：L1 惩罚使解稀疏，等价于特征选择</p>
+<p><strong>2. SHAP 值</strong>（[Analysis] 标准形式）
+[
+\phi_j = \sum_{S \subseteq F \setminus {j}} \frac{|S|! (|F| - |S| - 1)!}{|F|!} [f(x_S \cup {j}) - f(x_S)]
+]
+- ( \phi_j )：特征 j 的 Shapley 值，表示其对预测的边际贡献
+- ( F )：全部特征集合
+- ( f(x_S) )：仅用特征子集 S 时的模型预测
+- <strong>用途</strong>：量化每个结构特征对折叠速率预测的贡献方向和大小
+- <strong>直觉</strong>：公平分配预测结果到每个特征</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：训练集 145 个蛋白质，独立测试集 29 个蛋白质（来源未提供，可能为公开折叠速率数据库如 Plaxco et al. 或 Ivankov et al. 数据集，但摘要未说明）。</li>
+<li><strong>规模</strong>：总计 174 个蛋白质。</li>
+<li><strong>指标</strong>：RMSE（均方根误差）、MAE（平均绝对误差）、相关系数 R。</li>
+<li><strong>基线</strong>：未明确提及基线模型，但四种模型互为比较。</li>
+<li><strong>评测协议</strong>：训练集用于 LASSO 特征选择和模型训练；独立测试集用于评估；Bootstrap 重采样用于不确定性估计。</li>
+<li><strong>oracle 输入</strong>：结构参数（如 L(eff)、LRO、ACO 等）作为输入特征，折叠速率实验值作为标签。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LASSO 特征选择</td>
+<td>12 个参数中存在冗余，可压缩至 6 个</td>
+<td>LASSO 回归在 145 蛋白训练集上</td>
+<td>筛选出 L(eff)、LRO、ACO、Sheet、H(nc)、P(beta)</td>
+<td>特征选择有效降低维度</td>
+<td>未说明 λ 选择方法或稳定性</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>四模型性能比较（full test set）</td>
+<td>不同模型预测精度不同</td>
+<td>RR vs. RF vs. SVM vs. SSA-BP，29 蛋白测试集</td>
+<td>RF 最低 RMSE/MAE；SSA-BP 最高 R=0.9282</td>
+<td>模型选择影响误差与相关性</td>
+<td>未报告具体 RMSE/MAE 数值</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>折叠类型分层分析</td>
+<td>two-state 与 multi-state 蛋白的最优模型不同</td>
+<td>按折叠类型分层评估</td>
+<td>模型表现模式不同</td>
+<td>折叠类型影响模型适用性</td>
+<td>未报告各层具体数值</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>SHAP 分析</td>
+<td>特征贡献随模型和折叠类型变化</td>
+<td>对四种模型分别计算 SHAP 值</td>
+<td>L(eff)、LRO、ACO 贡献较大</td>
+<td>可解释性分析可行</td>
+<td>未报告 SHAP 值具体数值或排序</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅限蛋白质折叠速率（log(kf)）的回归预测，不涉及折叠路径、中间态或自由能面。</li>
+<li><strong>数据边界</strong>：训练集 145 + 测试集 29 = 174 个蛋白质，规模较小，可能偏向已知折叠速率数据的蛋白家族，泛化到新折叠类型需谨慎。</li>
+<li><strong>特征边界</strong>：仅使用 12 个结构参数，未包含序列进化信息（如 PSSM）、溶剂化或温度等环境因素。</li>
+<li><strong>oracle 输入</strong>：结构参数本身来自实验或预测结构，若来自预测结构（如 AlphaFold），则误差会传播。</li>
+<li><strong>端到端状态</strong>：非端到端——需要预先计算结构参数，且 LASSO 特征选择在训练集上完成，测试集未参与。</li>
+<li><strong>算力成本</strong>：未提供，但四种模型（尤其 SSA-BP）训练成本中等，Bootstrap 增加计算量。</li>
+<li><strong>不确定性</strong>：Bootstrap 用于评估性能不确定性，但摘要未报告置信区间，无法判断模型间差异是否显著。</li>
+<li><strong>最难情形</strong>：multi-state 蛋白的折叠机制更复杂，预测误差可能更大（摘要暗示模型表现模式不同）。</li>
+<li><strong>有边界的复述</strong>：在 174 个已知折叠速率蛋白上，LASSO 筛选的 6 个结构特征配合 RF/SSA-BP 可达到 R≈0.93 的预测精度，但该精度受限于数据集规模、特征类型和折叠类型分层，不能外推至所有蛋白质。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<blockquote>
+<p>摘要中未明确列出局限性，以下为「作者提及的相关约束」：</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>摘要未包含 limitations 段落</td>
+<td>未提供</td>
+<td>摘要全文</td>
+</tr>
+</tbody>
+</table>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 摘要提到「existing structural parameters show limited generalizability across two-state and multi-state proteins」，暗示本文特征选择虽缓解但未必完全解决此问题。
+- 数据集规模（174 蛋白）相对较小，作者未讨论数据扩充策略。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据集规模小（174 蛋白）</td>
+<td>模型可能过拟合训练集，测试集 29 蛋白不足以稳定估计泛化误差</td>
+<td>小样本下 R=0.93 可能高估真实性能</td>
+<td>用留一法交叉验证或外部数据集（如不同来源的折叠速率数据）验证</td>
+<td>摘要报告的训练/测试规模</td>
+</tr>
+<tr>
+<td>LASSO 特征选择在训练集上完成</td>
+<td>特征选择可能引入选择偏差，测试集性能被乐观估计</td>
+<td>若特征选择与模型训练在同一数据上，需嵌套交叉验证</td>
+<td>用嵌套 CV 或独立特征选择集重复实验</td>
+<td>摘要未说明特征选择与训练集分离</td>
+</tr>
+<tr>
+<td>未报告具体 RMSE/MAE 数值</td>
+<td>无法判断误差的绝对大小（如 log 尺度下 0.5 与 0.1 差异巨大）</td>
+<td>相关系数高不等于误差小，尤其 log 尺度</td>
+<td>要求作者提供具体误差值及单位</td>
+<td>摘要仅报告「lowest RMSE/MAE」无数值</td>
+</tr>
+<tr>
+<td>SSA-BP 的 R 最高但 RMSE 非最优</td>
+<td>相关系数与误差指标可能矛盾（如系统性偏差导致 R 高但误差大）</td>
+<td>单一指标可能误导模型选择</td>
+<td>检查 Bland-Altman 图或误差分布</td>
+<td>摘要报告 SSA-BP R=0.9282 但 RF 误差最低</td>
+</tr>
+<tr>
+<td>未报告 two-state/multi-state 分层后的具体性能</td>
+<td>「distinct patterns」缺乏量化细节</td>
+<td>无法判断分层是否真的必要</td>
+<td>要求报告分层后的 R/RMSE/MAE 及样本量</td>
+<td>摘要仅定性描述</td>
+</tr>
+<tr>
+<td>结构参数来源未说明</td>
+<td>若来自实验结构 vs. 预测结构，误差传播不同</td>
+<td>影响方法在无实验结构场景下的可用性</td>
+<td>检查方法部分或复现实验</td>
+<td>摘要未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>LASSO 作为蛋白质性质预测的特征选择工具</strong>：当多个结构/序列参数高度相关时，LASSO 可自动筛选稀疏特征子集，且筛选出的特征在不同模型（线性、树、神经网络）上均有效——这提示在蛋白质设计任务中，特征选择应优先于模型复杂化。</p>
+</li>
+<li>
+<p><strong>折叠类型（two-state vs. multi-state）作为分层变量</strong>：本文发现不同折叠类型蛋白的最优模型不同，这提示在蛋白质折叠速率预测或设计时，应先将蛋白按折叠机制分层，再分别建模，而非合并训练。</p>
+</li>
+<li>
+<p><strong>SHAP 用于揭示结构-动力学关系</strong>：SHAP 分析可量化每个结构特征（如 L(eff)、LRO、ACO）对折叠速率的贡献方向和大小，这为理解「哪些结构属性驱动快速折叠」提供了可解释性工具，可迁移到蛋白质设计中的目标函数构建。</p>
+</li>
+<li>
+<p><strong>多模型比较 + Bootstrap 不确定性估计</strong>：在 29 个测试蛋白的小样本下，Bootstrap 重采样可估计性能不确定性，避免因单次划分导致的偶然结论——这在蛋白质性质预测中尤为重要，因为实验数据通常稀缺。</p>
+</li>
+<li>
+<p><strong>相关系数与误差指标需同时报告</strong>：SSA-BP 的 R 最高但 RMSE 非最优，说明高相关性可能伴随系统性偏差——在蛋白质设计评估中，应同时关注误差绝对值和相关性，避免被单一指标误导。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：与 Plaxco et al. (1998) 的接触序（CO）预测折叠速率、Ivankov et al. (2003) 的 LRO 方法、Gromiha 的氨基酸组成方法同属「结构/序列参数 → 折叠速率」回归任务。本文的增量在于用 LASSO 系统处理参数共线性，并引入 ML 模型比较。</li>
+<li><strong>组合方向</strong>：与 AlphaFold 预测的结构结合——若结构参数来自 AlphaFold 预测结构而非实验结构，可评估「预测结构 → 折叠速率」的端到端可行性，这是本文未覆盖但可自然延伸的方向。</li>
+<li><strong>冲突/对比</strong>：本文强调特征选择的重要性，与「深度学习端到端预测」范式（如直接从序列预测折叠速率）形成对比——本文结果暗示在数据量有限时，手工特征 + 稀疏选择可能优于端到端黑箱。</li>
+<li><strong>可迁移领域</strong>：蛋白质设计中的「可折叠性评分」——LASSO 筛选出的特征（L(eff)、LRO、ACO）可作为设计序列的快速筛选指标；SHAP 分析可帮助设计者理解哪些结构属性需优化。</li>
+<li><strong>候选方向（未验证）</strong>：将本文框架迁移到蛋白质稳定性（ΔΔG）预测或构象采样中的能量函数特征选择，可能同样受益于 LASSO 的稀疏化。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：AlphaFold 结构驱动的折叠速率预测管线
+   - <strong>来源局限/观察</strong>：本文结构参数可能来自实验结构，但实际应用中常无实验结构；AlphaFold 预测结构可作为替代。
+   - <strong>核心假设</strong>：从 AlphaFold 预测结构计算的结构参数（L(eff)、LRO、ACO 等）与实验结构计算的参数高度相关，且能保持折叠速率预测精度。
+   - <strong>初步方法</strong>：对同一蛋白集分别用实验结构和 AlphaFold 结构计算 12 个参数，比较 LASSO 筛选结果和模型性能。
+   - <strong>验证方式</strong>：在本文 174 蛋白数据集上复现，比较 R/RMSE/MAE。
+   - <strong>失败模式</strong>：AlphaFold 对多结构域或 intrinsically disordered 蛋白的结构预测误差大，导致参数失真。</p>
+</li>
+<li>
+<p><strong>名称</strong>：折叠类型感知的层次化折叠速率预测模型
+   - <strong>来源局限/观察</strong>：本文发现 two-state 与 multi-state 蛋白的最优模型不同，但未构建层次化模型。
+   - <strong>核心假设</strong>：先用分类器预测折叠类型，再选择对应回归模型，可提升整体预测精度。
+   - <strong>初步方法</strong>：训练一个 two-state/multi-state 分类器（基于序列或结构特征），然后对每类分别训练最优回归器。
+   - <strong>验证方式</strong>：与本文「单一模型」结果对比，用 Bootstrap 检验差异显著性。
+   - <strong>失败模式</strong>：折叠类型分类误差会传播到回归阶段，且分类边界可能模糊。</p>
+</li>
+<li>
+<p><strong>名称</strong>：基于 SHAP 引导的蛋白质设计特征优化
+   - <strong>来源局限/观察</strong>：SHAP 揭示了 L(eff)、LRO、ACO 对折叠速率的贡献，但未用于设计。
+   - <strong>核心假设</strong>：通过调整序列/结构以增大高贡献特征（如 LRO），可设计出折叠更快的蛋白变体。
+   - <strong>初步方法</strong>：以 SHAP 值为梯度信号，用序列设计算法（如 ProteinMPNN 或 Rosetta）优化目标特征。
+   - <strong>验证方式</strong>：设计若干变体，实验或 MD 模拟验证折叠速率变化。
+   - <strong>失败模式</strong>：SHAP 反映的是相关性而非因果性，优化特征可能不改变真实折叠速率。</p>
+</li>
+<li>
+<p><strong>名称</strong>：LASSO 特征选择在蛋白质稳定性预测中的迁移
+   - <strong>来源局限/观察</strong>：本文方法在折叠速率上有效，但未测试其他蛋白质性质。
+   - <strong>核心假设</strong>：LASSO 同样能筛选出预测 ΔΔG（突变稳定性变化）的关键结构特征，并消除共线性。
+   - <strong>初步方法</strong>：在公开 ΔΔG 数据集（如 S669）上应用 LASSO + 多模型比较。
+   - <strong>验证方式</strong>：与现有 ΔΔG 预测器（如 DDGun、Rosetta）对比。
+   - <strong>失败模式</strong>：ΔΔG 数据噪声大，特征-标签关系可能非线性更强，LASSO 线性假设受限。</p>
+</li>
+<li>
+<p><strong>名称</strong>：折叠速率预测中的不确定性量化与主动学习
+   - <strong>来源局限/观察</strong>：本文用 Bootstrap 估计不确定性，但未用于数据采集策略。
+   - <strong>核心假设</strong>：在低置信度区域主动采集新蛋白的折叠速率数据，可高效提升模型泛化性。
+   - <strong>初步方法</strong>：用 Bootstrap 或 MC-Dropout 估计预测不确定性，选择高不确定性蛋白进行实验或模拟。
+   - <strong>验证方式</strong>：模拟主动学习循环，比较随机采样与不确定性采样的学习曲线。
+   - <strong>失败模式</strong>：不确定性估计可能不校准，导致采样策略无效。</p>
+</li>
+</ol>
+<hr />
+<p><strong>证据与来源规则遵守声明</strong>：本 Card 中所有数值（R=0.9282、145/29 蛋白、6/12 特征）均直接引自摘要原文；未提供的信息（如具体 RMSE/MAE 数值、数据集来源、代码）标注为「未提供」或「Not assessable」；[Analysis] 标记的分析为本人基于领域知识的推断，不冒充原文内容。</p></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose a LASSO-based feature selection framework applied to 145 training proteins, identifying six structural features from 12 parameters, and use these to build four machine learning models (RR, RF, SVM, SSA-BP) for protein folding rate prediction. Performance is evaluated on 29 test proteins with bootstrap resampling. RF achieves lowest RMSE and MAE; SSA-BP achieves highest correlation coefficient (R = 0.9282). Folding-type-specific analysis and SHAP interpretation are reported.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no numerical results beyond R = 0.9282, no figures, tables, or methodological details</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all quantitative performance metrics (RMSE, MAE values), dataset composition and source, hyperparameter settings, bootstrap details, SHAP analysis outputs, and any validation or comparison against existing methods</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a plausible and potentially useful framework for protein folding rate prediction, combining LASSO feature selection with multiple machine learning models and interpretability analysis. However, the evidence provided in the abstract is insufficient to evaluate the robustness, novelty, or generalizability of the claims. Key quantitative results are missing, and the comparative claims about model performance cannot be verified from the supplied material. The work may be of interest to the protein biophysics and computational biology communities, but the case is not established from the abstract alone.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in computational biology, protein biophysics, and machine learning applied to biological problems would be interested. The framework addresses a practical need for interpretable and accurate prediction of protein folding rates, which is relevant to understanding protein dynamics and folding mechanisms. The use of SHAP for model interpretation may appeal to those seeking explainable AI approaches in bioinformatics.</li>
+<li><strong>Major strengths</strong> The abstract clearly identifies a specific problem (limited generalizability and multicollinearity of existing structural parameters) and proposes a coherent pipeline (feature selection, modeling, interpretation). The use of bootstrap resampling for uncertainty assessment is a positive methodological choice. The inclusion of folding-type-specific analysis and SHAP interpretation suggests attention to model behavior beyond aggregate metrics.</li>
+<li><strong>Major Concerns</strong> </li>
+<li>R1-M1: The abstract reports only one performance metric (R = 0.9282 for SSA-BP) and does not provide the actual RMSE and MAE values for any model. Without these numbers, the comparative claim that "RF achieved the lowest RMSE and MAE" cannot be assessed.</li>
+<li>R1-M2: The claim that LASSO identified six features "from 12 structural parameters" is presented without any detail on the selection procedure, stability of selection, or validation that these features are indeed the most informative. The abstract does not state whether the same features were used across all models or whether feature selection was performed within cross-validation, which is a common source of bias.</li>
+<li>R1-M3: The abstract claims "distinct model performance patterns between two-state and multi-state proteins" but provides no quantitative support. The reader cannot determine the magnitude or direction of these differences, nor whether they are statistically significant.</li>
+<li>R1-M4: The SHAP analysis claim that "relative contributions of structural features varied across models and folding types" is not supported by any specific results. The abstract does not report which features dominated for which model or folding type, nor how these contributions were quantified.</li>
+<li>R1-M5: The training set of 145 proteins and test set of 29 proteins are mentioned, but the abstract does not state how the split was performed, whether the test set is truly independent, or whether the dataset is publicly available. This limits the reproducibility assessment.</li>
+<li><strong>Minor Comments</strong> </li>
+<li>R1-m1: The abstract does not specify the units or definition of "folding rate" used, which is important for interpreting the RMSE and MAE values.</li>
+<li>R1-m2: The choice of the four models (RR, RF, SVM, SSA-BP) is not justified. The abstract does not explain why these particular models were selected or how they complement each other.</li>
+<li>R1-m3: The abstract mentions "bootstrap resampling used to assess performance uncertainty" but does not report any confidence intervals or uncertainty measures. The reader cannot evaluate the stability of the reported performance.</li>
+<li>R1-m4: The term "SSA-BP" is not defined in the abstract. If this is a hybrid model (e.g., sparrow search algorithm optimized backpropagation), it should be stated explicitly.</li>
+<li>R1-m5: The abstract does not compare the proposed framework against existing protein folding rate prediction methods. Without such a comparison, the added value of the approach is unclear.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3, R1-M4, R1-M5. The core comparative and interpretability claims are not supported by the evidence provided in the abstract.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The combination of LASSO feature selection with multiple ML models and SHAP interpretation for protein folding rate prediction is not clearly novel from the abstract alone. Similar approaches have been used in other bioinformatics prediction tasks. The abstract does not articulate what is new compared to prior work.</li>
+<li>Scientific importance: Protein folding rate prediction is a relevant problem, but the abstract does not demonstrate that the proposed framework achieves substantially better performance or provides new biological insight beyond existing methods.</li>
+<li>Interdisciplinary readership: The work sits at the intersection of biophysics and machine learning, which could attract a broad readership. However, the abstract is written in a way that assumes familiarity with both fields, and the lack of quantitative detail limits accessibility.</li>
+<li>Technical soundness: The methodological choices (LASSO, bootstrap, SHAP) are reasonable, but the abstract does not provide enough detail to assess whether they were implemented correctly. The absence of key performance metrics is a significant technical shortcoming.</li>
+<li>Readability for nonspecialists: The abstract is concise but uses field-specific terms (e.g., L(eff), LRO, ACO, Sheet, H(nc), P(beta)) without definition. A nonspecialist would struggle to understand the significance of these features.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract presents a reasonable framework, but the lack of quantitative results and methodological detail prevents a supportive recommendation. The authors should provide the full manuscript with complete performance metrics, feature selection details, and SHAP outputs for a proper evaluation.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that "RF achieved the lowest RMSE and MAE" is unsupported because the actual values are not reported.</li>
+<li>The claim that "SSA-BP showed the highest correlation coefficient (R = 0.9282)" is supported only by a single number with no context (e.g., confidence interval, comparison to other models' R values).</li>
+<li>The claim of "distinct model performance patterns between two-state and multi-state proteins" is unsupported by any quantitative evidence.</li>
+<li>The claim that "SHAP analysis further showed that the relative contributions of structural features varied across models and folding types" is unsupported by specific results.</li>
+<li>The generalizability claim ("providing an interpretable approach for protein folding rate prediction") is not established because the abstract does not demonstrate performance on external or independent datasets beyond the 29-protein test set.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

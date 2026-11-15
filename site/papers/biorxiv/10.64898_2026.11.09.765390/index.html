@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Integrating evolutionary and protein language model representations for thermodynamically consistent stability prediction · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Integrating evolutionary and protein language model representations for thermodynamically consistent stability prediction</h1>
+      <div class="meta">Guido Barducci; Tiziana Sanavia; Piero Fariselli</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-11-10
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.11.09.765390">原文</a>
+      </div>
+      <p class="one-liner">该文提出一种无需训练的集成策略，将进化信息和蛋白语言模型表示结合，并通过热力学约束（反对称性和路径独立性）构建势能化预测器EvoPhi-DDG，用于蛋白质稳定性变化预测，显著提升准确性和物理一致性，属于蛋白质结构相关计算建模的核心工作。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">At fixed thermodynamic conditions, protein stability changes obey reversal antisymmetry and path independence, but learned predictors need not satisfy these properties. Explicit alignment-derived evolutionary information may also complement single-sequence protein language model representations, motivating their integration under clearly defined physical constraints. Here, we develop a training-free strategy that combines thermodynamic constraints with complementary sequence representations. We first introduce EvoPhi-DDG, a potential-based adaptation of the alignment-conditioned evolutionary predictor MSAesm_ddG. By antisymmetrizing its predictions and setting the hidden biases to zero, we express stability changes as differences of a learned, evolution-informed effective potential conditioned on the mutation site and alignment context. This guarantees exact reversal consistency and exact same-site transitivity under fixed alignment contexts while preserving predictive accuracy. We further extend the adapted predictor to multiple substitutions through a background-aware construction that preserves whole-variant antisymmetry. We then combine EvoPhi-DDG with the previously published JanusDDG using fixed, equal-weight averaging to test predictive complementarity without additional training. The ensemble preserves exact antisymmetry and reduces multisite pathway-closure RMSE relative to JanusDDG across all evaluated path lengths. Furthermore, the ensemble outperforms both components on S669 and S96, achieving Pearson correlations of 0.59 and 0.55, respectively, compared with 0.55 and 0.52 for JanusDDG and 0.53 and 0.48 for EvoPhi-DDG. On the multiple-substitution benchmark PTmul-NR, the ensemble achieves a Pearson correlation of 0.66, improving on JanusDDG’s 0.61 and matching the EvoPhi-DDG extension at the reported precision. Together, these findings distinguish two benefits: averaging complementary predictions improves accuracy, whereas the potential-based reformulation strengthens physical consistency. They support the integration of alignment-conditioned and single-sequence representations without additional training, while separating predictive improvements from mathematical guarantees.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">在固定的热力学条件下，蛋白质稳定性变化遵循反转反对称性和路径无关性，但学习型预测器未必满足这些性质。显式的比对衍生进化信息也可能补充单序列蛋白质语言模型表示，这促使在明确物理约束下对其进行整合。在此，我们开发了一种无训练策略，将热力学约束与互补序列表示相结合。我们首先引入EvoPhi-DDG，一种基于势能的比对条件进化预测器MSAesm_ddG的适配版本。通过对其预测进行反对称化处理并将隐藏偏置设为零，我们将稳定性变化表示为学习得到的、受进化信息影响的、以突变位点和比对上下文为条件的有效势能之差。这保证了在固定比对上下文下精确的反转一致性和精确的同位点传递性，同时保持预测准确性。我们进一步通过一种保持整体变体反对称性的背景感知构造，将适配预测器扩展到多个替换。然后，我们将EvoPhi-DDG与先前发表的JanusDDG通过固定等权平均进行组合，以在无需额外训练的情况下测试预测互补性。该集成方法保留了精确的反对称性，并在所有评估的路径长度上相对于JanusDDG降低了多位点路径闭合RMSE。此外，该集成方法在S669和S96上优于两个组成模型，分别达到0.59和0.55的Pearson相关系数，而JanusDDG为0.55和0.52，EvoPhi-DDG为0.53和0.48。在多位点替换基准PTmul-NR上，该集成方法达到0.66的Pearson相关系数，优于JanusDDG的0.61，并在报告精度下与EvoPhi-DDG扩展版本持平。综合来看，这些发现区分了两种益处：平均互补预测提高了准确性，而基于势能的重新表述增强了物理一致性。它们支持在无需额外训练的情况下整合比对条件和单序列表示，同时将预测改进与数学保证分离开来。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Integrating evolutionary and protein language model representations for thermodynamically consistent stability prediction</li>
+<li><strong>作者</strong>：Guido Barducci; Tiziana Sanavia; Piero Fariselli</li>
+<li><strong>单位</strong>：未提供（根据通讯邮箱推断为意大利都灵大学，University of Torino）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：方法学/预印本</li>
+<li><strong>领域</strong>：蛋白质稳定性预测 × 蛋白质语言模型 × 进化信息 × 热力学一致性</li>
+<li><strong>关键词</strong>：ΔΔG 预测、反反对称性、传递性、MSA Transformer、ESM-2、JanusDDG、MSAesm_ddG、EvoPhi-DDG、集成模型</li>
+<li><strong>DOI/ID</strong>：10.64898/2026.11.09.765390</li>
+<li><strong>代码</strong>：https://github.com/bardu98/EvoPhi-DDG</li>
+<li><strong>数据</strong>：S669、S461、S96、PTmul-NR（均来自已发表数据集，未提供原始下载链接）</li>
+<li><strong>阅读日期</strong>：2026-11-10</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质稳定性变化（ΔΔG）预测 × 蛋白质语言模型（PLM）× 进化信息（MSA）× 热力学一致性约束」交叉方向。其核心贡献在于：(1) 将已有的 MSA 条件预测器 MSAesm_ddG 重构为势函数形式（EvoPhi-DDG），在不重训练的前提下获得精确的热力学一致性保证；(2) 与单序列 ESM-2 模型 JanusDDG 进行固定等权集成，验证了互补性。该工作为「如何在不牺牲精度的前提下为预测器注入物理约束」提供了可迁移的范式。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文通过将 MSA 条件预测器 MSAesm_ddG 的预测头重构为势函数差形式（EvoPhi-DDG，零隐藏偏置 + 反反对称化），在不重训练的情况下获得精确的反反对称性和同一位点传递性保证，并与单序列模型 JanusDDG 进行固定等权集成，在 S669、S96 和 PTmul-NR 上同时提升了预测精度和路径闭合一致性。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：已有的蛋白质稳定性预测器（如 MSAesm_ddG）虽然精度尚可，但其预测不满足热力学一致性约束——即 ΔΔG 预测不满足反反对称性（ΔΔG(A→B) = −ΔΔG(B→A)）和路径无关性（传递性）。这导致同一突变在不同方向或不同路径上产生矛盾预测。</li>
+<li><strong>为什么重要</strong>：热力学一致性是自由能作为状态函数的必然要求。违反一致性的预测器在应用于路径依赖分析（如多突变逐步累积）、蛋白质工程中的反向设计、以及自由能微扰等场景时会产生系统性偏差。</li>
+<li><strong>现有方法不足</strong>：已有方法（如 JanusDDG）通过架构设计（双向交叉注意力）和训练后微调（传递性导向的损失）来鼓励一致性，但一致性是「软性」的、通过优化逼近的，而非「硬性」的、代数保证的。此外，MSAesm_ddG 本身不具备任何一致性保证。</li>
+<li><strong>精确的 Can 问题</strong>：Can an existing alignment-conditioned stability predictor be reformulated as a potential function (without retraining) such that its predictions satisfy exact reversal antisymmetry and exact same-site transitivity, while preserving predictive accuracy and complementing a single-sequence model in an ensemble?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文引用与作者叙述，标注为「经外部核验」的部分来自文中明确引用的文献；未标注部分为本文框架。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>经验力场</td>
+<td>FoldX [3]</td>
+<td>可解释、计算快</td>
+<td>精度有限，依赖经验参数</td>
+<td>作为基准对比</td>
+</tr>
+<tr>
+<td>序列/进化特征机器学习</td>
+<td>INPS、DDGun [4,6]</td>
+<td>利用序列与进化信息</td>
+<td>特征工程繁琐，精度天花板</td>
+<td>作为基准对比</td>
+</tr>
+<tr>
+<td>单序列 PLM</td>
+<td>PROSTATA、DDGemb [2,7,8]</td>
+<td>利用 ESM-2 上下文表征</td>
+<td>无显式进化信息，一致性无保证</td>
+<td>作为基准对比</td>
+</tr>
+<tr>
+<td>MSA 条件 PLM</td>
+<td>MSAesm_ddG [10]</td>
+<td>显式利用家族比对信息</td>
+<td>无一致性保证，预测有方向性偏差</td>
+<td>本文改造对象</td>
+</tr>
+<tr>
+<td>物理一致性架构</td>
+<td>JanusDDG [11]</td>
+<td>架构级反反对称 + 传递性微调</td>
+<td>一致性是软约束，非代数保证</td>
+<td>作为集成组件与对比基准</td>
+</tr>
+<tr>
+<td><strong>本文</strong></td>
+<td><strong>EvoPhi-DDG + JanusDDG 集成</strong></td>
+<td><strong>硬性一致性保证 + 互补信息融合</strong></td>
+<td>一致性限于同一位点/固定比对上下文；多突变需端点构造</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在「精度 vs 一致性」的权衡谱系中，本文提出二者可以分离获得——通过势函数重构获得硬性一致性，通过集成获得精度提升，且无需重训练。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>预测器违反反反对称性</td>
+<td>原始 MSAesm_ddG 的 M(A,B) + M(B,A) ≠ 0，平均偏差 0.20 kcal/mol，最大 1.19 kcal/mol</td>
+<td>预测头为非线性 ReLU 网络，对输入差分的响应不满足奇函数性质；隐藏偏置 b 的存在破坏了反对称性</td>
+<td>Results 2.1 节；"The original model exhibited a mean absolute reversal defect |M(A,B)+M(B,A)| of 0.20 kcal/mol, with RMSE 0.28 kcal/mol across S669. The largest defect was 1.19 kcal/mol."</td>
+</tr>
+<tr>
+<td>恒等预测不为零</td>
+<td>M(A,A) = −1.38×10⁻³ kcal/mol 而非 0</td>
+<td>隐藏偏置导致 ReLU 输出在零输入时不恒为零</td>
+<td>Results 2.1 节；"Its identity prediction, M(A,A), was −1.38×10⁻³ kcal/mol rather than zero."</td>
+</tr>
+<tr>
+<td>传递性（路径无关性）不满足</td>
+<td>同一位点经不同中间态路径的预测闭合误差随路径长度增大</td>
+<td>ReLU 非线性导致中间态贡献无法相消；偏置项产生累积残差</td>
+<td>Results 2.1 节；"the original MSAesm_ddG predictor was not transitive: its mean direct-versus-path Pearson correlation decreased from 0.96 with one intermediate to 0.84 with nine, while closure RMSE increased from 0.26 to 0.61 kcal/mol"</td>
+</tr>
+<tr>
+<td>多突变预测缺乏一致性保证</td>
+<td>多突变效应不能由单突变简单相加，且方向反转不一致</td>
+<td>原始模型仅支持单突变；多突变需构造端点方案</td>
+<td>Results 2.1 节；Methods 3.4 节</td>
+</tr>
+<tr>
+<td>精度与一致性难以兼得</td>
+<td>已有方法要么精度高但一致性差，要么一致性较好但精度受限</td>
+<td>一致性与精度通常通过联合训练权衡，难以同时最优</td>
+<td>Discussion 节；"These findings identify complementary representations and physical constraints as two separable contributions to the resulting predictor."</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：
+- 将 MSAesm_ddG 的预测头（单隐藏层 ReLU）进行两步改造：(a) 反反对称化——将前向与反向预测取平均差（Siamese 结构）；(b) 隐藏偏置置零——使 ReLU 网络退化为线性势函数差。
+- 将改造后的 EvoPhi-DDG 与 JanusDDG 以固定等权平均集成。
+- 多突变预测采用端点构造：分别从野生型和全突变背景计算单突变贡献之和，再取差并反反对称化。</p>
+<p><strong>2) 核心洞察</strong>：
+- <strong>洞察一</strong>：对于形如 f(x) = vᵀReLU(Wx + b) + c 的单隐藏层网络，当 b = 0 时，反反对称化后的预测头退化为线性泛函：ReLU(x) − ReLU(−x) = x。这意味着预测可以表示为势函数差，从而自动满足传递性。
+- <strong>洞察二</strong>：隐藏偏置 b 是破坏一致性的根源，而非网络宽度或深度。移除 b 后精度几乎不变（Supplementary Fig. S1），说明 b 对预测的贡献是「可牺牲的噪声」而非「必要信号」。
+- <strong>洞察三</strong>：精度提升与一致性保证是可分离的——集成负责精度，势函数重构负责一致性，二者互不干扰。
+- <strong>洞察四</strong>：多突变的一致性可以通过端点构造实现，无需训练多突变专用模型。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：
+- 对于任何「预测两个状态间差值」的模型，若输出头为非线性且含偏置，则一致性（反对称、传递性）必然被破坏。检查并消除偏置项是获得硬性一致性的最直接途径。
+- 反反对称化（Siamese 平均差）是一种「免费」的一致性增强手段，不改变模型容量，仅增加一次前向计算。
+- 集成学习中，若组件模型误差高度相关（r=0.85），仍可通过固定等权平均获得收益，说明互补性不仅来自相关性，还来自误差符号的分布。</p>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：</li>
+<li>蛋白质序列对 (A, B)，其中 B 为 A 的单突变或多突变体</li>
+<li>对于 MSAesm_ddG/EvoPhi-DDG：额外输入 MSA 比对上下文（固定比对上下文 C）</li>
+<li>对于 JanusDDG：仅输入序列对 (A, B)</li>
+<li><strong>输出</strong>：ΔΔG 预测值（kcal/mol），满足反反对称性；同一位点路径闭合误差为零（EvoPhi-DDG 单独或集成后）</li>
+<li><strong>模块</strong>：
+  1. <strong>MSAesm_ddG 原始预测器</strong>：MSA Transformer 编码器（第 12 层残基嵌入）→ 位点嵌入与池化嵌入拼接 → 单隐藏层 ReLU 头 → 标量预测
+  2. <strong>反反对称化模块</strong>：对同一突变对 (A,B) 和 (B,A) 分别计算预测，取 (M(A,B) − M(B,A))/2
+  3. <strong>零偏置模块</strong>：将隐藏层偏置 b 置零，输出偏置 c 在反反对称化后自动抵消
+  4. <strong>EvoPhi-DDG</strong>：零偏置 + 反反对称化的 MSAesm_ddG
+  5. <strong>JanusDDG</strong>：ESM-2 编码器 + 双向交叉注意力 + 反反对称化（已发布模型）
+  6. <strong>固定等权集成</strong>：E = (J + M_Φ)/2
+  7. <strong>多突变端点构造</strong>：P(A,B) = (Σᵢ M_Φ(Aᵢ,A) − Σᵢ M_Φ(B,B₋ᵢ))/2，再与 JanusDDG 直接预测平均</li>
+<li><strong>训练</strong>：无。所有参数来自已发布 checkpoint，仅进行推理时改造。</li>
+<li><strong>工具</strong>：未提供具体软件环境；代码仓库为 GitHub。</li>
+<li><strong>假设</strong>：</li>
+<li>固定比对上下文 C 下，同一突变位点的不同氨基酸状态共享相同的 MSA 上下文（用于传递性证明）</li>
+<li>多突变效应可通过端点背景下的单突变贡献之和近似（端点构造的固有假设）</li>
+<li><strong>文字流程</strong>：
+  1. 对每个单突变对 (A,B)，用 MSAesm_ddG 编码器在固定比对上下文 C 下提取 A 和 B 的位点嵌入与池化嵌入
+  2. 拼接为 1536 维差分向量 d_AB
+  3. 通过零偏置 ReLU 头计算势差：M_Φ(A,B) = vᵀReLU(Wd_AB)（b=0）
+  4. 反反对称化：M_Φ(A,B) = (M(A,B) − M(B,A))/2
+  5. 对 JanusDDG 直接计算 J(A,B)
+  6. 集成：E(A,B) = (J(A,B) + M_Φ(A,B))/2
+  7. 多突变：对每个突变位点 i，分别计算 M_Φ(Aᵢ,A) 和 M_Φ(B,B₋ᵢ)，求和后取差并除以 2，再与 J(A,B) 平均</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSA Transformer 编码器</td>
+<td>生成残基级上下文嵌入</td>
+<td>提供进化信息（同源序列共变模式）</td>
+<td>输入：MSA 比对；输出：残基嵌入 h_i</td>
+<td>原始 MSAesm_ddG 论文 [10]；本文 Results 2.1 节</td>
+<td>无法获得进化信息，退化为单序列模型</td>
+</tr>
+<tr>
+<td>位点嵌入 + 池化嵌入拼接</td>
+<td>组合局部突变位点信息与全局序列信息</td>
+<td>差分向量需同时包含位点特异性和序列背景</td>
+<td>输入：h_p(A), h̄(A)；输出：1536 维向量</td>
+<td>Methods 3.2.1 节</td>
+<td>缺少任一成分都会降低预测精度</td>
+</tr>
+<tr>
+<td>单隐藏层 ReLU 头</td>
+<td>将差分向量映射为标量 ΔΔG</td>
+<td>原始 MSAesm_ddG 的预测头</td>
+<td>输入：1536 维差分向量；输出：标量</td>
+<td>Methods 3.2.1 节</td>
+<td>无此模块则无法产生预测</td>
+</tr>
+<tr>
+<td>反反对称化（Siamese 平均差）</td>
+<td>强制 M(A,B) = −M(B,A)</td>
+<td>消除方向性偏差</td>
+<td>输入：M(A,B), M(B,A)；输出：(M(A,B)−M(B,A))/2</td>
+<td>Results 2.1 节；"The original model exhibited a mean absolute reversal defect of 0.20 kcal/mol"</td>
+<td>保留原始非线性头时，仅消除反对称缺陷，不保证传递性</td>
+</tr>
+<tr>
+<td>零隐藏偏置</td>
+<td>使 ReLU 头退化为线性势差</td>
+<td>获得精确传递性</td>
+<td>输入：ReLU 头参数；输出：b=0 的线性头</td>
+<td>Results 2.1 节；"Removing the hidden biases eliminates the nonlinear residual and replaces near-exact same-site transitivity with an exact algebraic guarantee"；Supplementary Fig. S1 显示精度几乎不变</td>
+<td>保留偏置时，传递性仅为近似（残差有界但非零）</td>
+</tr>
+<tr>
+<td>固定等权集成</td>
+<td>融合单序列与 MSA 条件预测</td>
+<td>利用互补信息提升精度</td>
+<td>输入：J(A,B), M_Φ(A,B)；输出：(J+M_Φ)/2</td>
+<td>Results 2.3 节；S669 Pearson 0.59 vs 0.55/0.53</td>
+<td>退化为单一模型，精度下降</td>
+</tr>
+<tr>
+<td>多突变端点构造</td>
+<td>将单突变预测器扩展到多突变</td>
+<td>原始 MSAesm_ddG 不支持多突变</td>
+<td>输入：野生型 A、全突变体 B、突变位点集合 S；输出：P(A,B)</td>
+<td>Methods 3.4 节；PTmul-NR Pearson 0.66</td>
+<td>无法预测多突变效应</td>
+</tr>
+<tr>
+<td>分类模块（阈值 0）</td>
+<td>将连续预测转为稳定/不稳定二分类</td>
+<td>评估判别能力</td>
+<td>输入：ΔΔG 预测；输出：稳定（&gt;0）或不稳定（&lt;0）</td>
+<td>Methods 3.6 节；S669 AUC 0.83</td>
+<td>无法进行二分类评估</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<blockquote>
+<p>仅列理解本文所必需的公式。</p>
+</blockquote>
+<p><strong>1. 反反对称化（Siamese 平均差）</strong>：
+M_a(A,B) = (M(A,B) − M(B,A)) / 2
+- M：原始 MSAesm_ddG 预测器
+- M_a：反反对称化后的预测器
+- 性质：M_a(A,B) = −M_a(B,A)，M_a(A,A) = 0</p>
+<p><strong>2. ReLU 恒等式（零偏置时）</strong>：
+ReLU(x) − ReLU(−x) = x
+- 用途：当隐藏偏置 b = 0 时，反反对称化后的预测头退化为线性函数</p>
+<p><strong>3. EvoPhi-DDG 势差形式</strong>：
+M_Φ(A,B) = vᵀReLU(Wd_AB)（b = 0）
+- d_AB = [h_p,C(A); h̄(A)] − [h_p,C(B); h̄(B)]：1536 维差分向量
+- W ∈ ℝ^{768×1536}：隐藏层权重
+- v ∈ ℝ^{768}：输出层权重
+- 性质：M_Φ(A,B) = Φ(A) − Φ(B)，其中 Φ 为势函数</p>
+<p><strong>4. 传递性（同一位点、固定比对上下文）</strong>：
+对同一突变位点 p 和固定比对上下文 C，任意三个氨基酸状态 X, Y, Z：
+M_Φ(X,Z) = M_Φ(X,Y) + M_Φ(Y,Z)
+- 即路径无关性：直接预测等于任意中间路径之和</p>
+<p><strong>5. 有偏置时的残差上界</strong>：
+|M_a(A,B) − (Φ(A) − Φ(B))| ≤ R_b
+- R_b = Σᵢ |vᵢ bᵢ| = 1.34 × 10⁻² kcal/mol（checkpoint 实测值）
+- 对 N 个中间态：闭合误差 ≤ (N+2) R_b</p>
+<p><strong>6. 集成模型</strong>：
+E(A,B) = (J(A,B) + M_Φ(A,B)) / 2
+- J：JanusDDG 预测器（已反反对称化）
+- E：集成预测器，保持精确反反对称性</p>
+<p><strong>7. 多突变端点构造</strong>：
+P(A,B) = (1/2) [Σ_{i∈S} M_Φ(Aᵢ, A) − Σ_{i∈S} M_Φ(B, B₋ᵢ)]
+- Aᵢ：仅在位点 i 引入突变的序列
+- B₋ᵢ：在 B 中仅保留突变 i 的序列
+- 性质：P(A,B) = −P(B,A)</p>
+<p><strong>8. 分类规则</strong>：
+z = 1[y &gt; 0.50] 或 z = 1[y &lt; −0.50]（实验标签）
+预测类别：ΔΔG_pred &gt; 0 为稳定，≤ 0 为不稳定</p>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/群体</strong>：
+- S669：669 个单突变体，87 条独特野生型全长序列（手动精选，低冗余）
+- S461：S669 的精选子集，461 个单突变体，46 条独特野生型序列
+- S96：96 个单突变体，14 条独特野生型序列（源自 ProTherm，人工核对）
+- PTmul-NR：82 个多突变体，13 条独特野生型序列（非冗余）
+- 所有数据集均来自已发表文献，与 JanusDDG 论文使用相同版本</p>
+<p><strong>指标</strong>：
+- 回归：Pearson 相关系数、Spearman 相关系数、MAE、RMSE
+- 分类：ROC-AUC、精确率、召回率、平衡准确率
+- 一致性：反反对称缺陷（|M(A,B)+M(B,A)|）、闭合误差（直接 vs 路径求和）</p>
+<p><strong>基线</strong>：
+- 原始 MSAesm_ddG（未改造）
+- JanusDDG（已发布 checkpoint）
+- 集成对照组：E_orig = (J + M)/2（原始 MSAesm_ddG 未反反对称化）、E_anti = (J + M_a)/2（反反对称化但保留偏置）</p>
+<p><strong>评测协议</strong>：
+- 所有模型使用相同序列/比对输入，无重训练
+- 反反对称缺陷在 S669 全部 669 对正反突变上评估
+- 传递性测试：同一位点随机采样 1/3/5/7/9 个中间态，10 次重复，固定随机种子
+- 多突变测试：PTmul-NR 82 个变体，使用端点构造
+- 分类测试：排除 |ΔΔG| ≤ 0.50 的实验值，预测阈值固定为 0
+- 不确定性：5,000 次 paired bootstrap（按 87 条野生型序列分组）；分类用 1,000 次</p>
+<p><strong>实验列表</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>反反对称缺陷评估</td>
+<td>原始 MSAesm_ddG 违反反反对称性</td>
+<td>S669 全部 669 对正反突变</td>
+<td>平均 |M(A,B)+M(B,A)| = 0.20 kcal/mol，RMSE 0.28，最大 1.19</td>
+<td>原始模型存在显著反反对称缺陷</td>
+<td>缺陷是否影响实际应用精度未直接验证</td>
+<td>Results 2.1 节</td>
+</tr>
+<tr>
+<td>恒等预测</td>
+<td>M(A,A) 应为 0</td>
+<td>S669 全部位点</td>
+<td>M(A,A) = −1.38×10⁻³ kcal/mol</td>
+<td>原始模型恒等预测非零</td>
+<td>—</td>
+<td>Results 2.1 节</td>
+</tr>
+<tr>
+<td>同一位点传递性（原始 vs 反反对称化）</td>
+<td>反反对称化改善传递性</td>
+<td>1/3/5/7/9 中间态，10 次重复</td>
+<td>原始：相关从 0.96 降至 0.84，闭合 RMSE 0.26→0.61；反反对称化：相关 ≈ 1−1.38×10⁻⁶，闭合 RMSE 1.50×10⁻³</td>
+<td>反反对称化几乎完全消除同一位点传递性缺陷</td>
+<td>仅限同一位点、固定比对上下文</td>
+<td>Results 2.1 节；Fig. 2；Table S7</td>
+</tr>
+<tr>
+<td>零偏置对精度的影响</td>
+<td>移除隐藏偏置不损害精度</td>
+<td>S669、S96 上对比 M_a vs M_Φ</td>
+<td>Pearson 变化微小（S669: 0.53 vs 0.53；S96: 0.48 vs 0.48）</td>
+<td>零偏置在保持精度的同时获得精确传递性</td>
+<td>未在其他数据集验证</td>
+<td>Results 2.1 节；Fig. S1；Table S1, S3</td>
+</tr>
+<tr>
+<td>集成 vs 单组件（S669）</td>
+<td>集成提升精度</td>
+<td>E vs J vs M_Φ</td>
+<td>E: Pearson 0.59, MAE 0.91, RMSE 1.33；J: 0.55；M_Φ: 0.53</td>
+<td>集成优于任一组件</td>
+<td>提升幅度是否统计显著需查 bootstrap 区间</td>
+<td>Results 2.3 节；Fig. 5a–c；Table S9</td>
+</tr>
+<tr>
+<td>集成 vs 单组件（S96）</td>
+<td>集成提升精度</td>
+<td>E vs J vs M_Φ</td>
+<td>E: Pearson 0.55；J: 0.52；M_Φ: 0.48</td>
+<td>集成优于任一组件</td>
+<td>—</td>
+<td>Results 2.3 节；Fig. 5；Table S9</td>
+</tr>
+<tr>
+<td>集成 vs 单组件（S461）</td>
+<td>集成提升精度</td>
+<td>E vs J vs M_Φ</td>
+<td>E: Pearson 0.75；J: 0.72；M_Φ: 0.70</td>
+<td>集成优于任一组件</td>
+<td>—</td>
+<td>Results 2.3 节；Fig. 5；Table S9</td>
+</tr>
+<tr>
+<td>多突变（PTmul-NR）</td>
+<td>端点构造 + 集成有效</td>
+<td>E_multi vs J vs M_Φ_ext</td>
+<td>E_multi: Pearson 0.66；J: 0.61；M_Φ_ext: 0.66</td>
+<td>集成改进 J，但未超越 M_Φ_ext</td>
+<td>多突变测试集仅 82 个变体、13 条序列</td>
+<td>Results 2.3 节；Fig. 5j–l；Table S9</td>
+</tr>
+<tr>
+<td>控制实验：E_orig vs E_anti vs E_Φ（S669）</td>
+<td>精度提升来自平均而非反反对称化</td>
+<td>三者 Pearson 均为 0.59</td>
+<td>精度提升完全来自平均，与一致性改造无关</td>
+<td>一致性改造不损害精度</td>
+<td>—</td>
+<td>Results 2.5 节；Table S5</td>
+</tr>
+<tr>
+<td>控制实验：反反对称缺陷（E_orig vs E_anti vs E_Φ）</td>
+<td>一致性改造消除缺陷</td>
+<td>S669、S461、S96</td>
+<td>E_orig 缺陷 0.10/0.10/0.12 kcal/mol；E_anti 与 E_Φ 为 0</td>
+<td>一致性改造消除反反对称缺陷</td>
+<td>—</td>
+<td>Results 2.5 节</td>
+</tr>
+<tr>
+<td>控制实验：传递性（E_orig vs E_anti vs E_Φ）</td>
+<td>零偏置进一步改善传递性</td>
+<td>S669 同一位点路径</td>
+<td>E_orig 闭合 RMSE 0.35；E_anti 0.17（50.18% 降低）；E_Φ 0.17</td>
+<td>反反对称化贡献主要改善，零偏置使组件自身精确</td>
+<td>—</td>
+<td>Results 2.5 节；Fig. S2</td>
+</tr>
+<tr>
+<td>分类评估（S669、S461、S96、PTmul-NR）</td>
+<td>集成提升分类性能</td>
+<td>排除</td>
+<td>ΔΔG</td>
+<td>≤0.50，阈值 0</td>
+<td>S669 AUC 0.83；S461 AUC 0.92；S96 AUC 0.75；PTmul-NR AUC 0.85</td>
+<td>分类提升与回归提升不完全一致</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅针对蛋白质稳定性变化（ΔΔG）预测，不涉及结构预测、对接或构象采样。评估数据集为 S669、S461、S96（单突变）和 PTmul-NR（多突变），全部为全长序列。</li>
+<li><strong>oracle/真值输入</strong>：实验 ΔΔG 值来自已发表文献；MSA 上下文来自公共数据库（通过 ColabFold MMseqs2 生成）；无 oracle 结构输入。</li>
+<li><strong>端到端状态</strong>：非端到端。模型为「编码器 + 预测头」的判别式架构，输入为序列/比对，输出为标量 ΔΔG。无生成或采样过程。</li>
+<li><strong>算力成本</strong>：未提供具体训练成本（因无重训练）；推理成本为两次 MSA Transformer 前向 + 一次 ESM-2 前向。</li>
+<li><strong>历史数据依赖</strong>：MSAesm_ddG 训练于 S155329（大规模稳定性数据集）；JanusDDG 训练于 S2450。两者训练集与评估集有重叠控制（S669 与训练集序列相似性过滤）。</li>
+<li><strong>模型依赖</strong>：结论依赖于 MSA Transformer 和 ESM-2 的表示质量；若更换编码器，结论可能不成立。</li>
+<li><strong>最难情形</strong>：多突变预测（PTmul-NR）中，集成未超越更强的单组件（E_Φ_ext），说明多突变场景下互补性有限。</li>
+<li><strong>群体/领域边界</strong>：全部为可溶性球蛋白的稳定性数据；膜蛋白、 intrinsically disordered proteins、非标准残基不在范围内。</li>
+<li><strong>不确定性</strong>：bootstrap 区间显示 S669 上集成提升的 95% 区间为 [0.02, 0.08]（Pearson），未报告所有指标的完整区间。</li>
+<li><strong>有边界的复述</strong>：在 S669、S461、S96 和 PTmul-NR 上，将 MSAesm_ddG 重构为势函数形式（EvoPhi-DDG）并与 JanusDDG 等权平均，可在保持精度的同时获得精确的反反对称性和同一位点传递性；精度提升主要来自平均而非一致性改造；多突变场景下集成优势减弱。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多突变集成优势有限</td>
+<td>PTmul-NR 上集成未超越 E_Φ_ext 单组件</td>
+<td>未明确提及</td>
+<td>Results 2.3 节；"the ensemble improved JanusDDG without surpassing the stronger component"</td>
+</tr>
+<tr>
+<td>传递性保证限于同一位点/固定比对上下文</td>
+<td>多突变路径（不同位点组合）不保证传递性</td>
+<td>未明确提及</td>
+<td>Discussion 节；"Exact transitivity is not guaranteed for arbitrary multisite paths or for the ensemble"</td>
+</tr>
+<tr>
+<td>固定等权平均可能非最优</td>
+<td>未尝试学习权重或非线性组合</td>
+<td>未明确提及</td>
+<td>Methods 3.3 节；"fixed, equal-weight averaging"</td>
+</tr>
+<tr>
+<td>评估数据集规模有限</td>
+<td>PTmul-NR 仅 82 个变体、13 条序列</td>
+<td>未明确提及</td>
+<td>Results 2.3 节；"With only 13 WT sequences, these comparisons remain sensitive to the available protein sample"</td>
+</tr>
+<tr>
+<td>未与其他方法进行大规模基准对比</td>
+<td>仅与自身组件和已发表数值比较</td>
+<td>未明确提及</td>
+<td>Results 2.3 节；Table 1</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>零偏置的精度保持可能依赖特定数据集</td>
+<td>S669/S96 上精度不变，但未在更大规模或更多样化的数据集上验证</td>
+<td>若零偏置在更广数据集上损害精度，则方法的普适性受限</td>
+<td>在 S155329 或 S2648 全量数据上对比 M_a vs M_Φ</td>
+<td>Results 2.1 节；Fig. S1</td>
+</tr>
+<tr>
+<td>传递性证明依赖「固定比对上下文」假设</td>
+<td>实际应用中，不同突变体可能触发不同的 MSA 构建（如序列长度变化），导致上下文不一致</td>
+<td>若上下文变化，传递性保证可能失效</td>
+<td>在 MSA 重新构建的条件下重复传递性测试</td>
+<td>Methods 3.2.1 节；"fixed alignment context"</td>
+</tr>
+<tr>
+<td>集成增益可能来自模型容量而非信息互补</td>
+<td>E_orig 与 E_Φ 精度相同，说明增益来自平均本身；但未与「两个相同模型平均」对照</td>
+<td>若增益仅来自方差缩减，则「互补性」叙事需弱化</td>
+<td>用两个独立初始化的 MSAesm_ddG 平均作为对照</td>
+<td>Results 2.5 节；Table S5</td>
+</tr>
+<tr>
+<td>分类评估的阈值选择可能影响结论</td>
+<td>固定阈值 0 而非数据驱动阈值，可能低估或高估分类性能</td>
+<td>分类性能对阈值敏感，固定阈值可能不具代表性</td>
+<td>绘制 ROC 曲线并报告 AUC 而非仅报告固定阈值指标</td>
+<td>Methods 3.6 节</td>
+</tr>
+<tr>
+<td>多突变端点构造的精度上限未探索</td>
+<td>未与多突变专用训练模型（如直接训练于多突变数据）比较</td>
+<td>端点构造可能只是次优方案</td>
+<td>训练一个直接预测多突变 ΔΔG 的模型并对比</td>
+<td>Methods 3.4 节</td>
+</tr>
+<tr>
+<td>bootstrap 分组以野生型序列为单位，但未报告所有指标的区间</td>
+<td>部分结论（如 S96 上的提升）可能不显著</td>
+<td>统计不确定性未完全透明</td>
+<td>补充所有指标的完整 bootstrap 区间</td>
+<td>Methods 3.7 节</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<blockquote>
+<p>标题写「Agent 提炼的知识候选」。</p>
+</blockquote>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>「势函数化」是获得热力学一致性的通用策略</strong>：对于任何「预测两状态差值」的判别模型，若输出头为线性且无偏置，则预测自动满足可加性和路径无关性。本文展示了如何将已有非线性模型「降级」为势函数而不损失精度。可迁移到：分子对接打分函数、构象能评估、突变效应预测等所有「差值预测」任务。</p>
+</li>
+<li>
+<p><strong>反反对称化（Siamese 平均差）是零成本的硬约束注入</strong>：不需要重训练，仅需对正反两个方向各做一次前向并取平均差。适用于任何已有模型，且与后续集成兼容。可迁移到：AlphaFold 的 pLDDT 差值分析、MD 模拟的自由能微扰（FEP）预测器。</p>
+</li>
+<li>
+<p><strong>固定等权集成可作为「无训练融合」的基线</strong>：本文证明即使组件误差高度相关（r=0.85），等权平均仍可带来稳定提升。这提示在蛋白质结构相关任务中，多表示融合（如 ESM-2 + MSA Transformer）可先尝试零参数集成，再考虑学习融合权重。</p>
+</li>
+<li>
+<p><strong>「精度 vs 一致性」可以解耦</strong>：本文通过控制实验（E_orig vs E_anti vs E_Φ）清晰分离了「平均带来的精度提升」与「势函数化带来的一致性保证」。这种实验设计值得借鉴——在引入任何物理约束时，应同时报告「约束带来的精度变化」和「约束带来的一致性改善」，而非混为一谈。</p>
+</li>
+<li>
+<p><strong>多突变预测的端点构造是简单有效的扩展</strong>：将单突变预测器扩展到多突变时，从野生型和全突变背景分别计算贡献之和再取差，可保持反反对称性。可迁移到：组合突变设计、深度突变扫描（DMS）的外推。</p>
+</li>
+<li>
+<p><strong>「隐藏偏置是破坏一致性的根源」这一诊断思路可推广</strong>：本文通过数学推导定位了不一致性的具体来源（偏置项），而非笼统归因于「非线性」。这种「归因到具体参数」的诊断方法适用于任何物理约束失效的调试场景。</p>
+</li>
+<li>
+<p><strong>评估协议中应区分「回归精度」与「物理一致性」</strong>：本文在 S669 上同时报告 Pearson/MAE/RMSE 和反反对称缺陷/闭合误差，二者独立变化。这提示在蛋白质结构相关任务中，应建立「物理一致性指标」作为与精度并列的评估维度。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, results, methods, discussion, data availability statement)</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological soundness, clarity of claims, and consistency of evidence presented in the provided text. No external data or code was accessed.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present EvoPhi-DDG, a training-free adaptation of the MSAesm_ddG predictor that enforces exact thermodynamic antisymmetry and same-site transitivity by reformulating predictions as differences of a learned potential. They further combine EvoPhi-DDG with the published JanusDDG model via fixed equal-weight averaging, reporting improved predictive accuracy on S669, S96, and PTmul-NR benchmarks, and reduced multisite pathway-closure error.</li>
+<li><strong>Visible evidence base</strong> Main text figures (Figures 1–6 referenced), Supplementary Figures S1–S3, Supplementary Tables S1–S10, and the Methods section describing datasets, model architectures, and evaluation protocols.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript addresses a relevant and timely problem in protein stability prediction: enforcing thermodynamic consistency in learned predictors. The proposed EvoPhi-DDG reformulation is elegant and the theoretical analysis of the ReLU head is a clear strength. The empirical evaluation is reasonably thorough, but several concerns about the strength of the claims, the interpretation of the benchmark results, and the generalizability of the theoretical guarantees need to be addressed. The distinction between predictive gains from averaging and consistency gains from the potential-based reformulation is well articulated, but the practical significance of the consistency improvements is not fully demonstrated.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in computational protein engineering, biophysics, and machine learning applied to biology. The work is particularly relevant to those developing or using stability predictors, as it offers a principled way to enforce physical constraints without retraining, and to those interested in model ensembling and complementarity analysis.</li>
+<li><strong>Major strengths</strong>
+  1. The theoretical analysis of the MSAesm_ddG head is a significant contribution. The derivation of the exact potential-difference form when hidden biases are zero, and the explicit residual for nonzero biases, provides a clear and testable architectural explanation for the observed near-transitivity.
+  2. The separation of predictive accuracy from physical consistency as distinct evaluation criteria is methodologically sound and clearly presented.
+  3. The use of fixed, equal-weight averaging without additional training is a parsimonious and well-justified integration strategy, avoiding overfitting concerns.
+  4. The residual analysis (Section 2.6) provides a useful statistical framework for understanding when and why ensembling helps, beyond simple model diversity arguments.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Claim strength vs. evidence</li>
+<li><strong>Claim pointer</strong> The abstract and Section 2.3 state that the ensemble "outperforms both components on S669 and S96, achieving Pearson correlations of 0.59 and 0.55, respectively, compared with 0.55 and 0.52 for JanusDDG and 0.53 and 0.48 for EvoPhi-DDG."</li>
+<li><strong>Evidence pointer</strong> Section 2.3, Figure 5, Supplementary Table S9</li>
+<li><strong>Concern</strong> The reported improvements in Pearson correlation (e.g., 0.55 to 0.59 on S669) are modest. The manuscript does not provide confidence intervals for these point estimates in the main text, nor does it report whether these differences are statistically significant. The bootstrap analysis is mentioned for the multisite RMSE comparison (Section 2.3), but not for the primary single-site accuracy metrics. Without uncertainty quantification, the claim of "outperforming" is not fully supported.</li>
+<li><strong>Why it matters</strong> The central claim of the paper is that the ensemble improves predictive accuracy. If the observed gains are within the noise of the evaluation, the practical value of the ensemble for accuracy is questionable, and the paper's contribution would rest solely on the consistency guarantees.</li>
+<li><strong>Resolution test</strong> Provide 95% confidence intervals (e.g., via the described protein-bootstrap procedure) for the Pearson correlations on S669, S96, and PTmul-NR for all models compared. Report whether the differences are statistically significant. If the gains are not significant, temper the language in the abstract and results accordingly.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Generalizability of theoretical guarantee</li>
+<li><strong>Claim pointer</strong> Section 2.1 and Methods 3.2.4 state that EvoPhi-DDG "guarantees exact same-site transitivity under fixed alignment contexts."</li>
+<li><strong>Evidence pointer</strong> Section 2.1, Methods 3.2.4</li>
+<li><strong>Concern</strong> The theoretical guarantee of exact transitivity is derived for a fixed alignment context and a fixed mutation site. The manuscript correctly notes that this does not establish general multisite transitivity. However, the practical utility of the guarantee is unclear. The evaluation of multisite consistency (Section 2.3, Figure 4) shows that the ensemble still has nonzero closure error (RMSE 0.10 kcal/mol at ten intermediates). While this is lower than JanusDDG, it is not zero. The manuscript should more clearly state that the exact guarantee applies only to a narrow set of conditions (same site, same alignment) and that the empirical improvement on multisite paths is a separate, weaker result.</li>
+<li><strong>Why it matters</strong> Overstating the scope of the theoretical guarantee could mislead readers into thinking the model is exactly thermodynamically consistent in all practical scenarios. The distinction between the exact guarantee and the empirical improvement is crucial for correct interpretation.</li>
+<li><strong>Resolution test</strong> In the abstract and discussion, explicitly state that the exact transitivity guarantee is limited to single-site mutations under a fixed alignment context, and that for multisite mutations, the model only shows empirically reduced, but not eliminated, closure error.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Benchmark interpretation</li>
+<li><strong>Claim pointer</strong> Section 2.3 states that on PTmul-NR, the ensemble "achieves a Pearson correlation of 0.66, improving on JanusDDG’s 0.61 and matching the EvoPhi-DDG extension at the reported precision."</li>
+<li><strong>Evidence pointer</strong> Section 2.3, Figure 5, Supplementary Table S9</li>
+<li><strong>Concern</strong> The PTmul-NR benchmark contains only 82 variants across 13 distinct WT sequences. The manuscript acknowledges this limitation in Section 2.3, but the claim of "matching" the EvoPhi-DDG extension is based on a very small sample. The lack of a clear advantage over the stronger component on this benchmark is not framed as a potential limitation of the ensembling approach for multiple mutations.</li>
+<li><strong>Why it matters</strong> The manuscript aims to show that the ensemble is beneficial. If on the multiple-mutation benchmark the ensemble does not improve over the best component, this is an important boundary condition for the method's applicability. The discussion should address this more directly.</li>
+<li><strong>Resolution test</strong> Discuss the implications of the PTmul-NR result more thoroughly. Is the lack of improvement due to the small sample size, the nature of the task, or a fundamental limitation of the ensembling approach for multiple mutations? Suggest potential avenues for future work to address this.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Section 2.1, Figure 1</li>
+<li><strong>Evidence pointer</strong> Section 2.1, Figure 1</li>
+<li><strong>Issue</strong> The description of the EvoPhi-DDG architecture in Section 2.1 is dense and relies heavily on equations that are not fully introduced in the main text. Figure 1 is referenced but not described in detail.</li>
+<li><strong>Required correction</strong> Provide a more accessible, high-level description of the EvoPhi-DDG architecture in the main text, and ensure Figure 1 clearly illustrates the key components (e.g., the shared encoder, the potential-difference head, the background-aware extension).</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Methods 3.1.2</li>
+<li><strong>Evidence pointer</strong> Methods 3.1.2</li>
+<li><strong>Issue</strong> The description of the alignment construction and filtering is brief. The specific parameters for MMseqs2 and HHfilter are mentioned, but the exact commands or a link to a configuration file are not provided.</li>
+<li><strong>Required correction</strong> Provide the exact commands or a configuration file for the alignment generation and filtering steps to ensure reproducibility.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Affected element</strong> Section 2.4, Supplementary Table S10</li>
+<li><strong>Evidence pointer</strong> Section 2.4, Supplementary Table S10</li>
+<li><strong>Issue</strong> The classification analysis in Section 2.4 reports ROC-AUC and other metrics, but the manuscript does not state whether the differences between models are statistically significant. Given the small number of positive examples in some benchmarks (e.g., 23 stabilizing variants in S461), this is a concern.</li>
+<li><strong>Required correction</strong> Report confidence intervals for the classification metrics, or at least acknowledge the limitations of the small sample sizes in the discussion.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Presentation</li>
+<li><strong>Affected element</strong> Section 2.6</li>
+<li><strong>Evidence pointer</strong> Section 2.6</li>
+<li><strong>Issue</strong> The residual analysis in Section 2.6 is interesting but the presentation is somewhat abrupt. The connection between the residual correlation and the ensemble's performance could be explained more intuitively.</li>
+<li><strong>Required correction</strong> Add a sentence or two explaining why a high residual correlation with opposite signs for a fraction of variants leads to error cancellation, and what the practical implications are for model ensembling.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong></li>
+<li>R1-M1: Lack of confidence intervals for primary accuracy metrics.</li>
+<li>R1-M2: Potential overstatement of the scope of the theoretical transitivity guarantee.</li>
+<li><strong>Assessment against Nature-style criteria</strong></li>
+<li><strong>Originality</strong> The idea of reformulating an existing predictor as a potential difference to enforce thermodynamic consistency is novel and elegant. The theoretical analysis of the ReLU head is a distinct contribution. This is not a simple application of existing methods.</li>
+<li><strong>Scientific importance</strong> The problem of physical consistency in learned predictors is important for the field of protein stability prediction. The work provides a clear framework for addressing this, and the separation of consistency from accuracy is a valuable conceptual contribution. The practical impact is currently limited by the modest accuracy gains and the narrow scope of the exact guarantee.</li>
+<li><strong>Interdisciplinary readership</strong> The work is relevant to computational biologists, biophysicists, and machine learning researchers. The main text is generally accessible, but the Methods section is highly technical. The potential for broader interest is moderate.</li>
+<li><strong>Technical soundness</strong> The theoretical derivations appear sound. The empirical evaluation is reasonable but has limitations in statistical rigor (see R1-M1). The use of fixed, equal-weight averaging is well-justified.</li>
+<li><strong>Readability for nonspecialists</strong> The abstract and introduction are clear. The Results section is dense but understandable. The Methods section is for specialists. The distinction between the two benefits (accuracy vs. consistency) is well-communicated.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The core idea is promising and the theoretical analysis is a strength. However, the strength of the empirical claims needs to be backed by proper uncertainty quantification, and the scope of the theoretical guarantee needs to be stated more carefully. Once these are addressed, the manuscript would be a solid contribution.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that the ensemble "outperforms" both components on S669 and S96 is not fully supported without confidence intervals or significance testing.</li>
+<li>The claim of "exact same-site transitivity" is technically correct but could be misinterpreted as applying more broadly; the manuscript should be more explicit about its limited scope.</li>
+<li>The statement that the ensemble "matching the EvoPhi-DDG extension at the reported precision" on PTmul-NR is based on a very small benchmark and should be interpreted with caution.</li>
+<li>The manuscript states that the ensemble "reduces multisite pathway-closure RMSE relative to JanusDDG across all evaluated path lengths." While this is reported, the practical significance of a reduction from, e.g., 0.16 to 0.10 kcal/mol is not discussed. Is this level of error acceptable for practical applications?</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

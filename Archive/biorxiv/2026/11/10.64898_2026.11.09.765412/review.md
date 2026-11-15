@@ -1,0 +1,106 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, methods and results, discussion, supplementary material references)
+- **Assessment boundary** Scientific validity, methodological soundness, and support of claims based solely on the provided manuscript text. No external data, code, or supplementary figures were available for inspection beyond what is described in the text.
+- **Shared manuscript claim summary** The authors propose "coarse-tuning," a process of further training a protein foundation model (ESM2, 35M parameters) using masked language modeling on a domain-specific, unlabeled dataset (~80,000 outer membrane beta-barrel sequences). They claim this improves the model's performance on downstream tasks for that domain, including amino acid embedding quality, transfer learning for strand-number prediction, and attention-based contact prediction, compared to the unmodified ESM2 model.
+- **Visible evidence base** Text descriptions of methods and results, including references to Figures 2, 3, 7, Tables 1 and 2, and Supplementary Figures 2, 5, 6, 8. No actual figures, tables, or numerical data are provided in the supplied material.
+- **Missing materials affecting confidence** All figures, tables, and supplementary materials are referenced but not included. Specific numerical results (e.g., accuracy values, AUC values, loss curves) are described qualitatively but not presented. Details of the dataset composition, training hyperparameters, and computational resources are incomplete.
+
+## Reviewer
+- **Overall assessment** The manuscript presents a conceptually interesting and potentially useful idea: domain-specific "coarse-tuning" of a protein foundation model using a modestly sized, unlabeled sequence dataset. The motivation is clear and the choice of OMBBs as a test case is appropriate given their distinct biophysical environment. However, the evidence presented in the text is largely qualitative, with all quantitative results relegated to figures and tables that were not provided. The claims of improvement are plausible but cannot be rigorously evaluated from the supplied material. Several methodological details are missing, and some claims appear to overreach relative to what is described. The manuscript would benefit from a clearer presentation of the experimental setup, a more critical discussion of limitations, and a more cautious interpretation of the observed improvements.
+- **Who would be interested in the results, and why** Researchers working on protein language models and their application to specific protein families, particularly those studying membrane proteins or other biophysically distinct classes. The concept of specializing a foundation model with a relatively small, unlabeled dataset could be of broad interest to the computational biology community, as it offers a potentially cost-effective alternative to full retraining or large-scale fine-tuning. The detailed analysis of embeddings and attention maps may also interest those studying model interpretability.
+- **Major strengths**
+  - The concept of "coarse-tuning" is clearly defined and distinct from both transfer learning and fine-tuning, addressing a practical gap in the application of foundation models to specialized domains.
+  - The choice of OMBBs is well-justified, given their unique biophysical environment and evolutionary history, making them a strong test case for domain specialization.
+  - The evaluation strategy is multi-faceted, examining embeddings, downstream task performance, and attention maps, which provides a more comprehensive view of the model's behavior than a single metric.
+  - The observation regarding the sensitivity of embeddings to padded inputs is a practical and valuable insight for practitioners.
+- **Major Concerns**
+  - **R1-M1**
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Evidence sufficiency
+    - **Claim pointer** The central claim that coarse-tuned models "outperform the original foundation model" across multiple tasks.
+    - **Evidence pointer** Tables 1 and 2, Figures 3 and 7 (location not provided)
+    - **Concern** All quantitative results supporting the central claim are presented only in figures and tables that are not included in the supplied material. The text provides qualitative descriptions (e.g., "measurably better," "more pronounced clustering," "AUC of 0.62") but no actual numbers, error bars, or statistical significance tests. Without this data, the magnitude and reliability of the reported improvements cannot be assessed.
+    - **Why it matters** The core contribution of the paper is the demonstration that coarse-tuning improves performance. If the improvements are marginal, inconsistent, or not statistically significant, the practical value of the method is substantially diminished. The current evidence base is insufficient to establish the claim.
+    - **Resolution test** Provide the actual data from Tables 1 and 2, including all accuracy values, standard deviations, and the number of test samples. Include the ROC curves from Figure 7 with AUC values and confidence intervals. Ideally, include a statistical test (e.g., paired bootstrap or McNemar's test) comparing the coarse-tuned and vanilla models.
+  - **R1-M2**
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Methodological completeness
+    - **Claim pointer** The claim that a dataset of ~80,000 sequences is "sufficient to effectively specialize a foundation model."
+    - **Evidence pointer** Section 2.1 (location not provided)
+    - **Concern** The manuscript does not describe the composition of the ~80,000 sequence dataset in sufficient detail. It is stated to be "predicted OMBB sequences" from a prior study, but the source, the method of prediction, the redundancy reduction (if any), and the potential for contamination with non-OMBB sequences are not discussed. The authors acknowledge the dataset may contain non-OMBBs but argue this is not a problem; however, the extent of contamination and its effect on the training signal is unknown. Furthermore, the choice of 200 epochs and the number of frozen layers (0, 2, 4, 6, 8, 10) is presented without justification. The claim of sufficiency is a key practical conclusion, but it is not supported by a systematic analysis of dataset size or composition.
+    - **Why it matters** The practical utility of coarse-tuning depends on the ability to collect a suitable dataset. If the dataset requirements are not well-characterized, practitioners cannot determine whether the method is applicable to their domain of interest. The claim of "sufficiency" is a strong statement that requires more rigorous support.
+    - **Resolution test** Provide a detailed description of the dataset: source database, prediction method, sequence identity clustering threshold, and an estimate of the false-positive rate. Ideally, include an ablation study showing performance as a function of dataset size (e.g., 10k, 20k, 40k, 80k sequences) to demonstrate that 80k is indeed sufficient and to explore the lower bound.
+  - **R1-M3**
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Interpretability of results
+    - **Claim pointer** The claim that coarse-tuning "rescued the relationships among embeddings of different amino acids" and that this is biophysically relevant.
+    - **Evidence pointer** Section 2.2, Figure 2 (location not provided)
+    - **Concern** The analysis of amino acid embedding relationships is based on visual inspection of t-SNE plots. The text describes qualitative observations (e.g., "M is among the other hydrophobic residues") but provides no quantitative measure of clustering quality or biophysical relevance. The choice of t-SNE parameters (perplexity, iterations) is not reported for this figure. The claim that the relationships are "biophysically relevant" is an interpretation that is not directly tested.
+    - **Why it matters** The embedding analysis is presented as evidence that coarse-tuning improves the model's internal representations. If this is based solely on subjective visual inspection, it is not a robust or reproducible finding. A more quantitative analysis would strengthen the claim and provide a clearer link between the training procedure and the observed improvements.
+    - **Resolution test** Provide a quantitative analysis of the embedding space, such as measuring the correlation between embedding distances and a biophysical property (e.g., hydrophobicity scale), or using a clustering metric (e.g., silhouette score) to compare the separation of amino acid types between the two models. Report the t-SNE parameters used.
+  - **R1-M4**
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Generalizability of conclusions
+    - **Claim pointer** The claim that the improved performance on OMBBs suggests that coarse-tuning can be applied to other protein domains.
+    - **Evidence pointer** Section 3 (Discussion) (location not provided)
+    - **Concern** The manuscript demonstrates the method on a single protein family (OMBBs). While the authors speculate on the reasons for the improvement (distinct biophysical environment, evolutionary relatedness), no evidence is provided that the method would work for other domains. The claim in the abstract that the work "suggests that a medium-sized dataset is sufficient to effectively specialize a foundation model" is a generalization from a single case study.
+    - **Why it matters** The broader impact of the paper depends on the generalizability of the method. Without evidence from additional domains, the conclusion is speculative and may not hold for protein families with different characteristics (e.g., less sequence diversity, different structural constraints).
+    - **Resolution test** Either temper the claims of generalizability in the abstract and discussion, or provide a proof-of-concept on at least one additional, distinct protein domain to demonstrate that the method is not specific to OMBBs.
+- **Minor Comments**
+  - **R1-m1**
+    - **Severity** Minor
+    - **Axis** Clarity
+    - **Affected element** Section 2.1, description of training
+    - **Evidence pointer** Section 2.1 (location not provided)
+    - **Issue** The text states "we trained for 200 epochs on a random subset of 70% of the proteins in the dataset" but also mentions "150000 steps." The relationship between epochs and steps is not clear, and the batch size is not stated (though it is implied to be 1 later in the text).
+    - **Required correction** Clarify the training setup: state the batch size explicitly, and explain the relationship between epochs and steps (e.g., "200 epochs, corresponding to 150,000 optimization steps with a batch size of 1").
+  - **R1-m2**
+    - **Severity** Minor
+    - **Axis** Completeness
+    - **Affected element** Section 2.3, test set description
+    - **Evidence pointer** Section 2.3 (location not provided)
+    - **Issue** The test set is described as including 97 experimentally solved structures, 189 AlphaFold-predicted structures, and 30 non-barrel domains. The source of the 189 AlphaFold-predicted structures is not specified, and the criteria for selecting these specific sequences are not given.
+    - **Required correction** Provide a reference or description of the source of the AlphaFold-predicted structures and the selection criteria for inclusion in the test set.
+  - **R1-m3**
+    - **Severity** Minor
+    - **Axis** Presentation
+    - **Affected element** Section 2.4, contact prediction analysis
+    - **Evidence pointer** Section 2.4 (location not provided)
+    - **Issue** The text mentions "logistic regression of the attention values" for contact prediction but does not describe how this regression was performed, what features were used, or how the model was trained.
+    - **Required correction** Provide a brief description of the logistic regression setup, including the input features and training procedure.
+  - **R1-m4**
+    - **Severity** Minor
+    - **Axis** Consistency
+    - **Affected element** Section 2.2, Figure 2
+    - **Evidence pointer** Section 2.2 (location not provided)
+    - **Issue** The text refers to "Figure 2A" twice for both the ESM-vanilla and coarse-tuned models, which is ambiguous. It is likely that one of these should be "Figure 2B."
+    - **Required correction** Correct the figure references to clearly distinguish between the two panels.
+  - **R1-m5**
+    - **Severity** Minor
+    - **Axis** Clarity
+    - **Affected element** Section 2.1, model selection
+    - **Evidence pointer** Section 2.1 (location not provided)
+    - **Issue** The text states that the model with 0 frozen layers was the "top-performing model in the chosen downstream tasks" but does not provide the comparison data for the other models with different numbers of frozen layers.
+    - **Required correction** Briefly summarize the performance of the models with different frozen layers, or refer to a supplementary table that provides this comparison.
+- **Technical failings that need to be addressed before the case is established**
+  - R1-M1 (lack of quantitative evidence)
+  - R1-M2 (insufficient dataset characterization)
+  - R1-M3 (subjective embedding analysis)
+- **Assessment against Nature-style criteria**
+  - **Originality** The concept of "coarse-tuning" is a novel and potentially valuable contribution. While the idea of further training a pre-trained model on domain-specific data is not entirely new, the specific framing, the use of a relatively small unlabeled dataset, and the focus on a distinct protein family provide a fresh perspective. The work is not merely an incremental application of existing methods.
+  - **Scientific importance** The potential importance is moderate to high. If the method is robust and generalizable, it could provide a practical and cost-effective way to adapt large foundation models to specialized research areas. The OMBB case study is relevant to a significant community. However, the importance is currently tempered by the lack of rigorous evidence and the single-domain demonstration.
+  - **Interdisciplinary readership** The topic is at the intersection of machine learning, computational biology, and structural biology. The writing is generally accessible to a computational biology audience, but the lack of quantitative details and the reliance on qualitative descriptions may limit its appeal to a broader readership. The practical implications for experimental biologists working on membrane proteins could be highlighted more clearly.
+  - **Technical soundness** The overall approach is technically sound in principle, but the execution as presented has significant gaps. The training procedure is described, but key details are missing. The evaluation methodology is reasonable in design but the results are not presented in a verifiable form. The embedding analysis is subjective. The technical soundness cannot be fully assessed without the missing data.
+  - **Readability for nonspecialists** The abstract and introduction are clear and accessible. The methods and results sections are more technical and assume familiarity with protein language models and machine learning concepts. The discussion is somewhat speculative. The manuscript is readable for a specialist but would benefit from a more explicit statement of the practical implications for a broader audience.
+- **Recommendation posture** Currently not established from the provided evidence. The central claims of improved performance are plausible and the concept is interesting, but the lack of quantitative data, incomplete methodological details, and subjective analyses prevent a rigorous evaluation. The manuscript has the potential to be a valuable contribution, but it requires substantial revision and the inclusion of the missing evidence before the claims can be considered supported. I would be supportive if the technical concerns are resolved.
+
+## Risk / unsupported claims
+- The claim that coarse-tuned models "outperform" the original model is unsupported without the actual numerical results from Tables 1 and 2 and Figure 7.
+- The claim that a "medium-sized dataset (fewer than 100,000 protein sequences) is sufficient" is a generalization from a single case study and is not supported by any systematic analysis.
+- The claim that coarse-tuning "rescued the relationships among embeddings" is based on subjective visual inspection of t-SNE plots and is not quantitatively supported.
+- The claim that the improved performance is due to the "distinct biophysical environment" and "evolutionary relationships" of OMBBs is speculative and not tested.
+- The statement that the dataset "only contains real domain sequences, so we do not mislead the model with false information" is an assumption that is not verified or discussed in detail.

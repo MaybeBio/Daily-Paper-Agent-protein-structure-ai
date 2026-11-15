@@ -1,0 +1,77 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors present ioNERDSS, a Python package that converts 3D atomic protein structures into coarse-grained (CG) models for stochastic reaction-diffusion simulations of macromolecular self-assembly using the NERDSS software. The package enforces orientational constraints, regularizes repeated subunits, initializes binding affinities via ML tools, and is benchmarked on over 50,000 PDB structures.
+- **Visible evidence base** Abstract text only; no quantitative results, benchmark details, or validation data are visible
+- **Missing materials affecting confidence** Full manuscript, methods section, figures, tables, benchmark datasets, code availability statement, and any supplementary information
+
+## Reviewer
+- **Overall assessment** The abstract describes a potentially valuable software tool that addresses a real gap in the field, namely converting static structural data into dynamic self-assembly simulations. The concept is timely and the scope of benchmarking (50,000 PDB structures) is ambitious. However, the abstract provides insufficient quantitative evidence to evaluate the tool's performance, reliability, or novelty relative to existing approaches. The claims of successful assembly for "the majority" of CG models are vague and unverifiable from the supplied material. The technical approach is plausible but key details on how structural constraints are enforced, how ML predictions are integrated, and how thermodynamic reversibility is maintained are absent.
+- **Who would be interested in the results, and why** Computational biophysicists and structural biologists studying macromolecular assembly, particularly those working on viral capsids, protein complexes, and synthetic biology applications. Researchers developing coarse-grained simulation methods and those interested in integrating AlphaFold/PDB structures with dynamic modeling would also find this relevant. The tool's user-friendly Python interface could appeal to experimentalists seeking to model assembly pathways from known structures.
+- **Major strengths** The tool addresses a clear and important gap between static structural biology and dynamic simulation of assembly processes. The approach of enforcing orientational constraints and regularizing repeated subunits is conceptually sound for maintaining target topology. The integration of ML-based affinity prediction and thermodynamic reversibility constraints shows awareness of both accuracy and physical realism. The large-scale benchmarking effort (50,000 structures) suggests a serious validation attempt.
+- **Major Concerns** 
+  - R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "Benchmarking on over 50,000 PDB structures shows the majority of CG models will stochastically assemble into target structures."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The central performance claim is presented without any quantitative detail. What fraction constitutes "the majority"? What is the distribution of success rates across different structure types, sizes, or symmetries? How was "successful assembly" defined and measured? No error rates, failure modes, or comparative baselines are provided.
+  - **Why it matters** This is the primary evidence that the tool works as claimed. Without quantitative benchmarks, the reader cannot assess whether the tool is genuinely useful or whether it fails for most realistic targets. The claim is too vague to support the tool's utility.
+  - **Resolution test** Provide specific success rates, stratified by structure class (e.g., capsids, multi-subunit complexes, fibers), with clear definitions of assembly success (e.g., RMSD to target, fraction of native contacts). Include failure analysis and comparison to existing tools or naive approaches.
+  - R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "Each protein chain is defined by a rigid subunit with discrete interfaces and explicit orientational constraints that enforce a structured assembly."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not explain how orientational constraints are derived from atomic structures, how interfaces are identified, or how the rigid subunit approximation handles conformational flexibility that is often critical for assembly. The method for regularizing repeated subunits to preserve topology across stochastic pathways is also not described.
+  - **Why it matters** These are the core methodological innovations that distinguish ioNERDSS from existing CG approaches. Without understanding the constraint derivation and regularization scheme, the reader cannot evaluate whether the method is generalizable or limited to specific structure types. The rigid subunit assumption may fail for proteins with significant domain motion.
+  - **Resolution test** Describe the algorithm for interface detection and constraint assignment, including how flexibility is handled. Provide validation on structures with known conformational changes during assembly. Show that the regularization scheme does not introduce artifacts in assembly pathways.
+  - R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Reproducibility
+  - **Claim pointer** "We initialize pairwise binding affinities using ML prediction tools, and our default CG models are all constrained by thermodynamic reversibility to reach an equilibrium steady-state."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The specific ML tools used, their training data, and the accuracy of their affinity predictions for the diverse set of PDB structures are not stated. The thermodynamic reversibility constraint is mentioned but its implementation and impact on simulation outcomes are unclear.
+  - **Why it matters** Binding affinities are critical parameters that determine assembly pathways and outcomes. If the ML predictions are inaccurate for certain protein classes, the simulations may produce incorrect results. The reversibility constraint could also limit the exploration of kinetically trapped states that are biologically relevant.
+  - **Resolution test** Specify the ML tools and their validation on experimental binding data. Show how affinity prediction errors propagate to assembly outcomes. Demonstrate that the reversibility constraint does not preclude capturing non-equilibrium assembly behavior.
+- **Minor Comments** 
+  - R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Tool description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not clarify the relationship between ioNERDSS and NERDSS. Is ioNERDSS a wrapper, a plugin, or a standalone extension? Users need to know what additional software dependencies are required.
+  - **Required correction** State explicitly whether ioNERDSS requires NERDSS as a dependency and describe the interface between the two packages.
+  - R1-m2
+  - **Severity** Minor
+  - **Axis** Scope
+  - **Affected element** Benchmarking claim
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The benchmark of 50,000 PDB structures is mentioned but the computational cost of running these simulations is not addressed. If each simulation requires significant compute time, the practical utility for users with limited resources is unclear.
+  - **Required correction** Provide typical runtime and resource requirements for representative structures, and discuss scalability.
+  - R1-m3
+  - **Severity** Minor
+  - **Axis** Usability
+  - **Affected element** User guidance
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract notes that binding rates and subunit abundances are "key variables that users should tune" but provides no guidance on how to choose these parameters or how sensitive results are to them.
+  - **Required correction** Include a brief description of parameter sensitivity analysis or provide default parameter selection guidelines in the full manuscript.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (quantitative benchmark evidence), R1-M2 (methodological detail on constraints and regularization)
+- **Assessment against Nature-style criteria** 
+  - **Originality** The concept of automated conversion of PDB/AlphaFold structures into CG self-assembly simulations is not entirely new, but the specific combination of orientational constraints, subunit regularization, and ML-based affinity initialization may offer a novel integration. The originality claim is weakened by lack of comparison to existing tools.
+  - **Scientific importance** The problem addressed is important, as understanding self-assembly pathways from known structures has broad implications for virology, cell biology, and nanotechnology. However, the abstract does not demonstrate that the tool provides new biological or mechanistic insights beyond what existing methods achieve.
+  - **Interdisciplinary readership** The tool could appeal to structural biologists, computational chemists, and biophysicists. The abstract is written in accessible language but lacks the quantitative detail that would engage a broader interdisciplinary audience.
+  - **Technical soundness** The approach is plausible but insufficiently detailed to assess. The rigid subunit assumption and ML-based affinity predictions raise concerns about accuracy and generalizability that are not addressed in the abstract.
+  - **Readability for nonspecialists** The abstract is generally clear and avoids excessive jargon, but terms like "stochastic reaction-diffusion" and "thermodynamic reversibility" may be challenging for readers outside computational biophysics. The significance of the 50,000-structure benchmark is not contextualized for nonspecialists.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a promising tool but lacks the quantitative and methodological detail needed to evaluate its claims. Supportive if the full manuscript provides rigorous benchmarks, clear methodological descriptions, and validation against experimental or known assembly data.
+
+## Risk / unsupported claims
+- The claim that "the majority of CG models will stochastically assemble into target structures" is unsupported without quantitative benchmark data.
+- The claim that ioNERDSS "transforms" structures "for immediate simulation" implies ease of use that is not demonstrated.
+- The claim that the tool "supports assembly of structures with thousands of subunits" is unverifiable without performance data.
+- The claim that ML-based affinity predictions are reliable for diverse protein classes is unsupported.
+- The claim that thermodynamic reversibility constraints ensure physically meaningful equilibrium states is not substantiated.
+- The overall utility of the tool relative to existing CG simulation approaches is not assessable from the abstract.

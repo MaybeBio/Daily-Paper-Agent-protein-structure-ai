@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no full-text methods, figures, or data are available for verification
+- **Shared manuscript claim summary** The authors report that structure-based computational modeling was used to design nsP1 mutants predicted to disrupt dodecameric assembly in Semliki Forest virus. Molecular dynamics simulations suggested reduced membrane-binding affinity. Experimental assays (Western blotting, confocal microscopy, trans-replicase assays, viral challenge) indicated that mutant nsP1 is mislocalized to endosomal compartments and fails to support viral RNA replication. The authors conclude that nsP1 dodecamerization is required for plasma membrane stabilization and propose targeting oligomerization as an antiviral strategy.
+- **Visible evidence base** Abstract text only; no figures, tables, methods details, or numerical data are provided
+- **Missing materials affecting confidence** Full methods, all figures and tables, statistical analyses, simulation parameters, mutant design details, replication assay protocols, viral challenge data, and any control experiments
+
+## Reviewer
+- **Overall assessment** The abstract presents a coherent and potentially interesting story linking nsP1 dodecamerization to membrane localization and viral replication. However, the evidence as presented is entirely descriptive and lacks quantitative detail. The central claims regarding the necessity of dodecamerization for replication are plausible but cannot be rigorously evaluated from the abstract alone. The computational predictions and experimental results are described in a way that suggests correlation rather than causation, and the proposed antiviral strategy is speculative without demonstration of therapeutic feasibility.
+- **Who would be interested in the results, and why** Researchers studying togavirus replication, alphavirus molecular biology, viral replication organelle biogenesis, and antiviral drug development targeting viral protein oligomerization. The work may also interest structural biologists studying membrane-associated protein complexes and those working on other positive-sense RNA viruses with analogous replication strategies.
+- **Major strengths** The study addresses a specific and mechanistically important question about the functional role of nsP1 oligomerization. The combination of computational design, molecular dynamics, and cell-based assays represents a multi-pronged approach. The use of trans-replicase assays and viral challenge experiments provides complementary functional readouts. The potential translational relevance to antiviral development is clearly articulated.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The authors claim that nsP1 dodecamerization is required for its stabilization on plasma membranes and that dodecamerization-surface mutants are deficient in supporting viral replication.
+  - **Evidence pointer** Abstract sections describing Western blotting, confocal microscopy, trans-replicase assays, and viral challenge experiments; location not provided
+  - **Concern** The abstract states that mutant proteins "appear to not be stably retained at the plasma membrane" and are "mislocalized to endosomal compartments," but no quantitative data are presented. It is unclear whether the observed mislocalization is due to disrupted dodecamerization per se or to protein misfolding, aggregation, or reduced expression levels. The Western blotting was performed under denaturing reducing conditions, which would not preserve oligomeric states, so this assay cannot directly confirm or refute dodecamer disruption in cells. The trans-replicase and viral challenge results are described only as showing deficiency, without effect sizes, statistical significance, or comparison to appropriate controls.
+  - **Why it matters** The central conclusion that dodecamerization is functionally required depends on excluding alternative explanations such as general protein instability or misfolding. Without quantitative localization data, oligomerization state assessment in cells, and replication data with statistical support, the causal link between dodecamerization and replication competence is not established.
+  - **Resolution test** Provide quantitative colocalization analysis with plasma membrane and endosomal markers, include a properly folded but oligomerization-deficient control mutant, show that mutant proteins are expressed at comparable levels to wild type, and present replication data with statistical analysis and appropriate positive and negative controls.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Computational-experimental integration
+  - **Claim pointer** The authors state that molecular dynamics simulations "indicated that these mutations may impair the membrane-binding affinity of nsP1."
+  - **Evidence pointer** Abstract section describing molecular dynamics simulations; location not provided
+  - **Concern** The abstract does not specify which metrics were used to assess membrane-binding affinity in the simulations, how many independent simulations were performed, what force field and membrane model were used, or whether the predicted affinity changes were experimentally validated. The word "may" indicates uncertainty, yet the subsequent experimental claims are framed as if the computational prediction was confirmed.
+  - **Why it matters** The computational predictions are the basis for mutant design. If the simulations are not robust or the predicted affinity changes are not experimentally verified, the interpretation of all subsequent experimental results becomes ambiguous. The link between predicted structural disruption and observed functional outcomes needs to be explicitly demonstrated.
+  - **Resolution test** Provide simulation details including convergence criteria, replicate numbers, and error estimates. Include experimental measurement of membrane binding affinity (for example, liposome binding assays or surface plasmon resonance) for wild-type and mutant nsP1 to validate the computational predictions.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Generalizability of antiviral strategy
+  - **Claim pointer** The authors propose that "targeting the oligomerization of membrane-associated replication proteins represents a viable antiviral strategy for Togaviruses and potentially other positive-sense RNA viruses."
+  - **Evidence pointer** Abstract section under IMPORTANCE; location not provided
+  - **Concern** The abstract provides no evidence that the identified mutants or any small molecule inhibitor can block nsP1 oligomerization in a therapeutically relevant context. No data on compound screening, dose-response effects, or cytotoxicity are presented. The extension to other positive-sense RNA viruses is speculative, as the abstract only addresses Semliki Forest virus nsP1.
+  - **Why it matters** The proposed antiviral strategy is a significant claim that goes beyond the data presented. Without demonstration that oligomerization can be pharmacologically targeted or that the concept applies beyond the single virus studied, this claim is not supported.
+  - **Resolution test** Provide proof-of-concept experiments showing that a pharmacological agent or peptide can disrupt nsP1 oligomerization and inhibit viral replication, with selectivity and toxicity data. Alternatively, temper the claim to reflect that the study identifies a potential target that warrants further investigation.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Methodological clarity
+  - **Affected element** Western blotting description
+  - **Evidence pointer** Abstract section describing Western blotting; location not provided
+  - **Issue** The abstract states that Western blotting was performed "under denaturing reducing conditions" but does not specify what was assessed with this assay. It is unclear whether the purpose was to confirm expression, assess molecular weight, or compare expression levels.
+  - **Required correction** Clarify the purpose of the Western blotting experiment and specify the antibodies used, loading controls, and whether quantification was performed.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Terminology precision
+  - **Affected element** Use of "dodecamerization surface"
+  - **Evidence pointer** Title and abstract; location not provided
+  - **Issue** The term "dodecamerization surface" is used without definition. It is unclear whether this refers to a specific structural interface identified in a published crystal structure or a computationally predicted interface.
+  - **Required correction** Define the dodecamerization surface with reference to the structural model used, including PDB identifier if applicable, and specify which residues were mutated.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Experimental design description
+  - **Affected element** Trans-replicase assay and viral challenge description
+  - **Evidence pointer** Abstract section describing functional assays; location not provided
+  - **Issue** The abstract does not specify whether the trans-replicase assay measured RNA synthesis directly or used a reporter system, nor does it indicate the multiplicity of infection or time points for the viral challenge experiments.
+  - **Required correction** Provide brief methodological details for the functional assays, including readouts and experimental conditions.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** All experimental results
+  - **Evidence pointer** Abstract sections describing experimental results; location not provided
+  - **Issue** No statistical information is provided for any experimental comparison. It is unclear whether differences between wild-type and mutant nsP1 were statistically significant.
+  - **Required correction** Include statistical test names, sample sizes, and p-values or confidence intervals for key comparisons in the full manuscript.
+
+## Risk / unsupported claims
+- The claim that nsP1 dodecamerization is required for plasma membrane stabilization is not fully supported because alternative explanations such as protein misfolding or instability are not excluded based on the abstract.
+- The claim that molecular dynamics simulations predicted reduced membrane-binding affinity is unverifiable without simulation details and experimental validation.
+- The claim that targeting oligomerization represents a viable antiviral strategy is speculative and not supported by any pharmacological or therapeutic data.
+- The statement that mutant proteins are "mislocalized to endosomal compartments" is presented without quantitative evidence or statistical support.
+- The generalizability of findings to other positive-sense RNA viruses is not supported by any comparative data.

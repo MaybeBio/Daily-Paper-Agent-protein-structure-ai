@@ -1,0 +1,80 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors present HandShake, a sequence-only, partner-specific protein-protein binding site predictor combining ProstT5, LoRA, cross-chain attention, and a contact supervision head. They claim state-of-the-art performance among sequence-only methods at a 30% redundancy threshold, comparable performance to structure-based methods, and demonstrate that sequence redundancy inflates AUROC by up to 0.079 and MCC by up to 0.145.
+- **Visible evidence base** Abstract text only; no numerical tables, benchmark definitions, dataset descriptions, or methodological details beyond those summarized
+- **Missing materials affecting confidence** Full methods, training and evaluation dataset specifications, benchmark construction details, redundancy filtering protocols, baseline comparisons, statistical significance tests, and all figures and tables
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially valuable contribution to protein-protein interaction prediction, addressing a recognized limitation in the field regarding redundancy inflation. The methodological combination is novel and the scale of training data is ambitious. However, the abstract alone provides insufficient detail to verify the central claims, particularly regarding benchmark construction, baseline fairness, and the statistical robustness of the reported performance differences. The redundancy inflation analysis is conceptually important but requires careful scrutiny of how it was conducted.
+- **Who would be interested in the results, and why** Computational biologists working on protein-protein interaction prediction, structural bioinformatics researchers, and developers of protein language model applications. The redundancy inflation findings would also interest method developers in the broader machine learning for biology community, as they highlight a systematic evaluation pitfall.
+- **Major strengths** The sequence-only design removes the test-time structural information requirement, which is a practical advantage. The use of ProstT5 with LoRA and cross-chain attention is a sensible architectural choice. The systematic redundancy threshold analysis addresses a real methodological gap. The scale of training data, derived from PPInterface, is a notable asset.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The claim that HandShake exceeds the best published sequence-only result at 30% redundancy threshold (AUROC = 0.811, MCC = 0.367, F1 = 0.45)
+  - **Evidence pointer** Abstract, performance metrics section; location not provided
+  - **Concern** The abstract reports absolute performance numbers but provides no comparison table, no baseline identifiers, and no statistical significance measures. It is unclear which specific published methods were compared, under what exact evaluation protocol, and whether the differences are within variance.
+  - **Why it matters** Without explicit baseline definitions and significance testing, the claim of exceeding prior results cannot be independently assessed. The field has known variability in benchmark construction, and small differences may not be meaningful.
+  - **Resolution test** Provide a comparison table with named baselines, confidence intervals or significance tests, and a precise description of the evaluation protocol used for all methods.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological transparency
+  - **Claim pointer** The claim that sequence redundancy inflates AUROC by up to 0.079 and MCC by up to 0.145 on identical models
+  - **Evidence pointer** Abstract, redundancy inflation analysis; location not provided
+  - **Concern** The abstract states these inflation values but does not describe how they were computed, which models were used, which redundancy thresholds were compared, or whether the inflation is consistent across model types. The direction and magnitude of inflation may depend heavily on dataset composition.
+  - **Why it matters** This is a central methodological contribution of the paper. If the analysis is not rigorously described, the finding cannot be reproduced or trusted, and its implications for the field remain unclear.
+  - **Resolution test** Describe the exact protocol for measuring inflation, including model architecture, training data splits, evaluation sets, and the statistical method used to derive the reported values.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Benchmark validity
+  - **Claim pointer** The claim that evaluation was conducted on systematically filtered benchmarks at four redundancy thresholds (30%-90% sequence identity)
+  - **Evidence pointer** Abstract, evaluation section; location not provided
+  - **Concern** The abstract does not specify how redundancy filtering was applied, whether it was done on the training set, test set, or both, and what sequence identity measure was used. The choice of filtering method can dramatically affect benchmark difficulty and comparability.
+  - **Why it matters** The redundancy threshold is the central variable in the evaluation. Without a precise definition, the reported performance numbers cannot be compared to other work, and the inflation analysis loses interpretability.
+  - **Resolution test** Provide a detailed description of the redundancy filtering pipeline, including the sequence identity metric, clustering method, and whether filtering was applied to training and test sets independently or jointly.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Comparative claim
+  - **Claim pointer** The claim that HandShake achieves comparable performance to existing partner-specific methods that use explicit structural information
+  - **Evidence pointer** Abstract, performance comparison section; location not provided
+  - **Concern** The abstract states comparability but provides no specific numbers, method names, or evaluation conditions for the structure-based methods. It is unclear whether the comparison is fair, given that structure-based methods may use different input representations and evaluation conventions.
+  - **Why it matters** This claim positions the method against a different class of predictors. Without specifics, the reader cannot judge whether the comparison is meaningful or whether the structural methods were evaluated under equivalent conditions.
+  - **Resolution test** Name the structure-based methods compared, report their performance on the same benchmarks, and describe any adjustments made to ensure fair comparison.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Method name and architecture description
+  - **Evidence pointer** Abstract, method description; location not provided
+  - **Issue** The abstract states the method combines ProstT5, LoRA, cross-chain attention, and a contact supervision head, but does not explain how these components interact or what the contact supervision head contributes to the final prediction.
+  - **Required correction** Provide a brief architectural summary in the abstract or indicate that full details are in the methods section.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Dataset description
+  - **Affected element** PPInterface dataset
+  - **Evidence pointer** Abstract, training data section; location not provided
+  - **Issue** The abstract calls PPInterface the most comprehensive structural protein-protein database to date, but provides no size, composition, or curation details.
+  - **Required correction** Add a sentence with dataset size and a reference, or clarify that details are in the methods.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Code and data availability
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** No statement about code or data availability is included in the abstract.
+  - **Required correction** Add an availability statement or confirm it appears in the full text.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, and R1-M3 are blocking because the central performance and inflation claims cannot be verified from the abstract alone. R1-M4 is important but not blocking if the other concerns are resolved.
+- **Assessment against Nature-style criteria** Originality is moderate to high, as the combination of ProstT5 with cross-chain attention for partner-specific prediction is not standard, and the redundancy inflation analysis addresses a real gap. Scientific importance is potentially high, given the practical value of sequence-only prediction and the methodological caution about redundancy. Interdisciplinary readership is plausible, spanning machine learning, structural biology, and drug discovery. Technical soundness cannot be fully assessed from the abstract, but the described architecture is reasonable. Readability for nonspecialists is adequate, though the abstract assumes familiarity with protein language models and binding site prediction.
+- **Recommendation posture** Supportive if technical concerns are resolved. The core idea is promising, but the abstract does not provide enough evidence to establish the claims. Full methods and results are required for a definitive assessment.
+
+## Risk / unsupported claims
+- The claim of exceeding the best published sequence-only result is unsupported without baseline names and significance testing.
+- The redundancy inflation values (AUROC up to 0.079, MCC up to 0.145) are unsupported without a described protocol.
+- The claim of comparability to structure-based methods is unsupported without specific comparisons.
+- The assertion that PPInterface is the most comprehensive database of its kind is unverifiable from the abstract alone.
+- The reported performance numbers (AUROC = 0.811, MCC = 0.367, F1 = 0.45) are not independently assessable without benchmark details.

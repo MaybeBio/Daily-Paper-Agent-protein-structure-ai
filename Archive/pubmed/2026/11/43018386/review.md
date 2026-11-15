@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the supplied abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors apply a previously developed dynamic coarse graining technique based on Markov state modeling to a model peptidic system that unfolds in a non-two-state manner. Using donor-acceptor distances of helical hydrogen bonds as collective variables with dimension reduction, they construct a Markov model that reproduces the microscopic unfolding behavior at moderate pulling velocities. They claim the method is suitable for systems where end-to-end distance is an insufficient order parameter and where unfolding is not cooperative.
+- **Visible evidence base** Abstract text only; no quantitative results, model validation metrics, simulation parameters, or comparisons with reference methods are provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, simulation protocols, model construction details, validation statistics, and any comparison with experimental or alternative computational results
+
+## Reviewer
+- **Overall assessment** The abstract presents a methodologically plausible extension of Markov state modeling to forced unfolding of a peptide with non-two-state behavior. The choice of hydrogen bond donor-acceptor distances as collective variables is physically motivated and addresses a known limitation of end-to-end distance based order parameters. However, the abstract provides no quantitative evidence to support the central claims of correctness, accuracy, or applicability. The claim that the model "correctly represents the microscopic behavior" is unsubstantiated without validation data. The scope of the claim regarding "not too fast pulling velocities" is vague and lacks a defined regime. The work may be of interest to computational biophysicists, but the current evidence base is insufficient to assess technical soundness or significance.
+- **Who would be interested in the results, and why** Computational biophysicists and physical chemists working on protein folding and mechanical unfolding simulations would be interested. Researchers developing coarse graining and dimensionality reduction methods for biomolecular dynamics would also find relevance. The work addresses a practical gap in applying Markov state models to non-equilibrium forced unfolding, which is a growing area in single molecule force spectroscopy and simulation.
+- **Major strengths** The methodological framing is clear and addresses a recognized limitation in the field, namely the inadequacy of end-to-end distance as an order parameter for certain unfolding pathways. The choice of hydrogen bond distances as collective variables is physically sensible and likely to capture local structural transitions that global coordinates miss. The explicit acknowledgment of the pulling velocity regime as a limiting factor shows awareness of the method's boundaries.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** The abstract claims the Markov model "correctly represents the microscopic behavior of the system for not too fast pulling velocities."  
+  - **Evidence pointer** Abstract only; no validation data provided  
+  - **Concern** No quantitative evidence is presented to support the claim of correct representation. There are no metrics such as Chapman-Kolmogorov tests, implied timescale plots, or comparisons between model predictions and direct simulation observables. The phrase "correctly represents" is a strong assertion that requires demonstration.  
+  - **Why it matters** The central contribution of the paper is the claim that the Markov model faithfully reproduces the unfolding dynamics. Without validation, the method's utility cannot be assessed, and the claim is not established.  
+  - **Resolution test** Provide quantitative validation in the full manuscript, including but not limited to Chapman-Kolmogorov consistency checks, comparison of state populations or transition probabilities against direct MD simulations, and error estimates. Specify the range of pulling velocities for which the model is valid and show where it breaks down.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Scope and generalizability  
+  - **Claim pointer** The abstract claims the method "can be used to mimic the mechanical unfolding process of systems for which the end-to-end distance does not provide a sufficient order parameter and that do not unfold in a simple cooperative manner."  
+  - **Evidence pointer** Abstract only; single model peptide system  
+  - **Concern** The claim of general applicability is based on a single example. No evidence is provided that the method transfers to other systems with different secondary structure elements, sizes, or unfolding mechanisms. The choice of hydrogen bond distances as collective variables may be system specific.  
+  - **Why it matters** The stated significance of the work depends on its generalizability beyond the specific peptide studied. A single demonstration is insufficient to support a broad methodological claim.  
+  - **Resolution test** Either temper the claim to be system specific or provide additional examples or a systematic discussion of the conditions under which the collective variable choice is expected to work.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Reproducibility  
+  - **Claim pointer** The abstract describes the use of "an earlier developed dynamic coarse graining technique" and "dimension reduction" without specifying the methods.  
+  - **Evidence pointer** Abstract only; no methodological details  
+  - **Concern** The abstract does not identify the specific Markov state modeling approach, the dimension reduction technique, or the parameters used. This prevents assessment of reproducibility and comparability with existing methods.  
+  - **Why it matters** Reproducibility is a core requirement for computational studies. Without specification of the methods, readers cannot evaluate or replicate the work.  
+  - **Resolution test** In the full manuscript, clearly identify the Markov state modeling framework, the dimension reduction algorithm, and all relevant parameters including lag time, number of states, and discretization choices.
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Definition of "not too fast pulling velocities"  
+  - **Evidence pointer** Abstract  
+  - **Issue** The phrase "not too fast pulling velocities" is vague and does not define a quantitative regime.  
+  - **Required correction** Specify the range of pulling velocities tested and the criterion used to determine the validity limit.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Completeness  
+  - **Affected element** Comparison with existing methods  
+  - **Evidence pointer** Abstract  
+  - **Issue** The abstract does not mention how the proposed method compares with standard approaches such as umbrella sampling, steered MD with end-to-end distance, or other Markov state model variants.  
+  - **Required correction** Add a brief statement in the abstract or introduction on how the method compares with existing approaches in terms of accuracy or computational cost.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Terminology  
+  - **Affected element** Use of "dynamic coarse graining"  
+  - **Evidence pointer** Abstract  
+  - **Issue** The term "dynamic coarse graining" is not standard and may confuse readers.  
+  - **Required correction** Define the term explicitly on first use or use a more standard terminology such as "kinetic coarse graining" or "Markov state model based coarse graining."
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The absence of validation data for the central claim of correct representation and the overgeneralization from a single system must be resolved before the case is established.
+- **Assessment against Nature-style criteria**  
+  - **Originality** The approach of using hydrogen bond distances as collective variables for Markov state modeling of forced unfolding is a reasonable incremental contribution, but the abstract does not demonstrate conceptual novelty beyond existing Markov state model applications.  
+  - **Scientific importance** The work addresses a practical limitation in simulating non-two-state unfolding, which is relevant to the field, but the significance is not established without broader demonstration.  
+  - **Interdisciplinary readership** The topic is of interest to computational biophysicists and physical chemists, but the abstract is unlikely to attract a broad interdisciplinary audience without clearer implications for experimental single molecule studies.  
+  - **Technical soundness** Cannot be assessed from the abstract alone. The lack of validation data and methodological detail prevents evaluation.  
+  - **Readability for nonspecialists** The abstract is reasonably clear for a specialist audience but uses jargon such as "dynamic coarse graining" and "Markov state modeling" without sufficient context for nonspecialists.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a plausible methodological idea, but the central claims of correctness and generalizability are unsupported. I would be supportive if the full manuscript provides quantitative validation, defines the velocity regime, and tempers or substantiates the generalizability claim.
+
+## Risk / unsupported claims
+- The claim that the Markov model "correctly represents the microscopic behavior" is unsupported without validation data.
+- The claim of general applicability to systems with insufficient end-to-end distance order parameters is unsupported by a single example.
+- The existence of a well-defined "not too fast pulling velocities" regime is asserted but not quantified.
+- The suitability of hydrogen bond donor-acceptor distances as collective variables is plausible but not demonstrated to be optimal or sufficient.

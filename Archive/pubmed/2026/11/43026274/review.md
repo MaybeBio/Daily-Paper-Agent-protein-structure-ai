@@ -1,0 +1,77 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report a systematic evaluation of AlphaFold2- and AlphaFold3-derived models for structure-based virtual screening (VS), establish a hierarchical VS pipeline, apply it to the oncogenic fusion protein CLIP1-LTK, and identify QL07 as a small-molecule inhibitor with in vitro and in vivo activity.
+- **Visible evidence base** Abstract text only; no experimental details, benchmarking data, chemical structures, or statistical analyses are provided
+- **Missing materials affecting confidence** Full methods, benchmarking results, docking/scoring configurations, compound library details, chemical structures, IC50 determination protocol, signaling pathway data, apoptosis assays, xenograft study design, and statistical analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially valuable application of AlphaFold models to a target lacking experimental structures, with a clear translational arc from benchmarking to hit identification to preliminary biological validation. However, the abstract alone provides insufficient evidence to assess the technical rigor of the benchmarking, the validity of the VS pipeline, or the robustness of the biological data. The claim that QL07 is a promising inhibitor is supported only by a single IC50 value and qualitative descriptions of cellular and in vivo effects, without quantitative details or statistical context. The work is of interest to the computational drug discovery community, but the case is not fully established from the supplied material.
+- **Who would be interested in the results, and why** Computational chemists and structural biologists working on structure-based drug discovery, particularly those evaluating AlphaFold models for practical VS applications. Oncology researchers studying fusion kinase targets, especially CLIP1-LTK, would also be interested in the identification of a novel inhibitor scaffold. The methodological benchmarking component may appeal to method developers in the AI-for-drug-discovery space.
+- **Major strengths** The study addresses a timely and important question regarding the reliability of AlphaFold models for VS. The application to a clinically relevant fusion protein without experimental structures is a compelling use case. The progression from benchmarking to prospective application to experimental validation is a logical and ambitious design. The reported IC50 in the sub-micromolar range and the inclusion of both cellular and in vivo data suggest a substantive experimental effort.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness of benchmarking
+  - **Claim pointer** The authors claim a systematic evaluation of AlphaFold2- and AlphaFold3-derived models for VS and the establishment of a hierarchical VS methodology based on benchmarking results.
+  - **Evidence pointer** Abstract only; benchmarking details not provided
+  - **Concern** The abstract does not describe the benchmarking dataset, the number of targets, the metrics used to evaluate VS performance, or the criteria for selecting the hierarchical pipeline. Without these details, it is impossible to assess whether the benchmarking was sufficiently comprehensive or whether the conclusions drawn from it are statistically robust.
+  - **Why it matters** The entire premise of the study rests on the validity of the benchmarking. If the benchmarking is flawed or limited in scope, the subsequent application to CLIP1-LTK and the generalizability of the methodology are called into question.
+  - **Resolution test** Provide a description of the benchmarking dataset, including target diversity, number of actives and decoys, evaluation metrics (e.g., enrichment factor, AUC), and a comparison of AlphaFold models against experimental structures where available. Statistical significance of performance differences should be reported.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence for inhibitor activity
+  - **Claim pointer** The authors claim QL07 exhibited an IC50 of 524.27 nM and inhibited downstream signaling, induced apoptosis, and suppressed tumor growth in xenograft models.
+  - **Evidence pointer** Abstract only; no experimental details or quantitative results provided
+  - **Concern** A single IC50 value is reported without assay details, replicates, or error estimates. The descriptions of signaling inhibition, apoptosis induction, and tumor growth suppression are qualitative and lack quantitative data such as percent inhibition, dose-response relationships, or tumor volume measurements. No statistical analyses are mentioned.
+  - **Why it matters** The biological validation is the key translational evidence for the utility of the VS pipeline. Without quantitative and statistically supported data, the claim that QL07 is a promising inhibitor is not established.
+  - **Resolution test** Provide full dose-response curves with replicates and error bars, quantitative data for signaling pathway inhibition (e.g., phosphoprotein levels), apoptosis assays (e.g., annexin V percentages), and xenograft tumor growth curves with statistical comparisons to control groups.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Selectivity and mechanism of action
+  - **Claim pointer** The authors imply QL07 is a specific inhibitor of CLIP1-LTK based on the VS approach and downstream signaling inhibition.
+  - **Evidence pointer** Abstract only; selectivity data not mentioned
+  - **Concern** No information is provided regarding the selectivity of QL07 against other kinases or non-kinase targets. The mechanism of binding to CLIP1-LTK is not described, and it is unclear whether QL07 binds the LTK kinase domain or the fusion interface.
+  - **Why it matters** Without selectivity data, off-target effects could confound the observed biological activities. Understanding the binding mode is important for medicinal chemistry optimization and for assessing the validity of the AlphaFold-derived model used for docking.
+  - **Resolution test** Include kinase selectivity profiling or counter-screens against related kinases, and provide structural or mutagenesis evidence supporting the proposed binding mode.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity of methodology
+  - **Affected element** Hierarchical VS methodology
+  - **Evidence pointer** Abstract only
+  - **Issue** The term "hierarchical VS methodology" is vague and does not convey the specific stages or decision points in the pipeline.
+  - **Required correction** Briefly describe the stages of the hierarchical approach, such as initial docking, rescoring, and consensus filtering, in the abstract or provide a schematic in the main text.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Compound library details
+  - **Affected element** Library of approximately three million compounds
+  - **Evidence pointer** Abstract only
+  - **Issue** The source and chemical diversity of the compound library are not described, which limits the reproducibility of the screening approach.
+  - **Required correction** Specify the library source, chemical space coverage, and any filtering criteria applied before screening.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Analog searching rationale
+  - **Affected element** Similarity-based analog searching leading to QL07
+  - **Evidence pointer** Abstract only
+  - **Issue** The relationship between the initial hits and QL07 is not described, including the similarity metric used and the medicinal chemistry rationale for selecting QL07.
+  - **Required correction** Provide the chemical structures of the initial hits and QL07, and describe the similarity search criteria and optimization rationale.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** In vivo model relevance
+  - **Affected element** Xenograft models
+  - **Evidence pointer** Abstract only
+  - **Issue** The xenograft model is not described, including the cell line used, route of administration, dosing regimen, and whether the model is subcutaneous or orthotopic.
+  - **Required correction** Provide details of the xenograft study design, including the cell line, animal strain, dosing schedule, and tumor measurement methods.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking concerns. The benchmarking methodology and the quantitative biological validation must be fully described and statistically supported before the central claims can be accepted.
+- **Assessment against Nature-style criteria** Originality: The application of AlphaFold models to a fusion protein without experimental structures is a novel and timely contribution, though the general concept of AlphaFold-based VS is not entirely new. Scientific importance: The work addresses a practical bottleneck in drug discovery and could have broad implications for targeting undrugged proteins, but the significance depends on the robustness of the benchmarking and the translational validity of the biological data. Interdisciplinary readership: The topic bridges computational biology, medicinal chemistry, and oncology, and would appeal to a broad audience if the methods are clearly presented. Technical soundness: Cannot be assessed from the abstract alone; the benchmarking and biological validation require full scrutiny. Readability for nonspecialists: The abstract is concise and accessible, but the lack of methodological detail limits its utility for readers seeking to evaluate the approach.
+- **Recommendation posture** Supportive if technical concerns are resolved. The study has clear potential, but the abstract-level evidence is insufficient to establish the validity of the benchmarking or the biological claims. Full manuscript review is necessary to determine whether the case is made.
+
+## Risk / unsupported claims
+- The claim that the hierarchical VS methodology is "established" based on benchmarking is unsupported without benchmarking details.
+- The claim that QL07 is a "promising" inhibitor is supported only by a single IC50 value and qualitative biological descriptions; quantitative and statistical evidence is missing.
+- The generalizability of the AlphaFold-based VS approach to other targets without experimental structures is implied but not demonstrated beyond the single CLIP1-LTK case.
+- The selectivity of QL07 and its mechanism of action are not addressed and cannot be evaluated from the abstract.

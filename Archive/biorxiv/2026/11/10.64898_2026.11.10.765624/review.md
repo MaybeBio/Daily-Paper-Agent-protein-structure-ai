@@ -1,0 +1,107 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, methods, results, discussions, author contributions, competing interests, acknowledgments). Figures, tables, and supplementary materials referenced but not provided.
+- **Assessment boundary** Scientific validity, methodological soundness, clarity of claims, and alignment of evidence with conclusions, based solely on the provided text.
+- **Shared manuscript claim summary** The authors extend their bAIes framework, previously developed for AlphaFold2 distograms, to six AI structure predictors (AF2, AF3, Boltz-1, Boltz-2, ESMFold, ESMFold2) and demonstrate that bAIes generates atomistic ensembles of intrinsically disordered proteins with accuracy comparable to experimental NMR and SAXS data and competitive with state-of-the-art all-atom simulations and alternative ensemble generation methods.
+- **Visible evidence base** Methods descriptions (bAIes formalism, simulation protocols, back-calculation procedures), benchmark descriptions (17-IDP dataset, PeptoneDB-Integrative with 16 IDPs), and qualitative results statements. No figures, tables, or numerical data are visible in the provided material.
+- **Missing materials affecting confidence** All figures (Figures 1-5), supplementary figures (S1-S12), supplementary tables (S1-S3), and any quantitative results (RMSE values, error bars, statistical comparisons) are absent. This substantially limits the ability to verify the central claims.
+
+## Reviewer
+- **Overall assessment** The manuscript presents a timely and potentially valuable extension of the bAIes framework to multiple AI structure predictors, addressing an important question in the disordered protein community: whether distograms from different predictors carry useful conformational information for ensemble generation. The conceptual framing is clear and the methodological approach is well motivated. However, the provided text alone does not contain the quantitative evidence needed to assess whether the claims are fully supported. The results sections are descriptive rather than data-bearing, and the absence of all figures and tables makes it impossible to evaluate the magnitude of reported effects, the statistical significance of comparisons, or the validity of the stated conclusions. The manuscript is likely to be of interest to a specialized audience, but the case for broad impact and definitive conclusions is not established from the supplied material.
+- **Who would be interested in the results, and why** Computational biophysicists and structural biologists working on intrinsically disordered proteins and regions, particularly those interested in integrating AI-based structure prediction with physics-based sampling. Developers of ensemble generation methods and users of tools like AlphaFold, ESMFold, and Boltz for disordered systems would find the comparison across predictors and the benchmarking against experimental data relevant. The work may also interest method developers in the broader protein structure prediction community who are concerned with the information content of distogram outputs.
+- **Major Strengths**
+  - The question addressed is well defined and practically important: whether the choice of AI structure predictor materially affects the quality of downstream ensemble generation for IDPs.
+  - The extension of bAIes to six predictors, including recent models with different architectures and training strategies, is a logical and useful contribution.
+  - The benchmarking strategy is thoughtful, using both a curated dataset with multiple experimental observables and a comparison against several alternative ensemble generation methods.
+  - The authors acknowledge limitations honestly, including the issue of conditionally folded proteins and the difficulty of reproducing long-range observables.
+  - The new OpenMM implementation with GPU support is a practical improvement that will likely increase the usability of the method.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The manuscript claims that "bAIes generates ensembles with comparable accuracy against experimental NMR and SAXS data, and competitive performance relative to state-of-the-art all-atom simulations and alternative IDP ensemble generation methods."
+  - **Evidence pointer** Results sections "Experimental validation of bAIes across AI structure predictors" and "Benchmarking of bAIes against other IDP ensemble generation methods"; Figures 3-5; Tables S1-S3
+  - **Concern** The central quantitative claim of the manuscript cannot be evaluated from the provided text. All numerical results, including RMSE values, error bars, statistical comparisons, and benchmark rankings, are contained in figures and tables that were not supplied. The results sections describe trends qualitatively but provide no data points, no effect sizes, and no uncertainty estimates. Without access to the actual numbers, it is impossible to verify whether the stated conclusions follow from the evidence.
+  - **Why it matters** The claim of "comparable accuracy" and "competitive performance" is the core contribution of the work. If the underlying data do not support these statements, or if the comparisons are underpowered or confounded, the manuscript's value is substantially diminished. The reader cannot assess the magnitude of differences between predictors or between methods, nor whether the reported performance is practically meaningful.
+  - **Resolution test** Provide the full set of figures and tables with numerical values, including error bars and statistical tests, so that the claims can be quantitatively verified. If the data are available in a repository, state this explicitly and provide access details.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological transparency
+  - **Claim pointer** The manuscript states that "bAIes is robust to the choice of structure predictor" and that "the distance distributions generated by different deep learning architectures contain valuable information about the conformational preferences of disordered proteins."
+  - **Evidence pointer** Methods section "Comparison of distograms across predictors using PeptoneDB-CS"; Figures 1, S1-S5
+  - **Concern** The comparison of distograms across predictors is described qualitatively, but the criteria for "agreement" and "disagreement" between predictors are not fully specified. The Wasserstein distance and Pearson correlation are mentioned, but the thresholds for meaningful agreement or disagreement are not defined. Furthermore, the claim that distograms contain "valuable information" is not operationalized: what specific features of the distograms are informative, and how is this information quantified? The analysis appears to be descriptive rather than hypothesis-driven.
+  - **Why it matters** The manuscript's motivation rests on the premise that distograms from different predictors differ in ways that matter for ensemble generation. If the comparison is purely descriptive, the reader cannot determine whether the observed differences are systematic, biologically meaningful, or simply noise. The claim of robustness to predictor choice is central and requires a more rigorous definition of what constitutes a meaningful difference.
+  - **Resolution test** Define quantitative criteria for agreement and disagreement between predictors. Provide statistical tests for differences in distogram properties between ordered and disordered proteins. Clarify what specific distogram features are claimed to be informative and how they relate to downstream ensemble quality.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Benchmark validity
+  - **Claim pointer** The manuscript claims that bAIes is "competitive" with "state-of-the-art all-atom simulations and alternative IDP ensemble generation methods" on the PeptoneDB-Integrative benchmark.
+  - **Evidence pointer** Methods section "Benchmarking against other IDP ensemble generation methods"; Figure 5; Table S2
+  - **Concern** The comparison against other methods is described, but the details of how these methods were run are not provided. Were the alternative methods (IDP-o, IDPFold, idpGAN, BioEmu, ESMFlow, PepTron) run by the authors or were results taken from the literature? What hyperparameters or settings were used? The exclusion of four proteins with conditionally folded predictions is described, but the rationale for exclusion is based on the behavior of other methods, which could introduce bias. The criteria for "competitive" performance are not defined in terms of a specific metric or threshold.
+  - **Why it matters** Benchmarking studies are only meaningful if the comparison is fair and transparent. If the alternative methods were not run under equivalent conditions, or if the exclusion criteria favor bAIes, the conclusions about competitiveness may not be reliable. The reader needs to know the exact protocol to judge the validity of the comparison.
+  - **Resolution test** Provide full details of how each alternative method was run, including software versions, hyperparameters, and any preprocessing steps. Justify the exclusion criteria for the four conditionally folded proteins. Define the metric and threshold used to determine "competitive" performance.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Generalizability of conclusions
+  - **Claim pointer** The manuscript concludes that "bAIes is robust to the choice of structure predictor" and that the framework is "a flexible tool" for IDP ensemble generation.
+  - **Evidence pointer** Results sections "Experimental validation of bAIes across AI structure predictors" and "Benchmarking of bAIes against other IDP ensemble generation methods"; Figures 3-5
+  - **Concern** The benchmark datasets are limited in size (17 and 16 proteins, respectively) and may not be representative of the diversity of IDP sequences and behaviors. The authors note that the total number of proteins is limited (29), but the implications of this limitation for the generalizability of the conclusions are not discussed in depth. The claim of robustness across predictors is based on a small sample, and the variability between proteins within each category is not quantified.
+  - **Why it matters** If the conclusions are based on a small and potentially biased sample, they may not hold for the broader population of IDPs. The claim of robustness is strong and requires evidence that the findings are not specific to the particular proteins studied.
+  - **Resolution test** Discuss the limitations of the dataset size and composition explicitly. If possible, provide evidence that the conclusions hold across a more diverse set of IDPs, or temper the claims accordingly.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Methods section "Overview of the bAIes approach"
+  - **Evidence pointer** Methods, first subsection
+  - **Issue** The Bayesian formalism is presented in equations, but the notation is not fully defined in the text. For example, the meaning of the likelihood function p(D|X) and the prior p(X) is stated, but the specific forms of the Gaussian likelihood and the marginal likelihood are not explained in words.
+  - **Required correction** Add a brief verbal description of each equation, explaining the role of each term and how the marginalization over sigma is performed.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Methods section "Structure prediction and distogram extraction"
+  - **Evidence pointer** Methods, subsection on structure prediction
+  - **Issue** The manuscript states that model code was modified to extract distograms for AF3, Boltz-1, Boltz-2, and ESMFold, but does not specify the nature of these modifications or provide a link to the modified code.
+  - **Required correction** Provide a detailed description of the code modifications or a link to a repository containing the modified code, to ensure reproducibility.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Statistical rigor
+  - **Affected element** Methods section "Computational performance across simulation platforms"
+  - **Evidence pointer** Methods, subsection on computational performance
+  - **Issue** The performance comparison between LAMMPS and OpenMM is reported as a single speed value for each system size. It is unclear whether these are single runs or averages over multiple replicates, and no error estimates are provided.
+  - **Required correction** Report the number of replicates and the variability (e.g., standard deviation) for each performance measurement.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Discussion section
+  - **Evidence pointer** Discussion, paragraph on limitations
+  - **Issue** The discussion of the limitations of the approach is brief and does not address the potential impact of the choice of force field (amber99SB-ILDN with corrections) on the results. The authors note that the prior is a simplified random coil model, but do not discuss how this might affect the transferability of the method to systems with different physicochemical properties.
+  - **Required correction** Expand the discussion of the limitations of the prior model and its potential impact on the accuracy of the generated ensembles.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Results section "Consistency of IDP distograms across structure predictors"
+  - **Evidence pointer** Results, first subsection
+  - **Issue** The analysis of distogram consistency is described for the PaaA2 example, but it is unclear how representative this example is of the broader dataset. The manuscript states that "all methods systematically predict the two helices" but does not provide a systematic quantification of this agreement across the full benchmark.
+  - **Required correction** Provide a quantitative summary of the agreement across all proteins in the benchmark, not just a single example.
+- **Technical failings that need to be addressed before the case is established**
+  - R1-M1: Absence of all quantitative data (figures, tables) prevents verification of the central claims.
+  - R1-M2: Lack of defined criteria for distogram agreement and information content weakens the motivational premise.
+  - R1-M3: Insufficient detail on the benchmarking protocol for alternative methods undermines the validity of the comparison.
+- **Assessment against Nature-style criteria**
+  - Originality: The work is an incremental but useful extension of a previously published method. The idea of comparing multiple AI predictors for IDP ensemble generation is not entirely novel, as the authors themselves note that other groups have explored similar directions. The originality lies primarily in the systematic comparison and the open-source implementation, which is a moderate contribution.
+  - Scientific importance: The question of whether AI structure predictors can inform IDP ensemble generation is of genuine importance to the field. However, the importance of the specific findings, as presented, is difficult to gauge without the quantitative results. If the conclusions hold, the work would provide practical guidance for users of such tools, but the impact is likely to be incremental rather than transformative.
+  - Interdisciplinary readership: The manuscript is written for a specialized audience of computational structural biologists. The methods and terminology assume familiarity with Bayesian inference, molecular dynamics, and structure prediction. The broader significance for cell biology or biochemistry is not articulated in a way that would attract readers outside the immediate field.
+  - Technical soundness: The methodological framework is sound in principle, and the authors have prior work demonstrating the validity of the bAIes approach. However, the technical soundness of the specific claims in this manuscript cannot be assessed without the data. The lack of detail on the benchmarking protocol and the statistical treatment of results is a concern.
+  - Readability for nonspecialists: The abstract is clear and accessible, but the methods and results sections are dense and assume substantial background knowledge. The manuscript would benefit from a more explicit statement of the practical implications for nonspecialist readers.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript addresses a relevant question and the methodological approach is reasonable, but the absence of all quantitative data and the lack of detail on key methodological aspects prevent verification of the central claims. The authors should be invited to resubmit with the full set of figures, tables, and statistical analyses, along with a more detailed description of the benchmarking protocol. If the data support the stated conclusions, the manuscript could be suitable for publication in a specialized journal, though the impact may not reach the level expected for Nature.
+
+## Risk / unsupported claims
+- The claim that "bAIes generates ensembles with comparable accuracy against experimental NMR and SAXS data" is unsupported in the provided text, as no numerical results are visible.
+- The claim that bAIes is "competitive" with "state-of-the-art all-atom simulations and alternative IDP ensemble generation methods" is unsupported without the benchmark data and details of the comparison protocol.
+- The claim that "the distance distributions generated by different deep learning architectures contain valuable information about the conformational preferences of disordered proteins" is not operationalized and cannot be evaluated.
+- The claim that "bAIes is robust to the choice of structure predictor" is stated as a conclusion but is not supported by quantitative evidence in the provided text.
+- The performance comparison between LAMMPS and OpenMM implementations is reported without error estimates or replicate information, making the claim of improved efficiency unverifiable.

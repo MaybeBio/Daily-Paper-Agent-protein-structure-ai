@@ -1,0 +1,106 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, methods, results, discussion, conclusions) without figures, tables, or supplementary material
+- **Assessment boundary** Scientific validity, methodological soundness, claims versus evidence, and suitability for the stated journal context
+- **Shared manuscript claim summary** The authors present FlexENN, a message-passing graph neural network with two independently trained models (FlexENN-F for folded complexes, FlexENN-I for IDP-containing complexes), which predicts binding free energies from single resolved bound structures using interface-restricted graphs with physicochemical, geometric, and flexibility-related node features. They report accurate predictions on benchmark systems including microtubule and MAP complexes, and demonstrate distinct feature dependencies between folded and disordered systems via ablation studies.
+- **Visible evidence base** Text descriptions of datasets (PDBbind-derived, 2,257 folded and 1,071 IDP complexes), benchmark predictions (numerical values cited in text), ablation study results (numerical values cited in text), and methodological descriptions. Figures and tables referenced but not provided.
+- **Missing materials affecting confidence** All figures, tables, and supplementary material are absent. This includes the model architecture diagram, dataset distribution plots, performance comparison tables, ablation result figures, and the MD simulation analysis described in the Supporting Information. Numerical results are reported in text but cannot be independently verified without the corresponding figures and tables.
+
+## Reviewer
+- **Overall assessment** The manuscript addresses a genuine and timely gap: binding energy prediction for IDP-containing complexes, for which conventional structure-based scoring functions are poorly suited. The core idea of an interface-restricted graph neural network with flexibility-related descriptors is reasonable and potentially valuable. However, the evidence presented in the text alone is insufficient to establish the central claims. Key quantitative results are reported without the corresponding figures or tables, the benchmark evaluation is limited in scope, and critical methodological details (dataset construction, train/test separation, statistical significance) are incompletely described. The ablation studies are described qualitatively rather than quantitatively. The work is promising but currently not established from the provided evidence.
+- **Who would be interested in the results, and why** Computational biophysicists and structural biologists working on protein-protein interactions, particularly those studying IDPs and their binding mechanisms. Researchers developing machine learning methods for binding affinity prediction would also find the approach relevant, as would experimentalists studying microtubule-associated proteins who need computational estimates of binding energetics. The curated IDP binding dataset could be a useful community resource.
+- **Major strengths** The problem addressed is important and underexplored; most existing methods are designed for folded complexes. The two-model architecture (folded vs IDP) is a sensible design choice given the different physical principles governing these interactions. The use of interface-restricted graphs with relative geometry is computationally efficient and translation-invariant. The benchmark choice of microtubule systems is biologically relevant and provides a stringent test. The ablation studies, if fully presented, could provide mechanistic insight into which features matter for different complex types.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "the models reproduce physically reasonable energetic profiles, including the stronger interdimer relative to the lateral MT interactions"
+  - **Evidence pointer** Results and Discussion, Predictive Performance of FlexENN; Table (referenced but not provided)
+  - **Concern** The central quantitative claim of accurate binding energy prediction is supported only by text descriptions of results. The referenced tables and figures that would contain the actual predicted versus experimental values, error metrics, and comparisons to baselines are not available in the provided material. Without these, the magnitude of errors, the statistical significance of improvements over baselines, and the consistency of predictions across systems cannot be assessed.
+  - **Why it matters** The core contribution of the paper is a predictive model. Its validity rests entirely on quantitative performance metrics. Text descriptions such as "predicted −10.37 kcal/mol against the experimental value of −10.8 kcal/mol" are helpful but insufficient; the reader needs to see the full distribution of predictions, error bars, and comparisons across all benchmark systems to judge whether the model is genuinely accurate or merely performing well on a few favorable cases.
+  - **Resolution test** Provide the referenced tables and figures with full quantitative results, including per-system predictions, error metrics (RMSE, MAE, Pearson r), and comparisons to all baselines. Include confidence intervals or error bars where applicable.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological rigor
+  - **Claim pointer** "we constructed and curated an IDP-focused binding dataset by matching experimentally characterized IDPs from DisProt with available PDB structures and experimental binding affinity measurements from PDBbind+"
+  - **Evidence pointer** Materials and Methods, Datasets Preparation
+  - **Concern** The dataset construction process is described at a high level but lacks critical details. How were IDPs identified and matched between DisProt and PDB? What fraction of the 1,071 complexes have experimentally verified disorder versus predicted disorder? How was the 5% to 80% disorder range determined, and what is the distribution within that range? Most importantly, how were the 703 structures selected from the initial pool, and what filtering criteria beyond those listed were applied? The text mentions "the same filtering criteria applied to the folded proteins" but these are not fully enumerated.
+  - **Why it matters** The IDP dataset is a claimed contribution of the work and the training basis for FlexENN-I. If the dataset is not rigorously constructed and described, the model trained on it cannot be properly evaluated, and the dataset cannot serve as a reliable resource for the community. Reproducibility requires a complete description of the curation pipeline.
+  - **Resolution test** Provide a detailed, step-by-step description of the dataset construction pipeline, including inclusion/exclusion criteria, the number of complexes removed at each step, and validation of disorder annotations. Consider making the dataset publicly available with clear documentation.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Benchmark validity
+  - **Claim pointer** "we chose to evaluate our models on a benchmark set independent of the training set"
+  - **Evidence pointer** Materials and Methods, Benchmark Set; Results and Discussion, Predictive Performance of FlexENN
+  - **Concern** The benchmark set is described as independent, but the text does not establish that the benchmark complexes share no significant sequence or structural similarity with training complexes. For the MT-MAPs subset, the tubulin structure is a common fold, and it is unclear whether similar tubulin complexes appear in the training data. For the three additional IDP complexes (1AXC, 1JDH, 2GL7), no information is given about their relationship to training complexes. Sequence or structural homology between training and test sets could lead to inflated performance estimates.
+  - **Why it matters** Generalization claims depend on the benchmark being truly independent. If the model has seen similar complexes during training, its performance on the benchmark does not reflect its ability to handle novel systems. This is a standard concern in machine learning for structural biology and must be explicitly addressed.
+  - **Resolution test** Perform and report sequence and structural similarity analysis between all benchmark complexes and all training complexes. Report maximum sequence identity and structural similarity (e.g., TM-score) for the closest training match to each benchmark complex. Exclude any benchmark complexes with high similarity to training data, or justify their inclusion.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Comparison fairness
+  - **Claim pointer** "FlexENN-F outperformed all baselines in this task"
+  - **Evidence pointer** Results and Discussion, Predictive Performance of FlexENN; Table (referenced but not provided)
+  - **Concern** The baselines compared include the original PBEM model, PBEM retrained on expanded datasets, and tree-based models. However, the text does not describe whether these baselines were given the same input features, the same training data, or the same hyperparameter tuning effort as FlexENN. If the baselines were not optimized to the same extent, the comparison may be unfair. Additionally, no state-of-the-art deep learning methods for binding affinity prediction (e.g., recent GNN or transformer-based approaches) are included as baselines.
+  - **Why it matters** A claim of outperforming baselines is only meaningful if the comparison is fair and includes current state-of-the-art methods. If the baselines are weak or under-tuned, the result does not demonstrate that FlexENN is competitive with the best available approaches.
+  - **Resolution test** Describe the training and hyperparameter tuning protocol for all baselines. Include at least one or two recent deep learning baselines for binding affinity prediction. Report results for all methods on the same benchmark with the same evaluation metrics.
+  - **Concern ID** R1-M5
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Statistical rigor
+  - **Claim pointer** "the models reproduce physically reasonable energetic profiles"
+  - **Evidence pointer** Results and Discussion, Predictive Performance of FlexENN; Ablation Studies
+  - **Concern** The manuscript reports single predicted values for each benchmark system without error bars, confidence intervals, or multiple runs with different random seeds. Given the stochastic nature of neural network training, the reported predictions could vary substantially across runs. The ablation studies are described in terms of "failed to distinguish" and "moderate deviations" without quantitative thresholds or statistical tests.
+  - **Why it matters** Without measures of variability, the reader cannot assess whether the reported predictions are stable or whether the differences between models and baselines are statistically significant. This is particularly important for the ablation studies, where the claim that all features are necessary rests on qualitative descriptions.
+  - **Resolution test** Report mean and standard deviation of predictions across multiple training runs (at least 5) with different random seeds. For ablation studies, report quantitative metrics (e.g., RMSE, MAE) for each ablation condition and perform statistical significance testing (e.g., paired t-test or Wilcoxon signed-rank test) between the full model and each ablation.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract
+  - **Issue** The abstract states "the models reproduce physically reasonable energetic profiles" but does not provide any quantitative performance metric. Readers cannot gauge the accuracy of the method from the abstract alone.
+  - **Required correction** Include a brief quantitative summary in the abstract, such as the RMSE or mean absolute error on the benchmark set, to give readers an immediate sense of performance.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Materials and Methods, Message Passing Geometric Graph Model
+  - **Evidence pointer** Materials and Methods, Message Passing Geometric Graph Model
+  - **Issue** The model architecture is described textually but the referenced figure (Figure, "schematic overview") is not provided. Key hyperparameters (number of layers, hidden dimensions, learning rate schedule, dropout rate, activation functions) are partially described but not fully specified.
+  - **Required correction** Provide the architecture figure and a complete table of hyperparameters. Consider releasing code and trained model weights to facilitate reproduction.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Results and Discussion, Predictive Performance of FlexENN
+  - **Evidence pointer** Results and Discussion, Predictive Performance of FlexENN
+  - **Issue** The term "physically reasonable" is used repeatedly but never defined. It is unclear whether this means the predictions fall within a certain range, correlate with experimental values, or satisfy thermodynamic constraints.
+  - **Required correction** Define what constitutes "physically reasonable" in quantitative terms, or replace with specific performance metrics.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Results and Discussion, Ablation Studies
+  - **Evidence pointer** Results and Discussion, Ablation Studies
+  - **Issue** The ablation studies are described for the MT interdimer/lateral distinction and for the DCX and MAP7 systems, but no ablation results are reported for the three additional IDP complexes (1AXC, 1JDH, 2GL7). It is unclear whether the feature dependencies observed for MAP7 generalize to other IDP systems.
+  - **Required correction** Report ablation results for all benchmark systems, or explicitly state that ablations were only performed on a subset and justify this choice.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Data availability
+  - **Affected element** Materials and Methods, Datasets Preparation
+  - **Evidence pointer** Materials and Methods, Datasets Preparation
+  - **Issue** The curated IDP dataset is described as a contribution, but no information is provided about its availability. The text does not state whether the dataset will be deposited in a public repository.
+  - **Required correction** State clearly whether the dataset will be made publicly available and, if so, where and under what license.
+- **Technical failings that need to be addressed before the case is established** (1) The central quantitative results are not verifiable from the provided material because all figures and tables are missing. (2) The independence of the benchmark set from the training set is not established. (3) The dataset construction pipeline is incompletely described. (4) No measures of variability or statistical significance are provided for any reported result. (5) The comparison to baselines may be unfair if baselines were not equally optimized.
+- **Assessment against Nature-style criteria** Originality: The approach of using interface-restricted graphs with flexibility-related descriptors for IDP binding energy prediction is a reasonable incremental advance over existing GNN-based methods, though the core architecture (message-passing GNN with physicochemical features) is not fundamentally novel. Scientific importance: The problem is important, and a reliable method for IDP binding energy prediction would be valuable, but the current evidence does not establish that FlexENN achieves this. Interdisciplinary readership: The work bridges machine learning, structural biology, and biophysics, which could appeal to a broad audience, but the presentation assumes significant background in all three areas. Technical soundness: The methodological description is incomplete, and the lack of quantitative results prevents assessment of technical soundness. Readability for nonspecialists: The manuscript is written for specialists and would benefit from clearer motivation and explanation of why existing methods fail for IDPs.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript addresses an important problem with a plausible approach, but the evidence presented is insufficient to support the central claims. Major revisions are required to provide complete quantitative results, establish benchmark independence, fully describe the dataset and methods, and add statistical rigor. If these concerns are addressed, the work could be suitable for publication in a specialized computational biology journal.
+
+## Risk / unsupported claims
+- The claim that FlexENN "reproduces physically reasonable energetic profiles" is unsupported because the referenced figures and tables are not provided.
+- The claim that FlexENN-F "outperformed all baselines" is unsupported without the comparison table and without evidence that baselines were fairly tuned.
+- The claim that the IDP dataset is a useful resource is unsupported without details on dataset composition, quality, and availability.
+- The claim that "the models reproduce physically reasonable energetic profiles, including the stronger interdimer relative to the lateral MT interactions" is based on a single qualitative observation and lacks quantitative error metrics.
+- The claim that ablation studies "reveal system-dependent contributions of selected descriptors" is based on qualitative descriptions without quantitative results or statistical testing.
+- The claim that the model "learns structure-affinity relationships from a single resolved bound conformation" is plausible but not demonstrated; no analysis of what the model actually learns is presented.
+- The claim that predictions for complexes with higher edge counts "may be unreliable" is speculative and not tested; no experiments on large-interface complexes are reported.
+- The claim that "all benchmark complexes fall within the well-sampled range of their respective training distributions" is unverifiable without the referenced figures (Figures S5 and S6).

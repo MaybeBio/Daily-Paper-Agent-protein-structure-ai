@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Impact of training data on deep learning-based RNA 3D structure quality assessment. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>Impact of training data on deep learning-based RNA 3D structure quality assessment.</h1>
+      <div class="meta">Adamczyk, Bartosz; Szachniuk, Marta; Antczak, Maciej</div>
+      <div class="meta muted">
+        
+        <span class="journal">Briefings in bioinformatics</span>
+        · 2026-11-09
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/43002601/">原文</a>
+      </div>
+      <p class="one-liner">该文系统比较了不同训练数据对深度学习RNA 3D结构质量评估器的影响，虽对象为RNA而非蛋白质，但其跨训练集分析和质量评估方法框架可迁移至蛋白质结构计算领域。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Accurate reference-free assessment of predicted RNA 3D structures is essential for large-scale RNA modeling, yet the impact of training data on deep learning-based quality predictors remains poorly understood. Here, we present a systematic cross-training analysis of three deep learning predictors for RNA 3D structure quality assessment, each originally developed on distinct training sets. By retraining each predictor on alternative (nonnative) datasets-including RNA3DQA, a new set created specifically for this project-and evaluating performance on independent RNA-Puzzles benchmarks, we systematically assess the relative contributions of model architecture and training data composition. Our results reveal pronounced differences in cross-dataset generalization, with predictors often performing better when trained on nonnative datasets than on their native ones. Notably, the impact of the training datasets varied across predictors, with RNA3DQA yielding the overall best accuracy and ranking stability results specifically for the ARES model. Native training sets yielded better performance for RNA3DCNN and lociPARSE. These findings demonstrate that the characteristics of the training data play a dominant, model-dependent role in shaping the performance and robustness of reference-free RNA 3D structure quality assessment methods. We conclude with practical recommendations for designing transferable training datasets and for benchmarking deep learning-based quality predictors in RNA structural bioinformatics.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">对预测RNA三维结构的准确无参考评估对于大规模RNA建模至关重要，然而训练数据对基于深度学习的质量预测器的影响仍知之甚少。在此，我们针对三个用于RNA三维结构质量评估的深度学习预测器进行了系统的交叉训练分析，每个预测器最初均基于不同的训练集开发。通过在每个预测器上使用替代（非天然）数据集（包括RNA3DQA，一个专门为本项目创建的新数据集）进行重新训练，并在独立的RNA-Puzzles基准上评估性能，我们系统地评估了模型架构和训练数据组成的相对贡献。我们的结果揭示了跨数据集泛化中的显著差异，预测器在非天然数据集上训练时往往比在其天然数据集上表现更好。值得注意的是，训练数据集的影响因预测器而异，其中RNA3DQA在ARES模型上总体实现了最佳准确性和排名稳定性。天然训练集则对RNA3DCNN和lociPARSE产生了更好的性能。这些发现表明，训练数据的特征在塑造无参考RNA三维结构质量评估方法的性能和鲁棒性方面起着主导且依赖模型的作用。最后，我们提出了设计可迁移训练数据集以及基准测试RNA结构生物信息学中基于深度学习的质量预测器的实用建议。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Impact of training data on deep learning-based RNA 3D structure quality assessment</li>
+<li><strong>作者与单位</strong>: Adamczyk, Bartosz; Szachniuk, Marta; Antczak, Maciej（波兰波兹南理工大学计算科学研究所，Institute of Computing Science, Poznan University of Technology）</li>
+<li><strong>期刊/预印本平台</strong>: Briefings in Bioinformatics</li>
+<li><strong>年份</strong>: 2026（在线日期 2026-11-09）</li>
+<li><strong>论文类型</strong>: 系统性交叉训练（cross-training）实证研究</li>
+<li><strong>领域</strong>: RNA 3D 结构质量评估 × 深度学习</li>
+<li><strong>关键词</strong>: RNA 3D structure; quality assessment; deep learning; training data; cross-dataset generalization; RNA-Puzzles</li>
+<li><strong>DOI/arXiv 号</strong>: 10.1093/bib/bbag630</li>
+<li><strong>代码</strong>: 未提供（但数据与模型权重公开于 Zenodo: https://doi.org/10.5281/zenodo.22712263）</li>
+<li><strong>数据</strong>: RNA3DQA 数据集（720 个参考结构，&gt;18k 模型）、RNA-Puzzles-Bench 基准集（23 个 benchmark units，1546 个预测模型）</li>
+<li><strong>阅读日期</strong>: 2026-05-12</li>
+<li><strong>在课题方向中的位置</strong>: 本文聚焦于 RNA 3D 结构质量评估（QA）这一与蛋白质结构预测 QA 高度同构的任务，系统性地分离了「模型架构」与「训练数据」两个变量，揭示了训练数据分布对无参考（reference-free）质量评估器泛化能力的决定性影响。其交叉训练实验设计、数据集构建策略（RNA3DQA）和基准评估协议（RNA-Puzzles-Bench）对蛋白质结构预测中的 QA 模型训练与评估具有直接的方法论迁移价值。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文通过将三种深度学习 RNA 3D 结构质量评估器（ARES、lociPARSE、RNA3DCNN）在三个不同训练集（含新建的 RNA3DQA）上进行全组合交叉训练，并在独立 RNA-Puzzles-Bench 基准上评估，发现训练数据特性对无参考质量评估性能的影响具有模型依赖性，且非原生数据集（RNA3DQA）可使 lociPARSE 架构达到最优的排序准确性与稳定性。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 训练数据的组成（来源、结构多样性、质量分布、冗余度）如何影响深度学习 RNA 3D 结构质量评估器的性能与跨数据集泛化能力？</li>
+<li><strong>为什么重要</strong>: RNA 3D 结构预测方法可生成大量候选模型，无参考质量评估是筛选与排序这些模型的关键环节。若质量评估器对训练数据分布过拟合，则在实际应用中（预测未知结构）可能产生系统性偏差。理解训练数据的影响是设计可靠 QA 模型的前提。</li>
+<li><strong>现有方法为何不足</strong>: 已有三种主流 QA 模型（ARES、lociPARSE、RNA3DCNN）各自使用不同的训练集，但缺乏系统性对照实验来分离「架构」与「数据」的贡献。现有比较多聚焦于架构创新与特征工程，将训练集视为固定组件，未检验训练数据分布变化对同一架构的影响。</li>
+<li><strong>精确研究问题</strong>: Can the choice of training dataset (native vs. nonnative) alter the ranking accuracy and cross-dataset generalization of a fixed deep learning architecture for reference-free RNA 3D structure quality assessment?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「经外部核验」——基于文中引用与领域常识，但阶段划分与代表性方法选择为本文框架）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期启发式/物理评分</td>
+<td>Rosetta、RNAfold 能量函数</td>
+<td>可解释、无需训练</td>
+<td>精度有限，难以捕捉复杂构象</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>机器学习 QA</td>
+<td>基于 SVM/RF 的评分函数</td>
+<td>可整合多类特征</td>
+<td>特征工程依赖人工，泛化有限</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>深度学习 QA（当前）</td>
+<td>ARES (GCN)、lociPARSE (IPA)、RNA3DCNN (3D CNN)</td>
+<td>自动特征学习，精度显著提升</td>
+<td>训练数据固定，跨数据集泛化未系统检验</td>
+<td>本文研究对象</td>
+</tr>
+<tr>
+<td>交叉训练系统分析</td>
+<td>本文工作</td>
+<td>分离架构与数据变量，揭示数据主导性</td>
+<td>仅覆盖三种架构、三个数据集</td>
+<td>本文贡献</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练数据与评估基准重叠</td>
+<td>模型在原生数据集上表现好，但跨数据集泛化未知</td>
+<td>训练集与测试集可能共享 Rfam 家族或序列相似性</td>
+<td>Methods 节：RNA-Puzzles-Bench 构建时排除了训练集中的 PDB ID 和 Rfam 家族</td>
+</tr>
+<tr>
+<td>数据集结构偏差</td>
+<td>tRNA 等少数家族过度代表（~10%），常见基序（茎、发夹）过多</td>
+<td>现有数据集构建未做家族平衡</td>
+<td>Methods 节：lociPARSE 与 RNA3DQA 的 Rfam 分布分析</td>
+</tr>
+<tr>
+<td>模型对训练数据的敏感性未知</td>
+<td>同一架构在不同训练集上表现差异显著</td>
+<td>训练数据分布（质量范围、结构多样性）直接影响模型学习到的评分规律</td>
+<td>Results 图 3、表 4、表 5</td>
+</tr>
+<tr>
+<td>无参考 QA 的基准评估困难</td>
+<td>不同研究使用不同基准，难以横向比较</td>
+<td>缺乏统一的、与训练集严格分离的基准</td>
+<td>Methods 节：RNA-Puzzles-Bench 构建协议</td>
+</tr>
+<tr>
+<td>低质量模型排序不可靠</td>
+<td>部分模型在困难目标（如 PZ15）上排序接近随机</td>
+<td>训练数据中低质量模型分布不足或偏差</td>
+<td>Results：PZ15 原生模型 r_s = -0.13, P = 0.1970</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>: 对三种已有 QA 架构（ARES、lociPARSE、RNA3DCNN）在三个训练集（ARES 集、lociPARSE 集、新建 RNA3DQA 集）上进行全组合交叉训练（3×3=9 种配置，外加 4 个 off-the-shelf 模型，共 13 个配置），在独立基准 RNA-Puzzles-Bench 上统一评估。</li>
+<li><strong>核心洞察</strong>: 训练数据的影响是「模型依赖的」——同一数据集对不同架构的增益不同。RNA3DQA（基于 RNAsolo2 非冗余结构、RNAComposer 生成模型、覆盖更广结构多样性）对 IPA 架构（lociPARSE）增益最大，使其成为综合最优；而 RNA3DCNN 对训练数据变化不敏感（稳定但低效）。这表明架构与数据的匹配（而非单一因素）决定 QA 性能上限。</li>
+<li><strong>可能的普适教训</strong> [Analysis]: 在结构预测 QA 任务中，训练数据的「结构多样性」与「质量分布广度」可能比数据量更重要；评估 QA 模型时必须使用与训练数据严格分离（家族级别）的基准，否则会高估模型泛化能力。这一结论可迁移至蛋白质结构 QA（如 AlphaFold 的 pLDDT 或 DeepAccNet 类模型）的训练与评估设计。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: RNA 3D 结构模型（PDB 格式），包含原子坐标与序列信息</li>
+<li><strong>输出</strong>: 每个输入模型的质量分数（ARES/RNA3DCNN 输出 RMSD 预测值；lociPARSE 输出 lDDT 预测值）</li>
+<li><strong>模块</strong>:
+  1. <strong>数据构建模块</strong>: 三个训练集（ARES 集、lociPARSE 集、RNA3DQA 新数据集）+ 独立基准 RNA-Puzzles-Bench
+  2. <strong>模型模块</strong>: 三种架构（GCN-based ARES、IPA-based lociPARSE、3D CNN-based RNA3DCNN）
+  3. <strong>训练模块</strong>: 各架构按原始论文超参数设置，在三个训练集上分别训练
+  4. <strong>评估模块</strong>: 每个 benchmark unit 内计算 Spearman 相关系数（预测分数 vs 参考分数），聚合为 Top-3 与 Correlation 两种评分</li>
+<li><strong>文字流程</strong>: 构建/收集三个训练集 → 对每个架构在每个训练集上训练 → 对 13 个配置在 RNA-Puzzles-Bench 的 23 个 benchmark units 上逐一预测 → 计算每个 unit 内 Spearman 相关 → 按 Top-3 与 Correlation 评分聚合 → 统计检验（bootstrap CI + Wilcoxon 检验）→ 案例研究（PZ37）深入分析排序误差分布</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RNA3DQA 数据集构建</td>
+<td>提供高多样性、非冗余、质量分布广的训练数据</td>
+<td>现有数据集家族偏差大、多样性不足</td>
+<td>输入：RNAsolo2 非冗余结构（≤3.5Å）；输出：720 参考结构 + &gt;18k RNAComposer 模型</td>
+<td>Methods 节；表 1</td>
+<td>预期影响：移除后 lociPARSE 架构失去最优训练数据，综合性能下降</td>
+</tr>
+<tr>
+<td>RNA-Puzzles-Bench 基准</td>
+<td>独立、无泄漏的评估集</td>
+<td>确保训练与测试在家族级别分离</td>
+<td>输入：23 个 RNA-Puzzles 目标；输出：1546 个预测模型</td>
+<td>Methods 节</td>
+<td>预期影响：移除后无法可靠评估跨数据集泛化</td>
+</tr>
+<tr>
+<td>交叉训练协议</td>
+<td>分离架构与数据变量</td>
+<td>系统归因性能差异来源</td>
+<td>输入：3 架构 × 3 数据集；输出：9 个重训练模型 + 4 个 off-the-shelf</td>
+<td>Methods 节；表 3-5</td>
+<td>预期影响：移除后无法得出「数据影响是模型依赖的」结论</td>
+</tr>
+<tr>
+<td>排序评估协议</td>
+<td>量化 QA 模型的排序能力</td>
+<td>QA 的核心用途是排序而非绝对分数</td>
+<td>输入：预测分数 + 参考分数；输出：Spearman r_s、Top-3 评分、Correlation 评分</td>
+<td>Methods 节；表 4-5</td>
+<td>预期影响：移除后无法比较不同配置的排序质量</td>
+</tr>
+<tr>
+<td>统计检验</td>
+<td>评估差异显著性</td>
+<td>区分真实差异与随机波动</td>
+<td>输入：各 unit 的 r_s 分布；输出：bootstrap CI、Wilcoxon P 值</td>
+<td>Methods 节；补充表 S2-S5</td>
+<td>预期影响：移除后无法确认 PZ15 等案例的改善是否显著</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ul>
+<li><strong>Spearman 秩相关系数</strong> (r_s): 衡量预测排序与参考排序的一致性。r_s = 1 - (6 Σ d_i²) / (n(n²-1))，其中 d_i 为第 i 个模型的预测秩与参考秩之差，n 为模型总数。用途：每个 benchmark unit 内评估 QA 模型的排序质量。</li>
+<li><strong>绝对排序误差</strong> (Absolute Rank Error): 对每个预测模型，|预测秩 - 参考秩|。用途：案例研究 PZ37 中按质量分层（高/中/低）分析排序误差分布，识别系统性偏差。</li>
+<li><strong>Top-3 评分</strong>: 每个 benchmark unit 中，预测排名前 3 的模型与参考排名前 3 的模型的重合计数，跨 23 个 units 求和。用途：评估 QA 模型在「挑选最优模型」场景下的实用价值。</li>
+<li><strong>Correlation 评分</strong>: 每个 benchmark unit 的 Spearman r_s 的聚合（文中未明确给出具体聚合公式，推测为求和或均值）。用途：整体排序能力比较。</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>: </li>
+<li>训练集：ARES 集（14 个参考结构，14,000 模型）、lociPARSE 集（51,723 模型）、RNA3DQA 集（720 参考结构，&gt;18k 模型）</li>
+<li>评估集：RNA-Puzzles-Bench（23 个 benchmark units，1546 个预测模型，长度 10-720 nt）</li>
+<li><strong>指标</strong>: Spearman r_s（每 unit）、Top-3 评分、Correlation 评分、绝对排序误差分布</li>
+<li><strong>基线</strong>: 各架构的 off-the-shelf 原始模型（原生训练数据）</li>
+<li><strong>骨干/仪器</strong>: 未提供具体 GPU 型号（仅提及 ARES 需 RTX 2080 Ti 因 e3nn 依赖限制）</li>
+<li><strong>oracle 输入</strong>: 参考结构来自实验测定（X-ray、NMR、EM），RMSD/lDDT 计算基于与参考结构的比对</li>
+<li><strong>评测协议</strong>: 每个 benchmark unit 内计算预测分数与参考分数的 Spearman 相关；bootstrap 1000 次估计 95% CI；配对 Wilcoxon 检验比较配置间差异</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全组合交叉训练（9 配置 + 4 off-the-shelf）</td>
+<td>训练数据影响是模型依赖的</td>
+<td>3 架构 × 3 训练集，统一评估</td>
+<td>lociPARSE+RNA3DQA 综合最优（Correlation 27 分）；ARES+RNA3DQA 次优（10 分）；RNA3DCNN 各配置均低（≤4 分）</td>
+<td>训练数据对性能的影响因架构而异</td>
+<td>不能得出「某一数据集对所有架构最优」的普适结论</td>
+<td>表 4、表 5</td>
+</tr>
+<tr>
+<td>PZ15 案例</td>
+<td>RNA3DQA 训练可修复原生模型的排序失败</td>
+<td>原生 lociPARSE vs RNA3DQA-lociPARSE</td>
+<td>原生 r_s = -0.13 (P=0.1970) → RNA3DQA 训练 r_s = 0.27 (P=0.0065)</td>
+<td>训练数据多样性可显著提升困难目标的排序能力</td>
+<td>单一案例，不能推广至所有困难目标</td>
+<td>Results 节；补充表 S3</td>
+</tr>
+<tr>
+<td>PZ37 案例</td>
+<td>RNA3DQA 训练降低排序误差方差</td>
+<td>4 种 lociPARSE 配置的排序误差分布</td>
+<td>RNA3DQA 训练在高中低三档均降低中位误差与方差</td>
+<td>数据多样性提升排序稳定性</td>
+<td>未检验其他架构的类似效应</td>
+<td>Results 节；图 4</td>
+</tr>
+<tr>
+<td>多种子稳定性</td>
+<td>结果对随机初始化鲁棒</td>
+<td>lociPARSE 与 RNA3DCNN 在 RNA3DQA 上 4 种子重训</td>
+<td>Spearman 分布高度一致</td>
+<td>观察到的性能差异非随机初始化所致</td>
+<td>未覆盖 ARES（计算成本过高）</td>
+<td>补充图 S15-S16</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 本文结论仅适用于 RNA 3D 结构质量评估（reference-free QA），不直接推广至 RNA 结构预测本身。</li>
+<li><strong>oracle/真值输入</strong>: 参考结构来自实验测定，RMSD/lDDT 计算依赖结构比对算法，比对误差可能影响参考排序。</li>
+<li><strong>端到端状态</strong>: 评估的是「给定预测模型集合，QA 模型能否正确排序」这一子任务，不涉及从序列到结构的端到端流程。</li>
+<li><strong>算力成本</strong>: ARES 训练需旧版 GPU 架构（RTX 2080 Ti），限制了多种子实验；lociPARSE 与 RNA3DCNN 在 H100 上训练。</li>
+<li><strong>历史数据依赖</strong>: RNA3DQA 基于 RNAsolo2 3.306 版本（2024 年数据），RNA-Puzzles-Bench 基于已发表的 RNA-Puzzles 结果，两者均有时效性。</li>
+<li><strong>模型依赖</strong>: 结论仅覆盖三种架构（GCN、IPA、3D CNN），不排除其他架构（如 Transformer-based）对训练数据有不同响应。</li>
+<li><strong>有边界的复述</strong>: 在三种深度学习 QA 架构、三个训练集、23 个 RNA-Puzzles 基准单元的条件下，训练数据的选择对 QA 性能的影响大于架构差异；RNA3DQA 数据集（高多样性、非冗余、RNAComposer 生成）使 IPA 架构达到最优排序性能，但同一数据集对 GCN 和 3D CNN 架构的增益有限。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RNA3DCNN 训练集不可用</td>
+<td>原始 RNA3DCNN 训练集未公开，无法纳入分布分析</td>
+<td>未明确提及</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>ARES 计算成本高</td>
+<td>多种子实验仅覆盖 lociPARSE 与 RNA3DCNN</td>
+<td>未明确提及</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>数据时效性</td>
+<td>RNA3DQA 基于 RNAsolo2 3.306 版本</td>
+<td>未明确提及</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>基准规模有限</td>
+<td>RNA-Puzzles-Bench 仅 23 个 benchmark units</td>
+<td>未明确提及</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>单一案例研究</td>
+<td>PZ37 作为案例，未系统覆盖所有困难目标</td>
+<td>未明确提及</td>
+<td>Results 节</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RNA3DQA 数据集构建中 RNAComposer 为唯一模型生成器</td>
+<td>模型生成器的单一性可能使 QA 模型学习到 RNAComposer 特有的误差模式，而非通用结构质量特征</td>
+<td>若 QA 模型对生成器过拟合，则在实际应用中（面对其他预测器输出）性能可能下降</td>
+<td>使用多种预测器（如 Rosetta、SimRNA、AlphaFold3）生成模型训练同一架构，比较泛化</td>
+<td>Methods 节：RNA3DQA 构建协议</td>
+</tr>
+<tr>
+<td>「非原生数据集更优」的结论可能受基准构成影响</td>
+<td>RNA-Puzzles-Bench 中 ribozymes 占 11/23，可能偏向 RNA3DQA 覆盖的家族</td>
+<td>基准构成偏差可能高估 RNA3DQA 的通用优势</td>
+<td>按 RNA 类型分层分析性能，或构建家族平衡的基准</td>
+<td>Results 节：benchmark 构成</td>
+</tr>
+<tr>
+<td>排序评估仅使用 Spearman 相关</td>
+<td>Spearman 对单调变换不敏感，可能掩盖绝对分数校准问题</td>
+<td>QA 模型不仅需排序正确，还需分数可解释（如用于置信度估计）</td>
+<td>增加校准评估（如可靠性图、期望校准误差）</td>
+<td>Methods 节：评估协议</td>
+</tr>
+<tr>
+<td>未报告推理时间与计算开销对比</td>
+<td>不同架构的实用价值需考虑推理成本</td>
+<td>若 RNA3DQA 训练的最优模型推理极慢，实际部署受限</td>
+<td>补充推理时间基准测试</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>交叉训练仅覆盖 3 架构 × 3 数据集</td>
+<td>数据与架构的交互效应可能在小样本下不稳定</td>
+<td>更全面的矩阵（更多架构、更多数据集）才能支撑强结论</td>
+<td>扩展至 5+ 架构、5+ 数据集</td>
+<td>表 4、表 5</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>:
+1. <strong>交叉训练实验设计</strong>: 将「架构」与「数据」作为独立变量进行全组合实验，是分离模型性能影响因素的系统性方法。可迁移至蛋白质 QA 模型（如 DeepAccNet、AlphaFold pLDDT 头）的训练数据敏感性分析。
+2. <strong>数据集构建策略</strong>: RNA3DQA 的构建流程（非冗余参考结构 + 单一模型生成器 + 质量分层）可作为蛋白质 QA 训练集设计的参考模板，特别是「结构多样性优先于数据量」的原则。
+3. <strong>基准构建的防泄漏协议</strong>: RNA-Puzzles-Bench 在家族级别（Rfam）排除训练重叠，比序列相似性排除更严格。蛋白质 QA 基准（如 CAMEO、CASP）可借鉴此策略，按 SCOP/CATH 折叠家族排除。
+4. <strong>排序评估的分层分析</strong>: 将预测模型按质量分层（高/中/低）分析排序误差，可识别 QA 模型的系统性偏差（如对中等质量模型排序不稳）。此方法可迁移至蛋白质模型排序评估。
+5. <strong>架构-数据匹配原则</strong>: 不同架构对训练数据的响应不同（IPA 受益于高多样性数据，3D CNN 不敏感），提示在蛋白质 QA 中应针对架构特性定制训练数据，而非追求通用数据集。
+6. <strong>多种子稳定性验证</strong>: 对重训练模型进行多随机种子评估，可排除初始化对结论的干扰。蛋白质 QA 模型训练应纳入此标准流程。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>: 本文的交叉训练协议与蛋白质结构预测领域的「CASP 盲测」精神一致，但更聚焦于 QA 子任务。与蛋白质 QA 中的 DeepAccNet（Hiranuma et al., 2021）和 AlphaFold 的 pLDDT 头（Jumper et al., 2021）在任务定义上同构，但本文系统性地检验了训练数据的影响。</li>
+<li><strong>组合/扩展</strong>: 本文的 RNA3DQA 数据集构建策略可扩展至蛋白质 QA 训练集设计；RNA-Puzzles-Bench 的家族级防泄漏协议可迁移至蛋白质 QA 基准（如 CAMEO-QA）的重新设计。</li>
+<li><strong>冲突/张力</strong>: 本文发现「非原生数据集可优于原生数据集」与蛋白质 QA 领域「使用与预测器同源的数据训练 QA」的常见做法存在张力，提示蛋白质 QA 训练可能需要更广泛的数据多样性。</li>
+<li><strong>可迁移领域</strong>: 本文的排序评估协议（分层误差分析、bootstrap CI、Wilcoxon 检验）可直接迁移至蛋白质模型排序评估；「数据影响是模型依赖的」结论提示蛋白质 QA 研究应报告跨数据集性能，而非仅报告单一基准结果。</li>
+<li><strong>候选方向</strong> [Analysis]: 本文未涉及蛋白质系统，但其「训练数据多样性 &gt; 数据量」的发现与蛋白质语言模型（如 ESM）训练中「多样性采样」策略相呼应，可探索将 RNA3DQA 的构建原则应用于蛋白质 QA 训练集。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>:</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>: 蛋白质 QA 训练数据的家族级防泄漏基准构建
+   - <strong>来源局限/观察</strong>: RNA-Puzzles-Bench 的家族级排除策略有效防止了数据泄漏，但蛋白质 QA 基准（如 CAMEO）未系统采用此策略。
+   - <strong>核心假设</strong>: 在 SCOP/CATH 折叠家族级别排除训练-测试重叠，可更真实地评估蛋白质 QA 模型的泛化能力。
+   - <strong>初步方法</strong>: 基于 CATH 家族划分构建蛋白质 QA 基准，训练 DeepAccNet 类模型，比较家族级排除与序列级排除下的性能差异。
+   - <strong>验证方式</strong>: 在 CAMEO 和 CASP 数据集上交叉验证，统计性能差异显著性。
+   - <strong>可能的失败模式</strong>: 家族级排除后训练数据量不足，导致模型性能整体下降，无法区分「泄漏效应」与「数据量效应」。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 架构-数据匹配的蛋白质 QA 训练策略
+   - <strong>来源局限/观察</strong>: 本文发现 IPA 架构受益于高多样性数据，而 3D CNN 不敏感，提示架构-数据匹配的重要性。
+   - <strong>核心假设</strong>: 蛋白质 QA 中，注意力机制架构（如 IPA）比卷积架构更能从高多样性训练数据中获益。
+   - <strong>初步方法</strong>: 在统一蛋白质 QA 训练集上训练 IPA 与 3D CNN 架构，比较不同数据多样性水平下的性能曲线。
+   - <strong>验证方式</strong>: 多随机种子训练 + 跨基准评估，绘制数据多样性-性能曲线。
+   - <strong>可能的失败模式</strong>: 蛋白质 QA 任务与 RNA 差异较大，架构-数据交互效应不显著。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 基于分层排序误差的 QA 模型诊断框架
+   - <strong>来源局限/观察</strong>: PZ37 案例中，分层误差分析揭示了 RNA3DQA 训练对中等质量模型排序的改善，但此方法未在蛋白质 QA 中系统应用。
+   - <strong>核心假设</strong>: 将预测模型按质量分层分析排序误差，可识别 QA 模型的系统性偏差来源。
+   - <strong>初步方法</strong>: 在蛋白质 QA 基准上，将模型按 GDT-TS 分层，分析各层内排序误差分布，识别 QA 模型的「盲区」。
+   - <strong>验证方式</strong>: 在 CASP 和 CAMEO 数据集上复现，比较不同 QA 模型的分层误差模式。
+   - <strong>可能的失败模式</strong>: 分层标准（如 GDT-TS 阈值）选择敏感，不同阈值下结论不一致。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 多生成器训练数据对 QA 泛化的影响
+   - <strong>来源局限/观察</strong>: RNA3DQA 仅使用 RNAComposer 生成模型，单一生成器可能引入特定误差模式。
+   - <strong>核心假设</strong>: 使用多种预测器（如 AlphaFold3、Rosetta、SimRNA）生成训练模型，可提升 QA 模型对未知生成器的泛化能力。
+   - <strong>初步方法</strong>: 构建多生成器混合训练集，训练 QA 模型，在独立生成器输出上评估排序性能。
+   - <strong>验证方式</strong>: 与单一生成器训练对比，统计跨生成器性能差异。
+   - <strong>可能的失败模式</strong>: 多生成器数据引入噪声，模型学习到生成器间差异而非通用质量特征。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 物理模拟增强的 QA 训练数据生成
+   - <strong>来源局限/观察</strong>: 本文建议「物理模拟增强可增加训练数据多样性」，但未实证。
+   - <strong>核心假设</strong>: MD 模拟生成的构象可补充实验结构附近的构象空间，提升 QA 模型对近天然构象的排序能力。
+   - <strong>初步方法</strong>: 对 RNA3DQA 参考结构进行短 MD 模拟，生成额外训练模型，比较有无 MD 增强的性能。
+   - <strong>验证方式</strong>: 在 RNA-Puzzles-Bench 上评估，统计排序性能提升。
+   - <strong>可能的失败模式</strong>: MD 模拟构象与实验结构偏差模式不同，引入分布偏移。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, materials and methods, results, conclusions) without supplementary figures or tables</li>
+<li><strong>Assessment boundary</strong> Scientific soundness, methodological rigor, validity of claims relative to provided evidence, and clarity of presentation</li>
+<li><strong>Shared manuscript claim summary</strong> The authors systematically investigate how training data composition affects the performance of three deep learning-based RNA 3D structure quality assessment models (ARES, lociPARSE, RNA3DCNN). They introduce a new dataset, RNA3DQA, retrain each model on nonnative datasets, and evaluate on an independent RNA-Puzzles-derived benchmark. They report that training data characteristics can dominate architectural differences, with RNA3DQA-trained lociPARSE achieving the best overall performance.</li>
+<li><strong>Visible evidence base</strong> Main text tables (Tables 1–6), figures referenced (Figs 1–4), and statistical results described in text; supplementary materials referenced but not provided</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary tables (S1–S5), supplementary figures (S1–S16), actual figure content, detailed hyperparameter settings, and the RNA3DCNN reimplementation code were not available for verification</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> This manuscript addresses a timely and important question in RNA structural bioinformatics: how training data influence deep learning-based quality assessment models. The cross-training experimental design is conceptually sound and the introduction of a new dataset (RNA3DQA) is a valuable contribution. However, several methodological details and statistical analyses are incompletely described, and some claims appear stronger than the visible evidence supports. The manuscript would benefit from clearer reporting of benchmark construction, model reimplementation fidelity, and the practical significance of observed performance differences.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Researchers developing deep learning methods for RNA 3D structure prediction and quality assessment, computational structural biologists working on RNA modeling pipelines, and methodologists interested in dataset design for structure prediction benchmarks. The findings on training data dominance over architecture could inform future dataset construction efforts across biomolecular structure prediction fields.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong><br />
+  1. Systematic cross-training design that directly addresses a previously undercharacterized question<br />
+  2. Introduction of a new, publicly available dataset (RNA3DQA) with clear construction criteria<br />
+  3. Use of an independent benchmark (RNA-Puzzles) with explicit efforts to prevent data leakage<br />
+  4. Multi-faceted evaluation including aggregate scoring schemes and per-target statistical analysis<br />
+  5. Practical recommendations for dataset design grounded in observed results</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1  </p>
+</li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Technical soundness  </li>
+<li><strong>Claim pointer</strong> The authors claim that RNA3DCNN was reimplemented based on the original description, and that retrained models faithfully reproduce the original architectures.  </li>
+<li><strong>Evidence pointer</strong> Section "Cross-dataset training protocol", Table 2  </li>
+<li><strong>Concern</strong> The RNA3DCNN reimplementation is a critical component of the study, yet no verification of reimplementation fidelity is provided. The original RNA3DCNN paper may contain ambiguities in architecture details, training procedures, or preprocessing steps that could lead to behavioral differences. Without demonstrating that the reimplemented model reproduces the original model's performance on the original training data, the validity of all RNA3DCNN-related conclusions is uncertain.  </li>
+<li><strong>Why it matters</strong> If the reimplementation differs from the original in meaningful ways, the cross-training comparisons involving RNA3DCNN may reflect implementation artifacts rather than genuine training data effects. This would undermine a core conclusion of the study.  </li>
+<li>
+<p><strong>Resolution test</strong> Provide quantitative evidence that the reimplemented RNA3DCNN reproduces the original model's performance on the original training/validation split, or clearly state the limitations of the reimplementation and temper conclusions accordingly.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2  </p>
+</li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Technical soundness  </li>
+<li><strong>Claim pointer</strong> The authors state that the benchmark dataset "contains neither PDB IDs from the training sets nor any Rfam families in common" with training data.  </li>
+<li><strong>Evidence pointer</strong> Section "Benchmark set for independent evaluation"  </li>
+<li><strong>Concern</strong> The exclusion criteria are described only at the level of Rfam family membership and PDB identifiers. However, structural similarity can exist across different Rfam families, and sequence similarity below the CD-HIT thresholds used (85–88.46%) could still lead to informative leakage. Additionally, the RNA-Puzzles targets themselves may have been used in the development of some prediction methods whose outputs are included in the benchmark, potentially introducing indirect biases. The authors do not report sequence identity checks between benchmark targets and training set sequences beyond Rfam family assignment.  </li>
+<li><strong>Why it matters</strong> Incomplete leakage prevention could inflate performance estimates and weaken the claim that the benchmark provides an unbiased assessment of generalization.  </li>
+<li>
+<p><strong>Resolution test</strong> Report pairwise sequence identity distributions between benchmark targets and all training set sequences, and discuss any targets with unexpectedly high similarity. If such similarity exists, either exclude those targets or demonstrate that results are robust to their removal.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3  </p>
+</li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Statistical rigor  </li>
+<li><strong>Claim pointer</strong> The authors conclude that "RNA3DQA yielding the overall best accuracy and ranking stability results specifically for the ARES model" and that "the best-performing model across both evaluation protocols uses IPA and was trained on the RNA3DQA dataset."  </li>
+<li><strong>Evidence pointer</strong> Section "Results of cross-training experiment", Tables 4 and 5  </li>
+<li><strong>Concern</strong> The aggregate scoring schemes (Top-3 and Correlation) are described only in general terms. The exact formulas, weighting schemes, and thresholds for "top-three finishes" are not fully specified in the visible text. Furthermore, the reported differences between top configurations (e.g., 26 versus 27 points in Table 5) are small, and no confidence intervals or significance tests are reported for the aggregate scores. The claim that one configuration is "best" may not be statistically distinguishable from others.  </li>
+<li><strong>Why it matters</strong> Without uncertainty quantification on the aggregate scores, the ranking of configurations may not be robust, and the central conclusion about which training dataset is most effective could be overstated.  </li>
+<li>
+<p><strong>Resolution test</strong> Provide formal definitions of both scoring schemes, report bootstrap confidence intervals for aggregate scores, and perform pairwise significance tests between top configurations. If differences are not significant, state this explicitly and adjust the strength of conclusions.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4  </p>
+</li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> No  </li>
+<li><strong>Axis</strong> Reproducibility  </li>
+<li><strong>Claim pointer</strong> The authors state that "all datasets, trained models, and analysis scripts supporting this study are available in the RNA3DQA repository at Zenodo."  </li>
+<li><strong>Evidence pointer</strong> Section "Data availability"  </li>
+<li><strong>Concern</strong> While data availability is commendable, the manuscript does not specify the software versions, environment configurations, or exact commands needed to reproduce the training and evaluation pipeline. Given the known dependency issues with ARES (acknowledged by the authors), reproducibility may be challenging without a containerized environment or detailed setup instructions.  </li>
+<li><strong>Why it matters</strong> Reproducibility is a core expectation for computational studies, and incomplete documentation could prevent others from building on this work.  </li>
+<li>
+<p><strong>Resolution test</strong> Provide a Dockerfile or equivalent container definition, a requirements file with pinned versions, and a step-by-step reproduction guide in the repository or supplementary materials.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1  </p>
+</li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Clarity  </li>
+<li><strong>Affected element</strong> Section "Evaluation protocols"  </li>
+<li><strong>Evidence pointer</strong> Location not provided  </li>
+<li><strong>Issue</strong> The two scoring schemes are introduced but their exact definitions are not fully described in the main text. The reader is left to infer how "Top-3" and "Correlation" scores are computed from the brief description.  </li>
+<li>
+<p><strong>Required correction</strong> Provide explicit mathematical definitions of both scoring schemes in the main text or refer clearly to a supplementary section where they are fully specified.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2  </p>
+</li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Presentation  </li>
+<li><strong>Affected element</strong> Figure 3 and associated text  </li>
+<li><strong>Evidence pointer</strong> Section "Training data impact on model performance"  </li>
+<li><strong>Issue</strong> The text states that "the strongest positive effects are observed under maximum-based aggregation," but the figure is not available for verification. The description of aggregation methods (mean-, median-, minimum-, maximum-based) is not fully explained.  </li>
+<li>
+<p><strong>Required correction</strong> Clarify what is being aggregated (e.g., per-target Spearman correlations) and how each aggregation method is computed. Ensure figure captions are self-contained.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3  </p>
+</li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Completeness  </li>
+<li><strong>Affected element</strong> Section "Case study: cross-training effect for benchmark unit PZ37"  </li>
+<li><strong>Evidence pointer</strong> Figure 4  </li>
+<li><strong>Issue</strong> The case study is presented as illustrative, but the selection of PZ37 as the case study target is not justified. It is unclear whether PZ37 was chosen because it is representative, exceptional, or convenient.  </li>
+<li>
+<p><strong>Required correction</strong> Briefly justify the selection of PZ37 or state that it was chosen as an illustrative example.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4  </p>
+</li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Technical detail  </li>
+<li><strong>Affected element</strong> Section "Training sets for RNA quality assessment"  </li>
+<li><strong>Evidence pointer</strong> Table 1  </li>
+<li><strong>Issue</strong> The RNA3DCNN training set is stated to be unavailable, which limits the completeness of the cross-training analysis. The authors do not discuss the potential impact of this missing component on their conclusions.  </li>
+<li>
+<p><strong>Required correction</strong> Add a sentence acknowledging this limitation and discuss how it might affect the generalizability of the findings.</p>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong><br />
+  R1-M1 (RNA3DCNN reimplementation verification), R1-M2 (leakage prevention completeness), R1-M3 (statistical significance of aggregate scores)</p>
+</li>
+<li>
+<p><strong>Assessment against Nature-style criteria</strong><br />
+<strong>Originality</strong> The question of training data influence on RNA 3D structure quality assessment is relatively underexplored, and the systematic cross-training approach is a novel contribution. However, the individual components (the three models, the datasets, the benchmark) are all previously published, and the novelty lies primarily in their combination.<br />
+<strong>Scientific importance</strong> The findings have practical implications for dataset design in RNA structure prediction and quality assessment, which is a growing field. The conclusion that training data can outweigh architecture is potentially important but needs stronger statistical support.<br />
+<strong>Interdisciplinary readership</strong> The topic sits at the intersection of structural biology, machine learning, and bioinformatics. The manuscript is likely to appeal to a specialized audience within these fields, but the broader significance for general structural biology or machine learning audiences is not fully articulated.<br />
+<strong>Technical soundness</strong> The experimental design is generally sound, but the concerns above regarding reimplementation fidelity, leakage prevention, and statistical rigor need to be addressed. The lack of supplementary materials for verification limits confidence.<br />
+<strong>Readability for nonspecialists</strong> The manuscript is clearly written and the main concepts are accessible. However, some methodological details (e.g., scoring schemes, aggregation methods) could be explained more explicitly for readers outside the immediate subfield.</p>
+</li>
+<li>
+<p><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The core question is important, the experimental design is appropriate, and the new dataset is a valuable resource. However, the manuscript cannot be accepted in its current form due to the unresolved concerns about RNA3DCNN reimplementation fidelity, potential data leakage, and insufficient statistical support for the central claims.</p>
+</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that RNA3DQA yields "the overall best accuracy and ranking stability results specifically for the ARES model" is not fully supported without confidence intervals or significance tests on aggregate scores.</li>
+<li>The claim that "training data characteristics play a dominant, model-dependent role" is supported by the data but may be overstated given the small differences between top configurations and the lack of uncertainty quantification.</li>
+<li>The assertion that the benchmark is fully independent of training data is not fully verifiable from the provided information, as sequence-level similarity checks beyond Rfam family assignment are not reported.</li>
+<li>The performance of the reimplemented RNA3DCNN relative to the original model is unverified, making all RNA3DCNN-related conclusions uncertain.</li>
+<li>The statement that "no significant difference observed in the remaining 11 contests" in the Wilcoxon test is reported without showing the actual p-values or effect sizes for those cases.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

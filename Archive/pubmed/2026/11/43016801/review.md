@@ -1,0 +1,97 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, main text, tables, figure legends) as provided
+- **Assessment boundary** Scientific content, methodological rigor, internal consistency, and support for claims based solely on the supplied material
+- **Shared manuscript claim summary** The authors present a systematic review of protein engineering research associated with Brazilian institutions from 1988 to June 2026, identifying 792 peer-reviewed articles via PubMed. They argue that the field has evolved from residue-level mutagenesis to integrated experimental-computational and AI-assisted design, with biophysics transitioning from a descriptive role to a central design function. The review is organized around five biophysical properties: folding, stability, dynamics, molecular recognition, and catalytic efficiency.
+- **Visible evidence base** Abstract, main text sections (Introduction, Literature search strategy, Historical evolution, Engineering protein properties, Emerging technologies, Conclusion), Table 1, Figure legends (Figs. 1-3), reference citations (author-year format)
+- **Missing materials affecting confidence** Full reference list, search strings and Boolean operators, PRISMA-style flow diagram, inclusion/exclusion criteria, data extraction form, quality assessment protocol, full figure images, supplementary materials, author contributions, competing interests, and any statistical analysis code or raw data
+
+## Reviewer
+- **Overall assessment** This manuscript provides a broad narrative synthesis of protein engineering research in Brazil, organized around five biophysical properties. The historical framing and the emphasis on the growing centrality of biophysics are potentially useful contributions. However, the review's evidentiary basis is not transparently presented. The search strategy is described only at a high level, and the quantitative claims (e.g., 792 articles, 57% addressing stability) are not traceable to reproducible methods. The manuscript would benefit from a more rigorous systematic methodology, including explicit search strings, screening criteria, and a transparent data extraction framework. The narrative is readable but at times asserts trends without direct citation support in the visible text.
+- **Who would be interested in the results, and why** Researchers in protein engineering, structural biology, and biophysics, particularly those interested in the scientific landscape of Latin America. The review may also be of interest to science policy analysts and funding agencies seeking an overview of capacity and trends in Brazilian protein science. The historical narrative and the emphasis on hybrid experimental-computational workflows could serve as a useful entry point for newcomers to the field.
+- **Major strengths**
+  - The manuscript addresses a genuinely under-documented topic: the historical and thematic development of protein engineering in Brazil.
+  - The organization around five biophysical properties (folding, stability, dynamics, molecular recognition, catalytic efficiency) provides a coherent conceptual scaffold.
+  - The authors correctly emphasize the interdependence of protein properties and the need for orthogonal validation, which is a scientifically sound perspective.
+  - The inclusion of recent AI-based methods (AlphaFold, ProteinMPNN, language models) reflects an up-to-date understanding of the field.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodology transparency
+  - **Claim pointer** The manuscript claims to be a "systematic review" identifying 792 articles through eight thematic search strategies.
+  - **Evidence pointer** Literature search strategy section; Table 1
+  - **Concern** The search strategy is described only in general terms. The eight thematic blocks are named, but the actual Boolean search strings, database-specific filters, screening criteria, and the process for determining inclusion/exclusion are not provided. Without these details, the claim of systematicity cannot be evaluated, and the reproducibility of the search is impossible.
+  - **Why it matters** A systematic review must be reproducible and transparent. The absence of search strings and screening protocols undermines the core methodological claim of the manuscript and prevents readers from assessing potential selection bias.
+  - **Resolution test** Provide the full search strings for each of the eight thematic blocks, the screening and eligibility criteria, the number of records retrieved at each stage, and a PRISMA-style flow diagram. If the review is not intended to be fully systematic, the terminology should be revised accordingly.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Quantitative claim support
+  - **Claim pointer** The manuscript states that 57% of articles address protein stability, 57.9% address molecular recognition, 54.7% address catalytic efficiency, and 54.5% address protein dynamics, with specific counts in Table 1.
+  - **Evidence pointer** Table 1; sections on protein stability, folding, dynamics, molecular recognition, catalytic efficiency
+  - **Concern** The percentages and counts in Table 1 are presented without any description of how the classification was performed. No coding scheme, inter-rater reliability assessment, or operational definitions for "Central," "Secondary," "Mentioned," or "Not Addressed" are provided. The reader cannot determine whether these classifications are reproducible or subjective.
+  - **Why it matters** These quantitative claims are central to the review's descriptive authority. If the classification framework is not defined and validated, the numbers are not interpretable as objective measures of the literature.
+  - **Resolution test** Define the coding scheme with explicit criteria for each category, describe the classification process (e.g., title/abstract screening, full-text review), and report inter-rater reliability if multiple reviewers were involved. If the classification was performed by a single author, state this and acknowledge the limitation.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Citation support
+  - **Claim pointer** The manuscript makes numerous specific claims about the historical development and current state of the field, e.g., "the establishment of national synchrotron facilities (CNPEM/LNLS) accelerated the transition from descriptive structure-function studies to mechanism-driven protein engineering."
+  - **Evidence pointer** Historical evolution section; Engineering protein properties sections
+  - **Concern** Many claims are presented without direct citation support in the visible text. For example, the statement about synchrotron facilities accelerating a transition is not tied to specific references. Similarly, the claim that "Brazilian groups have rapidly incorporated AlphaFold2 and AlphaFold3 into workflows" is not supported by specific citations in the text provided.
+  - **Why it matters** A review must support its assertions with citations. Unsupported claims, even if plausible, reduce the manuscript's credibility and prevent readers from verifying the authors' interpretations.
+  - **Resolution test** Add citations for all specific claims about the development, methods, and findings of the reviewed literature. Where a claim is a synthesis or interpretation, make this explicit and provide the underlying references.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scope and generalizability
+  - **Claim pointer** The manuscript claims to provide "the first comprehensive overview of protein engineering in Brazil."
+  - **Evidence pointer** Introduction section
+  - **Concern** The claim of being the "first" comprehensive overview is a strong assertion. The authors do not demonstrate, through a comparison with existing literature, that no prior comprehensive review exists. Additionally, the restriction to PubMed and to English-language articles may exclude relevant work indexed elsewhere or published in Portuguese.
+  - **Why it matters** The novelty claim is central to the manuscript's contribution. If prior reviews exist, the claim is inaccurate. The database and language restrictions also limit the comprehensiveness of the review and should be acknowledged as limitations.
+  - **Resolution test** Conduct a scoping search for prior reviews on protein engineering in Brazil and cite any that exist, adjusting the novelty claim accordingly. Acknowledge the PubMed-only and English-only limitations and discuss their potential impact on the findings.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Internal consistency
+  - **Affected element** Table 1 percentages
+  - **Evidence pointer** Table 1
+  - **Issue** The percentages in Table 1 do not appear to sum to 100% for each row. For example, for Molecular Recognition, 57.9% + 32.8% + 4.8% + 4.4% = 99.9%, which may be due to rounding, but this is not stated. For Catalytic Function, 36.1% + 18.6% + 3.9% + 41.4% = 100.0%. The inconsistency is minor but should be clarified.
+  - **Required correction** Add a footnote stating that percentages may not sum to 100% due to rounding, or adjust the values to ensure consistency.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Figure clarity
+  - **Affected element** Figure 1 legend
+  - **Evidence pointer** Figure 1 legend
+  - **Issue** The legend for Figure 1 reads "Workflow of protein engineering" with no further description. It is unclear what the figure actually depicts and how it relates to the review's structure.
+  - **Required correction** Expand the legend to describe the workflow steps and their relevance to the review's organization.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** "Systematic review" label
+  - **Evidence pointer** Abstract; Literature search strategy section
+  - **Issue** The manuscript uses the term "systematic review" but the described methodology (narrative synthesis organized by theme) is more consistent with a scoping review or a narrative review with a systematic search component. The terminology should be precise.
+  - **Required correction** Either adopt a full systematic review methodology with all required elements, or relabel the manuscript as a "scoping review" or "narrative review with systematic search."
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Temporal coverage
+  - **Affected element** Search period
+  - **Evidence pointer** Abstract; Literature search strategy section
+  - **Issue** The search period is stated as 1988 to June 2026. The manuscript is dated November 2026, so the search period is plausible, but the rationale for the 1988 start date is not explained.
+  - **Required correction** Briefly justify the 1988 start date, e.g., as the earliest indexed article meeting the inclusion criteria.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (search transparency) and R1-M2 (classification framework) are the primary technical failings. Without these, the review's quantitative and systematic claims are not verifiable. R1-M3 (citation support) also needs to be addressed to establish the reliability of the narrative.
+- **Assessment against Nature-style criteria**
+  - **Originality** The topic is under-documented and the historical synthesis is potentially original. However, the claim of being the "first" comprehensive review is not substantiated. The conceptual organization around biophysical properties is a reasonable framing but is not deeply novel.
+  - **Scientific importance** The review addresses a real gap in the literature and could be valuable for researchers and policymakers. However, its importance is diminished by the lack of methodological transparency, which limits its utility as a reliable reference.
+  - **Interdisciplinary readership** The topic is inherently interdisciplinary, spanning biophysics, molecular biology, and computational biology. The manuscript is written in a way that is broadly accessible, but the lack of methodological detail may frustrate readers seeking to use the review as a data source.
+  - **Technical soundness** The technical soundness is currently not established. The search strategy and classification framework are not described in sufficient detail to be evaluated. The narrative synthesis is plausible but not verifiable from the provided material.
+  - **Readability for nonspecialists** The prose is generally clear and the organization around five properties is helpful. However, the manuscript assumes familiarity with a range of biophysical techniques and protein engineering concepts, which may limit accessibility for a general scientific audience.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript addresses a worthwhile topic and has a sensible structure, but the core methodological claims (systematic search, quantitative classification) are not verifiable from the supplied material. Major revisions are required to provide the missing methodological detail and to substantiate the quantitative claims. If these concerns are addressed, the manuscript could become a useful contribution.
+
+## Risk / unsupported claims
+- The claim of being the "first comprehensive overview of protein engineering in Brazil" is unsupported, as no comparison with prior reviews is provided.
+- The quantitative classifications in Table 1 (e.g., 57% for stability, 57.9% for molecular recognition) are not verifiable without a defined coding scheme and classification process.
+- The claim that "Brazilian groups have rapidly incorporated AlphaFold2 and AlphaFold3 into workflows" is not supported by specific citations in the visible text.
+- The claim that "the establishment of national synchrotron facilities accelerated the transition from descriptive structure-function studies to mechanism-driven protein engineering" is not directly cited.
+- The statement that "the findings indicate that biophysics has moved beyond a predominantly descriptive role and has become central to the design and validation of engineered proteins" is a synthesis that is not directly supported by the visible evidence.
+- The temporal trend claims (e.g., growth in publications, shifts in methodological emphasis) are not supported by any quantitative analysis or figure showing publication counts over time beyond the reference to Fig. 2B, whose content is not visible.

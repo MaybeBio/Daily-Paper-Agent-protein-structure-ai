@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors present SLIP, a framework for constructing synthetic protein fitness landscapes with tunable difficulty based on Potts models, intended for benchmarking machine learning-guided directed evolution (MLDE) pipelines. The framework is claimed to be extendable to any protein family with a sequence alignment, and the tuning framework is claimed to produce landscapes sufficiently challenging for benchmarking MLDE pipelines. The software is open-source.
+- **Visible evidence base** Abstract text only; no quantitative results, methodological details, or validation data are visible
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, supplementary information, code repository contents, and any experimental or computational validation results
+
+## Reviewer
+- **Overall assessment** The abstract describes a potentially useful contribution to the protein engineering community, addressing a real need for standardized synthetic benchmarks in MLDE. The concept of using Potts models with tunable difficulty is reasonable and aligns with existing literature on fitness landscape inference. However, the abstract provides insufficient detail to evaluate the technical soundness of the tuning mechanism, the validity of the benchmarking claims, or the practical utility of the framework. The central claim that the landscapes are "sufficiently challenging" is not supported by any visible evidence. The contribution is plausible but currently not established from the provided material.
+- **Who would be interested in the results, and why** Researchers developing or applying machine learning methods for protein design, particularly those working on directed evolution pipelines. The framework could serve as a standardized testbed for comparing MLDE strategies, which would be of interest to both computational and experimental groups seeking to optimize their design-build-test-learn loops. The open-source availability enhances potential adoption.
+- **Major strengths** The problem addressed is well-motivated, as experimental benchmarking of MLDE pipelines is costly and often impractical. The use of Potts models is a principled choice, given their established success in capturing sequence constraints from alignments. The claim of generalizability to any protein family with an alignment is attractive and, if true, would broaden the framework's applicability. The open-source release is a positive step for reproducibility and community use.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "we develop a framework called SLIP for constructing synthetic landscapes with tunable difficulty based on Potts models"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not describe how "tunable difficulty" is defined, parameterized, or controlled. No details are given on the tuning mechanism, the range of difficulty accessible, or how difficulty is quantified. Without this information, the core methodological contribution cannot be assessed.
+  - **Why it matters** The tunability of difficulty is the central feature that distinguishes SLIP from existing synthetic landscape approaches. If the tuning mechanism is not well-defined or does not produce a meaningful gradient of challenge, the framework's utility for benchmarking is undermined.
+  - **Resolution test** The full manuscript must provide a precise definition of difficulty, the parameters that control it, and a demonstration that varying these parameters produces landscapes with measurably different benchmarking outcomes.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "we show that our tuning framework provides landscapes sufficiently challenging to benchmark MLDE pipelines"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** No results are presented to support this claim. There is no indication of what benchmarks were run, which MLDE pipelines were tested, what metrics were used, or how "sufficiently challenging" was determined. The claim is entirely unsupported in the visible material.
+  - **Why it matters** This is the primary validation claim of the work. Without evidence that the landscapes pose a meaningful challenge to state-of-the-art MLDE methods, the practical value of SLIP remains unproven.
+  - **Resolution test** The full manuscript must include benchmarking results comparing MLDE pipeline performance on SLIP landscapes against appropriate baselines, with clear metrics and statistical analysis demonstrating that the landscapes are non-trivial.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Generalizability
+  - **Claim pointer** "This framework can be extended to any protein family for which there is a sequence alignment"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract claims universal applicability but provides no evidence or discussion of potential limitations. Potts model inference requires sufficient alignment depth and diversity, and it is unclear how the framework handles families with few sequences, strong phylogenetic structure, or non-standard constraints.
+  - **Why it matters** Overclaiming generalizability without addressing known limitations could mislead potential users and reduce the framework's credibility. A clear statement of applicability conditions is needed.
+  - **Resolution test** The full manuscript should include a discussion of alignment requirements, potential failure modes, and ideally a demonstration on multiple protein families with varying alignment characteristics.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Software availability
+  - **Evidence pointer** Abstract; URL provided
+  - **Issue** The abstract states the software is open-source and provides a URL, but there is no mention of versioning, documentation, or example usage. The repository contents cannot be verified from the abstract alone.
+  - **Required correction** The full manuscript should include a software availability statement with version details, dependencies, and a link to documentation or a usage example.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "tunable difficulty" is used without definition. It is unclear whether difficulty refers to the ruggedness of the landscape, the number of local optima, the signal-to-noise ratio, or some other property.
+  - **Required correction** Define "difficulty" explicitly in the abstract or introduction, and specify how it is operationalized in the tuning framework.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Context
+  - **Affected element** Related work
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not situate SLIP relative to existing synthetic landscape benchmarks for protein design. It is unclear what gap this work fills beyond prior approaches.
+  - **Required correction** The full manuscript should include a comparison with existing synthetic landscape methods, highlighting the specific advantages of SLIP.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The tuning mechanism must be fully specified and validated, and the benchmarking claim must be supported with concrete results. Without these, the core contributions of the work are not established.
+- **Assessment against Nature-style criteria** 
+  - Originality: The use of Potts models for synthetic landscape construction is not entirely novel, but the specific focus on tunable difficulty for MLDE benchmarking may offer a new angle. The abstract does not provide enough detail to assess the degree of innovation.
+  - Scientific importance: The problem of benchmarking MLDE pipelines is important and timely. If the framework is robust and well-validated, it could have significant utility for the protein engineering community.
+  - Interdisciplinary readership: The work sits at the intersection of machine learning, computational biology, and protein engineering. The abstract is written in a way that is accessible to these communities, though the lack of technical detail limits its immediate usefulness.
+  - Technical soundness: Not assessable from the abstract. The tuning mechanism and validation approach are not described.
+  - Readability for nonspecialists: The abstract is clear and concise, with minimal jargon. The core concept is understandable to a broad scientific audience.
+- **Recommendation posture** Currently not established from the provided evidence. The concept is promising and the problem is well-motivated, but the abstract lacks the technical detail and validation results needed to assess the claims. A full review of the manuscript would be required to determine whether the framework is sound and useful.
+
+## Risk / unsupported claims
+- The claim that SLIP provides landscapes "sufficiently challenging to benchmark MLDE pipelines" is unsupported in the abstract.
+- The claim of generalizability to "any protein family for which there is a sequence alignment" is unsupported and likely overstated without qualification.
+- The tunability of difficulty is asserted but not defined or demonstrated.
+- The practical utility of the framework for benchmarking is not established from the visible material.

@@ -1,0 +1,340 @@
+{
+  "identity": {
+    "pmid": "43006150",
+    "doi": "10.1093/nar/gkag1116",
+    "title": "ThermoMutDB 2.0: semiautomated literature curation and structural enrichment of thermostability data for protein mutations."
+  },
+  "content": {
+    "abstract": "Experimental measurements of protein thermodynamic stability are essential for understanding the relationship between protein structure and function, the molecular consequences of mutations, and their potential implications for protein malfunction and disease. However, extracting these data from the literature remains constrained by labor-intensive manual curation. Here, we present ThermoMutDB 2.0, a scalable framework for semiautomated literature curation and systematic structural enrichment. It introduces a major architectural redesign that integrates a large language model with rule-based entity recognition to identify and prioritize publications reporting experimentally measured effects of protein mutations on thermostability, while retaining expert validation as the final curation step. Complementing this literature-processing workflow, ThermoMutDB 2.0 systematically enriches curated mutations with mutant structural models, enabling interactive three-dimensional contextualization of experimentally derived thermodynamic data. Applied to the literature retrieved from January 1976 to the most recent search update in 2026, the pipeline screened 5,934 candidate publications and prioritized 254 for expert review, resulting in the incorporation of 102 articles and 1763 new entries. Rather than representing a simple expansion of database content, ThermoMutDB 2.0 establishes an extensible human-in-the-loop architecture in which automated literature triage, expert curation, and structural modeling operate as an integrated workflow. This redesign provides a sustainable foundation for continuous database maintenance and for linking experimental protein stability measurements with their structural context (available at http://thermomutdb.pathotrack.health/).",
+    "keywords": [],
+    "mesh_terms": [],
+    "pub_types": [
+      "Journal Article"
+    ]
+  },
+  "contributors": {
+    "medline": {
+      "full_names": [
+        "Rodrigues, Gratchela Dutra",
+        "Clementino-Silva, Alisson",
+        "Brant-Ribeiro, Taffarel",
+        "de Mendonca, Maria Luiza Maciel",
+        "Zuccolotto-Guimaraes, Barbara",
+        "Dos Santos, Fernanda Elen Silva",
+        "Guimaraes, Ronison Alves",
+        "Ferreira, Valentina Gessinger",
+        "Ehlert, Maria Eduarda",
+        "Quintanilha-Peixoto, Gabriel",
+        "Rodrigues-Silva, Damares",
+        "de Menek, Gabriel Liston",
+        "Goulart, Lucas Mocellin",
+        "Silva, Danilo de Castro",
+        "Zadra, Vivian Ferreira",
+        "Goes-Neto, Aristoteles",
+        "Pires, Douglas Eduardo Valente",
+        "Kremer, Frederico Schmitt",
+        "Xavier, Joicymara Santos"
+      ],
+      "short_names": [
+        "Rodrigues GD",
+        "Clementino-Silva A",
+        "Brant-Ribeiro T",
+        "de Mendonca MLM",
+        "Zuccolotto-Guimaraes B",
+        "Dos Santos FES",
+        "Guimaraes RA",
+        "Ferreira VG",
+        "Ehlert ME",
+        "Quintanilha-Peixoto G",
+        "Rodrigues-Silva D",
+        "de Menek GL",
+        "Goulart LM",
+        "Silva DC",
+        "Zadra VF",
+        "Goes-Neto A",
+        "Pires DEV",
+        "Kremer FS",
+        "Xavier JS"
+      ],
+      "auids": [
+        "ORCID: 0000-0003-1120-7659",
+        "ORCID: 0000-0003-0622-5561",
+        "ORCID: 0000-0001-9727-1656",
+        "ORCID: 0000-0002-8415-1396",
+        "ORCID: 0009-0009-9907-2939",
+        "ORCID: 0009-0002-6281-8169",
+        "ORCID: 0009-0006-5939-2610",
+        "ORCID: 0009-0009-0209-5190",
+        "ORCID: 0009-0000-5060-1339",
+        "ORCID: 0000-0002-7476-5845",
+        "ORCID: 0009-0009-8842-0934",
+        "ORCID: 0009-0006-1291-6931",
+        "ORCID: 0009-0007-5088-3648",
+        "ORCID: 0000-0001-5740-3968",
+        "ORCID: 0000-0001-8634-2738",
+        "ORCID: 0000-0002-7692-6243",
+        "ORCID: 0000-0002-3004-2119",
+        "ORCID: 0000-0001-7284-6054",
+        "ORCID: 0000-0002-4649-6270"
+      ],
+      "affiliations": [
+        "Technological Development Center, Federal University of Pelotas (UFPel), Capao do Leao, Rio Grande do Sul 96160-000, Brazil.",
+        "Biological Sciences Institute, Universidade Federal de Minas Gerais (UFMG), Belo Horizonte, Minas Gerais 31270-901, Brazil.",
+        "Campus Passos, Instituto Federal de Educacao, Ciencia e Tecnologia do Sul de Minas Gerais (IFSULDEMINAS), Passos, Minas Gerais 37903-070, Brazil.",
+        "Computer Science Division, Instituto Tecnologico de Aeronautica (ITA), Sao Jose dos Campos, Sao Paulo 12228-900, Brazil.",
+        "Department of Veterinary Clinic, Sao Paulo State University (UNESP), Botucatu, Sao Paulo 18618-681, Brazil.",
+        "Biological Sciences Institute, Universidade Federal de Minas Gerais (UFMG), Belo Horizonte, Minas Gerais 31270-901, Brazil.",
+        "Biological Sciences Institute, Universidade Federal de Minas Gerais (UFMG), Belo Horizonte, Minas Gerais 31270-901, Brazil.",
+        "Biological Sciences Institute, Universidade Federal de Minas Gerais (UFMG), Belo Horizonte, Minas Gerais 31270-901, Brazil.",
+        "Technological Development Center, Federal University of Pelotas (UFPel), Capao do Leao, Rio Grande do Sul 96160-000, Brazil.",
+        "Technological Development Center, Federal University of Pelotas (UFPel), Capao do Leao, Rio Grande do Sul 96160-000, Brazil.",
+        "Center of Biosciences and Biotechnology, State University of Norte Fluminense (UENF), Campos dos Goytacazes, Rio de Janeiro 28013-602, Brazil.",
+        "Biological Sciences Institute, Universidade Federal de Minas Gerais (UFMG), Belo Horizonte, Minas Gerais 31270-901, Brazil.",
+        "Technological Development Center, Federal University of Pelotas (UFPel), Capao do Leao, Rio Grande do Sul 96160-000, Brazil.",
+        "Technological Development Center, Federal University of Pelotas (UFPel), Capao do Leao, Rio Grande do Sul 96160-000, Brazil.",
+        "Centre for Epidemic Response and Innovation, School for Data Science and Computational Thinking, Stellenbosch University, Stellenbosch 7600, South Africa.",
+        "Department of Agriculture Sciences, Universidade Federal dos Vales do Jequitinhonha e Mucuri (UFVJM), Unai, Minas Gerais 39100-000, Brazil.",
+        "Biological Sciences Institute, Universidade Federal de Minas Gerais (UFMG), Belo Horizonte, Minas Gerais 31270-901, Brazil.",
+        "Xyme, Oxford OX2 0HA, United Kingdom.",
+        "Technological Development Center, Federal University of Pelotas (UFPel), Capao do Leao, Rio Grande do Sul 96160-000, Brazil.",
+        "Biological Sciences Institute, Universidade Federal de Minas Gerais (UFMG), Belo Horizonte, Minas Gerais 31270-901, Brazil.",
+        "Computer Science Division, Instituto Tecnologico de Aeronautica (ITA), Sao Jose dos Campos, Sao Paulo 12228-900, Brazil.",
+        "Centre for Epidemic Response and Innovation, School for Data Science and Computational Thinking, Stellenbosch University, Stellenbosch 7600, South Africa."
+      ]
+    },
+    "xml": [
+      {
+        "full_name": "Rodrigues, Gratchela Dutra",
+        "short_name": "Rodrigues GD",
+        "identifiers": [
+          "0000-0003-1120-7659"
+        ],
+        "affiliations": [
+          "Technological Development Center, Federal University of Pelotas (UFPel), Capão do Leão, Rio Grande do Sul 96160-000, Brazil."
+        ]
+      },
+      {
+        "full_name": "Clementino-Silva, Alisson",
+        "short_name": "Clementino-Silva A",
+        "identifiers": [
+          "0000-0003-0622-5561"
+        ],
+        "affiliations": [
+          "Biological Sciences Institute, Universidade Federal de Minas Gerais (UFMG), Belo Horizonte, Minas Gerais 31270-901, Brazil."
+        ]
+      },
+      {
+        "full_name": "Brant-Ribeiro, Taffarel",
+        "short_name": "Brant-Ribeiro T",
+        "identifiers": [
+          "0000-0001-9727-1656"
+        ],
+        "affiliations": [
+          "Campus Passos, Instituto Federal de Educação, Ciência e Tecnologia do Sul de Minas Gerais (IFSULDEMINAS), Passos, Minas Gerais 37903-070, Brazil.",
+          "Computer Science Division, Instituto Tecnológico de Aeronáutica (ITA), São José dos Campos, São Paulo 12228-900, Brazil."
+        ]
+      },
+      {
+        "full_name": "de Mendonça, Maria Luiza Maciel",
+        "short_name": "de Mendonça MLM",
+        "identifiers": [
+          "0000-0002-8415-1396"
+        ],
+        "affiliations": [
+          "Department of Veterinary Clinic, São Paulo State University (UNESP), Botucatu, São Paulo 18618-681, Brazil."
+        ]
+      },
+      {
+        "full_name": "Zuccolotto-Guimarães, Bárbara",
+        "short_name": "Zuccolotto-Guimarães B",
+        "identifiers": [
+          "0009-0009-9907-2939"
+        ],
+        "affiliations": [
+          "Biological Sciences Institute, Universidade Federal de Minas Gerais (UFMG), Belo Horizonte, Minas Gerais 31270-901, Brazil."
+        ]
+      },
+      {
+        "full_name": "Dos Santos, Fernanda Elen Silva",
+        "short_name": "Dos Santos FES",
+        "identifiers": [
+          "0009-0002-6281-8169"
+        ],
+        "affiliations": [
+          "Biological Sciences Institute, Universidade Federal de Minas Gerais (UFMG), Belo Horizonte, Minas Gerais 31270-901, Brazil."
+        ]
+      },
+      {
+        "full_name": "Guimarães, Ronison Alves",
+        "short_name": "Guimarães RA",
+        "identifiers": [
+          "0009-0006-5939-2610"
+        ],
+        "affiliations": [
+          "Biological Sciences Institute, Universidade Federal de Minas Gerais (UFMG), Belo Horizonte, Minas Gerais 31270-901, Brazil."
+        ]
+      },
+      {
+        "full_name": "Ferreira, Valentina Gessinger",
+        "short_name": "Ferreira VG",
+        "identifiers": [
+          "0009-0009-0209-5190"
+        ],
+        "affiliations": [
+          "Technological Development Center, Federal University of Pelotas (UFPel), Capão do Leão, Rio Grande do Sul 96160-000, Brazil."
+        ]
+      },
+      {
+        "full_name": "Ehlert, Maria Eduarda",
+        "short_name": "Ehlert ME",
+        "identifiers": [
+          "0009-0000-5060-1339"
+        ],
+        "affiliations": [
+          "Technological Development Center, Federal University of Pelotas (UFPel), Capão do Leão, Rio Grande do Sul 96160-000, Brazil."
+        ]
+      },
+      {
+        "full_name": "Quintanilha-Peixoto, Gabriel",
+        "short_name": "Quintanilha-Peixoto G",
+        "identifiers": [
+          "0000-0002-7476-5845"
+        ],
+        "affiliations": [
+          "Center of Biosciences and Biotechnology, State University of Norte Fluminense (UENF), Campos dos Goytacazes, Rio de Janeiro 28013-602, Brazil."
+        ]
+      },
+      {
+        "full_name": "Rodrigues-Silva, Damares",
+        "short_name": "Rodrigues-Silva D",
+        "identifiers": [
+          "0009-0009-8842-0934"
+        ],
+        "affiliations": [
+          "Biological Sciences Institute, Universidade Federal de Minas Gerais (UFMG), Belo Horizonte, Minas Gerais 31270-901, Brazil."
+        ]
+      },
+      {
+        "full_name": "de Menek, Gabriel Liston",
+        "short_name": "de Menek GL",
+        "identifiers": [
+          "0009-0006-1291-6931"
+        ],
+        "affiliations": [
+          "Technological Development Center, Federal University of Pelotas (UFPel), Capão do Leão, Rio Grande do Sul 96160-000, Brazil."
+        ]
+      },
+      {
+        "full_name": "Goulart, Lucas Mocellin",
+        "short_name": "Goulart LM",
+        "identifiers": [
+          "0009-0007-5088-3648"
+        ],
+        "affiliations": [
+          "Technological Development Center, Federal University of Pelotas (UFPel), Capão do Leão, Rio Grande do Sul 96160-000, Brazil."
+        ]
+      },
+      {
+        "full_name": "Silva, Danilo de Castro",
+        "short_name": "Silva DC",
+        "identifiers": [
+          "0000-0001-5740-3968"
+        ],
+        "affiliations": [
+          "Centre for Epidemic Response and Innovation, School for Data Science and Computational Thinking, Stellenbosch University, Stellenbosch 7600, South Africa."
+        ]
+      },
+      {
+        "full_name": "Zadra, Vívian Ferreira",
+        "short_name": "Zadra VF",
+        "identifiers": [
+          "0000-0001-8634-2738"
+        ],
+        "affiliations": [
+          "Department of Agriculture Sciences, Universidade Federal dos Vales do Jequitinhonha e Mucuri (UFVJM), Unaí, Minas Gerais 39100-000, Brazil."
+        ]
+      },
+      {
+        "full_name": "Góes-Neto, Aristóteles",
+        "short_name": "Góes-Neto A",
+        "identifiers": [
+          "0000-0002-7692-6243"
+        ],
+        "affiliations": [
+          "Biological Sciences Institute, Universidade Federal de Minas Gerais (UFMG), Belo Horizonte, Minas Gerais 31270-901, Brazil."
+        ]
+      },
+      {
+        "full_name": "Pires, Douglas Eduardo Valente",
+        "short_name": "Pires DEV",
+        "identifiers": [
+          "0000-0002-3004-2119"
+        ],
+        "affiliations": [
+          "Xyme, Oxford OX2 0HA, United Kingdom."
+        ]
+      },
+      {
+        "full_name": "Kremer, Frederico Schmitt",
+        "short_name": "Kremer FS",
+        "identifiers": [
+          "0000-0001-7284-6054"
+        ],
+        "affiliations": [
+          "Technological Development Center, Federal University of Pelotas (UFPel), Capão do Leão, Rio Grande do Sul 96160-000, Brazil."
+        ]
+      },
+      {
+        "full_name": "Xavier, Joicymara Santos",
+        "short_name": "Xavier JS",
+        "identifiers": [
+          "0000-0002-4649-6270"
+        ],
+        "affiliations": [
+          "Biological Sciences Institute, Universidade Federal de Minas Gerais (UFMG), Belo Horizonte, Minas Gerais 31270-901, Brazil.",
+          "Computer Science Division, Instituto Tecnológico de Aeronáutica (ITA), São José dos Campos, São Paulo 12228-900, Brazil.",
+          "Centre for Epidemic Response and Innovation, School for Data Science and Computational Thinking, Stellenbosch University, Stellenbosch 7600, South Africa."
+        ]
+      }
+    ]
+  },
+  "source": {
+    "journal_title": [
+      "Nucleic acids research"
+    ],
+    "journal_abbrev": [
+      "Nucleic Acids Res"
+    ],
+    "pub_date": "2026 Nov 10",
+    "pub_year": "2026",
+    "pub_types": [
+      "Journal Article"
+    ]
+  },
+  "metadata": {
+    "entrez_date": "2026/11/10 11:36",
+    "fetched_at": "2026-11-15 11:51:31"
+  },
+  "links": {
+    "cites": [],
+    "refs": [],
+    "similar": [
+      "43006150"
+    ],
+    "review": [
+      "43006150"
+    ],
+    "pmc": [],
+    "entrez": {},
+    "external": [
+      {
+        "url": "https://academic.oup.com/nar/article-lookup/doi/10.1093/nar/gkag1116",
+        "provider": "Silverchair Information Systems",
+        "category": "Full Text Sources",
+        "attribute": "free resource",
+        "linkname": ""
+      }
+    ],
+    "text_mined": []
+  }
+}

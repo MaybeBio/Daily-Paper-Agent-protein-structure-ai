@@ -1,0 +1,86 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, results, discussion, methods) without supplementary figures, tables, or source data
+- **Assessment boundary** Scientific claims, methodological soundness, and evidence consistency as presented in the provided text; no external validation performed
+- **Shared manuscript claim summary** The authors propose that a cryptic, dynamically forming divalent metal binding pocket (DBP) at the HNH–RuvC interface of Cas9 regulates metal-dependent conformational activation of the HNH domain and coordinates the coupled activity of the HNH and RuvC nucleases. They further claim that different divalent metals (Mg2+, Ca2+, Co2+) differentially affect the catalytic mechanism, with Mg2+ and Ca2+ supporting cleavage and Co2+ impairing it.
+- **Visible evidence base** Molecular dynamics simulations (~75 μs aggregate), umbrella sampling free energy profiles, Markov state models, QM/MM simulations with thermodynamic integration and metadynamics, solution NMR on an isolated HNH–L2 construct, in vitro cleavage assays with DBP mutants, DSF stability assays, fluorescence anisotropy DNA binding measurements, gRNA binding measurements
+- **Missing materials affecting confidence** Supplementary figures and tables (including Supplementary Figs. 1–36, Supplementary Tables 1–2), source data, reporting summary, and full NMR assignment details; these are referenced but not provided for verification
+
+## Reviewer
+- **Overall assessment** This manuscript presents a compelling and multi-faceted investigation into the metal-dependent regulation of Cas9 activity, combining extensive computational sampling with experimental validation. The identification of a cryptic binding pocket at the HNH–RuvC interface is novel and mechanistically plausible, and the integration of NMR, mutagenesis, and kinetics strengthens the case. However, several concerns regarding the directness of experimental evidence for the DBP, the interpretation of kinetic data, and the generalizability of the QM/MM findings need to be addressed before the central claims are fully established.
+- **Who would be interested in the results, and why** Researchers in CRISPR biology and genome editing, particularly those interested in the mechanistic basis of Cas9 activity and its optimization across different cellular ionic environments. Also of interest to the broader community studying metal-dependent nucleases, cryptic allosteric sites, and the application of enhanced sampling and QM/MM methods to enzyme catalysis.
+- **Major strengths** 1) The combination of multiple computational techniques (MD, MSM, QM/MM) with experimental validation (NMR, mutagenesis, kinetics) is rigorous and comprehensive. 2) The identification of a cryptic, dynamically forming pocket is a novel contribution that could have broad implications for understanding Cas9 regulation. 3) The use of NMR to directly probe metal-dependent conformational changes in the HNH–L2 region provides strong experimental support for the computational predictions. 4) The study addresses an important and under-explored question: how ionic environment modulates Cas9 function, with practical implications for genome editing.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence strength for the DBP as a functional regulatory element
+  - **Claim pointer** The authors claim that the DBP "regulates the metal-dependent activity of Cas9" and that mutations targeting the DBP "disrupt HNH activation and impair the coupled catalytic activity of both nucleases."
+  - **Evidence pointer** Figure 3, Figure 4e–g, Supplementary Figs. 23–24
+  - **Concern** The functional significance of the DBP is primarily inferred from mutagenesis experiments (M1–M3) that show reduced cleavage activity. However, the manuscript does not provide direct evidence that these mutations specifically disrupt metal binding at the DBP without affecting other aspects of protein structure or dynamics. The NMR data are collected on an isolated HNH–L2 construct, not on the full Cas9 protein, and the authors do not demonstrate that the DBP is occupied by metal ions in the full-length context. The claim that the DBP is a "key regulator" would be strengthened by direct binding measurements (e.g., ITC or NMR titrations showing metal binding to the DBP) or by showing that the mutations specifically alter metal-dependent conformational transitions rather than simply destabilizing the protein.
+  - **Why it matters** Without direct evidence that the DBP is a bona fide metal binding site that mediates the regulatory effect, the central mechanistic claim of the paper remains correlative. The mutations could impair activity through indirect structural effects, and the reduced cleavage could be due to altered protein stability or folding rather than specific disruption of metal-dependent regulation.
+  - **Resolution test** Provide direct evidence of metal binding to the DBP (e.g., via ITC, NMR titrations, or X-ray crystallography with metal ions in the pocket). Alternatively, show that the M1–M3 mutations specifically abolish metal-dependent conformational changes in the full-length Cas9 protein, as monitored by smFRET or other single-molecule approaches, without affecting overall protein stability or DNA binding.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Quantitative agreement between simulation and experiment
+  - **Claim pointer** The authors claim that "elevated Mg2+ levels (10 mM) facilitate the transition of HNH from the pre-active to the active conformation, accelerating the activation nearly twofold relative to low Mg2+ conditions (10 μM)" and that this is "in remarkable agreement with FRET experiments reporting an approximately 2.5-fold increase in transition rates at elevated Mg2+ concentrations."
+  - **Evidence pointer** Figures 1–2, Discussion
+  - **Concern** The manuscript reports a ~2-fold acceleration from simulations and cites a ~2.5-fold increase from FRET experiments as "remarkable agreement." While the qualitative trend is consistent, the quantitative discrepancy (2.0 vs. 2.5) is not trivial, and the authors do not discuss potential sources of this difference (e.g., force field accuracy, finite sampling, differences in solution conditions between simulation and experiment). Additionally, the MSM-derived kinetics are stated to be faster than experimental millisecond timescales, and the authors acknowledge this but do not provide a detailed analysis of how this affects the interpretation of the rate enhancement.
+  - **Why it matters** The claim of quantitative agreement is used to validate the computational model. If the agreement is only qualitative, the authors should temper their language and discuss the limitations of their kinetic estimates. Overstating agreement could mislead readers about the predictive power of the simulations.
+  - **Resolution test** Provide a more detailed comparison of simulated and experimental rates, including error bars and a discussion of potential sources of discrepancy. Alternatively, revise the language to "qualitative agreement" and provide a more nuanced discussion of the limitations of the MSM approach for absolute rate prediction.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Generalizability of QM/MM findings to other metals
+  - **Claim pointer** The authors claim that "quantum-classical simulations revealing distinct catalytic behaviours among divalent metals" and that "Co2+ disrupts enzymatic function, despite ionic strength promoting Cas9 conformational activation regardless of ion type."
+  - **Evidence pointer** Figure 5, Supplementary Figs. 30–36
+  - **Concern** The QM/MM simulations are performed on a single active-site model with Ca2+ and Co2+, and the free energy barriers are compared to a previously published Mg2+ result. The authors do not provide sufficient detail on how the QM region was constructed, how the metal ions were parameterized, or how the simulations were validated against experimental data for Ca2+ and Co2+. The claim that Co2+ raises the barrier by ~9 kcal/mol is based on a single set of simulations, and the manuscript does not report error bars for the Mg2+ reference barrier. This limits the confidence in the quantitative comparison.
+  - **Why it matters** The claim that different metals have distinct catalytic behaviors is a key part of the paper's message about metal-dependent regulation. If the QM/MM results are not robustly validated, the conclusion that Co2+ is inhibitory due to a specific mechanistic change (rather than, e.g., a general destabilization of the active site) is not fully supported.
+  - **Resolution test** Provide more detailed validation of the QM/MM setup, including convergence tests, comparison with experimental kinetic data for Ca2+ and Co2+ (if available), and error estimates for all reported barriers. If possible, perform additional simulations with different starting conditions to ensure the results are robust.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Experimental validation of the DBP in the full-length Cas9 context
+  - **Claim pointer** The authors state that "NMR measurements revealing metal-dependent structural perturbations within the HNH–L2 region" support the computational identification of the DBP.
+  - **Evidence pointer** Figure 4a–d, Supplementary Figs. 21–22
+  - **Concern** The NMR experiments are performed on an isolated HNH–L2 construct (residues 772–925), which may not fully recapitulate the environment of the DBP in the full-length Cas9 protein. The DBP is proposed to form at the HNH–RuvC interface, and the isolated construct lacks the RuvC domain. The authors do not address whether the metal-dependent perturbations observed in the isolated construct are representative of the full-length protein, nor do they provide evidence that the DBP is formed in the full-length context.
+  - **Why it matters** The DBP is defined as a pocket at the HNH–RuvC interface, and its functional relevance depends on its formation in the intact protein. If the NMR data are collected on a construct that cannot form the full interface, the relevance of the observed perturbations to the proposed mechanism is unclear.
+  - **Resolution test** Perform NMR or other biophysical experiments on a construct that includes both the HNH and RuvC domains, or use cross-linking or HDX-MS to demonstrate that the DBP is formed in the full-length protein. Alternatively, provide a clear rationale for why the isolated HNH–L2 construct is a valid model for the DBP.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity of figure labels
+  - **Affected element** Figure 1b
+  - **Evidence pointer** Figure 1b
+  - **Issue** The figure legend states "Shaded regions represent the standard error obtained using Monte Carlo bootstrap analysis of the free energy simulations," but the shaded regions in the figure are not clearly distinguishable from the line plots. It would be helpful to use a more distinct shading or add error bars at specific points.
+  - **Required correction** Improve the visual distinction of the shaded error regions in Figure 1b, or add explicit error bars at representative points.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Figure 4e–g
+  - **Evidence pointer** Figure 4e–g, Supplementary Figs. 23–24
+  - **Issue** The manuscript reports "mean ± s.e.m. from three independent experiments" for cleavage assays but does not specify the statistical test used to compare mutant and wild-type rates. Additionally, the number of replicates for the oligoduplex cleavage assays is not stated.
+  - **Required correction** Specify the statistical tests used and the number of replicates for all quantitative comparisons in Figure 4.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness of methods
+  - **Affected element** NMR spectroscopy methods
+  - **Evidence pointer** Methods section, NMR spectroscopy
+  - **Issue** The methods state that "Backbone assignments were obtained using standard triple-resonance experiments" but do not list the specific experiments or the assignment completeness. Additionally, the methods for determining pKa values are described only briefly.
+  - **Required correction** Provide more detail on the NMR experiments used for backbone assignment and pKa determination, including the percentage of residues assigned and the fitting procedure.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Discussion of limitations
+  - **Affected element** Discussion
+  - **Evidence pointer** Discussion
+  - **Issue** The discussion does not explicitly address the limitations of using an isolated HNH–L2 construct for NMR studies, nor does it discuss the potential impact of force field choice on the simulation results.
+  - **Required correction** Add a brief paragraph discussing the limitations of the study, including the use of isolated domains and the inherent uncertainties in computational predictions.
+- **Technical failings that need to be addressed before the case is established** 1) Direct evidence of metal binding to the DBP in the full-length Cas9 context is lacking (R1-M1). 2) The quantitative agreement between simulated and experimental kinetics is overstated (R1-M2). 3) The QM/MM results for Ca2+ and Co2+ lack sufficient validation and error analysis (R1-M3). 4) The NMR data are collected on an isolated construct that may not recapitulate the full HNH–RuvC interface (R1-M4).
+- **Assessment against Nature-style criteria** **Originality:** High. The identification of a cryptic, dynamically forming metal binding pocket as a regulatory element in Cas9 is a novel concept that has not been previously reported. **Scientific importance:** High. The work addresses a fundamental question about how metal ions regulate Cas9 function, with direct implications for genome editing in diverse cellular environments. **Interdisciplinary readership:** Moderate to high. The topic is of interest to CRISPR biologists, biophysicists, and computational chemists, but the heavy reliance on computational methods may limit accessibility for some experimental biologists. **Technical soundness:** Generally strong, with a multi-pronged approach combining MD, MSM, QM/MM, NMR, and biochemistry. However, the concerns raised above about direct evidence for the DBP and the validation of QM/MM results need to be addressed. **Readability for nonspecialists:** The abstract and introduction are accessible, but the results section is dense and may be challenging for readers without a strong background in computational biophysics. The authors should consider adding a schematic or summary figure to aid comprehension.
+- **Recommendation posture** Supportive if technical concerns are resolved. The manuscript presents a novel and potentially important mechanism for metal-dependent regulation of Cas9, but the central claim that the DBP is a functional regulatory element requires stronger direct evidence. The authors should address the concerns about direct metal binding measurements, quantitative agreement with experiment, and the relevance of the isolated HNH–L2 construct to the full-length protein.
+
+## Risk / unsupported claims
+- The claim that the DBP "regulates" Cas9 activity is not fully supported by direct evidence; the mutagenesis data are consistent with this interpretation but do not exclude alternative explanations.
+- The claim of "remarkable agreement" between simulated and experimental kinetics is overstated given the ~25% discrepancy.
+- The claim that Co2+ disrupts catalysis through a specific mechanistic change (dissociative pathway) is based on a single set of QM/MM simulations without sufficient validation.
+- The generalizability of the findings to other Cas9 orthologs or to in vivo conditions is not established, as all experiments were performed in vitro with a single Cas9 variant.

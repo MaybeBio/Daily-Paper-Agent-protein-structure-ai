@@ -1,0 +1,77 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors present a method that integrates ion mobility mass spectrometry (IM-MS) collision cross section (CCS) data with AlphaFold and Rosetta to improve protein complex structure prediction. The approach docks AlphaFold-predicted subunits with Rosetta and selects models using a newly developed score incorporating experimental or simulated CCS data. The authors report improved RMSD100 values for 26 of 38 (68%) complexes compared to AlphaFold-Multimer, with 14 systems improving from greater than 4 Å to less than 4 Å RMSD100.
+- **Visible evidence base** Abstract text only; no methodological details, benchmark composition, statistical analyses, or comparative performance metrics beyond the stated counts and percentages
+- **Missing materials affecting confidence** Full methods, benchmark complex list and selection criteria, definition and validation of the new scoring function, CCS measurement or simulation protocols, statistical significance testing, comparison details against AlphaFold-Multimer, and any structural examples or case studies
+
+## Reviewer
+- **Overall assessment** The abstract describes a potentially valuable integration of experimental IM-MS data with computational structure prediction, addressing a recognized limitation in protein complex modeling. The reported success rate of 68% improvement and the rescue of 14 systems from poor to acceptable accuracy are encouraging. However, the abstract provides insufficient methodological detail to evaluate the novelty, robustness, and generalizability of the approach. Key questions regarding the scoring function, benchmark composition, and statistical rigor remain unanswered. The work appears promising but is not fully assessable from the supplied material.
+- **Who would be interested in the results, and why** Structural biologists and computational biologists working on protein complex prediction, particularly those using AlphaFold or related deep learning approaches, would find this method relevant. Researchers in integrative structural biology who combine experimental data with computational modeling, as well as developers of scoring functions for model selection, would also be interested. The approach could appeal to laboratories using IM-MS as a structural characterization tool who seek to leverage their data for modeling applications.
+- **Major strengths** The abstract addresses a clear and important limitation in current protein complex prediction, namely the difficulty AlphaFold faces with multimeric assemblies. The integration of experimental or simulated CCS data as a model selection criterion is a logical and potentially powerful strategy. The reported improvement across a benchmark of 38 complexes, with 14 systems crossing the 4 Å RMSD100 threshold, suggests practical utility. The method appears broadly applicable, as it can use either experimental or simulated CCS data.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The method improves RMSD100 values for 26 of 38 (68%) complexes compared to AlphaFold-Multimer.  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The abstract reports a success rate but provides no information on the benchmark composition, including the diversity of complex sizes, stoichiometries, or difficulty levels. Without knowing whether the 38 complexes represent a balanced and unbiased test set, the 68% improvement rate cannot be interpreted as a general measure of method performance.  
+  - **Why it matters** If the benchmark is skewed toward easy cases or complexes where CCS data are particularly informative, the reported improvement may not generalize to the broader population of protein complexes. The claim of a "robust approach" requires evidence that the test set is representative.  
+  - **Resolution test** Provide a description of the benchmark selection criteria, including complex size range, stoichiometry distribution, and any filtering based on expected difficulty. Demonstrate that the test set is not biased toward cases favorable to the method.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** A newly developed score that incorporates experimental or simulated CCS data is used to select models.  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The abstract does not describe the scoring function, its mathematical form, how CCS data are weighted relative to Rosetta energy terms, or how the score was calibrated and validated. Without this information, the novelty and reliability of the score cannot be assessed.  
+  - **Why it matters** The core contribution of the work is the integration of CCS data into model selection. If the scoring function is ad hoc or poorly calibrated, the reported improvements may not be reproducible or transferable to other systems.  
+  - **Resolution test** Provide a full description of the scoring function, including its components, weighting scheme, and any training or calibration procedure. Show that the score is robust to variations in CCS measurement error and that it outperforms simpler alternatives.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Statistical rigor  
+  - **Claim pointer** 14 of these systems improved significantly from greater than 4 Å RMSD100 to less than 4 Å.  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The term "significantly" is used without any statistical testing. The abstract does not report confidence intervals, p-values, or any measure of variability across independent runs or model sampling. The improvement from greater than 4 Å to less than 4 Å is presented as a binary outcome, but the robustness of this transition is unclear.  
+  - **Why it matters** Without statistical analysis, the reader cannot determine whether the observed improvements are consistent or could arise from stochastic variation in the docking or scoring procedures. The claim of significance is unsupported.  
+  - **Resolution test** Report statistical analyses, such as paired comparisons of RMSD100 distributions, confidence intervals for the improvement rates, or bootstrapping results. Clarify whether the 4 Å threshold is a standard metric in the field and justify its use.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Reproducibility  
+  - **Claim pointer** The method integrates IM-MS data with AlphaFold and Rosetta.  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The abstract does not specify whether experimental or simulated CCS data were used for each of the 38 complexes, nor does it describe the simulation protocol for CCS values. The sensitivity of the method to CCS measurement error or simulation accuracy is not addressed.  
+  - **Why it matters** For the method to be useful to the community, users need to know whether they can rely on simulated CCS values when experimental data are unavailable, and how much error in CCS input can be tolerated.  
+  - **Resolution test** Specify the proportion of complexes using experimental versus simulated CCS data. Provide an analysis of method performance as a function of CCS error or uncertainty. Describe the CCS simulation method and its validation.
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Abstract wording  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Issue** The phrase "docks AlphaFold predicted subunits with Rosetta" is ambiguous regarding whether the docking is fully flexible or uses rigid-body approximations, and whether the AlphaFold models are used as-is or refined.  
+  - **Required correction** Clarify the docking protocol, including any flexibility treatment and whether AlphaFold models are used directly or subjected to refinement before docking.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Completeness  
+  - **Affected element** Benchmark description  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Issue** The abstract does not state whether the 38 complexes are all previously unseen by AlphaFold training or whether any were used in the development of the scoring function.  
+  - **Required correction** State whether the benchmark complexes were held out from any training or calibration of the method, and whether any overlap exists with AlphaFold training data.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Comparability  
+  - **Affected element** Baseline comparison  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Issue** The comparison is made only against AlphaFold-Multimer. It is unclear whether the Rosetta docking step alone, without CCS data, would yield similar improvements.  
+  - **Required correction** Report performance of the Rosetta docking pipeline without CCS-based scoring to isolate the contribution of the IM-MS data integration.
+
+## Risk / unsupported claims
+- The claim of "significant" improvement for 14 systems is unsupported without statistical testing.
+- The generalizability of the 68% improvement rate is not assessable without benchmark composition details.
+- The novelty and reliability of the "newly developed score" cannot be evaluated from the abstract alone.
+- The relative contribution of CCS data versus the Rosetta docking step to the reported improvements is not established.
+- The robustness of the method to CCS measurement or simulation error is not addressed.

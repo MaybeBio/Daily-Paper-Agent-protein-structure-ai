@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beyond Global Contrasts: Paired-Unit Activation Steering for Context-Aware Protein Sequence Design · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Beyond Global Contrasts: Paired-Unit Activation Steering for Context-Aware Protein Sequence Design</h1>
+      <div class="meta">Yingtong Zhou; Xiaoning Qian; Byung-Jun Yoon</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-11-11
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.11.09.765362">原文</a>
+      </div>
+      <p class="one-liner">该文提出PULSE方法，通过配对单元激活引导实现上下文感知的蛋白质序列设计，利用蛋白语言模型进行可控序列优化，核心聚焦蛋白质序列设计问题，方法上采用AI驱动，与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Activation steering in protein language models enables controllable sequence generation without changing the model weights. However, existing methods typically construct steering vectors from global differences between property-positive and property-negative protein populations, overlooking how property-improving directions vary across different protein sequence backgrounds. To address this, we propose Paired-Unit local steering of embeddings (PULSE) , which matches positive- and negative-property proteins by maximizing their representation cosine similarity and constructs steering vectors by aggregating similarity-weighted, unit-normalized differences between matched pairs. Across three protein optimization objectives–solubility, immunogenicity, and toxicity– PULSE consistently outperforms global population-centroid steering in both final predicted property scores and optimization success rates. Further analysis reveals that conventional static steering-vector diagnostics cannot adequately explain optimization performance. To characterize steering reliability during iterative sequence editing, we introduce Local Directional Support (LDS) , which measures how well successive representation changes align with property-improving directions from similar protein backgrounds. We show that LDS captures differences in trajectory reliability and enables predictor-free candidate prioritization, enriching successful protein designs without requiring property predictions during candidate selection. Together, these findings demonstrate the importance of context-aware steering and trajectory-level evaluation for controllable protein sequence optimization.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质语言模型中的激活引导（activation steering）能够在无需改变模型权重的情况下实现可控的序列生成。然而，现有方法通常基于性质阳性与性质阴性蛋白质群体之间的全局差异构建引导向量，忽略了性质改善方向在不同蛋白质序列背景中的变化。为解决这一问题，我们提出了配对单元局部嵌入引导（Paired-Unit local steering of embeddings, PULSE），该方法通过最大化正负性质蛋白质的表示余弦相似度进行匹配，并聚合相似度加权、单元归一化的匹配对差异来构建引导向量。在三个蛋白质优化目标——溶解度、免疫原性和毒性——中，PULSE在最终预测性质得分和优化成功率上均持续优于全局群体质心引导。进一步分析表明，传统的静态引导向量诊断方法无法充分解释优化性能。为表征迭代序列编辑过程中的引导可靠性，我们引入了局部方向支持（Local Directional Support, LDS），该指标衡量连续表示变化与来自相似蛋白质背景的性质改善方向的对齐程度。我们证明，LDS能够捕捉轨迹可靠性的差异，并实现无需预测器的候选优先排序，从而在候选选择过程中无需性质预测即可丰富成功蛋白质设计。综合这些发现，本研究强调了上下文感知引导和轨迹级评估对于可控蛋白质序列优化的重要性。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Beyond Global Contrasts: Paired-Unit Activation Steering for Context-Aware Protein Sequence Design</li>
+<li><strong>作者</strong>：Yingtong Zhou; Xiaoning Qian; Byung-Jun Yoon</li>
+<li><strong>单位</strong>：未提供（根据作者信息推测为 Texas A&amp;M University 相关机构，但原文未明确标注）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：方法学（Method）论文，提出新的激活引导（activation steering）方法用于蛋白质序列优化</li>
+<li><strong>领域</strong>：蛋白质序列设计 × 蛋白质语言模型（pLM）激活引导 × 可控生成</li>
+<li><strong>关键词</strong>：activation steering, protein language model, sequence optimization, context-aware, solubility, immunogenicity, toxicity</li>
+<li><strong>DOI/ID</strong>：10.64898/2026.11.09.765362</li>
+<li><strong>代码</strong>：https://github.com/TeresaZhouTamu/Paired_Unit_Steering</li>
+<li><strong>数据</strong>：DeepSol（溶解度）、ImmunoDB（免疫原性）、ToxDL 2.0（毒性）；具体数据划分见 Appendix B</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>方向定位</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>序列设计/优化</strong>子方向，具体为<strong>无需微调的激活引导（activation steering）</strong>方法。与 AlphaFold 等结构预测方法不同，本文聚焦于利用 pLM 内部表示进行<strong>可控序列生成</strong>，不涉及结构预测或 MD 模拟，但其所提出的<strong>上下文感知（context-aware）引导向量构建</strong>思路可迁移至结构相关任务（如基于结构的序列设计、构象采样中的偏置方向构建）。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>针对全局质心引导向量忽略序列背景差异的问题，本文提出 PULSE——通过最大化正负性质蛋白表示余弦相似度进行配对，并聚合相似度加权的单位归一化配对差异来构建上下文感知的引导向量，在溶解度、免疫原性和毒性三个优化目标上均优于全局质心引导（ASPO），并引入轨迹级指标 LDS 实现无需预测器的候选序列优先排序。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：在蛋白质语言模型的激活引导（activation steering）中，如何构建<strong>上下文感知（context-aware）</strong>的引导向量，使得同一性质改进方向在不同序列背景下仍然有效？</li>
+<li><strong>为什么重要</strong>：蛋白质适应度景观具有<strong>上位效应（epistasis）</strong>——同一突变在不同序列背景下的效应不同。全局质心引导向量（如 ASPO）通过平均正负性质群体的表示差异，抹平了这种背景依赖性，导致引导方向对某些目标序列不够有效。在湿实验验证成本高昂的背景下，提高计算优化的成功率和候选排序质量具有直接实用价值。</li>
+<li><strong>现有方法为何不足</strong>：ASPO 等全局方法仅计算正负群体质心的单一差异向量，未保留配对级别的方向信息；且静态引导向量诊断（如 bootstrap 稳定性）无法解释优化轨迹的实际可靠性。</li>
+<li><strong>精确研究问题</strong>：Can paired-unit, similarity-weighted aggregation of representation differences construct steering vectors that outperform global centroid-based steering across multiple protein optimization objectives, and can a trajectory-level metric (LDS) provide oracle-free candidate prioritization?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文引用与作者论述整理，标注为「仅本文框架」——本文未提供系统综述，以下为从引用文献和论述中提取的线索。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>预训练 pLM 用于序列设计</td>
+<td>ESM [18], ProtTrans [11], ProstT5 [13]</td>
+<td>从大规模序列数据中学习进化/结构/功能信息</td>
+<td>难以直接引导至特定性质</td>
+<td>本文的基础模型层</td>
+</tr>
+<tr>
+<td>突变效应预测与序列生成</td>
+<td>[14], [6]</td>
+<td>利用 pLM 表示进行下游任务</td>
+<td>需要标签数据或微调</td>
+<td>本文的对比背景</td>
+</tr>
+<tr>
+<td>激活引导（activation steering）</td>
+<td>[21], [17]</td>
+<td>不修改模型权重即可控制生成</td>
+<td>多为全局对比，忽略背景差异</td>
+<td>本文的直接改进对象</td>
+</tr>
+<tr>
+<td>蛋白质优化中的激活引导</td>
+<td>ASPO [7]</td>
+<td>迭代掩码+引导解码实现序列优化</td>
+<td>全局质心对比，忽略上位效应</td>
+<td>本文的基线方法</td>
+</tr>
+<tr>
+<td>不确定性感知引导</td>
+<td>[15]</td>
+<td>提高优化可靠性</td>
+<td>仍基于全局引导向量</td>
+<td>本文的补充对比</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在激活引导方法谱系中，本文是首个（据作者主张）将<strong>配对级别（paired-unit）</strong>的局部对比信息引入引导向量构建的方法，并首次提出<strong>轨迹级（trajectory-level）</strong>可靠性指标用于候选排序。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全局引导向量忽略序列背景差异</td>
+<td>同一性质改进方向在不同蛋白背景下效果不同</td>
+<td>上位效应（epistasis）导致突变效应依赖序列背景；全局质心平均抹平了配对级别的方向差异</td>
+<td>Introduction 第 2 段；Results 3.3 节</td>
+</tr>
+<tr>
+<td>静态引导向量诊断无法解释优化性能</td>
+<td>bootstrap 稳定性、局部静态支持等指标与最终优化效果不一致</td>
+<td>静态向量描述的是"意图干预方向"，而实际优化效果取决于迭代解码中选中的具体突变</td>
+<td>Results 3.4 节，图 4</td>
+</tr>
+<tr>
+<td>全局引导向量在强背景依赖性性质上失效</td>
+<td>毒性优化中全局方法表现差</td>
+<td>毒性相关方向在不同蛋白背景下差异最大（Spearman ρ = 0.568）</td>
+<td>Results 3.3 节，表 1；Appendix B.2</td>
+</tr>
+<tr>
+<td>候选排序依赖性质预测器</td>
+<td>标签数据有限时难以训练可靠预测器</td>
+<td>湿实验验证成本高，需要无需预测器的排序信号</td>
+<td>Results 3.6 节；Discussion 4.1 节</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>：PULSE 通过以下步骤构建引导向量——(1) 在配对层 l_pair 计算正负性质蛋白的表示；(2) 使用匈牙利算法（Hungarian algorithm）最大化配对间的余弦相似度，获得 K = min(N+, N−) 个不相交配对；(3) 对每个配对计算表示差异并做单位归一化；(4) 用配对层相似度的 softmax 权重（τ = 0.10）聚合这些单位归一化差异，得到引导向量。该向量在每一层重新计算，但配对和权重共享。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>：性质改进方向在表示空间中<strong>不是全局一致的</strong>，而是随序列背景（protein background）系统变化。通过<strong>相似度匹配</strong>正负性质蛋白，可以保留"可比背景下的方向信息"，避免全局平均带来的方向模糊。单位归一化则消除了配对间位移幅度差异的干扰，使方向信息不被大位移配对主导。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]：
+   - <strong>配对而非群体对比</strong>：在生物序列表示空间中，群体级别的对比（如质心差）会丢失个体级别的方向异质性。任何涉及"方向"的表示学习任务（如突变方向预测、构象变化方向）都可能受益于配对级别的对比设计。
+   - <strong>轨迹级评估优于静态评估</strong>：引导向量的质量不应仅由静态属性（稳定性、局部对齐）判断，而应通过实际优化轨迹中每步的方向支持来评估。这一思路可迁移至 MD 模拟中的偏置方向评估、构象采样中的推进方向选择。
+   - <strong>无需预测器的排序信号</strong>：LDS 提供了一种不依赖性质预测器的候选排序方法，在标签稀缺场景下具有实用价值。</p>
+</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：目标蛋白序列 x₀（待优化）、正负性质蛋白序列集合（用于构建引导向量）、外部性质预测器 f（仅用于评估，不参与优化）</li>
+<li><strong>输出</strong>：优化后的蛋白序列 x_T（T 步迭代后）</li>
+<li><strong>模块</strong>：
+  1. <strong>引导向量构建（PULSE）</strong>：配对（匈牙利算法）→ 单位归一化差异 → 相似度加权聚合
+  2. <strong>位点选择</strong>：与 ASPO 相同，按残基表示与引导向量的对齐程度排序，掩码最低得分位点
+  3. <strong>引导解码</strong>：在解码时对隐藏状态施加引导，同时保持原始范数
+  4. <strong>轨迹级评估（LDS）</strong>：计算每步表示位移与局部参考方向的点积，取下四分位数作为轨迹级指标</li>
+<li><strong>训练</strong>：无训练/微调；仅需前向传播计算表示</li>
+<li><strong>工具</strong>：PyTorch, CUDA, NVIDIA GeForce RTX 5090；ESMC-600M 作为骨干模型</li>
+<li><strong>流程</strong>：
+  1. 在配对层 l_pair 计算正负性质蛋白表示，执行匈牙利配对
+  2. 对每个目标序列 x₀，在每一层 l 用共享配对和权重构建引导向量 v^(l)
+  3. 迭代 T = 4 步，每步选择 2 个突变位点，掩码并引导解码
+  4. 用外部预测器 f 评估最终序列，计算成功标签
+  5. 对候选序列计算 LDS，按 LDS 降序排序，评估排序质量（AUROC、成功富集）</li>
+<li><strong>假设</strong>：</li>
+<li>表示空间中的余弦相似度能反映序列背景相似性</li>
+<li>配对级别的方向信息在聚合后仍能保留上下文感知性</li>
+<li>轨迹级 LDS 与最终优化成功相关</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>匈牙利配对（Hungarian matching）</td>
+<td>在正负性质蛋白间建立一一对应，最大化表示余弦相似度</td>
+<td>确保配对双方具有相似的序列背景，使方向差异反映"背景内"的性质效应而非背景差异</td>
+<td>输入：正负性质蛋白表示；输出：K 个配对索引</td>
+<td>Results 3.3 节：背景-方向相关性显著</td>
+<td>[预期] 移除后退化为随机配对，方向信息被背景差异污染，性能应接近全局质心方法</td>
+</tr>
+<tr>
+<td>单位归一化差异聚合</td>
+<td>对每个配对的表示差异做单位归一化，用 softmax 权重聚合</td>
+<td>消除位移幅度差异的干扰，使方向信息不被大位移配对主导</td>
+<td>输入：配对表示差异；输出：引导向量 v^(l)</td>
+<td>Methods 2.2 节；Results 3.2 节 PULSE 优于 ASPO</td>
+<td>[预期] 不做单位归一化则大位移配对主导方向，可能偏向异常蛋白</td>
+</tr>
+<tr>
+<td>位点选择与掩码</td>
+<td>按残基表示与引导向量的对齐程度排序，掩码最低得分位点</td>
+<td>确定每步需要修改的残基位置</td>
+<td>输入：序列表示、引导向量；输出：掩码位点</td>
+<td>与 ASPO 相同（Methods 2.1 节）</td>
+<td>已由 ASPO 验证；非本文贡献</td>
+</tr>
+<tr>
+<td>引导解码</td>
+<td>在解码时对隐藏状态施加引导，保持原始范数</td>
+<td>将引导向量转化为实际的序列修改</td>
+<td>输入：隐藏状态、引导向量；输出：修改后的隐藏状态</td>
+<td>与 ASPO 相同（Methods 2.1 节）</td>
+<td>已由 ASPO 验证；非本文贡献</td>
+</tr>
+<tr>
+<td>LDS（轨迹级指标）</td>
+<td>计算每步表示位移与局部参考方向的点积，取下四分位数</td>
+<td>量化优化轨迹中每一步的方向支持度，无需预测器即可排序候选</td>
+<td>输入：表示位移、局部参考方向；输出：轨迹级 LDS 标量</td>
+<td>Results 3.5 节：PULSE 的 LDS 高于 ASPO；Results 3.6 节：LDS 排序有效</td>
+<td>[预期] 移除后无法进行无需预测器的候选排序</td>
+</tr>
+<tr>
+<td>全局 bootstrap 稳定性</td>
+<td>通过重采样评估引导向量的方向稳定性</td>
+<td>作为静态诊断对比</td>
+<td>输入：引导向量；输出：平均角度偏差</td>
+<td>Results 3.4 节：无法解释优化性能</td>
+<td>本文证明其不足以评估引导质量</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>1. 引导向量构建（PULSE）</strong></p>
+<p>配对层表示：
+- h^(l_pair)(x) = mean over residues of h_r^(l_pair)(x)（残基表示的平均）</p>
+<p>匈牙利配对：
+- 最大化 Σ_k cos(h^(l_pair)(x⁺<em>{i_k}), h^(l_pair)(x⁻</em>{j_k}))，得到 K = min(N+, N−) 个不相交配对</p>
+<p>配对差异（每层 l）：
+- d_k^(l) = h^(l)(x⁺<em>{i_k}) − h^(l)(x⁻</em>{j_k})</p>
+<p>单位归一化：
+- d̂_k^(l) = d_k^(l) / ‖d_k^(l)‖</p>
+<p>相似度权重：
+- s_k = cos(h^(l_pair)(x⁺<em>{i_k}), h^(l_pair)(x⁻</em>{j_k}))
+- w_k = exp(s_k / τ) / Σ_m exp(s_m / τ)，其中 τ = 0.10</p>
+<p>引导向量：
+- v^(l) = Σ_k w_k · d̂_k^(l)</p>
+<p><strong>2. 位点选择与解码（与 ASPO 相同）</strong></p>
+<ul>
+<li>残基得分：s_r = ⟨h_r^(l_select)(x_t), v^(l_select)⟩</li>
+<li>掩码最低得分位点</li>
+<li>解码引导：h_steered = h + α · v^(l)（保持原始范数）</li>
+</ul>
+<p><strong>3. LDS（轨迹级指标）</strong></p>
+<ul>
+<li>表示位移：δ_t = h(x_{t+1}) − h(x_t)</li>
+<li>参考方向：从独立参考池中检索 K = 32 个与起始蛋白背景最相似（在 l_pair 层）的配对方向</li>
+<li>步级 LDS：LDS_t = cos(δ_t, v_ref)（若 δ_t ≠ 0；若 δ_t = 0，则 LDS_t = 0.5）</li>
+<li>轨迹级 LDS：LDS_traj = 步级 LDS 的下四分位数（Q1）</li>
+</ul>
+<p><strong>4. 全局 bootstrap 稳定性</strong></p>
+<ul>
+<li>A_m = mean over b=1..200 of angle(v_m, v_m^(b))（度）</li>
+</ul>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集与规模</strong>：
+- 三个独立测试集：溶解度 100 个目标蛋白、免疫原性 100 个、毒性 50 个
+- 每个性质的数据分为三部分：引导向量构建集、测试集、LDS 参考池（互不重叠，去除重复序列）
+- LDS 参考池平衡为正负性质改进方向各半</p>
+<p><strong>骨干/仪器</strong>：
+- ESMC-600M 作为 pLM 骨干
+- 外部性质预测器：溶解度用 ESM-2-650M + DeepSol 数据训练的二元预测器；免疫原性和毒性用 VenusVaccine 微调预测器
+- 硬件：NVIDIA GeForce RTX 5090</p>
+<p><strong>评测协议</strong>：
+- 最终预测性质分数（f(x_T)）的均值比较
+- 成功定义：f(x_T) &gt; f(x_0)（回顾性标签）
+- 配对 t 检验 / 置信区间（Appendix A.1）
+- 排序质量：AUROC、成功富集（top 25% 阈值）</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主优化实验</td>
+<td>PULSE 优于 ASPO</td>
+<td>三个性质，相同优化设置（T=4, 2 突变/步, 确定性解码）</td>
+<td>PULSE 在三个性质上均获得更高平均最终预测分数；配对比较经 Holm 校正后显著</td>
+<td>PULSE 的引导向量构建方式带来性能提升</td>
+<td>未提供效应量大小；未与更多基线（如微调、其他引导方法）对比</td>
+<td>Results 3.2 节，图 2，表 2</td>
+</tr>
+<tr>
+<td>成功率比较</td>
+<td>PULSE 提高优化成功率</td>
+<td>成功 = 最终分数 &gt; 原始分数</td>
+<td>PULSE 在三个性质上成功率更高，免疫原性提升最大</td>
+<td>PULSE 更可靠地实现性质改进</td>
+<td>未报告失败案例分析</td>
+<td>Results 3.2 节，图 2b</td>
+</tr>
+<tr>
+<td>背景-方向相关性</td>
+<td>性质改进方向具有背景依赖性</td>
+<td>配对间背景相似度 vs 方向相似度</td>
+<td>三个性质均呈正相关，毒性最强（ρ = 0.568）</td>
+<td>方向确实随背景变化，支持 PULSE 的设计动机</td>
+<td>相关性不等于因果；未控制其他变量</td>
+<td>Results 3.3 节，图 3，表 1</td>
+</tr>
+<tr>
+<td>静态诊断对比</td>
+<td>静态指标无法解释优化性能</td>
+<td>bootstrap 稳定性、LSVS 对比</td>
+<td>PULSE 的 bootstrap 稳定性更差但优化更好；LSVS 无显著差异</td>
+<td>静态诊断不足以评估引导质量</td>
+<td>未系统探索其他静态指标</td>
+<td>Results 3.4 节，图 4</td>
+</tr>
+<tr>
+<td>LDS 比较</td>
+<td>PULSE 轨迹更受局部方向支持</td>
+<td>相同参考池，比较 LDS 分布</td>
+<td>PULSE 的 LDS 显著更高，对参考池采样稳健</td>
+<td>LDS 捕捉了 PULSE 的轨迹级优势</td>
+<td>未证明 LDS 与湿实验成功率的直接关联</td>
+<td>Results 3.5 节，图 5</td>
+</tr>
+<tr>
+<td>LDS 排序实验</td>
+<td>LDS 可无需预测器排序候选</td>
+<td>按 LDS 降序排序，回顾性评估</td>
+<td>成功富集随 LDS 阈值提高而增加；AUROC 在 PULSE 上更高</td>
+<td>LDS 是有效的无预测器排序信号</td>
+<td>AUROC 为点估计，未报告置信区间</td>
+<td>Results 3.6 节，图 6</td>
+</tr>
+<tr>
+<td>全局 vs 局部指标对比</td>
+<td>两者互补</td>
+<td>同一轨迹分别计算全局置信度和 LDS</td>
+<td>溶解度/免疫原性上全局置信度也偏好 PULSE，但毒性上失效；LDS 在三个性质上均有效</td>
+<td>全局和局部指标提供互补信息</td>
+<td>未提供组合使用的定量增益</td>
+<td>Discussion 4.1 节，图 7</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文的结论仅限于<strong>序列优化</strong>任务（溶解度、免疫原性、毒性），不涉及结构预测、构象采样或 MD 模拟。所有评估基于<strong>外部预测器的分数</strong>，而非湿实验测量。</li>
+<li><strong>oracle/真值输入</strong>：外部性质预测器 f(·) 仅用于回顾性评估，不参与优化过程或 LDS 排序。LDS 排序完全无需预测器。</li>
+<li><strong>端到端状态</strong>：方法本身是端到端的（序列进、序列出），但<strong>验证不是端到端的</strong>——最终结论依赖预测器分数的可靠性，未经过实验验证。</li>
+<li><strong>算力成本</strong>：PULSE 的额外计算开销主要在匈牙利配对（K 不超过构建集大小）和每层引导向量计算；与 ASPO 相比，解码和优化过程完全相同，因此额外成本可忽略。</li>
+<li><strong>历史数据依赖</strong>：引导向量构建需要正负性质蛋白的标注数据；LDS 参考池也需要独立标注数据。数据质量直接影响引导质量。</li>
+<li><strong>模型依赖</strong>：所有实验基于 ESMC-600M 单一骨干；结论可能不迁移到其他 pLM（如 ESM-2、ProGen 等）。</li>
+<li><strong>最难情形</strong>：毒性优化中全局方法失效最明显，说明背景依赖性最强的任务中 PULSE 优势最大；但这也意味着在背景依赖性弱的任务中，PULSE 的优势可能缩小。</li>
+<li><strong>群体/领域边界</strong>：测试集规模有限（50-100 个目标蛋白），且未报告蛋白家族/功能多样性；结论可能偏向于训练分布内的蛋白。</li>
+<li><strong>有边界的复述</strong>：在 ESMC-600M 骨干和三个性质预测器评估下，PULSE 的配对级上下文感知引导向量构建方式在最终预测分数和成功率上优于全局质心引导，且 LDS 能有效排序候选序列；但该结论未经湿实验验证，且局限于单一骨干和有限测试集。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单一模型骨干</td>
+<td>所有实验仅使用 ESMC-600M</td>
+<td>在更广泛的 pLM 骨干上验证</td>
+<td>Discussion 4.2 节</td>
+</tr>
+<tr>
+<td>预测器而非实验验证</td>
+<td>评估基于外部预测器分数，非湿实验测量</td>
+<td>湿实验验证</td>
+<td>Discussion 4.2 节</td>
+</tr>
+<tr>
+<td>LDS 参考池依赖标注数据</td>
+<td>需要独立的正负性质标注数据构建参考池</td>
+<td>未明确提及</td>
+<td>Discussion 4.2 节（隐含）</td>
+</tr>
+<tr>
+<td>局部方向对齐与成功的因果关系未确立</td>
+<td>LDS 与优化成功的关联不证明因果</td>
+<td>未明确提及</td>
+<td>Discussion 4.2 节</td>
+</tr>
+<tr>
+<td>优化预算比较缺失</td>
+<td>未系统比较不同 T 和突变数设置</td>
+<td>更广泛的优化预算比较</td>
+<td>Discussion 4.2 节</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>评估完全依赖预测器分数</td>
+<td>预测器本身可能有偏；PULSE 可能是在"欺骗"预测器而非真正改进性质</td>
+<td>如果预测器有系统性偏差，PULSE 的优势可能是人为的</td>
+<td>用湿实验验证子集；或用多个独立预测器交叉验证</td>
+<td>Results 3.2 节；Discussion 4.2 节作者自认</td>
+</tr>
+<tr>
+<td>未与更多基线对比</td>
+<td>仅对比 ASPO；未对比其他引导方法（如线性探针引导、对比学习引导）或微调方法</td>
+<td>无法判断 PULSE 是"最优"还是"优于一个基线"</td>
+<td>增加基线：如随机配对引导、全局 PCA 方向、微调 ESM</td>
+<td>Results 3.2 节</td>
+</tr>
+<tr>
+<td>匈牙利配对的计算复杂度未讨论</td>
+<td>构建集规模大时，匈牙利算法 O(n³) 可能成为瓶颈</td>
+<td>实际应用中构建集可能达数万条序列</td>
+<td>报告运行时间；探索近似匹配算法</td>
+<td>Methods 2.2 节</td>
+</tr>
+<tr>
+<td>LDS 的 K=32 和 τ=0.10 缺乏敏感性分析</td>
+<td>这些超参数可能对结果敏感</td>
+<td>影响方法的可复现性和泛化性</td>
+<td>对 K 和 τ 做网格搜索，报告敏感性</td>
+<td>Methods 2.3 节</td>
+</tr>
+<tr>
+<td>背景-方向相关性的因果方向不明确</td>
+<td>相关可能由构建集本身的聚类结构驱动，而非真实的生物学背景依赖</td>
+<td>影响 PULSE 的生物学解释</td>
+<td>在合成数据上验证；控制序列相似性混淆变量</td>
+<td>Results 3.3 节</td>
+</tr>
+<tr>
+<td>未报告失败案例</td>
+<td>哪些目标蛋白优化失败？失败是否与背景相关？</td>
+<td>帮助理解方法的适用边界</td>
+<td>分析失败案例的序列特征</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>测试集规模有限</td>
+<td>50-100 个目标蛋白可能不足以支撑强结论</td>
+<td>影响统计功效和泛化性</td>
+<td>扩大测试集；报告效应量和置信区间</td>
+<td>Results 3.1 节</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>配对级对比优于群体级对比</strong>：在蛋白质表示空间中，构建"方向"时，群体质心差会抹平背景异质性。通过相似度匹配建立配对，再聚合配对级方向，可以保留上下文信息。这一思路可迁移至：
+   - <strong>构象采样</strong>：在 MD 模拟中，不同构象状态间的过渡方向可能依赖当前构象背景，配对级方向构建可用于设计上下文相关的偏置势。
+   - <strong>突变效应预测</strong>：预测突变方向时，配对级对比（同背景下的突变前后）可能优于全局平均效应。</p>
+</li>
+<li>
+<p><strong>单位归一化 + 相似度加权聚合</strong>：对配对差异做单位归一化可以避免幅度干扰，而相似度加权可以突出与目标背景更相关的方向。这一聚合策略可迁移至任何需要从示例对中提取方向信息的任务。</p>
+</li>
+<li>
+<p><strong>轨迹级评估指标（LDS）</strong>：静态引导向量诊断（如 bootstrap 稳定性）不足以评估实际优化可靠性。LDS 通过检查每一步实际位移与局部参考方向的对齐程度，提供了更贴近实际效果的评估。这一思路可迁移至：
+   - <strong>MD 模拟中的偏置方向评估</strong>：评估每一步模拟是否沿预期方向推进。
+   - <strong>强化学习中的策略评估</strong>：评估每一步动作是否朝向局部最优方向。</p>
+</li>
+<li>
+<p><strong>无需预测器的候选排序</strong>：LDS 提供了一种不依赖性质预测器的排序信号，在标签稀缺场景下具有实用价值。这提示在蛋白质设计中，<strong>过程指标</strong>（如轨迹方向支持度）可以替代<strong>结果指标</strong>（如预测分数）进行早期筛选。</p>
+</li>
+<li>
+<p><strong>实验设计启示</strong>：将数据严格分为构建集、测试集、参考池三部分，并去除重叠，是评估引导方法的关键设计，避免信息泄漏。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>激活引导（Activation Steering）</strong>：本文直接建立在 [21, 17] 的激活引导框架上，并针对蛋白质领域提出改进。与 NLP 中的激活引导（如表示工程、方向探针）相比，本文强调了<strong>生物序列的背景依赖性</strong>这一领域特有挑战。</li>
+<li><strong>ASPO [7]</strong>：本文的直接基线和改进对象。ASPO 的全局质心引导是 PULSE 的对照；PULSE 保留了 ASPO 的位点选择和引导解码流程，仅改变引导向量构建方式。</li>
+<li><strong>上位效应（Epistasis）</strong>：本文的生物学动机与 [22, 19, 20] 的上位效应研究一致。在蛋白质工程中，上位效应是突变效应预测的核心挑战，本文将其映射到表示空间中的方向异质性。</li>
+<li><strong>蛋白质语言模型表示</strong>：ESMC-600M 作为骨干，其表示质量直接影响引导效果。与 ESM-2 [18] 等模型的关系：本文未做多模型对比，但方法本身与骨干无关。</li>
+<li><strong>不确定性感知引导 [15]</strong>：本文引用了不确定性感知引导作为相关工作，但未直接对比；LDS 可视为一种<strong>轨迹级不确定性/可靠性</strong>度量，与 [15] 的静态不确定性形成互补。</li>
+<li><strong>可迁移领域</strong>：</li>
+<li><strong>基于结构的序列设计</strong>：若将结构编码器（如 ESM-IF、ProteinMPNN）的表示用于引导，PULSE 的配对策略可直接迁移。</li>
+<li><strong>构象生成</strong>：在生成构象时，配对级方向构建可用于设计上下文相关的生成方向。</li>
+<li><strong>分子对接</strong>：对接姿态的优化方向可能依赖受体-配体对的具体背景，配对级引导思路可迁移。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：Structure-Aware Paired-Unit Steering (SPUS)
+   - <strong>来源局限/观察</strong>：PULSE 仅使用序列表示（ESMC-600M），未利用结构信息。对于结构敏感的蛋白性质（如稳定性、结合亲和力），序列表示可能不够充分。
+   - <strong>核心假设</strong>：将结构编码器（如 ESM-IF、AlphaFold 的表示）与序列表示融合，配对级方向构建在结构感知空间中能更好地捕捉背景依赖性。
+   - <strong>初步方法</strong>：在 PULSE 框架中，将配对表示替换为序列-结构联合表示（如 ESM-IF 的 encoder 输出），其余流程不变。
+   - <strong>验证方式</strong>：在结构相关性质（热稳定性、结合亲和力）上对比 SPUS 与 PULSE、ASPO。
+   - <strong>可能的失败模式</strong>：结构表示可能引入噪声；结构预测误差可能传播到引导向量。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Trajectory-Aware Adaptive Steering (TAAS)
+   - <strong>来源局限/观察</strong>：PULSE 的引导向量在优化过程中固定不变，但序列背景在每步突变后发生变化，固定方向可能逐渐失效。
+   - <strong>核心假设</strong>：在优化轨迹中动态更新引导向量（基于当前序列的背景），能进一步提高优化效果。
+   - <strong>初步方法</strong>：每步优化后，重新计算当前序列与参考池的相似度，动态调整引导向量；LDS 可作为停止准则（当 LDS 低于阈值时停止）。
+   - <strong>验证方式</strong>：对比固定 vs. 动态引导的最终分数和成功率；分析 LDS 随步数的变化。
+   - <strong>可能的失败模式</strong>：动态更新可能引入不稳定性；计算开销增加。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：LDS-Guided Multi-Objective Steering
+   - <strong>来源局限/观察</strong>：PULSE 处理单一性质优化；实际蛋白质工程常需同时优化多个性质（如溶解度+免疫原性）。
+   - <strong>核心假设</strong>：LDS 可作为多目标优化中权衡不同性质引导方向的依据——选择 LDS 最高的方向组合。
+   - <strong>初步方法</strong>：为每个性质构建 PULSE 引导向量，在每步优化中根据 LDS 加权组合多个方向。
+   - <strong>验证方式</strong>：在多性质测试集上对比单性质引导、简单加权、LDS 加权。
+   - <strong>可能的失败模式</strong>：多性质方向可能冲突，LDS 加权可能偏向某一性质。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：PULSE for Conformational Sampling Bias
+   - <strong>来源局限/观察</strong>：PULSE 的配对引导思路可迁移至构象采样——在 MD 模拟中，不同构象状态间的过渡方向可能依赖当前构象背景。
+   - <strong>核心假设</strong>：通过配对级方向构建（如开放/闭合构象配对），可以设计上下文相关的偏置势，加速构象过渡。
+   - <strong>初步方法</strong>：将 PULSE 的配对策略应用于构象表示（如内坐标或接触图），构建偏置方向；在 MD 模拟中施加方向性偏置。
+   - <strong>验证方式</strong>：对比 PULSE 偏置 vs. 无偏置 vs. 全局方向偏置的构象过渡时间。
+   - <strong>可能的失败模式</strong>：构象表示空间的背景相似性定义不明确；偏置可能过度限制构象探索。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Cross-Model PULSE Transferability Study
+   - <strong>来源局限/观察</strong>：PULSE 仅在 ESMC-600M 上验证；不同 pLM 的表示空间几何不同，配对策略的迁移性未知。
+   - <strong>核心假设</strong>：PULSE 的配对策略在不同 pLM（如 ESM-2、ProGen2、ProtT5）上均优于全局引导，但优势大小与表示空间的背景异质性程度相关。
+   - <strong>初步方法</strong>：在多个 pLM 骨干上复现 PULSE 与 ASPO 的对比，并计算表示空间的"背景异质性指标"（如配对方向与全局方向的角度分布）。
+   - <strong>验证方式</strong>：跨模型对比性能；检验背景异质性指标是否预测 PULSE 的优势大小。
+   - <strong>可能的失败模式</strong>：某些 pLM 的表示空间可能本身已编码背景信息，PULSE 优势缩小。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, methods, results, discussion, supplementary information)</li>
+<li><strong>Assessment boundary</strong> Scientific claims, methodological soundness, evidence quality, and reproducibility as presented in the supplied text</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose PULSE, a context-aware activation steering method for protein sequence optimization that constructs steering vectors from similarity-matched positive-negative protein pairs rather than global population contrasts. They report improved optimization outcomes across solubility, immunogenicity, and toxicity, and introduce Local Directional Support (LDS) as a trajectory-level reliability metric enabling predictor-free candidate prioritization.</li>
+<li><strong>Visible evidence base</strong> Main text figures (Figs. 2–7), Table 1, Table 2, Supplementary Tables 3–5, Appendix A–C</li>
+<li><strong>Missing materials affecting confidence</strong> Figure images not provided; exact numerical values for many reported results not given in text; full algorithm pseudocode not provided; dataset composition details partially described; code repository not inspected</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript addresses a relevant problem in controllable protein sequence generation and proposes a conceptually interesting alternative to global steering vector construction. The motivation for context-aware steering is well articulated and supported by the background-dependence analysis. However, the evidence as presented has several gaps that prevent full assessment of the method's validity and generalizability. The reliance on predictor-based outcomes without experimental validation, the limited model scope, and the absence of key methodological details (e.g., exact hyperparameter values, computational costs, sensitivity analyses) temper enthusiasm. The LDS metric is a useful conceptual contribution, but its practical utility requires stronger validation.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in protein engineering, computational protein design, and machine learning for biology would be interested. The work speaks to those developing controllable generation methods for protein language models and those seeking reliability metrics for iterative sequence optimization. The predictor-free prioritization aspect may appeal to experimental groups with limited screening capacity.</li>
+<li><strong>Major strengths</strong> The core idea of moving from global to local, context-dependent steering is well motivated and timely. The pairing strategy using representation similarity is methodologically clean. The introduction of LDS as a trajectory-level diagnostic addresses a genuine gap in evaluating iterative optimization. The evaluation across three distinct protein properties provides breadth. The authors are transparent about limitations, including the lack of experimental validation.</li>
+<li><strong>Major Concerns</strong> See detailed items below.</li>
+<li><strong>Minor Comments</strong> See detailed items below.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (predictor dependence), R1-M2 (limited model scope), R1-M3 (missing methodological details), R1-M4 (LDS validation gap)</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The paired-unit steering concept is a meaningful departure from existing global contrast methods, and LDS is a novel diagnostic. Scientific importance: The problem of context-aware steering is significant for the field, but the current evidence does not yet establish broad impact. Interdisciplinary readership: The work bridges machine learning and protein engineering, but the presentation assumes familiarity with both fields without sufficient scaffolding. Technical soundness: The core methodology is reasonable, but several implementation details and validation choices weaken the current case. Readability for nonspecialists: The abstract and introduction are accessible, but the methods section is dense and would benefit from clearer exposition of the mathematical notation.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The core idea has merit, but the current evidence base is insufficient to fully establish the claims.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence quality</li>
+<li><strong>Claim pointer</strong> "PULSE consistently outperforms global population-centroid steering in both final predicted property scores and optimization success rates" (Abstract; Section 3.2)</li>
+<li><strong>Evidence pointer</strong> Section 3.2, Fig. 2, Table 2</li>
+<li><strong>Concern</strong> All performance claims rest on predictor-based outcomes. The predictors used for solubility, immunogenicity, and toxicity are themselves models with unknown accuracy for the specific target proteins tested. Without experimental validation or at least a demonstration that predictor scores correlate with known experimental measurements for a held-out set, the reported improvements may reflect artifacts of the predictors rather than genuine property improvements.</li>
+<li><strong>Why it matters</strong> The central claim of the paper is that PULSE produces better protein optimizations. If the evaluation oracle is unreliable, the claim is not established. The authors acknowledge this limitation in Section 4.2, but the acknowledgment does not mitigate the evidentiary gap.</li>
+<li>
+<p><strong>Resolution test</strong> Provide experimental validation on a small set of designed proteins, or demonstrate that the predictors used have been benchmarked against experimental data for the relevant property and sequence space, with quantified accuracy.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Generalizability</li>
+<li><strong>Claim pointer</strong> "PULSE consistently outperforms global population-centroid steering" (Abstract; Section 3.2)</li>
+<li><strong>Evidence pointer</strong> Section 3.1, Section 4.2</li>
+<li><strong>Concern</strong> All experiments use a single model backbone (ESMC-600M). The authors acknowledge this in Section 4.2, but the claim of consistent outperformance is only demonstrated for one architecture. It is unknown whether the paired-unit steering advantage persists with other protein language models of different sizes or architectures.</li>
+<li><strong>Why it matters</strong> The method's utility depends on its generalizability across the diverse landscape of protein language models. A single-backbone evaluation is insufficient to support the strength of the stated claim.</li>
+<li>
+<p><strong>Resolution test</strong> Repeat key experiments with at least one additional model backbone (e.g., ESM-2 of comparable size, or a smaller model) and report whether the performance advantage holds.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> "PULSE adpots the same site selection and decoding as ASPO; only the construction of v(l) differs" (Section 2.1)</li>
+<li><strong>Evidence pointer</strong> Section 2.1, Section 2.2, Appendix C</li>
+<li><strong>Concern</strong> Several methodological details required for reproduction are missing or incompletely specified. The exact values of α (steering intensity) are said to be in Table 5, but the table is not provided in the supplied text. The site selection procedure references a ranking and masking step, but the precise criterion (e.g., lowest-scoring by what measure) is not fully defined. The decoding procedure is described in words but not with sufficient mathematical precision to implement without guessing.</li>
+<li><strong>Why it matters</strong> Reproducibility is a core requirement for scientific claims. Without complete methodological specification, independent verification is impossible.</li>
+<li>
+<p><strong>Resolution test</strong> Provide complete pseudocode for the optimization loop, exact hyperparameter values in the main text or a fully specified appendix, and clarify the site selection and decoding equations.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Conceptual validation</li>
+<li><strong>Claim pointer</strong> "LDS captures differences in trajectory reliability and enables predictor-free candidate prioritization" (Abstract; Section 3.6)</li>
+<li><strong>Evidence pointer</strong> Section 3.5, Section 3.6, Fig. 5, Fig. 6</li>
+<li><strong>Concern</strong> The claim that LDS enables predictor-free prioritization is supported by AUROC comparisons, but the analysis does not establish that LDS provides information beyond what could be obtained from simpler metrics (e.g., final property score change, or trajectory length). No comparison against alternative prioritization strategies is provided.</li>
+<li><strong>Why it matters</strong> The practical value of LDS depends on its incremental utility over existing or simpler approaches. Without such comparison, the contribution of LDS as a prioritization tool is unclear.</li>
+<li><strong>Resolution test</strong> Compare LDS-based ranking against ranking by final predicted score, by total trajectory displacement, or by random selection, and report AUROC and enrichment for each.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Section 2.2, pairing procedure</li>
+<li><strong>Evidence pointer</strong> Section 2.2</li>
+<li><strong>Issue</strong> The description of the Hungarian algorithm application states that K = min(N+, N−) disjoint pairs are obtained, but it is unclear how ties in similarity are broken and whether the matching is performed once on the full dataset or per target.</li>
+<li>
+<p><strong>Required correction</strong> Clarify the matching procedure, including tie-breaking and whether matching is global or target-specific.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> Section 3.2, Table 2</li>
+<li><strong>Evidence pointer</strong> Section 3.2, Table 2</li>
+<li><strong>Issue</strong> The text states that paired comparisons were statistically significant after multiple-testing correction, but effect sizes and confidence intervals are not reported in the main text.</li>
+<li>
+<p><strong>Required correction</strong> Report effect sizes and confidence intervals for the paired differences alongside p-values.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Notation consistency</li>
+<li><strong>Affected element</strong> Section 2.1, Section 2.2</li>
+<li><strong>Evidence pointer</strong> Section 2.1, Section 2.2</li>
+<li><strong>Issue</strong> The notation for representations is introduced as h(l)x for the representation of residue r at layer l, but the subscript r is not defined in the text. The mean over residues is denoted h̄(l)x, but the averaging operation is not explicitly stated.</li>
+<li>
+<p><strong>Required correction</strong> Define all notation explicitly, including the residue index and the averaging operation.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Computational cost</li>
+<li><strong>Affected element</strong> Section 2.2, Hungarian algorithm</li>
+<li><strong>Evidence pointer</strong> Section 2.2</li>
+<li><strong>Issue</strong> The computational cost of the Hungarian algorithm for large datasets is not discussed. For protein datasets with tens of thousands of sequences, this could be a practical bottleneck.</li>
+<li>
+<p><strong>Required correction</strong> Report the computational time for the pairing step and discuss scalability.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Robustness</li>
+<li><strong>Affected element</strong> Section 3.5, Fig. 5</li>
+<li><strong>Evidence pointer</strong> Section 3.5</li>
+<li><strong>Issue</strong> The sensitivity analysis uses 10 independently sampled reference pools, but the variance across these pools is not reported beyond the claim that the advantage was robust.</li>
+<li>
+<p><strong>Required correction</strong> Report the distribution of LDS differences across reference pools (e.g., mean and standard deviation).</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m6</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Presentation</li>
+<li><strong>Affected element</strong> Section 3.3, Table 1</li>
+<li><strong>Evidence pointer</strong> Section 3.3, Table 1</li>
+<li><strong>Issue</strong> The Spearman correlations are reported, but the corresponding scatter plots or binned summaries are only referenced in supplementary material.</li>
+<li><strong>Required correction</strong> Include representative scatter plots in the main text or supplementary for visual inspection.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that PULSE "consistently outperforms" global steering is not fully supported given the single model backbone and predictor-based evaluation.</li>
+<li>The claim that LDS "enables predictor-free candidate prioritization" is not supported by comparison against alternative prioritization methods.</li>
+<li>The claim that "property-improving directions vary across different protein sequence backgrounds" is supported by correlational evidence, but the causal interpretation is not established.</li>
+<li>The statement that PULSE's advantage is due to "retaining pair-specific information prior to aggregation" is a plausible interpretation but not directly tested (e.g., via ablation of the weighting scheme).</li>
+<li>The generalizability of findings to other protein properties beyond the three tested is not established.</li>
+<li>The practical utility of the method for experimental workflows is asserted but not demonstrated with wet-lab data.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

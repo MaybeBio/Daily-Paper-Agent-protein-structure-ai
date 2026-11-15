@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FlexENN: A Graph Neural Network for Binding Energy Prediction of Globular and Intrinsically Disordered Proteins. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>FlexENN: A Graph Neural Network for Binding Energy Prediction of Globular and Intrinsically Disordered Proteins.</h1>
+      <div class="meta">Irshad, Maryum; Ori-McKenney, Kassandra; Dima, Ruxandra I</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of chemical information and modeling</span>
+        · 2026-11-09
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/43001910/">原文</a>
+      </div>
+      <p class="one-liner">该文用图神经网络预测折叠蛋白及含无序蛋白复合物的结合自由能，以蛋白质结构为核心，结合结构描述符与序列信息，属于蛋白质结构相关的AI计算建模，方法有创新且问题明确。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Intrinsically disordered proteins (IDPs) drive a large fraction of cellular signaling, transcription, and assembly through interfaces that often lack a defined geometry, making the prediction of their binding energies challenging for methods developed primarily for folded complexes. Here, we introduce FlexENN, an interface-focused message-passing graph neural network framework comprising two independently trained models: FlexENN-F for folded protein complexes and FlexENN-I for complexes containing a disordered partner. The FlexENN architecture constructs a local interface graph in which each residue node integrates the relative geometry, flexibility-related structural descriptors, and sequence information, allowing the network to learn structure-affinity relationships from a single resolved bound conformation. We also construct an IDP-containing dataset for training the FlexENN-I model. Benchmarked across folded complexes and IDP-containing systems, including tubulin-tubulin interfaces within microtubules (MTs) and MTs in complex with microtubule-associated proteins (MAPs), with reference binding affinity values extracted from our experiments, the models reproduce physically reasonable energetic profiles, including the stronger interdimer relative to the lateral MT interactions, while feature-ablation analyses reveal system-dependent contributions of selected descriptors to the predictions. More broadly, this work delivers an accurate, structure-aware approach to predicting binding free energies for complexes of folded protein and complexes that contain ordered or partially ordered IDP regions for which a sufficiently well-defined bound structure is available.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">intrinsically disordered proteins (IDPs) 通过通常缺乏确定几何形状的界面驱动了细胞信号传导、转录和组装的大部分过程，这使得主要为折叠复合物设计的方法在预测其结合能时面临挑战。在此，我们引入FlexENN，一种以界面为中心的消息传递图神经网络框架，包含两个独立训练的模型：FlexENN-F用于折叠蛋白复合物，FlexENN-I用于含有无序伴侣的复合物。FlexENN架构构建了一个局部界面图，其中每个残基节点整合了相对几何形状、柔性相关的结构描述符和序列信息，使网络能够从单一解析的结合构象中学习结构-亲和力关系。我们还构建了一个含IDP的数据集用于训练FlexENN-I模型。在折叠复合物和含IDP系统上进行基准测试，包括微管（MTs）内的微管蛋白-微管蛋白界面以及微管与微管相关蛋白（MAPs）复合的体系，参考结合亲和力值取自我们的实验，模型再现了物理上合理的能量谱，包括相对于侧向MT相互作用更强的二聚体间相互作用，而特征消融分析揭示了所选描述符对预测的系统依赖性贡献。更广泛地说，这项工作提供了一种准确、结构感知的方法，用于预测折叠蛋白复合物以及含有有序或部分有序IDP区域且具有足够明确结合结构的复合物的结合自由能。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: FlexENN: A Graph Neural Network for Binding Energy Prediction of Globular and Intrinsically Disordered Proteins</li>
+<li><strong>作者与单位</strong>: Irshad, Maryum; Ori-McKenney, Kassandra; Dima, Ruxandra I（单位未提供，推测为美国大学，具体未提供）</li>
+<li><strong>期刊/预印本平台</strong>: Journal of Chemical Information and Modeling (JCIM)</li>
+<li><strong>年份</strong>: 2026（在线日期 2026-11-09）</li>
+<li><strong>论文类型</strong>: 方法学（方法开发 + 基准测试）</li>
+<li><strong>领域</strong>: 蛋白质结合自由能预测 × 图神经网络（GNN）</li>
+<li><strong>关键词</strong>: 内在无序蛋白（IDP）、结合自由能、图神经网络、消息传递、微管、微管相关蛋白</li>
+<li><strong>DOI/arXiv 号</strong>: 10.1021/acs.jcim.6c01545</li>
+<li><strong>代码</strong>: 未提供</li>
+<li><strong>数据</strong>: PDBbind+ (v2020.R1)、DisProt、PDB；自建 IDP 结合数据集（PBEE + IDPs，1071 个复合物）</li>
+<li><strong>阅读日期</strong>: 2026-11-09（基于在线日期）</li>
+<li><strong>在课题方向中的位置</strong>: 该文面向「蛋白质结构相关计算研究 × AI 方法」中的<strong>结合亲和力预测</strong>子任务，聚焦 IDP 参与的结合界面，提出接口局部图 + 消息传递的 GNN 框架，是对传统 Rosetta 能量函数和全复合物图模型在 IDP 场景下的补充与改进。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>针对 IDP 参与的结合界面缺乏几何定义、传统能量函数失效的问题，FlexENN 构建仅含界面残基的局部图，以残基理化性质、B-factor、二面角、最小距离为节点特征，通过消息传递 GNN 从单一结合构象预测结合自由能，在微管/微管相关蛋白及多种 IDP 复合物基准上达到接近实验值的精度（误差 ≤0.6 kcal/mol），并揭示折叠蛋白与 IDP 体系对特征依赖的系统性差异。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 如何从单一解析的结合构象准确预测含有内在无序蛋白（IDP）或无序区域（IDR）的蛋白复合物的结合自由能？</li>
+<li><strong>为什么重要</strong>: IDP 参与大量信号转导、转录调控和组装过程，其结合界面常缺乏稳定几何结构，传统面向折叠复合物的打分函数（如 Rosetta）和基于刚性几何的模型难以适用；现有数据集（如 PDBbind）中 IDP 复合物占比极低（~19%），导致模型对 IDP 体系存在系统性偏差。</li>
+<li><strong>现有方法不足</strong>:</li>
+<li>传统物理能量函数（如 Rosetta BETANOV16）依赖固定几何参数，对 IDP 的构象异质性和模糊界面敏感，易产生不合理能量惩罚。</li>
+<li>现有深度学习方法（如 ProAffinity-GNN、PPI-Graphomer、SSIF-Affinity）多构建全复合物图，包含大量远离界面的残基，且训练数据以折叠蛋白为主，对 IDP 泛化能力差。</li>
+<li>PBEE 等集成学习方法在 IDP 基准上出现均值回归和特征崩溃。</li>
+<li><strong>精确研究问题（Can ... ?）</strong>: Can a single resolved bound conformation, combined with interface-restricted graph representation and flexibility-related descriptors, yield accurate binding free energy predictions for both folded and IDP-containing complexes?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文引言与相关工作描述，属「仅本文框架」，未经外部系统核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>知识统计势</td>
+<td>DFIRE</td>
+<td>无需动力学模拟，计算快</td>
+<td>依赖原子接触频率，忽略构象动态</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>接触特征 + 回归</td>
+<td>PRODIGY</td>
+<td>简单有效，界面接触数可解释</td>
+<td>特征单一，无法捕捉复杂相互作用</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>多尺度几何拓扑</td>
+<td>PerSpect-EL</td>
+<td>引入拓扑不变量</td>
+<td>计算复杂，对 IDP 模糊界面不适用</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>深度学习 + 全复合物图</td>
+<td>ProAffinity-GNN, PPI-Graphomer, SSIF-Affinity</td>
+<td>自动学习特征，精度高</td>
+<td>图规模大、含远端残基；训练数据以折叠蛋白为主</td>
+<td>本文超越对象</td>
+</tr>
+<tr>
+<td>物理能量 + 集成学习</td>
+<td>PBEE (Super Learner)</td>
+<td>融合多种 Rosetta 特征</td>
+<td>对 IDP 严重偏差（IDP 仅占 4%），均值回归</td>
+<td>本文直接对比基线</td>
+</tr>
+<tr>
+<td><strong>接口局部图 + GNN</strong></td>
+<td><strong>FlexENN</strong></td>
+<td><strong>仅界面残基、融合柔性描述符、双模型分别训练</strong></td>
+<td><strong>依赖单一构象，未显式建模构象系综</strong></td>
+<td><strong>本文</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IDP 复合物在训练数据中占比极低</td>
+<td>IDP 仅占全部复合物的 ~19%</td>
+<td>现有数据库（PDBbind）以折叠蛋白复合物为主，IDP 结构解析困难</td>
+<td>Materials and Methods, Datasets Preparation 节</td>
+</tr>
+<tr>
+<td>Rosetta 特征对 IDP 界面失效</td>
+<td>PBEE 对 β-catenin 两个复合物预测几乎相同（−13.41 vs −13.68 kcal/mol），而实验差 3.0 kcal/mol</td>
+<td>Rosetta 能量项针对折叠态参数化，对 IDP 模糊界面和构象异质性不适用</td>
+<td>Results, Limitations of the PBEE Framework 节，Table 1</td>
+</tr>
+<tr>
+<td>扩展数据集后出现均值回归</td>
+<td>重训 PBEE 后所有基准预测收敛到数据集均值（~9.9 kcal/mol）</td>
+<td>特征空间无法区分 IDP 与折叠界面的能量学差异，模型丧失判别力</td>
+<td>Results, Dataset Expansion 节</td>
+</tr>
+<tr>
+<td>树模型严重过拟合</td>
+<td>Decision Trees、Extra Trees 训练误差为零，验证误差平台化</td>
+<td>高维 Rosetta 特征 + 小样本导致过拟合</td>
+<td>Results, Dataset Expansion 节，Figure S3</td>
+</tr>
+<tr>
+<td>模型对训练集组成极度敏感</td>
+<td>移除 5 个随机样本即导致预测质量急剧下降</td>
+<td>决策边界由个别样本主导，缺乏鲁棒性</td>
+<td>Results, Dataset Expansion 节</td>
+</tr>
+<tr>
+<td>全复合物图包含大量无关残基</td>
+<td>图规模大、计算开销高，远端残基引入噪声</td>
+<td>现有 GNN 方法未聚焦界面区域</td>
+<td>Introduction 节（对现有方法的评述）</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>FlexENN 是一个<strong>接口局部图 + 消息传递 GNN</strong> 框架，包含两个独立训练的模型：
+- <strong>FlexENN-F</strong>：针对折叠蛋白复合物，在 PDBbind 过滤后的 2257 个复合物上训练；
+- <strong>FlexENN-I</strong>：针对含 IDP 的复合物，在自建的 1071 个 IDP 复合物数据集（PBEE + IDPs）上训练。</p>
+<p>图构建仅保留界面残基（Cα 距离 ≤ 8 Å 的残基对），边分为链内（&lt;8 Å）和链间（&lt;4.5 Å）两类。节点特征为 28 维（折叠模型加 1 维偏置），包含氨基酸 one-hot、疏水性、电荷、二面角、B-factor、到最近链间残基的最小距离。消息传递 3 层，隐藏维度 64，最终通过全局平均池化输出标量结合自由能。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>接口局部化</strong>：将图限制在界面区域，排除远端残基的干扰，使模型聚焦于决定结合的局部化学环境，同时大幅降低计算复杂度。</li>
+<li><strong>柔性描述符替代刚性几何</strong>：B-factor 和二面角作为节点特征，隐式编码局部构象可变性，使模型能处理 IDP 界面的构象异质性，而无需显式构象系综。</li>
+<li><strong>双模型分离训练</strong>：折叠蛋白与 IDP 复合物的结合机制本质不同，分开训练使各模型学习各自领域的特征-能量关系，避免数据不平衡导致的偏差。</li>
+<li><strong>相对几何 + 平移不变性</strong>：使用相对位置向量而非绝对坐标，保证平移不变性，增强泛化能力。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>针对数据稀缺的 IDP 体系，与其强行扩展现有模型，不如构建领域专属数据集并独立训练</strong>——本文通过自建 IDP 数据集（1071 个复合物）实现了对 IDP 体系的有效建模，说明数据分层比数据混合更有效。</li>
+<li><strong>在结构预测/构象采样任务中，局部图 + 柔性描述符的思路可迁移</strong>：对于 IDP 或柔性区域，显式几何约束往往失效，用 B-factor 等实验可得的柔性指标作为特征，可能比强制拟合刚性坐标更鲁棒。</li>
+<li><strong>特征消融揭示体系特异性</strong>：不同体系对特征的依赖不同（折叠蛋白依赖几何，IDP 依赖距离和柔性），提示在构建通用模型时需考虑体系自适应的特征选择。</li>
+</ul>
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>: 蛋白复合物的单一解析结构（PDB 格式），包含两条或多条链的原子坐标。</p>
+<p><strong>输出</strong>: 标量结合自由能 ΔG（kcal/mol）。</p>
+<p><strong>模块</strong>:
+1. <strong>数据预处理与过滤</strong>：从 PDBbind+ 下载复合物，去除重复、无有效亲和力值、&gt;10 条链的结构；从 DisProt 匹配 IDP 注释。
+2. <strong>图构建</strong>：以残基为节点，Cα 坐标定义空间位置；界面残基筛选（Cα 距离 ≤ 8 Å）；边构建（链内 &lt;8 Å，链间 &lt;4.5 Å）。
+3. <strong>特征编码</strong>：28 维节点特征（one-hot 20 维 + 疏水性 + 电荷 + sin/cos 二面角 + B-factor + 最小距离 + 界面标志）。
+4. <strong>消息传递层</strong>：3 层，每层包含边 MLP（φ_e）和节点更新 MLP（φ_h），SiLU 激活。
+5. <strong>读出层</strong>：全局平均池化 + 2 层 MLP 预测头。
+6. <strong>训练</strong>：Adam 优化器，学习率 1×10⁻³，batch size 16（IDP）/32（折叠），MSE 损失，125 epochs。</p>
+<p><strong>工具</strong>: PyTorch（推测，未明确）、PDB 解析工具（未明确）、Rosetta（用于 PBEE 基线特征计算）。</p>
+<p><strong>反馈回路</strong>: 无显式反馈回路；模型为单次前向预测，无迭代优化。</p>
+<p><strong>假设</strong>:
+- 单一结合构象足以编码结合自由能的主要决定因素（对 IDP 而言是近似假设）。
+- 界面残基（≤8 Å）包含全部与结合相关的信息。
+- B-factor 可作为局部构象可变性的有效代理。</p>
+<p><strong>文字流程</strong>:
+1. 从 PDBbind+ 和 DisProt 获取复合物结构、亲和力数据和 IDP 注释；
+2. 过滤冗余和无效条目，划分折叠/IDP 数据集；
+3. 对每个复合物，提取界面残基，构建局部图（节点 + 两类边）；
+4. 计算 28 维节点特征；
+5. 3 层消息传递更新节点嵌入；
+6. 全局平均池化 + MLP 输出 ΔG 预测；
+7. 在各自数据集上独立训练 FlexENN-F 和 FlexENN-I；
+8. 在微管/微管相关蛋白及 IDP 基准上评估。</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>界面残基筛选</td>
+<td>仅保留 Cα 距对侧链 ≤8 Å 的残基</td>
+<td>聚焦结合相关区域，排除远端干扰，降低图规模</td>
+<td>输入：全链坐标；输出：界面残基集合</td>
+<td>Methods, Graph Construction 节</td>
+<td>预期：图规模增大、噪声增加、精度下降（未实测）</td>
+</tr>
+<tr>
+<td>双类型边构建</td>
+<td>链内边（&lt;8 Å）编码链内结构上下文，链间边（&lt;4.5 Å）编码直接接触</td>
+<td>区分链内折叠约束与链间相互作用，提供多尺度几何信息</td>
+<td>输入：界面残基坐标；输出：两类边集</td>
+<td>Methods, Graph Construction 节，图 2（MAP7-MT 示例）</td>
+<td>预期：仅保留链间边会丢失链内结构上下文，精度下降（未实测）</td>
+</tr>
+<tr>
+<td>28 维节点特征</td>
+<td>编码序列化学性质 + 局部柔性 + 空间邻近性</td>
+<td>为 GNN 提供热力学相关的输入信号</td>
+<td>输入：残基类型、结构坐标、B-factor；输出：28 维向量</td>
+<td>Methods, Node Feature Encoding 节</td>
+<td>消融实验显示：移除任一特征均导致模型无法区分微管链内/链间界面（Figure S7）</td>
+</tr>
+<tr>
+<td>消息传递层（3 层）</td>
+<td>聚合邻居信息，学习残基间相互作用模式</td>
+<td>捕获界面残基的协同效应</td>
+<td>输入：节点嵌入 + 边特征；输出：更新后的节点嵌入</td>
+<td>Methods, Message Passing 节</td>
+<td>预期：层数减少会降低感受野，精度下降（未实测）</td>
+</tr>
+<tr>
+<td>全局平均池化 + MLP 头</td>
+<td>将节点级表示压缩为复合物级标量</td>
+<td>输出单一结合自由能预测</td>
+<td>输入：节点嵌入集合；输出：ΔG 标量</td>
+<td>Methods, Readout and Prediction 节</td>
+<td>预期：改用注意力池化可能提升对大界面的表征能力（未实测）</td>
+</tr>
+<tr>
+<td>双模型独立训练</td>
+<td>FlexENN-F 和 FlexENN-I 分别训练</td>
+<td>折叠与 IDP 体系的特征-能量关系不同，独立训练避免偏差</td>
+<td>输入：各自数据集；输出：两个独立模型</td>
+<td>Methods, Datasets Preparation 节</td>
+<td>预期：合并训练会导致 IDP 性能下降（基于 PBEE 的失败模式推断）</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>公式 1（消息计算）</strong>:
+$$m_{ij} = \phi_e(h_i^{(l)} | h_j^{(l)} | \Delta p_{ij})$$</p>
+<ul>
+<li>$m_{ij}$: 从节点 j 到节点 i 的消息向量</li>
+<li>$\phi_e$: 边 MLP（2 层，SiLU 激活）</li>
+<li>$h_i^{(l)}$: 节点 i 在第 l 层的嵌入</li>
+<li>$|$: 向量拼接操作</li>
+<li>$\Delta p_{ij} = p_i - p_j$: 节点 i 与 j 之间的相对位置向量（Cα 坐标差）</li>
+</ul>
+<p><strong>公式 2（邻域聚合）</strong>:
+$$m_i^{(l)} = \frac{1}{|\mathcal{N}(i)|} \sum_{j \in \mathcal{N}(i)} m_{ij}^{(l)}$$</p>
+<ul>
+<li>$m_i^{(l)}$: 节点 i 聚合后的消息</li>
+<li>$\mathcal{N}(i)$: 节点 i 的邻居集合</li>
+<li>$|\mathcal{N}(i)|$: 邻居数量（归一化因子）</li>
+</ul>
+<p><strong>公式 3（节点更新）</strong>:
+$$h_i^{(l+1)} = \phi_h(h_i^{(l)} | m_i^{(l)})$$</p>
+<ul>
+<li>$\phi_h$: 节点更新 MLP（SiLU 激活）</li>
+</ul>
+<p><strong>公式 4（读出）</strong>:
+$$z = \frac{1}{|V|} \sum_{i \in V} h_i^{(L)}$$</p>
+<ul>
+<li>$z$: 图级表示（全局平均池化）</li>
+<li>$V$: 图中所有节点集合</li>
+<li>$L = 3$: 消息传递层数</li>
+</ul>
+<p><strong>公式 5（结合自由能计算）</strong>:
+$$\Delta G = -RT \ln K_d$$
+- $R$: 理想气体常数
+- $T = 298.15$ K
+- $K_d$: 解离常数（实验测量）</p>
+<p><strong>直觉</strong>: 公式 1-3 实现残基级别的信息传播——每个残基通过相对位置感知其空间邻居的化学特征，逐步构建局部结合环境的表征。公式 4 将整个界面的信息压缩为单一标量。公式 5 是实验值换算，用于监督学习。</p>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集</strong>:
+- 训练集：PDBbind+ (v2020.R1)，过滤后 2257 个折叠复合物（FlexENN-F）；自建 1071 个 IDP 复合物（FlexENN-I）
+- 基准集：微管（MT）体系，包括微管蛋白链内/链间界面、DCX（双皮质蛋白）CDC/NDC 结构域、MAP7、tau 等
+- 实验参考值：微管蛋白界面自由能来自作者前期工作；IDP 复合物来自文献报道的 Kd 值</p>
+<p><strong>指标</strong>: RMSE（均方根误差）、Pearson 相关系数（r）</p>
+<p><strong>基线</strong>: 原始 PBEE（Super Learner 集成）、扩展数据集重训的 PBEE、XGBoost、Decision Trees、Extra Trees Regressor</p>
+<p><strong>评测协议</strong>: 在独立基准集上评估，不参与训练；对微管体系，比较链内/链间界面区分能力；对 IDP 体系，比较与实验值的偏差</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PBEE 在基准集上的表现</td>
+<td>现有 Rosetta 特征方法对 IDP 复合物有效</td>
+<td>原始 PBEE 应用于 β-catenin 复合物</td>
+<td>对 1JDH 和 2GL7 预测几乎相同（−13.41 vs −13.68 kcal/mol），实验差 3.0 kcal/mol</td>
+<td>PBEE 无法区分共享结合伙伴但界面几何不同的 IDP 复合物</td>
+<td>不能说明 PBEE 对所有 IDP 复合物失效</td>
+<td>Results, Limitations of the PBEE Framework 节，Table 1</td>
+</tr>
+<tr>
+<td>扩展数据集重训 PBEE</td>
+<td>增加数据量可解决 IDP 偏差</td>
+<td>PBEE + Folded（2257）和 PBEE + IDPs（1071）重训</td>
+<td>RMSE 改善至 1.92/1.87 kcal/mol，但预测均值回归（~9.9 kcal/mol）</td>
+<td>数据扩展不足以解决特征表征的根本缺陷</td>
+<td>不能说明所有集成方法均失败</td>
+<td>Results, Dataset Expansion 节，Figure 4A,B</td>
+</tr>
+<tr>
+<td>FlexENN-F 区分微管链内/链间界面</td>
+<td>接口局部图能捕捉不同界面类型的能量差异</td>
+<td>FlexENN-F vs 各基线</td>
+<td>FlexENN-F 正确预测链内界面（−14.9 kcal/mol）强于链间界面（−6.9 kcal/mol）</td>
+<td>接口局部图 + 柔性描述符能区分不同强度的界面</td>
+<td>未提供与实验值的定量比较</td>
+<td>Results, Predictive Performance 节，Table 1</td>
+</tr>
+<tr>
+<td>FlexENN-F 预测 DCX 结构域</td>
+<td>模型能推广到折叠结构域-微管相互作用</td>
+<td>FlexENN-F 预测 CDC/NDC 平均后 vs 实验 −10.8 kcal/mol</td>
+<td>预测 −10.37 kcal/mol</td>
+<td>对折叠结构域预测准确</td>
+<td>平均化处理可能掩盖单结构域误差</td>
+<td>Results, Predictive Performance 节，Table 1</td>
+</tr>
+<tr>
+<td>FlexENN-I 预测 MAP7</td>
+<td>IDP 专属模型能准确预测无序蛋白结合</td>
+<td>FlexENN-I vs 原始 PBEE</td>
+<td>预测 −12.1 kcal/mol vs 实验 −12.3 kcal/mol</td>
+<td>IDP 专属训练显著提升准确度</td>
+<td>单一体系不足以证明泛化性</td>
+<td>Results, Predictive Performance 节，Table 1</td>
+</tr>
+<tr>
+<td>FlexENN-I 预测 tau</td>
+<td>模型对多价 IDP 结合有效</td>
+<td>FlexENN-I 预测 R2 重复 vs 全长实验值</td>
+<td>预测 −8.0 kcal/mol vs 实验 −7.4 kcal/mol（R2 单重复）</td>
+<td>对部分无序结合有合理预测</td>
+<td>全长 tau 与 R2 结构差异大，直接比较受限</td>
+<td>Results, Predictive Performance 节，Table 1</td>
+</tr>
+<tr>
+<td>FlexENN-I 预测 PCNA-p21、β-catenin 复合物</td>
+<td>模型推广到非微管体系</td>
+<td>1AXC、1JDH、2GL7</td>
+<td>预测 −9.4、−11.6、−8.0 kcal/mol vs 实验 −9.7、−11.6、−8.6 kcal/mol（误差 ≤0.6）</td>
+<td>模型在多种 IDP 复合物上均准确</td>
+<td>样本量小（3 个），需更大规模验证</td>
+<td>Results, Predictive Performance 节，Table 1</td>
+</tr>
+<tr>
+<td>特征消融实验</td>
+<td>各特征对预测的贡献</td>
+<td>逐一移除 28 维特征中的每一维</td>
+<td>移除任一特征均导致微管链内/链间区分失败</td>
+<td>所有特征均为必要，无冗余</td>
+<td>未量化各特征的相对贡献</td>
+<td>Results, Ablation Studies 节，Figure S7-S9</td>
+</tr>
+<tr>
+<td>消融实验对比折叠 vs IDP 体系</td>
+<td>特征依赖是否具有体系特异性</td>
+<td>分别对 DCX（折叠）和 MAP7（IDP）进行消融</td>
+<td>折叠体系依赖 φ 角和 B-factor；IDP 体系依赖最小距离</td>
+<td>不同结构类别的特征重要性不同</td>
+<td>仅基于两个体系，需更多验证</td>
+<td>Results, Ablation Studies 节，Figure S8-S9</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<p><strong>任务范围</strong>: 本文任务为<strong>结合自由能预测</strong>，输入为单一解析结构，输出为标量 ΔG。不涉及构象采样、结构预测或序列设计。</p>
+<p><strong>oracle/真值输入</strong>: 训练标签为实验测定的解离常数（Kd）换算的自由能；微管体系参考值来自作者前期实验工作。模型不依赖任何 oracle 结构或能量函数。</p>
+<p><strong>端到端状态</strong>: 模型为端到端训练，从结构直接预测 ΔG，无需中间特征工程或后处理。但依赖预定义的节点特征（B-factor 等需从结构文件中提取）。</p>
+<p><strong>算力成本</strong>: 未提供具体训练时间或硬件信息。模型规模较小（3 层 GNN，隐藏维度 64），推断成本低。</p>
+<p><strong>历史数据依赖</strong>: 训练数据来自 PDBbind+ 和 DisProt，存在数据库偏差；IDP 数据集为作者自建，可能未覆盖所有 IDP 结合模式。</p>
+<p><strong>模型依赖</strong>: 依赖单一解析构象，未建模构象系综；对高度动态的 fuzzy complex 可能不适用。</p>
+<p><strong>最难情形</strong>: 作者指出，最理想的数据集应包含每个复合物的构象系综及对应能量，但此类数据目前不存在。因此模型在高度无序、多构象结合的体系上可能受限。</p>
+<p><strong>群体/领域边界</strong>: 模型适用于有足够清晰解析结构的复合物；对完全无结构信息的 IDP 或仅有无序区域的体系，需要先获得结合态结构。</p>
+<p><strong>有边界的复述</strong>: FlexENN 在具有明确解析结合构象的折叠蛋白复合物和含 IDP/IDR 的复合物上，能够以 ≤0.6 kcal/mol 的误差预测结合自由能，并正确区分微管链内/链间界面的能量差异；其性能依赖于界面局部图表示和柔性描述符的联合使用，且对训练数据分布之外的超大或高度动态界面可能不适用。</p>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单一构象表示</td>
+<td>模型仅使用单一解析结合构象，未显式建模构象系综</td>
+<td>纳入分子动力学模拟轨迹数据，学习结构异质性与能量关系</td>
+<td>Conclusions 节</td>
+</tr>
+<tr>
+<td>训练数据偏差</td>
+<td>PDBbind 中 IDP 复合物占比低，自建数据集可能未覆盖所有 IDP 结合模式</td>
+<td>扩展 IDP 数据集，纳入更多样化的 IDP 复合物</td>
+<td>Conclusions 节（隐含）</td>
+</tr>
+<tr>
+<td>未分解热力学贡献</td>
+<td>模型不区分焓和熵的贡献</td>
+<td>未来工作将显式建模热力学状态函数</td>
+<td>Conclusions 节</td>
+</tr>
+<tr>
+<td>构象系综数据缺失</td>
+<td>最理想的数据集（构象系综 + 能量）目前不存在</td>
+<td>发展数据生成策略或利用 MD 模拟补充</td>
+<td>Conclusions 节</td>
+</tr>
+<tr>
+<td>外推能力受限</td>
+<td>对显著大于训练分布中典型界面的复合物，预测可能不可靠</td>
+<td>纳入更多大界面复合物或开发尺度自适应策略</td>
+<td>Results, Limitations of the PDBBind Dataset 节（隐含）</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基准集规模小且集中于微管体系</td>
+<td>微管蛋白界面具有特殊的重复几何特征，可能使模型过拟合于该体系；IDP 基准仅 5 个复合物</td>
+<td>泛化性声明可能被高估</td>
+<td>在更大规模、多样化的 IDP 复合物基准上测试</td>
+<td>Results, Predictive Performance 节，Table 1</td>
+</tr>
+<tr>
+<td>消融实验仅报告「移除后失败」</td>
+<td>未提供量化指标（如 RMSE 变化幅度），无法判断各特征的相对贡献</td>
+<td>无法指导特征工程优化</td>
+<td>报告移除各特征后的 RMSE/相关系数变化</td>
+<td>Results, Ablation Studies 节，Figure S7-S9</td>
+</tr>
+<tr>
+<td>与基线比较不完整</td>
+<td>未与当前最优的深度学习结合亲和力预测方法（如 ProAffinity-GNN、SSIF-Affinity）在相同基准上直接比较</td>
+<td>无法确定 FlexENN 的相对优势</td>
+<td>在统一基准上运行多种方法进行公平比较</td>
+<td>Results, Predictive Performance 节</td>
+</tr>
+<tr>
+<td>微管界面参考值来源依赖作者前期工作</td>
+<td>若参考值计算方式与文献不一致，基准比较可能不公平</td>
+<td>影响结论的可重复性</td>
+<td>使用独立实验测定的亲和力数据交叉验证</td>
+<td>Materials and Methods, Benchmark Set 节</td>
+</tr>
+<tr>
+<td>未报告预测不确定性</td>
+<td>模型输出为点估计，无置信区间</td>
+<td>实际应用中无法判断预测可靠性</td>
+<td>添加不确定性量化（如 MC dropout、集成方差）</td>
+<td>全文未提及</td>
+</tr>
+<tr>
+<td>特征选择缺乏理论动机</td>
+<td>为何选择这 28 维特征而非其他（如进化信息、共进化）？</td>
+<td>特征完备性存疑</td>
+<td>系统搜索特征空间，比较不同特征组合</td>
+<td>Methods, Node Feature Encoding 节</td>
+</tr>
+<tr>
+<td>对 fuzzy complex 的适用性未验证</td>
+<td>作者承认模型针对「有足够清晰结构」的复合物，但未测试高度动态的 fuzzy complex</td>
+<td>IDP 结合的重要模式可能未被覆盖</td>
+<td>在已知 fuzzy complex 体系上测试</td>
+<td>Conclusions 节</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>接口局部图策略</strong>：将图限制在界面残基（≤8 Å）而非全复合物，可减少噪声、降低计算量，同时保留结合相关核心信息。可迁移到分子对接打分、结合位点预测等任务。</p>
+</li>
+<li>
+<p><strong>柔性描述符作为 IDP 特征</strong>：B-factor 和二面角作为节点特征，为无序区域提供结构可变性的隐式编码，避免了对刚性坐标的过度依赖。可迁移到 IDP 结合位点预测、无序区域功能注释。</p>
+</li>
+<li>
+<p><strong>双模型分离训练范式</strong>：针对折叠蛋白和 IDP 分别训练独立模型，避免数据不平衡导致的偏差。可迁移到任何包含异质结构类别的预测任务。</p>
+</li>
+<li>
+<p><strong>特征消融揭示体系特异性</strong>：折叠体系依赖几何特征（φ 角、B-factor），IDP 体系依赖空间邻近性（最小距离），提示模型设计需考虑目标体系的结构特征。可迁移到特征工程和模型选择。</p>
+</li>
+<li>
+<p><strong>单一构象的近似有效性</strong>：在缺乏构象系综数据的情况下，单一解析构象 + 柔性描述符可达到合理精度，为数据稀缺场景提供实用方案。</p>
+</li>
+<li>
+<p><strong>数据集构建方法</strong>：从 PDBbind 过滤 + DisProt 匹配 IDP 注释的流程，可复用于构建其他 IDP 相关数据集。</p>
+</li>
+<li>
+<p><strong>物理合理性验证</strong>：以微管链内/链间界面能量差异作为物理合理性判据，是检验模型是否学到真实物理规律的有效手段，可迁移到其他体系。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li>
+<p><strong>PDBbind 数据库</strong>: 本文使用 PDBbind+ v2020.R1 作为折叠蛋白复合物数据来源，该数据库是结合亲和力预测领域的标准基准（如 CASF 基准）。与 ProAffinity-GNN、SSIF-Affinity 等方法使用相同数据源，但本文额外构建了 IDP 专属数据集。</p>
+</li>
+<li>
+<p><strong>Rosetta 能量函数</strong>: 本文以 Rosetta BETANOV16 特征作为 PBEE 基线，指出其参数化针对折叠态，对 IDP 失效。这与 Rosetta 在柔性肽-蛋白对接中的已知局限一致。</p>
+</li>
+<li>
+<p><strong>图神经网络用于结合亲和力预测</strong>: 本文与 ProAffinity-GNN、PPI-Graphomer 等方法同属 GNN 路线，但创新点在于接口局部图 + 柔性描述符 + 双模型分离，而非全复合物图。</p>
+</li>
+<li>
+<p><strong>IDP 结合机制研究</strong>: 本文与「fuzzy complex」「coupled folding and binding」等 IDP 结合模型相关，但采用静态结构近似，未显式建模构象系综。与 MD 模拟结合是自然延伸方向。</p>
+</li>
+<li>
+<p><strong>AlphaFold 等结构预测工具</strong>: 本文方法依赖实验解析结构，若与 AlphaFold 预测结构结合，可扩展到无实验结构的 IDP 复合物，但需注意预测结构对 IDP 区域的不确定性。</p>
+</li>
+<li>
+<p><strong>微管/微管相关蛋白研究</strong>: 本文基准涉及微管蛋白界面，与细胞骨架动力学、神经元发育等领域相关，MAP7/tau/DCX 均为已知的微管结合蛋白。</p>
+</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>: IDP-Affinity-MD：结合 FlexENN 与分子动力学模拟的 IDP 结合自由能预测
+   - <strong>来源局限/观察</strong>: FlexENN 使用单一静态结构，未建模构象系综；作者在结论中明确此为未来方向
+   - <strong>核心假设</strong>: 对同一 IDP 复合物的 MD 采样构象进行 FlexENN 预测并取平均，可提升对高度动态 IDP 复合物的预测精度
+   - <strong>初步方法</strong>: 对 benchmark 中的 IDP 复合物（如 tau-MT）运行短程 MD，提取多个构象，分别用 FlexENN-I 预测后取平均；与单构象预测比较
+   - <strong>验证方式</strong>: 在 1AXC、1JDH、2GL7 等已知实验值的复合物上比较单构象 vs 多构象平均的 RMSE
+   - <strong>可能的失败模式</strong>: MD 采样可能偏离实验结合态构象，反而引入噪声；需先验证 MD 构象系综的物理合理性
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: FlexENN-Ensemble：利用 AlphaFold 预测结构扩展 IDP 结合数据集
+   - <strong>来源局限/观察</strong>: 自建 IDP 数据集仅 1071 个复合物，且依赖实验结构；大量 IDP 复合物无实验结构
+   - <strong>核心假设</strong>: AlphaFold 对部分折叠的 IDP 复合物预测结构虽不完美，但结合 FlexENN 的柔性描述符可部分补偿结构误差
+   - <strong>初步方法</strong>: 对 PDB 中无实验亲和力但有 AlphaFold 预测结构的 IDP 复合物，用 FlexENN-I 预测并与已知实验值（如有）交叉验证
+   - <strong>验证方式</strong>: 在保留的实验结构子集上比较 AlphaFold 结构 vs 实验结构的预测差异
+   - <strong>可能的失败模式</strong>: AlphaFold 对 IDP 区域预测不可靠，可能引入系统性偏差
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 特征重要性迁移分析：FlexENN 消融结果对 IDP 结合位点预测的启示
+   - <strong>来源局限/观察</strong>: 消融实验显示 IDP 体系强烈依赖最小距离特征，折叠体系依赖 φ 角和 B-factor
+   - <strong>核心假设</strong>: 最小距离特征可有效识别 IDP 结合热点残基
+   - <strong>初步方法</strong>: 将 FlexENN 的节点特征（特别是最小距离）作为结合位点预测的输入特征，训练残基级分类器
+   - <strong>验证方式</strong>: 在 DisProt 注释的结合区域上评估 AUC
+   - <strong>可能的失败模式</strong>: 最小距离特征可能仅对微管体系有效，泛化性需验证
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 多价 IDP 结合的能量分解：FlexENN 在重复单元体系上的扩展
+   - <strong>来源局限/观察</strong>: tau-MT 预测基于 R2 单重复，与全长 tau 实验值存在结构差异；多价 IDP 结合是常见模式
+   - <strong>核心假设</strong>: 对多价 IDP 的每个结合单元分别预测后线性叠加，可近似全长结合自由能
+   - <strong>初步方法</strong>: 对 tau 的 R1-R4 重复分别建模，用 FlexENN-I 预测各单元贡献，与全长实验值比较
+   - <strong>验证方式</strong>: 在 tau、MAP7 等多价 IDP 体系上比较叠加预测 vs 全长预测
+   - <strong>可能的失败模式</strong>: 多价结合存在协同效应，线性叠加可能低估结合强度
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 结合口袋几何描述符增强的 FlexENN 变体
+   - <strong>来源局限/观察</strong>: 当前节点特征未包含口袋几何信息（如形状互补性、溶剂可及性）
+   - <strong>核心假设</strong>: 加入口袋几何描述符可提升对折叠蛋白复合物的预测精度
+   - <strong>初步方法</strong>: 在节点特征中加入溶剂可及表面积（SASA）、口袋深度等几何描述符，在 PDBbind 子集上重新训练
+   - <strong>验证方式</strong>: 与原始 FlexENN-F 在相同测试集上比较 RMSE
+   - <strong>可能的失败模式</strong>: 特征维度增加可能导致过拟合，需配合正则化
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, methods, results, discussion, conclusions) without figures, tables, or supplementary material</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological soundness, claims versus evidence, and suitability for the stated journal context</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present FlexENN, a message-passing graph neural network with two independently trained models (FlexENN-F for folded complexes, FlexENN-I for IDP-containing complexes), which predicts binding free energies from single resolved bound structures using interface-restricted graphs with physicochemical, geometric, and flexibility-related node features. They report accurate predictions on benchmark systems including microtubule and MAP complexes, and demonstrate distinct feature dependencies between folded and disordered systems via ablation studies.</li>
+<li><strong>Visible evidence base</strong> Text descriptions of datasets (PDBbind-derived, 2,257 folded and 1,071 IDP complexes), benchmark predictions (numerical values cited in text), ablation study results (numerical values cited in text), and methodological descriptions. Figures and tables referenced but not provided.</li>
+<li><strong>Missing materials affecting confidence</strong> All figures, tables, and supplementary material are absent. This includes the model architecture diagram, dataset distribution plots, performance comparison tables, ablation result figures, and the MD simulation analysis described in the Supporting Information. Numerical results are reported in text but cannot be independently verified without the corresponding figures and tables.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript addresses a genuine and timely gap: binding energy prediction for IDP-containing complexes, for which conventional structure-based scoring functions are poorly suited. The core idea of an interface-restricted graph neural network with flexibility-related descriptors is reasonable and potentially valuable. However, the evidence presented in the text alone is insufficient to establish the central claims. Key quantitative results are reported without the corresponding figures or tables, the benchmark evaluation is limited in scope, and critical methodological details (dataset construction, train/test separation, statistical significance) are incompletely described. The ablation studies are described qualitatively rather than quantitatively. The work is promising but currently not established from the provided evidence.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biophysicists and structural biologists working on protein-protein interactions, particularly those studying IDPs and their binding mechanisms. Researchers developing machine learning methods for binding affinity prediction would also find the approach relevant, as would experimentalists studying microtubule-associated proteins who need computational estimates of binding energetics. The curated IDP binding dataset could be a useful community resource.</li>
+<li><strong>Major strengths</strong> The problem addressed is important and underexplored; most existing methods are designed for folded complexes. The two-model architecture (folded vs IDP) is a sensible design choice given the different physical principles governing these interactions. The use of interface-restricted graphs with relative geometry is computationally efficient and translation-invariant. The benchmark choice of microtubule systems is biologically relevant and provides a stringent test. The ablation studies, if fully presented, could provide mechanistic insight into which features matter for different complex types.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "the models reproduce physically reasonable energetic profiles, including the stronger interdimer relative to the lateral MT interactions"</li>
+<li><strong>Evidence pointer</strong> Results and Discussion, Predictive Performance of FlexENN; Table (referenced but not provided)</li>
+<li><strong>Concern</strong> The central quantitative claim of accurate binding energy prediction is supported only by text descriptions of results. The referenced tables and figures that would contain the actual predicted versus experimental values, error metrics, and comparisons to baselines are not available in the provided material. Without these, the magnitude of errors, the statistical significance of improvements over baselines, and the consistency of predictions across systems cannot be assessed.</li>
+<li><strong>Why it matters</strong> The core contribution of the paper is a predictive model. Its validity rests entirely on quantitative performance metrics. Text descriptions such as "predicted −10.37 kcal/mol against the experimental value of −10.8 kcal/mol" are helpful but insufficient; the reader needs to see the full distribution of predictions, error bars, and comparisons across all benchmark systems to judge whether the model is genuinely accurate or merely performing well on a few favorable cases.</li>
+<li><strong>Resolution test</strong> Provide the referenced tables and figures with full quantitative results, including per-system predictions, error metrics (RMSE, MAE, Pearson r), and comparisons to all baselines. Include confidence intervals or error bars where applicable.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological rigor</li>
+<li><strong>Claim pointer</strong> "we constructed and curated an IDP-focused binding dataset by matching experimentally characterized IDPs from DisProt with available PDB structures and experimental binding affinity measurements from PDBbind+"</li>
+<li><strong>Evidence pointer</strong> Materials and Methods, Datasets Preparation</li>
+<li><strong>Concern</strong> The dataset construction process is described at a high level but lacks critical details. How were IDPs identified and matched between DisProt and PDB? What fraction of the 1,071 complexes have experimentally verified disorder versus predicted disorder? How was the 5% to 80% disorder range determined, and what is the distribution within that range? Most importantly, how were the 703 structures selected from the initial pool, and what filtering criteria beyond those listed were applied? The text mentions "the same filtering criteria applied to the folded proteins" but these are not fully enumerated.</li>
+<li><strong>Why it matters</strong> The IDP dataset is a claimed contribution of the work and the training basis for FlexENN-I. If the dataset is not rigorously constructed and described, the model trained on it cannot be properly evaluated, and the dataset cannot serve as a reliable resource for the community. Reproducibility requires a complete description of the curation pipeline.</li>
+<li><strong>Resolution test</strong> Provide a detailed, step-by-step description of the dataset construction pipeline, including inclusion/exclusion criteria, the number of complexes removed at each step, and validation of disorder annotations. Consider making the dataset publicly available with clear documentation.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Benchmark validity</li>
+<li><strong>Claim pointer</strong> "we chose to evaluate our models on a benchmark set independent of the training set"</li>
+<li><strong>Evidence pointer</strong> Materials and Methods, Benchmark Set; Results and Discussion, Predictive Performance of FlexENN</li>
+<li><strong>Concern</strong> The benchmark set is described as independent, but the text does not establish that the benchmark complexes share no significant sequence or structural similarity with training complexes. For the MT-MAPs subset, the tubulin structure is a common fold, and it is unclear whether similar tubulin complexes appear in the training data. For the three additional IDP complexes (1AXC, 1JDH, 2GL7), no information is given about their relationship to training complexes. Sequence or structural homology between training and test sets could lead to inflated performance estimates.</li>
+<li><strong>Why it matters</strong> Generalization claims depend on the benchmark being truly independent. If the model has seen similar complexes during training, its performance on the benchmark does not reflect its ability to handle novel systems. This is a standard concern in machine learning for structural biology and must be explicitly addressed.</li>
+<li><strong>Resolution test</strong> Perform and report sequence and structural similarity analysis between all benchmark complexes and all training complexes. Report maximum sequence identity and structural similarity (e.g., TM-score) for the closest training match to each benchmark complex. Exclude any benchmark complexes with high similarity to training data, or justify their inclusion.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Comparison fairness</li>
+<li><strong>Claim pointer</strong> "FlexENN-F outperformed all baselines in this task"</li>
+<li><strong>Evidence pointer</strong> Results and Discussion, Predictive Performance of FlexENN; Table (referenced but not provided)</li>
+<li><strong>Concern</strong> The baselines compared include the original PBEM model, PBEM retrained on expanded datasets, and tree-based models. However, the text does not describe whether these baselines were given the same input features, the same training data, or the same hyperparameter tuning effort as FlexENN. If the baselines were not optimized to the same extent, the comparison may be unfair. Additionally, no state-of-the-art deep learning methods for binding affinity prediction (e.g., recent GNN or transformer-based approaches) are included as baselines.</li>
+<li><strong>Why it matters</strong> A claim of outperforming baselines is only meaningful if the comparison is fair and includes current state-of-the-art methods. If the baselines are weak or under-tuned, the result does not demonstrate that FlexENN is competitive with the best available approaches.</li>
+<li><strong>Resolution test</strong> Describe the training and hyperparameter tuning protocol for all baselines. Include at least one or two recent deep learning baselines for binding affinity prediction. Report results for all methods on the same benchmark with the same evaluation metrics.</li>
+<li><strong>Concern ID</strong> R1-M5</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Claim pointer</strong> "the models reproduce physically reasonable energetic profiles"</li>
+<li><strong>Evidence pointer</strong> Results and Discussion, Predictive Performance of FlexENN; Ablation Studies</li>
+<li><strong>Concern</strong> The manuscript reports single predicted values for each benchmark system without error bars, confidence intervals, or multiple runs with different random seeds. Given the stochastic nature of neural network training, the reported predictions could vary substantially across runs. The ablation studies are described in terms of "failed to distinguish" and "moderate deviations" without quantitative thresholds or statistical tests.</li>
+<li><strong>Why it matters</strong> Without measures of variability, the reader cannot assess whether the reported predictions are stable or whether the differences between models and baselines are statistically significant. This is particularly important for the ablation studies, where the claim that all features are necessary rests on qualitative descriptions.</li>
+<li><strong>Resolution test</strong> Report mean and standard deviation of predictions across multiple training runs (at least 5) with different random seeds. For ablation studies, report quantitative metrics (e.g., RMSE, MAE) for each ablation condition and perform statistical significance testing (e.g., paired t-test or Wilcoxon signed-rank test) between the full model and each ablation.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract</li>
+<li><strong>Issue</strong> The abstract states "the models reproduce physically reasonable energetic profiles" but does not provide any quantitative performance metric. Readers cannot gauge the accuracy of the method from the abstract alone.</li>
+<li><strong>Required correction</strong> Include a brief quantitative summary in the abstract, such as the RMSE or mean absolute error on the benchmark set, to give readers an immediate sense of performance.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Materials and Methods, Message Passing Geometric Graph Model</li>
+<li><strong>Evidence pointer</strong> Materials and Methods, Message Passing Geometric Graph Model</li>
+<li><strong>Issue</strong> The model architecture is described textually but the referenced figure (Figure, "schematic overview") is not provided. Key hyperparameters (number of layers, hidden dimensions, learning rate schedule, dropout rate, activation functions) are partially described but not fully specified.</li>
+<li><strong>Required correction</strong> Provide the architecture figure and a complete table of hyperparameters. Consider releasing code and trained model weights to facilitate reproduction.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Results and Discussion, Predictive Performance of FlexENN</li>
+<li><strong>Evidence pointer</strong> Results and Discussion, Predictive Performance of FlexENN</li>
+<li><strong>Issue</strong> The term "physically reasonable" is used repeatedly but never defined. It is unclear whether this means the predictions fall within a certain range, correlate with experimental values, or satisfy thermodynamic constraints.</li>
+<li><strong>Required correction</strong> Define what constitutes "physically reasonable" in quantitative terms, or replace with specific performance metrics.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Results and Discussion, Ablation Studies</li>
+<li><strong>Evidence pointer</strong> Results and Discussion, Ablation Studies</li>
+<li><strong>Issue</strong> The ablation studies are described for the MT interdimer/lateral distinction and for the DCX and MAP7 systems, but no ablation results are reported for the three additional IDP complexes (1AXC, 1JDH, 2GL7). It is unclear whether the feature dependencies observed for MAP7 generalize to other IDP systems.</li>
+<li><strong>Required correction</strong> Report ablation results for all benchmark systems, or explicitly state that ablations were only performed on a subset and justify this choice.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Data availability</li>
+<li><strong>Affected element</strong> Materials and Methods, Datasets Preparation</li>
+<li><strong>Evidence pointer</strong> Materials and Methods, Datasets Preparation</li>
+<li><strong>Issue</strong> The curated IDP dataset is described as a contribution, but no information is provided about its availability. The text does not state whether the dataset will be deposited in a public repository.</li>
+<li><strong>Required correction</strong> State clearly whether the dataset will be made publicly available and, if so, where and under what license.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> (1) The central quantitative results are not verifiable from the provided material because all figures and tables are missing. (2) The independence of the benchmark set from the training set is not established. (3) The dataset construction pipeline is incompletely described. (4) No measures of variability or statistical significance are provided for any reported result. (5) The comparison to baselines may be unfair if baselines were not equally optimized.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The approach of using interface-restricted graphs with flexibility-related descriptors for IDP binding energy prediction is a reasonable incremental advance over existing GNN-based methods, though the core architecture (message-passing GNN with physicochemical features) is not fundamentally novel. Scientific importance: The problem is important, and a reliable method for IDP binding energy prediction would be valuable, but the current evidence does not establish that FlexENN achieves this. Interdisciplinary readership: The work bridges machine learning, structural biology, and biophysics, which could appeal to a broad audience, but the presentation assumes significant background in all three areas. Technical soundness: The methodological description is incomplete, and the lack of quantitative results prevents assessment of technical soundness. Readability for nonspecialists: The manuscript is written for specialists and would benefit from clearer motivation and explanation of why existing methods fail for IDPs.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript addresses an important problem with a plausible approach, but the evidence presented is insufficient to support the central claims. Major revisions are required to provide complete quantitative results, establish benchmark independence, fully describe the dataset and methods, and add statistical rigor. If these concerns are addressed, the work could be suitable for publication in a specialized computational biology journal.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that FlexENN "reproduces physically reasonable energetic profiles" is unsupported because the referenced figures and tables are not provided.</li>
+<li>The claim that FlexENN-F "outperformed all baselines" is unsupported without the comparison table and without evidence that baselines were fairly tuned.</li>
+<li>The claim that the IDP dataset is a useful resource is unsupported without details on dataset composition, quality, and availability.</li>
+<li>The claim that "the models reproduce physically reasonable energetic profiles, including the stronger interdimer relative to the lateral MT interactions" is based on a single qualitative observation and lacks quantitative error metrics.</li>
+<li>The claim that ablation studies "reveal system-dependent contributions of selected descriptors" is based on qualitative descriptions without quantitative results or statistical testing.</li>
+<li>The claim that the model "learns structure-affinity relationships from a single resolved bound conformation" is plausible but not demonstrated; no analysis of what the model actually learns is presented.</li>
+<li>The claim that predictions for complexes with higher edge counts "may be unreliable" is speculative and not tested; no experiments on large-interface complexes are reported.</li>
+<li>The claim that "all benchmark complexes fall within the well-sampled range of their respective training distributions" is unverifiable without the referenced figures (Figures S5 and S6).</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

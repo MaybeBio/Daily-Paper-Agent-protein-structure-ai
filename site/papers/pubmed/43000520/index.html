@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A cryptic binding pocket regulates the metal-dependent activity of Cas9. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>A cryptic binding pocket regulates the metal-dependent activity of Cas9.</h1>
+      <div class="meta">Ahsan, Mohd; Knight, Alexa L; Saha, Aakash; Ramos, Delisa; Strohkendl, Isabel; Skeens, Erin; West, Madeline S; Luo, Jinping; Dresser, Charlotte S; Taylor, David W; Lisi, George P; Palermo, Giulia</div>
+      <div class="meta muted">
+        
+        <span class="journal">Nature communications</span>
+        · 2026-11-09
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/43000520/">原文</a>
+      </div>
+      <p class="one-liner">该文通过分子模拟、马尔可夫状态模型和混合量子-经典方法研究Cas9金属依赖性催化活性的隐秘结合口袋，属于蛋白质结构计算问题，但对象为核酸酶复合物而非纯蛋白质结构，方法创新且可迁移至蛋白结构计算。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Cas9 is a metal-dependent nuclease used for genome editing across diverse cells and organisms exhibiting distinct ionic environments, yet how metal ions regulate its catalytic function, and consequently its editing efficiency remains unclear. Here, molecular simulations, Markov state models, and mixed quantum-classical approaches reveal that divalent metals promote activation of the catalytic HNH domain through formation of a divalent metal-binding pocket (DBP) at the HNH-RuvC interface. This cryptic pocket emerges dynamically during HNH activation and is supported by NMR measurements revealing metal-dependent structural perturbations within the HNH-L2 region. Mutations targeting the DBP disrupt HNH activation and impair the coupled catalytic activity of both nucleases, identifying the pocket as a key regulator of Cas9&#39;s metal-dependent activity. Together with quantum-classical simulations revealing distinct catalytic behaviours among divalent metals, these findings uncover an ion-dependent regulatory mechanism in Cas9 with insights for genome editing across diverse biological environments.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">Cas9是一种金属依赖性核酸酶，用于在具有不同离子环境的多种细胞和生物体中进行基因组编辑，然而金属离子如何调控其催化功能，进而影响其编辑效率，仍不清楚。在此，分子模拟、马尔可夫状态模型和混合量子-经典方法揭示，二价金属通过形成HNH-RuvC界面处的二价金属结合口袋（DBP），促进催化性HNH结构域的激活。这一隐秘口袋在HNH激活过程中动态出现，并得到核磁共振测量的支持，后者揭示了HNH-L2区域内的金属依赖性结构扰动。靶向DBP的突变破坏HNH激活，并损害两种核酸酶的偶联催化活性，从而将该口袋确定为Cas9金属依赖性活性的关键调控因子。结合量子-经典模拟揭示的二价金属间不同的催化行为，这些发现揭示了Cas9中一种离子依赖性调控机制，为跨多种生物环境的基因组编辑提供了见解。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：A cryptic binding pocket regulates the metal-dependent activity of Cas9</li>
+<li><strong>作者与单位</strong>：Ahsan, Mohd; Knight, Alexa L; Saha, Aakash; Ramos, Delisa; Strohkendl, Isabel; Skeens, Erin; West, Madeline S; Luo, Jinping; Taylor, David W; Lisi, George P; Palermo, Giulia（单位未提供）</li>
+<li><strong>期刊/平台</strong>：Nature Communications</li>
+<li><strong>年份</strong>：2026（在线日期 2026-11-09）</li>
+<li><strong>论文类型</strong>：研究论文（计算+实验联合）</li>
+<li><strong>领域</strong>：CRISPR-Cas9 金属依赖性核酸酶活性调控；蛋白质构象动力学 × 金属离子</li>
+<li><strong>关键词</strong>：Cas9、HNH 结构域、金属依赖性催化、隐蔽结合口袋、分子动力学模拟、Markov 状态模型、QM/MM、NMR</li>
+<li><strong>DOI/arXiv 号</strong>：10.1038/s41467-026-78458-0</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：PDB 5F9R、6O0Y；BMRB 27949（NMR 化学位移归属）</li>
+<li><strong>阅读日期</strong>：2026-05-12（按系统日期）</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI/物理模拟」中的物理模拟分支，聚焦金属离子如何通过隐蔽口袋调控 Cas9 的 HNH 结构域构象激活与催化。方法上采用经典 MD + 增强采样（伞形采样）+ MSM + QM/MM 的多尺度模拟策略，并结合 NMR 与生化突变验证。对课题的可迁移点在于：隐蔽口袋的动态识别、金属离子浓度依赖的构象调控机制、以及多尺度模拟与实验验证的闭环范式。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>通过分子动力学模拟、伞形采样、Markov 状态模型和 QM/MM 计算，结合 NMR 与生化实验，发现 Cas9 的 HNH–RuvC 界面存在一个动态形成的隐蔽二价金属结合口袋（DBP），该口袋通过稳定 HNH 的激活构象来调控金属依赖性核酸酶活性，且不同二价金属离子（Mg²⁺、Ca²⁺、Co²⁺）对催化机制的影响不同。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：二价金属离子如何调控 Cas9 的 HNH 结构域从预激活态到激活态的构象转变，以及不同金属离子如何影响催化效率？</li>
+<li><strong>为什么重要</strong>：Cas9 被用于多种细胞和生物体的基因组编辑，不同生物体的离子环境差异显著。理解金属离子如何调控 Cas9 活性，有助于优化编辑效率并拓展其应用范围。</li>
+<li><strong>现有方法为何不足</strong>：已有研究主要关注 Mg²⁺ 对 Cas9 活性的促进作用，但缺乏对金属离子如何从构象层面调控 HNH 激活的原子级理解。晶体结构仅提供静态快照，无法捕捉隐蔽口袋的动态形成过程。</li>
+<li><strong>精确研究问题</strong>：Can divalent metal ions regulate Cas9's HNH domain activation through a dynamically formed cryptic binding pocket at the HNH–RuvC interface, and do different divalent metals differentially modulate the catalytic mechanism?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p>（标注：以下脉络为「经外部核验」的领域常识，结合本文框架整理）</p>
+<ol>
+<li><strong>Cas9 结构解析阶段</strong>：Cas9 的 apo 结构（Jinek et al. 2014）、与 guide RNA 和靶 DNA 的复合物结构（Anders et al. 2014；Nishimasu et al. 2014）逐步揭示 HNH 和 RuvC 两个核酸酶结构域的空间排布。HNH 结构域在未结合 DNA 时处于远离切割位点的构象。</li>
+<li><strong>构象动态研究阶段</strong>：单分子 FRET 实验（Sternberg et al. 2015；Dagdas et al. 2017）揭示 HNH 结构域在 DNA 结合后经历大幅构象重排，从「未对接」到「对接」状态。本文引用的 Strohkendl et al. 工作表明 Mg²⁺ 浓度影响 HNH 构象平衡。</li>
+<li><strong>金属离子作用机制研究阶段</strong>：早期生化实验表明 Mg²⁺ 是 Cas9 切割的必需辅因子，Ca²⁺ 可支持构象变化但切割效率低。但金属离子如何从原子层面调控 HNH 激活的机制尚不清楚。</li>
+<li><strong>本文位置</strong>：在已有构象动态研究基础上，通过多尺度模拟首次揭示 HNH–RuvC 界面存在一个动态形成的隐蔽二价金属结合口袋（DBP），将金属离子结合与 HNH 构象激活直接联系起来，并通过 QM/MM 区分不同金属离子的催化行为。</li>
+</ol>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>金属离子调控 Cas9 活性的机制不清</td>
+<td>已知 Mg²⁺ 促进切割，但不知道具体通过什么结构机制实现</td>
+<td>缺乏对金属离子如何影响 HNH 构象转变的原子级理解；晶体结构无法捕捉动态过程</td>
+<td>Introduction 第 2-3 段</td>
+</tr>
+<tr>
+<td>HNH 结构域激活的中间态难以捕捉</td>
+<td>HNH 从预激活到激活态的转变涉及多个中间构象，实验手段难以分辨</td>
+<td>HNH 结构域构象高度动态，晶体和 cryo-EM 仅提供静态快照</td>
+<td>Results 图 1a；Discussion 第 1 段</td>
+</tr>
+<tr>
+<td>不同金属离子对 Cas9 活性影响不同但机制不明</td>
+<td>Ca²⁺ 支持构象变化但切割效率低，Co²⁺ 行为不同</td>
+<td>缺乏对金属离子在催化位点的配位化学差异的理解</td>
+<td>Results 图 5；Discussion 第 3 段</td>
+</tr>
+<tr>
+<td>隐蔽口袋难以通过实验直接观测</td>
+<td>DBP 在静态结构中不可见，仅在模拟中动态出现</td>
+<td>隐蔽口袋（cryptic pocket）本质上是瞬态构象，实验结构难以捕捉</td>
+<td>Results 图 3a；Discussion 第 2 段</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>：对 Cas9 预激活态（PDB 5F9R）和激活态（PDB 6O0Y）进行多尺度模拟——经典 MD（~75 μs 总采样）、伞形采样计算 PMF、MSM 分析构象动力学、QM/MM 研究催化机制；同时用 NMR 和生化突变实验验证模拟预测。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>：Cas9 的 HNH–RuvC 界面存在一个隐蔽的二价金属结合口袋（DBP），该口袋在 HNH 从预激活到激活的构象转变过程中动态形成。Mg²⁺ 等二价金属离子结合到 DBP 后，通过桥接 HNH 的 L2 区域、RuvC 结构域和 DNA 非靶链（NTS），稳定 HNH 的激活构象，从而促进催化。DBP 的突变会破坏金属离子介导的桥接作用，导致 HNH 和 RuvC 的协同切割受损。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]：
+   - 隐蔽口袋（cryptic pocket）可能是金属离子调控酶活性的普遍机制，不仅限于 Cas9。在结构预测和药物设计中，仅依赖静态实验结构可能遗漏这类功能性瞬态位点。
+   - 金属离子的作用不仅是催化辅因子，还可能通过稳定特定构象状态来调控酶的构象景观。这提示在 MD 模拟中应显式考虑金属离子浓度和种类的影响。
+   - 多尺度模拟（经典 MD → 增强采样 → MSM → QM/MM）与实验（NMR、突变、活性测定）的闭环验证是研究构象调控机制的有效范式。</p>
+</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：Cas9 预激活态（PDB 5F9R）和激活态（PDB 6O0Y）晶体结构；不同金属离子（Mg²⁺、Ca²⁺、Co²⁺）及浓度条件；HNH-L2 分离结构域（NMR 实验用）</li>
+<li><strong>输出</strong>：HNH 构象转变的自由能景观、DBP 的结构特征与动态形成机制、不同金属离子的催化行为差异、DBP 突变体的活性变化</li>
+<li><strong>模块</strong>：
+  1. <strong>经典 MD 模拟</strong>：Amber ff19SB 力场 + OL15/OL3 核酸修正 + TIP3P 水模型 + Li-Merz 离子参数；~340,000 原子体系；~75 μs 总采样
+  2. <strong>伞形采样（US）</strong>：以 HNH 和 REC 结构域 Cα RMSD 差为反应坐标，36 个窗口，每窗口 ~120 ns，共 ~8.6 μs；WHAM 计算 PMF
+  3. <strong>Markov 状态模型（MSM）</strong>：基于无偏 MD 模拟，以 S355–S867 和 S867–N1054 的 Cα 距离为特征，TICA 降维，k-means 聚类为 100 微状态，PCCA++ 定义 4 个宏状态，计算转移通量和构象动力学
+  4. <strong>QM/MM 模拟</strong>：DFT/BLYP 级别处理 QM 区域（123 原子，含金属离子、催化残基 D839/N863/H840、DNA 碱基 G-3/T-4/C-5 和 9 个水分子），CPMD 程序；~20 ps/体系
+  5. <strong>热力学积分（TI）</strong>：计算磷酸二酯键断裂的自由能垒，反应坐标为断裂/形成 P–O 键距离差
+  6. <strong>Metadynamics</strong>：二维自由能面，CV1 = 亲核攻击距离差，CV2 = H840 到亲核水的质子转移距离
+  7. <strong>NMR 实验</strong>：HNH-L2 结构域（残基 772–925）的 ¹H-¹⁵N HSQC、化学位移扰动、CPMG 弛豫色散、组氨酸 pKa 测定
+  8. <strong>生化实验</strong>：定点突变（M1: D54A/S55A/E57A；M2: Q920A/E923A；M3: T13A/N14A），质粒 DNA 切割活性测定</li>
+<li><strong>工具</strong>：AMBER 22（GPU 版）、CPMD、PyEMMA、WHAM、FIJI、GraphPad Prism、KinTek</li>
+<li><strong>假设</strong>：力场参数能准确描述金属离子-蛋白质-核酸相互作用；晶体结构可作为模拟起点；HNH-L2 分离结构域能反映全酶中的构象行为</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>经典 MD 模拟</td>
+<td>采样 HNH 构象空间，观察 DBP 动态形成</td>
+<td>捕捉晶体结构中不可见的瞬态构象</td>
+<td>输入：PDB 5F9R/6O0Y + 离子条件；输出：~75 μs 轨迹</td>
+<td>Results 图 3；Methods MD 部分</td>
+<td>无法获得构象动态信息，DBP 无法被发现</td>
+</tr>
+<tr>
+<td>伞形采样 + WHAM</td>
+<td>计算 HNH 预激活→激活的 PMF</td>
+<td>定量比较不同 Mg²⁺ 浓度下的热力学稳定性</td>
+<td>输入：US 轨迹；输出：自由能曲线</td>
+<td>Results 图 1b</td>
+<td>无法定量评估 Mg²⁺ 浓度对构象转变的影响</td>
+</tr>
+<tr>
+<td>MSM</td>
+<td>描述构象转变的动力学和中间态</td>
+<td>提供超越静态自由能的动力学信息</td>
+<td>输入：无偏 MD 轨迹；输出：状态网络、转移通量</td>
+<td>Results 图 2</td>
+<td>无法获得动力学路径和中间态信息</td>
+</tr>
+<tr>
+<td>QM/MM + TI</td>
+<td>计算不同金属离子下的催化自由能垒</td>
+<td>区分 Mg²⁺、Ca²⁺、Co²⁺ 的催化行为</td>
+<td>输入：激活态结构 + 金属离子；输出：反应自由能面</td>
+<td>Results 图 5d</td>
+<td>无法解释不同金属离子的催化差异</td>
+</tr>
+<tr>
+<td>NMR 化学位移扰动</td>
+<td>实验验证金属离子诱导的构象变化</td>
+<td>为模拟预测提供实验证据</td>
+<td>输入：HNH-L2 蛋白 ± Mg²⁺；输出：Δδ 图谱</td>
+<td>Results 图 4a-c</td>
+<td>缺乏独立实验验证模拟的可靠性</td>
+</tr>
+<tr>
+<td>定点突变 + 切割实验</td>
+<td>验证 DBP 的功能重要性</td>
+<td>证明 DBP 残基对 Cas9 活性的必要性</td>
+<td>输入：M1/M2/M3 突变体；输出：切割活性曲线</td>
+<td>Results 图 4e-g</td>
+<td>无法建立 DBP 与功能之间的因果关系</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ol>
+<li>
+<p><strong>伞形采样偏置势</strong>：
+   V(RC) = (k/2) × [RC(t) − RC<em>]²
+   - V(RC)：偏置势能
+   - k：弹簧常数（50 kcal/mol·Å²）
+   - RC(t)：t 时刻反应坐标值
+   - RC</em>：窗口中心参考值
+   - 用途：沿反应坐标施加谐波约束，实现均匀采样
+   - 直觉：每个窗口限制在 RC 附近，最后通过 WHAM 合并</p>
+</li>
+<li>
+<p><strong>反应坐标（RC）</strong>：
+   RC = RMSD(Cα_HNH + REC, 预激活态) − RMSD(Cα_HNH + REC, 激活态)
+   - 用途：区分预激活和激活构象
+   - 直觉：RC 越小越接近激活态</p>
+</li>
+<li>
+<p><strong>WHAM 方程</strong>（未显式给出，但用于 PMF 计算）：
+   P(RC) = Σᵢ nᵢ(RC) / Σᵢ Nᵢ bᵢ exp[−β(Vᵢ(RC) − fᵢ)]
+   - 用途：从有偏采样中恢复无偏概率分布
+   - 直觉：加权合并各窗口的直方图</p>
+</li>
+<li>
+<p><strong>热力学积分（TI）</strong>：
+   ΔF = ∫₀¹ ⟨∂H(λ)/∂λ⟩_λ dλ
+   - 用途：计算磷酸二酯键断裂的自由能变化
+   - 直觉：沿 λ 路径逐步改变哈密顿量</p>
+</li>
+<li>
+<p><strong>Metadynamics 偏置势</strong>：
+   V(s, t) = Σ_{t'&lt;t} W exp[−|s(t) − s(t')|²/2σ²]
+   - 用途：加速自由能面采样
+   - 直觉：不断填充已访问区域，推动系统探索未访问区域</p>
+</li>
+</ol>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：Cas9 预激活态（PDB 5F9R，3.40 Å）和激活态（PDB 6O0Y，3.37 Å）晶体结构；HNH-L2 分离结构域（残基 772–925）用于 NMR</li>
+<li><strong>规模</strong>：~75 μs 经典 MD 总采样；~8.6 μs 伞形采样；~3.6 μs/条件的 MSM 无偏模拟；~20 ps/体系的 QM/MM</li>
+<li><strong>指标</strong>：PMF 自由能差、MSM 转移通量、化学位移扰动（Δδ）、切割速率常数（k_obs）、催化自由能垒</li>
+<li><strong>基线</strong>：WT Cas9 在 Mg²⁺ 存在下的活性；低 Mg²⁺（10 μM）条件作为对照</li>
+<li><strong>骨干/仪器</strong>：AMBER 22（GPU）、CPMD、PyEMMA、Bruker Avance NEO 600 MHz NMR</li>
+<li><strong>oracle 输入</strong>：晶体结构坐标、NMR 化学位移归属（BMRB 27949）</li>
+<li><strong>评测协议</strong>：PMF 比较（高 vs 低 Mg²⁺）；MSM 状态布居和通量比较；突变体活性与 WT 比较；QM/MM 自由能垒比较</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>伞形采样 PMF（高 vs 低 Mg²⁺）</td>
+<td>Mg²⁺ 浓度影响 HNH 激活的热力学</td>
+<td>10 mM vs 10 μM Mg²⁺</td>
+<td>高 Mg²⁺ 下无势垒，低 Mg²⁺ 下 ~2.5 kcal/mol 势垒</td>
+<td>Mg²⁺ 促进 HNH 激活</td>
+<td>不能定量预测体内活性差异</td>
+<td>Results 图 1b</td>
+</tr>
+<tr>
+<td>MSM 动力学分析</td>
+<td>Mg²⁺ 加速 HNH 构象转变</td>
+<td>高 vs 低 Mg²⁺ 的转移通量</td>
+<td>高 Mg²⁺ 下通量约 2 倍</td>
+<td>Mg²⁺ 加速构象转变</td>
+<td>不能精确匹配实验毫秒时间尺度</td>
+<td>Results 图 2</td>
+</tr>
+<tr>
+<td>MD 模拟中 DBP 的鉴定</td>
+<td>HNH-RuvC 界面存在隐蔽金属结合位点</td>
+<td>高 Mg²⁺ 模拟轨迹分析</td>
+<td>DBP 由 L2、RuvC 和 NTS 残基组成</td>
+<td>隐蔽口袋动态形成</td>
+<td>未直接证明口袋在体内存在</td>
+<td>Results 图 3a</td>
+</tr>
+<tr>
+<td>NMR 化学位移扰动</td>
+<td>Mg²⁺ 诱导 HNH-L2 构象变化</td>
+<td>apo vs Mg²⁺ 结合</td>
+<td>扰动集中在 H840 和 L2 区域</td>
+<td>模拟预测的金属结合位点有实验支持</td>
+<td>分离结构域可能不完全代表全酶</td>
+<td>Results 图 4a-c</td>
+</tr>
+<tr>
+<td>突变体切割活性（M1/M2/M3）</td>
+<td>DBP 残基对 Cas9 活性必要</td>
+<td>突变体 vs WT</td>
+<td>所有突变体活性降低，M2 最强</td>
+<td>DBP 功能重要性</td>
+<td>突变可能影响折叠（但 DSF 排除）</td>
+<td>Results 图 4e-g</td>
+</tr>
+<tr>
+<td>QM/MM TI 自由能垒</td>
+<td>不同金属离子催化效率不同</td>
+<td>Mg²⁺ vs Ca²⁺ vs Co²⁺</td>
+<td>Ca²⁺ 垒 ~18.1，Co²⁺ 垒 ~27.8 kcal/mol</td>
+<td>金属离子特异性催化机制</td>
+<td>未测试其他二价离子</td>
+<td>Results 图 5d</td>
+</tr>
+<tr>
+<td>Metadynamics 二维自由能面</td>
+<td>Ca²⁺ 遵循与 Mg²⁺ 类似的 SN2 机制</td>
+<td>Ca²⁺ 体系</td>
+<td>确认 SN2 样机制</td>
+<td>Ca²⁺ 支持催化但效率低于 Mg²⁺</td>
+<td>未直接比较 Mg²⁺ 的二维自由能面</td>
+<td>Results 图 5f</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅研究 SpCas9 的 HNH 结构域激活和靶链切割，不涉及非靶链切割、R-loop 形成早期事件或 Cas9 变体的行为。</li>
+<li><strong>oracle/真值输入</strong>：模拟以晶体结构为起点，NMR 实验使用分离的 HNH-L2 结构域而非全酶；生化实验使用质粒 DNA 底物，与体内染色质环境有差异。</li>
+<li><strong>端到端状态</strong>：计算与实验相互印证，但未提供完整的端到端定量预测（如从离子浓度到切割效率的定量模型）。</li>
+<li><strong>算力成本</strong>：~75 μs 经典 MD + ~8.6 μs 伞形采样 + QM/MM，属于计算密集型研究，未提供具体 GPU 时数。</li>
+<li><strong>历史数据依赖</strong>：依赖 PDB 5F9R 和 6O0Y 的晶体结构质量；NMR 归属依赖 BMRB 27949。</li>
+<li><strong>模型依赖</strong>：力场（ff19SB + OL15/OL3 + Li-Merz 离子参数）和 DFT/BLYP 泛函的选择可能影响定量结论。</li>
+<li><strong>最难情形</strong>：Co²⁺ 的顺磁效应导致 NMR 无法直接研究其结合；隐蔽口袋的瞬态特性使其难以通过常规结构生物学方法验证。</li>
+<li><strong>群体/领域边界</strong>：结论基于 SpCas9，推广到其他 Cas9 直系同源物或 Cas12 家族需谨慎；不同细胞类型的离子环境差异可能影响 DBP 的占据率。</li>
+<li><strong>不确定性</strong>：PMF 和自由能垒的误差范围已报告（如 Ca²⁺ 垒 18.1 ± 1.16 kcal/mol），但力场误差未系统评估。</li>
+</ul>
+<p><strong>有边界的复述</strong>：在 SpCas9 中，二价金属离子通过结合 HNH–RuvC 界面的隐蔽口袋 DBP 来促进 HNH 结构域的构象激活，该口袋由 L2 区域、RuvC 结构域和 DNA 非靶链的残基共同构成；不同二价金属离子（Mg²⁺、Ca²⁺、Co²⁺）在催化位点的配位差异导致不同的催化效率。</p>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>模拟时间尺度与实验的差距</td>
+<td>MSM 推导的动力学速率快于实验毫秒级时间尺度</td>
+<td>未明确提及</td>
+<td>Results 图 2 讨论</td>
+</tr>
+<tr>
+<td>分离结构域 NMR 的局限性</td>
+<td>HNH-L2 分离结构域可能无法完全代表全酶中的构象行为</td>
+<td>未明确提及</td>
+<td>Results 图 4 讨论</td>
+</tr>
+<tr>
+<td>Co²⁺ 的 NMR 研究受限</td>
+<td>Co²⁺ 的顺磁效应导致无法用 NMR 直接研究其结合行为</td>
+<td>未明确提及</td>
+<td>Results 图 5 讨论</td>
+</tr>
+<tr>
+<td>力场参数的不确定性</td>
+<td>金属离子-蛋白质相互作用的力场描述可能不准确</td>
+<td>使用多种离子参数进行交叉验证（Supplementary Fig. 16）</td>
+<td>Methods MD 部分</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DBP 的鉴定主要依赖模拟</td>
+<td>隐蔽口袋可能在力场偏差下被过度预测；NMR 仅提供间接证据（化学位移扰动），未直接观测金属离子在 DBP 中的配位</td>
+<td>如果 DBP 是模拟伪影，则整个调控机制不成立</td>
+<td>尝试用 cryo-EM 捕获 DBP 结合态；或使用 25Mg²⁺ 固态 NMR 直接观测配位</td>
+<td>Results 图 3-4</td>
+</tr>
+<tr>
+<td>突变体实验的解读</td>
+<td>M1/M2/M3 突变可能通过改变局部稳定性而非直接破坏金属结合来影响活性；DSF 仅检测整体热稳定性，无法排除局部构象变化</td>
+<td>需要区分「金属结合破坏」与「构象稳定性改变」两种机制</td>
+<td>用等温滴定量热法（ITC）直接测量突变体的金属结合亲和力</td>
+<td>Results 图 4e-g</td>
+</tr>
+<tr>
+<td>QM/MM 自由能垒的力场依赖</td>
+<td>BLYP 泛函对过渡态的描述可能不准确；QM 区域大小（123 原子）可能不足以捕捉远程静电效应</td>
+<td>定量结论（如 Co²⁺ 垒高 9.7 kcal/mol）可能受方法选择影响</td>
+<td>使用不同泛函（如 B3LYP、ωB97X-D）和更大 QM 区域进行交叉验证</td>
+<td>Methods QM/MM 部分</td>
+</tr>
+<tr>
+<td>MSM 特征选择的合理性</td>
+<td>仅用两个 Cα-Cα 距离作为 MSM 特征可能无法完全描述 HNH 构象转变</td>
+<td>可能遗漏重要的构象自由度，导致状态划分不准确</td>
+<td>使用更全面的特征集（如所有 Cα 距离或 PCA 降维）重新构建 MSM</td>
+<td>Methods MSM 部分</td>
+</tr>
+<tr>
+<td>生理相关性</td>
+<td>10 mM Mg²⁺ 接近体外实验条件，但细胞内游离 Mg²⁺ 浓度通常为 0.5-1 mM；DBP 在生理 Mg²⁺ 浓度下的占据率未定量</td>
+<td>如果 DBP 在生理条件下占据率很低，其调控意义可能有限</td>
+<td>在 0.5-1 mM Mg²⁺ 条件下重复 PMF 和 MSM 分析</td>
+<td>Results 图 1-2</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>隐蔽口袋的动态识别方法</strong>：通过长时程 MD 模拟 + MSM 分析，可以在蛋白质-蛋白质界面或结构域界面发现晶体结构中不可见的瞬态金属结合位点。可迁移到其他金属依赖性核酸酶（如 Cas12、Argonaute）或金属伴侣蛋白的研究中。</p>
+</li>
+<li>
+<p><strong>多尺度模拟-实验闭环范式</strong>：经典 MD（构象采样）→ 增强采样（自由能）→ MSM（动力学）→ QM/MM（化学步骤）→ NMR/突变验证，这一流程可系统性地用于研究金属离子调控的酶活性机制。</p>
+</li>
+<li>
+<p><strong>金属离子的双重角色</strong>：金属离子不仅是催化辅因子，还通过稳定特定构象状态来调控酶的构象景观。在设计金属依赖性酶的突变体或工程化变体时，应同时考虑金属结合对构象平衡的影响，而不仅仅是催化位点的直接参与。</p>
+</li>
+<li>
+<p><strong>隐蔽口袋作为调控靶点</strong>：DBP 的发现提示，在蛋白质工程中可以通过设计金属结合位点来调控构象转变，而不必直接突变催化残基。这一思路可迁移到其他构象门控的酶系统。</p>
+</li>
+<li>
+<p><strong>离子特异性效应的模拟方法</strong>：通过比较不同金属离子（Mg²⁺、Ca²⁺、Co²⁺）在相同模拟条件下的行为，可以揭示离子半径、配位偏好和电荷密度对构象和催化的影响。这一方法可推广到其他金属依赖性系统。</p>
+</li>
+<li>
+<p><strong>NMR 弛豫色散与模拟的互补</strong>：CPMG 实验检测 μs-ms 时间尺度的构象交换，与 MSM 预测的中间态直接对应，是验证模拟结果的有力工具。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>Cas9 构象动力学</strong>：与单分子 FRET 研究（Sternberg et al. 2015, Nature；Dagdas et al. 2017, Sci Adv）一致，本文的 MSM 结果进一步细化了 HNH 激活的中间态。FRET 实验报道的 Mg²⁺ 浓度依赖性构象变化（Strohkendl et al.）在本文的 PMF 中得到热力学解释。</li>
+<li><strong>金属依赖性核酸酶</strong>：与 Tn5 转座酶、I-TevI 归巢核酸酶等金属依赖性核酸酶的研究类似，金属离子通过稳定特定构象来调控活性。本文的 DBP 机制可与其他核酸酶的金属结合位点进行比较。</li>
+<li><strong>隐蔽口袋（cryptic pocket）</strong>：与药物发现中隐蔽口袋的概念（如 TEM-1 β-内酰胺酶）一致，本文展示了隐蔽口袋在天然酶调控中的功能角色。</li>
+<li><strong>QM/MM 研究核酸酶催化</strong>：与 Palermo 课题组此前对 Cas9 的 QM/MM 研究（例如 Cas9 的 Mg²⁺ 催化机制）一致，本文进一步扩展了 Ca²⁺ 和 Co²⁺ 的比较。</li>
+<li><strong>Markov 状态模型在蛋白质构象研究中的应用</strong>：与 MSM 在蛋白质折叠、构象转换中的广泛应用一致，本文展示了 MSM 在核酸酶构象调控研究中的适用性。</li>
+<li><strong>[Analysis] 候选方向</strong>：本文的 DBP 机制可能与其他 CRISPR-Cas 系统的金属依赖性调控有关，如 Cas12 家族的金属结合位点；也可与 AlphaFold 预测的结构进行对比，检验 AF 是否能预测这类隐蔽口袋。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：基于 DBP 的 Cas9 变体工程化设计
+   - <strong>来源局限/观察</strong>：DBP 突变（M1/M2/M3）均降低活性，但不同突变对 HNH 和 RuvC 的影响不同
+   - <strong>核心假设</strong>：通过优化 DBP 的金属配位残基，可以增强 Cas9 在低 Mg²⁺ 环境下的活性
+   - <strong>初步方法</strong>：基于 DBP 结构进行饱和突变 + MD 模拟筛选 + 活性验证
+   - <strong>验证方式</strong>：在低 Mg²⁺（&lt;1 mM）条件下比较突变体与 WT 的切割活性
+   - <strong>可能的失败模式</strong>：DBP 残基同时参与结构稳定性，突变可能破坏整体折叠
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：AlphaFold 对隐蔽金属结合口袋的预测能力评估
+   - <strong>来源局限/观察</strong>：DBP 在静态晶体结构中不可见，仅在 MD 中动态出现
+   - <strong>核心假设</strong>：AlphaFold2/3 无法直接预测这类瞬态口袋，但结合多构象预测（如 AF-cluster）可能部分捕获
+   - <strong>初步方法</strong>：对 Cas9 进行 AF2/3 多序列比对和构象采样，检查是否出现类似 DBP 的构象
+   - <strong>验证方式</strong>：与本文 MD 模拟的 DBP 结构进行 RMSD 比较
+   - <strong>可能的失败模式</strong>：AF 预测偏向热力学稳定构象，可能完全错过瞬态口袋
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：金属离子种类对 Cas9 构象景观的系统性影响
+   - <strong>来源局限/观察</strong>：Mg²⁺、Ca²⁺、Co²⁺ 在 QM/MM 中表现出不同的催化行为，但构象层面的差异未系统比较
+   - <strong>核心假设</strong>：不同金属离子通过改变 DBP 的占据率和配位几何，差异性地调节 HNH 构象平衡
+   - <strong>初步方法</strong>：对 Mg²⁺、Ca²⁺、Co²⁺、Mn²⁺、Zn²⁺ 进行平行 MD + US + MSM 分析
+   - <strong>验证方式</strong>：预测不同金属离子下的 HNH 激活自由能差，与实验切割活性关联
+   - <strong>可能的失败模式</strong>：力场对非生理离子的描述不准确，导致构象预测偏差
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：隐蔽口袋在其他 CRISPR-Cas 系统中的保守性分析
+   - <strong>来源局限/观察</strong>：DBP 残基在 SpCas9 中具有酸性/极性特征，但未检查其他 Cas9 直系同源物
+   - <strong>核心假设</strong>：DBP 在 Cas9 家族中保守，但在 Cas12 等不同核酸酶家族中可能不保守
+   - <strong>初步方法</strong>：对 Cas9 家族和 Cas12 家族进行多序列比对 + 结构叠加
+   - <strong>验证方式</strong>：在代表性 Cas9 直系同源物中引入 DBP 突变并检测活性
+   - <strong>可能的失败模式</strong>：不同 Cas9 的 HNH-RuvC 界面几何差异大，DBP 可能不保守
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：金属离子浓度梯度下的 Cas9 构象切换动力学
+   - <strong>来源局限/观察</strong>：本文比较了 10 mM 和 10 μM 两个极端浓度，未覆盖中间浓度
+   - <strong>核心假设</strong>：DBP 的占据率随 Mg²⁺ 浓度呈 sigmoidal 响应，存在阈值浓度
+   - <strong>初步方法</strong>：在 0.1-20 mM Mg²⁺ 范围内进行 US + MSM 分析，构建浓度-构象响应曲线
+   - <strong>验证方式</strong>：与单分子 FRET 实验在不同 Mg²⁺ 浓度下的构象布居比较
+   - <strong>可能的失败模式</strong>：力场对离子浓度的响应不敏感，无法重现实验浓度依赖性
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, results, discussion, methods) without supplementary figures, tables, or source data</li>
+<li><strong>Assessment boundary</strong> Scientific claims, methodological soundness, and evidence consistency as presented in the provided text; no external validation performed</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose that a cryptic, dynamically forming divalent metal binding pocket (DBP) at the HNH–RuvC interface of Cas9 regulates metal-dependent conformational activation of the HNH domain and coordinates the coupled activity of the HNH and RuvC nucleases. They further claim that different divalent metals (Mg2+, Ca2+, Co2+) differentially affect the catalytic mechanism, with Mg2+ and Ca2+ supporting cleavage and Co2+ impairing it.</li>
+<li><strong>Visible evidence base</strong> Molecular dynamics simulations (~75 μs aggregate), umbrella sampling free energy profiles, Markov state models, QM/MM simulations with thermodynamic integration and metadynamics, solution NMR on an isolated HNH–L2 construct, in vitro cleavage assays with DBP mutants, DSF stability assays, fluorescence anisotropy DNA binding measurements, gRNA binding measurements</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary figures and tables (including Supplementary Figs. 1–36, Supplementary Tables 1–2), source data, reporting summary, and full NMR assignment details; these are referenced but not provided for verification</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This manuscript presents a compelling and multi-faceted investigation into the metal-dependent regulation of Cas9 activity, combining extensive computational sampling with experimental validation. The identification of a cryptic binding pocket at the HNH–RuvC interface is novel and mechanistically plausible, and the integration of NMR, mutagenesis, and kinetics strengthens the case. However, several concerns regarding the directness of experimental evidence for the DBP, the interpretation of kinetic data, and the generalizability of the QM/MM findings need to be addressed before the central claims are fully established.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in CRISPR biology and genome editing, particularly those interested in the mechanistic basis of Cas9 activity and its optimization across different cellular ionic environments. Also of interest to the broader community studying metal-dependent nucleases, cryptic allosteric sites, and the application of enhanced sampling and QM/MM methods to enzyme catalysis.</li>
+<li><strong>Major strengths</strong> 1) The combination of multiple computational techniques (MD, MSM, QM/MM) with experimental validation (NMR, mutagenesis, kinetics) is rigorous and comprehensive. 2) The identification of a cryptic, dynamically forming pocket is a novel contribution that could have broad implications for understanding Cas9 regulation. 3) The use of NMR to directly probe metal-dependent conformational changes in the HNH–L2 region provides strong experimental support for the computational predictions. 4) The study addresses an important and under-explored question: how ionic environment modulates Cas9 function, with practical implications for genome editing.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence strength for the DBP as a functional regulatory element</li>
+<li><strong>Claim pointer</strong> The authors claim that the DBP "regulates the metal-dependent activity of Cas9" and that mutations targeting the DBP "disrupt HNH activation and impair the coupled catalytic activity of both nucleases."</li>
+<li><strong>Evidence pointer</strong> Figure 3, Figure 4e–g, Supplementary Figs. 23–24</li>
+<li><strong>Concern</strong> The functional significance of the DBP is primarily inferred from mutagenesis experiments (M1–M3) that show reduced cleavage activity. However, the manuscript does not provide direct evidence that these mutations specifically disrupt metal binding at the DBP without affecting other aspects of protein structure or dynamics. The NMR data are collected on an isolated HNH–L2 construct, not on the full Cas9 protein, and the authors do not demonstrate that the DBP is occupied by metal ions in the full-length context. The claim that the DBP is a "key regulator" would be strengthened by direct binding measurements (e.g., ITC or NMR titrations showing metal binding to the DBP) or by showing that the mutations specifically alter metal-dependent conformational transitions rather than simply destabilizing the protein.</li>
+<li><strong>Why it matters</strong> Without direct evidence that the DBP is a bona fide metal binding site that mediates the regulatory effect, the central mechanistic claim of the paper remains correlative. The mutations could impair activity through indirect structural effects, and the reduced cleavage could be due to altered protein stability or folding rather than specific disruption of metal-dependent regulation.</li>
+<li><strong>Resolution test</strong> Provide direct evidence of metal binding to the DBP (e.g., via ITC, NMR titrations, or X-ray crystallography with metal ions in the pocket). Alternatively, show that the M1–M3 mutations specifically abolish metal-dependent conformational changes in the full-length Cas9 protein, as monitored by smFRET or other single-molecule approaches, without affecting overall protein stability or DNA binding.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Quantitative agreement between simulation and experiment</li>
+<li><strong>Claim pointer</strong> The authors claim that "elevated Mg2+ levels (10 mM) facilitate the transition of HNH from the pre-active to the active conformation, accelerating the activation nearly twofold relative to low Mg2+ conditions (10 μM)" and that this is "in remarkable agreement with FRET experiments reporting an approximately 2.5-fold increase in transition rates at elevated Mg2+ concentrations."</li>
+<li><strong>Evidence pointer</strong> Figures 1–2, Discussion</li>
+<li><strong>Concern</strong> The manuscript reports a ~2-fold acceleration from simulations and cites a ~2.5-fold increase from FRET experiments as "remarkable agreement." While the qualitative trend is consistent, the quantitative discrepancy (2.0 vs. 2.5) is not trivial, and the authors do not discuss potential sources of this difference (e.g., force field accuracy, finite sampling, differences in solution conditions between simulation and experiment). Additionally, the MSM-derived kinetics are stated to be faster than experimental millisecond timescales, and the authors acknowledge this but do not provide a detailed analysis of how this affects the interpretation of the rate enhancement.</li>
+<li><strong>Why it matters</strong> The claim of quantitative agreement is used to validate the computational model. If the agreement is only qualitative, the authors should temper their language and discuss the limitations of their kinetic estimates. Overstating agreement could mislead readers about the predictive power of the simulations.</li>
+<li><strong>Resolution test</strong> Provide a more detailed comparison of simulated and experimental rates, including error bars and a discussion of potential sources of discrepancy. Alternatively, revise the language to "qualitative agreement" and provide a more nuanced discussion of the limitations of the MSM approach for absolute rate prediction.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Generalizability of QM/MM findings to other metals</li>
+<li><strong>Claim pointer</strong> The authors claim that "quantum-classical simulations revealing distinct catalytic behaviours among divalent metals" and that "Co2+ disrupts enzymatic function, despite ionic strength promoting Cas9 conformational activation regardless of ion type."</li>
+<li><strong>Evidence pointer</strong> Figure 5, Supplementary Figs. 30–36</li>
+<li><strong>Concern</strong> The QM/MM simulations are performed on a single active-site model with Ca2+ and Co2+, and the free energy barriers are compared to a previously published Mg2+ result. The authors do not provide sufficient detail on how the QM region was constructed, how the metal ions were parameterized, or how the simulations were validated against experimental data for Ca2+ and Co2+. The claim that Co2+ raises the barrier by ~9 kcal/mol is based on a single set of simulations, and the manuscript does not report error bars for the Mg2+ reference barrier. This limits the confidence in the quantitative comparison.</li>
+<li><strong>Why it matters</strong> The claim that different metals have distinct catalytic behaviors is a key part of the paper's message about metal-dependent regulation. If the QM/MM results are not robustly validated, the conclusion that Co2+ is inhibitory due to a specific mechanistic change (rather than, e.g., a general destabilization of the active site) is not fully supported.</li>
+<li><strong>Resolution test</strong> Provide more detailed validation of the QM/MM setup, including convergence tests, comparison with experimental kinetic data for Ca2+ and Co2+ (if available), and error estimates for all reported barriers. If possible, perform additional simulations with different starting conditions to ensure the results are robust.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Experimental validation of the DBP in the full-length Cas9 context</li>
+<li><strong>Claim pointer</strong> The authors state that "NMR measurements revealing metal-dependent structural perturbations within the HNH–L2 region" support the computational identification of the DBP.</li>
+<li><strong>Evidence pointer</strong> Figure 4a–d, Supplementary Figs. 21–22</li>
+<li><strong>Concern</strong> The NMR experiments are performed on an isolated HNH–L2 construct (residues 772–925), which may not fully recapitulate the environment of the DBP in the full-length Cas9 protein. The DBP is proposed to form at the HNH–RuvC interface, and the isolated construct lacks the RuvC domain. The authors do not address whether the metal-dependent perturbations observed in the isolated construct are representative of the full-length protein, nor do they provide evidence that the DBP is formed in the full-length context.</li>
+<li><strong>Why it matters</strong> The DBP is defined as a pocket at the HNH–RuvC interface, and its functional relevance depends on its formation in the intact protein. If the NMR data are collected on a construct that cannot form the full interface, the relevance of the observed perturbations to the proposed mechanism is unclear.</li>
+<li><strong>Resolution test</strong> Perform NMR or other biophysical experiments on a construct that includes both the HNH and RuvC domains, or use cross-linking or HDX-MS to demonstrate that the DBP is formed in the full-length protein. Alternatively, provide a clear rationale for why the isolated HNH–L2 construct is a valid model for the DBP.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity of figure labels</li>
+<li><strong>Affected element</strong> Figure 1b</li>
+<li><strong>Evidence pointer</strong> Figure 1b</li>
+<li><strong>Issue</strong> The figure legend states "Shaded regions represent the standard error obtained using Monte Carlo bootstrap analysis of the free energy simulations," but the shaded regions in the figure are not clearly distinguishable from the line plots. It would be helpful to use a more distinct shading or add error bars at specific points.</li>
+<li><strong>Required correction</strong> Improve the visual distinction of the shaded error regions in Figure 1b, or add explicit error bars at representative points.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> Figure 4e–g</li>
+<li><strong>Evidence pointer</strong> Figure 4e–g, Supplementary Figs. 23–24</li>
+<li><strong>Issue</strong> The manuscript reports "mean ± s.e.m. from three independent experiments" for cleavage assays but does not specify the statistical test used to compare mutant and wild-type rates. Additionally, the number of replicates for the oligoduplex cleavage assays is not stated.</li>
+<li><strong>Required correction</strong> Specify the statistical tests used and the number of replicates for all quantitative comparisons in Figure 4.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness of methods</li>
+<li><strong>Affected element</strong> NMR spectroscopy methods</li>
+<li><strong>Evidence pointer</strong> Methods section, NMR spectroscopy</li>
+<li><strong>Issue</strong> The methods state that "Backbone assignments were obtained using standard triple-resonance experiments" but do not list the specific experiments or the assignment completeness. Additionally, the methods for determining pKa values are described only briefly.</li>
+<li><strong>Required correction</strong> Provide more detail on the NMR experiments used for backbone assignment and pKa determination, including the percentage of residues assigned and the fitting procedure.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Discussion of limitations</li>
+<li><strong>Affected element</strong> Discussion</li>
+<li><strong>Evidence pointer</strong> Discussion</li>
+<li><strong>Issue</strong> The discussion does not explicitly address the limitations of using an isolated HNH–L2 construct for NMR studies, nor does it discuss the potential impact of force field choice on the simulation results.</li>
+<li><strong>Required correction</strong> Add a brief paragraph discussing the limitations of the study, including the use of isolated domains and the inherent uncertainties in computational predictions.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> 1) Direct evidence of metal binding to the DBP in the full-length Cas9 context is lacking (R1-M1). 2) The quantitative agreement between simulated and experimental kinetics is overstated (R1-M2). 3) The QM/MM results for Ca2+ and Co2+ lack sufficient validation and error analysis (R1-M3). 4) The NMR data are collected on an isolated construct that may not recapitulate the full HNH–RuvC interface (R1-M4).</li>
+<li><strong>Assessment against Nature-style criteria</strong> <strong>Originality:</strong> High. The identification of a cryptic, dynamically forming metal binding pocket as a regulatory element in Cas9 is a novel concept that has not been previously reported. <strong>Scientific importance:</strong> High. The work addresses a fundamental question about how metal ions regulate Cas9 function, with direct implications for genome editing in diverse cellular environments. <strong>Interdisciplinary readership:</strong> Moderate to high. The topic is of interest to CRISPR biologists, biophysicists, and computational chemists, but the heavy reliance on computational methods may limit accessibility for some experimental biologists. <strong>Technical soundness:</strong> Generally strong, with a multi-pronged approach combining MD, MSM, QM/MM, NMR, and biochemistry. However, the concerns raised above about direct evidence for the DBP and the validation of QM/MM results need to be addressed. <strong>Readability for nonspecialists:</strong> The abstract and introduction are accessible, but the results section is dense and may be challenging for readers without a strong background in computational biophysics. The authors should consider adding a schematic or summary figure to aid comprehension.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The manuscript presents a novel and potentially important mechanism for metal-dependent regulation of Cas9, but the central claim that the DBP is a functional regulatory element requires stronger direct evidence. The authors should address the concerns about direct metal binding measurements, quantitative agreement with experiment, and the relevance of the isolated HNH–L2 construct to the full-length protein.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that the DBP "regulates" Cas9 activity is not fully supported by direct evidence; the mutagenesis data are consistent with this interpretation but do not exclude alternative explanations.</li>
+<li>The claim of "remarkable agreement" between simulated and experimental kinetics is overstated given the ~25% discrepancy.</li>
+<li>The claim that Co2+ disrupts catalysis through a specific mechanistic change (dissociative pathway) is based on a single set of QM/MM simulations without sufficient validation.</li>
+<li>The generalizability of the findings to other Cas9 orthologs or to in vivo conditions is not established, as all experiments were performed in vitro with a single Cas9 variant.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

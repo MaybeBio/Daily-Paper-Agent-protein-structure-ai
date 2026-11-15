@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors propose DynamicsPLM, a 35-million-parameter protein language model that combines evolutionary sequence information with explicit molecular dynamics supervision via a second-stage continual pretraining strategy on over 60,000 proteins. The model is claimed to achieve state-of-the-art accuracy among models under 100M parameters on ProteinGym and the Tsuboyama folding stability dataset, and to match or outperform several billion-scale sequence-based models.
+- **Visible evidence base** Abstract text only; no quantitative results, benchmark tables, or methodological details are provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, benchmark performance numbers, model architecture details, training hyperparameters, dataset composition and preprocessing, baseline comparison lists, statistical significance tests, and code repository contents
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually appealing idea: enriching a small protein language model with explicit molecular dynamics supervision to achieve competitive variant effect prediction without scaling to billions of parameters. The motivation is clear and the proposed approach is timely given the field's focus on parameter efficiency. However, the abstract provides no quantitative evidence whatsoever. No performance numbers, no comparison tables, no statistical measures, and no methodological specifics are visible. The central claims of state-of-the-art performance and equivalence to billion-scale models are therefore entirely unverifiable from the supplied material. The writing is generally clear, though the final sentence of the abstract contains an apparent error referencing "LoMuS" instead of "DynamicsPLM."
+- **Who would be interested in the results, and why** Computational biologists and machine learning researchers working on protein function prediction, variant effect prediction, and protein language models. The parameter-efficiency angle would also appeal to groups with limited computational resources who cannot train or fine-tune billion-scale models. The integration of molecular dynamics with sequence-based representation learning may interest researchers at the interface of biophysics and deep learning.
+- **Major strengths** The conceptual framing is strong: the abstract clearly identifies a gap between sequence-only PLMs and dynamics-only models, and proposes a principled way to bridge it. The parameter efficiency claim (35M parameters) is notable and, if substantiated, would be a meaningful contribution. The use of continual pretraining to preserve evolutionary knowledge while adding dynamics supervision is a sensible design choice. The zero-shot inference approach from sequence alone is practically attractive.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "DynamicsPLM achieves state-of-the-art accuracy among all models under 100M parameters, and matches or outperforms several billion-scale sequence-based models"
+  - **Evidence pointer** Abstract, Results section not provided
+  - **Concern** The central performance claim is presented without any numerical support. No accuracy values, no benchmark scores, no effect size measures, and no statistical significance indicators are given. The reader cannot assess whether the claimed state-of-the-art performance is marginal or substantial, on which specific benchmarks it holds, or against which specific baselines it was compared.
+  - **Why it matters** The entire contribution rests on this performance claim. Without quantitative evidence, the claim is unfalsifiable and the scientific contribution cannot be evaluated. In a field where benchmark results are the primary currency, omitting all numbers from the abstract is a critical deficiency.
+  - **Resolution test** Provide specific performance metrics (e.g., Spearman correlation, AUROC, MCC) on ProteinGym and Tsuboyama datasets, with clear baseline comparisons and confidence intervals or significance tests.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological transparency
+  - **Claim pointer** "Utilizing a second-stage, multi-task continual pretraining strategy on over 60,000 proteins, we enrich a foundational sequence encoder with explicit residue-level and pairwise molecular dynamics heads"
+  - **Evidence pointer** Abstract, Methods section not provided
+  - **Concern** The methodological description is too vague to evaluate. The nature of the "foundational sequence encoder" is unspecified. The molecular dynamics simulation protocol, the types of dynamics features extracted, the multi-task objectives, and the continual pretraining procedure are all undefined. The dataset of 60,000 proteins is mentioned but its composition, redundancy filtering, and relationship to downstream benchmarks are not described.
+  - **Why it matters** Reproducibility is a core requirement for computational biology research. Without methodological detail, other groups cannot implement or validate the approach. Moreover, the choice of dynamics features and training strategy directly determines whether the claimed benefits are real or artifacts of specific implementation choices.
+  - **Resolution test** Provide a complete methods description including architecture details, simulation parameters, feature definitions, training objectives, and dataset construction. The code repository should be functional and documented.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim consistency
+  - **Claim pointer** "All codes including data preparation scripts, training and validation recipes, and experimental configurations for LoMuS are available at: https://github.com/kabir-ai2bio-lab/DynamicsPLM"
+  - **Evidence pointer** Abstract, Availability statement
+  - **Concern** The availability statement references "LoMuS" rather than "DynamicsPLM." This appears to be an error, but it raises uncertainty about whether the correct repository is linked and whether the code corresponds to the described model. The repository name in the URL suggests DynamicsPLM, but the text inconsistency is concerning.
+  - **Why it matters** Code availability is a stated commitment. An inconsistency in the availability statement undermines confidence in the reproducibility of the work and may indicate careless preparation.
+  - **Resolution test** Correct the availability statement to reference DynamicsPLM consistently and verify that the linked repository contains all described materials.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract, final sentence
+  - **Evidence pointer** Abstract, Availability section
+  - **Issue** The sentence "All codes including data preparation scripts, training and validation recipes, and experimental configurations for LoMuS are available" uses "LoMuS" which does not match the model name "DynamicsPLM" used throughout the abstract.
+  - **Required correction** Replace "LoMuS" with "DynamicsPLM" or clarify if LoMuS is a related but distinct resource.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Precision
+  - **Affected element** Abstract, performance claim
+  - **Evidence pointer** Abstract, Results summary
+  - **Issue** The phrase "matches or outperforms several billion-scale sequence-based models of its size" is internally contradictory. A model "of its size" cannot be billion-scale. This likely means "matches or outperforms several billion-scale sequence-based models despite its small size," but the wording is confusing.
+  - **Required correction** Rewrite to clarify the comparison, for example "matches or outperforms several billion-scale sequence-based models despite having 35M parameters."
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Scope definition
+  - **Affected element** Abstract, benchmark description
+  - **Evidence pointer** Abstract, Results summary
+  - **Issue** The abstract mentions "the massive ProteinGym benchmark" and "natural variants of the Tsuboyama folding stability dataset" but does not specify which ProteinGym subsets were used (e.g., deep mutational scanning vs. clinical variants) or how many variants were evaluated.
+  - **Required correction** Specify the exact benchmark subsets and variant counts to enable proper interpretation of the performance claims.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (no quantitative evidence), R1-M2 (insufficient methodological detail), R1-M3 (availability statement inconsistency). These are blocking because the core claims cannot be evaluated or reproduced from the supplied material.
+- **Assessment against Nature-style criteria** 
+  - Originality: The idea of enriching a small PLM with explicit molecular dynamics supervision is conceptually novel and distinct from both pure sequence-based scaling and pure physics-based approaches. This is a potential strength, but the abstract does not provide enough detail to assess whether the implementation is genuinely new or an incremental combination of existing techniques.
+  - Scientific importance: Variant effect prediction is a high-impact problem with direct relevance to clinical genetics and protein engineering. A parameter-efficient model that approaches billion-scale performance would be practically valuable. However, the importance claim is entirely dependent on the unverified performance numbers.
+  - Interdisciplinary readership: The work sits at the intersection of machine learning, biophysics, and computational biology, which is a broad and active readership. The abstract is written accessibly for this audience.
+  - Technical soundness: Cannot be assessed from the abstract. The methodological description is too sparse to evaluate the soundness of the training strategy, the dynamics feature extraction, or the evaluation protocol.
+  - Readability for nonspecialists: The abstract is generally readable and the motivation is clearly stated. The terminology is appropriate for a bioinformatics audience. The "LoMuS" error and the contradictory phrasing in the performance claim detract from clarity.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual idea is promising and the direction is worth pursuing, but the abstract alone provides no verifiable support for the central claims. A full review would require the complete manuscript with quantitative results, methodological details, and a functional code repository.
+
+## Risk / unsupported claims
+- The claim of state-of-the-art performance among sub-100M models is unsupported by any numerical data in the abstract.
+- The claim of matching or outperforming billion-scale models is unsupported and the phrasing is internally inconsistent.
+- The claim that explicit dynamics supervision provides a parameter-efficient alternative to raw scale is a reasonable hypothesis but is not substantiated with comparative efficiency data.
+- The description of the continual pretraining strategy and its effect on preserving evolutionary knowledge is not verifiable without methodological details.
+- The availability of code and data cannot be confirmed due to the naming inconsistency in the availability statement and the lack of repository inspection.

@@ -1,0 +1,81 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no figures, tables, methods, or supporting information were supplied
+- **Shared manuscript claim summary** The authors report all-atom molecular dynamics simulations of NPC1L1 in four functional states (open apo, open bound, closed bound, closed apo) and propose that cholesterol binding to the N-terminal domain (NTD) restrains NTD mobility, couples NTD dynamics to the middle luminal domain (MLD) and C-terminal domain (CTD), induces a new NTD-cholesterol hydrogen bond in the closed bound state, and increases MLD flexibility in the closed apo state, with the protocol framed as a robust framework for analyzing NPC1L1 inhibitors.
+- **Visible evidence base** Abstract text only; no simulation details, force field parameters, system setup, trajectory lengths, convergence metrics, or quantitative results are provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, methods section, simulation parameters, force field validation, convergence analysis, and any statistical or error analysis
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible and potentially interesting computational study of NPC1L1 dynamics, but the claims are stated without quantitative support, and the absence of methodological detail prevents assessment of technical soundness. The central mechanistic proposals, while reasonable, are not established from the supplied material. The work may be of interest to the membrane protein and cholesterol transport community, but the current evidence base is insufficient to evaluate the strength of the conclusions.
+- **Who would be interested in the results, and why** Researchers studying cholesterol absorption and transport, membrane protein dynamics, and computational biophysics. The proposed framework for analyzing NPC1L1 inhibitors could also interest drug discovery groups focused on cholesterol-lowering therapies.
+- **Major strengths** The study addresses a biologically important question with clear translational relevance. The use of four functional states is a thoughtful design that allows comparison of both conformational state and ligand binding effects. The abstract identifies specific dynamical features that could be mechanistically meaningful.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims that "the wide motions of NTD observed in the open apo state are partially restrained in the open bound state" and that "cholesterol binding to the NTD also makes this domain dynamically coupled to the collective rearrangements of the MLD and the CTD."
+  - **Evidence pointer** Location not provided
+  - **Concern** No quantitative data are presented to support these dynamical claims. There are no measures of domain mobility, correlation coefficients, or statistical comparisons between states. The terms "partially restrained" and "dynamically coupled" are qualitative and cannot be evaluated without numerical evidence.
+  - **Why it matters** The central conclusions of the study rest on these dynamical differences between states. Without quantitative metrics and appropriate statistical testing, the claims are not distinguishable from anecdotal observation.
+  - **Resolution test** Provide quantitative measures such as root-mean-square fluctuations, principal component analysis projections, or dynamic cross-correlation matrices with error bars and statistical significance tests comparing the four states.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract states that "a new NTD-cholesterol hydrogen bond is observed" in the closed bound state and that this "could represent the first step for cholesterol delivery."
+  - **Evidence pointer** Location not provided
+  - **Concern** The observation of a single hydrogen bond in a simulation is presented without any assessment of its stability, occupancy, or statistical significance. The mechanistic interpretation is speculative and not supported by the evidence described.
+  - **Why it matters** The proposed role of this hydrogen bond as a functional step in cholesterol delivery is a strong mechanistic claim. Without occupancy analysis, free energy calculations, or mutational validation, the claim is not established.
+  - **Resolution test** Report hydrogen bond occupancy over the trajectory, assess its persistence across independent simulations, and discuss whether the interaction is stable enough to be functionally relevant. Consider free energy perturbation or umbrella sampling to evaluate the thermodynamic significance.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims that "the closed apo state is characterized by an increased MLD flexibility which may destabilize extracellular domain interfaces, preparing the NPC1L1 transporter to return to the open apo state."
+  - **Evidence pointer** Location not provided
+  - **Concern** The causal link between increased MLD flexibility and domain interface destabilization is asserted without evidence. No interface contact analysis, free energy estimates, or transition pathway sampling is described.
+  - **Why it matters** This claim proposes a specific conformational transition mechanism. Without evidence that the increased flexibility actually leads to interface destabilization or that the system can sample the open state from the closed apo state, the claim is unsupported.
+  - **Resolution test** Provide interface contact maps or residue-residue distance distributions over time, and consider enhanced sampling methods to demonstrate that the closed apo state can transition toward the open state.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract states that "our protocol provides a robust framework that can be used to analyze novel NPC1L1 inhibitors."
+  - **Evidence pointer** Location not provided
+  - **Concern** No validation of the protocol is described. There is no evidence that the simulation setup reproduces known experimental data, that the force field is appropriate for this system, or that the protocol has been tested against any benchmark.
+  - **Why it matters** The claim of robustness requires demonstration. Without validation against experimental structures, binding affinities, or other reference data, the framework cannot be considered reliable for inhibitor analysis.
+  - **Resolution test** Describe validation of the simulation protocol against experimental data, such as reproducing known conformational populations, binding poses, or mutational effects. Provide evidence of convergence and reproducibility.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract text
+  - **Evidence pointer** Location not provided
+  - **Issue** The abstract uses domain abbreviations (NTD, MLD, CTD) without defining them at first use.
+  - **Required correction** Define all abbreviations at first mention in the abstract.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Scientific importance
+  - **Affected element** Abstract text
+  - **Evidence pointer** Location not provided
+  - **Issue** The abstract does not state the simulation length or number of replicas, which are essential for evaluating the significance of the dynamical observations.
+  - **Required correction** Include simulation timescale and number of independent simulations in the abstract or methods.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Abstract text
+  - **Evidence pointer** Location not provided
+  - **Issue** The phrase "horizontal line" appears twice in the abstract, likely indicating a formatting error.
+  - **Required correction** Remove the extraneous text and ensure the abstract reads cleanly.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4
+- **Assessment against Nature-style criteria** Originality: The study addresses a relevant question with a reasonable computational approach, but the abstract does not demonstrate conceptual novelty beyond applying standard MD methods to a known system. Scientific importance: The topic is important for cholesterol biology, but the mechanistic claims are not yet supported. Interdisciplinary readership: The work could appeal to both biophysicists and cell biologists, but the abstract is written in a specialized manner that may limit accessibility. Technical soundness: Not assessable from the abstract alone; the absence of methodological detail and quantitative results is a critical gap. Readability for nonspecialists: The abstract is concise but uses domain-specific terminology without adequate context.
+- **Recommendation posture** Currently not established from the provided evidence. The study may have merit, but the abstract alone does not provide sufficient quantitative or methodological support for the central claims. A full manuscript with detailed methods, validation, and statistical analysis would be required to assess whether the conclusions are justified.
+
+## Risk / unsupported claims
+- The claim that cholesterol binding restrains NTD mobility is unsupported without quantitative fluctuation data.
+- The claim of dynamical coupling between NTD and MLD/CTD is unsupported without correlation analysis.
+- The observation of a new NTD-cholesterol hydrogen bond and its proposed functional role is unsupported without occupancy or stability analysis.
+- The claim that increased MLD flexibility destabilizes domain interfaces is unsupported without interface analysis.
+- The claim that the protocol is robust for inhibitor analysis is unsupported without validation.
+- The overall mechanistic model of cholesterol transport is presented as a coherent narrative but is not established from the evidence described.

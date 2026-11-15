@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ControlHarbor: A Benchmark for Control Design by Coding Agents · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-low">0</span>
+    <div>
+      <h1>ControlHarbor: A Benchmark for Control Design by Coding Agents</h1>
+      <div class="meta">Jieqiang Wei; Fahad Ali; Jonny Reichwald; Silun Zhang</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-11-12
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2611.16867v1">原文</a>
+      </div>
+      <p class="one-liner">该文研究LLM智能体进行控制系统设计，对象为控制工程而非蛋白质结构，不涉及蛋白质结构计算或AI/物理模拟方法，与本课题无关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">LLM agents, i.e., language models run by a harness, can now write, run and debug software autonomously. This raises the question of whether they can also carry out control system design. In this paper, we consider control system design as a task for LLM agents and grade the designed controller as control engineers do: the controller is given in a single Python file mapping measurements to actions, evaluated on held-out seeds against an ordered set of requirements, under specified physical perturbations and structural certificates, without using neural networks. We formulate the task as a chance-constrained feasibility problem and instantiate it in ControlHarbor, a benchmark of 44 tasks over 13 plants, which includes network consensus, vehicle platooning, the MuJoCo hopper, walker and humanoid. The tasks are packaged in the Harbor format, so that any agent harness can be run against them, and the same environments also serve learning algorithms other than LLMs, such as reinforcement learning (RL), under the same evaluation. With ControlHarbor, we observe that the controllers designed by three frontier coding agents, Claude Opus 5.5, Fable 5.1 and Sonnet 5.5, reach the RL return on every parity task, but only in a minority of sessions. We also observe that the controllers certified for return alone usually fail under perturbations. When robustness is part of the specification, a structured design meets it at the RL return on the humanoid task, where domain-randomised RL does not; under large pushes, domain-randomised RL succeeds and no designed controller does. The benchmark, the controllers, and their grades are released.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">LLM智能体，即由执行框架（harness）运行的语言模型，现已能自主编写、运行和调试软件。这引发了一个问题：它们是否也能进行控制系统设计。在本文中，我们将控制系统设计视为LLM智能体的一项任务，并像控制工程师那样对设计的控制器进行评分：控制器以单个Python文件形式给出，将测量映射到动作，在保留的测试种子上，依据一组有序需求，在指定的物理扰动和结构认证下进行评估，且不使用神经网络。我们将该任务形式化为一个机会约束可行性问题，并在ControlHarbor中实例化，这是一个包含13个被控对象、44个任务的基准测试，涵盖网络共识、车辆编队、MuJoCo的hopper、walker和humanoid。这些任务以Harbor格式打包，因此任何智能体执行框架均可运行它们，并且相同的环境也适用于除LLM之外的学习算法，如强化学习（RL），在相同评估条件下进行。借助ControlHarbor，我们观察到三个前沿编码智能体Claude Opus 5.5、Fable 5.1和Sonnet 5.5设计的控制器在每个对等任务上达到了RL的回报水平，但仅在少数会话中如此。我们还观察到，仅针对回报进行认证的控制器在扰动下通常会失败。当鲁棒性成为规格的一部分时，一种结构化设计在humanoid任务上达到了RL回报，而域随机化RL未能做到；在大力推挤下，域随机化RL成功，而所有设计的控制器均失败。该基准测试、控制器及其评分均已发布。</div>
+  </section>
+  
+  
+  
+</article>
+</main>
+</body>
+</html>

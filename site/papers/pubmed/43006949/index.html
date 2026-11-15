@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MARS: Machine-Learned Force Field Framework for Automated Conformational Sampling, Vibrational Spectroscopy, and Microsolvation. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>MARS: Machine-Learned Force Field Framework for Automated Conformational Sampling, Vibrational Spectroscopy, and Microsolvation.</h1>
+      <div class="meta">Suarez-Dou, Sergio; Gallegos, Miguel; Brunig, Florian N; Tkatchenko, Alexandre</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of chemical theory and computation</span>
+        · 2026-11-10
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/43006949/">原文</a>
+      </div>
+      <p class="one-liner">该文介绍MARS，一个基于机器学习力场（SO3LR/MACE）的自动化构象采样、红外光谱预测和微溶剂化框架，核心针对蛋白质相关分子（氨基酸、肽）的构象生成与结构计算，方法上结合AI力场与MD/增强采样，与蛋白质结构计算课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">We present MARS, an open-source Python package for automated conformational ensemble generation, infrared spectrum prediction, and explicit microsolvation of molecular systems. Built on JAX for GPU acceleration and automatic differentiation, MARS is carried out with machine-learned force fields (MLFFs), including SO3LR and MACE, with a four-phase conformational sampling workflow combining metadynamics, multitemperature molecular dynamics, and genetic algorithms. The package provides automated vibrational mode classification using Wilson B-matrix projections and functional group identification via graph-based pattern matching. We benchmark MARS on chemically diverse systems, including alkanes, halogenated aromatics, amino acids, peptides, drug-like molecules, phosphamides, host-guest complexes, and microsolvated biomolecular models. Semiempirical quantum-chemical methods have until now provided the practical state of the art for automated conformational sampling. Our benchmarks show that modern MLFFs can improve upon this paradigm by combining greater accuracy for high-level relative conformer energies with lower computational cost and more favorable scaling with molecular size. IR benchmarks against experimental gas-phase spectra additionally show performance comparable to quantum-chemical methods, with chemically interpretable mode assignments. Applications to alanine peptides, proline/beta-cyclodextrin inclusion complexes, alanine dipeptide, and 2-methoxycyclohexanone further demonstrate that MARS captures conformational reorganization, noncovalent binding motifs, solvent-induced stability shifts, and spectroscopic signatures. These results establish MARS as a transferable and accessible platform for ensemble-based molecular modeling with machine-learned potentials. MARS is freely available at github.com/tcpunilu/mars.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">我们介绍MARS，一个开源的Python包，用于自动化构象系综生成、红外光谱预测以及分子系统的显式微溶剂化。基于JAX构建以实现GPU加速和自动微分，MARS采用机器学习力场（MLFFs），包括SO3LR和MACE，并采用结合元动力学、多温度分子动力学和遗传算法的四阶段构象采样工作流程。该包通过Wilson B矩阵投影提供自动化振动模式分类，并通过基于图的模式匹配进行官能团识别。我们在化学多样性系统上对MARS进行基准测试，包括烷烃、卤代芳香烃、氨基酸、肽、类药分子、磷酰胺、主客体复合物以及微溶剂化生物分子模型。迄今为止，半经验量子化学方法为自动化构象采样提供了实用的最先进技术。我们的基准测试表明，现代MLFFs可以通过结合更高精度的相对构象能、更低的计算成本以及更有利的分子尺寸扩展性来改进这一范式。针对实验气相光谱的IR基准测试还显示，其性能与量子化学方法相当，并具有化学可解释的振动模式分配。对丙氨酸肽、脯氨酸/β-环糊精包合物、丙氨酸二肽和2-甲氧基环己酮的应用进一步证明，MARS能够捕捉构象重排、非共价结合基序、溶剂诱导的稳定性变化以及光谱特征。这些结果确立了MARS作为基于系综的分子建模平台，具有可转移性和可访问性，并采用机器学习势。MARS可在github.com/tcpunilu/mars免费获取。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: MARS: Machine-Learned Force Field Framework for Automated Conformational Sampling, Vibrational Spectroscopy, and Microsolvation</li>
+<li><strong>作者与单位</strong>: Suarez-Dou, Sergio; Gallegos, Miguel; Brunig, Florian N; Tkatchenko, Alexandre（单位未提供，推测为卢森堡大学，因致谢提及卢森堡大学与卢森堡国家研究基金）</li>
+<li><strong>期刊/预印本平台</strong>: Journal of Chemical Theory and Computation</li>
+<li><strong>年份</strong>: 2026（在线日期 2026-11-10）</li>
+<li><strong>论文类型</strong>: 方法学/软件框架论文</li>
+<li><strong>领域</strong>: 计算化学 × 机器学习力场（MLFF）× 构象采样 × 振动光谱 × 微溶剂化</li>
+<li><strong>关键词</strong>: machine-learned force fields, conformational sampling, vibrational spectroscopy, microsolvation, SO3LR, MACE, JAX</li>
+<li><strong>DOI/arXiv 号</strong>: 10.1021/acs.jctc.6c01588</li>
+<li><strong>代码</strong>: https://github.com/tcpunilu/mars（开源）</li>
+<li><strong>数据</strong>: 未提供独立数据集，使用公开基准（MPCONF196、TorsionNet500、CCCBDB、QUID、NIST35 等）</li>
+<li><strong>阅读日期</strong>: 2026-11-10（基于在线日期）</li>
+<li><strong>在课题方向中的位置</strong>: 本文是「蛋白质结构相关计算研究 × AI 方法」中的关键方法学贡献——将 MLFF（SO3LR、MACE）集成到自动化构象采样、IR 光谱预测和微溶剂化工作流中，直接对标并试图超越半经验方法（GFN2-xTB/CREST）在构象系综生成中的主导地位。对蛋白质/多肽构象采样、溶剂效应建模和光谱预测具有直接迁移价值。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出并开源了一个基于 JAX 的模型无关框架 MARS，将 MLFF（SO3LR、MACE）与四阶段构象采样（metadynamics、多温度 MD、遗传算法）结合，在保持与半经验方法相当或更优的构象能量精度的同时，实现更快的 GPU 加速构象系综生成、自动 IR 光谱指认和显式微溶剂化。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 自动化构象采样和系综生成长期以来依赖半经验量子化学方法（如 GFN2-xTB/CREST），其能量评估成本随分子尺寸增长迅速，限制了可采样的分子大小和轨迹长度。MLFF 能否在自动化构象采样工作流中替代半经验方法，同时保持或提升能量精度？</li>
+<li><strong>为什么重要</strong>: 构象系综是预测柔性分子（药物、多肽、蛋白质片段）热力学性质、光谱和反应性的基础。更快的能量评估直接转化为更充分的构象空间探索和更大分子的可处理性。</li>
+<li><strong>现有方法不足</strong>: CREST/GFN2-xTB 是当前事实标准，但其能量评估的尺寸标度限制了大规模采样；现有 MLFF 工具缺乏针对构象采样的自动化工作流集成。</li>
+<li><strong>精确研究问题</strong>: Can modern MLFFs (SO3LR, MACE) replace semiempirical GFN2-xTB as the practical state of the art for automated conformational sampling, while improving accuracy, throughput, and scaling with molecular size?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p>（标注：以下脉络基于本文 Introduction 与引用，经外部核验部分已注明）</p>
+<ol>
+<li><strong>系统构象搜索时代</strong>: 基于经验力场（MMFF、GAFF）的系统旋转搜索，速度快但精度有限，无法准确描述电子效应和弱相互作用。</li>
+<li><strong>半经验量子化学时代（当前标准）</strong>: GFN2-xTB 结合 metadynamics（CREST 工具）成为自动化构象采样的实际标准，在精度与成本间取得平衡。但尺寸标度限制了更大分子的应用。</li>
+<li><strong>MLFF 兴起</strong>: 等变神经网络力场（如 SO3krates、MACE、SO3LR）在气相小分子上达到近 DFT 精度，但缺乏面向构象采样的自动化工作流集成。</li>
+<li><strong>本文位置</strong>: 首次将 MLFF 系统性地嵌入自动化构象采样、光谱预测和微溶剂化的一体化工作流，验证其作为半经验方法替代品的可行性，并提供模型无关的开放框架。</li>
+</ol>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>半经验方法计算成本高</td>
+<td>大分子构象搜索需数万次能量/力评估，尺寸标度限制轨迹长度和分子大小</td>
+<td>GFN2-xTB 的电子结构计算随体系增大成本快速上升</td>
+<td>Introduction: "the scaling of semiempirical electronic-structure calculations increasingly limits the length and number of trajectories"</td>
+</tr>
+<tr>
+<td>MLFF 缺乏自动化工作流集成</td>
+<td>虽有高精度 MLFF，但无面向构象采样的开箱即用工具</td>
+<td>MLFF 发展聚焦于模型精度而非下游应用工作流</td>
+<td>Introduction: "MLFFs remain underutilized in automated workflows for conformational sampling"</td>
+</tr>
+<tr>
+<td>构象采样与光谱预测脱节</td>
+<td>传统流程中采样、优化、光谱计算需在不同软件间手动切换</td>
+<td>缺乏统一框架整合采样-优化-光谱-微溶剂化</td>
+<td>Overview: "researchers can proceed from a Cartesian input structure to a solvated, ensemble-averaged spectrum without manually coordinating intermediate steps"</td>
+</tr>
+<tr>
+<td>微溶剂化构建缺乏自动化</td>
+<td>显式溶剂壳构建需手动设置，难以批量处理</td>
+<td>缺乏自动化的溶剂壳生成与优化流程</td>
+<td>Microsolvation 模块: 两种自动构建策略（Fibonacci 球面 + barostat）</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>: 一个 Python 包，集成四阶段构象采样（metadynamics → 多温度 MD → 遗传算法交叉 → 优化）、自动 IR 光谱计算与指认、显式微溶剂化构建，全部基于 JAX 实现 GPU 加速，支持多种 MLFF 后端（SO3LR、MACE、dftb+）。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>: MLFF 的 GPU 原生执行和批量并行能力使其在构象采样场景中不仅精度可媲美半经验方法，而且总工作流时间更短——因为采样成本由能量评估次数 × 单次评估成本决定，MLFF 的单次评估成本远低于 GFN2-xTB，且可并行评估多个结构。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]: 方法学的进步不仅来自更好的模型，更来自将模型嵌入自动化工作流的设计。MARS 的模型无关接口设计使得新 MLFF 可以即插即用，这提示本课题（蛋白质结构计算）中，工具链的集成度往往比单一模型的精度更能决定实际应用效果。</p>
+</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: Cartesian 坐标（.xyz 格式）</li>
+<li><strong>输出</strong>: 构象系综（含相对能量排序）、IR 光谱（含模式指认）、微溶剂化簇结构</li>
+<li><strong>模块</strong>:
+  1. <strong>构象采样引擎</strong>: 四阶段流水线（metadynamics → 多温度 MD → 遗传算法 → 优化）
+  2. <strong>光谱模块</strong>: 解析 Hessian → 简正模式 → IR 强度 → 谱线展宽 → 模式指认（Wilson B-matrix 投影 + 图匹配功能团识别）
+  3. <strong>微溶剂化模块</strong>: Fibonacci 球面几何构建 / barostat 压缩液滴构建
+  4. <strong>模型无关接口</strong>: 统一后端抽象，支持 SO3LR-1/2、MACE-OFF23/24、MACE-OMol、dftb+</li>
+<li><strong>训练</strong>: 无（使用预训练 MLFF，不涉及微调）</li>
+<li><strong>工具</strong>: JAX（自动微分 + JIT 编译）、JAX-MD（MD 引擎）</li>
+<li><strong>流程</strong>: 输入结构 → 四阶段采样 → 去重/聚类 → 优化 → Hessian/光谱 → 微溶剂化（可选）→ 输出</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>四阶段构象采样</td>
+<td>结合 metadynamics、多温度 MD、遗传算法、优化</td>
+<td>单一方法无法同时保证探索广度与局部优化精度</td>
+<td>输入: 初始结构；输出: 去重后的构象系综</td>
+<td>Results 图 2-3: 各基准集上的采样恢复率</td>
+<td>预期: 采样恢复率显著下降，尤其对高能垒体系 [预期效应]</td>
+</tr>
+<tr>
+<td>自动 IR 光谱模块</td>
+<td>解析 Hessian → 简正模式 → IR 强度 → 模式指认</td>
+<td>将构象系综与实验可观测直接连接</td>
+<td>输入: 优化后构象；输出: 光谱 + 模式指认</td>
+<td>Results 图 4-5: NIST35 基准与实验光谱对比</td>
+<td>预期: 失去光谱预测能力，无法验证构象系综的实验相关性 [预期效应]</td>
+</tr>
+<tr>
+<td>微溶剂化模块</td>
+<td>自动构建显式溶剂壳</td>
+<td>捕捉氢键、极化等连续介质模型无法描述的效果</td>
+<td>输入: 溶质构象 + 溶剂类型/数量；输出: 溶剂化簇</td>
+<td>Results 图 6-7: 丙氨酸二肽和 2-甲氧基环己酮</td>
+<td>预期: 无法捕捉溶剂诱导的构象重排和光谱位移 [预期效应]</td>
+</tr>
+<tr>
+<td>模型无关后端</td>
+<td>统一接口支持多种 MLFF</td>
+<td>允许用户根据精度/速度需求选择模型</td>
+<td>输入: 模型名称；输出: 统一能量/力接口</td>
+<td>Methods: "model-agnostic design"</td>
+<td>预期: 框架灵活性降低，新模型集成成本增加 [预期效应]</td>
+</tr>
+<tr>
+<td>图匹配功能团识别</td>
+<td>基于图模式自动标注振动模式</td>
+<td>将抽象简正模式转化为化学可解释标签</td>
+<td>输入: 简正模式 + 分子图；输出: 功能团标签</td>
+<td>Methods S3.4: "graph-based pattern matching inspired by the AccFG algorithm"</td>
+<td>预期: 光谱指认需人工完成，效率大幅降低 [预期效应]</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ul>
+<li><strong>IR 强度</strong>: $I_k^{IR} \propto |\partial \mu / \partial Q_k|^2$ — 第 k 个简正模式的 IR 强度正比于偶极矩对简正坐标导数的平方。$\mu$ 为分子偶极矩，$Q_k$ 为第 k 个简正坐标。</li>
+<li><strong>简正频率</strong>: $\omega_k = \sqrt{\lambda_k}$ — 简正频率为质量加权 Hessian 矩阵特征值的平方根。$\lambda_k$ 为质量加权 Hessian 的第 k 个特征值。</li>
+<li><strong>Wilson B-matrix 投影</strong>: 用于将 Cartesian 坐标下的简正模式投影到内坐标基组，实现模式分类。B 矩阵将内坐标变化与 Cartesian 位移关联。</li>
+<li><strong>Kabsch RMSD 匹配</strong>: 用于构象匹配的阈值 0.3 Å（重原子 RMSD），通过旋转对齐最小化结构间距离。</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>:</li>
+<li>Tier 1: 36 个化学多样分子，454 个参考构象（含烷烃、卤代芳烃、氨基酸、多肽、药物分子 MPCONF196、磷酰胺）</li>
+<li>Tier 2: TorsionNet500（扭转能）、CCCBDB（扭转势垒，PBE0+MBD 参考）、QUID（42 个二聚体非共价相互作用）</li>
+<li>光谱: NIST35 子集 4155 个分子（实验气相 IR）</li>
+<li>微溶剂化: 丙氨酸二肽（100 H₂O / 25 Et₂O）、2-甲氧基环己酮（25 CCl₄ / 25 CH₃CN）</li>
+<li><strong>指标</strong>: 最小保留率（构象保留）、相对能量 MAE/RMSE、采样恢复率、光谱相关系数、计算时间</li>
+<li><strong>基线</strong>: GFN1-xFTB、GFN2-xFTB（dxtb 实现）、CREST 工作流</li>
+<li><strong>评测协议</strong>: 对每个分子执行完整 MARS 工作流，与参考构象集比较；光谱与 NIST 实验数据比较；微溶剂化与 DFT 参考比较</li>
+<li><strong>骨干/仪器</strong>: 未提供具体 GPU 型号；提及 MeluXina 超算与卢森堡大学 HPC</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单点能量精度</td>
+<td>MLFF 能准确复现参考构象相对能量</td>
+<td>固定参考几何上的单点能，对比 GFN1/2-xFTB</td>
+<td>SO3LR-2 和 MACE-OMol 在多数子集上 MAE 低于 GFN2-xFTB</td>
+<td>MLFF 能量精度 ≥ 半经验方法</td>
+<td>未提供跨全部子集的统一排名</td>
+<td>Results 图 1</td>
+</tr>
+<tr>
+<td>最小保留率</td>
+<td>MLFF 优化后保留参考构象</td>
+<td>0.3 Å Kabsch RMSD 阈值</td>
+<td>简单子集近 100% 保留；MPCONF196 和磷酰胺区分度最大</td>
+<td>MLFF 能保持参考构象为局部最小</td>
+<td>保留率不等于采样完整性</td>
+<td>Results 图 2A</td>
+</tr>
+<tr>
+<td>采样恢复率</td>
+<td>MARS 工作流能找到参考构象</td>
+<td>四阶段采样 vs 参考集</td>
+<td>SO3LR-2 恢复率优于 SO3LR-1，磷酰胺提升最显著</td>
+<td>新模型提升采样效率</td>
+<td>未与 CREST 采样恢复率直接对比</td>
+<td>Results 图 2C</td>
+</tr>
+<tr>
+<td>计算时间</td>
+<td>MLFF 工作流比半经验更快</td>
+<td>总工作流时间，含优化和 Hessian</td>
+<td>SO3LR 系列最快，尺寸标度最优</td>
+<td>MLFF 在吞吐量上优于半经验</td>
+<td>未提供硬件归一化对比</td>
+<td>Results 图 2B</td>
+</tr>
+<tr>
+<td>IR 光谱基准</td>
+<td>MLFF 光谱与实验一致</td>
+<td>NIST35 子集，相关系数</td>
+<td>SO3LR-2-L 接近 B3LYP-3c 参考</td>
+<td>MLFF 光谱精度达 DFT 水平</td>
+<td>仅测试谐波近似</td>
+<td>Results 图 4</td>
+</tr>
+<tr>
+<td>微溶剂化</td>
+<td>显式溶剂壳捕捉溶剂效应</td>
+<td>丙氨酸二肽 + 水/醚，2-甲氧基环己酮 + CCl₄/CH₃CN</td>
+<td>溶剂诱导构象重排和光谱位移与 DFT 定性一致</td>
+<td>微溶剂化工作流有效</td>
+<td>仅 2 个体系，统计功效有限</td>
+<td>Results 图 6-7</td>
+</tr>
+<tr>
+<td>数值稳定性</td>
+<td>单精度可复现</td>
+<td>10 次独立重复，5 个体系</td>
+<td>SO3LR 单精度稳定；MACE 需双精度</td>
+<td>SO3LR 适合单精度生产</td>
+<td>MACE 双精度成本更高</td>
+<td>Results 图 8</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 构象采样、IR 光谱预测、微溶剂化，针对 14-116 原子的小分子到中等分子；未涉及蛋白质折叠或大尺度构象转变。</li>
+<li><strong>oracle/真值输入</strong>: 参考构象来自文献 DFT 计算；光谱实验来自 NIST 数据库；微溶剂化参考为 DFT 单点能。</li>
+<li><strong>端到端状态</strong>: 全流程自动化，但光谱仅谐波近似，未包含非谐效应；微溶剂化未做自由能采样。</li>
+<li><strong>算力成本</strong>: SO3LR 在 GPU 上最快，但 MACE-OMax 成本显著更高；未报告具体 GPU 型号和能耗。</li>
+<li><strong>历史数据依赖</strong>: 使用预训练 MLFF，不涉及新训练；模型泛化受训练数据覆盖限制。</li>
+<li><strong>模型依赖</strong>: 结论依赖 SO3LR/MACE 系列模型，不保证其他 MLFF 同样适用。</li>
+<li><strong>最难情形</strong>: MPCONF196（药物样分子）和磷酰胺（立体电子效应）对 MLFF 最具挑战性；水溶剂中丙氨酸二肽的亚稳态构象（C7ax, αL, α）能量偏差最大。</li>
+<li><strong>群体/领域边界</strong>: 结果适用于中性有机分子；带电体系（MACE-OFF 除外）和过渡金属体系未验证。</li>
+<li><strong>有边界的复述</strong>: 在 14-116 原子中性有机分子范围内，MLFF（特别是 SO3LR-2 和 MACE-OMax）在自动化构象采样中可达到或超过 GFN2-xFTB 的能量精度，同时提供更快的 GPU 加速工作流和可解释的 IR 光谱指认；微溶剂化可定性捕捉溶剂诱导效应，但定量精度受限于有限溶剂壳和缺乏自由能采样。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>谐波近似</td>
+<td>IR 光谱仅谐波水平，未包含非谐效应和温度依赖</td>
+<td>未明确提及</td>
+<td>Results 图 4 讨论</td>
+</tr>
+<tr>
+<td>有限溶剂壳</td>
+<td>微溶剂化仅一层溶剂，缺乏体相介电响应和自由能采样</td>
+<td>未明确提及</td>
+<td>Solvation 讨论</td>
+</tr>
+<tr>
+<td>模型未发表</td>
+<td>SO3LR-2 是未发表模型，影响可复现性</td>
+<td>未明确提及</td>
+<td>Results: "remains an unpublished model under active development"</td>
+</tr>
+<tr>
+<td>带电体系覆盖不足</td>
+<td>MACE-OFF 训练集仅含中性分子</td>
+<td>未明确提及</td>
+<td>Noncovalent 讨论</td>
+</tr>
+<tr>
+<td>计算资源需求</td>
+<td>MACE-OMax 计算成本高</td>
+<td>未明确提及</td>
+<td>Results 图 2B 讨论</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基准分子尺寸偏小（14-116 原子）</td>
+<td>MLFF 的优势可能在大分子（&gt;500 原子）才显著，小分子上 GFN2-xFTB 已足够</td>
+<td>实际应用（药物、蛋白质）通常更大</td>
+<td>在 200+ 原子体系上对比采样效率</td>
+<td>Results 图 2B 尺寸标度</td>
+</tr>
+<tr>
+<td>未与 CREST 采样恢复率直接对比</td>
+<td>仅对比了能量精度，未对比采样算法本身的效率</td>
+<td>采样算法设计可能比能量函数更关键</td>
+<td>用相同能量函数对比不同采样算法</td>
+<td>Results 图 2C</td>
+</tr>
+<tr>
+<td>光谱基准仅用相关系数</td>
+<td>相关系数对系统偏差不敏感，可能掩盖频率偏移</td>
+<td>实验可重复性需要绝对频率精度</td>
+<td>报告频率 MAE 和偏移分布</td>
+<td>Results 图 4</td>
+</tr>
+<tr>
+<td>微溶剂化仅 2 个体系</td>
+<td>统计功效不足，无法推广到一般溶剂效应</td>
+<td>溶剂效应是构象系综的关键</td>
+<td>扩展到更多溶剂-溶质对</td>
+<td>Results 图 6-7</td>
+</tr>
+<tr>
+<td>未报告硬件细节</td>
+<td>GPU 型号和内存影响可复现性</td>
+<td>计算成本比较需要硬件归一化</td>
+<td>提供标准基准硬件配置</td>
+<td>Results 图 2B</td>
+</tr>
+<tr>
+<td>SO3LR-2 未发表</td>
+<td>核心模型不可复现，削弱框架的可验证性</td>
+<td>科学可复现性要求</td>
+<td>发布模型权重或提供训练细节</td>
+<td>Results 讨论</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>:</p>
+<ol>
+<li>
+<p><strong>四阶段采样流水线设计</strong>: metadynamics（探索）→ 多温度 MD（热激发）→ 遗传算法（重组）→ 优化（精修）的组合策略，可迁移到蛋白质构象采样任务中，特别是 intrinsically disordered peptides 的系综生成。</p>
+</li>
+<li>
+<p><strong>模型无关接口模式</strong>: 通过统一后端抽象实现 MLFF 即插即用，提示本课题中应设计类似的能量函数抽象层，使 AlphaFold、MACE、SO3LR 等模型可无缝切换。</p>
+</li>
+<li>
+<p><strong>原子能量分解用于溶剂效应</strong>: 通过原子能量贡献分解（per-atom embedded energy）评估溶质在溶剂中的构象能，这一思路可迁移到蛋白质-配体结合自由能预测中。</p>
+</li>
+<li>
+<p><strong>Wilson B-matrix 自动模式指认</strong>: 将简正模式投影到内坐标并自动标注功能团振动，可迁移到蛋白质振动光谱（如 amide I/II/III）的自动归属。</p>
+</li>
+<li>
+<p><strong>分层基准设计</strong>: 先单点能、再构象保留、再采样恢复、再光谱、再微溶剂化的递进式评测，为蛋白质结构预测/构象采样方法提供了可复用的评测框架。</p>
+</li>
+<li>
+<p><strong>GPU 批量并行采样</strong>: 利用 JAX 的 vmap 并行评估多个构象，这一思路可迁移到蛋白质构象系综的并行生成中。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>CREST/GFN2-xFTB</strong>: 本文的直接对标方法，Pracht et al. 开发的构象搜索工具，本文在算法设计上受其启发（metadynamics + 遗传算法），但用 MLFF 替代半经验能量。</li>
+<li><strong>SO3LR (SO3krates)</strong>: 等变 Transformer 力场，本文使用的核心 MLFF 之一，由 Tkatchenko 组开发。</li>
+<li><strong>MACE 系列</strong>: 等变消息传递力场，MACE-OFF23/24 为有机分子通用模型，MACE-OMax 为更大模型。</li>
+<li><strong>AccFG 算法</strong>: 图匹配功能团识别算法，本文的 IR 模式指认模块受其启发。</li>
+<li><strong>NIST35 光谱基准</strong>: Pracht et al. 建立的气相 IR 光谱基准集，用于验证谐波光谱预测。</li>
+<li><strong>MPCONF196</strong>: 药物样分子构象基准集，广泛用于构象搜索方法评测。</li>
+<li><strong>TorsionNet500 / QUID</strong>: 扭转能和非共价相互作用基准，用于评估力场对构象能量描述的准确性。</li>
+<li><strong>与本课题的连接</strong>: 本文的多肽构象采样（丙氨酸肽）和微溶剂化方法可直接迁移到蛋白质片段/loop 的构象系综生成；MLFF 替代半经验能量的思路对蛋白质力场开发具有启示。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>:</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>: MARS-Prot：面向蛋白质 loop/肽段构象采样的 MLFF 自动化工作流
+   - <strong>来源局限/观察</strong>: MARS 在 14-116 原子分子上验证，但蛋白质 loop（20-50 残基）的构象采样仍依赖 MD 或 Rosetta，缺乏 MLFF 自动化工作流
+   - <strong>核心假设</strong>: 将 MARS 的四阶段采样扩展到蛋白质 loop，MLFF 可在保持精度的同时显著加速构象系综生成
+   - <strong>初步方法</strong>: 扩展 MARS 的分子图表示支持氨基酸残基，集成蛋白质专用 MLFF（如 MACE-MP-0），在 loop 数据库上评测
+   - <strong>验证方式</strong>: 与 Rosetta/OpenMM 采样对比，用实验结构（如 PDB loop 库）验证采样恢复率
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 基于原子能量分解的蛋白质-配体结合自由能预测
+   - <strong>来源局限/观察</strong>: MARS 用 per-atom embedded energy 评估溶剂中溶质构象能，这一分解可迁移到结合自由能预测
+   - <strong>核心假设</strong>: 配体原子能量贡献可区分关键结合药效团，提高虚拟筛选精度
+   - <strong>初步方法</strong>: 用 MARS 的 MLFF 计算蛋白-配体复合物的原子能量分解，训练分类器识别关键相互作用
+   - <strong>验证方式</strong>: 在 PDBbind 基准上对比传统打分函数
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 振动光谱引导的构象系综验证
+   - <strong>来源局限/观察</strong>: MARS 将 IR 光谱与构象系综连接，但蛋白质的 IR 光谱（amide I/II/III）对二级结构敏感
+   - <strong>核心假设</strong>: 用 MLFF 预测的蛋白质 IR 光谱可验证 MD 采样的构象系综是否与实验一致
+   - <strong>初步方法</strong>: 对蛋白质构象系综计算谐波 IR 光谱，与实验 2D-IR 对比，迭代优化采样权重
+   - <strong>验证方式</strong>: 在已知二级结构的蛋白质上验证光谱预测精度
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 微溶剂化壳层对 intrinsically disordered peptides 构象系综的影响
+   - <strong>来源局限/观察</strong>: MARS 的微溶剂化显示溶剂可改变构象稳定性，但 IDP 的溶剂效应更复杂
+   - <strong>核心假设</strong>: 显式水分子层可捕捉 IDP 的溶剂诱导构象转变，比隐式溶剂更准确
+   - <strong>初步方法</strong>: 用 MARS 的 Fibonacci 球面构建 IDP 的水合壳层，比较不同壳层厚度的构象系综
+   - <strong>验证方式</strong>: 与 SAXS/FRET 实验数据对比
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, methods overview, results, conclusions) without figures, tables, or supplementary information</li>
+<li><strong>Assessment boundary</strong> Scientific claims, methodological soundness, benchmark design, and evidence quality as presented in the provided text</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present MARS, an open-source Python package for automated conformational sampling, vibrational spectroscopy, and microsolvation using machine-learned force fields. They claim that modern MLFFs can outperform semiempirical methods (CREST/GFN2-xTB) in accuracy, speed, and scaling, and that MARS provides a practical, model-agnostic framework for nonexpert users.</li>
+<li><strong>Visible evidence base</strong> Text descriptions of benchmarks on conformational energetics (36 molecules, 454 conformers), noncovalent interactions (NCI-ATLAS subset, 20 dimers, 406 conformers), IR spectroscopy (NIST35 subset, 4155 molecules), microsolvation (alanine dipeptide, 2-methoxycyclohexanone), and host–guest systems (proline/β-cyclodextrin)</li>
+<li><strong>Missing materials affecting confidence</strong> All figures, tables, and supplementary information referenced throughout the text are unavailable. Quantitative results are described qualitatively without numerical values. Benchmark methodology details are deferred to SI sections that were not provided.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript presents a timely and potentially valuable software framework that addresses a real need in computational chemistry. The integration of conformational sampling, spectroscopy, and microsolvation into a single MLFF-based workflow is conceptually appealing, and the model-agnostic design is a sensible architectural choice. However, the evidence presented in the text alone is insufficient to evaluate the central claims. Key quantitative results are described only qualitatively, benchmark details are deferred to SI, and the comparison against the stated semiempirical baseline is not substantiated with numbers. The framework's practical utility for nonexperts is asserted but not demonstrated through usability metrics or case-study depth. The scientific case is plausible but not established from the provided material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational chemists developing or applying conformational sampling workflows, researchers in machine-learned force field development and benchmarking, spectroscopists who use predicted IR spectra for structural assignment, and method developers in the broader molecular simulation community. The open-source, JAX-based implementation and the focus on GPU acceleration will also appeal to researchers seeking practical tools for ensemble-based modeling.</li>
+<li><strong>Major strengths</strong> The manuscript addresses a clear gap in the field by providing an integrated, automated workflow that leverages recent advances in MLFFs. The model-agnostic interface is a thoughtful design choice that future-proofs the framework. The breadth of benchmark systems, from small alkanes to host–guest complexes and microsolvated biomolecules, demonstrates ambition and potential generalizability. The inclusion of usability features such as preset profiles, a GUI, and automated mode assignment suggests genuine attention to the nonexpert user. The open-source availability and the use of modern software practices (JAX, GPU acceleration) are commendable.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence quality</li>
+<li><strong>Claim pointer</strong> "Our benchmarks show that modern MLFFs can improve upon this paradigm by combining greater accuracy for high-level relative conformer energies with lower computational cost and more favorable scaling with molecular size."</li>
+<li><strong>Evidence pointer</strong> Section "Conformational Exploration", Figure 1 (not provided), SI Tables S19, SI Figures S4 and S5</li>
+<li><strong>Concern</strong> The central quantitative claim of the paper, that MLFFs outperform semiempirical methods for conformational energetics, is presented without any numerical values in the text. No MAE, RMSE, or scaling data are given. The reader cannot assess the magnitude of the claimed improvement, the statistical significance, or the systems for which the improvement holds or fails.</li>
+<li><strong>Why it matters</strong> This is the core scientific contribution of the work. Without quantitative evidence, the claim is unverifiable and the paper's contribution cannot be assessed against existing literature.</li>
+<li><strong>Resolution test</strong> Provide the numerical results in the main text, including per-system and aggregate MAE/RMSE values for all methods, with uncertainty estimates. Include the scaling data and specify the hardware and software configurations used for timing comparisons.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Benchmark validity</li>
+<li><strong>Claim pointer</strong> "IR benchmarks against experimental gas-phase spectra additionally show performance comparable to quantum-chemical methods, with chemically interpretable mode assignments."</li>
+<li><strong>Evidence pointer</strong> Section "Infrared Spectrum in Biomolecules", Figure 2 (not provided), SI Section S12</li>
+<li><strong>Concern</strong> The IR benchmark is described only in terms of a "shift-tolerant correlation" against experimental spectra. The metric is not defined, the comparison against quantum-chemical methods is not quantified, and the claim of "comparable" performance is not substantiated. The benchmark set of 4155 molecules is stated, but the results are not presented.</li>
+<li><strong>Why it matters</strong> IR spectroscopy is a major advertised feature of MARS. Without quantitative comparison to established methods and experimental data, the utility of this module cannot be evaluated.</li>
+<li><strong>Resolution test</strong> Define the correlation metric precisely, report the numerical values for all methods, and include representative spectra showing agreement and disagreement with experiment. Provide a statistical analysis of the performance across the full benchmark set.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Claim support</li>
+<li><strong>Claim pointer</strong> "MARS captures conformational reorganization, noncovalent binding motifs, solvent-induced stability shifts, and spectroscopic signatures" in the applications to alanine peptides, proline/β-cyclodextrin, alanine dipeptide, and 2-methoxycyclohexanone.</li>
+<li><strong>Evidence pointer</strong> Sections "Noncovalent Sampling", "Solvation Effects in Biomolecules", "Host–Guest Chemistry", Figures 3–5 (not provided), SI Sections S11, S13–S16</li>
+<li><strong>Concern</strong> The application studies are described qualitatively. For the alanine dipeptide microsolvation, the text states that the largest solvent effect is reproduced but also that deviations of 1.6–2.8 kcal/mol exist in water, with metastable states not stabilized. For the host–guest system, the IR spectrum is stated to reproduce "principal features" but the predicted band is 20–40 cm⁻¹ above experiment. These discrepancies are acknowledged but their implications for the claimed utility are not discussed.</li>
+<li><strong>Why it matters</strong> The applications are intended to demonstrate the practical value of MARS. The mixed results, with some quantitative agreement and some systematic deviations, need to be interpreted critically to establish the limits of the method.</li>
+<li><strong>Resolution test</strong> Provide a critical discussion of the discrepancies, including an analysis of their origins (e.g., force field limitations, finite solvation shell, harmonic approximation) and their implications for the reliability of MARS predictions in different chemical contexts.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> "MARS is freely available at github.com/tcpunilu/mars" and the framework is described as accessible to nonexperts.</li>
+<li><strong>Evidence pointer</strong> Section "Overview of the MARS Framework", SI Sections S1–S8</li>
+<li><strong>Concern</strong> The manuscript does not provide information on software dependencies, installation requirements, input/output formats, or the computational resources needed to run the workflows. The claim of accessibility for nonexperts is not supported by usability documentation or benchmarks on standard hardware.</li>
+<li><strong>Why it matters</strong> For a software contribution, reproducibility and usability are central. The reader cannot assess whether the tool can be deployed in their environment or whether the claimed accessibility is realistic.</li>
+<li><strong>Resolution test</strong> Provide a detailed software availability statement, including dependencies, installation instructions, and a minimal working example. Report the hardware requirements for the benchmarks presented and provide a comparison of performance on CPU versus GPU.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract, "four-phase conformational sampling workflow"</li>
+<li><strong>Issue</strong> The four phases are listed but not described. The reader cannot understand the workflow from the abstract alone.</li>
+<li><strong>Required correction</strong> Briefly describe the four phases in the abstract or refer to a figure that summarizes the workflow.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Benchmark description</li>
+<li><strong>Evidence pointer</strong> Section "Conformational Exploration", Table 1 (not provided)</li>
+<li><strong>Issue</strong> The benchmark systems are described as spanning 14–116 atoms, but the composition of the benchmark set is not described in the text. The reader cannot assess the diversity or representativeness of the systems.</li>
+<li><strong>Required correction</strong> Provide a summary of the benchmark composition in the main text, including the number of systems per chemical class and the range of flexibility and size.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Methodology</li>
+<li><strong>Affected element</strong> IR intensity calculation</li>
+<li><strong>Evidence pointer</strong> Section "Infrared Spectrum in Biomolecules"</li>
+<li><strong>Issue</strong> The text states that IR intensities are restricted to potentials that predict partial charges or dipole moments, but the method for computing intensities is not described.</li>
+<li><strong>Required correction</strong> Briefly describe the intensity calculation method and its limitations.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation</li>
+<li><strong>Affected element</strong> Microsolvation results</li>
+<li><strong>Evidence pointer</strong> Section "Solvation Effects in Biomolecules"</li>
+<li><strong>Issue</strong> The text states that the "extended β2 backbone" is lowered in water but does not explain the structural origin of this effect or why the explicit solvation model captures it.</li>
+<li><strong>Required correction</strong> Provide a brief structural interpretation of the solvent-induced stabilization and its relation to the hydrogen-bonding network.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Consistency</li>
+<li><strong>Affected element</strong> Force field selection</li>
+<li><strong>Evidence pointer</strong> Sections "Conformational Exploration" and "Noncovalent Sampling"</li>
+<li><strong>Issue</strong> The text mentions that SO3LR-2 is an unpublished model under active development, yet it is used for benchmarking. The implications of using an unpublished model for the reproducibility of the results are not discussed.</li>
+<li><strong>Required correction</strong> Clarify the availability and versioning of SO3LR-2 and discuss the implications for reproducibility.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The absence of quantitative results in the main text is the primary technical failing. The central claims of improved accuracy, speed, and scaling are not supported by any numbers. The benchmark methodology, including the choice of reference methods, the handling of multiple DFT references, and the statistical treatment of results, is not described. The IR benchmark metric is undefined. The microsolvation results show deviations from reference that are acknowledged but not analyzed. The host–guest study lacks quantitative comparison to experiment beyond a single band position.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The integration of MLFFs into an automated, model-agnostic workflow for conformational sampling, spectroscopy, and microsolvation is a novel contribution, though each component individually builds on existing methods. Scientific importance: The work addresses a practical bottleneck in computational chemistry and could have broad impact if the claims are substantiated. Interdisciplinary readership: The manuscript is written for a computational chemistry audience and would not be accessible to a broader scientific readership without significant revision. Technical soundness: Cannot be fully assessed from the provided text; the qualitative descriptions suggest a reasonable methodology, but the lack of quantitative evidence prevents verification. Readability for nonspecialists: The text assumes familiarity with MLFFs, conformational sampling, and spectroscopy; the abstract and introduction are accessible, but the results sections are not.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript presents a promising framework and a plausible scientific case, but the central quantitative claims are not supported by the text. The authors must provide numerical results, define their metrics, and critically analyze the discrepancies in the applications before the case can be evaluated.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that MLFFs "improve upon" the semiempirical paradigm for conformational sampling is unsupported without quantitative accuracy and timing data.</li>
+<li>The claim of "performance comparable to quantum-chemical methods" for IR spectroscopy is unsupported without defined metrics and numerical values.</li>
+<li>The claim that MARS "captures" the described physical phenomena in the application studies is only qualitatively supported and requires quantitative evidence.</li>
+<li>The claim of accessibility for nonexperts is unsupported without usability documentation or hardware requirement information.</li>
+<li>The statement that SO3LR-2 "largely resolves" the deficiencies of SO3LR-1 for phosphamides is unsupported without numerical retention and energy error data.</li>
+<li>The claim that the microsolvation protocol captures effects "inaccessible to a uniform reaction field" is plausible but not quantitatively demonstrated.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,106 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, methods, results, discussion, conclusions, data availability)
+- **Assessment boundary** Scientific and technical evaluation of the presented method, experimental design, results, and claims. No evaluation of code functionality or data reproducibility beyond what is stated.
+- **Shared manuscript claim summary** The authors present PharmaDiff, a pharmacophore-conditioned diffusion model for 3D de novo drug design. The model integrates atom-based pharmacophore representations into a transformer-based diffusion architecture, achieving superior pharmacophore matching accuracy compared to existing ligand-based methods and improved docking scores compared to structure-based baselines, without requiring target protein structures.
+- **Visible evidence base** Full text including methods, results tables (referenced but not shown in detail), case studies for DDR1 and PI3Kα, and references to supplementary figures and ablation studies.
+- **Missing materials affecting confidence** Actual result tables and figures are not visible in the provided text. Supplementary information, including ablation studies and additional case study details, is referenced but not provided. Baseline method configurations and hyperparameter details are only partially described.
+
+## Reviewer
+- **Overall assessment** The manuscript presents a technically sound and potentially valuable contribution to the field of ligand-based de novo drug design. The core idea of conditioning a 3D diffusion model on atom-level pharmacophore representations is well motivated and the architectural choices are reasonable. The reported results, if accurately represented in the referenced tables, suggest meaningful improvements over existing methods. However, the manuscript has several weaknesses that need to be addressed: the evaluation methodology for the ligand-based comparison is not fully described, the pharmacophore feature extraction and matching criteria require more detail, and the case studies, while illustrative, do not provide quantitative evidence of biological activity. The discussion of limitations is thoughtful and balanced. Overall, the work is of interest to the computational drug design community, but the current evidence base is insufficient to fully establish the claimed advantages.
+- **Who would be interested in the results, and why** Computational chemists and medicinal chemists working on de novo drug design, particularly those interested in ligand-based approaches for targets without structural information. Researchers developing generative models for 3D molecular generation will also find the architectural contributions relevant. The case studies on DDR1 and PI3Kα may attract interest from kinase-focused drug discovery groups.
+- **Major strengths** 1) The problem is well defined and practically relevant, addressing a gap in ligand-based generative modeling. 2) The architectural design, combining inpainting with cross-attention and COM adjustment, is technically thoughtful and addresses known challenges in equivariant generation. 3) The evaluation includes both ligand-based and structure-based comparisons against multiple baselines. 4) The case studies demonstrate potential practical applicability. 5) The discussion of limitations is honest and identifies clear directions for future work.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Experimental methodology
+  - **Claim pointer** "PharmaDiff demonstrates superior performance in matching 3D pharmacophore constraints compared to ligand-based drug design methods" and "achieves higher docking scores across a range of proteins in structure-based drug design"
+  - **Evidence pointer** Results section, Tables 1 and 2 (referenced but not visible)
+  - **Concern** The evaluation protocol for the ligand-based comparison is not fully described. Specifically, it is unclear how the pharmacophore hypotheses were constructed for the 250 conditioning compounds, whether the same hypotheses were used for all baselines, and how the match score was computed for methods that do not generate 3D coordinates directly (e.g., SMILES-based methods like TransPharmer and REINVENT4). For the structure-based comparison, the docking protocol is not described in sufficient detail, including the preparation of protein structures, the docking software version, and the scoring function parameters.
+  - **Why it matters** Without a clear and consistent evaluation protocol, the reported improvements could be artifacts of the evaluation setup rather than genuine methodological advantages. The comparison between 3D generative models and 2D/SMILES-based methods is particularly sensitive to how 3D conformations are generated and aligned for the latter.
+  - **Resolution test** Provide a detailed description of the evaluation protocol, including how pharmacophore hypotheses were generated, how match scores were computed for each baseline, and the exact docking procedure. Ideally, include a supplementary figure showing example generated molecules aligned to their conditioning pharmacophores for each method.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "PharmaDiff employs a transformer-based architecture to integrate an atom-based representation of the 3D pharmacophore into the generative process, enabling the precise generation of 3D molecular graphs that align with predefined pharmacophore hypotheses"
+  - **Evidence pointer** Methods section, Model Architecture subsection
+  - **Concern** The description of the pharmacophore feature representation is incomplete. The authors state that pharmacophoric features are represented as atom-based one-hot vectors, but it is unclear how features such as hydrogen bond donors, acceptors, hydrophobic groups, and aromatic rings are encoded. Specifically, how are feature types assigned to atoms, and how are excluded volumes or spatial constraints handled? Additionally, the relationship between the pharmacophore graph and the generated molecular graph is not fully specified: are pharmacophore atoms always a subset of generated atoms, and how is this enforced during generation?
+  - **Why it matters** The core contribution of the work is the integration of pharmacophore information into the generative process. If the feature representation is ambiguous or the integration mechanism is not clearly specified, the method cannot be reproduced or properly evaluated by others.
+  - **Resolution test** Provide a formal definition of the pharmacophore feature encoding, including the feature types, their assignment to atoms, and how the pharmacophore graph is constructed. Clarify whether pharmacophore atoms are fixed during generation or can be modified, and how the model ensures that generated molecules satisfy the spatial constraints of the pharmacophore.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Result interpretation
+  - **Claim pointer** "PharmaDiff achieves higher docking scores across a range of proteins in structure-based drug design, without the need for target protein structures"
+  - **Evidence pointer** Results section, Table 3 (referenced but not visible)
+  - **Concern** The comparison with DiffSBDD in the structure-based setting is potentially confounded. DiffSBDD is conditioned on the full protein pocket, while PharmaDiff is conditioned only on a pharmacophore hypothesis derived from the pocket. The authors report that PharmaDiff achieves better docking scores, but it is unclear whether the pharmacophore hypotheses used for PharmaDiff were derived from the same protein structures used for DiffSBDD, and whether the comparison is fair in terms of the information available to each model. Additionally, the docking scores are reported as averages, but the distribution of scores and the statistical significance of the differences are not discussed.
+  - **Why it matters** The claim that PharmaDiff outperforms a structure-based method without using protein structure is strong and would be of significant interest. However, if the comparison is not properly controlled, the conclusion may not be robust.
+  - **Resolution test** Clarify the experimental setup for the structure-based comparison, including how pharmacophore hypotheses were derived for each target, whether the same test molecules were used for both models, and whether the docking scores are statistically significantly different. Consider reporting the distribution of docking scores and the fraction of molecules with scores below a meaningful threshold.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Technical soundness
+  - **Claim pointer** "PharmaDiff achieves a higher PMR than PGMG, although PGMG achieves a slightly higher fraction of molecules with MS ≥ 0.8"
+  - **Evidence pointer** Results section, Table 2 (referenced but not visible)
+  - **Concern** The match score (MS) and perfect match rate (PMR) are described as adapted from PGMG, with the key difference being the use of Euclidean distances instead of graph-based shortest path distances. However, the details of the MS computation are not provided. Specifically, how is the alignment between generated molecules and pharmacophore hypotheses performed? Is it a simple distance threshold, or is a more sophisticated matching algorithm used? How sensitive are the reported MS and PMR values to the choice of distance threshold?
+  - **Why it matters** The MS and PMR are the primary metrics for evaluating the core claim of pharmacophore matching. If the metric is not well defined or is overly lenient, the reported improvements may not reflect genuine pharmacophore satisfaction.
+  - **Resolution test** Provide a precise definition of the MS computation, including the matching algorithm, distance thresholds, and how feature types are matched. Discuss the sensitivity of the results to these choices and consider reporting results for multiple thresholds.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract
+  - **Issue** The abstract states that PharmaDiff "offers a powerful and flexible framework for rational drug design" but does not mention the limitations discussed in the manuscript, such as the need for predefined pharmacophore hypotheses and the challenges with disconnected fragments.
+  - **Required correction** Consider adding a brief statement about the requirement for a pharmacophore hypothesis and the current limitations to provide a more balanced summary.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Methods, Computational Details
+  - **Evidence pointer** Methods section, Computational Details subsection
+  - **Issue** The hyperparameter selection for the loss function weights is described as based on "a series of short numerical experiments" without providing the specific values or the range explored.
+  - **Required correction** Provide the final hyperparameter values and a brief description of the selection procedure, or reference a supplementary table with this information.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Result presentation
+  - **Affected element** Results, Case Study DDR1
+  - **Evidence pointer** Results section, Case Study subsection
+  - **Issue** The DDR1 case study describes extensive downstream computational analyses (MD, WaterMap, IFD-MD, FreeForm) but does not provide quantitative results for these analyses in the main text. The reader is referred to supplementary figures without a summary of the findings.
+  - **Required correction** Provide a brief summary of the key findings from these analyses in the main text, such as the stability of the MD simulations or the results of the WaterMap analysis, to support the claim that the generated molecules are promising.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Results, Case Study PI3Kα
+  - **Evidence pointer** Results section, Case Study subsection
+  - **Issue** The PI3Kα case study mentions that 39 compounds surpassed the reference ligand Taselisib in docking score, but it is unclear whether this comparison is based on the same docking protocol and whether the reference ligand was re-docked or used as a crystal structure pose.
+  - **Required correction** Clarify the docking protocol for the reference ligand and whether the comparison is based on re-docking or the co-crystallized pose.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Methods, Evaluation Metrics
+  - **Evidence pointer** Methods section, Evaluation Metrics subsection
+  - **Issue** The diversity metric is described as "1 – average pairwise Tanimoto similarity" but it is not specified whether this is calculated over the entire generated set or per conditioning pharmacophore, and whether the average is over all pairs or a random sample.
+  - **Required correction** Specify the exact computation of the diversity metric, including the sampling strategy and the number of molecules used.
+  - **Concern ID** R1-m6
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Methods, Dataset
+  - **Evidence pointer** Methods section, Dataset subsection
+  - **Issue** The dataset preparation states that "a subset of 3–7 random features was selected to build the 3D pharmacophoric hypothesis" for each conformer. It is unclear whether the same random seed was used across methods and whether the pharmacophore hypotheses are available for download.
+  - **Required correction** Provide the random seed or state that the pharmacophore hypotheses are available in the data repository, and clarify whether the same hypotheses were used for all baseline methods.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (evaluation protocol not fully described), R1-M2 (pharmacophore feature representation incomplete), R1-M3 (potential confounding in structure-based comparison).
+- **Assessment against Nature-style criteria** 
+  - Originality: The work presents a novel combination of pharmacophore conditioning with 3D diffusion models. While individual components exist in prior work, the specific integration and the focus on atom-level pharmacophore representations for ligand-based design is a meaningful contribution. Moderate originality.
+  - Scientific importance: The problem of ligand-based de novo design for targets without structural information is important and timely. The potential to generate molecules that satisfy pharmacophore constraints without protein structures could have practical impact. However, the demonstrated advantages over existing methods are incremental rather than transformative. Moderate scientific importance.
+  - Interdisciplinary readership: The work is primarily of interest to computational chemists and cheminformaticians. The methods and evaluation are technical and would not be immediately accessible to a broader biological or clinical audience. Limited interdisciplinary reach.
+  - Technical soundness: The architectural design is reasonable and builds on established methods. However, the incomplete description of the evaluation protocol and pharmacophore representation limits the ability to fully assess technical soundness. The reported results, if accurate, support the claims, but the missing details prevent full verification.
+  - Readability for nonspecialists: The manuscript is clearly written for a computational chemistry audience. The introduction provides adequate context, but the methods and results sections assume familiarity with diffusion models, pharmacophore concepts, and docking procedures. Not accessible to nonspecialists.
+- **Recommendation posture** Supportive if technical concerns are resolved. The core idea is promising and the reported results are encouraging, but the manuscript requires substantial clarification of the evaluation methodology and pharmacophore representation before the claims can be fully established. The authors should also consider strengthening the case studies with more quantitative analysis and addressing the potential confounding in the structure-based comparison.
+
+## Risk / unsupported claims
+- The claim that PharmaDiff "achieves higher docking scores across a range of proteins" is not fully supported without a detailed description of the docking protocol and statistical analysis.
+- The claim that PharmaDiff "offers a powerful and flexible framework for rational drug design" is overstated given the limitations acknowledged in the discussion.
+- The statement that "PharmaDiff excels in diversity, outperforming all other models" is based on a single metric and may not be robust across different diversity measures.
+- The case study conclusions regarding DDR1 and PI3Kα inhibitors are qualitative and do not provide quantitative evidence of improved biological activity or drug-likeness compared to known inhibitors.
+- The claim that the model "enables the precise generation of 3D molecular graphs that align with predefined pharmacophore hypotheses" is not fully supported by the reported PMR of 0.6990, which indicates that a substantial fraction of generated molecules do not perfectly match the conditioning pharmacophore.

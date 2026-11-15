@@ -1,0 +1,86 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors propose that a C-terminal beta-turn-like conformational state, stabilized by intramolecular CO...HN contacts involving the proline carbonyl, competes with interstrand hydrogen bonding and thereby controls frame-dependent stability of collagen triple helices. They report that N-methylation or esterification suppresses this state and increases stability by up to 7.5 degrees C, while the effect is frame-dependent (POG vs GPO). The mechanism is supported by DFT, NMR, X-ray crystallography, CD, and MD, and is claimed to be length-independent based on 20-22 residue peptides.
+- **Visible evidence base** Abstract text only; no numerical data, spectra, crystallographic parameters, or methodological details are visible
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, experimental procedures, crystallographic data, NMR assignments, DFT computational details, MD simulation parameters, and statistical analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a mechanistically interesting and potentially significant hypothesis for the long-standing puzzle of frame-dependent stability in collagen triple helices. The proposed competing beta-turn-like state is a novel concept that could have broad implications for collagen mimetic peptide design. However, the abstract alone provides insufficient quantitative evidence to evaluate the robustness of the claims. The reported stability enhancement of up to 7.5 degrees C is substantial, but without visible data on the magnitude of the effect across different peptide lengths, the length-independence claim cannot be assessed. The multi-technique approach is commendable, but the abstract does not demonstrate how these techniques converge on the proposed mechanism. The claim that the beta-turn-like state "reduces availability" of the proline carbonyl for interstrand hydrogen bonding is mechanistically plausible but requires direct spectroscopic or computational evidence that is not visible in the abstract.
+- **Who would be interested in the results, and why** Researchers in collagen biochemistry, protein folding, peptide design, and biomaterials science would be interested. The work addresses a fundamental structural question about collagen stability that has implications for understanding collagen-related diseases and for designing collagen mimetic materials with tunable stability. The proposed mechanism involving competing intramolecular hydrogen bonding could also inform broader studies of beta-turn formation in proline-rich sequences.
+- **Major strengths** The study addresses a well-documented but mechanistically unresolved problem in collagen biophysics. The proposed competing conformational state is a conceptually novel explanation that could unify disparate observations. The use of multiple complementary techniques (DFT, NMR, X-ray, CD, MD) is appropriate for establishing a structural mechanism. The frame-dependent comparison (POG vs GPO) provides a natural control that strengthens the causal argument. The chemical modification approach (N-methylation, esterification) is a clean way to test the proposed mechanism.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** The claim that a C-terminal beta-turn-like state with intramolecular CO...HN contacts is the competing motif governing frame-dependent stability  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The abstract asserts that the beta-turn-like state is identified and characterized, but no quantitative data are presented to demonstrate the population of this state, the occupancy of the intramolecular CO...HN contacts, or the correlation between this state and thermal stability across the peptide series. The phrase "transient intramolecular CO...HN contacts" implies a dynamic equilibrium, but no kinetic or thermodynamic parameters are reported.  
+  - **Why it matters** The central mechanistic claim rests on the existence and functional relevance of this beta-turn-like state. Without quantitative evidence of its population and its direct competition with interstrand hydrogen bonding, the proposed mechanism remains speculative. The stability enhancement of up to 7.5 degrees C could arise from other factors such as altered solvation, steric effects, or changes in backbone conformation unrelated to the proposed beta-turn.  
+  - **Resolution test** Provide population data (e.g., from NMR chemical shifts, NOE contacts, or MD free energy profiles) showing that the beta-turn-like state is populated in POG-frame peptides with a primary amide and suppressed upon N-methylation or esterification. Show a quantitative correlation between the population of this state and the observed melting temperature changes.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Claim support  
+  - **Claim pointer** The claim that the mechanism is length-independent, confirmed by trends across 20-22 residue collagen-mimetic peptides  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The abstract states that trends across 20-22 residue peptides confirm the mechanism arises from local C-terminal interactions, independent of length. However, no data are shown for the range of lengths tested, the number of peptides, or the magnitude of the stability differences across lengths. A claim of length independence requires demonstration that the effect is constant or systematically predictable across a range of lengths, and that longer peptides do not show diminishing or amplifying effects.  
+  - **Why it matters** If the effect is truly local and length-independent, this strengthens the mechanistic interpretation and has practical implications for peptide design. If the effect varies with length, the proposed mechanism may be incomplete or may interact with other length-dependent factors such as propagation of the triple helix or fraying at the termini.  
+  - **Resolution test** Show a table or figure with melting temperatures for peptides of at least three different lengths in both POG and GPO frames, with and without the C-terminal modification, and demonstrate that the stability difference attributable to the beta-turn is statistically indistinguishable across lengths.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Mechanistic specificity  
+  - **Claim pointer** The claim that the beta-turn-like state "perturbs terminal polyproline II geometry, directly opposing triple-helix assembly"  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The abstract does not specify how the perturbation of polyproline II geometry is quantified or how it directly opposes assembly. The connection between the beta-turn-like state and the disruption of triple-helix assembly is stated but not mechanistically detailed. It is unclear whether the effect is on nucleation, propagation, or both, and whether the perturbation is local to the C-terminus or propagates along the chain.  
+  - **Why it matters** The proposed mechanism should explain not only the thermodynamic stability difference but also the kinetic or structural pathway by which the beta-turn opposes assembly. Without this detail, the mechanism is incomplete and the interpretation of the stability data could be ambiguous.  
+  - **Resolution test** Provide structural data (e.g., from X-ray or MD) showing the conformation of the C-terminal region in the beta-turn state versus the native triple-helix state, and demonstrate how this conformation disrupts the canonical interstrand hydrogen bonding pattern or the polyproline II dihedral angles.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Evidence integration  
+  - **Claim pointer** The claim that DFT, NMR, X-ray crystallography, CD, and MD collectively establish the structural basis  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The abstract lists five techniques but does not describe how each contributes to the conclusion. It is not clear which technique provides the primary evidence for the beta-turn-like state, which provides the thermodynamic correlation, and which provides the structural detail. The convergence of multiple techniques is claimed but not demonstrated.  
+  - **Why it matters** For a mechanistic claim of this specificity, it is important to understand the weight of evidence from each technique and whether any technique provides contradictory or ambiguous results. The reader cannot judge whether the techniques are truly complementary or whether some are used in a supporting role that may be less definitive.  
+  - **Resolution test** In the full manuscript, clearly delineate the role of each technique, present the key data from each, and discuss any discrepancies or limitations. For example, specify which NMR parameters report on the beta-turn population, which crystallographic structure shows the beta-turn conformation, and how MD simulations quantify the competition between intra- and intermolecular hydrogen bonding.
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Definition of "frame"  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The term "frame" (POG vs GPO) is used without explicit definition. Readers unfamiliar with collagen mimetic peptide nomenclature may not understand that this refers to the amino acid sequence register relative to the Gly-X-Y repeat.  
+  - **Required correction** Define "frame" in the abstract or introduction, for example by stating that POG and GPO refer to the sequence register of proline and hydroxyproline relative to glycine in the repeating tripeptide unit.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Quantitative reporting  
+  - **Affected element** Stability enhancement value  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The stability enhancement is reported as "up to 7.5 degrees C" without specifying the peptide length, the exact modification, or the comparison condition. This makes it difficult to gauge the practical significance of the effect.  
+  - **Required correction** Report the specific peptide sequence, length, and modification that yielded the maximum enhancement, and provide the melting temperature values for the modified and unmodified peptides.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Terminology  
+  - **Affected element** "beta-turn-like"  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The term "beta-turn-like" is used without specifying which type of beta-turn (e.g., type I, II, I', II') or the criteria used to classify it as beta-turn-like rather than a different turn or loop conformation.  
+  - **Required correction** Specify the structural criteria used to define the beta-turn-like state, such as the distance between C-alpha atoms of the first and fourth residues, the presence of a hydrogen bond between CO(i) and NH(i+3), and the dihedral angles of the central residues.  
+  - **Concern ID** R1-m4  
+  - **Severity** Minor  
+  - **Axis** Generalizability  
+  - **Affected element** Scope of the conclusion  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The abstract concludes that the findings "reveal how terminal hydrogen-bonding interactions encode competing conformations modulating peptide folding and supramolecular assembly." This is a broad statement that may overreach beyond the specific collagen mimetic peptide system studied.  
+  - **Required correction** Qualify the conclusion to indicate that this mechanism is demonstrated in collagen mimetic peptides and may have broader relevance, rather than stating it as a general principle.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The central mechanistic claim requires quantitative evidence of the beta-turn-like state and its population, and the length-independence claim requires data across multiple lengths. Without these, the case is not established from the provided evidence.
+
+## Risk / unsupported claims
+- The existence and functional relevance of the C-terminal beta-turn-like state as the competing motif is asserted but not quantitatively supported in the abstract.
+- The claim that N-methylation or esterification suppresses beta-turn formation and enhances stability by up to 7.5 degrees C is reported without specific data.
+- The claim that the mechanism is length-independent is stated without visible supporting data.
+- The claim that the beta-turn-like state "perturbs terminal polyproline II geometry" is mechanistically plausible but not demonstrated.
+- The convergence of five techniques on the proposed mechanism is claimed but not shown.
+- The general conclusion about "terminal hydrogen-bonding interactions encoding competing conformations" extends beyond the specific system studied and is not supported by the abstract alone.

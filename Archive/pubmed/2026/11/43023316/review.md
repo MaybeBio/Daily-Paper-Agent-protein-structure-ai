@@ -1,0 +1,70 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors introduce Synapse, a synthetic benchmark for topology-aware modeling of multispecific antibodies (msAbs). They claim a generative method combining nonlinear per-domain sequence-to-score landscapes with connectivity-dependent synthetic readouts, and a graph neural network (GNN) architecture that explicitly encodes topological constraints, outperforming a connectivity-agnostic multilayer perceptron (MLP) on synthetic tasks. They also claim a transfer learning workflow as infrastructure for adaptation to biological datasets, demonstrated on a trispecific T cell engager-inspired optimization task and a constrained ranking of common light chain candidates.
+- **Visible evidence base** Abstract text only; no quantitative results, methodological details, or validation data are visible
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, supplementary methods, code availability, and any quantitative performance metrics
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually interesting and timely problem: predicting msAb function from domain topology. The proposed synthetic benchmark and GNN architecture are plausible in principle, and the authors are appropriately cautious in stating that all experiments use synthetic data with no biological validation. However, the abstract provides no quantitative evidence, no comparison details, and no methodological specifics sufficient to assess technical soundness or the strength of the claims. The core claim that the GNN "learns topology-dependent structure-function relationships" is asserted without supporting metrics. The transfer learning workflow is described only as "infrastructure," which is vague. Overall, the work may be of interest to computational biologists and machine learning practitioners, but the case is not established from the supplied material.
+- **Who would be interested in the results, and why** Computational biologists and bioinformaticians working on antibody engineering, protein structure-function modeling, and graph-based machine learning. Machine learning researchers interested in topology-aware architectures and synthetic benchmarks for structured biological data would also find the framework relevant. The trispecific T cell engager-inspired task may appeal to therapeutic antibody developers seeking computational tools for format optimization.
+- **Major strengths** The problem is well-motivated and addresses a real gap in msAb design. The use of a synthetic benchmark is a sensible approach given the scarcity of experimental data. The explicit focus on topology-aware modeling, with a GNN compared against a connectivity-agnostic MLP, is a clear and testable hypothesis. The authors are transparent about the synthetic-only scope, which is commendable.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "We demonstrate that this model learns topology-dependent structure-function relationships on synthetic landscapes"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract asserts that the GNN learns topology-dependent relationships, but no quantitative results are presented. There are no performance metrics, no comparison statistics, no error bars, and no ablation studies. The claim is therefore unsupported by the visible evidence.
+  - **Why it matters** Without quantitative evidence, the reader cannot assess whether the GNN actually outperforms the MLP or whether the learning is robust. This is the central claim of the work, and its support is essential for establishing the benchmark's utility.
+  - **Resolution test** Provide in the full text or a revised abstract specific metrics, such as accuracy, correlation, or ranking performance, with statistical significance tests, comparing the GNN to the MLP and any baselines on the synthetic tasks.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological clarity
+  - **Claim pointer** "a generative method that combines nonlinear per-domain sequence-to-score landscapes with connectivity-dependent synthetic readouts"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The generative method is described only at a high level. The nature of the "nonlinear per-domain sequence-to-score landscapes" and how "connectivity-dependent synthetic readouts" are constructed is not specified. Without details on the generative process, the benchmark's validity and reproducibility cannot be evaluated.
+  - **Why it matters** A synthetic benchmark is only useful if its generative process is well-defined and biologically inspired in a defensible way. The abstract does not provide enough information to judge whether the benchmark captures meaningful topological effects or is arbitrary.
+  - **Resolution test** In the full text, provide a formal description of the generative model, including the functional forms, parameter ranges, and how connectivity is encoded. Include a schematic or pseudocode.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim scope
+  - **Claim pointer** "evaluate a transfer learning workflow as infrastructure for adaptation to biological datasets"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The transfer learning workflow is described as "infrastructure," which is vague and non-committal. It is unclear whether any transfer learning was actually performed, what was transferred, or what the outcomes were. The phrase "evaluate" suggests some assessment, but no results are given.
+  - **Why it matters** Transfer learning is a key step toward biological applicability, but the abstract does not establish that the workflow works or is even implemented. This weakens the claim of practical relevance.
+  - **Resolution test** Specify what was transferred (e.g., pretrained embeddings, fine-tuning), on what data, and report quantitative outcomes, even if preliminary, in the full text.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Benchmark name
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The name "Synapse" is introduced without explanation of its relevance to the benchmark.
+  - **Required correction** Add a brief justification for the name or remove it if not meaningful.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Task descriptions
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The "trispecific T cell engager-inspired synthetic topology-dependent optimization task" and "constrained ranking of common light chain candidates" are mentioned but not described in terms of inputs, outputs, or evaluation criteria.
+  - **Required correction** Provide brief descriptions of these tasks, including what is optimized or ranked and how success is measured.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Code and data availability
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** No mention of code or data availability, which is important for a benchmark paper.
+  - **Required correction** State in the abstract or full text whether code and synthetic data generation scripts will be made publicly available.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of quantitative results, generative model details, and transfer learning outcomes means the core claims are not verifiable from the supplied material.
+- **Assessment against Nature-style criteria** Originality: The concept of a synthetic benchmark specifically for topology-aware msAb modeling appears novel, though similar ideas exist in other protein modeling domains. Scientific importance: The problem is relevant to therapeutic antibody design, but the synthetic-only scope limits immediate impact. Interdisciplinary readership: The work bridges computational biology and machine learning, which could attract a broad audience, but the abstract is too technical for nonspecialists without context. Technical soundness: Cannot be assessed from the abstract; no methodological or quantitative details are provided. Readability for nonspecialists: The abstract uses jargon (e.g., "connectivity-agnostic multilayer perceptron") without sufficient explanation, making it challenging for a general scientific audience.
+- **Recommendation posture** Currently not established from the provided evidence. The work is potentially interesting, and I would be supportive if the technical concerns are resolved, specifically by providing quantitative results, detailed methods, and a clearer description of the transfer learning workflow in the full manuscript.
+
+## Risk / unsupported claims
+- The claim that the GNN "learns topology-dependent structure-function relationships" is unsupported without quantitative metrics.
+- The claim that the generative method is "biologically inspired" is not verifiable from the abstract alone.
+- The claim that the transfer learning workflow is "infrastructure for adaptation to biological datasets" is vague and unsupported by any demonstrated results.
+- The utility of the benchmark for real msAb design is not assessable, as no biological validation is performed and no pathway to such validation is described.

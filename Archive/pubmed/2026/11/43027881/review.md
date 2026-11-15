@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no figures, tables, methods, or supporting data were provided
+- **Shared manuscript claim summary** The authors report all-atom molecular dynamics simulations of a DNA Holliday junction across three AMBER force fields, finding a broad and nearly flat inter-arm-angle landscape, force-field-robust Mg(2+) bridging at the crossover, and force-field-dependent differences in junction openness and stacking-isomer exchange rates.
+- **Visible evidence base** Abstract text only; no numerical tables, simulation protocols, convergence analyses, or statistical details are available
+- **Missing materials affecting confidence** Full methods, simulation convergence metrics, error bars, force-field parameter details, ion placement protocols, trajectory analyses, and all figures and tables
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially valuable systematic comparison of three AMBER force fields for a biologically and nanotechnologically relevant DNA junction. The central claims, including a nearly flat free-energy landscape, Mg(2+) crossover bridging, and force-field-dependent openness, are plausible and of interest to the DNA nanotechnology and biophysics communities. However, the abstract alone provides insufficient evidence to assess technical rigor, statistical significance, or methodological validity. Several claims, particularly quantitative values and rates, cannot be evaluated without access to the underlying data and analysis details. The work appears promising but is not yet established from the supplied material.
+- **Who would be interested in the results, and why** Researchers in DNA nanotechnology and DNA origami design, who require accurate conformational models of crossover motifs; computational biophysicists studying nucleic acid force-field behavior; and experimentalists investigating homologous recombination intermediates, who would benefit from a validated solution ensemble of Holliday junctions.
+- **Major strengths** The study addresses a clear gap in the field by systematically comparing three modern AMBER force fields under matched ionic conditions. The focus on a minimal short-arm construct is a sensible simplification that may isolate intrinsic junction behavior. The claim of force-field-robust Mg(2+) bridging, if supported, would be a valuable benchmark for simulation-guided nanostructure design.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims a "broad, nearly flat inter-arm-angle landscape, with <1 kcal/mol variation across inter-arm angles of 2-90 degrees" and that "the open state is favored by 0.45-0.63 kcal/mol."
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The abstract provides no information on how free energies were computed, whether error bars or statistical uncertainties are included, or how convergence was assessed. A <1 kcal/mol variation across a wide angular range is a strong quantitative claim that requires careful free-energy estimation, typically via umbrella sampling or weighted histogram analysis, and must be accompanied by uncertainty estimates.
+  - **Why it matters** Without convergence and error analysis, the reported free-energy differences may be within statistical noise, which would undermine the central conclusion of a flat landscape and the relative stability of open versus compact states.
+  - **Resolution test** Provide free-energy profiles with error bars, convergence tests (e.g., block averaging or multiple independent runs), and a description of the sampling method used.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims "A Mg(2+) ion occupies the crossover pocket in 92-94% of frames, specifically bridging the A- and C-strand phosphates."
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The occupancy percentage is a precise quantitative claim, but the abstract does not specify how ion occupancy was defined, what distance or coordination criteria were used, or whether this result is consistent across all three force fields. The Li-Merz CM Mg(2+) set is mentioned, but the sensitivity of the result to ion parameters is not discussed.
+  - **Why it matters** Ion occupancy at the crossover is a key mechanistic claim. If the definition of "occupies" is arbitrary or if the result is sensitive to analysis thresholds, the claim may be misleading.
+  - **Resolution test** Define the occupancy criterion explicitly, report occupancy for each force field separately, and show that the result is robust to reasonable variations in the criterion.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims "Stacking-isomer exchange between the A/C-continuous and crystallographic B/D isomers proceeds at ~0.5 ns(-1) in this minimal short-arm construct, independent of force field."
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The exchange rate is reported as a single value with no error estimate, no description of how transitions were identified, and no information on the number of observed events. A rate of 0.5 ns(-1) implies frequent transitions, but the statistical reliability of this estimate is unclear, especially given the short-arm construct and the simulation timescales.
+  - **Why it matters** If the rate is based on few events or is not reproducible across replicates, the claim of force-field independence is unsupported.
+  - **Resolution test** Report the number of transitions observed, the simulation length per force field, and a confidence interval for the rate.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract terminology
+  - **Evidence pointer** Abstract text
+  - **Issue** The term "crossover pocket" is used without definition, and the distinction between "A/C-continuous" and "B/D isomers" may be unclear to readers outside the Holliday junction field.
+  - **Required correction** Briefly define these terms or provide a schematic reference in the full manuscript.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Scientific importance
+  - **Affected element** Contextual framing
+  - **Evidence pointer** Abstract text
+  - **Issue** The abstract states that the junction "must be accurately modeled for rational DNA-nanodevice design" but does not explain how the specific findings (e.g., the flat landscape or Mg(2+) bridging) would change design practice.
+  - **Required correction** Add one sentence in the abstract or introduction connecting the results to a concrete design implication.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Force-field comparison
+  - **Evidence pointer** Abstract text
+  - **Issue** The abstract notes that "parmbsc1 yields a more open junction than OL21 and OL24," but does not state whether this difference is statistically significant or whether it arises from specific parameter differences.
+  - **Required correction** Report significance testing or effect sizes for the force-field comparison, and discuss the likely origin of the difference.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The abstract lacks the statistical and methodological detail required to validate the quantitative claims of free-energy differences, ion occupancy, and exchange rates.
+- **Assessment against Nature-style criteria** Originality: The systematic three-force-field comparison is a useful contribution, though not unprecedented. Scientific importance: The results could inform DNA nanostructure design and force-field development, but the impact depends on the robustness of the quantitative claims. Interdisciplinary readership: The topic bridges biophysics, computational chemistry, and nanotechnology, and the abstract is largely accessible. Technical soundness: Not assessable from the abstract alone; the missing error analysis and methodological details are critical. Readability for nonspecialists: Generally clear, but some jargon requires definition.
+- **Recommendation posture** Supportive if technical concerns are resolved. The study addresses a relevant question and the qualitative findings are plausible, but the quantitative claims require substantial additional evidence, including error analysis, convergence tests, and explicit definitions of analysis criteria.
+
+## Risk / unsupported claims
+- The claim of a "nearly flat" free-energy landscape with <1 kcal/mol variation is unsupported without error bars and convergence analysis.
+- The Mg(2+) occupancy of 92-94% is unsupported without a defined occupancy criterion and per-force-field breakdown.
+- The stacking-isomer exchange rate of ~0.5 ns(-1) is unsupported without event counts and confidence intervals.
+- The statement that OL24's "sugar-pucker shift" is "visible at the junction" is not assessable without structural data.
+- The claim that the results "establish a force-field-robust baseline" is premature given the lack of statistical validation.

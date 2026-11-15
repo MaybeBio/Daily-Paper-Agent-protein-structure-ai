@@ -1,0 +1,101 @@
+## Review setup
+
+- **Input scope** Full manuscript text, including abstract, introduction, results, discussion, limitations, methods, and supplementary figure legends. No figures, tables, or supplementary data files were provided.
+- **Assessment boundary** Scientific claims, methodological soundness, and evidentiary support as presented in the text. No independent verification of experimental data was possible.
+- **Shared manuscript claim summary** The authors present a variational autoencoder (ProteinVAEc) trained on natural AAV VP3 sequences, and use it to generate de novo AAV capsid variants. They report that 255 variants were synthesized and tested, with seven transducing human cells at >50% efficiency, and four of those avoiding neutralization by human sera reactive to AAV. One variant (s2_129) with 97 mutations relative to the closest natural sequence is highlighted as a potential first de novo AAV serotype.
+- **Visible evidence base** Text descriptions of computational evaluations (JSD, secondary structure, latent interpolation), in vitro transduction screening, qPCR/ddPCR titering, cell line tropism experiments, neutralization assays, and phylogenetic analysis. All quantitative results are described narratively without accompanying figures or tables.
+- **Missing materials affecting confidence** All figures, tables, supplementary data, and statistical analysis outputs. No raw data, no sequence alignments, no neutralization curves, no gating strategies, no titer values beyond those mentioned in text. The absence of these materials substantially limits the ability to verify the claims.
+
+## Reviewer
+
+- **Overall assessment** The manuscript addresses a clinically important problem, namely pre-existing immunity to AAV vectors, and proposes a generative modeling approach to design capsids that evade neutralizing antibodies. The conceptual framing is sound and the results, as described, are potentially significant. However, the evidentiary basis as presented is insufficient to support the strong claims made, particularly the assertion of a "first ever de novo AAV serotype." The lack of figures, tables, and detailed statistical reporting prevents verification of the central findings. The work is at a preliminary stage and requires substantial additional evidence and clarification before the claims can be considered established.
+- **Who would be interested in the results, and why** Researchers in gene therapy, AAV biology, and protein design would be interested. The potential to generate capsids with altered serological profiles has direct implications for patient eligibility and redosing strategies. The methodological contribution, namely the use of contrastive learning in a VAE for viral capsid design, would also interest the computational protein design community.
+- **Major strengths** The problem addressed is of high clinical relevance. The use of a generative model to explore sequence space beyond natural variation is a reasonable and timely approach. The authors have made an effort to validate their designs experimentally, including in vitro transduction, packaging, and neutralization assays. The observation that designed variants can alter cell type preference is interesting and suggests the model has captured functional determinants beyond simple sequence conservation.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "Seven designs transduced human cells with >50% efficiency, of which four avoided nAb neutralization (NT50 < 1:50) in all human sera that were reactive to AAV."
+  - **Evidence pointer** Results section, Figures 3 and 6 (not provided)
+  - **Concern** The central claim of the manuscript rests on transduction and neutralization data that are described only in text. No figures showing transduction efficiencies, neutralization curves, or statistical comparisons are available. The criteria for ">50% efficiency" are not defined in the text, and it is unclear whether this refers to the percentage of cells transduced, relative expression levels, or another metric. The neutralization data are described for three sera, but the selection criteria for these sera, the reproducibility of the assays, and the full dose-response curves are not shown.
+  - **Why it matters** Without the primary data, the reader cannot assess whether the reported efficiencies and neutralization resistance are robust, reproducible, or statistically significant. The claim of a "unique serological profile" depends entirely on these data.
+  - **Resolution test** Provide the figures and tables with raw data, including gating strategies, dose-response curves for all sera tested, statistical tests used, and clear definitions of all metrics. Show that the reported efficiencies are reproducible across independent experiments and that the neutralization resistance is consistent across a panel of sera.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim support
+  - **Claim pointer** "In one of these designs, sequence identity to the nearest natural AAV sequence was 18% divergent. Given the radical sequence diversity and its unique serological profile, this new capsid design would represent the first ever AAV serotype designed de novo."
+  - **Evidence pointer** Results section, Figure 4d (not provided)
+  - **Concern** The claim of a "first ever AAV serotype designed de novo" is a strong and definitive statement. The evidence presented, namely sequence divergence and resistance to a limited panel of human sera, is not sufficient to establish that this variant constitutes a new serotype. A serotype is defined by a lack of cross-reactivity with existing serotypes, which requires testing against a comprehensive panel of antisera to all known AAV serotypes. The manuscript only reports testing against sera from three donors reactive to a few serotypes. Furthermore, the phylogenetic analysis is described but not shown, and the criteria for defining a "new serotype" are not discussed.
+  - **Why it matters** The claim of a new serotype is the headline finding of the manuscript. If it is not supported by appropriate serological data, the conclusion is overstated and could mislead the field.
+  - **Resolution test** Test the lead variants against a comprehensive panel of antisera raised against all known AAV serotypes. Demonstrate that the variants are not neutralized by any of these antisera. Provide the phylogenetic tree and discuss the criteria used to define a new serotype in the context of existing literature.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Methodological clarity
+  - **Claim pointer** "We built a variational autoencoder that could learn these sequence constraints and generate functional AAV capsid proteins de novo."
+  - **Evidence pointer** Methods section, Computational Evaluation
+  - **Concern** The description of the model architecture and training is incomplete. The text states that ProteinVAEc is an adaptation of ProteinVAE with a "tailored contrastive loss term," but the details of this loss, the architecture, the training data, and the hyperparameters are not provided. The evaluation metrics (JSD, secondary structure) are described, but the specific values and comparisons to baselines are not given. The fine-tuning of ProGen2 and ESM2 is mentioned, but the training details are sparse.
+  - **Why it matters** The methodological contribution is a key part of the paper. Without sufficient detail, other researchers cannot reproduce the model or assess whether the improvements are due to the contrastive loss or other factors.
+  - **Resolution test** Provide a full description of the model architecture, the contrastive loss function, training details, and hyperparameters. Include a table comparing ProteinVAEc to ProteinVAE and other baselines on the reported metrics, with error bars and statistical tests.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interpretation
+  - **Claim pointer** "Mutations are broadly distributed across the capsid exterior, likely altering most if not all antibody-accessible regions. This provides a plausible structural rationale for reduced recognition by nAbs with diverse epitopes broadly across different individuals."
+  - **Evidence pointer** Results section, Figure 5 (not provided)
+  - **Concern** The structural analysis is presented as a "plausible rationale" but is not directly tested. The mapping of mutations onto the capsid structure is described, but no quantitative analysis of surface exposure, epitope overlap, or comparison to known antibody epitopes is provided. The link between mutation distribution and neutralization resistance is inferred, not demonstrated.
+  - **Why it matters** The structural argument is used to support the serological findings. Without a more rigorous analysis, the connection between sequence divergence and immune evasion remains speculative.
+  - **Resolution test** Provide a quantitative analysis of the mutation distribution, such as solvent-accessible surface area calculations, and compare the mutated positions to known antibody epitopes. If possible, perform epitope mapping experiments or structural studies to directly demonstrate that the mutations disrupt antibody binding.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract
+  - **Issue** The abstract states "More than 5000 monogenic diseases are potentially curable by replacing a single defective gene with one that functions normally." This is an overstatement, as gene replacement is not applicable to all monogenic diseases, and many are not "curable" by this approach.
+  - **Required correction** Rephrase to "More than 5000 monogenic diseases are potentially addressable by gene replacement therapy."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Consistency
+  - **Affected element** Results and Discussion
+  - **Evidence pointer** Results, Discussion
+  - **Issue** The text reports "seven designs transduced human cells with >50% efficiency" in the abstract, but later states "four variants transduced cells with >50% efficiency and also resist neutralization." The numbers are not clearly reconciled. It is stated that "Nine designs avoided nAb mediated neutralization" in the results, but the abstract says "four avoided nAb neutralization." The relationship between these numbers is confusing.
+  - **Required correction** Clearly state the number of variants at each stage of the screening pipeline, and define the criteria for each stage. Use a flow diagram if necessary.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Methods, Cell Culture
+  - **Evidence pointer** Methods, Cell Culture
+  - **Issue** The cell culture section mentions "HEK293T Lenti-X cells" and later "HEK293 cells" in the transduction validation. It is unclear if these are the same cell line.
+  - **Required correction** Clarify the cell lines used in each experiment and ensure consistent naming.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Results, Transduction experiments
+  - **Evidence pointer** Results, Figure 3
+  - **Issue** The text mentions "one-sided Welch's t-test on log EGFP+%, BH q < 0.05" but does not report the number of biological replicates for the initial screening, nor the effect sizes or confidence intervals.
+  - **Required correction** Report the number of replicates, effect sizes, and confidence intervals for all statistical comparisons.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Discussion
+  - **Evidence pointer** Discussion
+  - **Issue** The discussion states "in vitro experiments might underestimate the variants' transduction for the more important in vivo setting" due to the absence of R585/R588 arginines. This is speculative and not supported by data presented.
+  - **Required correction** Soften the claim or provide supporting evidence, such as in vivo data or literature references.
+- **Technical failings that need to be addressed before the case is established** The absence of all primary data figures and tables is the most significant technical failing. The manuscript cannot be evaluated without them. Additionally, the lack of detail on the model architecture and training, the incomplete statistical reporting, and the overstatement of the serotype claim are technical issues that must be addressed.
+- **Assessment against Nature-style criteria** 
+  - **Originality** The application of a VAE with contrastive learning to AAV capsid design is a novel contribution. The focus on generating variants with altered serological profiles, rather than simply improving titer or tropism, is a fresh angle. However, the conceptual approach of using generative models for protein design is not new, and the novelty lies in the specific application.
+  - **Scientific importance** The problem of pre-existing immunity is a major barrier to AAV gene therapy. If the claims are substantiated, this work could have significant clinical implications. The potential for redosing is also an important consideration. The importance is high, but contingent on the validity of the results.
+  - **Interdisciplinary readership** The work bridges computational protein design, virology, and gene therapy. It would appeal to researchers in all three fields. The writing is generally accessible, though some parts of the methods are dense.
+  - **Technical soundness** The technical soundness cannot be fully assessed due to missing data. The described methods are plausible, but the lack of figures and detailed statistical analysis prevents verification. The neutralization assay methodology, in particular, needs more detail.
+  - **Readability for nonspecialists** The abstract and introduction are clear and accessible. The results and methods sections are more technical and may be challenging for nonspecialists, but this is typical for a multidisciplinary journal.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript addresses an important problem and presents a plausible approach, but the claims are not verifiable without the primary data. The authors should be encouraged to resubmit with the full set of figures, tables, and detailed methods. The claim of a "first ever de novo AAV serotype" should be tempered until more comprehensive serological testing is performed.
+
+## Risk / unsupported claims
+- The claim of a "first ever AAV serotype designed de novo" is unsupported by the evidence presented. A serotype designation requires comprehensive cross-reactivity testing against all known serotypes, which was not performed.
+- The claim that "seven designs transduced human cells with >50% efficiency" is unverifiable without the underlying data and a clear definition of the metric.
+- The claim that mutations are "broadly distributed across the capsid exterior, likely altering most if not all antibody-accessible regions" is speculative and not supported by quantitative analysis.
+- The statement that "in vitro experiments might underestimate the variants' transduction for the more important in vivo setting" is speculative and not supported by data.
+- The claim that ProteinVAEc "showed better recovery of general VP3 sequence and secondary structure patterns" is unverifiable without the comparison data.

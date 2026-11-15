@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Predicting the alternative conformation of a known protein structure based on the distogram of AlphaFold2. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Predicting the alternative conformation of a known protein structure based on the distogram of AlphaFold2.</h1>
+      <div class="meta">Li, Jiaxuan; Zhu, Zefeng; Song, Chen</div>
+      <div class="meta muted">
+        
+        <span class="journal">Quantitative biology (Beijing, China)</span>
+        · 2026-11-08
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42997815/">原文</a>
+      </div>
+      <p class="one-liner">该文利用AlphaFold2预测的距离分布中的多峰特征提取状态特异性约束，结合Rosetta采样蛋白质替代构象，属于蛋白质构象采样与结构预测的AI+物理模拟方法创新。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">AlphaFold2 (AF2) has become one of the most established and leading tools for predicting protein structures, although it often favors a single conformation. While it has been shown that sampling different conformations is possible by manipulating the multiple sequence alignment (MSA), the potential for multi-state information within a standard AF2 prediction remains underexplored. In this work, we demonstrate that even with a deep MSA, AF2 predictions encode structural heterogeneity. Specifically, we observe that the predicted residue-residue distance distributions often exhibit multiple probability peaks before recycling, suggesting the presence of alternative states. We derive state-specific distance restraints by fitting and separating these multi-peak distributions. These restraints are then incorporated into Rosetta as energy terms to model large-scale conformational transitions. Across multiple protein systems undergoing diverse types of conformational changes, our method effectively samples alternative conformations starting from an input conformation, producing models comparable to those from existing approaches. Our findings highlight a previously underutilized feature of AF2 predictions and offer a novel strategy to take advantage of these insights to study conformational flexibility and dynamics in proteins. This work broadens the applicability of AF2 in structural biology and the modeling of multi-state protein systems.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">AlphaFold2 (AF2) 已成为预测蛋白质结构最成熟且领先的工具之一，尽管它通常偏向于单一构象。虽然已有研究表明，通过操纵多序列比对（MSA）可以采样不同构象，但标准AF2预测中多状态信息的潜力仍未得到充分探索。在本工作中，我们证明即使使用深度MSA，AF2预测也编码了结构异质性。具体而言，我们观察到，在循环前，预测的残基-残基距离分布往往表现出多个概率峰，提示存在替代状态。我们通过拟合和分离这些多峰分布，推导出状态特定的距离约束。这些约束随后作为能量项整合到Rosetta中，以模拟大规模构象转变。在多个经历不同类型构象变化的蛋白质系统中，我们的方法从输入构象出发有效采样替代构象，生成的模型与现有方法相当。我们的发现突显了AF2预测中一个先前未被充分利用的特征，并提供了一种新策略，利用这些见解来研究蛋白质的构象灵活性和动态性。本工作拓宽了AF2在结构生物学和多状态蛋白质系统建模中的适用性。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Predicting the alternative conformation of a known protein structure based on the distogram of AlphaFold2</li>
+<li><strong>作者与单位</strong>: Li, Jiaxuan; Zhu, Zefeng; Song, Chen（北京大学，未提供具体单位信息）</li>
+<li><strong>期刊/预印本平台</strong>: Quantitative Biology (Beijing, China)</li>
+<li><strong>年份</strong>: 2026-11-08（在线发表日期）</li>
+<li><strong>论文类型</strong>: 方法学研究</li>
+<li><strong>领域</strong>: 蛋白质结构预测、构象采样、多状态建模</li>
+<li><strong>关键词</strong>: AlphaFold2, distogram, alternative conformation, Rosetta, multi-state proteins</li>
+<li><strong>DOI/arXiv 号</strong>: 10.1002/qub2.70062</li>
+<li><strong>代码</strong>: https://github.com/ComputBiophys/AltConfDist</li>
+<li><strong>数据</strong>: 20个双状态蛋白系统（详见补充材料 Table S1）</li>
+<li><strong>阅读日期</strong>: 2026-11-08</li>
+<li><strong>在该方向中的位置</strong>: 本文属于「蛋白质结构预测 × 构象采样」交叉方向，提出了一种利用 AF2 distogram 中隐藏的多峰分布信息来预测蛋白质替代构象的新方法，与 MSA 子采样策略正交，为从单一序列预测多构象提供了新思路。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文通过分析 AlphaFold2 预测的 distogram 中残基对距离分布的多峰信号，提取替代构象的距离约束并转化为 Rosetta 能量项，从而在不降低 MSA 深度的情况下，从已知构象出发成功预测蛋白质的替代构象。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 如何从标准 AF2 预测中提取并利用隐藏的多构象信息，以预测已知蛋白质结构的替代构象？</li>
+<li><strong>为什么重要</strong>: 蛋白质功能往往依赖于构象变化，而 AF2 等深度学习工具通常只预测单一构象，限制了其在动态蛋白质系统研究中的应用。</li>
+<li><strong>现有方法不足</strong>: 现有方法主要依赖 MSA 子采样（降低 MSA 深度）来引入构象多样性，但这会牺牲预测精度，且对 MSA 深度敏感的蛋白质效果不佳。</li>
+<li><strong>精确研究问题</strong>: Can we extract alternative conformation information from the distogram of a standard AF2 prediction with deep MSA, and use it to model the alternative state of two-state proteins?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络基于本文引言及讨论部分，属「仅本文框架」，未经外部系统核验）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期多构象预测</td>
+<td>分子动力学模拟、蒙特卡洛采样</td>
+<td>物理原理驱动，可探索构象空间</td>
+<td>计算成本高，采样效率低</td>
+</tr>
+<tr>
+<td>深度学习单构象预测</td>
+<td>AF2, RoseTTAFold, trRosettaX</td>
+<td>精度高，速度快</td>
+<td>偏向预测单一构象，忽略多状态</td>
+</tr>
+<tr>
+<td>MSA 子采样策略</td>
+<td>AF2 聚类子采样、MSA 深度降低</td>
+<td>可引入构象多样性</td>
+<td>牺牲预测精度，依赖 MSA 质量</td>
+</tr>
+<tr>
+<td>生成模型方法</td>
+<td>扩散模型、流匹配</td>
+<td>可生成多构象分布</td>
+<td>需要大量训练数据，计算资源要求高</td>
+</tr>
+<tr>
+<td><strong>本文方法</strong></td>
+<td><strong>AF2 distogram 多峰分析 + Rosetta 约束建模</strong></td>
+<td><strong>保持 MSA 深度，利用隐藏构象信息</strong></td>
+<td><strong>依赖多峰信号质量，对某些系统效果有限</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AF2 偏向单一构象</td>
+<td>对双状态蛋白，AF2 通常只预测一个优势构象</td>
+<td>AF2 训练目标是最小化平均误差，倾向于输出最可能构象</td>
+<td>Results 节，Table 1 显示 AF2 预测常偏向 C2</td>
+</tr>
+<tr>
+<td>MSA 子采样牺牲精度</td>
+<td>降低 MSA 深度可增加多样性但降低预测质量</td>
+<td>子采样丢失了重要的进化信息</td>
+<td>Introduction 节，讨论现有方法局限</td>
+</tr>
+<tr>
+<td>多峰信号未被利用</td>
+<td>标准 AF2 使用中 distogram 的多峰信息被忽略</td>
+<td>研究者通常只关注最终结构，不分析中间概率分布</td>
+<td>Results 节，提出分析 rank005 模型的 distogram</td>
+</tr>
+<tr>
+<td>长距离信号难以建模</td>
+<td>超过 22 Å 的残基对距离无法从 distogram 直接获取</td>
+<td>AF2 的 distogram 覆盖范围有限（2-22 Å）</td>
+<td>Methods 节，使用最后一 bin 作为长距离信号指示</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>利用 AF2 预测的 distogram（残基对距离概率分布），通过高斯拟合识别多峰分布，提取与替代构象相关的距离约束，转化为 Rosetta 能量项进行结构建模。</p>
+<h3>2) 核心洞察</h3>
+<p>AF2 的 distogram 中即使使用深度 MSA，也包含多峰分布，这些多峰反映了蛋白质的构象异质性。通过系统分析这些多峰信号，可以提取出替代构象的距离信息，而无需降低 MSA 深度。</p>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li>深度学习模型的中间输出（如 distogram、注意力图）可能包含比最终预测更丰富的信息，值得深入挖掘。</li>
+<li>将深度学习预测的概率分布与物理模拟（如 Rosetta）结合，可以发挥两者优势：深度学习的进化信息 + 物理的能量优化。</li>
+<li>低排名模型（rank005）可能比高排名模型包含更多构象多样性信息，不应简单丢弃。</li>
+</ul>
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>: 
+- 蛋白质序列
+- 已知的初始构象（C1 或 C2，实验结构或 AF2 预测结构）</p>
+<p><strong>输出</strong>: 
+- 替代构象的 3D 结构模型</p>
+<p><strong>模块</strong>:
+1. <strong>AF2 预测模块</strong>: 使用 ColabFold v1.5.2，设置 max_msa=512:1024，num_recycles=0，无模板，单种子，生成 5 个模型（rank001-005）及对应 distogram
+2. <strong>信号提取模块</strong>: 分析 distogram 中的多峰分布，通过高斯拟合分类信号（Class I-VI），与已知结构比较，提取替代构象信号（alt-distogram）
+3. <strong>Rosetta 建模模块</strong>: 将 alt-distogram 转化为距离约束能量项，通过 centroid 初始化、能量最小化、全原子精修三个阶段生成构象模型
+4. <strong>模型评估模块</strong>: 使用 Rosetta 能量分数和 TM-score 选择最佳模型</p>
+<p><strong>工具</strong>: ColabFold v1.5.2, PyRosetta (2019.42+release.3666509), TM-align</p>
+<p><strong>反馈回路</strong>: 无显式反馈回路，但通过 15 组参数 × 10 次独立采样（共 150 个模型）进行充分采样</p>
+<p><strong>假设</strong>:
+- AF2 distogram 中的多峰分布反映构象异质性
+- 替代构象的距离信息可以从多峰中提取
+- Rosetta 能量优化可以有效地将距离约束转化为结构变化</p>
+<p><strong>文字流程</strong>:
+1. 对目标蛋白序列运行 AF2 预测，获得 5 个模型及对应 distogram
+2. 选择 rank005 模型的 distogram 进行分析（因其包含最多替代构象信号）
+3. 对每个残基对的距离分布进行高斯拟合，识别多峰信号
+4. 将多峰信号与已知初始构象的距离比较，去除对应初始构象的峰，保留替代构象的峰
+5. 将提取的替代构象距离约束转化为 Rosetta 能量项（Eij_alt），同时保留共同信号约束（Eij_com）
+6. 从初始构象出发，使用 Rosetta 进行能量最小化和全原子精修
+7. 评估生成的模型，选择最佳预测</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AF2 预测模块</td>
+<td>生成结构预测和 distogram</td>
+<td>提供多构象信息的来源</td>
+<td>输入: 序列; 输出: 5个模型+distogram</td>
+<td>Results 节，图 1 显示 rank005 包含最多替代信号</td>
+<td>无法获取多峰距离分布信息</td>
+</tr>
+<tr>
+<td>信号提取模块</td>
+<td>识别和分类多峰信号</td>
+<td>从 distogram 中提取替代构象信息</td>
+<td>输入: distogram+初始结构; 输出: alt-distogram</td>
+<td>Results 节，Table 2 显示信号提取精度</td>
+<td>无法区分替代构象与噪声信号</td>
+</tr>
+<tr>
+<td>高斯拟合分类</td>
+<td>拟合多峰分布，分类信号类型</td>
+<td>系统化识别多峰信号</td>
+<td>输入: 距离概率分布; 输出: 信号分类 (Class I-VI)</td>
+<td>Methods 节，图 3 展示六种信号类型</td>
+<td>无法有效提取替代构象距离信息</td>
+</tr>
+<tr>
+<td>Rosetta 建模模块</td>
+<td>将距离约束转化为结构模型</td>
+<td>物理模拟驱动构象转变</td>
+<td>输入: 初始结构+alt-distogram; 输出: 构象模型</td>
+<td>Results 节，Table 3 显示预测成功率</td>
+<td>无法将距离信息转化为结构变化</td>
+</tr>
+<tr>
+<td>能量约束设计</td>
+<td>构建 Eij_alt 和 Eij_com 能量项</td>
+<td>平衡替代信号与共同信号</td>
+<td>输入: alt-distogram 信号; 输出: 能量函数</td>
+<td>Methods 节，公式 4-10</td>
+<td>无法有效引导构象转变</td>
+</tr>
+<tr>
+<td>模型评估模块</td>
+<td>选择最佳预测模型</td>
+<td>从 150 个模型中筛选最优</td>
+<td>输入: 150个模型; 输出: 最佳模型</td>
+<td>Methods 节，模型选择标准</td>
+<td>无法从采样结果中选出最优预测</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>1. Softmax 转换 distogram 概率</strong>（Methods 节，公式 1）:</p>
+<pre><code>softmax(DM_logits_i) = exp(DM_logits_i) / Σ_j exp(DM_logits_j)
+</code></pre>
+<ul>
+<li>DM_logits_i: AF2 输出的第 i 个距离 bin 的 logit 值</li>
+<li>用途: 将 AF2 的原始 logits 转换为概率分布</li>
+</ul>
+<p><strong>2. 双变量高斯拟合</strong>（Methods 节，公式 2）:</p>
+<pre><code>p(x) = a1·exp(-(x-μ1)²/(2σ1²))/(σ1√(2π)) + a2·exp(-(x-μ2)²/(2σ2²))/(σ2√(2π))
+</code></pre>
+<ul>
+<li>μ1, μ2: 两个峰的均值（对应距离）</li>
+<li>σ1, σ2: 两个峰的标准差</li>
+<li>a1, a2: 两个峰的振幅</li>
+<li>用途: 拟合多峰距离分布，识别替代构象信号</li>
+</ul>
+<p><strong>3. 替代构象能量项</strong>（Methods 节，公式 4-5）:</p>
+<pre><code>Eij_temp = tanh(Eij) 若 Eij &gt; 0; Eij 若 Eij &lt; 0
+Eij_alt = Eij_temp(n) - (n-n0)/(n1-n0), 当 n ~ [n0, n1]
+</code></pre>
+<ul>
+<li>n: 距离 bin 索引（1-64，覆盖 2-22 Å）</li>
+<li>n0: 初始构象距离对应的 bin</li>
+<li>n1: 能量首次过零的 bin</li>
+<li>用途: 平坦化初始构象的能量势垒，引导向替代构象转变</li>
+</ul>
+<p><strong>4. 共同信号能量项</strong>（Methods 节，公式 8-9）:</p>
+<pre><code>Mo = mode(Eij)  # 正能量的统计众数
+Eij_com = tanh(Eij - Mo) 若 Eij &gt; Mo; Eij 若 Eij &lt; Mo
+</code></pre>
+<p><strong>5. 缩放参数</strong>（Methods 节，公式 10-14）:</p>
+<pre><code>mag = max(min(Eij_alt)/min(min(Eij_com)) × 1/(1+e^(-plast-bin)) × pnl × Hnorm, 若 plast-bin ≥ 0.5
+      mean(min(Eij_alt)/mean(min(Eij_com)) × 1/(1+e^(-plast-bin)) × pnl × Hnorm, 若 plast-bin &lt; 0.5
+</code></pre>
+<ul>
+<li>pnl = Nalt/L: 替代信号数与序列长度比</li>
+<li>plast-bin = Nlast-bin/Nalt: 长距离信号比例</li>
+<li>Hnorm = (Hmax-H)/(Hmax-Hmin): 归一化熵</li>
+<li>用途: 自适应调整共同信号约束强度</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集</strong>: 
+- 20个双状态蛋白系统（83-524个氨基酸），涵盖铰链运动、结构域开合、局部重排等多种构象变化类型
+- 补充数据集: OC23（23个开-闭状态蛋白）和 TP16（16个转运蛋白），来自 AFsample2 研究</p>
+<p><strong>评估指标</strong>: TM-score, RMSD, 预测成功率（TM-score 超过初始构象的 TM-score 即为成功）</p>
+<p><strong>基线</strong>: AF2 默认预测（rank001-005）、AFsample 方法</p>
+<p><strong>评测协议</strong>: 
+- 每个蛋白系统从 C1 预测 C2，以及从 C2 预测 C1 两个方向
+- 每个方向生成 150 个模型（15 组参数 × 10 次采样）
+- 使用 TM-score 和 Rosetta 能量分数选择最佳模型</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多峰信号存在性分析</td>
+<td>AF2 distogram 包含替代构象信息</td>
+<td>20个蛋白，5个模型，分析多峰信号</td>
+<td>rank005 模型包含最多替代信号</td>
+<td>AF2 预测编码多构象信息</td>
+<td>未量化信号强度与构象变化幅度的关系</td>
+<td>Results 节，图 1</td>
+</tr>
+<tr>
+<td>信号提取精度</td>
+<td>多峰信号能准确指示替代构象</td>
+<td>与已知双状态结构比较</td>
+<td>平均精度 0.73，多个蛋白 &gt;0.85</td>
+<td>多峰信号有效指示替代构象</td>
+<td>精度受蛋白类型影响</td>
+<td>Results 节，Table 2</td>
+</tr>
+<tr>
+<td>替代构象预测</td>
+<td>方法能预测替代构象</td>
+<td>20个蛋白，双向预测</td>
+<td>C1→C2 成功率 85% (17/20)，C2→C1 成功率 70% (14/20)</td>
+<td>方法有效预测替代构象</td>
+<td>C2→C1 方向成功率较低</td>
+<td>Results 节，Table 3</td>
+</tr>
+<tr>
+<td>与 AFsample 对比</td>
+<td>方法性能与现有方法相当</td>
+<td>OC23 和 TP16 数据集</td>
+<td>达到与 AFsample 相当的性能</td>
+<td>方法具有竞争力</td>
+<td>未进行统计显著性检验</td>
+<td>Results 节，图 7</td>
+</tr>
+<tr>
+<td>控制实验</td>
+<td>信号选择和能量平衡的必要性</td>
+<td>CTRL1（无选择）、CTRL2（无缩放）</td>
+<td>完整方法优于两个控制实验</td>
+<td>信号选择和能量平衡均重要</td>
+<td>未单独检验每个参数的影响</td>
+<td>Results 节，图 S3</td>
+</tr>
+<tr>
+<td>案例研究</td>
+<td>方法能处理复杂构象变化</td>
+<td>AK, DAHPS, 48G7g 等</td>
+<td>成功预测结构域旋转和复杂重排</td>
+<td>方法适用于多种构象变化类型</td>
+<td>对某些膜蛋白效果有限</td>
+<td>Results 节，图 5, 6</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 本文方法仅针对双状态蛋白系统，即已知两个实验结构的蛋白质。对于多状态（&gt;2）或未知构象的蛋白质，方法适用性未验证。</li>
+<li><strong>oracle/真值输入</strong>: 方法需要已知的初始构象（C1 或 C2）作为起点，且需要两个构象的已知结构来评估信号提取精度。这属于"部分 oracle"设置。</li>
+<li><strong>端到端状态</strong>: 方法并非全自动端到端流程，需要人工选择参数（15 组参数）和模型选择标准。</li>
+<li><strong>算力成本</strong>: 每个蛋白系统需要 150 次 Rosetta 采样，计算成本中等；AF2 预测本身需要 GPU 支持。</li>
+<li><strong>历史数据依赖</strong>: 方法依赖 AF2 的预训练权重，不依赖特定训练数据。</li>
+<li><strong>模型依赖</strong>: 方法对 AF2 的 distogram 质量敏感，不同版本的 AF2 可能影响结果。</li>
+<li><strong>最难情形</strong>: 构象变化幅度大（TM2states ≤ 0.55）的蛋白（如 S100B, S100A1, NTnC）预测困难；膜蛋白（如 AS2CT）因假阳性信号导致效果不佳。</li>
+<li><strong>群体/领域边界</strong>: 方法在 20 个双状态蛋白上验证，对单状态蛋白或 intrinsically disordered proteins 的适用性未知。</li>
+<li><strong>不确定性</strong>: 方法未提供置信度估计或不确定性量化，无法判断预测结果的可靠性。</li>
+</ul>
+<p><strong>有边界的复述</strong>: 本文展示了一种从 AF2 distogram 中提取替代构象信息的方法，在 20 个双状态蛋白系统中，从 C1 预测 C2 的成功率为 85%，从 C2 预测 C1 的成功率为 70%，性能与 AFsample 相当，但方法依赖已知初始构象，对大幅构象变化和某些膜蛋白效果有限。</p>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅针对双状态蛋白</td>
+<td>方法未扩展到多状态（&gt;2）蛋白系统</td>
+<td>可分解为多个双状态系统处理</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>依赖初始构象</td>
+<td>需要已知的 C1 或 C2 作为起点</td>
+<td>未明确提及</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>对大幅构象变化效果有限</td>
+<td>TM2states ≤ 0.55 的蛋白预测困难</td>
+<td>可能需要更强的采样策略</td>
+<td>Results 节，Table 3</td>
+</tr>
+<tr>
+<td>膜蛋白假阳性信号</td>
+<td>AS2CT 等膜蛋白因长距离假阳性信号导致效果不佳</td>
+<td>可能需要针对膜蛋白优化信号提取</td>
+<td>Results 节，Table 3</td>
+</tr>
+<tr>
+<td>计算成本</td>
+<td>每个系统需要 150 次 Rosetta 采样</td>
+<td>未明确提及</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>未处理多状态系统</td>
+<td>仅验证了双状态蛋白</td>
+<td>可分解为多个双状态系统处理</td>
+<td>Discussion 节</td>
+</tr>
+</tbody>
+</table>
+<p><strong>作者提及的相关约束</strong>（非正式局限）:
+- 方法依赖 AF2 的 distogram 质量，对某些蛋白（如 T4L）缺乏多峰信号
+- 信号提取的精度受蛋白类型影响，平均精度 0.73
+- 模型选择标准基于能量分数和 TM-score，可能不适用于所有系统</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>方法依赖已知双状态结构来评估信号精度</td>
+<td>信号提取的"真值"来自实验结构，可能引入循环论证</td>
+<td>影响方法在未知构象系统上的泛化性评估</td>
+<td>在仅有单结构已知的蛋白上测试信号提取精度</td>
+<td>Results 节，Table 2 的评估方式</td>
+</tr>
+<tr>
+<td>rank005 模型的选择缺乏理论依据</td>
+<td>为什么 rank005 包含最多替代信号？是否与 pLDDT 排序机制有关？</td>
+<td>理解方法适用性的关键</td>
+<td>分析 rank 排序与信号含量的相关性</td>
+<td>Results 节，图 1</td>
+</tr>
+<tr>
+<td>控制实验仅比较了有无信号选择和缩放</td>
+<td>未测试不同高斯拟合参数、不同信号分类阈值的影响</td>
+<td>方法对超参数的敏感性未知</td>
+<td>进行超参数敏感性分析</td>
+<td>Results 节，图 S3</td>
+</tr>
+<tr>
+<td>与 AFsample 的比较仅基于 TM-score</td>
+<td>未比较计算效率、采样多样性等其他维度</td>
+<td>影响方法实用性的评估</td>
+<td>进行多维度基准测试</td>
+<td>Results 节，图 7</td>
+</tr>
+<tr>
+<td>方法在 20 个蛋白上的验证规模有限</td>
+<td>蛋白类型多样性可能不足，缺乏对特定家族的系统测试</td>
+<td>影响结论的普适性</td>
+<td>在更大规模、更多样化的数据集上验证</td>
+<td>Results 节，Table 1</td>
+</tr>
+<tr>
+<td>未讨论 AF2 版本差异的影响</td>
+<td>不同版本 AF2 的 distogram 分布可能不同</td>
+<td>影响方法的可复现性</td>
+<td>使用多个 AF2 版本进行测试</td>
+<td>Methods 节，ColabFold v1.5.2</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>:</p>
+<ol>
+<li>
+<p><strong>AF2 中间输出蕴含构象异质性信息</strong>: 即使使用深度 MSA，AF2 的 distogram 也包含多峰分布，反映蛋白质的构象多样性。这提示我们不应只关注 AF2 的最终结构预测，其概率输出（distogram、pLDDT）可能包含更丰富的动态信息。</p>
+</li>
+<li>
+<p><strong>低排名模型的价值</strong>: rank005 模型虽然 pLDDT 较低，但包含最多的替代构象信号。这提示在构象采样任务中，不应简单丢弃低置信度模型，它们可能编码了不同的构象状态。</p>
+</li>
+<li>
+<p><strong>概率分布到能量约束的转化策略</strong>: 将深度学习预测的概率分布转化为物理模拟的能量项，是连接 AI 预测与物理采样的有效桥梁。本文的 Eij_alt 和 Eij_com 设计思路可迁移到其他 MD/对接任务中。</p>
+</li>
+<li>
+<p><strong>多峰信号分类系统</strong>: 本文提出的六类信号分类（Class I-VI）为系统分析距离分布提供了框架，可推广到其他残基-残基距离预测任务中。</p>
+</li>
+<li>
+<p><strong>与 MSA 子采样策略的互补性</strong>: 本文方法不降低 MSA 深度，与 MSA 子采样策略正交，两者可结合使用以增强构象采样能力。</p>
+</li>
+<li>
+<p><strong>自动参数调节机制</strong>: 通过 pnl、plast-bin、Hnorm 等指标自动调节能量约束强度，这种自适应策略可迁移到其他约束建模任务中。</p>
+</li>
+<li>
+<p><strong>模型选择标准</strong>: 结合能量分数和 TM-score 差异的模型选择策略，为从大量采样结果中筛选最优构象提供了参考。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li>
+<p><strong>AF2 多构象预测能力</strong>: 与近期研究表明 AF2 可以通过 MSA 子采样（如 AlphaFold2 聚类）预测多构象的工作相关。本文方法与之互补，不依赖 MSA 深度降低。相关文献: Wayment-Steele et al. (2023), del Alamo et al. (2022)。</p>
+</li>
+<li>
+<p><strong>AFsample/AFsample2</strong>: 本文在 OC23 和 TP16 数据集上与 AFsample 方法进行了基准比较，AFsample 通过修改 MSA 和随机种子来采样构象。本文方法可作为 AFsample 的补充策略。</p>
+</li>
+<li>
+<p><strong>trRosettaX 能量转化</strong>: 本文的能量转化方法借鉴了 trRosettaX 的概率-能量转化思路，但针对多峰分布进行了扩展。</p>
+</li>
+<li>
+<p><strong>Rosetta 约束建模</strong>: 本文使用 PyRosetta 进行约束建模，与蛋白质设计中的约束满足方法相关。</p>
+</li>
+<li>
+<p><strong>构象采样方法谱系</strong>: 本文属于「AI 预测 + 物理优化」的混合方法，与 MD 模拟增强采样（如 metadynamics）、正态模式分析等方法互补。</p>
+</li>
+<li>
+<p><strong>双状态蛋白数据库</strong>: 使用的 20 个双状态蛋白来自 Flores et al. 和 Saldaño et al. 的数据库，这些数据库可用于其他构象预测方法的基准测试。</p>
+</li>
+<li>
+<p><strong>Distance-AF</strong>: 讨论中提及 Distance-AF 可能增强 distogram 信息的利用，提示未来可探索将本文方法与 Distance-AF 结合。</p>
+</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>:</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>: 多状态 AF2 distogram 分析扩展到三态蛋白系统
+   - <strong>来源局限/观察</strong>: 本文仅针对双状态蛋白，但许多蛋白具有三个或更多功能构象
+   - <strong>核心假设</strong>: 三态蛋白的 distogram 可能包含三个或更多峰，可通过扩展高斯拟合方法提取
+   - <strong>初步方法</strong>: 将双峰拟合扩展到多峰拟合，使用贝叶斯信息准则确定峰数；在已知三态蛋白（如 kinases）上验证
+   - <strong>验证方式</strong>: 在 10-15 个三态蛋白上测试，比较与双状态方法的性能差异
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 基于 distogram 熵的构象多样性预测器
+   - <strong>来源局限/观察</strong>: 本文发现 rank005 包含最多替代信号，但未系统量化 distogram 熵与构象多样性的关系
+   - <strong>核心假设</strong>: distogram 的平均熵可以作为蛋白质构象多样性的预测指标
+   - <strong>初步方法</strong>: 计算每个蛋白的 distogram 熵分布，与已知构象多样性（如 RMSD2states）进行相关性分析；开发基于熵的构象多样性分类器
+   - <strong>验证方式</strong>: 在本文 20 个蛋白 + 额外 30 个蛋白上验证相关性
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 将 distogram 多峰约束与 MD 模拟增强采样结合
+   - <strong>来源局限/观察</strong>: 本文使用 Rosetta 进行能量优化，但未探索与 MD 模拟的结合
+   - <strong>核心假设</strong>: distogram 多峰约束可作为 MD 模拟的偏置势，加速构象转变
+   - <strong>初步方法</strong>: 将 Eij_alt 转化为 MD 模拟中的偏置势（类似 metadynamics 的 CV），在双状态蛋白上进行增强采样
+   - <strong>验证方式</strong>: 比较 MD+约束与纯 MD 的构象转变时间、采样效率
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 基于 distogram 多峰信号的构象系综生成
+   - <strong>来源局限/观察</strong>: 本文预测单一替代构象，但蛋白质可能具有构象系综
+   - <strong>核心假设</strong>: 多峰信号的峰宽和峰高可以编码构象系综的分布信息
+   - <strong>初步方法</strong>: 将多峰信号转化为构象系综的权重，使用 Rosetta 生成多个构象并按其概率加权
+   - <strong>验证方式</strong>: 与实验构象系综（如 NMR 结构）比较，评估系综重现度
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 将 distogram 多峰分析扩展到蛋白质-配体结合构象预测
+   - <strong>来源局限/观察</strong>: 本文仅处理 apo/holo 状态，未涉及配体诱导的构象变化
+   - <strong>核心假设</strong>: 配体结合引起的构象变化也会在 distogram 中产生多峰信号
+   - <strong>初步方法</strong>: 对配体结合蛋白（如 kinases, GPCRs）分析 apo/holo 状态的 distogram 差异，提取配体诱导的构象信号
+   - <strong>验证方式</strong>: 在已知配体结合构象的蛋白上测试，比较与分子对接方法的性能
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 基于 distogram 多峰信号的突变效应预测
+   - <strong>来源局限/观察</strong>: 本文方法可识别构象相关的残基对，这些残基对可能对突变敏感
+   - <strong>核心假设</strong>: 多峰信号中的关键残基对突变后可能导致构象平衡改变
+   - <strong>初步方法</strong>: 对多峰信号中的残基对进行饱和突变分析，预测突变对构象平衡的影响
+   - <strong>验证方式</strong>: 与实验突变数据（如 deep mutational scanning）比较
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, results, discussion, conclusions, materials and methods) as provided</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological soundness, evidence quality, and clarity of claims as presented in the supplied text; no assessment of supplementary figures or tables beyond what is referenced</li>
+<li><strong>Shared manuscript claim summary</strong> The authors claim that standard AlphaFold2 (AF2) predictions with deep multiple sequence alignments (MSAs) and no recycling encode multi-state conformational information in their distograms. They propose a protocol to extract alternative-conformation distance signals from AF2 distograms, convert them into Rosetta energy restraints, and successfully model alternative conformations for two-state proteins, achieving performance comparable to existing approaches on benchmark datasets.</li>
+<li><strong>Visible evidence base</strong> Main text tables (Tables 1–3), main text figures (Figures 1–8 as referenced), equations (1)–(15), and descriptions of methods and results</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary figures and tables (S1–S12) referenced but not provided; benchmark dataset details for OC23 and TP16 not fully described; code repository not inspected; no structural alignments or PDB identifiers for predicted models in main text</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript addresses a timely and relevant question: whether AF2 distograms contain usable multi-state information beyond the single preferred conformation. The observation that lower-ranked AF2 models (rank005) contain alternative conformational signals is interesting and potentially useful. However, the manuscript has several significant weaknesses. The methodological description is dense and at times unclear, particularly regarding the signal classification criteria and the energy restraint construction. The evaluation metrics and success criteria are not fully justified, and the comparison to existing methods is limited. The claim of "comparable performance" to AFsample2 is not quantitatively substantiated in the visible text. The generalization to single-state proteins is presented as a preliminary extension but lacks rigorous validation. Overall, the core idea has merit, but the evidence as presented does not fully establish the case.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational structural biologists, protein biophysicists, and researchers developing methods for conformational sampling and ensemble prediction. The work is relevant to those interested in extracting more information from deep learning structure prediction models and combining them with physics-based refinement. The potential application to studying conformational dynamics and alternative functional states would interest a broad structural biology audience.</li>
+<li><strong>Major strengths</strong> The manuscript identifies a previously underutilized feature of AF2 predictions (distogram multi-peak signals in low-ranked models) and proposes a practical protocol to exploit it. The approach is orthogonal to MSA-subsampling strategies, which is a useful conceptual contribution. The testing across 20 two-state proteins with diverse conformational change types adds breadth. The inclusion of control experiments (CTRL1 and CTRL2) is commendable. The authors also test on out-of-training-set targets, which strengthens the generalization claim.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence quality</li>
+<li><strong>Claim pointer</strong> The authors claim that their method "effectively samples alternative conformations" and achieves "performance comparable to existing approaches" on OC23 and TP16 datasets.</li>
+<li><strong>Evidence pointer</strong> Table 3, Figures 7 and 8, "Distogram-guided modeling of alternative conformation further refines the AF2 predictions" section</li>
+<li><strong>Concern</strong> The quantitative comparison to existing methods is not presented in the visible text. The claim of "comparable performance" to AFsample2 is stated but no numerical comparison (e.g., TM-score distributions, success rates, or statistical tests) is shown. The AUC analysis in Figure 7C is mentioned but the actual values and comparison baselines are not described. Without these data, the performance claim cannot be evaluated.</li>
+<li><strong>Why it matters</strong> The central claim of the manuscript is that the proposed method is useful for predicting alternative conformations. If the performance relative to existing state-of-the-art methods is not quantitatively demonstrated, the practical value of the approach is unclear.</li>
+<li><strong>Resolution test</strong> Provide a table or figure with quantitative comparison of TM-scores, success rates, or other relevant metrics between the proposed method and AFsample2 (and ideally AFsample) on the same datasets, including statistical significance testing where appropriate.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological clarity</li>
+<li><strong>Claim pointer</strong> The signal classification criteria (Classes I–VI) and the energy restraint construction (Equations 4–10) are described as central to the method.</li>
+<li><strong>Evidence pointer</strong> "Extracting information on alternative conformations from distogram analysis" and "Converting distogram into energy restraints for Rosetta modeling" sections, Figure 3</li>
+<li><strong>Concern</strong> The classification criteria are described in a highly condensed manner. The distinction between Classes I–VI is not clearly explained in terms of how each class is treated differently in the restraint construction. The parameters for the bivariate Gaussian fitting (initial values, convergence criteria) are not specified. The energy function construction, particularly the role of the hyperbolic tangent preprocessing and the piecewise form of the scaling parameter mag, is difficult to follow from the equations alone. The choice of the threshold values (e.g., pmax2&gt;0.1pmax1, pmax1−pmax2&lt;0.05pmax1) is not justified.</li>
+<li><strong>Why it matters</strong> Reproducibility is a core requirement for a methods paper. If the classification and restraint construction are not described with sufficient detail, other researchers cannot implement or build upon the method.</li>
+<li><strong>Resolution test</strong> Provide a step-by-step algorithmic description of the classification and restraint construction, including all parameters, thresholds, and their rationales. Consider a pseudocode or flowchart. Clarify how each class of signal is treated differently in the energy function.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Evidence quality</li>
+<li><strong>Claim pointer</strong> The authors state that "AF2 predictions with deep MSA yielded hundreds of multi-peak signals" for 12 of 20 proteins, and that the average precision of alternative conformation signals was 0.73.</li>
+<li><strong>Evidence pointer</strong> Table 2, "Extracting structural information of the alternative conformation based on a known structure and AF2 distogram" section</li>
+<li><strong>Concern</strong> The precision calculation (Equation 3) defines true positives and false positives, but the ground truth for determining true versus false positives is not clearly described. How is it determined whether a predicted alternative signal corresponds to the actual alternative conformation? Is this based on comparison to the experimentally known alternative state? The definition of "precision" in this context needs clarification. Additionally, the relationship between the number of signals and the modeling success is not analyzed.</li>
+<li><strong>Why it matters</strong> The precision metric is used to support the claim that the extracted signals are meaningful. If the ground truth definition is ambiguous, the precision values are difficult to interpret.</li>
+<li><strong>Resolution test</strong> Clearly define the ground truth for true and false positive signals. Describe how the known alternative conformation is used to validate the extracted signals. Provide a more detailed breakdown of precision by protein and by signal class.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Scope of claims</li>
+<li><strong>Claim pointer</strong> The authors extend their analysis to 20 single-state proteins and claim that "most modeled protein systems exhibit some degree of conformational flexibility" and that "in several cases, our approach uncovered putative alternative conformations."</li>
+<li><strong>Evidence pointer</strong> "Discussion" section, Supporting Information S4, S8, S9</li>
+<li><strong>Concern</strong> This extension is presented as a potential application, but the validation is limited. For single-state proteins, there is no experimentally known alternative conformation to validate against. The claim of "putative alternative conformations" is speculative. The criteria for judging whether a sampled conformation is a meaningful alternative state versus a distorted or degenerate model are not defined.</li>
+<li><strong>Why it matters</strong> Overclaiming on preliminary results can mislead readers about the method's capabilities. The single-state extension is interesting but needs to be framed as exploratory with appropriate caveats.</li>
+<li><strong>Resolution test</strong> Either remove or substantially soften the claims about single-state proteins, or provide additional validation (e.g., comparison to known functional states from literature, consistency with experimental data such as hydrogen-deuterium exchange or cross-linking).</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract</li>
+<li><strong>Issue</strong> The abstract states that the method "effectively samples alternative conformations" but does not mention the success rate (85% for best-scored, 90% for best-sampled in one direction). Including a quantitative result would strengthen the abstract.</li>
+<li><strong>Required correction</strong> Consider adding a brief quantitative summary of performance in the abstract.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Methods, "Source of distogram" section</li>
+<li><strong>Evidence pointer</strong> "Source of distogram" section</li>
+<li><strong>Issue</strong> The version of ColabFold (v1.5.2) and the specific parameters are stated, but the exact command or script used for prediction is not provided. The "save_all" option is mentioned but the specific output files used are not fully described.</li>
+<li><strong>Required correction</strong> Provide a link to the code repository and a minimal example command or script for generating the distograms.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Affected element</strong> Results, "Assessment of predicted structures" section</li>
+<li><strong>Evidence pointer</strong> Table 3</li>
+<li><strong>Issue</strong> The success criteria are defined as TM-score improvement over the initial state, but no statistical significance testing is reported. Given that 150 models are sampled, it would be useful to know if the improvements are consistent across independent runs.</li>
+<li><strong>Required correction</strong> Report the variance or confidence intervals for the TM-score improvements across the 150 models, or perform a statistical test comparing the best-scored models to the initial state.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Presentation</li>
+<li><strong>Affected element</strong> Figures 5 and 6</li>
+<li><strong>Evidence pointer</strong> Figures 5 and 6</li>
+<li><strong>Issue</strong> The figure captions are not provided in the text. It is difficult to interpret the structural alignments and radar plots without captions.</li>
+<li><strong>Required correction</strong> Ensure figure captions are included and describe the color schemes, alignment methods, and metrics displayed.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Discussion</li>
+<li><strong>Evidence pointer</strong> Discussion section</li>
+<li><strong>Issue</strong> The discussion mentions that the method is "orthogonal to MSA-subsampling strategies" but does not discuss potential limitations of this orthogonality or scenarios where the method might fail (e.g., proteins with very subtle conformational changes or intrinsically disordered regions).</li>
+<li><strong>Required correction</strong> Add a paragraph discussing limitations and potential failure modes of the method.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (quantitative comparison to existing methods missing), R1-M2 (methodological details insufficient for reproducibility), R1-M3 (ground truth for precision calculation unclear)</li>
+<li><strong>Assessment against Nature-style criteria</strong></li>
+<li><strong>Originality</strong> The idea of mining AF2 distograms for multi-state information without MSA manipulation is relatively novel. Most prior work has focused on MSA subsampling or dropout-based sampling. The specific approach of classifying multi-peak signals and converting them into Rosetta restraints appears to be a new contribution. However, the conceptual foundation builds directly on prior work by the same group (reference 30), and the incremental advance needs to be more clearly articulated.</li>
+<li><strong>Scientific importance</strong> The problem of predicting alternative conformations is important for understanding protein function and dynamics. If the method is robust and generalizable, it could be a useful tool. However, the importance is somewhat limited by the focus on two-state proteins and the reliance on known starting structures. The broader applicability to de novo prediction of conformational ensembles is not demonstrated.</li>
+<li><strong>Interdisciplinary readership</strong> The work sits at the interface of computational structural biology, machine learning, and biophysics. The methods are specific to these fields, and the manuscript is likely to appeal primarily to specialists. The broader significance for cell biology or biochemistry is not strongly argued.</li>
+<li><strong>Technical soundness</strong> The technical approach is plausible, but the manuscript has significant gaps in methodological detail and quantitative validation. The control experiments are a positive feature, but the lack of comparison to state-of-the-art methods weakens the technical case. The statistical treatment of results is minimal.</li>
+<li><strong>Readability for nonspecialists</strong> The manuscript is written in a technical style that assumes familiarity with AF2, distograms, Rosetta, and TM-scores. The introduction provides some context, but the methods section is dense and would be challenging for nonspecialists. The figures are referenced but not described in the text, making it difficult to follow the results.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The core idea is interesting and potentially useful, but the manuscript in its current form does not provide sufficient evidence to fully establish the claims. The missing quantitative comparison, methodological ambiguities, and unclear validation criteria need to be addressed. If the authors can provide a clear, reproducible protocol and a rigorous quantitative evaluation against existing methods, the work could be a valuable contribution to the field.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "performance comparable to existing approaches" (AFsample2) is not supported by quantitative data in the visible text.</li>
+<li>The claim that the method "effectively samples alternative conformations" for 19 of 20 proteins is based on TM-score improvements, but the statistical significance and consistency of these improvements are not reported.</li>
+<li>The extension to single-state proteins and the claim of "putative alternative conformations" is exploratory and lacks validation against experimental data.</li>
+<li>The precision values reported in Table 2 depend on a ground truth definition that is not clearly described.</li>
+<li>The statement that "AF2 predictions inherently contain latent information about the alternative structural states" is supported by the results but is presented as a general conclusion from a limited set of 20 proteins; the generalizability to all two-state proteins is not established.</li>
+<li>The claim that the method is "orthogonal to MSA-subsampling strategies" is conceptually valid but not empirically demonstrated through direct comparison.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

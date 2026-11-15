@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report that, using regenerated silk fibroin as a model system, they experimentally capture an early nucleation window in which protein self-assembly pathways diverge before conformational locking. They combine controlled electric-field perturbation with multiscale structural characterization and coarse-grained simulations to identify nanoscale intermediates that mediate pathway selection. They report that electric fields bias early assembly kinetics nonmonotonically, modulating formation, elongation, and competition of intermediates rather than directly enforcing structure or orientation. They further report that subsequent growth proceeds via elongation and fusion of existing intermediates, with beta-sheet formation and crystallization emerging later to stabilize earlier-biased pathways. They conclude that detectable pathway biasing emerges within the nucleation stage.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or numerical data provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, experimental protocols, simulation details, statistical analyses, and any quantitative results
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually interesting and potentially significant claim about the temporal ordering of pathway selection relative to conformational locking in protein self-assembly. The use of electric-field perturbation as a kinetic probe is creative. However, the abstract alone provides insufficient detail to evaluate the technical soundness of the experimental and computational approaches, the robustness of the evidence for the central claims, or the generalizability of the findings beyond the specific silk fibroin system. The core claim that pathway biasing precedes conformational locking is plausible but not established from the supplied material.
+- **Who would be interested in the results, and why** Researchers in protein self-assembly, biomaterials, and nonequilibrium soft matter would be interested. The work addresses a fundamental question about when assembly pathways become committed, which has implications for designing self-assembling materials and for understanding pathological protein aggregation. The methodological combination of electric-field perturbation with structural characterization may also interest experimentalists seeking new kinetic probes.
+- **Major strengths** The research question is well-posed and addresses a genuine gap in understanding early-stage assembly dynamics. The use of electric-field perturbation as a noninvasive kinetic modulator is an innovative approach. The claim that beta-sheet formation and crystallization are late-stage stabilizers rather than early drivers is a testable and potentially important distinction. The multiscale approach combining experiments and simulations is appropriate for the question.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The authors claim to "experimentally capture and analyze an early nucleation window in which assembly pathways begin to diverge before conformational locking occurs."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract provides no quantitative or qualitative evidence that a distinct "nucleation window" was experimentally resolved. No time-resolved data, structural characterization results, or simulation outputs are described. The claim that pathway divergence occurs "before conformational locking" requires direct temporal comparison of at least two observables, neither of which is specified.
+  - **Why it matters** The central novelty of the work rests on establishing the temporal ordering of pathway divergence relative to conformational locking. Without evidence that both processes were measured on comparable timescales and that their ordering was resolved, the core claim is unsupported.
+  - **Resolution test** Provide time-resolved data showing that a measurable pathway-divergence indicator changes before a measurable conformational-locking indicator, with appropriate error bars and statistical comparison.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic specificity
+  - **Claim pointer** The authors claim that "electric fields bias early assembly kinetics in a nonmonotonic manner, modulating the formation, elongation, and competition of intermediates rather than directly enforcing structure or orientation."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The mechanism by which electric fields modulate intermediate formation, elongation, and competition is not described. No field strengths, exposure times, or kinetic parameters are given. The distinction between "biasing kinetics" and "enforcing structure" is asserted but not operationalized.
+  - **Why it matters** The mechanistic claim is central to the framework proposed. Without specifying how the field couples to the assembly process, the claim is not falsifiable from the provided material.
+  - **Resolution test** Provide quantitative kinetic data at multiple field strengths showing nonmonotonic effects on specific rate constants, and structural data ruling out field-induced orientation or structural templating.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Generalizability
+  - **Claim pointer** The authors claim to "provide a framework for understanding and guiding protein self-assembly under nonequilibrium conditions."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The framework is derived from a single model system, regenerated silk fibroin. No evidence is presented that the observed temporal ordering or field effects generalize to other proteins or assembly conditions.
+  - **Why it matters** The stated framework implies broader applicability. Without comparative data or a mechanistic rationale for generality, the framework remains a hypothesis specific to silk fibroin.
+  - **Resolution test** Provide either comparative data from at least one additional protein system or a mechanistic argument, supported by simulation, for why the observed ordering should be general.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "conformational locking" is used without definition. It is unclear whether this refers to beta-sheet formation, crystallization, or a specific structural transition.
+  - **Required correction** Define "conformational locking" operationally in the abstract or introduction.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Experimental conditions
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** No information is given about the silk fibroin preparation, concentration, buffer conditions, or temperature. These parameters are critical for reproducing self-assembly experiments.
+  - **Required correction** Include key experimental conditions in the abstract or refer to a methods section with full details.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Simulation validation
+  - **Affected element** Coarse-grained simulations
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states that coarse-grained simulations were used but does not indicate whether the simulations were predictive, fitted to experiments, or used for mechanistic interpretation.
+  - **Required correction** Clarify the role of simulations in the abstract, for example whether they were used to test hypotheses or to extract parameters.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The abstract does not provide sufficient evidence to establish the temporal ordering claim, the mechanistic claim about electric-field effects, or the generalizability of the framework.
+- **Assessment against Nature-style criteria** 
+  - Originality: The question of when pathway selection occurs relative to conformational locking is a fresh framing of a known problem. The electric-field perturbation approach is original. However, originality alone is insufficient without evidence.
+  - Scientific importance: The question is important for understanding and controlling protein self-assembly. If established, the findings could influence biomaterials design and aggregation research.
+  - Interdisciplinary readership: The topic bridges biophysics, materials science, and nonequilibrium thermodynamics. The abstract is written accessibly for a broad scientific audience.
+  - Technical soundness: Cannot be assessed from the abstract. No methods, controls, or quantitative results are provided.
+  - Readability for nonspecialists: The abstract is clear and well-structured. Technical terms are used appropriately, though "conformational locking" needs definition.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual framework is interesting and the approach is creative, but the abstract alone does not provide the quantitative temporal data, mechanistic detail, or comparative evidence needed to support the central claims. I would be supportive if the full manuscript provides the missing evidence and addresses the concerns above.
+
+## Risk / unsupported claims
+- The claim that pathway divergence occurs before conformational locking is unsupported without time-resolved comparative data.
+- The claim that electric fields modulate kinetics rather than structure is unsupported without mechanistic or structural evidence.
+- The claim of a generalizable framework for protein self-assembly under nonequilibrium conditions is unsupported from a single model system.
+- The existence of "reproducible nanoscale intermediates" is asserted but not evidenced in the abstract.
+- The nonmonotonic dependence of assembly kinetics on electric field is stated without any quantitative data.

@@ -1,0 +1,95 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, results, conclusions, computational methods) for a single preprint.
+- **Assessment boundary** Scientific validity, methodological soundness, clarity of claims, and alignment with stated evidence. No assessment of editorial fit or publication venue.
+- **Shared manuscript claim summary** The authors present REVEAL, a workflow combining secondary structure ensemble generation, trRosettaRNA2-based tertiary structure prediction, unbiased MD, and Markov state modeling, to capture the ES2↔GS register shift in an engineered HIV-1 TAR mutant. They claim that seeding MD from a diverse tertiary structure ensemble enables sampling of this rare transition within 6.8 µs of aggregate simulation, that sequence-only predictors and NMR-seeded MD fail to do so, and that a novel scoring metric (PWCS) identifies the dominant state without experimental restraints or low-dimensional separation.
+- **Visible evidence base** Abstract, Introduction, Results (narrative), Conclusions, Computational Methods. Figures are referenced but not provided. No raw data, trajectories, or analysis scripts are included.
+- **Missing materials affecting confidence** All figures and supplementary materials are absent. No convergence diagnostics, error bars on free energy surfaces, or validation against experimental observables beyond qualitative state assignment. No details on MSM validation (e.g., Chapman-Kolmogorov tests, implied timescale plots). No force field or water model sensitivity analysis. No comparison of PWCS against existing scoring methods.
+
+## Reviewer
+- **Overall assessment** The manuscript presents a conceptually appealing and timely workflow that addresses a real bottleneck in RNA computational biology. The central idea, that seeding MD from a diverse, secondary-structure-conditioned tertiary ensemble can overcome rare-event sampling limitations, is plausible and worth exploring. However, the evidence as presented is insufficient to establish the core claims. The absence of figures, convergence data, and quantitative validation makes it impossible to assess whether the observed transitions are statistically robust, whether the MSM is well-constructed, or whether PWCS genuinely outperforms existing approaches. The comparison against sequence-only predictors is also weakened by the lack of detail on how those predictions were generated and evaluated. The manuscript reads more like a methods proposal than a validated study, and the conclusions outpace the visible evidence.
+- **Who would be interested in the results, and why** Computational biophysicists and chemists working on RNA conformational dynamics, particularly those interested in rare-event sampling, ensemble generation, and the integration of machine learning with molecular simulation. Method developers in the MSM and enhanced sampling communities may also find the workflow relevant. The PWCS metric, if validated, could be of interest to researchers studying conformational ensembles of RNA and intrinsically disordered proteins.
+- **Major Strengths** The workflow is logically designed and combines established tools in a transparent manner. The choice of HIV-1 TAR Mut as a test system is appropriate, given its known excited states and engineered population inversion. The emphasis on seed diversity as a key determinant of sampling success is a useful conceptual contribution. The introduction of PWCS as a population-aware scoring metric is a novel idea that could have broad applicability. The authors are candid about the limitations of their approach and the need for force field and ion condition sensitivity testing.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "REVEAL captures the reversible ES2 to GS register shift from 6.8 µs of aggregate unbiased sampling across 34 seeds, recovering both basins, the intermediate states, and correctly identifies ES2 as the dominant state."
+  - **Evidence pointer** Results section, Figure 2A; location not provided
+  - **Concern** The central claim of capturing the ES2↔GS transition rests entirely on figures that are not provided. No free energy surface, no representative structures, no time series, and no quantitative measure of sampling convergence are shown. The statement that "the MSM-weighted free energy surface captures reversible transition" cannot be evaluated without seeing the surface, the statistical uncertainties, or the implied timescale convergence. The claim that 6.8 µs is sufficient to sample a transition with a millisecond lifetime in the wild-type is counterintuitive and requires strong evidence of barrier crossing events, which is not presented.
+  - **Why it matters** The entire premise of the paper is that REVEAL enables sampling of a rare event that conventional MD cannot reach. Without visible evidence of the transition, the claim is unsubstantiated. The aggregate simulation time is short relative to the expected timescale of the transition, and the authors do not explain how the seed diversity compensates for this.
+  - **Resolution test** Provide the free energy surface with error bars, show representative structures of each basin, demonstrate multiple transition events between ES2 and GS, and include convergence diagnostics such as implied timescale plots and Chapman-Kolmogorov tests. Quantify the number of observed transitions and the statistical uncertainty in the population estimates.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological validation
+  - **Claim pointer** "PWCS identifies the dominant state even when low-dimensional representations fail to separate the states."
+  - **Evidence pointer** Results section, Figure 8; location not provided
+  - **Concern** PWCS is a central methodological contribution, but its validation is incomplete. The claim that it identifies the dominant state is based on a single system, and the comparison against "low-dimensional representations" is not quantified. It is unclear how PWCS scores compare to simpler metrics, such as MSM stationary probabilities or cluster populations. The sensitivity of PWCS to the number of GMM components, the choice of features, and the resampling procedure is not discussed. The claim that PWCS is "independent of the choice of collective variables" is not demonstrated, as the method is applied to projections of R/G-vectors and to CV1/CV2 directly.
+  - **Why it matters** PWCS is presented as a generalizable tool, but its robustness and added value over existing methods are not established. Without a benchmark against alternative scoring approaches or a demonstration of its utility on a system where low-dimensional separation fails, the claim is speculative.
+  - **Resolution test** Provide a systematic comparison of PWCS against MSM populations, cluster populations, and other scoring metrics. Show that PWCS rankings are stable across different GMM component counts and feature choices. Demonstrate its utility on a second system or on a case where the low-dimensional projection does not separate states.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Comparative analysis
+  - **Claim pointer** "Sequence-only ensemble predictors (AlphaFold3, Boltz-2, ESMFold2, OpenFold3 and Protenix-v2) place every structure near the ground state and invert the experimentally observed population ordering."
+  - **Evidence pointer** Results section, Figure 2C; location not provided
+  - **Concern** The benchmark against sequence-only predictors is a key part of the argument, but the details are missing. It is unclear how many structures were generated per predictor, whether any filtering or clustering was applied, and how the "population ordering" was inferred from a set of discrete predictions. The statement that all five predictors "place every structure near the ground state" is a strong claim that requires quantitative support, such as a distribution of CV1/CV2 values for each predictor. The choice of predictors and their versions is also not justified.
+  - **Why it matters** The comparison is used to argue that sequence-only models are inadequate for ensemble prediction, which is an important claim for the field. Without a rigorous and reproducible benchmark, the conclusion is not supported.
+  - **Resolution test** Provide the full distribution of predicted structures for each predictor in the CV1/CV2 plane. State the number of structures generated, any clustering or selection steps, and the criteria used to assign states. Include a quantitative measure of how far each predictor's ensemble is from the experimental ES2 and GS states.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Physical model sensitivity
+  - **Claim pointer** "The populations and transition times reported here are properties of the chosen force field, water model and ionic conditions as much as of TAR Mut itself."
+  - **Evidence pointer** Conclusions section; location not provided
+  - **Concern** The authors acknowledge that their results depend on the physical model, but they do not test this dependence. The free energy difference of ~0.5 kT between ES2 and GS is presented as consistent with the design, but it is not clear how sensitive this value is to the force field, water model, or ion parameters. The manuscript would be strengthened by at least one additional simulation set with a different force field or ion condition to show that the qualitative conclusions hold.
+  - **Why it matters** The claim that REVEAL recovers the correct dominant state is only meaningful if it is robust to reasonable variations in the physical model. Without such a test, the result could be a fortuitous artifact of the specific simulation setup.
+  - **Resolution test** Repeat the REVEAL workflow with at least one alternative force field (e.g., DES-Amber) or with different Mg2+ concentrations, and show that the ES2-dominant population ordering and the transition pathway are preserved.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Methods, Featurization
+  - **Evidence pointer** Computational Methods; location not provided
+  - **Issue** The definition of the G-vector is incomplete. The text states "The corresponding G-vector maps this displacement into a smooth four-component representation" but the actual formula is not given. The cutoff description is also ambiguous.
+  - **Required correction** Provide the explicit formula for the G-vector components and clarify the cutoff behavior.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Methods, MSM
+  - **Evidence pointer** Computational Methods; location not provided
+  - **Issue** The MSM construction is described briefly. The number of clusters (k=200) and lag time (10 frames) are stated, but the selection of these parameters is not justified. The statement that the results are robust to these choices is not supported by data.
+  - **Required correction** Show the implied timescale plot and the sensitivity analysis for k and lag time, or provide a reference for the chosen values.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Statistical rigor
+  - **Affected element** Results, MFPTs
+  - **Evidence pointer** Results section, Figure 7; location not provided
+  - **Issue** The mean first passage times are reported with 95% confidence intervals, but the number of transition events used to estimate these values is not stated. For a rare event, the statistics may be poor.
+  - **Required correction** Report the number of observed transitions for each MFPT estimate and discuss the statistical reliability.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Results, Committor analysis
+  - **Evidence pointer** Results section, Figure 5C, D; location not provided
+  - **Issue** The committor analysis is described qualitatively. It is unclear how the committor was estimated and whether the results are converged.
+  - **Required correction** Provide details on the committor estimation method and convergence criteria.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Introduction
+  - **Evidence pointer** Introduction; location not provided
+  - **Issue** The sentence "In essence, this approach is be inspired by recent methods" contains a grammatical error.
+  - **Required correction** Correct to "In essence, this approach is inspired by recent methods."
+- **Technical failings that need to be addressed before the case is established** R1-M1 (missing evidence for the central transition claim), R1-M2 (incomplete validation of PWCS), R1-M3 (inadequate benchmark details for sequence-only predictors). These are blocking because the core conclusions depend on them.
+- **Assessment against Nature-style criteria** Originality: The workflow is a sensible combination of existing tools, and PWCS is a novel concept, but the overall approach is not fundamentally new. Scientific importance: The problem of capturing RNA excited states is important, and a validated workflow would be valuable, but the current evidence does not establish that REVEAL solves it. Interdisciplinary readership: The work is primarily of interest to computational biophysicists and method developers; the broader biological or chemical readership would need clearer demonstrations of biological insight. Technical soundness: The methods are described in sufficient detail to be reproducible, but the lack of validation data undermines confidence. Readability for nonspecialists: The manuscript is clearly written and the logic is easy to follow, but the absence of figures makes it difficult for any reader to assess the results.
+- **Recommendation posture** Currently not established from the provided evidence. The workflow is promising and the questions are relevant, but the manuscript as presented does not provide sufficient evidence to support the central claims. The authors should be encouraged to resubmit with full figures, convergence analyses, and a more rigorous benchmark of PWCS and the sequence-only predictors.
+
+## Risk / unsupported claims
+- The claim that REVEAL captures the reversible ES2↔GS transition is unsupported without the free energy surface and transition statistics.
+- The claim that PWCS identifies the dominant state even when low-dimensional representations fail is unsupported without a quantitative comparison.
+- The claim that sequence-only predictors invert the population ordering is unsupported without details on the prediction protocol and the resulting distributions.
+- The claim that the MSM is converged and robust to parameter choices is unsupported without convergence diagnostics.
+- The claim that the ~0.5 kT free energy difference is consistent with the design is qualitative and not backed by error estimates.
+- The claim that REVEAL is "the first Markov state model of TAR Mut" is a strong statement that would require a literature search to verify.

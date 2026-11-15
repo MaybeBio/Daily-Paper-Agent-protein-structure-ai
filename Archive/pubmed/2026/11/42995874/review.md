@@ -1,0 +1,86 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors introduce Chaperone, a lightweight and customizable framework for integrating RFdiffusion3 with downstream protein design tools. They claim reduced token usage by 86% and GPU costs by 64% relative to baseline agents, increased computational design pass rate, successful design of low nanomolar cortisol binders zero shot, a symmetric 12-subunit self-assembly nanoparticle, and a linker mediating crystalline assemblies.
+- **Visible evidence base** Abstract text only; no quantitative data, experimental protocols, or statistical analyses are visible
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, supplementary information, benchmark definitions, baseline agent specifications, and experimental validation details
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially valuable contribution to computational protein design, addressing a real bottleneck in tool orchestration. However, the evidence base is entirely insufficient to evaluate the core claims. Key metrics such as token usage reduction, GPU cost savings, and pass rate improvements are stated without methodological context or statistical support. The biological results, including low nanomolar binders and complex assemblies, are asserted without experimental validation details. The framework's novelty relative to existing agent harnesses is unclear from the abstract alone.
+- **Who would be interested in the results, and why** Computational protein designers, structural biologists, and researchers developing AI-driven laboratory automation would be interested. The framework addresses practical inefficiencies in multi-tool workflows, and the demonstrated applications to binder design and self-assembling nanoparticles have broad relevance to protein engineering and synthetic biology.
+- **Major strengths** The abstract identifies a genuine problem in fragmented computational protein design workflows. The proposed solution, a standardized tool interface with parallelized execution, is conceptually sound and addresses scalability. The range of demonstrated applications, from small-molecule binders to symmetric assemblies, suggests versatility. The commitment to open-source availability is commendable.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "reduces total token usage relative to baseline agents by 86% and GPU costs by 64%, while increasing the overall computational design pass rate"
+  - **Evidence pointer** Abstract, Results section not provided
+  - **Concern** The quantitative efficiency claims are presented without any methodological detail. The baseline agents are not defined, the benchmark tasks are not specified beyond "nine biomolecular design tasks," and no statistical measures such as confidence intervals or error bars are mentioned. The pass rate increase is not quantified.
+  - **Why it matters** These efficiency metrics are central to the paper's value proposition. Without knowing the baseline configuration, task difficulty distribution, and variance across runs, readers cannot assess whether the improvements are robust or task-specific.
+  - **Resolution test** Provide full benchmark definitions, baseline agent descriptions, per-task results with variance measures, and statistical significance testing.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Experimental validation
+  - **Claim pointer** "yielding low nanomolar binders to cortisol zero shot"
+  - **Evidence pointer** Abstract, Results section not provided
+  - **Concern** The claim of low nanomolar binders is a strong biological result, but no experimental details are given. Binding affinity measurement methods, number of candidates tested, hit rates, and reproducibility are absent. The term "zero shot" requires clarification regarding what prior information was excluded.
+  - **Why it matters** Low nanomolar affinity is a high bar for computational design. Without experimental protocols and replicate data, this claim cannot be distinguished from a single favorable measurement or a selected outlier.
+  - **Resolution test** Provide full experimental methods, binding assay details, dose-response curves, replicate measurements, and comparison to appropriate controls.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Structural validation
+  - **Claim pointer** "design of a symmetric 12-subunit self-assembly nanoparticle and a linker that mediates interactions between C2- and D3-symmetric protein complexes to form crystalline assemblies"
+  - **Evidence pointer** Abstract, Results section not provided
+  - **Concern** These structural claims require validation by experimental techniques such as electron microscopy, X-ray crystallography, or other high-resolution methods. The abstract provides no indication of how these assemblies were characterized or whether the designs behaved as intended.
+  - **Why it matters** Computational predictions of self-assembly and crystallization frequently fail. Without experimental structural evidence, these results remain in silico predictions rather than demonstrated capabilities.
+  - **Resolution test** Provide structural characterization data, including micrographs, density maps, crystallographic statistics, or equivalent evidence, along with design success rates.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Novelty and comparison
+  - **Claim pointer** "a lightweight and customizable framework that enables seamless integration of RFdiffusion3 with downstream sequence design, structure prediction, and evaluation tools"
+  - **Evidence pointer** Abstract, Introduction not provided
+  - **Concern** The abstract does not position Chaperone relative to existing agent frameworks or tool orchestration systems in computational biology. The claimed novelty of "agent harnesses built around standardized tool interfaces" is not contextualized against prior work.
+  - **Why it matters** Without a clear comparison to existing solutions, readers cannot assess whether Chaperone represents a meaningful advance or an incremental contribution.
+  - **Resolution test** Include a comparative analysis with existing frameworks, highlighting specific architectural or performance advantages.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract, framework description
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The term "agentic" is used without definition, and the distinction between Chaperone as a "harness" versus the underlying AI agents is unclear.
+  - **Required correction** Define "agentic" in the context of this work and clarify the relationship between Chaperone and the agents it orchestrates.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Abstract, tool integration claim
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The claim of integrating "more than 50 other protein design tools" is not accompanied by a list or categorization of these tools.
+  - **Required correction** Provide a supplementary table listing all integrated tools and their interfaces.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Temporal context
+  - **Affected element** Abstract, timeline
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The "two-week end-to-end small-molecule binder design campaign" is mentioned without context on team size, computational resources, or comparison to conventional timelines.
+  - **Required correction** Provide resource usage details and a comparison to standard campaign durations.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The efficiency claims, biological results, and structural validations are all unsubstantiated from the abstract alone. These are central to the paper's contribution and must be fully documented.
+- **Assessment against Nature-style criteria** 
+  - Originality: The concept of a standardized tool harness for protein design agents appears potentially novel, but the abstract does not provide sufficient comparison to prior work to establish originality.
+  - Scientific importance: If the efficiency and success claims hold, the work could significantly accelerate computational protein design, which is of high importance. However, importance is contingent on validation.
+  - Interdisciplinary readership: The work bridges computational biology, machine learning, and structural biology, which could attract broad interest. The abstract is accessible but lacks depth for specialists.
+  - Technical soundness: Cannot be assessed from the abstract. The efficiency metrics and biological results require full methodological transparency.
+  - Readability for nonspecialists: The abstract is generally readable, but terms like "agentic" and "toolset harnessing" may be unclear to a broader audience.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents promising directions, but the core quantitative and biological claims are unverifiable without the full manuscript. A supportive stance would require the complete methods, data, and validation results.
+
+## Risk / unsupported claims
+- The 86% token usage reduction and 64% GPU cost reduction are unsupported without baseline definitions and benchmark details.
+- The increased computational design pass rate is unquantified and lacks statistical context.
+- The low nanomolar cortisol binder claim is unsupported without experimental binding data and protocols.
+- The symmetric 12-subunit nanoparticle and crystalline assembly designs are unsupported without structural validation evidence.
+- The claim of "seamless integration" of over 50 tools is unverifiable without a tool list and interface documentation.
+- The "zero shot" designation for cortisol binders is ambiguous and requires clarification of what training data or prior knowledge was excluded.

@@ -1,0 +1,24 @@
+{
+  "source": "pubmed",
+  "id": "43001923",
+  "title": "HEIWA: Hybrid Explicit-Implicit Water Attention Affects Force Field Accuracy in Structure-Based Protein Language Model ESM3.",
+  "authors": "Ernest Ho, Ngai Hei; Yang, Chao Tung; Ng, I-Son; Chang, Jo-Shu",
+  "journal": "Journal of chemical information and modeling",
+  "published_date": "2026-11-09",
+  "window": {
+    "start": "2026-11-08",
+    "end": "2026-11-14"
+  },
+  "score": 8,
+  "one_liner_zh": "该文提出HEIWA模块，将显式/隐式水溶剂信息注入ESM3蛋白语言模型，以增强其对力场物理相互作用的感知，并通过热稳定性分类和MD模拟验证改进，属于蛋白质结构计算与AI结合的方法创新。",
+  "abstract": "Protein language models have achieved remarkable success in structure prediction and de novo design. However, their understanding of physical interactions remains limited. For structure-based models, we hypothesize that this limitation stems from the absence of explicit solvent modeling: water mediates hydrogen bonding, hydrophobic burial, and electrostatic interactions that govern protein thermodynamics and kinetics, yet current structure-based models treat proteins as if they exist in a vacuum. Using thermophilic protein classification as a proxy task for force-field awareness, per-residue logit mis-correlated with H-bonds as a destabilizing attribute and exhibits significant solvent-accessible surface area (SASA)-dependent error, despite high overall classification accuracy. These artifacts point to the water-protein interface as a source of systematic bias. To address this, we propose HEIWA (HybridExplicit-Implicit Water Attention), a novel attention module that injects solvent-mediated force-field information into static ESM3 residue embeddings via an all-query-to-all-key water-residue attention. Biophysics-guided model selection identifies configurations whose residue-level outputs are more consistent with the RMSF benchmark and selected biophysical attributes, while classification performance remains broadly comparable to the baseline. By forcing the model to predict the protein thermophilicity from the contributions of individual residues, HEIWA learns biophysical patterns that can be extended to SUPFAM absent from the training data set. HEIWA also largely preserves the embedding structure of ESM3. Molecular dynamics simulations show improved kinetic stability under thermophilic conditions, suggesting the potential to generate structures with greater kinetic stability. To our knowledge, this is the first study to incorporate explicit solvent encoding into a residue-resolution protein language model.",
+  "abstract_zh": "蛋白质语言模型在结构预测和从头设计方面取得了显著成功。然而，它们对物理相互作用的理解仍然有限。对于基于结构的模型，我们假设这一局限性源于缺乏显式溶剂建模：水介导氢键、疏水埋藏和静电相互作用，这些作用支配着蛋白质的热力学和动力学，但当前基于结构的模型将蛋白质视为存在于真空中。使用嗜热蛋白分类作为力场感知的代理任务，每个残基的logit与氢键作为去稳定属性存在错误相关，并表现出显著的溶剂可及表面积（SASA）依赖性误差，尽管整体分类准确率较高。这些伪影表明水-蛋白质界面是系统性偏差的来源。为解决这一问题，我们提出HEIWA（混合显式-隐式水注意力，HybridExplicit-Implicit Water Attention），一种新颖的注意力模块，通过全查询到全键的水-残基注意力，将溶剂介导的力场信息注入静态ESM3残基嵌入中。生物物理引导的模型选择识别出残基级输出与RMSF基准及选定生物物理属性更一致的配置，而分类性能与基线大致相当。通过强制模型从单个残基的贡献预测蛋白质的嗜热性，HEIWA学习到的生物物理模式可扩展到训练数据集中未包含的SUPFAM。HEIWA还基本保留了ESM3的嵌入结构。分子动力学模拟显示在嗜热条件下动力学稳定性提高，表明其具有生成更高动力学稳定性结构的潜力。据我们所知，这是首次将显式溶剂编码纳入残基分辨率蛋白质语言模型的研究。",
+  "has_fulltext": true,
+  "fulltext_source": "pmc",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/43001923/",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/43001923/",
+  "paper_page_path": "papers/pubmed/43001923/index.html"
+}

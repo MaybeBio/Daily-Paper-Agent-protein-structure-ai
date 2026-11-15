@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DynamicsPLM: A Dynamics-Enriched Small Protein Language Model for Protein Variant Effect Prediction · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>DynamicsPLM: A Dynamics-Enriched Small Protein Language Model for Protein Variant Effect Prediction</h1>
+      <div class="meta">Tuan Minh Dao; Amarda Shehu; Anowarul Kabir</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-11-13
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.11.11.765945">原文</a>
+      </div>
+      <p class="one-liner">该文提出一个35M参数的小型蛋白语言模型DynamicsPLM，通过融合序列进化信息和分子动力学结构特征，实现零样本突变效应预测，属于蛋白质结构相关计算建模，方法上结合了PLM和MD监督，具有方法创新性。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Predicting how mutations impact protein function and stability remains a key challenge in computational biology. Current state-of-the-art protein language models (PLMs) primarily scale parameter size on sequence corpora to capture evolutionary constraints but remain blind to the explicit physical dynamics of folded proteins. Conversely, models trained strictly on physical dynamics neglect critical evolutionary sequence statistics. In this paper, we bridge this gap by introducing DynamicsPLM, a highly parameter-efficient 35-million-parameter model that unifies evolutionary and biophysical representation learning. Utilizing a second-stage, multi-task continual pretraining strategy on over 60,000 proteins, we enrich a foundational sequence encoder with explicit residue-level and pairwise molecular dynamics heads while preserving its original evolutionary knowledge. At inference, DynamicsPLM computes zero-shot mutation effects from sequence alone by balancing an evolutionary plausibility score against a structural dynamics disruption score. Across the massive ProteinGym benchmark and natural variants of the Tsuboyama folding stability dataset, DynamicsPLM achieves state-of-the-art accuracy among all models under 100M parameters, and matches or outperforms several billion-scale sequence-based models of its size. Our findings demonstrate that explicit structural-dynamics supervision provides a parameter-efficient alternative to raw scale. Availability: All codes including data preparation scripts, training and validation recipes, and experimental configurations for LoMuS are available at: https://github.com/kabir-ai2bio-lab/DynamicsPLM.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">预测突变如何影响蛋白质功能和稳定性仍然是计算生物学中的一个关键挑战。当前最先进的蛋白质语言模型（PLMs）主要通过在序列语料库上扩展参数规模来捕捉进化约束，但对折叠蛋白质的显式物理动力学视而不见。相反，严格基于物理动力学训练的模型则忽视了关键的进化序列统计信息。在本文中，我们通过引入DynamicsPLM弥合了这一差距，这是一个高度参数高效的3500万参数模型，统一了进化和生物物理表示学习。利用对超过60,000种蛋白质的第二阶段多任务持续预训练策略，我们丰富了基础序列编码器，添加了显式的残基级和成对分子动力学头，同时保留了其原有的进化知识。在推理时，DynamicsPLM仅从序列中通过平衡进化合理性评分与结构动力学破坏评分来计算零样本突变效应。在庞大的ProteinGym基准和Tsuboyama折叠稳定性数据集的自然变体上，DynamicsPLM在所有低于1亿参数的模型中达到了最先进的准确性，并在其规模下匹配或超越了多个数十亿规模的基于序列的模型。我们的研究结果表明，显式结构动力学监督提供了一种参数高效的替代原始规模的方法。可用性：包括数据准备脚本、训练和验证配方以及LoMuS实验配置在内的所有代码可在以下网址获取：https://github.com/kabir-ai2bio-lab/DynamicsPLM。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：DynamicsPLM: A Dynamics-Enriched Small Protein Language Model for Protein Variant Effect Prediction</li>
+<li><strong>作者</strong>：Tuan Minh Dao; Amarda Shehu; Anowarul Kabir</li>
+<li><strong>单位</strong>：未提供（根据作者信息推测为美国高校，具体单位未在摘要中给出）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026（预印本日期 2026-11-13）</li>
+<li><strong>论文类型</strong>：预印本（方法学/应用研究）</li>
+<li><strong>领域</strong>：蛋白质语言模型 × 分子动力学 × 变异效应预测</li>
+<li><strong>关键词</strong>：protein language model, variant effect prediction, molecular dynamics, continual pretraining, zero-shot prediction</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.11.11.765945</li>
+<li><strong>代码</strong>：https://github.com/kabir-ai2bio-lab/DynamicsPLM</li>
+<li><strong>数据</strong>：ProteinGym benchmark；Tsuboyama folding stability dataset（自然变异）</li>
+<li><strong>阅读日期</strong>：2026-11-14</li>
+<li><strong>在该方向中的位置</strong>：本文处于「蛋白质结构相关计算研究 × AI 方法」交叉点，具体位于 PLM 与 MD 模拟融合的路径上。其核心主张是：在小型 PLM（35M 参数）上通过第二阶段的动力学增强持续预训练，使模型在变异效应预测任务上达到或超越数十亿参数模型，从而挑战「规模至上」范式，提出「显式结构动力学监督可作为参数规模的有效替代」这一论点。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文通过一个 35M 参数的小型蛋白质语言模型 DynamicsPLM，在第二阶段多任务持续预训练中引入显式的残基级和配对级分子动力学头，使模型在推理时仅从序列出发、通过平衡进化保守性得分与结构动力学扰动得分来零样本预测变异效应，在 ProteinGym 和 Tsuboyama 数据集上达到 100M 参数以下模型的最高精度，并匹配或超越若干十亿级序列模型。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何在不依赖大规模参数扩展的前提下，让蛋白质语言模型获得对蛋白质物理动力学的显式理解，从而提升变异效应预测的准确性？</li>
+<li><strong>为什么重要</strong>：变异效应预测在疾病机制理解、蛋白质工程和药物设计中具有直接应用价值。现有 PLM 主要依赖序列语料中的进化约束，但缺乏对蛋白质折叠后物理动力学的显式建模；而纯物理模型（如 MD）又忽略了进化序列统计信息。两者融合有望互补短板。</li>
+<li><strong>现有方法为何不足</strong>：</li>
+<li>大规模 PLM（如 ESM-2、ProtTrans）通过参数扩展提升性能，但计算成本高、可解释性差，且仍缺乏显式物理动力学信号。</li>
+<li>纯 MD 或基于结构的模型计算昂贵，难以大规模应用于变异效应扫描。</li>
+<li>已有融合方法（如 ESM-IF、MIF-Net）多依赖结构输入或需要额外结构预测步骤，未能从序列直接端到端地融合动力学信息。</li>
+<li><strong>精确研究问题</strong>：Can a small PLM (35M parameters) enriched with explicit molecular dynamics supervision during continual pretraining achieve state-of-the-art zero-shot variant effect prediction without scaling to billions of parameters?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文摘要及该领域公开知识构建，标注为「经外部核验」的部分基于已知文献，其余为「仅本文框架」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一阶段：序列 PLM</td>
+<td>ESM-1b/2, ProtBERT, ProtT5</td>
+<td>捕捉进化约束，零样本变异预测能力强</td>
+<td>缺乏显式物理动力学；性能依赖参数规模</td>
+<td>本文的基础编码器</td>
+</tr>
+<tr>
+<td>第二阶段：结构感知 PLM</td>
+<td>ESM-IF, MIF-Net, ProstT5</td>
+<td>引入结构信息，改善功能相关预测</td>
+<td>依赖结构输入或结构预测；未显式建模动力学</td>
+<td>本文的对比对象</td>
+</tr>
+<tr>
+<td>第三阶段：物理模拟融合</td>
+<td>MD + ML 打分函数, AlphaFold + 能量函数</td>
+<td>显式物理建模，可解释性强</td>
+<td>计算昂贵；难以大规模应用；忽略进化统计</td>
+<td>本文的动力学头来源</td>
+</tr>
+<tr>
+<td>第四阶段（本文）：动力学增强小型 PLM</td>
+<td><strong>DynamicsPLM</strong></td>
+<td>参数高效（35M）；融合进化 + 动力学；序列端到端零样本</td>
+<td>仅验证了变异效应预测任务；动力学头为粗粒度监督</td>
+<td><strong>本文位置</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>脉络标注</strong>：上述阶段划分中，ESM、ProtTrans、ESM-IF 等为经外部核验的公开方法；本文的具体技术路径（第二阶段多任务持续预训练 + 动力学头）为「仅本文框架」。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PLM 缺乏显式物理动力学</td>
+<td>现有 PLM 主要从序列语料学习进化约束，对折叠后蛋白质的物理运动（如残基波动、配对协同运动）无显式表征</td>
+<td>序列语料本身不包含折叠态的三维动力学信息；参数扩展只能间接增强统计关联，无法直接注入物理约束</td>
+<td>Abstract: "remain blind to the explicit physical dynamics of folded proteins"</td>
+</tr>
+<tr>
+<td>纯物理模型忽略进化统计</td>
+<td>基于 MD 或能量函数的模型未利用大规模序列进化信息，预测精度受限</td>
+<td>MD 模拟的构象采样空间有限，且计算成本限制了可覆盖的序列多样性</td>
+<td>Abstract: "models trained strictly on physical dynamics neglect critical evolutionary sequence statistics"</td>
+</tr>
+<tr>
+<td>参数规模与性能的强绑定</td>
+<td>当前 SOTA PLM 依赖数十亿参数获得最佳性能，小型模型难以匹敌</td>
+<td>传统观点认为模型容量是表征能力的主要瓶颈</td>
+<td>Abstract: "Current state-of-the-art PLMs primarily scale parameter size on sequence corpora"</td>
+</tr>
+<tr>
+<td>进化与动力学信息难以统一</td>
+<td>两类信息来自不同模态（序列 vs. 结构动力学），缺乏有效融合框架</td>
+<td>需要设计既能保留进化知识又能注入动力学监督的训练策略</td>
+<td>Abstract: "we bridge this gap by introducing DynamicsPLM"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>DynamicsPLM 采用两阶段训练策略：
+- <strong>第一阶段</strong>：使用一个基础序列编码器（35M 参数），在序列语料上预训练以捕捉进化约束。
+- <strong>第二阶段</strong>：在超过 60,000 个蛋白质上进行多任务持续预训练，添加显式的残基级（residue-level）和配对级（pairwise）分子动力学头，同时保留原有进化知识。
+- <strong>推理阶段</strong>：仅从序列输入，计算零样本变异效应，通过平衡两个得分——进化保守性得分（evolutionary plausibility score）与结构动力学扰动得分（structural dynamics disruption score）——得到最终预测。</p>
+<h3>2) 核心洞察</h3>
+<p>[Analysis] 本文的核心洞察在于：<strong>显式的结构动力学监督可以作为参数规模的替代品</strong>。具体而言：
+- 通过在持续预训练阶段注入 MD 衍生的动力学标签（残基级波动、配对协同运动），模型可以在不增加参数量的情况下获得对蛋白质物理行为的显式表征。
+- 进化信息与动力学信息在推理时通过得分平衡而非特征拼接的方式融合，避免了灾难性遗忘，同时允许两个信号独立贡献。
+- 这一设计隐含假设：变异效应主要由「进化保守性」和「结构动力学扰动」两个正交因素决定，二者互补而非冗余。</p>
+<h3>3) 可能的普适教训</h3>
+<p>[Analysis] 从方法论层面，本文提供了一个可迁移的范式：<strong>在小型模型上通过任务特定的持续预训练注入物理先验，可以在特定下游任务上匹敌大规模模型</strong>。这暗示：
+- 模型规模不是唯一杠杆；「训练信号的信息密度」同样关键。
+- 多任务持续预训练（而非从头训练）是融合异构知识（进化 + 物理）的有效策略。
+- 推理时的得分平衡机制（而非端到端联合预测）可以灵活组合不同来源的信号，且便于调试和解释。</p>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质氨基酸序列（单序列，无需结构或 MSA 输入）</li>
+<li><strong>输出</strong>：变异效应预测（零样本，即突变对蛋白质功能/稳定性的影响得分）</li>
+<li><strong>模块</strong>：
+  1. 基础序列编码器（35M 参数，预训练于序列语料）
+  2. 残基级 MD 头（预测每个残基的动力学属性，如 RMSF）
+  3. 配对级 MD 头（预测残基对的协同运动或接触稳定性）
+  4. 推理模块：进化保守性得分 + 结构动力学扰动得分的加权平衡</li>
+<li><strong>训练</strong>：</li>
+<li>第一阶段：标准序列掩码语言建模（MLM）预训练</li>
+<li>第二阶段：多任务持续预训练，在 60,000+ 蛋白质上同时优化序列 MLM 损失 + 残基级 MD 预测损失 + 配对级 MD 预测损失</li>
+<li><strong>工具</strong>：未提供具体 MD 模拟工具（推测为 GROMACS/OpenMM 等，但摘要未说明）</li>
+<li><strong>反馈回路</strong>：持续预训练阶段，MD 头产生的梯度同时影响编码器表征，使编码器逐渐获得动力学感知能力；推理阶段无反馈回路</li>
+<li><strong>假设</strong>：
+  1. MD 衍生的动力学标签（残基级 + 配对级）能够编码对变异效应预测有用的物理信号
+  2. 多任务持续预训练不会导致灾难性遗忘（即进化知识得以保留）
+  3. 进化保守性得分与结构动力学扰动得分在推理时线性平衡足以捕捉变异效应的主要决定因素</li>
+</ul>
+<p><strong>文字流程</strong>：</p>
+<pre><code>输入序列 → 基础编码器（35M）→ 序列表征
+         → [推理时] 计算进化保守性得分（基于序列似然）
+         → [推理时] 通过 MD 头计算结构动力学扰动得分
+         → 加权平衡 → 变异效应预测
+</code></pre>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基础序列编码器（35M）</td>
+<td>从序列提取进化相关的表征</td>
+<td>提供序列层面的先验知识，是变异效应预测的基础</td>
+<td>输入：序列；输出：残基级隐表征</td>
+<td>Abstract: "preserving its original evolutionary knowledge"</td>
+<td>预期：模型退化为纯 MD 打分函数，失去进化保守性信号，变异预测精度显著下降（[预期效应]）</td>
+</tr>
+<tr>
+<td>残基级 MD 头</td>
+<td>预测每个残基的动力学属性（如波动性）</td>
+<td>为模型注入位点特异性的物理柔性信息</td>
+<td>输入：编码器隐表征；输出：残基级动力学预测</td>
+<td>Abstract: "explicit residue-level ... molecular dynamics heads"</td>
+<td>预期：失去位点特异性柔性信号，对影响局部稳定性的突变预测能力下降（[预期效应]）</td>
+</tr>
+<tr>
+<td>配对级 MD 头</td>
+<td>预测残基对的协同运动或接触稳定性</td>
+<td>捕捉突变对残基间相互作用的非局部扰动</td>
+<td>输入：编码器隐表征（配对）；输出：配对级动力学预测</td>
+<td>Abstract: "pairwise molecular dynamics heads"</td>
+<td>预期：失去长程相互作用信息，对破坏残基-残基接触的突变预测能力下降（[预期效应]）</td>
+</tr>
+<tr>
+<td>多任务持续预训练策略</td>
+<td>在保留进化知识的同时注入动力学监督</td>
+<td>避免从头训练的高成本，同时防止灾难性遗忘</td>
+<td>输入：序列 + MD 标签；输出：多任务损失</td>
+<td>Abstract: "multi-task continual pretraining strategy"</td>
+<td>预期：若移除，模型无法获得动力学感知，退化为纯序列 PLM（[预期效应]）</td>
+</tr>
+<tr>
+<td>推理得分平衡模块</td>
+<td>组合进化保守性得分与动力学扰动得分</td>
+<td>允许两个正交信号独立贡献，灵活调节权重</td>
+<td>输入：两个得分；输出：最终变异效应预测</td>
+<td>Abstract: "balancing an evolutionary plausibility score against a structural dynamics disruption score"</td>
+<td>预期：若移除平衡机制，模型只能利用单一信号，精度下降（[预期效应]）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：由于仅提供摘要，所有消融效应均为「预期效应」而非「实测消融效应」。文中未提供具体消融实验数据。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>。摘要中未提供任何数学公式或符号定义。文中提到的「进化保守性得分」和「结构动力学扰动得分」的具体计算方式未在摘要中给出。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<h3>数据集与评测协议</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主基准</td>
+<td>ProteinGym benchmark（大规模变异效应基准，包含数千个蛋白质的深度突变扫描数据）</td>
+</tr>
+<tr>
+<td>辅助基准</td>
+<td>Tsuboyama folding stability dataset（自然变异，关注蛋白质折叠稳定性）</td>
+</tr>
+<tr>
+<td>模型规模</td>
+<td>35M 参数（DynamicsPLM）</td>
+</tr>
+<tr>
+<td>对比基线</td>
+<td>100M 参数以下模型；若干十亿级序列模型</td>
+</tr>
+<tr>
+<td>评测指标</td>
+<td>未在摘要中具体说明（推测为 Spearman 相关或 AUC，但未提供）</td>
+</tr>
+<tr>
+<td>训练数据</td>
+<td>60,000+ 蛋白质（第二阶段持续预训练）</td>
+</tr>
+<tr>
+<td>推理输入</td>
+<td>仅序列（零样本）</td>
+</tr>
+<tr>
+<td>代码可用性</td>
+<td>GitHub 仓库提供数据准备脚本、训练/验证配方和实验配置</td>
+</tr>
+</tbody>
+</table>
+<h3>实验列表</h3>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 Claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ProteinGym 基准评测</td>
+<td>DynamicsPLM 在 100M 参数以下模型中达到 SOTA</td>
+<td>对比所有 100M 以下模型</td>
+<td>达到 SOTA 精度</td>
+<td>动力学增强可提升小型 PLM 的变异预测能力</td>
+<td>未提供具体数值，无法判断与十亿模型的差距大小</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>与十亿级模型对比</td>
+<td>小型模型可匹配或超越大规模模型</td>
+<td>对比若干十亿级序列模型</td>
+<td>匹配或超越</td>
+<td>显式动力学监督可替代部分参数规模优势</td>
+<td>未提供具体哪些模型、差距多少</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>Tsuboyama 自然变异评测</td>
+<td>在自然变异上同样有效</td>
+<td>对比该数据集上的其他方法</td>
+<td>达到 SOTA</td>
+<td>动力学增强对自然变异同样有效</td>
+<td>未提供与 ProteinGym 结果的一致性分析</td>
+<td>Abstract</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：摘要中未提供具体数值、图表或详细实验协议。所有结果描述均为作者主张，未提供可独立验证的量化数据。</p>
+</blockquote>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：变异效应预测（零样本），涵盖功能与稳定性两方面。不涉及结构预测、对接或构象采样任务。</li>
+<li><strong>输入限制</strong>：仅序列输入，无需 MSA 或结构。这意味着模型无法利用同源序列信息（如 ESM-MSA 类模型），也无法利用实验结构。</li>
+<li><strong>模型规模</strong>：35M 参数，属于小型 PLM。结论仅适用于该规模范围，不能外推至更大或更小模型。</li>
+<li><strong>数据范围</strong>：训练数据为 60,000+ 蛋白质；评测覆盖 ProteinGym 和 Tsuboyama 数据集。结论的普适性受限于这两个基准的覆盖范围。</li>
+<li><strong>零样本性质</strong>：模型不针对特定变异数据集进行微调，因此结论反映的是预训练知识的泛化能力，而非任务特定优化后的性能。</li>
+<li><strong>端到端状态</strong>：推理时从序列直接输出预测，无需额外的结构预测或 MD 模拟步骤，因此计算成本远低于显式 MD 方法。</li>
+<li><strong>有边界的复述</strong>：在 35M 参数规模下，通过第二阶段多任务持续预训练注入显式 MD 动力学监督，DynamicsPLM 在 ProteinGym 和 Tsuboyama 变异效应预测基准上达到 100M 参数以下模型的最高精度，并匹配或超越若干十亿级序列模型。该结论仅适用于变异效应预测任务，且未提供与所有十亿级模型的系统对比。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（仅摘要）中，未发现作者明确承认的局限。摘要未包含 Limitations 部分或相关讨论。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 模型为「small PLM」（35M），作者将其定位为参数高效方案，暗示其不追求超越所有大模型，而是提供一种替代路径。
+- 摘要强调「zero-shot」预测，暗示模型未针对特定任务微调，可能在某些数据集上不如任务特化模型。
+- 代码仓库名称为「LoMuS」（与论文标题 DynamicsPLM 不一致），可能暗示论文与代码之间存在版本差异或命名不一致。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>摘要未提供任何具体数值</td>
+<td>无法验证「SOTA」和「匹配或超越」的具体程度；可能仅在某些子集上达到</td>
+<td>结论强度无法独立评估</td>
+<td>查阅全文或 GitHub 仓库中的详细结果</td>
+<td>Abstract 仅定性描述</td>
+</tr>
+<tr>
+<td>未说明 MD 数据的生成方式</td>
+<td>MD 模拟的力场、时长、体系设置会显著影响动力学标签质量；不同设置可能导致结果不可复现</td>
+<td>方法可复现性存疑</td>
+<td>检查 GitHub 仓库中的数据准备脚本</td>
+<td>Abstract 仅提及 "over 60,000 proteins"</td>
+</tr>
+<tr>
+<td>未说明「进化保守性得分」的具体定义</td>
+<td>可能是序列似然比、BLOSUM 或基于 MSA 的保守性；不同定义影响结果</td>
+<td>方法核心机制不透明</td>
+<td>查阅全文 Methods 节</td>
+<td>Abstract 仅提及 "evolutionary plausibility score"</td>
+</tr>
+<tr>
+<td>未说明与哪些十亿级模型对比</td>
+<td>「若干」的表述模糊；可能仅对比了部分模型或特定子集</td>
+<td>无法判断对比的公平性</td>
+<td>查阅全文实验部分</td>
+<td>Abstract 表述模糊</td>
+</tr>
+<tr>
+<td>代码仓库名称为「LoMuS」而非「DynamicsPLM」</td>
+<td>可能存在版本不一致或仓库命名错误</td>
+<td>影响可复现性和可信度</td>
+<td>访问 GitHub 仓库验证</td>
+<td>Abstract 末尾的 URL</td>
+</tr>
+<tr>
+<td>未讨论失败案例或模型失效场景</td>
+<td>变异效应预测中，某些突变类型（如截短突变、移码突变）可能超出模型能力</td>
+<td>结论边界不清晰</td>
+<td>查阅全文是否包含失败分析</td>
+<td>Abstract 未提及</td>
+</tr>
+<tr>
+<td>未说明与 ESM-2/ProtTrans 等主流模型的具体差距</td>
+<td>「匹配或超越」可能仅针对特定子集或特定指标</td>
+<td>无法判断模型的真实竞争力</td>
+<td>查阅全文对比表</td>
+<td>Abstract 表述模糊</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>多任务持续预训练作为知识注入策略</strong>：本文展示了在已有序列 PLM 基础上，通过第二阶段多任务持续预训练注入物理动力学知识，而非从头训练。这一策略可迁移至本课题的其他任务（如结构预测、构象采样），即在预训练模型上添加任务特定的预测头，通过持续预训练注入物理先验。</p>
+</li>
+<li>
+<p><strong>得分平衡而非特征拼接的融合策略</strong>：本文在推理时通过平衡两个得分（进化 + 动力学）而非在特征层面拼接，避免了多任务训练中的表征冲突。这一思路可迁移至分子对接或 MD 模拟中，将不同来源的评分函数（如物理能量项 + 进化保守性）以可调节权重组合。</p>
+</li>
+<li>
+<p><strong>小型模型的参数效率论证</strong>：本文提供了一个「小型模型 + 高信息密度训练信号」可匹敌「大型模型 + 数据规模」的案例。对本课题的启示是：在计算资源受限时，优先考虑训练信号的信息密度（如引入 MD 标签、实验数据）而非盲目扩大模型。</p>
+</li>
+<li>
+<p><strong>残基级 + 配对级双头设计</strong>：同时预测残基级属性（如柔性）和配对级属性（如协同运动）可以捕捉不同尺度的物理信息。这一设计可迁移至构象生成任务，即同时优化局部结构质量和全局构象合理性。</p>
+</li>
+<li>
+<p><strong>零样本推理的实用价值</strong>：模型在推理时无需 MSA 或结构输入，直接从序列预测变异效应。这一设计对高通量变异筛选场景具有实用价值，可迁移至蛋白质设计中的突变扫描。</p>
+</li>
+<li>
+<p><strong>动力学标签的生成管线</strong>：虽然摘要未提供细节，但「60,000+ 蛋白质的 MD 标签」暗示了一个大规模 MD 模拟管线。对本课题的启示是：MD 模拟数据可以作为 PLM 训练的监督信号，但需要标准化生成流程以保证标签质量。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>ESM-2 / ESM-1b</strong>（Meta AI）：序列 PLM 的代表，本文的基础编码器可能基于类似架构。ESM 系列通过大规模参数扩展提升变异效应预测，本文则通过动力学监督实现参数效率。</li>
+<li><strong>ProtTrans / ProtBERT</strong>：基于 Transformer 的蛋白质序列模型，与本文同属序列 PLM 家族。</li>
+<li><strong>ESM-IF</strong>（Inverse Folding）：结构感知的 PLM，与本文不同之处在于 ESM-IF 需要结构输入，而本文仅需序列。</li>
+<li><strong>AlphaFold / AlphaFold2</strong>：结构预测模型，其 Evoformer 模块也融合了进化信息与结构信息，但未显式建模动力学。本文的「进化 + 动力学」融合思路与 AlphaFold 的「进化 + 几何」有相似之处。</li>
+<li><strong>MIF-Net / ProstT5</strong>：结构-序列联合模型，与本文同属多模态蛋白质模型。</li>
+<li><strong>ProteinGym benchmark</strong>：变异效应预测的标准基准，本文的主要评测平台。</li>
+<li><strong>Tsuboyama folding stability dataset</strong>：2023 年发表的蛋白质折叠稳定性大规模数据集，本文用于自然变异评测。</li>
+<li><strong>MD 模拟 + ML 融合</strong>：如 VAMP、AIS 等将 MD 轨迹与深度学习结合的方法，本文的动力学头可视为这一方向的轻量级变体。</li>
+<li><strong>LoMuS</strong>：代码仓库名称，可能为「Low-cost Molecular Simulation」或类似含义的缩写，但未在摘要中解释。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<h3>候选 1：动力学增强的构象生成模型</h3>
+<ul>
+<li><strong>名称</strong>：Dynamics-Guided Conformer Generation</li>
+<li><strong>来源局限/观察</strong>：DynamicsPLM 证明了动力学监督可提升变异效应预测；但构象生成任务需要更细粒度的结构输出，而非仅打分。</li>
+<li><strong>核心假设</strong>：在扩散模型或生成模型中注入 MD 衍生的动力学先验（如残基柔性谱、配对运动模式），可生成物理上更合理的构象集合。</li>
+<li><strong>相对本文的增量</strong>：从「打分/预测」扩展到「生成」，从「序列输入」扩展到「序列 + 动力学先验」。</li>
+<li><strong>初步方法</strong>：在构象生成扩散模型的去噪过程中，以 MD 衍生的残基级柔性作为条件输入，引导生成过程偏向物理合理的构象。</li>
+<li><strong>验证方式</strong>：在构象生成基准（如 GEOM-QM9 的蛋白质子集）上对比有无动力学条件的生成质量；用 MD 模拟验证生成构象的物理合理性。</li>
+<li><strong>可能的失败模式</strong>：MD 标签的力场偏差可能被生成模型放大；动力学先验可能过度约束构象多样性。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 2：进化-动力学双通道打分函数用于分子对接</h3>
+<ul>
+<li><strong>名称</strong>：EvoDyn Scoring Function</li>
+<li><strong>来源局限/观察</strong>：DynamicsPLM 的得分平衡机制（进化 + 动力学）可视为一种可解释的打分函数设计；对接打分函数同样需要组合不同来源的能量项。</li>
+<li><strong>核心假设</strong>：将进化保守性得分与 MD 衍生的动力学扰动得分组合，可提升对接 pose 排序的准确性。</li>
+<li><strong>相对本文的增量</strong>：从变异效应预测迁移到分子对接；从蛋白质单体扩展到蛋白质-配体/蛋白质-蛋白质复合物。</li>
+<li><strong>初步方法</strong>：在对接打分函数中引入 DynamicsPLM 的进化得分作为先验项，与物理能量项（如 Rosetta 或 AutoDock Vina 能量）加权组合。</li>
+<li><strong>验证方式</strong>：在对接基准（如 PDBbind、DockQ 数据集）上对比组合打分与纯物理打分的 pose 排序能力。</li>
+<li><strong>可能的失败模式</strong>：进化保守性得分可能对结合位点不敏感；动力学扰动得分需要复合物的 MD 模拟，计算成本高。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 3：动力学感知的蛋白质设计序列采样</h3>
+<ul>
+<li><strong>名称</strong>：Dynamics-Aware Sequence Sampling</li>
+<li><strong>来源局限/观察</strong>：DynamicsPLM 的动力学头提供了残基级柔性信息；蛋白质设计需要同时考虑序列的进化可行性和折叠后的结构稳定性。</li>
+<li><strong>核心假设</strong>：在设计过程中引入动力学约束（如避免设计过高柔性的残基），可提高设计序列的实验成功率和折叠稳定性。</li>
+<li><strong>相对本文的增量</strong>：从「预测变异效应」扩展到「生成新序列」；从「评估」扩展到「设计」。</li>
+<li><strong>初步方法</strong>：在蛋白质设计模型（如 ProteinMPNN 或 ESM-IF）的序列采样过程中，以 DynamicsPLM 的动力学预测作为约束，惩罚高柔性位点的突变。</li>
+<li><strong>验证方式</strong>：设计若干蛋白质并实验验证折叠稳定性；或使用 AlphaFold2 预测设计序列的结构并评估 pLDDT。</li>
+<li><strong>可能的失败模式</strong>：动力学约束可能过度限制序列多样性；MD 标签的准确性直接影响设计质量。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 4：持续预训练策略的系统性评估</h3>
+<ul>
+<li><strong>名称</strong>：Continual Pretraining for Physics-Enriched PLMs</li>
+<li><strong>来源局限/观察</strong>：本文展示了第二阶段持续预训练的有效性，但未提供与从头训练、联合训练等替代策略的系统对比。</li>
+<li><strong>核心假设</strong>：持续预训练（而非联合训练或从头训练）是注入物理知识到 PLM 的最优策略，因其避免了灾难性遗忘和计算浪费。</li>
+<li><strong>相对本文的增量</strong>：从单一方法验证扩展到策略对比；提供可复现的训练配方。</li>
+<li><strong>初步方法</strong>：在相同数据上对比三种策略：(a) 从头训练（随机初始化 + 全部数据）；(b) 联合训练（序列 + 动力学损失同时优化）；(c) 持续预训练（本文策略）。控制模型大小、数据量、计算预算一致。</li>
+<li><strong>验证方式</strong>：在 ProteinGym 和 Tsuboyama 上评估三种策略的变异效应预测精度；同时评估灾难性遗忘程度（即序列 MLM 损失的回升情况）。</li>
+<li><strong>可能的失败模式</strong>：持续预训练的优势可能仅在特定数据规模下成立；不同物理标签（如 RMSF vs. 接触图）可能改变结论。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 5：动力学标签的主动学习管线</h3>
+<ul>
+<li><strong>名称</strong>：Active Learning for MD Label Generation</li>
+<li><strong>来源局限/观察</strong>：本文在 60,000+ 蛋白质上生成 MD 标签，但 MD 模拟计算成本高；并非所有蛋白质的动力学标签对变异预测同等重要。</li>
+<li><strong>核心假设</strong>：通过主动学习选择信息量最大的蛋白质进行 MD 模拟，可以在更少的模拟预算下达到相近的模型性能。</li>
+<li><strong>相对本文的增量</strong>：从「全量 MD 标签」到「选择性 MD 标签」；降低数据生成成本。</li>
+<li><strong>初步方法</strong>：初始用少量 MD 标签训练模型，用模型的不确定性或变异预测误差来选择下一批需要 MD 模拟的蛋白质，迭代进行。</li>
+<li><strong>验证方式</strong>：对比主动学习策略与随机采样策略在相同 MD 预算下的模型性能；绘制学习曲线。</li>
+<li><strong>可能的失败模式</strong>：不确定性估计可能不准确；MD 标签的信息量难以预先评估。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no full text, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose DynamicsPLM, a 35-million-parameter protein language model that combines evolutionary sequence information with explicit molecular dynamics supervision via a second-stage continual pretraining strategy on over 60,000 proteins. The model is claimed to achieve state-of-the-art accuracy among models under 100M parameters on ProteinGym and the Tsuboyama folding stability dataset, and to match or outperform several billion-scale sequence-based models.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, benchmark tables, or methodological details are provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, benchmark performance numbers, model architecture details, training hyperparameters, dataset composition and preprocessing, baseline comparison lists, statistical significance tests, and code repository contents</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a conceptually appealing idea: enriching a small protein language model with explicit molecular dynamics supervision to achieve competitive variant effect prediction without scaling to billions of parameters. The motivation is clear and the proposed approach is timely given the field's focus on parameter efficiency. However, the abstract provides no quantitative evidence whatsoever. No performance numbers, no comparison tables, no statistical measures, and no methodological specifics are visible. The central claims of state-of-the-art performance and equivalence to billion-scale models are therefore entirely unverifiable from the supplied material. The writing is generally clear, though the final sentence of the abstract contains an apparent error referencing "LoMuS" instead of "DynamicsPLM."</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists and machine learning researchers working on protein function prediction, variant effect prediction, and protein language models. The parameter-efficiency angle would also appeal to groups with limited computational resources who cannot train or fine-tune billion-scale models. The integration of molecular dynamics with sequence-based representation learning may interest researchers at the interface of biophysics and deep learning.</li>
+<li><strong>Major strengths</strong> The conceptual framing is strong: the abstract clearly identifies a gap between sequence-only PLMs and dynamics-only models, and proposes a principled way to bridge it. The parameter efficiency claim (35M parameters) is notable and, if substantiated, would be a meaningful contribution. The use of continual pretraining to preserve evolutionary knowledge while adding dynamics supervision is a sensible design choice. The zero-shot inference approach from sequence alone is practically attractive.</li>
+<li><strong>Major Concerns</strong> </li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "DynamicsPLM achieves state-of-the-art accuracy among all models under 100M parameters, and matches or outperforms several billion-scale sequence-based models"</li>
+<li><strong>Evidence pointer</strong> Abstract, Results section not provided</li>
+<li><strong>Concern</strong> The central performance claim is presented without any numerical support. No accuracy values, no benchmark scores, no effect size measures, and no statistical significance indicators are given. The reader cannot assess whether the claimed state-of-the-art performance is marginal or substantial, on which specific benchmarks it holds, or against which specific baselines it was compared.</li>
+<li><strong>Why it matters</strong> The entire contribution rests on this performance claim. Without quantitative evidence, the claim is unfalsifiable and the scientific contribution cannot be evaluated. In a field where benchmark results are the primary currency, omitting all numbers from the abstract is a critical deficiency.</li>
+<li><strong>Resolution test</strong> Provide specific performance metrics (e.g., Spearman correlation, AUROC, MCC) on ProteinGym and Tsuboyama datasets, with clear baseline comparisons and confidence intervals or significance tests.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological transparency</li>
+<li><strong>Claim pointer</strong> "Utilizing a second-stage, multi-task continual pretraining strategy on over 60,000 proteins, we enrich a foundational sequence encoder with explicit residue-level and pairwise molecular dynamics heads"</li>
+<li><strong>Evidence pointer</strong> Abstract, Methods section not provided</li>
+<li><strong>Concern</strong> The methodological description is too vague to evaluate. The nature of the "foundational sequence encoder" is unspecified. The molecular dynamics simulation protocol, the types of dynamics features extracted, the multi-task objectives, and the continual pretraining procedure are all undefined. The dataset of 60,000 proteins is mentioned but its composition, redundancy filtering, and relationship to downstream benchmarks are not described.</li>
+<li><strong>Why it matters</strong> Reproducibility is a core requirement for computational biology research. Without methodological detail, other groups cannot implement or validate the approach. Moreover, the choice of dynamics features and training strategy directly determines whether the claimed benefits are real or artifacts of specific implementation choices.</li>
+<li><strong>Resolution test</strong> Provide a complete methods description including architecture details, simulation parameters, feature definitions, training objectives, and dataset construction. The code repository should be functional and documented.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Claim consistency</li>
+<li><strong>Claim pointer</strong> "All codes including data preparation scripts, training and validation recipes, and experimental configurations for LoMuS are available at: https://github.com/kabir-ai2bio-lab/DynamicsPLM"</li>
+<li><strong>Evidence pointer</strong> Abstract, Availability statement</li>
+<li><strong>Concern</strong> The availability statement references "LoMuS" rather than "DynamicsPLM." This appears to be an error, but it raises uncertainty about whether the correct repository is linked and whether the code corresponds to the described model. The repository name in the URL suggests DynamicsPLM, but the text inconsistency is concerning.</li>
+<li><strong>Why it matters</strong> Code availability is a stated commitment. An inconsistency in the availability statement undermines confidence in the reproducibility of the work and may indicate careless preparation.</li>
+<li><strong>Resolution test</strong> Correct the availability statement to reference DynamicsPLM consistently and verify that the linked repository contains all described materials.</li>
+<li><strong>Minor Comments</strong> </li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract, final sentence</li>
+<li><strong>Evidence pointer</strong> Abstract, Availability section</li>
+<li><strong>Issue</strong> The sentence "All codes including data preparation scripts, training and validation recipes, and experimental configurations for LoMuS are available" uses "LoMuS" which does not match the model name "DynamicsPLM" used throughout the abstract.</li>
+<li><strong>Required correction</strong> Replace "LoMuS" with "DynamicsPLM" or clarify if LoMuS is a related but distinct resource.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Precision</li>
+<li><strong>Affected element</strong> Abstract, performance claim</li>
+<li><strong>Evidence pointer</strong> Abstract, Results summary</li>
+<li><strong>Issue</strong> The phrase "matches or outperforms several billion-scale sequence-based models of its size" is internally contradictory. A model "of its size" cannot be billion-scale. This likely means "matches or outperforms several billion-scale sequence-based models despite its small size," but the wording is confusing.</li>
+<li><strong>Required correction</strong> Rewrite to clarify the comparison, for example "matches or outperforms several billion-scale sequence-based models despite having 35M parameters."</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Scope definition</li>
+<li><strong>Affected element</strong> Abstract, benchmark description</li>
+<li><strong>Evidence pointer</strong> Abstract, Results summary</li>
+<li><strong>Issue</strong> The abstract mentions "the massive ProteinGym benchmark" and "natural variants of the Tsuboyama folding stability dataset" but does not specify which ProteinGym subsets were used (e.g., deep mutational scanning vs. clinical variants) or how many variants were evaluated.</li>
+<li><strong>Required correction</strong> Specify the exact benchmark subsets and variant counts to enable proper interpretation of the performance claims.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (no quantitative evidence), R1-M2 (insufficient methodological detail), R1-M3 (availability statement inconsistency). These are blocking because the core claims cannot be evaluated or reproduced from the supplied material.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The idea of enriching a small PLM with explicit molecular dynamics supervision is conceptually novel and distinct from both pure sequence-based scaling and pure physics-based approaches. This is a potential strength, but the abstract does not provide enough detail to assess whether the implementation is genuinely new or an incremental combination of existing techniques.</li>
+<li>Scientific importance: Variant effect prediction is a high-impact problem with direct relevance to clinical genetics and protein engineering. A parameter-efficient model that approaches billion-scale performance would be practically valuable. However, the importance claim is entirely dependent on the unverified performance numbers.</li>
+<li>Interdisciplinary readership: The work sits at the intersection of machine learning, biophysics, and computational biology, which is a broad and active readership. The abstract is written accessibly for this audience.</li>
+<li>Technical soundness: Cannot be assessed from the abstract. The methodological description is too sparse to evaluate the soundness of the training strategy, the dynamics feature extraction, or the evaluation protocol.</li>
+<li>Readability for nonspecialists: The abstract is generally readable and the motivation is clearly stated. The terminology is appropriate for a bioinformatics audience. The "LoMuS" error and the contradictory phrasing in the performance claim detract from clarity.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The conceptual idea is promising and the direction is worth pursuing, but the abstract alone provides no verifiable support for the central claims. A full review would require the complete manuscript with quantitative results, methodological details, and a functional code repository.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of state-of-the-art performance among sub-100M models is unsupported by any numerical data in the abstract.</li>
+<li>The claim of matching or outperforming billion-scale models is unsupported and the phrasing is internally inconsistent.</li>
+<li>The claim that explicit dynamics supervision provides a parameter-efficient alternative to raw scale is a reasonable hypothesis but is not substantiated with comparative efficiency data.</li>
+<li>The description of the continual pretraining strategy and its effect on preserving evolutionary knowledge is not verifiable without methodological details.</li>
+<li>The availability of code and data cannot be confirmed due to the naming inconsistency in the availability statement and the lack of repository inspection.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

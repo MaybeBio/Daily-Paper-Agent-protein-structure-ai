@@ -1,0 +1,92 @@
+## Review setup
+- **Input scope** Full manuscript text, including abstract, results, discussion, methods, and supplementary figure/table references.
+- **Assessment boundary** Scientific validity, methodological rigor, interpretation of results, and alignment with stated conclusions. Editorial and stylistic issues are noted only where they affect scientific clarity.
+- **Shared manuscript claim summary** The authors present a proteome-wide deep learning-based structure modeling analysis of *Treponema pallidum* subsp. *pallidum* (Nichols strain), generating high-confidence models for 976 of 990 proteins. Using DALI structural comparisons, they assign putative functions to 240 of 323 previously uncharacterized proteins, identify 63 putative pathogenesis-related proteins (including seven novel putative outer membrane proteins), and predict 90 prioritized linear B cell epitopes from known and predicted OMPs. The work is framed as providing new insights into syphilis pathogenesis and informing vaccine development.
+- **Visible evidence base** Main text figures (Figures 1–6), supplementary tables (Tables S1–S17), supplementary figures (Figures S1–S9), and methods descriptions. No raw data files, model coordinate files, or code were directly inspected.
+- **Missing materials affecting confidence** The following were not available for direct inspection: (1) the deposited Harvard Dataverse dataset containing model coordinate files and raw DALI outputs; (2) the full supplementary tables (only referenced, not provided in the manuscript text); (3) the TPPD database interface and contents; (4) detailed parameter settings for DALI searches beyond the stated thresholds; (5) the complete list of 90 prioritized epitopes with their sequences and locations. These omissions limit independent verification of specific results but do not preclude assessment of the overall methodology.
+
+## Reviewer
+- **Overall assessment** This manuscript presents a comprehensive and technically ambitious computational analysis of the *T. pallidum* proteome, applying state-of-the-art deep learning structure prediction tools at scale. The methodological pipeline is logical, and the validation approach comparing structure-based annotations to genome-based annotations is appropriate and strengthens confidence in the workflow. The identification of novel putative OMPs and the systematic B cell epitope prediction effort are potentially valuable contributions to the syphilis vaccine field. However, the manuscript is largely descriptive and computational, with no experimental validation of any prediction. The central claims regarding pathogenesis insights and vaccine relevance rest entirely on bioinformatic inference, and the authors appropriately acknowledge this limitation. The novelty relative to prior work by the same group and others is incremental rather than transformative. The manuscript would benefit from clearer presentation of the prioritization logic for epitopes, more critical discussion of the limitations of structure-based functional inference, and explicit acknowledgment of what would be required to move from prediction to validation.
+- **Who would be interested in the results, and why** Researchers working on *Treponema pallidum* biology and syphilis pathogenesis would find the functional annotations of previously uncharacterized proteins useful. The syphilis vaccine development community would be interested in the expanded OMP list and the prioritized B cell epitopes, particularly those conserved across strains. More broadly, computational biologists and microbiologists studying genetically intractable or uncultivable pathogens could find the structure-to-function pipeline applicable to their own systems. The TPPD database, once publicly available, may serve as a community resource.
+- **Major strengths** (1) The proteome-wide scale of the analysis is comprehensive, covering 990 proteins with high-confidence models for 98.6%. (2) The validation step comparing structure-based annotations to genome-based annotations for 667 proteins provides a quantitative assessment of the method's reliability. (3) The multi-program approach (RF, AlphaFold 3, I-TASSER) for cross-validation of key predictions is methodologically sound. (4) The identification of seven novel putative OMPs with structural similarity to known OMPs from other Gram-negative bacteria is a concrete, testable contribution. (5) The epitope prioritization framework, combining surface exposure, conservation, and biophysical properties, is systematic and transparent. (6) The authors acknowledge the purely computational nature of the work and the need for experimental validation.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency for central claims
+  - **Claim pointer** The manuscript claims that the identified PPRPs and novel OMPs provide "insights into *T. pallidum* pathogenesis" and that the prioritized epitopes "inform syphilis vaccine design."
+  - **Evidence pointer** Results sections on PPRP identification, novel OMP candidates, and B cell epitope prediction; Discussion section.
+  - **Concern** The central claims of the manuscript rest entirely on computational predictions without any experimental validation. While the authors acknowledge this limitation, the framing throughout the abstract, introduction, and discussion implies a level of biological insight that the evidence does not support. For example, the identification of TPANIC_0346 and TPANIC_0619 as structural homologs of NspA and OmpW, respectively, is presented as evidence of immune evasion function, but structural similarity alone does not establish function. Similarly, the 90 prioritized epitopes are described as vaccine-relevant, yet no immunological data (e.g., antibody binding, neutralization, protection) are presented. The claim that this work "informs" vaccine design is only weakly supported, as the epitopes have not been tested for immunogenicity or accessibility in the native pathogen.
+  - **Why it matters** The manuscript's stated significance hinges on the biological and translational relevance of the predictions. Without experimental validation, the findings remain hypotheses. Overstating the implications could mislead readers, particularly those in the vaccine development field, into pursuing targets that may not be functionally relevant or immunologically accessible. The distinction between prediction and validated function must be made unambiguous throughout.
+  - **Resolution test** The authors should either (a) temper the language in the abstract and discussion to clearly frame all findings as predictions requiring experimental validation, or (b) include at least a minimal experimental component (e.g., surface localization of one or two novel OMPs, antibody binding to a subset of predicted epitopes) to substantiate the claims. If neither is feasible, the claims should be revised to state that the work generates testable hypotheses rather than providing insights or informing design.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Methodological transparency and reproducibility
+  - **Claim pointer** The methods describe the DALI filtering criteria and the epitope prioritization framework, but the specific implementation details are incomplete.
+  - **Evidence pointer** Materials and Methods, sections on DALI analyses, OMP analyses, and B cell epitope prediction.
+  - **Concern** The manuscript states that DALI searches were performed and filtered using thresholds (RF confidence ≥0.50, Z-score ≥8.0, coverage ≥10%, resolution <4.0 Å), but does not specify how many DALI hits were returned per query on average, how the top hit was selected when multiple structural homologs with different functions were identified, or how conflicts between structure-based and sequence-based annotations were resolved. Similarly, the epitope prioritization criteria are listed, but the weighting of each criterion and the decision tree for selecting the final 90 epitopes from the 103 that met all nine criteria are not described. The statement that "103 fulfilled all nine criteria" and "90 were conserved across all strains" implies a two-step filter, but the exact logic is unclear.
+  - **Why it matters** Reproducibility is a core expectation for computational studies. Without precise descriptions of the decision-making process, other researchers cannot replicate the analysis or assess whether the thresholds and filters were appropriate or inadvertently biased. The ambiguity also makes it difficult to evaluate the robustness of the conclusions.
+  - **Resolution test** Provide a detailed step-by-step description of the DALI hit selection process, including how ties or conflicting functional annotations were handled. For the epitope prioritization, specify the exact order of filtering steps, the thresholds for each criterion, and how the final 90 were selected from the 103. Consider including a flowchart or pseudocode in the supplementary materials.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Validation of structure-based functional inference
+  - **Claim pointer** The manuscript claims that the structure-to-function pipeline is validated by the high correlation between structure-based and genome-based annotations for 553 of 667 proteins.
+  - **Evidence pointer** Results, section on method validation; Figure 4.
+  - **Concern** The validation is presented as strong evidence for the pipeline's reliability, but the analysis is circular in an important sense. The DALI-based functional assignment relies on structural similarity to proteins with known functions, and the comparison to genome-based annotations is essentially comparing two annotation methods that both ultimately derive from sequence or structural homology to the same databases. The 10 proteins with differing annotations and the 40 that could not be assigned are not discussed in detail. What were the nature of the discrepancies? Were they due to genuine functional differences, multi-domain complexities, or errors in one or both methods? The manuscript would be strengthened by a more critical analysis of the failure cases.
+  - **Why it matters** The validation is the primary evidence that the functional annotations for the 240 previously uncharacterized proteins are trustworthy. If the validation is weaker than presented, the downstream claims about PPRPs and novel OMPs are correspondingly less secure. Understanding the failure modes is essential for interpreting the confidence of individual predictions.
+  - **Resolution test** Provide a detailed analysis of the 10 proteins with differing annotations and the 40 unassigned proteins. Discuss whether the discrepancies reveal systematic biases in the structure-based approach. Consider presenting confidence scores for individual functional assignments rather than a single aggregate validation statistic.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Completeness of epitope analysis
+  - **Claim pointer** The manuscript identifies 90 prioritized B cell epitopes across 22 known and predicted OMPs and states these are conserved across globally circulating strains.
+  - **Evidence pointer** Results, section on B cell epitope prediction; Tables S16 and S17; Figure S9.
+  - **Concern** The analysis of epitope conservation is described as comparing against "all NCBI *T. pallidum* strains," but the number of strains, their geographic and temporal distribution, and the specific sequence comparison method are not stated. The statement that epitopes are "conserved" is ambiguous: does this mean identical amino acid sequence, or similar physicochemical properties? Given that the authors previously reported inter-strain variability in OMP surface-exposed regions, it is surprising that 90 epitopes were found to be fully conserved. The relationship between the previously identified variable regions and the currently predicted conserved epitopes needs clarification.
+  - **Why it matters** The vaccine relevance of the epitopes depends critically on their conservation across circulating strains. If the conservation analysis is based on a limited or biased strain set, or if "conserved" is defined too loosely, the translational significance is overstated. The apparent contradiction with prior findings of inter-strain variability must be resolved.
+  - **Resolution test** Specify the number and diversity of strains used in the conservation analysis, the exact definition of "conserved," and the alignment method. Clarify how the 90 conserved epitopes relate to the previously reported variable regions. If the epitopes are located in conserved regions, state this explicitly; if they overlap with variable regions, explain how conservation was determined.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity of figure presentation
+  - **Affected element** Figure 1
+  - **Evidence pointer** Figure 1 and its legend
+  - **Issue** Figure 1 is described as a schematic of the workflow, but the legend does not clearly distinguish between the different panels (a, b, c) and their respective roles in the overall pipeline. The reader must infer the flow from the text.
+  - **Required correction** Expand the figure legend to explicitly describe each panel and how they connect. Consider adding numbered steps or arrows to make the workflow more intuitive.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Terminology consistency
+  - **Affected element** Abstract and Results
+  - **Evidence pointer** Abstract, Results sections
+  - **Issue** The abstract states "976 *T. pallidum* proteins" were modeled, while the Results state "958 of the 990 *T. pallidum* proteins were modeled with confidence scores ≥0.5" and then "high-confidence structure models were obtained for 976 of the 990." The relationship between these numbers is not immediately clear: 958 from RF, plus 18 from re-analysis? The text should clarify the arithmetic.
+  - **Required correction** Add a sentence in the Results clarifying that the 976 total includes 958 from RF plus 18 additional models obtained from AlphaFold or I-TASSER re-analysis.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Discussion of limitations
+  - **Affected element** Discussion section
+  - **Evidence pointer** Discussion, limitations paragraph
+  - **Issue** The limitations paragraph is thorough but does not address the potential for model bias in the DALI searches. The authors note that DALI depends on the availability of close structural homologs, but do not discuss whether the PDB is biased toward certain protein families or whether this could systematically affect the functional annotations.
+  - **Required correction** Add a sentence acknowledging that the PDB is not a random sample of protein space and that the absence of close structural homologs for some *T. pallidum* proteins may reflect genuine novelty or simply underrepresentation in the database.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Data availability statement
+  - **Affected element** Data Availability Statement
+  - **Evidence pointer** Data Availability Statement
+  - **Issue** The statement indicates data are deposited in Harvard Dataverse and the TPPD database is "being developed." The manuscript does not specify when the TPPD will be accessible or whether the Dataverse deposit is currently complete and publicly available.
+  - **Required correction** Provide a timeline for TPPD availability and confirm that the Dataverse deposit is currently accessible, with a direct URL if possible.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Citation of software versions
+  - **Affected element** Materials and Methods
+  - **Evidence pointer** Materials and Methods, modeling section
+  - **Issue** The manuscript mentions RF, AlphaFold 3, and I-TASSER but does not specify the exact versions or release dates of these tools. Given the rapid evolution of these programs, version information is important for reproducibility.
+  - **Required correction** Add version numbers and access dates for all software tools used.
+
+## Risk / unsupported claims
+- The claim that the work provides "insights into *T. pallidum* pathogenesis" is unsupported by experimental evidence; the identified PPRPs are predictions based on structural homology and require functional validation.
+- The claim that the 90 prioritized epitopes "inform syphilis vaccine design" is overstated; no immunological data are presented, and the epitopes have not been tested for immunogenicity, surface accessibility, or protective capacity.
+- The statement that the structure-to-function pipeline is "validated" by the correlation with genome-based annotations is partially circular, as both methods rely on homology-based inference; the validation demonstrates consistency between methods but not biological accuracy.
+- The identification of seven novel putative OMPs is based on structural prediction and DALI comparisons; the claim that these are OMPs is a prediction that requires experimental confirmation of outer membrane localization.
+- The conservation analysis of epitopes across "globally circulating strains" is not fully described; the number and diversity of strains and the definition of "conserved" are not specified, making the claim difficult to evaluate.
+- The TPPD database is described as "being developed"; its availability and contents cannot be assessed from the current manuscript.

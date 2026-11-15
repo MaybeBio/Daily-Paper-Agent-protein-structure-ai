@@ -1,0 +1,100 @@
+## Review setup
+- **Input scope** Full manuscript text including abstract, introduction, methods, results, discussion, and conclusions. Figures and tables are referenced but not provided. Supplementary material is referenced but not provided.
+- **Assessment boundary** The review assesses the scientific claims, methodological soundness, and interpretational validity of the reported findings based solely on the provided text. Numerical results, figure contents, and supplementary analyses are not directly verifiable from the supplied material.
+- **Shared manuscript claim summary** The authors claim that performance of multimodal protein foundation models in distinguishing allosteric from orthosteric binding sites is governed primarily by intrinsic data set properties rather than architectural complexity, with data set identity accounting for 63.7% of explainable variance. They further claim that the utility of specific modality embeddings is context-dependent, that high predictive performance does not imply reliance on explicitly provided pocket representations, and that combining data sets reshapes which binding sites are preferentially recognized.
+- **Visible evidence base** Text descriptions of four data sets (PPI-Site, KinSite, Dual-Site, AlloDiverse), seven encoder architectures, four embedding combinations, variance decomposition results, and selected performance metrics (ROC-AUC, PR-AUC, MCC, Brier score). Specific numerical values are reported for several key results.
+- **Missing materials affecting confidence** All figures, tables, and supplementary materials are absent. Detailed numerical results for individual configurations, statistical significance tests, data set construction details, and the full variance decomposition output are not available. The original OneProt model description is cited but not summarized.
+
+## Reviewer
+- **Overall assessment** This manuscript presents a systematic and conceptually valuable framework for evaluating multimodal protein foundation models in the context of allosteric versus orthosteric binding site prediction. The central finding, that data set identity dominates performance variance, is an important and potentially field-shaping observation. However, the strength of the conclusions cannot be fully assessed from the provided text alone, as the key numerical evidence resides in figures and tables that were not supplied. The manuscript is well-structured and clearly written, but several methodological details and interpretational caveats require clarification.
+- **Who would be interested in the results, and why** Researchers developing and applying protein foundation models for binding site prediction, computational chemists and structural biologists studying allosteric regulation, and machine learning practitioners interested in multimodal representation learning for biological sequences and structures. The framework for disentangling data set effects from model effects is broadly applicable beyond allostery prediction.
+- **Major strengths** The study addresses a timely and important question with a rigorous experimental design. The two-level ablation strategy (encoder-level and embedding-level) is thoughtful and allows separation of distinct contributions. The inclusion of single-modality controls, source-only baselines, and a non-foundation-model baseline strengthens the interpretability of the results. The identification of distinct separability regimes provides a useful conceptual framework. The finding that data set identity dominates variance is a significant and potentially cautionary result for the field.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence completeness
+  - **Claim pointer** The claim that data set identity accounts for 63.7% of explainable variance in ROC-AUC.
+  - **Evidence pointer** Results section, Figure 3 (not provided), Table 2 (not provided)
+  - **Concern** The central quantitative claim of the paper, the 63.7% variance attribution, is presented without the supporting statistical output. The variance decomposition methodology is described, but the full ANOVA table, effect sizes, and confidence intervals are not visible. Without these, the robustness of this key finding cannot be evaluated.
+  - **Why it matters** This single number is the primary basis for the paper's main conclusion. If the variance decomposition is sensitive to model specification, outlier data sets, or interaction terms, the conclusion could be substantially weakened. The reader cannot assess the stability of this estimate.
+  - **Resolution test** Provide the full ANOVA table with sums of squares, degrees of freedom, F-statistics, and p-values for all main effects and interactions. Report confidence intervals for the variance components. Show that the result is robust to alternative model specifications (e.g., excluding interaction terms, using different variance estimators).
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim support
+  - **Claim pointer** The claim that "high predictive performance does not necessarily imply reliance on the explicitly provided pocket representation" based on single-modality controls.
+  - **Evidence pointer** Results section, Figure 4 (not provided), Tables S6-S11 (not provided)
+  - **Concern** The manuscript reports that sequence- or text-based representations can achieve substantial discrimination in some data sets. However, the specific performance values, the magnitude of the gap between single-modality and multimodal configurations, and the statistical significance of these differences are not visible. The claim that performance does not imply reliance on pocket representation requires a demonstration that the single-modality performance is not merely a weak baseline but is genuinely competitive.
+  - **Why it matters** This claim has important implications for model interpretation and for the design of future prediction pipelines. If the evidence is weak, the conclusion could be overstated. The reader needs to see the actual performance distributions to judge whether the claim is justified.
+  - **Resolution test** Show the full performance distributions for single-modality and multimodal configurations across all data sets and architectures. Report statistical tests comparing single-modality to multimodal performance. Demonstrate that the single-modality performance is not an artifact of data set leakage or trivial class separability.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Methodological clarity
+  - **Claim pointer** The claim that the framework enables "systematic profiling" of multimodal models across "distinct separability regimes."
+  - **Evidence pointer** Methods section, Data Sets and Biological Regimes
+  - **Concern** The criteria for defining the "separability regimes" (low, intermediate, high) are not explicitly operationalized. The text describes the data sets as representing a "spectrum" of complexity, but the specific metrics or thresholds used to classify them into regimes are not stated. It is unclear whether the regimes are defined a priori based on biological properties or post hoc based on observed performance.
+  - **Why it matters** The regime concept is central to the paper's framing. If the regimes are defined post hoc, the conclusions about regime-dependent behavior could be circular. The reader needs to understand how the regimes are defined to interpret the results.
+  - **Resolution test** Clearly define the criteria for classifying data sets into separability regimes. State whether these criteria are based on data set properties (e.g., sequence identity, structural diversity, class imbalance) or on observed model performance. Provide a table summarizing the key properties of each data set and the rationale for its regime classification.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interpretational validity
+  - **Claim pointer** The claim that the Dual-Site analysis shows data set merging "reshapes which binding sites are preferentially recognized" and that this reflects "complementary training signals."
+  - **Evidence pointer** Results section, Dual-Site Training Redistributes Allosteric-Site Recovery across Constituent Data Sets
+  - **Concern** The interpretation of the redistribution effect is presented as evidence for complementary training signals. However, an alternative explanation is that the merged model simply learns a different decision boundary that favors the majority class or that the effect is driven by the specific class imbalance of the merged data set. The text does not rule out these alternative explanations.
+  - **Why it matters** The claim about complementary training signals has implications for how practitioners should combine data sets. If the effect is simply a class-imbalance artifact, the recommendation would be different. The reader needs to see evidence that the redistribution is not explained by trivial factors.
+  - **Resolution test** Provide a more detailed analysis of the redistribution effect, including class-conditional performance, calibration curves, and a comparison to a model trained on a randomly reweighted version of the merged data set. Show that the redistribution is not explained by class imbalance or data set size effects.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, first paragraph
+  - **Issue** The abstract states that the framework "combines systematic modality embedding ablations, encoder architecture comparisons, and variance decomposition" but does not mention the key finding that data set identity dominates. The abstract could be more informative about the main result.
+  - **Required correction** Consider adding a sentence in the abstract that explicitly states the dominant role of data set identity in determining performance.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Methods, Data Sets
+  - **Evidence pointer** Methods section, Data Sets and Biological Regimes
+  - **Issue** The description of the data set construction is incomplete. For example, the PPI-Site data set is described as "derived from a large-scale pocket-centric collection," but the specific source database and filtering criteria are not fully specified. The KinSite data set description mentions temporal filtering but not the exact date range.
+  - **Required correction** Provide complete details of data set construction, including source databases, version numbers, filtering criteria, and the exact date range for temporal filtering. This is essential for reproducibility.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Results, Overall Performance
+  - **Evidence pointer** Results section, Overall Performance Reveals a Hierarchy of Data Set Separability
+  - **Issue** The text reports ROC-AUC values with standard deviations (e.g., "AUC ≈0.55–0.60") but does not report the number of test samples or the uncertainty in these estimates. Given the small number of positive examples in some data sets, confidence intervals would be more informative.
+  - **Required correction** Report the number of test samples for each data set and provide confidence intervals for the key performance metrics.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Throughout
+  - **Evidence pointer** Multiple sections
+  - **Issue** The term "separability" is used to describe both data set properties and model performance. This dual use could be confusing. For example, "low-separability regime" could refer to data sets where the classes are inherently difficult to separate or to data sets where the model performs poorly.
+  - **Required correction** Consider using distinct terms for data set properties (e.g., "intrinsic class separability") and model performance (e.g., "achieved discrimination") to avoid ambiguity.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Results, Variance Decomposition
+  - **Evidence pointer** Results section, Variance Decomposition Identifies Data Set Regimes as Primary Performance Determinants
+  - **Issue** The text reports that "random seed effects were negligible (<0.5%)" but does not report the variance attributable to the residual term. The residual variance is important for understanding the total explainable variance.
+  - **Required correction** Report the residual variance component and discuss what it implies about the reproducibility of the results.
+- **Technical failings that need to be addressed before the case is established** The primary technical failing is the absence of the actual numerical results. The paper's conclusions rest on figures and tables that were not provided for review. The variance decomposition analysis, the performance distributions, and the statistical comparisons are all described but not shown. Without these, the case for the paper's central claims is not established. Additionally, the lack of explicit operationalization of the "separability regimes" and the incomplete data set descriptions hinder reproducibility.
+- **Assessment against Nature-style criteria** 
+  - **Originality** The framework for systematically profiling multimodal models across data set regimes is a novel contribution. The finding that data set identity dominates performance variance is an important and potentially counterintuitive result. The work goes beyond simple benchmarking to ask why and when multimodal integration helps.
+  - **Scientific importance** The results have significant implications for the field of protein foundation model application. If data set composition is indeed the dominant factor, this shifts the focus from model architecture to data curation. The framework is generalizable and could be applied to other prediction tasks.
+  - **Interdisciplinary readership** The work bridges machine learning, structural biology, and drug discovery. The findings are relevant to practitioners in all three areas. The writing is accessible, though some familiarity with protein foundation models is assumed.
+  - **Technical soundness** The experimental design is thoughtful and rigorous in concept. The two-level ablation strategy is a strength. However, the technical soundness cannot be fully verified without the numerical results. The statistical analysis, particularly the variance decomposition, needs to be shown to be robust.
+  - **Readability for nonspecialists** The manuscript is generally well-written and the logical flow is clear. The abstract and introduction effectively set up the problem. The results section is dense but understandable. The discussion effectively contextualizes the findings. Some terms (e.g., "Foldseek tokens," "MDGen encoder") may be unfamiliar to nonspecialists but are adequately explained in context.
+- **Recommendation posture** Supportive if technical concerns are resolved. The conceptual framework and the central hypothesis are valuable and potentially important. However, the current submission does not provide sufficient evidence to fully establish the claims. The authors must provide the complete numerical results, including the full variance decomposition output, performance distributions, and statistical tests, to allow a proper evaluation. The methodological details regarding data set construction and regime definition also need to be clarified.
+
+## Risk / unsupported claims
+- The claim that data set identity accounts for 63.7% of explainable variance is unsupported without the full ANOVA output.
+- The claim that "high predictive performance does not necessarily imply reliance on the explicitly provided pocket representation" is not fully supported without the specific performance values for single-modality controls.
+- The claim that data set merging provides "complementary training signals" is not fully supported without ruling out alternative explanations such as class-imbalance effects.
+- The classification of data sets into "separability regimes" is not operationally defined and may be post hoc.
+- The claim that structural and dynamical encoders provide "the greatest benefit in intermediate and high separability settings" is not fully supported without the detailed performance breakdowns.
+- The generalizability of the framework beyond the specific data sets and model used is asserted but not demonstrated.

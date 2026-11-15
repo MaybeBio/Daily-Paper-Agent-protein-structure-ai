@@ -1,0 +1,91 @@
+## Review setup
+- **Input scope** Full manuscript text (Introduction, Methods, Results, Discussion) with figure legends; supplementary materials not provided.
+- **Assessment boundary** Scientific content, experimental design, data interpretation, and claims as presented in the provided text. Statistical reporting and figure quality assessed only insofar as described in the text.
+- **Shared manuscript claim summary** The authors report a novel SLC6A1 variant (c.1069G>A, p.A357T) identified in two siblings with developmental epileptic encephalopathies (DEEs). They characterize clinical phenotypes, use AI-based structural prediction tools to assess protein stability, and perform functional assays (3H-GABA uptake, Western blot, confocal microscopy) in HEK293T cells and human iPSC-derived astrocytes and neurons. They report that the A357T variant reduces GABA uptake, increases ER retention, and that pharmacochaperones (PBA, TUDCA) or genetic upregulation of ER chaperones (BiP, calnexin) rescue function.
+- **Visible evidence base** Results sections describing clinical data (Fig. 1), AI predictions (Fig. 2), GABA uptake assays (Fig. 3), Western blot analyses (Fig. 4), confocal microscopy (Fig. 5), and pharmacological/genetic rescue experiments (Fig. 6). Figure legends are present but actual figure images are not available for inspection.
+- **Missing materials affecting confidence** Actual figure images and full figure legends with statistical annotations; supplementary tables (including clinical data in Supplementary Table 1); detailed experimental protocols; raw data and statistical outputs; information on biological replicates beyond "n = 5-8 transfections"; details on iPSC line validation and differentiation quality control; information on whether experiments were blinded or randomized.
+
+## Reviewer
+- **Overall assessment** This manuscript addresses a clinically relevant question: functional characterization of a novel SLC6A1 variant and evaluation of pharmacochaperone-based rescue. The clinical description of two siblings with the same variant is valuable, and the combination of AI-based prediction with experimental validation is a reasonable approach. However, several technical concerns limit the strength of the conclusions. The mechanistic claims regarding pharmacochaperone versus HDAC inhibition are not fully supported by the data presented, and the quantification methods for confocal microscopy and Western blots are described with insufficient detail. The study is potentially of interest to the epilepsy and neurogenetics community, but the current evidence does not fully establish the central claims.
+- **Who would be interested in the results, and why** Clinicians and researchers in epilepsy genetics, neurodevelopmental disorders, and GABAergic neurotransmission. The study adds a new variant to the SLC6A1 mutation spectrum and provides preliminary evidence for a potential therapeutic strategy (pharmacochaperones) that could be relevant for personalized medicine approaches in SLC6A1-related disorders.
+- **Major strengths** 1) Clinical characterization of two siblings with the same variant, including EEG data and neuropsychiatric comorbidities, is a useful addition to the literature. 2) The combination of AI-based structural prediction with experimental validation is a modern and potentially efficient approach. 3) The study addresses a clinically actionable question: whether pharmacochaperones can rescue mutant GAT-1 function. 4) The use of multiple cell types (HEK293T, iPSC-derived astrocytes and neurons) strengthens the translational relevance.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Experimental design and controls
+  - **Claim pointer** The authors claim that PBA and TUDCA restore GABA uptake via pharmacochaperoning, while HDAC inhibitors (butyrate, SAHA) show inconsistent effects, supporting a pharmacochaperone mechanism.
+  - **Evidence pointer** Figure 6A-B; Results section "The impaired GABA uptake in the mutant protein was restored by pharmacological or genetic upregulation of chaperones in the ER"
+  - **Concern** The comparison between PBA/TUDCA (pharmacochaperones) and butyrate/SAHA (HDAC inhibitors) is presented as evidence for a pharmacochaperone mechanism. However, the text states that butyrate and SAHA "exhibited inconsistent increase of GABA uptake." This is ambiguous. Were these effects statistically significant or not? The lack of clear statistical reporting for these comparisons makes it impossible to evaluate whether the distinction between pharmacochaperone and HDAC inhibitor effects is robust. Furthermore, PBA is known to have both pharmacochaperone and HDAC inhibitory activities, so the claim that the effect is "likely contributed by its pharmacochaperoning effect" is not directly tested. A more rigorous approach would include a specific HDAC inhibitor that does not have chaperone activity at the concentrations used, or genetic knockdown of HDACs.
+  - **Why it matters** The central mechanistic claim of the paper is that pharmacochaperoning, not HDAC inhibition, underlies the rescue. If this distinction is not clearly demonstrated, the mechanistic conclusion is not supported, and the therapeutic rationale for using PBA specifically as a pharmacochaperone is weakened.
+  - **Resolution test** Provide complete statistical analysis for all drug treatment conditions, including effect sizes, confidence intervals, and p-values for pairwise comparisons. Include a dose-response experiment with a selective HDAC inhibitor (e.g., vorinostat) to determine whether HDAC inhibition alone can rescue GABA uptake. Alternatively, use a pharmacochaperone that lacks HDAC inhibitory activity to directly test the pharmacochaperone hypothesis.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Data quantification and reproducibility
+  - **Claim pointer** The authors claim that the A357T mutant has increased ER retention compared to wild-type, and that PBA reduces this retention (Figure 5).
+  - **Evidence pointer** Figure 5A-C; Results section "GAT-1(A357T) mutant protein had increased endoplasmic reticulum retention while PBA can reduce the ER retained GAT-1 protein"
+  - **Concern** The quantification of ER retention is based on colocalization of GAT-1-YFP with an ER marker (ERCFP). The methods state that "the percent fluorescence signal of GAT-1 overlapping with ER marker ERCFP was higher in the mutant" but the details of the colocalization analysis are not provided. What threshold was used for colocalization? Was Manders' or Pearson's coefficient used? How many cells were analyzed per condition? The statement that "cells expressing mutant GAT-1 exhibited a more rounded morphology" is subjective and not quantified. Additionally, the authors acknowledge that "direct surface labeling was not performed," which is a significant limitation given that the claim is about impaired trafficking to the plasma membrane.
+  - **Why it matters** ER retention is a key mechanistic claim linking the mutation to reduced function. Without rigorous, quantitative colocalization analysis and ideally surface biotinylation or surface staining, the evidence for ER retention is circumstantial. The functional data (reduced GABA uptake) are consistent with reduced surface expression, but the direct evidence is lacking.
+  - **Resolution test** Provide detailed colocalization analysis parameters, including the coefficient used, thresholds, and number of cells/fields analyzed. Perform surface biotinylation or immunofluorescence without permeabilization to directly quantify surface versus intracellular GAT-1. Quantify cell morphology using a defined metric (e.g., circularity index).
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Statistical analysis and data presentation
+  - **Claim pointer** The authors report that GABA uptake in A357T is reduced to 17.25% of wild-type in HEK293T cells, 39.86% in astrocytes, and 31% in neurons (Figure 3).
+  - **Evidence pointer** Figure 3A-C; Results section "GAT-1(A357T) and GAT-1(A357V) had impaired GABA reuptake in HEK293T, human iPSC-derived astrocytes, and neurons overexpressing the mutant GAT-1"
+  - **Concern** The statistical analysis for the GABA uptake data is not described in sufficient detail. The figure legend mentions "n = 7-8 different transfections" and use of ANOVA with Newman-Keuls test, but it is unclear whether each transfection represents an independent biological replicate or a technical replicate. The variability between experiments is not shown (no error bars described in the text). Additionally, the normalization to wild-type (100%) without showing the raw uptake values makes it difficult to assess the biological significance of the differences. The comparison to the GAT-1 inhibitor Cl-966 is mentioned but not shown in the text description.
+  - **Why it matters** The functional assay is the primary outcome measure. Without clear reporting of variability and statistical rigor, the reliability of the quantitative claims cannot be assessed.
+  - **Resolution test** Provide raw data (or at least mean ± SEM with individual data points) for all uptake experiments. Clarify the definition of n (biological vs. technical replicates). Report the results of the Cl-966 control experiments. Consider showing data as scatter plots with overlaid means.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Clinical-genetic correlation
+  - **Claim pointer** The authors state that the variant was "not identified in the shared parents, suggesting gonadal mosaicism."
+  - **Evidence pointer** Figure 1B; Results section "Mutation analysis identified SLC6A1(A357V) variation in two siblings"
+  - **Concern** The claim of gonadal mosaicism is inferred from the absence of the variant in parental saliva samples. However, the possibility of germline mosaicism in one parent cannot be distinguished from other mechanisms (e.g., somatic mosaicism in the parents not detected in saliva, or de novo occurrence in both siblings which is extremely unlikely but not impossible). The text does not mention whether parental samples were tested with sufficient sensitivity (e.g., deep sequencing) to exclude low-level mosaicism. Additionally, the variant is described as "novel" but no information is provided on its frequency in population databases (e.g., gnomAD) or on in silico pathogenicity predictions beyond the stability tools used.
+  - **Why it matters** Accurate genetic counseling depends on understanding the inheritance pattern. The distinction between gonadal mosaicism and other mechanisms has implications for recurrence risk.
+  - **Resolution test** Provide details on the sequencing depth and methodology used for parental testing. If possible, test parental samples with a more sensitive method (e.g., amplicon-based deep sequencing) to exclude low-level mosaicism. Report the variant frequency in gnomAD and any ACMG/AMP classification.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity of writing
+  - **Affected element** Introduction, paragraph 1
+  - **Evidence pointer** "We4−7 have studied the impact of mutation on the mutant GAT-1 function and trafficking in cell models of neurons and astrocytes as well as knockin mouse models bearing representative mutations1–3."
+  - **Issue** The citation formatting is confusing. The superscript numbers appear to mix references for the authors' own work and others' work. The sentence structure is awkward and could be clearer.
+  - **Required correction** Rewrite for clarity, e.g., "We and others have previously studied the impact of mutations on GAT-1 function and trafficking in neuronal and astrocytic cell models, as well as in knockin mouse models bearing representative mutations [refs]."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Data presentation
+  - **Affected element** Figure 4
+  - **Evidence pointer** Figure 4 legend
+  - **Issue** The figure legend is extremely long and contains a mix of methodological details and results. It is difficult to follow. The legend mentions "Two-way ANOVA with Turkey's post-hoc test" which should be "Tukey's post-hoc test."
+  - **Required correction** Split the legend into a brief description of the experiment and a separate statistical analysis section. Correct the typo "Turkey's" to "Tukey's."
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Throughout
+  - **Evidence pointer** "pharmacochaperone" and "pharmachaperone" (Discussion section)
+  - **Issue** The term is spelled inconsistently. In the Discussion, "pharmachaperone" is used instead of "pharmacochaperone."
+  - **Required correction** Use "pharmacochaperone" consistently throughout.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Missing information
+  - **Affected element** Methods, iPSC differentiation
+  - **Evidence pointer** "Human iPSC derived cortical neurons and astrocytes overexpressing the transporters"
+  - **Issue** The text mentions that iPSC-derived cells were used, but there is no description of how the iPSC line was validated, how differentiation efficiency was assessed, or whether the cells were characterized for neuronal/astrocytic identity (e.g., by immunostaining for cell-type-specific markers beyond what is mentioned).
+  - **Required correction** Add a brief description of iPSC characterization and differentiation quality control, or refer to a previously published protocol with appropriate citation.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Figure quality
+  - **Affected element** Figure 1A
+  - **Evidence pointer** "Schematic representation of GAT-1 protein topology and locations of GAT-1 variants previously identified in patients"
+  - **Issue** The text states that "most assayed mutations (Fig. 1A) are de novo" but the figure is not available for review. It is unclear how many variants are shown and whether the figure is legible.
+  - **Required correction** Ensure the figure is legible and that all variants mentioned in the text are clearly labeled.
+
+## Risk / unsupported claims
+- The claim that PBA acts via pharmacochaperoning rather than HDAC inhibition is not fully supported by the data presented, as the comparison with HDAC inhibitors is described as "inconsistent" without clear statistical reporting.
+- The claim of gonadal mosaicism is inferred from negative parental testing but is not definitively established without more sensitive testing or additional evidence.
+- The statement that "the GAT-1(A357T) protein is more destabilized than the GAT-1(A357V) protein" is based on AI predictions and is presented as a robust finding, but the correlation between predicted stability and functional outcome is not quantitatively assessed.
+- The claim that "reduced GAT-1 surface availability is functionally reflected by the marked decrease in GABA uptake" is an inference, as direct surface expression was not measured.
+- The statement that "astrocytes in thalamus could lead to commonly seen EEG features" is speculative and not directly tested in this study.

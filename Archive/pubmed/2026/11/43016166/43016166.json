@@ -1,0 +1,208 @@
+{
+  "identity": {
+    "pmid": "43016166",
+    "doi": "10.1093/bib/bbag616",
+    "title": "CRAFT: an antigen-specific TCR generative model for conditional de novo design with physicochemical constraints."
+  },
+  "content": {
+    "abstract": "T-cell receptors (TCRs) are essential to adaptive immunity and mediate the recognition and elimination of malignant or infected cells through antigen-specific interactions. Despite the clinical progress of TCR-based immunotherapies, computational de novo design of antigen-specific TCRs remains difficult. The main difficulties include the complexity of peptide-major histocompatibility complex (pMHC)-dependent recognition, strict physicochemical requirements at the binding interface, and the small amount of paired training data available for model development. Current generative approaches depend largely on 1D sequence statistics and do not capture pMHC presentation context, interfacial physicochemical properties, and native receptor priors within a unified framework. We present conditional reconstruction of antigen fragments for TCRs (CRAFT), a decoupled generative model for pMHC-conditioned de novo design of antigen-specific TCR CDR3$\\beta $ sequences under physicochemical constraints. With large-scale pretraining, CRAFT learns base representations that help reduce the limitations imposed by data scarcity. We further incorporate antigen-derived contextual information to guide antigen-specific TCR CDR3$\\beta $ sequence design. The architecture comprises an antigen encoder (PrimeBERT) that captures the pMHC context and an autoregressive decoder (PrimeTCR) that preserves native receptor priors. The encoder and decoder are coupled through cross-attention and augmented with Atchley factor embeddings, allowing CRAFT to incorporate physicochemical constraints relevant to antigen-conditioned receptor design during sequence decoding. Across multiple evaluations, CRAFT demonstrates competitive sequence naturalness, together with favorable performance in specific binding, and predicted structural plausibility. Overall, CRAFT provides a computational framework for developing personalized tumor immunotherapies. It also holds potential to support clinical translation by enabling the efficient, targeted discovery of candidate TCRs.",
+    "keywords": [
+      "CDR3beta generation",
+      "decoupled conditional generation",
+      "neoantigen",
+      "pMHC-contextualized decoding",
+      "physicochemical constraints"
+    ],
+    "mesh_terms": [
+      "*Receptors, Antigen, T-Cell/chemistry/immunology/genetics",
+      "Humans",
+      "Immunoinformatics",
+      "*Antigens/immunology/chemistry",
+      "Generative Artificial Intelligence",
+      "Major Histocompatibility Complex",
+      "Algorithms"
+    ],
+    "pub_types": [
+      "Journal Article"
+    ]
+  },
+  "contributors": {
+    "medline": {
+      "full_names": [
+        "Yang, Xiaochuan",
+        "Li, Zaiduo",
+        "Li, Zhijuan",
+        "Zhang, Wei",
+        "Zhang, Xianyu",
+        "Yang, Tiansong",
+        "Liu, Mingliang",
+        "Li, Xiaokun"
+      ],
+      "short_names": [
+        "Yang X",
+        "Li Z",
+        "Li Z",
+        "Zhang W",
+        "Zhang X",
+        "Yang T",
+        "Liu M",
+        "Li X"
+      ],
+      "auids": [
+        "ORCID: 0009-0009-2567-1488",
+        "ORCID: 0009-0003-4559-1385",
+        "ORCID: 0000-0002-2162-5654",
+        "ORCID: 0000-0002-5758-9552",
+        "ORCID: 0000-0002-9738-2361",
+        "ORCID: 0000-0002-4008-702X",
+        "ORCID: 0000-0003-1124-3561",
+        "ORCID: 0000-0002-6645-6890"
+      ],
+      "affiliations": [
+        "Key Laboratory of Information Fusion Estimation and Detection, Heilongjiang University, Xuefu Road, Harbin 150080, China.",
+        "Key Laboratory of Information Fusion Estimation and Detection, Heilongjiang University, Xuefu Road, Harbin 150080, China.",
+        "School of Computer and Big Data, Heilongjiang University, Xuefu Road, Harbin 150080, China.",
+        "Postdoctoral Program of Heilongjiang Hengxun Technology Co., Ltd., Xuefu Road, Harbin 150080, China.",
+        "School of Computer and Big Data, Heilongjiang University, Xuefu Road, Harbin 150080, China.",
+        "Postdoctoral Program of Heilongjiang Hengxun Technology Co., Ltd., Xuefu Road, Harbin 150080, China.",
+        "Department of Breast Surgery, Harbin Medical University Cancer Hospital, Haping Road, Harbin 150081, China.",
+        "Department of Rehabilitation, the First Affiliated Hospital of Heilongjiang University of Traditional Chinese Medicine, and Traditional Chinese Medicine Informatics Key Laboratory of Heilongjiang Province, Heping Road, Harbin 150040, China.",
+        "Key Laboratory of Information Fusion Estimation and Detection, Heilongjiang University, Xuefu Road, Harbin 150080, China.",
+        "Key Laboratory of Information Fusion Estimation and Detection, Heilongjiang University, Xuefu Road, Harbin 150080, China.",
+        "School of Computer and Big Data, Heilongjiang University, Xuefu Road, Harbin 150080, China.",
+        "Postdoctoral Program of Heilongjiang Hengxun Technology Co., Ltd., Xuefu Road, Harbin 150080, China.",
+        "Faculty of Computing, Harbin Institute of Technology, West DaZhi Street, Harbin 150001, China.",
+        "Shandong Hengxun Technology Co., Ltd., Miaoling Road, Qingdao 266100, China."
+      ]
+    },
+    "xml": [
+      {
+        "full_name": "Yang, Xiaochuan",
+        "short_name": "Yang X",
+        "identifiers": [
+          "0009-0009-2567-1488"
+        ],
+        "affiliations": [
+          "Key Laboratory of Information Fusion Estimation and Detection, Heilongjiang University, Xuefu Road, Harbin 150080, China."
+        ]
+      },
+      {
+        "full_name": "Li, Zaiduo",
+        "short_name": "Li Z",
+        "identifiers": [
+          "0009-0003-4559-1385"
+        ],
+        "affiliations": [
+          "Key Laboratory of Information Fusion Estimation and Detection, Heilongjiang University, Xuefu Road, Harbin 150080, China."
+        ]
+      },
+      {
+        "full_name": "Li, Zhijuan",
+        "short_name": "Li Z",
+        "identifiers": [
+          "0000-0002-2162-5654"
+        ],
+        "affiliations": [
+          "School of Computer and Big Data, Heilongjiang University, Xuefu Road, Harbin 150080, China.",
+          "Postdoctoral Program of Heilongjiang Hengxun Technology Co., Ltd., Xuefu Road, Harbin 150080, China."
+        ]
+      },
+      {
+        "full_name": "Zhang, Wei",
+        "short_name": "Zhang W",
+        "identifiers": [
+          "0000-0002-5758-9552"
+        ],
+        "affiliations": [
+          "School of Computer and Big Data, Heilongjiang University, Xuefu Road, Harbin 150080, China.",
+          "Postdoctoral Program of Heilongjiang Hengxun Technology Co., Ltd., Xuefu Road, Harbin 150080, China."
+        ]
+      },
+      {
+        "full_name": "Zhang, Xianyu",
+        "short_name": "Zhang X",
+        "identifiers": [
+          "0000-0002-9738-2361"
+        ],
+        "affiliations": [
+          "Department of Breast Surgery, Harbin Medical University Cancer Hospital, Haping Road, Harbin 150081, China."
+        ]
+      },
+      {
+        "full_name": "Yang, Tiansong",
+        "short_name": "Yang T",
+        "identifiers": [
+          "0000-0002-4008-702X"
+        ],
+        "affiliations": [
+          "Department of Rehabilitation, the First Affiliated Hospital of Heilongjiang University of Traditional Chinese Medicine, and Traditional Chinese Medicine Informatics Key Laboratory of Heilongjiang Province, Heping Road, Harbin 150040, China."
+        ]
+      },
+      {
+        "full_name": "Liu, Mingliang",
+        "short_name": "Liu M",
+        "identifiers": [
+          "0000-0003-1124-3561"
+        ],
+        "affiliations": [
+          "Key Laboratory of Information Fusion Estimation and Detection, Heilongjiang University, Xuefu Road, Harbin 150080, China."
+        ]
+      },
+      {
+        "full_name": "Li, Xiaokun",
+        "short_name": "Li X",
+        "identifiers": [
+          "0000-0002-6645-6890"
+        ],
+        "affiliations": [
+          "Key Laboratory of Information Fusion Estimation and Detection, Heilongjiang University, Xuefu Road, Harbin 150080, China.",
+          "School of Computer and Big Data, Heilongjiang University, Xuefu Road, Harbin 150080, China.",
+          "Postdoctoral Program of Heilongjiang Hengxun Technology Co., Ltd., Xuefu Road, Harbin 150080, China.",
+          "Faculty of Computing, Harbin Institute of Technology, West DaZhi Street, Harbin 150001, China.",
+          "Shandong Hengxun Technology Co., Ltd., Miaoling Road, Qingdao 266100, China."
+        ]
+      }
+    ]
+  },
+  "source": {
+    "journal_title": [
+      "Briefings in bioinformatics"
+    ],
+    "journal_abbrev": [
+      "Brief Bioinform"
+    ],
+    "pub_date": "2026 Nov 2",
+    "pub_year": "2026",
+    "pub_types": [
+      "Journal Article"
+    ]
+  },
+  "metadata": {
+    "entrez_date": "2026/11/12 05:29",
+    "fetched_at": "2026-11-15 11:51:31"
+  },
+  "links": {
+    "cites": [],
+    "refs": [],
+    "similar": [
+      "43016166"
+    ],
+    "review": [
+      "43016166"
+    ],
+    "pmc": [
+      "13755358"
+    ],
+    "entrez": {},
+    "external": [
+      {
+        "url": "https://academic.oup.com/bib/article-lookup/doi/10.1093/bib/bbag616",
+        "provider": "Silverchair Information Systems",
+        "category": "Full Text Sources",
+        "attribute": "subscription/membership/fee required",
+        "linkname": ""
+      }
+    ],
+    "text_mined": []
+  }
+}
